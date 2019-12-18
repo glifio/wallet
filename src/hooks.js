@@ -75,7 +75,7 @@ export const useAccounts = () => {
 
 
   const addAccount = async () => {
-    const account = await filecoin.newAccount();
+    const account = await filecoin.wallet.newAccount();
     dispatch(newAccount(account))
   }
 
