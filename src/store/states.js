@@ -3,6 +3,7 @@ export const initialState = {
   selectedAccount: null,
   isLoggedIn: false,
   error: null,
+  balance: 0
 }
 
 export const walletList = (state, { accounts }) => ({
@@ -20,6 +21,11 @@ export const newAccount = (state, {account}) => ({
   ...state,
   selectedAccount: account,
   accounts: [...state.accounts, account]
+})
+
+export const updateBalance = (state, {balance}) => ({
+  ...state,
+  balance
 })
 
 export const error = (state, error) => ({
