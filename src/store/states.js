@@ -2,13 +2,13 @@ export const initialState = {
   accounts: [],
   selectedAccount: null,
   isLoggedIn: false,
-  error: null
+  error: null,
 }
 
 export const walletList = (state, { accounts }) => ({
   ...state,
   accounts,
-  selectedAccount: accounts[0]
+  selectedAccount: accounts[0],
 });
 
 export const switchAccount = (state, {account}) => ({

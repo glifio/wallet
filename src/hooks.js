@@ -4,22 +4,35 @@ import { useDispatch, useSelector } from 'react-redux'
 import filecoinWallet from './wallet'
 import { error, newAccount, switchAccount, walletList } from './store/actions'
 
-export const useAccounts = () => {
-  const [fetchedAccounts, setFetchedAccounts] = useState(false)
+export const useFilecoin = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
+    // TODO: proper loading states
     const getAccounts = async () => {
       try {
         const accounts = await filecoinWallet.getAccounts();
         dispatch(walletList(accounts));
-      } catch(err) {
+      } catch (err) {
         dispatch(error(err))
       }
-      setFetchedAccounts(true)
     }
-    if (!fetchedAccounts) getAccounts()
-  }, [dispatch, fetchedAccounts])
+    getAccounts()
+  }, [dispatch])
+
+  return
+}
+
+export const useAccounts = () => {
+  const { accounts, isLoggedIn, selectedAccount } = useSelector(state => {
+    return {
+      accounts: state.accounts,
+      selectedAccount: state.selectedAccount,
+      isLoggedIn: state.isLoggedIn,
+    };
+  });
+
+  const dispatch = useDispatch()
 
   const selectAccount = useCallback((account) =>
     dispatch(switchAccount(account)), [dispatch])
@@ -30,14 +43,6 @@ export const useAccounts = () => {
   }
 
   const logIn = () => {}
-
-  const { accounts, isLoggedIn, selectedAccount } = useSelector(state => {
-    return {
-      accounts: state.accounts,
-      selectedAccount: state.selectedAccount,
-      isLoggedIn: state.isLoggedIn,
-    };
-  });
 
   return {
     accounts,
