@@ -1,9 +1,11 @@
+import BigNumber from 'bignumber.js'
+
 export const initialState = {
   accounts: [],
-  selectedAccount: null,
+  selectedAccount: '',
   isLoggedIn: false,
   error: null,
-  balance: 0
+  balance: new BigNumber(0)
 }
 
 export const walletList = (state, { accounts }) => ({

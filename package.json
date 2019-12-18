@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "bignumber.js": "^9.0.0",
     "bootstrap": "^4.4.1",
     "http-proxy-middleware": "^0.20.0",
     "lodash.clonedeep": "^4.5.0",

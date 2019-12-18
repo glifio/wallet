@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import { useFilecoin } from './hooks'
 import AccountPicker from './components/AccountPicker'
 import AccountDetail from './components/AccountDetail';
+import MsgCreator from './components/MsgCreator';
 import { DisplayFlexCol } from './components/StyledComponents'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <DisplayFlexCol>
         <AccountPicker />
         <AccountDetail />
+        <MsgCreator />
       </DisplayFlexCol>
     </Container>
   );

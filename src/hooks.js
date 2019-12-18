@@ -91,4 +91,5 @@ export const useAccounts = () => {
 }
 
 // for readability in the UI
+// returns the balance of the single selected account
 export const useBalance = () => useSelector(({balance}) => balance)
