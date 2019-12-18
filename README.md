@@ -1,3 +1,7 @@
+Notes:
+
+REACT_APP_LOTUS_JWT_TOKEN needs to be passed in a `.env` variable (this should be the token of your local node)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
