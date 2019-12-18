@@ -34,6 +34,7 @@ export const useFilecoin = () => {
   const timeout = useRef();
 
   const pollBalance = useCallback(() => {
+    clearTimeout(timeout.current)
     timeout.current = setTimeout(async () => {
       const latestBalance = await filecoin.getBalance(selectedAccount);
       // balances from filecoin.getBalance are javascript BigNumbers https://github.com/MikeMcl/bignumber.js/
