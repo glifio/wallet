@@ -1,7 +1,10 @@
-export const WALLET_LIST = 'WALLET_LIST'
-export const SWITCH_ACCOUNT = 'SWITCH_ACCOUNT'
-export const NEW_ACCOUNT = 'NEW_ACCOUNT'
+export const WALLET_LIST = 'WALLET_LIST';
+export const SWITCH_ACCOUNT = 'SWITCH_ACCOUNT';
+export const NEW_ACCOUNT = 'NEW_ACCOUNT';
 
-export const UPDATE_BALANCE = 'UPDATE_BALANCE'
+export const UPDATE_BALANCE = 'UPDATE_BALANCE';
 
-export const ERROR = 'ERROR'
+export const CONFIRMING_MESSAGE = 'CONFIRMING_MESSAGE';
+export const CONFIRMED_MESSAGE = 'CONFIRMED_MESSAGE';
+
+export const ERROR = 'ERROR';

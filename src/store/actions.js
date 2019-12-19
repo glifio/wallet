@@ -3,38 +3,38 @@ import {
   WALLET_LIST,
   SWITCH_ACCOUNT,
   NEW_ACCOUNT,
-  UPDATE_BALANCE
+  UPDATE_BALANCE,
 } from './actionTypes';
 
-export const walletList = (accounts) => ({
+export const walletList = accounts => ({
   type: WALLET_LIST,
   payload: {
     accounts,
-  }
-})
+  },
+});
 
-export const switchAccount = (account) => ({
+export const switchAccount = account => ({
   type: SWITCH_ACCOUNT,
   payload: {
-    account
-  }
-})
+    account,
+  },
+});
 
-export const newAccount = (account) => ({
+export const newAccount = account => ({
   type: NEW_ACCOUNT,
   payload: {
-    account
-  }
-})
+    account,
+  },
+});
 
-export const updateBalance = (balance) => ({
+export const updateBalance = balance => ({
   type: UPDATE_BALANCE,
   payload: {
-    balance
-  }
-})
+    balance,
+  },
+});
 
-export const error = (error) => ({
+export const error = error => ({
   type: ERROR,
-  error
-})
+  error,
+});
