@@ -1,4 +1,6 @@
 import {
+  CONFIRM_MESSAGE,
+  CONFIRMED_MESSAGES,
   ERROR,
   WALLET_LIST,
   SWITCH_ACCOUNT,
@@ -31,6 +33,21 @@ export const updateBalance = balance => ({
   type: UPDATE_BALANCE,
   payload: {
     balance,
+  },
+});
+
+export const confirmMessage = message => ({
+  type: CONFIRM_MESSAGE,
+  payload: {
+    message,
+  },
+});
+
+export const confirmedMessages = (confirmedMsgs, pendingMsgs) => ({
+  type: CONFIRMED_MESSAGES,
+  payload: {
+    confirmedMsgs,
+    pendingMsgs,
   },
 });
 

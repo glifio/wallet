@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Message } from '@openworklabs/filecoin-wallet-provider';
 import BigNumber from 'bignumber.js';
+import { useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 
 import { useAccounts, useBalance } from '../hooks';
+import { confirmMessage, error } from '../store/actions';
 import filecoin from '../wallet';
 
 // TODO: better validation
@@ -19,6 +21,7 @@ const isValidForm = (toAddress, value, balance, errors) => {
 const MsgCreator = () => {
   const { selectedAccount } = useAccounts();
   const balance = useBalance();
+  const dispatch = useDispatch();
   const [toAddress, setToAddress] = useState('');
   const [value, setValue] = useState('');
   const [errors, setErrors] = useState({ value: false, toAddress: false });
@@ -65,11 +68,14 @@ const MsgCreator = () => {
       `Are you sure you want to send ${value} Filecoin to ${toAddress}?`
     );
     if (confirmed) {
-      await message.generateNonce();
-      const signedMessage = await filecoin.wallet.sign(message.encode());
-      const tx = await filecoin.sendMessage(signedMessage);
-
-      console.log(signedMessage, tx);
+      try {
+        await message.generateNonce();
+        const signedMessage = await filecoin.wallet.sign(message.encode());
+        await filecoin.sendMessage(signedMessage);
+        dispatch(confirmMessage(message.encode()));
+      } catch (err) {
+        dispatch(error(err));
+      }
     }
   };
 

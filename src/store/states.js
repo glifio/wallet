@@ -6,6 +6,8 @@ export const initialState = {
   isLoggedIn: false,
   error: null,
   balance: new BigNumber(0),
+  pendingMsgs: [],
+  confirmedMsgs: [],
 };
 
 export const walletList = (state, { accounts }) => ({
@@ -29,6 +31,19 @@ export const updateBalance = (state, { balance }) => ({
   ...state,
   balance,
 });
+
+export const confirmMessage = (state, { message }) => ({
+  ...state,
+  pendingMsgs: [...state.pendingMsgs, message],
+});
+
+export const confirmedMessages = (state, { confirmedMsgs, pendingMsgs }) => {
+  return {
+    ...state,
+    pendingMsgs,
+    confirmedMsgs: [...confirmedMsgs, ...state.confirmedMsgs],
+  };
+};
 
 export const error = (state, error) => ({
   ...state,

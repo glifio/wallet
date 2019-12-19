@@ -6,9 +6,13 @@ import {
   ERROR,
   NEW_ACCOUNT,
   UPDATE_BALANCE,
+  CONFIRM_MESSAGE,
+  CONFIRMED_MESSAGES,
 } from './actionTypes';
 
 import {
+  confirmMessage,
+  confirmedMessages,
   initialState,
   newAccount,
   switchAccount,
@@ -31,6 +35,13 @@ export default (state = initialState, action) => {
     case UPDATE_BALANCE: {
       return updateBalance(cloneDeep(state), action.payload);
     }
+    case CONFIRM_MESSAGE: {
+      return confirmMessage(cloneDeep(state), action.payload);
+    }
+    case CONFIRMED_MESSAGES:
+      // we confirm plural messages to handle cases where multiple messages
+      // get confirmed in the same block (tough to handle this singularly without state bugs)
+      return confirmedMessages(cloneDeep(state), action.payload);
     case ERROR: {
       return error(cloneDeep(state), action.error);
     }
