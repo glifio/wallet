@@ -1,4 +1,6 @@
-import Filecoin, { LocalNodeProvider } from '@openworklabs/filecoin-wallet-provider'
+import Filecoin, {
+  LocalNodeProvider,
+} from '@openworklabs/filecoin-wallet-provider';
 
 export default new Filecoin(
   new LocalNodeProvider({

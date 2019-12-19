@@ -1,11 +1,17 @@
 import { useEffect, useCallback, useRef } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 
-import filecoin from './wallet'
-import { error, newAccount, switchAccount, walletList, updateBalance } from './store/actions'
+import filecoin from './wallet';
+import {
+  error,
+  newAccount,
+  switchAccount,
+  walletList,
+  updateBalance,
+} from './store/actions';
 
 export const useFilecoin = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   /* fetch details about accounts */
   useEffect(() => {
@@ -17,11 +23,11 @@ export const useFilecoin = () => {
         const balance = await filecoin.getBalance(accounts[0]);
         dispatch(updateBalance(balance));
       } catch (err) {
-        dispatch(error(err))
+        dispatch(error(err));
       }
-    }
-    getAccounts()
-  }, [dispatch])
+    };
+    getAccounts();
+  }, [dispatch]);
 
   /* poll for details about balance of single selected account */
   const { balanceFromRedux, selectedAccount } = useSelector(state => {
@@ -34,7 +40,8 @@ export const useFilecoin = () => {
   const timeout = useRef();
 
   const pollBalance = useCallback(() => {
-    clearTimeout(timeout.current)
+    // avoid race conditions (heisman)
+    clearTimeout(timeout.current);
     timeout.current = setTimeout(async () => {
       const latestBalance = await filecoin.getBalance(selectedAccount);
       // balances from filecoin.getBalance are javascript BigNumbers https://github.com/MikeMcl/bignumber.js/
@@ -53,8 +60,8 @@ export const useFilecoin = () => {
 
   useEffect(pollBalance, [selectedAccount, pollBalance]);
 
-  return
-}
+  return;
+};
 
 export const useAccounts = () => {
   const { accounts, isLoggedIn, selectedAccount } = useSelector(state => {
@@ -65,21 +72,23 @@ export const useAccounts = () => {
     };
   });
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const selectAccount = useCallback(async (account) => {
-    dispatch(switchAccount(account))
-    const balance = await filecoin.getBalance(account);
-    dispatch(updateBalance(balance));
-  }, [dispatch])
-
+  const selectAccount = useCallback(
+    async account => {
+      dispatch(switchAccount(account));
+      const balance = await filecoin.getBalance(account);
+      dispatch(updateBalance(balance));
+    },
+    [dispatch]
+  );
 
   const addAccount = async () => {
     const account = await filecoin.wallet.newAccount();
-    dispatch(newAccount(account))
-  }
+    dispatch(newAccount(account));
+  };
 
-  const logIn = () => {}
+  const logIn = () => {};
 
   return {
     accounts,
@@ -89,8 +98,8 @@ export const useAccounts = () => {
     isLoggedIn,
     logIn,
   };
-}
+};
 
 // for readability in the UI
 // returns the balance of the single selected account
-export const useBalance = () => useSelector(({balance}) => balance)
+export const useBalance = () => useSelector(({ balance }) => balance);
