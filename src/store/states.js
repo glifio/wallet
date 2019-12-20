@@ -1,22 +1,21 @@
-import BigNumber from 'bignumber.js';
+import updateArrayItem from './utils/updateArrayItem'
 
 export const initialState = {
   accounts: [],
-  selectedAccount: '',
+  selectedAccount: 0,
   isLoggedIn: false,
   error: null,
-  balance: new BigNumber(0),
 };
 
 export const walletList = (state, { accounts }) => ({
   ...state,
   accounts,
-  selectedAccount: accounts[0],
+  selectedAccount: 0,
 });
 
-export const switchAccount = (state, { account }) => ({
+export const switchAccount = (state, { index }) => ({
   ...state,
-  selectedAccount: account,
+  selectedAccount: index,
 });
 
 export const newAccount = (state, { account }) => ({
@@ -27,7 +26,10 @@ export const newAccount = (state, { account }) => ({
 
 export const updateBalance = (state, { balance }) => ({
   ...state,
-  balance,
+  accounts: updateArrayItem(
+    state.accounts,
+    { index: state.selectedAccount, item: { balance: balance } }
+  )
 });
 
 export const error = (state, error) => ({

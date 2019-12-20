@@ -13,10 +13,10 @@ export const walletList = accounts => ({
   },
 });
 
-export const switchAccount = account => ({
+export const switchAccount = index => ({
   type: SWITCH_ACCOUNT,
   payload: {
-    account,
+    index,
   },
 });
 
