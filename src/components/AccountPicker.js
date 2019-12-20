@@ -16,15 +16,15 @@ export default () => {
       <DisplayFlexCol>
         <h5>Select an account</h5>
         <ListGroup>
-          {accounts.map(account => {
+          {accounts.map((account, index) => {
             return (
               <ListGroup.Item
                 action
-                onClick={selectAccount.bind(this, account)}
-                key={account}
-                active={selectedAccount === account}
+                onClick={selectAccount.bind(this, index)}
+                key={account.address}
+                active={selectedAccount.address === account.address}
               >
-                {account}
+                {account.address}
               </ListGroup.Item>
             );
           })}

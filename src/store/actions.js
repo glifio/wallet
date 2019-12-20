@@ -15,10 +15,10 @@ export const walletList = accounts => ({
   },
 });
 
-export const switchAccount = account => ({
+export const switchAccount = index => ({
   type: SWITCH_ACCOUNT,
   payload: {
-    account,
+    index,
   },
 });
 
@@ -29,10 +29,11 @@ export const newAccount = account => ({
   },
 });
 
-export const updateBalance = balance => ({
+export const updateBalance = (balance, accountIdx) => ({
   type: UPDATE_BALANCE,
   payload: {
     balance,
+    accountIdx,
   },
 });
 
