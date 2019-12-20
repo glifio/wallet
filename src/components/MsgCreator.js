@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 
-import { useAccounts, useBalance } from '../hooks';
+import { useWallets, useBalance } from '../hooks';
 import { confirmMessage, error } from '../store/actions';
 import filecoin from '../wallet';
 
@@ -19,7 +19,7 @@ const isValidForm = (toAddress, value, balance, errors) => {
 };
 
 const MsgCreator = () => {
-  const { selectedAccount } = useAccounts();
+  const { selectedWallet } = useWallets();
   const balance = useBalance();
   const dispatch = useDispatch();
   const [toAddress, setToAddress] = useState('');
@@ -60,7 +60,7 @@ const MsgCreator = () => {
 
     const message = new Message({
       to: toAddress,
-      from: selectedAccount.address,
+      from: selectedWallet.address,
       value: value.toString(),
       method: 0,
     });
@@ -93,7 +93,7 @@ const MsgCreator = () => {
               placeholder="Select an account from above"
               aria-describedby="fromAddressPrepend"
               name="fromAddress"
-              value={selectedAccount.address}
+              value={selectedWallet.address}
               disabled
             />
           </InputGroup>

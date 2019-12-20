@@ -5,8 +5,7 @@ import BigNumber from 'bignumber.js';
 import filecoin from './wallet';
 import {
   error,
-  newAccount,
-  switchAccount,
+  switchWallet,
   walletList,
   updateBalance,
 } from './store/actions';
@@ -14,14 +13,14 @@ import {
 export const useFilecoin = () => {
   const dispatch = useDispatch();
 
-  /* fetch details about accounts */
+  /* fetch details about wallets */
   useEffect(() => {
     // TODO: proper loading states
-    const getAccounts = async () => {
+    const getWallets = async () => {
       try {
-        const addresses = await filecoin.wallet.getAccounts();
-        const accounts = await Promise.all(
-          addresses.map(async address => {
+        const accounts = await filecoin.wallet.getAccounts();
+        const wallets = await Promise.all(
+          accounts.map(async address => {
             const balance = await filecoin.getBalance(address);
             return {
               balance,
@@ -29,19 +28,19 @@ export const useFilecoin = () => {
             };
           })
         );
-        dispatch(walletList(accounts));
+        dispatch(walletList(wallets));
       } catch (err) {
         dispatch(error(err));
       }
     };
-    getAccounts();
+    getWallets();
   }, [dispatch]);
 
   /* poll for details about balance of single selected account */
-  const { selectedAccount, accounts } = useSelector(state => {
+  const { selectedWalletIdx, wallets } = useSelector(state => {
     return {
-      selectedAccount: state.selectedAccount,
-      accounts: state.accounts,
+      selectedWalletIdx: state.selectedWalletIdx,
+      wallets: state.wallets,
     };
   });
 
@@ -51,12 +50,12 @@ export const useFilecoin = () => {
     // avoid race conditions (heisman)
     clearTimeout(timeout.current);
     timeout.current = setTimeout(async () => {
-      if (!accounts[selectedAccount]) return await pollBalance();
+      if (!wallets[selectedWalletIdx]) return await pollBalance();
 
       const latestBalance = await filecoin.getBalance(
-        accounts[selectedAccount].address
+        wallets[selectedWalletIdx].address
       );
-      if (!latestBalance.isEqualTo(accounts[selectedAccount].balance)) {
+      if (!latestBalance.isEqualTo(wallets[selectedWalletIdx].balance)) {
         dispatch(updateBalance(latestBalance));
       }
       await pollBalance();
@@ -67,59 +66,48 @@ export const useFilecoin = () => {
         clearTimeout(timeout.current);
       }
     };
-  }, [accounts, dispatch, selectedAccount]);
+  }, [wallets, dispatch, selectedWalletIdx]);
 
-  useEffect(pollBalance, [selectedAccount, pollBalance]);
+  useEffect(pollBalance, [selectedWalletIdx, pollBalance]);
   return;
 };
 
-export const useAccounts = () => {
-  const { accounts, isLoggedIn, selectedAccount } = useSelector(state => {
-    const selectedAccount =
-      state.accounts.length > state.selectedAccount
-        ? state.accounts[state.selectedAccount]
+export const useWallets = () => {
+  const { wallets, selectedWallet } = useSelector(state => {
+    const selectedWallet =
+      state.wallets.length > state.selectedWalletIdx
+        ? state.wallets[state.selectedWalletIdx]
         : { balance: new BigNumber('0'), address: '' };
+
     return {
-      accounts: state.accounts,
-      selectedAccount,
-      isLoggedIn: state.isLoggedIn,
+      wallets: state.wallets,
+      selectedWallet,
     };
   });
 
   const dispatch = useDispatch();
 
-  const selectAccount = useCallback(
+  const selectWallet = useCallback(
     async index => {
-      dispatch(switchAccount(index));
-      const balance = await filecoin.getBalance(accounts[index].address);
+      dispatch(switchWallet(index));
+      const balance = await filecoin.getBalance(wallets[index].address);
       dispatch(updateBalance(balance, index));
     },
-    [accounts, dispatch]
+    [wallets, dispatch]
   );
 
-  const addAccount = async () => {
-    const account = await filecoin.wallet.newAccount();
-    const balance = await filecoin.getBalance(account);
-    dispatch(newAccount({ account, balance }));
-  };
-
-  const logIn = () => {};
-
   return {
-    accounts,
-    addAccount,
-    selectAccount,
-    selectedAccount,
-    isLoggedIn,
-    logIn,
+    wallets,
+    selectWallet,
+    selectedWallet,
   };
 };
 
 export const useBalance = index =>
   useSelector(state => {
     // optional account index param, default to selected account
-    const accountIdx = index ? index : state.selectedAccount;
-    return state.accounts[accountIdx]
-      ? state.accounts[accountIdx].balance
+    const walletIdx = index ? index : state.selectedWalletIdx;
+    return state.wallets[walletIdx]
+      ? state.wallets[walletIdx].balance
       : new BigNumber(0);
   });

@@ -2,9 +2,8 @@ import cloneDeep from 'lodash.clonedeep';
 
 import {
   WALLET_LIST,
-  SWITCH_ACCOUNT,
+  SWITCH_WALLET,
   ERROR,
-  NEW_ACCOUNT,
   UPDATE_BALANCE,
   CONFIRM_MESSAGE,
   CONFIRMED_MESSAGES,
@@ -14,8 +13,7 @@ import {
   confirmMessage,
   confirmedMessages,
   initialState,
-  newAccount,
-  switchAccount,
+  switchWallet,
   walletList,
   updateBalance,
   error,
@@ -26,11 +24,8 @@ export default (state = initialState, action) => {
     case WALLET_LIST: {
       return walletList(cloneDeep(state), action.payload);
     }
-    case SWITCH_ACCOUNT: {
-      return switchAccount(cloneDeep(state), action.payload);
-    }
-    case NEW_ACCOUNT: {
-      return newAccount(cloneDeep(state), action.payload);
+    case SWITCH_WALLET: {
+      return switchWallet(cloneDeep(state), action.payload);
     }
     case UPDATE_BALANCE: {
       return updateBalance(cloneDeep(state), action.payload);

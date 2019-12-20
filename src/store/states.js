@@ -1,36 +1,29 @@
 import updateArrayItem from './utils/updateArrayItem';
 
 export const initialState = {
-  accounts: [],
-  selectedAccount: 0,
-  isLoggedIn: false,
+  wallets: [],
+  selectedWalletIdx: 0,
   error: null,
   pendingMsgs: [],
   confirmedMsgs: [],
 };
 
-export const walletList = (state, { accounts }) => ({
+export const walletList = (state, { wallets }) => ({
   ...state,
-  accounts,
-  selectedAccount: 0,
+  wallets,
+  selectedWalletIdx: 0,
 });
 
-export const switchAccount = (state, { index }) => ({
+export const switchWallet = (state, { index }) => ({
   ...state,
-  selectedAccount: index,
+  selectedWalletIdx: index,
 });
 
-export const newAccount = (state, { account }) => ({
+export const updateBalance = (state, { balance, selectedWalletIdx }) => ({
   ...state,
-  selectedAccount: account,
-  accounts: [...state.accounts, account],
-});
-
-export const updateBalance = (state, { balance, accountIdx }) => ({
-  ...state,
-  accounts: updateArrayItem(state.accounts, accountIdx, {
+  wallet: updateArrayItem(state.wallets, selectedWalletIdx, {
     balance,
-    address: state.accounts[accountIdx].address,
+    address: state.wallets[selectedWalletIdx].address,
   }),
 });
 

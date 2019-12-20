@@ -3,37 +3,29 @@ import {
   CONFIRMED_MESSAGES,
   ERROR,
   WALLET_LIST,
-  SWITCH_ACCOUNT,
-  NEW_ACCOUNT,
+  SWITCH_WALLET,
   UPDATE_BALANCE,
 } from './actionTypes';
 
-export const walletList = accounts => ({
+export const walletList = wallets => ({
   type: WALLET_LIST,
   payload: {
-    accounts,
+    wallets,
   },
 });
 
-export const switchAccount = index => ({
-  type: SWITCH_ACCOUNT,
+export const switchWallet = index => ({
+  type: SWITCH_WALLET,
   payload: {
     index,
   },
 });
 
-export const newAccount = account => ({
-  type: NEW_ACCOUNT,
-  payload: {
-    account,
-  },
-});
-
-export const updateBalance = (balance, accountIdx) => ({
+export const updateBalance = (balance, selectedWalletIdx) => ({
   type: UPDATE_BALANCE,
   payload: {
     balance,
-    accountIdx,
+    selectedWalletIdx,
   },
 });
 
