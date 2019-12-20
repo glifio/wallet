@@ -1,5 +1,6 @@
 import { useEffect, useCallback, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import BigNumber from 'bignumber.js';
 
 import filecoin from './wallet';
 import {
@@ -9,7 +10,6 @@ import {
   walletList,
   updateBalance,
 } from './store/actions';
-import BigNumber from '@openworklabs/filecoin-wallet-provider/node_modules/bignumber.js';
 
 export const useFilecoin = () => {
   const dispatch = useDispatch();
