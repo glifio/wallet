@@ -21,7 +21,7 @@ export const switchWallet = (state, { index }) => ({
 
 export const updateBalance = (state, { balance, selectedWalletIdx }) => ({
   ...state,
-  wallet: updateArrayItem(state.wallets, selectedWalletIdx, {
+  wallets: updateArrayItem(state.wallets, selectedWalletIdx, {
     balance,
     address: state.wallets[selectedWalletIdx].address,
   }),
