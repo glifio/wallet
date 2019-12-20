@@ -57,7 +57,7 @@ const MsgCreator = () => {
 
     const message = new Message({
       to: toAddress,
-      from: selectedAccount,
+      from: selectedAccount.address,
       value: value.toString(),
       method: 0,
     });
@@ -87,7 +87,7 @@ const MsgCreator = () => {
               placeholder="Select an account from above"
               aria-describedby="fromAddressPrepend"
               name="fromAddress"
-              value={selectedAccount}
+              value={selectedAccount.address}
               disabled
             />
           </InputGroup>
