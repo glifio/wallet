@@ -1,14 +1,6 @@
-function updateArrayItem(array, action) {
-  return array.map((item, index) => {
-    if (index !== action.index) {
-      return item
-    }
+const updateArrayItem = (array, idxToReplace, replacement) =>
+  array.map((original, index) =>
+    index === idxToReplace ? replacement : original
+  );
 
-    return {
-      ...item,
-      ...action.item
-    }
-  })
-}
-
-export default updateArrayItem
+export default updateArrayItem;

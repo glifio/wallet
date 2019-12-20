@@ -27,10 +27,11 @@ export const newAccount = account => ({
   },
 });
 
-export const updateBalance = balance => ({
+export const updateBalance = (balance, accountIdx) => ({
   type: UPDATE_BALANCE,
   payload: {
     balance,
+    accountIdx,
   },
 });
 

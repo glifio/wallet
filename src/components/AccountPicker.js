@@ -22,7 +22,7 @@ export default () => {
                 action
                 onClick={selectAccount.bind(this, index)}
                 key={account.address}
-                active={accounts[selectedAccount] && (accounts[selectedAccount].address === account.address)}
+                active={selectedAccount.address === account.address}
               >
                 {account.address}
               </ListGroup.Item>

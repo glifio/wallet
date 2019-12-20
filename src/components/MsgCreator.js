@@ -12,12 +12,12 @@ import filecoin from '../wallet';
 const isValidForm = (toAddress, value, balance, errors) => {
   const errorFree = !errors.value && !errors.toAddress;
   const fieldsFilledOut = toAddress && value;
-  const enoughInTheBank = balance ? balance.isGreaterThan(value) : false;
+  const enoughInTheBank = balance.isGreaterThan(value);
   return !!(errorFree && fieldsFilledOut && enoughInTheBank);
 };
 
 const MsgCreator = () => {
-  const { accounts, selectedAccount } = useAccounts();
+  const { selectedAccount } = useAccounts();
   const balance = useBalance();
   const [toAddress, setToAddress] = useState('');
   const [value, setValue] = useState('');
@@ -57,7 +57,7 @@ const MsgCreator = () => {
 
     const message = new Message({
       to: toAddress,
-      from: accounts[selectedAccount].address,
+      from: selectedAccount.address,
       value: value.toString(),
       method: 0,
     });
@@ -87,7 +87,7 @@ const MsgCreator = () => {
               placeholder="Select an account from above"
               aria-describedby="fromAddressPrepend"
               name="fromAddress"
-              value={accounts[selectedAccount] ? accounts[selectedAccount].address : ''}
+              value={selectedAccount.address}
               disabled
             />
           </InputGroup>

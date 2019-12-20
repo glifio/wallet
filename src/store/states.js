@@ -1,4 +1,4 @@
-import updateArrayItem from './utils/updateArrayItem'
+import updateArrayItem from './utils/updateArrayItem';
 
 export const initialState = {
   accounts: [],
@@ -24,12 +24,12 @@ export const newAccount = (state, { account }) => ({
   accounts: [...state.accounts, account],
 });
 
-export const updateBalance = (state, { balance }) => ({
+export const updateBalance = (state, { balance, accountIdx }) => ({
   ...state,
-  accounts: updateArrayItem(
-    state.accounts,
-    { index: state.selectedAccount, item: { balance: balance } }
-  )
+  accounts: updateArrayItem(state.accounts, accountIdx, {
+    balance,
+    address: state.accounts[accountIdx].address,
+  }),
 });
 
 export const error = (state, error) => ({
