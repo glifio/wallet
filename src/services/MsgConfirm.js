@@ -38,6 +38,8 @@ export const MsgConfirm = () => {
         }
       };
 
+      const timeout = setTimeout(subscribeCb, 3000)
+
       /*
       const newPendingMsgs = state.pendingMsgs.filter(msg => {
     const isMatch = isSameMsg(msg, message);
@@ -51,13 +53,13 @@ export const MsgConfirm = () => {
       return true;
     }
   }); */
-
-      lotus.store.subscribe(subscribeCb);
-      lotus.listen();
+      // lotus.store.subscribe(subscribeCb);
+      // lotus.listen();
 
       return () => {
-        lotus.store.unsubscribe(subscribeCb);
-        lotus.stopListening();
+        clearTimeout(timeout)
+        // lotus.store.unsubscribe(subscribeCb);
+        // lotus.stopListening();
       };
     }
   }, [pendingMsgs, dispatch]);

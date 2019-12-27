@@ -7,12 +7,14 @@ import AccountDetail from './components/AccountDetail';
 import MessageCreator from './components/MessageCreator';
 import TransactionHistory from './components/TransactionHistory';
 import { Wrapper, Header, AppTitle, BalanceBanner, FilecoinLogo, BalanceInBanner } from './components/StyledComponents';
+import { MsgConfirm } from './services/MsgConfirm';
 
 function App() {
   // hydrates the redux store with data from the filecoin-wallet-provider
   useFilecoin();
   return (
     <Wrapper>
+      <MsgConfirm />
       <Header>
         <AppTitle>Filament</AppTitle>
       </Header>
