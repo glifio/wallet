@@ -1,27 +1,29 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
+import 'styled-components/macro'
 
 import { useFilecoin } from './hooks';
 import AccountPicker from './components/AccountPicker';
 import AccountDetail from './components/AccountDetail';
-import MsgCreator from './components/MsgCreator';
-import { DisplayFlexCol } from './components/StyledComponents';
+import MessageCreator from './components/MessageCreator';
+import TransactionHistory from './components/TransactionHistory';
+import { Wrapper, Header, AppTitle, BalanceBanner, FilecoinLogo, BalanceInBanner } from './components/StyledComponents';
 
 function App() {
   // hydrates the redux store with data from the filecoin-wallet-provider
   useFilecoin();
   return (
-    <Container>
-      <h1>Welcome to the first Filecoin web wallet</h1>
-      <h3>
-        Right now this app requires a local Lotus node running on your machine
-      </h3>
-      <DisplayFlexCol>
-        <AccountPicker />
-        <AccountDetail />
-        <MsgCreator />
-      </DisplayFlexCol>
-    </Container>
+    <Wrapper>
+      <Header>
+        <AppTitle>Filament</AppTitle>
+      </Header>
+      <AccountPicker />
+      <BalanceBanner>
+        <FilecoinLogo src="/filecoin.png" alt="" />
+        <BalanceInBanner>5,400.84 FIL</BalanceInBanner>
+      </BalanceBanner>
+      <MessageCreator />
+      <TransactionHistory></TransactionHistory>
+    </Wrapper >
   );
 }
 

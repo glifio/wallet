@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button';
 
 import { useWallets, useBalance } from '../hooks';
 import { confirmMessage, error } from '../store/actions';
+import { MessageCreator, SectionHeader, MessageForm, ToInput, InputLabel, AvailableBalance, AvailableBalanceLabel, AmountInput, CancelButton, SendButton } from './StyledComponents'
 import filecoin from '../wallet';
 
 // TODO: better validation
@@ -81,68 +82,64 @@ const MsgCreator = () => {
 
   return (
     <React.Fragment>
-      <h5>Send some filecoin</h5>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="fromAddress">
-          <InputGroup>
-            <InputGroup.Prepend>
-              <InputGroup.Text id="fromAddressPrepend">From</InputGroup.Text>
-            </InputGroup.Prepend>
-            <Form.Control
-              type="text"
-              placeholder="Select an account from above"
-              aria-describedby="fromAddressPrepend"
-              name="fromAddress"
-              value={selectedWallet.address}
-              disabled
-            />
-          </InputGroup>
-        </Form.Group>
+      <MessageCreator>
+        <hr />
+        <SectionHeader>Send Filecoin</SectionHeader>
+        <Form onSubmit={handleSubmit}>
+          <MessageForm>
+            <ToInput>
+              <Form.Group controlId="toAddress">
+                <InputLabel>To</InputLabel>
+                <InputGroup>
+                  <Form.Control
+                    type="text"
+                    aria-describedby="toAddressPrepend"
+                    name="toAddress"
+                    value={toAddress}
+                    onChange={e => setToAddress(e.target.value)}
+                  />
+                </InputGroup>
+              </Form.Group>
+            </ToInput>
 
-        <Form.Group controlId="toAddress">
-          <InputGroup>
-            <InputGroup.Prepend>
-              <InputGroup.Text id="toAddressPrepend">To</InputGroup.Text>
-            </InputGroup.Prepend>
-            <Form.Control
-              type="text"
-              placeholder="An account to send Filecoin to"
-              aria-describedby="toAddressPrepend"
-              name="toAddress"
-              value={toAddress}
-              onChange={e => setToAddress(e.target.value)}
-            />
-          </InputGroup>
-        </Form.Group>
+            <AvailableBalance>
+              <AvailableBalanceLabel>Available</AvailableBalanceLabel>
+              {balance.toString()}
+            </AvailableBalance>
 
-        <Form.Group controlId="value">
-          <InputGroup>
-            <InputGroup.Prepend>
-              <InputGroup.Text id="valuePrepend">Amount</InputGroup.Text>
-            </InputGroup.Prepend>
-            <Form.Control
-              placeholder="0"
-              type="text"
-              aria-describedby="valuePrepend"
-              name="value"
-              value={value.toString()}
-              onChange={handleValueChange}
-              isInvalid={errors.value}
-            />
-            <Form.Control.Feedback type="invalid">
-              {errors.value}
-            </Form.Control.Feedback>
-          </InputGroup>
-        </Form.Group>
+            <AmountInput>
+              <InputLabel>Amount</InputLabel>
+              <Form.Group controlId="value">
+                <InputGroup>
+                  <Form.Control
+                    placeholder="0"
+                    type="text"
+                    aria-describedby="valuePrepend"
+                    name="value"
+                    value={value.toString()}
+                    onChange={handleValueChange}
+                    isInvalid={errors.value}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    {errors.value}
+                  </Form.Control.Feedback>
+                </InputGroup>
+              </Form.Group>
+            </AmountInput>
 
-        <Button
-          disabled={!isValidForm(toAddress, value, balance, errors)}
-          variant="primary"
-          type="submit"
-        >
-          Submit
-        </Button>
-      </Form>
+            <CancelButton>
+              Cancel
+            </CancelButton>
+
+            <SendButton
+              disabled={!isValidForm(toAddress, value, balance, errors)}
+              type="submit"
+            >
+              Send
+            </SendButton>
+          </MessageForm>
+        </Form>
+      </MessageCreator>
     </React.Fragment>
   );
 };
