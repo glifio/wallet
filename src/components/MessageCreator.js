@@ -141,14 +141,14 @@ const MsgCreator = () => {
 
             {confirmStage === 'reviewMessage' &&
               <MessageReview>
-                You're sending <strong>3.01 FIL</strong> to <strong>123jb12hj3bnjh12bn3jhnkjn12kj3n</strong>
+                You're sending <strong>{value.toString()} FIL</strong> to <strong>{toAddress}</strong>
                 <MessageReviewSubText>All transactions are final.</MessageReviewSubText>
               </MessageReview>
             }
 
             {confirmStage === 'reviewOnDevice' &&
               <MessageReview>
-                Confirm the message on your Ledger <br /> to send <strong>3.01 FIL</strong>.
+                Confirm the message on your Ledger.
               </MessageReview>
             }
 
