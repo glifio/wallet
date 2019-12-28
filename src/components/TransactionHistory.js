@@ -6,15 +6,15 @@ import { TransactionHistory, Transaction, TransactionAmount, TransactionActorAdd
 import { useTransactions, useWallets } from '../hooks';
 import { shortenAddress } from '../utils'
 
-const TransactionComponent = ({ To, From, Nounce, Value, Method, GasPrice, GasLimit, MessageCid, Date }, selectedWalletaddress) => {
+const TransactionComponent = ({ To, From, Nounce, Value, Method, GasPrice, GasLimit, MessageCid, Date }, status, selectedWalletaddress) => {
   const sent = From === selectedWalletaddress
   return (
-    <Transaction key="">
+    <Transaction key={MessageCid}>
       <TransactionAmount>
         {sent && <span>-</span>}{Value.toString()}
       </TransactionAmount>
       <TransactionStatus>
-        <TransactionStatusText>Pending</TransactionStatusText>
+        <TransactionStatusText>{status}</TransactionStatusText>
       </TransactionStatus>
       <TransactionGas><strong>Gas: </strong>{GasPrice} FIL</TransactionGas>
       {
@@ -39,13 +39,13 @@ const MessageCreator = () => {
         <SectionHeader css={{ marginBottom: '10px' }}>Transaction History</SectionHeader>
         {pending.length > 0 &&
           pending.map((tx) => {
-            return TransactionComponent(tx, selectedWallet.address)
+            return TransactionComponent(tx, 'Pending', selectedWallet.address)
           })
         }
 
         {confirmed.length > 0 &&
           confirmed.map((tx) => {
-            return TransactionComponent(tx, selectedWallet.address)
+            return TransactionComponent(tx, 'Confirmed', selectedWallet.address)
           })
         }
 
