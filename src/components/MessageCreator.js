@@ -79,10 +79,12 @@ const MsgCreator = () => {
       await message.generateNonce();
       const signedMessage = await filecoin.wallet.sign(message.encode());
       await filecoin.sendMessage(signedMessage);
-      setConfirmStage('')
       const messageObj = message.encode()
       messageObj.MessageCid = 'bafy2bzacebbzy3olddxqclyqjnuzr5mjlom2eojlponzda22wwnl4me4paqy' + Math.floor(Math.random() * 10)
       dispatch(confirmMessage(messageObj));
+      setToAddress('')
+      setValue('')
+      setConfirmStage('')
     } catch (err) {
       dispatch(error(err));
     }
