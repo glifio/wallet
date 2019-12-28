@@ -16,7 +16,7 @@ export default () => {
         <AccountDetail>
           <AccountAddress>{selectedWallet.address}</AccountAddress>
           <AccountBalance>{balance.toString()} FIL</AccountBalance>
-          <ListGroup>
+          {/* <ListGroup>
             {wallets.map((account, index) => {
               return (
                 <ListGroup.Item
@@ -29,7 +29,7 @@ export default () => {
                 </ListGroup.Item>
               );
             })}
-          </ListGroup>
+          </ListGroup> */}
         </AccountDetail>
         <SwitchAccountButton>Switch account</SwitchAccountButton>
       </AccountHeader>
