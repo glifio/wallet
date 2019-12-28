@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 
 import { useWallets, useBalance } from '../hooks';
 import { confirmMessage, error } from '../store/actions';
-import { MessageCreator, SectionHeader, MessageForm, ToInput, InputLabel, AvailableBalance, AvailableBalanceLabel, AmountInput, CancelButton, SendButton } from './StyledComponents'
+import { MessageCreator, SectionHeader, MessageForm, ToInput, InputLabel, AvailableBalance, AvailableBalanceLabel, AmountInput, CancelButton, SendButton, MessageReview, MessageReviewSubText } from './StyledComponents'
 import filecoin from '../wallet';
 
 // TODO: better validation
@@ -25,6 +25,7 @@ const MsgCreator = () => {
   const dispatch = useDispatch();
   const [toAddress, setToAddress] = useState('');
   const [value, setValue] = useState('');
+  const [confirmStage, setConfirmStage] = useState('');
   const [errors, setErrors] = useState({ value: false, toAddress: false });
 
   const handleValueChange = e => {
@@ -59,24 +60,31 @@ const MsgCreator = () => {
   const handleSubmit = async e => {
     e.preventDefault();
 
+    if (!confirmStage) {
+      return setConfirmStage('reviewMessage')
+    }
+
+    if (confirmStage === 'reviewMessage') {
+      return setConfirmStage('reviewOnDevice')
+    }
+
     const message = new Message({
       to: toAddress,
       from: selectedWallet.address,
       value: value.toString(),
       method: 0,
     });
-    const confirmed = window.confirm(
-      `Are you sure you want to send ${value} Filecoin to ${toAddress}?`
-    );
-    if (confirmed) {
-      try {
-        await message.generateNonce();
-        const signedMessage = await filecoin.wallet.sign(message.encode());
-        await filecoin.sendMessage(signedMessage);
-        dispatch(confirmMessage(message.encode()));
-      } catch (err) {
-        dispatch(error(err));
-      }
+
+    try {
+      await message.generateNonce();
+      const signedMessage = await filecoin.wallet.sign(message.encode());
+      await filecoin.sendMessage(signedMessage);
+      setConfirmStage('')
+      const messageObj = message.encode()
+      messageObj.MessageCid = 'bafy2bzacebbzy3olddxqclyqjnuzr5mjlom2eojlponzda22wwnl4me4paqy' + Math.floor(Math.random() * 10)
+      dispatch(confirmMessage(messageObj));
+    } catch (err) {
+      dispatch(error(err));
     }
   };
 
@@ -87,45 +95,62 @@ const MsgCreator = () => {
         <SectionHeader>Send Filecoin</SectionHeader>
         <Form onSubmit={handleSubmit}>
           <MessageForm>
-            <ToInput>
-              <Form.Group controlId="toAddress">
-                <InputLabel>To</InputLabel>
-                <InputGroup>
-                  <Form.Control
-                    type="text"
-                    aria-describedby="toAddressPrepend"
-                    name="toAddress"
-                    value={toAddress}
-                    onChange={e => setToAddress(e.target.value)}
-                  />
-                </InputGroup>
-              </Form.Group>
-            </ToInput>
+            {!confirmStage &&
+              <React.Fragment>
+                <ToInput>
+                  <Form.Group controlId="toAddress">
+                    <InputLabel>To</InputLabel>
+                    <InputGroup>
+                      <Form.Control
+                        type="text"
+                        aria-describedby="toAddressPrepend"
+                        name="toAddress"
+                        value={toAddress}
+                        onChange={e => setToAddress(e.target.value)}
+                      />
+                    </InputGroup>
+                  </Form.Group>
+                </ToInput>
 
-            <AvailableBalance>
-              <AvailableBalanceLabel>Available</AvailableBalanceLabel>
-              {balance.toString()}
-            </AvailableBalance>
+                <AvailableBalance>
+                  <AvailableBalanceLabel>Available</AvailableBalanceLabel>
+                  {balance.toString()}
+                </AvailableBalance>
 
-            <AmountInput>
-              <InputLabel>Amount</InputLabel>
-              <Form.Group controlId="value">
-                <InputGroup>
-                  <Form.Control
-                    placeholder="0"
-                    type="text"
-                    aria-describedby="valuePrepend"
-                    name="value"
-                    value={value.toString()}
-                    onChange={handleValueChange}
-                    isInvalid={errors.value}
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    {errors.value}
-                  </Form.Control.Feedback>
-                </InputGroup>
-              </Form.Group>
-            </AmountInput>
+                <AmountInput>
+                  <InputLabel>Amount</InputLabel>
+                  <Form.Group controlId="value">
+                    <InputGroup>
+                      <Form.Control
+                        placeholder="0"
+                        type="text"
+                        aria-describedby="valuePrepend"
+                        name="value"
+                        value={value.toString()}
+                        onChange={handleValueChange}
+                        isInvalid={errors.value}
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        {errors.value}
+                      </Form.Control.Feedback>
+                    </InputGroup>
+                  </Form.Group>
+                </AmountInput>
+              </React.Fragment>
+            }
+
+            {confirmStage === 'reviewMessage' &&
+              <MessageReview>
+                You're sending <strong>3.01 FIL</strong> to <strong>123jb12hj3bnjh12bn3jhnkjn12kj3n</strong>
+                <MessageReviewSubText>All transactions are final.</MessageReviewSubText>
+              </MessageReview>
+            }
+
+            {confirmStage === 'reviewOnDevice' &&
+              <MessageReview>
+                Confirm the message on your Ledger <br /> to send <strong>3.01 FIL</strong>.
+              </MessageReview>
+            }
 
             <CancelButton>
               Cancel
@@ -135,12 +160,22 @@ const MsgCreator = () => {
               disabled={!isValidForm(toAddress, value, balance, errors)}
               type="submit"
             >
-              Send
+              {!confirmStage &&
+                <span>Send</span>
+              }
+
+              {confirmStage === 'reviewMessage' &&
+                <span>Continue</span>
+              }
+
+              {confirmStage === 'reviewOnDevice' &&
+                <span>Mock Confirm</span>
+              }
             </SendButton>
           </MessageForm>
         </Form>
       </MessageCreator>
-    </React.Fragment>
+    </React.Fragment >
   );
 };
 

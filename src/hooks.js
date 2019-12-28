@@ -111,3 +111,11 @@ export const useBalance = index =>
       ? state.wallets[walletIdx].balance
       : new BigNumber(0);
   });
+
+export const useTransactions = index =>
+  useSelector(state => {
+    return {
+      pending: state.pendingMsgs,
+      confirmed: state.confirmedMsgs,
+    };
+  });

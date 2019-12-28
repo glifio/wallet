@@ -189,10 +189,10 @@ export const TransactionStatus = styled.div`
 `;
 
 export const TransactionStatusText = styled.span`
-    background-color: #BABABA;
-    padding: 5px 10px;
-    position: relative;
-    top: 4px;
+  background-color: #BABABA;
+  padding: 5px 10px;
+  position: relative;
+  top: 4px;
 `;
 
 export const TransactionGas = styled.div`
@@ -211,4 +211,27 @@ export const TransactionDate = styled.div`
 export const TransactionMessageHash = styled.div`
   grid-area: transaction-message-hash;
   text-align: right;
+`;
+
+export const EmptyHistoryText = styled.div`
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 22px;
+  background-color: white;
+  height: 100px;
+  text-align: center;
+  padding-top: 32px;
+`;
+
+export const MessageReview = styled.div`
+  grid-area: to-input;
+  margin-top: 10px;
+  font-size: 22px;
+  text-align: center;
+`;
+
+export const MessageReviewSubText = styled.div`
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 13px;
 `;
