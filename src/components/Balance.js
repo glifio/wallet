@@ -1,7 +1,7 @@
 import React from 'react';
 import { useBalance } from '../hooks';
 
-const Balance = ({ selectedWallet }) => {
+const Balance = () => {
   const balance = useBalance();
   return <div>Balance: {balance.toString()}</div>;
 };
