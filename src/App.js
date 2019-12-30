@@ -3,7 +3,6 @@ import 'styled-components/macro'
 
 import { useFilecoin, useBalance } from './hooks';
 import AccountPicker from './components/AccountPicker';
-import AccountDetail from './components/AccountDetail';
 import MessageCreator from './components/MessageCreator';
 import TransactionHistory from './components/TransactionHistory';
 import { Wrapper, Header, AppTitle, BalanceBanner, FilecoinLogo, BalanceInBanner } from './components/StyledComponents';

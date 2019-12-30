@@ -1,12 +1,11 @@
 import React from 'react';
 
 import { useWallets, useBalance } from '../hooks';
-import { AccountLabel, AccountBalance, SwitchAccountButton, AccountHeader, AccountDetailWrapper, AccountDetail, AccountAddress } from './StyledComponents';
-import ListGroup from 'react-bootstrap/ListGroup';
-// import AccountDetail from './AccountDetail';
+import { AccountLabel, AccountBalance, SwitchAccountButton, AccountHeader, AccountDetail, AccountAddress } from './StyledComponents';
+// import ListGroup from 'react-bootstrap/ListGroup';
 
 export default () => {
-  const { wallets, selectedWallet, selectWallet } = useWallets();
+  const { selectedWallet } = useWallets();
   const balance = useBalance();
 
   return (

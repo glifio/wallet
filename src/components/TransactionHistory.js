@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import BigNumber from 'bignumber.js';
+import React from 'react';
 import * as moment from 'moment'
 import 'styled-components/macro'
 import { TransactionHistory, Transaction, TransactionAmount, TransactionActorAddress, TransactionStatus, TransactionGas, TransactionDate, TransactionMessageHash, SectionHeader, TransactionStatusText, EmptyHistoryText } from './StyledComponents';

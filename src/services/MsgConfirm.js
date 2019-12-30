@@ -3,14 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Lotus } from '@openworklabs/lotus-block-explorer';
 import { confirmedMessages } from '../store/actions';
 
-const isSameMsg = (msg1, msg2) => {
-  const sameFromAddress = msg1.From === msg2.From;
-  const sameToAddress = msg1.To === msg2.To;
-  const sameNonce = msg1.Nonce === msg2.Nonce;
-  const match = sameFromAddress && sameToAddress && sameNonce;
-  return match;
-};
-
 export const MsgConfirm = () => {
   const dispatch = useDispatch();
   const pendingMsgs = useSelector(({ pendingMsgs }) => pendingMsgs);

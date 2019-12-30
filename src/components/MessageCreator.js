@@ -4,7 +4,6 @@ import BigNumber from 'bignumber.js';
 import { useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-import Button from 'react-bootstrap/Button';
 
 import { useWallets, useBalance } from '../hooks';
 import { confirmMessage, error } from '../store/actions';
