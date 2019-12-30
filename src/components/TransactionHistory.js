@@ -29,7 +29,7 @@ const TransactionComponent = ({
 }) => {
   const sent = From === selectedWalletAddress;
   return (
-    <Transaction key={Cid}>
+    <Transaction>
       <TransactionAmount>
         {sent && <span>-</span>}
         {Value.toString()}
