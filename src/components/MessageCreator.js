@@ -7,7 +7,19 @@ import InputGroup from 'react-bootstrap/InputGroup';
 
 import { useWallets, useBalance } from '../hooks';
 import { confirmMessage, error } from '../store/actions';
-import { MessageCreator, SectionHeader, MessageForm, ToInput, InputLabel, AvailableBalance, AvailableBalanceLabel, AmountInput, CancelButton, SendButton, MessageReview, MessageReviewSubText } from './StyledComponents'
+import {
+  MessageCreator,
+  SectionHeader,
+  MessageForm,
+  ToInput,
+  InputLabel,
+  AvailableBalance,
+  AvailableBalanceLabel,
+  AmountInput,
+  SendButton,
+  MessageReview,
+  MessageReviewSubText,
+} from './StyledComponents';
 import filecoin from '../wallet';
 
 // TODO: better validation
@@ -60,11 +72,11 @@ const MsgCreator = () => {
     e.preventDefault();
 
     if (!confirmStage) {
-      return setConfirmStage('reviewMessage')
+      return setConfirmStage('reviewMessage');
     }
 
     if (confirmStage === 'reviewMessage') {
-      return setConfirmStage('reviewOnDevice')
+      return setConfirmStage('reviewOnDevice');
     }
 
     const message = new Message({
@@ -78,12 +90,14 @@ const MsgCreator = () => {
       await message.generateNonce();
       const signedMessage = await filecoin.wallet.sign(message.encode());
       await filecoin.sendMessage(signedMessage);
-      const messageObj = message.encode()
-      messageObj.MessageCid = 'bafy2bzacebbzy3olddxqclyqjnuzr5mjlom2eojlponzda22wwnl4me4paqy' + Math.floor(Math.random() * 10)
+      const messageObj = message.encode();
+      messageObj.Cid =
+        'bafy2bzacebbzy3olddxqclyqjnuzr5mjlom2eojlponzda22wwnl4me4paqy' +
+        Math.floor(Math.random() * 10);
       dispatch(confirmMessage(messageObj));
-      setToAddress('')
-      setValue('')
-      setConfirmStage('')
+      setToAddress('');
+      setValue('');
+      setConfirmStage('');
     } catch (err) {
       dispatch(error(err));
     }
@@ -96,7 +110,7 @@ const MsgCreator = () => {
         <SectionHeader>Send Filecoin</SectionHeader>
         <Form onSubmit={handleSubmit}>
           <MessageForm>
-            {!confirmStage &&
+            {!confirmStage && (
               <React.Fragment>
                 <ToInput>
                   <Form.Group controlId="toAddress">
@@ -138,45 +152,36 @@ const MsgCreator = () => {
                   </Form.Group>
                 </AmountInput>
               </React.Fragment>
-            }
+            )}
 
-            {confirmStage === 'reviewMessage' &&
+            {confirmStage === 'reviewMessage' && (
               <MessageReview>
-                You're sending <strong>{value.toString()} FIL</strong> to <strong>{toAddress}</strong>
-                <MessageReviewSubText>All transactions are final.</MessageReviewSubText>
+                You're sending <strong>{value.toString()} FIL</strong> to{' '}
+                <strong>{toAddress}</strong>
+                <MessageReviewSubText>
+                  All transactions are final.
+                </MessageReviewSubText>
               </MessageReview>
-            }
+            )}
 
-            {confirmStage === 'reviewOnDevice' &&
-              <MessageReview>
-                Confirm the message on your Ledger.
-              </MessageReview>
-            }
-
-            <CancelButton>
-              Cancel
-            </CancelButton>
+            {confirmStage === 'reviewOnDevice' && (
+              <MessageReview>Confirm the message on your Ledger.</MessageReview>
+            )}
 
             <SendButton
               disabled={!isValidForm(toAddress, value, balance, errors)}
               type="submit"
             >
-              {!confirmStage &&
-                <span>Send</span>
-              }
+              {!confirmStage && <span>Send</span>}
 
-              {confirmStage === 'reviewMessage' &&
-                <span>Continue</span>
-              }
+              {confirmStage === 'reviewMessage' && <span>Continue</span>}
 
-              {confirmStage === 'reviewOnDevice' &&
-                <span>Mock Confirm</span>
-              }
+              {confirmStage === 'reviewOnDevice' && <span>Mock Confirm</span>}
             </SendButton>
           </MessageForm>
         </Form>
       </MessageCreator>
-    </React.Fragment >
+    </React.Fragment>
   );
 };
 

@@ -3,15 +3,15 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: grid;
   font-size: 13px;
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   grid-template-columns: 1fr 550px 1fr;
   grid-template-rows: 78px auto 3fr 3fr auto;
   grid-template-areas:
-  "header header header"
-  "left-gutter account-header right-gutter"
-  "left-gutter balance-banner right-gutter"
-  "left-gutter message-creator right-gutter"
-  "left-gutter transaction-history right-gutter"
+    'header header header'
+    'left-gutter account-header right-gutter'
+    'left-gutter balance-banner right-gutter'
+    'left-gutter message-creator right-gutter'
+    'left-gutter transaction-history right-gutter';
 `;
 
 export const Header = styled.div`
@@ -20,7 +20,7 @@ export const Header = styled.div`
   display: grid;
   grid-template-columns: 1fr 550px 1fr;
   margin-bottom: 30px;
-  grid-template-areas: "left-gutter app-title right-gutter"
+  grid-template-areas: 'left-gutter app-title right-gutter';
 `;
 
 export const AppTitle = styled.div`
@@ -38,9 +38,9 @@ export const AccountHeader = styled.div`
   grid-column-gap: 15px;
   margin-bottom: 15px;
   overflow: hidden;
-  grid-template-areas: 
-  "accountLabel right-gutter"
-  "accountDetails switchAccountButton"
+  grid-template-areas:
+    'accountLabel right-gutter'
+    'accountDetails switchAccountButton';
 `;
 
 export const AccountDetailWrapper = styled.div`
@@ -49,13 +49,13 @@ export const AccountDetailWrapper = styled.div`
 
 export const AccountLabel = styled.div`
   grid-area: accountLabel;
-  color: #BABABA;
+  color: #bababa;
   font-weight: bold;
 `;
 
 export const AccountDetail = styled.div`
   grid-area: accountDetails;
-  background-color: white;  
+  background-color: white;
   padding: 7px 12px;
 `;
 
@@ -99,7 +99,7 @@ export const MessageCreator = styled.div`
 
 export const SectionHeader = styled.div`
   text-align: center;
-  color: #BABABA;
+  color: #bababa;
 `;
 
 export const MessageForm = styled.div`
@@ -109,9 +109,9 @@ export const MessageForm = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto auto 70px;
   grid-template-areas:
-  "to-input to-input to-input to-input"
-  "available-balance available-balance amount-input amount-input"
-  "left-gutter cancel-button send-button right-gutter"
+    'to-input to-input to-input to-input'
+    'available-balance available-balance amount-input amount-input'
+    'left-gutter send-button send-button right-gutter';
 `;
 
 export const ToInput = styled.div`
@@ -121,7 +121,7 @@ export const ToInput = styled.div`
 export const InputLabel = styled.div`
   font-weight: bold;
   margin-bottom: 5px;
-  color: #BABABA;
+  color: #bababa;
 `;
 
 export const AvailableBalance = styled.div`
@@ -131,25 +131,18 @@ export const AvailableBalance = styled.div`
 export const AvailableBalanceLabel = styled.div`
   font-weight: bold;
   margin-bottom: 10px;
-  color: #BABABA;
+  color: #bababa;
 `;
 
 export const AmountInput = styled.div`
   grid-area: amount-input;
 `;
 
-export const CancelButton = styled.button`
-  grid-area: cancel-button;
-  background: white;
-  border: 1px solid gray;
-  margin-right: 10px;
-  margin-top: 30px;
-  border-radius: 4px;
-`;
-
 export const SendButton = styled.button`
+  cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
+  disabled: ${props => props.disabled};
   grid-area: send-button;
-  background: gray;
+  background: ${props => (props.disabled ? 'grey' : '#61d6d9')};
   color: white;
   border: 0;
   margin-top: 30px;
@@ -167,10 +160,10 @@ export const Transaction = styled.div`
   margin-bottom: 15px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 70px auto auto;
-  grid-template-areas: 
-  "transaction-amount transaction-status"
-  "transaction-gas transaction-actor-address"
-  "transaction-date transaction-message-hash"
+  grid-template-areas:
+    'transaction-amount transaction-status'
+    'transaction-gas transaction-actor-address'
+    'transaction-date transaction-message-hash';
 `;
 
 export const TransactionAmount = styled.div`
@@ -189,7 +182,7 @@ export const TransactionStatus = styled.div`
 `;
 
 export const TransactionStatusText = styled.span`
-  background-color: #BABABA;
+  background-color: #bababa;
   padding: 5px 10px;
   position: relative;
   top: 4px;

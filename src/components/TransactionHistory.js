@@ -5,10 +5,10 @@ import { TransactionHistory, Transaction, TransactionAmount, TransactionActorAdd
 import { useTransactions, useWallets } from '../hooks';
 import { shortenAddress } from '../utils'
 
-const TransactionComponent = ({ To, From, Nounce, Value, Method, GasPrice, GasLimit, MessageCid, Date }, status, selectedWalletaddress) => {
+const TransactionComponent = ({ To, From, Nounce, Value, Method, GasPrice, GasLimit, Cid, Date }, status, selectedWalletaddress) => {
   const sent = From === selectedWalletaddress
   return (
-    <Transaction key={MessageCid}>
+    <Transaction key={Cid}>
       <TransactionAmount>
         {sent && <span>-</span>}{Value.toString()}
       </TransactionAmount>
@@ -23,7 +23,7 @@ const TransactionComponent = ({ To, From, Nounce, Value, Method, GasPrice, GasLi
           <TransactionActorAddress><strong>From:</strong> {shortenAddress(From)}</TransactionActorAddress>
       }
       <TransactionDate>{moment(Date).format('MMMM Do YYYY, h:mm a')}</TransactionDate>
-      <TransactionMessageHash><strong>Message hash:</strong> {shortenAddress(MessageCid)}</TransactionMessageHash>
+      <TransactionMessageHash><strong>Message hash:</strong> {shortenAddress(Cid)}</TransactionMessageHash>
     </Transaction>
   )
 }
