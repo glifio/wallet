@@ -103,15 +103,15 @@ export const SectionHeader = styled.div`
 `;
 
 export const MessageForm = styled.div`
-display: grid;
-background-color: white;
-padding: 15px;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-template-rows: auto auto 70px;
-grid-template-areas:
-"to-input to-input to-input to-input"
-"available-balance available-balance amount-input amount-input"
-"left-gutter cancel-button send-button right-gutter"
+  display: grid;
+  background-color: white;
+  padding: 15px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto 70px;
+  grid-template-areas:
+  "to-input to-input to-input to-input"
+  "available-balance available-balance amount-input amount-input"
+  "left-gutter cancel-button send-button right-gutter"
 `;
 
 export const ToInput = styled.div`

@@ -16,8 +16,6 @@ export const MsgConfirm = () => {
       const subscribeCb = chainState => {
         const confirmedMsgs = [];
         const newPendingMsgs = pendingMsgs.filter(msg => {
-          // const isMatch = isSameMsg(msg, message);
-          // check if match and handle it
           confirmedMsgs.push(msg);
           return false;
         });
@@ -32,26 +30,8 @@ export const MsgConfirm = () => {
 
       const timeout = setTimeout(subscribeCb, 3000)
 
-      /*
-      const newPendingMsgs = state.pendingMsgs.filter(msg => {
-    const isMatch = isSameMsg(msg, message);
-    if (isMatch) {
-      // push message into array of confirmed messages
-      newConfirmedMsgs.push(message);
-      // delete this message from the pending messages list
-      return false;
-    } else {
-      // if not the same message
-      return true;
-    }
-  }); */
-      // lotus.store.subscribe(subscribeCb);
-      // lotus.listen();
-
       return () => {
         clearTimeout(timeout)
-        // lotus.store.unsubscribe(subscribeCb);
-        // lotus.stopListening();
       };
     }
   }, [pendingMsgs, dispatch]);
