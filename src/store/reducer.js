@@ -7,6 +7,7 @@ import {
   UPDATE_BALANCE,
   CONFIRM_MESSAGE,
   CONFIRMED_MESSAGES,
+  UPDATE_PROGRESS,
 } from './actionTypes';
 
 import {
@@ -16,6 +17,7 @@ import {
   switchWallet,
   walletList,
   updateBalance,
+  updateProgress,
   error,
 } from './states';
 
@@ -37,6 +39,8 @@ export default (state = initialState, action) => {
       // we confirm plural messages to handle cases where multiple messages
       // get confirmed in the same block (tough to handle this singularly without state bugs)
       return confirmedMessages(cloneDeep(state), action.payload);
+    case UPDATE_PROGRESS:
+      return updateProgress(cloneDeep(state), action.payload);
     case ERROR: {
       return error(cloneDeep(state), action.error);
     }

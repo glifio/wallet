@@ -6,6 +6,7 @@ export const initialState = {
   error: null,
   pendingMsgs: [],
   confirmedMsgs: [],
+  progress: 3,
 };
 
 export const walletList = (state, { wallets }) => ({
@@ -39,6 +40,11 @@ export const confirmedMessages = (state, { confirmedMsgs, pendingMsgs }) => {
     confirmedMsgs: [...confirmedMsgs, ...state.confirmedMsgs],
   };
 };
+
+export const updateProgress = (state, { progress }) => ({
+  ...state,
+  progress,
+});
 
 export const error = (state, error) => ({
   ...state,

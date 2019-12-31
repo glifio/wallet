@@ -8,6 +8,7 @@ import {
   switchWallet,
   walletList,
   updateBalance,
+  updateProgress,
 } from './store/actions';
 
 export const useFilecoin = () => {
@@ -119,3 +120,15 @@ export const useTransactions = index =>
       confirmed: state.confirmedMsgs,
     };
   });
+
+export const useProgress = () => {
+  const dispatch = useDispatch();
+  const setProgress = useCallback(
+    async progress => {
+      dispatch(updateProgress(progress));
+    },
+    [dispatch]
+  );
+  const progress = useSelector(state => state.progress);
+  return { progress, setProgress };
+};
