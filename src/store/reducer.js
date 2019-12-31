@@ -8,6 +8,7 @@ import {
   CONFIRM_MESSAGE,
   CONFIRMED_MESSAGES,
   UPDATE_PROGRESS,
+  CLEAR_ERROR
 } from './actionTypes';
 
 import {
@@ -19,6 +20,7 @@ import {
   updateBalance,
   updateProgress,
   error,
+  clearError
 } from './states';
 
 export default (state = initialState, action) => {
@@ -43,6 +45,9 @@ export default (state = initialState, action) => {
       return updateProgress(cloneDeep(state), action.payload);
     case ERROR: {
       return error(cloneDeep(state), action.error);
+    }
+    case CLEAR_ERROR: {
+      return clearError(cloneDeep(state));
     }
     default:
       return state;

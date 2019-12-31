@@ -8,7 +8,7 @@ import {
   switchWallet,
   walletList,
   updateBalance,
-  updateProgress,
+  updateProgress
 } from './store/actions';
 
 export const useFilecoin = () => {
@@ -25,7 +25,7 @@ export const useFilecoin = () => {
             const balance = await filecoin.getBalance(address);
             return {
               balance,
-              address,
+              address
             };
           })
         );
@@ -41,7 +41,7 @@ export const useFilecoin = () => {
   const { selectedWalletIdx, wallets } = useSelector(state => {
     return {
       selectedWalletIdx: state.selectedWalletIdx,
-      wallets: state.wallets,
+      wallets: state.wallets
     };
   });
 
@@ -82,7 +82,7 @@ export const useWallets = () => {
 
     return {
       wallets: state.wallets,
-      selectedWallet,
+      selectedWallet
     };
   });
 
@@ -100,7 +100,7 @@ export const useWallets = () => {
   return {
     wallets,
     selectWallet,
-    selectedWallet,
+    selectedWallet
   };
 };
 
@@ -117,7 +117,14 @@ export const useTransactions = index =>
   useSelector(state => {
     return {
       pending: state.pendingMsgs,
-      confirmed: state.confirmedMsgs,
+      confirmed: state.confirmedMsgs
+    };
+  });
+
+export const useError = () =>
+  useSelector(state => {
+    return {
+      error: state.error
     };
   });
 

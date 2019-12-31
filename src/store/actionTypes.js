@@ -9,3 +9,4 @@ export const CONFIRMED_MESSAGES = 'CONFIRMED_MESSAGES';
 export const UPDATE_PROGRESS = 'UPDATE_PROGRESS';
 
 export const ERROR = 'ERROR';
+export const CLEAR_ERROR = 'CLEAR_ERROR';
