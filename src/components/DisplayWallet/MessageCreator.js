@@ -4,6 +4,7 @@ import BigNumber from 'bignumber.js';
 import { useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import 'styled-components/macro';
 
 import { useWallets, useBalance } from '../../hooks';
 import { confirmMessage, error } from '../../store/actions';
@@ -18,7 +19,7 @@ import {
   AmountInput,
   SendButton,
   MessageReview,
-  MessageReviewSubText,
+  MessageReviewSubText
 } from '../StyledComponents';
 import filecoin from '../../wallet';
 
@@ -43,7 +44,7 @@ const MsgCreator = () => {
     // clear errors for better UX
     setErrors({
       ...errors,
-      value: false,
+      value: false
     });
     // handle case where user deletes all values from text input
     if (!e.target.value) setValue('');
@@ -51,14 +52,14 @@ const MsgCreator = () => {
     else if (e.target.value && new BigNumber(e.target.value).isNaN()) {
       setErrors({
         ...errors,
-        value: 'Must pass numbers only',
+        value: 'Must pass numbers only'
       });
     }
     // user enters a value that's greater than their balance
     else if (new BigNumber(e.target.value).isGreaterThan(balance)) {
       setErrors({
         ...errors,
-        value: "The amount must be smaller than this account's balance",
+        value: "The amount must be smaller than this account's balance"
       });
       // still set the value for better feedback in the UI, but we don't allow submission of form
       setValue(new BigNumber(e.target.value));
@@ -83,7 +84,7 @@ const MsgCreator = () => {
       to: toAddress,
       from: selectedWallet.address,
       value: value.toString(),
-      method: 0,
+      method: 0
     });
 
     try {
@@ -113,13 +114,13 @@ const MsgCreator = () => {
             {!confirmStage && (
               <React.Fragment>
                 <ToInput>
-                  <Form.Group controlId="toAddress">
+                  <Form.Group controlId='toAddress'>
                     <InputLabel>To</InputLabel>
                     <InputGroup>
                       <Form.Control
-                        type="text"
-                        aria-describedby="toAddressPrepend"
-                        name="toAddress"
+                        type='text'
+                        aria-describedby='toAddressPrepend'
+                        name='toAddress'
                         value={toAddress}
                         onChange={e => setToAddress(e.target.value)}
                       />
@@ -134,18 +135,18 @@ const MsgCreator = () => {
 
                 <AmountInput>
                   <InputLabel>Amount</InputLabel>
-                  <Form.Group controlId="value">
+                  <Form.Group controlId='value'>
                     <InputGroup>
                       <Form.Control
-                        placeholder="0"
-                        type="text"
-                        aria-describedby="valuePrepend"
-                        name="value"
+                        placeholder='0'
+                        type='text'
+                        aria-describedby='valuePrepend'
+                        name='value'
                         value={value.toString()}
                         onChange={handleValueChange}
                         isInvalid={errors.value}
                       />
-                      <Form.Control.Feedback type="invalid">
+                      <Form.Control.Feedback type='invalid'>
                         {errors.value}
                       </Form.Control.Feedback>
                     </InputGroup>
@@ -165,12 +166,14 @@ const MsgCreator = () => {
             )}
 
             {confirmStage === 'reviewOnDevice' && (
-              <MessageReview>Confirm the message on your Ledger.</MessageReview>
+              <MessageReview css={{ marginBottom: '78px', marginTop: '45px' }}>
+                Confirm the message on your Ledger.
+              </MessageReview>
             )}
 
             <SendButton
               disabled={!isValidForm(toAddress, value, balance, errors)}
-              type="submit"
+              type='submit'
             >
               {!confirmStage && <span>Send</span>}
 
