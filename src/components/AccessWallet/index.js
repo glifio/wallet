@@ -50,14 +50,16 @@ const LedgerWallet = styled.img`
 
 export default () => {
   const { setProgress } = useProgress();
-  const [selectedWallet, setSelectedWallet] = useState(false);
+  const [selectedWallet, setSelectedWallet] = useState('');
   return (
     <FlexContainer>
       <WalletOptionsContainer>
         <LedgerWallet
-          onClick={() => setSelectedWallet(!selectedWallet)}
+          onClick={() =>
+            selectedWallet ? setSelectedWallet('') : setSelectedWallet('ledger')
+          }
           src="/ledger.png"
-          clicked={selectedWallet}
+          clicked={selectedWallet === 'ledger'}
           alt=""
         />
         <Button disabled={!selectedWallet} onClick={() => setProgress(1)}>
