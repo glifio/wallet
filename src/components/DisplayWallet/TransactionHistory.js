@@ -12,7 +12,7 @@ import {
   TransactionMessageHash,
   SectionHeader,
   TransactionStatusText,
-  EmptyHistoryText
+  EmptyHistoryText,
 } from '../StyledComponents';
 import { useTransactions, useWallets } from '../../hooks';
 import { shortenAddress } from '../../utils';
@@ -25,7 +25,7 @@ const TransactionComponent = ({
   Cid,
   Date,
   status,
-  selectedWalletAddress
+  selectedWalletAddress,
 }) => {
   const sent = From === selectedWalletAddress;
   return (
@@ -76,7 +76,7 @@ const MessageCreator = () => {
               <TransactionComponent
                 key={tx.Cid}
                 {...tx}
-                status='Pending'
+                status="Pending"
                 selectedWalletAddress={selectedWallet.address}
               />
             );
@@ -88,7 +88,7 @@ const MessageCreator = () => {
               <TransactionComponent
                 key={tx.Cid}
                 {...tx}
-                status='Confirmed'
+                status="Confirmed"
                 selectedWalletAddress={selectedWallet.address}
               />
             );

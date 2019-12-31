@@ -6,7 +6,7 @@ import {
   BalanceBanner,
   FilecoinLogo,
   BalanceInBanner,
-  Wrapper
+  Wrapper,
 } from '../StyledComponents';
 import { useBalance } from '../../hooks';
 
@@ -16,7 +16,7 @@ export default () => {
     <Wrapper>
       <AccountPicker />
       <BalanceBanner>
-        <FilecoinLogo src='/filecoin.png' alt='' />
+        <FilecoinLogo src="/filecoin.png" alt="" />
         <BalanceInBanner>{balance.toString()} FIL</BalanceInBanner>
       </BalanceBanner>
       <MessageCreator />

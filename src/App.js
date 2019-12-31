@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import 'styled-components/macro';
 
 import { useFilecoin, useProgress } from './hooks';
@@ -11,13 +11,13 @@ function App() {
   const { progress } = useProgress();
   useFilecoin();
   return (
-    <div css={{ 'min-height': '100vh', 'background-color': '#f7f7f7' }}>
-      <Header></Header>
+    <Fragment>
+      <Header />
       {progress === 0 && <AccessWallet />}
       {progress === 1 && <ConnectWallet />}
       {/* {progress === 2 && <SyncingWallet />} */}
       {progress === 3 && <DisplayWallet />}
-    </div>
+    </Fragment>
   );
 }
 
