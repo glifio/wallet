@@ -5,8 +5,8 @@ import { useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-import { useWallets, useBalance } from '../hooks';
-import { confirmMessage, error } from '../store/actions';
+import { useWallets, useBalance } from '../../hooks';
+import { confirmMessage, error } from '../../store/actions';
 import {
   MessageCreator,
   SectionHeader,
@@ -19,8 +19,8 @@ import {
   SendButton,
   MessageReview,
   MessageReviewSubText,
-} from './StyledComponents';
-import filecoin from '../wallet';
+} from '../StyledComponents';
+import filecoin from '../../wallet';
 
 // TODO: better validation
 const isValidForm = (toAddress, value, balance, errors) => {

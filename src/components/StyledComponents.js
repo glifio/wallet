@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: grid;
   font-size: 13px;
-  background-color: #f7f7f7;
   grid-template-columns: 1fr 550px 1fr;
   grid-template-rows: 78px auto 3fr 3fr auto;
   grid-template-areas:

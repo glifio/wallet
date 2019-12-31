@@ -1,7 +1,14 @@
 import React from 'react';
 
-import { useWallets } from '../hooks';
-import { AccountLabel, AccountBalance, SwitchAccountButton, AccountHeader, AccountDetail, AccountAddress } from './StyledComponents';
+import { useWallets } from '../../hooks';
+import {
+  AccountLabel,
+  AccountBalance,
+  SwitchAccountButton,
+  AccountHeader,
+  AccountDetail,
+  AccountAddress,
+} from '../StyledComponents';
 
 export default () => {
   const { selectedWallet } = useWallets();
@@ -12,7 +19,9 @@ export default () => {
         <AccountLabel>Account</AccountLabel>
         <AccountDetail>
           <AccountAddress>{selectedWallet.address}</AccountAddress>
-          <AccountBalance>{selectedWallet.balance.toString()} FIL</AccountBalance>
+          <AccountBalance>
+            {selectedWallet.balance.toString()} FIL
+          </AccountBalance>
         </AccountDetail>
         <SwitchAccountButton>Switch account</SwitchAccountButton>
       </AccountHeader>

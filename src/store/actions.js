@@ -5,6 +5,7 @@ import {
   WALLET_LIST,
   SWITCH_WALLET,
   UPDATE_BALANCE,
+  UPDATE_PROGRESS,
 } from './actionTypes';
 
 export const walletList = wallets => ({
@@ -41,6 +42,13 @@ export const confirmedMessages = (confirmedMsgs, pendingMsgs) => ({
   payload: {
     confirmedMsgs,
     pendingMsgs,
+  },
+});
+
+export const updateProgress = progress => ({
+  type: UPDATE_PROGRESS,
+  payload: {
+    progress,
   },
 });
 

@@ -13,9 +13,9 @@ import {
   SectionHeader,
   TransactionStatusText,
   EmptyHistoryText,
-} from './StyledComponents';
-import { useTransactions, useWallets } from '../hooks';
-import { shortenAddress } from '../utils';
+} from '../StyledComponents';
+import { useTransactions, useWallets } from '../../hooks';
+import { shortenAddress } from '../../utils';
 
 const TransactionComponent = ({
   To,
