@@ -4,9 +4,8 @@ export const Wrapper = styled.div`
   display: grid;
   font-size: 13px;
   grid-template-columns: 1fr 550px 1fr;
-  grid-template-rows: 78px auto 3fr 3fr auto;
+  grid-template-rows: auto 3fr 310px auto;
   grid-template-areas:
-    'header header header'
     'left-gutter account-header right-gutter'
     'left-gutter balance-banner right-gutter'
     'left-gutter message-creator right-gutter'
@@ -26,6 +25,10 @@ export const AppTitle = styled.div`
   grid-area: app-title;
   // grid-column: 2 / 3;
   margin: 15px 0px;
+`;
+
+export const AppFAQs = styled.div`
+  float
 `;
 
 export const AccountHeader = styled.div`
@@ -93,7 +96,6 @@ export const FilecoinLogo = styled.img`
 export const MessageCreator = styled.div`
   grid-area: message-creator;
   background-color: white;
-  margin-bottom: 30px;
 `;
 
 export const SectionHeader = styled.div`
@@ -146,6 +148,8 @@ export const SendButton = styled.button`
   border: 0;
   margin-top: 30px;
   border-radius: 4px;
+  width: 120px;
+  margin-left: 70px;
 `;
 
 export const TransactionHistory = styled.div`
@@ -217,13 +221,13 @@ export const EmptyHistoryText = styled.div`
 
 export const MessageReview = styled.div`
   grid-area: to-input;
-  margin-top: 10px;
-  font-size: 22px;
+  margin-top: 25px;
+  font-size: 18px;
   text-align: center;
 `;
 
 export const MessageReviewSubText = styled.div`
   margin-top: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   font-size: 13px;
 `;

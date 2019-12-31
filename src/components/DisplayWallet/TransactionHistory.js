@@ -67,7 +67,7 @@ const MessageCreator = () => {
   return (
     <React.Fragment>
       <TransactionHistory>
-        <SectionHeader css={{ marginBottom: '10px' }}>
+        <SectionHeader css={{ marginBottom: '10px', marginTop: '30px' }}>
           Transaction History
         </SectionHeader>
         {pending.length > 0 &&

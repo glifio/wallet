@@ -4,6 +4,7 @@ import BigNumber from 'bignumber.js';
 import { useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import 'styled-components/macro';
 
 import { useWallets, useBalance } from '../../hooks';
 import { confirmMessage, error } from '../../store/actions';
@@ -165,7 +166,9 @@ const MsgCreator = () => {
             )}
 
             {confirmStage === 'reviewOnDevice' && (
-              <MessageReview>Confirm the message on your Ledger.</MessageReview>
+              <MessageReview css={{ marginBottom: '78px', marginTop: '45px' }}>
+                Confirm the message on your Ledger.
+              </MessageReview>
             )}
 
             <SendButton
