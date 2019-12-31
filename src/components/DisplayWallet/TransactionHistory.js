@@ -1,6 +1,6 @@
-import React from 'react';
-import * as moment from 'moment';
-import 'styled-components/macro';
+import React from 'react'
+import * as moment from 'moment'
+import 'styled-components/macro'
 import {
   TransactionHistory,
   Transaction,
@@ -12,10 +12,10 @@ import {
   TransactionMessageHash,
   SectionHeader,
   TransactionStatusText,
-  EmptyHistoryText,
-} from '../StyledComponents';
-import { useTransactions, useWallets } from '../../hooks';
-import { shortenAddress } from '../../utils';
+  EmptyHistoryText
+} from '../StyledComponents'
+import { useTransactions, useWallets } from '../../hooks'
+import { shortenAddress } from '../../utils'
 
 const TransactionComponent = ({
   To,
@@ -25,9 +25,9 @@ const TransactionComponent = ({
   Cid,
   Date,
   status,
-  selectedWalletAddress,
+  selectedWalletAddress
 }) => {
-  const sent = From === selectedWalletAddress;
+  const sent = From === selectedWalletAddress
   return (
     <Transaction>
       <TransactionAmount>
@@ -57,12 +57,12 @@ const TransactionComponent = ({
         <strong>Message hash:</strong> {shortenAddress(Cid)}
       </TransactionMessageHash>
     </Transaction>
-  );
-};
+  )
+}
 
 const MessageCreator = () => {
-  const { pending, confirmed } = useTransactions();
-  const { selectedWallet } = useWallets();
+  const { pending, confirmed } = useTransactions()
+  const { selectedWallet } = useWallets()
 
   return (
     <React.Fragment>
@@ -76,10 +76,10 @@ const MessageCreator = () => {
               <TransactionComponent
                 key={tx.Cid}
                 {...tx}
-                status="Pending"
+                status='Pending'
                 selectedWalletAddress={selectedWallet.address}
               />
-            );
+            )
           })}
 
         {confirmed.length > 0 &&
@@ -88,10 +88,10 @@ const MessageCreator = () => {
               <TransactionComponent
                 key={tx.Cid}
                 {...tx}
-                status="Confirmed"
+                status='Confirmed'
                 selectedWalletAddress={selectedWallet.address}
               />
-            );
+            )
           })}
 
         {confirmed.length === 0 && pending.length === 0 && (
@@ -99,7 +99,7 @@ const MessageCreator = () => {
         )}
       </TransactionHistory>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default MessageCreator;
+export default MessageCreator

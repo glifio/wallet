@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import Balance from './Balance';
+import Balance from './Balance'
 
 export default () => {
   return (
@@ -8,5 +8,5 @@ export default () => {
       <h5>Account details</h5>
       <Balance />
     </React.Fragment>
-  );
-};
+  )
+}

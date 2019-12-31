@@ -7,21 +7,21 @@ import {
   UPDATE_BALANCE,
   UPDATE_PROGRESS,
   CLEAR_ERROR
-} from './actionTypes';
+} from './actionTypes'
 
 export const walletList = wallets => ({
   type: WALLET_LIST,
   payload: {
     wallets
   }
-});
+})
 
 export const switchWallet = index => ({
   type: SWITCH_WALLET,
   payload: {
     index
   }
-});
+})
 
 export const updateBalance = (balance, selectedWalletIdx) => ({
   type: UPDATE_BALANCE,
@@ -29,14 +29,14 @@ export const updateBalance = (balance, selectedWalletIdx) => ({
     balance,
     selectedWalletIdx
   }
-});
+})
 
 export const confirmMessage = message => ({
   type: CONFIRM_MESSAGE,
   payload: {
     message
   }
-});
+})
 
 export const confirmedMessages = (confirmedMsgs, pendingMsgs) => ({
   type: CONFIRMED_MESSAGES,
@@ -44,22 +44,22 @@ export const confirmedMessages = (confirmedMsgs, pendingMsgs) => ({
     confirmedMsgs,
     pendingMsgs
   }
-});
+})
 
 export const updateProgress = progress => ({
   type: UPDATE_PROGRESS,
   payload: {
     progress
   }
-});
+})
 
 export const error = error => ({
   type: ERROR,
   error
-});
+})
 
 export const clearError = () => {
   return {
     type: CLEAR_ERROR
-  };
-};
+  }
+}
