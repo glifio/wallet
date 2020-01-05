@@ -6,53 +6,60 @@ import {
   SWITCH_WALLET,
   UPDATE_BALANCE,
   UPDATE_PROGRESS,
-} from './actionTypes';
+  CLEAR_ERROR
+} from './actionTypes'
 
 export const walletList = wallets => ({
   type: WALLET_LIST,
   payload: {
-    wallets,
-  },
-});
+    wallets
+  }
+})
 
 export const switchWallet = index => ({
   type: SWITCH_WALLET,
   payload: {
-    index,
-  },
-});
+    index
+  }
+})
 
 export const updateBalance = (balance, selectedWalletIdx) => ({
   type: UPDATE_BALANCE,
   payload: {
     balance,
-    selectedWalletIdx,
-  },
-});
+    selectedWalletIdx
+  }
+})
 
 export const confirmMessage = message => ({
   type: CONFIRM_MESSAGE,
   payload: {
-    message,
-  },
-});
+    message
+  }
+})
 
 export const confirmedMessages = (confirmedMsgs, pendingMsgs) => ({
   type: CONFIRMED_MESSAGES,
   payload: {
     confirmedMsgs,
-    pendingMsgs,
-  },
-});
+    pendingMsgs
+  }
+})
 
 export const updateProgress = progress => ({
   type: UPDATE_PROGRESS,
   payload: {
-    progress,
-  },
-});
+    progress
+  }
+})
 
 export const error = error => ({
   type: ERROR,
-  error,
-});
+  error
+})
+
+export const clearError = () => {
+  return {
+    type: CLEAR_ERROR
+  }
+}

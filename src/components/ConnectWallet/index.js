@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import 'styled-components/macro';
+import React from 'react'
+import styled from 'styled-components'
+import 'styled-components/macro'
 
-import { useProgress } from '../../hooks';
+import { useProgress } from '../../hooks'
 
 const Button = styled.button`
   cursor: pointer;
@@ -10,17 +10,17 @@ const Button = styled.button`
   color: white;
   border: 0;
   border-radius: 4px;
-`;
+`
 
 export default () => {
-  const { setProgress } = useProgress();
+  const { setProgress } = useProgress()
   return (
     <div
       css={{
         display: 'flex',
         'justify-content': 'center',
         'background-color': '#f7f7f7',
-        height: '100vh',
+        height: '100vh'
       }}
     >
       <div
@@ -29,12 +29,12 @@ export default () => {
           border: '1px black',
           'margin-top': '78px',
           display: 'flex',
-          'flex-direction': 'column',
+          'flex-direction': 'column'
         }}
       >
         <div>Continue</div>
         <Button onClick={() => setProgress(2)}>Next</Button>
       </div>
     </div>
-  );
-};
+  )
+}

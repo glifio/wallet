@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import 'styled-components/macro';
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import 'styled-components/macro'
 
-import { useProgress } from '../../hooks';
+import { useProgress } from '../../hooks'
 
 const Button = styled.button`
   background: ${props => (props.disabled ? 'grey' : '#61d6d9')};
@@ -13,12 +13,12 @@ const Button = styled.button`
   width: 50%;
   align-self: center;
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
-`;
+`
 
 const FlexContainer = styled.div`
   display: flex;
   justify-content: center;
-`;
+`
 
 const WalletOptionsContainer = styled.div`
   background-color: white;
@@ -29,7 +29,7 @@ const WalletOptionsContainer = styled.div`
   justify-content: space-between;
   height: 360px;
   width: 30vw;
-`;
+`
 
 const LedgerWallet = styled.img`
   width: 30%;
@@ -46,11 +46,11 @@ const LedgerWallet = styled.img`
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
   }
   background-color: ${props => (props.clicked ? '#61d6d9' : 'white')};
-`;
+`
 
 export default () => {
-  const { setProgress } = useProgress();
-  const [selectedWallet, setSelectedWallet] = useState('');
+  const { setProgress } = useProgress()
+  const [selectedWallet, setSelectedWallet] = useState('')
   return (
     <FlexContainer>
       <WalletOptionsContainer>
@@ -58,14 +58,14 @@ export default () => {
           onClick={() =>
             selectedWallet ? setSelectedWallet('') : setSelectedWallet('ledger')
           }
-          src="/ledger.png"
+          src='/ledger.png'
           clicked={selectedWallet === 'ledger'}
-          alt=""
+          alt=''
         />
         <Button disabled={!selectedWallet} onClick={() => setProgress(1)}>
           Access wallet
         </Button>
       </WalletOptionsContainer>
     </FlexContainer>
-  );
-};
+  )
+}

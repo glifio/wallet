@@ -1,4 +1,4 @@
-import updateArrayItem from './utils/updateArrayItem';
+import updateArrayItem from './utils/updateArrayItem'
 
 export const initialState = {
   wallets: [],
@@ -6,47 +6,52 @@ export const initialState = {
   error: null,
   pendingMsgs: [],
   confirmedMsgs: [],
-  progress: 3,
-};
+  progress: 3
+}
 
 export const walletList = (state, { wallets }) => ({
   ...state,
   wallets,
-  selectedWalletIdx: 5,
-});
+  selectedWalletIdx: 5
+})
 
 export const switchWallet = (state, { index }) => ({
   ...state,
-  selectedWalletIdx: index,
-});
+  selectedWalletIdx: index
+})
 
 export const updateBalance = (state, { balance, selectedWalletIdx }) => ({
   ...state,
   wallets: updateArrayItem(state.wallets, selectedWalletIdx, {
     balance,
-    address: state.wallets[selectedWalletIdx].address,
-  }),
-});
+    address: state.wallets[selectedWalletIdx].address
+  })
+})
 
 export const confirmMessage = (state, { message }) => ({
   ...state,
-  pendingMsgs: [...state.pendingMsgs, message],
-});
+  pendingMsgs: [...state.pendingMsgs, message]
+})
 
 export const confirmedMessages = (state, { confirmedMsgs, pendingMsgs }) => {
   return {
     ...state,
     pendingMsgs,
-    confirmedMsgs: [...confirmedMsgs, ...state.confirmedMsgs],
-  };
-};
+    confirmedMsgs: [...confirmedMsgs, ...state.confirmedMsgs]
+  }
+}
 
 export const updateProgress = (state, { progress }) => ({
   ...state,
-  progress,
-});
+  progress
+})
 
 export const error = (state, error) => ({
   ...state,
-  error,
-});
+  error
+})
+
+export const clearError = state => ({
+  ...state,
+  error: null
+})

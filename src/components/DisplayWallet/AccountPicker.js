@@ -1,17 +1,17 @@
-import React from 'react';
+import React from 'react'
 
-import { useWallets } from '../../hooks';
+import { useWallets } from '../../hooks'
 import {
   AccountLabel,
   AccountBalance,
   SwitchAccountButton,
   AccountHeader,
   AccountDetail,
-  AccountAddress,
-} from '../StyledComponents';
+  AccountAddress
+} from '../StyledComponents'
 
 export default () => {
-  const { selectedWallet } = useWallets();
+  const { selectedWallet } = useWallets()
 
   return (
     <React.Fragment>
@@ -26,5 +26,5 @@ export default () => {
         <SwitchAccountButton>Switch account</SwitchAccountButton>
       </AccountHeader>
     </React.Fragment>
-  );
-};
+  )
+}
