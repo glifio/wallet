@@ -29,20 +29,18 @@ export const CloseButton = styled.button`
 export default () => {
   const { error } = useError()
   const dispatch = useDispatch()
-  const clear = () => {
-    dispatch(clearError())
-  }
+  const clear = () => dispatch(clearError())
 
   return (
-    <div>
-      {error && (
+    <React.Fragment>
+      {error ? (
         <Error>
           <Message>
             {error.message}
             <CloseButton onClick={clear}>Close</CloseButton>
           </Message>
         </Error>
-      )}
-    </div>
+      ) : null}
+    </React.Fragment>
   )
 }
