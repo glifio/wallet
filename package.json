@@ -11,7 +11,6 @@
     "bignumber.js": "^9.0.0",
     "bootstrap": "^4.4.1",
     "http-proxy-middleware": "^0.20.0",
-    "ledger-filecoin-js": "git+https://github.com/ZondaX/ledger-filecoin-js.git",
     "lodash.clonedeep": "^4.5.0",
     "moment": "^2.24.0",
     "react": "^16.12.0",
