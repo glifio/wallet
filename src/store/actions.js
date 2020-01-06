@@ -2,10 +2,11 @@ import {
   CONFIRM_MESSAGE,
   CONFIRMED_MESSAGES,
   ERROR,
-  WALLET_LIST,
+  SET_WALLET_TYPE,
   SWITCH_WALLET,
   UPDATE_BALANCE,
   UPDATE_PROGRESS,
+  WALLET_LIST,
   CLEAR_ERROR
 } from './actionTypes'
 
@@ -50,6 +51,13 @@ export const updateProgress = progress => ({
   type: UPDATE_PROGRESS,
   payload: {
     progress
+  }
+})
+
+export const setWalletType = walletType => ({
+  type: SET_WALLET_TYPE,
+  payload: {
+    walletType
   }
 })
 

@@ -8,6 +8,7 @@ import {
   CONFIRM_MESSAGE,
   CONFIRMED_MESSAGES,
   UPDATE_PROGRESS,
+  SET_WALLET_TYPE,
   CLEAR_ERROR
 } from './actionTypes'
 
@@ -15,6 +16,7 @@ import {
   confirmMessage,
   confirmedMessages,
   initialState,
+  setWalletType,
   switchWallet,
   walletList,
   updateBalance,
@@ -43,6 +45,8 @@ export default (state = initialState, action) => {
       return confirmedMessages(cloneDeep(state), action.payload)
     case UPDATE_PROGRESS:
       return updateProgress(cloneDeep(state), action.payload)
+    case SET_WALLET_TYPE:
+      return setWalletType(cloneDeep(state), action.payload)
     case ERROR: {
       return error(cloneDeep(state), action.error)
     }

@@ -231,3 +231,20 @@ export const MessageReviewSubText = styled.div`
   margin-bottom: 25px;
   font-size: 13px;
 `
+
+export const OnboardingContainer = styled.div`
+  background-color: white;
+  border: 1px black;
+  margin-top 78px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 360px;
+  width: 30vw;
+`
+
+/* FLEXBOX STYLES */
+export const JustifyContentCenter = styled.div`
+  display: flex;
+  justify-content: center;
+`

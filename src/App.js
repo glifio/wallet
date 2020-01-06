@@ -10,7 +10,7 @@ import Error from './components/Error'
 
 function App() {
   const { progress } = useProgress()
-  useFilecoin()
+  // useFilecoin()
   return (
     <Fragment>
       <Error />

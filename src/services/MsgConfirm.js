@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Lotus } from '@openworklabs/lotus-block-explorer'
 import { confirmedMessages } from '../store/actions'
 
-export const MsgConfirm = () => {
+export default () => {
   const dispatch = useDispatch()
   const pendingMsgs = useSelector(({ pendingMsgs }) => pendingMsgs)
 
