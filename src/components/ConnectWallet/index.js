@@ -1,13 +1,13 @@
-import React, { useState, useReducer } from 'react'
+import React, { useState, useReducer, useEffect } from 'react'
 import styled from 'styled-components'
 import 'styled-components/macro'
 import TransportWebHID from '@ledgerhq/hw-transport-webhid'
 import Filecoin, {
   LedgerProvider
 } from '@openworklabs/filecoin-wallet-provider'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { error } from '../../store/actions'
+import { error, clearError, walletList } from '../../store/actions'
 import { useProgress } from '../../hooks'
 import { OnboardingContainer } from '../StyledComponents'
 import {
@@ -46,9 +46,13 @@ import {
 
 export default () => {
   const dispatchRdx = useDispatch()
+  const errorFromRdx = useSelector(state => state.error)
   const [ledgerState, dispatchLocal] = useReducer(reducer, initialLedgerState)
   const { setProgress } = useProgress()
-  console.log(ledgerState)
+
+  useEffect(() => {
+    if (!errorFromRdx) dispatchLocal({ type: RESET_STATE })
+  }, [errorFromRdx])
 
   return (
     <ConnectWalletContainer>
@@ -108,7 +112,7 @@ export default () => {
               </InputLabel>
             </EducationalCheckboxItem>
             <EducationalCheckboxItem>
-              {!ledgerState.filecoinAppOpen ||
+              {!ledgerState.filecoinAppOpen &&
               !ledgerState.filecoinAppNotOpen ? (
                 <Checkbox
                   onChange={() =>
@@ -153,6 +157,7 @@ export default () => {
             )
           }
           onClick={async () => {
+            dispatchRdx(clearError())
             dispatchLocal({ type: USER_INITIATED_IMPORT })
             let transport = ledgerState.transport
             if (!transport) {
@@ -173,24 +178,43 @@ export default () => {
             }
 
             dispatchLocal({ type: ESTABLISHING_CONNECTION_W_FILECOIN_APP })
-            try {
-              const provider = new Filecoin(new LedgerProvider(transport), {
-                token: process.env.REACT_APP_LOTUS_JWT_TOKEN
-              })
-              const response = await provider.wallet.getVersion()
-              if (response.device_locked) {
-                dispatchLocal({ type: LEDGER_LOCKED })
-                dispatchRdx(error(new Error('Ledger device locked')))
-                return
-              }
+            let provider = ledgerState.provider
+            if (!provider) {
+              try {
+                provider = new Filecoin(new LedgerProvider(transport), {
+                  token: process.env.REACT_APP_LOTUS_JWT_TOKEN
+                })
+                const response = await provider.wallet.getVersion()
+                if (response.device_locked) {
+                  dispatchLocal({ type: LEDGER_LOCKED })
+                  dispatchRdx(error(new Error('Ledger device locked')))
+                  return
+                }
 
-              dispatchLocal({ type: LEDGER_UNLOCKED })
-              // const response2 = await provider.wallet.getAccounts()
-              // console.log('yo')
-              // console.log(response2)
-              dispatchLocal({ type: FILECOIN_APP_OPEN })
+                dispatchLocal({ type: LEDGER_UNLOCKED })
+                dispatchLocal({ type: FILECOIN_APP_OPEN, provider })
+              } catch (err) {
+                dispatchLocal({ type: FILECOIN_APP_NOT_OPEN })
+                dispatchRdx(error(err))
+              }
+            }
+
+            try {
+              const filAddresses = await provider.wallet.getAccounts(0, 1)
+              const wallets = await Promise.all(
+                filAddresses.map(async address => {
+                  const balance = await provider.getBalance(
+                    't1e2tmlvccdm6zdwxlu5h7mtihs3w23cqs5gg3c4q'
+                  )
+                  return {
+                    balance,
+                    address
+                  }
+                })
+              )
+              dispatchRdx(walletList(wallets))
+              setProgress(2)
             } catch (err) {
-              dispatchLocal({ type: FILECOIN_APP_NOT_OPEN })
               dispatchRdx(error(err))
             }
           }}

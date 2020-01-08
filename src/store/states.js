@@ -2,7 +2,7 @@ import updateArrayItem from './utils/updateArrayItem'
 
 export const initialState = {
   wallets: [],
-  selectedWalletIdx: 5,
+  selectedWalletIdx: 0,
   error: null,
   pendingMsgs: [],
   confirmedMsgs: [],
@@ -13,8 +13,7 @@ export const initialState = {
 
 export const walletList = (state, { wallets }) => ({
   ...state,
-  wallets,
-  selectedWalletIdx: 5
+  wallets
 })
 
 export const switchWallet = (state, { index }) => ({

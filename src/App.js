@@ -10,15 +10,13 @@ import Error from './components/Error'
 
 function App() {
   const { progress } = useProgress()
-  // useFilecoin()
   return (
     <Fragment>
       <Error />
       <Header />
       {progress === 0 && <AccessWallet />}
       {progress === 1 && <ConnectWallet />}
-      {/* {progress === 2 && <SyncingWallet />} */}
-      {progress === 3 && <DisplayWallet />}
+      {progress === 2 && <DisplayWallet />}
     </Fragment>
   )
 }

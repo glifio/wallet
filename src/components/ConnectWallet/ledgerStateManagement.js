@@ -12,7 +12,8 @@ export const initialLedgerState = {
   establishingConnectionWFilecoinApp: false,
   filecoinAppOpen: false,
   filecoinAppNotOpen: false,
-  transport: null
+  transport: null,
+  provider: null
 }
 
 /* VALID ACTION TYPES */
@@ -134,7 +135,8 @@ export const reducer = (state, action) => {
         filecoinAppOpen: true,
         filecoinAppNotOpen: false,
         ledgerLocked: false,
-        ledgerUnlocked: true
+        ledgerUnlocked: true,
+        provider: action.provider
       }
     case RESET_STATE:
       return initialLedgerState
