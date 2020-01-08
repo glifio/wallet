@@ -80,9 +80,7 @@ const ImportLedgerBtn = ({ ledgerState, dispatchRdx, dispatchLocal }) => {
           const filAddresses = await provider.wallet.getAccounts(0, 1)
           const wallets = await Promise.all(
             filAddresses.map(async address => {
-              const balance = await provider.getBalance(
-                't1e2tmlvccdm6zdwxlu5h7mtihs3w23cqs5gg3c4q'
-              )
+              const balance = await provider.getBalance(address)
               return {
                 balance,
                 address

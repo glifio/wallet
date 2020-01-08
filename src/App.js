@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import 'styled-components/macro'
 
-import { useProgress } from './hooks'
+import { useProgress, useFilecoin } from './hooks'
 import DisplayWallet from './components/DisplayWallet'
 import ConnectWallet from './components/ConnectWallet'
 import AccessWallet from './components/AccessWallet'
@@ -10,6 +10,7 @@ import Error from './components/Error'
 
 function App() {
   const { progress } = useProgress()
+  useFilecoin()
   return (
     <Fragment>
       <Error />
