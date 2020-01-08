@@ -38,7 +38,7 @@ const ConnectedLedgerCheckbox = ({ ledgerState, dispatchLocal }) => (
       <ColoredDot color={determineDotColorForLedgerConnection(ledgerState)} />
     )}
     <InputLabel htmlFor='ledger_connected'>
-      My Ledger is connected to my computer and unlocked.
+      My Ledger is connected to my computer.
     </InputLabel>
   </EducationalCheckboxItem>
 )

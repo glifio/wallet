@@ -8,7 +8,8 @@ export const initialState = {
   confirmedMsgs: [],
   progress: 1,
   walletType: 'LEDGER',
-  walletConnected: false
+  walletConnected: false,
+  walletProvider: null
 }
 
 export const walletList = (state, { wallets }) => ({
@@ -50,6 +51,12 @@ export const updateProgress = (state, { progress }) => ({
 export const setWalletType = (state, { walletType }) => ({
   ...state,
   walletType
+})
+
+export const createWalletProvider = (state, { provider }) => ({
+  ...state,
+  walletConnected: true,
+  walletProvider: provider
 })
 
 export const error = (state, error) => ({

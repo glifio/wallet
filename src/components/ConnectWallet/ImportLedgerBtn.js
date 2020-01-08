@@ -5,7 +5,7 @@ import Filecoin, {
   LedgerProvider
 } from '@openworklabs/filecoin-wallet-provider'
 
-import { error, clearError, walletList } from '../../store/actions'
+import { error, walletList, createWalletProvider } from '../../store/actions'
 import { useProgress } from '../../hooks'
 import {
   USER_INITIATED_IMPORT,
@@ -18,9 +18,11 @@ import {
   LEDGER_CONNECTED
 } from './ledgerStateManagement'
 import { Button } from './styledComponents'
+import { useSelector } from 'react-redux'
 
 const ImportLedgerBtn = ({ ledgerState, dispatchRdx, dispatchLocal }) => {
   const { setProgress } = useProgress()
+  const walletProvider = useSelector(state => state.walletProvider)
   return (
     <Button
       disabled={
@@ -31,7 +33,6 @@ const ImportLedgerBtn = ({ ledgerState, dispatchRdx, dispatchLocal }) => {
         )
       }
       onClick={async () => {
-        dispatchRdx(clearError())
         dispatchLocal({ type: USER_INITIATED_IMPORT })
         let transport = ledgerState.transport
         try {
@@ -52,7 +53,7 @@ const ImportLedgerBtn = ({ ledgerState, dispatchRdx, dispatchLocal }) => {
         }
 
         dispatchLocal({ type: ESTABLISHING_CONNECTION_W_FILECOIN_APP })
-        let provider = ledgerState.provider
+        let provider = walletProvider
         if (!provider) {
           try {
             provider = new Filecoin(new LedgerProvider(transport), {
@@ -66,7 +67,8 @@ const ImportLedgerBtn = ({ ledgerState, dispatchRdx, dispatchLocal }) => {
             }
 
             dispatchLocal({ type: LEDGER_UNLOCKED })
-            dispatchLocal({ type: FILECOIN_APP_OPEN, provider })
+            dispatchLocal({ type: FILECOIN_APP_OPEN })
+            dispatchRdx(createWalletProvider(provider))
           } catch (err) {
             dispatchLocal({ type: FILECOIN_APP_NOT_OPEN })
             dispatchRdx(error(err))

@@ -3,6 +3,7 @@ import {
   CONFIRMED_MESSAGES,
   ERROR,
   SET_WALLET_TYPE,
+  CREATE_WALLET_PROVIDER,
   SWITCH_WALLET,
   UPDATE_BALANCE,
   UPDATE_PROGRESS,
@@ -58,6 +59,13 @@ export const setWalletType = walletType => ({
   type: SET_WALLET_TYPE,
   payload: {
     walletType
+  }
+})
+
+export const createWalletProvider = provider => ({
+  type: CREATE_WALLET_PROVIDER,
+  payload: {
+    provider
   }
 })
 
