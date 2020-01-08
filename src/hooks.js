@@ -121,13 +121,6 @@ export const useTransactions = index =>
     }
   })
 
-export const useError = () =>
-  useSelector(state => {
-    return {
-      error: state.error
-    }
-  })
-
 export const useProgress = () => {
   const dispatch = useDispatch()
   const setProgress = useCallback(
