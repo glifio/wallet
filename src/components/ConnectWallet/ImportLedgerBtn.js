@@ -5,7 +5,12 @@ import Filecoin, {
   LedgerProvider
 } from '@openworklabs/filecoin-wallet-provider'
 
-import { error, walletList, createWalletProvider } from '../../store/actions'
+import {
+  error,
+  walletList,
+  createWalletProvider,
+  clearError
+} from '../../store/actions'
 import { useProgress } from '../../hooks'
 import {
   USER_INITIATED_IMPORT,
@@ -88,6 +93,7 @@ const ImportLedgerBtn = ({ ledgerState, dispatchRdx, dispatchLocal }) => {
             })
           )
           dispatchRdx(walletList(wallets))
+          dispatchRdx(clearError())
           setProgress(2)
         } catch (err) {
           dispatchRdx(error(err))
