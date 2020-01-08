@@ -54,26 +54,26 @@ const ImportLedgerBtn = ({ ledgerState, dispatchRdx, dispatchLocal }) => {
 
         dispatchLocal({ type: ESTABLISHING_CONNECTION_W_FILECOIN_APP })
         let provider = walletProvider
-        if (!provider) {
-          try {
+        try {
+          if (!provider) {
             provider = new Filecoin(new LedgerProvider(transport), {
               token: process.env.REACT_APP_LOTUS_JWT_TOKEN
             })
-            const response = await provider.wallet.getVersion()
-            if (response.device_locked) {
-              dispatchLocal({ type: LEDGER_LOCKED })
-              dispatchRdx(error(new Error('Ledger device locked')))
-              return
-            }
-
-            dispatchLocal({ type: LEDGER_UNLOCKED })
-            dispatchLocal({ type: FILECOIN_APP_OPEN })
-            dispatchRdx(createWalletProvider(provider))
-          } catch (err) {
-            dispatchLocal({ type: FILECOIN_APP_NOT_OPEN })
-            dispatchRdx(error(err))
+          }
+          const response = await provider.wallet.getVersion()
+          if (response.device_locked) {
+            dispatchLocal({ type: LEDGER_LOCKED })
+            dispatchRdx(error(new Error('Ledger device locked')))
             return
           }
+
+          dispatchLocal({ type: LEDGER_UNLOCKED })
+          dispatchLocal({ type: FILECOIN_APP_OPEN })
+          dispatchRdx(createWalletProvider(provider))
+        } catch (err) {
+          dispatchLocal({ type: FILECOIN_APP_NOT_OPEN })
+          dispatchRdx(error(err))
+          return
         }
 
         try {
