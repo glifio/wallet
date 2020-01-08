@@ -6,8 +6,8 @@ export const initialState = {
   error: null,
   pendingMsgs: [],
   confirmedMsgs: [],
-  progress: 0,
-  walletType: null,
+  progress: 1,
+  walletType: 'LEDGER',
   walletConnected: false
 }
 

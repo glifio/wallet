@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useReducer } from 'react'
 import styled from 'styled-components'
 import 'styled-components/macro'
 import TransportWebHID from '@ledgerhq/hw-transport-webhid'
@@ -9,101 +9,156 @@ import { useDispatch } from 'react-redux'
 
 import { error } from '../../store/actions'
 import { useProgress } from '../../hooks'
-import { JustifyContentCenter, OnboardingContainer } from '../StyledComponents'
-
-const Button = styled.button`
-  cursor: pointer;
-  background: #61d6d9;
-  color: white;
-  border: 0;
-  border-radius: 4px;
-`
-
-const ConnectWalletContainer = styled(JustifyContentCenter)`
-  flex-direction: column;
-  align-items: center;
-`
+import { OnboardingContainer } from '../StyledComponents'
+import {
+  reducer,
+  initialLedgerState,
+  USER_VERIFIED_LEDGER_CONNECTED,
+  USER_UNVERIFIED_LEDGER_CONNECTED,
+  USER_VERIFIED_LEDGER_UNLOCKED,
+  USER_UNVERIFIED_LEDGER_UNLOCKED,
+  USER_VERIFIED_FILECOIN_APP_OPEN,
+  USER_UNVERIFIED_FILECOIN_APP_OPEN,
+  USER_INITIATED_IMPORT,
+  LEDGER_NOT_FOUND,
+  RESET_STATE,
+  LEDGER_CONNECTED
+} from './ledgerStateManagement'
+import {
+  ConnectWalletContainer,
+  EducationalCheckboxContainer,
+  EducationalCheckboxItem,
+  Checkbox,
+  ColoredDot,
+  InputLabel,
+  Button
+} from './styledComponents'
+import { determineDotColorForLedgerConnection } from './helpers'
 
 export default () => {
-  const dispatch = useDispatch()
+  const dispatchRdx = useDispatch()
+  const [ledgerState, dispatchLocal] = useReducer(reducer, initialLedgerState)
   const { setProgress } = useProgress()
-  const [ledgerConnected, setLedgerConnected] = useState(false)
-  const [filecoinLedgerAppOpen, setFilecoinLedgerAppOpen] = useState(false)
-  const [accounts, setAccounts] = useState({
-    list: [],
-    startIdx: 0,
-    endIdx: 5
-  })
-  const [selectedAccountIdx, setSelectedAccountIdx] = useState(0)
-  const onRadioSelect = accountIndex =>
-    setSelectedAccountIdx(Number(accountIndex))
 
   return (
     <ConnectWalletContainer>
-      <p>
-        {ledgerConnected
-          ? filecoinLedgerAppOpen
-            ? `Selected account: ${
-                accounts.list[selectedAccountIdx]
-              } with the HD path: 44/461/5/0/${accounts.startIdx +
-                selectedAccountIdx}`
-            : 'Make sure the Filecoin application is open on your Ledger device'
-          : 'Make sure your ledger is plugged in'}
-      </p>
-
       <OnboardingContainer>
         <form>
-          <ol>
-            {accounts.list.map((account, i) => {
-              return (
-                <li
-                  css={{
-                    margin: '4px'
-                  }}
-                  key={account}
-                >
-                  <input
-                    onChange={() => onRadioSelect(Number(i))}
-                    type='radio'
-                    name='account'
-                    value={account}
-                    id={account}
-                    checked={Number(selectedAccountIdx) === Number(i)}
-                  />
-                  <label htmlFor={account}>{account}</label>
-                  <br />
-                </li>
-              )
-            })}
-          </ol>
+          <EducationalCheckboxContainer>
+            <EducationalCheckboxItem>
+              {!ledgerState.userInitiatedImport ? (
+                <Checkbox
+                  onChange={() =>
+                    dispatchLocal({
+                      type: ledgerState.userVerifiedLedgerConnected
+                        ? USER_UNVERIFIED_LEDGER_CONNECTED
+                        : USER_VERIFIED_LEDGER_CONNECTED
+                    })
+                  }
+                  type='checkbox'
+                  name='ledger_connected'
+                  id='ledger_connected'
+                  checked={ledgerState.userVerifiedLedgerConnected}
+                />
+              ) : (
+                <ColoredDot
+                  color={determineDotColorForLedgerConnection(ledgerState)}
+                />
+              )}
+              <InputLabel htmlFor='ledger_connected'>
+                I have connected my Ledger device to my computer.
+              </InputLabel>
+            </EducationalCheckboxItem>
+            <EducationalCheckboxItem>
+              <Checkbox
+                onChange={() =>
+                  dispatchLocal({
+                    type: ledgerState.userVerifiedLedgerUnlocked
+                      ? USER_UNVERIFIED_LEDGER_UNLOCKED
+                      : USER_VERIFIED_LEDGER_UNLOCKED
+                  })
+                }
+                type='checkbox'
+                name='ledger_unlocked'
+                id='ledger_unlocked'
+                checked={ledgerState.userVerifiedLedgerUnlocked}
+                disabled={!ledgerState.userVerifiedLedgerConnected}
+              />
+              <InputLabel
+                htmlFor='ledger_unlocked'
+                disabled={!ledgerState.userVerifiedLedgerConnected}
+              >
+                My Ledger device is unlocked.
+              </InputLabel>
+            </EducationalCheckboxItem>
+            <EducationalCheckboxItem>
+              <Checkbox
+                onChange={() =>
+                  dispatchLocal({
+                    type: ledgerState.userVerifiedFilecoinAppOpen
+                      ? USER_UNVERIFIED_FILECOIN_APP_OPEN
+                      : USER_VERIFIED_FILECOIN_APP_OPEN
+                  })
+                }
+                type='checkbox'
+                name='filecoin_app_open'
+                id='filecoin_app_open'
+                checked={ledgerState.userVerifiedFilecoinAppOpen}
+                disabled={
+                  !ledgerState.userVerifiedLedgerConnected ||
+                  !ledgerState.userVerifiedLedgerUnlocked
+                }
+              />
+              <InputLabel
+                htmlFor='filecoin_app_open'
+                disabled={
+                  !ledgerState.userVerifiedLedgerConnected ||
+                  !ledgerState.userVerifiedLedgerUnlocked
+                }
+              >
+                The Filecoin Ledger app is open on my Ledger.
+              </InputLabel>
+            </EducationalCheckboxItem>
+          </EducationalCheckboxContainer>
         </form>
         <Button
+          disabled={
+            !(
+              ledgerState.userVerifiedLedgerConnected &&
+              ledgerState.userVerifiedLedgerUnlocked &&
+              ledgerState.userVerifiedFilecoinAppOpen
+            )
+          }
           onClick={async () => {
+            dispatchLocal({ type: USER_INITIATED_IMPORT })
             try {
               const transport = await TransportWebHID.create()
-              setLedgerConnected(true)
-              const provider = new Filecoin(new LedgerProvider(transport), {
-                token: process.env.REACT_APP_LOTUS_JWT_TOKEN
-              })
-
-              // we call getVersion here to make sure the Filecoin Ledger app is open on the user's device
-              await provider.wallet.getVersion()
-              setFilecoinLedgerAppOpen(true)
-
-              const accountList = await provider.wallet.getAccounts(
-                accounts.startIdx,
-                accounts.endIdx
-              )
-              setAccounts({
-                ...accounts,
-                list: accountList
-              })
+              dispatchLocal({ type: LEDGER_CONNECTED })
             } catch (err) {
-              dispatch(error(err))
+              dispatchLocal({ type: LEDGER_NOT_FOUND })
+              // if we want to display banner instead:
+              // dispatchRdx(error(err))
             }
+
+            // const provider = new Filecoin(new LedgerProvider(transport), {
+            //   token: process.env.REACT_APP_LOTUS_JWT_TOKEN
+            // })
+
+            // // we call getVersion here to make sure the Filecoin Ledger app is open on the user's device
+            // await provider.wallet.getVersion()
+            // setFilecoinLedgerAppOpen(true)
+
+            // const accountList = await provider.wallet.getAccounts(
+            //   accounts.startIdx,
+            //   accounts.endIdx
+            // )
+            // setAccounts({
+            //   ...accounts,
+            //   list: accountList
+            // })
           }}
         >
-          {ledgerConnected ? 'Select account' : 'Unlock ledger'}
+          Import Ledger Wallet
         </Button>
       </OnboardingContainer>
     </ConnectWalletContainer>
