@@ -18,7 +18,7 @@ export const ConnectWalletContainer = styled(JustifyContentCenter)`
   align-items: center;
 `
 
-export const EducationalCheckboxContainer = styled.ul`
+export const CheckboxContainer = styled.ul`
   margin-top: 15px;
   list-style: none;
   display: flex;
