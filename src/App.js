@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import 'styled-components/macro'
 
-import { useFilecoin, useProgress } from './hooks'
+import { useProgress } from './hooks'
 import DisplayWallet from './components/DisplayWallet'
 import ConnectWallet from './components/ConnectWallet'
 import AccessWallet from './components/AccessWallet'

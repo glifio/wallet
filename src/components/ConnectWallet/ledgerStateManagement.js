@@ -139,7 +139,10 @@ export const reducer = (state, action) => {
         provider: action.provider
       }
     case RESET_STATE:
-      return initialLedgerState
+      return {
+        ...initialLedgerState,
+        transport: state.transport
+      }
     default:
       return state
   }

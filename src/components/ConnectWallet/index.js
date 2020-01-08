@@ -50,6 +50,8 @@ export default () => {
   const [ledgerState, dispatchLocal] = useReducer(reducer, initialLedgerState)
   const { setProgress } = useProgress()
 
+  console.log(ledgerState)
+
   useEffect(() => {
     if (!errorFromRdx) dispatchLocal({ type: RESET_STATE })
   }, [errorFromRdx])
@@ -84,7 +86,7 @@ export default () => {
               </InputLabel>
             </EducationalCheckboxItem>
             <EducationalCheckboxItem>
-              {!ledgerState.userInitiatedImport ? (
+              {!ledgerState.ledgerUnlocked && !ledgerState.ledgerLocked ? (
                 <Checkbox
                   onChange={() =>
                     dispatchLocal({
@@ -160,20 +162,20 @@ export default () => {
             dispatchRdx(clearError())
             dispatchLocal({ type: USER_INITIATED_IMPORT })
             let transport = ledgerState.transport
-            if (!transport) {
-              try {
+            try {
+              if (!transport) {
                 transport = await TransportWebHID.create()
-                dispatchLocal({ type: LEDGER_CONNECTED, transport })
-              } catch (err) {
-                if (
-                  err.message &&
-                  !err.message.toLowerCase().includes('device is already open')
-                ) {
-                  dispatchLocal({ type: LEDGER_NOT_FOUND })
-                  // if we want to display banner instead:
-                  dispatchRdx(error(err))
-                  return
-                }
+              }
+              dispatchLocal({ type: LEDGER_CONNECTED, transport })
+            } catch (err) {
+              if (
+                err.message &&
+                !err.message.toLowerCase().includes('device is already open')
+              ) {
+                dispatchLocal({ type: LEDGER_NOT_FOUND })
+                // if we want to display banner instead:
+                dispatchRdx(error(err))
+                return
               }
             }
 
@@ -196,6 +198,7 @@ export default () => {
               } catch (err) {
                 dispatchLocal({ type: FILECOIN_APP_NOT_OPEN })
                 dispatchRdx(error(err))
+                return
               }
             }
 
