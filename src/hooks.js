@@ -145,16 +145,20 @@ export const useTransactions = index => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetch(
-        `${
-          process.env.REACT_APP_CHAINWATCH_API_SERVER_ENDPOINT
-        }/api/v0/messages/${selectedWallet.address}?page=${index || 0}`
-      )
-      const { data, links, status } = await result.json()
-      if (status === 'success') {
-        dispatch(fetchedConfirmedMessagesSuccess(data, links))
-      } else if (status === 'failed') {
-        dispatch(fetchedConfirmedMessagesFailure(data))
+      try {
+        const result = await fetch(
+          `${
+            process.env.REACT_APP_CHAINWATCH_API_SERVER_ENDPOINT
+          }/api/v0/messages/${selectedWallet.address}?page=${index || 0}`
+        )
+        const { data, links, status } = await result.json()
+        if (status === 'success') {
+          dispatch(fetchedConfirmedMessagesSuccess(data, links))
+        } else if (status === 'failed') {
+          dispatch(fetchedConfirmedMessagesFailure(data))
+        }
+      } catch (err) {
+        dispatch(fetchedConfirmedMessagesFailure(err))
       }
     }
     if (selectedWallet.address) {

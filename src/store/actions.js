@@ -9,7 +9,10 @@ import {
   CLEAR_ERROR,
   FETCHING_CONFIRMED_MESSAGES,
   FETCHED_CONFIRMED_MESSAGES_SUCCESS,
-  FETCHED_CONFIRMED_MESSAGES_FAILURE
+  FETCHED_CONFIRMED_MESSAGES_FAILURE,
+  FETCHING_NEXT_PAGE,
+  FETCHING_NEXT_PAGE_SUCCESS,
+  FETCHING_NEXT_PAGE_FAILURE
 } from './actionTypes'
 
 export const walletList = wallets => ({
@@ -70,6 +73,23 @@ export const fetchedConfirmedMessagesSuccess = (messages, links) => ({
 
 export const fetchedConfirmedMessagesFailure = () => ({
   type: FETCHED_CONFIRMED_MESSAGES_FAILURE,
+  error
+})
+
+export const fetchingNextPage = () => ({
+  type: FETCHING_NEXT_PAGE
+})
+
+export const fetchedNextPageSuccess = (messages, links) => ({
+  type: FETCHING_NEXT_PAGE_SUCCESS,
+  payload: {
+    messages,
+    links
+  }
+})
+
+export const fetchedNextPageFailure = () => ({
+  type: FETCHING_NEXT_PAGE_FAILURE,
   error
 })
 

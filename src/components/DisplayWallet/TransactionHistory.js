@@ -16,10 +16,23 @@ import {
 } from '../StyledComponents'
 import { useTransactions, useWallets } from '../../hooks'
 import { shortenAddress } from '../../utils'
+import { useDispatch } from 'react-redux'
+import {
+  fetchingNextPage,
+  fetchedNextPageSuccess,
+  fetchedNextPageFailure
+} from '../../store/actions'
 
 const MethodText = styled(MessageReviewSubText)`
   font-weight: bold;
   margin-right: 5px;
+`
+
+const ShowMore = styled(SectionHeader)`
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 `
 
 const TransactionComponent = ({
@@ -80,7 +93,7 @@ const MessageCreator = () => {
     loading
   } = useTransactions()
   const { selectedWallet } = useWallets()
-
+  const dispatch = useDispatch()
   return (
     <React.Fragment>
       <TransactionHistory>
@@ -112,9 +125,30 @@ const MessageCreator = () => {
           })}
 
         {links.next && (
-          <SectionHeader css={{ marginBottom: '10px', marginTop: '30px' }}>
+          <ShowMore
+            role='button'
+            rel='noopener noreferrer'
+            onClick={async () => {
+              dispatch(fetchingNextPage())
+              try {
+                const result = await (
+                  await fetch(
+                    `${process.env.REACT_APP_CHAINWATCH_API_SERVER_ENDPOINT}/api/v0/${links.next}`
+                  )
+                ).json()
+                if (result.status === 'success') {
+                  dispatch(fetchedNextPageSuccess(result.data, result.links))
+                } else if (result.status === 'failed') {
+                  dispatch(fetchedNextPageFailure(result.data))
+                }
+              } catch (err) {
+                dispatch(fetchedNextPageFailure(err))
+              }
+            }}
+            css={{ marginBottom: '10px', marginTop: '30px' }}
+          >
             More
-          </SectionHeader>
+          </ShowMore>
         )}
 
         {loadedSuccess && pending.length === 0 && confirmed.length === 0 && (

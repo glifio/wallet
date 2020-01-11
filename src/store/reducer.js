@@ -11,7 +11,10 @@ import {
   CLEAR_ERROR,
   FETCHING_CONFIRMED_MESSAGES,
   FETCHED_CONFIRMED_MESSAGES_SUCCESS,
-  FETCHED_CONFIRMED_MESSAGES_FAILURE
+  FETCHED_CONFIRMED_MESSAGES_FAILURE,
+  FETCHING_NEXT_PAGE,
+  FETCHING_NEXT_PAGE_SUCCESS,
+  FETCHING_NEXT_PAGE_FAILURE
 } from './actionTypes'
 
 import {
@@ -26,7 +29,10 @@ import {
   clearError,
   fetchingConfirmedMessages,
   fetchedConfirmedMessagesSuccess,
-  fetchedConfirmedMessagesFailure
+  fetchedConfirmedMessagesFailure,
+  fetchingNextPage,
+  fetchedNextPageSuccess,
+  fetchedNextPageFailure
 } from './states'
 
 export default (state = initialState, action) => {
@@ -55,6 +61,12 @@ export default (state = initialState, action) => {
       return fetchedConfirmedMessagesSuccess(cloneDeep(state), action.payload)
     case FETCHED_CONFIRMED_MESSAGES_FAILURE:
       return fetchedConfirmedMessagesFailure(cloneDeep(state), action.error)
+    case FETCHING_NEXT_PAGE:
+      return fetchingNextPage(cloneDeep(state))
+    case FETCHING_NEXT_PAGE_SUCCESS:
+      return fetchedNextPageSuccess(cloneDeep(state), action.payload)
+    case FETCHING_NEXT_PAGE_FAILURE:
+      return fetchedNextPageFailure(cloneDeep(state), action.error)
     case ERROR: {
       return error(cloneDeep(state), action.error)
     }
