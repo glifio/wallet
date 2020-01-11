@@ -6,7 +6,10 @@ import {
   SWITCH_WALLET,
   UPDATE_BALANCE,
   UPDATE_PROGRESS,
-  CLEAR_ERROR
+  CLEAR_ERROR,
+  FETCHING_CONFIRMED_MESSAGES,
+  FETCHED_CONFIRMED_MESSAGES_SUCCESS,
+  FETCHED_CONFIRMED_MESSAGES_FAILURE
 } from './actionTypes'
 
 export const walletList = wallets => ({
@@ -51,6 +54,23 @@ export const updateProgress = progress => ({
   payload: {
     progress
   }
+})
+
+export const fetchingConfirmedMessages = () => ({
+  type: FETCHING_CONFIRMED_MESSAGES
+})
+
+export const fetchedConfirmedMessagesSuccess = (messages, links) => ({
+  type: FETCHED_CONFIRMED_MESSAGES_SUCCESS,
+  payload: {
+    messages,
+    links
+  }
+})
+
+export const fetchedConfirmedMessagesFailure = () => ({
+  type: FETCHED_CONFIRMED_MESSAGES_FAILURE,
+  error
 })
 
 export const error = error => ({

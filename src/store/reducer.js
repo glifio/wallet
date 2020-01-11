@@ -8,7 +8,10 @@ import {
   CONFIRM_MESSAGE,
   CONFIRMED_MESSAGES,
   UPDATE_PROGRESS,
-  CLEAR_ERROR
+  CLEAR_ERROR,
+  FETCHING_CONFIRMED_MESSAGES,
+  FETCHED_CONFIRMED_MESSAGES_SUCCESS,
+  FETCHED_CONFIRMED_MESSAGES_FAILURE
 } from './actionTypes'
 
 import {
@@ -20,7 +23,10 @@ import {
   updateBalance,
   updateProgress,
   error,
-  clearError
+  clearError,
+  fetchingConfirmedMessages,
+  fetchedConfirmedMessagesSuccess,
+  fetchedConfirmedMessagesFailure
 } from './states'
 
 export default (state = initialState, action) => {
@@ -43,6 +49,12 @@ export default (state = initialState, action) => {
       return confirmedMessages(cloneDeep(state), action.payload)
     case UPDATE_PROGRESS:
       return updateProgress(cloneDeep(state), action.payload)
+    case FETCHING_CONFIRMED_MESSAGES:
+      return fetchingConfirmedMessages(cloneDeep(state))
+    case FETCHED_CONFIRMED_MESSAGES_SUCCESS:
+      return fetchedConfirmedMessagesSuccess(cloneDeep(state), action.payload)
+    case FETCHED_CONFIRMED_MESSAGES_FAILURE:
+      return fetchedConfirmedMessagesFailure(cloneDeep(state), action.error)
     case ERROR: {
       return error(cloneDeep(state), action.error)
     }

@@ -4,8 +4,15 @@ export const initialState = {
   wallets: [],
   selectedWalletIdx: 5,
   error: null,
-  pendingMsgs: [],
-  confirmedMsgs: [],
+  messages: {
+    page: 0,
+    loading: false,
+    loadedSuccess: false,
+    loadedFailure: false,
+    pending: [],
+    confirmed: [],
+    links: {}
+  },
   progress: 3
 }
 
@@ -44,6 +51,42 @@ export const confirmedMessages = (state, { confirmedMsgs, pendingMsgs }) => {
 export const updateProgress = (state, { progress }) => ({
   ...state,
   progress
+})
+
+export const fetchingConfirmedMessages = state => ({
+  ...state,
+  messages: {
+    ...state.messages,
+    loading: true,
+    loadedSuccess: false,
+    loadedFailure: false
+  }
+})
+
+export const fetchedConfirmedMessagesSuccess = (
+  state,
+  { messages, links }
+) => ({
+  ...state,
+  messages: {
+    ...state.messages,
+    loading: false,
+    loadedSuccess: true,
+    loadedFailure: false,
+    confirmed: messages,
+    links
+  }
+})
+
+export const fetchedConfirmedMessagesFailure = (state, error) => ({
+  ...state,
+  messages: {
+    ...state.messages,
+    loading: false,
+    loadedSuccess: false,
+    loadedFailure: true
+  },
+  error
 })
 
 export const error = (state, error) => ({

@@ -8,7 +8,10 @@ import {
   switchWallet,
   walletList,
   updateBalance,
-  updateProgress
+  updateProgress,
+  fetchedConfirmedMessagesSuccess,
+  fetchedConfirmedMessagesFailure,
+  fetchingConfirmedMessages
 } from './store/actions'
 
 export const useFilecoin = () => {
@@ -113,13 +116,62 @@ export const useBalance = index =>
       : new BigNumber(0)
   })
 
-export const useTransactions = index =>
-  useSelector(state => {
+export const useTransactions = index => {
+  const dispatch = useDispatch()
+
+  const {
+    confirmed,
+    links,
+    loading,
+    loadedSuccess,
+    loadedFailurepending,
+    pending,
+    selectedWallet
+  } = useSelector(state => {
+    const selectedWallet =
+      state.wallets.length > state.selectedWalletIdx
+        ? state.wallets[state.selectedWalletIdx]
+        : { balance: new BigNumber('0'), address: '' }
     return {
-      pending: state.pendingMsgs,
-      confirmed: state.confirmedMsgs
+      confirmed: state.messages.confirmed,
+      links: state.messages.links,
+      pending: state.messages.pending,
+      loading: state.messages.loading,
+      loadedSuccess: state.messages.loadedSuccess,
+      loadedFailure: state.messages.loadedFailure,
+      selectedWallet
     }
   })
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await fetch(
+        `${
+          process.env.REACT_APP_CHAINWATCH_API_SERVER_ENDPOINT
+        }/api/v0/messages/${selectedWallet.address}?page=${index || 0}`
+      )
+      const { data, links, status } = await result.json()
+      if (status === 'success') {
+        dispatch(fetchedConfirmedMessagesSuccess(data, links))
+      } else if (status === 'failed') {
+        dispatch(fetchedConfirmedMessagesFailure(data))
+      }
+    }
+    if (selectedWallet.address) {
+      dispatch(fetchingConfirmedMessages())
+      fetchData()
+    }
+  }, [selectedWallet.address, index, dispatch])
+
+  return {
+    confirmed,
+    links,
+    loading,
+    loadedSuccess,
+    loadedFailurepending,
+    pending
+  }
+}
 
 export const useError = () =>
   useSelector(state => {
