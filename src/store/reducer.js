@@ -14,13 +14,17 @@ import {
   FETCHED_CONFIRMED_MESSAGES_FAILURE,
   FETCHING_NEXT_PAGE,
   FETCHING_NEXT_PAGE_SUCCESS,
-  FETCHING_NEXT_PAGE_FAILURE
+  FETCHING_NEXT_PAGE_FAILURE,
+  SET_WALLET_TYPE,
+  CREATE_WALLET_PROVIDER
 } from './actionTypes'
 
 import {
   confirmMessage,
   confirmedMessages,
+  createWalletProvider,
   initialState,
+  setWalletType,
   switchWallet,
   walletList,
   updateBalance,
@@ -67,6 +71,10 @@ export default (state = initialState, action) => {
       return fetchedNextPageSuccess(cloneDeep(state), action.payload)
     case FETCHING_NEXT_PAGE_FAILURE:
       return fetchedNextPageFailure(cloneDeep(state), action.error)
+    case SET_WALLET_TYPE:
+      return setWalletType(cloneDeep(state), action.payload)
+    case CREATE_WALLET_PROVIDER:
+      return createWalletProvider(cloneDeep(state), action.payload)
     case ERROR: {
       return error(cloneDeep(state), action.error)
     }

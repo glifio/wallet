@@ -2,7 +2,6 @@ import {
   CONFIRM_MESSAGE,
   CONFIRMED_MESSAGES,
   ERROR,
-  WALLET_LIST,
   SWITCH_WALLET,
   UPDATE_BALANCE,
   UPDATE_PROGRESS,
@@ -12,7 +11,10 @@ import {
   FETCHED_CONFIRMED_MESSAGES_FAILURE,
   FETCHING_NEXT_PAGE,
   FETCHING_NEXT_PAGE_SUCCESS,
-  FETCHING_NEXT_PAGE_FAILURE
+  FETCHING_NEXT_PAGE_FAILURE,
+  WALLET_LIST,
+  SET_WALLET_TYPE,
+  CREATE_WALLET_PROVIDER
 } from './actionTypes'
 
 export const walletList = wallets => ({
@@ -91,6 +93,20 @@ export const fetchedNextPageSuccess = (messages, links) => ({
 export const fetchedNextPageFailure = () => ({
   type: FETCHING_NEXT_PAGE_FAILURE,
   error
+})
+
+export const setWalletType = walletType => ({
+  type: SET_WALLET_TYPE,
+  payload: {
+    walletType
+  }
+})
+
+export const createWalletProvider = provider => ({
+  type: CREATE_WALLET_PROVIDER,
+  payload: {
+    provider
+  }
 })
 
 export const error = error => ({

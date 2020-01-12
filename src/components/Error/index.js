@@ -1,9 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import 'styled-components/macro'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { useError } from '../../hooks'
 import { clearError } from '../../store/actions'
 
 export const Error = styled.div`
@@ -27,7 +26,7 @@ export const CloseButton = styled.button`
 `
 
 export default () => {
-  const { error } = useError()
+  const error = useSelector(state => state.error)
   const dispatch = useDispatch()
   const clear = () => dispatch(clearError())
 

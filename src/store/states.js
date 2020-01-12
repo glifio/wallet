@@ -2,7 +2,7 @@ import updateArrayItem from './utils/updateArrayItem'
 
 export const initialState = {
   wallets: [],
-  selectedWalletIdx: 5,
+  selectedWalletIdx: 0,
   error: null,
   messages: {
     page: 0,
@@ -14,13 +14,15 @@ export const initialState = {
     links: {},
     paginating: false
   },
-  progress: 3
+  progress: 3,
+  walletType: 'LEDGER',
+  walletConnected: false,
+  walletProvider: null
 }
 
 export const walletList = (state, { wallets }) => ({
   ...state,
-  wallets,
-  selectedWalletIdx: 5
+  wallets
 })
 
 export const switchWallet = (state, { index }) => ({
@@ -115,6 +117,16 @@ export const fetchedNextPageFailure = (state, error) => ({
     paginating: false
   },
   error
+})
+export const setWalletType = (state, { walletType }) => ({
+  ...state,
+  walletType
+})
+
+export const createWalletProvider = (state, { provider }) => ({
+  ...state,
+  walletConnected: true,
+  walletProvider: provider
 })
 
 export const error = (state, error) => ({

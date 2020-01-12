@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Message } from '@openworklabs/filecoin-wallet-provider'
 import BigNumber from 'bignumber.js'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
 import 'styled-components/macro'
@@ -21,7 +21,6 @@ import {
   MessageReview,
   MessageReviewSubText
 } from '../StyledComponents'
-import filecoin from '../../wallet'
 
 // TODO: better validation
 const isValidForm = (toAddress, value, balance, errors) => {
@@ -39,6 +38,7 @@ const MsgCreator = () => {
   const [value, setValue] = useState('')
   const [confirmStage, setConfirmStage] = useState('')
   const [errors, setErrors] = useState({ value: false, toAddress: false })
+  const walletProvider = useSelector(state => state.walletProvider)
 
   const handleValueChange = e => {
     // clear errors for better UX
@@ -89,8 +89,8 @@ const MsgCreator = () => {
 
     try {
       await message.generateNonce()
-      const signedMessage = await filecoin.wallet.sign(message.encode())
-      await filecoin.sendMessage(signedMessage)
+      const signedMessage = await walletProvider.wallet.sign(message.encode())
+      await walletProvider.sendMessage(signedMessage)
       const messageObj = message.encode()
       messageObj.Cid =
         'bafy2bzacebbzy3olddxqclyqjnuzr5mjlom2eojlponzda22wwnl4me4paqy' +

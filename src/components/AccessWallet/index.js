@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import 'styled-components/macro'
+import { useDispatch } from 'react-redux'
 
 import { useProgress } from '../../hooks'
+import { setWalletType } from '../../store/actions'
+import { LEDGER } from '../../constants'
+import { OnboardingContainer, JustifyContentCenter } from '../StyledComponents'
 
 const Button = styled.button`
   background: ${props => (props.disabled ? 'grey' : '#61d6d9')};
@@ -13,22 +17,6 @@ const Button = styled.button`
   width: 50%;
   align-self: center;
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
-`
-
-const FlexContainer = styled.div`
-  display: flex;
-  justify-content: center;
-`
-
-const WalletOptionsContainer = styled.div`
-  background-color: white;
-  border: 1px black;
-  margin-top 78px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 360px;
-  width: 30vw;
 `
 
 const LedgerWallet = styled.img`
@@ -49,23 +37,32 @@ const LedgerWallet = styled.img`
 `
 
 export default () => {
+  const dispatch = useDispatch()
   const { setProgress } = useProgress()
-  const [selectedWallet, setSelectedWallet] = useState('')
+  const [selectedWalletType, setSelectedWalletType] = useState('')
   return (
-    <FlexContainer>
-      <WalletOptionsContainer>
+    <JustifyContentCenter>
+      <OnboardingContainer>
         <LedgerWallet
           onClick={() =>
-            selectedWallet ? setSelectedWallet('') : setSelectedWallet('ledger')
+            selectedWalletType
+              ? setSelectedWalletType('')
+              : setSelectedWalletType(LEDGER)
           }
           src='/ledger.png'
-          clicked={selectedWallet === 'ledger'}
+          clicked={selectedWalletType === LEDGER}
           alt=''
         />
-        <Button disabled={!selectedWallet} onClick={() => setProgress(1)}>
+        <Button
+          disabled={!selectedWalletType}
+          onClick={() => {
+            dispatch(setWalletType(selectedWalletType))
+            setProgress(1)
+          }}
+        >
           Access wallet
         </Button>
-      </WalletOptionsContainer>
-    </FlexContainer>
+      </OnboardingContainer>
+    </JustifyContentCenter>
   )
 }

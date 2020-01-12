@@ -2,11 +2,8 @@ import { useEffect, useCallback, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import BigNumber from 'bignumber.js'
 
-import filecoin from './wallet'
 import {
-  error,
   switchWallet,
-  walletList,
   updateBalance,
   updateProgress,
   fetchedConfirmedMessagesSuccess,
@@ -17,34 +14,12 @@ import {
 export const useFilecoin = () => {
   const dispatch = useDispatch()
 
-  /* fetch details about wallets */
-  useEffect(() => {
-    // TODO: proper loading states
-    const getWallets = async () => {
-      try {
-        const accounts = await filecoin.wallet.getAccounts()
-        const wallets = await Promise.all(
-          accounts.map(async address => {
-            const balance = await filecoin.getBalance(address)
-            return {
-              balance,
-              address
-            }
-          })
-        )
-        dispatch(walletList(wallets))
-      } catch (err) {
-        dispatch(error(err))
-      }
-    }
-    getWallets()
-  }, [dispatch])
-
   /* poll for details about balance of single selected account */
-  const { selectedWalletIdx, wallets } = useSelector(state => {
+  const { selectedWalletIdx, wallets, walletProvider } = useSelector(state => {
     return {
       selectedWalletIdx: state.selectedWalletIdx,
-      wallets: state.wallets
+      wallets: state.wallets,
+      walletProvider: state.walletProvider
     }
   })
 
@@ -54,9 +29,10 @@ export const useFilecoin = () => {
     // avoid race conditions (heisman)
     clearTimeout(timeout.current)
     timeout.current = setTimeout(async () => {
-      if (!wallets[selectedWalletIdx]) return await pollBalance()
+      if (!wallets[selectedWalletIdx] || !walletProvider)
+        return await pollBalance()
 
-      const latestBalance = await filecoin.getBalance(
+      const latestBalance = await walletProvider.getBalance(
         wallets[selectedWalletIdx].address
       )
       if (!latestBalance.isEqualTo(wallets[selectedWalletIdx].balance)) {
@@ -70,14 +46,14 @@ export const useFilecoin = () => {
         clearTimeout(timeout.current)
       }
     }
-  }, [wallets, dispatch, selectedWalletIdx])
+  }, [wallets, dispatch, selectedWalletIdx, walletProvider])
 
   useEffect(pollBalance, [selectedWalletIdx, pollBalance])
   return
 }
 
 export const useWallets = () => {
-  const { wallets, selectedWallet } = useSelector(state => {
+  const { wallets, selectedWallet, walletProvider } = useSelector(state => {
     const selectedWallet =
       state.wallets.length > state.selectedWalletIdx
         ? state.wallets[state.selectedWalletIdx]
@@ -85,7 +61,8 @@ export const useWallets = () => {
 
     return {
       wallets: state.wallets,
-      selectedWallet
+      selectedWallet,
+      walletProvider: state.walletProvider
     }
   })
 
@@ -94,10 +71,10 @@ export const useWallets = () => {
   const selectWallet = useCallback(
     async index => {
       dispatch(switchWallet(index))
-      const balance = await filecoin.getBalance(wallets[index].address)
+      const balance = await walletProvider.getBalance(wallets[index].address)
       dispatch(updateBalance(balance, index))
     },
-    [wallets, dispatch]
+    [wallets, dispatch, walletProvider]
   )
 
   return {
