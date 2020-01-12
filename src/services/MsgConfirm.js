@@ -5,7 +5,7 @@ import { confirmedMessages } from '../store/actions'
 
 export default () => {
   const dispatch = useDispatch()
-  const pendingMsgs = useSelector(({ pendingMsgs }) => pendingMsgs)
+  const pendingMsgs = useSelector(({ messages }) => messages.pending)
 
   useEffect(() => {
     if (pendingMsgs.length > 0) {

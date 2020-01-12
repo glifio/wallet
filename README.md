@@ -1,6 +1,6 @@
 Notes:
 
-REACT_APP_LOTUS_JWT_TOKEN needs to be passed in a `.env` variable (this should be the token of your local node)
+REACT_APP_LOTUS_JWT_TOKEN and REACT_APP_CHAINWATCH_API_SERVER_ENDPOINT need to be passed in a `.env` variable (this should be the token of your local node and the url of your chainwatch db api server)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

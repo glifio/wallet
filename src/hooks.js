@@ -2,7 +2,14 @@ import { useEffect, useCallback, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import BigNumber from 'bignumber.js'
 
-import { switchWallet, updateBalance, updateProgress } from './store/actions'
+import {
+  switchWallet,
+  updateBalance,
+  updateProgress,
+  fetchedConfirmedMessagesSuccess,
+  fetchedConfirmedMessagesFailure,
+  fetchingConfirmedMessages
+} from './store/actions'
 
 export const useFilecoin = () => {
   const dispatch = useDispatch()
@@ -86,11 +93,71 @@ export const useBalance = index =>
       : new BigNumber(0)
   })
 
-export const useTransactions = index =>
+export const useTransactions = index => {
+  const dispatch = useDispatch()
+
+  const {
+    confirmed,
+    links,
+    loading,
+    loadedSuccess,
+    loadedFailurepending,
+    pending,
+    selectedWallet
+  } = useSelector(state => {
+    const selectedWallet =
+      state.wallets.length > state.selectedWalletIdx
+        ? state.wallets[state.selectedWalletIdx]
+        : { balance: new BigNumber('0'), address: '' }
+    return {
+      confirmed: state.messages.confirmed,
+      links: state.messages.links,
+      pending: state.messages.pending,
+      loading: state.messages.loading,
+      loadedSuccess: state.messages.loadedSuccess,
+      loadedFailure: state.messages.loadedFailure,
+      selectedWallet
+    }
+  })
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await fetch(
+          `${
+            process.env.REACT_APP_CHAINWATCH_API_SERVER_ENDPOINT
+          }/api/v0/messages/${selectedWallet.address}?page=${index || 0}`
+        )
+        const { data, links, status } = await result.json()
+        if (status === 'success') {
+          dispatch(fetchedConfirmedMessagesSuccess(data, links))
+        } else if (status === 'failed') {
+          dispatch(fetchedConfirmedMessagesFailure(data))
+        }
+      } catch (err) {
+        dispatch(fetchedConfirmedMessagesFailure(err))
+      }
+    }
+    if (selectedWallet.address) {
+      dispatch(fetchingConfirmedMessages())
+      fetchData()
+    }
+  }, [selectedWallet.address, index, dispatch])
+
+  return {
+    confirmed,
+    links,
+    loading,
+    loadedSuccess,
+    loadedFailurepending,
+    pending
+  }
+}
+
+export const useError = () =>
   useSelector(state => {
     return {
-      pending: state.pendingMsgs,
-      confirmed: state.confirmedMsgs
+      error: state.error
     }
   })
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import * as moment from 'moment'
+import styled from 'styled-components'
 import 'styled-components/macro'
 import {
   TransactionHistory,
@@ -8,62 +8,92 @@ import {
   TransactionActorAddress,
   TransactionStatus,
   TransactionGas,
-  TransactionDate,
   TransactionMessageHash,
   SectionHeader,
   TransactionStatusText,
-  EmptyHistoryText
+  EmptyHistoryText,
+  MessageReviewSubText
 } from '../StyledComponents'
 import { useTransactions, useWallets } from '../../hooks'
 import { shortenAddress } from '../../utils'
+import { useDispatch } from 'react-redux'
+import {
+  fetchingNextPage,
+  fetchedNextPageSuccess,
+  fetchedNextPageFailure
+} from '../../store/actions'
+
+const MethodText = styled(MessageReviewSubText)`
+  font-weight: bold;
+  margin-right: 5px;
+`
+
+const ShowMore = styled(SectionHeader)`
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+`
 
 const TransactionComponent = ({
-  To,
-  From,
-  Value,
-  GasPrice,
-  Cid,
-  Date,
+  to,
+  from,
+  value,
+  gasprice,
+  cid,
   status,
   selectedWalletAddress
 }) => {
-  const sent = From === selectedWalletAddress
+  const sent = from === selectedWalletAddress
   return (
     <Transaction>
       <TransactionAmount>
-        {sent && <span>-</span>}
-        {Value.toString()}
+        <div
+          css={{
+            display: 'flex',
+            'flex-direction': 'row',
+            'align-items': 'center'
+          }}
+        >
+          <MethodText>
+            <strong>{sent ? 'SENT: ' : 'RECEIVED: '}</strong>
+          </MethodText>
+          {value.toString()}
+        </div>
       </TransactionAmount>
       <TransactionStatus>
         <TransactionStatusText>{status}</TransactionStatusText>
       </TransactionStatus>
       <TransactionGas>
         <strong>Gas: </strong>
-        {GasPrice} FIL
+        {gasprice} FIL
       </TransactionGas>
       {sent ? (
         <TransactionActorAddress>
-          <strong>To:</strong> {shortenAddress(To)}
+          <strong>To:</strong> {shortenAddress(to)}
         </TransactionActorAddress>
       ) : (
         <TransactionActorAddress>
-          <strong>From:</strong> {shortenAddress(From)}
+          <strong>From:</strong> {shortenAddress(from)}
         </TransactionActorAddress>
       )}
-      <TransactionDate>
-        {moment(Date).format('MMMM Do YYYY, h:mm a')}
-      </TransactionDate>
       <TransactionMessageHash>
-        <strong>Message hash:</strong> {shortenAddress(Cid)}
+        <strong>Message hash:</strong> {shortenAddress(cid)}
       </TransactionMessageHash>
     </Transaction>
   )
 }
 
 const MessageCreator = () => {
-  const { pending, confirmed } = useTransactions()
+  const {
+    pending,
+    links,
+    confirmed,
+    loadedSuccess,
+    loading
+  } = useTransactions()
   const { selectedWallet } = useWallets()
-
+  const dispatch = useDispatch()
   return (
     <React.Fragment>
       <TransactionHistory>
@@ -86,7 +116,7 @@ const MessageCreator = () => {
           confirmed.map(tx => {
             return (
               <TransactionComponent
-                key={tx.Cid}
+                key={tx.cid}
                 {...tx}
                 status='Confirmed'
                 selectedWalletAddress={selectedWallet.address}
@@ -94,9 +124,38 @@ const MessageCreator = () => {
             )
           })}
 
-        {confirmed.length === 0 && pending.length === 0 && (
+        {links.next && (
+          <ShowMore
+            role='button'
+            rel='noopener noreferrer'
+            onClick={async () => {
+              dispatch(fetchingNextPage())
+              try {
+                const result = await (
+                  await fetch(
+                    `${process.env.REACT_APP_CHAINWATCH_API_SERVER_ENDPOINT}/api/v0/${links.next}`
+                  )
+                ).json()
+                if (result.status === 'success') {
+                  dispatch(fetchedNextPageSuccess(result.data, result.links))
+                } else if (result.status === 'failed') {
+                  dispatch(fetchedNextPageFailure(result.data))
+                }
+              } catch (err) {
+                dispatch(fetchedNextPageFailure(err))
+              }
+            }}
+            css={{ marginBottom: '10px', marginTop: '30px' }}
+          >
+            More
+          </ShowMore>
+        )}
+
+        {loadedSuccess && pending.length === 0 && confirmed.length === 0 && (
           <EmptyHistoryText>No transactions yet.</EmptyHistoryText>
         )}
+
+        {loading && <EmptyHistoryText>Loading transactions.</EmptyHistoryText>}
       </TransactionHistory>
     </React.Fragment>
   )
