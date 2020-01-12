@@ -2,17 +2,19 @@ import updateArrayItem from './utils/updateArrayItem'
 
 export const initialState = {
   wallets: [],
-  selectedWalletIdx: 5,
+  selectedWalletIdx: 0,
   error: null,
   pendingMsgs: [],
   confirmedMsgs: [],
-  progress: 3
+  progress: 1,
+  walletType: 'LEDGER',
+  walletConnected: false,
+  walletProvider: null
 }
 
 export const walletList = (state, { wallets }) => ({
   ...state,
-  wallets,
-  selectedWalletIdx: 5
+  wallets
 })
 
 export const switchWallet = (state, { index }) => ({
@@ -44,6 +46,17 @@ export const confirmedMessages = (state, { confirmedMsgs, pendingMsgs }) => {
 export const updateProgress = (state, { progress }) => ({
   ...state,
   progress
+})
+
+export const setWalletType = (state, { walletType }) => ({
+  ...state,
+  walletType
+})
+
+export const createWalletProvider = (state, { provider }) => ({
+  ...state,
+  walletConnected: true,
+  walletProvider: provider
 })
 
 export const error = (state, error) => ({
