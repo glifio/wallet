@@ -14,7 +14,7 @@ export const initialState = {
     links: {},
     paginating: false
   },
-  progress: 3,
+  progress: 0,
   walletType: 'LEDGER',
   walletConnected: false,
   walletProvider: null
