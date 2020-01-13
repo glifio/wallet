@@ -57,14 +57,20 @@ export const updateBalance = (state, { balance, walletIdx }) => ({
 
 export const confirmMessage = (state, { message }) => ({
   ...state,
-  pendingMsgs: [...state.pendingMsgs, message]
+  messages: {
+    ...state.messages,
+    pending: [...state.messages.pending, message]
+  }
 })
 
 export const confirmedMessages = (state, { confirmedMsgs, pendingMsgs }) => {
   return {
     ...state,
-    pendingMsgs,
-    confirmedMsgs: [...confirmedMsgs, ...state.confirmedMsgs]
+    messages: {
+      ...state.messages,
+      pending: pendingMsgs,
+      confirmed: [...confirmedMsgs, ...state.messages.confirmed]
+    }
   }
 }
 
