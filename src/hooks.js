@@ -36,7 +36,7 @@ export const useFilecoin = () => {
         wallets[selectedWalletIdx].address
       )
       if (!latestBalance.isEqualTo(wallets[selectedWalletIdx].balance)) {
-        dispatch(updateBalance(latestBalance))
+        dispatch(updateBalance(latestBalance, selectedWalletIdx))
       }
       await pollBalance()
     }, 3000)

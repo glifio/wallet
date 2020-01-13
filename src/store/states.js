@@ -1,7 +1,16 @@
+import Filecoin, {
+  LocalNodeProvider
+} from '@openworklabs/filecoin-wallet-provider'
 import updateArrayItem from './utils/updateArrayItem'
+import BigNumber from 'bignumber.js'
 
 export const initialState = {
-  wallets: [],
+  wallets: [
+    {
+      address: 't1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
+      balance: new BigNumber('0')
+    }
+  ],
   selectedWalletIdx: 0,
   error: null,
   messages: {
@@ -14,10 +23,18 @@ export const initialState = {
     links: {},
     paginating: false
   },
-  progress: 0,
+  progress: 2,
   walletType: 'LEDGER',
   walletConnected: false,
-  walletProvider: null
+  walletProvider: new Filecoin(
+    new LocalNodeProvider({
+      apiAddress: 'https://lotus-dev.temporal.cloud/rpc/v0',
+      token: process.env.REACT_APP_LOTUS_JWT_TOKEN
+    }),
+    {
+      token: process.env.REACT_APP_LOTUS_JWT_TOKEN
+    }
+  )
 }
 
 export const walletList = (state, { wallets }) => ({
@@ -30,11 +47,11 @@ export const switchWallet = (state, { index }) => ({
   selectedWalletIdx: index
 })
 
-export const updateBalance = (state, { balance, selectedWalletIdx }) => ({
+export const updateBalance = (state, { balance, walletIdx }) => ({
   ...state,
-  wallets: updateArrayItem(state.wallets, selectedWalletIdx, {
+  wallets: updateArrayItem(state.wallets, walletIdx, {
     balance,
-    address: state.wallets[selectedWalletIdx].address
+    address: state.wallets[walletIdx].address
   })
 })
 
