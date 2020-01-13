@@ -1,6 +1,6 @@
 import {
   CONFIRM_MESSAGE,
-  CONFIRMED_MESSAGES,
+  CONFIRMED_MESSAGE,
   ERROR,
   SWITCH_WALLET,
   UPDATE_BALANCE,
@@ -46,11 +46,10 @@ export const confirmMessage = message => ({
   }
 })
 
-export const confirmedMessages = (confirmedMsgs, pendingMsgs) => ({
-  type: CONFIRMED_MESSAGES,
+export const confirmedMessage = msgCid => ({
+  type: CONFIRMED_MESSAGE,
   payload: {
-    confirmedMsgs,
-    pendingMsgs
+    msgCid
   }
 })
 

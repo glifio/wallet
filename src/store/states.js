@@ -24,7 +24,7 @@ export const initialState = {
     paginating: false
   },
   progress: 2,
-  walletType: 'LEDGER',
+  walletType: 'import',
   walletConnected: false,
   walletProvider: new Filecoin(
     new LocalNodeProvider({
@@ -63,13 +63,22 @@ export const confirmMessage = (state, { message }) => ({
   }
 })
 
-export const confirmedMessages = (state, { confirmedMsgs, pendingMsgs }) => {
+export const confirmedMessage = (state, { msgCid }) => {
+  let newPendingMsgs = [...state.messages.pending]
+  let confirmedMsg
+
+  for (let i = 0; i < state.messages.pending.length; i++) {
+    if (state.messages.pending[i].cid === msgCid) {
+      confirmedMsg = newPendingMsgs.splice(i, 1)
+    }
+  }
+
   return {
     ...state,
     messages: {
       ...state.messages,
-      pending: pendingMsgs,
-      confirmed: [...confirmedMsgs, ...state.messages.confirmed]
+      pending: newPendingMsgs,
+      confirmed: [...confirmedMsg, ...state.messages.confirmed]
     }
   }
 }

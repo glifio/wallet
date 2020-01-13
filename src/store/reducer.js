@@ -6,7 +6,7 @@ import {
   ERROR,
   UPDATE_BALANCE,
   CONFIRM_MESSAGE,
-  CONFIRMED_MESSAGES,
+  CONFIRMED_MESSAGE,
   UPDATE_PROGRESS,
   CLEAR_ERROR,
   FETCHING_CONFIRMED_MESSAGES,
@@ -21,7 +21,7 @@ import {
 
 import {
   confirmMessage,
-  confirmedMessages,
+  confirmedMessage,
   createWalletProvider,
   initialState,
   setWalletType,
@@ -53,10 +53,10 @@ export default (state = initialState, action) => {
     case CONFIRM_MESSAGE: {
       return confirmMessage(cloneDeep(state), action.payload)
     }
-    case CONFIRMED_MESSAGES:
+    case CONFIRMED_MESSAGE:
       // we confirm plural messages to handle cases where multiple messages
       // get confirmed in the same block (tough to handle this singularly without state bugs)
-      return confirmedMessages(cloneDeep(state), action.payload)
+      return confirmedMessage(cloneDeep(state), action.payload)
     case UPDATE_PROGRESS:
       return updateProgress(cloneDeep(state), action.payload)
     case FETCHING_CONFIRMED_MESSAGES:
