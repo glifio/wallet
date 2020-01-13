@@ -59,13 +59,13 @@ export const confirmMessage = (state, { message }) => ({
   ...state,
   messages: {
     ...state.messages,
-    pending: [...state.messages.pending, message]
+    pending: [message, ...state.messages.pending]
   }
 })
 
 export const confirmedMessage = (state, { msgCid }) => {
   let newPendingMsgs = [...state.messages.pending]
-  let confirmedMsg
+  let confirmedMsg = []
 
   for (let i = 0; i < state.messages.pending.length; i++) {
     if (state.messages.pending[i].cid === msgCid) {
