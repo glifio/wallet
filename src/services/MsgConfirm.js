@@ -1,40 +1,51 @@
-import { useEffect } from 'react'
+import { useEffect, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Lotus } from '@openworklabs/lotus-block-explorer'
-import { confirmedMessages } from '../store/actions'
+import { confirmedMessage } from '../store/actions'
 
 export default () => {
   const dispatch = useDispatch()
-  const pendingMsgs = useSelector(({ messages }) => messages.pending)
+  const { pendingMsgs, walletProvider } = useSelector(state => ({
+    confirmedMsgs: state.messages.confirmed,
+    pendingMsgs: state.messages.pending,
+    walletProvider: state.walletProvider
+  }))
+  const listenForMsgConfirmation = useCallback(
+    msgCid => {
+      let listenerSubscribed = true
+      const confirm = async () => {
+        if (listenerSubscribed) {
+          try {
+            const { Receipt } = await walletProvider.jsonRpcEngine.request(
+              'StateWaitMsg',
+              {
+                '/': msgCid
+              }
+            )
+            if (Receipt.ExitCode === 0) {
+              dispatch(confirmedMessage(msgCid))
+            }
+          } catch (err) {
+            // TODO: get a proper error message from StateWaitMsg, so we know not to fetch again if a bad error occured
+            await confirm(msgCid)
+          }
+        }
+      }
+      const unsubscribe = () => (listenerSubscribed = false)
+      confirm()
+      return unsubscribe
+    },
+    [dispatch, walletProvider]
+  )
 
   useEffect(() => {
     if (pendingMsgs.length > 0) {
-      const lotus = new Lotus({
-        jsonrpcEndpoint: 'https://lotus-dev.temporal.cloud/rpc/v0'
-      })
-
-      const subscribeCb = chainState => {
-        const confirmedMsgs = []
-        const newPendingMsgs = pendingMsgs.filter(msg => {
-          confirmedMsgs.push(msg)
-          return false
-        })
-
-        dispatch(confirmedMessages(confirmedMsgs, newPendingMsgs))
-
-        if (newPendingMsgs.length === 0) {
-          lotus.store.unsubscribe(subscribeCb)
-          lotus.stopListening()
-        }
-      }
-
-      const timeout = setTimeout(subscribeCb, 3000)
-
-      return () => {
-        clearTimeout(timeout)
-      }
+      const unlistenersFuncs = pendingMsgs.map(msg =>
+        listenForMsgConfirmation(msg.cid)
+      )
+      // cleanup effects
+      return () => unlistenersFuncs.forEach(unlistener => unlistener())
     }
-  }, [pendingMsgs, dispatch])
+  }, [listenForMsgConfirmation, dispatch, pendingMsgs])
 
   return null
 }

@@ -21,6 +21,8 @@ import {
   MessageReview,
   MessageReviewSubText
 } from '../StyledComponents'
+import { toLowerCaseMsgFields } from '../../utils'
+import { LEDGER } from '../../constants'
 
 // TODO: better validation
 const isValidForm = (toAddress, value, balance, errors) => {
@@ -38,7 +40,10 @@ const MsgCreator = () => {
   const [value, setValue] = useState('')
   const [confirmStage, setConfirmStage] = useState('')
   const [errors, setErrors] = useState({ value: false, toAddress: false })
-  const walletProvider = useSelector(state => state.walletProvider)
+  const { walletProvider, walletType } = useSelector(state => ({
+    walletProvider: state.walletProvider,
+    walletType: state.walletType
+  }))
 
   const handleValueChange = e => {
     // clear errors for better UX
@@ -76,7 +81,7 @@ const MsgCreator = () => {
       return setConfirmStage('reviewMessage')
     }
 
-    if (confirmStage === 'reviewMessage') {
+    if (confirmStage === 'reviewMessage' && walletType === LEDGER) {
       return setConfirmStage('reviewOnDevice')
     }
 
@@ -90,12 +95,10 @@ const MsgCreator = () => {
     try {
       await message.generateNonce()
       const signedMessage = await walletProvider.wallet.sign(message.encode())
-      await walletProvider.sendMessage(signedMessage)
+      const msgCid = await walletProvider.sendMessage(signedMessage)
       const messageObj = message.encode()
-      messageObj.Cid =
-        'bafy2bzacebbzy3olddxqclyqjnuzr5mjlom2eojlponzda22wwnl4me4paqy' +
-        Math.floor(Math.random() * 10)
-      dispatch(confirmMessage(messageObj))
+      messageObj.cid = msgCid['/']
+      dispatch(confirmMessage(toLowerCaseMsgFields(messageObj)))
       setToAddress('')
       setValue('')
       setConfirmStage('')

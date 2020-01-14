@@ -104,7 +104,7 @@ const MessageCreator = () => {
           pending.map(tx => {
             return (
               <TransactionComponent
-                key={tx.Cid}
+                key={tx.cid}
                 {...tx}
                 status='Pending'
                 selectedWalletAddress={selectedWallet.address}
