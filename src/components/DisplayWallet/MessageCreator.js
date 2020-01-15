@@ -24,6 +24,7 @@ import {
 import { toLowerCaseMsgFields } from '../../utils'
 import { LEDGER } from '../../constants'
 import connectLedger from './connectLedger'
+import computeSig from './computeSig'
 import LedgerState from './LedgerState'
 import {
   reducer,
@@ -107,9 +108,11 @@ const MsgCreator = () => {
       }
       if (provider) {
         dispatch(clearError())
-        const signature = await provider.wallet.sign(
-          message.from,
-          message.encode()
+        const signature = await computeSig(
+          provider,
+          selectedWallet,
+          message,
+          walletType
         )
         const messageObj = message.encode()
 

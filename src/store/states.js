@@ -1,14 +1,8 @@
 import updateArrayItem from './utils/updateArrayItem'
-import BigNumber from 'bignumber.js'
 import { setMsgInCache, removeMsgFromCache } from './cache'
 
 export const initialState = {
-  wallets: [
-    {
-      address: 't1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
-      balance: new BigNumber('0')
-    }
-  ],
+  wallets: [],
   selectedWalletIdx: 0,
   error: null,
   messages: {

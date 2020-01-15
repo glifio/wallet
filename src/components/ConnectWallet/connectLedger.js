@@ -76,11 +76,12 @@ const fetchWallets = async (provider, dispatchRdx) => {
   try {
     const filAddresses = await provider.wallet.getAccounts(0, 1)
     const wallets = await Promise.all(
-      filAddresses.map(async address => {
+      filAddresses.map(async (address, i) => {
         const balance = await provider.getBalance(address)
         return {
           balance,
-          address
+          address,
+          path: [44, 461, 5, 0, i]
         }
       })
     )
