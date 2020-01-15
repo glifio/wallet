@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import 'styled-components/macro'
-import { useSelector } from 'react-redux'
 
 import { useProgress } from '../../hooks'
 import { LEDGER_STATE_PROPTYPES } from './ledgerStateManagement'

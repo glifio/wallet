@@ -24,6 +24,7 @@ import {
 import { toLowerCaseMsgFields } from '../../utils'
 import { LEDGER } from '../../constants'
 import connectLedger from './connectLedger'
+import LedgerState from './LedgerState'
 import {
   reducer,
   initialLedgerState
@@ -108,9 +109,9 @@ const MsgCreator = () => {
         dispatch(clearError())
         const signature = await provider.wallet.sign(
           message.from,
-          message.serialize()
+          message.encode()
         )
-        const messageObj = message.toObj()
+        const messageObj = message.encode()
 
         const msgCid = await provider.sendMessage(messageObj, signature)
         messageObj.cid = msgCid['/']
@@ -118,14 +119,11 @@ const MsgCreator = () => {
         setToAddress('')
         setValue('')
         setConfirmStage('')
-      } else {
-        dispatch(error(new Error('Error establishing a valid walletProvider')))
       }
     } catch (err) {
       dispatch(error(err))
     }
   }
-
   return (
     <React.Fragment>
       <MessageCreator>
@@ -188,9 +186,7 @@ const MsgCreator = () => {
             )}
 
             {confirmStage === 'reviewOnDevice' && (
-              <MessageReview css={{ marginBottom: '78px', marginTop: '45px' }}>
-                Confirm the message on your Ledger.
-              </MessageReview>
+              <LedgerState ledgerState={ledgerState} />
             )}
 
             <SendButton

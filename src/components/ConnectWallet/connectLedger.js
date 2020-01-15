@@ -24,6 +24,7 @@ export const establishConnectionWithDevice = async (
   dispatchLocal,
   dispatchRdx
 ) => {
+  dispatchLocal({ type: USER_INITIATED_IMPORT })
   try {
     const transport = await createTransport()
     dispatchLocal({ type: LEDGER_CONNECTED })
@@ -94,8 +95,6 @@ const fetchWallets = async (provider, dispatchRdx) => {
 
 // returns true if successful connection, false if not
 export default async (dispatchLocal, dispatchRdx) => {
-  dispatchLocal({ type: USER_INITIATED_IMPORT })
-
   const transport = await establishConnectionWithDevice(
     dispatchLocal,
     dispatchRdx
