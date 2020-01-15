@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 export const initialLedgerState = {
   userVerifiedLedgerConnected: false,
   userVerifiedLedgerUnlocked: false,
@@ -147,3 +149,21 @@ export const reducer = (state, action) => {
       return state
   }
 }
+
+export const LEDGER_STATE_PROPTYPES = PropTypes.shape({
+  userVerifiedLedgerConnected: PropTypes.bool.isRequired,
+  userVerifiedLedgerUnlocked: PropTypes.bool.isRequired,
+  userVerifiedFilecoinAppOpen: PropTypes.bool.isRequired,
+  userInitiatedImport: PropTypes.bool.isRequired,
+  userImportFailure: PropTypes.bool.isRequired,
+  connecting: PropTypes.bool.isRequired,
+  connectedFailure: PropTypes.bool.isRequired,
+  connectedSuccess: PropTypes.bool.isRequired,
+  ledgerLocked: PropTypes.bool.isRequired,
+  ledgerUnlocked: PropTypes.bool.isRequired,
+  establishingConnectionWFilecoinApp: PropTypes.bool.isRequired,
+  filecoinAppOpen: PropTypes.bool.isRequired,
+  filecoinAppNotOpen: PropTypes.bool.isRequired,
+  transport: PropTypes.object,
+  provider: PropTypes.object
+})
