@@ -1,6 +1,3 @@
-import Filecoin, {
-  LocalNodeProvider
-} from '@openworklabs/filecoin-wallet-provider'
 import updateArrayItem from './utils/updateArrayItem'
 import BigNumber from 'bignumber.js'
 import { setMsgInCache, removeMsgFromCache } from './cache'
@@ -24,18 +21,10 @@ export const initialState = {
     links: {},
     paginating: false
   },
-  progress: 2,
-  walletType: 'import',
+  progress: 0,
+  walletType: null,
   walletConnected: false,
-  walletProvider: new Filecoin(
-    new LocalNodeProvider({
-      apiAddress: 'https://lotus-dev.temporal.cloud/rpc/v0',
-      token: process.env.REACT_APP_LOTUS_JWT_TOKEN
-    }),
-    {
-      token: process.env.REACT_APP_LOTUS_JWT_TOKEN
-    }
-  )
+  walletProvider: null
 }
 
 export const walletList = (state, { wallets }) => ({
