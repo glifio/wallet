@@ -12,7 +12,8 @@ import {
   SectionHeader,
   TransactionStatusText,
   EmptyHistoryText,
-  MessageReviewSubText
+  MessageReviewSubText,
+  UnderlineOnHover
 } from '../StyledComponents'
 import { useTransactions, useWallets } from '../../hooks'
 import { shortenAddress } from '../../utils'
@@ -26,13 +27,6 @@ import {
 const MethodText = styled(MessageReviewSubText)`
   font-weight: bold;
   margin-right: 5px;
-`
-
-const ShowMore = styled(SectionHeader)`
-  &:hover {
-    text-decoration: underline;
-    cursor: pointer;
-  }
 `
 
 const TransactionComponent = ({
@@ -125,7 +119,7 @@ const MessageCreator = () => {
           })}
 
         {links.next && (
-          <ShowMore
+          <UnderlineOnHover
             role='button'
             rel='noopener noreferrer'
             onClick={async () => {
@@ -148,7 +142,7 @@ const MessageCreator = () => {
             css={{ marginBottom: '10px', marginTop: '30px' }}
           >
             More
-          </ShowMore>
+          </UnderlineOnHover>
         )}
 
         {loadedSuccess && pending.length === 0 && confirmed.length === 0 && (

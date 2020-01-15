@@ -1,4 +1,5 @@
 import React, { useState, useReducer } from 'react'
+import 'styled-components/macro'
 import { Message } from '@openworklabs/filecoin-wallet-provider'
 import BigNumber from 'bignumber.js'
 import { useDispatch, useSelector } from 'react-redux'
@@ -12,14 +13,11 @@ import {
   MessageCreator,
   SectionHeader,
   MessageForm,
-  ToInput,
   InputLabel,
-  AvailableBalance,
   AvailableBalanceLabel,
-  AmountInput,
   SendButton,
   MessageReview,
-  MessageReviewSubText
+  UnderlineOnHover
 } from '../StyledComponents'
 import { toLowerCaseMsgFields } from '../../utils'
 import { LEDGER } from '../../constants'
@@ -85,10 +83,6 @@ const MsgCreator = () => {
   const handleSubmit = async e => {
     e.preventDefault()
 
-    if (!confirmStage) {
-      return setConfirmStage('reviewMessage')
-    }
-
     if (confirmStage === 'reviewMessage' && walletType === LEDGER) {
       setConfirmStage('reviewOnDevice')
     }
@@ -140,96 +134,132 @@ const MsgCreator = () => {
         <hr />
         <SectionHeader>Send Filecoin</SectionHeader>
         <Form onSubmit={handleSubmit}>
-          <MessageForm>
-            {!confirmStage && (
-              <React.Fragment>
-                <ToInput>
-                  <Form.Group controlId='toAddress'>
-                    <InputLabel>To</InputLabel>
-                    <InputGroup>
-                      <Form.Control
-                        type='text'
-                        aria-describedby='toAddressPrepend'
-                        name='toAddress'
-                        value={toAddress}
-                        onChange={e => setToAddress(e.target.value)}
-                      />
-                    </InputGroup>
-                  </Form.Group>
-                </ToInput>
+          {!confirmStage && (
+            <MessageForm>
+              <div>
+                <Form.Group controlId='toAddress'>
+                  <InputLabel>To</InputLabel>
+                  <InputGroup>
+                    <Form.Control
+                      type='text'
+                      aria-describedby='toAddressPrepend'
+                      name='toAddress'
+                      value={toAddress}
+                      onChange={e => setToAddress(e.target.value)}
+                    />
+                  </InputGroup>
+                </Form.Group>
 
-                <AvailableBalance>
-                  <AvailableBalanceLabel>Available</AvailableBalanceLabel>
-                  {balance.toString()}
-                </AvailableBalance>
-
-                <AmountInput>
-                  <InputLabel>Amount</InputLabel>
-                  <Form.Group controlId='value'>
-                    <InputGroup>
-                      <Form.Control
-                        placeholder='0'
-                        type='text'
-                        aria-describedby='valuePrepend'
-                        name='value'
-                        value={value.toString()}
-                        onChange={handleValueChange}
-                        isInvalid={errors.value}
-                      />
-                      <Form.Control.Feedback type='invalid'>
-                        {errors.value}
-                      </Form.Control.Feedback>
-                    </InputGroup>
-                  </Form.Group>
-                </AmountInput>
-              </React.Fragment>
-            )}
-
-            {confirmStage === 'reviewMessage' && (
-              <MessageReview>
-                You're sending <strong>{value.toString()} FIL</strong> to{' '}
-                <strong>{toAddress}</strong>
-                <MessageReviewSubText>
-                  All transactions are final.
-                </MessageReviewSubText>
-              </MessageReview>
-            )}
-
-            {confirmStage === 'reviewOnDevice' && (
-              <>
-                <MessageReview
-                  css={{ marginBottom: '78px', marginTop: '45px' }}
+                <div
+                  css={{
+                    display: 'flex',
+                    'flex-direction': 'row',
+                    'justify-content': 'space-between'
+                  }}
                 >
-                  {ledgerState.userInitiatedImport &&
-                  ledgerState.userImportFailure
-                    ? `Is your Ledger plugged in, unlocked, and Filecoin app open?`
-                    : `Sign the message on your Ledger.`}
-                </MessageReview>
-                {ledgerState.userInitiatedImport &&
-                  ledgerState.userImportFailure && (
-                    <SendButton
-                      onClick={() => {
-                        setConfirmStage('')
-                        dispatchLocal({ type: RESET_STATE })
-                      }}
-                    >
-                      Start over
-                    </SendButton>
-                  )}
-              </>
-            )}
+                  <div css={{ 'flex-grow': '1', 'max-width': '50%' }}>
+                    <AvailableBalanceLabel>Available</AvailableBalanceLabel>
+                    {balance.toString()}
+                  </div>
 
-            {confirmStage !== 'reviewOnDevice' && (
+                  <div css={{ 'flex-grow': '1', 'max-width': '50%' }}>
+                    <InputLabel>Amount</InputLabel>
+                    <Form.Group controlId='value'>
+                      <InputGroup>
+                        <Form.Control
+                          placeholder='0'
+                          type='text'
+                          aria-describedby='valuePrepend'
+                          name='value'
+                          value={value.toString()}
+                          onChange={handleValueChange}
+                          isInvalid={errors.value}
+                        />
+                        <Form.Control.Feedback type='invalid'>
+                          {errors.value}
+                        </Form.Control.Feedback>
+                      </InputGroup>
+                    </Form.Group>
+                  </div>
+                </div>
+              </div>
+
               <SendButton
                 disabled={!isValidForm(toAddress, value, balance, errors)}
-                type='submit'
+                onClick={() => setConfirmStage('reviewMessage')}
               >
-                {!confirmStage && <span>Send</span>}
-
-                {confirmStage === 'reviewMessage' && <span>Continue</span>}
+                Send
               </SendButton>
-            )}
-          </MessageForm>
+            </MessageForm>
+          )}
+          {confirmStage === 'reviewMessage' && (
+            <MessageForm>
+              {ledgerState.userInitiatedImport &&
+              ledgerState.userImportFailure ? (
+                <MessageReview>
+                  Is your Ledger plugged in, unlocked, and Filecoin app open?
+                </MessageReview>
+              ) : (
+                <>
+                  <MessageReview>
+                    You're sending <strong>{value.toString()} FIL</strong> to{' '}
+                    <strong>{toAddress}</strong>
+                    {walletType === LEDGER && (
+                      <UnderlineOnHover
+                        css={{ 'font-size': '13px', 'margin-top': '10px' }}
+                        role='button'
+                        rel='noopener noreferrer'
+                        onClick={async () => {
+                          try {
+                            const provider = await connectLedger(
+                              dispatchLocal,
+                              dispatch
+                            )
+                            if (provider) {
+                              dispatch(clearError())
+                              await provider.wallet.showAddressAndPubKey(
+                                selectedWallet.path
+                              )
+                            } else {
+                              throw new Error('Error connecting with Ledger')
+                            }
+                          } catch (err) {
+                            dispatch(error(err))
+                          }
+                        }}
+                      >
+                        Display my address and path on my Ledger.
+                      </UnderlineOnHover>
+                    )}
+                  </MessageReview>
+                  <SendButton type='submit'>Send</SendButton>
+                </>
+              )}
+            </MessageForm>
+          )}
+
+          {confirmStage === 'reviewOnDevice' && (
+            <MessageForm>
+              <MessageReview>
+                {ledgerState.userInitiatedImport &&
+                ledgerState.userImportFailure
+                  ? `Is your Ledger plugged in, unlocked, and Filecoin app open?`
+                  : `Sign the message on your Ledger.`}
+              </MessageReview>
+
+              {ledgerState.userInitiatedImport &&
+                ledgerState.userImportFailure && (
+                  <SendButton
+                    onClick={() => {
+                      setConfirmStage('')
+                      dispatchLocal({ type: RESET_STATE })
+                    }}
+                  >
+                    Start over
+                  </SendButton>
+                )}
+            </MessageForm>
+          )}
         </Form>
       </MessageCreator>
     </React.Fragment>
