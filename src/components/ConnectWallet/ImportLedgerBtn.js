@@ -20,14 +20,14 @@ const ImportLedgerBtn = ({ ledgerState, dispatchRdx, dispatchLocal }) => {
           ledgerState.userVerifiedFilecoinAppOpen
         )
       }
-      onClick={async () =>
-        await connectLedger(
+      onClick={async () => {
+        const successfulConnection = await connectLedger(
           walletProvider,
-          setProgress,
           dispatchLocal,
           dispatchRdx
         )
-      }
+        if (successfulConnection) setProgress(2)
+      }}
     >
       {ledgerState.userImportFailure ? 'Try again' : 'Import Ledger Wallet'}
     </Button>

@@ -20,19 +20,14 @@ import {
 } from './ledgerStateManagement'
 import createTransport from './transport'
 
-export default async (
-  walletProvider,
-  setProgress,
+export const establishConnectionWithDevice = async (
   dispatchLocal,
   dispatchRdx
 ) => {
-  dispatchLocal({ type: USER_INITIATED_IMPORT })
-  let transport
   try {
-    if (!transport) {
-      transport = await createTransport()
-    }
+    const transport = await createTransport()
     dispatchLocal({ type: LEDGER_CONNECTED })
+    return transport
   } catch (err) {
     if (
       err.message &&
@@ -41,10 +36,17 @@ export default async (
       dispatchLocal({ type: LEDGER_NOT_FOUND })
       // if we want to display banner instead:
       dispatchRdx(error(err))
-      return
     }
+    return false
   }
+}
 
+export const establishConnectionWithFilecoinApp = async (
+  walletProvider,
+  transport,
+  dispatchLocal,
+  dispatchRdx
+) => {
   dispatchLocal({ type: ESTABLISHING_CONNECTION_W_FILECOIN_APP })
   let provider = walletProvider
   try {
@@ -58,18 +60,22 @@ export default async (
     if (response.device_locked) {
       dispatchLocal({ type: LEDGER_LOCKED })
       dispatchRdx(error(new Error('Ledger device locked')))
-      return
+      return false
     }
 
     dispatchLocal({ type: LEDGER_UNLOCKED })
     dispatchLocal({ type: FILECOIN_APP_OPEN })
     dispatchRdx(createWalletProvider(provider))
+
+    return provider
   } catch (err) {
     dispatchLocal({ type: FILECOIN_APP_NOT_OPEN })
     dispatchRdx(error(err))
-    return
+    return false
   }
+}
 
+const fetchWallets = async (provider, dispatchRdx) => {
   try {
     const filAddresses = await provider.wallet.getAccounts(0, 1)
     const wallets = await Promise.all(
@@ -83,8 +89,28 @@ export default async (
     )
     dispatchRdx(walletList(wallets))
     dispatchRdx(clearError())
-    setProgress(2)
+    return true
   } catch (err) {
     dispatchRdx(error(err))
+    return false
   }
+}
+
+// returns true if successful connection, false if not
+export default async (walletProvider, dispatchLocal, dispatchRdx) => {
+  dispatchLocal({ type: USER_INITIATED_IMPORT })
+
+  const transport = await establishConnectionWithDevice(
+    dispatchLocal,
+    dispatchRdx
+  )
+  if (!transport) return false
+  const provider = await establishConnectionWithFilecoinApp(
+    walletProvider,
+    transport,
+    dispatchLocal,
+    dispatchRdx
+  )
+  if (!provider) return false
+  return fetchWallets(provider, dispatchRdx)
 }
