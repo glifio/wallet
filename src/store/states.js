@@ -55,13 +55,15 @@ export const updateBalance = (state, { balance, walletIdx }) => ({
   })
 })
 
-export const confirmMessage = (state, { message }) => ({
-  ...state,
-  messages: {
-    ...state.messages,
-    pending: [message, ...state.messages.pending]
+export const confirmMessage = (state, { message }) => {
+  return {
+    ...state,
+    messages: {
+      ...state.messages,
+      pending: [message, ...state.messages.pending]
+    }
   }
-})
+}
 
 export const confirmedMessage = (state, { msgCid }) => {
   let newPendingMsgs = [...state.messages.pending]
@@ -169,4 +171,14 @@ export const error = (state, error) => ({
 export const clearError = state => ({
   ...state,
   error: null
+})
+
+export const populateRedux = (state, { confirmedMsgs, pendingMsgs }) => ({
+  ...state,
+  messages: {
+    ...state.messages,
+    // just in case there's some crazy race condition where msgs were loaded from server before localstorage
+    confirmed: [...confirmedMsgs, ...state.messages.confirmed],
+    pendingg: pendingMsgs
+  }
 })

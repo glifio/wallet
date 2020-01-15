@@ -8,8 +8,10 @@ import {
   updateProgress,
   fetchedConfirmedMessagesSuccess,
   fetchedConfirmedMessagesFailure,
-  fetchingConfirmedMessages
+  fetchingConfirmedMessages,
+  populateRedux
 } from './store/actions'
+import { getMsgsFromCache } from './store/cache'
 
 export const useFilecoin = () => {
   const dispatch = useDispatch()
@@ -171,4 +173,19 @@ export const useProgress = () => {
   )
   const progress = useSelector(state => state.progress)
   return { progress, setProgress }
+}
+
+export const useCachedMessages = () => {
+  const dispatch = useDispatch()
+  const selectedWalletAddress = useSelector(state => {
+    return (
+      state.wallets.length > state.selectedWalletIdx &&
+      state.wallets[state.selectedWalletIdx].address
+    )
+  })
+
+  useEffect(() => {
+    const messages = getMsgsFromCache(selectedWalletAddress)
+    dispatch(populateRedux(messages))
+  }, [dispatch, selectedWalletAddress])
 }

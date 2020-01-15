@@ -14,7 +14,8 @@ import {
   FETCHING_NEXT_PAGE_FAILURE,
   WALLET_LIST,
   SET_WALLET_TYPE,
-  CREATE_WALLET_PROVIDER
+  CREATE_WALLET_PROVIDER,
+  POPULATE_REDUX
 } from './actionTypes'
 
 export const walletList = wallets => ({
@@ -118,3 +119,11 @@ export const clearError = () => {
     type: CLEAR_ERROR
   }
 }
+
+export const populateRedux = ({ confirmedMsgs, pendingMsgs }) => ({
+  type: POPULATE_REDUX,
+  payload: {
+    confirmedMsgs,
+    pendingMsgs
+  }
+})
