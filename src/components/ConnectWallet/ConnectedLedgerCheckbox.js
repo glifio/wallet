@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import {
   EducationalCheckboxItem,
@@ -8,7 +9,8 @@ import {
 } from './styledComponents'
 import {
   USER_VERIFIED_LEDGER_CONNECTED,
-  USER_UNVERIFIED_LEDGER_CONNECTED
+  USER_UNVERIFIED_LEDGER_CONNECTED,
+  LEDGER_STATE_PROPTYPES
 } from './ledgerStateManagement'
 
 export const determineDotColorForLedgerConnection = ledgerState => {
@@ -42,5 +44,10 @@ const ConnectedLedgerCheckbox = ({ ledgerState, dispatchLocal }) => (
     </InputLabel>
   </EducationalCheckboxItem>
 )
+
+ConnectedLedgerCheckbox.propTypes = {
+  ledgerState: LEDGER_STATE_PROPTYPES,
+  dispatchLocal: PropTypes.func.isRequired
+}
 
 export default ConnectedLedgerCheckbox

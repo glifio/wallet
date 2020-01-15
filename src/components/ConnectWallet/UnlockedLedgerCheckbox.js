@@ -1,8 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import {
   USER_UNVERIFIED_LEDGER_UNLOCKED,
-  USER_VERIFIED_LEDGER_UNLOCKED
+  USER_VERIFIED_LEDGER_UNLOCKED,
+  LEDGER_STATE_PROPTYPES
 } from './ledgerStateManagement'
 import {
   EducationalCheckboxItem,
@@ -46,5 +48,10 @@ const UnlockedLedgerCheckbox = ({ ledgerState, dispatchLocal }) => (
     </InputLabel>
   </EducationalCheckboxItem>
 )
+
+UnlockedLedgerCheckbox.propTypes = {
+  ledgerState: LEDGER_STATE_PROPTYPES,
+  dispatchLocal: PropTypes.func
+}
 
 export default UnlockedLedgerCheckbox

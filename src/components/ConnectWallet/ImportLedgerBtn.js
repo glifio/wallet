@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import 'styled-components/macro'
 import TransportWebHID from '@ledgerhq/hw-transport-webhid'
 import Filecoin, {
@@ -20,7 +21,8 @@ import {
   FILECOIN_APP_OPEN,
   LEDGER_LOCKED,
   LEDGER_UNLOCKED,
-  LEDGER_CONNECTED
+  LEDGER_CONNECTED,
+  LEDGER_STATE_PROPTYPES
 } from './ledgerStateManagement'
 import { Button } from './styledComponents'
 import { useSelector } from 'react-redux'
@@ -103,6 +105,12 @@ const ImportLedgerBtn = ({ ledgerState, dispatchRdx, dispatchLocal }) => {
       {ledgerState.userImportFailure ? 'Try again' : 'Import Ledger Wallet'}
     </Button>
   )
+}
+
+ImportLedgerBtn.propTypes = {
+  ledgerState: LEDGER_STATE_PROPTYPES,
+  dispatchLocal: PropTypes.func.isRequired,
+  dispatchRdx: PropTypes.func.isRequired
 }
 
 export default ImportLedgerBtn

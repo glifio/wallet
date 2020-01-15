@@ -1,8 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import {
   USER_VERIFIED_FILECOIN_APP_OPEN,
-  USER_UNVERIFIED_FILECOIN_APP_OPEN
+  USER_UNVERIFIED_FILECOIN_APP_OPEN,
+  LEDGER_STATE_PROPTYPES
 } from './ledgerStateManagement'
 import {
   EducationalCheckboxItem,
@@ -52,5 +54,10 @@ const FilecoinAppOpenCheckbox = ({ ledgerState, dispatchLocal }) => (
     </InputLabel>
   </EducationalCheckboxItem>
 )
+
+FilecoinAppOpenCheckbox.propTypes = {
+  ledgerState: LEDGER_STATE_PROPTYPES,
+  dispatchLocal: PropTypes.func.isRequired
+}
 
 export default FilecoinAppOpenCheckbox
