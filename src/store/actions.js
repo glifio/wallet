@@ -120,10 +120,9 @@ export const clearError = () => {
   }
 }
 
-export const populateRedux = ({ confirmedMsgs, pendingMsgs }) => ({
+export const populateRedux = pendingMsgs => ({
   type: POPULATE_REDUX,
   payload: {
-    confirmedMsgs,
     pendingMsgs
   }
 })

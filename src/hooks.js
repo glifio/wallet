@@ -185,7 +185,7 @@ export const useCachedMessages = () => {
   })
 
   useEffect(() => {
-    const messages = getMsgsFromCache(selectedWalletAddress)
-    dispatch(populateRedux(messages))
+    const pendingMessages = getMsgsFromCache(selectedWalletAddress)
+    dispatch(populateRedux(pendingMessages))
   }, [dispatch, selectedWalletAddress])
 }

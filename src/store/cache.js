@@ -8,8 +8,8 @@ const storage = window.localStorage
 
   {
     messages: {
-      address1: {
-        msgCid1: {
+      address1: [
+        {
           ...msgFields,
           confirmed: false
         },
@@ -17,7 +17,7 @@ const storage = window.localStorage
           ...msgFields,
           confirmed: true
         }
-      }
+      ]
     }
   }
 
@@ -33,24 +33,32 @@ const storage = window.localStorage
   Confirmed messages are only those that have been confirmed in the network, but not captured in our database yet
 */
 export const getMsgsFromCache = address => {
-  const messages = storage.getItem('messages') || {}
-  const confirmedMsgs = []
-  const pendingMsgs = []
-  const messagesByAddress = messages[address] || {}
-
-  for (let message in messagesByAddress) {
-    const { confirmed } = message.confirmed
-    delete message.confirmed
-    if (confirmed) confirmedMsgs.push(message)
-    else pendingMsgs.push(message)
-  }
-
-  return {
-    confirmedMsgs,
-    pendingMsgs
-  }
+  const messages = JSON.parse(storage.getItem('messages')) || {}
+  return messages[address] || []
 }
 
-export const setInCache = message => {
-  // const currentUserMsgs = storage.getItem(message.from) || {}
+export const setMsgInCache = message => {
+  const messages = JSON.parse(storage.getItem('messages')) || {}
+  const messagesByAddress = messages[message.from] || []
+  const newMessagesByAddress = [message, ...messagesByAddress]
+  const updatedMessagesInCache = {
+    ...messages,
+    [message.from]: newMessagesByAddress
+  }
+
+  storage.setItem('messages', JSON.stringify(updatedMessagesInCache))
+}
+
+export const removeMsgFromCache = (address, msgCid) => {
+  const messages = JSON.parse(storage.getItem('messages')) || {}
+  const messagesByAddress = messages[address] || []
+  const newMessagesByAddress = messagesByAddress.filter(
+    msg => msg.cid !== msgCid
+  )
+  const updatedMessagesInCache = {
+    ...messages,
+    [address]: newMessagesByAddress
+  }
+
+  storage.setItem('messages', JSON.stringify(updatedMessagesInCache))
 }

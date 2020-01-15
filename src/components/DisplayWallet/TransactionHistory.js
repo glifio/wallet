@@ -155,7 +155,9 @@ const MessageCreator = () => {
           <EmptyHistoryText>No transactions yet.</EmptyHistoryText>
         )}
 
-        {loading && <EmptyHistoryText>Loading transactions.</EmptyHistoryText>}
+        {loading && pending.length === 0 && (
+          <EmptyHistoryText>Loading transactions.</EmptyHistoryText>
+        )}
       </TransactionHistory>
     </React.Fragment>
   )
