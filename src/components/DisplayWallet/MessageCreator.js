@@ -90,7 +90,7 @@ const MsgCreator = () => {
     }
 
     if (confirmStage === 'reviewMessage' && walletType === LEDGER) {
-      return setConfirmStage('reviewOnDevice')
+      setConfirmStage('reviewOnDevice')
     }
 
     const message = new Message({
@@ -115,7 +115,6 @@ const MsgCreator = () => {
           walletType
         )
         const messageObj = message.encode()
-
         const msgCid = await provider.sendMessage(messageObj, signature)
         messageObj.cid = msgCid['/']
         dispatch(confirmMessage(toLowerCaseMsgFields(messageObj)))
@@ -124,6 +123,9 @@ const MsgCreator = () => {
         setConfirmStage('')
       }
     } catch (err) {
+      setToAddress('')
+      setValue('')
+      setConfirmStage('')
       dispatch(error(err))
     }
   }
@@ -189,19 +191,25 @@ const MsgCreator = () => {
             )}
 
             {confirmStage === 'reviewOnDevice' && (
-              <LedgerState ledgerState={ledgerState} />
+              <MessageReview css={{ marginBottom: '78px', marginTop: '45px' }}>
+                {ledgerState.userInitiatedImport &&
+                ledgerState.userImportFailure
+                  ? `There was an issue connecting with your Ledger device. Please make sure
+                     it is unlocked with the Filecoin Application open.`
+                  : `Confirm the message on your Ledger.`}
+              </MessageReview>
             )}
 
-            <SendButton
-              disabled={!isValidForm(toAddress, value, balance, errors)}
-              type='submit'
-            >
-              {!confirmStage && <span>Send</span>}
+            {confirmStage !== 'reviewOnDevice' && (
+              <SendButton
+                disabled={!isValidForm(toAddress, value, balance, errors)}
+                type='submit'
+              >
+                {!confirmStage && <span>Send</span>}
 
-              {confirmStage === 'reviewMessage' && <span>Continue</span>}
-
-              {confirmStage === 'reviewOnDevice' && <span>Mock Confirm</span>}
-            </SendButton>
+                {confirmStage === 'reviewMessage' && <span>Continue</span>}
+              </SendButton>
+            )}
           </MessageForm>
         </Form>
       </MessageCreator>
