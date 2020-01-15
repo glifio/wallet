@@ -94,6 +94,7 @@ export const FilecoinLogo = styled.img`
 `
 
 export const MessageCreator = styled.div`
+  height: 235px;
   grid-area: message-creator;
   background-color: white;
 `

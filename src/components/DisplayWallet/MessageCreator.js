@@ -202,8 +202,7 @@ const MsgCreator = () => {
                 >
                   {ledgerState.userInitiatedImport &&
                   ledgerState.userImportFailure
-                    ? `There was an issue connecting with your Ledger device. Please make sure
-                      it is unlocked with the Filecoin Application open.`
+                    ? `Is your Ledger plugged in, unlocked, and Filecoin app open?`
                     : `Sign the message on your Ledger.`}
                 </MessageReview>
                 {ledgerState.userInitiatedImport &&
