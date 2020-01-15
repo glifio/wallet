@@ -16,14 +16,14 @@ import {
   FETCHING_NEXT_PAGE_SUCCESS,
   FETCHING_NEXT_PAGE_FAILURE,
   SET_WALLET_TYPE,
-  CREATE_WALLET_PROVIDER
+  CREATE_WALLET_PROVIDER,
+  POPULATE_REDUX
 } from './actionTypes'
 
 import {
   confirmMessage,
   confirmedMessage,
   createWalletProvider,
-  initialState,
   setWalletType,
   switchWallet,
   walletList,
@@ -36,10 +36,11 @@ import {
   fetchedConfirmedMessagesFailure,
   fetchingNextPage,
   fetchedNextPageSuccess,
-  fetchedNextPageFailure
+  fetchedNextPageFailure,
+  populateRedux
 } from './states'
 
-export default (state = initialState, action) => {
+export default (state, action) => {
   switch (action.type) {
     case WALLET_LIST: {
       return walletList(cloneDeep(state), action.payload)
@@ -75,12 +76,12 @@ export default (state = initialState, action) => {
       return setWalletType(cloneDeep(state), action.payload)
     case CREATE_WALLET_PROVIDER:
       return createWalletProvider(cloneDeep(state), action.payload)
-    case ERROR: {
+    case ERROR:
       return error(cloneDeep(state), action.error)
-    }
-    case CLEAR_ERROR: {
+    case CLEAR_ERROR:
       return clearError(cloneDeep(state))
-    }
+    case POPULATE_REDUX:
+      return populateRedux(cloneDeep(state), action.payload)
     default:
       return state
   }

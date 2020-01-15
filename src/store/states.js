@@ -3,6 +3,7 @@ import Filecoin, {
 } from '@openworklabs/filecoin-wallet-provider'
 import updateArrayItem from './utils/updateArrayItem'
 import BigNumber from 'bignumber.js'
+import { setMsgInCache, removeMsgFromCache } from './cache'
 
 export const initialState = {
   wallets: [
@@ -55,15 +56,20 @@ export const updateBalance = (state, { balance, walletIdx }) => ({
   })
 })
 
-export const confirmMessage = (state, { message }) => ({
-  ...state,
-  messages: {
-    ...state.messages,
-    pending: [message, ...state.messages.pending]
+export const confirmMessage = (state, { message }) => {
+  setMsgInCache(message)
+  return {
+    ...state,
+    messages: {
+      ...state.messages,
+      pending: [message, ...state.messages.pending]
+    }
   }
-})
+}
 
 export const confirmedMessage = (state, { msgCid }) => {
+  const { address } = state.wallets[state.selectedWalletIdx]
+  removeMsgFromCache(address, msgCid)
   let newPendingMsgs = [...state.messages.pending]
   let confirmedMsg = []
 
@@ -108,7 +114,7 @@ export const fetchedConfirmedMessagesSuccess = (
     loading: false,
     loadedSuccess: true,
     loadedFailure: false,
-    confirmed: messages,
+    confirmed: [...state.messages.confirmed, ...messages],
     links
   }
 })
@@ -169,4 +175,13 @@ export const error = (state, error) => ({
 export const clearError = state => ({
   ...state,
   error: null
+})
+
+export const populateRedux = (state, { pendingMsgs }) => ({
+  ...state,
+  messages: {
+    ...state.messages,
+    // just in case there's some crazy race condition where msgs were loaded from server before localstorage
+    pending: pendingMsgs
+  }
 })
