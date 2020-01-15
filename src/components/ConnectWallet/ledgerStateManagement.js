@@ -14,7 +14,6 @@ export const initialLedgerState = {
   establishingConnectionWFilecoinApp: false,
   filecoinAppOpen: false,
   filecoinAppNotOpen: false,
-  transport: null,
   provider: null
 }
 
@@ -94,8 +93,7 @@ export const reducer = (state, action) => {
         ...state,
         connecting: false,
         connectedFailure: false,
-        connectedSuccess: true,
-        transport: action.transport
+        connectedSuccess: true
       }
     case ESTABLISHING_CONNECTION_W_FILECOIN_APP:
       return {
@@ -142,8 +140,7 @@ export const reducer = (state, action) => {
       }
     case RESET_STATE:
       return {
-        ...initialLedgerState,
-        transport: state.transport
+        ...initialLedgerState
       }
     default:
       return state
@@ -164,6 +161,5 @@ export const LEDGER_STATE_PROPTYPES = PropTypes.shape({
   establishingConnectionWFilecoinApp: PropTypes.bool.isRequired,
   filecoinAppOpen: PropTypes.bool.isRequired,
   filecoinAppNotOpen: PropTypes.bool.isRequired,
-  transport: PropTypes.object,
   provider: PropTypes.object
 })
