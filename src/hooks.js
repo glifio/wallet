@@ -1,5 +1,6 @@
 import { useEffect, useCallback, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import BigNumber from 'bignumber.js'
 
 import {
@@ -12,6 +13,7 @@ import {
   populateRedux
 } from './store/actions'
 import { getMsgsFromCache } from './store/cache'
+import { isValidBrowser } from './utils'
 
 export const useFilecoin = () => {
   const dispatch = useDispatch()
@@ -188,4 +190,12 @@ export const useCachedMessages = () => {
     const pendingMessages = getMsgsFromCache(selectedWalletAddress)
     dispatch(populateRedux(pendingMessages))
   }, [dispatch, selectedWalletAddress])
+}
+
+export const useBrowserChecker = () => {
+  const history = useHistory()
+  useEffect(() => {
+    const onValidBrowser = isValidBrowser()
+    if (!onValidBrowser) history.replace('/error/bad-browser')
+  }, [history])
 }

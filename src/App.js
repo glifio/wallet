@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react'
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import 'styled-components/macro'
 
 import { useProgress, useFilecoin, useCachedMessages } from './hooks'
@@ -7,19 +8,31 @@ import ConnectWallet from './components/ConnectWallet'
 import AccessWallet from './components/AccessWallet'
 import Header from './components/Header'
 import Error from './components/Error'
+import BadBrowser from './components/Error/BadBrowser'
+import BrowserChecker from './services/BrowserChecker'
 
 function App() {
-  const { progress } = useProgress()
   useCachedMessages()
+  const { progress } = useProgress()
   useFilecoin()
   return (
-    <Fragment>
+    <Router>
+      <BrowserChecker />
       <Error />
       <Header />
-      {progress === 0 && <AccessWallet />}
-      {progress === 1 && <ConnectWallet />}
-      {progress === 2 && <DisplayWallet />}
-    </Fragment>
+      <Switch>
+        <Route path='/error/bad-browser'>
+          <BadBrowser />
+        </Route>
+        <Route>
+          <>
+            {progress === 0 && <AccessWallet />}
+            {progress === 1 && <ConnectWallet />}
+            {progress === 2 && <DisplayWallet />}
+          </>
+        </Route>
+      </Switch>
+    </Router>
   )
 }
 
