@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import 'styled-components/macro'
-import TransportWebHID from '@ledgerhq/hw-transport-webhid'
+import { useSelector } from 'react-redux'
 import Filecoin, {
   LedgerProvider
 } from '@openworklabs/filecoin-wallet-provider'
@@ -25,7 +25,7 @@ import {
   LEDGER_STATE_PROPTYPES
 } from './ledgerStateManagement'
 import { Button } from './styledComponents'
-import { useSelector } from 'react-redux'
+import createTransport from './transport'
 
 const ImportLedgerBtn = ({ ledgerState, dispatchRdx, dispatchLocal }) => {
   const { setProgress } = useProgress()
@@ -44,7 +44,7 @@ const ImportLedgerBtn = ({ ledgerState, dispatchRdx, dispatchLocal }) => {
         let transport = ledgerState.transport
         try {
           if (!transport) {
-            transport = await TransportWebHID.create()
+            transport = await createTransport()
           }
           dispatchLocal({ type: LEDGER_CONNECTED, transport })
         } catch (err) {
