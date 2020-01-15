@@ -25,10 +25,10 @@ import { toLowerCaseMsgFields } from '../../utils'
 import { LEDGER } from '../../constants'
 import connectLedger from './connectLedger'
 import computeSig from './computeSig'
-import LedgerState from './LedgerState'
 import {
   reducer,
-  initialLedgerState
+  initialLedgerState,
+  RESET_STATE
 } from '../ConnectWallet/ledgerStateManagement'
 
 // TODO: better validation
@@ -123,9 +123,14 @@ const MsgCreator = () => {
         setConfirmStage('')
       }
     } catch (err) {
-      setToAddress('')
-      setValue('')
-      setConfirmStage('')
+      if (
+        err.message &&
+        err.message.toLowerCase().includes('transaction rejected')
+      ) {
+        setToAddress('')
+        setValue('')
+        setConfirmStage('')
+      }
       dispatch(error(err))
     }
   }
@@ -191,13 +196,28 @@ const MsgCreator = () => {
             )}
 
             {confirmStage === 'reviewOnDevice' && (
-              <MessageReview css={{ marginBottom: '78px', marginTop: '45px' }}>
+              <>
+                <MessageReview
+                  css={{ marginBottom: '78px', marginTop: '45px' }}
+                >
+                  {ledgerState.userInitiatedImport &&
+                  ledgerState.userImportFailure
+                    ? `There was an issue connecting with your Ledger device. Please make sure
+                      it is unlocked with the Filecoin Application open.`
+                    : `Sign the message on your Ledger.`}
+                </MessageReview>
                 {ledgerState.userInitiatedImport &&
-                ledgerState.userImportFailure
-                  ? `There was an issue connecting with your Ledger device. Please make sure
-                     it is unlocked with the Filecoin Application open.`
-                  : `Confirm the message on your Ledger.`}
-              </MessageReview>
+                  ledgerState.userImportFailure && (
+                    <SendButton
+                      onClick={() => {
+                        setConfirmStage('')
+                        dispatchLocal({ type: RESET_STATE })
+                      }}
+                    >
+                      Start over
+                    </SendButton>
+                  )}
+              </>
             )}
 
             {confirmStage !== 'reviewOnDevice' && (
