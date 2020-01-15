@@ -42,19 +42,15 @@ export const establishConnectionWithDevice = async (
 }
 
 export const establishConnectionWithFilecoinApp = async (
-  walletProvider,
   transport,
   dispatchLocal,
   dispatchRdx
 ) => {
   dispatchLocal({ type: ESTABLISHING_CONNECTION_W_FILECOIN_APP })
-  let provider = walletProvider
   try {
-    if (!provider) {
-      provider = new Filecoin(new LedgerProvider(transport), {
-        token: process.env.REACT_APP_LOTUS_JWT_TOKEN
-      })
-    }
+    const provider = new Filecoin(new LedgerProvider(transport), {
+      token: process.env.REACT_APP_LOTUS_JWT_TOKEN
+    })
     const response = await provider.wallet.getVersion()
 
     if (response.device_locked) {
@@ -97,7 +93,7 @@ const fetchWallets = async (provider, dispatchRdx) => {
 }
 
 // returns true if successful connection, false if not
-export default async (walletProvider, dispatchLocal, dispatchRdx) => {
+export default async (dispatchLocal, dispatchRdx) => {
   dispatchLocal({ type: USER_INITIATED_IMPORT })
 
   const transport = await establishConnectionWithDevice(
@@ -106,7 +102,6 @@ export default async (walletProvider, dispatchLocal, dispatchRdx) => {
   )
   if (!transport) return false
   const provider = await establishConnectionWithFilecoinApp(
-    walletProvider,
     transport,
     dispatchLocal,
     dispatchRdx

@@ -10,7 +10,6 @@ import connectLedger from './connectLedger'
 
 const ImportLedgerBtn = ({ ledgerState, dispatchRdx, dispatchLocal }) => {
   const { setProgress } = useProgress()
-  const walletProvider = useSelector(state => state.walletProvider)
   return (
     <Button
       disabled={
@@ -22,7 +21,6 @@ const ImportLedgerBtn = ({ ledgerState, dispatchRdx, dispatchLocal }) => {
       }
       onClick={async () => {
         const successfulConnection = await connectLedger(
-          walletProvider,
           dispatchLocal,
           dispatchRdx
         )

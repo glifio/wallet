@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useReducer } from 'react'
 import { Message } from '@openworklabs/filecoin-wallet-provider'
 import BigNumber from 'bignumber.js'
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,7 +7,7 @@ import InputGroup from 'react-bootstrap/InputGroup'
 import 'styled-components/macro'
 
 import { useWallets, useBalance } from '../../hooks'
-import { confirmMessage, error } from '../../store/actions'
+import { confirmMessage, error, clearError } from '../../store/actions'
 import {
   MessageCreator,
   SectionHeader,
@@ -23,6 +23,11 @@ import {
 } from '../StyledComponents'
 import { toLowerCaseMsgFields } from '../../utils'
 import { LEDGER } from '../../constants'
+import connectLedger from './connectLedger'
+import {
+  reducer,
+  initialLedgerState
+} from '../ConnectWallet/ledgerStateManagement'
 
 // TODO: better validation
 const isValidForm = (toAddress, value, balance, errors) => {
@@ -44,6 +49,7 @@ const MsgCreator = () => {
     walletProvider: state.walletProvider,
     walletType: state.walletType
   }))
+  const [ledgerState, dispatchLocal] = useReducer(reducer, initialLedgerState)
 
   const handleValueChange = e => {
     // clear errors for better UX
@@ -94,14 +100,27 @@ const MsgCreator = () => {
 
     try {
       await message.generateNonce()
-      const signedMessage = await walletProvider.wallet.sign(message.encode())
-      const msgCid = await walletProvider.sendMessage(signedMessage)
-      const messageObj = message.encode()
-      messageObj.cid = msgCid['/']
-      dispatch(confirmMessage(toLowerCaseMsgFields(messageObj)))
-      setToAddress('')
-      setValue('')
-      setConfirmStage('')
+      let provider = walletProvider
+      if (walletType === LEDGER) {
+        provider = await connectLedger(dispatchLocal, dispatch)
+      }
+      if (provider) {
+        dispatch(clearError())
+        const signature = await provider.wallet.sign(
+          message.from,
+          message.serialize()
+        )
+        const messageObj = message.toObj()
+
+        const msgCid = await provider.sendMessage(messageObj, signature)
+        messageObj.cid = msgCid['/']
+        dispatch(confirmMessage(toLowerCaseMsgFields(messageObj)))
+        setToAddress('')
+        setValue('')
+        setConfirmStage('')
+      } else {
+        dispatch(error(new Error('Error establishing a valid walletProvider')))
+      }
     } catch (err) {
       dispatch(error(err))
     }
