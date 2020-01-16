@@ -21,13 +21,12 @@ import {
 } from '../StyledComponents'
 import { toLowerCaseMsgFields } from '../../utils'
 import { LEDGER } from '../../constants'
-import connectLedger from './connectLedger'
-import computeSig from './computeSig'
-import {
+import connectLedger, {
   reducer,
   initialLedgerState,
   RESET_STATE
-} from '../ConnectWallet/ledgerStateManagement'
+} from '../../utils/ledger'
+import computeSig from './computeSig'
 
 // TODO: better validation
 const isValidForm = (toAddress, value, balance, errors) => {

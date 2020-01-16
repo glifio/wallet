@@ -2,11 +2,7 @@ import React, { useReducer, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { OnboardingContainer } from '../StyledComponents'
-import {
-  reducer,
-  initialLedgerState,
-  RESET_STATE
-} from './ledgerStateManagement'
+import { reducer, initialLedgerState, RESET_STATE } from '../../utils/ledger'
 import { ConnectWalletContainer, CheckboxContainer } from './styledComponents'
 
 import ConnectedLedgerCheckbox from './ConnectedLedgerCheckbox'

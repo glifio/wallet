@@ -5,7 +5,7 @@ import {
   USER_UNVERIFIED_LEDGER_UNLOCKED,
   USER_VERIFIED_LEDGER_UNLOCKED,
   LEDGER_STATE_PROPTYPES
-} from './ledgerStateManagement'
+} from '../../utils/ledger'
 import {
   EducationalCheckboxItem,
   Checkbox,

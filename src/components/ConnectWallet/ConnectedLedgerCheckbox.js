@@ -11,7 +11,7 @@ import {
   USER_VERIFIED_LEDGER_CONNECTED,
   USER_UNVERIFIED_LEDGER_CONNECTED,
   LEDGER_STATE_PROPTYPES
-} from './ledgerStateManagement'
+} from '../../utils/ledger'
 
 export const determineDotColorForLedgerConnection = ledgerState => {
   if (ledgerState.connecting) return 'blue'

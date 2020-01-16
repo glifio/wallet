@@ -3,9 +3,8 @@ import PropTypes from 'prop-types'
 import 'styled-components/macro'
 
 import { useProgress } from '../../hooks'
-import { LEDGER_STATE_PROPTYPES } from './ledgerStateManagement'
 import { Button } from './styledComponents'
-import connectLedger from './connectLedger'
+import connectLedger, { LEDGER_STATE_PROPTYPES } from '../../utils/ledger'
 
 const ImportLedgerBtn = ({ ledgerState, dispatchRdx, dispatchLocal }) => {
   const { setProgress } = useProgress()

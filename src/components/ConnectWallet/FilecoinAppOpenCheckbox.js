@@ -5,7 +5,7 @@ import {
   USER_VERIFIED_FILECOIN_APP_OPEN,
   USER_UNVERIFIED_FILECOIN_APP_OPEN,
   LEDGER_STATE_PROPTYPES
-} from './ledgerStateManagement'
+} from '../../utils/ledger'
 import {
   EducationalCheckboxItem,
   Checkbox,
