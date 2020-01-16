@@ -45,7 +45,8 @@ const MsgCreator = () => {
   const [value, setValue] = useState('')
   const [confirmStage, setConfirmStage] = useState('')
   const [errors, setErrors] = useState({ value: false, toAddress: false })
-  const { walletProvider, walletType } = useSelector(state => ({
+  const { errorFromRdx, walletProvider, walletType } = useSelector(state => ({
+    errorFromRdx: state.error,
     walletProvider: state.walletProvider,
     walletType: state.walletType
   }))
@@ -108,7 +109,7 @@ const MsgCreator = () => {
           message,
           walletType
         )
-        const messageObj = message.encode()
+        const messageObj = message.toObj()
         const msgCid = await provider.sendMessage(messageObj, signature)
         messageObj.cid = msgCid['/']
         dispatch(confirmMessage(toLowerCaseMsgFields(messageObj)))
@@ -248,14 +249,14 @@ const MsgCreator = () => {
               </MessageReview>
 
               {ledgerState.userInitiatedImport &&
-                ledgerState.userImportFailure && (
+                (ledgerState.userImportFailure || errorFromRdx) && (
                   <SendButton
                     onClick={() => {
                       setConfirmStage('')
                       dispatchLocal({ type: RESET_STATE })
                     }}
                   >
-                    Start over
+                    Try again
                   </SendButton>
                 )}
             </MessageForm>
