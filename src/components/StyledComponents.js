@@ -63,6 +63,10 @@ export const AccountDetail = styled.div`
 
 export const AccountAddress = styled.div`
   word-wrap: break-word;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 `
 
 export const AccountBalance = styled.span`
@@ -247,4 +251,13 @@ export const OnboardingContainer = styled.div`
 export const JustifyContentCenter = styled.div`
   display: flex;
   justify-content: center;
+`
+
+export const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: ${props => props.flexDirection};
+`
+
+export const JustifyContentContainer = styled(FlexContainer)`
+  justify-content: ${props => props.justifyContent};
 `
