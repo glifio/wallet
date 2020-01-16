@@ -56,7 +56,13 @@ export const establishConnectionWithFilecoinApp = async (
 
     if (response.device_locked) {
       dispatchLocal({ type: LEDGER_LOCKED })
-      dispatchRdx(error(new Error('Ledger device locked')))
+      dispatchRdx(
+        error(
+          new Error(
+            'Ledger device locked or busy. Please try to unplug and replug device.'
+          )
+        )
+      )
       return false
     }
 
