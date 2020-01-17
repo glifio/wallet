@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import styled from 'styled-components'
@@ -7,6 +7,7 @@ import Tab from 'react-bootstrap/Tab'
 
 import { MessageCreator } from '../StyledComponents'
 import { switchNetwork } from '../../store/actions'
+import AccountSelector from './AccountSelector'
 
 const AccountAndNetworkPanel = styled.div`
   grid-area: balance-banner;
@@ -15,11 +16,11 @@ const AccountAndNetworkPanel = styled.div`
 `
 
 export default () => {
-  const { network, walletProvider, walletType } = useSelector(state => ({
-    network: state.network,
-    walletProvider: state.walletProvider,
-    walletType: state.walletType
+  const { network } = useSelector(state => ({
+    network: state.network
   }))
+
+  const [loadingAccounts, setLoadingAccounts] = useState(false)
 
   const dispatch = useDispatch()
 
@@ -32,16 +33,24 @@ export default () => {
           onSelect={k => dispatch(switchNetwork(k))}
         >
           <Tab eventKey='f' title='Mainnet'>
-            <div>yo</div>
+            <AccountSelector
+              loadingAccounts={loadingAccounts}
+              setLoadingAccounts={setLoadingAccounts}
+              network='f'
+              tabOpen={network === 'f'}
+            />
           </Tab>
           <Tab eventKey='t' title='Testnet'>
-            <div>yo</div>
+            <AccountSelector
+              loadingAccounts={loadingAccounts}
+              setLoadingAccounts={setLoadingAccounts}
+              network='t'
+              tabOpen={network === 't'}
+            />
           </Tab>
         </Tabs>
       </AccountAndNetworkPanel>
-      <MessageCreator>
-        <div>yo</div>
-      </MessageCreator>
+      <MessageCreator></MessageCreator>
     </>
   )
 }

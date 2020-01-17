@@ -6,12 +6,9 @@ import {
   USER_UNVERIFIED_FILECOIN_APP_OPEN,
   LEDGER_STATE_PROPTYPES
 } from '../../utils/ledger'
-import {
-  EducationalCheckboxItem,
-  Checkbox,
-  ColoredDot,
-  InputLabel
-} from './styledComponents'
+
+import { EducationalCheckboxItem, ColoredDot } from './styledComponents'
+import { Checkbox, CheckboxInputLabel } from '../StyledComponents'
 
 export const determineDotColorForFilecoinAppOpen = ledgerState => {
   if (ledgerState.filecoinAppNotOpen) return 'red'
@@ -43,7 +40,7 @@ const FilecoinAppOpenCheckbox = ({ ledgerState, dispatchLocal }) => (
     ) : (
       <ColoredDot color={determineDotColorForFilecoinAppOpen(ledgerState)} />
     )}
-    <InputLabel
+    <CheckboxInputLabel
       htmlFor='filecoin_app_open'
       disabled={
         !ledgerState.userVerifiedLedgerConnected ||
@@ -51,7 +48,7 @@ const FilecoinAppOpenCheckbox = ({ ledgerState, dispatchLocal }) => (
       }
     >
       The Filecoin App is open on my Ledger.
-    </InputLabel>
+    </CheckboxInputLabel>
   </EducationalCheckboxItem>
 )
 

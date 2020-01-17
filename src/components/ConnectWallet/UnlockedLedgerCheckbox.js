@@ -6,12 +6,8 @@ import {
   USER_VERIFIED_LEDGER_UNLOCKED,
   LEDGER_STATE_PROPTYPES
 } from '../../utils/ledger'
-import {
-  EducationalCheckboxItem,
-  Checkbox,
-  ColoredDot,
-  InputLabel
-} from './styledComponents'
+import { EducationalCheckboxItem, ColoredDot } from './styledComponents'
+import { Checkbox, CheckboxInputLabel } from '../StyledComponents'
 
 export const determineDotColorForLedgerUnlocked = ledgerState => {
   if (ledgerState.ledgerLocked) return 'red'
@@ -40,12 +36,12 @@ const UnlockedLedgerCheckbox = ({ ledgerState, dispatchLocal }) => (
     ) : (
       <ColoredDot color={determineDotColorForLedgerUnlocked(ledgerState)} />
     )}
-    <InputLabel
+    <CheckboxInputLabel
       htmlFor='ledger_unlocked'
       disabled={!ledgerState.userVerifiedLedgerConnected}
     >
       My Ledger device is unlocked.
-    </InputLabel>
+    </CheckboxInputLabel>
   </EducationalCheckboxItem>
 )
 

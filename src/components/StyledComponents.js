@@ -238,6 +238,15 @@ export const UnderlineOnHover = styled(SectionHeader)`
   }
 `
 
+export const CheckboxInputLabel = styled.label`
+  color: ${props => (props.disabled ? '#bababa' : 'black')};
+  font-size: 15px;
+`
+
+export const Checkbox = styled.input`
+  margin: 5px 10px 5px 5px;
+`
+
 /* FLEXBOX STYLES */
 export const JustifyContentCenter = styled.div`
   display: flex;
