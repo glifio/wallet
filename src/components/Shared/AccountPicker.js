@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react'
+import { useHistory, useLocation } from 'react-router-dom'
 
 import { useWallets } from '../../hooks'
 import {
@@ -11,12 +12,14 @@ import {
   JustifyContentContainer
 } from '../StyledComponents'
 
-import CopyToClipboardIcon from './ClipboardIcon'
+import CopyToClipboardIcon from '../DisplayWallet/ClipboardIcon'
 import { copyToClipboard } from '../../utils'
 
 export default () => {
   const { selectedWallet } = useWallets()
   const [copiedToClipboard, setCopiedToClipboard] = useState(false)
+  const history = useHistory()
+  const { pathname } = useLocation()
 
   const onClick = useCallback(() => {
     setCopiedToClipboard(true)
@@ -42,7 +45,18 @@ export default () => {
         </JustifyContentContainer>
         <AccountBalance>{selectedWallet.balance.toString()} FIL</AccountBalance>
       </AccountDetail>
-      <SwitchAccountButton>Switch account</SwitchAccountButton>
+      <SwitchAccountButton
+        onClick={() => {
+          if (pathname === '/settings') history.push('/')
+          else history.push('/settings')
+        }}
+      >
+        {pathname === '/settings' ? (
+          <span>Back</span>
+        ) : (
+          <span>&#x2699;account/network</span>
+        )}
+      </SwitchAccountButton>
     </AccountHeader>
   )
 }
