@@ -69,6 +69,22 @@ const AccountSelector = ({
     latestDerivationPathIdx
   ])
 
+  const goBack = useCallback(() => {
+    if (walletsInRdx.length === ACCOUNT_BATCH_SIZE) return
+    const newWalletsInRdx = [...walletsInRdx].slice(
+      0,
+      walletsInRdx.length - ACCOUNT_BATCH_SIZE
+    )
+    const newAccountsInView = newWalletsInRdx
+      .slice(
+        newWalletsInRdx.length - ACCOUNT_BATCH_SIZE,
+        newWalletsInRdx.length
+      )
+      .map(wallet => wallet.address)
+    dispatch(walletList(newWalletsInRdx))
+    setAccounts(newAccountsInView)
+  }, [walletsInRdx, dispatch])
+
   useEffect(() => {
     if (tabOpen && !loadingAccounts && accounts.length < ACCOUNT_BATCH_SIZE)
       fetchAccounts()
@@ -100,6 +116,12 @@ const AccountSelector = ({
               </div>
             )
           })}
+      <button
+        disabled={walletsInRdx.length === ACCOUNT_BATCH_SIZE}
+        onClick={goBack}
+      >
+        Back
+      </button>
       <button
         onClick={async () => {
           await fetchAccounts()
