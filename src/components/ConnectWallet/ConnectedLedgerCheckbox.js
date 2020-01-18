@@ -1,17 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import {
-  EducationalCheckboxItem,
-  Checkbox,
-  ColoredDot,
-  InputLabel
-} from './styledComponents'
+import { EducationalCheckboxItem, ColoredDot } from './styledComponents'
+import { Checkbox, CheckboxInputLabel } from '../StyledComponents'
 import {
   USER_VERIFIED_LEDGER_CONNECTED,
   USER_UNVERIFIED_LEDGER_CONNECTED,
   LEDGER_STATE_PROPTYPES
-} from './ledgerStateManagement'
+} from '../../utils/ledger'
 
 export const determineDotColorForLedgerConnection = ledgerState => {
   if (ledgerState.connecting) return 'blue'
@@ -39,9 +35,9 @@ const ConnectedLedgerCheckbox = ({ ledgerState, dispatchLocal }) => (
     ) : (
       <ColoredDot color={determineDotColorForLedgerConnection(ledgerState)} />
     )}
-    <InputLabel htmlFor='ledger_connected'>
+    <CheckboxInputLabel htmlFor='ledger_connected'>
       My Ledger is connected to my computer.
-    </InputLabel>
+    </CheckboxInputLabel>
   </EducationalCheckboxItem>
 )
 

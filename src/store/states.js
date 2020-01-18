@@ -1,14 +1,8 @@
 import updateArrayItem from './utils/updateArrayItem'
-import BigNumber from 'bignumber.js'
 import { setMsgInCache, removeMsgFromCache } from './cache'
 
 export const initialState = {
-  wallets: [
-    {
-      address: 't1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
-      balance: new BigNumber('0')
-    }
-  ],
+  wallets: [],
   selectedWalletIdx: 0,
   error: null,
   messages: {
@@ -24,7 +18,9 @@ export const initialState = {
   progress: 0,
   walletType: null,
   walletConnected: false,
-  walletProvider: null
+  walletProvider: null,
+  // one of 't', 'f', or 'c' (custom)
+  network: 't'
 }
 
 export const walletList = (state, { wallets }) => ({
@@ -173,4 +169,9 @@ export const populateRedux = (state, { pendingMsgs }) => ({
     // just in case there's some crazy race condition where msgs were loaded from server before localstorage
     pending: pendingMsgs
   }
+})
+
+export const switchNetwork = (state, { network }) => ({
+  ...state,
+  network
 })

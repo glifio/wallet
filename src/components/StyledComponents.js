@@ -108,19 +108,12 @@ export const SectionHeader = styled.div`
 `
 
 export const MessageForm = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: white;
   padding: 15px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto auto 70px;
-  grid-template-areas:
-    'to-input to-input to-input to-input'
-    'available-balance available-balance amount-input amount-input'
-    'left-gutter send-button send-button right-gutter';
-`
-
-export const ToInput = styled.div`
-  grid-area: to-input;
+  height: 250px;
 `
 
 export const InputLabel = styled.div`
@@ -129,31 +122,26 @@ export const InputLabel = styled.div`
   color: #bababa;
 `
 
-export const AvailableBalance = styled.div`
-  grid-area: available-balance;
-`
-
 export const AvailableBalanceLabel = styled.div`
   font-weight: bold;
   margin-bottom: 10px;
   color: #bababa;
 `
 
-export const AmountInput = styled.div`
-  grid-area: amount-input;
-`
-
-export const SendButton = styled.button`
+export const Button = styled.button`
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   disabled: ${props => props.disabled};
-  grid-area: send-button;
   background: ${props => (props.disabled ? 'grey' : '#61d6d9')};
   color: white;
   border: 0;
-  margin-top: 30px;
   border-radius: 4px;
   width: 120px;
-  margin-left: 70px;
+  height: 30px;
+`
+
+export const SendButton = styled(Button)`
+  align-self: center;
+  justify-self: flex-end;
 `
 
 export const TransactionHistory = styled.div`
@@ -224,7 +212,6 @@ export const EmptyHistoryText = styled.div`
 `
 
 export const MessageReview = styled.div`
-  grid-area: to-input;
   margin-top: 25px;
   font-size: 18px;
   text-align: center;
@@ -245,6 +232,22 @@ export const OnboardingContainer = styled.div`
   justify-content: space-between;
   height: 360px;
   width: 30vw;
+`
+
+export const UnderlineOnHover = styled(SectionHeader)`
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+`
+
+export const CheckboxInputLabel = styled.label`
+  color: ${props => (props.disabled ? '#bababa' : 'black')};
+  font-size: 15px;
+`
+
+export const Checkbox = styled.input`
+  margin: 5px 10px 5px 5px;
 `
 
 /* FLEXBOX STYLES */

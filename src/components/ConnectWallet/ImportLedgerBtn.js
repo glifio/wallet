@@ -1,16 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import 'styled-components/macro'
-import { useSelector } from 'react-redux'
 
 import { useProgress } from '../../hooks'
-import { LEDGER_STATE_PROPTYPES } from './ledgerStateManagement'
 import { Button } from './styledComponents'
-import connectLedger from './connectLedger'
+import connectLedger, { LEDGER_STATE_PROPTYPES } from '../../utils/ledger'
 
 const ImportLedgerBtn = ({ ledgerState, dispatchRdx, dispatchLocal }) => {
   const { setProgress } = useProgress()
-  const walletProvider = useSelector(state => state.walletProvider)
   return (
     <Button
       disabled={
@@ -20,14 +17,13 @@ const ImportLedgerBtn = ({ ledgerState, dispatchRdx, dispatchLocal }) => {
           ledgerState.userVerifiedFilecoinAppOpen
         )
       }
-      onClick={async () =>
-        await connectLedger(
-          walletProvider,
-          setProgress,
+      onClick={async () => {
+        const successfulConnection = await connectLedger(
           dispatchLocal,
           dispatchRdx
         )
-      }
+        if (successfulConnection) setProgress(2)
+      }}
     >
       {ledgerState.userImportFailure ? 'Try again' : 'Import Ledger Wallet'}
     </Button>

@@ -1,24 +1,15 @@
 import React from 'react'
-import AccountPicker from './AccountPicker'
+import { AccountPicker } from '../Shared'
 import MessageCreator from './MessageCreator'
 import TransactionHistory from './TransactionHistory'
-import {
-  BalanceBanner,
-  FilecoinLogo,
-  BalanceInBanner,
-  Wrapper
-} from '../StyledComponents'
-import { useBalance } from '../../hooks'
+import { Wrapper } from '../StyledComponents'
+import { BalanceBanner } from '../Shared'
 
 export default () => {
-  const balance = useBalance()
   return (
     <Wrapper>
       <AccountPicker />
-      <BalanceBanner>
-        <FilecoinLogo src='/filecoin.png' alt='' />
-        <BalanceInBanner>{balance.toString()} FIL</BalanceInBanner>
-      </BalanceBanner>
+      <BalanceBanner />
       <MessageCreator />
       <TransactionHistory />
     </Wrapper>

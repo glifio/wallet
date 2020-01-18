@@ -6,8 +6,19 @@ export default () =>
     TransportWebHID.create()
       .then(resolve)
       .catch(err => {
-        if (err.message.includes('navigator.hid is not supported')) {
+        if (
+          err.message.toLowerCase().includes('navigator.hid is not supported')
+        ) {
           return TransportWebUSB.create()
+        }
+        if (
+          err.message.toLowerCase().includes('transporterror: invalid channel')
+        ) {
+          reject(
+            new Error(
+              'Lost connection with Ledger. Please unplug and replug device.'
+            )
+          )
         }
         reject(err)
       })

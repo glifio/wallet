@@ -17,7 +17,8 @@ import {
   FETCHING_NEXT_PAGE_FAILURE,
   SET_WALLET_TYPE,
   CREATE_WALLET_PROVIDER,
-  POPULATE_REDUX
+  POPULATE_REDUX,
+  SWITCH_NETWORK
 } from './actionTypes'
 
 import {
@@ -37,7 +38,8 @@ import {
   fetchingNextPage,
   fetchedNextPageSuccess,
   fetchedNextPageFailure,
-  populateRedux
+  populateRedux,
+  switchNetwork
 } from './states'
 
 export default (state, action) => {
@@ -82,6 +84,8 @@ export default (state, action) => {
       return clearError(cloneDeep(state))
     case POPULATE_REDUX:
       return populateRedux(cloneDeep(state), action.payload)
+    case SWITCH_NETWORK:
+      return switchNetwork(cloneDeep(state), action.payload)
     default:
       return state
   }
