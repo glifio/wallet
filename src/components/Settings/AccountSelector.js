@@ -9,8 +9,7 @@ import { JustifyContentContainer, Button } from '../StyledComponents'
 
 import { walletList, switchWallet } from '../../store/actions'
 import sortAndRemoveWalletDups from './sortAndRemoveWalletDups'
-
-const ACCOUNT_BATCH_SIZE = 4
+import { ACCOUNT_BATCH_SIZE } from '../../constants'
 
 const ButtonContainer = styled(JustifyContentContainer)`
   justify-self: flex-end;

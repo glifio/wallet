@@ -15,8 +15,10 @@ import {
 import CopyToClipboardIcon from '../DisplayWallet/ClipboardIcon'
 import { copyToClipboard } from '../../utils'
 
+import { ACCOUNT_BATCH_SIZE, LEDGER } from '../../constants'
+
 export default () => {
-  const { selectedWallet } = useWallets()
+  const { selectedWallet, walletType } = useWallets()
   const [copiedToClipboard, setCopiedToClipboard] = useState(false)
   const history = useHistory()
   const { pathname } = useLocation()
@@ -47,8 +49,12 @@ export default () => {
       </AccountDetail>
       <SwitchAccountButton
         onClick={() => {
+          let page = 0
+          if (walletType === LEDGER) {
+            page = Math.floor(selectedWallet.path[4] / ACCOUNT_BATCH_SIZE)
+          }
           if (pathname.includes('/settings')) history.push('/')
-          else history.push('/settings/accounts?page=0')
+          else history.push(`/settings/accounts?page=${page}`)
         }}
       >
         {pathname === '/settings' ? (
