@@ -63,6 +63,10 @@ export const AccountDetail = styled.div`
 
 export const AccountAddress = styled.div`
   word-wrap: break-word;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 `
 
 export const AccountBalance = styled.span`
@@ -124,7 +128,7 @@ export const AvailableBalanceLabel = styled.div`
   color: #bababa;
 `
 
-export const SendButton = styled.button`
+export const Button = styled.button`
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   disabled: ${props => props.disabled};
   background: ${props => (props.disabled ? 'grey' : '#61d6d9')};
@@ -132,9 +136,12 @@ export const SendButton = styled.button`
   border: 0;
   border-radius: 4px;
   width: 120px;
+  height: 30px;
+`
+
+export const SendButton = styled(Button)`
   align-self: center;
   justify-self: flex-end;
-  height: 30px;
 `
 
 export const TransactionHistory = styled.div`
@@ -234,8 +241,26 @@ export const UnderlineOnHover = styled(SectionHeader)`
   }
 `
 
+export const CheckboxInputLabel = styled.label`
+  color: ${props => (props.disabled ? '#bababa' : 'black')};
+  font-size: 15px;
+`
+
+export const Checkbox = styled.input`
+  margin: 5px 10px 5px 5px;
+`
+
 /* FLEXBOX STYLES */
 export const JustifyContentCenter = styled.div`
   display: flex;
   justify-content: center;
+`
+
+export const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: ${props => props.flexDirection};
+`
+
+export const JustifyContentContainer = styled(FlexContainer)`
+  justify-content: ${props => props.justifyContent};
 `

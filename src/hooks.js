@@ -57,18 +57,21 @@ export const useFilecoin = () => {
 }
 
 export const useWallets = () => {
-  const { wallets, selectedWallet, walletProvider } = useSelector(state => {
-    const selectedWallet =
-      state.wallets.length > state.selectedWalletIdx
-        ? state.wallets[state.selectedWalletIdx]
-        : { balance: new BigNumber('0'), address: '' }
+  const { wallets, selectedWallet, walletProvider, walletType } = useSelector(
+    state => {
+      const selectedWallet =
+        state.wallets.length > state.selectedWalletIdx
+          ? state.wallets[state.selectedWalletIdx]
+          : { balance: new BigNumber('0'), address: '' }
 
-    return {
-      wallets: state.wallets,
-      selectedWallet,
-      walletProvider: state.walletProvider
+      return {
+        wallets: state.wallets,
+        selectedWallet,
+        walletProvider: state.walletProvider,
+        walletType: state.walletType
+      }
     }
-  })
+  )
 
   const dispatch = useDispatch()
 
@@ -84,7 +87,8 @@ export const useWallets = () => {
   return {
     wallets,
     selectWallet,
-    selectedWallet
+    selectedWallet,
+    walletType
   }
 }
 

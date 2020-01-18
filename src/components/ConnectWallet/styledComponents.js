@@ -36,15 +36,6 @@ export const EducationalCheckboxItem = styled.li`
   width: 80%;
 `
 
-export const InputLabel = styled.label`
-  color: ${props => (props.disabled ? '#bababa' : 'black')};
-  font-size: 15px;
-`
-
-export const Checkbox = styled.input`
-  margin: 5px 10px 5px 5px;
-`
-
 export const ColoredDot = styled.span`
   height: 10px;
   width: 10px;

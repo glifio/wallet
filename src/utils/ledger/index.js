@@ -69,16 +69,23 @@ export const establishConnectionWithFilecoinApp = async (
   }
 }
 
-const fetchWallets = async (provider, dispatchRdx) => {
+const fetchWallets = async (
+  provider,
+  dispatchRdx,
+  start = 0,
+  end = 1,
+  network = 't'
+) => {
   try {
-    const filAddresses = await provider.wallet.getAccounts(0, 1)
+    const filAddresses = await provider.wallet.getAccounts(start, end, network)
     const wallets = await Promise.all(
       filAddresses.map(async (address, i) => {
         const balance = await provider.getBalance(address)
+        const networkDerivationPath = network === 'f' ? 1 : 461
         return {
           balance,
           address,
-          path: [44, 461, 5, 0, i]
+          path: [44, networkDerivationPath, 5, 0, i]
         }
       })
     )

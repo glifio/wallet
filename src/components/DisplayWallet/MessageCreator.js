@@ -67,7 +67,7 @@ const MsgCreator = () => {
       })
     }
     // user enters a value that's greater than their balance
-    else if (new BigNumber(e.target.value).isGreaterThan(balance)) {
+    else if (new BigNumber(e.target.value).isGreaterThanOrEqualTo(balance)) {
       setErrors({
         ...errors,
         value: "The amount must be smaller than this account's balance"

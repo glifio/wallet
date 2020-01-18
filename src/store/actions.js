@@ -3,6 +3,7 @@ import {
   CONFIRMED_MESSAGE,
   ERROR,
   SWITCH_WALLET,
+  SWITCH_NETWORK,
   UPDATE_BALANCE,
   UPDATE_PROGRESS,
   CLEAR_ERROR,
@@ -124,5 +125,12 @@ export const populateRedux = pendingMsgs => ({
   type: POPULATE_REDUX,
   payload: {
     pendingMsgs
+  }
+})
+
+export const switchNetwork = network => ({
+  type: SWITCH_NETWORK,
+  payload: {
+    network
   }
 })
