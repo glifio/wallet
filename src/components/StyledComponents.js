@@ -128,7 +128,7 @@ export const AvailableBalanceLabel = styled.div`
   color: #bababa;
 `
 
-export const SendButton = styled.button`
+export const Button = styled.button`
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   disabled: ${props => props.disabled};
   background: ${props => (props.disabled ? 'grey' : '#61d6d9')};
@@ -136,9 +136,12 @@ export const SendButton = styled.button`
   border: 0;
   border-radius: 4px;
   width: 120px;
+  height: 30px;
+`
+
+export const SendButton = styled(Button)`
   align-self: center;
   justify-self: flex-end;
-  height: 30px;
 `
 
 export const TransactionHistory = styled.div`

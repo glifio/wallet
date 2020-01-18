@@ -47,8 +47,8 @@ export default () => {
       </AccountDetail>
       <SwitchAccountButton
         onClick={() => {
-          if (pathname === '/settings') history.push('/')
-          else history.push('/settings')
+          if (pathname.includes('/settings')) history.push('/')
+          else history.push('/settings/accounts?page=0')
         }}
       >
         {pathname === '/settings' ? (

@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 
-import { MessageCreator } from '../StyledComponents'
 import { switchNetwork } from '../../store/actions'
 import AccountSelector from './AccountSelector'
 
@@ -50,7 +49,6 @@ export default () => {
           </Tab>
         </Tabs>
       </AccountAndNetworkPanel>
-      <MessageCreator></MessageCreator>
     </>
   )
 }
