@@ -139,9 +139,7 @@ const AccountSelector = ({
                   <Checkbox
                     onChange={() =>
                       dispatch(
-                        switchWallet(
-                          walletsInRdx.length - ACCOUNT_BATCH_SIZE + arrayIndex
-                        )
+                        switchWallet(page * ACCOUNT_BATCH_SIZE + arrayIndex)
                       )
                     }
                     type='checkbox'
