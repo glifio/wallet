@@ -28,6 +28,11 @@ export const establishConnectionWithDevice = async (
       dispatchLocal({ type: LEDGER_NOT_FOUND })
       // if we want to display banner instead:
       dispatchRdx(error(err))
+    } else if (
+      err.message &&
+      !err.message.toLowerCase().includes('transporterror: invalid channel')
+    ) {
+      dispatchRdx(error(new Error('Please unplug and replug your device.')))
     }
     return false
   }
@@ -64,6 +69,14 @@ export const establishConnectionWithFilecoinApp = async (
     return provider
   } catch (err) {
     dispatchLocal({ type: FILECOIN_APP_NOT_OPEN })
+
+    if (
+      err.message &&
+      !err.message.toLowerCase().includes('transporterror: invalid channel')
+    ) {
+      dispatchRdx(error(new Error('Please unplug and replug your device.')))
+      return false
+    }
     dispatchRdx(error(err))
     return false
   }

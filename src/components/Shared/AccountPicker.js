@@ -15,11 +15,10 @@ import {
 } from '../StyledComponents'
 
 import CopyToClipboardIcon from '../DisplayWallet/ClipboardIcon'
-import { copyToClipboard, noop } from '../../utils'
+import { copyToClipboard } from '../../utils'
 
 import { ACCOUNT_BATCH_SIZE, LEDGER } from '../../constants'
 
-import connectLedger from '../../utils/ledger'
 import { error } from '../../store/actions'
 
 export default () => {
@@ -63,8 +62,7 @@ export default () => {
               role='button'
               onClick={async () => {
                 try {
-                  const provider = await connectLedger(noop, dispatch)
-                  if (provider) {
+                  if (walletProvider) {
                     await walletProvider.wallet.showAddressAndPubKey(
                       selectedWallet.path
                     )

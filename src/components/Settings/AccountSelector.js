@@ -7,7 +7,7 @@ import { useLocation, useHistory } from 'react-router-dom'
 import { Checkbox, CheckboxInputLabel } from '../StyledComponents'
 import { JustifyContentContainer, Button } from '../StyledComponents'
 
-import { walletList, switchWallet } from '../../store/actions'
+import { walletList, switchWallet, error } from '../../store/actions'
 import sortAndRemoveWalletDups from './sortAndRemoveWalletDups'
 import { ACCOUNT_BATCH_SIZE } from '../../constants'
 
@@ -56,30 +56,34 @@ const AccountSelector = ({
   useEffect(() => {
     const fetchAccounts = async () => {
       setLoadingAccounts(true)
-      const accounts = await walletProvider.wallet.getAccounts(
-        page * ACCOUNT_BATCH_SIZE,
-        page * ACCOUNT_BATCH_SIZE + ACCOUNT_BATCH_SIZE,
-        network
-      )
+      try {
+        const accounts = await walletProvider.wallet.getAccounts(
+          page * ACCOUNT_BATCH_SIZE,
+          page * ACCOUNT_BATCH_SIZE + ACCOUNT_BATCH_SIZE,
+          network
+        )
 
-      const wallets = await Promise.all(
-        accounts.map(async (address, i) => {
-          const balance = await walletProvider.getBalance(address)
-          const networkDerivationPath = network === 'f' ? 1 : 461
-          return {
-            balance,
-            address,
-            path: [
-              44,
-              networkDerivationPath,
-              5,
-              0,
-              page * ACCOUNT_BATCH_SIZE + i
-            ]
-          }
-        })
-      )
-      dispatch(walletList(sortAndRemoveWalletDups(walletsInRdx, wallets)))
+        const wallets = await Promise.all(
+          accounts.map(async (address, i) => {
+            const balance = await walletProvider.getBalance(address)
+            const networkDerivationPath = network === 'f' ? 1 : 461
+            return {
+              balance,
+              address,
+              path: [
+                44,
+                networkDerivationPath,
+                5,
+                0,
+                page * ACCOUNT_BATCH_SIZE + i
+              ]
+            }
+          })
+        )
+        dispatch(walletList(sortAndRemoveWalletDups(walletsInRdx, wallets)))
+      } catch (err) {
+        dispatch(error(err))
+      }
       setLoadingAccounts(false)
     }
 
