@@ -14,30 +14,35 @@ const AccountSelector = ({
   setLoadingAccounts,
   tabOpen
 }) => {
-  const {
-    walletProvider,
-    selectedWallet,
-    selectedWalletIdx,
-    selectedWalletDerivationIndex
-  } = useSelector(state => ({
-    walletProvider: state.walletProvider,
-    selectedWallet: state.wallets[state.selectedWalletIdx],
-    selectedWalletIdx: state.selectedWalletIdx,
-    selectedWalletDerivationIndex:
-      state.wallets[state.selectedWalletIdx].path[4]
-  }))
+  const { walletProvider, selectedWallet, walletsInRdx } = useSelector(
+    state => ({
+      walletProvider: state.walletProvider,
+      selectedWallet: state.wallets[state.selectedWalletIdx],
+      walletsInRdx: state.wallets
+    })
+  )
 
   const dispatch = useDispatch()
 
   const [accounts, setAccounts] = useState([selectedWallet.address])
 
+  const latestDerivationPathIdx = walletsInRdx[walletsInRdx.length - 1].path[4]
+
   const fetchAccounts = useCallback(async () => {
     setLoadingAccounts(true)
+    // we have to handle pagination differently when its the first (0th) page vs all others
+    const startDerivationPathIndex =
+      latestDerivationPathIdx === 0 ? 0 : latestDerivationPathIdx + 1
+    const endDerivationPathIndex =
+      latestDerivationPathIdx === 0
+        ? ACCOUNT_BATCH_SIZE
+        : latestDerivationPathIdx + ACCOUNT_BATCH_SIZE + 1
     const accounts = await walletProvider.wallet.getAccounts(
-      selectedWalletDerivationIndex,
-      selectedWalletDerivationIndex + ACCOUNT_BATCH_SIZE,
+      startDerivationPathIndex,
+      endDerivationPathIndex,
       network
     )
+
     const wallets = await Promise.all(
       accounts.map(async (address, i) => {
         const balance = await walletProvider.getBalance(address)
@@ -45,11 +50,13 @@ const AccountSelector = ({
         return {
           balance,
           address,
-          path: [44, networkDerivationPath, 5, 0, i]
+          path: [44, networkDerivationPath, 5, 0, startDerivationPathIndex + i]
         }
       })
     )
-    dispatch(walletList(wallets))
+    // if this is the first pagination of accounts, don't duplicate any wallets in redux
+    if (walletsInRdx.length === 1) dispatch(walletList(wallets))
+    else dispatch(walletList([...walletsInRdx, ...wallets]))
     setAccounts(accounts)
     setLoadingAccounts(false)
   }, [
@@ -58,7 +65,8 @@ const AccountSelector = ({
     setAccounts,
     network,
     dispatch,
-    selectedWalletDerivationIndex
+    walletsInRdx,
+    latestDerivationPathIdx
   ])
 
   useEffect(() => {
@@ -74,13 +82,19 @@ const AccountSelector = ({
             return (
               <div key={account}>
                 <Checkbox
-                  onChange={() => dispatch(switchWallet(arrayIndex))}
+                  onChange={() =>
+                    dispatch(
+                      switchWallet(
+                        walletsInRdx.length - ACCOUNT_BATCH_SIZE + arrayIndex
+                      )
+                    )
+                  }
                   type='checkbox'
-                  name='account'
-                  id='account'
-                  checked={selectedWalletIdx === arrayIndex}
+                  name={`account-${account}`}
+                  id={`account-${account}`}
+                  checked={selectedWallet.address === account}
                 />
-                <CheckboxInputLabel htmlFor='account'>
+                <CheckboxInputLabel htmlFor={`account-${account}`}>
                   {account}
                 </CheckboxInputLabel>
               </div>
