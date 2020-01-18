@@ -8,6 +8,7 @@ import { Checkbox, CheckboxInputLabel } from '../StyledComponents'
 import { JustifyContentContainer, Button } from '../StyledComponents'
 
 import { walletList, switchWallet } from '../../store/actions'
+import sortAndRemoveWalletDups from './sortAndRemoveWalletDups'
 
 const ACCOUNT_BATCH_SIZE = 4
 
@@ -79,9 +80,7 @@ const AccountSelector = ({
           }
         })
       )
-      // if this is the first pagination of accounts, don't duplicate any wallets in redux
-      if (page === 0) dispatch(walletList(wallets))
-      else dispatch(walletList([...walletsInRdx, ...wallets]))
+      dispatch(walletList(sortAndRemoveWalletDups(walletsInRdx, wallets)))
       setLoadingAccounts(false)
     }
 
@@ -124,43 +123,40 @@ const AccountSelector = ({
           </JustifyContentContainer>
         ) : (
           walletsInRdx
-            .slice(
-              page * ACCOUNT_BATCH_SIZE,
-              page * ACCOUNT_BATCH_SIZE + ACCOUNT_BATCH_SIZE
+            .filter(
+              wallet =>
+                wallet.path[4] >= page * ACCOUNT_BATCH_SIZE &&
+                wallet.path[4] < page * ACCOUNT_BATCH_SIZE + ACCOUNT_BATCH_SIZE
             )
-            .map((wallet, arrayIndex) => {
-              return (
-                <LineItem
-                  flexDirection='row'
-                  justifyContent='space-between'
-                  key={wallet.address}
-                  even={arrayIndex % 2}
-                >
-                  <div>
-                    <Checkbox
-                      onChange={() =>
-                        dispatch(
-                          switchWallet(
-                            walletsInRdx.length -
-                              ACCOUNT_BATCH_SIZE +
-                              arrayIndex
-                          )
+            .map((wallet, arrayIndex) => (
+              <LineItem
+                flexDirection='row'
+                justifyContent='space-between'
+                key={wallet.address}
+                even={arrayIndex % 2}
+              >
+                <div>
+                  <Checkbox
+                    onChange={() =>
+                      dispatch(
+                        switchWallet(
+                          walletsInRdx.length - ACCOUNT_BATCH_SIZE + arrayIndex
                         )
-                      }
-                      type='checkbox'
-                      name={`account-${wallet.address}`}
-                      id={`account-${wallet.address}`}
-                      checked={selectedWallet.address === wallet.address}
-                    />
-                    <CheckboxInputLabel htmlFor={`account-${wallet.address}`}>
-                      {wallet.address}
-                    </CheckboxInputLabel>
-                  </div>
+                      )
+                    }
+                    type='checkbox'
+                    name={`account-${wallet.address}`}
+                    id={`account-${wallet.address}`}
+                    checked={selectedWallet.address === wallet.address}
+                  />
+                  <CheckboxInputLabel htmlFor={`account-${wallet.address}`}>
+                    {wallet.address}
+                  </CheckboxInputLabel>
+                </div>
 
-                  <div>{wallet.balance.toString()}</div>
-                </LineItem>
-              )
-            })
+                <div>{wallet.balance.toString()}</div>
+              </LineItem>
+            ))
         )}
       </div>
       <ButtonContainer flexDirection='row' justifyContent='space-around'>
