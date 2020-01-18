@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
@@ -9,7 +9,7 @@ import { JustifyContentContainer, Button } from '../StyledComponents'
 
 import { walletList, switchWallet } from '../../store/actions'
 
-const ACCOUNT_BATCH_SIZE = 3
+const ACCOUNT_BATCH_SIZE = 4
 
 const ButtonContainer = styled(JustifyContentContainer)`
   justify-self: flex-end;
@@ -18,6 +18,20 @@ const ButtonContainer = styled(JustifyContentContainer)`
 
 const SettingsContainer = styled(JustifyContentContainer)`
   height: 350px;
+  margin-top: 30px;
+`
+
+const LineItem = styled(JustifyContentContainer)`
+  height: 50px;
+  background-color: ${props => (props.even ? 'white' : 'aliceblue')};
+  padding: 0 10px 0 10px;
+  align-items: center;
+`
+
+const LoadingText = styled.p`
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 20;
 `
 
 const AccountSelector = ({
@@ -104,16 +118,25 @@ const AccountSelector = ({
   return (
     <SettingsContainer flexDirection='column' justifyContent='space-between'>
       <div>
-        {loadingAccounts
-          ? 'loading'
-          : walletsInRdx
-              .slice(
-                page * ACCOUNT_BATCH_SIZE,
-                page * ACCOUNT_BATCH_SIZE + ACCOUNT_BATCH_SIZE
-              )
-              .map((wallet, arrayIndex) => {
-                return (
-                  <div key={wallet.address}>
+        {loadingAccounts ? (
+          <JustifyContentContainer flexDirection='row' justifyContent='center'>
+            <LoadingText>Loading...</LoadingText>
+          </JustifyContentContainer>
+        ) : (
+          walletsInRdx
+            .slice(
+              page * ACCOUNT_BATCH_SIZE,
+              page * ACCOUNT_BATCH_SIZE + ACCOUNT_BATCH_SIZE
+            )
+            .map((wallet, arrayIndex) => {
+              return (
+                <LineItem
+                  flexDirection='row'
+                  justifyContent='space-between'
+                  key={wallet.address}
+                  even={arrayIndex % 2}
+                >
+                  <div>
                     <Checkbox
                       onChange={() =>
                         dispatch(
@@ -133,8 +156,12 @@ const AccountSelector = ({
                       {wallet.address}
                     </CheckboxInputLabel>
                   </div>
-                )
-              })}
+
+                  <div>{wallet.balance.toString()}</div>
+                </LineItem>
+              )
+            })
+        )}
       </div>
       <ButtonContainer flexDirection='row' justifyContent='space-around'>
         <Button
