@@ -88,7 +88,8 @@ export const useWallets = () => {
     wallets,
     selectWallet,
     selectedWallet,
-    walletType
+    walletType,
+    walletProvider
   }
 }
 

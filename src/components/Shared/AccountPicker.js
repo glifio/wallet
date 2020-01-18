@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
 import { useWallets } from '../../hooks'
 import {
@@ -9,19 +10,24 @@ import {
   AccountHeader,
   AccountDetail,
   AccountAddress,
-  JustifyContentContainer
+  JustifyContentContainer,
+  UnderlineOnHover
 } from '../StyledComponents'
 
 import CopyToClipboardIcon from '../DisplayWallet/ClipboardIcon'
-import { copyToClipboard } from '../../utils'
+import { copyToClipboard, noop } from '../../utils'
 
 import { ACCOUNT_BATCH_SIZE, LEDGER } from '../../constants'
 
+import connectLedger from '../../utils/ledger'
+import { error } from '../../store/actions'
+
 export default () => {
-  const { selectedWallet, walletType } = useWallets()
+  const { selectedWallet, walletType, walletProvider } = useWallets()
   const [copiedToClipboard, setCopiedToClipboard] = useState(false)
   const history = useHistory()
   const { pathname } = useLocation()
+  const dispatch = useDispatch()
 
   const onClick = useCallback(() => {
     setCopiedToClipboard(true)
@@ -45,7 +51,35 @@ export default () => {
             <CopyToClipboardIcon onClick={onClick} />
           )}
         </JustifyContentContainer>
-        <AccountBalance>{selectedWallet.balance.toString()} FIL</AccountBalance>
+        <JustifyContentContainer
+          flexDirection='row'
+          justifyContent='space-between'
+        >
+          <AccountBalance>
+            {selectedWallet.balance.toString()} FIL
+          </AccountBalance>
+          {walletType === LEDGER && (
+            <UnderlineOnHover
+              role='button'
+              onClick={async () => {
+                try {
+                  const provider = await connectLedger(noop, dispatch)
+                  if (provider) {
+                    await walletProvider.wallet.showAddressAndPubKey(
+                      selectedWallet.path
+                    )
+                  } else {
+                    throw new Error('Error connecting with Ledger')
+                  }
+                } catch (err) {
+                  dispatch(error(err))
+                }
+              }}
+            >
+              Show address on Ledger
+            </UnderlineOnHover>
+          )}
+        </JustifyContentContainer>
       </AccountDetail>
       <SwitchAccountButton
         onClick={() => {

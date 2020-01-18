@@ -54,3 +54,5 @@ export const copyToClipboard = text =>
     }
     navigator.clipboard.writeText(text).then(resolve, reject)
   })
+
+export const noop = () => {}
