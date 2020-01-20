@@ -168,7 +168,7 @@ const MsgCreator = () => {
                       <InputGroup>
                         <Form.Control
                           placeholder='0'
-                          type='text'
+                          type='number'
                           aria-describedby='valuePrepend'
                           name='value'
                           value={value.toString()}
