@@ -89,8 +89,8 @@ export default () => {
           else history.push(`/settings/accounts?page=${page}`)
         }}
       >
-        {pathname === '/settings' ? (
-          <span>Back</span>
+        {pathname.includes('/settings') ? (
+          <span>Back to wallet</span>
         ) : (
           <span>&#x2699;account/network</span>
         )}

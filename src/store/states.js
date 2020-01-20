@@ -25,7 +25,8 @@ export const initialState = {
 
 export const walletList = (state, { wallets }) => ({
   ...state,
-  wallets
+  // make sure we only ever add wallets to our list that include the right network prefix (blocks race conditions with ledger)
+  wallets: wallets.filter(wallet => wallet.address[0] === state.network)
 })
 
 export const switchWallet = (state, { index }) => ({
