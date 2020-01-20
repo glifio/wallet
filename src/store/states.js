@@ -173,5 +173,6 @@ export const populateRedux = (state, { pendingMsgs }) => ({
 
 export const switchNetwork = (state, { network }) => ({
   ...state,
-  network
+  network,
+  wallets: []
 })
