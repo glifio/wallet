@@ -1,7 +1,7 @@
 import React, { useState, useReducer } from 'react'
 import 'styled-components/macro'
 import { Message } from '@openworklabs/filecoin-wallet-provider'
-import BigNumber from 'bignumber.js'
+import FilecoinNumber from '@openworklabs/filecoin-number'
 import { useDispatch, useSelector } from 'react-redux'
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
@@ -21,7 +21,8 @@ import {
 } from '../StyledComponents'
 import { toLowerCaseMsgFields } from '../../utils'
 import { LEDGER } from '../../constants'
-import connectLedger, {
+import {
+  fetchProvider,
   reducer,
   initialLedgerState,
   RESET_STATE
@@ -34,6 +35,11 @@ const isValidForm = (toAddress, value, balance, errors) => {
   const fieldsFilledOut = toAddress && value
   const enoughInTheBank = balance.isGreaterThan(value)
   return !!(errorFree && fieldsFilledOut && enoughInTheBank)
+}
+
+const formatValue = number => {
+  if (FilecoinNumber.isBigNumber(number)) return number.toFil()
+  return number
 }
 
 const MsgCreator = () => {
@@ -60,23 +66,34 @@ const MsgCreator = () => {
     // handle case where user deletes all values from text input
     if (!e.target.value) setValue('')
     // user entered non-numeric characters
-    else if (e.target.value && new BigNumber(e.target.value).isNaN()) {
+    else if (
+      e.target.value &&
+      new FilecoinNumber(e.target.value, 'fil').isNaN()
+    ) {
       setErrors({
         ...errors,
         value: 'Must pass numbers only'
       })
     }
+    // when user is setting decimals
+    else if (new FilecoinNumber(e.target.value, 'fil').isEqualTo(0)) {
+      // dont use big numbers
+      setValue(e.target.value)
+    }
     // user enters a value that's greater than their balance
-    else if (new BigNumber(e.target.value).isGreaterThanOrEqualTo(balance)) {
+    else if (
+      new FilecoinNumber(e.target.value, 'fil').isGreaterThanOrEqualTo(balance)
+    ) {
       setErrors({
         ...errors,
         value: "The amount must be smaller than this account's balance"
       })
       // still set the value for better feedback in the UI, but we don't allow submission of form
-      setValue(new BigNumber(e.target.value))
+      setValue(new FilecoinNumber(e.target.value, 'fil'))
     }
+
     // handle number change
-    else setValue(new BigNumber(e.target.value))
+    else setValue(new FilecoinNumber(e.target.value, 'fil'))
   }
 
   // TODO: better validation
@@ -90,7 +107,7 @@ const MsgCreator = () => {
     const message = new Message({
       to: toAddress,
       from: selectedWallet.address,
-      value: value.toString(),
+      value: value.toAttoFil(),
       method: 0
     })
 
@@ -98,7 +115,7 @@ const MsgCreator = () => {
       await message.generateNonce()
       let provider = walletProvider
       if (walletType === LEDGER) {
-        provider = await connectLedger(dispatchLocal, dispatch)
+        provider = await fetchProvider(dispatchLocal, dispatch)
       }
       if (provider) {
         dispatch(clearError())
@@ -159,7 +176,7 @@ const MsgCreator = () => {
                 >
                   <div css={{ 'flex-grow': '1', 'max-width': '50%' }}>
                     <AvailableBalanceLabel>Available</AvailableBalanceLabel>
-                    {balance.toString()}
+                    {formatValue(balance)}
                   </div>
 
                   <div css={{ 'flex-grow': '1', 'max-width': '50%' }}>
@@ -169,9 +186,11 @@ const MsgCreator = () => {
                         <Form.Control
                           placeholder='0'
                           type='number'
+                          step='.001'
+                          min='0'
                           aria-describedby='valuePrepend'
                           name='value'
-                          value={value.toString()}
+                          value={formatValue(value)}
                           onChange={handleValueChange}
                           isInvalid={errors.value}
                         />
@@ -202,7 +221,7 @@ const MsgCreator = () => {
               ) : (
                 <>
                   <MessageReview>
-                    You're sending <strong>{value.toString()} FIL</strong> to{' '}
+                    You're sending <strong>{value.toFil()} FIL</strong> to{' '}
                     <strong>{toAddress}</strong>
                     {walletType === LEDGER && (
                       <UnderlineOnHover
@@ -211,7 +230,7 @@ const MsgCreator = () => {
                         rel='noopener noreferrer'
                         onClick={async () => {
                           try {
-                            const provider = await connectLedger(
+                            const provider = await fetchProvider(
                               dispatchLocal,
                               dispatch
                             )
