@@ -111,6 +111,19 @@ const fetchWallets = async (
   }
 }
 
+export const fetchProvider = async (dispatchLocal, dispatchRdx) => {
+  const transport = await establishConnectionWithDevice(
+    dispatchLocal,
+    dispatchRdx
+  )
+  if (!transport) return false
+  return establishConnectionWithFilecoinApp(
+    transport,
+    dispatchLocal,
+    dispatchRdx
+  )
+}
+
 // returns true if successful connection, false if not
 export default async (dispatchLocal, dispatchRdx) => {
   const transport = await establishConnectionWithDevice(

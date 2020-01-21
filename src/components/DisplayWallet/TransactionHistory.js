@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import 'styled-components/macro'
+import FilecoinNumber from '@openworklabs/filecoin-number'
 import {
   TransactionHistory,
   Transaction,
@@ -52,7 +53,7 @@ const TransactionComponent = ({
           <MethodText>
             <strong>{sent ? 'SENT: ' : 'RECEIVED: '}</strong>
           </MethodText>
-          {value.toString()}
+          {new FilecoinNumber(value, 'attofil').toFil()}
         </div>
       </TransactionAmount>
       <TransactionStatus>

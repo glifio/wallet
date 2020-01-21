@@ -1,7 +1,7 @@
 import { useEffect, useCallback, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import BigNumber from 'bignumber.js'
+import FilecoinNumber from '@openworklabs/filecoin-number'
 
 import {
   switchWallet,
@@ -62,7 +62,7 @@ export const useWallets = () => {
       const selectedWallet =
         state.wallets.length > state.selectedWalletIdx
           ? state.wallets[state.selectedWalletIdx]
-          : { balance: new BigNumber('0'), address: '' }
+          : { balance: new FilecoinNumber('0', 'attofil'), address: '' }
 
       return {
         wallets: state.wallets,
@@ -78,7 +78,10 @@ export const useWallets = () => {
   const selectWallet = useCallback(
     async index => {
       dispatch(switchWallet(index))
-      const balance = await walletProvider.getBalance(wallets[index].address)
+      const balance = new FilecoinNumber(
+        await walletProvider.getBalance(wallets[index].address),
+        'attofil'
+      )
       dispatch(updateBalance(balance, index))
     },
     [wallets, dispatch, walletProvider]
@@ -99,7 +102,7 @@ export const useBalance = index =>
     const walletIdx = index ? index : state.selectedWalletIdx
     return state.wallets[walletIdx]
       ? state.wallets[walletIdx].balance
-      : new BigNumber(0)
+      : new FilecoinNumber('0', 'attofil')
   })
 
 export const useTransactions = index => {
@@ -117,7 +120,7 @@ export const useTransactions = index => {
     const selectedWallet =
       state.wallets.length > state.selectedWalletIdx
         ? state.wallets[state.selectedWalletIdx]
-        : { balance: new BigNumber('0'), address: '' }
+        : { balance: new FilecoinNumber('0', 'attofil'), address: '' }
     return {
       confirmed: state.messages.confirmed,
       links: state.messages.links,
