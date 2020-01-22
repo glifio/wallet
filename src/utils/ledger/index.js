@@ -94,7 +94,7 @@ const fetchWallets = async (
     const wallets = await Promise.all(
       filAddresses.map(async (address, i) => {
         const balance = await provider.getBalance(address)
-        const networkDerivationPath = network === 'f' ? 1 : 461
+        const networkDerivationPath = network === 'f' ? 461 : 1
         return {
           balance,
           address,
