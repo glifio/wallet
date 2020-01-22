@@ -66,7 +66,7 @@ const AccountSelector = ({
         const wallets = await Promise.all(
           accounts.map(async (address, i) => {
             const balance = await walletProvider.getBalance(address)
-            const networkDerivationPath = network === 'f' ? 1 : 461
+            const networkDerivationPath = network === 'f' ? 461 : 1
             return {
               balance,
               address,
@@ -165,7 +165,7 @@ const AccountSelector = ({
           disabled={loadingAccounts || page === 0}
           onClick={() => history.push(`/settings/accounts?page=${page - 1}`)}
         >
-          Back
+          Previous
         </Button>
         <Button
           disabled={loadingAccounts}
