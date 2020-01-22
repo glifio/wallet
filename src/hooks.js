@@ -144,7 +144,11 @@ export const useTransactions = index => {
         if (status === 'success') {
           dispatch(fetchedConfirmedMessagesSuccess(data, links))
         } else if (status === 'failed') {
-          dispatch(fetchedConfirmedMessagesFailure(data))
+          dispatch(
+            fetchedConfirmedMessagesFailure(
+              new Error('Failed to fetch data: ', JSON.stringify(data))
+            )
+          )
         }
       } catch (err) {
         dispatch(fetchedConfirmedMessagesFailure(err))

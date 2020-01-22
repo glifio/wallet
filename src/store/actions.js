@@ -74,7 +74,7 @@ export const fetchedConfirmedMessagesSuccess = (messages, links) => ({
   }
 })
 
-export const fetchedConfirmedMessagesFailure = () => ({
+export const fetchedConfirmedMessagesFailure = error => ({
   type: FETCHED_CONFIRMED_MESSAGES_FAILURE,
   error
 })
