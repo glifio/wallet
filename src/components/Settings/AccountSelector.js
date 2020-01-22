@@ -165,7 +165,7 @@ const AccountSelector = ({
           disabled={loadingAccounts || page === 0}
           onClick={() => history.push(`/settings/accounts?page=${page - 1}`)}
         >
-          Back
+          Previous
         </Button>
         <Button
           disabled={loadingAccounts}
