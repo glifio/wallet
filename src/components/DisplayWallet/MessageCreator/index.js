@@ -5,10 +5,9 @@ import FilecoinNumber from '@openworklabs/filecoin-number'
 import { useDispatch, useSelector } from 'react-redux'
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
-import 'styled-components/macro'
 
-import { useWallets, useBalance } from '../../hooks'
-import { confirmMessage, error, clearError } from '../../store/actions'
+import { useWallets, useBalance } from '../../../hooks'
+import { confirmMessage, error, clearError } from '../../../store/actions'
 import {
   MessageCreator,
   SectionHeader,
@@ -16,18 +15,18 @@ import {
   InputLabel,
   AvailableBalanceLabel,
   SendButton,
-  MessageReview,
-  UnderlineOnHover
-} from '../StyledComponents'
-import { toLowerCaseMsgFields } from '../../utils'
-import { LEDGER } from '../../constants'
+  MessageReview
+} from '../../StyledComponents'
+import { toLowerCaseMsgFields } from '../../../utils'
+import { LEDGER } from '../../../constants'
 import {
   fetchProvider,
   reducer,
   initialLedgerState,
   RESET_STATE
-} from '../../utils/ledger'
-import computeSig from './computeSig'
+} from '../../../utils/ledger'
+import computeSig from '../computeSig'
+import ReviewMessage from './ReviewMessage'
 
 // TODO: better validation
 const isValidForm = (toAddress, value, balance, errors) => {
@@ -46,9 +45,11 @@ const MsgCreator = () => {
   const { selectedWallet } = useWallets()
   const balance = useBalance()
   const dispatch = useDispatch()
-  const [toAddress, setToAddress] = useState('')
-  const [value, setValue] = useState('')
-  const [confirmStage, setConfirmStage] = useState('')
+  const [toAddress, setToAddress] = useState(
+    't1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq'
+  )
+  const [value, setValue] = useState(new FilecoinNumber('100', 'fil'))
+  const [confirmStage, setConfirmStage] = useState('reviewMessage')
   const [errors, setErrors] = useState({ value: false, toAddress: false })
   const { errorFromRdx, walletProvider, walletType } = useSelector(state => ({
     errorFromRdx: state.error,
@@ -56,6 +57,8 @@ const MsgCreator = () => {
     walletType: state.walletType
   }))
   const [ledgerState, dispatchLocal] = useReducer(reducer, initialLedgerState)
+  const [gasPrice, setGasPrice] = useState('1')
+  const [gasLimit, setGasLimit] = useState('1000')
 
   const handleValueChange = e => {
     // clear errors for better UX
@@ -81,16 +84,16 @@ const MsgCreator = () => {
       setValue(e.target.value)
     }
     // user enters a value that's greater than their balance
-    else if (
-      new FilecoinNumber(e.target.value, 'fil').isGreaterThanOrEqualTo(balance)
-    ) {
-      setErrors({
-        ...errors,
-        value: "The amount must be smaller than this account's balance"
-      })
-      // still set the value for better feedback in the UI, but we don't allow submission of form
-      setValue(new FilecoinNumber(e.target.value, 'fil'))
-    }
+    // else if (
+    //   new FilecoinNumber(e.target.value, 'fil').isGreaterThanOrEqualTo(balance)
+    // ) {
+    //   setErrors({
+    //     ...errors,
+    //     value: "The amount must be smaller than this account's balance"
+    //   })
+    //   // still set the value for better feedback in the UI, but we don't allow submission of form
+    //   setValue(new FilecoinNumber(e.target.value, 'fil'))
+    // }
 
     // handle number change
     else setValue(new FilecoinNumber(e.target.value, 'fil'))
@@ -202,7 +205,6 @@ const MsgCreator = () => {
                   </div>
                 </div>
               </div>
-
               <SendButton
                 disabled={!isValidForm(toAddress, value, balance, errors)}
                 onClick={() => setConfirmStage('reviewMessage')}
@@ -212,49 +214,17 @@ const MsgCreator = () => {
             </MessageForm>
           )}
           {confirmStage === 'reviewMessage' && (
-            <MessageForm>
-              {ledgerState.userInitiatedImport &&
-              ledgerState.userImportFailure ? (
-                <MessageReview>
-                  Is your Ledger plugged in, unlocked, and Filecoin app open?
-                </MessageReview>
-              ) : (
-                <>
-                  <MessageReview>
-                    You're sending <strong>{value.toFil()} FIL</strong> to{' '}
-                    <strong>{toAddress}</strong>
-                    {walletType === LEDGER && (
-                      <UnderlineOnHover
-                        css={{ 'font-size': '13px', 'margin-top': '10px' }}
-                        role='button'
-                        rel='noopener noreferrer'
-                        onClick={async () => {
-                          try {
-                            const provider = await fetchProvider(
-                              dispatchLocal,
-                              dispatch
-                            )
-                            if (provider) {
-                              dispatch(clearError())
-                              await provider.wallet.showAddressAndPubKey(
-                                selectedWallet.path
-                              )
-                            } else {
-                              throw new Error('Error connecting with Ledger')
-                            }
-                          } catch (err) {
-                            dispatch(error(err))
-                          }
-                        }}
-                      >
-                        Display my address and path on my Ledger.
-                      </UnderlineOnHover>
-                    )}
-                  </MessageReview>
-                  <SendButton type='submit'>Send</SendButton>
-                </>
-              )}
-            </MessageForm>
+            <ReviewMessage
+              ledgerState={ledgerState}
+              gasPrice={gasPrice}
+              gasLimit={gasLimit}
+              selectedWallet={selectedWallet}
+              setGasLimit={setGasLimit}
+              setGasPrice={setGasPrice}
+              toAddress={toAddress}
+              value={value}
+              walletType={walletType}
+            />
           )}
 
           {confirmStage === 'reviewOnDevice' && (
