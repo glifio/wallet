@@ -45,11 +45,9 @@ const MsgCreator = () => {
   const { selectedWallet } = useWallets()
   const balance = useBalance()
   const dispatch = useDispatch()
-  const [toAddress, setToAddress] = useState(
-    't1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq'
-  )
-  const [value, setValue] = useState(new FilecoinNumber('100', 'fil'))
-  const [confirmStage, setConfirmStage] = useState('reviewMessage')
+  const [toAddress, setToAddress] = useState('')
+  const [value, setValue] = useState('')
+  const [confirmStage, setConfirmStage] = useState('')
   const [errors, setErrors] = useState({ value: false, toAddress: false })
   const { errorFromRdx, walletProvider, walletType } = useSelector(state => ({
     errorFromRdx: state.error,
@@ -84,16 +82,16 @@ const MsgCreator = () => {
       setValue(e.target.value)
     }
     // user enters a value that's greater than their balance
-    // else if (
-    //   new FilecoinNumber(e.target.value, 'fil').isGreaterThanOrEqualTo(balance)
-    // ) {
-    //   setErrors({
-    //     ...errors,
-    //     value: "The amount must be smaller than this account's balance"
-    //   })
-    //   // still set the value for better feedback in the UI, but we don't allow submission of form
-    //   setValue(new FilecoinNumber(e.target.value, 'fil'))
-    // }
+    else if (
+      new FilecoinNumber(e.target.value, 'fil').isGreaterThanOrEqualTo(balance)
+    ) {
+      setErrors({
+        ...errors,
+        value: "The amount must be smaller than this account's balance"
+      })
+      // still set the value for better feedback in the UI, but we don't allow submission of form
+      setValue(new FilecoinNumber(e.target.value, 'fil'))
+    }
 
     // handle number change
     else setValue(new FilecoinNumber(e.target.value, 'fil'))
