@@ -1,6 +1,6 @@
 import React, { useState, useReducer } from 'react'
 import 'styled-components/macro'
-import { Message } from '@openworklabs/filecoin-wallet-provider'
+import Message from '@openworklabs/filecoin-message'
 import FilecoinNumber from '@openworklabs/filecoin-number'
 import { useDispatch, useSelector } from 'react-redux'
 import Form from 'react-bootstrap/Form'
@@ -104,21 +104,21 @@ const MsgCreator = () => {
       setConfirmStage('reviewOnDevice')
     }
 
-    const message = new Message({
-      to: toAddress,
-      from: selectedWallet.address,
-      value: value.toAttoFil(),
-      method: 0
-    })
-
     try {
-      await message.generateNonce()
       let provider = walletProvider
       if (walletType === LEDGER) {
         provider = await fetchProvider(dispatchLocal, dispatch)
       }
       if (provider) {
         dispatch(clearError())
+        const nonce = await provider.getNonce(selectedWallet.address)
+        const message = new Message({
+          to: toAddress,
+          from: selectedWallet.address,
+          value: value.toAttoFil(),
+          method: 0,
+          nonce
+        })
         const signature = await computeSig(
           provider,
           selectedWallet,
