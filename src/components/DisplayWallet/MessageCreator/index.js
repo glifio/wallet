@@ -109,7 +109,9 @@ const MsgCreator = () => {
       to: toAddress,
       from: selectedWallet.address,
       value: value.toAttoFil(),
-      method: 0
+      method: 0,
+      gasPrice,
+      gasLimit
     })
 
     try {
