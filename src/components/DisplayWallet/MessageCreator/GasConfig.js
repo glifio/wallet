@@ -88,6 +88,8 @@ const OptionButtons = styled(Button).attrs(props => {
 
 const GasConfig = ({ gasLimit, gasPrice, setGasPrice, setGasLimit }) => {
   const [configOpen, setConfigOpen] = useState(true)
+  const [gasPriceLocal, setGasPriceLocal] = useState(gasPrice)
+  const [gasLimitLocal, setGasLimitLocal] = useState(gasLimit)
   return (
     <div
       css={`
@@ -130,7 +132,7 @@ const GasConfig = ({ gasLimit, gasPrice, setGasPrice, setGasLimit }) => {
                 `}
                 htmlFor='gasPrice'
               >
-                {gasPrice} AttoFil
+                {gasPriceLocal} AttoFil
               </TextLabel>
             </JustifyContentContainer>
             <JustifyContentContainer
@@ -153,8 +155,8 @@ const GasConfig = ({ gasLimit, gasPrice, setGasPrice, setGasLimit }) => {
                 type='range'
                 min='1'
                 max='100'
-                value={gasPrice}
-                onChange={e => setGasPrice(e.target.value)}
+                value={gasPriceLocal}
+                onChange={e => setGasPriceLocal(e.target.value)}
                 name='gasPrice'
                 id='gasPrice'
               />
@@ -188,8 +190,8 @@ const GasConfig = ({ gasLimit, gasPrice, setGasPrice, setGasLimit }) => {
                 max='10000'
                 aria-describedby='gasLimit'
                 name='gasLimit'
-                value={gasLimit}
-                onChange={e => setGasLimit(e.target.value)}
+                value={gasLimitLocal}
+                onChange={e => setGasLimitLocal(e.target.value)}
               />
             </JustifyContentContainer>
           </div>
@@ -204,25 +206,29 @@ const GasConfig = ({ gasLimit, gasPrice, setGasPrice, setGasLimit }) => {
             `}
           >
             <OptionButtons
-              onClick={() => setConfigOpen(false)}
+              onClick={() => {
+                setGasPrice(gasPriceLocal)
+                setGasLimit(gasLimitLocal)
+                setConfigOpen(false)
+              }}
               color='darkseagreen'
             >
               Save
             </OptionButtons>
             <OptionButtons
               onClick={() => {
-                setGasLimit('1000')
-                setGasPrice('1')
+                setGasLimitLocal('1000')
+                setGasPriceLocal('1')
               }}
               color='cornflowerblue'
             >
-              Reset
+              Default
             </OptionButtons>
             <OptionButtons
               onClick={() => {
                 setConfigOpen(false)
-                setGasLimit('1000')
-                setGasPrice('1')
+                setGasLimitLocal(gasLimit)
+                setGasPriceLocal(gasPrice)
               }}
               color='mediumvioletred'
             >
