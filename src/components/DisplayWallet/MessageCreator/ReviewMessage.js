@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import 'styled-components/macro'
+import FilecoinNumber from '@openworklabs/filecoin-number'
 
 import { MessageForm, SendButton, MessageReview } from '../../StyledComponents'
 import { LEDGER_STATE_PROPTYPES } from '../../../utils/ledger'
@@ -51,7 +52,10 @@ ReviewMessage.propTypes = {
   gasLimit: PropTypes.string.isRequired,
   setGasLimit: PropTypes.func.isRequired,
   toAddress: PropTypes.string.isRequired,
-  value: PropTypes.object.isRequired
+  value: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.instanceOf(FilecoinNumber)
+  ])
 }
 
 export default ReviewMessage

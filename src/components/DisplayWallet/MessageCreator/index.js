@@ -4,29 +4,21 @@ import { Message } from '@openworklabs/filecoin-wallet-provider'
 import FilecoinNumber from '@openworklabs/filecoin-number'
 import { useDispatch, useSelector } from 'react-redux'
 import Form from 'react-bootstrap/Form'
-import InputGroup from 'react-bootstrap/InputGroup'
 
 import { useWallets, useBalance } from '../../../hooks'
 import { confirmMessage, error, clearError } from '../../../store/actions'
-import {
-  MessageCreator,
-  SectionHeader,
-  MessageForm,
-  InputLabel,
-  AvailableBalanceLabel,
-  SendButton,
-  MessageReview
-} from '../../StyledComponents'
+import { MessageCreator, SectionHeader } from '../../StyledComponents'
 import { toLowerCaseMsgFields } from '../../../utils'
 import { LEDGER } from '../../../constants'
 import {
   fetchProvider,
   reducer,
-  initialLedgerState,
-  RESET_STATE
+  initialLedgerState
 } from '../../../utils/ledger'
 import computeSig from '../computeSig'
 import ReviewMessage from './ReviewMessage'
+import CreateMessage from './CreateMessage'
+import ReviewMsgOnDevice from './ReviewMsgOnDevice'
 
 // TODO: better validation
 const isValidForm = (toAddress, value, balance, errors) => {
@@ -34,11 +26,6 @@ const isValidForm = (toAddress, value, balance, errors) => {
   const fieldsFilledOut = toAddress && value
   const enoughInTheBank = balance.isGreaterThan(value)
   return !!(errorFree && fieldsFilledOut && enoughInTheBank)
-}
-
-const formatValue = number => {
-  if (FilecoinNumber.isBigNumber(number)) return number.toFil()
-  return number
 }
 
 const MsgCreator = () => {
@@ -155,63 +142,16 @@ const MsgCreator = () => {
         <SectionHeader>Send Filecoin</SectionHeader>
         <Form onSubmit={handleSubmit}>
           {!confirmStage && (
-            <MessageForm>
-              <div>
-                <Form.Group controlId='toAddress'>
-                  <InputLabel>To</InputLabel>
-                  <InputGroup>
-                    <Form.Control
-                      type='text'
-                      aria-describedby='toAddressPrepend'
-                      name='toAddress'
-                      value={toAddress}
-                      onChange={e => setToAddress(e.target.value)}
-                    />
-                  </InputGroup>
-                </Form.Group>
-
-                <div
-                  css={{
-                    display: 'flex',
-                    'flex-direction': 'row',
-                    'justify-content': 'space-between'
-                  }}
-                >
-                  <div css={{ 'flex-grow': '1', 'max-width': '50%' }}>
-                    <AvailableBalanceLabel>Available</AvailableBalanceLabel>
-                    {formatValue(balance)}
-                  </div>
-
-                  <div css={{ 'flex-grow': '1', 'max-width': '50%' }}>
-                    <InputLabel>Amount</InputLabel>
-                    <Form.Group controlId='value'>
-                      <InputGroup>
-                        <Form.Control
-                          placeholder='0'
-                          type='number'
-                          step='.001'
-                          min='0'
-                          aria-describedby='valuePrepend'
-                          name='value'
-                          value={formatValue(value)}
-                          onChange={handleValueChange}
-                          isInvalid={errors.value}
-                        />
-                        <Form.Control.Feedback type='invalid'>
-                          {errors.value}
-                        </Form.Control.Feedback>
-                      </InputGroup>
-                    </Form.Group>
-                  </div>
-                </div>
-              </div>
-              <SendButton
-                disabled={!isValidForm(toAddress, value, balance, errors)}
-                onClick={() => setConfirmStage('reviewMessage')}
-              >
-                Send
-              </SendButton>
-            </MessageForm>
+            <CreateMessage
+              toAddress={toAddress}
+              setToAddress={setToAddress}
+              balance={balance}
+              value={value}
+              handleValueChange={handleValueChange}
+              errors={errors}
+              isValidForm={isValidForm}
+              setConfirmStage={setConfirmStage}
+            />
           )}
           {confirmStage === 'reviewMessage' && (
             <ReviewMessage
@@ -228,26 +168,12 @@ const MsgCreator = () => {
           )}
 
           {confirmStage === 'reviewOnDevice' && (
-            <MessageForm>
-              <MessageReview>
-                {ledgerState.userInitiatedImport &&
-                ledgerState.userImportFailure
-                  ? `Is your Ledger plugged in, unlocked, and Filecoin app open?`
-                  : `Sign the message on your Ledger.`}
-              </MessageReview>
-
-              {ledgerState.userInitiatedImport &&
-                (ledgerState.userImportFailure || errorFromRdx) && (
-                  <SendButton
-                    onClick={() => {
-                      setConfirmStage('')
-                      dispatchLocal({ type: RESET_STATE })
-                    }}
-                  >
-                    Try again
-                  </SendButton>
-                )}
-            </MessageForm>
+            <ReviewMsgOnDevice
+              ledgerState={ledgerState}
+              errorFromRdx={errorFromRdx}
+              setConfirmStage={setConfirmStage}
+              dispatchLocal={dispatchLocal}
+            />
           )}
         </Form>
       </MessageCreator>

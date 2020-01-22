@@ -73,7 +73,7 @@ const GasLimitInput = styled.input`
   }
 `
 
-const OptionButtons = styled(Button).attrs(props => {
+const OptionButtons = styled(Button).attrs(() => {
   return {
     type: 'button'
   }
@@ -87,7 +87,7 @@ const OptionButtons = styled(Button).attrs(props => {
 `
 
 const GasConfig = ({ gasLimit, gasPrice, setGasPrice, setGasLimit }) => {
-  const [configOpen, setConfigOpen] = useState(true)
+  const [configOpen, setConfigOpen] = useState(false)
   const [gasPriceLocal, setGasPriceLocal] = useState(gasPrice)
   const [gasLimitLocal, setGasLimitLocal] = useState(gasLimit)
   return (
