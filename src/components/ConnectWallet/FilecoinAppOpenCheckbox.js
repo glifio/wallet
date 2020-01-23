@@ -8,13 +8,19 @@ import {
 } from '../../utils/ledger'
 
 import { EducationalCheckboxItem, ColoredDot } from './styledComponents'
-import { Checkbox, CheckboxInputLabel } from '../StyledComponents'
+import {
+  Checkbox,
+  CheckboxInputLabel,
+  SECONDARY_BLUE,
+  GREEN,
+  RED
+} from '../StyledComponents'
 
 export const determineDotColorForFilecoinAppOpen = ledgerState => {
-  if (ledgerState.filecoinAppNotOpen) return 'red'
-  else if (ledgerState.filecoinAppOpen) return 'green'
-  else if (ledgerState.establishingConnectionWFilecoinApp) return 'blue'
-  return 'blue'
+  if (ledgerState.filecoinAppNotOpen) return RED
+  else if (ledgerState.filecoinAppOpen) return GREEN
+  else if (ledgerState.establishingConnectionWFilecoinApp) return SECONDARY_BLUE
+  return SECONDARY_BLUE
 }
 
 const FilecoinAppOpenCheckbox = ({ ledgerState, dispatchLocal }) => (

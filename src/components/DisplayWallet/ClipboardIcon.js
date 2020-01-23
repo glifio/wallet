@@ -2,8 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
+import { BASE_SIZE_UNIT } from '../StyledComponents'
+
 const ClipboardIconWrapper = styled.svg`
-  width: 15px;
+  width: ${BASE_SIZE_UNIT * 3}px;
   height: auto;
   &:hover {
     cursor: pointer;

@@ -1,17 +1,6 @@
 import styled from 'styled-components'
 
-import { JustifyContentCenter } from '../StyledComponents'
-
-export const Button = styled.button`
-  background: ${props => (props.disabled ? 'grey' : '#61d6d9')};
-  color: white;
-  border: 0;
-  border-radius: 4px;
-  margin-bottom: 30px;
-  width: 50%;
-  align-self: center;
-  cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
-`
+import { JustifyContentCenter, BASE_SIZE_UNIT } from '../StyledComponents'
 
 export const ConnectWalletContainer = styled(JustifyContentCenter)`
   flex-direction: column;
@@ -19,7 +8,7 @@ export const ConnectWalletContainer = styled(JustifyContentCenter)`
 `
 
 export const CheckboxContainer = styled.ul`
-  margin-top: 15px;
+  margin-top: ${BASE_SIZE_UNIT * 3}px;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -32,15 +21,16 @@ export const EducationalCheckboxItem = styled.li`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  margin: 15px;
+  margin: ${BASE_SIZE_UNIT * 3}px;
   width: 80%;
 `
 
 export const ColoredDot = styled.span`
-  height: 10px;
-  width: 10px;
+  height: ${BASE_SIZE_UNIT * 2}px;
+  width: ${BASE_SIZE_UNIT * 2}px;
   background-color: ${props => props.color};
   border-radius: 50%;
   display: inline-block;
-  margin: 5px 10px 5px 5px;
+  margin: ${BASE_SIZE_UNIT}px ${BASE_SIZE_UNIT * 2}px ${BASE_SIZE_UNIT}px
+    ${BASE_SIZE_UNIT}px;
 `

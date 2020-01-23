@@ -7,10 +7,11 @@ import styled from 'styled-components'
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 import AccountSelector from './AccountSelector'
+import { WHITE } from '../StyledComponents'
 
 const AccountAndNetworkPanelContainer = styled.div`
   grid-area: balance-banner;
-  background: white;
+  background: ${WHITE};
   border: 0;
 `
 

@@ -6,19 +6,25 @@ import 'styled-components/macro'
 import {
   JustifyContentContainer,
   UnderlineOnHover,
-  Button
+  ButtonBase,
+  TEXT_XSM,
+  GRAY,
+  BLACK,
+  FILECOIN_BLUE,
+  BASE_SIZE_UNIT,
+  WHITE
 } from '../../StyledComponents'
 
 const Text = styled.p`
-  font-size: 13px;
-  color: #bababa;
+  font-size: ${TEXT_XSM}px;
+  color: ${GRAY};
 `
 
 const TextLabel = styled.label`
-  font-size: 13px;
-  color: black;
-  background-color: #61d6d9;
-  width: 75px;
+  font-size: ${TEXT_XSM}px;
+  color: ${BLACK};
+  background-color: ${FILECOIN_BLUE};
+  width: ${BASE_SIZE_UNIT * 15}px;
   line-height: 2;
   border-radius: 4px;
 `
@@ -27,7 +33,7 @@ const Slider = styled.input`
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
-  height: 5px;
+  height: ${BASE_SIZE_UNIT}px;
   border-radius: 4px;
   background: #d3d3d3;
   outline: none;
@@ -42,24 +48,23 @@ const Slider = styled.input`
   ::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 10px;
-    height: 10px;
+    width: ${BASE_SIZE_UNIT * 2}px;
+    height: ${BASE_SIZE_UNIT * 2}px;
     border-radius: 4px;
-    background: #61d6d9;
+    background: ${FILECOIN_BLUE};
     cursor: pointer;
   }
 
   ::-moz-range-thumb {
-    width: 10px;
-    height: 10px;
-    background:
+    width: ${BASE_SIZE_UNIT * 2}px;
+    height: ${BASE_SIZE_UNIT * 2}px;
     cursor: pointer;
   }
 `
 
 const GasLimitInput = styled.input`
-  font-size: 13px;
-  width: 60px;
+  font-size: ${TEXT_XSM}px;
+  width: ${BASE_SIZE_UNIT * 12}px;
   border-radius: 4px;
   border: 1px solid #ced4da;
   transition-property: border-color, box-shadow;
@@ -73,17 +78,17 @@ const GasLimitInput = styled.input`
   }
 `
 
-const OptionButtons = styled(Button).attrs(() => {
+const OptionButtons = styled(ButtonBase).attrs(() => {
   return {
     type: 'button'
   }
 })`
   border: ${props => `1px solid ${props.color}`};
-  background-color: white;
+  background-color: ${WHITE};
   color: ${props => `${props.color}`};
-  font-size: 13px;
-  margin-bottom: 3px;
-  width: 70px;
+  font-size: ${TEXT_XSM}px;
+  margin-bottom: ${BASE_SIZE_UNIT}px;
+  width: ${BASE_SIZE_UNIT * 14}px;
 `
 
 const GasConfig = ({ gasLimit, gasPrice, setGasPrice, setGasLimit }) => {
@@ -93,7 +98,7 @@ const GasConfig = ({ gasLimit, gasPrice, setGasPrice, setGasLimit }) => {
   return (
     <div
       css={`
-        margin-top: 20px;
+        margin-top: ${BASE_SIZE_UNIT * 4}px;
       `}
     >
       {configOpen ? (
@@ -103,7 +108,7 @@ const GasConfig = ({ gasLimit, gasPrice, setGasPrice, setGasLimit }) => {
         >
           <div
             css={`
-              margin-right: 50px;
+              margin-right: ${BASE_SIZE_UNIT * 10}px;
             `}
           />
           <div
@@ -116,7 +121,7 @@ const GasConfig = ({ gasLimit, gasPrice, setGasPrice, setGasLimit }) => {
               justifyContent='space-between'
               css={`
                 align-items: center;
-                margin-bottom: 15px;
+                margin-bottom: ${BASE_SIZE_UNIT * 3}px;
               `}
             >
               <Text
@@ -145,7 +150,7 @@ const GasConfig = ({ gasLimit, gasPrice, setGasPrice, setGasLimit }) => {
               <Text
                 css={`
                   margin-bottom: 0;
-                  margin-right: 10px;
+                  margin-right: ${BASE_SIZE_UNIT * 2}px;
                 `}
               >
                 Slow
@@ -164,7 +169,7 @@ const GasConfig = ({ gasLimit, gasPrice, setGasPrice, setGasLimit }) => {
               <Text
                 css={`
                   margin-bottom: 0;
-                  margin-left: 10px;
+                  margin-left: ${BASE_SIZE_UNIT * 2}px;
                 `}
               >
                 Fast
@@ -179,7 +184,7 @@ const GasConfig = ({ gasLimit, gasPrice, setGasPrice, setGasLimit }) => {
             >
               <Text
                 css={`
-                  margin-top: 15px;
+                  margin-top: ${BASE_SIZE_UNIT * 3}px;
                 `}
               >
                 Gas limit:
@@ -199,7 +204,7 @@ const GasConfig = ({ gasLimit, gasPrice, setGasPrice, setGasLimit }) => {
             flexDirection='column'
             justifyContent='end'
             css={`
-              width: 100px;
+              width: ${BASE_SIZE_UNIT * 20}px;
               display: flex;
               flex-direction: column;
               align-items: flex-end;
@@ -239,7 +244,7 @@ const GasConfig = ({ gasLimit, gasPrice, setGasPrice, setGasLimit }) => {
       ) : (
         <UnderlineOnHover
           onClick={() => setConfigOpen(true)}
-          css={{ 'font-size': '13px' }}
+          css={{ 'font-size': `${TEXT_XSM}px` }}
         >
           Average network fee: ~128 AttoFil
         </UnderlineOnHover>

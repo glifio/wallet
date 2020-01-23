@@ -9,7 +9,8 @@ import {
   MessageForm,
   InputLabel,
   AvailableBalanceLabel,
-  SendButton
+  SendButton,
+  JustifyContentContainer
 } from '../../StyledComponents'
 
 const formatValue = number => {
@@ -43,12 +44,9 @@ const CreateMessage = ({
           </InputGroup>
         </Form.Group>
 
-        <div
-          css={{
-            display: 'flex',
-            'flex-direction': 'row',
-            'justify-content': 'space-between'
-          }}
+        <JustifyContentContainer
+          flexDirection='row'
+          justifyContent='space-between'
         >
           <div css={{ 'flex-grow': '1', 'max-width': '50%' }}>
             <AvailableBalanceLabel>Available</AvailableBalanceLabel>
@@ -76,7 +74,7 @@ const CreateMessage = ({
               </InputGroup>
             </Form.Group>
           </div>
-        </div>
+        </JustifyContentContainer>
       </div>
       <SendButton
         disabled={!isValidForm(toAddress, value, balance, errors)}
