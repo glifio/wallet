@@ -92,7 +92,7 @@ export const AccountLabel = styled.div`
 
 export const AccountDetail = styled.div`
   grid-area: accountDetails;
-  background-color: ${GRAY};
+  background-color: ${WHITE};
   padding: ${BASE_SIZE_UNIT}px ${BASE_SIZE_UNIT * 2}px;
 `
 
@@ -172,6 +172,9 @@ export const ButtonBase = styled.button`
   border-radius: 4px;
   width: ${BASE_SIZE_UNIT * 24}px;
   height: ${BASE_SIZE_UNIT * 6}px;
+  &:focus {
+    outline: 0;
+  }
 `
 
 export const SendButton = styled(ButtonBase)`
