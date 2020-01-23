@@ -14,7 +14,8 @@ import {
   TransactionStatusText,
   EmptyHistoryText,
   MessageReviewSubText,
-  UnderlineOnHover
+  UnderlineOnHover,
+  BASE_SIZE_UNIT
 } from '../StyledComponents'
 import { useTransactions, useWallets } from '../../hooks'
 import { shortenAddress } from '../../utils'
@@ -27,7 +28,13 @@ import {
 
 const MethodText = styled(MessageReviewSubText)`
   font-weight: bold;
-  margin-right: 5px;
+  margin-right: ${BASE_SIZE_UNIT}px;
+`
+
+const AlignItemsCenter = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `
 
 const TransactionComponent = ({
@@ -43,7 +50,7 @@ const TransactionComponent = ({
   return (
     <Transaction>
       <TransactionAmount>
-        <div
+        <AlignItemsCenter
           css={{
             display: 'flex',
             'flex-direction': 'row',
@@ -54,7 +61,7 @@ const TransactionComponent = ({
             <strong>{sent ? 'SENT: ' : 'RECEIVED: '}</strong>
           </MethodText>
           {new FilecoinNumber(value, 'attofil').toFil()}
-        </div>
+        </AlignItemsCenter>
       </TransactionAmount>
       <TransactionStatus>
         <TransactionStatusText>{status}</TransactionStatusText>
@@ -92,7 +99,12 @@ const MessageCreator = () => {
   return (
     <React.Fragment>
       <TransactionHistory>
-        <SectionHeader css={{ marginBottom: '10px', marginTop: '30px' }}>
+        <SectionHeader
+          css={{
+            marginBottom: `${BASE_SIZE_UNIT * 2}px`,
+            marginTop: `${BASE_SIZE_UNIT * 6}px`
+          }}
+        >
           Transaction History
         </SectionHeader>
         {pending.length > 0 &&

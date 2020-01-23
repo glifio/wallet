@@ -1,10 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import 'styled-components/macro'
+import styled from 'styled-components'
 
 import { useProgress } from '../../hooks'
-import { Button } from './styledComponents'
+import { ButtonBase } from '../StyledComponents'
 import { connectLedger, LEDGER_STATE_PROPTYPES } from '../../utils/ledger'
+
+const Button = styled(ButtonBase)`
+  align-self: center;
+  margin-bottom: 30px;
+`
 
 const ImportLedgerBtn = ({
   ledgerState,

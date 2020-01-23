@@ -4,8 +4,14 @@ import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 import { useLocation, useHistory } from 'react-router-dom'
 
-import { Checkbox, CheckboxInputLabel } from '../StyledComponents'
-import { JustifyContentContainer, Button } from '../StyledComponents'
+import {
+  JustifyContentContainer,
+  ButtonBase,
+  Checkbox,
+  CheckboxInputLabel,
+  BASE_SIZE_UNIT,
+  TEXT_XSM
+} from '../StyledComponents'
 
 import { walletList, switchWallet, error } from '../../store/actions'
 import sortAndRemoveWalletDups from './sortAndRemoveWalletDups'
@@ -13,24 +19,24 @@ import { ACCOUNT_BATCH_SIZE } from '../../constants'
 
 const ButtonContainer = styled(JustifyContentContainer)`
   justify-self: flex-end;
-  margin-bottom: 30px;
+  margin-bottom: ${BASE_SIZE_UNIT * 6}px;
 `
 
 const SettingsContainer = styled(JustifyContentContainer)`
-  height: 350px;
-  margin-top: 30px;
+  height: ${BASE_SIZE_UNIT * 70}px;
+  margin-top: ${BASE_SIZE_UNIT * 6}px;
 `
 
 const LineItem = styled(JustifyContentContainer)`
-  height: 50px;
+  height: ${BASE_SIZE_UNIT * 10}px;
   background-color: ${props => (props.even ? 'white' : 'aliceblue')};
-  padding: 0 10px 0 10px;
+  padding: 0 ${BASE_SIZE_UNIT * 2}px 0 ${BASE_SIZE_UNIT * 2}px;
   align-items: center;
 `
 
 const LoadingText = styled.p`
   font-weight: bold;
-  font-size: 13px;
+  font-size: ${TEXT_XSM}px;
   line-height: 20;
 `
 
@@ -169,15 +175,18 @@ const AccountSelector = ({
         )}
       </div>
       <ButtonContainer flexDirection='row' justifyContent='space-around'>
-        <Button
+        <ButtonBase
           disabled={loadingAccounts || page === 0}
           onClick={() => paginate(page - 1)}
         >
           Previous
-        </Button>
-        <Button disabled={loadingAccounts} onClick={() => paginate(page + 1)}>
+        </ButtonBase>
+        <ButtonBase
+          disabled={loadingAccounts}
+          onClick={() => paginate(page + 1)}
+        >
           Next
-        </Button>
+        </ButtonBase>
       </ButtonContainer>
     </SettingsContainer>
   )

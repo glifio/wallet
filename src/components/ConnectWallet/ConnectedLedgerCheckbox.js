@@ -2,7 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { EducationalCheckboxItem, ColoredDot } from './styledComponents'
-import { Checkbox, CheckboxInputLabel } from '../StyledComponents'
+import {
+  Checkbox,
+  CheckboxInputLabel,
+  GREEN,
+  SECONDARY_BLUE,
+  RED
+} from '../StyledComponents'
 import {
   USER_VERIFIED_LEDGER_CONNECTED,
   USER_UNVERIFIED_LEDGER_CONNECTED,
@@ -10,9 +16,9 @@ import {
 } from '../../utils/ledger'
 
 export const determineDotColorForLedgerConnection = ledgerState => {
-  if (ledgerState.connecting) return 'blue'
-  else if (ledgerState.connectedFailure) return 'red'
-  else if (ledgerState.connectedSuccess) return 'green'
+  if (ledgerState.connecting) return SECONDARY_BLUE
+  else if (ledgerState.connectedFailure) return RED
+  else if (ledgerState.connectedSuccess) return GREEN
   return ''
 }
 
