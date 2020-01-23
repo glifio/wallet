@@ -1,5 +1,6 @@
 import React, { useReducer, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import styled from 'styled-components'
 
 import { OnboardingContainer } from '../StyledComponents'
 import { reducer, initialLedgerState, RESET_STATE } from '../../utils/ledger'
@@ -9,6 +10,16 @@ import ConnectedLedgerCheckbox from './ConnectedLedgerCheckbox'
 import UnlockedLedgerCheckbox from './UnlockedLedgerCheckbox'
 import FilecoinAppOpenCheckbox from './FilecoinAppOpenCheckbox'
 import ImportLedgerBtn from './ImportLedgerBtn'
+
+const LoadingContainer = styled.div`
+  align-self: center;
+`
+
+const LoadingEmoji = styled.span`
+  font-size: 20px;
+  align-self: center;
+  line-height: 15;
+`
 
 export default () => {
   const dispatchRdx = useDispatch()
@@ -25,28 +36,39 @@ export default () => {
   return (
     <ConnectWalletContainer>
       <OnboardingContainer>
-        <form>
-          <CheckboxContainer>
-            <ConnectedLedgerCheckbox
+        {ledgerState.userInitiatedImport ? (
+          <LoadingContainer>
+            {/* eslint-disable jsx-a11y/accessible-emoji */}
+            <LoadingEmoji role='img' aria-label='loading'>
+              ⌛Loading...
+            </LoadingEmoji>
+          </LoadingContainer>
+        ) : (
+          <>
+            <form>
+              <CheckboxContainer>
+                <ConnectedLedgerCheckbox
+                  ledgerState={ledgerState}
+                  dispatchLocal={dispatchLocal}
+                />
+                <UnlockedLedgerCheckbox
+                  ledgerState={ledgerState}
+                  dispatchLocal={dispatchLocal}
+                />
+                <FilecoinAppOpenCheckbox
+                  ledgerState={ledgerState}
+                  dispatchLocal={dispatchLocal}
+                />
+              </CheckboxContainer>
+            </form>
+            <ImportLedgerBtn
               ledgerState={ledgerState}
               dispatchLocal={dispatchLocal}
+              dispatchRdx={dispatchRdx}
+              network={network}
             />
-            <UnlockedLedgerCheckbox
-              ledgerState={ledgerState}
-              dispatchLocal={dispatchLocal}
-            />
-            <FilecoinAppOpenCheckbox
-              ledgerState={ledgerState}
-              dispatchLocal={dispatchLocal}
-            />
-          </CheckboxContainer>
-        </form>
-        <ImportLedgerBtn
-          ledgerState={ledgerState}
-          dispatchLocal={dispatchLocal}
-          dispatchRdx={dispatchRdx}
-          network={network}
-        />
+          </>
+        )}
       </OnboardingContainer>
     </ConnectWalletContainer>
   )
