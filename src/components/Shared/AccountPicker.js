@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useReducer } from 'react'
 import PropTypes from 'prop-types'
 import { useHistory, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
@@ -18,16 +18,18 @@ import {
 import CopyToClipboardIcon from '../DisplayWallet/ClipboardIcon'
 import { copyToClipboard } from '../../utils'
 
+import { fetchProvider, reducer, initialLedgerState } from '../../utils/ledger'
 import { ACCOUNT_BATCH_SIZE, LEDGER } from '../../constants'
 
 import { error } from '../../store/actions'
 
 const AccountPicker = ({ loadingAccounts }) => {
-  const { selectedWallet, walletType, walletProvider } = useWallets()
+  const { selectedWallet, walletType } = useWallets()
   const [copiedToClipboard, setCopiedToClipboard] = useState(false)
   const history = useHistory()
   const { pathname, search } = useLocation()
   const dispatch = useDispatch()
+  const [, dispatchLocal] = useReducer(reducer, initialLedgerState)
 
   const onClick = useCallback(() => {
     setCopiedToClipboard(true)
@@ -63,12 +65,11 @@ const AccountPicker = ({ loadingAccounts }) => {
               role='button'
               onClick={async () => {
                 try {
-                  if (walletProvider) {
-                    await walletProvider.wallet.showAddressAndPubKey(
+                  const provider = await fetchProvider(dispatchLocal, dispatch)
+                  if (provider) {
+                    await provider.wallet.showAddressAndPubKey(
                       selectedWallet.path
                     )
-                  } else {
-                    throw new Error('Error connecting with Ledger')
                   }
                 } catch (err) {
                   dispatch(error(err))
