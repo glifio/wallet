@@ -82,15 +82,9 @@ export const establishConnectionWithFilecoinApp = async (
   }
 }
 
-const fetchWallets = async (
-  provider,
-  dispatchRdx,
-  start = 0,
-  end = 1,
-  network = 't'
-) => {
+const fetchWallets = async (provider, dispatchRdx, network = 't') => {
   try {
-    const filAddresses = await provider.wallet.getAccounts(start, end, network)
+    const filAddresses = await provider.wallet.getAccounts(0, 1, network)
     const wallets = await Promise.all(
       filAddresses.map(async (address, i) => {
         const balance = await provider.getBalance(address)
@@ -125,7 +119,7 @@ export const fetchProvider = async (dispatchLocal, dispatchRdx) => {
 }
 
 // returns true if successful connection, false if not
-export default async (dispatchLocal, dispatchRdx) => {
+export const connectLedger = async (dispatchLocal, dispatchRdx, network) => {
   const transport = await establishConnectionWithDevice(
     dispatchLocal,
     dispatchRdx
@@ -137,7 +131,7 @@ export default async (dispatchLocal, dispatchRdx) => {
     dispatchRdx
   )
   if (!provider) return false
-  return fetchWallets(provider, dispatchRdx)
+  return fetchWallets(provider, dispatchRdx, network)
 }
 
 export const initialLedgerState = {

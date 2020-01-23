@@ -12,7 +12,10 @@ import ImportLedgerBtn from './ImportLedgerBtn'
 
 export default () => {
   const dispatchRdx = useDispatch()
-  const errorFromRdx = useSelector(state => state.error)
+  const { errorFromRdx, network } = useSelector(state => ({
+    errorFromRdx: state.error,
+    network: state.network
+  }))
   const [ledgerState, dispatchLocal] = useReducer(reducer, initialLedgerState)
 
   useEffect(() => {
@@ -42,6 +45,7 @@ export default () => {
           ledgerState={ledgerState}
           dispatchLocal={dispatchLocal}
           dispatchRdx={dispatchRdx}
+          network={network}
         />
       </OnboardingContainer>
     </ConnectWalletContainer>

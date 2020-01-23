@@ -26,7 +26,7 @@ const AccountPicker = ({ loadingAccounts }) => {
   const { selectedWallet, walletType, walletProvider } = useWallets()
   const [copiedToClipboard, setCopiedToClipboard] = useState(false)
   const history = useHistory()
-  const { pathname } = useLocation()
+  const { pathname, search } = useLocation()
   const dispatch = useDispatch()
 
   const onClick = useCallback(() => {
@@ -83,12 +83,20 @@ const AccountPicker = ({ loadingAccounts }) => {
       <SwitchAccountButton
         disabled={loadingAccounts}
         onClick={() => {
+          const params = new URLSearchParams(search)
           let page = 0
           if (walletType === LEDGER) {
             page = Math.floor(selectedWallet.path[4] / ACCOUNT_BATCH_SIZE)
           }
-          if (pathname.includes('/settings')) history.push('/')
-          else history.push(`/settings/accounts?page=${page}`)
+          if (pathname.includes('/settings')) {
+            params.delete('page')
+            const hasParams = Array.from(params).length > 0
+            const query = hasParams ? `/?${params.toString()}` : '/'
+            history.push(query)
+          } else {
+            params.set('page', page)
+            history.push(`/settings/accounts?${params.toString()}`)
+          }
         }}
       >
         {loadingAccounts ? (
