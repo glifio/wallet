@@ -40,7 +40,8 @@ const AccountSelector = ({
   setLoadingAccounts,
   tabOpen
 }) => {
-  const params = new URLSearchParams(useLocation().search)
+  const { search } = useLocation()
+  const params = new URLSearchParams(search)
   const page = Number(params.get('page'))
   const history = useHistory()
   const { walletProvider, selectedWallet, walletsInRdx } = useSelector(
@@ -117,6 +118,13 @@ const AccountSelector = ({
     walletsInRdx
   ])
 
+  const paginate = page => {
+    const params = new URLSearchParams(search)
+    params.delete('page')
+    params.set('page', page)
+    history.push(`/settings/accounts?${params.toString()}`)
+  }
+
   return (
     <SettingsContainer flexDirection='column' justifyContent='space-between'>
       <div>
@@ -163,14 +171,11 @@ const AccountSelector = ({
       <ButtonContainer flexDirection='row' justifyContent='space-around'>
         <Button
           disabled={loadingAccounts || page === 0}
-          onClick={() => history.push(`/settings/accounts?page=${page - 1}`)}
+          onClick={() => paginate(page - 1)}
         >
           Previous
         </Button>
-        <Button
-          disabled={loadingAccounts}
-          onClick={() => history.push(`/settings/accounts?page=${page + 1}`)}
-        >
+        <Button disabled={loadingAccounts} onClick={() => paginate(page + 1)}>
           Next
         </Button>
       </ButtonContainer>

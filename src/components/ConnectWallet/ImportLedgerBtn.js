@@ -4,9 +4,14 @@ import 'styled-components/macro'
 
 import { useProgress } from '../../hooks'
 import { Button } from './styledComponents'
-import connectLedger, { LEDGER_STATE_PROPTYPES } from '../../utils/ledger'
+import { connectLedger, LEDGER_STATE_PROPTYPES } from '../../utils/ledger'
 
-const ImportLedgerBtn = ({ ledgerState, dispatchRdx, dispatchLocal }) => {
+const ImportLedgerBtn = ({
+  ledgerState,
+  dispatchRdx,
+  dispatchLocal,
+  network
+}) => {
   const { setProgress } = useProgress()
   return (
     <Button
@@ -20,7 +25,8 @@ const ImportLedgerBtn = ({ ledgerState, dispatchRdx, dispatchLocal }) => {
       onClick={async () => {
         const successfulConnection = await connectLedger(
           dispatchLocal,
-          dispatchRdx
+          dispatchRdx,
+          network
         )
         if (successfulConnection) setProgress(2)
       }}
@@ -33,7 +39,8 @@ const ImportLedgerBtn = ({ ledgerState, dispatchRdx, dispatchLocal }) => {
 ImportLedgerBtn.propTypes = {
   ledgerState: LEDGER_STATE_PROPTYPES,
   dispatchLocal: PropTypes.func.isRequired,
-  dispatchRdx: PropTypes.func.isRequired
+  dispatchRdx: PropTypes.func.isRequired,
+  network: PropTypes.string.isRequired
 }
 
 export default ImportLedgerBtn

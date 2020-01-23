@@ -11,6 +11,7 @@ import Error from './components/Error'
 import BadBrowser from './components/Error/BadBrowser'
 import Settings from './components/Settings'
 import BrowserChecker from './services/BrowserChecker'
+import { NetworkChecker } from './services'
 
 function App() {
   useCachedMessages()
@@ -19,6 +20,7 @@ function App() {
   return (
     <Router>
       <BrowserChecker />
+      <NetworkChecker />
       <Error />
       <Header />
       <Switch>

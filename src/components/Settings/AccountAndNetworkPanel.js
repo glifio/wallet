@@ -1,12 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { useLocation, useHistory } from 'react-router-dom'
 
 import styled from 'styled-components'
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
-
-import { switchNetwork } from '../../store/actions'
 import AccountSelector from './AccountSelector'
 
 const AccountAndNetworkPanelContainer = styled.div`
@@ -20,14 +19,22 @@ const AccountAndNetworkPanel = ({ loadingAccounts, setLoadingAccounts }) => {
     network: state.network
   }))
 
-  const dispatch = useDispatch()
+  const { search, pathname } = useLocation()
+  const history = useHistory()
+
+  const switchNetwork = network => {
+    const params = new URLSearchParams(search)
+    params.delete('network')
+    params.set('network', network)
+    history.replace(`${pathname}?${params.toString()}`)
+  }
 
   return (
     <AccountAndNetworkPanelContainer>
       <Tabs
         id='controlled-tab-example'
         activeKey={network}
-        onSelect={k => dispatch(switchNetwork(k))}
+        onSelect={switchNetwork}
       >
         <Tab eventKey='f' title='Mainnet'>
           <AccountSelector

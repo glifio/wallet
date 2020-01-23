@@ -1,10 +1,11 @@
 import { useEffect, useCallback, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 import FilecoinNumber from '@openworklabs/filecoin-number'
 
 import {
   switchWallet,
+  switchNetwork,
   updateBalance,
   updateProgress,
   fetchedConfirmedMessagesSuccess,
@@ -202,6 +203,20 @@ export const useCachedMessages = () => {
     const pendingMessages = getMsgsFromCache(selectedWalletAddress)
     dispatch(populateRedux(pendingMessages))
   }, [dispatch, selectedWalletAddress])
+}
+
+export const useNetwork = () => {
+  const dispatch = useDispatch()
+  const networkFromRdx = useSelector(state => state.network)
+  const params = new URLSearchParams(useLocation().search)
+  const network = params.get('network')
+  if (
+    network &&
+    network.toLowerCase() !== networkFromRdx &&
+    (network.toLowerCase() === 'f' || network.toLowerCase() === 't')
+  ) {
+    dispatch(switchNetwork(network))
+  }
 }
 
 export const useBrowserChecker = () => {
