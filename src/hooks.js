@@ -155,11 +155,11 @@ export const useTransactions = index => {
         dispatch(fetchedConfirmedMessagesFailure(err))
       }
     }
-    if (selectedWallet.address) {
+    if (selectedWallet.address && !loading && !loadedSuccess) {
       dispatch(fetchingConfirmedMessages())
       fetchData()
     }
-  }, [selectedWallet.address, index, dispatch])
+  }, [selectedWallet.address, index, dispatch, loading, loadedSuccess])
 
   return {
     confirmed,
