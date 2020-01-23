@@ -30,7 +30,7 @@ export const establishConnectionWithDevice = async (
       dispatchRdx(error(err))
     } else if (
       err.message &&
-      !err.message.toLowerCase().includes('transporterror: invalid channel')
+      err.message.toLowerCase().includes('transporterror: invalid channel')
     ) {
       dispatchRdx(error(new Error('Please unplug and replug your device.')))
     }
@@ -72,7 +72,7 @@ export const establishConnectionWithFilecoinApp = async (
 
     if (
       err.message &&
-      !err.message.toLowerCase().includes('transporterror: invalid channel')
+      err.message.toLowerCase().includes('transporterror: invalid channel')
     ) {
       dispatchRdx(error(new Error('Please unplug and replug your device.')))
       return false

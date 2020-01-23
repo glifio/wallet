@@ -23,9 +23,10 @@ const LoadingEmoji = styled.span`
 
 export default () => {
   const dispatchRdx = useDispatch()
-  const { errorFromRdx, network } = useSelector(state => ({
+  const { errorFromRdx, network, provider } = useSelector(state => ({
     errorFromRdx: state.error,
-    network: state.network
+    network: state.network,
+    provider: state.walletProvider
   }))
   const [ledgerState, dispatchLocal] = useReducer(reducer, initialLedgerState)
 
@@ -33,10 +34,16 @@ export default () => {
     if (!errorFromRdx) dispatchLocal({ type: RESET_STATE })
   }, [errorFromRdx])
 
+  const showLoading =
+    ledgerState.userInitiatedImport &&
+    !ledgerState.userImportFailure &&
+    provider &&
+    !errorFromRdx
+
   return (
     <ConnectWalletContainer>
       <OnboardingContainer>
-        {ledgerState.userInitiatedImport ? (
+        {showLoading ? (
           <LoadingContainer>
             {/* eslint-disable jsx-a11y/accessible-emoji */}
             <LoadingEmoji role='img' aria-label='loading'>
