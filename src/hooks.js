@@ -114,7 +114,7 @@ export const useTransactions = index => {
     links,
     loading,
     loadedSuccess,
-    loadedFailurepending,
+    loadedFailure,
     pending,
     selectedWallet
   } = useSelector(state => {
@@ -155,18 +155,30 @@ export const useTransactions = index => {
         dispatch(fetchedConfirmedMessagesFailure(err))
       }
     }
-    if (selectedWallet.address && !loading && !loadedSuccess) {
+    if (
+      selectedWallet.address &&
+      !loading &&
+      !loadedSuccess &&
+      !loadedFailure
+    ) {
       dispatch(fetchingConfirmedMessages())
       fetchData()
     }
-  }, [selectedWallet.address, index, dispatch, loading, loadedSuccess])
+  }, [
+    selectedWallet.address,
+    index,
+    dispatch,
+    loading,
+    loadedSuccess,
+    loadedFailure
+  ])
 
   return {
     confirmed,
     links,
     loading,
     loadedSuccess,
-    loadedFailurepending,
+    loadedFailure,
     pending
   }
 }
