@@ -121,6 +121,7 @@ const AccountSelector = ({
 
     // checks to see if the wallets already exists in redux
     const needToFetch = () => {
+      if (walletType !== LEDGER) return false
       const matchCount = walletsInRdx.reduce((matches, wallet) => {
         const walletDerivationIndex = wallet.path[4]
         const derivationIndexRange = [
@@ -166,88 +167,100 @@ const AccountSelector = ({
 
   return (
     <SettingsContainer flexDirection='column' justifyContent='space-between'>
-      <div>
-        {ledgerState.userInitiatedImport && ledgerState.userImportFailure ? (
-          <JustifyContentContainer flexDirection='row' justifyContent='center'>
-            <JustifyContentContainer
-              flexDirection='column'
-              justifyContent='center'
-              css={{ 'margin-top': '20%' }}
-            >
-              <Text>
-                Is your Ledger plugged in, unlocked, and Filecoin app open?
-              </Text>
-              <UnderlineOnHover
-                role='button'
-                rel='noopener noreferrer'
-                onClick={() => dispatchLocal({ type: RESET_STATE })}
-              >
-                Yes.
-              </UnderlineOnHover>
-            </JustifyContentContainer>
-          </JustifyContentContainer>
-        ) : loadingAccounts ? (
-          <JustifyContentContainer flexDirection='row' justifyContent='center'>
-            <LoadingText
-              css={`
-                line-height: 20;
-              `}
-            >
-              Loading...
-            </LoadingText>
-          </JustifyContentContainer>
-        ) : (
-          walletsInRdx
-            .filter(
-              wallet =>
-                wallet.path[4] >= page * ACCOUNT_BATCH_SIZE &&
-                wallet.path[4] < page * ACCOUNT_BATCH_SIZE + ACCOUNT_BATCH_SIZE
-            )
-            .map((wallet, arrayIndex) => (
-              <LineItem
+      {walletType === LEDGER && (
+        <>
+          <div>
+            {ledgerState.userInitiatedImport &&
+            ledgerState.userImportFailure ? (
+              <JustifyContentContainer
                 flexDirection='row'
-                justifyContent='space-between'
-                key={wallet.address}
-                even={arrayIndex % 2}
+                justifyContent='center'
               >
-                <div>
-                  <Checkbox
-                    onChange={() =>
-                      dispatch(
-                        switchWallet(page * ACCOUNT_BATCH_SIZE + arrayIndex)
-                      )
-                    }
-                    type='checkbox'
-                    name={`account-${wallet.address}`}
-                    id={`account-${wallet.address}`}
-                    checked={selectedWallet.address === wallet.address}
-                  />
-                  <CheckboxInputLabel htmlFor={`account-${wallet.address}`}>
-                    {wallet.address}
-                  </CheckboxInputLabel>
-                </div>
+                <JustifyContentContainer
+                  flexDirection='column'
+                  justifyContent='center'
+                  css={{ 'margin-top': '20%' }}
+                >
+                  <Text>
+                    Is your Ledger plugged in, unlocked, and Filecoin app open?
+                  </Text>
+                  <UnderlineOnHover
+                    role='button'
+                    rel='noopener noreferrer'
+                    onClick={() => dispatchLocal({ type: RESET_STATE })}
+                  >
+                    Yes.
+                  </UnderlineOnHover>
+                </JustifyContentContainer>
+              </JustifyContentContainer>
+            ) : loadingAccounts ? (
+              <JustifyContentContainer
+                flexDirection='row'
+                justifyContent='center'
+              >
+                <LoadingText
+                  css={`
+                    line-height: 20;
+                  `}
+                >
+                  Loading...
+                </LoadingText>
+              </JustifyContentContainer>
+            ) : (
+              walletsInRdx
+                .filter(
+                  wallet =>
+                    wallet.path[4] >= page * ACCOUNT_BATCH_SIZE &&
+                    wallet.path[4] <
+                      page * ACCOUNT_BATCH_SIZE + ACCOUNT_BATCH_SIZE
+                )
+                .map((wallet, arrayIndex) => (
+                  <LineItem
+                    flexDirection='row'
+                    justifyContent='space-between'
+                    key={wallet.address}
+                    even={arrayIndex % 2}
+                  >
+                    <div>
+                      <Checkbox
+                        onChange={() =>
+                          dispatch(
+                            switchWallet(page * ACCOUNT_BATCH_SIZE + arrayIndex)
+                          )
+                        }
+                        type='checkbox'
+                        name={`account-${wallet.address}`}
+                        id={`account-${wallet.address}`}
+                        checked={selectedWallet.address === wallet.address}
+                      />
+                      <CheckboxInputLabel htmlFor={`account-${wallet.address}`}>
+                        {wallet.address}
+                      </CheckboxInputLabel>
+                    </div>
 
-                <div>{wallet.balance.toString()}</div>
-              </LineItem>
-            ))
-        )}
-      </div>
-      <ButtonContainer flexDirection='row' justifyContent='space-around'>
-        <ButtonBase
-          disabled={
-            ledgerState.userImportFailure || loadingAccounts || page === 0
-          }
-          onClick={() => paginate(page - 1)}
-        >
-          Previous
-        </ButtonBase>
-        <ButtonBase
-          disabled={ledgerState.userImportFailure || loadingAccounts}
-          onClick={() => paginate(page + 1)}
-        >
-          Next
-        </ButtonBase>
-      </ButtonContainer>
+                    <div>{wallet.balance.toString()}</div>
+                  </LineItem>
+                ))
+            )}
+          </div>
+          <ButtonContainer flexDirection='row' justifyContent='space-around'>
+            <ButtonBase
+              disabled={
+                ledgerState.userImportFailure || loadingAccounts || page === 0
+              }
+              onClick={() => paginate(page - 1)}
+            >
+              Previous
+            </ButtonBase>
+            <ButtonBase
+              disabled={ledgerState.userImportFailure || loadingAccounts}
+              onClick={() => paginate(page + 1)}
+            >
+              Next
+            </ButtonBase>
+          </ButtonContainer>
+        </>
+      )}
     </SettingsContainer>
   )
 }
