@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import 'styled-components/macro'
 import FilecoinNumber from '@openworklabs/filecoin-number'
 import {
@@ -41,7 +42,7 @@ const TransactionComponent = ({
   to,
   from,
   value,
-  gasprice,
+  gas_used,
   cid,
   status,
   selectedWalletAddress
@@ -68,7 +69,7 @@ const TransactionComponent = ({
       </TransactionStatus>
       <TransactionGas>
         <strong>Gas: </strong>
-        {gasprice} FIL
+        {gas_used} AttoFil
       </TransactionGas>
       {sent ? (
         <TransactionActorAddress>
@@ -84,6 +85,16 @@ const TransactionComponent = ({
       </TransactionMessageHash>
     </Transaction>
   )
+}
+
+TransactionComponent.propTypes = {
+  to: PropTypes.string.isRequired,
+  from: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  gas_used: PropTypes.number.isRequired,
+  cid: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
+  selectedWalletAddress: PropTypes.string.isRequired
 }
 
 const MessageCreator = () => {
