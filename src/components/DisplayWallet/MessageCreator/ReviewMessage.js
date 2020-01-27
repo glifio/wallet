@@ -6,6 +6,7 @@ import FilecoinNumber from '@openworklabs/filecoin-number'
 import { MessageForm, SendButton, MessageReview } from '../../StyledComponents'
 import { LEDGER_STATE_PROPTYPES } from '../../../utils/ledger'
 import GasConfig from './GasConfig'
+import { ADDRESS_PROPTYPE } from '../../../utils'
 
 const ReviewMessage = ({
   ledgerState,
@@ -51,7 +52,7 @@ ReviewMessage.propTypes = {
   setGasPrice: PropTypes.func.isRequired,
   gasLimit: PropTypes.string.isRequired,
   setGasLimit: PropTypes.func.isRequired,
-  toAddress: PropTypes.string.isRequired,
+  toAddress: ADDRESS_PROPTYPE,
   value: PropTypes.oneOfType([
     PropTypes.string.isRequired,
     PropTypes.instanceOf(FilecoinNumber)
