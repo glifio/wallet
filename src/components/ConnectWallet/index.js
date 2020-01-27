@@ -2,9 +2,14 @@ import React, { useReducer, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 
-import { OnboardingContainer } from '../StyledComponents'
+import {
+  OnboardingContainer,
+  ButtonBase,
+  JustifyContentContainer
+} from '../StyledComponents'
 import { reducer, initialLedgerState, RESET_STATE } from '../../utils/ledger'
 import { ConnectWalletContainer, CheckboxContainer } from './styledComponents'
+import { useProgress } from '../../hooks'
 
 import ConnectedLedgerCheckbox from './ConnectedLedgerCheckbox'
 import UnlockedLedgerCheckbox from './UnlockedLedgerCheckbox'
@@ -23,6 +28,7 @@ const LoadingEmoji = styled.span`
 
 export default () => {
   const dispatchRdx = useDispatch()
+  const { setProgress } = useProgress()
   const { errorFromRdx, network, provider } = useSelector(state => ({
     errorFromRdx: state.error,
     network: state.network,
@@ -68,12 +74,18 @@ export default () => {
                 />
               </CheckboxContainer>
             </form>
-            <ImportLedgerBtn
-              ledgerState={ledgerState}
-              dispatchLocal={dispatchLocal}
-              dispatchRdx={dispatchRdx}
-              network={network}
-            />
+            <JustifyContentContainer
+              flexDirection='row'
+              justifyContent='space-around'
+            >
+              <ButtonBase onClick={() => setProgress(0)}>Back</ButtonBase>
+              <ImportLedgerBtn
+                ledgerState={ledgerState}
+                dispatchLocal={dispatchLocal}
+                dispatchRdx={dispatchRdx}
+                network={network}
+              />
+            </JustifyContentContainer>
           </>
         )}
       </OnboardingContainer>
