@@ -1,6 +1,7 @@
 import React, { useState, useReducer } from 'react'
 import 'styled-components/macro'
 import Message from '@openworklabs/filecoin-message'
+import { validateAddressString } from '@openworklabs/filecoin-address'
 import FilecoinNumber from '@openworklabs/filecoin-number'
 import { useDispatch, useSelector } from 'react-redux'
 import Form from 'react-bootstrap/Form'
@@ -20,9 +21,9 @@ import ReviewMessage from './ReviewMessage'
 import CreateMessage from './CreateMessage'
 import ReviewMsgOnDevice from './ReviewMsgOnDevice'
 
-// TODO: better validation
 const isValidForm = (toAddress, value, balance, errors) => {
-  const errorFree = !errors.value && !errors.toAddress
+  const validToAddress = validateAddressString(toAddress)
+  const errorFree = !errors.value && !errors.toAddress && validToAddress
   const fieldsFilledOut = toAddress && value
   const enoughInTheBank = balance.isGreaterThan(value)
   return !!(errorFree && fieldsFilledOut && enoughInTheBank)
@@ -84,7 +85,6 @@ const MsgCreator = () => {
     else setValue(new FilecoinNumber(e.target.value, 'fil'))
   }
 
-  // TODO: better validation
   const handleSubmit = async e => {
     e.preventDefault()
 
@@ -151,6 +151,7 @@ const MsgCreator = () => {
               errors={errors}
               isValidForm={isValidForm}
               setConfirmStage={setConfirmStage}
+              setErrors={setErrors}
             />
           )}
           {confirmStage === 'reviewMessage' && (

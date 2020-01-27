@@ -19,7 +19,7 @@ import {
   BASE_SIZE_UNIT
 } from '../StyledComponents'
 import { useTransactions, useWallets } from '../../hooks'
-import { shortenAddress } from '../../utils'
+import { shortenAddress, ADDRESS_PROPTYPE } from '../../utils'
 import { useDispatch } from 'react-redux'
 import {
   fetchingNextPage,
@@ -88,13 +88,13 @@ const TransactionComponent = ({
 }
 
 TransactionComponent.propTypes = {
-  to: PropTypes.string.isRequired,
-  from: PropTypes.string.isRequired,
+  to: ADDRESS_PROPTYPE,
+  from: ADDRESS_PROPTYPE,
   value: PropTypes.string.isRequired,
   gas_used: PropTypes.number.isRequired,
   cid: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
-  selectedWalletAddress: PropTypes.string.isRequired
+  selectedWalletAddress: ADDRESS_PROPTYPE
 }
 
 const MessageCreator = () => {

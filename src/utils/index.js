@@ -1,3 +1,5 @@
+import { validateStringAddress } from '@openworklabs/filecoin-address'
+
 export const shortenAddress = address => {
   const beginning = address.slice(0, 5)
   const end = address.slice(address.length - 5, address.length)
@@ -56,3 +58,17 @@ export const copyToClipboard = text =>
   })
 
 export const noop = () => {}
+
+export const ADDRESS_PROPTYPE = (props, propName, componentName) => {
+  if (!validateStringAddress(props[propName]))
+    return new Error(
+      'Invalid prop `' +
+        propName +
+        '` supplied to' +
+        ' `' +
+        componentName +
+        '`. Validation failed.'
+    )
+
+  return null
+}
