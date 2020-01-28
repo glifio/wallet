@@ -115,7 +115,7 @@ const MsgCreator = () => {
           message,
           walletType
         )
-        const messageObj = message.toObj()
+        const messageObj = message.encode()
         const msgCid = await provider.sendMessage(messageObj, signature)
         messageObj.cid = msgCid['/']
         dispatch(confirmMessage(toLowerCaseMsgFields(messageObj)))
