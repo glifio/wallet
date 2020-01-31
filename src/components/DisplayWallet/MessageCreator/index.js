@@ -107,7 +107,8 @@ const MsgCreator = () => {
           method: 0,
           gasPrice,
           gasLimit,
-          nonce
+          nonce,
+          params: ''
         })
         const signature = await computeSig(
           provider,
