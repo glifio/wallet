@@ -69,9 +69,11 @@ const MsgCreator = () => {
       // dont use big numbers
       setValue(e.target.value)
     }
-    // user enters a value that's greater than their balance
+    // user enters a value that's greater than their balance - gas limit
     else if (
-      new FilecoinNumber(e.target.value, 'fil').isGreaterThanOrEqualTo(balance)
+      new FilecoinNumber(e.target.value, 'fil')
+        .plus(new FilecoinNumber(gasLimit, 'attofil'))
+        .isGreaterThanOrEqualTo(balance)
     ) {
       setErrors({
         ...errors,
