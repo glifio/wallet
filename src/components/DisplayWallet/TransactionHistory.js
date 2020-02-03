@@ -91,7 +91,7 @@ TransactionComponent.propTypes = {
   to: ADDRESS_PROPTYPE,
   from: ADDRESS_PROPTYPE,
   value: PropTypes.string.isRequired,
-  gas_used: PropTypes.number.isRequired,
+  gas_used: PropTypes.number,
   cid: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
   selectedWalletAddress: ADDRESS_PROPTYPE
