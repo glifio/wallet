@@ -10,6 +10,7 @@ import Header from './components/Header'
 import Error from './components/Error'
 import BadBrowser from './components/Error/BadBrowser'
 import Settings from './components/Settings'
+import Faqs from './components/Faqs'
 import BrowserChecker from './services/BrowserChecker'
 import { NetworkChecker } from './services'
 
@@ -26,6 +27,9 @@ function App() {
       <Switch>
         <Route path='/error/bad-browser'>
           <BadBrowser />
+        </Route>
+        <Route path='/faqs'>
+          <Faqs />
         </Route>
         <Route path='/settings'>
           <>
