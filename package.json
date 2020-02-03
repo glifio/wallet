@@ -1,5 +1,5 @@
 {
-  "name": "filecoin-wallet",
+  "name": "filecoin-web-wallet",
   "version": "0.1.0",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
@@ -8,7 +8,6 @@
     "@openworklabs/filecoin-address": "latest",
     "@openworklabs/filecoin-message": "latest",
     "@openworklabs/filecoin-number": "latest",
-    "@openworklabs/filecoin-wallet-provider": "latest",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -29,8 +28,8 @@
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
-    "terser-webpack-plugin": "^1.4.2",
-    "serialize-javascript": ">=2.1.1"
+    "serialize-javascript": ">=2.1.1",
+    "terser-webpack-plugin": "^1.4.2"
   },
   "scripts": {
     "start": "react-scripts start",
