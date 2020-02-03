@@ -43,6 +43,7 @@ const TransactionComponent = ({
   from,
   value,
   gas_used,
+  gasprice,
   cid,
   status,
   selectedWalletAddress
@@ -68,8 +69,17 @@ const TransactionComponent = ({
         <TransactionStatusText>{status}</TransactionStatusText>
       </TransactionStatus>
       <TransactionGas>
-        <strong>Gas: </strong>
-        {gas_used} AttoFil
+        {status.toLowerCase() === 'pending' ? (
+          <>
+            <strong>Gas price: </strong>
+            {gasprice} AttoFil
+          </>
+        ) : (
+          <>
+            <strong>Gas used: </strong>
+            {gas_used} AttoFil
+          </>
+        )}
       </TransactionGas>
       {sent ? (
         <TransactionActorAddress>
@@ -91,6 +101,7 @@ TransactionComponent.propTypes = {
   to: ADDRESS_PROPTYPE,
   from: ADDRESS_PROPTYPE,
   value: PropTypes.string.isRequired,
+  gasprice: PropTypes.string.isRequired,
   gas_used: PropTypes.number,
   cid: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
