@@ -31,7 +31,17 @@ export const walletList = (state, { wallets }) => ({
 
 export const switchWallet = (state, { index }) => ({
   ...state,
-  selectedWalletIdx: index
+  selectedWalletIdx: index,
+  messages: {
+    page: 0,
+    loading: false,
+    loadedSuccess: false,
+    loadedFailure: false,
+    pending: [],
+    confirmed: [],
+    links: {},
+    paginating: false
+  }
 })
 
 export const updateBalance = (state, { balance, walletIdx }) => ({
