@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import 'styled-components/macro'
+import FilecoinNumber from '@openworklabs/filecoin-number'
 import {
   TransactionHistory,
   Transaction,
@@ -13,10 +15,11 @@ import {
   TransactionStatusText,
   EmptyHistoryText,
   MessageReviewSubText,
-  UnderlineOnHover
+  UnderlineOnHover,
+  BASE_SIZE_UNIT
 } from '../StyledComponents'
 import { useTransactions, useWallets } from '../../hooks'
-import { shortenAddress } from '../../utils'
+import { shortenAddress, ADDRESS_PROPTYPE } from '../../utils'
 import { useDispatch } from 'react-redux'
 import {
   fetchingNextPage,
@@ -26,13 +29,20 @@ import {
 
 const MethodText = styled(MessageReviewSubText)`
   font-weight: bold;
-  margin-right: 5px;
+  margin-right: ${BASE_SIZE_UNIT}px;
+`
+
+const AlignItemsCenter = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `
 
 const TransactionComponent = ({
   to,
   from,
   value,
+  gas_used,
   gasprice,
   cid,
   status,
@@ -42,7 +52,7 @@ const TransactionComponent = ({
   return (
     <Transaction>
       <TransactionAmount>
-        <div
+        <AlignItemsCenter
           css={{
             display: 'flex',
             'flex-direction': 'row',
@@ -52,15 +62,24 @@ const TransactionComponent = ({
           <MethodText>
             <strong>{sent ? 'SENT: ' : 'RECEIVED: '}</strong>
           </MethodText>
-          {value.toString()}
-        </div>
+          {new FilecoinNumber(value, 'attofil').toFil()}
+        </AlignItemsCenter>
       </TransactionAmount>
       <TransactionStatus>
         <TransactionStatusText>{status}</TransactionStatusText>
       </TransactionStatus>
       <TransactionGas>
-        <strong>Gas: </strong>
-        {gasprice} FIL
+        {status.toLowerCase() === 'pending' ? (
+          <>
+            <strong>Gas price: </strong>
+            {gasprice} AttoFil
+          </>
+        ) : (
+          <>
+            <strong>Gas used: </strong>
+            {gas_used} AttoFil
+          </>
+        )}
       </TransactionGas>
       {sent ? (
         <TransactionActorAddress>
@@ -78,6 +97,17 @@ const TransactionComponent = ({
   )
 }
 
+TransactionComponent.propTypes = {
+  to: ADDRESS_PROPTYPE,
+  from: ADDRESS_PROPTYPE,
+  value: PropTypes.string.isRequired,
+  gasprice: PropTypes.string.isRequired,
+  gas_used: PropTypes.number,
+  cid: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
+  selectedWalletAddress: ADDRESS_PROPTYPE
+}
+
 const MessageCreator = () => {
   const {
     pending,
@@ -91,7 +121,12 @@ const MessageCreator = () => {
   return (
     <React.Fragment>
       <TransactionHistory>
-        <SectionHeader css={{ marginBottom: '10px', marginTop: '30px' }}>
+        <SectionHeader
+          css={{
+            marginBottom: `${BASE_SIZE_UNIT * 2}px`,
+            marginTop: `${BASE_SIZE_UNIT * 6}px`
+          }}
+        >
           Transaction History
         </SectionHeader>
         {pending.length > 0 &&

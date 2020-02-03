@@ -1,4 +1,5 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useReducer } from 'react'
+import PropTypes from 'prop-types'
 import { useHistory, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
@@ -17,16 +18,18 @@ import {
 import CopyToClipboardIcon from '../DisplayWallet/ClipboardIcon'
 import { copyToClipboard } from '../../utils'
 
+import { fetchProvider, reducer, initialLedgerState } from '../../utils/ledger'
 import { ACCOUNT_BATCH_SIZE, LEDGER } from '../../constants'
 
 import { error } from '../../store/actions'
 
-export default () => {
-  const { selectedWallet, walletType, walletProvider } = useWallets()
+const AccountPicker = ({ loadingAccounts }) => {
+  const { selectedWallet, walletType } = useWallets()
   const [copiedToClipboard, setCopiedToClipboard] = useState(false)
   const history = useHistory()
-  const { pathname } = useLocation()
+  const { pathname, search } = useLocation()
   const dispatch = useDispatch()
+  const [, dispatchLocal] = useReducer(reducer, initialLedgerState)
 
   const onClick = useCallback(() => {
     setCopiedToClipboard(true)
@@ -62,12 +65,11 @@ export default () => {
               role='button'
               onClick={async () => {
                 try {
-                  if (walletProvider) {
-                    await walletProvider.wallet.showAddressAndPubKey(
+                  const provider = await fetchProvider(dispatchLocal, dispatch)
+                  if (provider) {
+                    await provider.wallet.showAddressAndPubKey(
                       selectedWallet.path
                     )
-                  } else {
-                    throw new Error('Error connecting with Ledger')
                   }
                 } catch (err) {
                   dispatch(error(err))
@@ -80,16 +82,29 @@ export default () => {
         </JustifyContentContainer>
       </AccountDetail>
       <SwitchAccountButton
+        disabled={loadingAccounts}
         onClick={() => {
+          const params = new URLSearchParams(search)
           let page = 0
           if (walletType === LEDGER) {
             page = Math.floor(selectedWallet.path[4] / ACCOUNT_BATCH_SIZE)
           }
-          if (pathname.includes('/settings')) history.push('/')
-          else history.push(`/settings/accounts?page=${page}`)
+          if (pathname.includes('/settings')) {
+            params.delete('page')
+            const hasParams = Array.from(params).length > 0
+            const query = hasParams ? `/?${params.toString()}` : '/'
+            history.push(query)
+          } else {
+            params.set('page', page)
+            history.push(`/settings/accounts?${params.toString()}`)
+          }
         }}
       >
-        {pathname.includes('/settings') ? (
+        {loadingAccounts ? (
+          <span role='img' aria-label='loading'>
+            ⌛
+          </span>
+        ) : pathname.includes('/settings') ? (
           <span>Back to wallet</span>
         ) : (
           <span>&#x2699;account/network</span>
@@ -98,3 +113,13 @@ export default () => {
     </AccountHeader>
   )
 }
+
+AccountPicker.propTypes = {
+  loadingAccounts: PropTypes.bool
+}
+
+AccountPicker.defaultProps = {
+  loadingAccounts: false
+}
+
+export default AccountPicker

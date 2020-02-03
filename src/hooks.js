@@ -1,10 +1,11 @@
 import { useEffect, useCallback, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom'
-import BigNumber from 'bignumber.js'
+import { useHistory, useLocation } from 'react-router-dom'
+import FilecoinNumber from '@openworklabs/filecoin-number'
 
 import {
   switchWallet,
+  switchNetwork,
   updateBalance,
   updateProgress,
   fetchedConfirmedMessagesSuccess,
@@ -62,7 +63,7 @@ export const useWallets = () => {
       const selectedWallet =
         state.wallets.length > state.selectedWalletIdx
           ? state.wallets[state.selectedWalletIdx]
-          : { balance: new BigNumber('0'), address: '' }
+          : { balance: new FilecoinNumber('0', 'attofil'), address: '' }
 
       return {
         wallets: state.wallets,
@@ -78,7 +79,10 @@ export const useWallets = () => {
   const selectWallet = useCallback(
     async index => {
       dispatch(switchWallet(index))
-      const balance = await walletProvider.getBalance(wallets[index].address)
+      const balance = new FilecoinNumber(
+        await walletProvider.getBalance(wallets[index].address),
+        'attofil'
+      )
       dispatch(updateBalance(balance, index))
     },
     [wallets, dispatch, walletProvider]
@@ -99,7 +103,7 @@ export const useBalance = index =>
     const walletIdx = index ? index : state.selectedWalletIdx
     return state.wallets[walletIdx]
       ? state.wallets[walletIdx].balance
-      : new BigNumber(0)
+      : new FilecoinNumber('0', 'attofil')
   })
 
 export const useTransactions = index => {
@@ -110,14 +114,14 @@ export const useTransactions = index => {
     links,
     loading,
     loadedSuccess,
-    loadedFailurepending,
+    loadedFailure,
     pending,
     selectedWallet
   } = useSelector(state => {
     const selectedWallet =
       state.wallets.length > state.selectedWalletIdx
         ? state.wallets[state.selectedWalletIdx]
-        : { balance: new BigNumber('0'), address: '' }
+        : { balance: new FilecoinNumber('0', 'attofil'), address: '' }
     return {
       confirmed: state.messages.confirmed,
       links: state.messages.links,
@@ -141,24 +145,40 @@ export const useTransactions = index => {
         if (status === 'success') {
           dispatch(fetchedConfirmedMessagesSuccess(data, links))
         } else if (status === 'failed') {
-          dispatch(fetchedConfirmedMessagesFailure(data))
+          dispatch(
+            fetchedConfirmedMessagesFailure(
+              new Error('Failed to fetch data: ', JSON.stringify(data))
+            )
+          )
         }
       } catch (err) {
         dispatch(fetchedConfirmedMessagesFailure(err))
       }
     }
-    if (selectedWallet.address) {
+    if (
+      selectedWallet.address &&
+      !loading &&
+      !loadedSuccess &&
+      !loadedFailure
+    ) {
       dispatch(fetchingConfirmedMessages())
       fetchData()
     }
-  }, [selectedWallet.address, index, dispatch])
+  }, [
+    selectedWallet.address,
+    index,
+    dispatch,
+    loading,
+    loadedSuccess,
+    loadedFailure
+  ])
 
   return {
     confirmed,
     links,
     loading,
     loadedSuccess,
-    loadedFailurepending,
+    loadedFailure,
     pending
   }
 }
@@ -195,6 +215,20 @@ export const useCachedMessages = () => {
     const pendingMessages = getMsgsFromCache(selectedWalletAddress)
     dispatch(populateRedux(pendingMessages))
   }, [dispatch, selectedWalletAddress])
+}
+
+export const useNetwork = () => {
+  const dispatch = useDispatch()
+  const networkFromRdx = useSelector(state => state.network)
+  const params = new URLSearchParams(useLocation().search)
+  const network = params.get('network')
+  if (
+    network &&
+    network.toLowerCase() !== networkFromRdx &&
+    (network.toLowerCase() === 'f' || network.toLowerCase() === 't')
+  ) {
+    dispatch(switchNetwork(network))
+  }
 }
 
 export const useBrowserChecker = () => {

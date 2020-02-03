@@ -6,34 +6,35 @@ import { useDispatch } from 'react-redux'
 import { useProgress } from '../../hooks'
 import { setWalletType } from '../../store/actions'
 import { LEDGER } from '../../constants'
-import { OnboardingContainer, JustifyContentCenter } from '../StyledComponents'
+import {
+  ButtonBase,
+  OnboardingContainer,
+  JustifyContentCenter,
+  FILECOIN_BLUE,
+  WHITE,
+  BASE_SIZE_UNIT
+} from '../StyledComponents'
 
-const Button = styled.button`
-  background: ${props => (props.disabled ? 'grey' : '#61d6d9')};
-  color: white;
-  border: 0;
-  border-radius: 4px;
-  margin-bottom: 30px;
-  width: 50%;
+const Button = styled(ButtonBase)`
   align-self: center;
-  cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
+  margin-bottom: 30px;
 `
 
 const LedgerWallet = styled.img`
   width: 30%;
   align-self: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: ${BASE_SIZE_UNIT * 6}px;
+  margin-bottom: ${BASE_SIZE_UNIT * 6}px;
   cursor: pointer;
-  padding: 10px;
+  padding: ${BASE_SIZE_UNIT * 2}px;
   &:hover {
-    background-color: #61d6d9;
+    background-color: ${FILECOIN_BLUE};
   }
   &:active {
     transform: scale(1.05);
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
   }
-  background-color: ${props => (props.clicked ? '#61d6d9' : 'white')};
+  background-color: ${props => (props.clicked ? FILECOIN_BLUE : WHITE)};
 `
 
 export default () => {

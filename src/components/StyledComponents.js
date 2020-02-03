@@ -1,10 +1,46 @@
 import styled from 'styled-components'
 
+/* COLOR VARIABLES */
+export const FILECOIN_BLUE = '#61d6d9'
+export const WHITE = 'white'
+export const GRAY = '#bababa'
+export const BLACK = 'black'
+export const GREEN = 'darkseagreen'
+export const SECONDARY_BLUE = 'cornflowerblue'
+export const RED = 'red'
+export const SECONDARY_RED = 'mediumvioletred'
+
+/* FONTS */
+export const TEXT_XSM = '13'
+export const TEXT_SM = '18'
+export const TEXT_MD = '22'
+export const TEXT_LG = '30'
+
+/* SIZING */
+export const BASE_SIZE_UNIT = '5'
+
+/* FLEXBOX STYLES */
+export const JustifyContentCenter = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
+export const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: ${props => props.flexDirection};
+`
+
+export const JustifyContentContainer = styled(FlexContainer)`
+  justify-content: ${props => props.justifyContent};
+`
+
+/* COMPONENTS */
+
 export const Wrapper = styled.div`
   display: grid;
-  font-size: 13px;
-  grid-template-columns: 1fr 550px 1fr;
-  grid-template-rows: auto 3fr 310px auto;
+  font-size: ${TEXT_XSM}px;
+  grid-template-columns: 1fr ${BASE_SIZE_UNIT * 110}px 1fr;
+  grid-template-rows: auto 3fr ${BASE_SIZE_UNIT * 62}px auto;
   grid-template-areas:
     'left-gutter account-header right-gutter'
     'left-gutter balance-banner right-gutter'
@@ -13,18 +49,17 @@ export const Wrapper = styled.div`
 `
 
 export const Header = styled.div`
-  background-color: white;
+  background-color: ${WHITE};
   grid-area: header;
   display: grid;
-  grid-template-columns: 1fr 550px 1fr;
-  margin-bottom: 30px;
+  grid-template-columns: 1fr ${BASE_SIZE_UNIT * 110} 1fr;
+  margin-bottom: ${BASE_SIZE_UNIT * 6};
   grid-template-areas: 'left-gutter app-title right-gutter';
 `
 
 export const AppTitle = styled.div`
   grid-area: app-title;
-  // grid-column: 2 / 3;
-  margin: 15px 0px;
+  margin: ${BASE_SIZE_UNIT * 3}px 0px;
 `
 
 export const AppFAQs = styled.div`
@@ -37,8 +72,8 @@ export const AccountHeader = styled.div`
   grid-template-columns: 7fr 2fr;
   grid-template-rows: 1fr auto;
   grid-row-gap: 7.5px;
-  grid-column-gap: 15px;
-  margin-bottom: 15px;
+  grid-column-gap: ${BASE_SIZE_UNIT * 3}px;
+  margin-bottom: ${BASE_SIZE_UNIT * 3}px;
   overflow: hidden;
   grid-template-areas:
     'accountLabel right-gutter'
@@ -51,14 +86,14 @@ export const AccountDetailWrapper = styled.div`
 
 export const AccountLabel = styled.div`
   grid-area: accountLabel;
-  color: #bababa;
+  color: ${GRAY};
   font-weight: bold;
 `
 
 export const AccountDetail = styled.div`
   grid-area: accountDetails;
-  background-color: white;
-  padding: 7px 12px;
+  background-color: ${WHITE};
+  padding: ${BASE_SIZE_UNIT}px ${BASE_SIZE_UNIT * 2}px;
 `
 
 export const AccountAddress = styled.div`
@@ -75,71 +110,74 @@ export const AccountBalance = styled.span`
 
 export const SwitchAccountButton = styled.button`
   grid-area: switchAccountButton;
-  background-color: white;
+  background-color: ${WHITE};
   border: 0;
 `
 
 export const BalanceBanner = styled.button`
   grid-area: balance-banner;
-  background-color: white;
+  background-color: ${WHITE};
   border: 0;
 `
 
 export const BalanceInBanner = styled.div`
-  font-size: 30px;
+  font-size: ${TEXT_LG}px;
   font-weight: 300;
-  margin-bottom: 45px;
+  margin-bottom: ${BASE_SIZE_UNIT * 9}px;
 `
 
 export const FilecoinLogo = styled.img`
-  width: 120px;
-  margin-top: 45px;
-  margin-bottom: 15px;
+  width: ${BASE_SIZE_UNIT * 24}px;
+  margin-top: ${BASE_SIZE_UNIT * 9}px;
+  margin-bottom: ${BASE_SIZE_UNIT * 3}px;
 `
 
 export const MessageCreator = styled.div`
   grid-area: message-creator;
-  background-color: white;
+  background-color: ${WHITE};
 `
 
 export const SectionHeader = styled.div`
   text-align: center;
-  color: #bababa;
+  color: ${GRAY};
 `
 
 export const MessageForm = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: white;
-  padding: 15px;
-  height: 250px;
+  background-color: ${WHITE};
+  padding: ${BASE_SIZE_UNIT * 3}px;
+  height: ${BASE_SIZE_UNIT * 50}px;
 `
 
 export const InputLabel = styled.div`
   font-weight: bold;
-  margin-bottom: 5px;
-  color: #bababa;
+  margin-bottom: ${BASE_SIZE_UNIT}px;
+  color: ${GRAY};
 `
 
 export const AvailableBalanceLabel = styled.div`
   font-weight: bold;
-  margin-bottom: 10px;
-  color: #bababa;
+  margin-bottom: ${BASE_SIZE_UNIT * 2}px;
+  color: ${GRAY};
 `
 
-export const Button = styled.button`
+export const ButtonBase = styled.button`
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   disabled: ${props => props.disabled};
-  background: ${props => (props.disabled ? 'grey' : '#61d6d9')};
-  color: white;
+  background: ${props => (props.disabled ? GRAY : FILECOIN_BLUE)};
+  color: ${WHITE};
   border: 0;
   border-radius: 4px;
-  width: 120px;
-  height: 30px;
+  width: ${BASE_SIZE_UNIT * 24}px;
+  height: ${BASE_SIZE_UNIT * 6}px;
+  &:focus {
+    outline: 0;
+  }
 `
 
-export const SendButton = styled(Button)`
+export const SendButton = styled(ButtonBase)`
   align-self: center;
   justify-self: flex-end;
 `
@@ -150,11 +188,11 @@ export const TransactionHistory = styled.div`
 
 export const Transaction = styled.div`
   display: grid;
-  background-color: white;
-  padding: 15px;
-  margin-bottom: 15px;
+  background-color: ${WHITE};
+  padding: ${BASE_SIZE_UNIT * 3}px;
+  margin-bottom: ${BASE_SIZE_UNIT * 3}px;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 70px auto auto;
+  grid-template-rows: ${BASE_SIZE_UNIT * 14}px auto auto;
   grid-template-areas:
     'transaction-amount transaction-status'
     'transaction-gas transaction-actor-address'
@@ -163,24 +201,24 @@ export const Transaction = styled.div`
 
 export const TransactionAmount = styled.div`
   grid-area: transaction-amount;
-  font-size: 30px;
+  font-size: ${BASE_SIZE_UNIT * 6}px;
   font-weight: 300;
   position: relative;
-  bottom: 11px;
+  bottom: ${BASE_SIZE_UNIT * 2}px;
 `
 
 export const TransactionStatus = styled.div`
   grid-area: transaction-status;
   text-align: right;
-  color: white;
+  color: ${WHITE};
   font-weight: bold;
 `
 
 export const TransactionStatusText = styled.span`
-  background-color: #bababa;
-  padding: 5px 10px;
+  background-color: ${GRAY};
+  padding: ${BASE_SIZE_UNIT}px ${BASE_SIZE_UNIT}px;
   position: relative;
-  top: 4px;
+  top: ${BASE_SIZE_UNIT}px;
 `
 
 export const TransactionGas = styled.div`
@@ -202,35 +240,35 @@ export const TransactionMessageHash = styled.div`
 `
 
 export const EmptyHistoryText = styled.div`
-  margin-top: 30px;
-  margin-bottom: 30px;
-  font-size: 22px;
-  background-color: white;
-  height: 100px;
+  margin-top: ${BASE_SIZE_UNIT * 6}px;
+  margin-bottom: ${BASE_SIZE_UNIT * 6}px;
+  font-size: ${TEXT_MD}px;
+  background-color: ${WHITE};
+  height: ${BASE_SIZE_UNIT * 20}px;
   text-align: center;
-  padding-top: 32px;
+  padding-top: ${BASE_SIZE_UNIT * 6}px;
 `
 
 export const MessageReview = styled.div`
-  margin-top: 25px;
-  font-size: 18px;
+  margin-top: ${BASE_SIZE_UNIT * 5}px;
+  font-size: ${TEXT_SM}px;
   text-align: center;
 `
 
 export const MessageReviewSubText = styled.div`
-  margin-top: 30px;
-  margin-bottom: 25px;
-  font-size: 13px;
+  margin-top: ${BASE_SIZE_UNIT * 6}px;
+  margin-bottom: ${BASE_SIZE_UNIT * 5}px;
+  font-size: ${TEXT_XSM}px;
 `
 
 export const OnboardingContainer = styled.div`
-  background-color: white;
-  border: 1px black;
-  margin-top 78px;
+  background-color: ${WHITE};
+  border: 1px ${BLACK};
+  margin-top ${BASE_SIZE_UNIT * 16}px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 360px;
+  height: ${BASE_SIZE_UNIT * 72}px;
   width: 30vw;
 `
 
@@ -242,25 +280,11 @@ export const UnderlineOnHover = styled(SectionHeader)`
 `
 
 export const CheckboxInputLabel = styled.label`
-  color: ${props => (props.disabled ? '#bababa' : 'black')};
-  font-size: 15px;
+  color: ${props => (props.disabled ? GRAY : BLACK)};
+  font-size: ${TEXT_SM}px;
 `
 
 export const Checkbox = styled.input`
-  margin: 5px 10px 5px 5px;
-`
-
-/* FLEXBOX STYLES */
-export const JustifyContentCenter = styled.div`
-  display: flex;
-  justify-content: center;
-`
-
-export const FlexContainer = styled.div`
-  display: flex;
-  flex-direction: ${props => props.flexDirection};
-`
-
-export const JustifyContentContainer = styled(FlexContainer)`
-  justify-content: ${props => props.justifyContent};
+  margin: ${BASE_SIZE_UNIT}px ${BASE_SIZE_UNIT * 2}px ${BASE_SIZE_UNIT}px
+    ${BASE_SIZE_UNIT}px;
 `
