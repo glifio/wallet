@@ -24,13 +24,15 @@ export const StyledNavLink = styled.button`
   display: grid;
   font-size: ${TEXT_XSM}px;
   grid-template-columns: 1fr ${BASE_SIZE_UNIT * 110}px 1fr;
-  margin-bottom: ${BASE_SIZE_UNIT * 6}px;
   grid-template-areas: 'left-gutter app-title right-gutter';
 `
 
 export const AppTitle = styled.div`
-  grid-area: app-title;
-  margin: ${BASE_SIZE_UNIT * 3}px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: ${BASE_SIZE_UNIT * 10}px;
 `
 
 export const FAQsLink = styled.span`
