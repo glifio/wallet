@@ -58,6 +58,12 @@ const LoadingText = styled(Text)`
   line-height: 20;
 `
 
+const LoadingEmoji = styled.span`
+  font-size: 12px;
+  align-self: center;
+  line-height: 15;
+`
+
 const AccountSelector = ({
   network,
   loadingAccounts,
@@ -175,7 +181,9 @@ const AccountSelector = ({
     await Promise.all(
       walletsOnScreen.map(async (wallet, index) => {
         const balance = await walletProvider.getBalance(wallet.address)
-        dispatch(updateBalance(balance, index))
+        if (!wallet.balance.isEqualTo(balance)) {
+          dispatch(updateBalance(balance, index))
+        }
       })
     )
     setRefreshingBalances(false)
@@ -190,15 +198,17 @@ const AccountSelector = ({
 
   return (
     <SettingsContainer flexDirection='column' justifyContent='space-between'>
+      {!loadingAccounts && (
+        <ButtonBase
+          disabled={refreshingBalances}
+          onClick={() => refreshBalances()}
+        >
+          Refresh Balances
+        </ButtonBase>
+      )}
       {walletType === LEDGER && (
         <>
           <div>
-            <button
-              disabled={refreshingBalances}
-              onClick={() => refreshBalances()}
-            >
-              Refresh Balances
-            </button>
             {ledgerState.userInitiatedImport &&
             ledgerState.userImportFailure ? (
               <JustifyContentContainer
@@ -267,7 +277,16 @@ const AccountSelector = ({
                       </CheckboxInputLabel>
                     </div>
 
-                    <div>{wallet.balance.toString()}</div>
+                    <div>
+                      {refreshingBalances ? (
+                        /* eslint-disable jsx-a11y/accessible-emoji */
+                        <LoadingEmoji role='img' aria-label='loading'>
+                          ⌛
+                        </LoadingEmoji>
+                      ) : (
+                        wallet.balance.toString()
+                      )}
+                    </div>
                   </LineItem>
                 ))
             )}
