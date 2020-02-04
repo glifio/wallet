@@ -8,7 +8,6 @@ export const ConnectWalletContainer = styled(JustifyContentCenter)`
 `
 
 export const CheckboxContainer = styled.ul`
-  margin-top: ${BASE_SIZE_UNIT * 3}px;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -21,7 +20,6 @@ export const EducationalCheckboxItem = styled.li`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  margin: ${BASE_SIZE_UNIT * 3}px;
   width: 80%;
 `
 

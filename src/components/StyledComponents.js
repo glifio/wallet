@@ -264,7 +264,7 @@ export const MessageReviewSubText = styled.div`
 export const OnboardingContainer = styled.div`
   background-color: ${WHITE};
   border: 1px ${BLACK};
-  margin-top ${BASE_SIZE_UNIT * 16}px;
+  margin-top ${BASE_SIZE_UNIT * 5}px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
