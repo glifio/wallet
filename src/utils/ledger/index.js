@@ -46,7 +46,8 @@ export const establishConnectionWithFilecoinApp = async (
   dispatchLocal({ type: ESTABLISHING_CONNECTION_W_FILECOIN_APP })
   try {
     const provider = new Filecoin(new LedgerProvider(transport), {
-      apiAddress: process.env.REACT_APP_LOTUS_API_ENDPOINT
+      apiAddress: process.env.REACT_APP_LOTUS_API_ENDPOINT,
+      token: process.env.REACT_APP_LOTUS_JWT
     })
     const response = await provider.wallet.getVersion()
 
