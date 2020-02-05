@@ -36,7 +36,7 @@ const ImportLedgerBtn = ({
         if (successfulConnection) setProgress(2)
       }}
     >
-      {ledgerState.userImportFailure ? 'Try again' : 'Import Ledger Wallet'}
+      {ledgerState.userImportFailure ? 'Try again' : 'Import Ledger'}
     </Button>
   )
 }

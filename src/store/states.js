@@ -1,5 +1,6 @@
 import updateArrayItem from './utils/updateArrayItem'
 import { setMsgInCache, removeMsgFromCache } from './cache'
+import { LEDGER } from '../constants'
 
 export const initialState = {
   wallets: [],
@@ -15,8 +16,8 @@ export const initialState = {
     links: {},
     paginating: false
   },
-  progress: 0,
-  walletType: null,
+  progress: 1,
+  walletType: LEDGER,
   walletConnected: false,
   walletProvider: null,
   // one of 't', 'f', or 'c' (custom)

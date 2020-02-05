@@ -26,6 +26,12 @@ const LoadingEmoji = styled.span`
   line-height: 15;
 `
 
+export const Directions = styled.div`
+  padding: 20px 40px;
+  font-size: 18px;
+  font-weight: bold;
+`
+
 export default () => {
   const dispatchRdx = useDispatch()
   const { setProgress } = useProgress()
@@ -59,6 +65,10 @@ export default () => {
         ) : (
           <>
             <form>
+              <Directions>
+                Welcome to the Filecoin web wallet. Check the boxes when you've
+                completed these steps.
+              </Directions>
               <CheckboxContainer>
                 <ConnectedLedgerCheckbox
                   ledgerState={ledgerState}
@@ -78,7 +88,6 @@ export default () => {
               flexDirection='row'
               justifyContent='space-around'
             >
-              <ButtonBase onClick={() => setProgress(0)}>Back</ButtonBase>
               <ImportLedgerBtn
                 ledgerState={ledgerState}
                 dispatchLocal={dispatchLocal}

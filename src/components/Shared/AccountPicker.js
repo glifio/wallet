@@ -107,7 +107,7 @@ const AccountPicker = ({ loadingAccounts }) => {
         ) : pathname.includes('/settings') ? (
           <span>Back to wallet</span>
         ) : (
-          <span>&#x2699;account/network</span>
+          <span>Switch account</span>
         )}
       </SwitchAccountButton>
     </AccountHeader>
