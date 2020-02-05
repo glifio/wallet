@@ -8,6 +8,7 @@
     "@openworklabs/filecoin-address": "latest",
     "@openworklabs/filecoin-message": "latest",
     "@openworklabs/filecoin-number": "latest",
+    "@openworklabs/filecoin-wallet-provider": "0.0.12",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
