@@ -88,7 +88,6 @@ export default () => {
               flexDirection='row'
               justifyContent='space-around'
             >
-              <ButtonBase onClick={() => setProgress(0)}>Back</ButtonBase>
               <ImportLedgerBtn
                 ledgerState={ledgerState}
                 dispatchLocal={dispatchLocal}

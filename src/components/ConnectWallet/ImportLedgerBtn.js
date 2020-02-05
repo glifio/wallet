@@ -33,7 +33,7 @@ const ImportLedgerBtn = ({
           dispatchRdx,
           network
         )
-        if (successfulConnection) setProgress(1)
+        if (successfulConnection) setProgress(2)
       }}
     >
       {ledgerState.userImportFailure ? 'Try again' : 'Import Ledger'}

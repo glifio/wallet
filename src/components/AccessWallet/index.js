@@ -58,7 +58,7 @@ export default () => {
           disabled={!selectedWalletType}
           onClick={() => {
             dispatch(setWalletType(selectedWalletType))
-            setProgress(1)
+            setProgress(2)
           }}
         >
           Access wallet

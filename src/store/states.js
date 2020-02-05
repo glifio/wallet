@@ -15,7 +15,7 @@ export const initialState = {
     links: {},
     paginating: false
   },
-  progress: 0,
+  progress: 1,
   walletType: null,
   walletConnected: false,
   walletProvider: null,

@@ -32,14 +32,14 @@ function App() {
         </Route>
         <Route path='/settings'>
           <>
-            {progress === 0 && <ConnectWallet />}
-            {progress === 1 && <Settings />}
+            {progress === 1 && <ConnectWallet />}
+            {progress === 2 && <Settings />}
           </>
         </Route>
         <Route>
           <>
-            {progress === 0 && <ConnectWallet />}
-            {progress === 1 && <DisplayWallet />}
+            {progress === 1 && <ConnectWallet />}
+            {progress === 2 && <DisplayWallet />}
           </>
         </Route>
       </Switch>
