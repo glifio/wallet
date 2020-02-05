@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import 'styled-components/macro'
@@ -16,7 +16,12 @@ import {
   UnderlineOnHover
 } from '../StyledComponents'
 
-import { walletList, switchWallet, error } from '../../store/actions'
+import {
+  walletList,
+  switchWallet,
+  error,
+  updateBalance
+} from '../../store/actions'
 import sortAndRemoveWalletDups from './sortAndRemoveWalletDups'
 import { ACCOUNT_BATCH_SIZE } from '../../constants'
 import {
@@ -51,6 +56,12 @@ const Text = styled.p`
 
 const LoadingText = styled(Text)`
   line-height: 20;
+`
+
+const LoadingEmoji = styled.span`
+  font-size: 12px;
+  align-self: center;
+  line-height: 15;
 `
 
 const AccountSelector = ({
@@ -158,6 +169,26 @@ const AccountSelector = ({
     walletType
   ])
 
+  const [refreshingBalances, setRefreshingBalances] = useState(false)
+
+  const refreshBalances = async () => {
+    setRefreshingBalances(true)
+    const walletsOnScreen = walletsInRdx.filter(
+      wallet =>
+        wallet.path[4] >= page * ACCOUNT_BATCH_SIZE &&
+        wallet.path[4] < page * ACCOUNT_BATCH_SIZE + ACCOUNT_BATCH_SIZE
+    )
+    await Promise.all(
+      walletsOnScreen.map(async (wallet, index) => {
+        const balance = await walletProvider.getBalance(wallet.address)
+        if (!wallet.balance.isEqualTo(balance)) {
+          dispatch(updateBalance(balance, index))
+        }
+      })
+    )
+    setRefreshingBalances(false)
+  }
+
   const paginate = page => {
     const params = new URLSearchParams(search)
     params.delete('page')
@@ -167,6 +198,14 @@ const AccountSelector = ({
 
   return (
     <SettingsContainer flexDirection='column' justifyContent='space-between'>
+      {!loadingAccounts && (
+        <ButtonBase
+          disabled={refreshingBalances}
+          onClick={() => refreshBalances()}
+        >
+          Refresh Balances
+        </ButtonBase>
+      )}
       {walletType === LEDGER && (
         <>
           <div>
@@ -238,7 +277,16 @@ const AccountSelector = ({
                       </CheckboxInputLabel>
                     </div>
 
-                    <div>{wallet.balance.toString()}</div>
+                    <div>
+                      {refreshingBalances ? (
+                        /* eslint-disable jsx-a11y/accessible-emoji */
+                        <LoadingEmoji role='img' aria-label='loading'>
+                          ⌛
+                        </LoadingEmoji>
+                      ) : (
+                        wallet.balance.toString()
+                      )}
+                    </div>
                   </LineItem>
                 ))
             )}
