@@ -29,6 +29,7 @@ const LoadingEmoji = styled.span`
 export const Directions = styled.div`
   padding: 20px 40px;
   font-size: 18px;
+  font-weight: bold;
 `
 
 export default () => {
