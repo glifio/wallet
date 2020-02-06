@@ -8,6 +8,7 @@ import { WHITE, TEXT_XSM, BASE_SIZE_UNIT, GRAY } from '../StyledComponents'
 export const Header = styled.div`
   background-color: white;
   font-size: 13px;
+  margin-bottom: 30px;
 `
 
 export const StyledNavLink = styled.button`
