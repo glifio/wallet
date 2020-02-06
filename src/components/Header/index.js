@@ -10,6 +10,7 @@ export const Header = styled.div`
   font-size: 13px;
   height: 50px;
   padding: 14px 200px;
+  margin-bottom: 30px;
 `
 
 export const HomeLink = styled.span`
