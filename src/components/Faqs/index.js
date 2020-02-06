@@ -86,7 +86,7 @@ export default () => (
             <br />
             <br />
             <div>
-              If you're using the testnet, you can get funny Filecoin from a{' '}
+              If you're using the testnet, you can get test Filecoin from a{' '}
               <a target='_blank' href='https://faucet.testnet.filecoin.io/'>
                 faucet
               </a>
