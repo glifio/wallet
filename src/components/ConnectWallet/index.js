@@ -4,12 +4,10 @@ import styled from 'styled-components'
 
 import {
   OnboardingContainer,
-  ButtonBase,
   JustifyContentContainer
 } from '../StyledComponents'
 import { reducer, initialLedgerState, RESET_STATE } from '../../utils/ledger'
 import { ConnectWalletContainer, CheckboxContainer } from './styledComponents'
-import { useProgress } from '../../hooks'
 
 import ConnectedLedgerCheckbox from './ConnectedLedgerCheckbox'
 import UnlockedLedgerCheckbox from './UnlockedLedgerCheckbox'
@@ -34,7 +32,6 @@ export const Directions = styled.div`
 
 export default () => {
   const dispatchRdx = useDispatch()
-  const { setProgress } = useProgress()
   const { errorFromRdx, network, provider } = useSelector(state => ({
     errorFromRdx: state.error,
     network: state.network,
