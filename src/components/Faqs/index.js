@@ -87,8 +87,25 @@ export default () => (
             <br />
             <div>
               If you're using the testnet, you can get funny Filecoin from a{' '}
-              <a href='https://faucet.testnet.filecoin.io/'>faucet</a>.
+              <a target='_blank' href='https://faucet.testnet.filecoin.io/'>
+                faucet
+              </a>
+              .
             </div>
+          </Card.Body>
+        </Accordion.Collapse>
+        <Accordion.Toggle as={Card.Header} eventKey='5'>
+          <Question>Where is the code for this wallet?</Question>
+        </Accordion.Toggle>
+        <Accordion.Collapse eventKey='5'>
+          <Card.Body>
+            <a
+              target='_blank'
+              href='https://github.com/openworklabs/filecoin-web-wallet'
+            >
+              Our GitHub
+            </a>
+            .
           </Card.Body>
         </Accordion.Collapse>
       </Card>
