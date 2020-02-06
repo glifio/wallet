@@ -269,7 +269,7 @@ export const OnboardingContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: ${BASE_SIZE_UNIT * 72}px;
-  width: 30vw;
+  width: 40vw;
 `
 
 export const UnderlineOnHover = styled(SectionHeader)`

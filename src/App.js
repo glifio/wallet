@@ -9,6 +9,7 @@ import Header from './components/Header'
 import Error from './components/Error'
 import BadBrowser from './components/Error/BadBrowser'
 import Settings from './components/Settings'
+import Contact from './components/Contact'
 import Faqs from './components/Faqs'
 import BrowserChecker from './services/BrowserChecker'
 import { NetworkChecker } from './services'
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route path='/faqs'>
           <Faqs />
+        </Route>
+        <Route path='/contact-us'>
+          <Contact />
         </Route>
         <Route path='/settings'>
           <>

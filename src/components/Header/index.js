@@ -8,10 +8,12 @@ import { WHITE, TEXT_XSM, BASE_SIZE_UNIT, GRAY } from '../StyledComponents'
 export const Header = styled.div`
   background-color: white;
   font-size: 13px;
+  height: 50px;
+  padding: 14px 200px;
   margin-bottom: 30px;
 `
 
-export const StyledNavLink = styled.button`
+export const HomeLink = styled.span`
   border: none;
   cursor: pointer;
   &:hover {
@@ -22,23 +24,23 @@ export const StyledNavLink = styled.button`
     outline: 0;
   }
   background-color: ${WHITE};
-  display: grid;
   font-size: ${TEXT_XSM}px;
-  grid-template-columns: 1fr ${BASE_SIZE_UNIT * 110}px 1fr;
-  grid-template-areas: 'left-gutter app-title right-gutter';
 `
 
-export const AppTitle = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  height: ${BASE_SIZE_UNIT * 10}px;
-`
-
-export const FAQsLink = styled.span`
+export const FloatRightLink = styled.span`
+  border: none;
+  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  &:focus {
+    outline: 0;
+  }
+  background-color: ${WHITE};
+  font-size: ${TEXT_XSM}px;
   float: right;
-  color: ${GRAY};
+  padding-left: 35px;
 `
 
 export default () => {
@@ -46,10 +48,11 @@ export default () => {
   const changeTab = relativeUrl => history.push(relativeUrl)
   return (
     <Header>
-      <AppTitle>
-        <StyledNavLink onClick={() => changeTab('/')}>Filament</StyledNavLink>
-        <StyledNavLink onClick={() => changeTab('/faqs')}>FAQs</StyledNavLink>
-      </AppTitle>
+      <HomeLink onClick={() => changeTab('/')}>Filament</HomeLink>
+      <FloatRightLink onClick={() => changeTab('/contact-us')}>
+        Contact Us
+      </FloatRightLink>
+      <FloatRightLink onClick={() => changeTab('/faqs')}>FAQs</FloatRightLink>
     </Header>
   )
 }
