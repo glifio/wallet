@@ -27,6 +27,7 @@ export default () => (
       <ul>
         <li>Operating system and version: [Mac OS 10.14.5] </li>
         <li>Browser and version: [Google Chrome 79.0.3]</li>
+        <li>Public address (if any): [t0mrck2h5tfwdieolmd4y]</li>
         <li>Issue: [Explain issue here]</li>
       </ul>
     </div>
