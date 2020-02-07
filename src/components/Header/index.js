@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 import 'styled-components/macro'
 
-import { WHITE, TEXT_XSM, BASE_SIZE_UNIT, GRAY } from '../StyledComponents'
+import { WHITE, TEXT_XSM } from '../StyledComponents'
 
 export const Header = styled.div`
   background-color: white;

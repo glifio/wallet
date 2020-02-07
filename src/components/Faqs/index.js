@@ -87,7 +87,11 @@ export default () => (
             <br />
             <div>
               If you're using the testnet, you can get test Filecoin from a{' '}
-              <a target='_blank' href='https://faucet.testnet.filecoin.io/'>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://faucet.testnet.filecoin.io/'
+              >
                 faucet
               </a>
               .
@@ -101,6 +105,7 @@ export default () => (
           <Card.Body>
             <a
               target='_blank'
+              rel='noopener noreferrer'
               href='https://github.com/openworklabs/filecoin-web-wallet'
             >
               Our GitHub
