@@ -13,19 +13,19 @@ import {
   TransactionMessageHash,
   SectionHeader,
   TransactionStatusText,
-  EmptyHistoryText,
+  // EmptyHistoryText,
   MessageReviewSubText,
-  UnderlineOnHover,
+  // UnderlineOnHover,
   BASE_SIZE_UNIT
 } from '../StyledComponents'
-import { useTransactions, useWallets } from '../../hooks'
+import { useWallets } from '../../hooks'
 import { shortenAddress, ADDRESS_PROPTYPE } from '../../utils'
-import { useDispatch } from 'react-redux'
-import {
-  fetchingNextPage,
-  fetchedNextPageSuccess,
-  fetchedNextPageFailure
-} from '../../store/actions'
+// import { useDispatch } from 'react-redux'
+// import {
+//   fetchingNextPage,
+//   fetchedNextPageSuccess,
+//   fetchedNextPageFailure
+// } from '../../store/actions'
 
 const MethodText = styled(MessageReviewSubText)`
   font-weight: bold;
@@ -109,18 +109,23 @@ TransactionComponent.propTypes = {
 }
 
 const MessageCreator = () => {
-  const {
-    pending,
-    links,
-    confirmed,
-    loadedSuccess,
-    loading
-  } = useTransactions()
+  // const {
+  //   pending,
+  //   links,
+  //   confirmed,
+  //   loadedSuccess,
+  //   loading
+  // } = useTransactions()
   const { selectedWallet } = useWallets()
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   return (
     <React.Fragment>
-      <TransactionHistory>
+      <TransactionHistory
+        css={{
+          marginBottom: `${BASE_SIZE_UNIT * 10}px`,
+          textAlign: 'center'
+        }}
+      >
         <SectionHeader
           css={{
             marginBottom: `${BASE_SIZE_UNIT * 2}px`,
@@ -129,7 +134,18 @@ const MessageCreator = () => {
         >
           Transaction History
         </SectionHeader>
-        {pending.length > 0 &&
+        <a
+          target='_blank'
+          rel='noopener noreferrer'
+          href={
+            'https://filscan.io/#/address/detail?address=' +
+            selectedWallet.address
+          }
+        >
+          See your transaction
+        </a>{' '}
+        history on filscan.io.
+        {/* {pending.length > 0 &&
           pending.map(tx => {
             return (
               <TransactionComponent
@@ -177,16 +193,14 @@ const MessageCreator = () => {
             css={{ marginBottom: '10px', marginTop: '30px' }}
           >
             More
-          </UnderlineOnHover>
-        )}
-
+          </UnderlineOnHover> */}
+        {/* )}
         {loadedSuccess && pending.length === 0 && confirmed.length === 0 && (
           <EmptyHistoryText>No transactions yet.</EmptyHistoryText>
         )}
-
         {loading && pending.length === 0 && (
           <EmptyHistoryText>Loading transactions.</EmptyHistoryText>
-        )}
+        )} */}
       </TransactionHistory>
     </React.Fragment>
   )
