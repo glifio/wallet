@@ -281,7 +281,7 @@ export const UnderlineOnHover = styled(SectionHeader)`
 
 export const CheckboxInputLabel = styled.label`
   color: ${props => (props.disabled ? GRAY : BLACK)};
-  font-size: ${TEXT_SM}px;
+  font-size: ${TEXT_XSM}px;
 `
 
 export const Checkbox = styled.input`

@@ -76,7 +76,7 @@ const AccountPicker = ({ loadingAccounts }) => {
                 }
               }}
             >
-              Show address on Ledger
+              Show address on Ledger device
             </UnderlineOnHover>
           )}
         </JustifyContentContainer>
