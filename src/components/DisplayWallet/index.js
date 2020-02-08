@@ -1,7 +1,7 @@
 import React from 'react'
 import { AccountPicker } from '../Shared'
 import MessageCreator from './MessageCreator'
-import TransactionHistory from './TransactionHistory'
+// import TransactionHistory from './TransactionHistory'
 import { Wrapper } from '../StyledComponents'
 import { BalanceBanner } from '../Shared'
 
@@ -11,7 +11,7 @@ export default () => {
       <AccountPicker />
       <BalanceBanner />
       <MessageCreator />
-      <TransactionHistory />
+      {/* <TransactionHistory /> */}
     </Wrapper>
   )
 }
