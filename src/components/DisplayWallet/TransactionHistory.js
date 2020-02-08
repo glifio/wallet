@@ -108,7 +108,7 @@ TransactionComponent.propTypes = {
   selectedWalletAddress: ADDRESS_PROPTYPE
 }
 
-const MessageCreator = () => {
+const TransactionHistoryWrapper = () => {
   const {
     pending,
     links,
@@ -192,4 +192,4 @@ const MessageCreator = () => {
   )
 }
 
-export default MessageCreator
+export default TransactionHistoryWrapper
