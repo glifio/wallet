@@ -16,7 +16,7 @@ const ReviewMsgOnDevice = ({
       <MessageReview>
         {ledgerState.userInitiatedImport && ledgerState.userImportFailure
           ? `Is your Ledger plugged in, unlocked, and Filecoin app open?`
-          : `Sign the message on your Ledger.`}
+          : `Sign the transaction on your Ledger device to confirm.`}
       </MessageReview>
 
       {ledgerState.userInitiatedImport &&
