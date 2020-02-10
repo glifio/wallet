@@ -53,7 +53,7 @@ const FilecoinAppOpenCheckbox = ({ ledgerState, dispatchLocal }) => (
         !ledgerState.userVerifiedLedgerUnlocked
       }
     >
-      The Filecoin App is open on my Ledger.
+      The Filecoin App is open on my Ledger device.
     </CheckboxInputLabel>
   </EducationalCheckboxItem>
 )
