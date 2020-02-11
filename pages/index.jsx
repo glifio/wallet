@@ -1,7 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { AccountCard } from '@openworklabs/filecoin-wallet-styleguide'
+import styled from 'styled-components'
 import { startClock, serverRenderClock } from '../store'
 import Examples from '../components/examples'
+
+const StyledDiv = styled.div`
+  background-color: blue;
+`
 
 class Index extends React.Component {
   static getInitialProps({ reduxStore, req }) {
@@ -21,7 +27,7 @@ class Index extends React.Component {
   }
 
   render() {
-    return <Examples />
+    return <StyledDiv>yo</StyledDiv>
   }
 }
 
