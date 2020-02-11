@@ -60,7 +60,7 @@ const AccountPicker = ({ loadingAccounts }) => {
           <AccountBalance>
             {selectedWallet.balance.toString()} FIL
           </AccountBalance>
-          {walletType === LEDGER && (
+          {walletType === LEDGER && !loadingAccounts && selectedWallet && (
             <UnderlineOnHover
               role='button'
               onClick={async () => {
