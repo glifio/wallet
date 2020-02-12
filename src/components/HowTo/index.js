@@ -1,11 +1,8 @@
 import React from 'react'
 import 'styled-components/macro'
 import Container from 'react-bootstrap/Container'
-import { useHistory } from 'react-router-dom'
 
 export default () => {
-  const history = useHistory()
-  const changeTab = relativeUrl => history.push(relativeUrl)
   return (
     <Container
       css={`
@@ -14,9 +11,7 @@ export default () => {
         max-width: 720px !important;
       `}
     >
-      <h1 id='how-to-use-the-filecoin-web-wallet-with-your-ledger-device'>
-        How to use the Filecoin web wallet with your Ledger device
-      </h1>
+      <h1>How to use the Filecoin web wallet with your Ledger device</h1>
       <p>
         The Filecoin web wallet is a companion to your Ledger device that helps
         you manage your Filecoin. Your private keys will stay offline on your
@@ -65,10 +60,7 @@ export default () => {
         <li>Connect and unlock your Ledger device.</li>
         <li>Open the Filecoin app your Ledger device.</li>
         <li>
-          Go back to the{' '}
-          <a href='/' onclick={() => changeTab('/')}>
-            home page.
-          </a>
+          Go back to the <a href='/'>home page.</a>
         </li>
         <li>Click the checkboxes to confirm you’ve connected the Ledger.</li>
       </ol>
@@ -119,7 +111,7 @@ export default () => {
       </p>
       <p>
         To contact us, you can email ahoy@openworklabs.com or DM our Twitter
-        account, @openworklabs.{' '}
+        account, @openworklabs.
       </p>
     </Container>
   )
