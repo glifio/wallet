@@ -11,6 +11,7 @@ import BadBrowser from './components/Error/BadBrowser'
 import Settings from './components/Settings'
 import Contact from './components/Contact'
 import Faqs from './components/Faqs'
+import HowTo from './components/HowTo'
 import BrowserChecker from './services/BrowserChecker'
 import { NetworkChecker } from './services'
 
@@ -30,6 +31,9 @@ function App() {
         </Route>
         <Route path='/faqs'>
           <Faqs />
+        </Route>
+        <Route path='/how-to'>
+          <HowTo />
         </Route>
         <Route path='/contact-us'>
           <Contact />
