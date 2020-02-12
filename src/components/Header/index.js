@@ -49,6 +49,9 @@ export default () => {
   return (
     <Header>
       <HomeLink onClick={() => changeTab('/')}>Filament</HomeLink>
+      <FloatRightLink onClick={() => changeTab('/how-to')}>
+        How to use the web wallet
+      </FloatRightLink>
       <FloatRightLink onClick={() => changeTab('/contact-us')}>
         Contact Us
       </FloatRightLink>
