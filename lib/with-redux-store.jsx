@@ -1,7 +1,8 @@
 import React from 'react'
-import { initializeStore } from '../store'
+import initializeStore from '../store/store'
 
 const isServer = typeof window === 'undefined'
+/* eslint-disable no-underscore-dangle */
 const __NEXT_REDUX_STORE__ = '__NEXT_REDUX_STORE__'
 
 function getOrCreateStore(initialState) {
@@ -25,6 +26,7 @@ export default App => {
       const reduxStore = getOrCreateStore()
 
       // Provide the store to getInitialProps of pages
+      /* eslint-disable no-param-reassign */
       appContext.ctx.reduxStore = reduxStore
 
       let appProps = {}

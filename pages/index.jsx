@@ -1,34 +1,9 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { AccountCard } from '@openworklabs/filecoin-wallet-styleguide'
-import styled from 'styled-components'
-import { startClock, serverRenderClock } from '../store'
-import Examples from '../components/examples'
+import { Container } from '@openworklabs/filecoin-wallet-styleguide'
+import { useProgress } from '../hooks'
 
-const StyledDiv = styled.div`
-  background-color: blue;
-`
-
-class Index extends React.Component {
-  static getInitialProps({ reduxStore, req }) {
-    const isServer = !!req
-    reduxStore.dispatch(serverRenderClock(isServer))
-
-    return {}
-  }
-
-  componentDidMount() {
-    const { dispatch } = this.props
-    this.timer = startClock(dispatch)
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timer)
-  }
-
-  render() {
-    return <StyledDiv>yo</StyledDiv>
-  }
+export default () => {
+  const { progress, setProgress } = useProgress()
+  console.log(progress)
+  return <Container>YOOOOOOO</Container>
 }
-
-export default connect()(Index)
