@@ -1,4 +1,5 @@
 import React from 'react'
+
 import {
   Box,
   Button,
@@ -9,7 +10,7 @@ import {
 
 import StepCard from './StepCard'
 
-const Step1Helper = () => (
+const Step2Helper = () => (
   <Card
     display='flex'
     flexDirection='column'
@@ -36,8 +37,8 @@ export default () => (
       flexDirection='row'
       justifyContent='center'
     >
-      <StepCard />
-      <Step1Helper />
+      <StepCard step={2} />
+      <Step2Helper />
     </Box>
     <Box mt={6} display='flex' flexDirection='row' justifyContent='center'>
       <Button
