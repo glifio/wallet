@@ -5,7 +5,6 @@ import {
   SWITCH_WALLET,
   SWITCH_NETWORK,
   UPDATE_BALANCE,
-  UPDATE_PROGRESS,
   CLEAR_ERROR,
   FETCHING_CONFIRMED_MESSAGES,
   FETCHED_CONFIRMED_MESSAGES_SUCCESS,
@@ -52,13 +51,6 @@ export const confirmedMessage = msgCid => ({
   type: CONFIRMED_MESSAGE,
   payload: {
     msgCid
-  }
-})
-
-export const updateProgress = progress => ({
-  type: UPDATE_PROGRESS,
-  payload: {
-    progress
   }
 })
 
