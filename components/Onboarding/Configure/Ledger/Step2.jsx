@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useDispatch, useSelector } from 'react-redux'
 import {
   Box,
   Button,
@@ -9,35 +10,90 @@ import {
 } from '@openworklabs/filecoin-wallet-styleguide'
 
 import { useWalletProvider } from '../../../../WalletProvider'
+import { error } from '../../../../store/actions'
 import StepCard from './StepCard'
 
-const Step2Helper = () => (
+const reportLedgerConfigError = (
+  ledgerLocked,
+  filecoinAppNotOpen,
+  replug,
+  otherError
+) => {
+  if (ledgerLocked) return 'Is your Ledger device unlocked?'
+  if (filecoinAppNotOpen) return 'Is the Filecoin App open on your device?'
+  if (replug || otherError)
+    return 'Please unplug and replug your device, and try again.'
+
+  console.error('Unhandled error event: ', otherError.message)
+  return 'Please unplug and replug your device, and try again.'
+}
+
+const hasLedgerError = (ledgerLocked, filecoinAppNotOpen, replug) =>
+  ledgerLocked || filecoinAppNotOpen || replug
+
+const Step2Helper = ({
+  ledgerLocked,
+  filecoinAppNotOpen,
+  replug,
+  otherError
+}) => (
   <Card
     display='flex'
     flexDirection='column'
     justifyContent='space-between'
     borderColor='silver'
+    backgroundColor={
+      hasLedgerError(ledgerLocked, filecoinAppNotOpen, replug) && 'error.base'
+    }
     height={300}
     ml={2}
   >
-    <Box display='flex' alignItems='center'>
-      <Title>Next</Title>
-    </Box>
-    <Box display='block' mt={3}>
-      <Text mb={1}>Please unlock your Ledger device</Text>
-      <Text>And make sure the Filecoin App is open</Text>
-    </Box>
+    {hasLedgerError(ledgerLocked, filecoinAppNotOpen, replug) ? (
+      <>
+        <Box display='flex' alignItems='center'>
+          <Title>Oops!</Title>
+        </Box>
+        <Box mt={3}>
+          <Text mb={1}>We had trouble communicating with your device.</Text>
+          <Text>
+            {reportLedgerConfigError(
+              ledgerLocked,
+              filecoinAppNotOpen,
+              replug,
+              otherError
+            )}
+          </Text>
+        </Box>
+      </>
+    ) : (
+      <>
+        <Box display='flex' alignItems='center'>
+          <Title>Next</Title>
+        </Box>
+        <Box mt={3}>
+          <Text mb={1}>Please unlock your Ledger device</Text>
+          <Text>And make sure the Filecoin App is open</Text>
+        </Box>
+      </>
+    )}
   </Card>
 )
 
 Step2Helper.propTypes = {
   ledgerLocked: PropTypes.bool.isRequired,
   filecoinAppNotOpen: PropTypes.bool.isRequired,
-  replug: PropTypes.bool.isRequired
+  replug: PropTypes.bool.isRequired,
+  otherError: PropTypes.instanceOf(Error)
+}
+
+Step2Helper.defaultProps = {
+  otherError: null
 }
 
 export default () => {
   const { ledger, setWalletType, fetchDefaultWallet } = useWalletProvider()
+  const dispatch = useDispatch()
+  const generalError = useSelector(state => state.error)
   return (
     <>
       <Box
@@ -52,6 +108,7 @@ export default () => {
           ledgerLocked={ledger.ledgerLocked}
           filecoinAppNotOpen={ledger.filecoinAppNotOpen}
           replug={ledger.replug}
+          otherError={generalError}
         />
       </Box>
       <Box mt={6} display='flex' flexDirection='row' justifyContent='center'>
@@ -64,7 +121,11 @@ export default () => {
         <Button
           title='My Ledger device is unlocked  and Filecoin app open'
           onClick={async () => {
-            const [wallet] = await fetchDefaultWallet()
+            try {
+              const [wallet] = await fetchDefaultWallet()
+            } catch (err) {
+              dispatch(error(err))
+            }
           }}
           type='primary'
           ml={2}
