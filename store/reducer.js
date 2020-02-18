@@ -23,8 +23,6 @@ import {
 import {
   confirmMessage,
   confirmedMessage,
-  createWalletProvider,
-  setWalletType,
   switchWallet,
   walletList,
   updateBalance,
@@ -70,10 +68,6 @@ export default (state, action) => {
       return fetchedNextPageSuccess(cloneDeep(state), action.payload)
     case FETCHING_NEXT_PAGE_FAILURE:
       return fetchedNextPageFailure(cloneDeep(state), action.error)
-    case SET_WALLET_TYPE:
-      return setWalletType(cloneDeep(state), action.payload)
-    case CREATE_WALLET_PROVIDER:
-      return createWalletProvider(cloneDeep(state), action.payload)
     case ERROR:
       return error(cloneDeep(state), action.error)
     case CLEAR_ERROR:

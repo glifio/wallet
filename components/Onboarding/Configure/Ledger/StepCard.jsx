@@ -26,7 +26,7 @@ const StepCard = ({ step }) => {
           completedDotColor='green'
           incompletedDotColor='silver'
           step={step}
-          totalSteps={2}
+          totalSteps={3}
           ml={4}
         />
       </Box>

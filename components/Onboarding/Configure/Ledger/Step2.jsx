@@ -20,10 +20,11 @@ const Step2Helper = () => (
     ml={2}
   >
     <Box display='flex' alignItems='center'>
-      <Title>First</Title>
+      <Title>Next</Title>
     </Box>
     <Box display='block' mt={3}>
-      <Text>Please connect your Ledger to your computer.</Text>
+      <Text mb={1}>Please unlock your Ledger device</Text>
+      <Text>And make sure the Filecoin App is open</Text>
     </Box>
   </Card>
 )
@@ -48,7 +49,7 @@ export default () => (
         mr={2}
       />
       <Button
-        title='Yes, my Ledger device is connected.'
+        title='My Ledger device is unlocked  and Filecoin app open'
         onClick={() => console.log('going forward')}
         type='primary'
         ml={2}

@@ -13,8 +13,6 @@ import {
   FETCHING_NEXT_PAGE_SUCCESS,
   FETCHING_NEXT_PAGE_FAILURE,
   WALLET_LIST,
-  SET_WALLET_TYPE,
-  CREATE_WALLET_PROVIDER,
   POPULATE_REDUX
 } from './actionTypes'
 
@@ -86,20 +84,6 @@ export const fetchedNextPageSuccess = (messages, links) => ({
 export const fetchedNextPageFailure = ({ error }) => ({
   type: FETCHING_NEXT_PAGE_FAILURE,
   error
-})
-
-export const setWalletType = walletType => ({
-  type: SET_WALLET_TYPE,
-  payload: {
-    walletType
-  }
-})
-
-export const createWalletProvider = provider => ({
-  type: CREATE_WALLET_PROVIDER,
-  payload: {
-    provider
-  }
 })
 
 export const error = err => ({

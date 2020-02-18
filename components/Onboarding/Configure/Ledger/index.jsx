@@ -1,13 +1,15 @@
 import React from 'react'
 import { Box } from '@openworklabs/filecoin-wallet-styleguide'
 
+import { useWalletProvider } from '../../../../WalletProvider'
 import Step1 from './Step1'
 import Step2 from './Step2'
 
 export default () => {
+  const { ledger } = useWalletProvider()
   return (
     <Box display='flex' flexDirection='column'>
-      <Step2 />
+      {ledger.connectedSuccess ? <Step2 /> : <Step1 />}
     </Box>
   )
 }

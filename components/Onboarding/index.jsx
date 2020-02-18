@@ -1,10 +1,10 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import ChooseWallet from './Choose'
 import ConfigureWallet from './Configure'
+import { useWalletProvider } from '../../WalletProvider'
 
 export default () => {
-  const walletType = useSelector(state => state.walletType)
+  const { walletType } = useWalletProvider()
   return (
     <>
       {walletType ? (

@@ -15,7 +15,7 @@ export const initialState = {
     links: {},
     paginating: false
   },
-  walletType: 'LEDGER',
+  walletType: null,
   walletConnected: false,
   walletProvider: null,
   // one of 't', 'f', or 'c' (custom)
@@ -145,16 +145,6 @@ export const fetchedNextPageFailure = (state, error) => ({
     paginating: false
   },
   error
-})
-export const setWalletType = (state, { walletType }) => ({
-  ...state,
-  walletType
-})
-
-export const createWalletProvider = (state, { provider }) => ({
-  ...state,
-  walletConnected: true,
-  walletProvider: provider
 })
 
 export const error = (state, err) => ({

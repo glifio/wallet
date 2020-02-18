@@ -36,6 +36,7 @@ module.exports = {
     'implicit-arrow-linebreak': 0,
     'no-unused-vars': 1,
     'react/jsx-props-no-spreading': 0,
+    'no-shadow': 1,
     semi: 0
   }
 }
