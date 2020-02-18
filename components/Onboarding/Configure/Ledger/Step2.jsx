@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'
 import {
@@ -28,8 +29,8 @@ const reportLedgerConfigError = (
   return 'Please unplug and replug your device, and try again.'
 }
 
-const hasLedgerError = (ledgerLocked, filecoinAppNotOpen, replug) =>
-  ledgerLocked || filecoinAppNotOpen || replug
+const hasLedgerError = (ledgerLocked, filecoinAppNotOpen, replug, otherError) =>
+  ledgerLocked || filecoinAppNotOpen || replug || otherError
 
 const Step2Helper = ({
   ledgerLocked,
@@ -43,12 +44,13 @@ const Step2Helper = ({
     justifyContent='space-between'
     borderColor='silver'
     backgroundColor={
-      hasLedgerError(ledgerLocked, filecoinAppNotOpen, replug) && 'error.base'
+      hasLedgerError(ledgerLocked, filecoinAppNotOpen, replug, otherError) &&
+      'error.base'
     }
     height={300}
     ml={2}
   >
-    {hasLedgerError(ledgerLocked, filecoinAppNotOpen, replug) ? (
+    {hasLedgerError(ledgerLocked, filecoinAppNotOpen, replug, otherError) ? (
       <>
         <Box display='flex' alignItems='center'>
           <Title>Oops!</Title>
@@ -94,6 +96,7 @@ export default () => {
   const { ledger, setWalletType, fetchDefaultWallet } = useWalletProvider()
   const dispatch = useDispatch()
   const generalError = useSelector(state => state.error)
+  const router = useRouter()
   return (
     <>
       <Box
@@ -122,7 +125,8 @@ export default () => {
           title='My Ledger device is unlocked  and Filecoin app open'
           onClick={async () => {
             try {
-              const [wallet] = await fetchDefaultWallet()
+              const wallet = await fetchDefaultWallet()
+              router.replace(`/address/${wallet.address}`)
             } catch (err) {
               dispatch(error(err))
             }

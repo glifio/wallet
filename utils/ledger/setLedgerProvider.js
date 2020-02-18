@@ -50,7 +50,6 @@ export const checkLedgerConfiguration = async (dispatch, walletProvider) => {
   dispatch({ type: LEDGER_ESTABLISHING_CONNECTION_W_FILECOIN_APP })
   try {
     const response = await walletProvider.wallet.getVersion()
-
     if (response.device_locked) {
       dispatch({ type: LEDGER_LOCKED })
       return false

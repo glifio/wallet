@@ -3,7 +3,7 @@ import { checkLedgerConfiguration } from '../utils/ledger/setLedgerProvider'
 
 export default async (dispatch, network = 't', provider) => {
   if (provider.wallet.type === LEDGER) {
-    const configured = checkLedgerConfiguration(dispatch, provider)
+    const configured = await checkLedgerConfiguration(dispatch, provider)
     if (!configured) return []
   }
   const [defaultAddress] = await provider.wallet.getAccounts(0, 1, network)
