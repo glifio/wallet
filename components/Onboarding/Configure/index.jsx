@@ -1,18 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { LEDGER, IMPORT_SEED, CREATE, IMPORT_PK } from '../../../constants'
+import {
+  LEDGER,
+  IMPORT_MNEMONIC,
+  IMPORT_SINGLE_KEY,
+  CREATE_MNEMONIC
+} from '../../../constants'
 import Ledger from './Ledger'
 
 const Configure = ({ walletType }) => {
   switch (walletType) {
-    case CREATE:
+    case CREATE_MNEMONIC:
       return <div>Create</div>
     case LEDGER:
       return <Ledger />
-    case IMPORT_PK:
+    case IMPORT_SINGLE_KEY:
       return <div>Import pk</div>
-    case IMPORT_SEED:
+    case IMPORT_MNEMONIC:
       return <div>Import seed</div>
     default:
       return <div>Error, how the hell did you get here?</div>
@@ -20,8 +25,12 @@ const Configure = ({ walletType }) => {
 }
 
 Configure.propTypes = {
-  walletType: PropTypes.oneOf([LEDGER, IMPORT_SEED, CREATE, IMPORT_PK])
-    .isRequired
+  walletType: PropTypes.oneOf([
+    LEDGER,
+    IMPORT_MNEMONIC,
+    CREATE_MNEMONIC,
+    IMPORT_SINGLE_KEY
+  ]).isRequired
 }
 
 export default Configure

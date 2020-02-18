@@ -28,7 +28,7 @@ const Step1Helper = ({ connectedFailure }) => {
             <Title>Oops!</Title>
           </Box>
           <Box>
-            <Text mb={2}>It looks like your Ledger is still locked.</Text>
+            <Text mb={2}>We couldn&rsquo;t connect to your Ledger Device.</Text>
             <Text>Please unlock your Ledger and try again.</Text>
           </Box>
         </>
@@ -37,7 +37,7 @@ const Step1Helper = ({ connectedFailure }) => {
           <Box display='flex' alignItems='center'>
             <Title>First</Title>
           </Box>
-          <Box display='block' mt={3}>
+          <Box mt={3}>
             <Text>Please connect your Ledger to your computer.</Text>
           </Box>
         </>

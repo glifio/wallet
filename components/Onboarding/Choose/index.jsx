@@ -3,7 +3,12 @@ import { Box } from '@openworklabs/filecoin-wallet-styleguide'
 import ImportWallet from './Import'
 import CreateWallet from './Create'
 import Hello from './Hello'
-import { LEDGER, IMPORT_SEED, CREATE, IMPORT_PK } from '../../../constants'
+import {
+  LEDGER,
+  IMPORT_MNEMONIC,
+  CREATE_MNEMONIC,
+  IMPORT_SINGLE_KEY
+} from '../../../constants'
 import { useWalletProvider } from '../../../WalletProvider'
 
 export default () => {
@@ -26,7 +31,7 @@ export default () => {
           mt={2}
         />
         <ImportWallet
-          onClick={() => setWalletType(IMPORT_SEED)}
+          onClick={() => setWalletType(IMPORT_MNEMONIC)}
           glyphAcronym='Sp'
           title='Import Seed Phrase'
           description='Use your existing seed phrase'
@@ -34,9 +39,9 @@ export default () => {
         />
       </Box>
       <Box display='flex' flexDirection='column' ml={2}>
-        <CreateWallet onClick={() => setWalletType(CREATE)} mb={2} />
+        <CreateWallet onClick={() => setWalletType(CREATE_MNEMONIC)} mb={2} />
         <ImportWallet
-          onClick={() => setWalletType(IMPORT_PK)}
+          onClick={() => setWalletType(IMPORT_SINGLE_KEY)}
           glyphAcronym='Pk'
           title='Import Private Key'
           description='Use your existing private key'
