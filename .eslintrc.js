@@ -7,6 +7,8 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
     'airbnb',
     'prettier',
     'prettier/react'
@@ -34,6 +36,7 @@ module.exports = {
     'implicit-arrow-linebreak': 0,
     'no-unused-vars': 1,
     'react/jsx-props-no-spreading': 0,
+    'no-shadow': 1,
     semi: 0
   }
 }
