@@ -37,6 +37,7 @@ module.exports = {
     'no-unused-vars': 1,
     'react/jsx-props-no-spreading': 0,
     'no-shadow': 1,
+    'react/destructuring-assignment': 0,
     semi: 0
   }
 }
