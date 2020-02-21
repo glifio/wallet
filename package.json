@@ -5,7 +5,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint:fix": "eslint components lib pages --fix"
+    "lint:fix": "eslint components lib pages --fix",
+    "link:styleguide": "npm link @openworklabs/filecoin-wallet-styleguide && npm-link-shared ./node_modules/@openworklabs/filecoin-wallet-styleguide/node_modules . react"
   },
   "dependencies": {
     "@ledgerhq/hw-transport-webhid": "5.7.0",
@@ -40,6 +41,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "npm-link-shared": "^0.5.6",
     "prettier": "^1.19.1"
   },
   "license": "ISC"
