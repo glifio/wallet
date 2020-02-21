@@ -4,14 +4,26 @@ import {
   Card,
   Input,
   Stepper,
-  Text
+  Text,
+  Button,
+  Label,
+  Title
 } from '@openworklabs/filecoin-wallet-styleguide'
-import FilecoinNumber from '@openworklabs/filecoin-number'
+import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
+import { useWallet } from '../hooks'
 
 export default () => {
+  const wallet = useWallet()
   const [toAddress, setToAddress] = useState('')
-  // const [value, setValue] = useState('')
-
+  const [toAddressError, setToAddressError] = useState('')
+  const [value, setValue] = useState({
+    fil: new FilecoinNumber('0', 'fil'),
+    fiat: new BigNumber('0')
+  })
+  const [valueError, setValueError] = useState('')
+  const [gasPrice, setGasPrice] = useState('1')
+  const [gasLimit, setGasLimit] = useState('1000')
+  console.log(value)
   return (
     <Card
       display='flex'
@@ -51,18 +63,56 @@ export default () => {
         </Stepper>
       </Box>
       <Box mt={3}>
-        <Input.Address
-          onChange={e => setToAddress(e.target.value)}
-          value={toAddress}
-          label='RECIPIENT'
-          placeholder='t1...'
-        />
-        {/* <Input.Funds
-          onChange={handleValueChange}
-          value={value}
-          label='AMOUNT'
-          placeholder='0 FIL'
-        /> */}
+        <form>
+          <Input.Address
+            name='recipient'
+            onChange={e => setToAddress(e.target.value)}
+            value={toAddress}
+            label='Recipient'
+            placeholder='t1...'
+            error={toAddressError}
+            setError={setToAddressError}
+          />
+          <Input.Funds
+            name='amount'
+            label='Amount'
+            onAmountChange={setValue}
+            balance={wallet.balance}
+            error={valueError}
+            setError={setValueError}
+            gasLimit={gasLimit}
+          />
+          <Box display='flex' flexDirection='column'>
+            <Input.Text
+              onChange={() => {}}
+              label='Transfer Fee'
+              value='< 0.1FIL'
+              disabled
+            />
+            <Input.Text
+              label='Completed In'
+              value='Approx. 17 Seconds'
+              onChange={() => {}}
+              disabled
+            />
+          </Box>
+          <Card
+            display='flex'
+            flexDirection='row'
+            justifyContent='space-between'
+          >
+            <Label>Total</Label>
+            <Box display='flex' flexDirection='column'>
+              <Title>{value.fil.toFil()} FIL</Title>
+              <Text>{value.fiat.toString()} USD</Text>
+            </Box>
+          </Card>
+          <hr />
+          <Box display='flex' flexDirection='row' justifyContent='center'>
+            <Button title='Cancel' type='secondary' onClick={() => {}} />
+            <Button title='Next' type='primary' onClick={() => {}} />
+          </Box>
+        </form>
       </Box>
     </Card>
   )

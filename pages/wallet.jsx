@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import Router from 'next/router'
-import FilecoinNumber from '@openworklabs/filecoin-number'
+import { FilecoinNumber } from '@openworklabs/filecoin-number'
 
 import WalletView from '../components/Wallet'
 import { WALLET_PROP_TYPE } from '../customPropTypes'
