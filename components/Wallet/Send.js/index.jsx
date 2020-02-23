@@ -10,7 +10,17 @@ import {
   Title
 } from '@openworklabs/filecoin-wallet-styleguide'
 import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
+import { validateAddressString } from '@openworklabs/filecoin-address'
+
 import { useWallet } from '../hooks'
+
+const isValidForm = (toAddress, value, balance, toAddressError, valueError) => {
+  const validToAddress = validateAddressString(toAddress)
+  const errorFree = validToAddress && !toAddressError && !valueError
+  const fieldsFilledOut = toAddress && value && value.isGreaterThan(0)
+  const enoughInTheBank = balance.isGreaterThan(value)
+  return !!(errorFree && fieldsFilledOut && enoughInTheBank)
+}
 
 export default () => {
   const wallet = useWallet()
@@ -23,7 +33,13 @@ export default () => {
   const [valueError, setValueError] = useState('')
   const [gasPrice, setGasPrice] = useState('1')
   const [gasLimit, setGasLimit] = useState('1000')
-  console.log(value)
+  const [step, setStep] = useState(1)
+
+  const onSubmit = async e => {
+    e.preventDefault()
+    console.log('im here')
+  }
+
   return (
     <Card
       display='flex'
@@ -56,14 +72,14 @@ export default () => {
           textColor='purple'
           completedDotColor='purple'
           incompletedDotColor='silver'
-          step={1}
+          step={step}
           totalSteps={2}
         >
           Step 1
         </Stepper>
       </Box>
       <Box mt={3}>
-        <form>
+        <form onSubmit={onSubmit}>
           <Input.Address
             name='recipient'
             onChange={e => setToAddress(e.target.value)}
@@ -109,8 +125,22 @@ export default () => {
           </Card>
           <hr />
           <Box display='flex' flexDirection='row' justifyContent='center'>
-            <Button title='Cancel' type='secondary' onClick={() => {}} />
-            <Button title='Next' type='primary' onClick={() => {}} />
+            <Button title='Cancel' buttonStyle='secondary' onClick={() => {}} />
+            <Button
+              disabled={
+                !isValidForm(
+                  toAddress,
+                  value.fil,
+                  wallet.balance,
+                  toAddressError,
+                  valueError
+                )
+              }
+              type='submit'
+              title='Next'
+              buttonStyle='primary'
+              onClick={() => {}}
+            />
           </Box>
         </form>
       </Box>
