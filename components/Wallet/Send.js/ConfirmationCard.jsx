@@ -4,6 +4,7 @@ import {
   Box,
   Card,
   Input,
+  Glyph,
   Stepper,
   Text
 } from '@openworklabs/filecoin-wallet-styleguide'
@@ -75,17 +76,20 @@ const ConfirmationCard = ({ value, walletType, toAddress }) => {
             height={6}
             backgroundColor='status.success.background'
           >
-            <Text textAlign='center' color='white'>
-              Cf
-            </Text>
+            <Glyph
+              acronym='Cf'
+              textAlign='center'
+              color='card.confirmation.background'
+              backgroundColor='card.confirmation.foreground'
+            />
           </Box>
-          <Text color='status.success.background' ml={2}>
+          <Text color='card.confirmation.foreground' ml={2}>
             Confirmation
           </Text>
         </Box>
         <Stepper
-          textColor='status.success.background'
-          completedDotColor='status.success.background'
+          textColor='card.confirmation.foreground'
+          completedDotColor='card.confirmation.foreground'
           incompletedDotColor='core.silver'
           step={2}
           totalSteps={2}
