@@ -6,10 +6,11 @@ import Step1 from './Step1'
 import Step2 from './Step2'
 
 export default () => {
-  const { ledger } = useWalletProvider()
+  const { step } = useWalletProvider()
   return (
     <Box display='flex' flexDirection='column'>
-      {ledger.connectedSuccess ? <Step2 /> : <Step1 />}
+      {step === 1 && <Step1 />}
+      {step === 2 && <Step2 />}
     </Box>
   )
 }

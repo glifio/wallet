@@ -20,6 +20,7 @@ export const initialState = {
   walletType: null,
   walletProvider: null,
   walletConnected: false,
+  step: 1,
   error: ''
 }
 
@@ -73,7 +74,8 @@ const setWalletTypeInState = (state, { walletType }) => {
 const createWalletProviderInState = (state, { provider }) => ({
   ...state,
   walletConnected: true,
-  walletProvider: provider
+  walletProvider: provider,
+  step: 2
 })
 
 const setErrorInState = (state, { error }) => ({
@@ -97,8 +99,6 @@ export default (state, action) => {
       return setErrorInState(cloneDeep(state), action.error)
     case CLEAR_ERROR:
       return clearErrorInState(cloneDeep(state))
-    case LEDGER_RESET_STATE:
-      return { ...state, ledger: initialLedgerState }
     // ledger cases
     case LEDGER_USER_INITIATED_IMPORT:
       return {
