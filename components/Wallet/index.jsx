@@ -30,20 +30,7 @@ const WalletView = ({ wallet }) => {
         />
       </Box>
       <Box>{sending ? <Send /> : <MessageHistory />}</Box>
-      <>
-        {sending && (
-          <Glyph
-            css={`
-              cursor: pointer;
-            `}
-            role='button'
-            cursor='pointer'
-            onClick={() => setSending(false)}
-            acronym='X'
-            color='black'
-          />
-        )}
-      </>
+      <>{sending}</>
     </Box>
   )
 }
