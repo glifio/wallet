@@ -6,6 +6,7 @@ import {
   Card,
   Input,
   Stepper,
+  Glyph,
   Text,
   Button,
   Label,
@@ -22,7 +23,7 @@ import { useWalletProvider } from '../../../WalletProvider'
 import { LEDGER } from '../../../constants'
 
 const SendScreen = styled(Card)`
-  background-color: ${props => props.theme.colors.background.screen};
+  background-color: #eff3fd;
 `
 
 const isValidForm = (
@@ -135,9 +136,11 @@ export default () => {
               height={6}
               backgroundColor='core.primary'
             >
-              <Text textAlign='center' color='white'>
-                To
-              </Text>
+              <Glyph
+                acronym='To'
+                color='background.screen'
+                backgroundColor='core.primary'
+              />
             </Box>
             <Text color='core.primary' ml={2}>
               Sending Filecoin
