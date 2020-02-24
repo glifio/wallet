@@ -38,6 +38,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 0,
     'no-shadow': 1,
     'react/destructuring-assignment': 0,
+    'react/require-default-props': 0,
     semi: 0
   }
 }

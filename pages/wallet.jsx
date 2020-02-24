@@ -12,7 +12,11 @@ class Wallet extends Component {
   }
 
   render() {
-    return <WalletView wallet={this.props.wallet} />
+    return (
+      <>
+        {this.props.wallet.address && <WalletView wallet={this.props.wallet} />}
+      </>
+    )
   }
 }
 
