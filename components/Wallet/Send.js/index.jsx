@@ -186,7 +186,7 @@ export default () => {
                 disabled
               />
               <Input.Text
-                label='Completed In'
+                label='Completes In'
                 value='Approx. 17 Seconds'
                 onChange={() => {}}
                 backgroundColor='#EFF3FD'
