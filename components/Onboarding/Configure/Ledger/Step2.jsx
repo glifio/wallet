@@ -18,8 +18,10 @@ const reportLedgerConfigError = (
   ledgerLocked,
   filecoinAppNotOpen,
   replug,
+  busy,
   otherError
 ) => {
+  if (busy) return 'Is your Ledger device busy?'
   if (ledgerLocked) return 'Is your Ledger device unlocked?'
   if (filecoinAppNotOpen) return 'Is the Filecoin App open on your device?'
   if (replug || otherError)
@@ -29,13 +31,19 @@ const reportLedgerConfigError = (
   return 'Please unplug and replug your device, and try again.'
 }
 
-const hasLedgerError = (ledgerLocked, filecoinAppNotOpen, replug, otherError) =>
-  ledgerLocked || filecoinAppNotOpen || replug || otherError
+const hasLedgerError = (
+  ledgerLocked,
+  filecoinAppNotOpen,
+  replug,
+  ledgerBusy,
+  otherError
+) => ledgerLocked || filecoinAppNotOpen || replug || ledgerBusy || otherError
 
 const Step2Helper = ({
   ledgerLocked,
   filecoinAppNotOpen,
   replug,
+  ledgerBusy,
   otherError
 }) => (
   <Card
@@ -43,14 +51,25 @@ const Step2Helper = ({
     flexDirection='column'
     justifyContent='space-between'
     borderColor='silver'
-    backgroundColor={
-      hasLedgerError(ledgerLocked, filecoinAppNotOpen, replug, otherError) &&
-      'error.base'
+    bg={
+      hasLedgerError(
+        ledgerLocked,
+        filecoinAppNotOpen,
+        replug,
+        ledgerBusy,
+        otherError
+      ) && 'card.error.background'
     }
     height={300}
     ml={2}
   >
-    {hasLedgerError(ledgerLocked, filecoinAppNotOpen, replug, otherError) ? (
+    {hasLedgerError(
+      ledgerLocked,
+      filecoinAppNotOpen,
+      replug,
+      ledgerBusy,
+      otherError
+    ) ? (
       <>
         <Box display='flex' alignItems='center'>
           <Title>Oops!</Title>
@@ -62,6 +81,7 @@ const Step2Helper = ({
               ledgerLocked,
               filecoinAppNotOpen,
               replug,
+              ledgerBusy,
               otherError
             )}
           </Text>
@@ -85,6 +105,7 @@ Step2Helper.propTypes = {
   ledgerLocked: PropTypes.bool.isRequired,
   filecoinAppNotOpen: PropTypes.bool.isRequired,
   replug: PropTypes.bool.isRequired,
+  ledgerBusy: PropTypes.bool.isRequired,
   otherError: PropTypes.instanceOf(Error)
 }
 
@@ -108,9 +129,10 @@ export default () => {
       >
         <StepCard step={2} />
         <Step2Helper
-          ledgerLocked={ledger.ledgerLocked}
+          ledgerLocked={ledger.locked}
           filecoinAppNotOpen={ledger.filecoinAppNotOpen}
           replug={ledger.replug}
+          ledgerBusy={ledger.busy}
           otherError={generalError}
         />
       </Box>
@@ -122,12 +144,14 @@ export default () => {
           mr={2}
         />
         <Button
-          title='My Ledger device is unlocked  and Filecoin app open'
+          title='My Ledger device is unlocked and Filecoin app open'
           onClick={async () => {
             try {
               const wallet = await fetchDefaultWallet()
-              dispatch(walletList([wallet]))
-              router.push(`/wallet`)
+              if (wallet) {
+                dispatch(walletList([wallet]))
+                router.push(`/wallet`)
+              }
             } catch (err) {
               dispatch(error(err))
             }

@@ -1,7 +1,7 @@
 import { createContext, useContext, useReducer, useCallback } from 'react'
 import PropTypes from 'prop-types'
 
-import reducer, { initialState, setWalletType } from './state'
+import reducer, { initialState, setWalletType, setError } from './state'
 import { setLedgerProvider } from '../utils/ledger/setLedgerProvider'
 import fetchDefaultWallet from './fetchDefaultWallet'
 
@@ -17,6 +17,7 @@ const WalletProviderWrapper = ({ network, children }) => {
           () => fetchDefaultWallet(dispatch, network, state.walletProvider),
           [dispatch, state.walletProvider]
         ),
+        setWalletError: errorMessage => dispatch(setError(errorMessage)),
         setWalletType: walletType => dispatch(setWalletType(walletType)),
         setLedgerProvider: useCallback(
           () => setLedgerProvider(dispatch, network),

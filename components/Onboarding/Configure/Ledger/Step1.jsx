@@ -18,7 +18,7 @@ const Step1Helper = ({ connectedFailure }) => {
       flexDirection='column'
       justifyContent='space-between'
       borderColor='silver'
-      backgroundColor={connectedFailure && 'error.base'}
+      bg={connectedFailure && 'card.error.background'}
       height={300}
       ml={2}
     >
@@ -73,7 +73,7 @@ export default () => {
         />
         <Button
           title='Yes, my Ledger device is connected.'
-          onClick={() => setLedgerProvider()}
+          onClick={setLedgerProvider}
           buttonStyle='primary'
           ml={2}
         />

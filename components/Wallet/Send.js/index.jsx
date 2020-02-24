@@ -49,7 +49,7 @@ export default () => {
   const [signingError, setSigningError] = useState('')
   const [gasPrice, setGasPrice] = useState('1')
   const [gasLimit, setGasLimit] = useState('1000')
-  const [step, setStep] = useState(2)
+  const [step, setStep] = useState(1)
 
   const submitMsg = async () => {
     const nonce = await walletProvider.getNonce(wallet.address)
@@ -92,8 +92,8 @@ export default () => {
       setStep(2)
     } else {
       try {
-        const message = await submitMsg()
         setStep(2)
+        const message = await submitMsg()
       } catch (err) {
         setSigningError(err.message)
       }

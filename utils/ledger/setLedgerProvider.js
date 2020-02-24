@@ -11,7 +11,8 @@ import {
   LEDGER_UNLOCKED,
   LEDGER_ESTABLISHING_CONNECTION_W_FILECOIN_APP,
   LEDGER_FILECOIN_APP_NOT_OPEN,
-  LEDGER_FILECOIN_APP_OPEN
+  LEDGER_FILECOIN_APP_OPEN,
+  LEDGER_BUSY
 } from './ledgerStateManagement'
 import { createWalletProvider } from '../../WalletProvider/state'
 import createTransport from './createTransport'
@@ -20,16 +21,13 @@ export const setLedgerProvider = async (dispatch, network) => {
   dispatch({ type: LEDGER_USER_INITIATED_IMPORT })
   try {
     const transport = await createTransport()
+    const provider = new Filecoin(new LedgerProvider(transport), {
+      apiAddress: 'https://proxy.openworklabs.com/rpc/v0',
+      network
+    })
     dispatch({ type: LEDGER_CONNECTED })
-    dispatch(
-      createWalletProvider(
-        new Filecoin(new LedgerProvider(transport), {
-          apiAddress: 'https://proxy.openworklabs.com/rpc/v0',
-          network
-        })
-      )
-    )
-    return true
+    dispatch(createWalletProvider(provider))
+    return provider
   } catch (err) {
     if (
       err.message &&
@@ -58,13 +56,24 @@ export const checkLedgerConfiguration = async (dispatch, walletProvider) => {
     dispatch({ type: LEDGER_FILECOIN_APP_OPEN })
     return true
   } catch (err) {
-    dispatch({ type: LEDGER_FILECOIN_APP_NOT_OPEN })
-
     if (
       err.message &&
       err.message.toLowerCase().includes('transporterror: invalid channel')
     ) {
       dispatch({ type: LEDGER_REPLUG })
+    } else if (
+      err.message &&
+      err.message.toLowerCase().includes('ledger device locked or busy')
+    ) {
+      dispatch({ type: LEDGER_BUSY })
+    } else if (
+      err.message &&
+      err.message.toLowerCase().includes('app does not seem to be open')
+    ) {
+      dispatch({ type: LEDGER_FILECOIN_APP_NOT_OPEN })
+    } else {
+      // forward other unhandled errors along
+      throw new Error(err)
     }
     return false
   }
