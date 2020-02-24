@@ -9,6 +9,8 @@ import WalletProviderWrapper from '../WalletProvider'
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
+    font-family: ${theme.fonts.sansSerif};
+    font-size: ${theme.fontSizes[2]}
   }
 `
 
