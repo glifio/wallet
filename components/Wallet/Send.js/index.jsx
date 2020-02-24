@@ -178,14 +178,14 @@ export default () => {
                 onChange={() => {}}
                 label='Transfer Fee'
                 value='< 0.1FIL'
-                backgroundColor='#E4EBFC'
+                backgroundColor='#EFF3FD'
                 disabled
               />
               <Input.Text
                 label='Completed In'
                 value='Approx. 17 Seconds'
                 onChange={() => {}}
-                backgroundColor='#E4EBFC'
+                backgroundColor='#EFF3FD'
                 disabled
               />
             </Box>
