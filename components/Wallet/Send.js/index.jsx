@@ -22,7 +22,7 @@ import { useWallet } from '../hooks'
 import { useWalletProvider } from '../../../WalletProvider'
 import { LEDGER } from '../../../constants'
 
-const SendScreen = styled(Card)`
+const SendCard = styled(Card)`
   background-color: #eff3fd;
 `
 
@@ -118,7 +118,7 @@ export default () => {
           toAddress={toAddress}
         />
       )}
-      <SendScreen
+      <SendCard
         display='flex'
         flexDirection='column'
         justifyContent='space-between'
@@ -232,7 +232,7 @@ export default () => {
             </Box>
           </form>
         </Box>
-      </SendScreen>
+      </SendCard>
     </>
   )
 }
