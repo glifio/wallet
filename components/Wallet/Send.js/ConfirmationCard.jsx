@@ -35,8 +35,20 @@ const OtherWalletTypeConfirm = ({ toAddress, value }) => {
   return (
     <>
       <Text color='core.nearblack'>Please confirm that you want to:</Text>
-      <Input.Text disabled label='SEND' value={value.fil.toFil()} />
-      <Input.Address disabled label='to' value={toAddress} />
+      <Input.Text
+        disabled
+        backgroundColor='card.confirmation.background'
+        color='card.confirmation.foreground'
+        label='Sending'
+        value={value.fil.toFil()}
+      />
+      <Input.Address
+        disabled
+        backgroundColor='card.confirmation.background'
+        color='card.confirmation.foreground'
+        label='To'
+        value={toAddress}
+      />
     </>
   )
 }
@@ -56,8 +68,8 @@ const ConfirmationCard = ({ value, walletType, toAddress }) => {
       justifyContent='space-between'
       border='none'
       width='auto'
-      ml={4}
-      mr={4}
+      my={2}
+      mx={4}
       bg='card.confirmation.background'
     >
       <Box
