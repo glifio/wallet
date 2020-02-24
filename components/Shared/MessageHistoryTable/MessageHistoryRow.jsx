@@ -43,10 +43,11 @@ AddressText.propTypes = {
 
 const ActionText = ({ status, sentMsg }) => {
   if (status === 'confirmed' && sentMsg) return <Text my={0}>Sent</Text>
-  else if (status === 'confirmed') return <Text my={0}>Received</Text>
-  else if (status === 'pending' && sentMsg) return <Text my={0}>Sending</Text>
+  if (status === 'confirmed') return <Text my={0}>Received</Text>
+  if (status === 'pending' && sentMsg) return <Text my={0}>Sending</Text>
   // an unconfirmed received  sg
-  else if (status === 'pending') return <Text my={0}>Confirming</Text>
+  if (status === 'pending') return <Text my={0}>Confirming</Text>
+  return <Text my={0}>Unknown?</Text>
 }
 
 ActionText.propTypes = {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from '@openworklabs/filecoin-wallet-styleguide'
+import { Box } from '../../../Shared'
 
 import { useWalletProvider } from '../../../../WalletProvider'
 import Step1 from './Step1'

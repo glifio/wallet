@@ -5,7 +5,7 @@ import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 import Box from '../Box'
 import NumberInput from './Number'
 import { Text } from '../Typography'
-import { FILECOIN_NUMBER_PROP } from '../customPropTypes'
+import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 
 const formatFilValue = number => {
   if (!number) return ''
@@ -87,30 +87,30 @@ const Funds = forwardRef(
 
     return (
       <Box
-        display="flex"
-        maxWidth="480px"
-        minHeight="160px"
+        display='flex'
+        maxWidth='480px'
+        minHeight='160px'
         border={1}
         borderRadius={1}
-        borderColor="input.border"
+        borderColor='input.border'
         mt={3}
         ref={ref}
         {...props}
       >
         <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          flexGrow="1"
-          width="280px"
-          textAlign="center"
+          display='flex'
+          alignItems='center'
+          justifyContent='center'
+          flexGrow='1'
+          width='280px'
+          textAlign='center'
           borderRight={1}
-          borderColor="input.border"
+          borderColor='input.border'
         >
           {error ? <Text>{error}</Text> : <Text>Amount</Text>}
         </Box>
-        <Box display="inline-block" width="280px">
-          <Box display="block" height="80px" width="100%">
+        <Box display='inline-block' width='280px'>
+          <Box display='block' height='80px' width='100%'>
             <NumberInput
               onFocus={() => {
                 setError('')
@@ -124,22 +124,22 @@ const Funds = forwardRef(
                   onAmountChange({ fil: filAmount, fiat: fiatAmount })
                 }
               }}
-              height="100%"
-              width="100%"
-              border="0"
+              height='100%'
+              width='100%'
+              border='0'
               onChange={onFilChange}
               value={formatFilValue(filAmount)}
-              placeholder="0 FIL"
-              type="number"
+              placeholder='0 FIL'
+              type='number'
               step={new FilecoinNumber('1', 'attofil').toFil()}
             />
           </Box>
           <Box
-            display="block"
-            height="80px"
-            width="100%"
+            display='block'
+            height='80px'
+            width='100%'
             borderTop={1}
-            borderColor="input.border"
+            borderColor='input.border'
           >
             <NumberInput
               onFocus={() => {
@@ -154,15 +154,15 @@ const Funds = forwardRef(
                   onAmountChange({ fil: filAmount, fiat: fiatAmount })
                 }
               }}
-              height="100%"
-              width="100%"
-              border="0"
+              height='100%'
+              width='100%'
+              border='0'
               onChange={onFiatChange}
               value={formatFiatValue(fiatAmount)}
-              placeholder="0 USD"
-              type="number"
+              placeholder='0 USD'
+              type='number'
               step={new FilecoinNumber('1', 'attofil').toFil()}
-              min="0"
+              min='0'
             />
           </Box>
         </Box>
@@ -198,8 +198,7 @@ Funds.propTypes = {
 
 Funds.defaultProps = {
   error: '',
-  gasLimit: '1000',
-  gasPrice: '1'
+  gasLimit: '1000'
 }
 
 export default Funds

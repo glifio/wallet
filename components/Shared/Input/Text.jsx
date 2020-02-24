@@ -29,25 +29,25 @@ const TextInput = ({
 }) => (
   <>
     <TextInputWrapper
-      width="100%"
+      width='100%'
       mt={3}
       border={1}
-      borderColor="input.border"
+      borderColor='input.border'
       borderRadius={1}
     >
-      <Box display="flex" alignItems="center">
-        <Box display="inline-block" px={3} minWidth="120px" textAlign="center">
+      <Box display='flex' alignItems='center'>
+        <Box display='inline-block' px={3} minWidth='120px' textAlign='center'>
           {label}
         </Box>
         {/* how do we chunk the address in the input component? */}
         <BaseInput
-          display="inline-block"
+          display='inline-block'
           py={3}
           px={3}
           height={7}
           border={0}
           borderLeft={1}
-          borderColor="input.border"
+          borderColor='input.border'
           borderTopRightRadius={1}
           borderBottomRightRadius={1}
           onChange={onChange}
@@ -58,7 +58,7 @@ const TextInput = ({
         />
       </Box>
     </TextInputWrapper>
-    {error && <Label color="error.textLight">{error}</Label>}
+    {error && <Label color='error.textLight'>{error}</Label>}
   </>
 )
 
@@ -73,7 +73,7 @@ TextInput.propTypes = {
 
 TextInput.defaultProps = {
   value: '',
-  bool: false
+  disabled: false
 }
 
 export default TextInput

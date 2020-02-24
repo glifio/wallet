@@ -5,8 +5,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint:fix": "eslint components lib pages --fix",
-    "link:styleguide": "npm link @openworklabs/filecoin-wallet-styleguide && npm-link-shared ./node_modules/@openworklabs/filecoin-wallet-styleguide/node_modules . react"
+    "lint:fix": "eslint components pages Components WalletProvider --fix"
   },
   "dependencies": {
     "@ledgerhq/hw-transport-webhid": "5.7.0",
@@ -15,7 +14,6 @@
     "@openworklabs/filecoin-message": "0.0.8",
     "@openworklabs/filecoin-number": "0.0.3",
     "@openworklabs/filecoin-wallet-provider": "0.0.12",
-    "@openworklabs/filecoin-wallet-styleguide": "^0.1.1",
     "http-proxy-middleware": "^0.20.0",
     "lodash.clonedeep": "^4.5.0",
     "moment": "^2.24.0",

@@ -2,13 +2,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'
-import {
-  Box,
-  Button,
-  Card,
-  Text,
-  Title
-} from '@openworklabs/filecoin-wallet-styleguide'
+import { Box, Button, Card, Text, Title } from '../../../Shared'
 
 import { useWalletProvider } from '../../../../WalletProvider'
 import { error, walletList } from '../../../../store/actions'

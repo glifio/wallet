@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import PropTypes from 'prop-types'
 
-import { ADDRESS_PROPTYPE, MESSAGE_PROPS } from '../customPropTypes'
+import { ADDRESS_PROPTYPE, MESSAGE_PROPS } from '../../../customPropTypes'
 import MessageHistoryRow from './MessageHistoryRow'
 
 const MessageHistoryTable = forwardRef(
