@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
 import {
   Box,
   BigTitle,
@@ -19,6 +20,10 @@ import ErrorCard from './ErrorCard'
 import { useWallet } from '../hooks'
 import { useWalletProvider } from '../../../WalletProvider'
 import { LEDGER } from '../../../constants'
+
+const SendScreen = styled(Card)`
+  background-color: ${props => props.theme.colors.background.screen};
+`
 
 const isValidForm = (
   toAddress,
@@ -112,14 +117,13 @@ export default () => {
           toAddress={toAddress}
         />
       )}
-      <Card
+      <SendScreen
         display='flex'
         flexDirection='column'
         justifyContent='space-between'
         border='none'
         width='auto'
-        ml={4}
-        mr={4}
+        m={4}
       >
         <Box display='flex' alignItems='center' justifyContent='space-between'>
           <Box display='flex' alignItems='center'>
@@ -221,7 +225,7 @@ export default () => {
             </Box>
           </form>
         </Box>
-      </Card>
+      </SendScreen>
     </>
   )
 }
