@@ -1,9 +1,5 @@
 import React, { useState } from 'react'
-import {
-  AccountCard,
-  BalanceCard,
-  Box
-} from '@openworklabs/filecoin-wallet-styleguide'
+import { AccountCard, BalanceCard, Box } from '../Shared'
 
 import { WALLET_PROP_TYPE } from '../../customPropTypes'
 import Send from './Send.js'

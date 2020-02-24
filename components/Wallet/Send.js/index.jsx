@@ -11,7 +11,7 @@ import {
   Button,
   Label,
   Title
-} from '@openworklabs/filecoin-wallet-styleguide'
+} from '../../Shared'
 import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 import { validateAddressString } from '@openworklabs/filecoin-address'
 import Message from '@openworklabs/filecoin-message'

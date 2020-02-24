@@ -1,13 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  Box,
-  Card,
-  Input,
-  Glyph,
-  Stepper,
-  Text
-} from '@openworklabs/filecoin-wallet-styleguide'
+import { Box, Card, Input, Glyph, Stepper, Text } from '../../Shared'
 import {
   LEDGER,
   IMPORT_MNEMONIC,
