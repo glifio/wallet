@@ -140,6 +140,7 @@ export default () => {
               <Glyph
                 acronym='To'
                 color='background.screen'
+                borderColor='core.primary'
                 backgroundColor='core.primary'
               />
             </Box>

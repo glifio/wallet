@@ -84,6 +84,7 @@ const ConfirmationCard = ({ value, walletType, toAddress }) => {
             acronym='Cf'
             textAlign='center'
             color='card.confirmation.background'
+            borderColor='card.confirmation.foreground'
             backgroundColor='card.confirmation.foreground'
           />
           <Text color='card.confirmation.foreground' ml={2}>
