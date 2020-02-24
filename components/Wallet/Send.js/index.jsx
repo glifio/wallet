@@ -124,7 +124,8 @@ export default () => {
         justifyContent='space-between'
         border='none'
         width='auto'
-        m={4}
+        my={2}
+        mx={4}
       >
         <Box display='flex' alignItems='center' justifyContent='space-between'>
           <Box display='flex' alignItems='center'>
