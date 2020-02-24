@@ -1,8 +1,15 @@
+import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import updateArrayItem from '../utils/updateArrayItem'
 import { setMsgInCache, removeMsgFromCache } from './cache'
 
 export const initialState = {
-  wallets: [],
+  wallets: [
+    {
+      address: 't1hn7twanih6djfrg7s3phaek3ayge72c6vhndrhq',
+      balance: new FilecoinNumber('10', 'fil'),
+      path: [44, 1, 5, 0, 0]
+    }
+  ],
   selectedWalletIdx: 0,
   error: null,
   messages: {

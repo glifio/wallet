@@ -11,7 +11,7 @@ import {
 } from '@openworklabs/filecoin-wallet-styleguide'
 
 import { useWalletProvider } from '../../../../WalletProvider'
-import { error } from '../../../../store/actions'
+import { error, walletList } from '../../../../store/actions'
 import StepCard from './StepCard'
 
 const reportLedgerConfigError = (
@@ -118,7 +118,7 @@ export default () => {
         <Button
           title='Back'
           onClick={() => setWalletType(null)}
-          type='secondary'
+          buttonStyle='secondary'
           mr={2}
         />
         <Button
@@ -126,12 +126,13 @@ export default () => {
           onClick={async () => {
             try {
               const wallet = await fetchDefaultWallet()
-              router.replace(`/address/${wallet.address}`)
+              dispatch(walletList([wallet]))
+              router.push(`/wallet`)
             } catch (err) {
               dispatch(error(err))
             }
           }}
-          type='primary'
+          buttonStyle='primary'
           ml={2}
         />
       </Box>
