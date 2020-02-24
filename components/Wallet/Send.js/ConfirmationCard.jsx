@@ -68,21 +68,12 @@ const ConfirmationCard = ({ value, walletType, toAddress }) => {
         justifyContent='space-between'
       >
         <Box display='flex' alignItems='center'>
-          <Box
-            display='flex'
-            flexDirection='column'
-            justifyContent='center'
-            width={6}
-            height={6}
-            backgroundColor='status.success.background'
-          >
-            <Glyph
-              acronym='Cf'
-              textAlign='center'
-              color='card.confirmation.background'
-              backgroundColor='card.confirmation.foreground'
-            />
-          </Box>
+          <Glyph
+            acronym='Cf'
+            textAlign='center'
+            color='card.confirmation.background'
+            backgroundColor='card.confirmation.foreground'
+          />
           <Text color='card.confirmation.foreground' ml={2}>
             Confirmation
           </Text>
