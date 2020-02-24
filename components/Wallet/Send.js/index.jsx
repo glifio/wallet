@@ -178,19 +178,23 @@ export default () => {
                 onChange={() => {}}
                 label='Transfer Fee'
                 value='< 0.1FIL'
+                backgroundColor='#E4EBFC'
                 disabled
               />
               <Input.Text
                 label='Completed In'
                 value='Approx. 17 Seconds'
                 onChange={() => {}}
+                backgroundColor='#E4EBFC'
                 disabled
               />
             </Box>
-            <Card
+            <Box
               display='flex'
               flexDirection='row'
+              alignItems='center'
               justifyContent='space-between'
+              mt={3}
             >
               <Label>Total</Label>
               <Box display='flex' flexDirection='column'>
@@ -199,8 +203,7 @@ export default () => {
                 </BigTitle>
                 <Title color='core.darkgray'>{value.fiat.toString()} USD</Title>
               </Box>
-            </Card>
-            <hr />
+            </Box>
             <Box display='flex' flexDirection='row' justifyContent='center'>
               <Button
                 title='Cancel'
