@@ -1,11 +1,12 @@
 import React, { forwardRef } from 'react'
 import { oneOf } from 'prop-types'
 import styled from 'styled-components'
-import { space, color, layout, flexbox, border } from 'styled-system'
+import { space, color, layout, flexbox, border, position } from 'styled-system'
 
 import theme from '../theme'
 
 const IconBase = styled.svg`
+  ${position}
   ${space}
   ${color}
   ${layout}
@@ -217,7 +218,7 @@ export const IconClose = forwardRef((props, ref) => (
   </IconBase>
 ))
 
-export const IconApproximateEquals = forwardRef((props, ref) => (
+export const IconApproximatelyEquals = forwardRef((props, ref) => (
   <IconBase
     width='24'
     height='24'
