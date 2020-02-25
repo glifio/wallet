@@ -5,41 +5,14 @@ import {
 } from '../utils/ledger/setLedgerProvider'
 import { clearError, resetLedgerState } from './state'
 
-const fetchDefaultWallet = async (
-  dispatch,
-  network = 't',
-  provider,
-  attempted = false
-) => {
+const fetchDefaultWallet = async (dispatch, network = 't', walletType) => {
   dispatch(clearError())
-  if (provider.wallet.type === LEDGER) {
-    let configured
-    try {
-      configured = await checkLedgerConfiguration(dispatch, provider)
-    } catch (err) {
-      // if we cant establisha a connection with the device the first time, we need to restart the provider
-      if (
-        err.message &&
-        err.message.includes('DisconnectedDeviceDuringOperation') &&
-        !attempted
-      ) {
-        dispatch(resetLedgerState())
-        const providerWithRefreshedTransport = await setLedgerProvider(
-          dispatch,
-          network
-        )
-        // try again with renewed transport
-        return fetchDefaultWallet(
-          dispatch,
-          network,
-          providerWithRefreshedTransport,
-          true
-        )
-      }
-
-      // forward uncaught errors
-      throw new Error(err)
-    }
+  let provider
+  if (walletType === LEDGER) {
+    dispatch(resetLedgerState())
+    provider = await setLedgerProvider(dispatch, network)
+    if (!provider) return null
+    const configured = await checkLedgerConfiguration(dispatch, provider)
     if (!configured) return null
   }
   const [defaultAddress] = await provider.wallet.getAccounts(0, 1, network)

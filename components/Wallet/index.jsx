@@ -17,10 +17,11 @@ const WalletView = ({ wallet }) => {
   const [uncaughtError, setUncaughtError] = useState(null)
   const onShowOnLedger = async () => {
     try {
+      setUncaughtError(null)
       const provider = await connectLedger()
       if (provider) await provider.wallet.showAddressAndPubKey(wallet.path)
     } catch (err) {
-      setUncaughtError(err.message)
+      setUncaughtError(err)
     }
   }
   return (
@@ -32,6 +33,7 @@ const WalletView = ({ wallet }) => {
     >
       <Box display='flex' flexDirection='column' flexWrap='wrap' ml={2} mt={1}>
         {hasLedgerError(
+          ledger.connectedFailure,
           ledger.locked,
           ledger.filecoinAppNotOpen,
           ledger.replug,
@@ -41,6 +43,7 @@ const WalletView = ({ wallet }) => {
           <AccountError
             onTryAgain={onShowOnLedger}
             errorMsg={reportLedgerConfigError(
+              ledger.connectedFailure,
               ledger.locked,
               ledger.filecoinAppNotOpen,
               ledger.replug,

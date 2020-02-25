@@ -13,6 +13,7 @@ import {
 } from '../../../../utils/ledger/reportLedgerConfigError'
 
 const Step2Helper = ({
+  connectedFailure,
   ledgerLocked,
   filecoinAppNotOpen,
   replug,
@@ -26,6 +27,7 @@ const Step2Helper = ({
     borderColor='silver'
     bg={
       hasLedgerError(
+        connectedFailure,
         ledgerLocked,
         filecoinAppNotOpen,
         replug,
@@ -37,6 +39,7 @@ const Step2Helper = ({
     ml={2}
   >
     {hasLedgerError(
+      connectedFailure,
       ledgerLocked,
       filecoinAppNotOpen,
       replug,
@@ -51,6 +54,7 @@ const Step2Helper = ({
           <Text mb={1}>We had trouble communicating with your device.</Text>
           <Text>
             {reportLedgerConfigError(
+              connectedFailure,
               ledgerLocked,
               filecoinAppNotOpen,
               replug,
@@ -75,6 +79,7 @@ const Step2Helper = ({
 )
 
 Step2Helper.propTypes = {
+  connectedFailure: PropTypes.bool.isRequired,
   ledgerLocked: PropTypes.bool.isRequired,
   filecoinAppNotOpen: PropTypes.bool.isRequired,
   replug: PropTypes.bool.isRequired,
@@ -102,6 +107,7 @@ export default () => {
       >
         <StepCard step={2} />
         <Step2Helper
+          connectedFailure={ledger.connectedFailure}
           ledgerLocked={ledger.locked}
           filecoinAppNotOpen={ledger.filecoinAppNotOpen}
           replug={ledger.replug}

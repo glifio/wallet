@@ -15,8 +15,8 @@ const WalletProviderWrapper = ({ network, children }) => {
       value={{
         state,
         fetchDefaultWallet: useCallback(
-          () => fetchDefaultWallet(dispatch, network, state.walletProvider),
-          [dispatch, state.walletProvider]
+          () => fetchDefaultWallet(dispatch, network, state.walletType),
+          [dispatch, state.walletType]
         ),
         setWalletError: errorMessage => dispatch(setError(errorMessage)),
         setWalletType: walletType => dispatch(setWalletType(walletType)),
@@ -24,10 +24,10 @@ const WalletProviderWrapper = ({ network, children }) => {
           () => setLedgerProvider(dispatch, network),
           [dispatch, network]
         ),
-        connectLedger: useCallback(
-          () => connectLedger(dispatch, network, state.walletProvider),
-          [dispatch, state.walletProvider]
-        )
+        connectLedger: useCallback(() => connectLedger(dispatch, network), [
+          dispatch,
+          network
+        ])
       }}
     >
       {children}
