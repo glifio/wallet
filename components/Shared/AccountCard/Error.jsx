@@ -16,6 +16,7 @@ const AccountError = ({ errorMsg, onTryAgain }) => (
     p={3}
     bg='card.error.background'
     boxShadow={1}
+    mb={2}
   >
     <Box display='flex' alignItems='center' justifyContent='flex-start'>
       <Glyph mr={3} color='card.account.color' acronym='Er' />

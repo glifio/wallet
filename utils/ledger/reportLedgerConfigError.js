@@ -1,4 +1,3 @@
-/* eslint-disable consistent-return */
 export const reportLedgerConfigError = (
   connectedFailure,
   ledgerLocked,
@@ -12,7 +11,7 @@ export const reportLedgerConfigError = (
   if (ledgerLocked) return 'Is your Ledger device unlocked?'
   if (filecoinAppNotOpen) return 'Is the Filecoin App open on your device?'
   if (replug) return 'Please unplug and replug your device, and try again.'
-  if (otherError) return `Unhandled error event: ${otherError.message}`
+  if (otherError) return otherError && otherError.message
 }
 
 export const hasLedgerError = (
