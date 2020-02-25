@@ -242,6 +242,21 @@ export const IconApproximateEquals = forwardRef((props, ref) => (
   </IconBase>
 ))
 
+export const IconCopyAccountAddress = forwardRef((props, ref) => (
+  <IconBase
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+    ref={ref}
+    {...props}
+  >
+    <rect x='7.80859' y='4' width='12.1906' height='12.1906' fill='#1A0066' />
+    <rect x='4' y='7.80859' width='12.1906' height='12.1906' fill='#E0D7FE' />
+  </IconBase>
+))
+
 IconReceive.propTypes = {
   status: oneOf(['confirmed', 'pending']).isRequired
 }
