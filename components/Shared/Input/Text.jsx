@@ -63,8 +63,8 @@ const TextInput = ({
 )
 
 TextInput.propTypes = {
-  onChange: func.isRequired,
-  label: string.isRequired,
+  onChange: func,
+  label: string,
   value: string,
   placeholder: string,
   disabled: bool,
@@ -73,7 +73,9 @@ TextInput.propTypes = {
 
 TextInput.defaultProps = {
   value: '',
-  disabled: false
+  disabled: false,
+  onChange: () => {},
+  label: ''
 }
 
 export default TextInput

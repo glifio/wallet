@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
+import { validateAddressString } from '@openworklabs/filecoin-address'
+import Message from '@openworklabs/filecoin-message'
+
 import {
   Box,
   BigTitle,
@@ -12,9 +16,6 @@ import {
   Label,
   Title
 } from '../../Shared'
-import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
-import { validateAddressString } from '@openworklabs/filecoin-address'
-import Message from '@openworklabs/filecoin-message'
 
 import ConfirmationCard from './ConfirmationCard'
 import ErrorCard from './ErrorCard'
@@ -23,14 +24,14 @@ import { useWalletProvider } from '../../../WalletProvider'
 import { LEDGER } from '../../../constants'
 
 const SendCard = styled(Card)`
-  background-color: #eff3fd;
+  background-color: ${props => props.theme.colors.background.screen};
 `
 
 const FloatingContainer = styled(Box)`
   position: fixed;
   display: flex;
   flex-grow: 1;
-  bottom: 8px;
+  bottom: ${props => props.theme.sizes[3]}px;
   width: 100%;
   max-width: 560px;
 `
@@ -197,14 +198,14 @@ export default () => {
                   onChange={() => {}}
                   label='Transfer Fee'
                   value='< 0.1FIL'
-                  backgroundColor='#EFF3FD'
+                  backgroundColor='background.screen'
                   disabled
                 />
                 <Input.Text
                   label='Completes In'
                   value='Approx. 17 Seconds'
                   onChange={() => {}}
-                  backgroundColor='#EFF3FD'
+                  backgroundColor='background.screen'
                   disabled
                 />
               </Box>

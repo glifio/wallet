@@ -27,9 +27,9 @@ const Address = forwardRef(
 )
 
 Address.propTypes = {
-  onChange: func.isRequired,
-  label: string.isRequired,
-  setError: func.isRequired,
+  onChange: func,
+  label: string,
+  setError: func,
   value: string,
   error: string,
   placeholder: string
@@ -37,7 +37,10 @@ Address.propTypes = {
 
 Address.defaultProps = {
   value: '',
-  placeholder: 'f1...'
+  placeholder: 'f1...',
+  onChange: () => {},
+  setError: () => {},
+  label: ''
 }
 
 export default Address
