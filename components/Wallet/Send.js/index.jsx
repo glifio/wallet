@@ -279,14 +279,7 @@ export default () => {
             borderRadius={2}
             p={3}
           >
-            <Button
-              title='Cancel'
-              buttonStyle='secondary'
-              onClick={() => {
-                resetLedgerState()
-                setStep(1)
-              }}
-            />
+            <Button title='Cancel' buttonStyle='secondary' onClick={() => {}} />
             <Button
               disabled={
                 hasError() ||
