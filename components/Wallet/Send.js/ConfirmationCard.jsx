@@ -113,7 +113,7 @@ ConfirmationCard.propTypes = {
     CREATE_MNEMONIC,
     IMPORT_SINGLE_KEY
   ]).isRequired,
-  toAddress: ADDRESS_PROPTYPE.isRequired
+  toAddress: ADDRESS_PROPTYPE
 }
 
 export default ConfirmationCard
