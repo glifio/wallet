@@ -72,6 +72,7 @@ export default () => {
   const [gasPrice, setGasPrice] = useState('1')
   const [gasLimit, setGasLimit] = useState('1000')
   const [step, setStep] = useState(1)
+  const [attemptingTx, setAttemptingTx] = useState(false)
 
   const submitMsg = async () => {
     let provider = walletProvider
@@ -98,12 +99,15 @@ export default () => {
       const messageObj = message.encode()
       const msgCid = await provider.sendMessage(messageObj, signature)
       messageObj.cid = msgCid['/']
+      setAttemptingTx(false)
+
       return messageObj
     }
   }
 
   const onSubmit = async e => {
     e.preventDefault()
+    setAttemptingTx(true)
     if (
       !isValidForm(
         toAddress,
@@ -129,32 +133,42 @@ export default () => {
   }
 
   const hasError = () =>
-    uncaughtError ||
-    (wallet.type === LEDGER &&
-      reportLedgerConfigError(
-        ledger.connectedFailure,
-        ledger.locked,
-        ledger.filecoinAppNotOpen,
-        ledger.replug,
-        ledger.busy
-      ))
+    !!(
+      attemptingTx &&
+      (uncaughtError ||
+        (wallet.type === LEDGER &&
+          reportLedgerConfigError(
+            ledger.connectedFailure,
+            ledger.locked,
+            ledger.filecoinAppNotOpen,
+            ledger.replug,
+            ledger.busy
+          )))
+    )
+
+  const ledgerError = () =>
+    wallet.type === LEDGER &&
+    reportLedgerConfigError(
+      ledger.connectedFailure,
+      ledger.locked,
+      ledger.filecoinAppNotOpen,
+      ledger.replug,
+      ledger.busy
+    )
+
+  console.log(
+    'LEDGER RROR',
+    ledgerError(),
+    uncaughtError,
+    ledgerError() || uncaughtError
+  )
 
   return (
     <>
       <Box position='relative'>
         {hasError() && (
           <ErrorCard
-            error={
-              (wallet.type === LEDGER &&
-                reportLedgerConfigError(
-                  ledger.connectedFailure,
-                  ledger.locked,
-                  ledger.filecoinAppNotOpen,
-                  ledger.replug,
-                  ledger.busy
-                )) ||
-              uncaughtError
-            }
+            error={ledgerError() || uncaughtError}
             reset={() => {
               resetLedgerState()
               setStep(1)
@@ -282,13 +296,15 @@ export default () => {
             <Button title='Cancel' buttonStyle='secondary' onClick={() => {}} />
             <Button
               disabled={
-                hasError() ||
-                !isValidForm(
-                  toAddress,
-                  value.fil,
-                  wallet.balance,
-                  toAddressError,
-                  valueError
+                !!(
+                  hasError() ||
+                  !isValidForm(
+                    toAddress,
+                    value.fil,
+                    wallet.balance,
+                    toAddressError,
+                    valueError
+                  )
                 )
               }
               type='submit'

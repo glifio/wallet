@@ -15,14 +15,20 @@ const WalletView = ({ wallet }) => {
   const [sending, setSending] = useState(true)
   const { ledger, walletType, connectLedger } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState(null)
+  const [showLedgerError, setShowLedgerError] = useState(false)
+  const [ledgerBusy, setLedgerBusy] = useState(false)
   const onShowOnLedger = async () => {
+    setLedgerBusy(true)
     try {
       setUncaughtError(null)
+      setShowLedgerError(false)
       const provider = await connectLedger()
       if (provider) await provider.wallet.showAddressAndPubKey(wallet.path)
+      else setShowLedgerError(true)
     } catch (err) {
       setUncaughtError(err)
     }
+    setLedgerBusy(false)
   }
   return (
     <Box
@@ -39,7 +45,7 @@ const WalletView = ({ wallet }) => {
           ledger.replug,
           ledger.busy,
           uncaughtError
-        ) ? (
+        ) && showLedgerError ? (
           <AccountError
             onTryAgain={onShowOnLedger}
             errorMsg={reportLedgerConfigError(
@@ -59,6 +65,7 @@ const WalletView = ({ wallet }) => {
             address={wallet.address}
             isLedgerWallet={walletType === LEDGER}
             onShowOnLedger={onShowOnLedger}
+            ledgerBusy={ledgerBusy}
             mb={2}
           />
         )}

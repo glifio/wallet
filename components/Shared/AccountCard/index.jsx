@@ -16,11 +16,11 @@ const AccountCard = forwardRef(
       onAccountSwitch,
       isLedgerWallet,
       onShowOnLedger,
+      ledgerBusy,
       ...props
     },
     ref
   ) => {
-    const [isViewingOnLedger, setIsViewingOnLedger] = useState(false)
     return (
       <Box
         display='flex'
@@ -60,14 +60,10 @@ const AccountCard = forwardRef(
             <Button
               buttonStyle='tertiary'
               title='View on Ledger'
-              onClick={async () => {
-                setIsViewingOnLedger(true)
-                await onShowOnLedger()
-                setIsViewingOnLedger(false)
-              }}
+              onClick={onShowOnLedger}
               ml={2}
               p={2}
-              disabled={isViewingOnLedger}
+              disabled={ledgerBusy}
             />
           )}
         </Box>
@@ -100,13 +96,18 @@ AccountCard.propTypes = {
   /**
    * If this wallet represents a ledger, the function that gets called when "show on Ledger" button gets clicked
    */
-  onShowOnLedger: func
+  onShowOnLedger: func,
+  /**
+   * When true, disable the show on ledger button
+   */
+  ledgerBusy: bool
 }
 
 AccountCard.defaultProps = {
   color: 'white',
   isLedgerWallet: false,
-  onShowOnLedger: () => {}
+  onShowOnLedger: () => {},
+  ledgerBusy: false
 }
 
 export default AccountCard
