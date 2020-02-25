@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Box, Card, Input, Stepper, Text } from '../../Shared'
+import { Box, Card, Input, Glyph, Stepper, Text } from '../../Shared'
 import {
   LEDGER,
   IMPORT_MNEMONIC,
@@ -28,8 +28,20 @@ const OtherWalletTypeConfirm = ({ toAddress, value }) => {
   return (
     <>
       <Text color='core.nearblack'>Please confirm that you want to:</Text>
-      <Input.Text disabled label='SEND' value={value.fil.toFil()} />
-      <Input.Address disabled label='to' value={toAddress} />
+      <Input.Text
+        disabled
+        backgroundColor='card.confirmation.background'
+        color='card.confirmation.foreground'
+        label='Sending'
+        value={value.fil.toFil()}
+      />
+      <Input.Address
+        disabled
+        backgroundColor='card.confirmation.background'
+        color='card.confirmation.foreground'
+        label='To'
+        value={toAddress}
+      />
     </>
   )
 }
@@ -49,8 +61,8 @@ const ConfirmationCard = ({ value, walletType, toAddress }) => {
       justifyContent='space-between'
       border='none'
       width='auto'
-      ml={4}
-      mr={4}
+      my={2}
+      mx={4}
       bg='card.confirmation.background'
     >
       <Box
@@ -61,25 +73,20 @@ const ConfirmationCard = ({ value, walletType, toAddress }) => {
         justifyContent='space-between'
       >
         <Box display='flex' alignItems='center'>
-          <Box
-            display='flex'
-            flexDirection='column'
-            justifyContent='center'
-            width={6}
-            height={6}
-            backgroundColor='status.success.background'
-          >
-            <Text textAlign='center' color='white'>
-              Cf
-            </Text>
-          </Box>
-          <Text color='status.success.background' ml={2}>
+          <Glyph
+            acronym='Cf'
+            textAlign='center'
+            color='card.confirmation.background'
+            borderColor='card.confirmation.foreground'
+            backgroundColor='card.confirmation.foreground'
+          />
+          <Text color='card.confirmation.foreground' ml={2}>
             Confirmation
           </Text>
         </Box>
         <Stepper
-          textColor='status.success.background'
-          completedDotColor='status.success.background'
+          textColor='card.confirmation.foreground'
+          completedDotColor='card.confirmation.foreground'
           incompletedDotColor='core.silver'
           step={2}
           totalSteps={2}

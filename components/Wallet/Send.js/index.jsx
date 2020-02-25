@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
 import {
   Box,
   BigTitle,
   Card,
   Input,
   Stepper,
+  Glyph,
   Text,
   Button,
   Label,
@@ -19,6 +21,19 @@ import ErrorCard from './ErrorCard'
 import { useWallet } from '../hooks'
 import { useWalletProvider } from '../../../WalletProvider'
 import { LEDGER } from '../../../constants'
+
+const SendCard = styled(Card)`
+  background-color: #eff3fd;
+`
+
+const FloatingContainer = styled(Box)`
+  position: fixed;
+  display: flex;
+  flex-grow: 1;
+  bottom: 8px;
+  width: 100%;
+  max-width: 560px;
+`
 
 const isValidForm = (
   toAddress,
@@ -102,126 +117,147 @@ export default () => {
 
   return (
     <>
-      {signingError && (
-        <ErrorCard error={signingError} reset={() => setStep(2)} />
-      )}
-      {step === 2 && (
-        <ConfirmationCard
-          walletType={wallet.type}
-          value={value}
-          toAddress={toAddress}
-        />
-      )}
-      <Card
-        display='flex'
-        flexDirection='column'
-        justifyContent='space-between'
-        border='none'
-        width='auto'
-        ml={4}
-        mr={4}
-      >
-        <Box display='flex' alignItems='center' justifyContent='space-between'>
-          <Box display='flex' alignItems='center'>
+      <Box position='relative'>
+        {signingError && (
+          <ErrorCard error={signingError} reset={() => setStep(2)} />
+        )}
+        {step === 2 && (
+          <ConfirmationCard
+            walletType={wallet.type}
+            value={value}
+            toAddress={toAddress}
+          />
+        )}
+        <form onSubmit={onSubmit}>
+          <SendCard
+            display='flex'
+            flexDirection='column'
+            justifyContent='space-between'
+            border='none'
+            width='auto'
+            my={2}
+            mx={4}
+          >
             <Box
               display='flex'
-              flexDirection='column'
-              justifyContent='center'
-              width={6}
-              height={6}
-              backgroundColor='core.primary'
-            >
-              <Text textAlign='center' color='white'>
-                To
-              </Text>
-            </Box>
-            <Text color='core.primary' ml={2}>
-              Sending Filecoin
-            </Text>
-          </Box>
-          <Stepper
-            textColor='core.primary'
-            completedDotColor='core.primary'
-            incompletedDotColor='core.silver'
-            step={1}
-            totalSteps={2}
-          >
-            Step 1
-          </Stepper>
-        </Box>
-        <Box mt={3}>
-          <form onSubmit={onSubmit}>
-            <Input.Address
-              name='recipient'
-              onChange={e => setToAddress(e.target.value)}
-              value={toAddress}
-              label='Recipient'
-              placeholder='t1...'
-              error={toAddressError}
-              setError={setToAddressError}
-            />
-            <Input.Funds
-              name='amount'
-              label='Amount'
-              onAmountChange={setValue}
-              balance={wallet.balance}
-              error={valueError}
-              setError={setValueError}
-              gasLimit={gasLimit}
-            />
-            <Box display='flex' flexDirection='column'>
-              <Input.Text
-                onChange={() => {}}
-                label='Transfer Fee'
-                value='< 0.1FIL'
-                disabled
-              />
-              <Input.Text
-                label='Completed In'
-                value='Approx. 17 Seconds'
-                onChange={() => {}}
-                disabled
-              />
-            </Box>
-            <Card
-              display='flex'
-              flexDirection='row'
+              alignItems='center'
               justifyContent='space-between'
             >
-              <Label>Total</Label>
-              <Box display='flex' flexDirection='column'>
-                <BigTitle color='core.primary'>
-                  {value.fil.toFil()} FIL
-                </BigTitle>
-                <Title color='core.darkgray'>{value.fiat.toString()} USD</Title>
+              <Box display='flex' alignItems='center'>
+                <Box
+                  display='flex'
+                  flexDirection='column'
+                  justifyContent='center'
+                  width={6}
+                  height={6}
+                  backgroundColor='core.primary'
+                >
+                  <Glyph
+                    acronym='To'
+                    color='background.screen'
+                    borderColor='core.primary'
+                    backgroundColor='core.primary'
+                  />
+                </Box>
+                <Text color='core.primary' ml={2}>
+                  Sending Filecoin
+                </Text>
               </Box>
-            </Card>
-            <hr />
-            <Box display='flex' flexDirection='row' justifyContent='center'>
-              <Button
-                title='Cancel'
-                buttonStyle='secondary'
-                onClick={() => {}}
-              />
-              <Button
-                disabled={
-                  !isValidForm(
-                    toAddress,
-                    value.fil,
-                    wallet.balance,
-                    toAddressError,
-                    valueError
-                  )
-                }
-                type='submit'
-                title='Next'
-                buttonStyle='primary'
-                onClick={() => {}}
-              />
+              <Stepper
+                textColor='core.primary'
+                completedDotColor='core.primary'
+                incompletedDotColor='core.silver'
+                step={1}
+                totalSteps={2}
+              >
+                Step 1
+              </Stepper>
             </Box>
-          </form>
-        </Box>
-      </Card>
+            <Box mt={3}>
+              <Input.Address
+                name='recipient'
+                onChange={e => setToAddress(e.target.value)}
+                value={toAddress}
+                label='Recipient'
+                placeholder='t1...'
+                error={toAddressError}
+                setError={setToAddressError}
+              />
+              <Input.Funds
+                name='amount'
+                label='Amount'
+                onAmountChange={setValue}
+                balance={wallet.balance}
+                error={valueError}
+                setError={setValueError}
+                gasLimit={gasLimit}
+              />
+              <Box display='flex' flexDirection='column'>
+                <Input.Text
+                  onChange={() => {}}
+                  label='Transfer Fee'
+                  value='< 0.1FIL'
+                  backgroundColor='#EFF3FD'
+                  disabled
+                />
+                <Input.Text
+                  label='Completes In'
+                  value='Approx. 17 Seconds'
+                  onChange={() => {}}
+                  backgroundColor='#EFF3FD'
+                  disabled
+                />
+              </Box>
+              <Box
+                display='flex'
+                flexDirection='row'
+                alignItems='center'
+                justifyContent='space-between'
+                mt={3}
+              >
+                <Label>Total</Label>
+                <Box display='flex' flexDirection='column'>
+                  <BigTitle color='core.primary'>
+                    {value.fil.toFil()} FIL
+                  </BigTitle>
+                  <Title color='core.darkgray'>
+                    {value.fiat.toString()} USD
+                  </Title>
+                </Box>
+              </Box>
+            </Box>
+          </SendCard>
+          <FloatingContainer
+            bottom='8px'
+            display='flex'
+            flexDirection='row'
+            justifyContent='space-between'
+            boxShadow={1}
+            backgroundColor='core.white'
+            border={1}
+            borderColor='core.silver'
+            borderRadius={2}
+            p={3}
+          >
+            <Button title='Cancel' buttonStyle='secondary' onClick={() => {}} />
+            <Button
+              disabled={
+                !isValidForm(
+                  toAddress,
+                  value.fil,
+                  wallet.balance,
+                  toAddressError,
+                  valueError
+                )
+              }
+              type='submit'
+              title='Next'
+              buttonStyle='primary'
+              onClick={() => {}}
+            />
+          </FloatingContainer>
+        </form>
+      </Box>
     </>
   )
 }
