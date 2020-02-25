@@ -1,9 +1,18 @@
 import App from 'next/app'
 import React from 'react'
 import { Provider } from 'react-redux'
-import { theme, ThemeProvider } from '@openworklabs/filecoin-wallet-styleguide'
+import { createGlobalStyle } from 'styled-components'
+import { theme, ThemeProvider } from '../components/Shared'
 import withReduxStore from '../lib/with-redux-store'
 import WalletProviderWrapper from '../WalletProvider'
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+    font-family: ${theme.fonts.sansSerif};
+    font-size: ${theme.fontSizes[2]}
+  }
+`
 
 class MyApp extends App {
   render() {
@@ -11,6 +20,8 @@ class MyApp extends App {
     return (
       <Provider store={reduxStore}>
         <WalletProviderWrapper network={reduxStore.getState().network}>
+          <GlobalStyle />
+
           <ThemeProvider theme={theme}>
             <Component {...pageProps} />
           </ThemeProvider>

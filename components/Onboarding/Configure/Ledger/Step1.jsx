@@ -1,12 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  Box,
-  Button,
-  Card,
-  Text,
-  Title
-} from '@openworklabs/filecoin-wallet-styleguide'
+import { Box, Button, Card, Text, Title } from '../../../Shared'
 
 import { useWalletProvider } from '../../../../WalletProvider'
 import StepCard from './StepCard'

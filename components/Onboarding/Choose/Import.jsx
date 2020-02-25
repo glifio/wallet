@@ -1,11 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  Box,
-  Card,
-  Glyph,
-  Text
-} from '@openworklabs/filecoin-wallet-styleguide'
+import { Box, Card, Glyph, Text } from '../../Shared'
 
 const Import = ({ onClick, glyphAcronym, title, description, ...props }) => (
   <Card

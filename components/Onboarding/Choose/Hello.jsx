@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Text, Title } from '@openworklabs/filecoin-wallet-styleguide'
+import { Box, Text, Title } from '../../Shared'
 
 export default ({ ...props }) => (
   <Box {...props}>
