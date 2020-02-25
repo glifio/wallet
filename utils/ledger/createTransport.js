@@ -5,7 +5,6 @@ export default () =>
   new Promise((resolve, reject) => {
     TransportWebHID.create()
       .then(resolve)
-      /* eslint-disable consistent-return */
       .catch(err => {
         if (
           err.message.toLowerCase().includes('navigator.hid is not supported')

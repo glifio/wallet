@@ -12,18 +12,23 @@ import {
   LEDGER_FILECOIN_APP_OPEN,
   LEDGER_LOCKED,
   LEDGER_UNLOCKED,
-  LEDGER_REPLUG
+  LEDGER_REPLUG,
+  LEDGER_BUSY
 } from '../utils/ledger/ledgerStateManagement'
 
 export const initialState = {
   walletType: null,
   walletProvider: null,
-  walletConnected: false
+  walletConnected: false,
+  step: 1,
+  error: ''
 }
 
 /* ACTION TYPES */
 const SET_WALLET_TYPE = 'SET_WALLET_TYPE'
 const CREATE_WALLET_PROVIDER = 'CREATE_WALLET_PROVIDER'
+const WALLET_ERROR = 'WALLET_ERROR'
+const CLEAR_ERROR = 'CLEAR_ERROR'
 
 /* ACTIONS */
 export const setWalletType = walletType => ({
@@ -38,6 +43,19 @@ export const createWalletProvider = provider => ({
   payload: {
     provider
   }
+})
+
+export const setError = errMessage => ({
+  type: WALLET_ERROR,
+  error: errMessage
+})
+
+export const clearError = () => ({
+  type: CLEAR_ERROR
+})
+
+export const resetLedgerState = () => ({
+  type: LEDGER_RESET_STATE
 })
 
 /* STATE */
@@ -56,7 +74,18 @@ const setWalletTypeInState = (state, { walletType }) => {
 const createWalletProviderInState = (state, { provider }) => ({
   ...state,
   walletConnected: true,
-  walletProvider: provider
+  walletProvider: provider,
+  step: 2
+})
+
+const setErrorInState = (state, { error }) => ({
+  ...state,
+  error
+})
+
+const clearErrorInState = state => ({
+  ...state,
+  error: ''
 })
 
 /* REDUCER */
@@ -66,7 +95,10 @@ export default (state, action) => {
       return setWalletTypeInState(cloneDeep(state), action.payload)
     case CREATE_WALLET_PROVIDER:
       return createWalletProviderInState(cloneDeep(state), action.payload)
-
+    case WALLET_ERROR:
+      return setErrorInState(cloneDeep(state), action.error)
+    case CLEAR_ERROR:
+      return clearErrorInState(cloneDeep(state))
     // ledger cases
     case LEDGER_USER_INITIATED_IMPORT:
       return {
@@ -108,8 +140,10 @@ export default (state, action) => {
           establishingConnectionWFilecoinApp: true,
           filecoinAppOpen: false,
           filecoinAppNotOpen: false,
-          ledgerLocked: false,
-          ledgerUnlocked: false
+          locked: false,
+          unlocked: false,
+          busy: false,
+          replug: false
         }
       }
     case LEDGER_LOCKED:
@@ -117,8 +151,8 @@ export default (state, action) => {
         ...state,
         ledger: {
           ...state.ledger,
-          ledgerLocked: true,
-          ledgerUnlocked: false,
+          locked: true,
+          unlocked: false,
           userImportFailure: true
         }
       }
@@ -127,8 +161,8 @@ export default (state, action) => {
         ...state,
         ledger: {
           ...state.ledger,
-          ledgerLocked: false,
-          ledgerUnlocked: true
+          locked: false,
+          unlocked: true
         }
       }
     case LEDGER_FILECOIN_APP_NOT_OPEN:
@@ -142,7 +176,7 @@ export default (state, action) => {
           userImportFailure: true,
           // counterintuitive - but the only way we could have known this
           // is if the ledger was unlocked
-          ledgerUnlocked: true
+          unlocked: true
         }
       }
     case LEDGER_FILECOIN_APP_OPEN:
@@ -153,9 +187,19 @@ export default (state, action) => {
           establishingConnectionWFilecoinApp: false,
           filecoinAppOpen: true,
           filecoinAppNotOpen: false,
-          ledgerLocked: false,
-          ledgerUnlocked: true,
+          locked: false,
+          unlocked: true,
+          replug: false,
+          busy: false,
           provider: action.provider
+        }
+      }
+    case LEDGER_BUSY:
+      return {
+        ...state,
+        ledger: {
+          ...state.ledger,
+          busy: true
         }
       }
     case LEDGER_REPLUG:

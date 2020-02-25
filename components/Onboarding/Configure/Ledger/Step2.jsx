@@ -7,29 +7,17 @@ import { Box, Button, Card, Text, Title } from '../../../Shared'
 import { useWalletProvider } from '../../../../WalletProvider'
 import { error, walletList } from '../../../../store/actions'
 import StepCard from './StepCard'
-
-const reportLedgerConfigError = (
-  ledgerLocked,
-  filecoinAppNotOpen,
-  replug,
-  otherError
-) => {
-  if (ledgerLocked) return 'Is your Ledger device unlocked?'
-  if (filecoinAppNotOpen) return 'Is the Filecoin App open on your device?'
-  if (replug || otherError)
-    return 'Please unplug and replug your device, and try again.'
-
-  console.error('Unhandled error event: ', otherError.message)
-  return 'Please unplug and replug your device, and try again.'
-}
-
-const hasLedgerError = (ledgerLocked, filecoinAppNotOpen, replug, otherError) =>
-  ledgerLocked || filecoinAppNotOpen || replug || otherError
+import {
+  hasLedgerError,
+  reportLedgerConfigError
+} from '../../../../utils/ledger/reportLedgerConfigError'
 
 const Step2Helper = ({
+  connectedFailure,
   ledgerLocked,
   filecoinAppNotOpen,
   replug,
+  ledgerBusy,
   otherError
 }) => (
   <Card
@@ -37,14 +25,27 @@ const Step2Helper = ({
     flexDirection='column'
     justifyContent='space-between'
     borderColor='silver'
-    backgroundColor={
-      hasLedgerError(ledgerLocked, filecoinAppNotOpen, replug, otherError) &&
-      'error.base'
+    bg={
+      hasLedgerError(
+        connectedFailure,
+        ledgerLocked,
+        filecoinAppNotOpen,
+        replug,
+        ledgerBusy,
+        otherError
+      ) && 'card.error.background'
     }
     height={300}
     ml={2}
   >
-    {hasLedgerError(ledgerLocked, filecoinAppNotOpen, replug, otherError) ? (
+    {hasLedgerError(
+      connectedFailure,
+      ledgerLocked,
+      filecoinAppNotOpen,
+      replug,
+      ledgerBusy,
+      otherError
+    ) ? (
       <>
         <Box display='flex' alignItems='center'>
           <Title>Oops!</Title>
@@ -53,9 +54,11 @@ const Step2Helper = ({
           <Text mb={1}>We had trouble communicating with your device.</Text>
           <Text>
             {reportLedgerConfigError(
+              connectedFailure,
               ledgerLocked,
               filecoinAppNotOpen,
               replug,
+              ledgerBusy,
               otherError
             )}
           </Text>
@@ -76,9 +79,11 @@ const Step2Helper = ({
 )
 
 Step2Helper.propTypes = {
+  connectedFailure: PropTypes.bool.isRequired,
   ledgerLocked: PropTypes.bool.isRequired,
   filecoinAppNotOpen: PropTypes.bool.isRequired,
   replug: PropTypes.bool.isRequired,
+  ledgerBusy: PropTypes.bool.isRequired,
   otherError: PropTypes.instanceOf(Error)
 }
 
@@ -102,9 +107,11 @@ export default () => {
       >
         <StepCard step={2} />
         <Step2Helper
-          ledgerLocked={ledger.ledgerLocked}
+          connectedFailure={ledger.connectedFailure}
+          ledgerLocked={ledger.locked}
           filecoinAppNotOpen={ledger.filecoinAppNotOpen}
           replug={ledger.replug}
+          ledgerBusy={ledger.busy}
           otherError={generalError}
         />
       </Box>
@@ -116,12 +123,14 @@ export default () => {
           mr={2}
         />
         <Button
-          title='My Ledger device is unlocked  and Filecoin app open'
+          title='My Ledger device is unlocked and Filecoin app open'
           onClick={async () => {
             try {
               const wallet = await fetchDefaultWallet()
-              dispatch(walletList([wallet]))
-              router.push(`/wallet`)
+              if (wallet) {
+                dispatch(walletList([wallet]))
+                router.push(`/wallet`)
+              }
             } catch (err) {
               dispatch(error(err))
             }
