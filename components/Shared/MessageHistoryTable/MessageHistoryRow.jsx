@@ -78,6 +78,7 @@ const MessageHistoryRow = ({
   return (
     <MessageHistoryRowContainer
       display='flex'
+      flexWrap='wrap'
       border={1}
       borderColor='core.silver'
       borderRadius={1}
