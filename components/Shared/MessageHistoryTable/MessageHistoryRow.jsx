@@ -56,7 +56,8 @@ ActionText.propTypes = {
 }
 
 const MessageHistoryRow = ({
-  message: { address, to, from, value, status }
+  address,
+  message: { to, from, value, status }
 }) => {
   const sentMsg = address === from
   return (
@@ -135,6 +136,7 @@ const MessageHistoryRow = ({
 }
 
 MessageHistoryRow.propTypes = {
+  address: ADDRESS_PROPTYPE,
   message: MESSAGE_PROPS.isRequired
 }
 
