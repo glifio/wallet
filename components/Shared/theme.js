@@ -153,7 +153,6 @@ const theme = {
       fontSize: 2,
       fontColor: core.darkgray,
       fontWeight: 400,
-      textTransform: 'uppercase',
       lineHeight: 'solid',
       fontFamily: 'system-ui'
     }
