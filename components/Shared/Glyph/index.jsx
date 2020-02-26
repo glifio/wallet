@@ -5,6 +5,8 @@ import colors from '../colors'
 import Box from '../Box'
 
 const GlyphText = styled.h3`
+  font-family: ${props => props.theme.fonts.AliasMedium};
+  font-weight: 700;
   font-size: ${props => props.theme.fontSizes[4]};
 `
 

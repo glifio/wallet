@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { useDispatch } from 'react-redux'
 import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 import { validateAddressString } from '@openworklabs/filecoin-address'
 import Message from '@openworklabs/filecoin-message'
@@ -22,6 +24,9 @@ import ErrorCard from './ErrorCard'
 import { useWallet } from '../hooks'
 import { useWalletProvider } from '../../../WalletProvider'
 import { LEDGER } from '../../../constants'
+import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfigError'
+import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
+import { confirmMessage } from '../../../store/actions'
 
 const SendCard = styled(Card)`
   background-color: ${props => props.theme.colors.background.screen};
@@ -52,9 +57,15 @@ const isValidForm = (
   return !!(errorFree && fieldsFilledOut && enoughInTheBank)
 }
 
-export default () => {
+const Send = ({ setSending }) => {
+  const dispatch = useDispatch()
   const wallet = useWallet()
-  const { walletProvider } = useWalletProvider()
+  const {
+    ledger,
+    walletProvider,
+    connectLedger,
+    resetLedgerState
+  } = useWalletProvider()
   const [toAddress, setToAddress] = useState('')
   const [toAddressError, setToAddressError] = useState('')
   const [value, setValue] = useState({
@@ -62,36 +73,45 @@ export default () => {
     fiat: new BigNumber('0')
   })
   const [valueError, setValueError] = useState('')
-  const [signingError, setSigningError] = useState('')
+  const [uncaughtError, setUncaughtError] = useState('')
   const [gasPrice, setGasPrice] = useState('1')
   const [gasLimit, setGasLimit] = useState('1000')
-  const [step, setStep] = useState(2)
+  const [step, setStep] = useState(1)
+  const [attemptingTx, setAttemptingTx] = useState(false)
 
   const submitMsg = async () => {
-    const nonce = await walletProvider.getNonce(wallet.address)
-    const message = new Message({
-      to: toAddress,
-      from: wallet.address,
-      value: value.fil.toAttoFil(),
-      method: 0,
-      gasPrice,
-      gasLimit,
-      nonce,
-      params: ''
-    })
-    const serializedMessage = await message.serialize()
-    const signature = await walletProvider.wallet.sign(
-      wallet.path,
-      serializedMessage
-    )
-    const messageObj = message.encode()
-    const msgCid = await walletProvider.sendMessage(messageObj, signature)
-    messageObj.cid = msgCid['/']
-    return messageObj
+    let provider = walletProvider
+    if (wallet.type === LEDGER) {
+      provider = await connectLedger()
+    }
+    if (provider) {
+      const nonce = await provider.getNonce(wallet.address)
+      const message = new Message({
+        to: toAddress,
+        from: wallet.address,
+        value: value.fil.toAttoFil(),
+        method: 0,
+        gasPrice,
+        gasLimit,
+        nonce,
+        params: ''
+      })
+      const serializedMessage = await message.serialize()
+      const signature = await provider.wallet.sign(
+        wallet.path,
+        serializedMessage
+      )
+      const messageObj = message.encode()
+      const msgCid = await provider.sendMessage(messageObj, signature)
+      messageObj.cid = msgCid['/']
+      setAttemptingTx(false)
+      return messageObj
+    }
   }
 
   const onSubmit = async e => {
     e.preventDefault()
+    setAttemptingTx(true)
     if (
       !isValidForm(
         toAddress,
@@ -99,28 +119,65 @@ export default () => {
         wallet.balance,
         toAddressError,
         valueError,
-        signingError
+        uncaughtError
       )
     ) {
-      setSigningError('Invalid form!')
+      setUncaughtError('Invalid form!')
     }
     if (step === 1 && wallet.type !== LEDGER) {
       setStep(2)
     } else {
       try {
-        const message = await submitMsg()
         setStep(2)
+        const message = await submitMsg()
+        dispatch(confirmMessage(toLowerCaseMsgFields(message)))
+        setValue({
+          fil: new FilecoinNumber('0', 'fil'),
+          fiat: new BigNumber('0')
+        })
+        setToAddress('')
+        setSending(false)
       } catch (err) {
-        setSigningError(err.message)
+        setUncaughtError(err.message)
       }
     }
   }
 
+  const hasError = () =>
+    !!(
+      attemptingTx &&
+      (uncaughtError ||
+        (wallet.type === LEDGER &&
+          reportLedgerConfigError(
+            ledger.connectedFailure,
+            ledger.locked,
+            ledger.filecoinAppNotOpen,
+            ledger.replug,
+            ledger.busy
+          )))
+    )
+
+  const ledgerError = () =>
+    wallet.type === LEDGER &&
+    reportLedgerConfigError(
+      ledger.connectedFailure,
+      ledger.locked,
+      ledger.filecoinAppNotOpen,
+      ledger.replug,
+      ledger.busy
+    )
+
   return (
     <>
       <Box position='relative'>
-        {signingError && (
-          <ErrorCard error={signingError} reset={() => setStep(2)} />
+        {hasError() && (
+          <ErrorCard
+            error={ledgerError() || uncaughtError}
+            reset={() => {
+              resetLedgerState()
+              setStep(1)
+            }}
+          />
         )}
         {step === 2 && (
           <ConfirmationCard
@@ -244,25 +301,46 @@ export default () => {
             borderRadius={2}
             p={3}
           >
-            <Button title='Cancel' buttonStyle='secondary' onClick={() => {}} />
-            <Button
-              disabled={
-                !isValidForm(
-                  toAddress,
-                  value.fil,
-                  wallet.balance,
-                  toAddressError,
-                  valueError
-                )
-              }
-              type='submit'
-              title='Next'
-              buttonStyle='primary'
-              onClick={() => {}}
-            />
+            {step === 2 && wallet.type === LEDGER ? (
+              <Text>
+                Confirm or reject the transaction on your Ledger Device.
+              </Text>
+            ) : (
+              <>
+                <Button
+                  title='Cancel'
+                  buttonStyle='secondary'
+                  onClick={() => {}}
+                />
+                <Button
+                  disabled={
+                    !!(
+                      hasError() ||
+                      !isValidForm(
+                        toAddress,
+                        value.fil,
+                        wallet.balance,
+                        toAddressError,
+                        valueError
+                      )
+                    )
+                  }
+                  type='submit'
+                  title='Next'
+                  buttonStyle='primary'
+                  onClick={() => {}}
+                />
+              </>
+            )}
           </FloatingContainer>
         </form>
       </Box>
     </>
   )
 }
+
+Send.propTypes = {
+  setSending: PropTypes.func.isRequired
+}
+
+export default Send

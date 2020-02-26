@@ -40,6 +40,7 @@ module.exports = {
     'react/destructuring-assignment': 0,
     'react/require-default-props': 0,
     'import/prefer-default-export': 0,
+    'consistent-return': 0,
     semi: 0
   }
 }

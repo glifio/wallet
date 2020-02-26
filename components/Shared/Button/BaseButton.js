@@ -12,8 +12,9 @@ export default styled.button`
       ? props.theme.colors.status.inactive
       : props.theme.colors.buttons[props.buttonStyle].borderColor};
   color: ${props => props.theme.colors.buttons[props.buttonStyle].color};
-  ${borderRadius}
+  font-size: ${props => props.theme.fontSizes[2]}; 
+  ${borderRadius} 
   ${space}
-  ${layout}
-  ${flexbox}
+    ${layout} 
+    ${flexbox};
 `

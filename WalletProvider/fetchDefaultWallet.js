@@ -1,10 +1,19 @@
 import { SINGLE_KEY, LEDGER } from '../constants'
-import { checkLedgerConfiguration } from '../utils/ledger/setLedgerProvider'
+import {
+  checkLedgerConfiguration,
+  setLedgerProvider
+} from '../utils/ledger/setLedgerProvider'
+import { clearError, resetLedgerState } from './state'
 
-export default async (dispatch, network = 't', provider) => {
-  if (provider.wallet.type === LEDGER) {
+const fetchDefaultWallet = async (dispatch, network = 't', walletType) => {
+  dispatch(clearError())
+  let provider
+  if (walletType === LEDGER) {
+    dispatch(resetLedgerState())
+    provider = await setLedgerProvider(dispatch, network)
+    if (!provider) return null
     const configured = await checkLedgerConfiguration(dispatch, provider)
-    if (!configured) return []
+    if (!configured) return null
   }
   const [defaultAddress] = await provider.wallet.getAccounts(0, 1, network)
   const balance = await provider.getBalance(defaultAddress)
@@ -18,3 +27,5 @@ export default async (dispatch, network = 't', provider) => {
         : [44, networkDerivationPath, 5, 0, 0]
   }
 }
+
+export default fetchDefaultWallet

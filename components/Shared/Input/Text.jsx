@@ -37,7 +37,7 @@ const TextInput = ({
     >
       <Box display='flex' alignItems='center'>
         <Box display='inline-block' px={3} minWidth='120px' textAlign='center'>
-          {label}
+          <Label>{label}</Label>
         </Box>
         {/* how do we chunk the address in the input component? */}
         <BaseInput

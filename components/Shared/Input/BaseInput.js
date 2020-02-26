@@ -9,6 +9,7 @@ export default styled.input`
   border: ${props => props.theme.borders[1]}
   border-radius: ${props => props.theme.radii[1]}
   transition: 0.2s ease-in-out;
+  font-size: ${props => props.theme.fontSizes[2]};
   text-align: right;
   cursor: text;
   background: ${props =>

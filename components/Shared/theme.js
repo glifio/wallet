@@ -118,15 +118,7 @@ const colors = {
 // theme.js
 const theme = {
   colors,
-  fontSizes: [
-    '0rem',
-    '0.875rem',
-    '1.125rem',
-    '1.25rem',
-    '1.5rem',
-    '2rem',
-    '3rem'
-  ],
+  fontSizes: ['0rem', '1rem', '1.125rem', '1.25rem', '1.5rem', '2rem', '3rem'],
   fontWeights: [0, 400, 600, 900],
   letterSpacings: [0, 1, 2, 4, 8],
   lineHeights: {
@@ -140,7 +132,7 @@ const theme = {
       fontWeight: 700,
       margin: 0,
       lineHeight: 'solid',
-      fontFamily: 'system-ui'
+      fontFamily: 'RT-Alias-Medium'
     },
     title: {
       fontSize: 5,
@@ -148,25 +140,28 @@ const theme = {
       fontWeight: 700,
       margin: 0,
       lineHeight: 'title',
-      fontFamily: 'system-ui'
+      fontFamily: 'RT-Alias-Medium'
     },
     text: {
-      fontSize: 3,
+      fontSize: 2,
       fontColor: core.nearblack,
       fontWeight: 400,
       lineHeight: 'copy',
-      fontFamily: 'system-ui'
+      fontFamily: 'RT-Alias-Grotesk'
     },
     label: {
-      fontSize: 1,
+      fontSize: 2,
       fontColor: core.darkgray,
-      fontWeight: 700,
-      textTransform: 'uppercase',
+      fontWeight: 400,
       lineHeight: 'solid',
-      fontFamily: 'system-ui'
+      fontFamily: 'RT-Alias-Grotesk'
     }
   },
   fonts: {
+    AliasMedium:
+      '"RT-Alias-Medium", "system-ui", "Segoe UI", "Roboto", Helvetica',
+    AliasGrotesk:
+      '"RT-Alias-Grotesk", "system-ui", "Segoe UI", "Roboto", Helvetica',
     sansSerif:
       '"system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";',
     mono:
