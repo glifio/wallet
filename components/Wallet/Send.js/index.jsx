@@ -297,28 +297,36 @@ const Send = ({ setSending }) => {
             borderRadius={2}
             p={3}
           >
-            <Button title='Cancel' buttonStyle='secondary' onClick={() => {}} />
             {step === 2 && wallet.type === LEDGER ? (
-              <Text>Confirm on your Ledger Device.</Text>
+              <Text>
+                Confirm or reject the transaction on your Ledger Device.
+              </Text>
             ) : (
-              <Button
-                disabled={
-                  !!(
-                    hasError() ||
-                    !isValidForm(
-                      toAddress,
-                      value.fil,
-                      wallet.balance,
-                      toAddressError,
-                      valueError
+              <>
+                <Button
+                  title='Cancel'
+                  buttonStyle='secondary'
+                  onClick={() => {}}
+                />
+                <Button
+                  disabled={
+                    !!(
+                      hasError() ||
+                      !isValidForm(
+                        toAddress,
+                        value.fil,
+                        wallet.balance,
+                        toAddressError,
+                        valueError
+                      )
                     )
-                  )
-                }
-                type='submit'
-                title='Next'
-                buttonStyle='primary'
-                onClick={() => {}}
-              />
+                  }
+                  type='submit'
+                  title='Next'
+                  buttonStyle='primary'
+                  onClick={() => {}}
+                />
+              </>
             )}
           </FloatingContainer>
         </form>

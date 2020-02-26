@@ -6,6 +6,7 @@ import Box from '../Box'
 import { Menu, MenuItem } from '../Menu'
 import { Text } from '../Typography'
 import { IconSend, IconReceive } from '../Icons'
+import truncate from '../../../utils/truncateAddress'
 
 const MessageHistoryRowContainer = styled(Box)``
 
@@ -17,7 +18,7 @@ const AddressText = ({ sentMsg, to, from }) => {
           To
         </Text>
         <Text color='core.nearblack' m={0}>
-          {to}
+          {truncate(to)}
         </Text>
       </>
     )
@@ -29,7 +30,7 @@ const AddressText = ({ sentMsg, to, from }) => {
         From
       </Text>
       <Text color='core.nearblack' m={0}>
-        {from}
+        {truncate(from)}
       </Text>
     </>
   )
