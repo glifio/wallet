@@ -21,7 +21,7 @@ const BalanceCard = forwardRef(
       {...props}
     >
       <Label>Balance</Label>
-      <Box>
+      <Box overflow='hidden'>
         <BigTitle color='card.balance.color'>{balance}FIL</BigTitle>
         {/* @alex this will change to be dynamically created, for now just pretend 1 FIL = 5 USD */}
         <Title color='card.balance.color'>{Number(balance) * 5}USD</Title>
