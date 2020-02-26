@@ -132,7 +132,7 @@ const theme = {
       fontWeight: 700,
       margin: 0,
       lineHeight: 'solid',
-      fontFamily: 'system-ui'
+      fontFamily: 'RT-Alias-Medium'
     },
     title: {
       fontSize: 5,
@@ -140,24 +140,28 @@ const theme = {
       fontWeight: 700,
       margin: 0,
       lineHeight: 'title',
-      fontFamily: 'system-ui'
+      fontFamily: 'RT-Alias-Medium'
     },
     text: {
       fontSize: 2,
       fontColor: core.nearblack,
       fontWeight: 400,
       lineHeight: 'copy',
-      fontFamily: 'system-ui'
+      fontFamily: 'RT-Alias-Grotesk'
     },
     label: {
       fontSize: 2,
       fontColor: core.darkgray,
       fontWeight: 400,
       lineHeight: 'solid',
-      fontFamily: 'system-ui'
+      fontFamily: 'RT-Alias-Grotesk'
     }
   },
   fonts: {
+    AliasMedium:
+      '"RT-Alias-Medium", "system-ui", "Segoe UI", "Roboto", Helvetica',
+    AliasGrotesk:
+      '"RT-Alias-Grotesk", "system-ui", "Segoe UI", "Roboto", Helvetica',
     sansSerif:
       '"system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";',
     mono:
