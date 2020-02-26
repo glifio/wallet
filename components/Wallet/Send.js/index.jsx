@@ -16,7 +16,7 @@ import {
   Label,
   Title
 } from '../../Shared'
-
+import { ButtonClose } from '../../Shared/IconButtons'
 import ConfirmationCard from './ConfirmationCard'
 import ErrorCard from './ErrorCard'
 import { useWallet } from '../hooks'
@@ -164,15 +164,19 @@ export default () => {
                   Sending Filecoin
                 </Text>
               </Box>
-              <Stepper
-                textColor='core.primary'
-                completedDotColor='core.primary'
-                incompletedDotColor='core.silver'
-                step={1}
-                totalSteps={2}
-              >
-                Step 1
-              </Stepper>
+              <Box display='flex' alignItems='center'>
+                <Stepper
+                  textColor='core.primary'
+                  completedDotColor='core.primary'
+                  incompletedDotColor='core.silver'
+                  step={1}
+                  totalSteps={2}
+                  mr={2}
+                >
+                  Step 1
+                </Stepper>
+                <ButtonClose ml={2} />
+              </Box>
             </Box>
             <Box mt={3}>
               <Input.Address
