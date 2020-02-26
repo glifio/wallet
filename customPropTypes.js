@@ -30,7 +30,7 @@ export const WALLET_PROP_TYPE = shape({
   path: array
 })
 
-export const MESSAGE_PROPS = {
+export const MESSAGE_PROPS = shape({
   /**
    * Message sent to this address
    */
@@ -59,4 +59,4 @@ export const MESSAGE_PROPS = {
    * Either pending or confirmed
    */
   status: string.isRequired
-}
+})

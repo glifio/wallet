@@ -52,7 +52,7 @@ export const updateBalance = (state, { balance, walletIdx }) => ({
 })
 
 export const confirmMessage = (state, { message }) => {
-  setMsgInCache(message)
+  // setMsgInCache(message)
   return {
     ...state,
     messages: {
@@ -64,7 +64,7 @@ export const confirmMessage = (state, { message }) => {
 
 export const confirmedMessage = (state, { msgCid }) => {
   const { address } = state.wallets[state.selectedWalletIdx]
-  removeMsgFromCache(address, msgCid)
+  // removeMsgFromCache(address, msgCid)
   const newPendingMsgs = [...state.messages.pending]
   let confirmedMsg = []
 

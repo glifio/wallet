@@ -6,20 +6,19 @@ import Box from '../Box'
 import { Menu, MenuItem } from '../Menu'
 import { Text } from '../Typography'
 import { IconSend, IconReceive } from '../Icons'
+import truncate from '../../../utils/truncateAddress'
 
-const MessageHistoryRowContainer = styled(Box)`
-  &:nth-child(even) {
-    transform: translateY(-1px);
-  }
-`
+const MessageHistoryRowContainer = styled(Box)``
 
 const AddressText = ({ sentMsg, to, from }) => {
   if (sentMsg) {
     return (
       <>
-        <Text my={0}>To</Text>
-        <Text mt={2} mb={0}>
-          {to}
+        <Text color='core.nearblack' my={0}>
+          To
+        </Text>
+        <Text color='core.nearblack' m={0}>
+          {truncate(to)}
         </Text>
       </>
     )
@@ -27,9 +26,11 @@ const AddressText = ({ sentMsg, to, from }) => {
 
   return (
     <>
-      <Text my={0}>From</Text>
-      <Text mt={2} mb={0}>
-        {from}
+      <Text color='core.nearblack' my={0}>
+        From
+      </Text>
+      <Text color='core.nearblack' m={0}>
+        {truncate(from)}
       </Text>
     </>
   )
@@ -42,11 +43,26 @@ AddressText.propTypes = {
 }
 
 const ActionText = ({ status, sentMsg }) => {
-  if (status === 'confirmed' && sentMsg) return <Text my={0}>Sent</Text>
-  if (status === 'confirmed') return <Text my={0}>Received</Text>
+  if (status === 'confirmed' && sentMsg)
+    return (
+      <Text color='core.nearblack' my={0}>
+        Sent
+      </Text>
+    )
+  if (status === 'confirmed')
+    return (
+      <Text color='core.nearblack' my={0}>
+        Received
+      </Text>
+    )
   if (status === 'pending' && sentMsg) return <Text my={0}>Sending</Text>
   // an unconfirmed received  sg
-  if (status === 'pending') return <Text my={0}>Confirming</Text>
+  if (status === 'pending')
+    return (
+      <Text color='core.nearblack' my={0}>
+        Confirming
+      </Text>
+    )
   return <Text my={0}>Unknown?</Text>
 }
 
@@ -55,13 +71,20 @@ ActionText.propTypes = {
   status: string.isRequired
 }
 
-const MessageHistoryRow = ({ address, to, from, value, status }) => {
+const MessageHistoryRow = ({
+  address,
+  message: { to, from, value, status }
+}) => {
   const sentMsg = address === from
   return (
     <MessageHistoryRowContainer
       display='flex'
+      flexWrap='wrap'
       border={1}
+      borderColor='core.silver'
+      borderRadius={1}
       p={2}
+      my={1}
       justifyContent='space-between'
     >
       <Menu>
@@ -75,19 +98,19 @@ const MessageHistoryRow = ({ address, to, from, value, status }) => {
               )}
             </MenuItem>
           </Menu>
-          <Menu display='flex' flexDirection='column' ml={3}>
-            <MenuItem>
+          <Menu display='flex' flexDirection='column' ml={[2, 4]}>
+            <MenuItem width={[8, 9]}>
               <ActionText status={status} sentMsg={sentMsg} />
             </MenuItem>
             <MenuItem>
-              <Text mt={2} mb={0}>
+              <Text color='core.silver' m={0}>
                 Date
               </Text>
             </MenuItem>
           </Menu>
-          <Menu display='flex' flex-wrap='wrap' ml={3}>
+          <Menu display='flex' flex-wrap='wrap' ml={[2, 4, 5]}>
             <MenuItem overflow='hidden' maxWidth={120}>
-              <AddressText sentMsg={sentMsg} to={to} from={from} />
+              <AddressText sentMsg={sentMsg} to={to} from={from} m={0} />
             </MenuItem>
           </Menu>
         </MenuItem>
@@ -102,10 +125,12 @@ const MessageHistoryRow = ({ address, to, from, value, status }) => {
             ml={3}
           >
             <MenuItem display='flex'>
-              <Text my={0}>{value}</Text>
+              <Text color='core.nearblack' m={0}>
+                {value}
+              </Text>
             </MenuItem>
             <MenuItem display='flex'>
-              <Text mt={2} mb={0}>
+              <Text color='core.silver' m={0} mb={0}>
                 {value}
               </Text>
             </MenuItem>
@@ -120,8 +145,10 @@ const MessageHistoryRow = ({ address, to, from, value, status }) => {
             ml={3}
           >
             <MenuItem>
-              <Text my={0}>FIL</Text>
-              <Text mt={2} mb={0}>
+              <Text color='core.nearblack' m={0}>
+                FIL
+              </Text>
+              <Text color='core.silver' m={0} mb={0}>
                 Fiat
               </Text>
             </MenuItem>
@@ -132,6 +159,9 @@ const MessageHistoryRow = ({ address, to, from, value, status }) => {
   )
 }
 
-MessageHistoryRow.propTypes = MESSAGE_PROPS
+MessageHistoryRow.propTypes = {
+  address: ADDRESS_PROPTYPE,
+  message: MESSAGE_PROPS.isRequired
+}
 
 export default MessageHistoryRow

@@ -1,12 +1,11 @@
-import React, { forwardRef, useState } from 'react'
+import React, { forwardRef } from 'react'
 import { string, func, bool } from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import Box from '../Box'
 import Glyph from '../Glyph'
 import Button from '../Button'
 import { BigTitle, Text } from '../Typography'
-
-const truncate = text => `${text.slice(0, 4)}...${text.slice(-4)}`
+import truncate from '../../../utils/truncateAddress'
 
 const AccountCard = forwardRef(
   (
