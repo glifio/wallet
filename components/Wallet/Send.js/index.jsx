@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
@@ -56,7 +57,7 @@ const isValidForm = (
   return !!(errorFree && fieldsFilledOut && enoughInTheBank)
 }
 
-export default () => {
+const Send = ({ setSending }) => {
   const dispatch = useDispatch()
   const wallet = useWallet()
   const {
@@ -135,6 +136,7 @@ export default () => {
           fiat: new BigNumber('0')
         })
         setToAddress('')
+        setSending(false)
       } catch (err) {
         setUncaughtError(err.message)
       }
@@ -320,3 +322,9 @@ export default () => {
     </>
   )
 }
+
+Send.propTypes = {
+  setSending: PropTypes.func.isRequired
+}
+
+export default Send

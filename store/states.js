@@ -10,19 +10,7 @@ export const initialState = {
     loading: false,
     loadedSuccess: false,
     loadedFailure: false,
-    pending: [
-      {
-        to: 't1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
-        from: 't1hn7twanih6djfrg7s3phaek3ayge72c6vhndrhq',
-        nonce: 31,
-        value: '100000000000000',
-        method: 0,
-        gasprice: '1',
-        gaslimit: '1000',
-        params: '',
-        cid: 'bafy2bzacedxpwi7r3bh36ewvpjiup6se7pkvnrfqv2g5krnqqx7efzunnyzxc'
-      }
-    ],
+    pending: [],
     confirmed: [],
     links: {},
     paginating: false
