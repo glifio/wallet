@@ -10,9 +10,10 @@ import {
   hasLedgerError,
   reportLedgerConfigError
 } from '../../utils/ledger/reportLedgerConfigError'
+import MsgConfirmer from '../../lib/confirm-message'
 
 const WalletView = ({ wallet }) => {
-  const [sending, setSending] = useState(true)
+  const [sending, setSending] = useState(false)
   const { ledger, walletType, connectLedger } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState(null)
   const [showLedgerError, setShowLedgerError] = useState(false)
@@ -31,57 +32,70 @@ const WalletView = ({ wallet }) => {
     setLedgerBusy(false)
   }
   return (
-    <Box
-      display='flex'
-      flexDirection='row'
-      flexWrap='wrap'
-      justifyContent='space-between'
-    >
-      <Box display='flex' flexDirection='column' flexWrap='wrap' ml={2} mt={1}>
-        {hasLedgerError(
-          ledger.connectedFailure,
-          ledger.locked,
-          ledger.filecoinAppNotOpen,
-          ledger.replug,
-          ledger.busy,
-          uncaughtError
-        ) && showLedgerError ? (
-          <AccountError
-            onTryAgain={onShowOnLedger}
-            errorMsg={reportLedgerConfigError(
-              ledger.connectedFailure,
-              ledger.locked,
-              ledger.filecoinAppNotOpen,
-              ledger.replug,
-              ledger.busy,
-              uncaughtError
-            )}
-          />
-        ) : (
-          <AccountCard
-            onAccountSwitch={() => {}}
-            color='purple'
-            alias='Prime'
-            address={wallet.address}
-            isLedgerWallet={walletType === LEDGER}
-            onShowOnLedger={onShowOnLedger}
-            ledgerBusy={ledgerBusy}
-            mb={2}
-          />
-        )}
+    <>
+      <MsgConfirmer />
+      <Box
+        display='flex'
+        flexDirection='row'
+        flexWrap='wrap'
+        justifyContent='space-between'
+      >
+        <Box
+          display='flex'
+          flexDirection='column'
+          flexWrap='wrap'
+          ml={2}
+          mt={1}
+        >
+          {hasLedgerError(
+            ledger.connectedFailure,
+            ledger.locked,
+            ledger.filecoinAppNotOpen,
+            ledger.replug,
+            ledger.busy,
+            uncaughtError
+          ) && showLedgerError ? (
+            <AccountError
+              onTryAgain={onShowOnLedger}
+              errorMsg={reportLedgerConfigError(
+                ledger.connectedFailure,
+                ledger.locked,
+                ledger.filecoinAppNotOpen,
+                ledger.replug,
+                ledger.busy,
+                uncaughtError
+              )}
+            />
+          ) : (
+            <AccountCard
+              onAccountSwitch={() => {}}
+              color='purple'
+              alias='Prime'
+              address={wallet.address}
+              isLedgerWallet={walletType === LEDGER}
+              onShowOnLedger={onShowOnLedger}
+              ledgerBusy={ledgerBusy}
+              mb={2}
+            />
+          )}
 
-        <BalanceCard
-          balance={wallet.balance.toFil()}
-          disableButtons={sending}
-          onReceive={() => {}}
-          onSend={() => setSending(true)}
-        />
+          <BalanceCard
+            balance={wallet.balance.toFil()}
+            disableButtons={sending}
+            onReceive={() => {}}
+            onSend={() => setSending(true)}
+          />
+        </Box>
+        <Box
+          display='flex'
+          flexWrap='wrap'
+          flexGrow='1'
+          justifyContent='center'
+        >
+          <Box>{sending ? <Send /> : <MessageHistory />}</Box>
+        </Box>
       </Box>
-      <Box display='flex' flexWrap='wrap' flexGrow='1' justifyContent='center'>
-        <Box>{sending ? <Send /> : <MessageHistory />}</Box>
-        <>{sending}</>
-      </Box>
-    </Box>
+    </>
   )
 }
 

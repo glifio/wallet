@@ -55,7 +55,9 @@ ActionText.propTypes = {
   status: string.isRequired
 }
 
-const MessageHistoryRow = ({ address, to, from, value, status }) => {
+const MessageHistoryRow = ({
+  message: { address, to, from, value, status }
+}) => {
   const sentMsg = address === from
   return (
     <MessageHistoryRowContainer
@@ -132,6 +134,8 @@ const MessageHistoryRow = ({ address, to, from, value, status }) => {
   )
 }
 
-MessageHistoryRow.propTypes = MESSAGE_PROPS
+MessageHistoryRow.propTypes = {
+  message: MESSAGE_PROPS.isRequired
+}
 
 export default MessageHistoryRow

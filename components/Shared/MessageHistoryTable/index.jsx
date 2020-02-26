@@ -1,17 +1,19 @@
 import React, { forwardRef } from 'react'
 import PropTypes from 'prop-types'
 
+import Box from '../Box'
+
 import { ADDRESS_PROPTYPE, MESSAGE_PROPS } from '../../../customPropTypes'
 import MessageHistoryRow from './MessageHistoryRow'
 
 const MessageHistoryTable = forwardRef(
   ({ address, messages, ...props }, ref) => {
     return (
-      <div ref={ref} {...props}>
+      <Box ref={ref} {...props}>
         {messages.map(msg => (
-          <MessageHistoryRow address={address} key={msg.cid} {...msg} />
+          <MessageHistoryRow address={address} key={msg.cid} message={msg} />
         ))}
-      </div>
+      </Box>
     )
   }
 )
@@ -27,7 +29,7 @@ MessageHistoryTable.propTypes = {
   messages: PropTypes.arrayOf(MESSAGE_PROPS)
 }
 
-MessageHistoryTable.propTypes = {
+MessageHistoryTable.defaultProps = {
   messages: []
 }
 

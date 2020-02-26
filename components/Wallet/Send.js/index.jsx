@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { useDispatch } from 'react-redux'
 import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 import { validateAddressString } from '@openworklabs/filecoin-address'
 import Message from '@openworklabs/filecoin-message'
@@ -23,6 +24,8 @@ import { useWallet } from '../hooks'
 import { useWalletProvider } from '../../../WalletProvider'
 import { LEDGER } from '../../../constants'
 import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfigError'
+import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
+import { confirmMessage } from '../../../store/actions'
 
 const SendCard = styled(Card)`
   background-color: ${props => props.theme.colors.background.screen};
@@ -54,6 +57,7 @@ const isValidForm = (
 }
 
 export default () => {
+  const dispatch = useDispatch()
   const wallet = useWallet()
   const {
     ledger,
@@ -100,7 +104,6 @@ export default () => {
       const msgCid = await provider.sendMessage(messageObj, signature)
       messageObj.cid = msgCid['/']
       setAttemptingTx(false)
-
       return messageObj
     }
   }
@@ -126,6 +129,12 @@ export default () => {
       try {
         setStep(2)
         const message = await submitMsg()
+        dispatch(confirmMessage(toLowerCaseMsgFields(message)))
+        setValue({
+          fil: new FilecoinNumber('0', 'fil'),
+          fiat: new BigNumber('0')
+        })
+        setToAddress('')
       } catch (err) {
         setUncaughtError(err.message)
       }
@@ -155,13 +164,6 @@ export default () => {
       ledger.replug,
       ledger.busy
     )
-
-  console.log(
-    'LEDGER RROR',
-    ledgerError(),
-    uncaughtError,
-    ledgerError() || uncaughtError
-  )
 
   return (
     <>
