@@ -92,9 +92,7 @@ const WalletView = ({ wallet }) => {
           flexGrow='1'
           justifyContent='center'
         >
-          <Box>
-            {sending ? <Send setSending={setSending} /> : <MessageHistory />}
-          </Box>
+          {sending ? <Send setSending={setSending} /> : <MessageHistory />}
         </Box>
       </Box>
     </>

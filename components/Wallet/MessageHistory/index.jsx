@@ -23,6 +23,10 @@ export default () => {
     <MessageHistoryTable
       messages={[...pending, ...confirmed]}
       address={wallet.address}
+      flexGrow='2'
+      border='none'
+      my={3}
+      mx={4}
     />
   )
 }
