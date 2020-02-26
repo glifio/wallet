@@ -253,8 +253,8 @@ export const IconCopyAccountAddress = forwardRef((props, ref) => (
     ref={ref}
     {...props}
   >
-    <rect x='7.80859' y='4' width='12.1906' height='12.1906' fill='#1A0066' />
-    <rect x='4' y='7.80859' width='12.1906' height='12.1906' fill='#E0D7FE' />
+    <rect x='8' y='4' width='12' height='12' fill='#1A0066' />
+    <rect x='4' y='8' width='12' height='12' fill='#E0D7FE' />
   </IconBase>
 ))
 
