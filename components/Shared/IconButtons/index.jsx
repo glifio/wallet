@@ -1,31 +1,41 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
-import { func } from 'prop-types'
-import Button from '../Button'
-import { IconClose } from '../Icons'
+import { func, string } from 'prop-types'
+import { layout, space, border } from 'styled-system'
+import { IconClose, IconCopyAccountAddress } from '../Icons'
 
-const IconButton = styled(Button)`
+const IconButtonBase = styled.button`
+  outline: 0;
+  border: 0;
+  background: transparent;
+  /* @alex todo: setup custom bezier curve anims in theme file */
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+
   &:hover {
-    opacity: 0.5;
+   transform:scale(1.25);
   }
+  ${layout}
+  ${space}
+  ${border}
 `
 
-const ButtonClose = forwardRef(({ onClick, ...props }, ref) => (
-  <IconButton
-    display='inline-block'
-    borderRadius={100}
-    onClick={onClick}
-    ref={ref}
-    {...props}
-  >
-    <IconClose />
-  </IconButton>
+const IconButton = forwardRef(({ onClick, Icon, ...props }, ref) => (
+  <IconButtonBase display='inline-block' onClick={onClick} ref={ref} {...props}>
+    <Icon />
+  </IconButtonBase>
 ))
 
 const ButtonClosePropTypes = {
-  onClick: func.isRequired
+  onClick: func.isRequired,
+  buttonStyle: string,
+  Icon: string
 }
 
-ButtonClose.propTypes = ButtonClosePropTypes
+IconButton.propTypes = ButtonClosePropTypes
 
-export default ButtonClose
+export const ButtonClose = () => <IconButton Icon={IconClose} />
+
+export const ButtonCopyAccountAddress = () => (
+  <IconButton Icon={IconCopyAccountAddress} />
+)
