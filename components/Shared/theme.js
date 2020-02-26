@@ -118,15 +118,7 @@ const colors = {
 // theme.js
 const theme = {
   colors,
-  fontSizes: [
-    '0rem',
-    '0.875rem',
-    '1.125rem',
-    '1.25rem',
-    '1.5rem',
-    '2rem',
-    '3rem'
-  ],
+  fontSizes: ['0rem', '1rem', '1.125rem', '1.25rem', '1.5rem', '2rem', '3rem'],
   fontWeights: [0, 400, 600, 900],
   letterSpacings: [0, 1, 2, 4, 8],
   lineHeights: {
@@ -151,16 +143,16 @@ const theme = {
       fontFamily: 'system-ui'
     },
     text: {
-      fontSize: 3,
+      fontSize: 2,
       fontColor: core.nearblack,
       fontWeight: 400,
       lineHeight: 'copy',
       fontFamily: 'system-ui'
     },
     label: {
-      fontSize: 1,
+      fontSize: 2,
       fontColor: core.darkgray,
-      fontWeight: 700,
+      fontWeight: 400,
       textTransform: 'uppercase',
       lineHeight: 'solid',
       fontFamily: 'system-ui'
