@@ -4,6 +4,7 @@ import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import Box from '../Box'
 import Glyph from '../Glyph'
 import Button from '../Button'
+import { ButtonCopyAccountAddress } from '../IconButtons'
 import { BigTitle, Text } from '../Typography'
 import truncate from '../../../utils/truncateAddress'
 
@@ -46,7 +47,10 @@ const AccountCard = forwardRef(
         </Box>
         <Box color='card.account.color'>
           <BigTitle>{alias}</BigTitle>
-          <Text margin={0}>{truncate(address)}</Text>
+          <Box display='flex' alignContent='center'>
+            <Text margin={0}>{truncate(address)}</Text>
+            <ButtonCopyAccountAddress size={7} border={0} />
+          </Box>
         </Box>
         <Box display='flex'>
           <Button
