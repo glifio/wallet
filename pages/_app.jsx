@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     font-family: ${theme.fonts.sansSerif};
-    font-size: ${theme.fontSizes[2]}
+    font-size: 1rem;
   }
 `
 
