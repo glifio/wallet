@@ -9,9 +9,48 @@ import WalletProviderWrapper from '../WalletProvider'
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
-    font-family: ${theme.fonts.sansSerif};
     font-size: 1rem;
+    font-family: ${theme.fonts.AliasGrotesk};
   }
+
+  /* Alias Medium */
+
+  @font-face {
+  font-family: 'RT-Alias-Medium';
+  src: url('fonts/RTAliasMedium-Light.woff2');
+  font-weight: 200;
+ }
+
+ @font-face {
+  font-family: 'RT-Alias-Medium';
+  src: url('fonts/RTAliasMedium-Regular.woff2');
+  font-weight: 400;
+ }
+  @font-face {
+  font-family: 'RT-Alias-Medium';
+  src: url('fonts/RTAliasMedium-Bold.woff2');
+  font-weight: 700;
+ }
+
+/* Alias Grotesk */
+
+ @font-face {
+  font-family: 'RT-Alias-Grotesk';
+  src: url('fonts/RTAliasGrotesk-Light.woff2');
+  font-weight: 200;
+ }
+
+ @font-face {
+  font-family: 'RT-Alias-Grotesk';
+  src: url('fonts/RTAliasGrotesk-Regular.woff2');
+  font-weight: 400;
+ }
+  @font-face {
+  font-family: 'RT-Alias-Grotesk';
+  src: url('fonts/RTAliasGrotesk-Bold.woff2');
+  font-weight: 700;
+ }
+ 
 `
 
 class MyApp extends App {
