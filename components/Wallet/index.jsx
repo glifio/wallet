@@ -80,7 +80,7 @@ const WalletView = ({ wallet }) => {
           )}
 
           <BalanceCard
-            balance={wallet.balance.toFil()}
+            balance={wallet.balance}
             disableButtons={sending}
             onReceive={() => {}}
             onSend={() => setSending(true)}
