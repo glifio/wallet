@@ -119,7 +119,7 @@ export default () => {
         <Button
           title='Back'
           onClick={() => setWalletType(null)}
-          buttonStyle='secondary'
+          variant='secondary'
           mr={2}
         />
         <Button
@@ -135,7 +135,7 @@ export default () => {
               dispatch(error(err))
             }
           }}
-          buttonStyle='primary'
+          variant='primary'
           ml={2}
         />
       </Box>

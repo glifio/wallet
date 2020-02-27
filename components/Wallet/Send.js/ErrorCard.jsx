@@ -23,7 +23,7 @@ const ErrorCard = ({ error, reset }) => {
         <Button
           onClick={reset}
           title='Clear'
-          buttonStyle='tertiary'
+          variant='tertiary'
           height='100%'
           css={`
             align-self: flex-end;

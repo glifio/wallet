@@ -319,7 +319,7 @@ const Send = ({ setSending }) => {
                 <Button
                   type='button'
                   title='Cancel'
-                  buttonStyle='secondary'
+                  variant='secondary'
                   onClick={() => {
                     setAttemptingTx(false)
                     setUncaughtError('')
@@ -342,7 +342,7 @@ const Send = ({ setSending }) => {
                   }
                   type='submit'
                   title='Next'
-                  buttonStyle='primary'
+                  variant='primary'
                   onClick={() => {}}
                 />
               </>

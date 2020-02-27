@@ -63,11 +63,6 @@ const colors = {
       background: baseColors.mono.transparent,
       borderColor: baseColors.purple.light,
       color: baseColors.purple.light
-    },
-    'transparent-dark': {
-      bg: 'black',
-      borderColor: 'black',
-      color: 'black'
     }
   },
   background: {
@@ -115,9 +110,29 @@ const colors = {
   }
 }
 
+const buttons = {
+  colors,
+  primary: {
+    color: colors.buttons.primary.color,
+    borderColor: colors.buttons.primary.color,
+    backgroundColor: colors.buttons.tertiary.background
+  },
+  secondary: {
+    background: colors.buttons.secondary.background,
+    borderColor: colors.buttons.secondary.color,
+    color: colors.buttons.secondary.color
+  },
+  tertiary: {
+    background: baseColors.mono.transparent,
+    borderColor: baseColors.purple.light,
+    color: baseColors.purple.light
+  }
+}
+
 // theme.js
 const theme = {
   colors,
+  buttons,
   fontSizes: ['0rem', '1rem', '1.125rem', '1.25rem', '1.5rem', '2rem', '3rem'],
   fontWeights: [0, 400, 600, 900],
   letterSpacings: [0, 1, 2, 4, 8],

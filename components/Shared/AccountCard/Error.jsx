@@ -27,12 +27,7 @@ const AccountError = ({ errorMsg, onTryAgain }) => (
       <Text margin={0}>{errorMsg}</Text>
     </Box>
     <Box display='flex'>
-      <Button
-        buttonStyle='tertiary'
-        title='Try again'
-        onClick={onTryAgain}
-        p={2}
-      />
+      <Button variant='tertiary' title='Try again' onClick={onTryAgain} p={2} />
     </Box>
   </Box>
 )
