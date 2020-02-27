@@ -232,7 +232,11 @@ const Send = ({ setSending }) => {
                 >
                   Step 1
                 </Stepper>
-                <ButtonClose ml={2} />
+                <ButtonClose
+                  ml={2}
+                  type='button'
+                  onClick={() => setSending(false)}
+                />
               </Box>
             </Box>
             <Box mt={3}>
@@ -308,9 +312,10 @@ const Send = ({ setSending }) => {
             ) : (
               <>
                 <Button
+                  type='button'
                   title='Cancel'
                   buttonStyle='secondary'
-                  onClick={() => {}}
+                  onClick={() => setSending(false)}
                 />
                 <Button
                   disabled={
