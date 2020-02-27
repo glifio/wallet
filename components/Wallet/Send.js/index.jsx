@@ -198,8 +198,6 @@ const Send = ({ setSending }) => {
             justifyContent='space-between'
             border='none'
             width='auto'
-            my={2}
-            mx={4}
           >
             <Box
               display='flex'
