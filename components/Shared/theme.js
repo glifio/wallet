@@ -17,7 +17,8 @@ const baseColors = {
   green: {
     primary: '#1AD08F',
     light: '#D2F5ED',
-    dark: '#007056'
+    dark: '#007056',
+    darker: '#08442F'
   },
   red: {
     light: '#FC6D6F',
@@ -52,7 +53,7 @@ const colors = {
     primary: {
       background: baseColors.green.primary,
       borderColor: baseColors.green.primary,
-      color: baseColors.mono.nearblack
+      color: baseColors.green.darker
     },
     secondary: {
       background: baseColors.mono.transparent,
