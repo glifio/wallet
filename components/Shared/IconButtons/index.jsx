@@ -8,7 +8,6 @@ const IconButtonBase = styled.button`
   outline: 0;
   border: 0;
   background: transparent;
-  /* @alex todo: setup custom bezier curve anims in theme file */
   transition: 0.24s ease-in-out;
   cursor: pointer;
 
@@ -26,15 +25,15 @@ const IconButton = forwardRef(({ onClick, Icon, ...props }, ref) => (
   </IconButtonBase>
 ))
 
-const ButtonClosePropTypes = {
+IconButton.propTypes = {
   onClick: func.isRequired,
   Icon: object
 }
 
-IconButton.propTypes = ButtonClosePropTypes
+export const ButtonClose = ({ ...props }) => (
+  <IconButton Icon={IconClose} {...props} />
+)
 
-export const ButtonClose = () => <IconButton Icon={IconClose} />
-
-export const ButtonCopyAccountAddress = () => (
-  <IconButton Icon={IconCopyAccountAddress} />
+export const ButtonCopyAccountAddress = ({ ...props }) => (
+  <IconButton Icon={IconCopyAccountAddress} {...props} />
 )

@@ -1,8 +1,11 @@
 import React, { forwardRef } from 'react'
-import { string, func, bool } from 'prop-types'
+import { func, bool } from 'prop-types'
+import { BigNumber } from '@openworklabs/filecoin-number'
 import Box from '../Box'
 import Button from '../Button'
 import { BigTitle, Title, Label } from '../Typography'
+import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
+import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
 // this component will also be responsible for fetching the fiat denominated amount of the balance
 const BalanceCard = forwardRef(
@@ -22,9 +25,13 @@ const BalanceCard = forwardRef(
     >
       <Label>Balance</Label>
       <Box overflow='hidden'>
-        <BigTitle color='card.balance.color'>{balance}FIL</BigTitle>
-        {/* @alex this will change to be dynamically created, for now just pretend 1 FIL = 5 USD */}
-        <Title color='card.balance.color'>{Number(balance) * 5}USD</Title>
+        <BigTitle color='card.balance.color'>
+          {makeFriendlyBalance(new BigNumber(balance.toFil()))}FIL
+        </BigTitle>
+        <Title color='card.balance.color'>
+          {makeFriendlyBalance(new BigNumber(balance.toFil()).multipliedBy(5))}
+          USD
+        </Title>
       </Box>
       <Box display='flex' justifyContent='space-between'>
         <Button
@@ -51,7 +58,7 @@ BalanceCard.propTypes = {
   /**
    * users balance in Filecoin denom
    */
-  balance: string.isRequired,
+  balance: FILECOIN_NUMBER_PROP,
   /**
    * action fired when send button is clicked
    */

@@ -128,15 +128,18 @@ const Send = ({ setSending }) => {
       setStep(2)
     } else {
       try {
-        setStep(2)
         const message = await submitMsg()
-        dispatch(confirmMessage(toLowerCaseMsgFields(message)))
-        setValue({
-          fil: new FilecoinNumber('0', 'fil'),
-          fiat: new BigNumber('0')
-        })
-        setToAddress('')
-        setSending(false)
+        if (message) {
+          setStep(2)
+          dispatch(confirmMessage(toLowerCaseMsgFields(message)))
+          setValue({
+            fil: new FilecoinNumber('0', 'fil'),
+            fiat: new BigNumber('0')
+          })
+          setToAddress('')
+          setSending(false)
+          setAttemptingTx(false)
+        }
       } catch (err) {
         setUncaughtError(err.message)
       }
@@ -174,12 +177,14 @@ const Send = ({ setSending }) => {
           <ErrorCard
             error={ledgerError() || uncaughtError}
             reset={() => {
+              setAttemptingTx(false)
+              setUncaughtError('')
               resetLedgerState()
               setStep(1)
             }}
           />
         )}
-        {step === 2 && (
+        {step === 2 && !hasError() && (
           <ConfirmationCard
             walletType={wallet.type}
             value={value}
@@ -232,7 +237,11 @@ const Send = ({ setSending }) => {
                 >
                   Step 1
                 </Stepper>
-                <ButtonClose ml={2} />
+                <ButtonClose
+                  ml={2}
+                  type='button'
+                  onClick={() => setSending(false)}
+                />
               </Box>
             </Box>
             <Box mt={3}>
@@ -307,7 +316,17 @@ const Send = ({ setSending }) => {
               </Text>
             ) : (
               <>
-                <Button title='Cancel' variant='secondary' onClick={() => {}} />
+                <Button
+                  type='button'
+                  title='Cancel'
+                  variant='secondary'
+                  onClick={() => {
+                    setAttemptingTx(false)
+                    setUncaughtError('')
+                    resetLedgerState()
+                    setSending(false)
+                  }}
+                />
                 <Button
                   disabled={
                     !!(

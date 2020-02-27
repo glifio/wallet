@@ -55,7 +55,7 @@ const ActionText = ({ status, sentMsg }) => {
         Received
       </Text>
     )
-  if (status === 'pending' && sentMsg) return <Text my={0}>Sending</Text>
+  if (status === 'pending' && sentMsg) return <Text my={0}>Pending</Text>
   // an unconfirmed received  sg
   if (status === 'pending')
     return (
