@@ -49,7 +49,7 @@ const AccountCard = forwardRef(
           <BigTitle>{alias}</BigTitle>
           <Box display='flex' alignContent='center'>
             <Text margin={0}>{truncate(address)}</Text>
-            <ButtonCopyAccountAddress size={7} border={0} />
+            <ButtonCopyAccountAddress border={0} onClick />
           </Box>
         </Box>
         <Box display='flex'>
