@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { space, layout, borderRadius, flexbox, variant } from 'styled-system'
+import { space, layout, borderRadius, flexbox } from 'styled-system'
 
 export default styled.button`
   variant {
@@ -18,6 +18,6 @@ export default styled.button`
   font-size: ${props => props.theme.fontSizes[2]}; 
   ${borderRadius} 
   ${space}
-    ${layout} 
-    ${flexbox};
+  ${layout} 
+  ${flexbox}
 `

@@ -7,7 +7,6 @@ import theme from '../theme'
 const Button = forwardRef(({ disabled, onClick, title, ...props }, ref) => (
   <BaseButton
     variant={variant}
-    // buttonStyle={buttonStyle}
     p={3}
     fontSize={3}
     borderRadius={2}
@@ -22,7 +21,6 @@ const Button = forwardRef(({ disabled, onClick, title, ...props }, ref) => (
 
 Button.propTypes = {
   variant: oneOf(Object.keys(theme.buttons)),
-  // buttonStyle: oneOf(Object.keys(theme.colors.buttons)),
   onClick: func.isRequired,
   title: string.isRequired,
   disabled: bool
@@ -30,7 +28,6 @@ Button.propTypes = {
 
 Button.defaultProps = {
   variant: 'primary'
-  // buttonStyle: 'primary'
 }
 
 export default Button
