@@ -22,7 +22,7 @@ const ErrorCard = ({ error, reset }) => {
         </Box>
         <Button
           onClick={reset}
-          title='Try Again'
+          title='Clear'
           buttonStyle='tertiary'
           height='100%'
           css={`
