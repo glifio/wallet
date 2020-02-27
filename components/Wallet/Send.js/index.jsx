@@ -174,12 +174,13 @@ const Send = ({ setSending }) => {
           <ErrorCard
             error={ledgerError() || uncaughtError}
             reset={() => {
+              setUncaughtError('')
               resetLedgerState()
               setStep(1)
             }}
           />
         )}
-        {step === 2 && (
+        {step === 2 && !hasError() && (
           <ConfirmationCard
             walletType={wallet.type}
             value={value}
