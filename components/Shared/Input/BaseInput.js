@@ -19,9 +19,7 @@ export default styled.input`
 
   &:hover {
     background: ${props =>
-      props.disabled
-        ? props.theme.colors.status.inactive
-        : props.theme.colors.input.background.active};
+      !props.disabled && props.theme.colors.input.background.active};
   }
 
   &:focus {
