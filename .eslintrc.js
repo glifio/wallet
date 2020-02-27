@@ -26,7 +26,7 @@ module.exports = {
     sourceType: 'module',
     allowImportExportEverywhere: false
   },
-  plugins: ['prettier', 'react', 'jsx-a11y'],
+  plugins: ['prettier', 'react', 'jsx-a11y', 'react-hooks'],
   rules: {
     'prettier/prettier': 'error',
     'react/react-in-jsx-scope': 0,
@@ -41,6 +41,8 @@ module.exports = {
     'react/require-default-props': 0,
     'import/prefer-default-export': 0,
     'consistent-return': 0,
-    semi: 0
+    semi: 0,
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn'
   }
 }

@@ -11,8 +11,10 @@ import {
   reportLedgerConfigError
 } from '../../utils/ledger/reportLedgerConfigError'
 import MsgConfirmer from '../../lib/confirm-message'
+import useUpToDateBalance from '../../lib/update-balance'
 
 const WalletView = ({ wallet }) => {
+  useUpToDateBalance()
   const [sending, setSending] = useState(false)
   const { ledger, walletType, connectLedger } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState(null)
@@ -80,7 +82,7 @@ const WalletView = ({ wallet }) => {
           )}
 
           <BalanceCard
-            balance={wallet.balance.toFil()}
+            balance={wallet.balance}
             disableButtons={sending}
             onReceive={() => {}}
             onSend={() => setSending(true)}

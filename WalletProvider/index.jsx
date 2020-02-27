@@ -21,7 +21,7 @@ const WalletProviderWrapper = ({ network, children }) => {
         state,
         fetchDefaultWallet: useCallback(
           () => fetchDefaultWallet(dispatch, network, state.walletType),
-          [dispatch, state.walletType]
+          [dispatch, state.walletType, network]
         ),
         setWalletError: errorMessage => dispatch(setError(errorMessage)),
         setWalletType: walletType => dispatch(setWalletType(walletType)),
