@@ -69,7 +69,7 @@ const Funds = forwardRef(
     }
 
     const checkBalance = amount => {
-      if (!amount) {
+      if (!amount || new BigNumber(amount).isEqualTo(0)) {
         setError('Please enter a valid amount.')
         return false
       }
