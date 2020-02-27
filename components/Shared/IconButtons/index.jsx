@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
-import { func, string } from 'prop-types'
+import { func, object } from 'prop-types'
 import { layout, space, border } from 'styled-system'
 import { IconClose, IconCopyAccountAddress } from '../Icons'
 
@@ -28,8 +28,7 @@ const IconButton = forwardRef(({ onClick, Icon, ...props }, ref) => (
 
 const ButtonClosePropTypes = {
   onClick: func.isRequired,
-  buttonStyle: string,
-  Icon: string
+  Icon: object
 }
 
 IconButton.propTypes = ButtonClosePropTypes

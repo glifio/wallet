@@ -307,11 +307,7 @@ const Send = ({ setSending }) => {
               </Text>
             ) : (
               <>
-                <Button
-                  title='Cancel'
-                  buttonStyle='secondary'
-                  onClick={() => {}}
-                />
+                <Button title='Cancel' variant='secondary' onClick={() => {}} />
                 <Button
                   disabled={
                     !!(
@@ -327,7 +323,7 @@ const Send = ({ setSending }) => {
                   }
                   type='submit'
                   title='Next'
-                  buttonStyle='primary'
+                  variant='primary'
                   onClick={() => {}}
                 />
               </>

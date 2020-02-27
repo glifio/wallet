@@ -54,14 +54,14 @@ const AccountCard = forwardRef(
         </Box>
         <Box display='flex'>
           <Button
-            buttonStyle='tertiary'
+            variant='tertiary'
             title='Switch'
             onClick={onAccountSwitch}
             p={2}
           />
           {isLedgerWallet && (
             <Button
-              buttonStyle='tertiary'
+              variant='tertiary'
               title='View on Ledger'
               onClick={onShowOnLedger}
               ml={2}
