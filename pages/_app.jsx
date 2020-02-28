@@ -5,6 +5,7 @@ import { createGlobalStyle } from 'styled-components'
 import { theme, ThemeProvider } from '../components/Shared'
 import withReduxStore from '../lib/with-redux-store'
 import WalletProviderWrapper from '../WalletProvider'
+import { switchNetwork } from '../store/actions'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -54,11 +55,21 @@ const GlobalStyle = createGlobalStyle`
 `
 
 class MyApp extends App {
+  static getInitialProps({ ctx: { query } }) {
+    const clonedQuery = { ...query }
+    if (!query.network) clonedQuery.network = 'f'
+    return { query: clonedQuery }
+  }
+
   render() {
-    const { Component, pageProps, reduxStore } = this.props
+    const { Component, pageProps, reduxStore, query } = this.props
+
+    if (reduxStore.getState().network !== query.network) {
+      reduxStore.dispatch(switchNetwork(query.network))
+    }
     return (
       <Provider store={reduxStore}>
-        <WalletProviderWrapper network={reduxStore.getState().network}>
+        <WalletProviderWrapper network={query.network}>
           <GlobalStyle />
 
           <ThemeProvider theme={theme}>
