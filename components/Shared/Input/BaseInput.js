@@ -13,11 +13,6 @@ export default styled.input`
   text-align: right;
   cursor: text;
   background: ${props => props.theme.colors.input.background.base};
-  /* @jon - The below background change needs to be tied to a validation check on the user-submitted content. If valid, it will display a light green color, otherwise it will display red.
-  /* background: ${props =>
-    props.valid
-      ? props.theme.colors.input.background.valid
-      : props.theme.colors.input.background.invalid}; */
 
   &:hover {
     cursor: ${props => (props.disabled ? 'not-allowed' : 'text')};
