@@ -1,5 +1,4 @@
 import App from 'next/app'
-import Router from 'next/router'
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 import { Provider } from 'react-redux'
@@ -58,27 +57,16 @@ const GlobalStyle = createGlobalStyle`
 
 class MyApp extends App {
   static getInitialProps({ ctx: { query, pathname } }) {
-    const clonedQuery = { ...query }
-    if (!query.network) clonedQuery.network = 'f'
-    return { query: clonedQuery, pathname }
-  }
-
-  componentDidMount() {
-    const { reduxStore, query, pathname } = this.props
-    if (reduxStore.getState().network !== query.network) {
-      const params = new URLSearchParams(query)
-      Router.replace(`${pathname}?${params.toString()}`)
-    }
+    return { query, pathname }
   }
 
   render() {
-    const { Component, pageProps, reduxStore, query } = this.props
+    const { Component, pageProps, reduxStore, query, pathname } = this.props
     return (
       <Provider store={reduxStore}>
         <GlobalStyle />
-        <WalletProviderWrapper network={query.network}>
-          <NetworkChecker query={query} />
-
+        <WalletProviderWrapper network={reduxStore.getState().network}>
+          <NetworkChecker pathname={pathname} query={query} />
           <ThemeProvider theme={theme}>
             <Component {...pageProps} />
           </ThemeProvider>
