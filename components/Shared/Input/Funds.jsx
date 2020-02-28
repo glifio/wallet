@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from 'react'
-import { func, string } from 'prop-types'
+import { func, string, bool } from 'prop-types'
 import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 
 import Box from '../Box'
@@ -25,7 +25,10 @@ const fromUSD = async amount =>
   new FilecoinNumber(new BigNumber(amount).dividedBy(5), 'fil')
 
 const Funds = forwardRef(
-  ({ onAmountChange, balance, error, setError, gasLimit, ...props }, ref) => {
+  (
+    { onAmountChange, balance, error, setError, gasLimit, disabled, ...props },
+    ref
+  ) => {
     const [fiatAmount, setFiatAmount] = useState('')
     const [filAmount, setFilAmount] = useState('')
 
@@ -140,6 +143,8 @@ const Funds = forwardRef(
               placeholder='0 FIL'
               type='number'
               step={new FilecoinNumber('1', 'attofil').toFil()}
+              disabled={disabled}
+              {...props}
             />
           </Box>
           <Box
@@ -171,6 +176,7 @@ const Funds = forwardRef(
               type='number'
               step={new FilecoinNumber('1', 'attofil').toFil()}
               min='0'
+              disabled={disabled}
             />
           </Box>
         </Box>
@@ -201,12 +207,14 @@ Funds.propTypes = {
   /**
    * Gas limit selected by user (to make sure we dont go over the user's balance)
    */
-  gasLimit: string
+  gasLimit: string,
+  disabled: bool
 }
 
 Funds.defaultProps = {
   error: '',
-  gasLimit: '1000'
+  gasLimit: '1000',
+  disabled: false
 }
 
 export default Funds

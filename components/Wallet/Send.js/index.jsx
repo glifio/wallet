@@ -135,8 +135,8 @@ const Send = ({ setSending }) => {
           fil: new FilecoinNumber('0', 'fil'),
           fiat: new BigNumber('0')
         })
-        setToAddress('')
         setSending(false)
+        setToAddress('')
         setAttemptingTx(false)
       }
     } catch (err) {
@@ -251,6 +251,7 @@ const Send = ({ setSending }) => {
                 placeholder='t1...'
                 error={toAddressError}
                 setError={setToAddressError}
+                disabled={step === 2 && !hasError()}
               />
               <Input.Funds
                 name='amount'
@@ -260,6 +261,7 @@ const Send = ({ setSending }) => {
                 error={valueError}
                 setError={setValueError}
                 gasLimit={gasLimit}
+                disabled={step === 2 && !hasError()}
               />
               <Box display='flex' flexDirection='column'>
                 <Input.Text
