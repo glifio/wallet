@@ -6,20 +6,21 @@ export default styled.input`
   flex-grow: 1;
   padding-left: ${props => props.theme.space[2]}px;
   padding-right: ${props => props.theme.space[2]}px;
-  border: ${props => props.theme.borders[1]}
-  border-radius: ${props => props.theme.radii[1]}
+  border: ${props => props.theme.borders[1]};
+  border-radius: ${props => props.theme.radii[1]};
   transition: 0.2s ease-in-out;
   font-size: ${props => props.theme.fontSizes[2]};
   text-align: right;
   cursor: text;
-  background: ${props =>
-    props.disabled
-      ? props.theme.colors.status.inactive
-      : props.theme.colors.input.background.base};
+  background: ${props => props.theme.colors.input.background.base};
+  /* @jon - The below background change needs to be tied to a validation check on the user-submitted content. If valid, it will display a light green color, otherwise it will display red.
+  /* background: ${props =>
+    props.valid
+      ? props.theme.colors.input.background.valid
+      : props.theme.colors.input.background.invalid}; */
 
   &:hover {
-    background: ${props =>
-      !props.disabled && props.theme.colors.input.background.active};
+    cursor: ${props => (props.disabled ? 'not-allowed' : 'text')};
   }
 
   &:focus {
@@ -27,6 +28,7 @@ export default styled.input`
     outline: 0;
     background: ${props => props.theme.colors.input.background.active};
   }
+}
 
   ${color}
   ${space}
