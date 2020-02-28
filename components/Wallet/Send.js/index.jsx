@@ -77,6 +77,7 @@ const Send = ({ setSending }) => {
   const [gasPrice, setGasPrice] = useState('1')
   const [gasLimit, setGasLimit] = useState('1000')
   const [step, setStep] = useState(1)
+
   const [attemptingTx, setAttemptingTx] = useState(false)
 
   const submitMsg = async () => {
@@ -124,25 +125,22 @@ const Send = ({ setSending }) => {
     ) {
       setUncaughtError('Invalid form!')
     }
-    if (step === 1 && wallet.type !== LEDGER) {
+
+    try {
       setStep(2)
-    } else {
-      try {
-        const message = await submitMsg()
-        if (message) {
-          setStep(2)
-          dispatch(confirmMessage(toLowerCaseMsgFields(message)))
-          setValue({
-            fil: new FilecoinNumber('0', 'fil'),
-            fiat: new BigNumber('0')
-          })
-          setToAddress('')
-          setSending(false)
-          setAttemptingTx(false)
-        }
-      } catch (err) {
-        setUncaughtError(err.message)
+      const message = await submitMsg()
+      if (message) {
+        dispatch(confirmMessage(toLowerCaseMsgFields(message)))
+        setValue({
+          fil: new FilecoinNumber('0', 'fil'),
+          fiat: new BigNumber('0')
+        })
+        setToAddress('')
+        setSending(false)
+        setAttemptingTx(false)
       }
+    } catch (err) {
+      setUncaughtError(err.message)
     }
   }
 
