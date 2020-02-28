@@ -30,6 +30,12 @@ export const WALLET_PROP_TYPE = shape({
   path: array
 })
 
+export const NO_WALLET_PROP_TYPE = shape({
+  balance: FILECOIN_NUMBER_PROP,
+  address: string,
+  path: array
+})
+
 export const MESSAGE_PROPS = shape({
   /**
    * Message sent to this address
