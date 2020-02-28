@@ -41,6 +41,12 @@ const FloatingContainer = styled(Box)`
   max-width: 560px;
 `
 
+const isValidAmount = (value, balance) => {
+  const valueFieldFilledOut = value && value.isGreaterThan(0)
+  const enoughInTheBank = balance.isGreaterThan(value)
+  return valueFieldFilledOut && enoughInTheBank
+}
+
 const isValidForm = (
   toAddress,
   value,
@@ -52,9 +58,8 @@ const isValidForm = (
   const validToAddress = validateAddressString(toAddress)
   const errorFree =
     validToAddress && !toAddressError && !valueError && !otherError
-  const fieldsFilledOut = toAddress && value && value.isGreaterThan(0)
-  const enoughInTheBank = balance.isGreaterThan(value)
-  return !!(errorFree && fieldsFilledOut && enoughInTheBank)
+  const validAmount = isValidAmount(value, balance)
+  return !!(errorFree && validAmount)
 }
 
 const Send = ({ setSending }) => {
@@ -77,6 +82,7 @@ const Send = ({ setSending }) => {
   const [gasPrice, setGasPrice] = useState('1')
   const [gasLimit, setGasLimit] = useState('1000')
   const [step, setStep] = useState(1)
+
   const [attemptingTx, setAttemptingTx] = useState(false)
 
   const submitMsg = async () => {
@@ -124,25 +130,22 @@ const Send = ({ setSending }) => {
     ) {
       setUncaughtError('Invalid form!')
     }
-    if (step === 1 && wallet.type !== LEDGER) {
+
+    try {
       setStep(2)
-    } else {
-      try {
-        const message = await submitMsg()
-        if (message) {
-          setStep(2)
-          dispatch(confirmMessage(toLowerCaseMsgFields(message)))
-          setValue({
-            fil: new FilecoinNumber('0', 'fil'),
-            fiat: new BigNumber('0')
-          })
-          setToAddress('')
-          setSending(false)
-          setAttemptingTx(false)
-        }
-      } catch (err) {
-        setUncaughtError(err.message)
+      const message = await submitMsg()
+      if (message) {
+        dispatch(confirmMessage(toLowerCaseMsgFields(message)))
+        setValue({
+          fil: new FilecoinNumber('0', 'fil'),
+          fiat: new BigNumber('0')
+        })
+        setSending(false)
+        setToAddress('')
+        setAttemptingTx(false)
       }
+    } catch (err) {
+      setUncaughtError(err.message)
     }
   }
 
@@ -169,7 +172,6 @@ const Send = ({ setSending }) => {
       ledger.replug,
       ledger.busy
     )
-
   return (
     <>
       <Box position='relative'>
@@ -191,7 +193,7 @@ const Send = ({ setSending }) => {
             toAddress={toAddress}
           />
         )}
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} autoComplete='off'>
           <SendCard
             display='flex'
             flexDirection='column'
@@ -253,6 +255,8 @@ const Send = ({ setSending }) => {
                 placeholder='t1...'
                 error={toAddressError}
                 setError={setToAddressError}
+                disabled={step === 2 && !hasError()}
+                valid={validateAddressString(toAddress)}
               />
               <Input.Funds
                 name='amount'
@@ -262,6 +266,8 @@ const Send = ({ setSending }) => {
                 error={valueError}
                 setError={setValueError}
                 gasLimit={gasLimit}
+                disabled={step === 2 && !hasError()}
+                valid={isValidAmount(value.fil, wallet.balance)}
               />
               <Box display='flex' flexDirection='column'>
                 <Input.Text

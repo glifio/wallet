@@ -90,7 +90,9 @@ const colors = {
   input: {
     background: {
       base: baseColors.blue.light,
-      active: baseColors.blue.mid
+      active: baseColors.blue.mid,
+      valid: baseColors.green.light,
+      invalid: baseColors.red.light
     },
     border: core.silver
   },
