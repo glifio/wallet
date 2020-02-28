@@ -12,7 +12,11 @@ export default styled.input`
   font-size: ${props => props.theme.fontSizes[2]};
   text-align: right;
   cursor: text;
-  background: ${props => props.theme.colors.input.background.base};
+  background: ${props => {
+    if (props.valid) return props.theme.colors.input.background.valid
+    if (props.error) return props.theme.colors.input.background.invalid
+    return props.theme.colors.input.background.base
+  }};
 
   &:hover {
     cursor: ${props => (props.disabled ? 'not-allowed' : 'text')};
@@ -23,7 +27,6 @@ export default styled.input`
     outline: 0;
     background: ${props => props.theme.colors.input.background.active};
   }
-}
 
   ${color}
   ${space}

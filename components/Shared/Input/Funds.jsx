@@ -26,7 +26,16 @@ const fromUSD = async amount =>
 
 const Funds = forwardRef(
   (
-    { onAmountChange, balance, error, setError, gasLimit, disabled, ...props },
+    {
+      onAmountChange,
+      balance,
+      error,
+      setError,
+      gasLimit,
+      disabled,
+      valid,
+      ...props
+    },
     ref
   ) => {
     const [fiatAmount, setFiatAmount] = useState('')
@@ -130,9 +139,9 @@ const Funds = forwardRef(
               onBlur={async () => {
                 const validBalance = checkBalance(filAmount)
                 if (validBalance) {
-                  const fiatAmount = await toUSD(filAmount)
-                  setFiatAmount(fiatAmount)
-                  onAmountChange({ fil: filAmount, fiat: fiatAmount })
+                  const fiatAmnt = await toUSD(filAmount)
+                  setFiatAmount(fiatAmnt)
+                  onAmountChange({ fil: filAmount, fiat: fiatAmnt })
                 }
               }}
               height='100%'
@@ -144,6 +153,7 @@ const Funds = forwardRef(
               type='number'
               step={new FilecoinNumber('1', 'attofil').toFil()}
               disabled={disabled}
+              valid={valid}
               {...props}
             />
           </Box>
@@ -160,11 +170,11 @@ const Funds = forwardRef(
                 setFilAmount('')
               }}
               onBlur={async () => {
-                const filAmount = await fromUSD(fiatAmount)
-                const validBalance = checkBalance(filAmount)
+                const fiatAmnt = await fromUSD(fiatAmount)
+                const validBalance = checkBalance(fiatAmnt)
                 if (validBalance) {
-                  setFilAmount(filAmount)
-                  onAmountChange({ fil: filAmount, fiat: fiatAmount })
+                  setFilAmount(fiatAmnt)
+                  onAmountChange({ fil: fiatAmnt, fiat: fiatAmount })
                 }
               }}
               height='100%'
@@ -176,6 +186,7 @@ const Funds = forwardRef(
               type='number'
               step={new FilecoinNumber('1', 'attofil').toFil()}
               min='0'
+              valid={valid}
               disabled={disabled}
             />
           </Box>
@@ -208,7 +219,8 @@ Funds.propTypes = {
    * Gas limit selected by user (to make sure we dont go over the user's balance)
    */
   gasLimit: string,
-  disabled: bool
+  disabled: bool,
+  valid: bool
 }
 
 Funds.defaultProps = {

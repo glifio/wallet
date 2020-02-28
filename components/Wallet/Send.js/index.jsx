@@ -41,6 +41,12 @@ const FloatingContainer = styled(Box)`
   max-width: 560px;
 `
 
+const isValidAmount = (value, balance) => {
+  const valueFieldFilledOut = value && value.isGreaterThan(0)
+  const enoughInTheBank = balance.isGreaterThan(value)
+  return valueFieldFilledOut && enoughInTheBank
+}
+
 const isValidForm = (
   toAddress,
   value,
@@ -52,9 +58,8 @@ const isValidForm = (
   const validToAddress = validateAddressString(toAddress)
   const errorFree =
     validToAddress && !toAddressError && !valueError && !otherError
-  const fieldsFilledOut = toAddress && value && value.isGreaterThan(0)
-  const enoughInTheBank = balance.isGreaterThan(value)
-  return !!(errorFree && fieldsFilledOut && enoughInTheBank)
+  const validAmount = isValidAmount(value, balance)
+  return !!(errorFree && validAmount)
 }
 
 const Send = ({ setSending }) => {
@@ -167,7 +172,6 @@ const Send = ({ setSending }) => {
       ledger.replug,
       ledger.busy
     )
-
   return (
     <>
       <Box position='relative'>
@@ -189,7 +193,7 @@ const Send = ({ setSending }) => {
             toAddress={toAddress}
           />
         )}
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} autoComplete='off'>
           <SendCard
             display='flex'
             flexDirection='column'
@@ -252,6 +256,7 @@ const Send = ({ setSending }) => {
                 error={toAddressError}
                 setError={setToAddressError}
                 disabled={step === 2 && !hasError()}
+                valid={validateAddressString(toAddress)}
               />
               <Input.Funds
                 name='amount'
@@ -262,6 +267,7 @@ const Send = ({ setSending }) => {
                 setError={setValueError}
                 gasLimit={gasLimit}
                 disabled={step === 2 && !hasError()}
+                valid={isValidAmount(value.fil, wallet.balance)}
               />
               <Box display='flex' flexDirection='column'>
                 <Input.Text

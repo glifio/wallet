@@ -1,10 +1,13 @@
 import React, { forwardRef } from 'react'
-import { func, string } from 'prop-types'
+import { func, string, bool } from 'prop-types'
 import { validateAddressString } from '@openworklabs/filecoin-address'
 import TextInput from './Text'
 
 const Address = forwardRef(
-  ({ onChange, value, placeholder, label, error, setError, ...props }, ref) => {
+  (
+    { onChange, value, placeholder, label, error, setError, valid, ...props },
+    ref
+  ) => {
     return (
       <TextInput
         onBlur={() => {
@@ -20,6 +23,7 @@ const Address = forwardRef(
         value={value}
         placeholder={placeholder}
         error={error}
+        valid={valid}
         {...props}
       />
     )
@@ -32,7 +36,8 @@ Address.propTypes = {
   setError: func,
   value: string,
   error: string,
-  placeholder: string
+  placeholder: string,
+  valid: bool
 }
 
 Address.defaultProps = {
