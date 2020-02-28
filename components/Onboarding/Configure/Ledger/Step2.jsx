@@ -129,7 +129,12 @@ export default () => {
               const wallet = await fetchDefaultWallet()
               if (wallet) {
                 dispatch(walletList([wallet]))
-                router.push(`/wallet`)
+                const params = new URLSearchParams(router.query)
+                const hasParams = Array.from(params).length > 0
+                const query = hasParams
+                  ? `/wallet?${params.toString()}`
+                  : '/wallet'
+                router.push(query)
               }
             } catch (err) {
               dispatch(error(err))
