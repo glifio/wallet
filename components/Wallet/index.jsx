@@ -20,6 +20,7 @@ const WalletView = ({ wallet }) => {
   const [uncaughtError, setUncaughtError] = useState(null)
   const [showLedgerError, setShowLedgerError] = useState(false)
   const [ledgerBusy, setLedgerBusy] = useState(false)
+
   const onShowOnLedger = async () => {
     setLedgerBusy(true)
     try {

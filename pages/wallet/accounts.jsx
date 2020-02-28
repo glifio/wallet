@@ -1,27 +1,27 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import Router from 'next/router'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 
-import WalletView from '../components/Wallet'
-import { WALLET_PROP_TYPE } from '../customPropTypes'
+import { WALLET_PROP_TYPE } from '../../customPropTypes'
 
-class Wallet extends Component {
+class AccountSelector extends Component {
+  static getInitialProps({ query }) {
+    return { query }
+  }
+
   componentDidMount() {
     if (!this.props.wallet.address) Router.replace('/onboard')
   }
 
   render() {
-    return (
-      <>
-        {this.props.wallet.address && <WalletView wallet={this.props.wallet} />}
-      </>
-    )
+    return <>{this.props.wallet.address && <div>Yo</div>}</>
   }
 }
 
-Wallet.propTypes = {
-  wallet: WALLET_PROP_TYPE
+AccountSelector.propTypes = {
+  wallet: PropTypes.oneOfType([WALLET_PROP_TYPE])
 }
 
 const noWallet = {
@@ -30,7 +30,7 @@ const noWallet = {
   path: []
 }
 
-Wallet.defaultProps = {
+AccountSelector.defaultProps = {
   wallet: noWallet
 }
 
@@ -40,4 +40,4 @@ const mapStateToProps = state => {
   return { wallet: state.wallets[state.selectedWalletIdx] }
 }
 
-export default connect(mapStateToProps)(Wallet)
+export default connect(mapStateToProps)(AccountSelector)
