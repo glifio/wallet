@@ -1,10 +1,11 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
+import { oneOfType } from 'prop-types'
 import Router from 'next/router'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 
 import { WalletView } from '../../components'
-import { WALLET_PROP_TYPE } from '../../customPropTypes'
+import { NO_WALLET_PROP_TYPE, WALLET_PROP_TYPE } from '../../customPropTypes'
 
 class Wallet extends Component {
   componentDidMount() {
@@ -21,7 +22,7 @@ class Wallet extends Component {
 }
 
 Wallet.propTypes = {
-  wallet: WALLET_PROP_TYPE
+  wallet: oneOfType([NO_WALLET_PROP_TYPE, WALLET_PROP_TYPE])
 }
 
 const noWallet = {

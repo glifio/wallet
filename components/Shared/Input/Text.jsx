@@ -23,6 +23,7 @@ const TextInput = ({
   label,
   error,
   disabled,
+  valid,
   ...props
 }) => (
   <>
@@ -51,6 +52,8 @@ const TextInput = ({
           value={value}
           placeholder={placeholder}
           disabled={disabled}
+          error={error}
+          valid={valid}
           {...props}
         />
       </Box>
@@ -65,7 +68,8 @@ TextInput.propTypes = {
   value: string,
   placeholder: string,
   disabled: bool,
-  error: string
+  error: string,
+  valid: bool
 }
 
 TextInput.defaultProps = {
