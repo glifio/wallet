@@ -41,10 +41,10 @@ const FloatingContainer = styled(Box)`
   max-width: 560px;
 `
 
-const isValidAmount = (value, balance) => {
+const isValidAmount = (value, balance, error) => {
   const valueFieldFilledOut = value && value.isGreaterThan(0)
   const enoughInTheBank = balance.isGreaterThan(value)
-  return valueFieldFilledOut && enoughInTheBank
+  return valueFieldFilledOut && enoughInTheBank && !error
 }
 
 const isValidForm = (
@@ -267,7 +267,7 @@ const Send = ({ setSending }) => {
                 setError={setValueError}
                 gasLimit={gasLimit}
                 disabled={step === 2 && !hasError()}
-                valid={isValidAmount(value.fil, wallet.balance)}
+                valid={isValidAmount(value.fil, wallet.balance, valueError)}
               />
               <Box display='flex' flexDirection='column'>
                 <Input.Text
