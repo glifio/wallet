@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from 'react'
+import React, { forwardRef, useRef, useState } from 'react'
 import { func, string, bool } from 'prop-types'
 import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 
@@ -41,44 +41,7 @@ const Funds = forwardRef(
     const [fiatAmount, setFiatAmount] = useState('')
     const [filAmount, setFilAmount] = useState('')
 
-    const onFiatChange = e => {
-      setError('')
-
-      // handle case where user deletes all values from text input
-      if (!e.target.value) setFiatAmount('')
-      // user entered non-numeric characters
-      else if (e.target.value && new BigNumber(e.target.value).isNaN()) {
-        setError('Must pass numbers only')
-      }
-      // when user is setting decimals
-      else if (new BigNumber(e.target.value).isEqualTo(0)) {
-        // dont use big numbers
-        setFiatAmount(e.target.value)
-      }
-      // handle number change
-      else setFiatAmount(new BigNumber(e.target.value))
-    }
-
-    const onFilChange = e => {
-      setError('')
-      // handle case where user deletes all values from text input
-      if (!e.target.value) setFilAmount('')
-      // user entered non-numeric characters
-      else if (
-        e.target.value &&
-        new FilecoinNumber(e.target.value, 'fil').isNaN()
-      ) {
-        setError('Must pass numbers only')
-      }
-      // when user is setting decimals
-      else if (new FilecoinNumber(e.target.value, 'fil').isEqualTo(0)) {
-        // dont use big numbers
-        setFilAmount(e.target.value)
-      }
-
-      // handle number change
-      else setFilAmount(new FilecoinNumber(e.target.value, 'fil'))
-    }
+    const timeout = useRef()
 
     const checkBalance = amount => {
       if (!amount || new BigNumber(amount).isEqualTo(0)) {
@@ -96,6 +59,84 @@ const Funds = forwardRef(
       }
 
       return true
+    }
+
+    const onTimerFil = async amount => {
+      const fiatAmnt = await toUSD(amount)
+      const validBalance = checkBalance(amount)
+      if (validBalance) {
+        setFiatAmount(fiatAmnt)
+        onAmountChange({ fil: amount, fiat: fiatAmnt })
+      }
+    }
+
+    const onTimerFiat = async amount => {
+      const fil = await fromUSD(amount)
+      const validBalance = checkBalance(amount)
+      if (validBalance) {
+        setFilAmount(fil)
+        onAmountChange({ fil, fiat: amount })
+      }
+    }
+
+    const onFiatChange = e => {
+      setError('')
+      clearTimeout(timeout.current)
+
+      // handle case where user deletes all values from text input
+      if (!e.target.value) setFiatAmount('')
+      // user entered non-numeric characters
+      else if (e.target.value && new BigNumber(e.target.value).isNaN()) {
+        setError('Must pass numbers only')
+      }
+      // when user is setting decimals
+      else if (new BigNumber(e.target.value).isEqualTo(0)) {
+        const { value } = e.target
+        // use strings > big numbers
+        setFiatAmount(value)
+        timeout.current = setTimeout(() => onTimerFiat(value), 500)
+      }
+      // handle number change
+      else {
+        const { value } = e.target
+        setFiatAmount(new BigNumber(value))
+        timeout.current = setTimeout(
+          () => onTimerFiat(new BigNumber(value)),
+          500
+        )
+      }
+    }
+
+    const onFilChange = e => {
+      setError('')
+      clearTimeout(timeout.current)
+
+      // handle case where user deletes all values from text input
+      if (!e.target.value) setFilAmount('')
+      // user entered non-numeric characters
+      else if (
+        e.target.value &&
+        new FilecoinNumber(e.target.value, 'fil').isNaN()
+      ) {
+        setError('Must pass numbers only')
+      }
+      // when user is setting decimals
+      else if (new FilecoinNumber(e.target.value, 'fil').isEqualTo(0)) {
+        const { value } = e.target
+        // use strings > big numbers
+        setFilAmount(value)
+        timeout.current = setTimeout(() => onTimerFil(value), 500)
+      }
+
+      // handle number change
+      else {
+        const { value } = e.target
+        setFilAmount(new FilecoinNumber(value, 'fil'))
+        timeout.current = setTimeout(
+          () => onTimerFil(new FilecoinNumber(value, 'fil')),
+          500
+        )
+      }
     }
 
     return (
@@ -137,6 +178,7 @@ const Funds = forwardRef(
                 setFiatAmount('')
               }}
               onBlur={async () => {
+                clearTimeout(timeout.current)
                 const validBalance = checkBalance(filAmount)
                 if (validBalance) {
                   const fiatAmnt = await toUSD(filAmount)
@@ -170,11 +212,12 @@ const Funds = forwardRef(
                 setFilAmount('')
               }}
               onBlur={async () => {
-                const fiatAmnt = await fromUSD(fiatAmount)
-                const validBalance = checkBalance(fiatAmnt)
+                clearTimeout(timeout.current)
+                const fil = await fromUSD(fiatAmount)
+                const validBalance = checkBalance(fil)
                 if (validBalance) {
-                  setFilAmount(fiatAmnt)
-                  onAmountChange({ fil: fiatAmnt, fiat: fiatAmount })
+                  setFilAmount(fil)
+                  onAmountChange({ fil, fiat: fiatAmount })
                 }
               }}
               height='100%'
