@@ -155,8 +155,7 @@ const AccountSelector = ({ wallet }) => {
           </Card>
         )}
       </Box>
-      <Box>
-        <Text>FROM YOUR SEED PHRASE</Text>
+      <Box flexGrow='2' justifyContent='center'>
         {walletsInRdx
           .filter(
             w =>

@@ -8,7 +8,7 @@ import truncate from '../../../utils/truncateAddress'
 
 const AccountCardAlt = ({ address, index, balance, selected, onClick }) => {
   return (
-    <Box my={2} display='flex' flexDirection='column' alignItems='flex-end'>
+    <Box my={2} display='flex' flexDirection='column' alignItems='center'>
       {selected && (
         <Text my={1} color='core.primary'>
           CURRENT

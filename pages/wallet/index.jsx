@@ -9,7 +9,12 @@ import { NO_WALLET_PROP_TYPE, WALLET_PROP_TYPE } from '../../customPropTypes'
 
 class Wallet extends Component {
   componentDidMount() {
-    if (!this.props.wallet.address) Router.replace('/onboard')
+    if (!this.props.wallet.address) {
+      const route = Router.query.network
+        ? `/onboard?network=${Router.query.network}`
+        : '/onboard'
+      Router.replace(route)
+    }
   }
 
   render() {

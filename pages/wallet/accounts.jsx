@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
 import Router from 'next/router'
+import PropTypes from 'prop-types'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 
 import { AccountSelector } from '../../components'
@@ -9,7 +9,13 @@ import { NO_WALLET_PROP_TYPE, WALLET_PROP_TYPE } from '../../customPropTypes'
 
 class Accounts extends Component {
   componentDidMount() {
-    if (!this.props.wallet.address) Router.replace('/onboard')
+    if (Router.query.network)
+      if (!this.props.wallet.address) {
+        const route = Router.query.network
+          ? `/onboard?network=${Router.query.network}`
+          : '/onboard'
+        Router.replace(route)
+      }
   }
 
   render() {
