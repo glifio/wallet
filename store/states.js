@@ -15,9 +15,6 @@ export const initialState = {
     links: {},
     paginating: false
   },
-  walletType: null,
-  walletConnected: false,
-  walletProvider: null,
   // one of 't', 'f', or 'c' (custom)
   network: 't'
 }
@@ -169,5 +166,5 @@ export const populateRedux = (state, { pendingMsgs }) => ({
 export const switchNetwork = (state, { network }) => ({
   ...state,
   network,
-  wallets: []
+  wallets: state.wallets.map(w => `${network}${w.slice(1)}`)
 })
