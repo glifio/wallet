@@ -1,4 +1,4 @@
-export const ACCOUNT_BATCH_SIZE = 4
+export const ACCOUNT_BATCH_SIZE = 3
 
 /* WALLET TYPES */
 export const LEDGER = 'LEDGER'
