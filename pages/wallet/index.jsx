@@ -1,14 +1,20 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
+import { oneOfType } from 'prop-types'
 import Router from 'next/router'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 
-import WalletView from '../components/Wallet'
-import { WALLET_PROP_TYPE } from '../customPropTypes'
+import { WalletView } from '../../components'
+import { NO_WALLET_PROP_TYPE, WALLET_PROP_TYPE } from '../../customPropTypes'
 
 class Wallet extends Component {
   componentDidMount() {
-    if (!this.props.wallet.address) Router.replace('/onboard')
+    if (!this.props.wallet.address) {
+      const route = Router.query.network
+        ? `/onboard?network=${Router.query.network}`
+        : '/onboard'
+      Router.replace(route)
+    }
   }
 
   render() {
@@ -21,7 +27,7 @@ class Wallet extends Component {
 }
 
 Wallet.propTypes = {
-  wallet: WALLET_PROP_TYPE
+  wallet: oneOfType([NO_WALLET_PROP_TYPE, WALLET_PROP_TYPE])
 }
 
 const noWallet = {

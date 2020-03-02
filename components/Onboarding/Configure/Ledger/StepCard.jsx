@@ -17,8 +17,8 @@ const StepCard = ({ step }) => {
         <Glyph acronym='Ld' />
         <Stepper
           textColor='text'
-          completedDotColor='green'
-          incompletedDotColor='silver'
+          completedDotColor='status.success.background'
+          incompletedDotColor='status.inactive'
           step={step}
           totalSteps={3}
           ml={4}

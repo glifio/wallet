@@ -62,13 +62,13 @@ export default () => {
         <Button
           title='Back'
           onClick={() => setWalletType(null)}
-          buttonStyle='secondary'
+          variant='secondary'
           mr={2}
         />
         <Button
           title='Yes, my Ledger device is connected.'
           onClick={setLedgerProvider}
-          buttonStyle='primary'
+          variant='primary'
           ml={2}
         />
       </Box>

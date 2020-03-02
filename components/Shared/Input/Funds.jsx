@@ -1,5 +1,5 @@
-import React, { forwardRef, useState } from 'react'
-import { func, string } from 'prop-types'
+import React, { forwardRef, useRef, useState } from 'react'
+import { func, string, bool } from 'prop-types'
 import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 
 import Box from '../Box'
@@ -25,51 +25,26 @@ const fromUSD = async amount =>
   new FilecoinNumber(new BigNumber(amount).dividedBy(5), 'fil')
 
 const Funds = forwardRef(
-  ({ onAmountChange, balance, error, setError, gasLimit, ...props }, ref) => {
+  (
+    {
+      onAmountChange,
+      balance,
+      error,
+      setError,
+      gasLimit,
+      disabled,
+      valid,
+      ...props
+    },
+    ref
+  ) => {
     const [fiatAmount, setFiatAmount] = useState('')
     const [filAmount, setFilAmount] = useState('')
 
-    const onFiatChange = e => {
-      setError('')
-
-      // handle case where user deletes all values from text input
-      if (!e.target.value) setFiatAmount('')
-      // user entered non-numeric characters
-      else if (e.target.value && new BigNumber(e.target.value).isNaN()) {
-        setError('Must pass numbers only')
-      }
-      // when user is setting decimals
-      else if (new BigNumber(e.target.value).isEqualTo(0)) {
-        // dont use big numbers
-        setFiatAmount(e.target.value)
-      }
-      // handle number change
-      else setFiatAmount(new BigNumber(e.target.value))
-    }
-
-    const onFilChange = e => {
-      setError('')
-      // handle case where user deletes all values from text input
-      if (!e.target.value) setFilAmount('')
-      // user entered non-numeric characters
-      else if (
-        e.target.value &&
-        new FilecoinNumber(e.target.value, 'fil').isNaN()
-      ) {
-        setError('Must pass numbers only')
-      }
-      // when user is setting decimals
-      else if (new FilecoinNumber(e.target.value, 'fil').isEqualTo(0)) {
-        // dont use big numbers
-        setFilAmount(e.target.value)
-      }
-
-      // handle number change
-      else setFilAmount(new FilecoinNumber(e.target.value, 'fil'))
-    }
+    const timeout = useRef()
 
     const checkBalance = amount => {
-      if (!amount) {
+      if (!amount || new BigNumber(amount).isEqualTo(0)) {
         setError('Please enter a valid amount.')
         return false
       }
@@ -84,6 +59,84 @@ const Funds = forwardRef(
       }
 
       return true
+    }
+
+    const onTimerFil = async amount => {
+      const fiatAmnt = await toUSD(amount)
+      const validBalance = checkBalance(amount)
+      if (validBalance) {
+        setFiatAmount(fiatAmnt)
+        onAmountChange({ fil: amount, fiat: fiatAmnt })
+      }
+    }
+
+    const onTimerFiat = async amount => {
+      const fil = await fromUSD(amount)
+      const validBalance = checkBalance(amount)
+      if (validBalance) {
+        setFilAmount(fil)
+        onAmountChange({ fil, fiat: amount })
+      }
+    }
+
+    const onFiatChange = e => {
+      setError('')
+      clearTimeout(timeout.current)
+
+      // handle case where user deletes all values from text input
+      if (!e.target.value) setFiatAmount('')
+      // user entered non-numeric characters
+      else if (e.target.value && new BigNumber(e.target.value).isNaN()) {
+        setError('Must pass numbers only')
+      }
+      // when user is setting decimals
+      else if (new BigNumber(e.target.value).isEqualTo(0)) {
+        const { value } = e.target
+        // use strings > big numbers
+        setFiatAmount(value)
+        timeout.current = setTimeout(() => onTimerFiat(value), 500)
+      }
+      // handle number change
+      else {
+        const { value } = e.target
+        setFiatAmount(new BigNumber(value))
+        timeout.current = setTimeout(
+          () => onTimerFiat(new BigNumber(value)),
+          500
+        )
+      }
+    }
+
+    const onFilChange = e => {
+      setError('')
+      clearTimeout(timeout.current)
+
+      // handle case where user deletes all values from text input
+      if (!e.target.value) setFilAmount('')
+      // user entered non-numeric characters
+      else if (
+        e.target.value &&
+        new FilecoinNumber(e.target.value, 'fil').isNaN()
+      ) {
+        setError('Must pass numbers only')
+      }
+      // when user is setting decimals
+      else if (new FilecoinNumber(e.target.value, 'fil').isEqualTo(0)) {
+        const { value } = e.target
+        // use strings > big numbers
+        setFilAmount(value)
+        timeout.current = setTimeout(() => onTimerFil(value), 500)
+      }
+
+      // handle number change
+      else {
+        const { value } = e.target
+        setFilAmount(new FilecoinNumber(value, 'fil'))
+        timeout.current = setTimeout(
+          () => onTimerFil(new FilecoinNumber(value, 'fil')),
+          500
+        )
+      }
     }
 
     return (
@@ -125,11 +178,12 @@ const Funds = forwardRef(
                 setFiatAmount('')
               }}
               onBlur={async () => {
+                clearTimeout(timeout.current)
                 const validBalance = checkBalance(filAmount)
                 if (validBalance) {
-                  const fiatAmount = await toUSD(filAmount)
-                  setFiatAmount(fiatAmount)
-                  onAmountChange({ fil: filAmount, fiat: fiatAmount })
+                  const fiatAmnt = await toUSD(filAmount)
+                  setFiatAmount(fiatAmnt)
+                  onAmountChange({ fil: filAmount, fiat: fiatAmnt })
                 }
               }}
               height='100%'
@@ -140,6 +194,9 @@ const Funds = forwardRef(
               placeholder='0 FIL'
               type='number'
               step={new FilecoinNumber('1', 'attofil').toFil()}
+              disabled={disabled}
+              valid={valid}
+              {...props}
             />
           </Box>
           <Box
@@ -155,11 +212,12 @@ const Funds = forwardRef(
                 setFilAmount('')
               }}
               onBlur={async () => {
-                const filAmount = await fromUSD(fiatAmount)
-                const validBalance = checkBalance(filAmount)
+                clearTimeout(timeout.current)
+                const fil = await fromUSD(fiatAmount)
+                const validBalance = checkBalance(fil)
                 if (validBalance) {
-                  setFilAmount(filAmount)
-                  onAmountChange({ fil: filAmount, fiat: fiatAmount })
+                  setFilAmount(fil)
+                  onAmountChange({ fil, fiat: fiatAmount })
                 }
               }}
               height='100%'
@@ -171,6 +229,8 @@ const Funds = forwardRef(
               type='number'
               step={new FilecoinNumber('1', 'attofil').toFil()}
               min='0'
+              valid={valid}
+              disabled={disabled}
             />
           </Box>
         </Box>
@@ -201,12 +261,15 @@ Funds.propTypes = {
   /**
    * Gas limit selected by user (to make sure we dont go over the user's balance)
    */
-  gasLimit: string
+  gasLimit: string,
+  disabled: bool,
+  valid: bool
 }
 
 Funds.defaultProps = {
   error: '',
-  gasLimit: '1000'
+  gasLimit: '1000',
+  disabled: false
 }
 
 export default Funds

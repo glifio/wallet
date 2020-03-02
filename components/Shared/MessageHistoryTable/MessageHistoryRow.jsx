@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { bool, string } from 'prop-types'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import Box from '../Box'
@@ -55,7 +56,7 @@ const ActionText = ({ status, sentMsg }) => {
         Received
       </Text>
     )
-  if (status === 'pending' && sentMsg) return <Text my={0}>Sending</Text>
+  if (status === 'pending' && sentMsg) return <Text my={0}>Pending</Text>
   // an unconfirmed received  sg
   if (status === 'pending')
     return (
@@ -126,12 +127,12 @@ const MessageHistoryRow = ({
           >
             <MenuItem display='flex'>
               <Text color='core.nearblack' m={0}>
-                {value}
+                {new FilecoinNumber(value, 'attofil').toFil()}
               </Text>
             </MenuItem>
             <MenuItem display='flex'>
               <Text color='core.silver' m={0} mb={0}>
-                {value}
+                {new FilecoinNumber(value, 'attofil').toFil()}
               </Text>
             </MenuItem>
           </Menu>

@@ -8,8 +8,6 @@ import { Label } from '../Typography'
 
 const TextInputWrapper = styled.div`
   display: inline-block;
-  /* border: ${props => props.theme.borders[1]}; */
-  /* border-color: ${props => props.theme.colors.core.darkgray}; */
   border-radius: ${props => props.theme.radii[1]};
   ${color} 
   ${space} 
@@ -25,6 +23,7 @@ const TextInput = ({
   label,
   error,
   disabled,
+  valid,
   ...props
 }) => (
   <>
@@ -39,7 +38,6 @@ const TextInput = ({
         <Box display='inline-block' px={3} minWidth='120px' textAlign='center'>
           <Label>{label}</Label>
         </Box>
-        {/* how do we chunk the address in the input component? */}
         <BaseInput
           display='inline-block'
           py={3}
@@ -54,6 +52,8 @@ const TextInput = ({
           value={value}
           placeholder={placeholder}
           disabled={disabled}
+          error={error}
+          valid={valid}
           {...props}
         />
       </Box>
@@ -68,7 +68,8 @@ TextInput.propTypes = {
   value: string,
   placeholder: string,
   disabled: bool,
-  error: string
+  error: string,
+  valid: bool
 }
 
 TextInput.defaultProps = {

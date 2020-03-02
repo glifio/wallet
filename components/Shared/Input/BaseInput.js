@@ -6,22 +6,20 @@ export default styled.input`
   flex-grow: 1;
   padding-left: ${props => props.theme.space[2]}px;
   padding-right: ${props => props.theme.space[2]}px;
-  border: ${props => props.theme.borders[1]}
-  border-radius: ${props => props.theme.radii[1]}
+  border: ${props => props.theme.borders[1]};
+  border-radius: ${props => props.theme.radii[1]};
   transition: 0.2s ease-in-out;
   font-size: ${props => props.theme.fontSizes[2]};
   text-align: right;
   cursor: text;
-  background: ${props =>
-    props.disabled
-      ? props.theme.colors.status.inactive
-      : props.theme.colors.input.background.base};
+  background: ${props => {
+    if (props.valid) return props.theme.colors.input.background.valid
+    if (props.error) return props.theme.colors.input.background.invalid
+    return props.theme.colors.input.background.base
+  }};
 
   &:hover {
-    background: ${props =>
-      props.disabled
-        ? props.theme.colors.status.inactive
-        : props.theme.colors.input.background.active};
+    cursor: ${props => (props.disabled ? 'not-allowed' : 'text')};
   }
 
   &:focus {

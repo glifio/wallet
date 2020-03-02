@@ -17,7 +17,8 @@ const baseColors = {
   green: {
     primary: '#1AD08F',
     light: '#D2F5ED',
-    dark: '#007056'
+    dark: '#007056',
+    darker: '#08442F'
   },
   red: {
     light: '#FC6D6F',
@@ -52,7 +53,7 @@ const colors = {
     primary: {
       background: baseColors.green.primary,
       borderColor: baseColors.green.primary,
-      color: baseColors.mono.nearblack
+      color: baseColors.green.darker
     },
     secondary: {
       background: baseColors.mono.transparent,
@@ -63,11 +64,6 @@ const colors = {
       background: baseColors.mono.transparent,
       borderColor: baseColors.purple.light,
       color: baseColors.purple.light
-    },
-    'transparent-dark': {
-      bg: 'black',
-      borderColor: 'black',
-      color: 'black'
     }
   },
   background: {
@@ -94,7 +90,9 @@ const colors = {
   input: {
     background: {
       base: baseColors.blue.light,
-      active: baseColors.blue.mid
+      active: baseColors.blue.mid,
+      valid: baseColors.green.light,
+      invalid: baseColors.red.light
     },
     border: core.silver
   },
@@ -115,9 +113,29 @@ const colors = {
   }
 }
 
+const buttons = {
+  colors,
+  primary: {
+    color: colors.buttons.primary.color,
+    borderColor: colors.buttons.primary.color,
+    backgroundColor: colors.buttons.tertiary.background
+  },
+  secondary: {
+    background: colors.buttons.secondary.background,
+    borderColor: colors.buttons.secondary.color,
+    color: colors.buttons.secondary.color
+  },
+  tertiary: {
+    background: baseColors.mono.transparent,
+    borderColor: baseColors.purple.light,
+    color: baseColors.purple.light
+  }
+}
+
 // theme.js
 const theme = {
   colors,
+  buttons,
   fontSizes: ['0rem', '1rem', '1.125rem', '1.25rem', '1.5rem', '2rem', '3rem'],
   fontWeights: [0, 400, 600, 900],
   letterSpacings: [0, 1, 2, 4, 8],
@@ -170,10 +188,8 @@ const theme = {
   space: [0, 4, 8, 16, 24, 32, 48, 64, 128, 256],
   sizes: [0, 4, 8, 16, 24, 32, 48, 64, 80, 120, 240, 300, 480],
   radii: ['0', '1px', '4px', '8px', '16px', '32px'],
-  // width: [0, 16, 32, 48, 64, 128, 256],
   minWidths: [0, 16, 32, 64, 128, 256],
   maxWidths: [0, 16, 32, 64, 128, 256, 512, 768, 1024, 1536],
-  // heights: [0, 16, 32, 48, 64, 128, 256],
   minHeights: [0, 16, 32, 64, 128, 256],
   maxHeights: [0, 16, 32, 64, 128, 256],
   borders: [0, `1px solid`, `4px solid`],
