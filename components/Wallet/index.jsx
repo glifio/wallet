@@ -86,12 +86,13 @@ const WalletView = ({ wallet }) => {
     flex-grow: 1;
   `
   // Content is a flexible container with no explicit width (hence basis=0) but which grows to consume all available space. It then wraps once its min-width is reached.
+
   const Content = styled.div`
-    display: grid;
-    grid-template-columns: 1fr minmax(320px, 960px) 1fr;
+    display: flex;
     flex-basis: 0;
     flex-grow: 999;
-    min-width: calc(50% - 1rem);
+    justify-content: center;
+    min-width: calc(55% - 1rem);
   `
 
   return (
