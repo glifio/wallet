@@ -21,8 +21,10 @@ const formatFiatValue = number => {
 }
 
 const toUSD = async amount => new FilecoinNumber(amount, 'fil').multipliedBy(5)
-const fromUSD = async amount =>
-  new FilecoinNumber(new BigNumber(amount).dividedBy(5), 'fil')
+const fromUSD = async amount => {
+  if (!amount) return new FilecoinNumber('0', 'fil')
+  return new FilecoinNumber(new BigNumber(amount).dividedBy(5), 'fil')
+}
 
 const Funds = forwardRef(
   (
@@ -67,6 +69,11 @@ const Funds = forwardRef(
       if (validBalance) {
         setFiatAmount(fiatAmnt)
         onAmountChange({ fil: amount, fiat: fiatAmnt })
+      } else {
+        onAmountChange({
+          fil: new FilecoinNumber('0', 'fil'),
+          fiat: new BigNumber('0')
+        })
       }
     }
 
@@ -76,6 +83,11 @@ const Funds = forwardRef(
       if (validBalance) {
         setFilAmount(fil)
         onAmountChange({ fil, fiat: amount })
+      } else {
+        onAmountChange({
+          fil: new FilecoinNumber('0', 'fil'),
+          fiat: new BigNumber('0')
+        })
       }
     }
 
@@ -184,6 +196,11 @@ const Funds = forwardRef(
                   const fiatAmnt = await toUSD(filAmount)
                   setFiatAmount(fiatAmnt)
                   onAmountChange({ fil: filAmount, fiat: fiatAmnt })
+                } else {
+                  onAmountChange({
+                    fil: new FilecoinNumber('0', 'fil'),
+                    fiat: new BigNumber('0')
+                  })
                 }
               }}
               height='100%'
@@ -218,6 +235,11 @@ const Funds = forwardRef(
                 if (validBalance) {
                   setFilAmount(fil)
                   onAmountChange({ fil, fiat: fiatAmount })
+                } else {
+                  onAmountChange({
+                    fil: new FilecoinNumber('0', 'fil'),
+                    fiat: new BigNumber('0')
+                  })
                 }
               }}
               height='100%'
