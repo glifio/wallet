@@ -54,6 +54,7 @@ const WalletView = ({ wallet }) => {
       /* ↓ applies to both elements */
       margin: 0.5rem;
     }
+  }
   `
   // Creates an implicit gutter between Sidebar and Content
   const Gutter = styled.div``
@@ -64,9 +65,11 @@ const WalletView = ({ wallet }) => {
   `
   // Content is a flexible container with no explicit width (hence basis=0) but which grows to consume all available space. It then wraps once its min-width is reached.
   const Content = styled.div`
+    display: grid;
+    grid-template-columns: 1fr minmax(320px, 960px) 1fr;
     flex-basis: 0;
     flex-grow: 999;
-    min-width: calc(60% - 1rem);
+    min-width: calc(50% - 1rem);
   `
 
   return (
@@ -114,13 +117,12 @@ const WalletView = ({ wallet }) => {
               onSend={() => setSending(true)}
             />
           </Sidebar>
-          <Content
-            display='flex'
-            flexWrap='wrap'
-            flexGrow='1'
-            justifyContent='center'
-          >
-            {sending ? <Send setSending={setSending} /> : <MessageHistory />}
+          <Content>
+            {sending ? (
+              <Send gridColumn='2' setSending={setSending} />
+            ) : (
+              <MessageHistory gridColumn='2' />
+            )}
           </Content>
         </Gutter>
       </Wrapper>
