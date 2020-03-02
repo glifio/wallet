@@ -25,7 +25,7 @@ const LoaderGlyphChild = styled.span`
   animation-iteration-count: infinite;
 `
 
-export const LoaderGlyph = () => (
+export default () => (
   <LoaderGlyphParent>
     <LoaderGlyphChild />
   </LoaderGlyphParent>

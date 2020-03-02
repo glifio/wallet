@@ -6,6 +6,9 @@ import { space, color, layout, flexbox, border, position } from 'styled-system'
 import theme from '../theme'
 
 const IconBase = styled.svg`
+  &:hover {
+    cursor: pointer;
+  }
   ${position}
   ${space}
   ${color}
