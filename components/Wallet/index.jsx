@@ -118,11 +118,7 @@ const WalletView = ({ wallet }) => {
             />
           </Sidebar>
           <Content>
-            {sending ? (
-              <Send gridColumn='2' setSending={setSending} />
-            ) : (
-              <MessageHistory gridColumn='2' />
-            )}
+            {sending ? <Send setSending={setSending} /> : <MessageHistory />}
           </Content>
         </Gutter>
       </Wrapper>
