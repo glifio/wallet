@@ -180,7 +180,10 @@ const Send = ({ setSending }) => {
     flex-grow: 999;
   `
 
-  const SendForm = styled.form``
+  const SendForm = styled.form`
+    width: 100%;
+    max-width: 580px;
+  `
 
   return (
     <>
