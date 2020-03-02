@@ -25,7 +25,11 @@ export default styled.input`
   &:focus {
     box-shadow: 0;
     outline: 0;
-    background: ${props => props.theme.colors.input.background.active};
+    background: ${props => {
+      if (props.valid) return props.theme.colors.input.background.valid
+      if (props.error) return props.theme.colors.input.background.invalid
+      return props.theme.colors.input.background.active
+    }};
   }
 
   ${color}
