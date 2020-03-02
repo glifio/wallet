@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Box, Button, Card, Text, Title } from '../../../Shared'
 
@@ -47,6 +47,8 @@ Step1Helper.propTypes = {
 export default () => {
   const { ledger, setLedgerProvider, setWalletType } = useWalletProvider()
   const [loading, setLoading] = useState(false)
+
+  useEffect(() => () => setLoading(false), [setLoading])
   return (
     <>
       <Box
@@ -71,7 +73,6 @@ export default () => {
           onClick={async () => {
             setLoading(true)
             await setLedgerProvider()
-            setLoading(false)
           }}
           variant='primary'
           ml={2}

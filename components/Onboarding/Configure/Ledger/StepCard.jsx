@@ -39,7 +39,7 @@ StepCard.propTypes = {
   step: PropTypes.number.isRequired
 }
 
-StepCard.propTypes = {
+StepCard.defaultProps = {
   loading: false
 }
 

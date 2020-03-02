@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'
@@ -97,6 +97,9 @@ export default () => {
   const generalError = useSelector(state => state.error)
   const router = useRouter()
   const [loading, setLoading] = useState(false)
+  // cleanup loading effects
+  useEffect(() => () => loading && setLoading(false), [loading, setLoading])
+
   return (
     <>
       <Box
@@ -141,7 +144,6 @@ export default () => {
             } catch (err) {
               dispatch(error(err))
             }
-            setLoading(false)
           }}
           disabled={loading}
           variant='primary'
