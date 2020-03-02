@@ -315,8 +315,8 @@ const Send = ({ setSending }) => {
             display='flex'
             flexDirection='row'
             justifyContent='space-between'
-            width='100%'
-            maxWidth='640px'
+            width='calc(58% - 1rem)'
+            maxWidth='580px'
             boxShadow={1}
             backgroundColor='core.white'
             border={1}
