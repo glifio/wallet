@@ -11,7 +11,7 @@ import {
   Label,
   AccountError,
   Loading,
-  IconClose
+  ButtonClose
 } from '../Shared'
 import AccountCardAlt from '../Shared/AccountCardAlt'
 import { WALLET_PROP_TYPE } from '../../customPropTypes'
@@ -32,6 +32,12 @@ const FloatingContainer = styled(Box)`
   bottom: ${props => props.theme.sizes[3]}px;
   width: 100%;
   max-width: 560px;
+`
+
+const Close = styled(ButtonClose)`
+  position: absolute;
+  top: ${props => props.theme.sizes[3]}px;
+  right: ${props => props.theme.sizes[3]}px;
 `
 
 const AccountSelector = ({ wallet }) => {
@@ -142,7 +148,7 @@ const AccountSelector = ({ wallet }) => {
 
   return (
     <>
-      <IconClose position='absolute' top={3} right={3} onClick={onClose} />
+      <Close onClick={onClose} />
       {loadingAccounts ? (
         <Box
           width='100%'

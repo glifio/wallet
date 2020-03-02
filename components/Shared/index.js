@@ -18,6 +18,7 @@ export { default as MessageHistoryTable } from './MessageHistoryTable'
 export { default as Loading } from './LoaderGlyph'
 export * from './Menu'
 export * from './Icons'
+export * from './IconButtons'
 
 // typography
 export * from './Typography'
