@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
+import styled from 'styled-components'
 import { AccountCard, AccountError, BalanceCard, Box } from '../Shared'
 
 import { WALLET_PROP_TYPE } from '../../customPropTypes'
@@ -55,70 +56,93 @@ const WalletView = ({ wallet }) => {
     }
     setLedgerBusy(false)
   }
+
+  // Sidebar layout w/ implicit sizing & wrap, courtesy of https://every-layout.dev/layouts/sidebar/
+
+  // Wrapper wraps the content and applies a negative margin onto "Gutter" - thus acting as a defacto gutter between the Sidebar and Content sections.
+  const Wrapper = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 999;
+
+    > * {
+      display: flex;
+      flex-wrap: wrap;
+      flex-grow: 999;
+      margin: -0.5rem;
+    }
+
+    > * > * {
+      /* ↓ applies to both elements */
+      margin: 0.5rem;
+    }
+  }
+  `
+  // Creates an implicit gutter between Sidebar and Content
+  const Gutter = styled.div``
+
+  // Sidebar grows to adopt the width of its children
+  const Sidebar = styled.div`
+    flex-grow: 1;
+  `
+  // Content is a flexible container with no explicit width (hence basis=0) but which grows to consume all available space. It then wraps once its min-width is reached.
+  const Content = styled.div`
+    display: grid;
+    grid-template-columns: 1fr minmax(320px, 960px) 1fr;
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: calc(50% - 1rem);
+  `
+
   return (
     <>
       <MsgConfirmer />
-      <Box
-        display='flex'
-        flexDirection='row'
-        flexWrap='wrap'
-        justifyContent='space-between'
-      >
-        <Box
-          display='flex'
-          flexDirection='column'
-          flexWrap='wrap'
-          ml={2}
-          mt={1}
-        >
-          {hasLedgerError(
-            ledger.connectedFailure,
-            ledger.locked,
-            ledger.filecoinAppNotOpen,
-            ledger.replug,
-            ledger.busy,
-            uncaughtError
-          ) && showLedgerError ? (
-            <AccountError
-              onTryAgain={onShowOnLedger}
-              errorMsg={reportLedgerConfigError(
-                ledger.connectedFailure,
-                ledger.locked,
-                ledger.filecoinAppNotOpen,
-                ledger.replug,
-                ledger.busy,
-                uncaughtError
-              )}
+      <Wrapper>
+        <Gutter>
+          <Sidebar>
+            {hasLedgerError(
+              ledger.connectedFailure,
+              ledger.locked,
+              ledger.filecoinAppNotOpen,
+              ledger.replug,
+              ledger.busy,
+              uncaughtError
+            ) && showLedgerError ? (
+              <AccountError
+                onTryAgain={onShowOnLedger}
+                errorMsg={reportLedgerConfigError(
+                  ledger.connectedFailure,
+                  ledger.locked,
+                  ledger.filecoinAppNotOpen,
+                  ledger.replug,
+                  ledger.busy,
+                  uncaughtError
+                )}
+              />
+            ) : (
+              <AccountCard
+                onAccountSwitch={() => {}}
+                color='purple'
+                alias='Prime'
+                address={wallet.address}
+                isLedgerWallet={walletType === LEDGER}
+                onShowOnLedger={onShowOnLedger}
+                ledgerBusy={ledgerBusy}
+                mb={2}
+              />
+            )}
+            <BalanceCard
+              balance={wallet.balance}
+              disableButtons={sending}
+              onReceive={() => {}}
+              onSend={() => setSending(true)}
             />
-          ) : (
-            <AccountCard
-              onAccountSwitch={onAccountSwitch}
-              color='purple'
-              alias='Prime'
-              address={wallet.address}
-              isLedgerWallet={walletType === LEDGER}
-              onShowOnLedger={onShowOnLedger}
-              ledgerBusy={ledgerBusy}
-              mb={2}
-            />
-          )}
-
-          <BalanceCard
-            balance={wallet.balance}
-            disableButtons={sending}
-            onReceive={() => {}}
-            onSend={() => setSending(true)}
-          />
-        </Box>
-        <Box
-          display='flex'
-          flexWrap='wrap'
-          flexGrow='1'
-          justifyContent='center'
-        >
-          {sending ? <Send setSending={setSending} /> : <MessageHistory />}
-        </Box>
-      </Box>
+          </Sidebar>
+          <Content>
+            {sending ? <Send setSending={setSending} /> : <MessageHistory />}
+          </Content>
+        </Gutter>
+      </Wrapper>
     </>
   )
 }

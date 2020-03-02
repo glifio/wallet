@@ -12,7 +12,7 @@ import EmptyHistory from './EmptyHistory'
 const MessageHistoryTable = forwardRef(
   ({ address, messages, ...props }, ref) => {
     return (
-      <Box ref={ref} {...props}>
+      <Box ref={ref} {...props} pt={3} gridColumn='2'>
         <Box display='flex' alignItems='center' justifyContent='flex-start'>
           <Glyph mr={3} color='core.primary' acronym='Tx' />
           <Text color='core.primary'>Transaction History</Text>

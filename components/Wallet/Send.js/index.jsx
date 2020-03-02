@@ -28,17 +28,15 @@ import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfi
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
 
-const SendCard = styled(Card)`
+const SendCard = styled(Box)`
   background-color: ${props => props.theme.colors.background.screen};
 `
 
 const FloatingContainer = styled(Box)`
   position: fixed;
   display: flex;
-  flex-grow: 1;
+  flex-grow: 9999;
   bottom: ${props => props.theme.sizes[3]}px;
-  width: 100%;
-  max-width: 560px;
 `
 
 const isValidAmount = (value, balance, error) => {
@@ -172,9 +170,21 @@ const Send = ({ setSending }) => {
       ledger.replug,
       ledger.busy
     )
+
+  const SendContainer = styled.div`
+    display: flex;
+    grid-column: 1 / -1;
+    justify-content: center;
+    position: relative;
+    flex-basis: 0;
+    flex-grow: 999;
+  `
+
+  const SendForm = styled.form``
+
   return (
     <>
-      <Box position='relative'>
+      <SendContainer>
         {hasError() && (
           <ErrorCard
             error={ledgerError() || uncaughtError}
@@ -193,15 +203,16 @@ const Send = ({ setSending }) => {
             toAddress={toAddress}
           />
         )}
-        <form onSubmit={onSubmit} autoComplete='off'>
+        <SendForm gridColumn='2' onSubmit={onSubmit}>
           <SendCard
             display='flex'
             flexDirection='column'
             justifyContent='space-between'
             border='none'
-            width='auto'
-            my={2}
-            mx={4}
+            p={3}
+            borderRadius={2}
+            borderWidth={1}
+            flexGrow='1'
           >
             <Box
               display='flex'
@@ -209,21 +220,13 @@ const Send = ({ setSending }) => {
               justifyContent='space-between'
             >
               <Box display='flex' alignItems='center'>
-                <Box
-                  display='flex'
-                  flexDirection='column'
-                  justifyContent='center'
-                  width={6}
-                  height={6}
+                <Glyph
+                  acronym='To'
+                  color='background.screen'
+                  borderColor='core.primary'
                   backgroundColor='core.primary'
-                >
-                  <Glyph
-                    acronym='To'
-                    color='background.screen'
-                    borderColor='core.primary'
-                    backgroundColor='core.primary'
-                  />
-                </Box>
+                />
+
                 <Text color='core.primary' ml={2}>
                   Sending Filecoin
                 </Text>
@@ -309,12 +312,14 @@ const Send = ({ setSending }) => {
             display='flex'
             flexDirection='row'
             justifyContent='space-between'
+            width='100%'
+            maxWidth='640px'
             boxShadow={1}
             backgroundColor='core.white'
             border={1}
             borderColor='core.silver'
             borderRadius={2}
-            p={3}
+            p={1}
           >
             {step === 2 && wallet.type === LEDGER ? (
               <Text>
@@ -354,8 +359,8 @@ const Send = ({ setSending }) => {
               </>
             )}
           </FloatingContainer>
-        </form>
-      </Box>
+        </SendForm>
+      </SendContainer>
     </>
   )
 }

@@ -21,12 +21,11 @@ export default () => {
 
   return (
     <MessageHistoryTable
+      gridColumn='2'
       messages={[...pending, ...confirmed]}
       address={wallet.address}
       flexGrow='2'
       border='none'
-      my={3}
-      mx={4}
     />
   )
 }
