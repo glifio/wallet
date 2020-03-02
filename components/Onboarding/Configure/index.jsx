@@ -1,4 +1,5 @@
 import React from 'react'
+import dynamic from 'next/dynamic'
 import PropTypes from 'prop-types'
 
 import {
@@ -7,7 +8,9 @@ import {
   IMPORT_SINGLE_KEY,
   CREATE_MNEMONIC
 } from '../../../constants'
-import Ledger from './Ledger'
+
+const Ledger = dynamic(() => import('./Ledger'))
+const ImportSeed = dynamic(() => import('./ImportSeed'))
 
 const Configure = ({ walletType }) => {
   switch (walletType) {
@@ -18,7 +21,7 @@ const Configure = ({ walletType }) => {
     case IMPORT_SINGLE_KEY:
       return <div>Import pk</div>
     case IMPORT_MNEMONIC:
-      return <div>Import seed</div>
+      return <ImportSeed />
     default:
       return <div>Error, how the hell did you get here?</div>
   }
