@@ -3,7 +3,7 @@ import { func, string, bool } from 'prop-types'
 import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 
 import Box from '../Box'
-import NumberInput from './Number'
+import { RawNumberInput } from './Number'
 import { Text, Label } from '../Typography'
 import { IconApproximatelyEquals } from '../Icons/index'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
@@ -186,7 +186,7 @@ const Funds = forwardRef(
               size={7}
             />
 
-            <NumberInput
+            <RawNumberInput
               onFocus={() => {
                 setError('')
                 setFiatAmount('')
@@ -206,8 +206,6 @@ const Funds = forwardRef(
                 }
               }}
               height='100%'
-              width='100%'
-              border='0'
               onChange={onFilChange}
               value={formatFilValue(filAmount)}
               placeholder='0 FIL'
@@ -221,11 +219,10 @@ const Funds = forwardRef(
           <Box
             display='block'
             height='80px'
-            width='100%'
             borderTop={1}
             borderColor='input.border'
           >
-            <NumberInput
+            <RawNumberInput
               onFocus={() => {
                 setError('')
                 setFilAmount('')
@@ -245,8 +242,6 @@ const Funds = forwardRef(
                 }
               }}
               height='100%'
-              width='100%'
-              border='0'
               onChange={onFiatChange}
               value={formatFiatValue(fiatAmount)}
               placeholder='0 USD'

@@ -1,8 +1,13 @@
 import styled from 'styled-components'
 import { space, color, layout, border, flexbox } from 'styled-system'
 
-export default styled.input`
-  display: flex;
+export default styled.input.attrs(props => ({
+  display: 'inline-block',
+  height: props.height || 7,
+  width: props.width || '100%',
+  border: 0,
+  borderLeft: 1
+}))`
   flex-grow: 1;
   padding-left: ${props => props.theme.space[2]}px;
   padding-right: ${props => props.theme.space[2]}px;
