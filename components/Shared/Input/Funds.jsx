@@ -5,7 +5,6 @@ import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 import Box from '../Box'
 import { RawNumberInput } from './Number'
 import { Text, Label } from '../Typography'
-import { IconApproximatelyEquals } from '../Icons/index'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 
 const formatFilValue = number => {
@@ -171,7 +170,6 @@ const Funds = forwardRef(
           width='100%'
           maxWidth={11}
           textAlign='center'
-          borderRight={1}
           borderColor='input.border'
           bg={error && 'input.background.invalid'}
         >
@@ -179,12 +177,24 @@ const Funds = forwardRef(
         </Box>
         <Box display='inline-block' width='100%'>
           <Box position='relative' display='block' height='80px' width='100%'>
-            <IconApproximatelyEquals
+            <Box
               position='absolute'
               left='-24px'
-              bottom='-42px'
-              size={7}
-            />
+              bottom='-24px'
+              display='flex'
+              alignItems='center'
+              justifyContent='center'
+              backgroundColor='core.white'
+              border={1}
+              borderColor='input.border'
+              borderRadius={5}
+              size={6}
+              fontSize={5}
+              fontFamily='sansSerif'
+              paddingBottom='4px'
+            >
+              {'\u003D'}
+            </Box>
 
             <RawNumberInput
               onFocus={() => {
