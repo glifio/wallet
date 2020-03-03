@@ -182,7 +182,7 @@ const Send = ({ setSending }) => {
 
   const SendForm = styled.form`
     width: 100%;
-    max-width: 580px;
+    max-width: ${props => props.theme.sizes[13]}px;
   `
 
   return (
