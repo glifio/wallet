@@ -24,9 +24,6 @@ const TextInput = ({
         <BaseInput
           py={3}
           px={3}
-          borderColor='input.border'
-          borderTopRightRadius={1}
-          borderBottomRightRadius={1}
           onChange={onChange}
           value={value}
           placeholder={placeholder}
