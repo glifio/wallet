@@ -1,20 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
-import { space, color, layout, border, flexbox } from 'styled-system'
 import { func, string, bool } from 'prop-types'
 import BaseInput from './BaseInput'
 import Box from '../Box'
 import { Label } from '../Typography'
-
-const TextInputWrapper = styled.div`
-  display: inline-block;
-  border-radius: ${props => props.theme.radii[1]};
-  ${color} 
-  ${space} 
-  ${layout}
-  ${border}
-  ${flexbox};
-`
+import InputWrapper from './InputWrapper'
 
 const TextInput = ({
   onChange,
@@ -27,7 +16,7 @@ const TextInput = ({
   ...props
 }) => (
   <>
-    <TextInputWrapper
+    <InputWrapper
       width='100%'
       mt={3}
       border={1}
@@ -57,7 +46,7 @@ const TextInput = ({
           {...props}
         />
       </Box>
-    </TextInputWrapper>
+    </InputWrapper>
     {error && <Label color='error.textLight'>{error}</Label>}
   </>
 )
