@@ -122,7 +122,7 @@ const WalletView = ({ wallet }) => {
               />
             ) : (
               <AccountCard
-                onAccountSwitch={() => {}}
+                onAccountSwitch={onAccountSwitch}
                 color='purple'
                 alias='Prime'
                 address={wallet.address}
