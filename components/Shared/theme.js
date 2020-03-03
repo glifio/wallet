@@ -146,7 +146,7 @@ const theme = {
   },
   textStyles: {
     bigTitle: {
-      fontSize: [5, 6, 6],
+      fontSize: 6,
       fontWeight: 700,
       margin: 0,
       lineHeight: 'solid',
