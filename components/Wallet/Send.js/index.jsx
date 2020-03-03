@@ -173,7 +173,9 @@ const Send = ({ setSending }) => {
 
   const SendContainer = styled.div`
     display: flex;
+    flex-direction: column;
     grid-column: 1 / -1;
+    max-width: ${props => props.theme.sizes[13]}px;
     justify-content: center;
     position: relative;
     flex-basis: 0;
@@ -182,7 +184,6 @@ const Send = ({ setSending }) => {
 
   const SendForm = styled.form`
     width: 100%;
-    max-width: ${props => props.theme.sizes[13]}px;
   `
 
   return (
