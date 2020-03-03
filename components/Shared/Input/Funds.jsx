@@ -157,14 +157,14 @@ const Funds = forwardRef(
           justifyContent='center'
           flexGrow='1'
           width='100%'
-          maxWidth='280px'
+          maxWidth={11}
           textAlign='center'
           borderRight={1}
           borderColor='input.border'
         >
           {error ? <Text>{error}</Text> : <Label>Amount</Label>}
         </Box>
-        <Box display='inline-block' width='100%' maxWidth='280px'>
+        <Box display='inline-block' width='100%'>
           <Box position='relative' display='block' height='80px' width='100%'>
             <IconApproximatelyEquals
               position='absolute'
