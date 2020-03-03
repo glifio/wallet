@@ -24,7 +24,7 @@ const TextInput = ({
       borderRadius={1}
     >
       <Box display='flex' alignItems='center'>
-        <Box display='inline-block' px={3} minWidth='120px' textAlign='center'>
+        <Box display='inline-block' px={3} minWidth={9} textAlign='center'>
           <Label>{label}</Label>
         </Box>
         <BaseInput

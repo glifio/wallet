@@ -2,7 +2,17 @@ import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
-import { Box, Card, Button, Title, Text, AccountError } from '../Shared'
+import {
+  Box,
+  Card,
+  Button,
+  Title,
+  Text,
+  Label,
+  AccountError,
+  Loading,
+  ButtonClose
+} from '../Shared'
 import AccountCardAlt from '../Shared/AccountCardAlt'
 import { WALLET_PROP_TYPE } from '../../customPropTypes'
 import { useWalletProvider } from '../../WalletProvider'
@@ -22,6 +32,12 @@ const FloatingContainer = styled(Box)`
   bottom: ${props => props.theme.sizes[3]}px;
   width: 100%;
   max-width: 560px;
+`
+
+const Close = styled(ButtonClose)`
+  position: absolute;
+  top: ${props => props.theme.sizes[3]}px;
+  right: ${props => props.theme.sizes[3]}px;
 `
 
 const AccountSelector = ({ wallet }) => {
@@ -47,6 +63,17 @@ const AccountSelector = ({ wallet }) => {
     newSearchParams.delete('page')
     newSearchParams.set('page', nextPage)
     router.push(`/wallet/accounts?${newSearchParams.toString()}`)
+  }
+
+  const onClose = () => {
+    const newSearchParams = new URLSearchParams(router.query)
+    newSearchParams.delete('page')
+    const hasParams = Array.from(newSearchParams).length > 0
+    const query = hasParams
+      ? `/wallet?${newSearchParams.toString()}`
+      : '/wallet'
+    router.push(query)
+    router.push(`/wallet?${newSearchParams.toString()}`)
   }
 
   useEffect(() => {
@@ -120,95 +147,114 @@ const AccountSelector = ({ wallet }) => {
   ])
 
   return (
-    <Box display='flex' flexDirection='row'>
-      <Box>
-        {hasLedgerError(
-          ledger.connectedFailure,
-          ledger.locked,
-          ledger.filecoinAppNotOpen,
-          ledger.replug,
-          ledger.busy,
-          uncaughtError
-        ) ? (
-          <AccountError
-            onTryAgain={() => {}}
-            errorMsg={reportLedgerConfigError(
+    <>
+      <Close onClick={onClose} />
+      {loadingAccounts ? (
+        <Box
+          width='100%'
+          display='flex'
+          flexDirection='column'
+          alignItems='center'
+          mt={9}
+        >
+          <Loading width={3} height={3} />
+          <Label mt={3}>Loading Accounts</Label>
+        </Box>
+      ) : (
+        <Box display='flex' flexDirection='row'>
+          <Box>
+            {hasLedgerError(
               ledger.connectedFailure,
               ledger.locked,
               ledger.filecoinAppNotOpen,
               ledger.replug,
               ledger.busy,
               uncaughtError
+            ) ? (
+              <AccountError
+                onTryAgain={() => {}}
+                errorMsg={reportLedgerConfigError(
+                  ledger.connectedFailure,
+                  ledger.locked,
+                  ledger.filecoinAppNotOpen,
+                  ledger.replug,
+                  ledger.busy,
+                  uncaughtError
+                )}
+              />
+            ) : (
+              <Card
+                display='flex'
+                flexDirection='column'
+                justifyContent='space-between'
+                width={11}
+                height={11}
+                borderRadius={2}
+                p={3}
+              >
+                <Title>Choose an account</Title>
+              </Card>
             )}
-          />
-        ) : (
-          <Card
-            display='flex'
-            flexDirection='column'
-            justifyContent='space-between'
-            width={11}
-            height={11}
-            borderRadius={2}
-            p={3}
-          >
-            <Title>Choose an account</Title>
-          </Card>
-        )}
-      </Box>
-      <Box flexGrow='2' justifyContent='center'>
-        {walletsInRdx
-          .filter(
-            w =>
-              w.path[4] >= page * ACCOUNT_BATCH_SIZE &&
-              w.path[4] < page * ACCOUNT_BATCH_SIZE + ACCOUNT_BATCH_SIZE
-          )
-          .map((w, i) => (
-            <AccountCardAlt
-              onClick={() => {
-                dispatch(switchWallet(page * ACCOUNT_BATCH_SIZE + i))
-                const newParams = new URLSearchParams(router.query)
-                const hasParams = Array.from(newParams).length > 0
-                const query = hasParams
-                  ? `/wallet?${newParams.toString()}`
-                  : '/wallet'
-                router.push(query)
-              }}
-              key={w.address}
-              address={w.address}
-              index={page * ACCOUNT_BATCH_SIZE + i}
-              selected={w.address === wallet.address}
-              balance={makeFriendlyBalance(w.balance)}
-            />
-          ))}
-        <FloatingContainer
-          bottom='8px'
-          display='flex'
-          flexDirection='row'
-          justifyContent='space-between'
-          boxShadow={1}
-          backgroundColor='core.white'
-          border={1}
-          borderColor='core.silver'
-          borderRadius={2}
-          p={3}
-        >
-          <Button
-            onClick={() => paginate(page - 1)}
-            disabled={page === 0}
-            variant='secondary'
-            role='button'
-            title='back'
-          />
-          <Text>Page {page}</Text>
-          <Button
-            title='Next'
-            onClick={() => paginate(page + 1)}
-            role='button'
-            variant='primary'
-          />
-        </FloatingContainer>
-      </Box>
-    </Box>
+          </Box>
+
+          <Box flexGrow='2' justifyContent='center'>
+            {walletsInRdx
+              .filter(
+                w =>
+                  w.path[4] >= page * ACCOUNT_BATCH_SIZE &&
+                  w.path[4] < page * ACCOUNT_BATCH_SIZE + ACCOUNT_BATCH_SIZE
+              )
+              .map((w, i) => (
+                <AccountCardAlt
+                  alignItems='center'
+                  onClick={() => {
+                    dispatch(switchWallet(page * ACCOUNT_BATCH_SIZE + i))
+                    const newParams = new URLSearchParams(router.query)
+                    const hasParams = Array.from(newParams).length > 0
+                    const query = hasParams
+                      ? `/wallet?${newParams.toString()}`
+                      : '/wallet'
+                    router.push(query)
+                  }}
+                  key={w.address}
+                  address={w.address}
+                  index={page * ACCOUNT_BATCH_SIZE + i}
+                  selected={w.address === wallet.address}
+                  balance={makeFriendlyBalance(w.balance)}
+                />
+              ))}
+            <FloatingContainer
+              bottom='8px'
+              display='flex'
+              flexDirection='row'
+              justifyContent='space-between'
+              boxShadow={1}
+              backgroundColor='core.white'
+              border={1}
+              borderColor='core.silver'
+              borderRadius={2}
+              p={3}
+            >
+              <Button
+                onClick={() => paginate(page - 1)}
+                disabled={page === 0 || loadingAccounts}
+                variant='secondary'
+                role='button'
+                title='Prev'
+              />
+              <Text>Page {page + 1}</Text>
+              <Button
+                title='Next'
+                onClick={() => paginate(page + 1)}
+                role='button'
+                variant='primary'
+                disabled={loadingAccounts}
+              />
+            </FloatingContainer>
+          </Box>
+        </Box>
+      )}
+    </>
   )
 }
 

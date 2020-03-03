@@ -21,8 +21,10 @@ const formatFiatValue = number => {
 }
 
 const toUSD = async amount => new FilecoinNumber(amount, 'fil').multipliedBy(5)
-const fromUSD = async amount =>
-  new FilecoinNumber(new BigNumber(amount).dividedBy(5), 'fil')
+const fromUSD = async amount => {
+  if (!amount) return new FilecoinNumber('0', 'fil')
+  return new FilecoinNumber(new BigNumber(amount).dividedBy(5), 'fil')
+}
 
 const Funds = forwardRef(
   (
@@ -67,6 +69,11 @@ const Funds = forwardRef(
       if (validBalance) {
         setFiatAmount(fiatAmnt)
         onAmountChange({ fil: amount, fiat: fiatAmnt })
+      } else {
+        onAmountChange({
+          fil: new FilecoinNumber('0', 'fil'),
+          fiat: new BigNumber('0')
+        })
       }
     }
 
@@ -76,6 +83,11 @@ const Funds = forwardRef(
       if (validBalance) {
         setFilAmount(fil)
         onAmountChange({ fil, fiat: amount })
+      } else {
+        onAmountChange({
+          fil: new FilecoinNumber('0', 'fil'),
+          fiat: new BigNumber('0')
+        })
       }
     }
 
@@ -156,14 +168,16 @@ const Funds = forwardRef(
           alignItems='center'
           justifyContent='center'
           flexGrow='1'
-          width='280px'
+          width='100%'
+          maxWidth={11}
           textAlign='center'
           borderRight={1}
           borderColor='input.border'
+          bg={error && 'input.background.invalid'}
         >
           {error ? <Text>{error}</Text> : <Label>Amount</Label>}
         </Box>
-        <Box display='inline-block' width='280px'>
+        <Box display='inline-block' width='100%'>
           <Box position='relative' display='block' height='80px' width='100%'>
             <IconApproximatelyEquals
               position='absolute'
@@ -184,6 +198,11 @@ const Funds = forwardRef(
                   const fiatAmnt = await toUSD(filAmount)
                   setFiatAmount(fiatAmnt)
                   onAmountChange({ fil: filAmount, fiat: fiatAmnt })
+                } else {
+                  onAmountChange({
+                    fil: new FilecoinNumber('0', 'fil'),
+                    fiat: new BigNumber('0')
+                  })
                 }
               }}
               height='100%'
@@ -218,6 +237,11 @@ const Funds = forwardRef(
                 if (validBalance) {
                   setFilAmount(fil)
                   onAmountChange({ fil, fiat: fiatAmount })
+                } else {
+                  onAmountChange({
+                    fil: new FilecoinNumber('0', 'fil'),
+                    fiat: new BigNumber('0')
+                  })
                 }
               }}
               height='100%'

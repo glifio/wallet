@@ -5,6 +5,7 @@ import {
   layout,
   space,
   flexbox,
+  grid,
   position
 } from 'styled-system'
 import styled from 'styled-components'
@@ -19,4 +20,5 @@ export default styled.div`
   ${layout}
   ${flexbox}
   ${typography}
+  ${grid}
 `
