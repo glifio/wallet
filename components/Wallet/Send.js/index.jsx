@@ -28,7 +28,16 @@ import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfi
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
 
-const SendCard = styled(Box)`
+const SendCard = styled(Box).attrs(() => ({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  border: 'none',
+  p: 3,
+  borderRadius: 2,
+  borderWidth: 1,
+  flexGrow: '1'
+}))`
   background-color: ${props => props.theme.colors.background.screen};
 `
 
@@ -199,17 +208,8 @@ const Send = ({ setSending }) => {
           toAddress={toAddress}
         />
       )}
-      <SendForm gridColumn='2' onSubmit={onSubmit}>
-        <SendCard
-          display='flex'
-          flexDirection='column'
-          justifyContent='space-between'
-          border='none'
-          p={3}
-          borderRadius={2}
-          borderWidth={1}
-          flexGrow='1'
-        >
+      <SendForm gridColumn='2' onSubmit={onSubmit} autoComplete='off'>
+        <SendCard>
           <Box
             display='flex'
             alignItems='center'
