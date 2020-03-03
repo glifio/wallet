@@ -100,7 +100,7 @@ const MessageHistoryRow = ({
             </MenuItem>
           </Menu>
           <Menu display='flex' flexDirection='column' ml={[2, 4]}>
-            <MenuItem width={[8, 9]}>
+            <MenuItem width={8}>
               <ActionText status={status} sentMsg={sentMsg} />
             </MenuItem>
             <MenuItem>
@@ -110,7 +110,7 @@ const MessageHistoryRow = ({
             </MenuItem>
           </Menu>
           <Menu display='flex' flex-wrap='wrap' ml={[2, 4, 5]}>
-            <MenuItem overflow='hidden' maxWidth={120}>
+            <MenuItem overflow='hidden' maxWidth={9}>
               <AddressText sentMsg={sentMsg} to={to} from={from} m={0} />
             </MenuItem>
           </Menu>

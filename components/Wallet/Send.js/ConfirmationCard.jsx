@@ -62,7 +62,6 @@ const ConfirmationCard = ({ value, walletType, toAddress }) => {
       border='none'
       width='auto'
       my={2}
-      mx={4}
       bg='card.confirmation.background'
     >
       <Box
