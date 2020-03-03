@@ -31,9 +31,20 @@ const GasCustomization = ({ gasPrice, gasLimit, setGasPrice, setGasLimit }) => {
         <Button variant='tertiary' title='Custom' />
       </Box>
       <Input.Number
+        m='0'
         label='Gas Price'
         value={gasPrice.toAttoFil()}
-        onChange={setGasPrice}
+        onChange={e =>
+          setGasPrice(new FilecoinNumber(e.target.value, 'attofil'))
+        }
+      />
+      <Input.Number
+        m='0'
+        label='Gas Limit'
+        value={gasLimit.toAttoFil()}
+        onChange={e =>
+          setGasLimit(new FilecoinNumber(e.target.value, 'attofil'))
+        }
       />
     </>
   )
