@@ -1,13 +1,16 @@
 import React, { forwardRef } from 'react'
+import styled from 'styled-components'
 import { string, func, bool } from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import Box from '../Box'
 import Glyph from '../Glyph'
 import Button from '../Button'
 import { ButtonCopyAccountAddress } from '../IconButtons'
-import { BigTitle, Text } from '../Typography'
+import { BigTitle, Text, Title } from '../Typography'
 import truncate from '../../../utils/truncateAddress'
 import copyToClipboard from '../../../utils/copyToClipboard'
+
+const AccountCardAddress = styled(Title)``
 
 const AccountCard = forwardRef(
   (
@@ -49,7 +52,9 @@ const AccountCard = forwardRef(
         <Box color='card.account.color'>
           <BigTitle>{alias}</BigTitle>
           <Box display='flex' alignContent='center'>
-            <Text margin={0}>{truncate(address)}</Text>
+            <AccountCardAddress fontWeight={1} fontSize={5} margin={0}>
+              {truncate(address)}
+            </AccountCardAddress>
             <ButtonCopyAccountAddress
               border={0}
               onClick={() => copyToClipboard(address)}
