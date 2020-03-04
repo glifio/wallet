@@ -16,6 +16,11 @@ export default styled.button`
       : props.theme.colors.buttons[props.variant].borderColor};
   color: ${props => props.theme.colors.buttons[props.variant].color};
   font-size: ${props => props.theme.fontSizes[2]}; 
+  transition: 0.18s ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
   ${borderRadius} 
   ${space}
   ${layout} 
