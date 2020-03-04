@@ -34,12 +34,6 @@ const GasCustomization = ({
   const [gasPriceLocal, setGasPriceLocal] = useState(gasPrice)
   const [gasLimitLocal, setGasLimitLocal] = useState(gasLimit)
 
-  const onSave = () => {
-    setGasPrice(gasPriceLocal)
-    setGasLimit(gasLimitLocal)
-    exit()
-  }
-
   return (
     <>
       <hr />
@@ -99,7 +93,7 @@ const GasCustomization = ({
         label='Gas Price'
         value={gasPriceLocal.toAttoFil()}
         onChange={e =>
-          setGasPriceLocal(new FilecoinNumber(e.target.value, 'attofil'))
+          setGasPriceLocal(new FilecoinNumber(e.target.value || '0', 'attofil'))
         }
       />
       <Input.Number
@@ -107,7 +101,7 @@ const GasCustomization = ({
         label='Gas Limit'
         value={gasLimitLocal.toAttoFil()}
         onChange={e =>
-          setGasLimitLocal(new FilecoinNumber(e.target.value, 'attofil'))
+          setGasLimitLocal(new FilecoinNumber(e.target.value || '0', 'attofil'))
         }
       />
       <Text>*Transfers complete faster with a higher gas price.</Text>
