@@ -84,7 +84,8 @@ const colors = {
       foreground: baseColors.green.dark
     },
     error: {
-      background: baseColors.red.light
+      background: baseColors.red.light,
+      foreground: baseColors.red.dark
     }
   },
   input: {
