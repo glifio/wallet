@@ -16,7 +16,8 @@ import {
   Button,
   Label,
   Title,
-  FloatingContainer
+  FloatingContainer,
+  Label as Total
 } from '../../Shared'
 import { ButtonClose } from '../../Shared/IconButtons'
 import ConfirmationCard from './ConfirmationCard'
@@ -292,7 +293,7 @@ const Send = ({ setSending }) => {
               mt={3}
               mx={1}
             >
-              <Label fontSize={4}>Total</Label>
+              <Total fontSize={4}>Total</Total>
               <Box display='flex' flexDirection='column' textAlign='right'>
                 <BigTitle color='core.primary'>
                   {value.fil.toFil()} FIL
