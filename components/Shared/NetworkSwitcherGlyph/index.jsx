@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useRouter } from 'next/router'
+import { useSelector } from 'react-redux'
 import { bool, func } from 'prop-types'
 import Box from '../Box'
 
-const GlyphButton = styled.input.attrs(props => ({
+const NetworkSwitcherButton = styled.button.attrs(props => ({
   display: 'inline-block',
   height: props.height || 7,
   width: props.width || 7
@@ -16,33 +18,43 @@ const GlyphButton = styled.input.attrs(props => ({
   }};
 `
 
-const NetworkSwitcherGlyph = (
-  { active, connected, onClick, ...props },
-  ref
-) => {
+const NetworkSwitcherGlyph = ({ ...props }) => {
+  const router = useRouter()
+  const networkFromRedux = useSelector(state => state.network)
+  const onNetworkSwitch = network => {
+    if (network !== networkFromRedux) {
+      const searchParams = new URLSearchParams(router.query)
+      searchParams.set('network', network)
+      router.replace(`${router.pathname}?${searchParams.toString()}`)
+    }
+  }
   return (
-    <Box display='flex' ref={ref} {...props}>
-      <GlyphButton onClick={onClick}>Tn</GlyphButton>
-      <GlyphButton onClick={onClick}>Mn</GlyphButton>
+    <Box display='flex' {...props}>
+      <NetworkSwitcherButton
+        active={networkFromRedux === 't'}
+        onClick={() => onNetworkSwitch('t')}
+      >
+        Tn
+      </NetworkSwitcherButton>
+      <NetworkSwitcherButton
+        active={networkFromRedux === 'f'}
+        onClick={() => onNetworkSwitch('f')}
+      >
+        Mn
+      </NetworkSwitcherButton>
     </Box>
   )
 }
 
-GlyphButton.propTypes = {
-  /**
-   * Is the network active?
-   */
-  active: bool.isRequired,
-  /**
-   * Is the user connected to the network?
-   */
-  connected: bool.isRequired,
+NetworkSwitcherButton.propTypes = {
+  active: bool,
+  connected: bool,
   onClick: func.isRequired
 }
 
-GlyphButton.defaultProps = {
-  active: true,
-  connected: true
+NetworkSwitcherButton.defaultProps = {
+  connected: true,
+  active: false
 }
 
 export default NetworkSwitcherGlyph
