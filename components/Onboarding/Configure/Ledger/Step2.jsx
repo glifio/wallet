@@ -97,8 +97,6 @@ export default () => {
   const generalError = useSelector(state => state.error)
   const router = useRouter()
   const [loading, setLoading] = useState(false)
-  // cleanup loading effects
-  useEffect(() => () => loading && setLoading(false), [loading, setLoading])
 
   return (
     <>
@@ -109,7 +107,7 @@ export default () => {
         flexDirection='row'
         justifyContent='center'
       >
-        <StepCard step={2} loading={loading} />
+        <StepCard step={2} loading={!ledger.userImportFailure && loading} />
         <Step2Helper
           connectedFailure={ledger.connectedFailure}
           ledgerLocked={ledger.locked}
@@ -139,13 +137,15 @@ export default () => {
                 const query = hasParams
                   ? `/wallet?${params.toString()}`
                   : '/wallet'
+                setLoading(false)
                 router.push(query)
               }
             } catch (err) {
+              setLoading(false)
               dispatch(error(err))
             }
           }}
-          disabled={loading}
+          disabled={!ledger.userImportFailure && loading}
           variant='primary'
           ml={2}
         />

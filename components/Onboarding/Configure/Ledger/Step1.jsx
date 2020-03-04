@@ -46,9 +46,8 @@ Step1Helper.propTypes = {
 
 export default () => {
   const { ledger, setLedgerProvider, setWalletType } = useWalletProvider()
-  const [loading, setLoading] = useState(false)
+  console.log(ledger)
 
-  useEffect(() => () => setLoading(false), [setLoading])
   return (
     <>
       <Box
@@ -58,7 +57,7 @@ export default () => {
         flexDirection='row'
         justifyContent='center'
       >
-        <StepCard step={1} loading={loading} />
+        <StepCard step={1} loading={ledger.connecting} />
         <Step1Helper connectedFailure={ledger.connectedFailure} />
       </Box>
       <Box mt={6} display='flex' flexDirection='row' justifyContent='center'>
@@ -70,10 +69,7 @@ export default () => {
         />
         <Button
           title='Yes, my Ledger device is connected.'
-          onClick={async () => {
-            setLoading(true)
-            await setLedgerProvider()
-          }}
+          onClick={setLedgerProvider}
           variant='primary'
           ml={2}
         />
