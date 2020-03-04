@@ -1,6 +1,5 @@
 import React, { forwardRef } from 'react'
 import { useSelector } from 'react-redux'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { func } from 'prop-types'
 import styled from 'styled-components'
 
@@ -14,8 +13,8 @@ import {
   Label,
   Title,
   IconMessageStatus
-} from '../../Shared'
-import { ButtonClose } from '../../Shared/IconButtons'
+} from '../components/Shared'
+import { ButtonClose } from '../components/Shared/IconButtons'
 
 const MessageDetailCard = styled(Card)`
   background-color: ${props => props.theme.colors.background.screen};
@@ -109,16 +108,7 @@ const MessageDetail = forwardRef(({ setMessage }, ref) => {
             </Box>
           </Box>
           <Box mt={3}>
-            <Input.Funds
-              balance={new FilecoinNumber('0', 'fil')}
-              name='amount'
-              label='Amount'
-              error={null}
-              gasLimit='1000'
-              disabled
-              valid
-              onAmountChange={() => {}}
-            />
+            <Input.Funds name='amount' label='Amount' disabled />
             <Input.Address
               name='recipient'
               value={message.toAddress}
