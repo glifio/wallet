@@ -34,7 +34,11 @@ const TextInput = ({
         />
       </Box>
     </InputWrapper>
-    {error && <Label color='error.textLight'>{error}</Label>}
+    {error && (
+      <Label color='status.fail.background' mt={3} mb={0}>
+        {error}
+      </Label>
+    )}
   </>
 )
 
