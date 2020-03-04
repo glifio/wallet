@@ -100,7 +100,7 @@ const Send = ({ setSending }) => {
     new FilecoinNumber('1000', 'attofil')
   )
   const [step, setStep] = useState(1)
-  const [customizingGas, setCustomizingGas] = useState(true)
+  const [customizingGas, setCustomizingGas] = useState(false)
 
   const [attemptingTx, setAttemptingTx] = useState(false)
 
