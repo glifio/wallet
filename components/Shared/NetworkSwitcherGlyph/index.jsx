@@ -49,7 +49,13 @@ const NetworkSwitcherGlyph = ({ ...props }) => {
     }
   }
   return (
-    <Box display='flex' {...props}>
+    <Box
+      display='flex'
+      {...props}
+      maxWidth={9}
+      width='100%'
+      justifyContent='flex-end'
+    >
       <NetworkSwitcherButton
         active={networkFromRedux === 't'}
         onClick={() => onNetworkSwitch('t')}
