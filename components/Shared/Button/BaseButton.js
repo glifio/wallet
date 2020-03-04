@@ -19,7 +19,7 @@ export default styled.button`
   transition: 0.18s ease-in-out;
 
   &:hover {
-    opacity: 0.8;
+    opacity: ${props => (props.disabled ? '1' : '0.8')};
   }
   ${borderRadius} 
   ${space}
