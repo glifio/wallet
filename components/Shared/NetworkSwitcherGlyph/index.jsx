@@ -6,7 +6,7 @@ import { bool, func } from 'prop-types'
 import { border, typography, layout, flexbox, space } from 'styled-system'
 import Box from '../Box'
 
-const NetworkSwitcherButton = styled.button.attrs(props => ({
+const NetworkSwitcherButton = styled.button.attrs(() => ({
   display: 'flex',
   flexShrink: '0',
   alignItems: 'center',
@@ -31,6 +31,7 @@ const NetworkSwitcherButton = styled.button.attrs(props => ({
     cursor: pointer;
     background: ${props => props.active || props.theme.colors.core.lightgray};
   }
+  outline: none;
   ${border}
   ${typography}
   ${layout}
@@ -51,10 +52,10 @@ const NetworkSwitcherGlyph = ({ ...props }) => {
   return (
     <Box
       display='flex'
-      {...props}
       maxWidth={9}
       width='100%'
       justifyContent='flex-end'
+      {...props}
     >
       <NetworkSwitcherButton
         active={networkFromRedux === 't'}

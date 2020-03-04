@@ -55,7 +55,6 @@ const Sidebar = styled.div`
   flex-grow: 1;
 `
 // Content is a flexible container with no explicit width (hence basis=0) but which grows to consume all available space. It then wraps once its min-width is reached.
-
 const Content = styled.div`
   display: flex;
   flex-basis: 0;
