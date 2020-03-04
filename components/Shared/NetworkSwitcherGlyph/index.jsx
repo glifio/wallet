@@ -3,12 +3,22 @@ import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
 import { bool, func } from 'prop-types'
+import { border, typography, layout, flexbox, space } from 'styled-system'
 import Box from '../Box'
 
 const NetworkSwitcherButton = styled.button.attrs(props => ({
-  display: 'inline-block',
-  height: props.height || 7,
-  width: props.width || 7
+  display: 'flex',
+  flexShrink: '0',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: 6,
+  paddingLeft: 2,
+  padidngRight: 2,
+  fontSize: 2,
+  fontWeight: 1,
+  fontFamily: 'RT-Alias-Medium',
+  border: 0,
+  borderRadius: 0
 }))`
   background: ${props => {
     if (props.connected && props.active)
@@ -16,6 +26,16 @@ const NetworkSwitcherButton = styled.button.attrs(props => ({
     if (props.error) return props.theme.colors.status.error.background
     return props.theme.colors.core.transparent
   }};
+  transition: 0.2s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    background: ${props => props.active || props.theme.colors.core.lightgray};
+  }
+  ${border}
+  ${typography}
+  ${layout}
+  ${flexbox}
+  ${space}
 `
 
 const NetworkSwitcherGlyph = ({ ...props }) => {
@@ -34,13 +54,13 @@ const NetworkSwitcherGlyph = ({ ...props }) => {
         active={networkFromRedux === 't'}
         onClick={() => onNetworkSwitch('t')}
       >
-        Tn
+        Testnet
       </NetworkSwitcherButton>
       <NetworkSwitcherButton
         active={networkFromRedux === 'f'}
         onClick={() => onNetworkSwitch('f')}
       >
-        Mn
+        Mainnet
       </NetworkSwitcherButton>
     </Box>
   )
