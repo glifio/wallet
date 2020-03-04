@@ -202,7 +202,7 @@ Funds.propTypes = {
    * entered in the Funds input (in a BigNumber and FilecoinNumber instance)
    * @returns {Object} - { fiat: BigNumber, fil: FilecoinNumber }
    */
-  onAmountChange: func.isRequired,
+  onAmountChange: func,
   /**
    * Balance of account sending the transaction
    */
@@ -214,7 +214,7 @@ Funds.propTypes = {
   /**
    * A setter to set the error when errors occur
    */
-  setError: func.isRequired,
+  setError: func,
   /**
    * Gas limit selected by user (to make sure we dont go over the user's balance)
    */

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { bool, string } from 'prop-types'
+import { bool, string, func } from 'prop-types'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import Box from '../Box'
 import { Menu, MenuItem } from '../Menu'
@@ -73,7 +73,8 @@ ActionText.propTypes = {
 
 const MessageHistoryRow = ({
   address,
-  message: { to, from, value, status }
+  message: { to, from, value, status },
+  onSelection
 }) => {
   const sentMsg = address === from
   return (
@@ -161,7 +162,8 @@ const MessageHistoryRow = ({
 
 MessageHistoryRow.propTypes = {
   address: ADDRESS_PROPTYPE,
-  message: MESSAGE_PROPS.isRequired
+  message: MESSAGE_PROPS.isRequired,
+  onSelection: func
 }
 
 export default MessageHistoryRow

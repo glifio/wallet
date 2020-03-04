@@ -10,16 +10,28 @@ import MessageHistoryRow from './MessageHistoryRow'
 import EmptyHistory from './EmptyHistory'
 
 const MessageHistoryTable = forwardRef(
-  ({ address, messages, ...props }, ref) => {
+  ({ address, messages, setMessage, ...props }, ref) => {
     return (
       <Box ref={ref} {...props}>
         <Box display='flex' alignItems='center' justifyContent='flex-start'>
           <Glyph mr={3} color='core.primary' acronym='Tx' />
           <Text color='core.primary'>Transaction History</Text>
         </Box>
+        <button type='submit' onClick={() => setMessage('123')}>
+          go to message detail
+        </button>
         {messages.length > 0 ? (
           messages.map(msg => (
-            <MessageHistoryRow address={address} key={msg.cid} message={msg} />
+            <MessageHistoryRow
+              address={address}
+              key={msg.cid}
+              message={msg}
+              // This onSelection is not hooked up yet
+              onSelection={() => {
+                console.log('here', msg.cid)
+                setMessage(msg.cid)
+              }}
+            />
           ))
         ) : (
           <EmptyHistory />
@@ -37,7 +49,8 @@ MessageHistoryTable.propTypes = {
   /**
    * An array of message types
    */
-  messages: PropTypes.arrayOf(MESSAGE_PROPS)
+  messages: PropTypes.arrayOf(MESSAGE_PROPS),
+  setMessage: PropTypes.func
 }
 
 MessageHistoryTable.defaultProps = {

@@ -4,7 +4,9 @@ import { AccountCard, AccountError, BalanceCard, Box } from '../Shared'
 import { WALLET_PROP_TYPE } from '../../customPropTypes'
 import Send from './Send.js'
 import MessageHistory from './MessageHistory'
+import MessageDetail from './MessageDetail'
 import { useWalletProvider } from '../../WalletProvider'
+import { useMessage } from '../../hooks'
 import { LEDGER } from '../../constants'
 import {
   hasLedgerError,
@@ -20,6 +22,7 @@ const WalletView = ({ wallet }) => {
   const [uncaughtError, setUncaughtError] = useState(null)
   const [showLedgerError, setShowLedgerError] = useState(false)
   const [ledgerBusy, setLedgerBusy] = useState(false)
+  const message = useMessage()
   const onShowOnLedger = async () => {
     setLedgerBusy(true)
     try {
@@ -94,7 +97,13 @@ const WalletView = ({ wallet }) => {
           flexGrow='1'
           justifyContent='center'
         >
-          {sending ? <Send setSending={setSending} /> : <MessageHistory />}
+          {!sending && !message.selectedMessageCID && (
+            <MessageHistory setMessage={message.setMessage} />
+          )}
+          {sending && <Send setSending={setSending} />}
+          {message.selectedMessageCID && (
+            <MessageDetail setMessage={message.setMessage} />
+          )}
         </Box>
       </Box>
     </>

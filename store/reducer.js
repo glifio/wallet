@@ -15,7 +15,8 @@ import {
   FETCHING_NEXT_PAGE_SUCCESS,
   FETCHING_NEXT_PAGE_FAILURE,
   POPULATE_REDUX,
-  SWITCH_NETWORK
+  SWITCH_NETWORK,
+  SELECT_MESSAGE
 } from './actionTypes'
 
 import {
@@ -33,7 +34,8 @@ import {
   fetchedNextPageSuccess,
   fetchedNextPageFailure,
   populateRedux,
-  switchNetwork
+  switchNetwork,
+  selectMessage
 } from './states'
 
 export default (state, action) => {
@@ -74,6 +76,8 @@ export default (state, action) => {
       return populateRedux(cloneDeep(state), action.payload)
     case SWITCH_NETWORK:
       return switchNetwork(cloneDeep(state), action.payload)
+    case SELECT_MESSAGE:
+      return selectMessage(cloneDeep(state), action.payload)
     default:
       return state
   }

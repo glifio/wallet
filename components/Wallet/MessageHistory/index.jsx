@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { useSelector } from 'react-redux'
+import { func } from 'prop-types'
 
 import { MessageHistoryTable } from '../../Shared'
 import { useWallet } from '../hooks'
 
-export default () => {
+const MessageHistory = forwardRef(({ setMessage }) => {
   const wallet = useWallet()
   const { pending, confirmed } = useSelector(state => {
     return {
@@ -23,10 +24,17 @@ export default () => {
     <MessageHistoryTable
       messages={[...pending, ...confirmed]}
       address={wallet.address}
+      setMessage={setMessage}
       flexGrow='2'
       border='none'
       my={3}
       mx={4}
     />
   )
+})
+
+MessageHistory.propTypes = {
+  setMessage: func
 }
+
+export default MessageHistory
