@@ -298,7 +298,8 @@ Funds.propTypes = {
 Funds.defaultProps = {
   error: '',
   gasLimit: '1000',
-  disabled: false
+  disabled: false,
+  onAmountChange: () => {}
 }
 
 export default Funds

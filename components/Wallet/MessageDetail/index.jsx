@@ -111,13 +111,9 @@ const MessageDetail = forwardRef(({ setMessage }, ref) => {
           <Box mt={3}>
             <Input.Funds
               balance={new FilecoinNumber('0', 'fil')}
-              name='amount'
               label='Amount'
-              error={null}
-              gasLimit='1000'
               disabled
               valid
-              onAmountChange={() => {}}
             />
             <Input.Address
               name='recipient'
