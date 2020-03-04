@@ -290,9 +290,10 @@ const Send = ({ setSending }) => {
               alignItems='center'
               justifyContent='space-between'
               mt={3}
+              mx={1}
             >
-              <Label>Total</Label>
-              <Box display='flex' flexDirection='column'>
+              <Label fontSize={4}>Total</Label>
+              <Box display='flex' flexDirection='column' textAlign='right'>
                 <BigTitle color='core.primary'>
                   {value.fil.toFil()} FIL
                 </BigTitle>
