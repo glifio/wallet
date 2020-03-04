@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { bool, string, func } from 'prop-types'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import Box from '../Box'
@@ -100,7 +101,7 @@ const MessageHistoryRow = ({
             </MenuItem>
           </Menu>
           <Menu display='flex' flexDirection='column' ml={[2, 4]}>
-            <MenuItem width={[8, 9]}>
+            <MenuItem width={8}>
               <ActionText status={status} sentMsg={sentMsg} />
             </MenuItem>
             <MenuItem>
@@ -110,7 +111,7 @@ const MessageHistoryRow = ({
             </MenuItem>
           </Menu>
           <Menu display='flex' flex-wrap='wrap' ml={[2, 4, 5]}>
-            <MenuItem overflow='hidden' maxWidth={120}>
+            <MenuItem overflow='hidden' maxWidth={9}>
               <AddressText sentMsg={sentMsg} to={to} from={from} m={0} />
             </MenuItem>
           </Menu>
@@ -127,12 +128,12 @@ const MessageHistoryRow = ({
           >
             <MenuItem display='flex'>
               <Text color='core.nearblack' m={0}>
-                {value}
+                {new FilecoinNumber(value, 'attofil').toFil()}
               </Text>
             </MenuItem>
             <MenuItem display='flex'>
               <Text color='core.silver' m={0} mb={0}>
-                {value}
+                {new FilecoinNumber(value, 'attofil').toFil()}
               </Text>
             </MenuItem>
           </Menu>

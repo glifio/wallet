@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Box, Button, Card, Text, Title } from '../../../Shared'
 
@@ -46,6 +46,8 @@ Step1Helper.propTypes = {
 
 export default () => {
   const { ledger, setLedgerProvider, setWalletType } = useWalletProvider()
+  console.log(ledger)
+
   return (
     <>
       <Box
@@ -55,7 +57,7 @@ export default () => {
         flexDirection='row'
         justifyContent='center'
       >
-        <StepCard step={1} />
+        <StepCard step={1} loading={ledger.connecting} />
         <Step1Helper connectedFailure={ledger.connectedFailure} />
       </Box>
       <Box mt={6} display='flex' flexDirection='row' justifyContent='center'>

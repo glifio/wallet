@@ -21,7 +21,8 @@ export const initialState = {
   walletProvider: null,
   walletConnected: false,
   step: 1,
-  error: ''
+  error: '',
+  ledger: initialLedgerState
 }
 
 /* ACTION TYPES */

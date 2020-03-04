@@ -22,13 +22,12 @@ const MessageHistory = forwardRef(({ setMessage }) => {
 
   return (
     <MessageHistoryTable
+      gridColumn='2'
       messages={[...pending, ...confirmed]}
       address={wallet.address}
       setMessage={setMessage}
       flexGrow='2'
       border='none'
-      my={3}
-      mx={4}
     />
   )
 })

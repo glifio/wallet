@@ -9,14 +9,15 @@ import Message from '@openworklabs/filecoin-message'
 import {
   Box,
   BigTitle,
-  Card,
   Input,
   Stepper,
   Glyph,
   Text,
   Button,
   Label,
-  Title
+  Title,
+  FloatingContainer,
+  Label as Total
 } from '../../Shared'
 import { ButtonClose } from '../../Shared/IconButtons'
 import ConfirmationCard from './ConfirmationCard'
@@ -28,23 +29,38 @@ import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfi
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
 
-const SendCard = styled(Card)`
+const SendCard = styled(Box).attrs(() => ({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  border: 'none',
+  p: 3,
+  borderRadius: 2,
+  borderWidth: 1,
+  flexGrow: '1'
+}))`
   background-color: ${props => props.theme.colors.background.screen};
 `
 
-const FloatingContainer = styled(Box)`
-  position: fixed;
+const SendContainer = styled.div`
   display: flex;
-  flex-grow: 1;
-  bottom: ${props => props.theme.sizes[3]}px;
-  width: 100%;
-  max-width: 560px;
+  flex-direction: column;
+  grid-column: 1 / -1;
+  max-width: ${props => props.theme.sizes[13]}px;
+  justify-content: center;
+  position: relative;
+  flex-basis: 0;
+  flex-grow: 999;
 `
 
-const isValidAmount = (value, balance) => {
+const SendForm = styled.form`
+  width: 100%;
+`
+
+const isValidAmount = (value, balance, error) => {
   const valueFieldFilledOut = value && value.isGreaterThan(0)
   const enoughInTheBank = balance.isGreaterThan(value)
-  return valueFieldFilledOut && enoughInTheBank
+  return valueFieldFilledOut && enoughInTheBank && !error
 }
 
 const isValidForm = (
@@ -172,191 +188,162 @@ const Send = ({ setSending }) => {
       ledger.replug,
       ledger.busy
     )
+
   return (
-    <>
-      <Box position='relative'>
-        {hasError() && (
-          <ErrorCard
-            error={ledgerError() || uncaughtError}
-            reset={() => {
-              setAttemptingTx(false)
-              setUncaughtError('')
-              resetLedgerState()
-              setStep(1)
-            }}
-          />
-        )}
-        {step === 2 && !hasError() && (
-          <ConfirmationCard
-            walletType={wallet.type}
-            value={value}
-            toAddress={toAddress}
-          />
-        )}
-        <form onSubmit={onSubmit} autoComplete='off'>
-          <SendCard
+    <SendContainer>
+      {hasError() && (
+        <ErrorCard
+          error={ledgerError() || uncaughtError}
+          reset={() => {
+            setAttemptingTx(false)
+            setUncaughtError('')
+            resetLedgerState()
+            setStep(1)
+          }}
+        />
+      )}
+      {step === 2 && !hasError() && (
+        <ConfirmationCard
+          walletType={wallet.type}
+          value={value}
+          toAddress={toAddress}
+        />
+      )}
+      <SendForm gridColumn='2' onSubmit={onSubmit} autoComplete='off'>
+        <SendCard>
+          <Box
             display='flex'
-            flexDirection='column'
+            alignItems='center'
             justifyContent='space-between'
-            border='none'
-            width='auto'
-            my={2}
-            mx={4}
           >
+            <Box display='flex' alignItems='center'>
+              <Glyph
+                acronym='To'
+                color='background.screen'
+                borderColor='core.primary'
+                backgroundColor='core.primary'
+              />
+
+              <Text color='core.primary' ml={2}>
+                Sending Filecoin
+              </Text>
+            </Box>
+            <Box display='flex' alignItems='center'>
+              <Stepper
+                textColor='core.primary'
+                completedDotColor='core.primary'
+                incompletedDotColor='core.silver'
+                step={1}
+                totalSteps={2}
+                mr={2}
+              >
+                Step 1
+              </Stepper>
+              <ButtonClose
+                ml={2}
+                type='button'
+                onClick={() => setSending(false)}
+              />
+            </Box>
+          </Box>
+          <Box mt={3}>
+            <Input.Address
+              name='recipient'
+              onChange={e => setToAddress(e.target.value)}
+              value={toAddress}
+              label='Recipient'
+              placeholder='t1...'
+              error={toAddressError}
+              setError={setToAddressError}
+              disabled={step === 2 && !hasError()}
+              valid={validateAddressString(toAddress)}
+            />
+            <Input.Funds
+              name='amount'
+              label='Amount'
+              onAmountChange={setValue}
+              balance={wallet.balance}
+              error={valueError}
+              setError={setValueError}
+              gasLimit={gasLimit}
+              disabled={step === 2 && !hasError()}
+              valid={isValidAmount(value.fil, wallet.balance, valueError)}
+            />
+            <Box display='flex' flexDirection='column'>
+              <Input.Text
+                onChange={() => {}}
+                label='Transfer Fee'
+                value='< 0.1FIL'
+                backgroundColor='background.screen'
+                disabled
+              />
+              <Input.Text
+                label='Completes In'
+                value='Approx. 17 Seconds'
+                onChange={() => {}}
+                backgroundColor='background.screen'
+                disabled
+              />
+            </Box>
             <Box
               display='flex'
+              flexDirection='row'
               alignItems='center'
               justifyContent='space-between'
+              mt={3}
+              mx={1}
             >
-              <Box display='flex' alignItems='center'>
-                <Box
-                  display='flex'
-                  flexDirection='column'
-                  justifyContent='center'
-                  width={6}
-                  height={6}
-                  backgroundColor='core.primary'
-                >
-                  <Glyph
-                    acronym='To'
-                    color='background.screen'
-                    borderColor='core.primary'
-                    backgroundColor='core.primary'
-                  />
-                </Box>
-                <Text color='core.primary' ml={2}>
-                  Sending Filecoin
-                </Text>
-              </Box>
-              <Box display='flex' alignItems='center'>
-                <Stepper
-                  textColor='core.primary'
-                  completedDotColor='core.primary'
-                  incompletedDotColor='core.silver'
-                  step={1}
-                  totalSteps={2}
-                  mr={2}
-                >
-                  Step 1
-                </Stepper>
-                <ButtonClose
-                  ml={2}
-                  type='button'
-                  onClick={() => setSending(false)}
-                />
+              <Total fontSize={4}>Total</Total>
+              <Box display='flex' flexDirection='column' textAlign='right'>
+                <BigTitle color='core.primary'>
+                  {value.fil.toFil()} FIL
+                </BigTitle>
+                <Title color='core.darkgray'>{value.fiat.toString()} USD</Title>
               </Box>
             </Box>
-            <Box mt={3}>
-              <Input.Address
-                name='recipient'
-                onChange={e => setToAddress(e.target.value)}
-                value={toAddress}
-                label='Recipient'
-                placeholder='t1...'
-                error={toAddressError}
-                setError={setToAddressError}
-                disabled={step === 2 && !hasError()}
-                valid={validateAddressString(toAddress)}
+          </Box>
+        </SendCard>
+        <FloatingContainer>
+          {step === 2 && wallet.type === LEDGER ? (
+            <Text>
+              Confirm or reject the transaction on your Ledger Device.
+            </Text>
+          ) : (
+            <>
+              <Button
+                type='button'
+                title='Cancel'
+                variant='secondary'
+                onClick={() => {
+                  setAttemptingTx(false)
+                  setUncaughtError('')
+                  resetLedgerState()
+                  setSending(false)
+                }}
               />
-              <Input.Funds
-                name='amount'
-                label='Amount'
-                onAmountChange={setValue}
-                balance={wallet.balance}
-                error={valueError}
-                setError={setValueError}
-                gasLimit={gasLimit}
-                disabled={step === 2 && !hasError()}
-                valid={isValidAmount(value.fil, wallet.balance)}
-              />
-              <Box display='flex' flexDirection='column'>
-                <Input.Text
-                  onChange={() => {}}
-                  label='Transfer Fee'
-                  value='< 0.1FIL'
-                  backgroundColor='background.screen'
-                  disabled
-                />
-                <Input.Text
-                  label='Completes In'
-                  value='Approx. 17 Seconds'
-                  onChange={() => {}}
-                  backgroundColor='background.screen'
-                  disabled
-                />
-              </Box>
-              <Box
-                display='flex'
-                flexDirection='row'
-                alignItems='center'
-                justifyContent='space-between'
-                mt={3}
-              >
-                <Label>Total</Label>
-                <Box display='flex' flexDirection='column'>
-                  <BigTitle color='core.primary'>
-                    {value.fil.toFil()} FIL
-                  </BigTitle>
-                  <Title color='core.darkgray'>
-                    {value.fiat.toString()} USD
-                  </Title>
-                </Box>
-              </Box>
-            </Box>
-          </SendCard>
-          <FloatingContainer
-            bottom='8px'
-            display='flex'
-            flexDirection='row'
-            justifyContent='space-between'
-            boxShadow={1}
-            backgroundColor='core.white'
-            border={1}
-            borderColor='core.silver'
-            borderRadius={2}
-            p={3}
-          >
-            {step === 2 && wallet.type === LEDGER ? (
-              <Text>
-                Confirm or reject the transaction on your Ledger Device.
-              </Text>
-            ) : (
-              <>
-                <Button
-                  type='button'
-                  title='Cancel'
-                  variant='secondary'
-                  onClick={() => {
-                    setAttemptingTx(false)
-                    setUncaughtError('')
-                    resetLedgerState()
-                    setSending(false)
-                  }}
-                />
-                <Button
-                  disabled={
-                    !!(
-                      hasError() ||
-                      !isValidForm(
-                        toAddress,
-                        value.fil,
-                        wallet.balance,
-                        toAddressError,
-                        valueError
-                      )
+              <Button
+                disabled={
+                  !!(
+                    hasError() ||
+                    !isValidForm(
+                      toAddress,
+                      value.fil,
+                      wallet.balance,
+                      toAddressError,
+                      valueError
                     )
-                  }
-                  type='submit'
-                  title='Next'
-                  variant='primary'
-                  onClick={() => {}}
-                />
-              </>
-            )}
-          </FloatingContainer>
-        </form>
-      </Box>
-    </>
+                  )
+                }
+                type='submit'
+                title='Next'
+                variant='primary'
+                onClick={() => {}}
+              />
+            </>
+          )}
+        </FloatingContainer>
+      </SendForm>
+    </SendContainer>
   )
 }
 

@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Box, Card, Text, Stepper, Glyph } from '../../../Shared'
+import { Box, Card, Text, Stepper, Glyph, Loading } from '../../../Shared'
 
-const StepCard = ({ step }) => {
+const StepCard = ({ loading, step }) => {
   return (
     <Card
       display='flex'
@@ -14,7 +14,7 @@ const StepCard = ({ step }) => {
       mr={2}
     >
       <Box display='flex' alignItems='center'>
-        <Glyph acronym='Ld' />
+        {loading ? <Loading /> : <Glyph acronym='Ld' />}
         <Stepper
           textColor='text'
           completedDotColor='status.success.background'
@@ -35,7 +35,12 @@ const StepCard = ({ step }) => {
 }
 
 StepCard.propTypes = {
+  loading: PropTypes.bool,
   step: PropTypes.number.isRequired
+}
+
+StepCard.defaultProps = {
+  loading: false
 }
 
 export default StepCard
