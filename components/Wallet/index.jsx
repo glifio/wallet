@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
-import { AccountCard, AccountError, BalanceCard, Box } from '../Shared'
+import {
+  AccountCard,
+  AccountError,
+  BalanceCard,
+  Box,
+  NetworkSwitcherGlyph
+} from '../Shared'
 
 import { WALLET_PROP_TYPE } from '../../customPropTypes'
 import Send from './Send.js'
@@ -55,6 +61,7 @@ const Content = styled.div`
   flex-basis: 0;
   flex-grow: 999;
   justify-content: center;
+  padding-top: ${props => props.theme.sizes[4]}px;
   min-width: calc(55% - 1rem);
 `
 
@@ -142,6 +149,7 @@ const WalletView = ({ wallet }) => {
           </Sidebar>
           <Content>
             {sending ? <Send setSending={setSending} /> : <MessageHistory />}
+            <NetworkSwitcherGlyph />
           </Content>
         </Gutter>
       </Wrapper>
