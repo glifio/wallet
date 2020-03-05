@@ -138,13 +138,12 @@ const TransactionHistoryWrapper = () => {
           target='_blank'
           rel='noopener noreferrer'
           href={
-            'https://filscan.io/#/address/detail?address=' +
-            selectedWallet.address
+            'https://filscout.io/en/pc/account?id=' + selectedWallet.address
           }
         >
           See your transaction
         </a>{' '}
-        history on filscan.io.
+        history on filscout.io.
         {/* {pending.length > 0 &&
           pending.map(tx => {
             return (
