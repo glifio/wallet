@@ -7,6 +7,7 @@ import {
   Input,
   Label,
   Text,
+  Title,
   FloatingContainer
 } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
@@ -109,6 +110,24 @@ const GasCustomization = ({
       <Text color='core.darkgray'>
         Transfers complete faster with a higher gas price.
       </Text>
+      <Box
+        display='flex'
+        flexDirection='row'
+        alignItems='center'
+        justifyContent='space-between'
+        mt={3}
+        mx={1}
+      >
+        <Label>New Transaction Fee</Label>
+        <Box display='flex' flexDirection='column' textAlign='right' mt={5}>
+          <Title fontSize={4} color='core.primary'>
+            48 ATAFIL
+          </Title>
+          <Text color='core.darkgray' m={0}>
+            0.12 USD
+          </Text>
+        </Box>
+      </Box>
       <FloatingContainer>
         <>
           <Button
