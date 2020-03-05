@@ -36,11 +36,10 @@ const GasCustomization = ({
 
   return (
     <>
-      <hr />
-      <Label mx={2} my={3} color='core.primary'>
+      <Label my={3} color='core.primary'>
         Custom transaction Fee
       </Label>
-      <Text mx={2} mt={5} mb={3}>
+      <Text mt={5} mb={3}>
         Select a predifined speed
       </Text>
       <Box mb={4} display='flex' flexDirection='row'>
@@ -55,7 +54,7 @@ const GasCustomization = ({
               : 'tertiary'
           }
           title='Slow'
-          mx={2}
+          mr={3}
           type='button'
         />
         <Button
@@ -69,7 +68,7 @@ const GasCustomization = ({
               : 'tertiary'
           }
           title='Medium'
-          mx={2}
+          mr={3}
           type='button'
         />
         <Button
@@ -83,7 +82,7 @@ const GasCustomization = ({
               : 'tertiary'
           }
           title='Fast'
-          mx={2}
+          mr={3}
           type='button'
         />
       </Box>
