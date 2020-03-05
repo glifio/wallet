@@ -37,7 +37,7 @@ const GasCustomization = ({
   return (
     <>
       <Label my={3} color='core.primary'>
-        Custom transaction Fee
+        Custom Transaction Fee
       </Label>
       <Text mt={5} mb={3}>
         Select a predifined speed
@@ -96,6 +96,9 @@ const GasCustomization = ({
         }
       />
       <Input.Number
+        css={`
+          transform: translateY(-1px);
+        `}
         m='0'
         label='Gas Limit'
         value={gasLimitLocal.toAttoFil()}
@@ -118,7 +121,7 @@ const GasCustomization = ({
           />
           <Button
             type='button'
-            title='Save'
+            title='Save Custom Fee'
             variant='primary'
             onClick={() => {
               setGasPrice(gasPriceLocal)
