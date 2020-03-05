@@ -35,6 +35,7 @@ const Funds = forwardRef(
       gasLimit,
       disabled,
       valid,
+      viewOnly,
       ...props
     },
     ref
@@ -222,7 +223,7 @@ const Funds = forwardRef(
               type='number'
               step={new FilecoinNumber('1', 'attofil').toFil()}
               disabled={disabled}
-              valid={valid}
+              valid={viewOnly ? false : valid}
               {...props}
             />
           </Box>
@@ -258,7 +259,7 @@ const Funds = forwardRef(
               type='number'
               step={new FilecoinNumber('1', 'attofil').toFil()}
               min='0'
-              valid={valid}
+              valid={viewOnly ? false : valid}
               disabled={disabled}
             />
           </Box>
@@ -292,7 +293,8 @@ Funds.propTypes = {
    */
   gasLimit: string,
   disabled: bool,
-  valid: bool
+  valid: bool,
+  viewOnly: bool
 }
 
 Funds.defaultProps = {
