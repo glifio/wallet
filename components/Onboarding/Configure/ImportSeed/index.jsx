@@ -1,15 +1,37 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import { Box, Button, Card, Text, Title, Input } from '../../../Shared'
+import React, { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { useRouter } from 'next/router'
+import { Box, Button, Card, Text, Input } from '../../../Shared'
 
 import { useWalletProvider } from '../../../../WalletProvider'
 import StepCard from './StepCard'
+import ProviderCreator from './CreateProvider'
+
+const validateSeed = () => true
 
 export default () => {
-  const { setLedgerProvider, setWalletType } = useWalletProvider()
+  const { setWalletType } = useWalletProvider()
   const [seed, setSeed] = useState('')
+  const [validSeed, setValidSeed] = useState('')
+  const { network, wallets } = useSelector(state => ({
+    network: state.network,
+    wallets: state.wallets
+  }))
+  const router = useRouter()
+
+  useEffect(() => {
+    if (wallets.length > 0) {
+      const params = new URLSearchParams(router.query)
+      router.push(`/wallet?${params.toString()}`)
+    }
+    return () => {
+      setSeed('')
+      setValidSeed('')
+    }
+  }, [router, wallets, network])
   return (
     <>
+      <ProviderCreator network={network} mnemonic={validSeed} />
       <Box
         mt={8}
         mb={6}
@@ -37,7 +59,10 @@ export default () => {
         />
         <Button
           title='Next'
-          onClick={setLedgerProvider}
+          onClick={() => {
+            const isValid = validateSeed(seed)
+            if (isValid) setValidSeed(seed)
+          }}
           variant='primary'
           ml={2}
         />

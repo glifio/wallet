@@ -5,9 +5,14 @@ import {
 } from '../utils/ledger/setLedgerProvider'
 import { clearError, resetLedgerState } from './state'
 
-const fetchDefaultWallet = async (dispatch, network = 't', walletType) => {
+const fetchDefaultWallet = async (
+  dispatch,
+  network = 't',
+  walletType,
+  walletProvider
+) => {
   dispatch(clearError())
-  let provider
+  let provider = walletProvider
   if (walletType === LEDGER) {
     dispatch(resetLedgerState())
     provider = await setLedgerProvider(dispatch, network)
