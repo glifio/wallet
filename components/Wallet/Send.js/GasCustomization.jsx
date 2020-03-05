@@ -121,11 +121,8 @@ const GasCustomization = ({
         <Label>New Transaction Fee</Label>
         <Box display='flex' flexDirection='column' textAlign='right' mt={5}>
           <Title fontSize={4} color='core.primary'>
-            48 ATAFIL
+            48 ATTOFIL
           </Title>
-          <Text color='core.darkgray' m={0}>
-            0.12 USD
-          </Text>
         </Box>
       </Box>
       <FloatingContainer>
