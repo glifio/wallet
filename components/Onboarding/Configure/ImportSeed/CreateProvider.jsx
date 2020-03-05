@@ -37,10 +37,12 @@ export default dynamic({
         },
         sign: async (path, unsignedMessage) => {
           const privateKey = rustModule.key_derive(mnemonic, path).prvkey
-          return rustModule.sign_transaction(
-            unsignedMessage,
-            privateKey.toString('hex')
-          )
+          return rustModule
+            .sign_transaction(
+              JSON.stringify(unsignedMessage),
+              privateKey.toString('hex')
+            )
+            .toString('base64')
         },
         type: HD_WALLET
       }

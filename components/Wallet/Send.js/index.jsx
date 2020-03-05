@@ -114,7 +114,6 @@ const Send = ({ setSending }) => {
         formattedMessage
         // serializedMessage
       )
-      console.log(signature)
       const messageObj = message.encode()
       const msgCid = await provider.sendMessage(messageObj, signature)
       messageObj.cid = msgCid['/']
