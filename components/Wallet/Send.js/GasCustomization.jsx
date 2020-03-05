@@ -40,7 +40,7 @@ const GasCustomization = ({
         Custom Transaction Fee
       </Label>
       <Text mt={5} mb={3}>
-        Select a predifined speed
+        Select a predefined speed
       </Text>
       <Box mb={4} display='flex' flexDirection='row'>
         <Button
