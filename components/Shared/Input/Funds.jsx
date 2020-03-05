@@ -50,11 +50,7 @@ const Funds = forwardRef(
         return false
       }
       // user enters a value that's greater than their balance - gas limit
-      if (
-        amount
-          .plus(new FilecoinNumber(gasLimit, 'attofil'))
-          .isGreaterThanOrEqualTo(balance)
-      ) {
+      if (amount.plus(gasLimit.toAttoFil()).isGreaterThanOrEqualTo(balance)) {
         setError("The amount must be smaller than this account's balance")
         return false
       }
@@ -290,14 +286,13 @@ Funds.propTypes = {
   /**
    * Gas limit selected by user (to make sure we dont go over the user's balance)
    */
-  gasLimit: string,
+  gasLimit: FILECOIN_NUMBER_PROP,
   disabled: bool,
   valid: bool
 }
 
 Funds.defaultProps = {
   error: '',
-  gasLimit: '1000',
   disabled: false
 }
 

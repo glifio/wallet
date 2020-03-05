@@ -46,8 +46,6 @@ Step1Helper.propTypes = {
 
 export default () => {
   const { ledger, setLedgerProvider, setWalletType } = useWalletProvider()
-  console.log(ledger)
-
   return (
     <>
       <Box

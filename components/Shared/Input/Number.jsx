@@ -27,6 +27,7 @@ export const Number = forwardRef(
             <Label>{label}</Label>
           </Box>
           <RawNumberInput
+            type='number'
             onChange={onChange}
             value={value}
             valid={valid}
