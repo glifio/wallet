@@ -114,7 +114,10 @@ export const SwitchAccountButton = styled.button`
   border: 0;
 `
 
-export const BalanceBanner = styled.button`
+export const BalanceBanner = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   grid-area: balance-banner;
   background-color: ${WHITE};
   border: 0;

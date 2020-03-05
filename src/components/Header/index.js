@@ -6,6 +6,9 @@ import 'styled-components/macro'
 import { WHITE, TEXT_XSM } from '../StyledComponents'
 
 export const Header = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: white;
   font-size: 13px;
   height: 50px;
@@ -43,19 +46,27 @@ export const FloatRightLink = styled.span`
   padding-left: 35px;
 `
 
+const RightSideGroup = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: none;
+`
+
 export default () => {
   const history = useHistory()
   const changeTab = relativeUrl => history.push(relativeUrl)
   return (
     <Header>
-      <HomeLink onClick={() => changeTab('/')}>Filament</HomeLink>
-      <FloatRightLink onClick={() => changeTab('/how-to')}>
-        How to use the web wallet
-      </FloatRightLink>
-      <FloatRightLink onClick={() => changeTab('/contact-us')}>
-        Contact Us
-      </FloatRightLink>
-      <FloatRightLink onClick={() => changeTab('/faqs')}>FAQs</FloatRightLink>
+      <HomeLink onClick={() => changeTab('/')}>Home</HomeLink>
+      <RightSideGroup>
+        <FloatRightLink onClick={() => changeTab('/how-to')}>
+          Usage
+        </FloatRightLink>
+        <FloatRightLink onClick={() => changeTab('/contact-us')}>
+          Contact
+        </FloatRightLink>
+        <FloatRightLink onClick={() => changeTab('/faqs')}>FAQs</FloatRightLink>
+      </RightSideGroup>
     </Header>
   )
 }

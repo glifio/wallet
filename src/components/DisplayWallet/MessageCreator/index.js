@@ -101,6 +101,7 @@ const MsgCreator = () => {
           )
         )
       )
+      setConfirmStage('')
       return
     }
 
