@@ -37,11 +37,14 @@ const MsgCreator = () => {
   const [value, setValue] = useState('')
   const [confirmStage, setConfirmStage] = useState('')
   const [errors, setErrors] = useState({ value: false, toAddress: false })
-  const { errorFromRdx, walletProvider, walletType } = useSelector(state => ({
-    errorFromRdx: state.error,
-    walletProvider: state.walletProvider,
-    walletType: state.walletType
-  }))
+  const { errorFromRdx, pendingMsgs, walletProvider, walletType } = useSelector(
+    state => ({
+      errorFromRdx: state.error,
+      pendingMsgs: state.messages.pending,
+      walletProvider: state.walletProvider,
+      walletType: state.walletType
+    })
+  )
   const [ledgerState, dispatchLocal] = useReducer(reducer, initialLedgerState)
   const [gasPrice, setGasPrice] = useState('1')
   const [gasLimit, setGasLimit] = useState('1000')
@@ -89,6 +92,17 @@ const MsgCreator = () => {
 
   const handleSubmit = async e => {
     e.preventDefault()
+
+    if (pendingMsgs.length > 0) {
+      dispatch(
+        error(
+          new Error(
+            'Please wait until your previous transaction confirms before submitting another.'
+          )
+        )
+      )
+      return
+    }
 
     if (confirmStage === 'reviewMessage' && walletType === LEDGER) {
       setConfirmStage('reviewOnDevice')
