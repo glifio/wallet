@@ -49,6 +49,7 @@ const SendContainer = styled.div`
   max-width: ${props => props.theme.sizes[13]}px;
   justify-content: center;
   position: relative;
+  align-self: flex-start;
   flex-basis: 0;
   flex-grow: 999;
 `
