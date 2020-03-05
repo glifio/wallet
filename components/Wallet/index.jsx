@@ -107,6 +107,8 @@ const WalletView = ({ wallet }) => {
       <Wrapper>
         <Gutter>
           <Sidebar>
+            <NetworkSwitcherGlyph />
+
             {hasLedgerError(
               ledger.connectedFailure,
               ledger.locked,
@@ -148,7 +150,6 @@ const WalletView = ({ wallet }) => {
           </Sidebar>
           <Content>
             {sending ? <Send setSending={setSending} /> : <MessageHistory />}
-            <NetworkSwitcherGlyph />
           </Content>
         </Gutter>
       </Wrapper>
