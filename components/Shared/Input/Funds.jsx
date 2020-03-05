@@ -1,6 +1,10 @@
 import React, { forwardRef, useRef, useState } from 'react'
 import { func, string, bool } from 'prop-types'
-import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
+import {
+  FilecoinNumber,
+  BigNumber,
+  Converter
+} from '@openworklabs/filecoin-number'
 
 import Box from '../Box'
 import { RawNumberInput } from './Number'
@@ -19,10 +23,16 @@ const formatFiatValue = number => {
   return number
 }
 
-const toUSD = async amount => new FilecoinNumber(amount, 'fil').multipliedBy(5)
+const converter = new Converter('coinmarketcap')
+
+const toUSD = async amount => {
+  const FIL = await converter.convert(amount, 'FIL', 'USD')
+  return new BigNumber(FIL)
+}
 const fromUSD = async amount => {
   if (!amount) return new FilecoinNumber('0', 'fil')
-  return new FilecoinNumber(new BigNumber(amount).dividedBy(5), 'fil')
+  const USD = await converter.convert(amount, 'USD', 'FIL')
+  return new FilecoinNumber(new BigNumber(USD), 'fil')
 }
 
 const Funds = forwardRef(
