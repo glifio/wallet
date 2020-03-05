@@ -103,7 +103,9 @@ const GasCustomization = ({
           setGasLimitLocal(new FilecoinNumber(e.target.value || '0', 'attofil'))
         }
       />
-      <Text>*Transfers complete faster with a higher gas price.</Text>
+      <Text color='core.darkgray'>
+        Transfers complete faster with a higher gas price.
+      </Text>
       <FloatingContainer>
         <>
           <Button
