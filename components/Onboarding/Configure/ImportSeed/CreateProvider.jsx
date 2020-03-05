@@ -23,13 +23,25 @@ export default dynamic({
       if (!privateMnemonic) privateMnemonic = create()
       return {
         getAccounts: async (nStart = 0, nEnd = 5, network = 't') => {
-          const answer = rustModule.key_derive(
-            'equip will roof matter pink blind book anxiety banner elbow sun young',
-            "m/44'/461'/5'/0'/0"
-          )
-          return [answer.address]
+          const accounts = []
+          for (let i = nStart; i < nEnd; i += 1) {
+            const networkCode = network === 't' ? 1 : 461
+            accounts.push(
+              rustModule.key_derive(
+                mnemonic,
+                `m/44'/${networkCode}'/5'/0'/${i}`
+              ).address
+            )
+          }
+          return accounts
         },
-        sign: async (path, unsignedMessage) => {},
+        sign: async (path, unsignedMessage) => {
+          const privateKey = rustModule.key_derive(mnemonic, path).prvkey
+          return rustModule.sign_transaction(
+            JSON.stringify(unsignedMessage),
+            privateKey.toString('hex')
+          )
+        },
         type: MNEMONIC
       }
     }
@@ -72,7 +84,6 @@ export default dynamic({
       network: PropTypes.oneOf(['t', 'f'])
     }
 
-    // Return a React component that calls the add_one method on the wasm module
     return ProviderCreator
   }
 })
