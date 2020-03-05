@@ -7,7 +7,7 @@ import Filecoin from '@openworklabs/filecoin-wallet-provider'
 
 import { useWalletProvider } from '../../../../WalletProvider'
 import { createWalletProvider } from '../../../../WalletProvider/state'
-import { MNEMONIC } from '../../../../constants'
+import { HD_WALLET } from '../../../../constants'
 import { walletList } from '../../../../store/actions'
 
 const create = () =>
@@ -38,11 +38,11 @@ export default dynamic({
         sign: async (path, unsignedMessage) => {
           const privateKey = rustModule.key_derive(mnemonic, path).prvkey
           return rustModule.sign_transaction(
-            JSON.stringify(unsignedMessage),
+            unsignedMessage,
             privateKey.toString('hex')
           )
         },
-        type: MNEMONIC
+        type: HD_WALLET
       }
     }
 

@@ -102,11 +102,19 @@ const Send = ({ setSending }) => {
         nonce,
         params: ''
       })
-      const serializedMessage = await message.serialize()
+
+      const formattedMessage = toLowerCaseMsgFields(message.encode())
+      formattedMessage.gas_price = formattedMessage.gasprice
+      formattedMessage.gas_limit = formattedMessage.gaslimit
+      delete formattedMessage.gasprice
+      delete formattedMessage.gaslimit
+      // const serializedMessage = await message.serialize()
       const signature = await provider.wallet.sign(
         wallet.path,
-        serializedMessage
+        formattedMessage
+        // serializedMessage
       )
+      console.log(signature)
       const messageObj = message.encode()
       const msgCid = await provider.sendMessage(messageObj, signature)
       messageObj.cid = msgCid['/']
