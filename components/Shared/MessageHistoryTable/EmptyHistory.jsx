@@ -9,8 +9,8 @@ export default () => {
         How do I see my transaction history?
       </Text>
       <Text my='0' color='core.darkgray'>
-        If you're seeing this, you haven't sent or received any FIL from this
-        account yet. When you do, your transactions will appear.
+        If you&rsquo;re seeing this, you haven&rsquo;t sent or received any FIL
+        from this account yet. When you do, your transactions will appear.
       </Text>
     </Box>
   )
