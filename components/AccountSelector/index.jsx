@@ -24,6 +24,7 @@ import {
   reportLedgerConfigError
 } from '../../utils/ledger/reportLedgerConfigError'
 import makeFriendlyBalance from '../../utils/makeFriendlyBalance'
+import useWallet from '../../WalletProvider/useWallet'
 
 const FloatingContainer = styled(Box)`
   position: fixed;
@@ -40,7 +41,8 @@ const Close = styled(ButtonClose)`
   right: ${props => props.theme.sizes[3]}px;
 `
 
-const AccountSelector = ({ wallet }) => {
+const AccountSelector = () => {
+  const wallet = useWallet()
   const [loadingAccounts, setLoadingAccounts] = useState(false)
   const [uncaughtError, setUncaughtError] = useState(null)
   const dispatch = useDispatch()
@@ -256,10 +258,6 @@ const AccountSelector = ({ wallet }) => {
       )}
     </>
   )
-}
-
-AccountSelector.propTypes = {
-  wallet: WALLET_PROP_TYPE
 }
 
 export default AccountSelector
