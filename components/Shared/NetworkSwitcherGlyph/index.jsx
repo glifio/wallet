@@ -11,14 +11,15 @@ const NetworkSwitcherButton = styled.button.attrs(() => ({
   flexShrink: '0',
   alignItems: 'center',
   justifyContent: 'center',
-  height: 6,
-  paddingLeft: 2,
-  padidngRight: 2,
+  paddingLeft: 4,
+  paddingRight: 4,
+  paddingTop: 1,
+  paddingBottom: 1,
   fontSize: 2,
   fontWeight: 1,
-  fontFamily: 'RT-Alias-Medium',
+  fontFamily: 'RT-Alias-Grotesk',
   border: 0,
-  borderRadius: 0
+  borderRadius: 4
 }))`
   background: ${props => {
     if (props.connected && props.active)
@@ -27,6 +28,11 @@ const NetworkSwitcherButton = styled.button.attrs(() => ({
     return props.theme.colors.core.transparent
   }};
   transition: 0.2s ease-in-out;
+
+  &:first-child {
+    margin-right: ${props => props.theme.sizes[2]}px;
+  }
+
   &:hover {
     cursor: pointer;
     background: ${props => props.active || props.theme.colors.core.lightgray};
@@ -52,9 +58,9 @@ const NetworkSwitcherGlyph = ({ ...props }) => {
   return (
     <Box
       display='flex'
-      maxWidth={9}
       width='100%'
-      justifyContent='flex-end'
+      justifyContent='flex-start'
+      mb={2}
       {...props}
     >
       <NetworkSwitcherButton
