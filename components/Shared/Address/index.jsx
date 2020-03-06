@@ -11,23 +11,26 @@ const Wrapper = styled(Box).attrs(() => ({
   border: 1,
   borderColor: 'input.border',
   borderRadius: 1,
-  pl: 3
+  pl: 3,
+  width: 13
 }))`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  width: auto;
+  ${space};
 `
 
 const InlineButton = styled.button.attrs(() => ({
-  ...theme.textStyles.label,
   border: 0,
   borderLeft: 1,
   borderColor: 'input.border',
   borderTopRightRadius: 1,
   borderBottomRightRadius: 1,
   bg: 'input.background.base',
-  width: 7
+  width: 7,
+  p: 0,
+  ...theme.textStyles.label
 }))`
   display: inline-block;
   &:hover {
@@ -46,11 +49,26 @@ const Address = forwardRef(({ address, ...props }, ref) => {
   const [showAddress, setShowAddress] = useState(false)
   return (
     <Wrapper ref={ref} {...props}>
-      <Text pr={3}>{address}</Text>
-      <InlineButton onClick={() => copyToClipboard(address)}>Copy</InlineButton>
-      <InlineButton onClick={() => setShowAddress(!showAddress)}>
-        {showAddress ? 'Reveal' : 'Hide'}
-      </InlineButton>
+      {showAddress ? (
+        <Text pl={1} pr={2}>
+          {address}
+        </Text>
+      ) : (
+        <Box pl={1} pr={2} display='flex' flexDirection='row'>
+          <Text>{address.slice(0, 2)}</Text>
+          <Text mx={1}>{Array(address.length - 10).join('●')}</Text>
+          <Text>{address.slice(-4)}</Text>
+        </Box>
+      )}
+
+      <Box height='100%' display='flex' flexDirection='row'>
+        <InlineButton onClick={() => copyToClipboard(address)}>
+          Copy
+        </InlineButton>
+        <InlineButton onClick={() => setShowAddress(!showAddress)}>
+          {showAddress ? 'Hide' : 'Reveal'}
+        </InlineButton>
+      </Box>
     </Wrapper>
   )
 })
