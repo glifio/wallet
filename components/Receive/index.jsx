@@ -10,8 +10,6 @@ import {
   Sidebar,
   Content
 } from '../Shared'
-import Send from './Send.js'
-import MessageView from './Message'
 import { useWalletProvider } from '../../WalletProvider'
 import {
   LEDGER,
@@ -26,6 +24,7 @@ import {
 import MsgConfirmer from '../../lib/confirm-message'
 import useUpToDateBalance from '../../lib/update-balance'
 import useWallet from '../../WalletProvider/useWallet'
+import Receive from './Receive'
 
 const WalletView = () => {
   useUpToDateBalance()
@@ -72,7 +71,6 @@ const WalletView = () => {
         <Gutter>
           <Sidebar>
             <NetworkSwitcherGlyph />
-
             {hasLedgerError(
               ledger.connectedFailure,
               ledger.locked,
@@ -112,7 +110,7 @@ const WalletView = () => {
             />
           </Sidebar>
           <Content>
-            {sending ? <Send setSending={setSending} /> : <MessageView />}
+            <Receive address={wallet.address} />
           </Content>
         </Gutter>
       </Wrapper>
