@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import Box from '../Box'
@@ -30,9 +30,21 @@ const MessageHistoryTable = forwardRef(
           <EmptyHistory />
         )}
       </Box>
-    )
-  }
-)
+      {messages.length > 0 ? (
+        messages.map(msg => (
+          <MessageHistoryRow
+            address={address}
+            key={msg.cid}
+            message={msg}
+            selectMessage={selectMessage}
+          />
+        ))
+      ) : (
+        <EmptyHistory />
+      )}
+    </Box>
+  )
+}
 
 MessageHistoryTable.propTypes = {
   /**
@@ -42,7 +54,8 @@ MessageHistoryTable.propTypes = {
   /**
    * An array of message types
    */
-  messages: PropTypes.arrayOf(MESSAGE_PROPS)
+  messages: PropTypes.arrayOf(MESSAGE_PROPS),
+  selectMessage: PropTypes.func.isRequired
 }
 
 MessageHistoryTable.defaultProps = {
