@@ -11,18 +11,7 @@ export const initialState = {
     loadedSuccess: false,
     loadedFailure: false,
     pending: [],
-    confirmed: [
-      {
-        to: 't1quexo6nwc27rtbo5jqutywo3dfxbbrqut6pat3y',
-        from: 't1hn7twanih6djfrg7s3phaek3ayge72c6vhndrhq',
-        nonce: 25,
-        value: '1000000000000000',
-        gasprice: '1',
-        gas_used: '1000',
-        cid: 'bafy2bzacecf2gancqs5xqffznydzixqco6rjerm337b5tjl2zqjy7qs32bnv2',
-        status: 'confirmed'
-      }
-    ],
+    confirmed: [],
     links: {},
     paginating: false
   },
