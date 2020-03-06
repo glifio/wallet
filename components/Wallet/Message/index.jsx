@@ -25,6 +25,7 @@ export default () => {
     <>
       {selectedMessageCid ? (
         <MessageDetail
+          close={() => setSelectedMessageCid('')}
           message={messages.find(({ cid }) => cid === selectedMessageCid)}
         />
       ) : (
