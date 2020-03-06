@@ -48,6 +48,8 @@ const Funds = forwardRef(
     const [filAmount, setFilAmount] = useState(initialFilAmount)
     const [fiatAmount, setFiatAmount] = useState(initialFiatAmount)
 
+    console.log(filAmount)
+
     const timeout = useRef()
 
     const checkBalance = val => {
@@ -56,7 +58,7 @@ const Funds = forwardRef(
         return false
       }
       // user enters a value that's greater than their balance - gas limit
-      if (val.plus(gasLimit.toAttoFil()).isGreaterThanOrEqualTo(balance)) {
+      if (val.plus(gasLimit.toFil()).isGreaterThanOrEqualTo(balance)) {
         setError("The amount must be smaller than this account's balance")
         return false
       }

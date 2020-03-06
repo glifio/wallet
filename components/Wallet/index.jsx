@@ -111,6 +111,7 @@ const WalletView = ({ wallet }) => {
             />
           </Sidebar>
           <Content>
+            {sending ? <Send setSending={setSending} /> : <MessageView />}
           </Content>
         </Gutter>
       </Wrapper>
