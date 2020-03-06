@@ -48,8 +48,6 @@ const Funds = forwardRef(
     const [filAmount, setFilAmount] = useState(initialFilAmount)
     const [fiatAmount, setFiatAmount] = useState(initialFiatAmount)
 
-    console.log(filAmount)
-
     const timeout = useRef()
 
     const checkBalance = val => {
