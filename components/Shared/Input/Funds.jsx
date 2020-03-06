@@ -1,11 +1,12 @@
 import React, { forwardRef, useRef, useState } from 'react'
-import { func, string, bool } from 'prop-types'
+import { func, string, bool, oneOfType } from 'prop-types'
 import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 
 import Box from '../Box'
 import { RawNumberInput } from './Number'
 import { Text, Label } from '../Typography'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
+import noop from '../../../utils/noop'
 
 const formatFilValue = number => {
   if (!number) return ''
@@ -35,22 +36,27 @@ const Funds = forwardRef(
       gasLimit,
       disabled,
       valid,
+      amount,
       ...props
     },
     ref
   ) => {
-    const [fiatAmount, setFiatAmount] = useState('')
-    const [filAmount, setFilAmount] = useState('')
+    const initialFilAmount = amount ? new FilecoinNumber(amount, 'attofil') : ''
+    const initialFiatAmount = amount
+      ? new FilecoinNumber(amount, 'attofil').toFil()
+      : ''
+    const [filAmount, setFilAmount] = useState(initialFilAmount)
+    const [fiatAmount, setFiatAmount] = useState(initialFiatAmount)
 
     const timeout = useRef()
 
-    const checkBalance = amount => {
-      if (!amount || new BigNumber(amount).isEqualTo(0)) {
+    const checkBalance = val => {
+      if (!val || new BigNumber(val).isEqualTo(0)) {
         setError('Please enter a valid amount.')
         return false
       }
       // user enters a value that's greater than their balance - gas limit
-      if (amount.plus(gasLimit.toAttoFil()).isGreaterThanOrEqualTo(balance)) {
+      if (val.plus(gasLimit.toAttoFil()).isGreaterThanOrEqualTo(balance)) {
         setError("The amount must be smaller than this account's balance")
         return false
       }
@@ -58,12 +64,12 @@ const Funds = forwardRef(
       return true
     }
 
-    const onTimerFil = async amount => {
-      const fiatAmnt = await toUSD(amount)
-      const validBalance = checkBalance(amount)
+    const onTimerFil = async val => {
+      const fiatAmnt = await toUSD(val)
+      const validBalance = checkBalance(val)
       if (validBalance) {
         setFiatAmount(fiatAmnt)
-        onAmountChange({ fil: amount, fiat: fiatAmnt })
+        onAmountChange({ fil: val, fiat: fiatAmnt })
       } else {
         onAmountChange({
           fil: new FilecoinNumber('0', 'fil'),
@@ -72,12 +78,12 @@ const Funds = forwardRef(
       }
     }
 
-    const onTimerFiat = async amount => {
-      const fil = await fromUSD(amount)
-      const validBalance = checkBalance(amount)
+    const onTimerFiat = async val => {
+      const fil = await fromUSD(val)
+      const validBalance = checkBalance(val)
       if (validBalance) {
         setFilAmount(fil)
-        onAmountChange({ fil, fiat: amount })
+        onAmountChange({ fil, fiat: val })
       } else {
         onAmountChange({
           fil: new FilecoinNumber('0', 'fil'),
@@ -270,7 +276,7 @@ Funds.propTypes = {
    * entered in the Funds input (in a BigNumber and FilecoinNumber instance)
    * @returns {Object} - { fiat: BigNumber, fil: FilecoinNumber }
    */
-  onAmountChange: func.isRequired,
+  onAmountChange: func,
   /**
    * Balance of account sending the transaction
    */
@@ -282,18 +288,23 @@ Funds.propTypes = {
   /**
    * A setter to set the error when errors occur
    */
-  setError: func.isRequired,
+  setError: func,
   /**
    * Gas limit selected by user (to make sure we dont go over the user's balance)
    */
   gasLimit: FILECOIN_NUMBER_PROP,
   disabled: bool,
-  valid: bool
+  valid: bool,
+  amount: oneOfType([string, FILECOIN_NUMBER_PROP])
 }
 
 Funds.defaultProps = {
   error: '',
-  disabled: false
+  disabled: false,
+  setError: noop,
+  onAmountChange: noop,
+  amount: '',
+  gasLimit: new FilecoinNumber('1000', 'attofil')
 }
 
 export default Funds

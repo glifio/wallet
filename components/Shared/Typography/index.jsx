@@ -60,7 +60,7 @@ const H4Base = styled.h4`
 `
 
 export const Label = forwardRef(({ children, ...props }, ref) => (
-  <H4Base m={0} ref={ref} {...theme.textStyles.label} {...props}>
+  <H4Base m={0} ref={ref} {...props} {...theme.textStyles.label}>
     {children}
   </H4Base>
 ))

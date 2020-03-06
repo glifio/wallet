@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
 import { useRouter } from 'next/router'
-import { Wrapper, Gutter, Sidebar, Content } from '../Shared/'
 import {
   AccountCard,
   AccountError,
   BalanceCard,
-  Box,
-  NetworkSwitcherGlyph
+  NetworkSwitcherGlyph,
+  Wrapper,
+  Gutter,
+  Sidebar,
+  Content
 } from '../Shared'
-
 import { WALLET_PROP_TYPE } from '../../customPropTypes'
 import Send from './Send.js'
-import MessageHistory from './MessageHistory'
+import MessageView from './Message'
 import { useWalletProvider } from '../../WalletProvider'
 import {
   LEDGER,
@@ -101,7 +101,6 @@ const WalletView = ({ wallet }) => {
                 mb={2}
               />
             )}
-
             <BalanceCard
               balance={wallet.balance}
               disableButtons={sending}
@@ -110,7 +109,7 @@ const WalletView = ({ wallet }) => {
             />
           </Sidebar>
           <Content>
-            {sending ? <Send setSending={setSending} /> : <MessageHistory />}
+            {sending ? <Send setSending={setSending} /> : <MessageView />}
             <NetworkSwitcherGlyph />
           </Content>
         </Gutter>
