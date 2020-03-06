@@ -9,37 +9,33 @@ import { ADDRESS_PROPTYPE, MESSAGE_PROPS } from '../../../customPropTypes'
 import MessageHistoryRow from './MessageHistoryRow'
 import EmptyHistory from './EmptyHistory'
 
-const MessageHistoryTable = forwardRef(
-  ({ address, messages, setMessage, ...props }, ref) => {
-    return (
-      <Box ref={ref} {...props} maxWidth={16}>
-        <Box display='flex' alignItems='center' justifyContent='flex-start'>
-          <Glyph mr={3} color='core.primary' acronym='Tx' />
-          <Text color='core.primary'>Transaction History</Text>
-        </Box>
-        <button type='submit' onClick={() => setMessage('123')}>
-          go to message detail
-        </button>
-        {messages.length > 0 ? (
-          messages.map(msg => (
-            <MessageHistoryRow
-              address={address}
-              key={msg.cid}
-              message={msg}
-              // This onSelection is not hooked up yet
-              onSelection={() => {
-                console.log('here', msg.cid)
-                setMessage(msg.cid)
-              }}
-            />
-          ))
-        ) : (
-          <EmptyHistory />
-        )}
+const MessageHistoryTable = ({
+  address,
+  messages,
+  selectMessage,
+  ...props
+}) => {
+  return (
+    <Box {...props} maxWidth={16}>
+      <Box display='flex' alignItems='center' justifyContent='flex-start'>
+        <Glyph mr={3} color='core.primary' acronym='Tx' />
+        <Text color='core.primary'>Transaction History</Text>
       </Box>
-    )
-  }
-)
+      {messages.length > 0 ? (
+        messages.map(msg => (
+          <MessageHistoryRow
+            address={address}
+            key={msg.cid}
+            message={msg}
+            selectMessage={selectMessage}
+          />
+        ))
+      ) : (
+        <EmptyHistory />
+      )}
+    </Box>
+  )
+}
 
 MessageHistoryTable.propTypes = {
   /**
@@ -50,7 +46,7 @@ MessageHistoryTable.propTypes = {
    * An array of message types
    */
   messages: PropTypes.arrayOf(MESSAGE_PROPS),
-  setMessage: PropTypes.func
+  selectMessage: PropTypes.func.isRequired
 }
 
 MessageHistoryTable.defaultProps = {

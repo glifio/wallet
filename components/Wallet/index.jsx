@@ -12,7 +12,7 @@ import {
 } from '../Shared'
 import { WALLET_PROP_TYPE } from '../../customPropTypes'
 import Send from './Send.js'
-import MessageHistory from './MessageHistory'
+import MessageView from './Message'
 import { useWalletProvider } from '../../WalletProvider'
 import {
   LEDGER,
@@ -109,7 +109,7 @@ const WalletView = ({ wallet }) => {
             />
           </Sidebar>
           <Content>
-            {sending ? <Send setSending={setSending} /> : <MessageHistory />}
+            {sending ? <Send setSending={setSending} /> : <MessageView />}
             <NetworkSwitcherGlyph />
           </Content>
         </Gutter>

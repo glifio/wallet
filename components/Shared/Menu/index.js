@@ -19,5 +19,4 @@ export const MenuItem = styled.li`
   ${layout}
   ${flexbox}
   ${grid}
-
 `

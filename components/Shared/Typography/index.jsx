@@ -53,13 +53,6 @@ export const Text = forwardRef((props, ref) => {
 Text.propTypes = { children: node.isRequired }
 
 const H4Base = styled.h4`
-  color: ${props => {
-    if (props.status === 'confirmed')
-      return props.theme.colors.status.success.background
-    if (props.status === 'pending')
-      return props.theme.colors.status.pending.foreground
-  }};
-
   ${color}
   ${typography}
   ${layout}

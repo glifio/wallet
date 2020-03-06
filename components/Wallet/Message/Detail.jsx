@@ -69,10 +69,18 @@ const MessageDetail = ({ close, message }) => {
           />
           <Box m='0' display='flex' flexDirection='row' alignItems='center'>
             <IconMessageStatus status='confirmed' />
-            <Label status='confirmed'>SENT</Label>
+            <Label
+              color={
+                message.status === 'confirmed'
+                  ? 'colors.status.success.background'
+                  : 'colors.status.pending.foreground'
+              }
+            >
+              SENT
+            </Label>
           </Box>
           <Box display='flex' flexDirection='row' mr={2}>
-            <Text my='0' mr={1} color='gray'>
+            <Text my='0' mr={1} color='core.lightgray'>
               Jan 24,
             </Text>
             <Text my='0'>11:48PM</Text>
