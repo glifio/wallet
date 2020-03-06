@@ -4,7 +4,6 @@ import { setMsgInCache, removeMsgFromCache } from './cache'
 export const initialState = {
   wallets: [],
   selectedWalletIdx: 0,
-  selectedMessageCID: null,
   error: null,
   messages: {
     page: 0,
@@ -172,10 +171,3 @@ export const switchNetwork = (state, { network }) => ({
     address: `${network}${w.address.slice(1)}`
   }))
 })
-
-export const selectMessage = (state, { message }) => {
-  return {
-    ...state,
-    selectedMessageCID: message
-  }
-}

@@ -6,6 +6,7 @@ import Box from '../Box'
 import { RawNumberInput } from './Number'
 import { Text, Label } from '../Typography'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
+import noop from '../../../utils/noop'
 
 const formatFilValue = number => {
   if (!number) return ''
@@ -35,7 +36,6 @@ const Funds = forwardRef(
       gasLimit,
       disabled,
       valid,
-      viewOnly,
       ...props
     },
     ref
@@ -51,11 +51,7 @@ const Funds = forwardRef(
         return false
       }
       // user enters a value that's greater than their balance - gas limit
-      if (
-        amount
-          .plus(new FilecoinNumber(gasLimit, 'attofil'))
-          .isGreaterThanOrEqualTo(balance)
-      ) {
+      if (amount.plus(gasLimit.toAttoFil()).isGreaterThanOrEqualTo(balance)) {
         setError("The amount must be smaller than this account's balance")
         return false
       }
@@ -223,7 +219,7 @@ const Funds = forwardRef(
               type='number'
               step={new FilecoinNumber('1', 'attofil').toFil()}
               disabled={disabled}
-              valid={viewOnly ? false : valid}
+              valid={valid}
               {...props}
             />
           </Box>
@@ -259,7 +255,7 @@ const Funds = forwardRef(
               type='number'
               step={new FilecoinNumber('1', 'attofil').toFil()}
               min='0'
-              valid={viewOnly ? false : valid}
+              valid={valid}
               disabled={disabled}
             />
           </Box>
@@ -291,17 +287,16 @@ Funds.propTypes = {
   /**
    * Gas limit selected by user (to make sure we dont go over the user's balance)
    */
-  gasLimit: string,
+  gasLimit: FILECOIN_NUMBER_PROP,
   disabled: bool,
-  valid: bool,
-  viewOnly: bool
+  valid: bool
 }
 
 Funds.defaultProps = {
   error: '',
-  gasLimit: '1000',
   disabled: false,
-  onAmountChange: () => {}
+  setError: noop,
+  onAmountChange: noop
 }
 
 export default Funds

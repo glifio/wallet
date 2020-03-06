@@ -13,8 +13,7 @@ import {
   FETCHING_NEXT_PAGE_SUCCESS,
   FETCHING_NEXT_PAGE_FAILURE,
   WALLET_LIST,
-  POPULATE_REDUX,
-  SELECT_MESSAGE
+  POPULATE_REDUX
 } from './actionTypes'
 
 export const walletList = wallets => ({
@@ -109,12 +108,5 @@ export const switchNetwork = network => ({
   type: SWITCH_NETWORK,
   payload: {
     network
-  }
-})
-
-export const selectMessage = message => ({
-  type: SELECT_MESSAGE,
-  payload: {
-    message
   }
 })
