@@ -1,9 +1,7 @@
-import React, { forwardRef } from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { func } from 'prop-types'
 import styled from 'styled-components'
-import theme from '../../Shared/theme'
 
 import {
   Box,
@@ -17,8 +15,9 @@ import {
   IconMessageStatus
 } from '../../Shared'
 import { ButtonClose } from '../../Shared/IconButtons'
+import { MESSAGE_PROPS } from '../../../customPropTypes'
 
-const MessageDetailCard = styled(Card).attrs(props => ({
+const MessageDetailCard = styled(Card).attrs(() => ({
   my: 2,
   mx: 2
 }))`
@@ -30,27 +29,7 @@ const MessageDetailCard = styled(Card).attrs(props => ({
   background-color: ${props => props.theme.colors.background.screen};
 `
 
-const MessageDetail = forwardRef(({ setMessage }, ref) => {
-  // const { message } = useSelector(state => {
-  //   // const currentMessage = state.messages.find(item => {
-  //   //   item
-  //   // })
-  //   return {
-  //     message: state.messages[0] ? state.messages[0] : {}
-  //   }
-  // })
-
-  const message = {
-    to: 't1quexo6nwc27rtbo5jqutywo3dfxbbrqut6pat3y',
-    from: 't1hn7twanih6djfrg7s3phaek3ayge72c6vhndrhq',
-    nonce: 25,
-    value: '1000000000000000',
-    gasprice: '1',
-    gas_used: '1000',
-    cid: 'bafy2bzacecf2gancqs5xqffznydzixqco6rjerm337b5tjl2zqjy7qs32bnv2',
-    status: 'confirmed'
-  }
-
+const MessageDetail = ({ close, message }) => {
   return (
     <MessageDetailCard>
       <Box
@@ -83,9 +62,7 @@ const MessageDetail = forwardRef(({ setMessage }, ref) => {
           <ButtonClose
             ml={2}
             type='button'
-            onClick={() => {
-              setMessage(null)
-            }}
+            onClick={close}
             css={`
               align-self: flex-end;
             `}
@@ -103,24 +80,18 @@ const MessageDetail = forwardRef(({ setMessage }, ref) => {
         </Box>
       </Box>
       <Box mt={1}>
-        <Input.Address value='t123' label='Sender' disabled />
-        <Input.Address
-          name='recipient'
-          value='t123'
-          label='Recipient'
-          disabled
-        />
+        <Input.Address value={message.from} label='Sender' disabled />
+        <Input.Address value={message.to} label='Recipient' disabled />
         <Input.Funds
           balance={new FilecoinNumber('0.1', 'fil')}
           label='Amount'
           disabled
-          valid
-          viewOnly
+          amount={message.value}
         />
         <Input.Text
           onChange={() => {}}
           label='Transfer Fee'
-          value='< 0.1FIL'
+          value={message.gas_used}
           backgroundColor='background.screen'
           disabled
         />
@@ -134,17 +105,19 @@ const MessageDetail = forwardRef(({ setMessage }, ref) => {
         >
           <Label>Total</Label>
           <Box display='flex' flexDirection='column'>
-            <BigTitle color='core.primary'>2 FIL</BigTitle>
-            <Title color='core.darkgray'>10 USD</Title>
-            {/* <BigTitle color='core.primary'>{value.fil.toFil()} FIL</BigTitle>
-                <Title color='core.darkgray'>{value.fiat.toString()} USD</Title> */}
+            <BigTitle color='core.primary'>
+              {new FilecoinNumber(message.value, 'attofil').toFil()}
+            </BigTitle>
+            <Title color='core.darkgray'>
+              {new FilecoinNumber(message.value, 'attofil').toFil()}
+            </Title>
           </Box>
         </Box>
       </Box>
     </MessageDetailCard>
   )
-})
+}
 
-MessageDetail.propTypes = { setMessage: func }
+MessageDetail.propTypes = { close: func, message: MESSAGE_PROPS }
 
 export default MessageDetail
