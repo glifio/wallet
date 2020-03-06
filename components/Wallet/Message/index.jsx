@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import MessageDetail from './Detail'
 import { MessageHistoryTable } from '../../Shared'
-import { useWallet } from '../hooks'
+import useWallet from '../../../WalletProvider/useWallet'
 
 export default () => {
   const [selectedMessageCid, setSelectedMessageCid] = useState('')
