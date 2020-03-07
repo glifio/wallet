@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Address, Box, Glyph, Text, ButtonClose } from '../Shared'
+import { Address, Box, Glyph, Text, ButtonClose, QRCode } from '../Shared'
 import { ADDRESS_PROPTYPE } from '../../customPropTypes'
 
 const Wrapper = styled(Box).attrs(() => ({
@@ -38,6 +38,7 @@ const Receive = ({ address }) => {
       </Text>
       <Address address={address} />
       <Text my={6}>Or share this QR code:</Text>
+      <QRCode address={address} />
     </Wrapper>
   )
 }
