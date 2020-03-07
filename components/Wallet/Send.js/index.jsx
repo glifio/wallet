@@ -105,6 +105,22 @@ const Send = ({ close }) => {
 
   const [attemptingTx, setAttemptingTx] = useState(false)
 
+  const estimateGas = async gp => {
+    // create a fake message
+    const message = new Message({
+      to: wallet.address,
+      from: wallet.address,
+      value: value.fil.toAttoFil(),
+      method: 0,
+      gasPrice: gp.toAttoFil(),
+      gasLimit: '100000000',
+      nonce: 0,
+      params: ''
+    })
+
+    return walletProvider.estimateGas(message.encode())
+  }
+
   const submitMsg = async () => {
     let provider = walletProvider
     if (wallet.type === LEDGER) {
@@ -249,6 +265,7 @@ const Send = ({ close }) => {
           <Box mt={3}>
             {customizingGas ? (
               <GasCustomization
+                estimateGas={estimateGas}
                 exit={() => setCustomizingGas(false)}
                 gasPrice={gasPrice}
                 gasLimit={gasLimit}
@@ -284,13 +301,6 @@ const Send = ({ close }) => {
                     onChange={() => {}}
                     label='Transfer Fee'
                     value='< 0.1FIL'
-                    backgroundColor='background.screen'
-                    disabled
-                  />
-                  <Input.Text
-                    label='Completes In'
-                    value='Approx. 17 Seconds'
-                    onChange={() => {}}
                     backgroundColor='background.screen'
                     disabled
                   />
