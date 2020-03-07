@@ -26,11 +26,13 @@ import {
 import MsgConfirmer from '../../lib/confirm-message'
 import useUpToDateBalance from '../../lib/update-balance'
 import useWallet from '../../WalletProvider/useWallet'
+import Receive from '../Receive'
+import { MESSAGE_HISTORY, SEND, RECEIVE } from './views'
 
 const WalletView = () => {
   useUpToDateBalance()
   const wallet = useWallet()
-  const [sending, setSending] = useState(false)
+  const [childView, setChildView] = useState(MESSAGE_HISTORY)
   const { ledger, walletType, connectLedger } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState(null)
   const [showLedgerError, setShowLedgerError] = useState(false)
@@ -51,11 +53,6 @@ const WalletView = () => {
     router.push(`/wallet/accounts?${params.toString()}`)
   }
 
-  const onReceive = () => {
-    const params = new URLSearchParams(router.query)
-    router.push(`/wallet/receive?${params.toString()}`)
-  }
-
   const onShowOnLedger = async () => {
     setLedgerBusy(true)
     try {
@@ -69,6 +66,8 @@ const WalletView = () => {
     }
     setLedgerBusy(false)
   }
+
+  const onViewChange = view => childView !== view && setChildView(view)
 
   return (
     <>
@@ -111,13 +110,24 @@ const WalletView = () => {
             )}
             <BalanceCard
               balance={wallet.balance}
-              disableButtons={sending}
-              onReceive={onReceive}
-              onSend={() => setSending(true)}
+              onReceive={() => onViewChange(RECEIVE)}
+              onSend={() => onViewChange(SEND)}
             />
           </Sidebar>
           <Content>
-            {sending ? <Send setSending={setSending} /> : <MessageView />}
+            {childView === MESSAGE_HISTORY && <MessageView />}
+            {childView === SEND && (
+              <Send
+                close={() => setChildView(MESSAGE_HISTORY)}
+                setSending={() => setChildView(SEND)}
+              />
+            )}
+            {childView === RECEIVE && (
+              <Receive
+                close={() => setChildView(MESSAGE_HISTORY)}
+                address={wallet.address}
+              />
+            )}
           </Content>
         </Gutter>
       </Wrapper>
