@@ -51,6 +51,11 @@ const WalletView = () => {
     router.push(`/wallet/accounts?${params.toString()}`)
   }
 
+  const onReceive = () => {
+    const params = new URLSearchParams(router.query)
+    router.push(`/wallet/receive?${params.toString()}`)
+  }
+
   const onShowOnLedger = async () => {
     setLedgerBusy(true)
     try {
@@ -107,7 +112,7 @@ const WalletView = () => {
             <BalanceCard
               balance={wallet.balance}
               disableButtons={sending}
-              onReceive={() => {}}
+              onReceive={onReceive}
               onSend={() => setSending(true)}
             />
           </Sidebar>
