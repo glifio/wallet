@@ -10,7 +10,6 @@ import {
   Sidebar,
   Content
 } from '../Shared'
-import { WALLET_PROP_TYPE } from '../../customPropTypes'
 import Send from './Send.js'
 import MessageView from './Message'
 import { useWalletProvider } from '../../WalletProvider'
@@ -27,11 +26,13 @@ import {
 import MsgConfirmer from '../../lib/confirm-message'
 import useUpToDateBalance from '../../lib/update-balance'
 import useWallet from '../../WalletProvider/useWallet'
+import Receive from '../Receive'
+import { MESSAGE_HISTORY, SEND, RECEIVE } from './views'
 
 const WalletView = () => {
   useUpToDateBalance()
   const wallet = useWallet()
-  const [sending, setSending] = useState(false)
+  const [childView, setChildView] = useState(MESSAGE_HISTORY)
   const { ledger, walletType, connectLedger } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState(null)
   const [showLedgerError, setShowLedgerError] = useState(false)
@@ -65,6 +66,8 @@ const WalletView = () => {
     }
     setLedgerBusy(false)
   }
+
+  const onViewChange = view => childView !== view && setChildView(view)
 
   return (
     <>
@@ -107,22 +110,29 @@ const WalletView = () => {
             )}
             <BalanceCard
               balance={wallet.balance}
-              disableButtons={sending}
-              onReceive={() => {}}
-              onSend={() => setSending(true)}
+              onReceive={() => onViewChange(RECEIVE)}
+              onSend={() => onViewChange(SEND)}
             />
           </Sidebar>
           <Content>
-            {sending ? <Send setSending={setSending} /> : <MessageView />}
+            {childView === MESSAGE_HISTORY && <MessageView />}
+            {childView === SEND && (
+              <Send
+                close={() => setChildView(MESSAGE_HISTORY)}
+                setSending={() => setChildView(SEND)}
+              />
+            )}
+            {childView === RECEIVE && (
+              <Receive
+                close={() => setChildView(MESSAGE_HISTORY)}
+                address={wallet.address}
+              />
+            )}
           </Content>
         </Gutter>
       </Wrapper>
     </>
   )
-}
-
-WalletView.propTypes = {
-  wallet: WALLET_PROP_TYPE.isRequired
 }
 
 export default WalletView

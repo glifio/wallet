@@ -79,7 +79,7 @@ const isValidForm = (
   return !!(errorFree && validAmount)
 }
 
-const Send = ({ setSending }) => {
+const Send = ({ close }) => {
   const dispatch = useDispatch()
   const wallet = useWallet()
   const {
@@ -160,7 +160,7 @@ const Send = ({ setSending }) => {
           fil: new FilecoinNumber('0', 'fil'),
           fiat: new BigNumber('0')
         })
-        setSending(false)
+        close()
         setToAddress('')
         setAttemptingTx(false)
       }
@@ -243,11 +243,7 @@ const Send = ({ setSending }) => {
               >
                 Step 1
               </Stepper>
-              <ButtonClose
-                ml={2}
-                type='button'
-                onClick={() => setSending(false)}
-              />
+              <ButtonClose ml={2} type='button' onClick={close} />
             </Box>
           </Box>
           <Box mt={3}>
@@ -350,7 +346,7 @@ const Send = ({ setSending }) => {
                     setAttemptingTx(false)
                     setUncaughtError('')
                     resetLedgerState()
-                    setSending(false)
+                    close()
                   }}
                 />
                 <Button
@@ -381,7 +377,7 @@ const Send = ({ setSending }) => {
 }
 
 Send.propTypes = {
-  setSending: PropTypes.func.isRequired
+  close: PropTypes.func.isRequired
 }
 
 export default Send
