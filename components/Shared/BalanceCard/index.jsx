@@ -1,6 +1,7 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState } from 'react'
 import { func, bool } from 'prop-types'
-import { BigNumber } from '@openworklabs/filecoin-number'
+import { BigNumber, FilecoinNumber } from '@openworklabs/filecoin-number'
+import { converter } from '../../../utils/cmcConverter'
 import Box from '../Box'
 import Button from '../Button'
 import { BigTitle, Title, Label } from '../Typography'
@@ -26,10 +27,12 @@ const BalanceCard = forwardRef(
       <Label>Balance</Label>
       <Box overflow='hidden'>
         <BigTitle color='card.balance.color'>
-          {makeFriendlyBalance(new BigNumber(balance.toFil()))}FIL
+          {makeFriendlyBalance(new BigNumber(balance.toFil()))} FIL
         </BigTitle>
         <Title color='card.balance.color'>
-          {makeFriendlyBalance(new BigNumber(balance.toFil()).multipliedBy(5))}
+          {makeFriendlyBalance(
+            new BigNumber(converter.fromFIL(balance.toFil()))
+          )}{' '}
           USD
         </Title>
       </Box>

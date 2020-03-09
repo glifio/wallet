@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 import { bool, string } from 'prop-types'
+import { converter } from '../../../utils/cmcConverter'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import Box from '../Box'
 import { Menu, MenuItem } from '../Menu'
 import { Text } from '../Typography'
 import { IconSend, IconReceive } from '../Icons'
 import truncate from '../../../utils/truncateAddress'
+import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
 const MessageHistoryRowContainer = styled(Box)``
 
@@ -127,12 +129,20 @@ const MessageHistoryRow = ({
           >
             <MenuItem display='flex'>
               <Text color='core.nearblack' m={0}>
-                {new FilecoinNumber(value, 'attofil').toFil()}
+                {makeFriendlyBalance(
+                  BigNumber(new FilecoinNumber(value, 'attofil').toFil())
+                )}
               </Text>
             </MenuItem>
             <MenuItem display='flex'>
               <Text color='core.silver' m={0} mb={0}>
-                {new FilecoinNumber(value, 'attofil').toFil()}
+                {makeFriendlyBalance(
+                  new BigNumber(
+                    converter.fromFIL(
+                      new FilecoinNumber(value, 'attofil').toFil()
+                    )
+                  )
+                )}
               </Text>
             </MenuItem>
           </Menu>
