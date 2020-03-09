@@ -14,7 +14,6 @@ import {
   ButtonClose
 } from '../Shared'
 import AccountCardAlt from '../Shared/AccountCardAlt'
-import { WALLET_PROP_TYPE } from '../../customPropTypes'
 import { useWalletProvider } from '../../WalletProvider'
 import { ACCOUNT_BATCH_SIZE, LEDGER } from '../../constants'
 import { walletList, switchWallet } from '../../store/actions'
@@ -29,10 +28,8 @@ import useWallet from '../../WalletProvider/useWallet'
 const FloatingContainer = styled(Box)`
   position: fixed;
   display: flex;
-  flex-grow: 1;
   bottom: ${props => props.theme.sizes[3]}px;
-  width: 100%;
-  max-width: 560px;
+  width: 40%;
 `
 
 const Close = styled(ButtonClose)`
