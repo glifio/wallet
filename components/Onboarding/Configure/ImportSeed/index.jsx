@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
+import { validateMnemonic } from 'bip39'
 import { Box, Button, Card, Text, Input } from '../../../Shared'
 
 import { useWalletProvider } from '../../../../WalletProvider'
 import StepCard from './StepCard'
 import ProviderCreator from './CreateProvider'
 
-const validateSeed = () => true
-
 export default () => {
   const { setWalletType } = useWalletProvider()
   const [seed, setSeed] = useState('')
   const [validSeed, setValidSeed] = useState('')
+  const [seedError, setSeedError] = useState('')
   const { network, wallets } = useSelector(state => ({
     network: state.network,
     wallets: state.wallets
@@ -47,7 +47,12 @@ export default () => {
           justifyContent='space-between'
         >
           <Text>Please input your 12-word seed phrase below</Text>
-          <Input.Seed value={seed} onChange={e => setSeed(e.target.value)} />
+          <Input.Seed
+            error={seedError}
+            setError={setSeedError}
+            value={seed}
+            onChange={e => setSeed(e.target.value)}
+          />
         </Card>
       </Box>
       <Box mt={6} display='flex' flexDirection='row' justifyContent='center'>
@@ -59,9 +64,14 @@ export default () => {
         />
         <Button
           title='Next'
+          disabled={!!(seed.length === 0 || seedError)}
           onClick={() => {
-            const isValid = validateSeed(seed)
-            if (isValid) setValidSeed(seed)
+            try {
+              const isValid = validateMnemonic(seed)
+              if (isValid) setValidSeed(seed)
+            } catch (_) {
+              setSeedError('Invalid seed phrase.')
+            }
           }}
           variant='primary'
           ml={2}
