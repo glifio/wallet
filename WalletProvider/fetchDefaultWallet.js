@@ -1,4 +1,4 @@
-import { SINGLE_KEY, LEDGER, HD_WALLET } from '../constants'
+import { SINGLE_KEY, LEDGER } from '../constants'
 import {
   checkLedgerConfiguration,
   setLedgerProvider
