@@ -9,7 +9,7 @@ import {
   Text,
   Title,
   FloatingContainer,
-  Container
+  ContentContainer
 } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 
@@ -60,7 +60,7 @@ const GasCustomization = ({
   }
 
   return (
-    <Container>
+    <ContentContainer>
       <Label my={3} color='core.primary'>
         Custom Transaction Fee
       </Label>
@@ -180,7 +180,7 @@ const GasCustomization = ({
           }}
         />
       </FloatingContainer>
-    </Container>
+    </ContentContainer>
   )
 }
 

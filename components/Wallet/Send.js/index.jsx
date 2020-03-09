@@ -230,7 +230,7 @@ const Send = ({ close }) => {
           toAddress={toAddress}
         />
       )}
-      <SendCardForm gridColumn='2' onSubmit={onSubmit} autoComplete='off'>
+      <SendCardForm onSubmit={onSubmit} autoComplete='off'>
         <Box display='flex' alignItems='center' justifyContent='space-between'>
           <Box display='flex' alignItems='center'>
             <Glyph
