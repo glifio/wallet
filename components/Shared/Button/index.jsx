@@ -20,7 +20,7 @@ const Button = forwardRef(({ disabled, onClick, title, ...props }, ref) => (
 ))
 
 Button.propTypes = {
-  variant: oneOf(Object.keys(theme.buttons)),
+  variant: oneOf(Object.keys(theme.colors.buttons)),
   onClick: func.isRequired,
   title: string.isRequired,
   disabled: bool

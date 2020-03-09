@@ -66,7 +66,7 @@ export const MESSAGE_PROPS = shape({
   /**
    * Amount of gas used in the message (not required for pending transactions)
    */
-  gas_used: number,
+  gas_used: string,
   /**
    * The message's cid
    */

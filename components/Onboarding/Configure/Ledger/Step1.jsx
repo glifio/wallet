@@ -1,9 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useRouter } from 'next/router'
 import { Box, Button, Card, Text, Title } from '../../../Shared'
 
 import { useWalletProvider } from '../../../../WalletProvider'
 import StepCard from './StepCard'
+import isValidBrowser from '../../../../utils/isValidBrowser'
 
 const Step1Helper = ({ connectedFailure }) => {
   return (
@@ -46,6 +48,12 @@ Step1Helper.propTypes = {
 
 export default () => {
   const { ledger, setLedgerProvider, setWalletType } = useWalletProvider()
+  const router = useRouter()
+  if (!isValidBrowser()) {
+    const params = new URLSearchParams(router.query)
+    setWalletType(null)
+    router.push(`/bad-browser?${params.toString()}`)
+  }
   return (
     <>
       <Box
@@ -55,7 +63,7 @@ export default () => {
         flexDirection='row'
         justifyContent='center'
       >
-        <StepCard step={1} />
+        <StepCard step={1} loading={ledger.connecting} />
         <Step1Helper connectedFailure={ledger.connectedFailure} />
       </Box>
       <Box mt={6} display='flex' flexDirection='row' justifyContent='center'>

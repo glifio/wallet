@@ -1,12 +1,12 @@
 import React, { forwardRef, useRef, useState } from 'react'
-import { func, string, bool } from 'prop-types'
+import { func, string, bool, oneOfType } from 'prop-types'
 import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 
 import Box from '../Box'
-import NumberInput from './Number'
+import { RawNumberInput } from './Number'
 import { Text, Label } from '../Typography'
-import { IconApproximatelyEquals } from '../Icons/index'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
+import noop from '../../../utils/noop'
 
 const formatFilValue = number => {
   if (!number) return ''
@@ -21,8 +21,10 @@ const formatFiatValue = number => {
 }
 
 const toUSD = async amount => new FilecoinNumber(amount, 'fil').multipliedBy(5)
-const fromUSD = async amount =>
-  new FilecoinNumber(new BigNumber(amount).dividedBy(5), 'fil')
+const fromUSD = async amount => {
+  if (!amount) return new FilecoinNumber('0', 'fil')
+  return new FilecoinNumber(new BigNumber(amount).dividedBy(5), 'fil')
+}
 
 const Funds = forwardRef(
   (
@@ -34,26 +36,27 @@ const Funds = forwardRef(
       gasLimit,
       disabled,
       valid,
+      amount,
       ...props
     },
     ref
   ) => {
-    const [fiatAmount, setFiatAmount] = useState('')
-    const [filAmount, setFilAmount] = useState('')
+    const initialFilAmount = amount ? new FilecoinNumber(amount, 'attofil') : ''
+    const initialFiatAmount = amount
+      ? new FilecoinNumber(amount, 'attofil').toFil()
+      : ''
+    const [filAmount, setFilAmount] = useState(initialFilAmount)
+    const [fiatAmount, setFiatAmount] = useState(initialFiatAmount)
 
     const timeout = useRef()
 
-    const checkBalance = amount => {
-      if (!amount || new BigNumber(amount).isEqualTo(0)) {
+    const checkBalance = val => {
+      if (!val || new BigNumber(val).isEqualTo(0)) {
         setError('Please enter a valid amount.')
         return false
       }
       // user enters a value that's greater than their balance - gas limit
-      if (
-        amount
-          .plus(new FilecoinNumber(gasLimit, 'attofil'))
-          .isGreaterThanOrEqualTo(balance)
-      ) {
+      if (val.plus(gasLimit.toFil()).isGreaterThanOrEqualTo(balance)) {
         setError("The amount must be smaller than this account's balance")
         return false
       }
@@ -61,21 +64,31 @@ const Funds = forwardRef(
       return true
     }
 
-    const onTimerFil = async amount => {
-      const fiatAmnt = await toUSD(amount)
-      const validBalance = checkBalance(amount)
+    const onTimerFil = async val => {
+      const fiatAmnt = await toUSD(val)
+      const validBalance = checkBalance(val)
       if (validBalance) {
         setFiatAmount(fiatAmnt)
-        onAmountChange({ fil: amount, fiat: fiatAmnt })
+        onAmountChange({ fil: val, fiat: fiatAmnt })
+      } else {
+        onAmountChange({
+          fil: new FilecoinNumber('0', 'fil'),
+          fiat: new BigNumber('0')
+        })
       }
     }
 
-    const onTimerFiat = async amount => {
-      const fil = await fromUSD(amount)
-      const validBalance = checkBalance(amount)
+    const onTimerFiat = async val => {
+      const fil = await fromUSD(val)
+      const validBalance = checkBalance(val)
       if (validBalance) {
         setFilAmount(fil)
-        onAmountChange({ fil, fiat: amount })
+        onAmountChange({ fil, fiat: val })
+      } else {
+        onAmountChange({
+          fil: new FilecoinNumber('0', 'fil'),
+          fiat: new BigNumber('0')
+        })
       }
     }
 
@@ -156,23 +169,36 @@ const Funds = forwardRef(
           alignItems='center'
           justifyContent='center'
           flexGrow='1'
-          width='280px'
+          width='100%'
+          maxWidth={11}
           textAlign='center'
-          borderRight={1}
           borderColor='input.border'
+          bg={error && 'input.background.invalid'}
         >
           {error ? <Text>{error}</Text> : <Label>Amount</Label>}
         </Box>
-        <Box display='inline-block' width='280px'>
+        <Box display='inline-block' width='100%'>
           <Box position='relative' display='block' height='80px' width='100%'>
-            <IconApproximatelyEquals
+            <Box
               position='absolute'
               left='-24px'
-              bottom='-42px'
-              size={7}
-            />
+              bottom='-24px'
+              display='flex'
+              alignItems='center'
+              justifyContent='center'
+              backgroundColor='core.white'
+              border={1}
+              borderColor='input.border'
+              borderRadius={5}
+              size={6}
+              fontSize={5}
+              fontFamily='sansSerif'
+              paddingBottom='4px'
+            >
+              {'\u003D'}
+            </Box>
 
-            <NumberInput
+            <RawNumberInput
               onFocus={() => {
                 setError('')
                 setFiatAmount('')
@@ -184,11 +210,14 @@ const Funds = forwardRef(
                   const fiatAmnt = await toUSD(filAmount)
                   setFiatAmount(fiatAmnt)
                   onAmountChange({ fil: filAmount, fiat: fiatAmnt })
+                } else {
+                  onAmountChange({
+                    fil: new FilecoinNumber('0', 'fil'),
+                    fiat: new BigNumber('0')
+                  })
                 }
               }}
               height='100%'
-              width='100%'
-              border='0'
               onChange={onFilChange}
               value={formatFilValue(filAmount)}
               placeholder='0 FIL'
@@ -202,11 +231,10 @@ const Funds = forwardRef(
           <Box
             display='block'
             height='80px'
-            width='100%'
             borderTop={1}
             borderColor='input.border'
           >
-            <NumberInput
+            <RawNumberInput
               onFocus={() => {
                 setError('')
                 setFilAmount('')
@@ -218,11 +246,14 @@ const Funds = forwardRef(
                 if (validBalance) {
                   setFilAmount(fil)
                   onAmountChange({ fil, fiat: fiatAmount })
+                } else {
+                  onAmountChange({
+                    fil: new FilecoinNumber('0', 'fil'),
+                    fiat: new BigNumber('0')
+                  })
                 }
               }}
               height='100%'
-              width='100%'
-              border='0'
               onChange={onFiatChange}
               value={formatFiatValue(fiatAmount)}
               placeholder='0 USD'
@@ -245,7 +276,7 @@ Funds.propTypes = {
    * entered in the Funds input (in a BigNumber and FilecoinNumber instance)
    * @returns {Object} - { fiat: BigNumber, fil: FilecoinNumber }
    */
-  onAmountChange: func.isRequired,
+  onAmountChange: func,
   /**
    * Balance of account sending the transaction
    */
@@ -257,19 +288,23 @@ Funds.propTypes = {
   /**
    * A setter to set the error when errors occur
    */
-  setError: func.isRequired,
+  setError: func,
   /**
    * Gas limit selected by user (to make sure we dont go over the user's balance)
    */
-  gasLimit: string,
+  gasLimit: FILECOIN_NUMBER_PROP,
   disabled: bool,
-  valid: bool
+  valid: bool,
+  amount: oneOfType([string, FILECOIN_NUMBER_PROP])
 }
 
 Funds.defaultProps = {
   error: '',
-  gasLimit: '1000',
-  disabled: false
+  disabled: false,
+  setError: noop,
+  onAmountChange: noop,
+  amount: '',
+  gasLimit: new FilecoinNumber('1000', 'attofil')
 }
 
 export default Funds

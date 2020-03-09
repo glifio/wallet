@@ -15,8 +15,15 @@ export { default as Stepper } from './Stepper'
 export { default as Glyph } from './Glyph'
 export { default as Box } from './Box'
 export { default as MessageHistoryTable } from './MessageHistoryTable'
+export { default as FloatingContainer } from './FloatingContainer'
+export { default as Loading } from './LoaderGlyph'
+export { default as NetworkSwitcherGlyph } from './NetworkSwitcherGlyph'
 export * from './Menu'
 export * from './Icons'
+export * from './IconButtons'
+
+// layout
+export * from './Layout/SidebarLayout'
 
 // typography
 export * from './Typography'

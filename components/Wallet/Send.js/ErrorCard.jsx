@@ -10,24 +10,43 @@ const ErrorCard = ({ error, reset }) => {
       justifyContent='space-between'
       border='none'
       width='auto'
-      ml={4}
-      mr={4}
+      my={2}
       bg='card.error.background'
+      color='card.error.foreground'
     >
-      <Box display='flex' flexDirection='row'>
-        <Glyph acronym='Er' color='' />
-        <Box flexGrow='2' ml={2} mr={2}>
-          <Text>Oops - something went wrong.</Text>
-          <Text>{error}</Text>
+      <Box
+        display='flex'
+        flexDirection='row'
+        border='none'
+        width='auto'
+        justifyContent='space-between'
+      >
+        <Box display='flex' alignItems='center'>
+          <Glyph
+            acronym='Er'
+            textAlign='center'
+            color='card.error.background'
+            borderColor='card.error.foreground'
+            backgroundColor='card.error.foreground'
+          />
+          <Text ml={2}>Error</Text>
         </Box>
+      </Box>
+      <Box
+        display='flex'
+        justifyContent='space-between'
+        alignItems='center'
+        flexGrow='2'
+      >
+        <Text>{error}</Text>
         <Button
           onClick={reset}
           title='Clear'
           variant='tertiary'
           height='100%'
-          css={`
-            align-self: flex-end;
-          `}
+          borderColor='status.fail.foreground'
+          color='status.fail.foreground'
+          py={2}
         />
       </Box>
     </Card>

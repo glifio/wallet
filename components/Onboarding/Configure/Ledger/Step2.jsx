@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'
@@ -96,6 +96,8 @@ export default () => {
   const dispatch = useDispatch()
   const generalError = useSelector(state => state.error)
   const router = useRouter()
+  const [loading, setLoading] = useState(false)
+
   return (
     <>
       <Box
@@ -105,7 +107,7 @@ export default () => {
         flexDirection='row'
         justifyContent='center'
       >
-        <StepCard step={2} />
+        <StepCard step={2} loading={!ledger.userImportFailure && loading} />
         <Step2Helper
           connectedFailure={ledger.connectedFailure}
           ledgerLocked={ledger.locked}
@@ -125,6 +127,7 @@ export default () => {
         <Button
           title='My Ledger device is unlocked and Filecoin app open'
           onClick={async () => {
+            setLoading(true)
             try {
               const wallet = await fetchDefaultWallet()
               if (wallet) {
@@ -137,9 +140,11 @@ export default () => {
                 router.push(query)
               }
             } catch (err) {
+              setLoading(false)
               dispatch(error(err))
             }
           }}
+          disabled={!ledger.userImportFailure && loading}
           variant='primary'
           ml={2}
         />

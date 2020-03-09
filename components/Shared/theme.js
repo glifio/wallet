@@ -64,6 +64,11 @@ const colors = {
       background: baseColors.mono.transparent,
       borderColor: baseColors.purple.light,
       color: baseColors.purple.light
+    },
+    'tertiary-selected': {
+      background: baseColors.purple.primary,
+      borderColor: baseColors.purple.primary,
+      color: baseColors.purple.light
     }
   },
   background: {
@@ -84,7 +89,8 @@ const colors = {
       foreground: baseColors.green.dark
     },
     error: {
-      background: baseColors.red.light
+      background: baseColors.red.light,
+      foreground: baseColors.red.dark
     }
   },
   input: {
@@ -113,29 +119,9 @@ const colors = {
   }
 }
 
-const buttons = {
-  colors,
-  primary: {
-    color: colors.buttons.primary.color,
-    borderColor: colors.buttons.primary.color,
-    backgroundColor: colors.buttons.tertiary.background
-  },
-  secondary: {
-    background: colors.buttons.secondary.background,
-    borderColor: colors.buttons.secondary.color,
-    color: colors.buttons.secondary.color
-  },
-  tertiary: {
-    background: baseColors.mono.transparent,
-    borderColor: baseColors.purple.light,
-    color: baseColors.purple.light
-  }
-}
-
 // theme.js
 const theme = {
   colors,
-  buttons,
   fontSizes: ['0rem', '1rem', '1.125rem', '1.25rem', '1.5rem', '2rem', '3rem'],
   fontWeights: [0, 400, 600, 900],
   letterSpacings: [0, 1, 2, 4, 8],
@@ -146,7 +132,7 @@ const theme = {
   },
   textStyles: {
     bigTitle: {
-      fontSize: [5, 6, 6],
+      fontSize: 6,
       fontWeight: 700,
       margin: 0,
       lineHeight: 'solid',
@@ -186,12 +172,28 @@ const theme = {
       '"system-ui", "Segoe UI", Roboto Mono, Helvetica, Arial, monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";'
   },
   space: [0, 4, 8, 16, 24, 32, 48, 64, 128, 256],
-  sizes: [0, 4, 8, 16, 24, 32, 48, 64, 80, 120, 240, 300, 480],
-  radii: ['0', '1px', '4px', '8px', '16px', '32px'],
-  minWidths: [0, 16, 32, 64, 128, 256],
-  maxWidths: [0, 16, 32, 64, 128, 256, 512, 768, 1024, 1536],
-  minHeights: [0, 16, 32, 64, 128, 256],
-  maxHeights: [0, 16, 32, 64, 128, 256],
+  sizes: [
+    0,
+    4,
+    8,
+    16,
+    24,
+    32,
+    48,
+    64,
+    80,
+    160,
+    240,
+    320,
+    480,
+    560,
+    640,
+    720,
+    800,
+    960,
+    1024
+  ],
+  radii: ['0', '1px', '4px', '8px', '16px', '32px', '100px'],
   borders: [0, `1px solid`, `4px solid`],
   borderStyles: ['solid'],
   borderWidths: ['0', '1px', '2px', '4px'],

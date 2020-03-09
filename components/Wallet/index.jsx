@@ -1,10 +1,17 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
-import { AccountCard, AccountError, BalanceCard, Box } from '../Shared'
-
-import { WALLET_PROP_TYPE } from '../../customPropTypes'
+import {
+  AccountCard,
+  AccountError,
+  BalanceCard,
+  NetworkSwitcherGlyph,
+  Wrapper,
+  Gutter,
+  Sidebar,
+  Content
+} from '../Shared'
 import Send from './Send.js'
-import MessageHistory from './MessageHistory'
+import MessageView from './Message'
 import { useWalletProvider } from '../../WalletProvider'
 import {
   LEDGER,
@@ -18,10 +25,14 @@ import {
 } from '../../utils/ledger/reportLedgerConfigError'
 import MsgConfirmer from '../../lib/confirm-message'
 import useUpToDateBalance from '../../lib/update-balance'
+import useWallet from '../../WalletProvider/useWallet'
+import Receive from '../Receive'
+import { MESSAGE_HISTORY, SEND, RECEIVE } from './views'
 
-const WalletView = ({ wallet }) => {
+const WalletView = () => {
   useUpToDateBalance()
-  const [sending, setSending] = useState(false)
+  const wallet = useWallet()
+  const [childView, setChildView] = useState(MESSAGE_HISTORY)
   const { ledger, walletType, connectLedger } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState(null)
   const [showLedgerError, setShowLedgerError] = useState(false)
@@ -55,76 +66,73 @@ const WalletView = ({ wallet }) => {
     }
     setLedgerBusy(false)
   }
+
+  const onViewChange = view => childView !== view && setChildView(view)
+
   return (
     <>
       <MsgConfirmer />
-      <Box
-        display='flex'
-        flexDirection='row'
-        flexWrap='wrap'
-        justifyContent='space-between'
-      >
-        <Box
-          display='flex'
-          flexDirection='column'
-          flexWrap='wrap'
-          ml={2}
-          mt={1}
-        >
-          {hasLedgerError(
-            ledger.connectedFailure,
-            ledger.locked,
-            ledger.filecoinAppNotOpen,
-            ledger.replug,
-            ledger.busy,
-            uncaughtError
-          ) && showLedgerError ? (
-            <AccountError
-              onTryAgain={onShowOnLedger}
-              errorMsg={reportLedgerConfigError(
-                ledger.connectedFailure,
-                ledger.locked,
-                ledger.filecoinAppNotOpen,
-                ledger.replug,
-                ledger.busy,
-                uncaughtError
-              )}
-            />
-          ) : (
-            <AccountCard
-              onAccountSwitch={onAccountSwitch}
-              color='purple'
-              alias='Prime'
-              address={wallet.address}
-              isLedgerWallet={walletType === LEDGER}
-              onShowOnLedger={onShowOnLedger}
-              ledgerBusy={ledgerBusy}
-              mb={2}
-            />
-          )}
+      <Wrapper>
+        <Gutter>
+          <Sidebar>
+            <NetworkSwitcherGlyph />
 
-          <BalanceCard
-            balance={wallet.balance}
-            disableButtons={sending}
-            onReceive={() => {}}
-            onSend={() => setSending(true)}
-          />
-        </Box>
-        <Box
-          display='flex'
-          flexWrap='wrap'
-          flexGrow='1'
-          justifyContent='center'
-        >
-          {sending ? <Send setSending={setSending} /> : <MessageHistory />}
-        </Box>
-      </Box>
+            {hasLedgerError(
+              ledger.connectedFailure,
+              ledger.locked,
+              ledger.filecoinAppNotOpen,
+              ledger.replug,
+              ledger.busy,
+              uncaughtError
+            ) && showLedgerError ? (
+              <AccountError
+                onTryAgain={onShowOnLedger}
+                errorMsg={reportLedgerConfigError(
+                  ledger.connectedFailure,
+                  ledger.locked,
+                  ledger.filecoinAppNotOpen,
+                  ledger.replug,
+                  ledger.busy,
+                  uncaughtError
+                )}
+              />
+            ) : (
+              <AccountCard
+                onAccountSwitch={onAccountSwitch}
+                color='purple'
+                alias='Prime'
+                address={wallet.address}
+                isLedgerWallet={walletType === LEDGER}
+                onShowOnLedger={onShowOnLedger}
+                ledgerBusy={ledgerBusy}
+                mb={2}
+              />
+            )}
+            <BalanceCard
+              balance={wallet.balance}
+              onReceive={() => onViewChange(RECEIVE)}
+              onSend={() => onViewChange(SEND)}
+            />
+          </Sidebar>
+          <Content>
+            {childView === MESSAGE_HISTORY && <MessageView />}
+            {childView === SEND && (
+              <Send
+                close={() => setChildView(MESSAGE_HISTORY)}
+                setSending={() => setChildView(SEND)}
+              />
+            )}
+            {childView === RECEIVE && (
+              <Receive
+                close={() => setChildView(MESSAGE_HISTORY)}
+                address={wallet.address}
+              />
+            )}
+          </Content>
+        </Gutter>
+      </Wrapper>
     </>
   )
-}
-
-WalletView.propTypes = {
-  wallet: WALLET_PROP_TYPE.isRequired
 }
 
 export default WalletView

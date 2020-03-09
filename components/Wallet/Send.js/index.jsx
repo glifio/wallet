@@ -9,36 +9,53 @@ import Message from '@openworklabs/filecoin-message'
 import {
   Box,
   BigTitle,
-  Card,
   Input,
   Stepper,
   Glyph,
   Text,
   Button,
-  Label,
-  Title
+  Title,
+  FloatingContainer,
+  Label as Total
 } from '../../Shared'
 import { ButtonClose } from '../../Shared/IconButtons'
 import ConfirmationCard from './ConfirmationCard'
+import GasCustomization from './GasCustomization'
 import ErrorCard from './ErrorCard'
-import { useWallet } from '../hooks'
 import { useWalletProvider } from '../../../WalletProvider'
+import useWallet from '../../../WalletProvider/useWallet'
 import { LEDGER } from '../../../constants'
 import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfigError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
 
-const SendCard = styled(Card)`
+const SendCard = styled(Box).attrs(() => ({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  border: 'none',
+  p: 3,
+  borderRadius: 2,
+  borderWidth: 1,
+  flexGrow: '1'
+}))`
   background-color: ${props => props.theme.colors.background.screen};
 `
 
-const FloatingContainer = styled(Box)`
-  position: fixed;
+const SendContainer = styled.div`
   display: flex;
-  flex-grow: 1;
-  bottom: ${props => props.theme.sizes[3]}px;
+  flex-direction: column;
+  grid-column: 1 / -1;
+  max-width: ${props => props.theme.sizes[13]}px;
+  justify-content: center;
+  position: relative;
+  align-self: flex-start;
+  flex-basis: 0;
+  flex-grow: 999;
+`
+
+const SendForm = styled.form`
   width: 100%;
-  max-width: 560px;
 `
 
 const isValidAmount = (value, balance, error) => {
@@ -62,7 +79,7 @@ const isValidForm = (
   return !!(errorFree && validAmount)
 }
 
-const Send = ({ setSending }) => {
+const Send = ({ close }) => {
   const dispatch = useDispatch()
   const wallet = useWallet()
   const {
@@ -79,11 +96,30 @@ const Send = ({ setSending }) => {
   })
   const [valueError, setValueError] = useState('')
   const [uncaughtError, setUncaughtError] = useState('')
-  const [gasPrice, setGasPrice] = useState('1')
-  const [gasLimit, setGasLimit] = useState('1000')
+  const [gasPrice, setGasPrice] = useState(new FilecoinNumber('1', 'attofil'))
+  const [gasLimit, setGasLimit] = useState(
+    new FilecoinNumber('1000', 'attofil')
+  )
   const [step, setStep] = useState(1)
+  const [customizingGas, setCustomizingGas] = useState(false)
 
   const [attemptingTx, setAttemptingTx] = useState(false)
+
+  const estimateGas = async gp => {
+    // create a fake message
+    const message = new Message({
+      to: wallet.address,
+      from: wallet.address,
+      value: value.fil.toAttoFil(),
+      method: 0,
+      gasPrice: gp.toAttoFil(),
+      gasLimit: '100000000',
+      nonce: 0,
+      params: ''
+    })
+
+    return walletProvider.estimateGas(message.encode())
+  }
 
   const submitMsg = async () => {
     let provider = walletProvider
@@ -97,8 +133,8 @@ const Send = ({ setSending }) => {
         from: wallet.address,
         value: value.fil.toAttoFil(),
         method: 0,
-        gasPrice,
-        gasLimit,
+        gasPrice: gasPrice.toAttoFil(),
+        gasLimit: gasLimit.toAttoFil(),
         nonce,
         params: ''
       })
@@ -147,7 +183,7 @@ const Send = ({ setSending }) => {
           fil: new FilecoinNumber('0', 'fil'),
           fiat: new BigNumber('0')
         })
-        setSending(false)
+        close()
         setToAddress('')
         setAttemptingTx(false)
       }
@@ -179,150 +215,140 @@ const Send = ({ setSending }) => {
       ledger.replug,
       ledger.busy
     )
+
   return (
-    <>
-      <Box position='relative'>
-        {hasError() && (
-          <ErrorCard
-            error={ledgerError() || uncaughtError}
-            reset={() => {
-              setAttemptingTx(false)
-              setUncaughtError('')
-              resetLedgerState()
-              setStep(1)
-            }}
-          />
-        )}
-        {step === 2 && !hasError() && (
-          <ConfirmationCard
-            walletType={wallet.type}
-            value={value}
-            toAddress={toAddress}
-          />
-        )}
-        <form onSubmit={onSubmit} autoComplete='off'>
-          <SendCard
+    <SendContainer>
+      {hasError() && (
+        <ErrorCard
+          error={ledgerError() || uncaughtError}
+          reset={() => {
+            setAttemptingTx(false)
+            setUncaughtError('')
+            resetLedgerState()
+            setStep(1)
+          }}
+        />
+      )}
+      {step === 2 && !hasError() && (
+        <ConfirmationCard
+          walletType={wallet.type}
+          value={value}
+          toAddress={toAddress}
+        />
+      )}
+      <SendForm gridColumn='2' onSubmit={onSubmit} autoComplete='off'>
+        <SendCard>
+          <Box
             display='flex'
-            flexDirection='column'
+            alignItems='center'
             justifyContent='space-between'
-            border='none'
-            width='auto'
-            my={2}
-            mx={4}
           >
-            <Box
-              display='flex'
-              alignItems='center'
-              justifyContent='space-between'
-            >
-              <Box display='flex' alignItems='center'>
+            <Box display='flex' alignItems='center'>
+              <Glyph
+                acronym='To'
+                color='background.screen'
+                borderColor='core.primary'
+                backgroundColor='core.primary'
+              />
+
+              <Text color='core.primary' ml={2}>
+                Sending Filecoin
+              </Text>
+            </Box>
+            <Box display='flex' alignItems='center'>
+              <Stepper
+                textColor='core.primary'
+                completedDotColor='core.primary'
+                incompletedDotColor='core.silver'
+                step={1}
+                totalSteps={2}
+                mr={2}
+              >
+                Step 1
+              </Stepper>
+              <ButtonClose ml={2} type='button' onClick={close} />
+            </Box>
+          </Box>
+          <Box mt={3}>
+            {customizingGas ? (
+              <GasCustomization
+                estimateGas={estimateGas}
+                exit={() => setCustomizingGas(false)}
+                gasPrice={gasPrice}
+                gasLimit={gasLimit}
+                setGasPrice={setGasPrice}
+                setGasLimit={setGasLimit}
+              />
+            ) : (
+              <>
+                <Input.Address
+                  name='recipient'
+                  onChange={e => setToAddress(e.target.value)}
+                  value={toAddress}
+                  label='Recipient'
+                  placeholder='t1...'
+                  error={toAddressError}
+                  setError={setToAddressError}
+                  disabled={step === 2 && !hasError()}
+                  valid={validateAddressString(toAddress)}
+                />
+                <Input.Funds
+                  name='amount'
+                  label='Amount'
+                  onAmountChange={setValue}
+                  balance={wallet.balance}
+                  error={valueError}
+                  setError={setValueError}
+                  gasLimit={gasLimit}
+                  disabled={step === 2 && !hasError()}
+                  valid={isValidAmount(value.fil, wallet.balance, valueError)}
+                />
+                <Box display='flex' flexDirection='column'>
+                  <Input.Text
+                    onChange={() => {}}
+                    label='Transfer Fee'
+                    value='< 0.1FIL'
+                    backgroundColor='background.screen'
+                    disabled
+                  />
+                  <Text
+                    color='core.primary'
+                    css={`
+                      &:hover {
+                        cursor: pointer;
+                      }
+                      text-decoration: underline;
+                      align-self: flex-end;
+                    `}
+                    onClick={() => setCustomizingGas(true)}
+                  >
+                    Adjust transfer fee
+                  </Text>
+                </Box>
                 <Box
                   display='flex'
-                  flexDirection='column'
-                  justifyContent='center'
-                  width={6}
-                  height={6}
-                  backgroundColor='core.primary'
+                  flexDirection='row'
+                  alignItems='center'
+                  justifyContent='space-between'
+                  mt={3}
+                  mx={1}
                 >
-                  <Glyph
-                    acronym='To'
-                    color='background.screen'
-                    borderColor='core.primary'
-                    backgroundColor='core.primary'
-                  />
+                  <Total fontSize={4}>Total</Total>
+                  <Box display='flex' flexDirection='column' textAlign='right'>
+                    <BigTitle color='core.primary'>
+                      {value.fil.toFil()} FIL
+                    </BigTitle>
+                    <Title color='core.darkgray'>
+                      {value.fiat.toString()} USD
+                    </Title>
+                  </Box>
                 </Box>
-                <Text color='core.primary' ml={2}>
-                  Sending Filecoin
-                </Text>
-              </Box>
-              <Box display='flex' alignItems='center'>
-                <Stepper
-                  textColor='core.primary'
-                  completedDotColor='core.primary'
-                  incompletedDotColor='core.silver'
-                  step={1}
-                  totalSteps={2}
-                  mr={2}
-                >
-                  Step 1
-                </Stepper>
-                <ButtonClose
-                  ml={2}
-                  type='button'
-                  onClick={() => setSending(false)}
-                />
-              </Box>
-            </Box>
-            <Box mt={3}>
-              <Input.Address
-                name='recipient'
-                onChange={e => setToAddress(e.target.value)}
-                value={toAddress}
-                label='Recipient'
-                placeholder='t1...'
-                error={toAddressError}
-                setError={setToAddressError}
-                disabled={step === 2 && !hasError()}
-                valid={validateAddressString(toAddress)}
-              />
-              <Input.Funds
-                name='amount'
-                label='Amount'
-                onAmountChange={setValue}
-                balance={wallet.balance}
-                error={valueError}
-                setError={setValueError}
-                gasLimit={gasLimit}
-                disabled={step === 2 && !hasError()}
-                valid={isValidAmount(value.fil, wallet.balance, valueError)}
-              />
-              <Box display='flex' flexDirection='column'>
-                <Input.Text
-                  onChange={() => {}}
-                  label='Transfer Fee'
-                  value='< 0.1FIL'
-                  backgroundColor='background.screen'
-                  disabled
-                />
-                <Input.Text
-                  label='Completes In'
-                  value='Approx. 17 Seconds'
-                  onChange={() => {}}
-                  backgroundColor='background.screen'
-                  disabled
-                />
-              </Box>
-              <Box
-                display='flex'
-                flexDirection='row'
-                alignItems='center'
-                justifyContent='space-between'
-                mt={3}
-              >
-                <Label>Total</Label>
-                <Box display='flex' flexDirection='column'>
-                  <BigTitle color='core.primary'>
-                    {value.fil.toFil()} FIL
-                  </BigTitle>
-                  <Title color='core.darkgray'>
-                    {value.fiat.toString()} USD
-                  </Title>
-                </Box>
-              </Box>
-            </Box>
-          </SendCard>
-          <FloatingContainer
-            bottom='8px'
-            display='flex'
-            flexDirection='row'
-            justifyContent='space-between'
-            boxShadow={1}
-            backgroundColor='core.white'
-            border={1}
-            borderColor='core.silver'
-            borderRadius={2}
-            p={3}
-          >
+              </>
+            )}
+          </Box>
+        </SendCard>
+        {!customizingGas && (
+          <FloatingContainer>
             {step === 2 && wallet.type === LEDGER ? (
               <Text>
                 Confirm or reject the transaction on your Ledger Device.
@@ -337,7 +363,7 @@ const Send = ({ setSending }) => {
                     setAttemptingTx(false)
                     setUncaughtError('')
                     resetLedgerState()
-                    setSending(false)
+                    close()
                   }}
                 />
                 <Button
@@ -361,14 +387,14 @@ const Send = ({ setSending }) => {
               </>
             )}
           </FloatingContainer>
-        </form>
-      </Box>
-    </>
+        )}
+      </SendForm>
+    </SendContainer>
   )
 }
 
 Send.propTypes = {
-  setSending: PropTypes.func.isRequired
+  close: PropTypes.func.isRequired
 }
 
 export default Send

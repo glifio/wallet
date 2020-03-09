@@ -1,7 +1,7 @@
 import { useEffect, useCallback, useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import { useWalletProvider } from '../WalletProvider'
-import { useWallet } from '../components/Wallet/hooks'
+import useWallet from '../WalletProvider/useWallet'
 import { updateBalance } from '../store/actions'
 
 export default () => {

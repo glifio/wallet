@@ -5,7 +5,7 @@ import Box from '../Box'
 import Glyph from '../Glyph'
 import Button from '../Button'
 import { ButtonCopyAccountAddress } from '../IconButtons'
-import { BigTitle, Text } from '../Typography'
+import { BigTitle, Text, Title as AccountAddress } from '../Typography'
 import truncate from '../../../utils/truncateAddress'
 import copyToClipboard from '../../../utils/copyToClipboard'
 
@@ -49,7 +49,9 @@ const AccountCard = forwardRef(
         <Box color='card.account.color'>
           <BigTitle>{alias}</BigTitle>
           <Box display='flex' alignContent='center'>
-            <Text margin={0}>{truncate(address)}</Text>
+            <AccountAddress fontWeight={1} fontSize={5} margin={0}>
+              {truncate(address)}
+            </AccountAddress>
             <ButtonCopyAccountAddress
               border={0}
               onClick={() => copyToClipboard(address)}

@@ -6,9 +6,16 @@ import Glyph from '../Glyph'
 import { Text } from '../Typography'
 import truncate from '../../../utils/truncateAddress'
 
-const AccountCardAlt = ({ address, index, balance, selected, onClick }) => {
+const AccountCardAlt = ({
+  address,
+  index,
+  balance,
+  selected,
+  onClick,
+  ...props
+}) => {
   return (
-    <Box my={2} display='flex' flexDirection='column' alignItems='center'>
+    <Box my={2} display='flex' flexDirection='column' {...props}>
       {selected && (
         <Text my={1} color='core.primary'>
           CURRENT
