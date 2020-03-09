@@ -1,16 +1,17 @@
 import React, { forwardRef, useRef } from 'react'
+import bip39 from 'bip39'
 import { func, string, bool } from 'prop-types'
 import TextInput from './Text'
-
-const validateSeed = seed => true
 
 const Seed = forwardRef(
   ({ onChange, value, placeholder, error, setError, valid, ...props }, ref) => {
     const timer = useRef()
-    const validate = seed => {
-      const isValidSeed = validateSeed(seed)
-      if (seed && !isValidSeed) setError(`Invalid seed phrase.`)
+
+    const validate = mnemonic => {
+      if (mnemonic && !bip39.validateMnemonic(mnemonic))
+        setError(`Invalid seed phrase.`)
     }
+
     return (
       <TextInput
         onBlur={() => validate(value)}
