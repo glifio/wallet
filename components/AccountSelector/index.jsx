@@ -66,17 +66,12 @@ const AccountSelector = ({ wallet }) => {
           const wallets = await Promise.all(
             accounts.map(async (address, i) => {
               const balance = await provider.getBalance(address)
-              const networkDerivationPath = network === 'f' ? 461 : 1
+              const networkCode = network === 'f' ? 461 : 1
               return {
                 balance,
                 address,
-                path: [
-                  44,
-                  networkDerivationPath,
-                  5,
-                  0,
-                  page * ACCOUNT_BATCH_SIZE + i
-                ]
+                path: `m/44'/${networkCode}'/0/0/${page * ACCOUNT_BATCH_SIZE +
+                  i}`
               }
             })
           )
@@ -91,7 +86,7 @@ const AccountSelector = ({ wallet }) => {
     // checks to see if the wallets already exists in redux
     const needToFetch = () => {
       const matchCount = walletsInRdx.reduce((matches, w) => {
-        const walletDerivationIndex = w.path[4]
+        const walletDerivationIndex = w.path.split('/')[5]
         const derivationIndexRange = [
           page * ACCOUNT_BATCH_SIZE,
           page * ACCOUNT_BATCH_SIZE + ACCOUNT_BATCH_SIZE
@@ -159,8 +154,9 @@ const AccountSelector = ({ wallet }) => {
         {walletsInRdx
           .filter(
             w =>
-              w.path[4] >= page * ACCOUNT_BATCH_SIZE &&
-              w.path[4] < page * ACCOUNT_BATCH_SIZE + ACCOUNT_BATCH_SIZE
+              w.path.split('/')[5] >= page * ACCOUNT_BATCH_SIZE &&
+              w.path.split('/')[5] <
+                page * ACCOUNT_BATCH_SIZE + ACCOUNT_BATCH_SIZE
           )
           .map((w, i) => (
             <AccountCardAlt

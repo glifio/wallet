@@ -13,7 +13,7 @@
     "@openworklabs/filecoin-address": "0.0.3",
     "@openworklabs/filecoin-message": "0.0.8",
     "@openworklabs/filecoin-number": "0.0.3",
-    "@openworklabs/filecoin-wallet-provider": "0.0.13",
+    "@openworklabs/filecoin-wallet-provider": "0.0.15",
     "http-proxy-middleware": "^0.20.0",
     "lodash.clonedeep": "^4.5.0",
     "moment": "^2.24.0",

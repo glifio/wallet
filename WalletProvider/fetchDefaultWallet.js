@@ -24,12 +24,8 @@ const fetchDefaultWallet = async (
   const balance = await provider.getBalance(defaultAddress)
   const networkDerivationPath = network === 'f' ? 461 : 1
 
-  let path
-  if (provider.wallet.type === SINGLE_KEY) path = null
-  if (provider.wallet.type === HD_WALLET)
-    path = `m/44'/${networkDerivationPath}'/5'/0'/0`
-  if (provider.wallet.type === LEDGER)
-    path = [44, networkDerivationPath, 5, 0, 0]
+  let path = `m/44'/${networkDerivationPath}'/0/0/0`
+  if (provider.wallet.type === SINGLE_KEY) path = ''
   return {
     balance,
     address: defaultAddress,
