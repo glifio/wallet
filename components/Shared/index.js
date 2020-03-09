@@ -23,7 +23,7 @@ export * from './Icons'
 export * from './IconButtons'
 
 // layout
-export * from './Layout/SidebarLayout'
+export * from './Layout'
 
 // typography
 export * from './Typography'

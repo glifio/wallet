@@ -8,7 +8,8 @@ import {
   Label,
   Text,
   Title,
-  FloatingContainer
+  FloatingContainer,
+  Container
 } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 
@@ -59,7 +60,7 @@ const GasCustomization = ({
   }
 
   return (
-    <>
+    <Container>
       <Label my={3} color='core.primary'>
         Custom Transaction Fee
       </Label>
@@ -157,31 +158,29 @@ const GasCustomization = ({
         </Box>
       </Box>
       <FloatingContainer>
-        <>
-          <Button
-            type='button'
-            title='Cancel'
-            variant='secondary'
-            onClick={() => {
-              exit()
-            }}
-          />
-          <Button
-            type='button'
-            title='Save Custom Fee'
-            variant='primary'
-            disabled={!gasPriceLocal.isGreaterThan(0)}
-            onClick={async () => {
-              setGasPrice(gasPriceLocal)
-              setGasLimit(gasLimitLocal)
-              const gas = await estimateGas(gasPriceLocal)
-              setEstimatedGas(gas)
-              exit()
-            }}
-          />
-        </>
+        <Button
+          type='button'
+          title='Cancel'
+          variant='secondary'
+          onClick={() => {
+            exit()
+          }}
+        />
+        <Button
+          type='button'
+          title='Save Custom Fee'
+          variant='primary'
+          disabled={!gasPriceLocal.isGreaterThan(0)}
+          onClick={async () => {
+            setGasPrice(gasPriceLocal)
+            setGasLimit(gasLimitLocal)
+            const gas = await estimateGas(gasPriceLocal)
+            setEstimatedGas(gas)
+            exit()
+          }}
+        />
       </FloatingContainer>
-    </>
+    </Container>
   )
 }
 

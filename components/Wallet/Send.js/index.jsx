@@ -17,7 +17,8 @@ import {
   Button,
   Title,
   FloatingContainer,
-  Label as Total
+  Label as Total,
+  ContentContainer as SendContainer
 } from '../../Shared'
 import { ButtonClose } from '../../Shared/IconButtons'
 import ConfirmationCard from './ConfirmationCard'
@@ -47,16 +48,16 @@ const SendCardForm = styled.form.attrs(() => ({
   ${flexbox}
 `
 
-const SendContainer = styled.div.attrs(() => ({
-  maxWidth: 13,
-  minWidth: 11
-}))`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-grow: 2;
-  ${layout}
-`
+// const SendContainer = styled.div.attrs(() => ({
+//   maxWidth: 13,
+//   minWidth: 11
+// }))`
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   flex-grow: 2;
+//   ${layout}
+// `
 
 const isValidAmount = (value, balance, error) => {
   const valueFieldFilledOut = value && value.isGreaterThan(0)
