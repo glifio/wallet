@@ -185,12 +185,13 @@ const AccountSelector = () => {
                   display='flex'
                   flexDirection='column'
                   justifyContent='space-between'
-                  width={11}
-                  height={11}
+                  width='300px'
+                  height='300px'
                   borderRadius={2}
                   p={3}
                 >
                   <Title>Choose an account</Title>
+                  <Text m={0}>Select a wallet to use with Glif.</Text>
                 </Card>
               )}
             </>
