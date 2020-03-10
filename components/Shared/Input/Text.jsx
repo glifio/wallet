@@ -16,7 +16,7 @@ const TextInput = ({
   ...props
 }) => (
   <>
-    <InputWrapper>
+    <InputWrapper mt={3}>
       <Box display='flex' alignItems='center'>
         <Box display='inline-block' px={3} minWidth={9} textAlign='center'>
           <Label>{label}</Label>

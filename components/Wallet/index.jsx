@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import {
   AccountCard,
   AccountError,
   BalanceCard,
-  Box,
-  NetworkSwitcherGlyph
+  NetworkSwitcherGlyph,
+  Wrapper,
+  Gutter,
+  Sidebar,
+  Content
 } from '../Shared'
-
-import { WALLET_PROP_TYPE } from '../../customPropTypes'
 import Send from './Send.js'
-import MessageHistory from './MessageHistory'
+import MessageView from './Message'
 import { useWalletProvider } from '../../WalletProvider'
 import {
   LEDGER,
@@ -25,48 +25,14 @@ import {
 } from '../../utils/ledger/reportLedgerConfigError'
 import MsgConfirmer from '../../lib/confirm-message'
 import useUpToDateBalance from '../../lib/update-balance'
+import useWallet from '../../WalletProvider/useWallet'
+import Receive from '../Receive'
+import { MESSAGE_HISTORY, SEND, RECEIVE } from './views'
 
-// Sidebar layout w/ implicit sizing & wrap, courtesy of https://every-layout.dev/layouts/sidebar/
-
-// Wrapper wraps the content and applies a negative margin onto "Gutter" - thus acting as a defacto gutter between the Sidebar and Content sections.
-const Wrapper = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    flex-grow: 999;
-
-    > * {
-      display: flex;
-      flex-wrap: wrap;
-      flex-grow: 999;
-      margin: -0.5rem;
-    }
-
-    > * > * {
-      /* ↓ applies to both elements */
-      margin: 0.5rem;
-    }
-  }
-  `
-// Creates an implicit gutter between Sidebar and Content
-const Gutter = styled.div``
-
-// Sidebar grows to adopt the width of its children
-const Sidebar = styled.div`
-  flex-grow: 1;
-`
-// Content is a flexible container with no explicit width (hence basis=0) but which grows to consume all available space. It then wraps once its min-width is reached.
-const Content = styled.div`
-  display: flex;
-  flex-basis: 0;
-  flex-grow: 999;
-  justify-content: center;
-  padding-top: ${props => props.theme.sizes[4]}px;
-  min-width: calc(55% - 1rem);
-`
-
-const WalletView = ({ wallet }) => {
+const WalletView = () => {
   useUpToDateBalance()
-  const [sending, setSending] = useState(false)
+  const wallet = useWallet()
+  const [childView, setChildView] = useState(MESSAGE_HISTORY)
   const { ledger, walletType, connectLedger } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState(null)
   const [showLedgerError, setShowLedgerError] = useState(false)
@@ -101,12 +67,16 @@ const WalletView = ({ wallet }) => {
     setLedgerBusy(false)
   }
 
+  const onViewChange = view => childView !== view && setChildView(view)
+
   return (
     <>
       <MsgConfirmer />
       <Wrapper>
         <Gutter>
           <Sidebar>
+            <NetworkSwitcherGlyph />
+
             {hasLedgerError(
               ledger.connectedFailure,
               ledger.locked,
@@ -138,26 +108,31 @@ const WalletView = ({ wallet }) => {
                 mb={2}
               />
             )}
-
             <BalanceCard
               balance={wallet.balance}
-              disableButtons={sending}
-              onReceive={() => {}}
-              onSend={() => setSending(true)}
+              onReceive={() => onViewChange(RECEIVE)}
+              onSend={() => onViewChange(SEND)}
             />
           </Sidebar>
           <Content>
-            {sending ? <Send setSending={setSending} /> : <MessageHistory />}
-            <NetworkSwitcherGlyph />
+            {childView === MESSAGE_HISTORY && <MessageView />}
+            {childView === SEND && (
+              <Send
+                close={() => setChildView(MESSAGE_HISTORY)}
+                setSending={() => setChildView(SEND)}
+              />
+            )}
+            {childView === RECEIVE && (
+              <Receive
+                close={() => setChildView(MESSAGE_HISTORY)}
+                address={wallet.address}
+              />
+            )}
           </Content>
         </Gutter>
       </Wrapper>
     </>
   )
-}
-
-WalletView.propTypes = {
-  wallet: WALLET_PROP_TYPE.isRequired
 }
 
 export default WalletView

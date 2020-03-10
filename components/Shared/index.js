@@ -22,5 +22,8 @@ export * from './Menu'
 export * from './Icons'
 export * from './IconButtons'
 
+// layout
+export * from './Layout/SidebarLayout'
+
 // typography
 export * from './Typography'

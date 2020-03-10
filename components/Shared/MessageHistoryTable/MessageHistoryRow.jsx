@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
-import { bool, string } from 'prop-types'
+import { bool, string, func } from 'prop-types'
 import { converter } from '../../../utils/cmcConverter'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import Box from '../Box'
@@ -11,7 +11,22 @@ import { IconSend, IconReceive } from '../Icons'
 import truncate from '../../../utils/truncateAddress'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
-const MessageHistoryRowContainer = styled(Box)``
+const MessageHistoryRowContainer = styled(Box).attrs(props => ({
+  border: 1,
+  borderColor: 'core.silver',
+  borderRadius: 1,
+  p: 2,
+  my: 1,
+  ...props
+}))`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &:hover {
+    cursor: pointer;
+  }
+`
 
 const AddressText = ({ sentMsg, to, from }) => {
   if (sentMsg) {
@@ -59,7 +74,6 @@ const ActionText = ({ status, sentMsg }) => {
       </Text>
     )
   if (status === 'pending' && sentMsg) return <Text my={0}>Pending</Text>
-  // an unconfirmed received  sg
   if (status === 'pending')
     return (
       <Text color='core.nearblack' my={0}>
@@ -76,20 +90,12 @@ ActionText.propTypes = {
 
 const MessageHistoryRow = ({
   address,
-  message: { to, from, value, status }
+  message: { to, from, value, status, cid },
+  selectMessage
 }) => {
   const sentMsg = address === from
   return (
-    <MessageHistoryRowContainer
-      display='flex'
-      flexWrap='wrap'
-      border={1}
-      borderColor='core.silver'
-      borderRadius={1}
-      p={2}
-      my={1}
-      justifyContent='space-between'
-    >
+    <MessageHistoryRowContainer onClick={() => selectMessage(cid)}>
       <Menu>
         <MenuItem display='flex' flexDirection='row'>
           <Menu display='flex' flexDirection='column'>
@@ -172,7 +178,8 @@ const MessageHistoryRow = ({
 
 MessageHistoryRow.propTypes = {
   address: ADDRESS_PROPTYPE,
-  message: MESSAGE_PROPS.isRequired
+  message: MESSAGE_PROPS.isRequired,
+  selectMessage: func.isRequired
 }
 
 export default MessageHistoryRow

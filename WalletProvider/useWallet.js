@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
-import { useWalletProvider } from '../../WalletProvider'
+import { useWalletProvider } from '.'
 
-export const useWallet = () => {
+export default () => {
   const { walletType } = useWalletProvider()
   const wallet = useSelector(state => {
     if (state.wallets.length === 0) return null
@@ -11,5 +11,3 @@ export const useWallet = () => {
 
   return { ...wallet, type: walletType }
 }
-
-export const useSomething = () => {}

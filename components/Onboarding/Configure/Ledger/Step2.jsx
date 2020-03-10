@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'
@@ -137,7 +137,6 @@ export default () => {
                 const query = hasParams
                   ? `/wallet?${params.toString()}`
                   : '/wallet'
-                setLoading(false)
                 router.push(query)
               }
             } catch (err) {

@@ -1,5 +1,4 @@
 import React, { forwardRef } from 'react'
-import styled from 'styled-components'
 import { string, func, bool } from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import Box from '../Box'
