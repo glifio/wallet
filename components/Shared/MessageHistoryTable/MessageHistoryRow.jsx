@@ -8,6 +8,7 @@ import { Menu, MenuItem } from '../Menu'
 import { Text } from '../Typography'
 import { IconSend, IconReceive } from '../Icons'
 import truncate from '../../../utils/truncateAddress'
+import { useConverter } from '../../../lib/Converter'
 
 const MessageHistoryRowContainer = styled(Box).attrs(props => ({
   border: 1,
@@ -91,6 +92,7 @@ const MessageHistoryRow = ({
   message: { to, from, value, status, cid },
   selectMessage
 }) => {
+  const { converter, converterError } = useConverter()
   const sentMsg = address === from
   return (
     <MessageHistoryRowContainer onClick={() => selectMessage(cid)}>
@@ -138,7 +140,11 @@ const MessageHistoryRow = ({
             </MenuItem>
             <MenuItem display='flex'>
               <Text color='core.silver' m={0} mb={0}>
-                {new FilecoinNumber(value, 'attofil').toFil()}
+                {converter &&
+                  !converterError &&
+                  converter.fromFIL(
+                    new FilecoinNumber(value, 'attofil').toFil()
+                  )}
               </Text>
             </MenuItem>
           </Menu>
