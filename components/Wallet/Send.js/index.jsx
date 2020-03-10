@@ -128,12 +128,13 @@ const Send = ({ close }) => {
     if (wallet.type === LEDGER) {
       provider = await connectLedger()
     }
+
     if (provider) {
       const nonce = await provider.getNonce(wallet.address)
       const message = new Message({
         to: toAddress,
         from: wallet.address,
-        value: value.fil.toAttoFil(),
+        value: new BigNumber(value.fil.toAttoFil()).toFixed(0, 1),
         method: 0,
         gasPrice: gasPrice.toAttoFil(),
         gasLimit: gasLimit.toAttoFil(),
