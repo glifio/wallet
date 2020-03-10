@@ -36,7 +36,6 @@ const AccountCardAlt = ({
         p={3}
         bg={selected && 'card.account.background'}
         color={selected ? 'card.account.color' : 'colors.core.black'}
-        boxShadow={1}
       >
         <Box display='flex' alignItems='center' justifyContent='flex-start'>
           <Glyph
