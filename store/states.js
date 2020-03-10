@@ -15,7 +15,6 @@ export const initialState = {
     links: {},
     paginating: false
   },
-  // one of 't', 'f', or 'c' (custom)
   network: 't'
 }
 

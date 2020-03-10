@@ -49,17 +49,6 @@ const SendCardForm = styled.form.attrs(() => ({
   ${flexbox}
 `
 
-// const SendContainer = styled.div.attrs(() => ({
-//   maxWidth: 13,
-//   minWidth: 11
-// }))`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   flex-grow: 2;
-//   ${layout}
-// `
-
 const isValidAmount = (value, balance, error) => {
   const valueFieldFilledOut = value && value.isGreaterThan(0)
   const enoughInTheBank = balance.isGreaterThan(value)
@@ -149,6 +138,7 @@ const Send = ({ close }) => {
       const messageObj = message.encode()
       const msgCid = await provider.sendMessage(messageObj, signature)
       messageObj.cid = msgCid['/']
+      messageObj.timestamp = Date.now()
       setAttemptingTx(false)
       return messageObj
     }
