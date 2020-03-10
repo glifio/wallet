@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { BigNumber, FilecoinNumber } from '@openworklabs/filecoin-number'
 import { bool, string, func } from 'prop-types'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import Box from '../Box'
@@ -8,6 +8,8 @@ import { Menu, MenuItem } from '../Menu'
 import { Text } from '../Typography'
 import { IconSend, IconReceive } from '../Icons'
 import truncate from '../../../utils/truncateAddress'
+import { useConverter } from '../../../lib/Converter'
+import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
 const MessageHistoryRowContainer = styled(Box).attrs(props => ({
   border: 1,
@@ -91,6 +93,7 @@ const MessageHistoryRow = ({
   message: { to, from, value, status, cid },
   selectMessage
 }) => {
+  const { converter, converterError } = useConverter()
   const sentMsg = address === from
   return (
     <MessageHistoryRowContainer onClick={() => selectMessage(cid)}>
@@ -133,12 +136,25 @@ const MessageHistoryRow = ({
           >
             <MenuItem display='flex'>
               <Text color='core.nearblack' m={0}>
-                {new FilecoinNumber(value, 'attofil').toFil()}
+                {makeFriendlyBalance(
+                  new BigNumber(new FilecoinNumber(value, 'attofil').toFil()),
+                  7
+                )}
               </Text>
             </MenuItem>
             <MenuItem display='flex'>
               <Text color='core.silver' m={0} mb={0}>
-                {new FilecoinNumber(value, 'attofil').toFil()}
+                {converter &&
+                  !converterError &&
+                  makeFriendlyBalance(
+                    converter.fromFIL(
+                      new BigNumber(
+                        new FilecoinNumber(value, 'attofil').toFil()
+                      )
+                    ),
+                    7
+                  )}{' '}
+                USD
               </Text>
             </MenuItem>
           </Menu>

@@ -5,6 +5,7 @@ import { theme, ThemeProvider } from '../components/Shared'
 import withReduxStore from '../lib/with-redux-store'
 import WalletProviderWrapper from '../WalletProvider'
 import NetworkChecker from '../lib/check-network'
+import { ConverterWrapper } from '../lib/Converter'
 import '../styles.css'
 
 class MyApp extends App {
@@ -16,12 +17,14 @@ class MyApp extends App {
     const { Component, pageProps, reduxStore, query, pathname } = this.props
     return (
       <Provider store={reduxStore}>
-        <WalletProviderWrapper network={reduxStore.getState().network}>
-          <NetworkChecker pathname={pathname} query={query} />
-          <ThemeProvider theme={theme}>
-            <Component {...pageProps} />
-          </ThemeProvider>
-        </WalletProviderWrapper>
+        <ConverterWrapper>
+          <WalletProviderWrapper network={reduxStore.getState().network}>
+            <NetworkChecker pathname={pathname} query={query} />
+            <ThemeProvider theme={theme}>
+              <Component {...pageProps} />
+            </ThemeProvider>
+          </WalletProviderWrapper>
+        </ConverterWrapper>
       </Provider>
     )
   }

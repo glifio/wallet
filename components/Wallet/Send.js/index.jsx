@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 import { validateAddressString } from '@openworklabs/filecoin-address'
 import Message from '@openworklabs/filecoin-message'
+import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
 import {
   Box,
@@ -127,12 +128,13 @@ const Send = ({ close }) => {
     if (wallet.type === LEDGER) {
       provider = await connectLedger()
     }
+
     if (provider) {
       const nonce = await provider.getNonce(wallet.address)
       const message = new Message({
         to: toAddress,
         from: wallet.address,
-        value: value.fil.toAttoFil(),
+        value: new BigNumber(value.fil.toAttoFil()).toFixed(0, 1),
         method: 0,
         gasPrice: gasPrice.toAttoFil(),
         gasLimit: gasLimit.toAttoFil(),
@@ -324,10 +326,11 @@ const Send = ({ close }) => {
                 <Total fontSize={4}>Total</Total>
                 <Box display='flex' flexDirection='column' textAlign='right'>
                   <BigTitle color='core.primary'>
-                    {value.fil.toFil()} FIL
+                    {makeFriendlyBalance(new BigNumber(value.fil.toFil()), 10)}{' '}
+                    FIL
                   </BigTitle>
                   <Title color='core.darkgray'>
-                    {value.fiat.toString()} USD
+                    {makeFriendlyBalance(value.fiat, 7)} USD
                   </Title>
                 </Box>
               </Box>
