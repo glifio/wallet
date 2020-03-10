@@ -15,14 +15,15 @@ const AccountError = ({ errorMsg, onTryAgain }) => (
     borderRadius={2}
     p={3}
     bg='card.error.background'
+    color='card.error.foreground'
     boxShadow={1}
     mb={2}
   >
     <Box display='flex' alignItems='center' justifyContent='flex-start'>
-      <Glyph mr={3} color='card.account.color' acronym='Er' />
+      <Glyph mr={3} acronym='Er' />
       <Text>Error</Text>
     </Box>
-    <Box color='card.account.color'>
+    <Box>
       <Title>Ledger Device Problem</Title>
       <Text margin={0}>{errorMsg}</Text>
     </Box>
