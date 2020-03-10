@@ -125,7 +125,12 @@ const MessageHistoryRow = ({
           </Menu>
         </MenuItem>
       </Menu>
-      <Menu display='flex' flexDirection='row'>
+      <Menu
+        display='flex'
+        flexDirection='row'
+        justifyContent='flex-end'
+        flexGrow='999'
+      >
         <MenuItem>
           <Menu
             display='flex'
