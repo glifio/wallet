@@ -17,7 +17,7 @@ const AccountCardAlt = ({
   return (
     <Box my={2} display='flex' flexDirection='column' {...props}>
       {selected && (
-        <Text my={1} width='100%' textAlign='right' color='core.primary'>
+        <Text my={1} width='100%' textAlign='left' color='core.primary'>
           CURRENT
         </Text>
       )}
