@@ -191,10 +191,7 @@ const AccountSelector = () => {
                   p={3}
                 >
                   <Title>Choose an account</Title>
-                  <Text m={0}>
-                    Choose which account on your Ledger device you want to
-                    access with Glif
-                  </Text>
+                  <Text m={0}>Select a wallet to use with Glif.</Text>
                 </Card>
               )}
             </>
