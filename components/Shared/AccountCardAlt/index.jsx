@@ -25,6 +25,9 @@ const AccountCardAlt = ({
         css={`
           transition: 0.2s ease-in-out;
           cursor: pointer;
+          &:hover {
+            background: ${selected && hsla(0, 0%, 90%, 1)};
+          }
         `}
         onClick={onClick}
         display='flex'
