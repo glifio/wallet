@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { string } from 'prop-types'
-import colors from '../colors'
+import { baseColors } from '../theme'
 import Box from '../Box'
 
 const GlyphText = styled.h3`
@@ -42,7 +42,7 @@ Glyph.propTypes = {
 }
 
 Glyph.defaultProps = {
-  color: colors.purplelight
+  color: baseColors.mono.black
 }
 
 export default Glyph

@@ -1,4 +1,4 @@
-const baseColors = {
+export const baseColors = {
   mono: {
     black: '#000',
     nearblack: '#262626',
@@ -119,7 +119,6 @@ const colors = {
   }
 }
 
-// theme.js
 const theme = {
   colors,
   fontSizes: ['0rem', '1rem', '1.125rem', '1.25rem', '1.5rem', '2rem', '3rem'],
@@ -198,7 +197,6 @@ const theme = {
   borderStyles: ['solid'],
   borderWidths: ['0', '1px', '2px', '4px'],
   breakpoints: ['40em', '52em', '64em'],
-  // Alex, Todo - Use SmoothShadow https://css-tricks.com/make-a-smooth-shadow-friend/
   shadows: [
     '0',
     '0 0.7px 2.2px -8px rgba(0, 0, 0, 0.18),0 1.7px 5.4px  rgba(0, 0, 0, 0.129),0 3.1px 10.1px rgba(0, 0, 0, 0.107),0 5.6px 18.1px rgba(0, 0, 0, 0.09),0 10.4px 33.8px rgba(0, 0, 0, 0.073),0 25px 81px rgba(0, 0, 0, 0.051)'
