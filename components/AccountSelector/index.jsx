@@ -185,12 +185,16 @@ const AccountSelector = () => {
                   display='flex'
                   flexDirection='column'
                   justifyContent='space-between'
-                  width={11}
-                  height={11}
+                  width='300px'
+                  height='300px'
                   borderRadius={2}
                   p={3}
                 >
                   <Title>Choose an account</Title>
+                  <Text>
+                    Choose which account on your Ledger device you want to
+                    access with Glif
+                  </Text>
                 </Card>
               )}
             </>
