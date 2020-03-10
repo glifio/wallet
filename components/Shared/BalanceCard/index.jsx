@@ -8,7 +8,6 @@ import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 import { useConverter } from '../../../lib/Converter'
 
-// this component will also be responsible for fetching the fiat denominated amount of the balance
 const BalanceCard = forwardRef(
   ({ balance, onSend, onReceive, disableButtons, ...props }, ref) => {
     const { converter, converterError } = useConverter()
