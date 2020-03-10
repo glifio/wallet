@@ -26,7 +26,7 @@ const AccountCardAlt = ({
           transition: 0.2s ease-in-out;
           cursor: pointer;
           &:hover {
-            background: ${selected && hsla(0, 0%, 90%, 1)};
+            background: ${!selected && 'hsla(0, 0%, 90%, 1)'};
           }
         `}
         onClick={onClick}
@@ -38,7 +38,7 @@ const AccountCardAlt = ({
         border={1}
         borderRadius={2}
         p={3}
-        bg={selected ? 'card.account.background' : 'colors.core.white'}
+        bg={selected ? 'card.account.background' : 'hsla(0, 0%, 90%, 0)'}
         color={selected ? 'card.account.color' : 'colors.core.black'}
         boxShadow={1}
       >
