@@ -1,9 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Box, Card, Text, Stepper, Glyph, Loading } from '../../../Shared'
+import Box from '../Box'
+import Card from '../Card'
+import Stepper from '../Stepper'
+import Loading from '../LoaderGlyph'
+import Glyph from '../Glyph'
+import { Text } from '../Typography'
 
-const StepCard = ({ loading, step }) => {
+const StepCard = ({
+  currentStep,
+  description,
+  glyphAcronym,
+  loading,
+  totalSteps
+}) => {
   return (
     <Card
       display='flex'
@@ -14,32 +25,33 @@ const StepCard = ({ loading, step }) => {
       mr={2}
     >
       <Box display='flex' alignItems='center'>
-        {loading ? <Loading /> : <Glyph acronym='Ld' />}
+        {loading ? <Loading /> : <Glyph acronym={glyphAcronym} />}
         <Stepper
           textColor='text'
           completedDotColor='status.success.background'
           incompletedDotColor='status.inactive'
-          step={step}
-          totalSteps={3}
+          step={currentStep}
+          totalSteps={totalSteps}
           ml={4}
         />
       </Box>
       <Box display='block' mt={3}>
-        <Text>
-          Please complete the following steps so Filament can interface with
-          your Ledger device
-        </Text>
+        <Text>{description}</Text>
       </Box>
     </Card>
   )
 }
 
 StepCard.propTypes = {
+  description: PropTypes.string,
   loading: PropTypes.bool,
-  step: PropTypes.number.isRequired
+  currentStep: PropTypes.number.isRequired,
+  glyphAcronym: PropTypes.string.isRequired,
+  totalSteps: PropTypes.number.isRequired
 }
 
 StepCard.defaultProps = {
+  description: '',
   loading: false
 }
 

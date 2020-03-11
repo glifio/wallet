@@ -1,10 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
-import { Box, Button, Card, Text, Title } from '../../../Shared'
+import { Box, Button, Card, Text, Title, StepCard } from '../../../Shared'
 
 import { useWalletProvider } from '../../../../WalletProvider'
-import StepCard from './StepCard'
 import isValidBrowser from '../../../../utils/isValidBrowser'
 
 const Step1Helper = ({ connectedFailure }) => {
@@ -63,7 +62,14 @@ export default () => {
         flexDirection='row'
         justifyContent='center'
       >
-        <StepCard step={1} loading={ledger.connecting} />
+        <StepCard
+          currentStep={1}
+          description='Please complete the following steps so Filament can interface with
+          your Ledger device.'
+          loading={ledger.connecting}
+          totalSteps={3}
+          glyphAcronym='Ld'
+        />
         <Step1Helper connectedFailure={ledger.connectedFailure} />
       </Box>
       <Box mt={6} display='flex' flexDirection='row' justifyContent='center'>

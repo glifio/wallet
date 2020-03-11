@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import { validateMnemonic } from 'bip39'
-import { Box, Button, Card, Text, Input } from '../../../Shared'
+import { Box, Button, Card, Text, Input, StepCard } from '../../../Shared'
 
 import { useWalletProvider } from '../../../../WalletProvider'
-import StepCard from './StepCard'
 import ProviderCreator from './CreateProvider'
 
 export default () => {
@@ -39,7 +38,13 @@ export default () => {
         flexDirection='row'
         justifyContent='center'
       >
-        <StepCard step={1} />
+        <StepCard
+          currentStep={1}
+          totalSteps={2}
+          description='Please enter your 12 word seed phrase to access the accounts connected
+          to your seed phrase.'
+          glyphAcronym='Sp'
+        />
         <Card
           width='auto'
           display='flex'
