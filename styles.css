@@ -4,6 +4,10 @@
   font-family: 'RT-Alias-Grotesk', 'system-ui', 'Segoe UI', 'Roboto', Helvetica;
 }
 
+body {
+  background: #f6f8fe;
+}
+
 /* Alias Medium */
 
 @font-face {

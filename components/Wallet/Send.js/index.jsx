@@ -38,10 +38,12 @@ const SendCardForm = styled.form.attrs(() => ({
   justifyContent: 'space-between',
   border: 'none',
   p: 3,
+  border: 1,
   borderRadius: 2,
-  borderWidth: 1
+  borderColor: 'silver'
 }))`
   background-color: ${props => props.theme.colors.background.screen};
+  /* box-shadow: ${props => props.theme.shadows[2]}; */
   ${position}
   ${border}
   ${space}

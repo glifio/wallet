@@ -167,6 +167,7 @@ const Funds = forwardRef(
           flexGrow='1'
           width='100%'
           maxWidth={11}
+          p={3}
           textAlign='center'
           borderColor='input.border'
           bg={error && 'input.background.invalid'}
