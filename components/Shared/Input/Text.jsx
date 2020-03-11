@@ -18,9 +18,11 @@ const TextInput = ({
   <>
     <InputWrapper mt={3}>
       <Box display='flex' alignItems='center'>
-        <Box display='inline-block' px={3} minWidth={9} textAlign='center'>
-          <Label>{label}</Label>
-        </Box>
+        {label && (
+          <Box display='inline-block' px={3} minWidth={9} textAlign='center'>
+            <Label>{label}</Label>
+          </Box>
+        )}
         <BaseInput
           py={3}
           px={3}

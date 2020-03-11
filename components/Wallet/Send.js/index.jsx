@@ -144,11 +144,11 @@ const Send = ({ close }) => {
       formattedMessage.gas_limit = formattedMessage.gaslimit
       delete formattedMessage.gasprice
       delete formattedMessage.gaslimit
-      // const serializedMessage = await message.serialize()
+      const serializedMessage = await message.serialize()
       const signature = await provider.wallet.sign(
         wallet.path,
-        formattedMessage
-        // serializedMessage
+        // formattedMessage
+        serializedMessage
       )
       const messageObj = message.encode()
       const msgCid = await provider.sendMessage(messageObj, signature)
