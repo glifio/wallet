@@ -1,5 +1,12 @@
 import React from 'react'
+import Router from 'next/router'
 
-import { Onboard } from '../components'
+export default class Home extends React.Component {
+  componentDidMount() {
+    Router.push(`/onboard?network=t`)
+  }
 
-export default () => <Onboard />
+  render() {
+    return <></>
+  }
+}
