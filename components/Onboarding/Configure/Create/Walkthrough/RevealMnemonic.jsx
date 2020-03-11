@@ -1,7 +1,7 @@
 import React from 'react'
 import { BigTitle, Text } from '../../../../Shared'
 import { MNEMONIC_PROPTYPE } from '../../../../../customPropTypes'
-import DisplayMnemonic from '../DisplayMnemonic'
+import DisplayMnemonic from './DisplayMnemonic'
 
 const Step1 = ({ mnemonic }) => {
   return (

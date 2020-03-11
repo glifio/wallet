@@ -1,26 +1,55 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { MNEMONIC_PROPTYPE } from '../../../../../customPropTypes'
-import Step1 from './Step1'
-import { Card, BigTitle } from '../../../../Shared'
+import RevealMnemonic from './RevealMnemonic'
+import { BigTitle, Card, Text } from '../../../../Shared'
 import WordPrompt from './WordPrompt'
-import generateRandomIndexes from '../../../../../utils/generateRandomIndexes'
+import generateRandomWords from '../../../../../utils/generateRandomWords'
+
+const indexToWord = [
+  'first',
+  'second',
+  'third',
+  'fourth',
+  'fifth',
+  'sixth',
+  'seventh',
+  'eighth',
+  'ninth',
+  'tenth',
+  'eleventh',
+  'twelfth'
+]
 
 const Stage = ({ mnemonic, walkthroughStep }) => {
-  const randomIndexes = generateRandomIndexes(mnemonic.split(' ').length, 4)
+  const [first, second, third, fourth] = generateRandomWords(mnemonic, 4)
   switch (walkthroughStep) {
     case 1:
-      return <Step1 mnemonic={mnemonic} />
+      return <RevealMnemonic mnemonic={mnemonic} />
     case 2:
-      return <WordPrompt word={mnemonic.split(' ')[randomIndexes[0]]} />
+      return (
+        <WordPrompt wordToMatch={first.word} index={indexToWord[first.index]} />
+      )
     case 3:
-      return <WordPrompt word={mnemonic.split(' ')[randomIndexes[1]]} />
+      return (
+        <WordPrompt
+          wordToMatch={second.word}
+          index={indexToWord[second.index]}
+        />
+      )
     case 4:
-      return <WordPrompt word={mnemonic.split(' ')[randomIndexes[2]]} />
+      return (
+        <WordPrompt wordToMatch={third.word} index={indexToWord[third.index]} />
+      )
     case 5:
-      return <WordPrompt word={mnemonic.split(' ')[randomIndexes[3]]} />
+      return (
+        <WordPrompt
+          wordToMatch={fourth.word}
+          index={indexToWord[fourth.index]}
+        />
+      )
     default:
-      return <div>Error, how the hell did you get here?</div>
+      return <Text>Error, how the hell did you get here?</Text>
   }
 }
 

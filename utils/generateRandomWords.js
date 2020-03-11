@@ -9,8 +9,13 @@ const generate = (setOfRandomNums, numRandoms, numWords) => {
   return generate(setOfRandomNums, numRandoms, numWords)
 }
 
-export default (numWords, numRandoms) => {
+export default (mnemonic, numRandoms) => {
   const indexes = new Set([])
-  const randoms = [...generate(indexes, numRandoms, numWords)]
-  return randoms.sort((a, b) => a - b)
+  const randoms = [
+    ...generate(indexes, numRandoms, mnemonic.split(' ').length)
+  ].sort((a, b) => a - b)
+  return randoms.map(index => ({
+    index: Number(index),
+    word: mnemonic.split(' ')[index]
+  }))
 }
