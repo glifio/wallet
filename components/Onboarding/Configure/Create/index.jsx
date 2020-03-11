@@ -54,12 +54,14 @@ export default () => {
       {!returningHome ? (
         <>
           <GenerateMnemonic setMnemonic={setMnemonic} />
-          <CreateProvider
-            network={network}
-            mnemonic={mnemonic}
-            ready={walkthroughStep === 6}
-          />
-          {loading ? (
+          {mnemonic && (
+            <CreateProvider
+              network={network}
+              mnemonic={mnemonic}
+              ready={walkthroughStep === 6}
+            />
+          )}
+          {loading || walkthroughStep === 6 ? (
             <Box
               width='100%'
               display='flex'

@@ -79,15 +79,11 @@ const Walkthrough = ({ mnemonic, walkthroughStep, setCanContinue }) => {
       flexDirection='column'
       justifyContent='space-between'
     >
-      {walkthroughStep < 6 ? (
-        <Stage
-          mnemonic={mnemonic}
-          walkthroughStep={walkthroughStep}
-          setCanContinue={setCanContinue}
-        />
-      ) : (
-        <BigTitle>Thank you</BigTitle>
-      )}
+      <Stage
+        mnemonic={mnemonic}
+        walkthroughStep={walkthroughStep}
+        setCanContinue={setCanContinue}
+      />
     </Card>
   )
 }

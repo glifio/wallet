@@ -30,11 +30,13 @@ export default () => {
   }, [router, wallets, network])
   return (
     <>
-      <CreateProvider
-        network={network}
-        mnemonic={validSeed}
-        ready={!!validSeed}
-      />
+      {validSeed && (
+        <CreateProvider
+          network={network}
+          mnemonic={validSeed}
+          ready={!!validSeed}
+        />
+      )}
       <Box
         mt={8}
         mb={6}

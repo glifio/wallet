@@ -11,9 +11,7 @@ const WordPrompt = ({ numWord, wordToMatch, setCanContinue }) => {
   }, [numWord, wordToMatch])
 
   useEffect(() => {
-    if (word === wordToMatch) {
-      setCanContinue(true)
-    }
+    if (word === wordToMatch) setCanContinue(true)
   }, [word, wordToMatch, setCanContinue])
 
   return (
