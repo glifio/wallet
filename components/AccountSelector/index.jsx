@@ -24,6 +24,7 @@ import {
 } from '../../utils/ledger/reportLedgerConfigError'
 import makeFriendlyBalance from '../../utils/makeFriendlyBalance'
 import useWallet from '../../WalletProvider/useWallet'
+import createPath from '../../utils/createPath'
 
 const FloatingContainer = styled(Box)`
   position: fixed;
@@ -98,8 +99,7 @@ const AccountSelector = () => {
               return {
                 balance,
                 address,
-                path: `m/44'/${networkCode}'/0/0/${page * ACCOUNT_BATCH_SIZE +
-                  i}`
+                path: createPath(networkCode, page * ACCOUNT_BATCH_SIZE + i)
               }
             })
           )

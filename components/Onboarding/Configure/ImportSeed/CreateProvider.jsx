@@ -9,6 +9,7 @@ import { useWalletProvider } from '../../../../WalletProvider'
 import { createWalletProvider } from '../../../../WalletProvider/state'
 import { HD_WALLET } from '../../../../constants'
 import { walletList } from '../../../../store/actions'
+import createPath from '../../../../utils/createPath'
 
 const create = () =>
   'equip will roof matter pink blind book anxiety banner elbow sun young'
@@ -27,22 +28,21 @@ export default dynamic({
           for (let i = nStart; i < nEnd; i += 1) {
             const networkCode = network === 't' ? 1 : 461
             accounts.push(
-              rustModule.key_derive(
-                mnemonic,
-                `m/44'/${networkCode}'/5'/0'/${i}`
-              ).address
+              rustModule.key_derive(mnemonic, createPath(networkCode, i))
+                .address
             )
           }
           return accounts
         },
         sign: async (path, unsignedMessage) => {
           const privateKey = rustModule.key_derive(mnemonic, path).prvkey
-          return rustModule
-            .sign_transaction(
+          return Buffer.from(
+            rustModule.sign_transaction(
               JSON.stringify(unsignedMessage),
               privateKey.toString('hex')
-            )
-            .toString('base64')
+            ),
+            'hex'
+          ).toString('base64')
         },
         type: HD_WALLET
       }

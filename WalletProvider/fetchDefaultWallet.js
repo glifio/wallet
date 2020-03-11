@@ -4,6 +4,7 @@ import {
   setLedgerProvider
 } from '../utils/ledger/setLedgerProvider'
 import { clearError, resetLedgerState } from './state'
+import createPath from '../utils/createPath'
 
 const fetchDefaultWallet = async (
   dispatch,
@@ -22,9 +23,9 @@ const fetchDefaultWallet = async (
   }
   const [defaultAddress] = await provider.wallet.getAccounts(0, 1, network)
   const balance = await provider.getBalance(defaultAddress)
-  const networkDerivationPath = network === 'f' ? 461 : 1
+  const networkCode = network === 'f' ? 461 : 1
 
-  let path = `m/44'/${networkDerivationPath}'/0/0/0`
+  let path = createPath(networkCode, 0)
   if (provider.wallet.type === SINGLE_KEY) path = ''
   return {
     balance,
