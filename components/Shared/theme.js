@@ -146,7 +146,7 @@ const theme = {
       fontFamily: 'RT-Alias-Medium'
     },
     text: {
-      fontSize: 2,
+      fontSize: 3,
       fontColor: core.nearblack,
       fontWeight: 400,
       lineHeight: 'copy',
@@ -199,7 +199,8 @@ const theme = {
   breakpoints: ['40em', '52em', '64em'],
   shadows: [
     '0',
-    '0 0.7px 2.2px -8px rgba(0, 0, 0, 0.18),0 1.7px 5.4px  rgba(0, 0, 0, 0.129),0 3.1px 10.1px rgba(0, 0, 0, 0.107),0 5.6px 18.1px rgba(0, 0, 0, 0.09),0 10.4px 33.8px rgba(0, 0, 0, 0.073),0 25px 81px rgba(0, 0, 0, 0.051)'
+    '0 0.7px 2.2px -8px rgba(0, 0, 0, 0.18),0 1.7px 5.4px  rgba(0, 0, 0, 0.129),0 3.1px 10.1px rgba(0, 0, 0, 0.107),0 5.6px 18.1px rgba(0, 0, 0, 0.09),0 10.4px 33.8px rgba(0, 0, 0, 0.073),0 25px 81px rgba(0, 0, 0, 0.051)',
+    'rgba(0, 0, 0, 0.10) 0px 0.7px 2.2px -8px, rgba(0, 0, 0, 0.04) 0px 1.7px 2.4px, rgba(0, 0, 0, 0.106) 0px 3.1px 8.1px, rgba(0, 0, 0, 0.04) 0px 5.6px 12.1px, rgba(0, 0, 0, 0.045) 0px 4.4px 4.8px, rgba(0, 0, 0, 0.05) 0px 15px 41px'
   ],
   opacity: {
     disabled: 0.4
