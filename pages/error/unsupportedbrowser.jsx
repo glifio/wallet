@@ -6,7 +6,8 @@ import {
   Text,
   Title,
   Glyph,
-  ButtonClose
+  ButtonClose,
+  AccountError
 } from '../../components/Shared'
 
 export default onClick => {
@@ -25,7 +26,7 @@ export default onClick => {
             display='flex'
             flexDirection='column'
             justifyContent='space-between'
-            borderColor='silver'
+            borderColor='card.error.background'
             bg='card.error.background'
             color='card.error.foreground'
             height={300}
@@ -35,7 +36,7 @@ export default onClick => {
               <Glyph acronym='!' />
             </Box>
             <Box>
-              <Text mb={2}>Sorry, Glif doesn't support Firefox</Text>
+              <Title mb={2}>Glif only supports Chrome</Title>
             </Box>
           </Card>
           <Card
@@ -47,12 +48,11 @@ export default onClick => {
             ml={2}
           >
             <Box display='flex' alignItems='center'>
-              <Title>Oops!</Title>
-            </Box>
-            <Box>
-              <Text mb={2}>
+              <Text mt={0}>
                 Please download the latest of Chrome to continue.
               </Text>
+            </Box>
+            <Box>
               <Button mt={3} variant='primary' title='Download' />
             </Box>
           </Card>
