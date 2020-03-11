@@ -11,11 +11,12 @@ import {
 
 const Ledger = dynamic(() => import('./Ledger'))
 const ImportSeed = dynamic(() => import('./ImportSeed'))
+const Create = dynamic(() => import('./Create'))
 
 const Configure = ({ walletType }) => {
   switch (walletType) {
     case CREATE_MNEMONIC:
-      return <div>Create</div>
+      return <Create />
     case LEDGER:
       return <Ledger />
     case IMPORT_SINGLE_KEY:

@@ -1,9 +1,19 @@
-import { number, shape, string } from 'prop-types'
+import { shape, string } from 'prop-types'
 import { validateAddressString } from '@openworklabs/filecoin-address'
 import { validatePath } from '@openworklabs/filecoin-wallet-provider'
+import { validateMnemonic } from 'bip39'
 
 export const ADDRESS_PROPTYPE = (props, propName, componentName) => {
   if (!validateAddressString(props[propName]))
+    return new Error(
+      `Invalid prop: ${propName} supplied to ${componentName}. Validation failed.`
+    )
+
+  return null
+}
+
+export const MNEMONIC_PROPTYPE = (props, propName, componentName) => {
+  if (!validateMnemonic(props[propName]))
     return new Error(
       `Invalid prop: ${propName} supplied to ${componentName}. Validation failed.`
     )

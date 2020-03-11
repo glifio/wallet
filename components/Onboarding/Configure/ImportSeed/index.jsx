@@ -5,7 +5,7 @@ import { validateMnemonic } from 'bip39'
 import { Box, Button, Card, Text, Input, StepCard } from '../../../Shared'
 
 import { useWalletProvider } from '../../../../WalletProvider'
-import ProviderCreator from './CreateProvider'
+import CreateProvider from '../../../../WalletProvider/CreateProvider'
 
 export default () => {
   const { setWalletType } = useWalletProvider()
@@ -30,7 +30,11 @@ export default () => {
   }, [router, wallets, network])
   return (
     <>
-      <ProviderCreator network={network} mnemonic={validSeed} />
+      <CreateProvider
+        network={network}
+        mnemonic={validSeed}
+        ready={!!validSeed}
+      />
       <Box
         mt={8}
         mb={6}
