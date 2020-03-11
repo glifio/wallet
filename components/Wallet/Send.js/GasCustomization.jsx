@@ -61,12 +61,9 @@ const GasCustomization = ({
 
   return (
     <ContentContainer>
-      <Text my={3} color='core.primary'>
-        Custom Transaction Fee
-      </Text>
-      <Text mt={0} mb={3}>
-        Select a predefined speed
-      </Text>
+      <Label mt={3} mb={3}>
+        Select a preset transfer speed
+      </Label>
       <Box mb={4} display='flex' flexDirection='row'>
         <Button
           onClick={async () => {
@@ -99,6 +96,8 @@ const GasCustomization = ({
           }
           title='Medium'
           mr={3}
+          py={1}
+          px={3}
           type='button'
         />
         <Button
@@ -119,9 +118,9 @@ const GasCustomization = ({
           type='button'
         />
       </Box>
-      <Text mt={0} mb={3}>
-        Or submit a custom fee
-      </Text>
+      <Label mt={3} mb={3}>
+        Submit a custom fee
+      </Label>
       <Input.Number
         mt={2}
         m='0'
@@ -140,19 +139,19 @@ const GasCustomization = ({
           setGasLimitLocal(new FilecoinNumber(e.target.value || '0', 'attofil'))
         }
       />
-      <Text color='core.darkgray'>
+      <Label my={3} color='core.darkgray'>
         Transfers complete faster with a higher gas price.
-      </Text>
+      </Label>
       <Box
         display='flex'
         flexDirection='row'
         alignItems='center'
         justifyContent='space-between'
-        mt={5}
+        mt={7}
         mx={1}
       >
         <Label>New Transaction Fee</Label>
-        <Box display='flex' flexDirection='column' textAlign='right'>
+        <Box display='flex' flexDirection='column' LabelAlign='right'>
           <Title fontSize={4} color='core.primary'>
             {estimatedGas
               ? `${estimatedGas.toAttoFil()} AttoFil`
