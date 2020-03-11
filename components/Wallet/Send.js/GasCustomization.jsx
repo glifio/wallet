@@ -61,10 +61,10 @@ const GasCustomization = ({
 
   return (
     <ContentContainer>
-      <Label my={3} color='core.primary'>
+      <Text my={3} color='core.primary'>
         Custom Transaction Fee
-      </Label>
-      <Text mt={5} mb={3}>
+      </Text>
+      <Text mt={0} mb={3}>
         Select a predefined speed
       </Text>
       <Box mb={4} display='flex' flexDirection='row'>
@@ -119,6 +119,9 @@ const GasCustomization = ({
           type='button'
         />
       </Box>
+      <Text mt={0} mb={3}>
+        Or submit a custom fee
+      </Text>
       <Input.Number
         mt={2}
         m='0'
@@ -145,11 +148,11 @@ const GasCustomization = ({
         flexDirection='row'
         alignItems='center'
         justifyContent='space-between'
-        mt={3}
+        mt={5}
         mx={1}
       >
         <Label>New Transaction Fee</Label>
-        <Box display='flex' flexDirection='column' textAlign='right' mt={5}>
+        <Box display='flex' flexDirection='column' textAlign='right'>
           <Title fontSize={4} color='core.primary'>
             {estimatedGas
               ? `${estimatedGas.toAttoFil()} AttoFil`
