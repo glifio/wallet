@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
-import { Box, Button, StepCard } from '../../../Shared'
+import { Box, Button, StepCard, Loading, Label } from '../../../Shared'
 
 import { useWalletProvider } from '../../../../WalletProvider'
 import CreateProvider from '../../../../WalletProvider/CreateProvider'
@@ -17,6 +17,26 @@ export default () => {
   const router = useRouter()
   const [mnemonic, setMnemonic] = useState('')
   const [walkthroughStep, setWalkthroughStep] = useState(1)
+  const [loading, setLoading] = useState(true)
+  const timeout = useRef()
+
+  const waitForMnemonic = useCallback(
+    timer => {
+      clearTimeout(timeout.current)
+      timeout.current = setTimeout(() => {
+        if (!mnemonic) {
+          waitForMnemonic(200)
+        } else {
+          setLoading(false)
+        }
+      }, timer)
+    },
+    [mnemonic]
+  )
+
+  useEffect(() => {
+    waitForMnemonic(750)
+  }, [waitForMnemonic])
 
   useEffect(() => {
     if (wallets.length > 0) {
@@ -27,6 +47,7 @@ export default () => {
       setMnemonic('')
     }
   }, [router, wallets, network])
+
   return (
     <>
       <GenerateMnemonic setMnemonic={setMnemonic} />
@@ -35,48 +56,62 @@ export default () => {
         mnemonic={mnemonic}
         ready={walkthroughStep === 6}
       />
-      <Box
-        mt={8}
-        mb={6}
-        display='flex'
-        flexDirection='row'
-        justifyContent='center'
-      >
-        <StepCard
-          currentStep={walkthroughStep}
-          totalSteps={2}
-          description='Please complete the following steps to create a new wallet.'
-          glyphAcronym='Cw'
-        />
-        {mnemonic ? (
-          walkthroughStep < 6 ? (
-            <Walkthrough
-              walkthroughStep={walkthroughStep}
-              setWalkthroughStep={setWalkthroughStep}
-              mnemonic={mnemonic}
+      {loading ? (
+        <Box
+          width='100%'
+          display='flex'
+          flexDirection='column'
+          alignItems='center'
+          mt={9}
+        >
+          <Loading width={3} height={3} />
+          <Label mt={3}>Loading...</Label>
+        </Box>
+      ) : (
+        <>
+          <Box
+            mt={8}
+            mb={6}
+            display='flex'
+            flexDirection='row'
+            justifyContent='center'
+          >
+            <StepCard
+              currentStep={walkthroughStep}
+              totalSteps={5}
+              description='Please complete the following steps to create a new wallet.'
+              glyphAcronym='Cw'
             />
-          ) : (
-            <div>Finished</div>
-          )
-        ) : (
-          <div>Loading</div>
-        )}
-      </Box>
-      <Box mt={6} display='flex' flexDirection='row' justifyContent='center'>
-        <Button
-          title='Back'
-          onClick={() => setWalletType(null)}
-          variant='secondary'
-          mr={2}
-        />
-        <Button
-          title="I've recorded my seed phrase"
-          disabled={false}
-          onClick={() => setWalkthroughStep(walkthroughStep + 1)}
-          variant='primary'
-          ml={2}
-        />
-      </Box>
+            {mnemonic && (
+              <Walkthrough
+                walkthroughStep={walkthroughStep}
+                setWalkthroughStep={setWalkthroughStep}
+                mnemonic={mnemonic}
+              />
+            )}
+          </Box>
+          <Box
+            mt={6}
+            display='flex'
+            flexDirection='row'
+            justifyContent='center'
+          >
+            <Button
+              title='Back'
+              onClick={() => setWalletType(null)}
+              variant='secondary'
+              mr={2}
+            />
+            <Button
+              title="I've recorded my seed phrase"
+              disabled={false}
+              onClick={() => setWalkthroughStep(walkthroughStep + 1)}
+              variant='primary'
+              ml={2}
+            />
+          </Box>
+        </>
+      )}
     </>
   )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { MNEMONIC_PROPTYPE } from '../../../../../customPropTypes'
 import Step1 from './Step1'
-import { Card } from '../../../../Shared'
+import { Card, BigTitle } from '../../../../Shared'
 import WordPrompt from './WordPrompt'
 import generateRandomIndexes from '../../../../../utils/generateRandomIndexes'
 
@@ -37,7 +37,11 @@ const Walkthrough = ({ mnemonic, walkthroughStep }) => {
       flexDirection='column'
       justifyContent='space-between'
     >
-      <Stage mnemonic={mnemonic} walkthroughStep={walkthroughStep} />
+      {walkthroughStep < 6 ? (
+        <Stage mnemonic={mnemonic} walkthroughStep={walkthroughStep} />
+      ) : (
+        <BigTitle>Thank you</BigTitle>
+      )}
     </Card>
   )
 }

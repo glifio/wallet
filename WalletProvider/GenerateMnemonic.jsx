@@ -6,8 +6,8 @@ import { generateMnemonic } from 'bip39'
 export default dynamic({
   ssr: false,
   loader: async () => {
-    // Import the wasm module
-    const rustModule = await import('fcwebsigner')
+    // Will use once we have generate mnemonic exposed from rust module
+    // const rustModule = await import('fcwebsigner')
 
     const GenerateMnemonic = ({ setMnemonic }) => {
       const [createdMnemonic, setCreatedMnemonic] = useState(false)
