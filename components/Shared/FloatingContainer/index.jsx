@@ -2,10 +2,10 @@ import styled from 'styled-components'
 import Box from '../Box'
 
 export default styled(Box).attrs(() => ({
-  backgroundColor: 'core.white',
+  backgroundColor: 'background.app',
   boxShadow: 2,
   border: 1,
-  borderColor: 'core.silver',
+  borderColor: 'core.lightgray',
   p: 1
 }))`
   position: fixed;
