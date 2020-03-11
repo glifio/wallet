@@ -15,9 +15,10 @@ export default () => {
   }))
   const router = useRouter()
   const [mnemonic, setMnemonic] = useState('')
-  const [walkthroughStep, setWalkthroughStep] = useState(2)
+  const [walkthroughStep, setWalkthroughStep] = useState(1)
   const [loading, setLoading] = useState(false)
   const [returningHome, setReturningHome] = useState(false)
+  const [canContinue, setCanContinue] = useState(true)
   const timeout = useRef()
 
   const waitForMnemonic = useCallback(
@@ -87,8 +88,8 @@ export default () => {
                 {mnemonic && (
                   <Walkthrough
                     walkthroughStep={walkthroughStep}
-                    setWalkthroughStep={setWalkthroughStep}
                     mnemonic={mnemonic}
+                    setCanContinue={setCanContinue}
                   />
                 )}
               </Box>
@@ -105,8 +106,16 @@ export default () => {
                   mr={2}
                 />
                 <Button
-                  title="I've recorded my seed phrase"
-                  onClick={() => setWalkthroughStep(walkthroughStep + 1)}
+                  title={
+                    walkthroughStep === 1
+                      ? "I've recorded my seed phrase"
+                      : 'Next'
+                  }
+                  disabled={!canContinue}
+                  onClick={() => {
+                    setCanContinue(false)
+                    setWalkthroughStep(walkthroughStep + 1)
+                  }}
                   variant='primary'
                   ml={2}
                 />
