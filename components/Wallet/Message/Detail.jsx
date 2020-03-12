@@ -16,6 +16,8 @@ import {
 } from '../../Shared'
 import { ButtonClose } from '../../Shared/IconButtons'
 import { MESSAGE_PROPS } from '../../../customPropTypes'
+import { useConverter } from '../../../lib/Converter'
+import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
 const MessageDetailCard = styled(Card).attrs(() => ({
   my: 2,
@@ -30,6 +32,7 @@ const MessageDetailCard = styled(Card).attrs(() => ({
 `
 
 const MessageDetail = ({ close, message }) => {
+  const { converter } = useConverter()
   return (
     <MessageDetailCard>
       <Box
@@ -114,10 +117,22 @@ const MessageDetail = ({ close, message }) => {
           <Label>Total</Label>
           <Box display='flex' flexDirection='column'>
             <BigTitle color='core.primary'>
-              {new FilecoinNumber(message.value, 'attofil').toFil()}
+              {makeFriendlyBalance(
+                new FilecoinNumber(message.value, 'attofil').plus(
+                  new FilecoinNumber(message.gas_used, 'attofil')
+                ),
+                18
+              ).toString()}{' '}
+              FIL
             </BigTitle>
             <Title color='core.darkgray'>
-              {new FilecoinNumber(message.value, 'attofil').toFil()}
+              {makeFriendlyBalance(
+                converter.fromFIL(
+                  new FilecoinNumber(message.value, 'attofil').toFil()
+                ),
+                18
+              ).toString()}{' '}
+              USD
             </Title>
           </Box>
         </Box>
