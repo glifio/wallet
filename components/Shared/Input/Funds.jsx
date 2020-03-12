@@ -39,7 +39,7 @@ const Funds = forwardRef(
     const { converter } = useConverter()
     const initialFilAmount = amount ? new FilecoinNumber(amount, 'attofil') : ''
     const initialFiatAmount = amount
-      ? new FilecoinNumber(amount, 'attofil').toFil()
+      ? converter.fromFIL(new FilecoinNumber(amount, 'attofil').toFil())
       : ''
     const [filAmount, setFilAmount] = useState(initialFilAmount)
     const [fiatAmount, setFiatAmount] = useState(initialFiatAmount)
