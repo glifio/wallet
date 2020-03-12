@@ -12,17 +12,11 @@ import { walletList } from '../store/actions'
 import createPath from '../utils/createPath'
 import { MNEMONIC_PROPTYPE } from '../customPropTypes'
 
-const create = () =>
-  'equip will roof matter pink blind book anxiety banner elbow sun young'
-
 export default dynamic({
   ssr: false,
   loader: async () => {
-    // Import the wasm module
     const rustModule = await import('fcwebsigner')
     const HDWalletProvider = mnemonic => {
-      let privateMnemonic = mnemonic
-      if (!privateMnemonic) privateMnemonic = create()
       return {
         getAccounts: async (nStart = 0, nEnd = 5, network = 't') => {
           const accounts = []
