@@ -1,9 +1,9 @@
 import React from 'react'
-import { Box, Text, Title } from '../../Shared'
+import { Box, Text, BigTitle } from '../../Shared'
 
 export default ({ ...props }) => (
   <Box {...props}>
-    <Title>Hello.</Title>
-    <Text>How do you want to use Filament?</Text>
+    <BigTitle>Hello.</BigTitle>
+    <Text maxWidth={11}>How would you like to access Glif?</Text>
   </Box>
 )

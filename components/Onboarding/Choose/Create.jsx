@@ -6,6 +6,10 @@ const CreateWallet = ({ onClick, ...props }) => (
   <Card
     css={`
       cursor: pointer;
+      transition: 0.13s ease-in-out;
+      &:hover {
+        transform: scale(1.05);
+      }
     `}
     role='button'
     onClick={onClick}
@@ -16,11 +20,13 @@ const CreateWallet = ({ onClick, ...props }) => (
     {...props}
   >
     <Box display='flex' alignItems='center'>
-      <Glyph acronym='Ld' />
+      <Glyph acronym='Cw' />
       <Text ml={3}>Create Wallet</Text>
     </Box>
-    <Box display='block' mt={3}>
-      <Text>Create a brand new wallet</Text>
+    <Box display='block'>
+      <Text mb={0} color='core.nearblack'>
+        Create a brand new wallet
+      </Text>
     </Box>
   </Card>
 )

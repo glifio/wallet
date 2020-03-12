@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
-import { BigTitle, Box, Text, Input } from '../../../../Shared'
+import { Title, Box, Text, Input } from '../../../../Shared'
 
 const WordPrompt = ({ numWord, wordToMatch, setCanContinue }) => {
   const [word, setWord] = useState('')
@@ -21,7 +21,7 @@ const WordPrompt = ({ numWord, wordToMatch, setCanContinue }) => {
       flexDirection='column'
       justifyContent='space-between'
     >
-      <BigTitle>Please follow the prompts</BigTitle>
+      <Title mt={3}>Please follow the prompts</Title>
       <Box display='flex' flexDirection='column'>
         <Box display='flex' flexDirection='row'>
           <Text my={1}>What&rsquo;s the&nbsp;</Text>
@@ -34,6 +34,7 @@ const WordPrompt = ({ numWord, wordToMatch, setCanContinue }) => {
           placeholder='tunafish'
           value={word}
           onChange={e => setWord(e.target.value)}
+          borderLeft={0}
         />
       </Box>
     </Box>

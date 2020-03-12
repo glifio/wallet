@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import { MNEMONIC_PROPTYPE } from '../../../../../customPropTypes'
 import RevealMnemonic from './RevealMnemonic'
-import { BigTitle, Card, Text } from '../../../../Shared'
+import { Card, Text } from '../../../../Shared'
 import WordPrompt from './WordPrompt'
 import generateRandomWords from '../../../../../utils/generateRandomWords'
 
@@ -78,6 +78,7 @@ const Walkthrough = ({ mnemonic, walkthroughStep, setCanContinue }) => {
       display='flex'
       flexDirection='column'
       justifyContent='space-between'
+      borderColor='core.lightgray'
     >
       <Stage
         mnemonic={mnemonic}

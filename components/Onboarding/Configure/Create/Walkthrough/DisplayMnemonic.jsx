@@ -5,7 +5,9 @@ import { MNEMONIC_PROPTYPE } from '../../../../../customPropTypes'
 const DisplayMnemonic = ({ mnemonic }) => {
   return (
     <>
-      <Text color='core.primary'>{mnemonic}</Text>
+      <Text color='core.primary' fontSize={4}>
+        {mnemonic}
+      </Text>
     </>
   )
 }

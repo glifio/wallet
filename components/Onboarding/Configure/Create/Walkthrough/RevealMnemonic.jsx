@@ -1,20 +1,19 @@
 import React from 'react'
-import { BigTitle, Text } from '../../../../Shared'
+import { Title, Text } from '../../../../Shared'
 import { MNEMONIC_PROPTYPE } from '../../../../../customPropTypes'
 import DisplayMnemonic from './DisplayMnemonic'
 
 const Step1 = ({ mnemonic }) => {
   return (
     <>
-      <BigTitle>Write down your seed phrase</BigTitle>
+      <Title mt={3}>Write down your seed phrase</Title>
       <DisplayMnemonic mnemonic={mnemonic} />
-      <Text width={14}>
+      <Text color='core.nearblack' my={2}>
         Consider this group of words like your unique safe deposit box key.
-        <br />
-        If you lose it, you will not be able to recover your valuables.
-        <br />
-        Or worse, anyone could open your safe deposit box and steal your
-        valuables.
+      </Text>
+      <Text color='core.nearblack' mt={0} mb={2}>
+        If you lose it, you will not be able to recover your valuables. Or
+        worse, anyone could open your safe deposit box and steal your valuables.
       </Text>
     </>
   )
