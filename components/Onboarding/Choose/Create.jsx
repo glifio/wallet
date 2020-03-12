@@ -6,6 +6,10 @@ const CreateWallet = ({ onClick, ...props }) => (
   <Card
     css={`
       cursor: pointer;
+      transition: 0.13s ease-in-out;
+      &:hover {
+        transform: scale(1.05);
+      }
     `}
     role='button'
     onClick={onClick}
