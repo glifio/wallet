@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import { validateMnemonic } from 'bip39'
-import { Box, Button, Card, Text, Input, StepCard } from '../../../Shared'
+import { Box, Button, Card, Title, Input, StepCard } from '../../../Shared'
 
 import { useWalletProvider } from '../../../../WalletProvider'
 import CreateProvider from '../../../../WalletProvider/CreateProvider'
@@ -56,8 +56,9 @@ export default () => {
           display='flex'
           flexDirection='column'
           justifyContent='space-between'
+          borderColor='core.lightgray'
         >
-          <Text>Please input your 12-word seed phrase below</Text>
+          <Title mt={3}>Please input your 12-word seed phrase below</Title>
           <Input.Seed
             error={seedError}
             setError={setSeedError}
