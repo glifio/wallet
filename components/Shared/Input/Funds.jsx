@@ -90,6 +90,7 @@ const Funds = forwardRef(
 
     const onFiatChange = e => {
       setError('')
+      setFilAmount('')
       clearTimeout(timeout.current)
 
       // handle case where user deletes all values from text input
@@ -118,6 +119,7 @@ const Funds = forwardRef(
 
     const onFilChange = e => {
       setError('')
+      setFiatAmount('')
       clearTimeout(timeout.current)
 
       // handle case where user deletes all values from text input
@@ -198,7 +200,6 @@ const Funds = forwardRef(
             <RawNumberInput
               onFocus={() => {
                 setError('')
-                setFiatAmount('')
               }}
               onBlur={async () => {
                 clearTimeout(timeout.current)
@@ -234,7 +235,6 @@ const Funds = forwardRef(
             <RawNumberInput
               onFocus={() => {
                 setError('')
-                setFilAmount('')
               }}
               onBlur={async () => {
                 clearTimeout(timeout.current)
