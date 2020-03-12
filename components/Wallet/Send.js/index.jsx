@@ -36,7 +36,6 @@ const SendCardForm = styled.form.attrs(() => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  border: 'none',
   p: 3,
   border: 1,
   borderRadius: 2,
@@ -83,14 +82,10 @@ const Send = ({ close }) => {
   } = useWalletProvider()
   const [toAddress, setToAddress] = useState('')
   const [toAddressError, setToAddressError] = useState('')
-  const [value, setValuee] = useState({
+  const [value, setValue] = useState({
     fil: new FilecoinNumber('0', 'fil'),
     fiat: new BigNumber('0')
   })
-  const setValue = val => {
-    console.log(val)
-    setValuee(val)
-  }
   const [valueError, setValueError] = useState('')
   const [uncaughtError, setUncaughtError] = useState('')
   const [gasPrice, setGasPrice] = useState(new FilecoinNumber('1', 'attofil'))
