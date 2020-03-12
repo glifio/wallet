@@ -140,6 +140,9 @@ const Send = ({ close }) => {
       const msgCid = await provider.sendMessage(messageObj, signature)
       messageObj.cid = msgCid['/']
       messageObj.timestamp = Date.now()
+      messageObj.gas_used = (
+        await walletProvider.estimateGas(messageObj)
+      ).toAttoFil()
       setAttemptingTx(false)
       return messageObj
     }
