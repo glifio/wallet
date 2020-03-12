@@ -30,11 +30,9 @@ export default () => {
         />
       ) : (
         <MessageHistoryTable
-          gridColumn='2'
           messages={[...pending, ...confirmed]}
           address={wallet.address}
           selectMessage={setSelectedMessageCid}
-          flexGrow='2'
           border='none'
         />
       )}

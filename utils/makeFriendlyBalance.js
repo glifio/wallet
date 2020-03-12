@@ -7,11 +7,11 @@ const makeFriendly = (bigNumber, denom) => {
   return `${base}.${dangler}${denom}`
 }
 
-export default bigNumber => {
+export default (bigNumber, dp = 3) => {
   if (bigNumber.isLessThan(0)) throw new Error('Cannot have a negative balance')
   if (bigNumber.isEqualTo(0)) return '0'
   if (bigNumber.isGreaterThan(0) && bigNumber.isLessThan(1000)) {
-    return bigNumber.dp(3, BigNumber.ROUND_DOWN).toString()
+    return bigNumber.dp(dp, BigNumber.ROUND_DOWN).toString()
   }
   if (bigNumber.isGreaterThanOrEqualTo(1000) && bigNumber.isLessThan(1000000)) {
     return makeFriendly(bigNumber, 'K')

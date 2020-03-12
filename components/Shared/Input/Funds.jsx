@@ -7,6 +7,7 @@ import { RawNumberInput } from './Number'
 import { Text, Label } from '../Typography'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import noop from '../../../utils/noop'
+import { useConverter } from '../../../lib/Converter'
 
 const formatFilValue = number => {
   if (!number) return ''
@@ -18,12 +19,6 @@ const formatFiatValue = number => {
   if (!number) return ''
   if (BigNumber.isBigNumber(number)) return number.toString()
   return number
-}
-
-const toUSD = async amount => new FilecoinNumber(amount, 'fil').multipliedBy(5)
-const fromUSD = async amount => {
-  if (!amount) return new FilecoinNumber('0', 'fil')
-  return new FilecoinNumber(new BigNumber(amount).dividedBy(5), 'fil')
 }
 
 const Funds = forwardRef(
@@ -41,6 +36,7 @@ const Funds = forwardRef(
     },
     ref
   ) => {
+    const { converter } = useConverter()
     const initialFilAmount = amount ? new FilecoinNumber(amount, 'attofil') : ''
     const initialFiatAmount = amount
       ? new FilecoinNumber(amount, 'attofil').toFil()
@@ -65,7 +61,7 @@ const Funds = forwardRef(
     }
 
     const onTimerFil = async val => {
-      const fiatAmnt = await toUSD(val)
+      const fiatAmnt = converter.fromFIL(val)
       const validBalance = checkBalance(val)
       if (validBalance) {
         setFiatAmount(fiatAmnt)
@@ -79,8 +75,8 @@ const Funds = forwardRef(
     }
 
     const onTimerFiat = async val => {
-      const fil = await fromUSD(val)
-      const validBalance = checkBalance(val)
+      const fil = converter.toFIL(val)
+      const validBalance = checkBalance(fil)
       if (validBalance) {
         setFilAmount(fil)
         onAmountChange({ fil, fiat: val })
@@ -171,6 +167,7 @@ const Funds = forwardRef(
           flexGrow='1'
           width='100%'
           maxWidth={11}
+          p={3}
           textAlign='center'
           borderColor='input.border'
           bg={error && 'input.background.invalid'}
@@ -207,7 +204,7 @@ const Funds = forwardRef(
                 clearTimeout(timeout.current)
                 const validBalance = checkBalance(filAmount)
                 if (validBalance) {
-                  const fiatAmnt = await toUSD(filAmount)
+                  const fiatAmnt = converter.fromFIL(filAmount)
                   setFiatAmount(fiatAmnt)
                   onAmountChange({ fil: filAmount, fiat: fiatAmnt })
                 } else {
@@ -241,7 +238,7 @@ const Funds = forwardRef(
               }}
               onBlur={async () => {
                 clearTimeout(timeout.current)
-                const fil = await fromUSD(fiatAmount)
+                const fil = converter.toFIL(fiatAmount)
                 const validBalance = checkBalance(fil)
                 if (validBalance) {
                   setFilAmount(fil)

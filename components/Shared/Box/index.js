@@ -4,6 +4,7 @@ import {
   border,
   layout,
   space,
+  shadow,
   flexbox,
   grid,
   position
@@ -21,4 +22,5 @@ export default styled.div`
   ${flexbox}
   ${typography}
   ${grid}
+  ${shadow}
 `

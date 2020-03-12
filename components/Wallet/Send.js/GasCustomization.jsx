@@ -8,7 +8,8 @@ import {
   Label,
   Text,
   Title,
-  FloatingContainer
+  FloatingContainer,
+  ContentContainer
 } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 
@@ -59,13 +60,10 @@ const GasCustomization = ({
   }
 
   return (
-    <>
-      <Label my={3} color='core.primary'>
-        Custom Transaction Fee
+    <ContentContainer>
+      <Label mt={3} mb={3}>
+        Select a preset transfer speed
       </Label>
-      <Text mt={5} mb={3}>
-        Select a predefined speed
-      </Text>
       <Box mb={4} display='flex' flexDirection='row'>
         <Button
           onClick={async () => {
@@ -98,6 +96,8 @@ const GasCustomization = ({
           }
           title='Medium'
           mr={3}
+          py={1}
+          px={3}
           type='button'
         />
         <Button
@@ -118,6 +118,9 @@ const GasCustomization = ({
           type='button'
         />
       </Box>
+      <Label mt={3} mb={3}>
+        Submit a custom fee
+      </Label>
       <Input.Number
         mt={2}
         m='0'
@@ -136,19 +139,19 @@ const GasCustomization = ({
           setGasLimitLocal(new FilecoinNumber(e.target.value || '0', 'attofil'))
         }
       />
-      <Text color='core.darkgray'>
+      <Label my={3} color='core.darkgray'>
         Transfers complete faster with a higher gas price.
-      </Text>
+      </Label>
       <Box
         display='flex'
         flexDirection='row'
         alignItems='center'
         justifyContent='space-between'
-        mt={3}
+        mt={7}
         mx={1}
       >
         <Label>New Transaction Fee</Label>
-        <Box display='flex' flexDirection='column' textAlign='right' mt={5}>
+        <Box display='flex' flexDirection='column' LabelAlign='right'>
           <Title fontSize={4} color='core.primary'>
             {estimatedGas
               ? `${estimatedGas.toAttoFil()} AttoFil`
@@ -157,31 +160,29 @@ const GasCustomization = ({
         </Box>
       </Box>
       <FloatingContainer>
-        <>
-          <Button
-            type='button'
-            title='Cancel'
-            variant='secondary'
-            onClick={() => {
-              exit()
-            }}
-          />
-          <Button
-            type='button'
-            title='Save Custom Fee'
-            variant='primary'
-            disabled={!gasPriceLocal.isGreaterThan(0)}
-            onClick={async () => {
-              setGasPrice(gasPriceLocal)
-              setGasLimit(gasLimitLocal)
-              const gas = await estimateGas(gasPriceLocal)
-              setEstimatedGas(gas)
-              exit()
-            }}
-          />
-        </>
+        <Button
+          type='button'
+          title='Cancel'
+          variant='secondary'
+          onClick={() => {
+            exit()
+          }}
+        />
+        <Button
+          type='button'
+          title='Save Custom Fee'
+          variant='primary'
+          disabled={!gasPriceLocal.isGreaterThan(0)}
+          onClick={async () => {
+            setGasPrice(gasPriceLocal)
+            setGasLimit(gasLimitLocal)
+            const gas = await estimateGas(gasPriceLocal)
+            setEstimatedGas(gas)
+            exit()
+          }}
+        />
       </FloatingContainer>
-    </>
+    </ContentContainer>
   )
 }
 

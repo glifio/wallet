@@ -1,4 +1,4 @@
-const baseColors = {
+export const baseColors = {
   mono: {
     black: '#000',
     nearblack: '#262626',
@@ -119,7 +119,6 @@ const colors = {
   }
 }
 
-// theme.js
 const theme = {
   colors,
   fontSizes: ['0rem', '1rem', '1.125rem', '1.25rem', '1.5rem', '2rem', '3rem'],
@@ -147,7 +146,7 @@ const theme = {
       fontFamily: 'RT-Alias-Medium'
     },
     text: {
-      fontSize: 2,
+      fontSize: 3,
       fontColor: core.nearblack,
       fontWeight: 400,
       lineHeight: 'copy',
@@ -198,10 +197,10 @@ const theme = {
   borderStyles: ['solid'],
   borderWidths: ['0', '1px', '2px', '4px'],
   breakpoints: ['40em', '52em', '64em'],
-  // Alex, Todo - Use SmoothShadow https://css-tricks.com/make-a-smooth-shadow-friend/
   shadows: [
     '0',
-    '0 0.9px 9px rgba(0, 0, 0, 0.017), 0 2.2px 18.6px rgba(0, 0, 0, 0.027),0 4.1px 29.7px rgba(0, 0, 0, 0.034),0 7.4px 45.2px rgba(0, 0, 0, 0.041),0 13.8px 73.1px rgba(0, 0, 0, 0.051), 0 33px 160px rgba(0, 0, 0, 0.07)'
+    '0 0.7px 2.2px -8px rgba(0, 0, 0, 0.18),0 1.7px 5.4px  rgba(0, 0, 0, 0.129),0 3.1px 10.1px rgba(0, 0, 0, 0.107),0 5.6px 18.1px rgba(0, 0, 0, 0.09),0 10.4px 33.8px rgba(0, 0, 0, 0.073),0 25px 81px rgba(0, 0, 0, 0.051)',
+    'rgba(0, 0, 0, 0.10) 0px 0.7px 2.2px -8px, rgba(0, 0, 0, 0.04) 0px 1.7px 2.4px, rgba(0, 0, 0, 0.106) 0px 3.1px 8.1px, rgba(0, 0, 0, 0.04) 0px 5.6px 12.1px, rgba(0, 0, 0, 0.045) 0px 4.4px 4.8px, rgba(0, 0, 0, 0.05) 0px 15px 41px'
   ],
   opacity: {
     disabled: 0.4

@@ -1,7 +1,6 @@
 export { default as theme } from './theme'
 export { default as ThemeProvider } from './ThemeProvider'
 
-// components
 export { default as Container } from './Container'
 export { default as Card } from './Card'
 export { default as AccountCard } from './AccountCard'
@@ -23,8 +22,6 @@ export * from './Menu'
 export * from './Icons'
 export * from './IconButtons'
 
-// layout
-export * from './Layout/SidebarLayout'
+export * from './Layout'
 
-// typography
 export * from './Typography'
