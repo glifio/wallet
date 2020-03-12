@@ -13,7 +13,7 @@
     "@openworklabs/filecoin-address": "0.0.3",
     "@openworklabs/filecoin-message": "0.0.8",
     "@openworklabs/filecoin-number": "0.0.5",
-    "@openworklabs/filecoin-wallet-provider": "0.0.16",
+    "@openworklabs/filecoin-wallet-provider": "0.0.17",
     "bip39": "^3.0.2",
     "dayjs": "^1.8.22",
     "http-proxy-middleware": "^0.20.0",

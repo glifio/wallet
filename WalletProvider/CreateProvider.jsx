@@ -10,6 +10,7 @@ import { createWalletProvider } from './state'
 import { HD_WALLET } from '../constants'
 import { walletList } from '../store/actions'
 import createPath from '../utils/createPath'
+import toLowerCaseMsgFields from '../utils/toLowerCaseMsgFields'
 import { MNEMONIC_PROPTYPE } from '../customPropTypes'
 
 export default dynamic({
@@ -29,11 +30,18 @@ export default dynamic({
           }
           return accounts
         },
-        sign: async (path, unsignedMessage) => {
+        sign: async (path, filecoinMessage) => {
+          const formattedMessage = toLowerCaseMsgFields(
+            filecoinMessage.encode()
+          )
+          formattedMessage.gas_price = formattedMessage.gasprice
+          formattedMessage.gas_limit = formattedMessage.gaslimit
+          delete formattedMessage.gasprice
+          delete formattedMessage.gaslimit
           const privateKey = rustModule.key_derive(mnemonic, path).prvkey
           return Buffer.from(
             rustModule.sign_transaction(
-              JSON.stringify(unsignedMessage),
+              JSON.stringify(formattedMessage),
               privateKey.toString('hex')
             ),
             'hex'
