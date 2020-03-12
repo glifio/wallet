@@ -110,7 +110,7 @@ export default () => {
           currentStep={2}
           description='Please complete the following steps so Filament can interface with
           your Ledger device.'
-          loading={ledger.connecting}
+          loading={!ledger.userImportFailure && loading}
           totalSteps={3}
           glyphAcronym='Ld'
         />
