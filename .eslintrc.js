@@ -44,6 +44,7 @@ module.exports = {
     semi: 0,
     'react/forbid-prop-types': 0,
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn'
+    'react-hooks/exhaustive-deps': 'warn',
+    'jsx-a11y/anchor-is-valid': 0
   }
 }

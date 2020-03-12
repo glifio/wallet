@@ -36,7 +36,6 @@ const SendCardForm = styled.form.attrs(() => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  border: 'none',
   p: 3,
   border: 1,
   borderRadius: 2,
