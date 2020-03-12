@@ -28,7 +28,7 @@ const BalanceCard = forwardRef(
         <Label>Balance</Label>
         <Box overflow='hidden'>
           <BigTitle color='card.balance.color'>
-            {makeFriendlyBalance(new BigNumber(balance.toFil()))}FIL
+            {makeFriendlyBalance(balance, 5)}FIL
           </BigTitle>
           {!converter && !converterError ? (
             <Title color='card.balance.color'>Loading USD</Title>
