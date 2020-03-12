@@ -15,8 +15,10 @@ const Import = ({ onClick, glyphAcronym, title, description, ...props }) => (
       <Glyph acronym={glyphAcronym} />
       <Text ml={3}>{title}</Text>
     </Box>
-    <Box display='block' mt={3}>
-      <Text>{description}</Text>
+    <Box display='block'>
+      <Text mb={0} color='core.nearblack'>
+        {description}
+      </Text>
     </Box>
   </Card>
 )

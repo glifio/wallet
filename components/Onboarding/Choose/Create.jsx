@@ -19,8 +19,10 @@ const CreateWallet = ({ onClick, ...props }) => (
       <Glyph acronym='Cw' />
       <Text ml={3}>Create Wallet</Text>
     </Box>
-    <Box display='block' mt={3}>
-      <Text>Create a brand new wallet</Text>
+    <Box display='block'>
+      <Text mb={0} color='core.nearblack'>
+        Create a brand new wallet
+      </Text>
     </Box>
   </Card>
 )
