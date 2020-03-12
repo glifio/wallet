@@ -52,7 +52,7 @@ export default () => {
   if (!isValidBrowser()) {
     const params = new URLSearchParams(router.query)
     setWalletType(null)
-    router.push(`/bad-browser?${params.toString()}`)
+    router.push(`/error/unsupported-browser?${params.toString()}`)
   }
   return (
     <>
