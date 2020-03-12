@@ -12,7 +12,7 @@
     "@ledgerhq/hw-transport-webusb": "5.7.0",
     "@openworklabs/filecoin-address": "0.0.3",
     "@openworklabs/filecoin-message": "0.0.8",
-    "@openworklabs/filecoin-number": "0.0.4",
+    "@openworklabs/filecoin-number": "0.0.5",
     "@openworklabs/filecoin-wallet-provider": "0.0.12",
     "dayjs": "^1.8.22",
     "http-proxy-middleware": "^0.20.0",

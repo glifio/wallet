@@ -83,10 +83,14 @@ const Send = ({ close }) => {
   } = useWalletProvider()
   const [toAddress, setToAddress] = useState('')
   const [toAddressError, setToAddressError] = useState('')
-  const [value, setValue] = useState({
+  const [value, setValuee] = useState({
     fil: new FilecoinNumber('0', 'fil'),
     fiat: new BigNumber('0')
   })
+  const setValue = val => {
+    console.log(val)
+    setValuee(val)
+  }
   const [valueError, setValueError] = useState('')
   const [uncaughtError, setUncaughtError] = useState('')
   const [gasPrice, setGasPrice] = useState(new FilecoinNumber('1', 'attofil'))

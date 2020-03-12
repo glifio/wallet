@@ -90,6 +90,7 @@ const Funds = forwardRef(
 
     const onFiatChange = e => {
       setError('')
+      setFilAmount('')
       clearTimeout(timeout.current)
 
       // handle case where user deletes all values from text input
@@ -118,6 +119,7 @@ const Funds = forwardRef(
 
     const onFilChange = e => {
       setError('')
+      setFiatAmount('')
       clearTimeout(timeout.current)
 
       // handle case where user deletes all values from text input
@@ -198,13 +200,16 @@ const Funds = forwardRef(
             <RawNumberInput
               onFocus={() => {
                 setError('')
-                setFiatAmount('')
               }}
               onBlur={async () => {
                 clearTimeout(timeout.current)
                 const validBalance = checkBalance(filAmount)
                 if (validBalance) {
                   const fiatAmnt = converter.fromFIL(filAmount)
+                  console.log(
+                    'valid balance, setting fiat amount',
+                    fiatAmnt.toString()
+                  )
                   setFiatAmount(fiatAmnt)
                   onAmountChange({ fil: filAmount, fiat: fiatAmnt })
                 } else {
@@ -234,13 +239,17 @@ const Funds = forwardRef(
             <RawNumberInput
               onFocus={() => {
                 setError('')
-                setFilAmount('')
               }}
               onBlur={async () => {
                 clearTimeout(timeout.current)
+                console.log('fiat amount into converter', fiatAmount)
                 const fil = converter.toFIL(fiatAmount)
                 const validBalance = checkBalance(fil)
                 if (validBalance) {
+                  console.log(
+                    'valid balance, setting fil amount',
+                    fil.toString()
+                  )
                   setFilAmount(fil)
                   onAmountChange({ fil, fiat: fiatAmount })
                 } else {
