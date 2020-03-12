@@ -64,8 +64,7 @@ export default () => {
       >
         <StepCard
           currentStep={1}
-          description='Please complete the following steps so Filament can interface with
-          your Ledger device.'
+          description='Complete the following steps to connect Glif with your Ledger device.'
           loading={ledger.connecting}
           totalSteps={3}
           glyphAcronym='Ld'
