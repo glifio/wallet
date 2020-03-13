@@ -77,6 +77,9 @@ const GasCustomization = ({
               ? 'tertiary-selected'
               : 'tertiary'
           }
+          color='core.primary'
+          backgroundColor='core.transparent'
+          borderColor='core.primary'
           title='Slow'
           mr={3}
           type='button'
@@ -89,11 +92,14 @@ const GasCustomization = ({
             const gas = await estimateGas(newGasPrice)
             setEstimatedGas(gas)
           }}
-          variant={
-            gasToButtonMap(gasLimitLocal, gasPriceLocal) === 'medium'
-              ? 'tertiary-selected'
-              : 'tertiary'
-          }
+          // variant={
+          //   gasToButtonMap(gasLimitLocal, gasPriceLocal) === 'medium'
+          //     ? 'tertiary-selected'
+          //     : 'tertiary'
+          // }
+          color='core.primary'
+          backgroundColor='core.transparent'
+          borderColor='core.primary'
           title='Medium'
           mr={3}
           py={1}
@@ -113,8 +119,12 @@ const GasCustomization = ({
               ? 'tertiary-selected'
               : 'tertiary'
           }
+          color='core.primary'
+          backgroundColor='core.transparent'
+          borderColor='core.primary'
           title='Fast'
           mr={3}
+          py={1}
           type='button'
         />
       </Box>
