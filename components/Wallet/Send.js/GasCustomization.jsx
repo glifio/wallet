@@ -171,6 +171,10 @@ const GasCustomization = ({
       </Box>
       <FloatingContainer>
         <Button
+          border={0}
+          borderRight={1}
+          borderRadius={0}
+          borderColor='core.lightgray'
           type='button'
           title='Cancel'
           variant='secondary'
@@ -179,6 +183,8 @@ const GasCustomization = ({
           }}
         />
         <Button
+          border={0}
+          borderRadius={0}
           type='button'
           title='Save Custom Fee'
           variant='primary'

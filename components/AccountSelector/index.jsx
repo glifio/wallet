@@ -215,16 +215,22 @@ const AccountSelector = () => {
                     balance={makeFriendlyBalance(w.balance)}
                   />
                 ))}
-              <FloatingContainer>
+              <FloatingContainer alignItems='center'>
                 <Button
+                  border={0}
+                  borderRight={1}
+                  borderRadius={0}
+                  borderColor='core.lightgray'
                   onClick={() => paginate(page - 1)}
                   disabled={page === 0 || loadingAccounts}
                   variant='secondary'
                   role='button'
                   title='Prev'
                 />
-                <Text>Page {page + 1}</Text>
+                <Text m={0}>Page {page + 1}</Text>
                 <Button
+                  border={0}
+                  borderRadius={0}
                   title='Next'
                   onClick={() => paginate(page + 1)}
                   role='button'

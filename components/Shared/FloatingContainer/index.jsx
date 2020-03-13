@@ -5,8 +5,7 @@ export default styled(Box).attrs(() => ({
   backgroundColor: 'background.app',
   boxShadow: 2,
   border: 1,
-  borderColor: 'core.lightgray',
-  p: 1
+  borderColor: 'core.lightgray'
 }))`
   position: fixed;
   display: flex;
