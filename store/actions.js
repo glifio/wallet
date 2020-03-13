@@ -104,9 +104,10 @@ export const populateRedux = pendingMsgs => ({
   }
 })
 
-export const switchNetwork = network => ({
+export const switchNetwork = (network, wallets = []) => ({
   type: SWITCH_NETWORK,
   payload: {
-    network
+    network,
+    wallets
   }
 })

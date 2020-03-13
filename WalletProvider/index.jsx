@@ -11,7 +11,7 @@ import { setLedgerProvider } from '../utils/ledger/setLedgerProvider'
 import fetchDefaultWallet from './fetchDefaultWallet'
 import connectLedger from './connectLedger'
 
-const WalletProviderContext = createContext({})
+export const WalletProviderContext = createContext({})
 
 const WalletProviderWrapper = ({ network, children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
