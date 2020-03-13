@@ -7,18 +7,18 @@ import { useWalletProvider } from '../../../../WalletProvider'
 import StepCard from './StepCard'
 import isValidBrowser from '../../../../utils/isValidBrowser'
 
-const Step1Helper = ({ connectedFailure }) => {
+const Step1Helper = ({ inUseByAnotherApp, connectedFailure }) => {
   return (
     <Card
       display='flex'
       flexDirection='column'
       justifyContent='space-between'
       borderColor='silver'
-      bg={connectedFailure && 'card.error.background'}
+      bg={(connectedFailure || inUseByAnotherApp) && 'card.error.background'}
       height={300}
       ml={2}
     >
-      {connectedFailure ? (
+      {connectedFailure && (
         <>
           <Box display='flex' alignItems='center'>
             <Title>Oops!</Title>
@@ -28,7 +28,24 @@ const Step1Helper = ({ connectedFailure }) => {
             <Text>Please unlock your Ledger and try again.</Text>
           </Box>
         </>
-      ) : (
+      )}
+      {inUseByAnotherApp && (
+        <>
+          <Box display='flex' alignItems='center'>
+            <Title>Oops!</Title>
+          </Box>
+          <Box>
+            <Text mb={2}>
+              Looks like another app is connected to your Ledger device.
+            </Text>
+            <Text>
+              Please quit any other application using your Ledger device, and
+              try again.
+            </Text>
+          </Box>
+        </>
+      )}
+      {!inUseByAnotherApp && !connectedFailure && (
         <>
           <Box display='flex' alignItems='center'>
             <Title>First</Title>
@@ -43,7 +60,8 @@ const Step1Helper = ({ connectedFailure }) => {
 }
 
 Step1Helper.propTypes = {
-  connectedFailure: PropTypes.bool.isRequired
+  connectedFailure: PropTypes.bool.isRequired,
+  inUseByAnotherApp: PropTypes.bool.isRequired
 }
 
 export default () => {
@@ -64,7 +82,10 @@ export default () => {
         justifyContent='center'
       >
         <StepCard step={1} loading={ledger.connecting} />
-        <Step1Helper connectedFailure={ledger.connectedFailure} />
+        <Step1Helper
+          connectedFailure={ledger.connectedFailure}
+          inUseByAnotherApp={ledger.inUseByAnotherApp}
+        />
       </Box>
       <Box mt={6} display='flex' flexDirection='row' justifyContent='center'>
         <Button

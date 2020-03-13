@@ -13,7 +13,8 @@ import {
   LEDGER_LOCKED,
   LEDGER_UNLOCKED,
   LEDGER_REPLUG,
-  LEDGER_BUSY
+  LEDGER_BUSY,
+  LEDGER_USED_BY_ANOTHER_APP
 } from '../utils/ledger/ledgerStateManagement'
 
 export const initialState = {
@@ -130,7 +131,8 @@ export default (state, action) => {
           ...state.ledger,
           connecting: false,
           connectedFailure: false,
-          connectedSuccess: true
+          connectedSuccess: true,
+          inUseByAnotherApp: false
         }
       }
     case LEDGER_ESTABLISHING_CONNECTION_W_FILECOIN_APP:
@@ -209,6 +211,14 @@ export default (state, action) => {
         ledger: {
           ...state.ledger,
           replug: true
+        }
+      }
+    case LEDGER_USED_BY_ANOTHER_APP:
+      return {
+        ...state,
+        ledger: {
+          ...state.ledger,
+          inUseByAnotherApp: true
         }
       }
     case LEDGER_RESET_STATE:

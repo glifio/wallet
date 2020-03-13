@@ -13,6 +13,7 @@ export const LEDGER_LOCKED = 'LEDGER_LOCKED'
 export const LEDGER_UNLOCKED = 'LEDGER_UNLOCKED'
 export const LEDGER_REPLUG = 'LEDGER_REPLUG'
 export const LEDGER_BUSY = 'LEDGER_BUSY'
+export const LEDGER_USED_BY_ANOTHER_APP = 'LEDGER_USED_BY_ANOTHER_APP'
 
 export const initialLedgerState = {
   userInitiatedImport: false,
@@ -26,7 +27,8 @@ export const initialLedgerState = {
   establishingConnectionWFilecoinApp: false,
   filecoinAppOpen: false,
   filecoinAppNotOpen: false,
-  replug: false
+  replug: false,
+  inUseByAnotherApp: false
 }
 
 export const LEDGER_STATE_PROPTYPES = {
