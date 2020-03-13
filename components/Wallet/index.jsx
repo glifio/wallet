@@ -75,24 +75,14 @@ const WalletView = () => {
         <Sidebar>
           <NetworkSwitcherGlyph />
 
-          {hasLedgerError(
-            ledger.connectedFailure,
-            ledger.locked,
-            ledger.filecoinAppNotOpen,
-            ledger.replug,
-            ledger.busy,
-            uncaughtError
-          ) && showLedgerError ? (
+          {hasLedgerError({ ...ledger, otherError: uncaughtError }) &&
+          showLedgerError ? (
             <AccountError
               onTryAgain={onShowOnLedger}
-              errorMsg={reportLedgerConfigError(
-                ledger.connectedFailure,
-                ledger.locked,
-                ledger.filecoinAppNotOpen,
-                ledger.replug,
-                ledger.busy,
-                uncaughtError
-              )}
+              errorMsg={reportLedgerConfigError({
+                ...ledger,
+                otherError: uncaughtError
+              })}
             />
           ) : (
             <AccountCard

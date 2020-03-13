@@ -12,7 +12,8 @@ import {
   LEDGER_ESTABLISHING_CONNECTION_W_FILECOIN_APP,
   LEDGER_FILECOIN_APP_NOT_OPEN,
   LEDGER_FILECOIN_APP_OPEN,
-  LEDGER_BUSY
+  LEDGER_BUSY,
+  LEDGER_USED_BY_ANOTHER_APP
 } from './ledgerStateManagement'
 import { createWalletProvider } from '../../WalletProvider/state'
 import createTransport from './createTransport'
@@ -30,6 +31,11 @@ export const setLedgerProvider = async (dispatch, network) => {
     return provider
   } catch (err) {
     if (
+      err.message &&
+      err.message.toLowerCase().includes('unable to claim interface.')
+    ) {
+      dispatch({ type: LEDGER_USED_BY_ANOTHER_APP })
+    } else if (
       err.message &&
       !err.message.toLowerCase().includes('device is already open')
     ) {

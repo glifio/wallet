@@ -18,6 +18,7 @@ const Step2Helper = ({
   filecoinAppNotOpen,
   replug,
   ledgerBusy,
+  inUseByAnotherApp,
   otherError
 }) => (
   <Card
@@ -26,26 +27,28 @@ const Step2Helper = ({
     justifyContent='space-between'
     borderColor='silver'
     bg={
-      hasLedgerError(
+      hasLedgerError({
         connectedFailure,
         ledgerLocked,
         filecoinAppNotOpen,
         replug,
         ledgerBusy,
+        inUseByAnotherApp,
         otherError
-      ) && 'card.error.background'
+      }) && 'card.error.background'
     }
     height={300}
     ml={2}
   >
-    {hasLedgerError(
+    {hasLedgerError({
       connectedFailure,
       ledgerLocked,
       filecoinAppNotOpen,
       replug,
       ledgerBusy,
+      inUseByAnotherApp,
       otherError
-    ) ? (
+    }) ? (
       <>
         <Box display='flex' alignItems='center'>
           <Title>Oops!</Title>
@@ -53,14 +56,15 @@ const Step2Helper = ({
         <Box mt={3}>
           <Text mb={1}>We had trouble communicating with your device.</Text>
           <Text>
-            {reportLedgerConfigError(
+            {reportLedgerConfigError({
               connectedFailure,
               ledgerLocked,
               filecoinAppNotOpen,
               replug,
               ledgerBusy,
+              inUseByAnotherApp,
               otherError
-            )}
+            })}
           </Text>
         </Box>
       </>
@@ -84,6 +88,7 @@ Step2Helper.propTypes = {
   filecoinAppNotOpen: PropTypes.bool.isRequired,
   replug: PropTypes.bool.isRequired,
   ledgerBusy: PropTypes.bool.isRequired,
+  inUseByAnotherApp: PropTypes.bool.isRequired,
   otherError: PropTypes.instanceOf(Error)
 }
 
@@ -114,6 +119,7 @@ export default () => {
           filecoinAppNotOpen={ledger.filecoinAppNotOpen}
           replug={ledger.replug}
           ledgerBusy={ledger.busy}
+          inUseByAnotherApp={ledger.inUseByAnotherApp}
           otherError={generalError}
         />
       </Box>
