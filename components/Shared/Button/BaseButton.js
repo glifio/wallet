@@ -1,5 +1,12 @@
 import styled from 'styled-components'
-import { space, layout, borderRadius, flexbox } from 'styled-system'
+import {
+  space,
+  layout,
+  borderRadius,
+  flexbox,
+  color,
+  border
+} from 'styled-system'
 
 const applyStyles = (styleProperty, props, disabledColor) => {
   if (props.disabled) return disabledColor
@@ -25,4 +32,6 @@ export default styled.button`
   ${space}
   ${layout}
   ${flexbox}
+  ${border}
+  ${color}
 `
