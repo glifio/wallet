@@ -162,11 +162,8 @@ export const populateRedux = (state, { pendingMsgs }) => ({
   }
 })
 
-export const switchNetwork = (state, { network }) => ({
+export const switchNetwork = (state, { network, wallets }) => ({
   ...state,
   network,
-  wallets: state.wallets.map(w => ({
-    ...w,
-    address: `${network}${w.address.slice(1)}`
-  }))
+  wallets
 })
