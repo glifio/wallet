@@ -1,63 +1,34 @@
-# Redux Thunk example
+# Glif
 
-This example shows how to integrate Redux and Redux Thunk in Next.js.
+<!-- Glif art/branding -->
 
-Usually splitting your app state into `pages` feels natural but sometimes you'll want to have global state for your app. This is an example on how you can use redux that also works with Next.js's universal rendering approach.
+Glif is a Filecoin web wallet built with Next.js that allows you to:
 
-## Deploy your own
+- **send and receive** Filecoin with your Ledger device
+- **create** test accounts to send small amounts of FIL
+- **import** accounts with seed phrases and private keys (SECURITY NOTICE: this is unsecure and is for testing and sending small amounts. If you need to recover an account, do it offline.)
 
-Deploy the example using [ZEIT Now](https://zeit.co/now):
-
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/zeit/next.js/tree/canary/examples/with-redux-thunk)
-
-## How to use
-
-### Using `create-next-app`
-
-Execute [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npm init next-app --example with-redux-thunk with-redux-thunk-app
-# or
-yarn create next-app --example with-redux-thunk with-redux-thunk-app
-```
-
-### Download manually
-
-Download the example:
-
-```bash
-curl https://codeload.github.com/zeit/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/with-redux-thunk
-cd with-redux-thunk
-```
-
-Install it and run:
+### Install
 
 ```bash
 npm install
 npm run dev
-# or
-yarn
-yarn dev
 ```
 
-Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download)):
+If you want to develop using the Ledger integration, follow these steps to get the Ledger app onto your device: **_(Note: only use Ledger devices meant for testing purposes)_**
 
-```bash
-now
-```
+1. Download the shell script for installing the app (here)[https://57-227919429-gh.circle-artifacts.com/0/home/test/project/src/ledger/pkg/zxtool.sh].
+2. Run the file: `zxtool.sh load`.
 
-## Notes
+<!-- ### Deploy -->
 
-In the first example we are going to display a digital clock that updates every second. The first render is happening in the server and then the browser will take over. To illustrate this, the server rendered clock will have a different background color (black) than the client one (grey).
+<!-- ### Contributing -->
 
-The Redux `Provider` is implemented in `pages/_app.js`. Since the `MyApp` component is wrapped in `withReduxStore` the redux store will be automatically initialized and provided to `MyApp`, which in turn passes it off to `react-redux`'s `Provider` component.
+### Filecoin modules
 
-`index.js` have access to the redux store using `connect` from `react-redux`.
-`counter.js` and `examples.js` have access to the redux store using `useSelector` and `useDispatch` from `react-redux@^7.1.0`
+Here are a few modules that we've broken out.
 
-On the server side every request initializes a new store, because otherwise different user data can be mixed up. On the client side the same store is used, even between page changes.
-
-The example under `components/counter.js`, shows a simple incremental counter implementing a common Redux pattern. Again, the first render is happening in the server and instead of starting the count at 0, it will dispatch an action in redux that starts the count at 1. This continues to highlight how each navigation triggers a server render first and then a client render when switching pages on the client side
-
-For simplicity and readability, Reducers, Actions, and Store creators are all in the same file: `store.js`
+- [Filecoin wallet provider](https://github.com/openworklabs/filecoin-wallet-provider)
+- [Lotus JSON-RPC Engine](https://github.com/openworklabs/lotus-jsonrpc-engine/)
+- [Filecoin number type](https://github.com/openworklabs/filecoin-number)
+- [Filecoin message type](https://github.com/openworklabs/filecoin-message)
