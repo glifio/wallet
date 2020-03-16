@@ -215,7 +215,7 @@ const AccountSelector = () => {
                     balance={makeFriendlyBalance(w.balance)}
                   />
                 ))}
-              <FloatingContainer alignItems='center'>
+              <FloatingContainer>
                 <Button
                   border={0}
                   borderRight={1}

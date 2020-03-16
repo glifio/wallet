@@ -9,6 +9,7 @@ export default styled(Box).attrs(() => ({
 }))`
   position: fixed;
   display: flex;
+  align-items: center;
   flex-direction: row;
   bottom: ${props => props.theme.sizes[3]}px;
   justify-content: space-between;

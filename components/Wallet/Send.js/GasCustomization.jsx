@@ -6,7 +6,6 @@ import {
   Button,
   Input,
   Label,
-  Text,
   Title,
   FloatingContainer,
   ContentContainer
@@ -72,11 +71,6 @@ const GasCustomization = ({
             const gas = await estimateGas(new FilecoinNumber('1', 'attofil'))
             setEstimatedGas(gas)
           }}
-          variant={
-            gasToButtonMap(gasLimitLocal, gasPriceLocal) === 'slow'
-              ? 'tertiary-selected'
-              : 'tertiary'
-          }
           color='core.primary'
           backgroundColor='core.transparent'
           borderColor='core.primary'
@@ -92,11 +86,6 @@ const GasCustomization = ({
             const gas = await estimateGas(newGasPrice)
             setEstimatedGas(gas)
           }}
-          // variant={
-          //   gasToButtonMap(gasLimitLocal, gasPriceLocal) === 'medium'
-          //     ? 'tertiary-selected'
-          //     : 'tertiary'
-          // }
           color='core.primary'
           backgroundColor='core.transparent'
           borderColor='core.primary'
