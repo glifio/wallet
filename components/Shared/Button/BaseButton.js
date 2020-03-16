@@ -1,28 +1,37 @@
 import styled from 'styled-components'
-import { space, layout, borderRadius, flexbox } from 'styled-system'
+import {
+  space,
+  layout,
+  borderRadius,
+  flexbox,
+  color,
+  border
+} from 'styled-system'
+
+const applyStyles = (styleProperty, props, disabledColor) => {
+  if (props.disabled) return disabledColor
+  if (props[styleProperty]) return props[styleProperty]
+  if (props.variant)
+    return props.theme.colors.buttons[props.variant][styleProperty]
+  return props.theme.colors.buttons.primary[styleProperty]
+}
 
 export default styled.button`
-  variant {
-    scale: 'buttons';
-  }
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   background-color: ${props =>
-    props.disabled
-      ? props.theme.colors.status.inactive
-      : props.theme.colors.buttons[props.variant].background};
+    applyStyles('background', props, props.theme.colors.status.inactive)};
   border-color: ${props =>
-    props.disabled
-      ? props.theme.colors.status.inactive
-      : props.theme.colors.buttons[props.variant].borderColor};
-  color: ${props => props.theme.colors.buttons[props.variant].color};
-  font-size: ${props => props.theme.fontSizes[2]}; 
+    applyStyles('borderColor', props, props.theme.colors.status.inactive)};
+  color: ${props => applyStyles('color', props, '')};
+  font-size: ${props => props.theme.fontSizes[2]};
   transition: 0.18s ease-in-out;
-
   &:hover {
     opacity: ${props => (props.disabled ? '1' : '0.8')};
   }
-  ${borderRadius} 
+  ${borderRadius}
   ${space}
-  ${layout} 
+  ${layout}
   ${flexbox}
+  ${border}
+  ${color}
 `

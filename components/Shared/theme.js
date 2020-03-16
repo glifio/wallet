@@ -113,7 +113,7 @@ const colors = {
     },
     fail: {
       background: baseColors.red.light,
-      foreground: baseColors.mono.darkgray
+      foreground: baseColors.red.dark
     },
     inactive: baseColors.mono.lightgray
   }

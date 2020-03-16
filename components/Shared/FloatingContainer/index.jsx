@@ -5,11 +5,11 @@ export default styled(Box).attrs(() => ({
   backgroundColor: 'background.app',
   boxShadow: 2,
   border: 1,
-  borderColor: 'core.lightgray',
-  p: 1
+  borderColor: 'core.lightgray'
 }))`
   position: fixed;
   display: flex;
+  align-items: center;
   flex-direction: row;
   bottom: ${props => props.theme.sizes[3]}px;
   justify-content: space-between;
