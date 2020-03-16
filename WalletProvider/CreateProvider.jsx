@@ -16,7 +16,7 @@ import { MNEMONIC_PROPTYPE } from '../customPropTypes'
 export default dynamic({
   ssr: false,
   loader: async () => {
-    const rustModule = await import('fcwebsigner')
+    const rustModule = await import('@zondax/filecoin-signer-wasm')
     const HDWalletProvider = mnemonic => {
       return {
         getAccounts: async (nStart = 0, nEnd = 5, network = 't') => {
@@ -34,18 +34,12 @@ export default dynamic({
           const formattedMessage = toLowerCaseMsgFields(
             filecoinMessage.encode()
           )
-          formattedMessage.gas_price = formattedMessage.gasprice
-          formattedMessage.gas_limit = formattedMessage.gaslimit
-          delete formattedMessage.gasprice
-          delete formattedMessage.gaslimit
-          const privateKey = rustModule.key_derive(mnemonic, path).prvkey
-          return Buffer.from(
-            rustModule.sign_transaction(
-              JSON.stringify(formattedMessage),
-              privateKey.toString('hex')
-            ),
-            'hex'
-          ).toString('base64')
+          const { private_hexstring } = rustModule.key_derive(mnemonic, path)
+          const { signature } = rustModule.transaction_sign(
+            formattedMessage,
+            private_hexstring
+          )
+          return signature.data
         },
         type: HD_WALLET
       }
