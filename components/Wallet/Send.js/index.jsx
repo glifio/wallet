@@ -326,6 +326,10 @@ const Send = ({ close }) => {
                   type='button'
                   title='Cancel'
                   variant='secondary'
+                  border={0}
+                  borderRight={1}
+                  borderRadius={0}
+                  borderColor='core.lightgray'
                   onClick={() => {
                     setAttemptingTx(false)
                     setUncaughtError('')
@@ -334,6 +338,8 @@ const Send = ({ close }) => {
                   }}
                 />
                 <Button
+                  border={0}
+                  borderRadius={0}
                   disabled={
                     !!(
                       hasError() ||

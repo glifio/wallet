@@ -6,7 +6,6 @@ import {
   Button,
   Input,
   Label,
-  Text,
   Title,
   FloatingContainer,
   ContentContainer
@@ -72,11 +71,9 @@ const GasCustomization = ({
             const gas = await estimateGas(new FilecoinNumber('1', 'attofil'))
             setEstimatedGas(gas)
           }}
-          variant={
-            gasToButtonMap(gasLimitLocal, gasPriceLocal) === 'slow'
-              ? 'tertiary-selected'
-              : 'tertiary'
-          }
+          color='core.primary'
+          backgroundColor='core.transparent'
+          borderColor='core.primary'
           title='Slow'
           mr={3}
           type='button'
@@ -89,11 +86,9 @@ const GasCustomization = ({
             const gas = await estimateGas(newGasPrice)
             setEstimatedGas(gas)
           }}
-          variant={
-            gasToButtonMap(gasLimitLocal, gasPriceLocal) === 'medium'
-              ? 'tertiary-selected'
-              : 'tertiary'
-          }
+          color='core.primary'
+          backgroundColor='core.transparent'
+          borderColor='core.primary'
           title='Medium'
           mr={3}
           py={1}
@@ -113,8 +108,12 @@ const GasCustomization = ({
               ? 'tertiary-selected'
               : 'tertiary'
           }
+          color='core.primary'
+          backgroundColor='core.transparent'
+          borderColor='core.primary'
           title='Fast'
           mr={3}
+          py={1}
           type='button'
         />
       </Box>
@@ -161,6 +160,10 @@ const GasCustomization = ({
       </Box>
       <FloatingContainer>
         <Button
+          border={0}
+          borderRight={1}
+          borderRadius={0}
+          borderColor='core.lightgray'
           type='button'
           title='Cancel'
           variant='secondary'
@@ -169,6 +172,8 @@ const GasCustomization = ({
           }}
         />
         <Button
+          border={0}
+          borderRadius={0}
           type='button'
           title='Save Custom Fee'
           variant='primary'

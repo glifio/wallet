@@ -42,8 +42,8 @@ const ErrorCard = ({ error, reset }) => {
         <Button
           onClick={reset}
           title='Clear'
-          variant='tertiary'
           height='100%'
+          backgroundColor='core.transparent'
           borderColor='status.fail.foreground'
           color='status.fail.foreground'
           py={2}
