@@ -9,9 +9,9 @@ import CreateProvider from '../../../../WalletProvider/CreateProvider'
 
 export default () => {
   const { setWalletType } = useWalletProvider()
-  const [seed, setSeed] = useState('')
-  const [validSeed, setValidSeed] = useState('')
-  const [seedError, setSeedError] = useState('')
+  const [mnemonic, setMnemonic] = useState('')
+  const [validMnemonic, setValidMnemonic] = useState('')
+  const [mnemonicError, setMnemonicError] = useState('')
   const { network, wallets } = useSelector(state => ({
     network: state.network,
     wallets: state.wallets
@@ -24,17 +24,17 @@ export default () => {
       router.push(`/wallet?${params.toString()}`)
     }
     return () => {
-      setSeed('')
-      setValidSeed('')
+      setMnemonic('')
+      setValidMnemonic('')
     }
   }, [router, wallets, network])
   return (
     <>
-      {validSeed && (
+      {validMnemonic && (
         <CreateProvider
           network={network}
-          mnemonic={validSeed}
-          ready={!!validSeed}
+          mnemonic={validMnemonic}
+          ready={!!validMnemonic}
         />
       )}
       <Box
@@ -47,7 +47,7 @@ export default () => {
         <StepCard
           currentStep={1}
           totalSteps={2}
-          description='Please enter your 12 word seed phrase to access the accounts connected
+          description='Please enter your seed phrase to access the accounts connected
           to your seed phrase.'
           glyphAcronym='Sp'
         />
@@ -59,11 +59,11 @@ export default () => {
           borderColor='core.lightgray'
         >
           <Title mt={3}>Please input your 12-word seed phrase below</Title>
-          <Input.Seed
-            error={seedError}
-            setError={setSeedError}
-            value={seed}
-            onChange={e => setSeed(e.target.value)}
+          <Input.Mnemonic
+            error={mnemonicError}
+            setError={setMnemonicError}
+            value={mnemonic}
+            onChange={e => setMnemonic(e.target.value)}
           />
         </Card>
       </Box>
@@ -76,13 +76,13 @@ export default () => {
         />
         <Button
           title='Next'
-          disabled={!!(seed.length === 0 || seedError)}
+          disabled={!!(mnemonic.length === 0 || mnemonicError)}
           onClick={() => {
             try {
-              const isValid = validateMnemonic(seed)
-              if (isValid) setValidSeed(seed)
+              const isValid = validateMnemonic(mnemonic)
+              if (isValid) setValidMnemonic(mnemonic)
             } catch (_) {
-              setSeedError('Invalid seed phrase.')
+              setMnemonicError('Invalid seed phrase.')
             }
           }}
           variant='primary'

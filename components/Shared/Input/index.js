@@ -1,13 +1,13 @@
 import Address from './Address'
 import Funds from './Funds'
-import Seed from './Seed'
+import Mnemonic from './Mnemonic'
 import { NumberInput, RawNumberInput } from './Number'
 import Text from './Text'
 
 export default {
   Address,
   Funds,
-  Seed,
+  Mnemonic,
   Number: NumberInput,
   RawNumberInput,
   Text
