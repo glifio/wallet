@@ -128,7 +128,9 @@ const MessageDetail = ({ close, message }) => {
             <Title color='core.darkgray'>
               {makeFriendlyBalance(
                 converter.fromFIL(
-                  new FilecoinNumber(message.value, 'attofil').toFil()
+                  new FilecoinNumber(message.value, 'attofil').plus(
+                    new FilecoinNumber(message.gas_used, 'attofil')
+                  )
                 ),
                 18
               ).toString()}{' '}

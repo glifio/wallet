@@ -131,11 +131,8 @@ const Send = ({ close }) => {
         nonce,
         params: ''
       })
-      const serializedMessage = await message.serialize()
-      const signature = await provider.wallet.sign(
-        wallet.path,
-        serializedMessage
-      )
+
+      const signature = await provider.wallet.sign(wallet.path, message)
       const messageObj = message.encode()
       const msgCid = await provider.sendMessage(messageObj, signature)
       messageObj.cid = msgCid['/']

@@ -1,4 +1,5 @@
 import { forwardRef } from 'react'
+import { func, string, bool } from 'prop-types'
 import styled from 'styled-components'
 import BaseInput from './BaseInput'
 import InputWrapper from './InputWrapper'
@@ -15,7 +16,7 @@ export const RawNumberInput = styled(BaseInput).attrs(props => ({ ...props }))`
   -moz-appearance: textfield;
 `
 
-export const Number = forwardRef(
+export const NumberInput = forwardRef(
   (
     { onChange, value, placeholder, label, error, setError, valid, ...props },
     ref
@@ -23,9 +24,11 @@ export const Number = forwardRef(
     return (
       <InputWrapper ref={ref} {...props}>
         <Box display='flex' alignItems='center'>
-          <Box display='inline-block' px={3} minWidth={9} textAlign='center'>
-            <Label>{label}</Label>
-          </Box>
+          {label && (
+            <Box display='inline-block' px={3} minWidth={9} textAlign='center'>
+              <Label>{label}</Label>
+            </Box>
+          )}
           <RawNumberInput
             type='number'
             onChange={onChange}
@@ -40,3 +43,20 @@ export const Number = forwardRef(
     )
   }
 )
+
+NumberInput.propTypes = {
+  onChange: func,
+  label: string,
+  value: string,
+  placeholder: string,
+  disabled: bool,
+  error: string,
+  valid: bool
+}
+
+NumberInput.defaultProps = {
+  value: '',
+  disabled: false,
+  onChange: () => {},
+  label: ''
+}

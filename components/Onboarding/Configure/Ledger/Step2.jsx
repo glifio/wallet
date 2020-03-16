@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'
-import { Box, Button, Card, Text, Title } from '../../../Shared'
+import { Box, Button, Card, Text, Title, StepCard } from '../../../Shared'
 
 import { useWalletProvider } from '../../../../WalletProvider'
 import { error, walletList } from '../../../../store/actions'
-import StepCard from './StepCard'
 import {
   hasLedgerError,
   reportLedgerConfigError
@@ -112,7 +111,14 @@ export default () => {
         flexDirection='row'
         justifyContent='center'
       >
-        <StepCard step={2} loading={!ledger.userImportFailure && loading} />
+        <StepCard
+          currentStep={2}
+          description='Please complete the following steps so Filament can interface with
+          your Ledger device.'
+          loading={!ledger.userImportFailure && loading}
+          totalSteps={3}
+          glyphAcronym='Ld'
+        />
         <Step2Helper
           connectedFailure={ledger.connectedFailure}
           ledgerLocked={ledger.locked}

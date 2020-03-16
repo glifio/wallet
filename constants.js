@@ -2,7 +2,7 @@ export const ACCOUNT_BATCH_SIZE = 4
 
 /* WALLET TYPES */
 export const LEDGER = 'LEDGER'
-export const MNEMONIC = 'MNEMONIC'
+export const HD_WALLET = 'HD_WALLET'
 export const SINGLE_KEY = 'SINGLE_KEY'
 
 export const IMPORT_MNEMONIC = 'IMPORT_MNEMONIC'

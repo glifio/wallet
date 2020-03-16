@@ -19,9 +19,16 @@ const WalletProviderWrapper = ({ network, children }) => {
     <WalletProviderContext.Provider
       value={{
         state,
+        dispatch,
         fetchDefaultWallet: useCallback(
-          () => fetchDefaultWallet(dispatch, network, state.walletType),
-          [dispatch, state.walletType, network]
+          walletProvider =>
+            fetchDefaultWallet(
+              dispatch,
+              network,
+              state.walletType,
+              walletProvider
+            ),
+          [dispatch, network, state.walletType]
         ),
         setWalletError: errorMessage => dispatch(setError(errorMessage)),
         setWalletType: walletType => dispatch(setWalletType(walletType)),

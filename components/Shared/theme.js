@@ -138,7 +138,7 @@ const theme = {
       fontFamily: 'RT-Alias-Medium'
     },
     title: {
-      fontSize: 5,
+      fontSize: 4,
       fontColor: core.primary,
       fontWeight: 700,
       margin: 0,

@@ -46,7 +46,7 @@ const WalletView = () => {
       walletType === CREATE_MNEMONIC ||
       walletType === IMPORT_MNEMONIC
     ) {
-      page = Math.floor(wallet.path[4] / ACCOUNT_BATCH_SIZE)
+      page = Math.floor(wallet.path.split('/')[5] / ACCOUNT_BATCH_SIZE)
     }
     params.set('page', page)
     router.push(`/wallet/accounts?${params.toString()}`)

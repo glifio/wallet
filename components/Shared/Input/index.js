@@ -1,12 +1,14 @@
 import Address from './Address'
 import Funds from './Funds'
-import { Number, RawNumberInput } from './Number'
+import Mnemonic from './Mnemonic'
+import { NumberInput, RawNumberInput } from './Number'
 import Text from './Text'
 
 export default {
   Address,
   Funds,
-  Number,
+  Mnemonic,
+  Number: NumberInput,
   RawNumberInput,
   Text
 }
