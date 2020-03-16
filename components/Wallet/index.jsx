@@ -90,7 +90,7 @@ const WalletView = () => {
               color='purple'
               alias='Prime'
               address={wallet.address}
-              isLedgerWallet={walletType === LEDGER}
+              walletType={wallet.type}
               onShowOnLedger={onShowOnLedger}
               ledgerBusy={ledgerBusy}
               mb={2}

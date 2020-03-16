@@ -5,13 +5,13 @@ import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 import Filecoin from '@openworklabs/filecoin-wallet-provider'
 
-import { useWalletProvider } from '.'
-import { createWalletProvider } from './state'
-import { HD_WALLET } from '../constants'
-import { walletList } from '../store/actions'
-import createPath from '../utils/createPath'
-import toLowerCaseMsgFields from '../utils/toLowerCaseMsgFields'
-import { MNEMONIC_PROPTYPE } from '../customPropTypes'
+import { useWalletProvider } from '..'
+import { createWalletProvider } from '../state'
+import { HD_WALLET } from '../../constants'
+import { walletList } from '../../store/actions'
+import createPath from '../../utils/createPath'
+import toLowerCaseMsgFields from '../../utils/toLowerCaseMsgFields'
+import { MNEMONIC_PROPTYPE } from '../../customPropTypes'
 
 export default dynamic({
   ssr: false,

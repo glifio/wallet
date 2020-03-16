@@ -2,6 +2,7 @@ import { shape, string } from 'prop-types'
 import { validateAddressString } from '@openworklabs/filecoin-address'
 import { validatePath } from '@openworklabs/filecoin-wallet-provider'
 import { validateMnemonic } from 'bip39'
+import { SINGLE_KEY } from './constants'
 
 export const ADDRESS_PROPTYPE = (props, propName, componentName) => {
   if (!validateAddressString(props[propName]))
@@ -36,7 +37,7 @@ export const FILECOIN_NUMBER_PROP = (props, propName, componentName) => {
 }
 
 export const HD_PATH_PROP = (props, propName, componentName) => {
-  if (!validatePath(props[propName]))
+  if (!validatePath(props[propName]) && props[propName] !== SINGLE_KEY)
     return new Error(
       `Invalid prop: ${propName} supplied to ${componentName}. Validation failed.`
     )
