@@ -46,9 +46,8 @@ export default () => {
         <StepCard
           currentStep={1}
           totalSteps={2}
-          description='Please enter your seed phrase to access the accounts connected
-          to your seed phrase.'
-          glyphAcronym='Sp'
+          description='Please enter your private key.'
+          glyphAcronym='Pk'
         />
         <Card
           width='auto'
@@ -58,7 +57,7 @@ export default () => {
           borderColor='core.lightgray'
         >
           <Title mt={3}>Please input your private key below</Title>
-          <Input.Text
+          <Input.PrivateKey
             error={privateKeyError}
             setError={setPrivateKeyError}
             value={privateKey}
