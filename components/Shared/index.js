@@ -23,6 +23,7 @@ export * from './Link'
 export * from './Menu'
 export * from './Icons'
 export * from './IconButtons'
+export * from './MnemonicWord'
 
 export * from './Layout'
 

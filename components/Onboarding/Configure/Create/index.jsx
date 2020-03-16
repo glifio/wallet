@@ -18,8 +18,10 @@ export default () => {
   const [walkthroughStep, setWalkthroughStep] = useState(1)
   const [loading, setLoading] = useState(true)
   const [returningHome, setReturningHome] = useState(false)
-  const [canContinue, setCanContinue] = useState(true)
+  const [canContinue, setCanContinue] = useState(false)
   const timeout = useRef()
+
+  console.log(canContinue, 'can contie')
 
   const waitForMnemonic = useCallback(
     timer => {
@@ -89,6 +91,7 @@ export default () => {
                 />
                 {mnemonic && (
                   <Walkthrough
+                    canContinue={canContinue}
                     walkthroughStep={walkthroughStep}
                     mnemonic={mnemonic}
                     setCanContinue={setCanContinue}
@@ -113,11 +116,7 @@ export default () => {
                       ? "I've recorded my seed phrase"
                       : 'Next'
                   }
-                  disabled={!canContinue}
-                  onClick={() => {
-                    setCanContinue(false)
-                    setWalkthroughStep(walkthroughStep + 1)
-                  }}
+                  onClick={() => setWalkthroughStep(walkthroughStep + 1)}
                   variant='primary'
                   ml={2}
                 />
