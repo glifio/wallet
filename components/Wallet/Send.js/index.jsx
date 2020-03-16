@@ -140,8 +140,20 @@ const Send = ({ close }) => {
       messageObj.gas_used = (
         await walletProvider.estimateGas(messageObj)
       ).toAttoFil()
-      setAttemptingTx(false)
       return messageObj
+    }
+  }
+
+  const sendMsg = async () => {
+    const message = await submitMsg()
+    if (message) {
+      dispatch(confirmMessage(toLowerCaseMsgFields(message)))
+      setValue({
+        fil: new FilecoinNumber('0', 'fil'),
+        fiat: new BigNumber('0')
+      })
+      setAttemptingTx(false)
+      close()
     }
   }
 
@@ -161,21 +173,28 @@ const Send = ({ close }) => {
       setUncaughtError('Invalid form!')
     }
 
-    try {
+    if (wallet.type === LEDGER) {
       setStep(2)
-      const message = await submitMsg()
-      if (message) {
-        dispatch(confirmMessage(toLowerCaseMsgFields(message)))
-        setValue({
-          fil: new FilecoinNumber('0', 'fil'),
-          fiat: new BigNumber('0')
-        })
-        close()
-        setToAddress('')
-        setAttemptingTx(false)
+      try {
+        await sendMsg()
+      } catch (err) {
+        setUncaughtError(err.message)
+        setStep(1)
       }
-    } catch (err) {
-      setUncaughtError(err.message)
+    } else {
+      // handle all other wallet types, this is easier to read than pleasing the linter
+      /* eslint-disable no-lonely-if */
+      if (step === 1) {
+        setStep(2)
+      } else {
+        setStep(3)
+        try {
+          await sendMsg()
+        } catch (err) {
+          setUncaughtError(err.message)
+          setStep(2)
+        }
+      }
     }
   }
 
@@ -202,7 +221,7 @@ const Send = ({ close }) => {
           }}
         />
       )}
-      {step === 2 && !hasError() && (
+      {(step === 2 || step === 3) && !hasError() && (
         <ConfirmationCard
           walletType={wallet.type}
           value={value}
@@ -317,7 +336,7 @@ const Send = ({ close }) => {
         {!customizingGas && (
           <FloatingContainer>
             {step === 2 && wallet.type === LEDGER ? (
-              <Text>
+              <Text width='100%' textAlign='center'>
                 Confirm or reject the transaction on your Ledger Device.
               </Text>
             ) : (
@@ -353,7 +372,7 @@ const Send = ({ close }) => {
                     )
                   }
                   type='submit'
-                  title='Next'
+                  title={step === 1 ? 'Next' : 'Confirm'}
                   variant='primary'
                   onClick={() => {}}
                 />
