@@ -25,6 +25,7 @@ const Mnemonic = forwardRef(
           {error}
         </Label>
         <TextInput
+          backgroundRadius={6}
           onBlur={() => validate(value)}
           onFocus={() => {
             if (error) setError('')
