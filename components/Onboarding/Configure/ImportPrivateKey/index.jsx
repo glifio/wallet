@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
-import { validateMnemonic } from 'bip39'
 import { Box, Button, Card, Title, Input, StepCard } from '../../../Shared'
 
 import { useWalletProvider } from '../../../../WalletProvider'
-import CreateHDWalletProvider from '../../../../WalletProvider/Subproviders/HDWalletProvider'
+import CreateSingleKeyProvider from '../../../../WalletProvider/Subproviders/SingleKeyProvider'
 
 export default () => {
   const { setWalletType } = useWalletProvider()
-  const [mnemonic, setMnemonic] = useState('')
-  const [validMnemonic, setValidMnemonic] = useState('')
-  const [mnemonicError, setMnemonicError] = useState('')
+  const [privateKey, setPrivateKey] = useState('')
+  const [ready, setReady] = useState(false)
+  const [privateKeyError, setPrivateKeyError] = useState('')
   const { network, wallets } = useSelector(state => ({
     network: state.network,
     wallets: state.wallets
@@ -24,17 +23,17 @@ export default () => {
       router.push(`/wallet?${params.toString()}`)
     }
     return () => {
-      setMnemonic('')
-      setValidMnemonic('')
+      setPrivateKey('')
+      setReady(false)
     }
   }, [router, wallets, network])
   return (
     <>
-      {validMnemonic && (
-        <CreateHDWalletProvider
+      {ready && (
+        <CreateSingleKeyProvider
           network={network}
-          mnemonic={validMnemonic}
-          ready={!!validMnemonic}
+          privateKey={privateKey}
+          ready={ready}
         />
       )}
       <Box
@@ -58,12 +57,12 @@ export default () => {
           justifyContent='space-between'
           borderColor='core.lightgray'
         >
-          <Title mt={3}>Please input your 12-word seed phrase below</Title>
-          <Input.Mnemonic
-            error={mnemonicError}
-            setError={setMnemonicError}
-            value={mnemonic}
-            onChange={e => setMnemonic(e.target.value)}
+          <Title mt={3}>Please input your private key below</Title>
+          <Input.Text
+            error={privateKeyError}
+            setError={setPrivateKeyError}
+            value={privateKey}
+            onChange={e => setPrivateKey(e.target.value)}
           />
         </Card>
       </Box>
@@ -76,15 +75,8 @@ export default () => {
         />
         <Button
           title='Next'
-          disabled={!!(mnemonic.length === 0 || mnemonicError)}
-          onClick={() => {
-            try {
-              const isValid = validateMnemonic(mnemonic)
-              if (isValid) setValidMnemonic(mnemonic)
-            } catch (_) {
-              setMnemonicError('Invalid seed phrase.')
-            }
-          }}
+          disabled={!!(privateKey.length === 0 || privateKeyError)}
+          onClick={() => setReady(true)}
           variant='primary'
           ml={2}
         />

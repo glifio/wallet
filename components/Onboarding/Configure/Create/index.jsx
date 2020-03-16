@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import { Box, Button, StepCard, Loading, Label } from '../../../Shared'
 
-import CreateProvider from '../../../../WalletProvider/CreateProvider'
+import CreateHDWalletProvider from '../../../../WalletProvider/Subproviders/HDWalletProvider'
 import GenerateMnemonic from '../../../../WalletProvider/GenerateMnemonic'
 import Walkthrough from './Walkthrough'
 import Back from './Back'
@@ -55,7 +55,7 @@ export default () => {
         <>
           <GenerateMnemonic setMnemonic={setMnemonic} />
           {mnemonic && (
-            <CreateProvider
+            <CreateHDWalletProvider
               network={network}
               mnemonic={mnemonic}
               ready={walkthroughStep === 6}

@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import { string, func, bool } from 'prop-types'
+import { string, func, bool, oneOf } from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import Box from '../Box'
 import Glyph from '../Glyph'
@@ -8,6 +8,12 @@ import { ButtonCopyAccountAddress } from '../IconButtons'
 import { BigTitle, Text, Title as AccountAddress } from '../Typography'
 import truncate from '../../../utils/truncateAddress'
 import copyToClipboard from '../../../utils/copyToClipboard'
+import {
+  LEDGER,
+  CREATE_MNEMONIC,
+  IMPORT_MNEMONIC,
+  IMPORT_SINGLE_KEY
+} from '../../../constants'
 
 const AccountCard = forwardRef(
   (
@@ -15,9 +21,9 @@ const AccountCard = forwardRef(
       address,
       alias,
       onAccountSwitch,
-      isLedgerWallet,
       onShowOnLedger,
       ledgerBusy,
+      walletType,
       ...props
     },
     ref
@@ -59,13 +65,15 @@ const AccountCard = forwardRef(
           </Box>
         </Box>
         <Box display='flex'>
-          <Button
-            variant='tertiary'
-            title='Switch'
-            onClick={onAccountSwitch}
-            p={2}
-          />
-          {isLedgerWallet && (
+          {walletType !== IMPORT_SINGLE_KEY && (
+            <Button
+              variant='tertiary'
+              title='Switch'
+              onClick={onAccountSwitch}
+              p={2}
+            />
+          )}
+          {walletType === LEDGER && (
             <Button
               variant='tertiary'
               title='View on Ledger'
@@ -101,7 +109,12 @@ AccountCard.propTypes = {
   /**
    * If this wallet represents a ledger
    */
-  isLedgerWallet: bool,
+  walletType: oneOf([
+    LEDGER,
+    CREATE_MNEMONIC,
+    IMPORT_MNEMONIC,
+    IMPORT_SINGLE_KEY
+  ]).isRequired,
   /**
    * If this wallet represents a ledger, the function that gets called when "show on Ledger" button gets clicked
    */
@@ -114,7 +127,6 @@ AccountCard.propTypes = {
 
 AccountCard.defaultProps = {
   color: 'white',
-  isLedgerWallet: false,
   onShowOnLedger: () => {},
   ledgerBusy: false
 }

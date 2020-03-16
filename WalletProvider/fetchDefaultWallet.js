@@ -26,7 +26,7 @@ const fetchDefaultWallet = async (
   const networkCode = network === 'f' ? 461 : 1
 
   let path = createPath(networkCode, 0)
-  if (provider.wallet.type === SINGLE_KEY) path = ''
+  if (provider.wallet.type === SINGLE_KEY) path = SINGLE_KEY
   return {
     balance,
     address: defaultAddress,

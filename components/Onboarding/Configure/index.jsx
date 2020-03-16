@@ -9,9 +9,10 @@ import {
   CREATE_MNEMONIC
 } from '../../../constants'
 
-const Ledger = dynamic(() => import('./Ledger'))
-const ImportMnemonic = dynamic(() => import('./ImportMnemonic'))
 const Create = dynamic(() => import('./Create'))
+const Ledger = dynamic(() => import('./Ledger'))
+const ImportPrivateKey = dynamic(() => import('./ImportPrivateKey'))
+const ImportMnemonic = dynamic(() => import('./ImportMnemonic'))
 
 const Configure = ({ walletType }) => {
   switch (walletType) {
@@ -20,7 +21,7 @@ const Configure = ({ walletType }) => {
     case LEDGER:
       return <Ledger />
     case IMPORT_SINGLE_KEY:
-      return <div>Import pk</div>
+      return <ImportPrivateKey />
     case IMPORT_MNEMONIC:
       return <ImportMnemonic />
     default:
