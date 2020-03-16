@@ -1,15 +1,45 @@
 import React from 'react'
 import styled from 'styled-components'
+import {
+  color,
+  space,
+  layout,
+  border,
+  flexbox,
+  typography
+} from 'styled-system'
 import { func, string, bool } from 'prop-types'
-import BaseInput from './BaseInput'
 import Box from '../Box'
 
-const MnemonicWordInput = styled(BaseInput)`
-  text-align: center;
-  &:focus {
-    border-radius: 100px;
-    background: transparent;
+export const MnemonicWordInput = styled.input.attrs(props => ({
+  display: 'inline-block',
+  width: '100%',
+  height: 5,
+  textAlign: 'center',
+  backgroundColor: 'core.transparent',
+  borderRadius: 6,
+  border: 0,
+  outline: 0
+}))`
+  ::placeholder {
+    color: ${props => props.theme.colors.core.secondary};
   }
+
+  &:focus {
+    box-shadow: 0;
+    outline: 0;
+    background: ${props => {
+      if (props.valid) return props.theme.colors.input.background.valid
+      if (props.error) return props.theme.colors.input.background.invalid
+      return props.theme.colors.core.primary
+    }};
+  }
+  ${color}
+  ${space}
+  ${layout}
+  ${border}
+  ${flexbox}
+  ${typography}
 `
 
 const MnemonicWord = ({
@@ -20,7 +50,7 @@ const MnemonicWord = ({
   error,
   disabled,
   valid,
-  numWord,
+  num,
   ...props
 }) => (
   <>
@@ -39,20 +69,20 @@ const MnemonicWord = ({
         display='flex'
         justifyContent='center'
         alignItems='center'
+        flexGrow='999'
         color='core.primary'
         backgroundColor='core.secondary'
-        width={6}
         height={5}
+        width={6}
         mx={2}
         border={1}
         borderColor='core.secondary'
         fontSize={3}
         borderRadius={6}
       >
-        {numWord}
+        10
       </Box>
       <MnemonicWordInput
-        borderLeft={0}
         label={label}
         onChange={onChange}
         value={value}
@@ -60,10 +90,6 @@ const MnemonicWord = ({
         error={error}
         valid={valid}
         {...props}
-        height={5}
-        textAlign='center'
-        backgroundColor='core.transparent'
-        borderRadius={6}
       />
     </Box>
   </>
