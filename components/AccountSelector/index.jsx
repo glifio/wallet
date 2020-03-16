@@ -156,24 +156,16 @@ const AccountSelector = () => {
         <Wrapper>
           <Sidebar>
             <>
-              {hasLedgerError(
-                ledger.connectedFailure,
-                ledger.locked,
-                ledger.filecoinAppNotOpen,
-                ledger.replug,
-                ledger.busy,
-                uncaughtError
-              ) ? (
+              {hasLedgerError({
+                ...ledger,
+                otherError: uncaughtError
+              }) ? (
                 <AccountError
                   onTryAgain={() => {}}
-                  errorMsg={reportLedgerConfigError(
-                    ledger.connectedFailure,
-                    ledger.locked,
-                    ledger.filecoinAppNotOpen,
-                    ledger.replug,
-                    ledger.busy,
-                    uncaughtError
-                  )}
+                  errorMsg={reportLedgerConfigError({
+                    ...ledger,
+                    otherError: uncaughtError
+                  })}
                 />
               ) : (
                 <Card

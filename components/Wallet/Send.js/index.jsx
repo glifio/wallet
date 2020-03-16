@@ -183,25 +183,11 @@ const Send = ({ close }) => {
     !!(
       attemptingTx &&
       (uncaughtError ||
-        (wallet.type === LEDGER &&
-          reportLedgerConfigError(
-            ledger.connectedFailure,
-            ledger.locked,
-            ledger.filecoinAppNotOpen,
-            ledger.replug,
-            ledger.busy
-          )))
+        (wallet.type === LEDGER && reportLedgerConfigError(ledger)))
     )
 
   const ledgerError = () =>
-    wallet.type === LEDGER &&
-    reportLedgerConfigError(
-      ledger.connectedFailure,
-      ledger.locked,
-      ledger.filecoinAppNotOpen,
-      ledger.replug,
-      ledger.busy
-    )
+    wallet.type === LEDGER && reportLedgerConfigError(ledger)
 
   return (
     <SendContainer>
