@@ -61,6 +61,10 @@ const MnemonicWord = ({
       setBumpedCorrectWordCount(true)
       setCorrectWordCount(correctWordCount + 1)
     }
+    if (word !== wordToMatch && bumpedCorrectWordCount) {
+      setBumpedCorrectWordCount(false)
+      setCorrectWordCount(correctWordCount - 1)
+    }
   }, [
     word,
     wordToMatch,
