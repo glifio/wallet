@@ -1,8 +1,9 @@
 import React from 'react'
+import { bool } from 'prop-types'
 import { DisplayWord as Word, Menu, MenuItem, Title } from '../../../../Shared'
 import { MNEMONIC_PROPTYPE } from '../../../../../customPropTypes'
 
-const Reveal = ({ mnemonic }) => {
+const Reveal = ({ mnemonic, valid }) => {
   return (
     <>
       <Title mt={3}>Write down your seed phrase</Title>
@@ -16,7 +17,7 @@ const Reveal = ({ mnemonic }) => {
           return (
             /* eslint-disable react/no-array-index-key */
             <MenuItem key={i}>
-              <Word num={i} word={word} />
+              <Word num={i} word={word} valid={valid} />
             </MenuItem>
           )
         })}
@@ -26,7 +27,12 @@ const Reveal = ({ mnemonic }) => {
 }
 
 Reveal.propTypes = {
-  mnemonic: MNEMONIC_PROPTYPE
+  mnemonic: MNEMONIC_PROPTYPE,
+  valid: bool
+}
+
+Reveal.defaultProps = {
+  valid: false
 }
 
 export default Reveal

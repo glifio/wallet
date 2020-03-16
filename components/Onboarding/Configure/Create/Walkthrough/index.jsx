@@ -7,9 +7,9 @@ import WordPrompt from './WordPrompt'
 
 const Stage = ({ canContinue, mnemonic, setCanContinue, walkthroughStep }) => {
   switch (walkthroughStep) {
-    case 2:
-      return <RevealMnemonic mnemonic={mnemonic} />
     case 1:
+      return <RevealMnemonic mnemonic={mnemonic} />
+    case 2:
       return (
         <WordPrompt
           canContinue={canContinue}
@@ -17,6 +17,8 @@ const Stage = ({ canContinue, mnemonic, setCanContinue, walkthroughStep }) => {
           mnemonic={mnemonic}
         />
       )
+    case 3:
+      return <RevealMnemonic valid mnemonic={mnemonic} />
     default:
       return <Text>Error, how the hell did you get here?</Text>
   }
@@ -49,6 +51,11 @@ const Walkthrough = ({
         walkthroughStep={walkthroughStep}
         setCanContinue={setCanContinue}
       />
+      {walkthroughStep === 3 && !canContinue && (
+        <Text color='status.fail.background'>
+          One or more of your seed phrase words was incorrect.
+        </Text>
+      )}
     </Card>
   )
 }
