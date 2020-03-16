@@ -80,7 +80,7 @@ const MnemonicWord = ({
         fontSize={3}
         borderRadius={6}
       >
-        10
+        {num || '1'}
       </Box>
       <MnemonicWordInput
         label={label}
