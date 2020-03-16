@@ -5,7 +5,7 @@ import TextInput from './Text'
 import { Label } from '../Typography'
 import Box from '../Box'
 
-const Seed = forwardRef(
+const Mnemonic = forwardRef(
   ({ onChange, value, placeholder, error, setError, valid, ...props }, ref) => {
     const timer = useRef()
 
@@ -49,7 +49,7 @@ const Seed = forwardRef(
   }
 )
 
-Seed.propTypes = {
+Mnemonic.propTypes = {
   onChange: func,
   setError: func,
   value: string,
@@ -58,11 +58,11 @@ Seed.propTypes = {
   valid: bool
 }
 
-Seed.defaultProps = {
+Mnemonic.defaultProps = {
   value: '',
   placeholder: 'Your seed phrase',
   onChange: () => {},
   setError: () => {}
 }
 
-export default Seed
+export default Mnemonic
