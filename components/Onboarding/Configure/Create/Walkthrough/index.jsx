@@ -33,6 +33,7 @@ Stage.propTypes = {
 
 const Walkthrough = ({
   canContinue,
+  importSeedError,
   mnemonic,
   walkthroughStep,
   setCanContinue
@@ -51,7 +52,7 @@ const Walkthrough = ({
         walkthroughStep={walkthroughStep}
         setCanContinue={setCanContinue}
       />
-      {walkthroughStep === 3 && !canContinue && (
+      {importSeedError && (
         <Text color='status.fail.background'>
           One or more of your seed phrase words was incorrect.
         </Text>
@@ -62,9 +63,14 @@ const Walkthrough = ({
 
 Walkthrough.propTypes = {
   canContinue: PropTypes.bool.isRequired,
+  importSeedError: PropTypes.bool,
   mnemonic: MNEMONIC_PROPTYPE,
   walkthroughStep: PropTypes.number.isRequired,
   setCanContinue: PropTypes.func.isRequired
+}
+
+Walkthrough.defaultProps = {
+  importSeedError: false
 }
 
 export default Walkthrough

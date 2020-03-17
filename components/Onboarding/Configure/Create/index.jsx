@@ -19,9 +19,15 @@ export default () => {
   const [loading, setLoading] = useState(true)
   const [returningHome, setReturningHome] = useState(false)
   const [canContinue, setCanContinue] = useState(false)
+  const [importSeedError, setImportSeedError] = useState(false)
   const timeout = useRef()
 
-  console.log(canContinue, 'can contie')
+  const nextStep = () => {
+    if (walkthroughStep === 1) setWalkthroughStep(2)
+    else if (walkthroughStep === 2 && canContinue) setWalkthroughStep(3)
+    else if (walkthroughStep === 2) setImportSeedError(true)
+    else if (walkthroughStep >= 3) setWalkthroughStep(walkthroughStep + 1)
+  }
 
   const waitForMnemonic = useCallback(
     timer => {
@@ -37,9 +43,7 @@ export default () => {
     [mnemonic]
   )
 
-  useEffect(() => {
-    waitForMnemonic(600)
-  }, [waitForMnemonic])
+  useEffect(() => waitForMnemonic(600), [waitForMnemonic])
 
   useEffect(() => {
     if (wallets.length > 0) {
@@ -60,7 +64,7 @@ export default () => {
             <CreateHDWalletProvider
               network={network}
               mnemonic={mnemonic}
-              ready={walkthroughStep === 6}
+              ready={walkthroughStep === 4}
             />
           )}
           {loading || walkthroughStep === 6 ? (
@@ -91,6 +95,7 @@ export default () => {
                 />
                 {mnemonic && (
                   <Walkthrough
+                    importSeedError={importSeedError}
                     canContinue={canContinue}
                     walkthroughStep={walkthroughStep}
                     mnemonic={mnemonic}
@@ -116,7 +121,7 @@ export default () => {
                       ? "I've recorded my seed phrase"
                       : 'Next'
                   }
-                  onClick={() => setWalkthroughStep(walkthroughStep + 1)}
+                  onClick={nextStep}
                   variant='primary'
                   ml={2}
                 />
