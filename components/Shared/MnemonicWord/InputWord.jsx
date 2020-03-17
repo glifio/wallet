@@ -75,8 +75,12 @@ const MnemonicWord = ({
         completed,
         empty: !word
       })}
-      border={(!word || word !== wordToMatch) && importSeedError && 1}
-      borderColor={(!word || word !== wordToMatch) && importSeedError && 'red'}
+      border={1}
+      borderColor={
+        (!word || word !== wordToMatch) &&
+        importSeedError &&
+        'status.fail.background'
+      }
     >
       <Circle color='core.primary' backgroundColor='core.secondary'>
         {num}
