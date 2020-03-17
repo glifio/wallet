@@ -89,7 +89,7 @@ export default () => {
               >
                 <StepCard
                   currentStep={walkthroughStep}
-                  totalSteps={5}
+                  totalSteps={4}
                   description='Please complete the following steps to create a new wallet.'
                   glyphAcronym='Cw'
                 />
@@ -111,7 +111,10 @@ export default () => {
               >
                 <Button
                   title='Back'
-                  onClick={() => setReturningHome(true)}
+                  onClick={() => {
+                    if (walkthroughStep === 2) setWalkthroughStep(1)
+                    else setReturningHome(true)
+                  }}
                   variant='secondary'
                   mr={2}
                 />
