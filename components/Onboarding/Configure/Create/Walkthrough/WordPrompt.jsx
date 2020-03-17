@@ -41,7 +41,7 @@ const WordPrompt = ({
               {randoms.current.has(i) ? (
                 <InputWord
                   correctWordCount={correctWordCount}
-                  num={i}
+                  num={i + 1}
                   wordToMatch={word}
                   setCorrectWordCount={setCorrectWordCount}
                   importSeedError={importSeedError}
