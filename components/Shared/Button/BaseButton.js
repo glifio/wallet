@@ -16,7 +16,11 @@ const applyStyles = (styleProperty, props, disabledColor) => {
   return props.theme.colors.buttons.primary[styleProperty]
 }
 
-export default styled.button`
+export default styled.button.attrs(() => ({
+  p: 3,
+  fontSize: 3,
+  borderRadius: 2
+}))`
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   background-color: ${props =>
     applyStyles('background', props, props.theme.colors.status.inactive)};
