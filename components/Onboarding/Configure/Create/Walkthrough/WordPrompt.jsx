@@ -47,7 +47,7 @@ const WordPrompt = ({
                   importSeedError={importSeedError}
                 />
               ) : (
-                <Word num={i} word={word} />
+                <Word num={i + 1} word={word} />
               )}
             </MenuItem>
           )
