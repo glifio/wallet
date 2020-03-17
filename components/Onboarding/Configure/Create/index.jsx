@@ -23,6 +23,7 @@ export default () => {
   const timeout = useRef()
 
   const nextStep = () => {
+    setImportSeedError(false)
     if (walkthroughStep === 1) setWalkthroughStep(2)
     else if (walkthroughStep === 2 && canContinue) setWalkthroughStep(3)
     else if (walkthroughStep === 2) setImportSeedError(true)
@@ -67,7 +68,7 @@ export default () => {
               ready={walkthroughStep === 4}
             />
           )}
-          {loading || walkthroughStep === 6 ? (
+          {loading || walkthroughStep === 4 ? (
             <Box
               width='100%'
               display='flex'
