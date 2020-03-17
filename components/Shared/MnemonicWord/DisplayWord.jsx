@@ -2,6 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { string, number, bool } from 'prop-types'
 import Box from '../Box'
+import { Text } from '../Typography'
+import StyledWrapper from './StyledWrapper'
+import Circle from './Circle'
+import contentProps from './contentProps'
 
 const setBackgroundColor = props => {
   if (props.valid) return 'status.success.background'
@@ -9,19 +13,12 @@ const setBackgroundColor = props => {
 }
 
 const setColor = props => {
-  if (props.valid) return 'status.success.foreground'
+  if (props.valid) return 'darkgreen'
   return 'core.white'
 }
 
 export const Word = styled(Box).attrs(props => ({
-  display: 'inline-block',
-  width: '100%',
-  height: 5,
-  textAlign: 'center',
-  backgroundColor: 'core.transparent',
-  borderRadius: 6,
-  border: 0,
-  outline: 0,
+  ...contentProps,
   color: setColor(props)
 }))`
   line-height: 2;
@@ -29,37 +26,12 @@ export const Word = styled(Box).attrs(props => ({
 
 const DisplayWord = ({ word, num, valid }) => {
   return (
-    <Box
-      display='flex'
-      alignItems='center'
-      justifyContent='center'
-      width={12}
-      maxWidth={9}
-      backgroundColor={setBackgroundColor({ word, num, valid })}
-      color='core.secondary'
-      borderRadius={6}
-      py={2}
-      m={2}
-    >
-      <Box
-        display='flex'
-        justifyContent='center'
-        alignItems='center'
-        flexGrow='999'
-        color={valid ? 'core.white' : 'core.primary'}
-        backgroundColor={valid ? 'status.success.foreground' : 'core.secondary'}
-        height={5}
-        width={6}
-        mx={2}
-        border={1}
-        borderColor={valid ? 'status.success.foreground' : 'core.secondary'}
-        fontSize={3}
-        borderRadius={6}
-      >
-        {num}
-      </Box>
+    <StyledWrapper backgroundColor={setBackgroundColor({ word, num, valid })}>
+      <Circle backgroundColor={valid ? 'darkgreen' : 'core.secondary'}>
+        <Text color={valid ? 'core.white' : 'core.primary'}>{num}</Text>
+      </Circle>
       <Word valid={valid}>{word}</Word>
-    </Box>
+    </StyledWrapper>
   )
 }
 

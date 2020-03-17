@@ -1,13 +1,33 @@
 import React from 'react'
 import { bool } from 'prop-types'
-import { DisplayWord as Word, Menu, MenuItem, Title } from '../../../../Shared'
+import {
+  Box,
+  Button,
+  DisplayWord as Word,
+  Menu,
+  MenuItem,
+  Title
+} from '../../../../Shared'
 import { MNEMONIC_PROPTYPE } from '../../../../../customPropTypes'
+import copyToClipboard from '../../../../../utils/copyToClipboard'
 
 const Reveal = ({ mnemonic, valid }) => {
   return (
     <>
-      <Title mt={3}>Write down your seed phrase</Title>
+      <Box display='flex' flexDirection='row' justifyContent='space-between'>
+        <Title mt={3}>Write down your seed phrase</Title>
+        <Button
+          css={`
+            outline: none;
+          `}
+          onClick={() => copyToClipboard(mnemonic)}
+          variant='tertiary'
+          title='copy'
+        />
+      </Box>
+
       <Menu
+        mt={3}
         display='flex'
         alignItems='center'
         justifyItems='center'
