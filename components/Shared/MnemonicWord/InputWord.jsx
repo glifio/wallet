@@ -13,9 +13,17 @@ import StyledWrapper from './StyledWrapper'
 import Circle from './Circle'
 import contentProps from './contentProps'
 
-const setBackgroundColor = ({ completed, empty }) => {
-  if (empty) return 'core.white'
-  if (completed) return 'core.primary'
+const setBackgroundColor = ({
+  completed,
+  empty,
+  word,
+  wordToMatch,
+  importSeedError
+}) => {
+  if (importSeedError && (empty || word !== wordToMatch))
+    return 'status.fail.background'
+  if (!importSeedError && completed) return 'core.primary'
+  if (!importSeedError && empty) return 'core.white'
   return 'core.white'
 }
 
@@ -73,6 +81,9 @@ const MnemonicWord = ({
       onBlur={() => setCompleted(true)}
       backgroundColor={setBackgroundColor({
         completed,
+        importSeedError,
+        wordToMatch,
+        word,
         empty: !word
       })}
       border={1}
