@@ -105,7 +105,7 @@ const colors = {
   status: {
     success: {
       background: baseColors.green.primary,
-      foreground: baseColors.mono.darkgray
+      foreground: baseColors.green.darker
     },
     pending: {
       background: baseColors.yellow.deep,
