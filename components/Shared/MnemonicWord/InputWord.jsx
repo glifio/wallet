@@ -8,19 +8,18 @@ import {
   flexbox,
   typography
 } from 'styled-system'
-import { func, string, bool, number } from 'prop-types'
+import { func, string, number } from 'prop-types'
 import StyledWrapper from './StyledWrapper'
 import Circle from './Circle'
 import contentProps from './contentProps'
 
-const setBackgroundColor = props => {
-  if (props.valid) return 'status.success.background'
-  if (props.completed) return 'core.primary'
+const setBackgroundColor = ({ completed, empty }) => {
+  if (empty) return 'core.white'
+  if (completed) return 'core.primary'
   return 'core.white'
 }
 
 const setInputColor = props => {
-  if (props.valid) return 'status.success.foreground'
   if (props.completed) return 'core.white'
   return 'core.primary'
 }
@@ -43,7 +42,6 @@ export const MnemonicWordInput = styled.input.attrs(props => ({
 
 const MnemonicWord = ({
   num,
-  valid,
   wordToMatch,
   correctWordCount,
   setCorrectWordCount
@@ -72,7 +70,7 @@ const MnemonicWord = ({
   return (
     <StyledWrapper
       onBlur={() => setCompleted(true)}
-      backgroundColor={setBackgroundColor({ valid, completed })}
+      backgroundColor={setBackgroundColor({ completed, empty: !word })}
     >
       <Circle color='core.primary' backgroundColor='core.secondary'>
         {num}
@@ -82,7 +80,6 @@ const MnemonicWord = ({
         onChange={e => setWord(e.target.value)}
         completed={completed}
         value={word}
-        valid={valid}
       />
     </StyledWrapper>
   )
@@ -92,12 +89,7 @@ MnemonicWord.propTypes = {
   wordToMatch: string.isRequired,
   correctWordCount: number.isRequired,
   setCorrectWordCount: func.isRequired,
-  num: number.isRequired,
-  valid: bool
-}
-
-MnemonicWord.defaultProps = {
-  valid: false
+  num: number.isRequired
 }
 
 export default MnemonicWord
