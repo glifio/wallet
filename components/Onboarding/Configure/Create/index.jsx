@@ -16,10 +16,19 @@ export default () => {
   const router = useRouter()
   const [mnemonic, setMnemonic] = useState('')
   const [walkthroughStep, setWalkthroughStep] = useState(1)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [returningHome, setReturningHome] = useState(false)
-  const [canContinue, setCanContinue] = useState(true)
+  const [canContinue, setCanContinue] = useState(false)
+  const [importSeedError, setImportSeedError] = useState(false)
   const timeout = useRef()
+
+  const nextStep = () => {
+    setImportSeedError(false)
+    if (walkthroughStep === 1) setWalkthroughStep(2)
+    else if (walkthroughStep === 2 && canContinue) setWalkthroughStep(3)
+    else if (walkthroughStep === 2) setImportSeedError(true)
+    else if (walkthroughStep >= 3) setWalkthroughStep(walkthroughStep + 1)
+  }
 
   const waitForMnemonic = useCallback(
     timer => {
@@ -35,9 +44,7 @@ export default () => {
     [mnemonic]
   )
 
-  useEffect(() => {
-    waitForMnemonic(600)
-  }, [waitForMnemonic])
+  useEffect(() => waitForMnemonic(600), [waitForMnemonic])
 
   useEffect(() => {
     if (wallets.length > 0) {
@@ -58,10 +65,10 @@ export default () => {
             <CreateHDWalletProvider
               network={network}
               mnemonic={mnemonic}
-              ready={walkthroughStep === 6}
+              ready={walkthroughStep === 4}
             />
           )}
-          {loading || walkthroughStep === 6 ? (
+          {loading || walkthroughStep === 4 ? (
             <Box
               width='100%'
               display='flex'
@@ -83,12 +90,14 @@ export default () => {
               >
                 <StepCard
                   currentStep={walkthroughStep}
-                  totalSteps={5}
+                  totalSteps={4}
                   description='Please complete the following steps to create a new wallet.'
                   glyphAcronym='Cw'
                 />
                 {mnemonic && (
                   <Walkthrough
+                    importSeedError={importSeedError}
+                    canContinue={canContinue}
                     walkthroughStep={walkthroughStep}
                     mnemonic={mnemonic}
                     setCanContinue={setCanContinue}
@@ -103,7 +112,10 @@ export default () => {
               >
                 <Button
                   title='Back'
-                  onClick={() => setReturningHome(true)}
+                  onClick={() => {
+                    if (walkthroughStep === 2) setWalkthroughStep(1)
+                    else setReturningHome(true)
+                  }}
                   variant='secondary'
                   mr={2}
                 />
@@ -113,11 +125,7 @@ export default () => {
                       ? "I've recorded my seed phrase"
                       : 'Next'
                   }
-                  disabled={!canContinue}
-                  onClick={() => {
-                    setCanContinue(false)
-                    setWalkthroughStep(walkthroughStep + 1)
-                  }}
+                  onClick={nextStep}
                   variant='primary'
                   ml={2}
                 />

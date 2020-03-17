@@ -1,49 +1,66 @@
-import React, { useEffect, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
-import { Title, Box, Text, Input } from '../../../../Shared'
+import {
+  Title,
+  Menu,
+  MenuItem,
+  DisplayWord as Word,
+  InputWord
+} from '../../../../Shared'
+import { MNEMONIC_PROPTYPE } from '../../../../../customPropTypes'
+import generateRandomWords from '../../../../../utils/generateRandomWords'
 
-const WordPrompt = ({ numWord, wordToMatch, setCanContinue }) => {
-  const [word, setWord] = useState('')
+const WordPrompt = ({
+  importSeedError,
+  canContinue,
+  mnemonic,
+  setCanContinue
+}) => {
+  const randoms = useRef()
+  if (!randoms.current) randoms.current = generateRandomWords(mnemonic, 4)
+  const [correctWordCount, setCorrectWordCount] = useState(0)
 
   useEffect(() => {
-    return () => setWord('')
-  }, [numWord, wordToMatch])
-
-  useEffect(() => {
-    if (word === wordToMatch) setCanContinue(true)
-  }, [word, wordToMatch, setCanContinue])
-
+    if (!canContinue && correctWordCount === 4) setCanContinue(true)
+    if (canContinue && correctWordCount !== 4) setCanContinue(false)
+  })
   return (
-    <Box
-      height='100%'
-      display='flex'
-      flexDirection='column'
-      justifyContent='space-between'
-    >
-      <Title mt={3}>Please follow the prompts</Title>
-      <Box display='flex' flexDirection='column'>
-        <Box display='flex' flexDirection='row'>
-          <Text my={1}>What&rsquo;s the&nbsp;</Text>
-          <Text my={1} color='core.primary'>
-            {numWord} word &nbsp;
-          </Text>
-          <Text my={1}>in your seed phrase?</Text>
-        </Box>
-        <Input.Text
-          placeholder='tunafish'
-          value={word}
-          onChange={e => setWord(e.target.value)}
-          borderLeft={0}
-        />
-      </Box>
-    </Box>
+    <>
+      <Title mt={3}>Write down your seed phrase</Title>
+      <Menu
+        display='flex'
+        alignItems='center'
+        justifyItems='center'
+        flexWrap='wrap'
+      >
+        {mnemonic.split(' ').map((word, i) => {
+          return (
+            /* eslint-disable react/no-array-index-key */
+            <MenuItem key={i}>
+              {randoms.current.has(i) ? (
+                <InputWord
+                  correctWordCount={correctWordCount}
+                  num={i + 1}
+                  wordToMatch={word}
+                  setCorrectWordCount={setCorrectWordCount}
+                  importSeedError={importSeedError}
+                />
+              ) : (
+                <Word num={i} word={word} />
+              )}
+            </MenuItem>
+          )
+        })}
+      </Menu>
+    </>
   )
 }
 
 WordPrompt.propTypes = {
-  numWord: PropTypes.string.isRequired,
-  wordToMatch: PropTypes.string.isRequired,
+  canContinue: PropTypes.bool.isRequired,
+  importSeedError: PropTypes.bool.isRequired,
+  mnemonic: MNEMONIC_PROPTYPE,
   setCanContinue: PropTypes.func.isRequired
 }
 

@@ -7,9 +7,6 @@ const Button = forwardRef(
   ({ disabled, onClick, variant, title, ...props }, ref) => (
     <BaseButton
       variant={variant}
-      p={3}
-      fontSize={3}
-      borderRadius={2}
       onClick={onClick}
       disabled={disabled}
       ref={ref}

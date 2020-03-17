@@ -1,89 +1,51 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { MNEMONIC_PROPTYPE } from '../../../../../customPropTypes'
 import RevealMnemonic from './RevealMnemonic'
 import { Card, Text } from '../../../../Shared'
 import WordPrompt from './WordPrompt'
-import generateRandomWords from '../../../../../utils/generateRandomWords'
 
-const indexToWord = [
-  '1st',
-  '2nd',
-  '3rd',
-  '4th',
-  '5th',
-  '6th',
-  '7th',
-  '8th',
-  '9th',
-  '10th',
-  '11th',
-  '12th',
-  '13th',
-  '14th',
-  '15th',
-  '16th',
-  '17th',
-  '18th',
-  '19th',
-  '20th',
-  '21st',
-  '22nd',
-  '23rd',
-  '24th'
-]
-
-const Stage = ({ mnemonic, setCanContinue, walkthroughStep }) => {
-  const randoms = useRef()
-  if (!randoms.current) randoms.current = generateRandomWords(mnemonic, 4)
-  const [first, second, third, fourth] = randoms.current
+const Stage = ({
+  canContinue,
+  importSeedError,
+  mnemonic,
+  setCanContinue,
+  walkthroughStep
+}) => {
   switch (walkthroughStep) {
     case 1:
       return <RevealMnemonic mnemonic={mnemonic} />
     case 2:
       return (
         <WordPrompt
+          importSeedError={importSeedError}
+          canContinue={canContinue}
           setCanContinue={setCanContinue}
-          wordToMatch={first.word}
-          numWord={indexToWord[first.index]}
+          mnemonic={mnemonic}
         />
       )
     case 3:
-      return (
-        <WordPrompt
-          setCanContinue={setCanContinue}
-          wordToMatch={second.word}
-          numWord={indexToWord[second.index]}
-        />
-      )
-    case 4:
-      return (
-        <WordPrompt
-          setCanContinue={setCanContinue}
-          wordToMatch={third.word}
-          numWord={indexToWord[third.index]}
-        />
-      )
-    case 5:
-      return (
-        <WordPrompt
-          setCanContinue={setCanContinue}
-          wordToMatch={fourth.word}
-          numWord={indexToWord[fourth.index]}
-        />
-      )
+      return <RevealMnemonic valid mnemonic={mnemonic} />
     default:
       return <Text>Error, how the hell did you get here?</Text>
   }
 }
 
 Stage.propTypes = {
+  canContinue: PropTypes.bool.isRequired,
   mnemonic: MNEMONIC_PROPTYPE,
   walkthroughStep: PropTypes.number.isRequired,
-  setCanContinue: PropTypes.func.isRequired
+  setCanContinue: PropTypes.func.isRequired,
+  importSeedError: PropTypes.bool.isRequired
 }
 
-const Walkthrough = ({ mnemonic, walkthroughStep, setCanContinue }) => {
+const Walkthrough = ({
+  canContinue,
+  importSeedError,
+  mnemonic,
+  walkthroughStep,
+  setCanContinue
+}) => {
   return (
     <Card
       width={16}
@@ -93,18 +55,31 @@ const Walkthrough = ({ mnemonic, walkthroughStep, setCanContinue }) => {
       borderColor='core.lightgray'
     >
       <Stage
+        canContinue={canContinue}
+        importSeedError={importSeedError}
         mnemonic={mnemonic}
         walkthroughStep={walkthroughStep}
         setCanContinue={setCanContinue}
       />
+      {importSeedError && (
+        <Text color='status.fail.background'>
+          One or more of your seed phrase words was incorrect.
+        </Text>
+      )}
     </Card>
   )
 }
 
 Walkthrough.propTypes = {
+  canContinue: PropTypes.bool.isRequired,
+  importSeedError: PropTypes.bool,
   mnemonic: MNEMONIC_PROPTYPE,
   walkthroughStep: PropTypes.number.isRequired,
   setCanContinue: PropTypes.func.isRequired
+}
+
+Walkthrough.defaultProps = {
+  importSeedError: false
 }
 
 export default Walkthrough
