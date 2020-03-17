@@ -5,13 +5,20 @@ import RevealMnemonic from './RevealMnemonic'
 import { Card, Text } from '../../../../Shared'
 import WordPrompt from './WordPrompt'
 
-const Stage = ({ canContinue, mnemonic, setCanContinue, walkthroughStep }) => {
+const Stage = ({
+  canContinue,
+  importSeedError,
+  mnemonic,
+  setCanContinue,
+  walkthroughStep
+}) => {
   switch (walkthroughStep) {
     case 1:
       return <RevealMnemonic mnemonic={mnemonic} />
     case 2:
       return (
         <WordPrompt
+          importSeedError={importSeedError}
           canContinue={canContinue}
           setCanContinue={setCanContinue}
           mnemonic={mnemonic}
@@ -28,7 +35,8 @@ Stage.propTypes = {
   canContinue: PropTypes.bool.isRequired,
   mnemonic: MNEMONIC_PROPTYPE,
   walkthroughStep: PropTypes.number.isRequired,
-  setCanContinue: PropTypes.func.isRequired
+  setCanContinue: PropTypes.func.isRequired,
+  importSeedError: PropTypes.bool.isRequired
 }
 
 const Walkthrough = ({
@@ -48,6 +56,7 @@ const Walkthrough = ({
     >
       <Stage
         canContinue={canContinue}
+        importSeedError={importSeedError}
         mnemonic={mnemonic}
         walkthroughStep={walkthroughStep}
         setCanContinue={setCanContinue}

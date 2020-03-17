@@ -8,7 +8,7 @@ import {
   flexbox,
   typography
 } from 'styled-system'
-import { func, string, number } from 'prop-types'
+import { func, string, number, bool } from 'prop-types'
 import StyledWrapper from './StyledWrapper'
 import Circle from './Circle'
 import contentProps from './contentProps'
@@ -44,7 +44,8 @@ const MnemonicWord = ({
   num,
   wordToMatch,
   correctWordCount,
-  setCorrectWordCount
+  setCorrectWordCount,
+  importSeedError
 }) => {
   const [word, setWord] = useState('')
   const [completed, setCompleted] = useState(false)
@@ -70,7 +71,12 @@ const MnemonicWord = ({
   return (
     <StyledWrapper
       onBlur={() => setCompleted(true)}
-      backgroundColor={setBackgroundColor({ completed, empty: !word })}
+      backgroundColor={setBackgroundColor({
+        completed,
+        empty: !word
+      })}
+      border={(!word || word !== wordToMatch) && importSeedError && 1}
+      borderColor={(!word || word !== wordToMatch) && importSeedError && 'red'}
     >
       <Circle color='core.primary' backgroundColor='core.secondary'>
         {num}
@@ -89,7 +95,8 @@ MnemonicWord.propTypes = {
   wordToMatch: string.isRequired,
   correctWordCount: number.isRequired,
   setCorrectWordCount: func.isRequired,
-  num: number.isRequired
+  num: number.isRequired,
+  importSeedError: bool.isRequired
 }
 
 export default MnemonicWord

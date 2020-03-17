@@ -11,7 +11,12 @@ import {
 import { MNEMONIC_PROPTYPE } from '../../../../../customPropTypes'
 import generateRandomWords from '../../../../../utils/generateRandomWords'
 
-const WordPrompt = ({ canContinue, mnemonic, setCanContinue }) => {
+const WordPrompt = ({
+  importSeedError,
+  canContinue,
+  mnemonic,
+  setCanContinue
+}) => {
   const randoms = useRef()
   if (!randoms.current) randoms.current = generateRandomWords(mnemonic, 4)
   const [correctWordCount, setCorrectWordCount] = useState(0)
@@ -39,6 +44,7 @@ const WordPrompt = ({ canContinue, mnemonic, setCanContinue }) => {
                   num={i}
                   wordToMatch={word}
                   setCorrectWordCount={setCorrectWordCount}
+                  importSeedError={importSeedError}
                 />
               ) : (
                 <Word num={i} word={word} />
@@ -53,6 +59,7 @@ const WordPrompt = ({ canContinue, mnemonic, setCanContinue }) => {
 
 WordPrompt.propTypes = {
   canContinue: PropTypes.bool.isRequired,
+  importSeedError: PropTypes.bool.isRequired,
   mnemonic: MNEMONIC_PROPTYPE,
   setCanContinue: PropTypes.func.isRequired
 }
