@@ -336,7 +336,7 @@ const Send = ({ close }) => {
         {!customizingGas && (
           <FloatingContainer>
             {step === 2 && wallet.type === LEDGER ? (
-              <Text width='100%' textAlign='center'>
+              <Text width='100%' textAlign='center' px={4}>
                 Confirm or reject the transaction on your Ledger Device.
               </Text>
             ) : (

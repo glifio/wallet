@@ -18,7 +18,14 @@ const LedgerConfirm = () => {
       <Text color='core.nearblack'>Thank you.</Text>
       <Text color='core.nearblack'>
         To send the transaction,{' '}
-        <strong>confirm the transfer on your Ledger device.</strong>
+        <span
+          css={`
+            font-size: 1.25rem;
+            font-weight: 600;
+          `}
+        >
+          confirm the transfer on your Ledger device.
+        </span>
       </Text>
     </>
   )
