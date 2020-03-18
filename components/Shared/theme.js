@@ -139,11 +139,10 @@ const theme = {
     },
     title: {
       fontSize: 4,
-      fontColor: core.primary,
-      fontWeight: 700,
+      fontWeight: 400,
       margin: 0,
       lineHeight: 'title',
-      fontFamily: 'RT-Alias-Medium'
+      fontFamily: 'RT-Alias-Grotesk'
     },
     text: {
       fontSize: 3,
