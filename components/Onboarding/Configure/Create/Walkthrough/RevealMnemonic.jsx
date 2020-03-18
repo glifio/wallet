@@ -73,7 +73,7 @@ const Reveal = ({ mnemonic, valid }) => {
           <Button
             onClick={() => copyToClipboard(mnemonic)}
             variant='secondary'
-            title='copy'
+            title='Copy'
             mx={2}
           />
           <DownloadButton
