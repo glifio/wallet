@@ -66,3 +66,21 @@ export const Label = forwardRef(({ children, ...props }, ref) => (
 ))
 
 Label.propTypes = { children: node.isRequired }
+
+export const HugeNumber = forwardRef(({ children, ...props }, ref) => (
+  <H2Base ref={ref} {...theme.textStyles.hugeNumber} {...props}>
+    {children}
+  </H2Base>
+))
+
+// Start number styles
+
+HugeNumber.propTypes = { children: node.isRequired }
+
+export const BigNumber = forwardRef(({ children, ...props }, ref) => (
+  <H2Base ref={ref} {...theme.textStyles.bigNumber} {...props}>
+    {children}
+  </H2Base>
+))
+
+BigNumber.propTypes = { children: node.isRequired }
