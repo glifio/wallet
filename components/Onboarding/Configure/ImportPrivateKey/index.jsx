@@ -37,48 +37,56 @@ export default () => {
         />
       )}
       <Box
-        mt={8}
-        mb={6}
         display='flex'
-        flexDirection='row'
+        flexDirection='column'
+        alignItems='center'
         justifyContent='center'
       >
-        <StepCard
-          currentStep={1}
-          totalSteps={2}
-          description='Please enter your private key.'
-          glyphAcronym='Pk'
-        />
-        <Card
-          width='auto'
+        <Box
           display='flex'
-          flexDirection='column'
-          justifyContent='space-between'
-          borderColor='core.lightgray'
+          flexWrap='wrap'
+          flexDirection='row'
+          justifyContent='center'
+          width='100%'
         >
-          <Title mt={3}>Please input your private key below</Title>
-          <Input.PrivateKey
-            error={privateKeyError}
-            setError={setPrivateKeyError}
-            value={privateKey}
-            onChange={e => setPrivateKey(e.target.value)}
+          <StepCard
+            currentStep={1}
+            totalSteps={2}
+            description='Please enter your private key.'
+            glyphAcronym='Pk'
           />
-        </Card>
-      </Box>
-      <Box mt={6} display='flex' flexDirection='row' justifyContent='center'>
-        <Button
-          title='Back'
-          onClick={() => setWalletType(null)}
-          variant='secondary'
-          mr={2}
-        />
-        <Button
-          title='Next'
-          disabled={!!(privateKey.length === 0 || privateKeyError)}
-          onClick={() => setReady(true)}
-          variant='primary'
-          ml={2}
-        />
+          <Card
+            width='auto'
+            display='flex'
+            flexDirection='column'
+            justifyContent='space-between'
+            borderColor='core.lightgray'
+            m={2}
+          >
+            <Title mt={3}>Please input your private key below</Title>
+            <Input.PrivateKey
+              error={privateKeyError}
+              setError={setPrivateKeyError}
+              value={privateKey}
+              onChange={e => setPrivateKey(e.target.value)}
+            />
+          </Card>
+        </Box>
+        <Box mt={6} display='flex' flexDirection='row' justifyContent='center'>
+          <Button
+            title='Back'
+            onClick={() => setWalletType(null)}
+            variant='secondary'
+            mr={2}
+          />
+          <Button
+            title='Next'
+            disabled={!!(privateKey.length === 0 || privateKeyError)}
+            onClick={() => setReady(true)}
+            variant='primary'
+            ml={2}
+          />
+        </Box>
       </Box>
     </>
   )
