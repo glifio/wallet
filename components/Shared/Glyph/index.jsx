@@ -24,7 +24,7 @@ const Glyph = forwardRef(
       ref={ref}
       {...props}
     >
-      <GlyphText>{acronym || <Icon />}</GlyphText>
+      {acronym ? <GlyphText>{acronym}</GlyphText> : <Icon />}
     </Box>
   )
 )
