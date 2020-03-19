@@ -22,7 +22,7 @@ const StepCard = ({
       justifyContent='space-between'
       borderColor='silver'
       height={300}
-      mr={2}
+      m={2}
     >
       <Box display='flex' alignItems='center'>
         {loading ? <Loading /> : <Glyph acronym={glyphAcronym} />}
