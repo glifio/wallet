@@ -24,6 +24,10 @@ export const baseColors = {
     light: '#FC6D6F',
     dark: '#660000'
   },
+  orange: {
+    light: '#FF9E80',
+    dark: '#661800'
+  },
   yellow: {
     light: '#FFDC99',
     deep: '#FCA703'
@@ -110,6 +114,10 @@ const colors = {
     pending: {
       background: baseColors.yellow.deep,
       foreground: baseColors.mono.darkgray
+    },
+    warning: {
+      background: baseColors.orange.light,
+      foreground: baseColors.orange.dark
     },
     fail: {
       background: baseColors.red.light,
