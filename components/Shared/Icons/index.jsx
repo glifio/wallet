@@ -291,10 +291,10 @@ IconMessageStatus.propTypes = {
   status: oneOf(['confirmed', 'pending']).isRequired
 }
 
-export const IconLedger = forwardRef((props, ref) => (
+export const IconLedger = forwardRef((iconwidth, iconheight, props, ref) => (
   <IconBase
-    width='24'
-    height='24'
+    width={iconwidth}
+    height={iconheight}
     viewBox='0 0 24 24'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
