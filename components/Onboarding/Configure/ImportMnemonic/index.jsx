@@ -37,57 +37,64 @@ export default () => {
           ready={!!validMnemonic}
         />
       )}
-      <Box
-        mt={8}
-        mb={6}
-        display='flex'
-        flexDirection='row'
-        justifyContent='center'
-      >
-        <StepCard
-          currentStep={1}
-          totalSteps={2}
-          description='Please enter your seed phrase to access the accounts connected
-          to your seed phrase.'
-          glyphAcronym='Sp'
-        />
-        <Card
-          width='auto'
+      <Box display='flex' flexDirection='column' justifyContent='center'>
+        <Box
           display='flex'
-          flexDirection='column'
-          justifyContent='space-between'
-          borderColor='core.lightgray'
+          flexWrap='wrap'
+          flexDirection='row'
+          justifyContent='center'
         >
-          <Title mt={3}>Please input your 12-word seed phrase below</Title>
-          <Input.Mnemonic
-            error={mnemonicError}
-            setError={setMnemonicError}
-            value={mnemonic}
-            onChange={e => setMnemonic(e.target.value)}
+          <StepCard
+            currentStep={1}
+            totalSteps={2}
+            description='Please enter your seed phrase to access the accounts connected
+          to your seed phrase.'
+            glyphAcronym='Sp'
+            m={2}
           />
-        </Card>
-      </Box>
-      <Box mt={6} display='flex' flexDirection='row' justifyContent='center'>
-        <Button
-          title='Back'
-          onClick={() => setWalletType(null)}
-          variant='secondary'
-          mr={2}
-        />
-        <Button
-          title='Next'
-          disabled={!!(mnemonic.length === 0 || mnemonicError)}
-          onClick={() => {
-            try {
-              const isValid = validateMnemonic(mnemonic)
-              if (isValid) setValidMnemonic(mnemonic)
-            } catch (_) {
-              setMnemonicError('Invalid seed phrase.')
-            }
-          }}
-          variant='primary'
-          ml={2}
-        />
+          <Card
+            width='auto'
+            display='flex'
+            flexDirection='column'
+            justifyContent='space-between'
+            borderColor='core.lightgray'
+          >
+            <Title mt={3}>Please input your 12-word seed phrase below</Title>
+            <Input.Mnemonic
+              error={mnemonicError}
+              setError={setMnemonicError}
+              value={mnemonic}
+              onChange={e => setMnemonic(e.target.value)}
+            />
+          </Card>
+        </Box>
+        <Box
+          mt={6}
+          display='flex'
+          flexDirection='row'
+          justifyContent='space-around'
+        >
+          <Button
+            title='Back'
+            onClick={() => setWalletType(null)}
+            variant='secondary'
+            mr={2}
+          />
+          <Button
+            title='Next'
+            disabled={!!(mnemonic.length === 0 || mnemonicError)}
+            onClick={() => {
+              try {
+                const isValid = validateMnemonic(mnemonic)
+                if (isValid) setValidMnemonic(mnemonic)
+              } catch (_) {
+                setMnemonicError('Invalid seed phrase.')
+              }
+            }}
+            variant='primary'
+            ml={2}
+          />
+        </Box>
       </Box>
     </>
   )
