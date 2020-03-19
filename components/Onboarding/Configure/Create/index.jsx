@@ -70,11 +70,10 @@ export default () => {
           )}
           {loading || walkthroughStep === 4 ? (
             <Box
-              width='100%'
               display='flex'
               flexDirection='column'
               alignItems='center'
-              mt={9}
+              justifyContent='center'
             >
               <Loading width={3} height={3} />
               <Label mt={3}>Loading...</Label>
@@ -82,53 +81,60 @@ export default () => {
           ) : (
             <>
               <Box
-                mt={8}
-                mb={6}
                 display='flex'
-                flexDirection='row'
+                flexDirection='column'
                 justifyContent='center'
+                alignItems='center'
               >
-                <StepCard
-                  currentStep={walkthroughStep}
-                  totalSteps={4}
-                  description='Please complete the following steps to create a new wallet.'
-                  glyphAcronym='Cw'
-                />
-                {mnemonic && (
-                  <Walkthrough
-                    importSeedError={importSeedError}
-                    canContinue={canContinue}
-                    walkthroughStep={walkthroughStep}
-                    mnemonic={mnemonic}
-                    setCanContinue={setCanContinue}
+                <Box
+                  display='flex'
+                  flexDirection='row'
+                  flexWrap='wrap'
+                  justifyContent='center'
+                >
+                  <StepCard
+                    currentStep={walkthroughStep}
+                    totalSteps={4}
+                    description='Please complete the following steps to create a new wallet.'
+                    glyphAcronym='Cw'
                   />
-                )}
-              </Box>
-              <Box
-                mt={6}
-                display='flex'
-                flexDirection='row'
-                justifyContent='center'
-              >
-                <Button
-                  title='Back'
-                  onClick={() => {
-                    if (walkthroughStep === 2) setWalkthroughStep(1)
-                    else setReturningHome(true)
-                  }}
-                  variant='secondary'
-                  mr={2}
-                />
-                <Button
-                  title={
-                    walkthroughStep === 1
-                      ? "I've recorded my seed phrase"
-                      : 'Next'
-                  }
-                  onClick={nextStep}
-                  variant='primary'
-                  ml={2}
-                />
+                  {mnemonic && (
+                    <Walkthrough
+                      importSeedError={importSeedError}
+                      canContinue={canContinue}
+                      walkthroughStep={walkthroughStep}
+                      mnemonic={mnemonic}
+                      setCanContinue={setCanContinue}
+                    />
+                  )}
+                </Box>
+                <Box
+                  maxWidth={16}
+                  mt={6}
+                  display='flex'
+                  flexDirection='row'
+                  justifyContent='center'
+                >
+                  <Button
+                    title='Back'
+                    onClick={() => {
+                      if (walkthroughStep === 2) setWalkthroughStep(1)
+                      else setReturningHome(true)
+                    }}
+                    variant='secondary'
+                    mr={2}
+                  />
+                  <Button
+                    title={
+                      walkthroughStep === 1
+                        ? "I've recorded my seed phrase"
+                        : 'Next'
+                    }
+                    onClick={nextStep}
+                    variant='primary'
+                    ml={2}
+                  />
+                </Box>
               </Box>
             </>
           )}

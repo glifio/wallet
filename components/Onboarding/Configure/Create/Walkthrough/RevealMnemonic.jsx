@@ -67,7 +67,12 @@ const Reveal = ({ mnemonic, valid }) => {
 
   return (
     <>
-      <Box display='flex' flexDirection='row' justifyContent='space-between'>
+      <Box
+        display='flex'
+        flexDirection='row'
+        width='100%'
+        justifyContent='space-between'
+      >
         <Title mt={3}>Write down your seed phrase</Title>
         <Box display='flex' flexDirection='row'>
           <Button

@@ -48,7 +48,9 @@ const Walkthrough = ({
 }) => {
   return (
     <Card
-      width={16}
+      maxWidth={16}
+      width='100%'
+      m={2}
       display='flex'
       flexDirection='column'
       justifyContent='space-between'
