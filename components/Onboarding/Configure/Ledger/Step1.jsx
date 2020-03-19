@@ -16,6 +16,7 @@ const Step1Helper = ({ inUseByAnotherApp, connectedFailure }) => {
       bg={(connectedFailure || inUseByAnotherApp) && 'card.error.background'}
       height={300}
       ml={2}
+      pt={5}
     >
       {connectedFailure && (
         <>
@@ -73,13 +74,7 @@ export default () => {
   }
   return (
     <>
-      <Box
-        mt={8}
-        mb={6}
-        display='flex'
-        flexDirection='row'
-        justifyContent='center'
-      >
+      <Box mb={6} display='flex' flexDirection='row' justifyContent='center'>
         <StepCard
           currentStep={1}
           description='Complete the following steps to connect Glif with your Ledger device.'
