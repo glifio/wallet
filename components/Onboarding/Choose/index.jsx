@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from '../../Shared'
+import { Box, IconLedger } from '../../Shared'
 import ImportWallet from './Import'
 import CreateWallet from './Create'
 import Hello from './Hello'
@@ -31,7 +31,7 @@ export default () => {
         >
           <ImportWallet
             onClick={() => setWalletType(LEDGER)}
-            glyphAcronym='Ld'
+            Icon={IconLedger}
             title='Ledger Device'
             description='Use Glif to access your Ledger device'
             m={2}

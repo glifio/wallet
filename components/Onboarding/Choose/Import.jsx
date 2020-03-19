@@ -2,7 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Box, Card, Glyph, Text } from '../../Shared'
 
-const Import = ({ onClick, glyphAcronym, title, description, ...props }) => (
+const Import = ({
+  onClick,
+  glyphAcronym,
+  title,
+  description,
+  Icon,
+  ...props
+}) => (
   <Card
     css={`
       cursor: pointer;
@@ -16,7 +23,7 @@ const Import = ({ onClick, glyphAcronym, title, description, ...props }) => (
     {...props}
   >
     <Box display='flex' alignItems='center'>
-      <Glyph acronym={glyphAcronym} />
+      <Glyph Icon={Icon} acronym={glyphAcronym} />
       <Text ml={3}>{title}</Text>
     </Box>
     <Box display='block'>
@@ -29,7 +36,8 @@ const Import = ({ onClick, glyphAcronym, title, description, ...props }) => (
 
 Import.propTypes = {
   onClick: PropTypes.func.isRequired,
-  glyphAcronym: PropTypes.string.isRequired,
+  glyphAcronym: PropTypes.string,
+  Icon: PropTypes.object,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired
 }
