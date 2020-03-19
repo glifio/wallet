@@ -15,8 +15,7 @@ const Step1Helper = ({ inUseByAnotherApp, connectedFailure }) => {
       borderColor='silver'
       bg={(connectedFailure || inUseByAnotherApp) && 'card.error.background'}
       height={300}
-      ml={2}
-      pt={5}
+      m={2}
     >
       {connectedFailure && (
         <>
@@ -74,7 +73,12 @@ export default () => {
   }
   return (
     <>
-      <Box mb={6} display='flex' flexDirection='row' justifyContent='center'>
+      <Box
+        display='flex'
+        flexWrap='wrap'
+        flexDirection='row'
+        justifyContent='center'
+      >
         <StepCard
           currentStep={1}
           description='Complete the following steps to connect Glif with your Ledger device.'
@@ -87,7 +91,13 @@ export default () => {
           inUseByAnotherApp={ledger.inUseByAnotherApp}
         />
       </Box>
-      <Box mt={6} display='flex' flexDirection='row' justifyContent='center'>
+      <Box
+        mt={6}
+        mx={2}
+        display='flex'
+        flexDirection='row'
+        justifyContent='space-between'
+      >
         <Button
           title='Back'
           onClick={() => setWalletType(null)}

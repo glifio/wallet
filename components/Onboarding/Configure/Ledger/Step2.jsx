@@ -37,7 +37,7 @@ const Step2Helper = ({
       }) && 'card.error.background'
     }
     height={300}
-    ml={2}
+    m={2}
   >
     {hasLedgerError({
       connectedFailure,
@@ -105,9 +105,8 @@ export default () => {
   return (
     <>
       <Box
-        mt={8}
-        mb={6}
         display='flex'
+        flexWrap='wrap'
         flexDirection='row'
         justifyContent='center'
       >
@@ -129,7 +128,13 @@ export default () => {
           otherError={generalError}
         />
       </Box>
-      <Box mt={6} display='flex' flexDirection='row' justifyContent='center'>
+      <Box
+        mt={6}
+        display='flex'
+        flexDirection='row'
+        justifyContent='space-between'
+        mx={2}
+      >
         <Button
           title='Back'
           onClick={() => setWalletType(null)}

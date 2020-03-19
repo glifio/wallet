@@ -8,7 +8,7 @@ import Step2 from './Step2'
 export default () => {
   const { step } = useWalletProvider()
   return (
-    <Box display='flex' flexDirection='column'>
+    <Box display='flex' flexDirection='column' justifyContent='center'>
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}
     </Box>
