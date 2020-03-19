@@ -290,3 +290,22 @@ export const IconMessageStatus = forwardRef((props, ref) => (
 IconMessageStatus.propTypes = {
   status: oneOf(['confirmed', 'pending']).isRequired
 }
+
+export const IconLedger = forwardRef((props, ref) => (
+  <IconBase
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+    ref={ref}
+    {...props}
+  >
+    <path
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M10.0934 4H17.4067H17.4148C18.8148 4 19.9676 5.15197 19.9676 6.55279V13.866H10.0934V4ZM6.55349 4.00065H7.81386V7.81378H4.00065V6.55344C4.00065 5.15342 5.15345 4.00065 6.55349 4.00065ZM4 10.0934H7.81321V13.9066H4V10.0934ZM17.4479 19.9679H16.1875V16.1869H20.0007V17.4071V17.4151C20.0007 18.8151 18.8487 19.9679 17.4479 19.9679ZM10.0938 16.1869H13.907V20H10.0938V16.1869ZM4 17.4472V16.1869H7.81321V20H6.55284C5.15279 20 4 18.8472 4 17.4472Z'
+      fill='#333333'
+    />
+  </IconBase>
+))
