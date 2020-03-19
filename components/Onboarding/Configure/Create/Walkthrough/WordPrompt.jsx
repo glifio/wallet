@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 import {
+  Box,
   Title,
   Menu,
   MenuItem,
@@ -27,12 +28,21 @@ const WordPrompt = ({
   })
   return (
     <>
-      <Title mt={3}>Write down your seed phrase</Title>
+      <Box
+        display='flex'
+        flexDirection='row'
+        width='100%'
+        justifyContent='space-between'
+        height={7}
+      >
+        <Title mt={3}>Add the correct words to the empty inputs</Title>
+      </Box>
       <Menu
         display='flex'
         alignItems='center'
         justifyItems='center'
         flexWrap='wrap'
+        mt={3}
       >
         {mnemonic.split(' ').map((word, i) => {
           return (

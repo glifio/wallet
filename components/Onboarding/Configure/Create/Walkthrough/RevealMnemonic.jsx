@@ -72,16 +72,19 @@ const Reveal = ({ mnemonic, valid }) => {
         flexDirection='row'
         width='100%'
         justifyContent='space-between'
+        height={7}
       >
         <Title mt={3}>Write down your seed phrase</Title>
         <Box display='flex' flexDirection='row'>
           <Button
+            height='max-content'
             onClick={() => copyToClipboard(mnemonic)}
             variant='secondary'
             title='Copy'
             mx={2}
           />
           <DownloadButton
+            height='max-content'
             variant='secondary'
             download='dontlookhere.txt'
             href={objectUrl}
