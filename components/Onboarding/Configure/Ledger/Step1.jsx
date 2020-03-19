@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
 import { Box, Button, Card, Text, Title, StepCard } from '../../../Shared'
+import { IconLedger } from '../../../Shared/Icons'
 
 import { useWalletProvider } from '../../../../WalletProvider'
 import isValidBrowser from '../../../../utils/isValidBrowser'
@@ -84,7 +85,7 @@ export default () => {
           description='Complete the following steps to connect Glif with your Ledger device.'
           loading={ledger.connecting}
           totalSteps={3}
-          glyphAcronym='Ld'
+          Icon={IconLedger}
         />
         <Step1Helper
           connectedFailure={ledger.connectedFailure}

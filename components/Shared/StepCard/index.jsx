@@ -12,6 +12,7 @@ const StepCard = ({
   currentStep,
   description,
   glyphAcronym,
+  Icon,
   loading,
   totalSteps
 }) => {
@@ -25,7 +26,7 @@ const StepCard = ({
       m={2}
     >
       <Box display='flex' alignItems='center'>
-        {loading ? <Loading /> : <Glyph acronym={glyphAcronym} />}
+        {loading ? <Loading /> : <Glyph Icon={Icon} acronym={glyphAcronym} />}
         <Stepper
           textColor='text'
           completedDotColor='status.success.background'
@@ -46,7 +47,8 @@ StepCard.propTypes = {
   description: PropTypes.string,
   loading: PropTypes.bool,
   currentStep: PropTypes.number.isRequired,
-  glyphAcronym: PropTypes.string.isRequired,
+  glyphAcronym: PropTypes.string,
+  Icon: PropTypes.object,
   totalSteps: PropTypes.number.isRequired
 }
 
