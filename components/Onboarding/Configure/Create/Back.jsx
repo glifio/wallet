@@ -2,13 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { useWalletProvider } from '../../../../WalletProvider'
-import { Box, Button, Card, Text } from '../../../Shared'
+import { Box, Button, Card, Text, Glyph } from '../../../Shared'
 
 const Back = ({ setReturningHome }) => {
   const { setWalletType } = useWalletProvider()
   return (
     <Box display='flex' flexDirection='column' alignItems='center' mt={8}>
-      <Card width={10} height={10}>
+      <Card width={11} height={11}>
+        <Glyph acronym='Bk' />
         <Text>Do you really wish to exit onboarding?</Text>
         <Text>You will be taken back to the home screen.</Text>
       </Card>
