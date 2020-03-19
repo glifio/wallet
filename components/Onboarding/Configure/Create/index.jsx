@@ -96,7 +96,7 @@ export default () => {
                     currentStep={walkthroughStep}
                     totalSteps={4}
                     description='Please complete the following steps to create a new wallet.'
-                    glyphAcronym='Cw'
+                    glyphAcronym='Sp'
                   />
                   {mnemonic && (
                     <Walkthrough
