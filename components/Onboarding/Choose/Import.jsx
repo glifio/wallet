@@ -8,9 +8,14 @@ const Import = ({
   title,
   description,
   Icon,
+  tag,
   ...props
 }) => (
   <Card
+    display='flex'
+    flexDirection='column'
+    justifyContent='space-between'
+    alignContent='space-between'
     css={`
       cursor: pointer;
       transition: 0.13s ease-in-out;
@@ -22,15 +27,32 @@ const Import = ({
     onClick={onClick}
     {...props}
   >
-    <Box display='flex' alignItems='center'>
-      <Glyph Icon={Icon} acronym={glyphAcronym} />
-      <Text ml={3}>{title}</Text>
+    <Box>
+      <Box display='flex' alignItems='center'>
+        <Glyph Icon={Icon} acronym={glyphAcronym} />
+        <Text ml={3}>{title}</Text>
+      </Box>
+      <Box display='block'>
+        <Text m={0} color='core.nearblack'>
+          {description}
+        </Text>
+      </Box>
     </Box>
-    <Box display='block'>
-      <Text mb={0} color='core.nearblack'>
-        {description}
-      </Text>
-    </Box>
+    {tag && (
+      <Box
+        display='inline-block'
+        width='max-content'
+        py={2}
+        px={4}
+        borderRadius={6}
+        fontSize={3}
+        my={2}
+        backgroundColor='status.success.background'
+        color='status.success.foreground'
+      >
+        {tag}
+      </Box>
+    )}
   </Card>
 )
 
@@ -39,7 +61,8 @@ Import.propTypes = {
   glyphAcronym: PropTypes.string,
   Icon: PropTypes.object,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired
+  description: PropTypes.string.isRequired,
+  tag: PropTypes.string
 }
 
 export default Import
