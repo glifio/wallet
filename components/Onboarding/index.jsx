@@ -2,16 +2,25 @@ import React from 'react'
 import ChooseWallet from './Choose'
 import ConfigureWallet from './Configure'
 import { useWalletProvider } from '../../WalletProvider'
+import Box from '../Shared/Box'
 
 export default () => {
   const { walletType } = useWalletProvider()
   return (
     <>
-      {walletType ? (
-        <ConfigureWallet walletType={walletType} />
-      ) : (
-        <ChooseWallet />
-      )}
+      <Box
+        display='flex'
+        minHeight='100vh'
+        justifyContent='center'
+        alignContent='center'
+        padding={[2, 3, 5]}
+      >
+        {walletType ? (
+          <ConfigureWallet walletType={walletType} />
+        ) : (
+          <ChooseWallet />
+        )}
+      </Box>
     </>
   )
 }
