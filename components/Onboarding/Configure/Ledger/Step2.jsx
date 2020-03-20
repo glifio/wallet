@@ -2,7 +2,16 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'
-import { Box, Button, Card, Text, Title, StepCard } from '../../../Shared'
+import {
+  Box,
+  Button,
+  OnboardCard,
+  Text,
+  Title,
+  StepCard,
+  StepHeader
+} from '../../../Shared'
+import { IconLedger } from '../../../Shared/Icons'
 
 import { useWalletProvider } from '../../../../WalletProvider'
 import { error, walletList } from '../../../../store/actions'
@@ -20,11 +29,12 @@ const Step2Helper = ({
   inUseByAnotherApp,
   otherError
 }) => (
-  <Card
+  <Box
     display='flex'
     flexDirection='column'
     justifyContent='space-between'
     borderColor='silver'
+    width='100%'
     bg={
       hasLedgerError({
         connectedFailure,
@@ -36,8 +46,7 @@ const Step2Helper = ({
         otherError
       }) && 'card.error.background'
     }
-    height={300}
-    m={2}
+    mt={5}
   >
     {hasLedgerError({
       connectedFailure,
@@ -70,15 +79,15 @@ const Step2Helper = ({
     ) : (
       <>
         <Box display='flex' alignItems='center'>
-          <Title>Next</Title>
+          <Title>Unlock & Open</Title>
         </Box>
-        <Box mt={3}>
-          <Text mb={1}>Please unlock your Ledger device</Text>
+        <Box>
+          <Text>Please unlock your Ledger device</Text>
           <Text>And make sure the Filecoin App is open</Text>
         </Box>
       </>
     )}
-  </Card>
+  </Box>
 )
 
 Step2Helper.propTypes = {
@@ -104,19 +113,14 @@ export default () => {
 
   return (
     <>
-      <Box
-        display='flex'
-        flexWrap='wrap'
-        flexDirection='row'
-        justifyContent='center'
-      >
-        <StepCard
+      <OnboardCard maxWidth={13} width='100%'>
+        <StepHeader
           currentStep={2}
           description='Please complete the following steps so Filament can interface with
           your Ledger device.'
           loading={!ledger.userImportFailure && loading}
-          totalSteps={3}
-          glyphAcronym='Ld'
+          totalSteps={2}
+          Icon={IconLedger}
         />
         <Step2Helper
           connectedFailure={ledger.connectedFailure}
@@ -127,13 +131,12 @@ export default () => {
           inUseByAnotherApp={ledger.inUseByAnotherApp}
           otherError={generalError}
         />
-      </Box>
+      </OnboardCard>
       <Box
         mt={6}
         display='flex'
         flexDirection='row'
         justifyContent='space-between'
-        mx={2}
       >
         <Button
           title='Back'

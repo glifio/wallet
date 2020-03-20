@@ -1,7 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
-import { Box, Button, Card, Text, Title, StepCard } from '../../../Shared'
+import {
+  Box,
+  Button,
+  OnboardCard,
+  Text,
+  Title,
+  StepHeader
+} from '../../../Shared'
 import { IconLedger } from '../../../Shared/Icons'
 
 import { useWalletProvider } from '../../../../WalletProvider'
@@ -9,14 +16,12 @@ import isValidBrowser from '../../../../utils/isValidBrowser'
 
 const Step1Helper = ({ inUseByAnotherApp, connectedFailure }) => {
   return (
-    <Card
-      display='flex'
+    <Box
+      display='block'
       flexDirection='column'
       justifyContent='space-between'
       borderColor='silver'
-      bg={(connectedFailure || inUseByAnotherApp) && 'card.error.background'}
-      height={300}
-      m={2}
+      mt={4}
     >
       {connectedFailure && (
         <>
@@ -47,15 +52,15 @@ const Step1Helper = ({ inUseByAnotherApp, connectedFailure }) => {
       )}
       {!inUseByAnotherApp && !connectedFailure && (
         <>
-          <Box display='flex' alignItems='center'>
-            <Title>First</Title>
+          <Box display='flex' alignItems='center' mt={4}>
+            <Title>Connect</Title>
           </Box>
           <Box mt={3}>
             <Text>Please connect your Ledger to your computer.</Text>
           </Box>
         </>
       )}
-    </Card>
+    </Box>
   )
 }
 
@@ -64,7 +69,7 @@ Step1Helper.propTypes = {
   inUseByAnotherApp: PropTypes.bool.isRequired
 }
 
-export default () => {
+export default (inUseByAnotherApp, connectedFailure) => {
   const { ledger, setLedgerProvider, setWalletType } = useWalletProvider()
   const router = useRouter()
   if (!isValidBrowser()) {
@@ -74,27 +79,28 @@ export default () => {
   }
   return (
     <>
-      <Box
-        display='flex'
-        flexWrap='wrap'
-        flexDirection='row'
-        justifyContent='center'
+      <OnboardCard
+        maxWidth={13}
+        width='100%'
+        // bg={
+        //   connectedFailure || inUseByAnotherApp
+        //     ? 'card.error.background'
+        //     : 'core.transparent'
+        // }
       >
-        <StepCard
+        <StepHeader
           currentStep={1}
-          description='Complete the following steps to connect Glif with your Ledger device.'
           loading={ledger.connecting}
-          totalSteps={3}
+          totalSteps={2}
           Icon={IconLedger}
         />
         <Step1Helper
           connectedFailure={ledger.connectedFailure}
           inUseByAnotherApp={ledger.inUseByAnotherApp}
         />
-      </Box>
+      </OnboardCard>
       <Box
         mt={6}
-        mx={2}
         display='flex'
         flexDirection='row'
         justifyContent='space-between'
