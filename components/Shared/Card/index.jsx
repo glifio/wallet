@@ -9,7 +9,6 @@ const Card = forwardRef(({ ...props }, ref) => (
     border={1}
     borderRadius={2}
     borderWidth={1}
-    color='text'
     overflow='hidden'
     ref={ref}
     {...props}
