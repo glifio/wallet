@@ -35,6 +35,7 @@ const Step2Helper = ({
     justifyContent='space-between'
     borderColor='silver'
     width='100%'
+    minHeight={9}
     bg={
       hasLedgerError({
         connectedFailure,
@@ -113,7 +114,7 @@ export default () => {
 
   return (
     <>
-      <OnboardCard maxWidth={13} width='100%'>
+      <OnboardCard maxWidth={13} width='100%' minHeight={9}>
         <StepHeader
           currentStep={2}
           description='Please complete the following steps so Filament can interface with
@@ -137,6 +138,7 @@ export default () => {
         display='flex'
         flexDirection='row'
         justifyContent='space-between'
+        width='100%'
       >
         <Button
           title='Back'
@@ -145,7 +147,7 @@ export default () => {
           mr={2}
         />
         <Button
-          title='My Ledger device is unlocked and Filecoin app open'
+          title='My Ledger device is unlocked & Filecoin app open'
           onClick={async () => {
             setLoading(true)
             try {

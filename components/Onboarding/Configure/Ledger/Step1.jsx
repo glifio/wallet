@@ -22,6 +22,7 @@ const Step1Helper = ({ inUseByAnotherApp, connectedFailure }) => {
       justifyContent='space-between'
       borderColor='silver'
       mt={4}
+      minHeight={9}
     >
       {connectedFailure && (
         <>
@@ -104,6 +105,7 @@ export default (inUseByAnotherApp, connectedFailure) => {
         display='flex'
         flexDirection='row'
         justifyContent='space-between'
+        width='100%'
       >
         <Button
           title='Back'
