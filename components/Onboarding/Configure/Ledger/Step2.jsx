@@ -114,7 +114,19 @@ export default () => {
 
   return (
     <>
-      <OnboardCard maxWidth={13} width='100%' minHeight={9}>
+      <OnboardCard
+        maxWidth={13}
+        width='100%'
+        minHeight={9}
+        bg={
+          hasLedgerError({
+            ...ledger,
+            otherError: generalError
+          })
+            ? 'status.fail.background'
+            : 'core.transparent'
+        }
+      >
         <StepHeader
           currentStep={2}
           description='Please complete the following steps so Filament can interface with
