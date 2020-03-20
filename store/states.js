@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import updateArrayItem from '../utils/updateArrayItem'
 import { setMsgInCache, removeMsgFromCache } from './cache'
 
