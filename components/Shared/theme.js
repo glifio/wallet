@@ -159,19 +159,21 @@ const theme = {
       lineHeight: 'solid',
       fontFamily: 'RT-Alias-Grotesk'
     },
-    hugeNumber: {
-      fontSize: 6,
-      fontWeight: 700,
-      margin: 0,
-      lineHeight: 'solid',
-      fontFamily: 'RT-Alias-Medium'
-    },
-    bigNumber: {
-      fontSize: 5,
-      fontWeight: 700,
-      margin: 0,
-      lineHeight: 'title',
-      fontFamily: 'RT-Alias-Medium'
+    num: {
+      l: {
+        fontSize: 5,
+        fontWeight: 700,
+        margin: 0,
+        lineHeight: 'title',
+        fontFamily: 'RT-Alias-Medium'
+      },
+      xl: {
+        fontSize: 6,
+        fontWeight: 700,
+        margin: 0,
+        lineHeight: 'solid',
+        fontFamily: 'RT-Alias-Medium'
+      }
     }
   },
   fonts: {

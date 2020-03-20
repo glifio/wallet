@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import { color, typography, layout, space } from 'styled-system'
 import styled from 'styled-components'
-import { node } from 'prop-types'
+import { node, oneOf } from 'prop-types'
 
 import theme from '../theme'
 
@@ -67,20 +67,13 @@ export const Label = forwardRef(({ children, ...props }, ref) => (
 
 Label.propTypes = { children: node.isRequired }
 
-export const HugeNumber = forwardRef(({ children, ...props }, ref) => (
-  <H2Base ref={ref} {...theme.textStyles.hugeNumber} {...props}>
+export const Num = forwardRef(({ children, size, ...props }, ref) => (
+  <H2Base ref={ref} {...theme.textStyles.num[size]} {...props}>
     {children}
   </H2Base>
 ))
 
-// Start number styles
-
-HugeNumber.propTypes = { children: node.isRequired }
-
-export const BigNumber = forwardRef(({ children, ...props }, ref) => (
-  <H2Base ref={ref} {...theme.textStyles.bigNumber} {...props}>
-    {children}
-  </H2Base>
-))
-
-BigNumber.propTypes = { children: node.isRequired }
+Num.propTypes = {
+  children: node.isRequired,
+  size: oneOf(Object.keys(theme.textStyles.num))
+}

@@ -1,9 +1,8 @@
 import React, { forwardRef } from 'react'
 import { func, bool } from 'prop-types'
-// import { BigNumber } from '@openworklabs/filecoin-number'
 import Box from '../Box'
 import Button from '../Button'
-import { HugeNumber, BigNumber, Title, Label } from '../Typography'
+import { Num, Label } from '../Typography'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 import { useConverter } from '../../../lib/Converter'
@@ -27,16 +26,18 @@ const BalanceCard = forwardRef(
       >
         <Label>Balance</Label>
         <Box overflow='hidden'>
-          <HugeNumber color='card.balance.color'>
+          <Num size='xl' color='card.balance.color'>
             {makeFriendlyBalance(balance, 5)}FIL
-          </HugeNumber>
+          </Num>
           {!converter && !converterError ? (
-            <BigNumber color='core.darkgray'>Loading USD</BigNumber>
+            <Num size='l' color='core.darkgray'>
+              Loading USD
+            </Num>
           ) : (
-            <BigNumber color='core.darkgray'>
+            <Num size='l' color='core.darkgray'>
               {makeFriendlyBalance(converter.fromFIL(balance.toFil()))}
               USD
-            </BigNumber>
+            </Num>
           )}
         </Box>
         <Box display='flex' justifyContent='space-between'>
