@@ -50,13 +50,7 @@ export default () => {
         alignItems='center'
         justifyContent='center'
       >
-        <OnboardCard
-          display='flex'
-          flexWrap='wrap'
-          flexDirection='row'
-          justifyContent='center'
-          width='100%'
-        >
+        <OnboardCard>
           <StepHeader
             currentStep={1}
             totalSteps={2}
