@@ -34,6 +34,7 @@ const setInputColor = props => {
 
 export const MnemonicWordInput = styled.input.attrs(props => ({
   ...contentProps,
+  borderRadius: 0,
   color: setInputColor(props)
 }))`
   &:focus {
