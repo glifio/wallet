@@ -7,7 +7,8 @@ import {
   Menu,
   MenuItem,
   DisplayWord as Word,
-  InputWord
+  InputWord,
+  MnemonicWordContainer
 } from '../../../../Shared'
 import { MNEMONIC_PROPTYPE } from '../../../../../customPropTypes'
 import generateRandomWords from '../../../../../utils/generateRandomWords'
@@ -31,13 +32,22 @@ const WordPrompt = ({
       <Box
         display='flex'
         flexDirection='row'
-        width='100%'
-        justifyContent='space-between'
-        height={7}
+        flexWrap='wrap'
+        flexGrow='99'
+        alignItems='center'
+        justifyContent={['center', 'space-between']}
+        my={3}
+        minHeight={7}
       >
-        <Title mt={3}>Add the correct words to the empty inputs</Title>
+        <Title
+          color={importSeedError ? 'status.fail.background' : 'core.nearblack'}
+        >
+          {importSeedError
+            ? 'One or more of your seed phrase words was incorrect. Please try again.'
+            : 'Add the correct words to the empty inputs'}
+        </Title>
       </Box>
-      <Menu
+      <MnemonicWordContainer
         display='flex'
         alignItems='center'
         justifyItems='center'
@@ -62,7 +72,7 @@ const WordPrompt = ({
             </MenuItem>
           )
         })}
-      </Menu>
+      </MnemonicWordContainer>
     </>
   )
 }
