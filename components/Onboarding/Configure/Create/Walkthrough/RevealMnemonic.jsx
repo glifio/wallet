@@ -13,9 +13,9 @@ import {
   Box,
   Button,
   DisplayWord as Word,
-  Menu,
   MenuItem,
-  Title
+  Title,
+  MnemonicWordContainer
 } from '../../../../Shared'
 import { MNEMONIC_PROPTYPE } from '../../../../../customPropTypes'
 import copyToClipboard from '../../../../../utils/copyToClipboard'
@@ -57,6 +57,7 @@ const DownloadButton = styled.a.attrs(() => ({
 
 const Reveal = ({ mnemonic, valid }) => {
   const [objectUrl, setObjectUrl] = useState('')
+  const [copied, setCopied] = useState(false)
   useEffect(() => {
     const file = new File([mnemonic], 'dontlookhere.txt', {
       type: 'text/plain'
@@ -70,17 +71,23 @@ const Reveal = ({ mnemonic, valid }) => {
       <Box
         display='flex'
         flexDirection='row'
-        width='100%'
-        justifyContent='space-between'
-        height={7}
+        flexWrap='wrap'
+        flexGrow='99'
+        alignItems='center'
+        justifyContent={['center', 'space-between']}
+        my={3}
+        minHeight={7}
       >
-        <Title mt={3}>Write down your seed phrase</Title>
-        <Box display='flex' flexDirection='row'>
+        <Title>Write down your seed phrase</Title>
+        <Box mt={[2, 0]}>
           <Button
             height='max-content'
-            onClick={() => copyToClipboard(mnemonic)}
+            onClick={() => {
+              copyToClipboard(mnemonic)
+              setCopied(true)
+            }}
             variant='secondary'
-            title='Copy'
+            title={copied ? 'Copied' : 'Copy'}
             mx={2}
           />
           <DownloadButton
@@ -94,22 +101,16 @@ const Reveal = ({ mnemonic, valid }) => {
         </Box>
       </Box>
 
-      <Menu
-        mt={3}
-        display='flex'
-        alignItems='center'
-        justifyItems='center'
-        flexWrap='wrap'
-      >
+      <MnemonicWordContainer>
         {mnemonic.split(' ').map((word, i) => {
           return (
             /* eslint-disable react/no-array-index-key */
             <MenuItem key={i}>
-              <Word num={i + 1} word={word} valid={valid} />
+              <Word ml={0} num={i + 1} word={word} valid={valid} />
             </MenuItem>
           )
         })}
-      </Menu>
+      </MnemonicWordContainer>
     </>
   )
 }

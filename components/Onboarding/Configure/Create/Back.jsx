@@ -8,12 +8,17 @@ const Back = ({ setReturningHome }) => {
   const { setWalletType } = useWalletProvider()
   return (
     <Box display='flex' flexDirection='column' alignItems='center' mt={8}>
-      <Card width={11} height={11}>
+      <Card
+        display='flex'
+        flexDirection='column'
+        justifyContent='space-between'
+        width='100%'
+      >
         <Glyph acronym='Bk' />
         <Text>Do you really wish to exit onboarding?</Text>
         <Text>You will be taken back to the home screen.</Text>
       </Card>
-      <Box mt={6} display='flex' flexDirection='row' justifyContent='center'>
+      <Box mt={6} display='flex' justifyContent='space-between' width='100%'>
         <Button
           title='No, keep onboarding'
           onClick={() => setReturningHome(false)}
