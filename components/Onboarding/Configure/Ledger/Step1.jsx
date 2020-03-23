@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import {
   Box,
@@ -13,6 +14,7 @@ import { IconLedger } from '../../../Shared/Icons'
 
 import { useWalletProvider } from '../../../../WalletProvider'
 import isValidBrowser from '../../../../utils/isValidBrowser'
+import { hasLedgerError } from '../../../../utils/ledger/reportLedgerConfigError'
 
 const Step1Helper = ({ inUseByAnotherApp, connectedFailure }) => {
   return (
@@ -26,10 +28,14 @@ const Step1Helper = ({ inUseByAnotherApp, connectedFailure }) => {
     >
       {connectedFailure && (
         <>
-          <Box display='flex' alignItems='center'>
+          <Box
+            display='flex'
+            alignItems='center'
+            color='status.fail.foreground'
+          >
             <Title>Oops!</Title>
           </Box>
-          <Box>
+          <Box color='status.fail.foreground'>
             <Text mb={2}>We couldn&rsquo;t connect to your Ledger Device.</Text>
             <Text>Please unlock your Ledger and try again.</Text>
           </Box>
@@ -78,22 +84,35 @@ export default (inUseByAnotherApp, connectedFailure) => {
     setWalletType(null)
     router.push(`/error/unsupported-browser?${params.toString()}`)
   }
+  const generalError = useSelector(state => state.error)
+
   return (
     <>
       <OnboardCard
         maxWidth={13}
         width='100%'
-        // bg={
-        //   connectedFailure || inUseByAnotherApp
-        //     ? 'card.error.background'
-        //     : 'core.transparent'
-        // }
+        bg={
+          hasLedgerError({
+            ...ledger,
+            otherError: generalError
+          })
+            ? 'status.fail.background'
+            : 'core.transparent'
+        }
       >
         <StepHeader
           currentStep={1}
           loading={ledger.connecting}
           totalSteps={2}
           Icon={IconLedger}
+          color={
+            hasLedgerError({
+              ...ledger,
+              otherError: generalError
+            })
+              ? 'status.fail.foreground'
+              : 'core.nearblack'
+          }
         />
         <Step1Helper
           connectedFailure={ledger.connectedFailure}
