@@ -88,8 +88,8 @@ const MnemonicWord = ({
       })}
       border={1}
       borderColor={
-        importSeedError && (!word || word !== wordToMatch)
-          ? 'status.fail.background'
+        !word || word !== wordToMatch
+          ? importSeedError && 'status.fail.background'
           : 'core.primary'
       }
     >
