@@ -102,7 +102,7 @@ export default () => {
                 >
                   <StepHeader
                     currentStep={walkthroughStep}
-                    totalSteps={4}
+                    totalSteps={3}
                     glyphAcronym='Sp'
                   />
                   {mnemonic && (
@@ -116,11 +116,10 @@ export default () => {
                   )}
                 </OnboardCard>
                 <Box
-                  maxWidth={16}
                   mt={6}
                   display='flex'
-                  flexDirection='row'
-                  justifyContent='center'
+                  width='100%'
+                  justifyContent='space-between'
                 >
                   <Button
                     title='Back'
