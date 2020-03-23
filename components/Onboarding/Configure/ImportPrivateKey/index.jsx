@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
-import { Box, Button, Card, Title, Input, StepCard } from '../../../Shared'
+import {
+  Box,
+  Button,
+  OnboardCard,
+  Title,
+  Text,
+  Input,
+  StepHeader
+} from '../../../Shared'
 
 import { useWalletProvider } from '../../../../WalletProvider'
 import CreateSingleKeyProvider from '../../../../WalletProvider/Subproviders/SingleKeyProvider'
@@ -42,20 +50,20 @@ export default () => {
         alignItems='center'
         justifyContent='center'
       >
-        <Box
+        <OnboardCard
           display='flex'
           flexWrap='wrap'
           flexDirection='row'
           justifyContent='center'
           width='100%'
         >
-          <StepCard
+          <StepHeader
             currentStep={1}
             totalSteps={2}
-            description='Please enter your private key.'
+            description='Import'
             glyphAcronym='Pk'
           />
-          <Card
+          <Box
             width='auto'
             display='flex'
             flexDirection='column'
@@ -63,16 +71,17 @@ export default () => {
             borderColor='core.lightgray'
             m={2}
           >
-            <Title mt={3}>Please input your private key below</Title>
+            <Title mt={3}>Import</Title>
+            <Text>Please input your private key below</Text>
             <Input.PrivateKey
               error={privateKeyError}
               setError={setPrivateKeyError}
               value={privateKey}
               onChange={e => setPrivateKey(e.target.value)}
             />
-          </Card>
-        </Box>
-        <Box mt={6} display='flex' flexDirection='row' justifyContent='center'>
+          </Box>
+        </OnboardCard>
+        <Box mt={6} display='flex' width='100%' justifyContent='space-between'>
           <Button
             title='Back'
             onClick={() => setWalletType(null)}
