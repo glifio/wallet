@@ -57,6 +57,7 @@ const DownloadButton = styled.a.attrs(() => ({
 
 const Reveal = ({ mnemonic, valid }) => {
   const [objectUrl, setObjectUrl] = useState('')
+  const [copied, setCopied] = useState(false)
   useEffect(() => {
     const file = new File([mnemonic], 'dontlookhere.txt', {
       type: 'text/plain'
@@ -81,9 +82,12 @@ const Reveal = ({ mnemonic, valid }) => {
         <Box mt={[2, 0]}>
           <Button
             height='max-content'
-            onClick={() => copyToClipboard(mnemonic)}
+            onClick={() => {
+              copyToClipboard(mnemonic)
+              setCopied(true)
+            }}
             variant='secondary'
-            title='Copy'
+            title={copied ? 'Copied' : 'Copy'}
             mx={2}
           />
           <DownloadButton
