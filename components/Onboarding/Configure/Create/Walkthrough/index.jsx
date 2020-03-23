@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { MNEMONIC_PROPTYPE } from '../../../../../customPropTypes'
 import RevealMnemonic from './RevealMnemonic'
-import { Card, Text } from '../../../../Shared'
+import { Text } from '../../../../Shared'
 import WordPrompt from './WordPrompt'
 
 const Stage = ({
@@ -47,28 +47,13 @@ const Walkthrough = ({
   setCanContinue
 }) => {
   return (
-    <Card
-      maxWidth={16}
-      width='100%'
-      m={2}
-      display='flex'
-      flexDirection='column'
-      justifyContent='space-between'
-      borderColor='core.lightgray'
-    >
-      <Stage
-        canContinue={canContinue}
-        importSeedError={importSeedError}
-        mnemonic={mnemonic}
-        walkthroughStep={walkthroughStep}
-        setCanContinue={setCanContinue}
-      />
-      {importSeedError && (
-        <Text color='status.fail.background'>
-          One or more of your seed phrase words was incorrect.
-        </Text>
-      )}
-    </Card>
+    <Stage
+      canContinue={canContinue}
+      importSeedError={importSeedError}
+      mnemonic={mnemonic}
+      walkthroughStep={walkthroughStep}
+      setCanContinue={setCanContinue}
+    />
   )
 }
 

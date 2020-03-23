@@ -34,6 +34,7 @@ const setInputColor = props => {
 
 export const MnemonicWordInput = styled.input.attrs(props => ({
   ...contentProps,
+  borderRadius: 0,
   color: setInputColor(props)
 }))`
   &:focus {
@@ -88,8 +89,8 @@ const MnemonicWord = ({
       })}
       border={1}
       borderColor={
-        importSeedError && (!word || word !== wordToMatch)
-          ? 'status.fail.background'
+        !word || word !== wordToMatch
+          ? importSeedError && 'status.fail.background'
           : 'core.primary'
       }
     >

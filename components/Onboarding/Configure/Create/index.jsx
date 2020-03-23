@@ -1,7 +1,14 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
-import { Box, Button, StepCard, Loading, Label } from '../../../Shared'
+import {
+  Box,
+  Button,
+  OnboardCard,
+  StepHeader,
+  Loading,
+  Label
+} from '../../../Shared'
 
 import CreateHDWalletProvider from '../../../../WalletProvider/Subproviders/HDWalletProvider'
 import GenerateMnemonic from '../../../../WalletProvider/GenerateMnemonic'
@@ -86,16 +93,16 @@ export default () => {
                 justifyContent='center'
                 alignItems='center'
               >
-                <Box
+                <OnboardCard
                   display='flex'
                   flexDirection='row'
                   flexWrap='wrap'
                   justifyContent='center'
+                  maxWidth={16}
                 >
-                  <StepCard
+                  <StepHeader
                     currentStep={walkthroughStep}
-                    totalSteps={4}
-                    description='Please complete the following steps to create a new wallet.'
+                    totalSteps={3}
                     glyphAcronym='Sp'
                   />
                   {mnemonic && (
@@ -107,13 +114,12 @@ export default () => {
                       setCanContinue={setCanContinue}
                     />
                   )}
-                </Box>
+                </OnboardCard>
                 <Box
-                  maxWidth={16}
                   mt={6}
                   display='flex'
-                  flexDirection='row'
-                  justifyContent='center'
+                  width='100%'
+                  justifyContent='space-between'
                 >
                   <Button
                     title='Back'

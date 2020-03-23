@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Box from '../Box'
-import Card from '../Card'
+import { Menu, MenuItem } from '../Menu'
 import Stepper from '../Stepper'
 import Loading from '../LoaderGlyph'
 import Glyph from '../Glyph'
@@ -17,7 +17,7 @@ const StepCard = ({
   totalSteps
 }) => {
   return (
-    <Card
+    <Menu
       display='flex'
       flexDirection='column'
       justifyContent='space-between'
@@ -25,8 +25,10 @@ const StepCard = ({
       height={300}
       m={2}
     >
-      <Box display='flex' alignItems='center'>
+      <MenuItem display='flex' justifyContent='space-between'>
         {loading ? <Loading /> : <Glyph Icon={Icon} acronym={glyphAcronym} />}
+      </MenuItem>
+      <MenuItem>
         <Stepper
           textColor='text'
           completedDotColor='status.success.background'
@@ -35,11 +37,13 @@ const StepCard = ({
           totalSteps={totalSteps}
           ml={4}
         />
-      </Box>
-      <Box display='block' mt={3}>
-        <Text>{description}</Text>
-      </Box>
-    </Card>
+      </MenuItem>
+      <Menu>
+        <MenuItem mt={3}>
+          <Text>{description}</Text>
+        </MenuItem>
+      </Menu>
+    </Menu>
   )
 }
 
@@ -58,3 +62,54 @@ StepCard.defaultProps = {
 }
 
 export default StepCard
+
+export const StepHeader = ({
+  currentStep,
+  title,
+  glyphAcronym,
+  Icon,
+  loading,
+  totalSteps
+}) => {
+  return (
+    <Menu
+      display='flex'
+      alignItems='center'
+      justifyContent='space-between'
+      borderColor='silver'
+      width='100%'
+    >
+      <MenuItem display='flex' justifyContent='space-between'>
+        {loading ? <Loading /> : <Glyph Icon={Icon} acronym={glyphAcronym} />}
+      </MenuItem>
+      <MenuItem mt={3}>
+        <Text>{title}</Text>
+      </MenuItem>
+      <MenuItem>
+        <Stepper
+          textColor='text'
+          completedDotColor='status.success.background'
+          incompletedDotColor='status.inactive'
+          step={currentStep}
+          totalSteps={totalSteps}
+          ml={4}
+          my={0}
+        />
+      </MenuItem>
+    </Menu>
+  )
+}
+
+StepHeader.propTypes = {
+  title: PropTypes.string,
+  loading: PropTypes.bool,
+  currentStep: PropTypes.number.isRequired,
+  glyphAcronym: PropTypes.string,
+  Icon: PropTypes.object,
+  totalSteps: PropTypes.number.isRequired
+}
+
+StepHeader.defaultProps = {
+  title: '',
+  loading: false
+}
