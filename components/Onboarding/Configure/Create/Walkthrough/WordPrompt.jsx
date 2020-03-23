@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import {
   Box,
   Title,
-  Menu,
   MenuItem,
   DisplayWord as Word,
   InputWord,
