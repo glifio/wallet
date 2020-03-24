@@ -18,6 +18,7 @@ import { ButtonClose } from '../../Shared/IconButtons'
 import { MESSAGE_PROPS } from '../../../customPropTypes'
 import { useConverter } from '../../../lib/Converter'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
+import noop from '../../../utils/noop'
 
 const MessageDetailCard = styled(Card).attrs(() => ({
   my: 2,
@@ -97,10 +98,10 @@ const MessageDetail = ({ close, message }) => {
           balance={new FilecoinNumber('0.1', 'fil')}
           label='Amount'
           disabled
-          amount={message.value}
+          amount={new FilecoinNumber(message.value, 'fil').toAttoFil()}
         />
         <Input.Text
-          onChange={() => {}}
+          onChange={noop}
           label='Transfer Fee'
           value={message.gas_used}
           backgroundColor='background.screen'
@@ -118,7 +119,7 @@ const MessageDetail = ({ close, message }) => {
           <Box display='flex' flexDirection='column'>
             <BigTitle color='core.primary'>
               {makeFriendlyBalance(
-                new FilecoinNumber(message.value, 'attofil').plus(
+                new FilecoinNumber(message.value, 'fil').plus(
                   new FilecoinNumber(message.gas_used, 'attofil')
                 ),
                 18
@@ -128,7 +129,7 @@ const MessageDetail = ({ close, message }) => {
             <Title color='core.darkgray'>
               {makeFriendlyBalance(
                 converter.fromFIL(
-                  new FilecoinNumber(message.value, 'attofil').plus(
+                  new FilecoinNumber(message.value, 'fil').plus(
                     new FilecoinNumber(message.gas_used, 'attofil')
                   )
                 ),

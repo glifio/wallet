@@ -7,13 +7,11 @@ export const initialState = {
   selectedWalletIdx: 0,
   error: null,
   messages: {
-    page: 0,
     loading: false,
     loadedSuccess: false,
     loadedFailure: false,
     pending: [],
     confirmed: [],
-    links: {},
     paginating: false
   },
   network: 't'

@@ -141,10 +141,7 @@ const MessageHistoryRow = ({
           >
             <MenuItem display='flex'>
               <Text color='core.nearblack' m={0}>
-                {makeFriendlyBalance(
-                  new BigNumber(new FilecoinNumber(value, 'attofil').toFil()),
-                  7
-                )}
+                {makeFriendlyBalance(new BigNumber(value), 7)}
               </Text>
             </MenuItem>
             <MenuItem display='flex'>
@@ -152,14 +149,9 @@ const MessageHistoryRow = ({
                 {converter &&
                   !converterError &&
                   makeFriendlyBalance(
-                    converter.fromFIL(
-                      new BigNumber(
-                        new FilecoinNumber(value, 'attofil').toFil()
-                      )
-                    ),
+                    converter.fromFIL(new BigNumber(value)),
                     7
                   )}{' '}
-                USD
               </Text>
             </MenuItem>
           </Menu>
@@ -177,7 +169,7 @@ const MessageHistoryRow = ({
                 FIL
               </Text>
               <Text color='core.silver' m={0} mb={0}>
-                Fiat
+                USD
               </Text>
             </MenuItem>
           </Menu>
