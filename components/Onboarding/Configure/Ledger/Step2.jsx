@@ -100,26 +100,19 @@ export default () => {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
 
+  const error = hasLedgerError({
+    ...ledger,
+    otherError: generalError
+  })
+
   return (
     <>
       <OnboardCard
         maxWidth={13}
         width='100%'
         minHeight={9}
-        backgroundColor={
-          hasLedgerError({
-            ...ledger,
-            otherError: generalError
-          }) && 'status.fail.background'
-        }
-        bg={
-          hasLedgerError({
-            ...ledger,
-            otherError: generalError
-          })
-            ? 'status.fail.background'
-            : 'core.transparent'
-        }
+        borderColor={error && 'status.fail.background'}
+        bg={error ? 'status.fail.background' : 'core.transparent'}
       >
         <StepHeader
           currentStep={2}
@@ -128,12 +121,7 @@ export default () => {
           loading={!ledger.userImportFailure && loading}
           totalSteps={2}
           Icon={IconLedger}
-          error={
-            hasLedgerError({
-              ...ledger,
-              otherError: generalError
-            }) && true
-          }
+          error={error}
         />
         <Step2Helper
           connectedFailure={ledger.connectedFailure}
