@@ -126,25 +126,6 @@ export const fetchingNextPage = state => ({
   }
 })
 
-// export const fetchedNextPageSuccess = (state, { messages, links }) => ({
-//   ...state,
-//   messages: {
-//     ...state.messages,
-//     paginating: false,
-//     confirmed: [...state.messages.confirmed, ...messages],
-//     links
-//   }
-// })
-
-// export const fetchedNextPageFailure = (state, error) => ({
-//   ...state,
-//   messages: {
-//     ...state.messages,
-//     paginating: false
-//   },
-//   error
-// })
-
 export const error = (state, err) => ({
   ...state,
   error: err
