@@ -2,6 +2,7 @@ import React from 'react'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { func } from 'prop-types'
 import styled from 'styled-components'
+import dayjs from 'dayjs'
 
 import {
   Box,
@@ -15,7 +16,7 @@ import {
   IconMessageStatus
 } from '../../Shared'
 import { ButtonClose } from '../../Shared/IconButtons'
-import { MESSAGE_PROPS } from '../../../customPropTypes'
+import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import { useConverter } from '../../../lib/Converter'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 import noop from '../../../utils/noop'
@@ -32,7 +33,7 @@ const MessageDetailCard = styled(Card).attrs(() => ({
   background-color: ${props => props.theme.colors.background.screen};
 `
 
-const MessageDetail = ({ close, message }) => {
+const MessageDetail = ({ address, close, message }) => {
   const { converter } = useConverter()
   return (
     <MessageDetailCard>
@@ -80,14 +81,14 @@ const MessageDetail = ({ close, message }) => {
                   : 'status.pending.foreground'
               }
             >
-              SENT
+              {address === message.from ? 'SENT' : 'RECEIVED'}
             </Label>
           </Box>
           <Box display='flex' flexDirection='row' mr={2}>
             <Text my='0' mr={1} color='core.lightgray'>
-              Jan 24,
+              {dayjs.unix(message.timestamp).format('MMM DD')}
             </Text>
-            <Text my='0'>11:48PM</Text>
+            <Text my='0'>{dayjs.unix(message.timestamp).format('hh:mmA')}</Text>
           </Box>
         </Box>
       </Box>
@@ -144,6 +145,10 @@ const MessageDetail = ({ close, message }) => {
   )
 }
 
-MessageDetail.propTypes = { close: func, message: MESSAGE_PROPS }
+MessageDetail.propTypes = {
+  address: ADDRESS_PROPTYPE,
+  close: func,
+  message: MESSAGE_PROPS
+}
 
 export default MessageDetail

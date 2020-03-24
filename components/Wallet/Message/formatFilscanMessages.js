@@ -3,7 +3,8 @@ export default messages =>
     const formattedMsg = {
       ...message.msg,
       cid: message.cid,
-      gas_used: '122'
+      gas_used: '122',
+      timestamp: message.msgcreate
     }
     return formattedMsg
   })

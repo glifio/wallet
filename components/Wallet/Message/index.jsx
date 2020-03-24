@@ -14,6 +14,7 @@ export default () => {
     <>
       {selectedMessageCid ? (
         <MessageDetail
+          address={wallet.address}
           close={() => setSelectedMessageCid('')}
           message={messages.find(({ cid }) => cid === selectedMessageCid)}
         />

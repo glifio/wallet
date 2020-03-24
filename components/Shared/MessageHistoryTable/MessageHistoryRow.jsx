@@ -1,4 +1,5 @@
 import React from 'react'
+import dayjs from 'dayjs'
 import { BigNumber } from '@openworklabs/filecoin-number'
 import { bool, string, func } from 'prop-types'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../customPropTypes'
@@ -72,7 +73,7 @@ ActionText.propTypes = {
 
 const MessageHistoryRow = ({
   address,
-  message: { to, from, value, status, cid },
+  message: { to, from, value, status, cid, timestamp },
   selectMessage
 }) => {
   const { converter, converterError } = useConverter()
@@ -96,7 +97,7 @@ const MessageHistoryRow = ({
             </MenuItem>
             <MenuItem>
               <Text color='core.silver' m={0}>
-                Date
+                {dayjs.unix(timestamp).format('MMM DD, YYYY')}
               </Text>
             </MenuItem>
           </Menu>
