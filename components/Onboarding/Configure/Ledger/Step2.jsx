@@ -8,7 +8,6 @@ import {
   OnboardCard,
   Text,
   Title,
-  StepCard,
   StepHeader
 } from '../../../Shared'
 import { IconLedger } from '../../../Shared/Icons'
@@ -36,17 +35,6 @@ const Step2Helper = ({
     borderColor='silver'
     width='100%'
     minHeight={9}
-    bg={
-      hasLedgerError({
-        connectedFailure,
-        ledgerLocked,
-        filecoinAppNotOpen,
-        replug,
-        ledgerBusy,
-        inUseByAnotherApp,
-        otherError
-      }) && 'card.error.background'
-    }
     mt={5}
   >
     {hasLedgerError({
@@ -59,10 +47,10 @@ const Step2Helper = ({
       otherError
     }) ? (
       <>
-        <Box display='flex' alignItems='center'>
+        <Box display='flex' alignItems='center' color='status.fail.foreground'>
           <Title>Oops!</Title>
         </Box>
-        <Box mt={3}>
+        <Box mt={3} color='status.fail.foreground'>
           <Text mb={1}>We had trouble communicating with your device.</Text>
           <Text>
             {reportLedgerConfigError({
@@ -118,6 +106,12 @@ export default () => {
         maxWidth={13}
         width='100%'
         minHeight={9}
+        backgroundColor={
+          hasLedgerError({
+            ...ledger,
+            otherError: generalError
+          }) && 'status.fail.background'
+        }
         bg={
           hasLedgerError({
             ...ledger,
@@ -134,6 +128,12 @@ export default () => {
           loading={!ledger.userImportFailure && loading}
           totalSteps={2}
           Icon={IconLedger}
+          error={
+            hasLedgerError({
+              ...ledger,
+              otherError: generalError
+            }) && true
+          }
         />
         <Step2Helper
           connectedFailure={ledger.connectedFailure}

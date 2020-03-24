@@ -59,10 +59,15 @@ const Step1Helper = ({ inUseByAnotherApp, connectedFailure }) => {
       )}
       {!inUseByAnotherApp && !connectedFailure && (
         <>
-          <Box display='flex' alignItems='center' mt={4}>
+          <Box
+            display='flex'
+            alignItems='center'
+            mt={4}
+            color='status.fail.foreground'
+          >
             <Title>Connect</Title>
           </Box>
-          <Box mt={3}>
+          <Box mt={3} color='status.fail.foreground'>
             <Text>Please connect your Ledger to your computer.</Text>
           </Box>
         </>
@@ -91,8 +96,17 @@ export default (inUseByAnotherApp, connectedFailure) => {
       <OnboardCard
         maxWidth={13}
         width='100%'
+        borderColor={
+          inUseByAnotherApp ||
+          (connectedFailure({
+            ...ledger,
+            otherError: generalError
+          }) &&
+            'status.fail.background')
+        }
         bg={
-          hasLedgerError({
+          inUseByAnotherApp ||
+          connectedFailure({
             ...ledger,
             otherError: generalError
           })
@@ -105,13 +119,22 @@ export default (inUseByAnotherApp, connectedFailure) => {
           loading={ledger.connecting}
           totalSteps={2}
           Icon={IconLedger}
+          error={
+            inUseByAnotherApp ||
+            (connectedFailure({
+              ...ledger,
+              otherError: generalError
+            }) &&
+              true)
+          }
           color={
-            hasLedgerError({
+            inUseByAnotherApp ||
+            connectedFailure({
               ...ledger,
               otherError: generalError
             })
               ? 'status.fail.foreground'
-              : 'core.nearblack'
+              : 'core.transparent'
           }
         />
         <Step1Helper
