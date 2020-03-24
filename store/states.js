@@ -101,7 +101,7 @@ export const fetchedConfirmedMessagesSuccess = (
     loadedSuccess: true,
     loadedFailure: false,
     confirmed: [...state.messages.confirmed, ...messages],
-    total,
+    total: total || state.messages.total,
     paginating: false
   }
 })

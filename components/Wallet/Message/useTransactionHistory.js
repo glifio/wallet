@@ -10,10 +10,12 @@ import {
 } from '../../../store/actions'
 import { FILSCAN } from '../../../constants'
 import formatFilscanMessages from './formatFilscanMessages'
+import useWallet from '../../../WalletProvider/useWallet'
 
 const PAGINATION_COUNT = 8
 
-export default address => {
+export default () => {
+  const { address } = useWallet()
   const dispatch = useDispatch()
   const {
     loading,
@@ -37,53 +39,64 @@ export default address => {
     }
   })
 
-  const fetchInitialData = useCallback(async () => {
-    if (total === confirmed.length) return
-    try {
-      const { data } = await axios.post(
-        `${FILSCAN}/messages/MessageByAddress`,
-        {
-          method: '',
-          begindex: confirmed.length,
-          count: PAGINATION_COUNT,
-          // address,
-          address: 't1hn7twanih6djfrg7s3phaek3ayge72c6vhndrhq',
-          from_to: ''
-        }
-      )
+  const fetchInitialData = useCallback(
+    async (address, total, cachedCount) => {
+      if (total === cachedCount) return
+      try {
+        const { data } = await axios.post(
+          `${FILSCAN}/messages/MessageByAddress`,
+          {
+            method: '',
+            begindex: cachedCount,
+            count: PAGINATION_COUNT,
+            address,
+            from_to: ''
+          }
+        )
 
-      // filscan reports 3 as success code https://github.com/filecoin-shipyard/filscan-backend/blob/master/Filscan_Interface_v1.0.md#2public-response-parameters
-      if (data.res.code !== 3) {
-        dispatch(
-          fetchedConfirmedMessagesFailure(
-            new Error('Error fetching from Filscan: ', data.res.msg)
+        // filscan reports 3 as success code https://github.com/filecoin-shipyard/filscan-backend/blob/master/Filscan_Interface_v1.0.md#2public-response-parameters
+        if (data.res.code !== 3) {
+          dispatch(
+            fetchedConfirmedMessagesFailure(
+              new Error('Error fetching from Filscan: ', data.res.msg)
+            )
           )
-        )
-      } else {
-        const formattedMessages = formatFilscanMessages(data.data.data)
-        dispatch(
-          fetchedConfirmedMessagesSuccess(
-            formattedMessages,
-            Number(data.data.total)
+        } else {
+          const formattedMessages = formatFilscanMessages(data.data.data)
+          dispatch(
+            fetchedConfirmedMessagesSuccess(
+              formattedMessages,
+              Number(data.data.total)
+            )
           )
-        )
+        }
+      } catch (err) {
+        dispatch(fetchedConfirmedMessagesFailure(new Error(err.message)))
       }
-    } catch (err) {
-      dispatch(fetchedConfirmedMessagesFailure(new Error(err.message)))
-    }
-  }, [address, confirmed.length, dispatch, total])
+    },
+    [dispatch]
+  )
 
   const showMore = useCallback(() => {
     dispatch(fetchingNextPage())
-    fetchInitialData()
-  }, [fetchInitialData, dispatch])
+    fetchInitialData(address, total, confirmed.length)
+  }, [address, confirmed.length, total, fetchInitialData, dispatch])
 
   useEffect(() => {
     if (!loading && !loadedFailure && !loadedSuccess) {
       dispatch(fetchingConfirmedMessages())
-      fetchInitialData()
+      fetchInitialData(address, total, confirmed.length)
     }
-  }, [loading, loadedFailure, loadedSuccess, fetchInitialData, dispatch])
+  }, [
+    address,
+    total,
+    confirmed.length,
+    loading,
+    loadedFailure,
+    loadedSuccess,
+    fetchInitialData,
+    dispatch
+  ])
 
   return {
     loading,

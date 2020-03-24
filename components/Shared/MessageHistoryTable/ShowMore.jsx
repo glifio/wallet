@@ -1,31 +1,32 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import MessageHistoryRowContainer from './MessageHistoryRowContainer'
 import { Text } from '../Typography'
+import useTransactionHistory from '../../Wallet/Message/useTransactionHistory'
 
-const ShowMore = ({ showMore }) => {
+export default () => {
+  const { paginating, showMore, confirmed, total } = useTransactionHistory()
   return (
-    <MessageHistoryRowContainer
-      css={`
-        cursor: pointer;
-      `}
-    >
-      <Text
-        role='button'
-        onClick={showMore}
-        color='core.primary'
-        width='100%'
-        textAlign='center'
-      >
-        View More
-      </Text>
-    </MessageHistoryRowContainer>
+    <>
+      {confirmed.length === total ? (
+        <></>
+      ) : (
+        <MessageHistoryRowContainer
+          css={`
+            cursor: pointer;
+          `}
+        >
+          <Text
+            role='button'
+            onClick={showMore}
+            color='core.primary'
+            width='100%'
+            textAlign='center'
+          >
+            {paginating ? 'Loading' : 'View More'}
+          </Text>
+        </MessageHistoryRowContainer>
+      )}
+    </>
   )
 }
-
-ShowMore.propTypes = {
-  showMore: PropTypes.func.isRequired
-}
-
-export default ShowMore

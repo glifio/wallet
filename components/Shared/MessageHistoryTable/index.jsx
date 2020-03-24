@@ -11,13 +11,7 @@ import EmptyHistory from './EmptyHistory'
 import LoadingScreen from '../LoadingScreen'
 import ShowMore from './ShowMore'
 
-const MessageHistoryTable = ({
-  address,
-  messages,
-  selectMessage,
-  loading,
-  showMore
-}) => {
+const MessageHistoryTable = ({ address, messages, selectMessage, loading }) => {
   return (
     <Box maxWidth={16} width='100%' border='none'>
       <Box display='flex' alignItems='center' justifyContent='flex-start'>
@@ -38,7 +32,7 @@ const MessageHistoryTable = ({
                   selectMessage={selectMessage}
                 />
               ))}
-              <ShowMore showMore={showMore} />
+              <ShowMore />
             </>
           ) : (
             <EmptyHistory />
@@ -59,8 +53,7 @@ MessageHistoryTable.propTypes = {
    */
   messages: PropTypes.arrayOf(MESSAGE_PROPS),
   selectMessage: PropTypes.func.isRequired,
-  loading: PropTypes.bool,
-  showMore: PropTypes.func.isRequired
+  loading: PropTypes.bool
 }
 
 MessageHistoryTable.defaultProps = {
