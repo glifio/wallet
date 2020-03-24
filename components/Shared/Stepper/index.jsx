@@ -16,7 +16,7 @@ const Stepper = forwardRef(
     ref
   ) => (
     <Box display='flex' ref={ref} {...props}>
-      <Text color={textColor} mr={2}>
+      <Text color={textColor} mr={2} my={0}>
         Step {step}
       </Text>
       {new Array(totalSteps).fill(true).map((_, i) => (

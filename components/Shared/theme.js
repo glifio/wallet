@@ -24,6 +24,10 @@ export const baseColors = {
     light: '#FC6D6F',
     dark: '#660000'
   },
+  orange: {
+    light: '#FF9E80',
+    dark: '#661800'
+  },
   yellow: {
     light: '#FFDC99',
     deep: '#FCA703'
@@ -105,11 +109,15 @@ const colors = {
   status: {
     success: {
       background: baseColors.green.primary,
-      foreground: baseColors.mono.darkgray
+      foreground: baseColors.green.darker
     },
     pending: {
       background: baseColors.yellow.deep,
       foreground: baseColors.mono.darkgray
+    },
+    warning: {
+      background: baseColors.orange.light,
+      foreground: baseColors.orange.dark
     },
     fail: {
       background: baseColors.red.light,
@@ -139,11 +147,10 @@ const theme = {
     },
     title: {
       fontSize: 4,
-      fontColor: core.primary,
-      fontWeight: 700,
+      fontWeight: 400,
       margin: 0,
       lineHeight: 'title',
-      fontFamily: 'RT-Alias-Medium'
+      fontFamily: 'RT-Alias-Grotesk'
     },
     text: {
       fontSize: 3,
@@ -158,6 +165,22 @@ const theme = {
       fontWeight: 400,
       lineHeight: 'solid',
       fontFamily: 'RT-Alias-Grotesk'
+    },
+    num: {
+      l: {
+        fontSize: 5,
+        fontWeight: 700,
+        margin: 0,
+        lineHeight: 'title',
+        fontFamily: 'RT-Alias-Medium'
+      },
+      xl: {
+        fontSize: 6,
+        fontWeight: 700,
+        margin: 0,
+        lineHeight: 'solid',
+        fontFamily: 'RT-Alias-Medium'
+      }
     }
   },
   fonts: {

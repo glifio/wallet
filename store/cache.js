@@ -1,6 +1,6 @@
 const storage = {
-  getItem: () => console.log('getting item'),
-  setItem: () => console.log('setting items')
+  getItem: () => {},
+  setItem: () => {}
 }
 
 /*

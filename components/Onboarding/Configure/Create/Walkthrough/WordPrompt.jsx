@@ -2,11 +2,12 @@ import React, { useRef, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 import {
+  Box,
   Title,
-  Menu,
   MenuItem,
   DisplayWord as Word,
-  InputWord
+  InputWord,
+  MnemonicWordContainer
 } from '../../../../Shared'
 import { MNEMONIC_PROPTYPE } from '../../../../../customPropTypes'
 import generateRandomWords from '../../../../../utils/generateRandomWords'
@@ -27,12 +28,30 @@ const WordPrompt = ({
   })
   return (
     <>
-      <Title mt={3}>Write down your seed phrase</Title>
-      <Menu
+      <Box
+        display='flex'
+        flexDirection='row'
+        flexWrap='wrap'
+        flexGrow='99'
+        alignItems='center'
+        justifyContent={['center', 'space-between']}
+        my={3}
+        minHeight={7}
+      >
+        <Title
+          color={importSeedError ? 'status.fail.background' : 'core.nearblack'}
+        >
+          {importSeedError
+            ? 'One or more of your seed phrase words was incorrect. Please try again.'
+            : 'Add the correct words to the empty inputs'}
+        </Title>
+      </Box>
+      <MnemonicWordContainer
         display='flex'
         alignItems='center'
         justifyItems='center'
         flexWrap='wrap'
+        mt={3}
       >
         {mnemonic.split(' ').map((word, i) => {
           return (
@@ -47,12 +66,12 @@ const WordPrompt = ({
                   importSeedError={importSeedError}
                 />
               ) : (
-                <Word num={i} word={word} />
+                <Word num={i + 1} word={word} />
               )}
             </MenuItem>
           )
         })}
-      </Menu>
+      </MnemonicWordContainer>
     </>
   )
 }
