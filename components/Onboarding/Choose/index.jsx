@@ -28,8 +28,6 @@ export default () => {
           <ImportWallet
             onClick={() => setWalletType(LEDGER)}
             Icon={IconLedger}
-            iconwidth='40px'
-            iconheight='40px'
             title='Ledger Device'
             description='Use your Ledger device'
             tag='Most Secure'

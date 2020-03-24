@@ -6,7 +6,7 @@ import {
   Button,
   OnboardCard,
   StepHeader,
-  Loading,
+  LoadingScreen,
   Label
 } from '../../../Shared'
 
@@ -76,15 +76,7 @@ export default () => {
             />
           )}
           {loading || walkthroughStep === 4 ? (
-            <Box
-              display='flex'
-              flexDirection='column'
-              alignItems='center'
-              justifyContent='center'
-            >
-              <Loading width={3} height={3} />
-              <Label mt={3}>Loading...</Label>
-            </Box>
+            <LoadingScreen />
           ) : (
             <>
               <Box

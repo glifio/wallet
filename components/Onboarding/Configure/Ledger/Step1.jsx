@@ -43,10 +43,14 @@ const Step1Helper = ({ inUseByAnotherApp, connectedFailure }) => {
       )}
       {inUseByAnotherApp && (
         <>
-          <Box display='flex' alignItems='center'>
+          <Box
+            display='flex'
+            alignItems='center'
+            color='status.fail.foreground'
+          >
             <Title>Oops!</Title>
           </Box>
-          <Box>
+          <Box color='status.fail.foreground'>
             <Text mb={2}>
               Looks like another app is connected to your Ledger device.
             </Text>
@@ -59,15 +63,10 @@ const Step1Helper = ({ inUseByAnotherApp, connectedFailure }) => {
       )}
       {!inUseByAnotherApp && !connectedFailure && (
         <>
-          <Box
-            display='flex'
-            alignItems='center'
-            mt={4}
-            color='status.fail.foreground'
-          >
+          <Box display='flex' alignItems='center' mt={4} color='core.nearblack'>
             <Title>Connect</Title>
           </Box>
-          <Box mt={3} color='status.fail.foreground'>
+          <Box color='core.nearblack' mt={3}>
             <Text>Please connect your Ledger to your computer.</Text>
           </Box>
         </>

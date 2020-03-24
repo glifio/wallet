@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import Menu from '../Box'
-// import { flex } from 'styled-system'
 
 export default styled(Menu).attrs(props => ({
   mt: 3,

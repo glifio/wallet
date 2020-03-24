@@ -6,11 +6,9 @@ import Stepper from '../Stepper'
 import Loading from '../LoaderGlyph'
 import Glyph from '../Glyph'
 import ErrorGlyph from '../Glyph/ErrorGlyph'
-import { Text } from '../Typography'
 
 const StepHeader = ({
   currentStep,
-  title,
   glyphAcronym,
   Icon,
   loading,
@@ -33,7 +31,7 @@ const StepHeader = ({
 
       <MenuItem>
         <Stepper
-          textColor='text'
+          textColor={error ? 'status.fail.foreground' : 'core.nearblack'}
           completedDotColor={
             error ? 'status.fail.foreground' : 'status.success.background'
           }
@@ -49,7 +47,6 @@ const StepHeader = ({
 }
 
 StepHeader.propTypes = {
-  title: PropTypes.string,
   loading: PropTypes.bool,
   currentStep: PropTypes.number.isRequired,
   glyphAcronym: PropTypes.string,
@@ -59,9 +56,9 @@ StepHeader.propTypes = {
 }
 
 StepHeader.defaultProps = {
-  title: '',
   loading: false,
-  error: false
+  error: false,
+  glyphAcronym: ''
 }
 
 export default StepHeader
