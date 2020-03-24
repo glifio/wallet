@@ -1,0 +1,32 @@
+dist: bionic
+os: linux
+language: node_js
+node_js:
+  - 12.14.1
+install:
+  - npm i
+cache:
+  directories:
+    - node_modules
+env:
+  global:
+    - SERVER_IP_ADDRESS=159.203.180.86
+    - secure: Oi9ZWUY9xZE2FD8Fu46vwGTmC6Op1sKyUMMLitaR2AR+/H9PhBdUjmjwh17q0p1sLzLt36jGT9s1rNwfY8gz3pNTofAtMvDxqfhgRVJsPz1ZyDsmu0tazqVo4b+OjKDxUCDoFQNL5793YfI1PVw1Cu6AcDGRP5L0D75O16nO+ERs4/JN2L3/nbJFFrCgb2PQ4ia3vMejCOrv8mbNuzdB5gl/OKnYm20bb3ot+kZUUIqgXlWPMz8SH2iJlZNVtALSAdVBt1oxWqABeyJmkgk33yIsQF0oDjjdANxOIoq5kPpwAMOUlngGhhq+l03KxUFFI3K6AQhAt13goo3Oc7C2xUsgZqS27GLp3501Ki7iBTahurrRNr3xZt4mudKXHSrMtFOCFmlXpVRnXAMubzye5SuJ8eTFtHMNYGoAvGbklzVsTFuJbwPo+JK0fUtnoSOJS6nvWwPkbnBFi2pnRas0WhzFu0RR2ampeKZSD/2Ki3YVyYao/a2INsKAGM8EvAqKAaCr9Dp/l72bgtFR8KQfa0xY5kmdDyrtBqvwH+qWXG21W/HfqmDHAUkOoqkO4ji2kItW17V1q+01dkGU2/nDkVardetB6eW5er+hKGJpLxV4dw0NENJJixWXWCHYJrvWjwpTh3DOH6vAFwihXPY7Ju5vvod5Gjpc0rWtH2JVfI4=
+    - secure: RkXYvyKyJFHqU2DaoufQU06RpbPjB8EHW9TT37lPCU+LsPROJEqrD9oBXjErasiy6KjpGf8r6jHDstiF+qJOFMrg1SSXYrxrE85Jv+Kd+MF9lzMzyiPOpCjGaysc59bLKdzG9n/ZGE9tnrUrky7WLlnTcJ1r6v7OOA84Rhw0+KM6U7gMzTfGs9KDENWYOuWPxAwJf/M9bhmTVOZVo0aK7XxG4y2izetMdAgejNzej1oOh8MmT1iDhEik/iQIR2fkGxS8bUieHD1MTchPWAelvpP5M8IrHyGsm5my5ugAlFtghBVVE3+cjQyPiWb91Nt5jOb3hs+stkqEI0sso8rObsM95FHeZzUD9H24nlEEPpD+LsjKu3rynnY6N8ve/9MsEH04ksoaEcDSea716k7OSyHcYDfP7falxB22GhL91k83MwyrwrtVC35XK9o2jFs3VAgqoUDQGkzvL8NIDXs9t0vUbJhN5Qj3Bx8dhJlCSAh/Saka+cj41L2aSXUrYBGxDbHa5oaDYl9UsUiw0IaPSyIPaRisuRMB7qaJGWaFGrKZurm27XiqDTyd6gQ7AFYqHqeuxzEpUN6QCFAwBYSFJuWDzfjW7qo9BNEQoZsgXYMR5awQxwsdjia3PuveSQS7QmLJx8KRsCWO0GzyVMQP50WYQ8g3ONmk3gfJ6sPU7DA=
+services:
+  - docker
+script:
+  - npm run lint
+  - npm run test
+before_deploy:
+  - openssl aes-256-cbc -K $encrypted_dfdcfd5172af_key -iv $encrypted_dfdcfd5172af_iv
+    -in deploy_key.enc -out $HOME/deploy_key -d
+  - eval "$(ssh-agent -s)"
+  - chmod 600 $HOME/deploy_key
+  - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - ssh-add $HOME/deploy_key
+deploy:
+  - provider: script
+    script: './deploy.sh'
+    on:
+      branch: primary
