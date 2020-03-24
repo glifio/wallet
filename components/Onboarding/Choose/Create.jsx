@@ -17,7 +17,6 @@ const CreateWallet = ({ onClick, ...props }) => (
     flexDirection='column'
     justifyContent='space-between'
     alignContent='space-between'
-    f
     height={240}
     {...props}
   >
@@ -28,12 +27,11 @@ const CreateWallet = ({ onClick, ...props }) => (
       </Box>
       <Box display='block'>
         <Text m={0} color='core.nearblack'>
-          New to crypto? We'll create a new seed phrase for you
+          New to crypto? We&rsquo;ll create a new seed phrase for you
         </Text>
       </Box>
     </Box>
     <Box
-      display='inline-block'
       width='max-content'
       py={2}
       px={4}
