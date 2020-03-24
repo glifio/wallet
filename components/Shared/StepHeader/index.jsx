@@ -30,13 +30,13 @@ const StepHeader = ({
         {loading && !error && <Loading />}
         {!loading && !error && <Glyph Icon={Icon} acronym={glyphAcronym} />}
       </MenuItem>
-      <MenuItem mt={3}>
-        <Text>{title}</Text>
-      </MenuItem>
+
       <MenuItem>
         <Stepper
           textColor='text'
-          completedDotColor='status.success.background'
+          completedDotColor={
+            error ? 'status.fail.foreground' : 'status.success.background'
+          }
           incompletedDotColor='status.inactive'
           step={currentStep}
           totalSteps={totalSteps}
