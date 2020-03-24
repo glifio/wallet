@@ -8,19 +8,9 @@ import useTransactionHistory from './useTransactionHistory'
 export default () => {
   const [selectedMessageCid, setSelectedMessageCid] = useState('')
   const wallet = useWallet()
-  useTransactionHistory(wallet.address)
-  const { pending, confirmed } = useSelector(state => {
-    return {
-      confirmed: state.messages.confirmed.map(msg => ({
-        ...msg,
-        status: 'confirmed'
-      })),
-      pending: state.messages.pending.map(msg => ({
-        ...msg,
-        status: 'pending'
-      }))
-    }
-  })
+  const { pending, confirmed, loading, showMore } = useTransactionHistory(
+    wallet.address
+  )
 
   const messages = [...pending, ...confirmed]
   return (
@@ -32,10 +22,11 @@ export default () => {
         />
       ) : (
         <MessageHistoryTable
-          messages={[...pending, ...confirmed]}
           address={wallet.address}
+          messages={[...pending, ...confirmed]}
+          loading={loading}
+          showMore={showMore}
           selectMessage={setSelectedMessageCid}
-          border='none'
         />
       )}
     </>
