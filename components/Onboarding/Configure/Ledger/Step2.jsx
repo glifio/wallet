@@ -8,7 +8,6 @@ import {
   OnboardCard,
   Text,
   Title,
-  StepCard,
   StepHeader
 } from '../../../Shared'
 import { IconLedger } from '../../../Shared/Icons'
@@ -36,17 +35,6 @@ const Step2Helper = ({
     borderColor='silver'
     width='100%'
     minHeight={9}
-    bg={
-      hasLedgerError({
-        connectedFailure,
-        ledgerLocked,
-        filecoinAppNotOpen,
-        replug,
-        ledgerBusy,
-        inUseByAnotherApp,
-        otherError
-      }) && 'card.error.background'
-    }
     mt={5}
   >
     {hasLedgerError({
@@ -59,10 +47,10 @@ const Step2Helper = ({
       otherError
     }) ? (
       <>
-        <Box display='flex' alignItems='center'>
+        <Box display='flex' alignItems='center' color='status.fail.foreground'>
           <Title>Oops!</Title>
         </Box>
-        <Box mt={3}>
+        <Box mt={3} color='status.fail.foreground'>
           <Text mb={1}>We had trouble communicating with your device.</Text>
           <Text>
             {reportLedgerConfigError({
@@ -112,20 +100,19 @@ export default () => {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
 
+  const error = hasLedgerError({
+    ...ledger,
+    otherError: generalError
+  })
+
   return (
     <>
       <OnboardCard
         maxWidth={13}
         width='100%'
         minHeight={9}
-        bg={
-          hasLedgerError({
-            ...ledger,
-            otherError: generalError
-          })
-            ? 'status.fail.background'
-            : 'core.transparent'
-        }
+        borderColor={error && 'status.fail.background'}
+        bg={error ? 'status.fail.background' : 'core.transparent'}
       >
         <StepHeader
           currentStep={2}
@@ -134,6 +121,7 @@ export default () => {
           loading={!ledger.userImportFailure && loading}
           totalSteps={2}
           Icon={IconLedger}
+          error={error}
         />
         <Step2Helper
           connectedFailure={ledger.connectedFailure}

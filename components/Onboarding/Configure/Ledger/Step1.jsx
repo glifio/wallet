@@ -59,10 +59,15 @@ const Step1Helper = ({ inUseByAnotherApp, connectedFailure }) => {
       )}
       {!inUseByAnotherApp && !connectedFailure && (
         <>
-          <Box display='flex' alignItems='center' mt={4}>
+          <Box
+            display='flex'
+            alignItems='center'
+            mt={4}
+            color='status.fail.foreground'
+          >
             <Title>Connect</Title>
           </Box>
-          <Box mt={3}>
+          <Box mt={3} color='status.fail.foreground'>
             <Text>Please connect your Ledger to your computer.</Text>
           </Box>
         </>
@@ -76,7 +81,7 @@ Step1Helper.propTypes = {
   inUseByAnotherApp: PropTypes.bool.isRequired
 }
 
-export default (inUseByAnotherApp, connectedFailure) => {
+export default () => {
   const { ledger, setLedgerProvider, setWalletType } = useWalletProvider()
   const router = useRouter()
   if (!isValidBrowser()) {
@@ -84,35 +89,24 @@ export default (inUseByAnotherApp, connectedFailure) => {
     setWalletType(null)
     router.push(`/error/unsupported-browser?${params.toString()}`)
   }
-  const generalError = useSelector(state => state.error)
+  const errFromRdx = useSelector(state => state.error)
+  const error = hasLedgerError({ ...ledger, otherError: errFromRdx })
 
   return (
     <>
       <OnboardCard
         maxWidth={13}
         width='100%'
-        bg={
-          hasLedgerError({
-            ...ledger,
-            otherError: generalError
-          })
-            ? 'status.fail.background'
-            : 'core.transparent'
-        }
+        borderColor={error && 'status.fail.background'}
+        bg={error ? 'status.fail.background' : 'core.transparent'}
       >
         <StepHeader
           currentStep={1}
           loading={ledger.connecting}
           totalSteps={2}
           Icon={IconLedger}
-          color={
-            hasLedgerError({
-              ...ledger,
-              otherError: generalError
-            })
-              ? 'status.fail.foreground'
-              : 'core.nearblack'
-          }
+          error={error}
+          color={error ? 'status.fail.foreground' : 'core.transparent'}
         />
         <Step1Helper
           connectedFailure={ledger.connectedFailure}
