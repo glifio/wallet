@@ -13,9 +13,10 @@ import StyledWrapper from './StyledWrapper'
 import Circle from './Circle'
 import contentProps from './contentProps'
 
-const setBackgroundColor = ({ completed, empty }) => {
-  if (empty) return 'core.white'
-  if (completed) return 'core.primary'
+const setBackgroundColor = ({ completed, empty, valid, importSeedError }) => {
+  if (importSeedError && (empty || !valid)) return 'status.fail.background'
+  if (!importSeedError && completed) return 'core.primary'
+  if (!importSeedError && empty) return 'core.white'
   return 'core.white'
 }
 
@@ -26,6 +27,7 @@ const setInputColor = props => {
 
 export const MnemonicWordInput = styled.input.attrs(props => ({
   ...contentProps,
+  borderRadius: 0,
   color: setInputColor(props)
 }))`
   &:focus {
@@ -73,10 +75,16 @@ const MnemonicWord = ({
       onBlur={() => setCompleted(true)}
       backgroundColor={setBackgroundColor({
         completed,
+        importSeedError,
+        valid: word === wordToMatch,
         empty: !word
       })}
-      border={(!word || word !== wordToMatch) && importSeedError && 1}
-      borderColor={(!word || word !== wordToMatch) && importSeedError && 'red'}
+      border={1}
+      borderColor={
+        !word || word !== wordToMatch
+          ? importSeedError && 'status.fail.background'
+          : 'core.primary'
+      }
     >
       <Circle color='core.primary' backgroundColor='core.secondary'>
         {num}

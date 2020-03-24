@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
-import { string } from 'prop-types'
+import { string, object } from 'prop-types'
 import { baseColors } from '../theme'
 import Box from '../Box'
 
@@ -11,7 +11,7 @@ const GlyphText = styled.h3`
 `
 
 const Glyph = forwardRef(
-  ({ acronym, color, backgroundColor, ...props }, ref) => (
+  ({ acronym, Icon, color, backgroundColor, ...props }, ref) => (
     <Box
       display='flex'
       alignItems='center'
@@ -24,7 +24,7 @@ const Glyph = forwardRef(
       ref={ref}
       {...props}
     >
-      <GlyphText>{acronym}</GlyphText>
+      {acronym ? <GlyphText>{acronym}</GlyphText> : <Icon />}
     </Box>
   )
 )
@@ -33,7 +33,11 @@ Glyph.propTypes = {
   /**
    * The two letters displayed in the glyph
    */
-  acronym: string.isRequired,
+  acronym: string,
+  /**
+   * This is a dom element, but PropTypes.node was failing
+   */
+  Icon: object,
   /**
    * The color of the text and border
    */
@@ -42,7 +46,8 @@ Glyph.propTypes = {
 }
 
 Glyph.defaultProps = {
-  color: baseColors.mono.black
+  color: baseColors.mono.black,
+  acronym: ''
 }
 
 export default Glyph

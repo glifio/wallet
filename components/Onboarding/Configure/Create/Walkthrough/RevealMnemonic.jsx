@@ -13,9 +13,9 @@ import {
   Box,
   Button,
   DisplayWord as Word,
-  Menu,
   MenuItem,
-  Title
+  Title,
+  MnemonicWordContainer
 } from '../../../../Shared'
 import { MNEMONIC_PROPTYPE } from '../../../../../customPropTypes'
 import copyToClipboard from '../../../../../utils/copyToClipboard'
@@ -57,6 +57,7 @@ const DownloadButton = styled.a.attrs(() => ({
 
 const Reveal = ({ mnemonic, valid }) => {
   const [objectUrl, setObjectUrl] = useState('')
+  const [copied, setCopied] = useState(false)
   useEffect(() => {
     const file = new File([mnemonic], 'dontlookhere.txt', {
       type: 'text/plain'
@@ -67,16 +68,30 @@ const Reveal = ({ mnemonic, valid }) => {
 
   return (
     <>
-      <Box display='flex' flexDirection='row' justifyContent='space-between'>
-        <Title mt={3}>Write down your seed phrase</Title>
-        <Box display='flex' flexDirection='row'>
+      <Box
+        display='flex'
+        flexDirection='row'
+        flexWrap='wrap'
+        flexGrow='99'
+        alignItems='center'
+        justifyContent={['center', 'space-between']}
+        my={3}
+        minHeight={7}
+      >
+        <Title>Write down your seed phrase</Title>
+        <Box mt={[2, 0]}>
           <Button
-            onClick={() => copyToClipboard(mnemonic)}
+            height='max-content'
+            onClick={() => {
+              copyToClipboard(mnemonic)
+              setCopied(true)
+            }}
             variant='secondary'
-            title='copy'
+            title={copied ? 'Copied' : 'Copy'}
             mx={2}
           />
           <DownloadButton
+            height='max-content'
             variant='secondary'
             download='dontlookhere.txt'
             href={objectUrl}
@@ -86,22 +101,16 @@ const Reveal = ({ mnemonic, valid }) => {
         </Box>
       </Box>
 
-      <Menu
-        mt={3}
-        display='flex'
-        alignItems='center'
-        justifyItems='center'
-        flexWrap='wrap'
-      >
+      <MnemonicWordContainer>
         {mnemonic.split(' ').map((word, i) => {
           return (
             /* eslint-disable react/no-array-index-key */
             <MenuItem key={i}>
-              <Word num={i + 1} word={word} valid={valid} />
+              <Word ml={0} num={i + 1} word={word} valid={valid} />
             </MenuItem>
           )
         })}
-      </Menu>
+      </MnemonicWordContainer>
     </>
   )
 }
