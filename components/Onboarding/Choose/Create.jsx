@@ -22,7 +22,7 @@ const CreateWallet = ({ onClick, ...props }) => (
   >
     <Box>
       <Box display='flex' alignItems='center'>
-        <Glyph acronym='Sp' />
+        <Glyph acronym='Cw' />
         <Text ml={3}>Create Wallet</Text>
       </Box>
       <Box display='block'>
