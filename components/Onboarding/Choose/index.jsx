@@ -32,7 +32,6 @@ export default () => {
             description='Hardware wallets protect your private information'
             tag='Most Secure'
             m={2}
-            height='240px'
             display='flex'
             justifyContent='space-between'
             flexDirection='column'
