@@ -30,6 +30,7 @@ export const MnemonicWordInput = styled.input.attrs(props => ({
   borderRadius: 0,
   color: setInputColor(props)
 }))`
+  max-width: 70%;
   &:focus {
     box-shadow: 0;
     outline: 0;
