@@ -19,13 +19,18 @@ const applyStyles = (styleProperty, props, disabledColor) => {
 export default styled.button.attrs(() => ({
   p: 3,
   fontSize: 3,
+  borderWidth: 1,
   borderRadius: 2
 }))`
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   background-color: ${props =>
     applyStyles('background', props, props.theme.colors.status.inactive)};
   border-color: ${props =>
-    applyStyles('borderColor', props, props.theme.colors.status.inactive)};
+    applyStyles(
+      'borderColor',
+      props,
+      props.theme.colors.status.inactive
+    )} !important;
   color: ${props => applyStyles('color', props, '')};
   font-size: ${props => props.theme.fontSizes[2]};
   transition: 0.18s ease-in-out;
