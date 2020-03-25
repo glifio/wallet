@@ -29,7 +29,7 @@ export default () => {
             onClick={() => setWalletType(LEDGER)}
             Icon={IconLedger}
             title='Ledger Device'
-            description='Use your Ledger device'
+            description='Hardware wallets protect your private information'
             tag='Most Secure'
             m={2}
             height='240px'
@@ -44,14 +44,12 @@ export default () => {
             onClick={() => setWalletType(IMPORT_MNEMONIC)}
             glyphAcronym='Sp'
             title='Import Seed Phrase'
-            description='Use your existing seed phrase'
             m={2}
           />
           <ImportWallet
             onClick={() => setWalletType(IMPORT_SINGLE_KEY)}
             glyphAcronym='Pk'
             title='Import Private Key'
-            description='Use your existing private key'
             m={2}
           />
         </Box>

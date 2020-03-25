@@ -61,8 +61,13 @@ Import.propTypes = {
   glyphAcronym: PropTypes.string,
   Icon: PropTypes.object,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   tag: PropTypes.string
+}
+
+Import.defaultProps = {
+  description: '',
+  tag: ''
 }
 
 export default Import

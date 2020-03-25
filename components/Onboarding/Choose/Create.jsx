@@ -23,11 +23,11 @@ const CreateWallet = ({ onClick, ...props }) => (
     <Box>
       <Box display='flex' alignItems='center'>
         <Glyph acronym='Sp' />
-        <Text ml={3}>Seed Phrase</Text>
+        <Text ml={3}>Create Wallet</Text>
       </Box>
       <Box display='block'>
         <Text m={0} color='core.nearblack'>
-          New to crypto? We&rsquo;ll create a new seed phrase for you
+          New to crypto? We&rsquo;ll generate a new wallet for you
         </Text>
       </Box>
     </Box>
