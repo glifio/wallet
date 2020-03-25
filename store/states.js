@@ -2,19 +2,21 @@
 import updateArrayItem from '../utils/updateArrayItem'
 import { setMsgInCache, removeMsgFromCache } from './cache'
 
+const messagesInitialState = {
+  loading: false,
+  loadedSuccess: false,
+  loadedFailure: false,
+  pending: [],
+  confirmed: [],
+  paginating: false,
+  total: -1
+}
+
 export const initialState = {
   wallets: [],
   selectedWalletIdx: 0,
   error: null,
-  messages: {
-    loading: false,
-    loadedSuccess: false,
-    loadedFailure: false,
-    pending: [],
-    confirmed: [],
-    paginating: false,
-    total: -1
-  },
+  messages: messagesInitialState,
   network: 't'
 }
 
@@ -148,5 +150,6 @@ export const populateRedux = (state, { pendingMsgs }) => ({
 export const switchNetwork = (state, { network, wallets }) => ({
   ...state,
   network,
-  wallets
+  wallets,
+  messages: messagesInitialState
 })
