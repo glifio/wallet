@@ -10,8 +10,6 @@ import {
   FETCHED_CONFIRMED_MESSAGES_SUCCESS,
   FETCHED_CONFIRMED_MESSAGES_FAILURE,
   FETCHING_NEXT_PAGE,
-  FETCHING_NEXT_PAGE_SUCCESS,
-  FETCHING_NEXT_PAGE_FAILURE,
   WALLET_LIST,
   POPULATE_REDUX
 } from './actionTypes'
@@ -56,11 +54,11 @@ export const fetchingConfirmedMessages = () => ({
   type: FETCHING_CONFIRMED_MESSAGES
 })
 
-export const fetchedConfirmedMessagesSuccess = (messages, links) => ({
+export const fetchedConfirmedMessagesSuccess = (messages, total) => ({
   type: FETCHED_CONFIRMED_MESSAGES_SUCCESS,
   payload: {
     messages,
-    links
+    total
   }
 })
 
@@ -71,19 +69,6 @@ export const fetchedConfirmedMessagesFailure = error => ({
 
 export const fetchingNextPage = () => ({
   type: FETCHING_NEXT_PAGE
-})
-
-export const fetchedNextPageSuccess = (messages, links) => ({
-  type: FETCHING_NEXT_PAGE_SUCCESS,
-  payload: {
-    messages,
-    links
-  }
-})
-
-export const fetchedNextPageFailure = ({ error }) => ({
-  type: FETCHING_NEXT_PAGE_FAILURE,
-  error
 })
 
 export const error = err => ({

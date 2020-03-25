@@ -1,32 +1,15 @@
 import React from 'react'
-import styled from 'styled-components'
-import { BigNumber, FilecoinNumber } from '@openworklabs/filecoin-number'
+import dayjs from 'dayjs'
+import { BigNumber } from '@openworklabs/filecoin-number'
 import { bool, string, func } from 'prop-types'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../customPropTypes'
-import Box from '../Box'
 import { Menu, MenuItem } from '../Menu'
 import { Text } from '../Typography'
 import { IconSend, IconReceive } from '../Icons'
 import truncate from '../../../utils/truncateAddress'
 import { useConverter } from '../../../lib/Converter'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
-
-const MessageHistoryRowContainer = styled(Box).attrs(props => ({
-  border: 1,
-  borderColor: 'core.silver',
-  borderRadius: 1,
-  p: 2,
-  my: 1,
-  ...props
-}))`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  &:hover {
-    cursor: pointer;
-  }
-`
+import MessageHistoryRowContainer from './MessageHistoryRowContainer'
 
 const AddressText = ({ sentMsg, to, from }) => {
   if (sentMsg) {
@@ -90,7 +73,7 @@ ActionText.propTypes = {
 
 const MessageHistoryRow = ({
   address,
-  message: { to, from, value, status, cid },
+  message: { to, from, value, status, cid, timestamp },
   selectMessage
 }) => {
   const { converter, converterError } = useConverter()
@@ -114,7 +97,7 @@ const MessageHistoryRow = ({
             </MenuItem>
             <MenuItem>
               <Text color='core.silver' m={0}>
-                Date
+                {dayjs.unix(timestamp).format('MMM DD, YYYY')}
               </Text>
             </MenuItem>
           </Menu>
@@ -141,10 +124,7 @@ const MessageHistoryRow = ({
           >
             <MenuItem display='flex'>
               <Text color='core.nearblack' m={0}>
-                {makeFriendlyBalance(
-                  new BigNumber(new FilecoinNumber(value, 'attofil').toFil()),
-                  7
-                )}
+                {makeFriendlyBalance(new BigNumber(value), 7)}
               </Text>
             </MenuItem>
             <MenuItem display='flex'>
@@ -152,14 +132,9 @@ const MessageHistoryRow = ({
                 {converter &&
                   !converterError &&
                   makeFriendlyBalance(
-                    converter.fromFIL(
-                      new BigNumber(
-                        new FilecoinNumber(value, 'attofil').toFil()
-                      )
-                    ),
+                    converter.fromFIL(new BigNumber(value)),
                     7
                   )}{' '}
-                USD
               </Text>
             </MenuItem>
           </Menu>
@@ -177,7 +152,7 @@ const MessageHistoryRow = ({
                 FIL
               </Text>
               <Text color='core.silver' m={0} mb={0}>
-                Fiat
+                USD
               </Text>
             </MenuItem>
           </Menu>

@@ -17,6 +17,7 @@
     "@openworklabs/filecoin-number": "0.0.6",
     "@openworklabs/filecoin-wallet-provider": "0.0.17",
     "@zondax/filecoin-signer-wasm": "^0.2.0",
+    "axios": "^0.19.2",
     "bip39": "^3.0.2",
     "dayjs": "^1.8.22",
     "lodash.clonedeep": "^4.5.0",

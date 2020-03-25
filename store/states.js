@@ -7,14 +7,13 @@ export const initialState = {
   selectedWalletIdx: 0,
   error: null,
   messages: {
-    page: 0,
     loading: false,
     loadedSuccess: false,
     loadedFailure: false,
     pending: [],
     confirmed: [],
-    links: {},
-    paginating: false
+    paginating: false,
+    total: -1
   },
   network: 't'
 }
@@ -93,7 +92,7 @@ export const fetchingConfirmedMessages = state => ({
 
 export const fetchedConfirmedMessagesSuccess = (
   state,
-  { messages, links }
+  { messages, total }
 ) => ({
   ...state,
   messages: {
@@ -102,7 +101,8 @@ export const fetchedConfirmedMessagesSuccess = (
     loadedSuccess: true,
     loadedFailure: false,
     confirmed: [...state.messages.confirmed, ...messages],
-    links
+    total: total || state.messages.total,
+    paginating: false
   }
 })
 
@@ -112,7 +112,8 @@ export const fetchedConfirmedMessagesFailure = (state, error) => ({
     ...state.messages,
     loading: false,
     loadedSuccess: false,
-    loadedFailure: true
+    loadedFailure: true,
+    paginating: false
   },
   error
 })
@@ -123,25 +124,6 @@ export const fetchingNextPage = state => ({
     ...state.messages,
     paginating: true
   }
-})
-
-export const fetchedNextPageSuccess = (state, { messages, links }) => ({
-  ...state,
-  messages: {
-    ...state.messages,
-    paginating: false,
-    confirmed: [...state.messages.confirmed, ...messages],
-    links
-  }
-})
-
-export const fetchedNextPageFailure = (state, error) => ({
-  ...state,
-  messages: {
-    ...state.messages,
-    paginating: false
-  },
-  error
 })
 
 export const error = (state, err) => ({

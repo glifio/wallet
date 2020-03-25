@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import dayjs from 'dayjs'
 import { border, layout, space, flexbox, position } from 'styled-system'
 import { useDispatch } from 'react-redux'
 import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
@@ -136,7 +137,7 @@ const Send = ({ close }) => {
       const messageObj = message.encode()
       const msgCid = await provider.sendMessage(messageObj, signature)
       messageObj.cid = msgCid['/']
-      messageObj.timestamp = Date.now()
+      messageObj.timestamp = dayjs().unix()
       messageObj.gas_used = (
         await walletProvider.estimateGas(messageObj)
       ).toAttoFil()

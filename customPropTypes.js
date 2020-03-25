@@ -1,4 +1,4 @@
-import { shape, string } from 'prop-types'
+import { shape, string, oneOfType, number } from 'prop-types'
 import { validateAddressString } from '@openworklabs/filecoin-address'
 import { validatePath } from '@openworklabs/filecoin-wallet-provider'
 import { validateMnemonic } from 'bip39'
@@ -85,5 +85,6 @@ export const MESSAGE_PROPS = shape({
   /**
    * Either pending or confirmed
    */
-  status: string.isRequired
+  status: string.isRequired,
+  timestamp: oneOfType([string, number]).isRequired
 })
