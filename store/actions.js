@@ -28,7 +28,7 @@ export const switchWallet = index => ({
   }
 })
 
-export const updateBalance = (balance, walletIdx) => ({
+export const updateBalance = (balance, walletIdx = 0) => ({
   type: UPDATE_BALANCE,
   payload: {
     balance,

@@ -2,7 +2,7 @@
 import updateArrayItem from '../utils/updateArrayItem'
 import { setMsgInCache, removeMsgFromCache } from './cache'
 
-const messagesInitialState = {
+export const initialMessagesState = {
   loading: false,
   loadedSuccess: false,
   loadedFailure: false,
@@ -16,7 +16,7 @@ export const initialState = {
   wallets: [],
   selectedWalletIdx: 0,
   error: null,
-  messages: messagesInitialState,
+  messages: initialMessagesState,
   network: 't'
 }
 
@@ -29,16 +29,7 @@ export const walletList = (state, { wallets }) => ({
 export const switchWallet = (state, { index }) => ({
   ...state,
   selectedWalletIdx: index,
-  messages: {
-    page: 0,
-    loading: false,
-    loadedSuccess: false,
-    loadedFailure: false,
-    pending: [],
-    confirmed: [],
-    links: {},
-    paginating: false
-  }
+  messages: initialMessagesState
 })
 
 export const updateBalance = (state, { balance, walletIdx }) => ({
@@ -61,7 +52,7 @@ export const confirmMessage = (state, { message }) => {
 }
 
 export const confirmedMessage = (state, { msgCid }) => {
-  const { address } = state.wallets[state.selectedWalletIdx]
+  // const { address } = state.wallets[state.selectedWalletIdx]
   // removeMsgFromCache(address, msgCid)
   const newPendingMsgs = [...state.messages.pending]
   let confirmedMsg = []
@@ -151,5 +142,5 @@ export const switchNetwork = (state, { network, wallets }) => ({
   ...state,
   network,
   wallets,
-  messages: messagesInitialState
+  messages: initialMessagesState
 })
