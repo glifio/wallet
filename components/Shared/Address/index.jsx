@@ -12,9 +12,10 @@ const Wrapper = styled(Box).attrs(() => ({
   borderColor: 'input.border',
   borderRadius: 1,
   pl: 3,
-  width: 13
+  width: 14
 }))`
   display: flex;
+  height: 70px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
