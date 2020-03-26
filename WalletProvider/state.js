@@ -94,13 +94,13 @@ const clearErrorInState = state => ({
 export default (state, action) => {
   switch (action.type) {
     case SET_WALLET_TYPE:
-      return setWalletTypeInState(cloneDeep(state), action.payload)
+      return setWalletTypeInState(Object.freeze(state), action.payload)
     case CREATE_WALLET_PROVIDER:
-      return createWalletProviderInState(cloneDeep(state), action.payload)
+      return createWalletProviderInState(Object.freeze(state), action.payload)
     case WALLET_ERROR:
-      return setErrorInState(cloneDeep(state), action.error)
+      return setErrorInState(Object.freeze(state), action.error)
     case CLEAR_ERROR:
-      return clearErrorInState(cloneDeep(state))
+      return clearErrorInState(Object.freeze(state))
     // ledger cases
     case LEDGER_USER_INITIATED_IMPORT:
       return {
