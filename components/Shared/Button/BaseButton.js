@@ -23,14 +23,13 @@ export default styled.button.attrs(() => ({
   borderRadius: 2
 }))`
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
+  /* We are applying both the explicit and shorthand border properties to resolve multiple, conflicting cross-browser rendering issues */
+  border: 1px solid ${props =>
+    applyStyles('borderColor', props, props.theme.colors.status.inactive)};
   background-color: ${props =>
     applyStyles('background', props, props.theme.colors.status.inactive)};
   border-color: ${props =>
-    applyStyles(
-      'borderColor',
-      props,
-      props.theme.colors.status.inactive
-    )} !important;
+    applyStyles('borderColor', props, props.theme.colors.status.inactive)};
   color: ${props => applyStyles('color', props, '')};
   font-size: ${props => props.theme.fontSizes[2]};
   transition: 0.18s ease-in-out;
