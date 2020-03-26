@@ -6,7 +6,8 @@ import withReduxStore from '../lib/with-redux-store'
 import WalletProviderWrapper from '../WalletProvider'
 import NetworkChecker from '../lib/check-network'
 import { ConverterWrapper } from '../lib/Converter'
-import '../styles.css'
+import '../stylesheets/normalize.css'
+import '../stylesheets/styles.css'
 
 class MyApp extends App {
   static getInitialProps({ ctx: { query, pathname } }) {

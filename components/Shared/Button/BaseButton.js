@@ -19,9 +19,13 @@ const applyStyles = (styleProperty, props, disabledColor) => {
 export default styled.button.attrs(() => ({
   p: 3,
   fontSize: 3,
+  borderWidth: 1,
   borderRadius: 2
 }))`
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
+  /* We are applying both the explicit and shorthand border properties to resolve multiple, conflicting cross-browser rendering issues */
+  border: 1px solid ${props =>
+    applyStyles('borderColor', props, props.theme.colors.status.inactive)};
   background-color: ${props =>
     applyStyles('background', props, props.theme.colors.status.inactive)};
   border-color: ${props =>
