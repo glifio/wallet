@@ -21,12 +21,14 @@ import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
 const MessageDetailCard = styled(Card).attrs(() => ({
   my: 2,
-  mx: 2
+  mx: 2,
+  maxWidth: 13,
+  border: 1,
+  borderColor: 'core.silver'
 }))`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: none;
   width: auto;
   background-color: ${props => props.theme.colors.background.screen};
 `
@@ -70,7 +72,7 @@ const MessageDetail = ({ close, message }) => {
               align-self: flex-end;
             `}
           />
-          <Box m='0' display='flex' flexDirection='row' alignItems='center'>
+          <Box m='0' display='flex' flexDirection='row' alignItems='flex-end'>
             <IconMessageStatus status='confirmed' />
             <Label
               color={
@@ -83,7 +85,7 @@ const MessageDetail = ({ close, message }) => {
             </Label>
           </Box>
           <Box display='flex' flexDirection='row' mr={2}>
-            <Text my='0' mr={1} color='core.lightgray'>
+            <Text my='0' mr={1} color='core.darkgray'>
               Jan 24,
             </Text>
             <Text my='0'>11:48PM</Text>
