@@ -1,8 +1,8 @@
 import React, { useContext, createContext, useEffect, useState } from 'react'
 import { string, node } from 'prop-types'
-import { Converter, BigNumber } from '@openworklabs/filecoin-number'
+import { Converter } from '@openworklabs/filecoin-number'
 
-const ConverterContext = createContext({})
+export const ConverterContext = createContext({})
 
 export const ConverterWrapper = ({ children, currency }) => {
   const [converter, setConverter] = useState(null)
