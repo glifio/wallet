@@ -3,11 +3,20 @@ import { useWalletProvider } from '.'
 
 export default () => {
   const { walletType } = useWalletProvider()
-  const wallet = useSelector(state => {
-    if (state.wallets.length === 0) return null
-    if (!state.wallets[state.selectedWalletIdx]) return null
-    return state.wallets[state.selectedWalletIdx]
+  const { wallet, selectedWalletIdx } = useSelector(state => {
+    if (state.wallets.length === 0)
+      return { wallet: null, selectedWalletIdx: -1 }
+    if (!state.wallets[state.selectedWalletIdx])
+      return { wallet: null, selectedWalletIdx: -1 }
+    return {
+      wallet: state.wallets[state.selectedWalletIdx],
+      selectedWalletIdx: state.selectedWalletIdx
+    }
   })
 
-  return { ...wallet, type: walletType }
+  return {
+    ...wallet,
+    type: walletType,
+    index: selectedWalletIdx
+  }
 }
