@@ -19,7 +19,7 @@ export default () => {
         if (!latestBalance.isEqualTo(balance)) {
           dispatch(updateBalance(latestBalance, wallet.index))
         }
-        await pollBalance(address, latestBalance, provider)
+        await pollBalance(wallet.address, latestBalance, provider)
       }, 3000)
 
       return () => {
@@ -28,12 +28,20 @@ export default () => {
         }
       }
     },
-    [dispatch, wallet.index]
+    [dispatch, wallet.index, wallet.address]
   )
 
   useEffect(() => {
     if (wallet.index >= 0 && walletProvider) {
       pollBalance(wallet.address, wallet.balance, walletProvider)
     }
-  }, [wallet, pollBalance, walletProvider])
+  }, [
+    wallet.address,
+    wallet.balance,
+    wallet.index,
+    pollBalance,
+    walletProvider
+  ])
+
+  return null
 }
