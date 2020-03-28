@@ -99,7 +99,7 @@ const AccountSelector = () => {
               }
             })
           )
-          dispatch(walletList(sortAndRemoveWalletDups(walletsInRdx, wallets)))
+          dispatch(walletList(wallets))
         }
       } catch (err) {
         setUncaughtError(err)

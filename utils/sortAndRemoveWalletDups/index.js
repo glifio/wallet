@@ -8,5 +8,5 @@ export default (walletsInRdx, wallets) => {
       }
       return false
     })
-    .sort((a, b) => a.path[4] - b.path[4])
+    .sort((a, b) => a.path.split('/')[5] - b.path.split('/')[5])
 }
