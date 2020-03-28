@@ -14,7 +14,7 @@ export const initialMessagesState = {
 
 export const initialState = {
   wallets: [],
-  selectedWalletIdx: 0,
+  selectedWalletIdx: -1,
   error: null,
   messages: initialMessagesState,
   network: 't'

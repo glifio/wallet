@@ -1,5 +1,3 @@
-import cloneDeep from 'lodash.clonedeep'
-
 import { LEDGER } from '../constants'
 import {
   initialLedgerState,

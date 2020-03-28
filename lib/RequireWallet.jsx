@@ -6,7 +6,7 @@ import { FilecoinNumber } from '@openworklabs/filecoin-number'
 
 import { NO_WALLET_PROP_TYPE, WALLET_PROP_TYPE } from '../customPropTypes'
 
-class RequireWallet extends Component {
+export class RequireWallet extends Component {
   componentDidMount() {
     if (!this.props.wallet.address) {
       const route = Router.query.network
