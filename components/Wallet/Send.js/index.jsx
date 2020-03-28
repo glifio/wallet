@@ -141,6 +141,7 @@ const Send = ({ close }) => {
       messageObj.gas_used = (
         await walletProvider.estimateGas(messageObj)
       ).toAttoFil()
+      messageObj.Value = new FilecoinNumber(messageObj.Value, 'attofil').toFil()
       return messageObj
     }
   }
