@@ -17,7 +17,7 @@ export default () => {
       timeout.current = setTimeout(async () => {
         const latestBalance = await provider.getBalance(address)
         if (!latestBalance.isEqualTo(balance)) {
-          dispatch(updateBalance(latestBalance, 0))
+          dispatch(updateBalance(latestBalance, wallet.index))
         }
         await pollBalance(address, latestBalance, provider)
       }, 3000)
@@ -28,11 +28,11 @@ export default () => {
         }
       }
     },
-    [dispatch]
+    [dispatch, wallet.index]
   )
 
   useEffect(() => {
-    if (wallet && walletProvider) {
+    if (wallet.index >= 0 && walletProvider) {
       pollBalance(wallet.address, wallet.balance, walletProvider)
     }
   }, [wallet, pollBalance, walletProvider])
