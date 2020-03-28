@@ -23,13 +23,11 @@ import {
   reportLedgerConfigError
 } from '../../utils/ledger/reportLedgerConfigError'
 import MsgConfirmer from '../../lib/confirm-message'
-import useUpToDateBalance from '../../lib/update-balance'
 import useWallet from '../../WalletProvider/useWallet'
 import Receive from '../Receive'
 import { MESSAGE_HISTORY, SEND, RECEIVE } from './views'
 
 const WalletView = () => {
-  useUpToDateBalance()
   const wallet = useWallet()
   const [childView, setChildView] = useState(MESSAGE_HISTORY)
   const { ledger, walletType, connectLedger } = useWalletProvider()
