@@ -282,6 +282,7 @@ const Send = ({ close }) => {
               <Input.Funds
                 name='amount'
                 label='Amount'
+                amount={value.fil.toAttoFil()}
                 onAmountChange={setValue}
                 balance={wallet.balance}
                 error={valueError}
