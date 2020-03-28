@@ -1,6 +1,9 @@
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import Message from '@openworklabs/filecoin-message'
+import clonedeep from 'lodash.clonedeep'
 import * as states from './states'
+import { SINGLE_KEY } from '../constants'
+import createPath from '../utils/createPath'
 
 describe('state manipulators', () => {
   // implicitly tests state mutations
@@ -11,40 +14,42 @@ describe('state manipulators', () => {
         {
           address: 't1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
           balance: new FilecoinNumber('1', 'fil'),
-          path: ''
+          path: SINGLE_KEY
         },
         {
-          address: 't1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
+          address: 't1jalfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
           balance: new FilecoinNumber('1', 'fil'),
-          path: ''
+          path: SINGLE_KEY
         }
       ]
 
       const expectedState = {
         ...initialState,
+        selectedWalletIdx: 0,
         wallets
       }
 
-      expect(states.walletList(initialState, { wallets })).toEqual(
-        expectedState
-      )
+      expect(
+        JSON.stringify(states.walletList(initialState, { wallets }))
+      ).toEqual(JSON.stringify(expectedState))
     })
     test('it does not add wallets on the wrong network to the store', () => {
       const walletsWithMixedNetworks = [
         {
           address: 'f1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
           balance: new FilecoinNumber('1', 'fil'),
-          path: ''
+          path: SINGLE_KEY
         },
         {
           address: 't1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
           balance: new FilecoinNumber('1', 'fil'),
-          path: ''
+          path: SINGLE_KEY
         }
       ]
 
       const expectedState = {
         ...initialState,
+        selectedWalletIdx: 0,
         wallets: [walletsWithMixedNetworks[1]]
       }
 
@@ -53,6 +58,144 @@ describe('state manipulators', () => {
           wallets: walletsWithMixedNetworks
         })
       ).toEqual(expectedState)
+    })
+
+    test('it keeps the selectedWalletIdx if one is already set', () => {
+      const wallets = [
+        {
+          address: 't1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
+          balance: new FilecoinNumber('1', 'fil'),
+          path: SINGLE_KEY
+        },
+        {
+          address: 't1jdlfl73voafblrvn2yfivvn5ifucwwv5f26nfza',
+          balance: new FilecoinNumber('1', 'fil'),
+          path: SINGLE_KEY
+        }
+      ]
+
+      const newInitialState = clonedeep({
+        ...initialState,
+        selectedWalletIdx: 3
+      })
+
+      const expectedState = {
+        ...initialState,
+        selectedWalletIdx: 3,
+        wallets
+      }
+
+      expect(states.walletList(newInitialState, { wallets })).toEqual(
+        expectedState
+      )
+    })
+
+    test('it adds the wallets to store when some already exist', () => {
+      const existingWallets = [
+        {
+          address: 't1zdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
+          balance: new FilecoinNumber('1', 'fil'),
+          path: SINGLE_KEY
+        },
+        {
+          address: 't1jflfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
+          balance: new FilecoinNumber('1', 'fil'),
+          path: SINGLE_KEY
+        }
+      ]
+
+      const newWallets = [
+        {
+          address: 't1jdlflg3voaiblrvn2yfivvn5ifucwwv5f26nfza',
+          balance: new FilecoinNumber('1', 'fil'),
+          path: SINGLE_KEY
+        },
+        {
+          address: 't1jdlfl73voaiblsvn2yfivvn5ifucwwv5f26nfza',
+          balance: new FilecoinNumber('1', 'fil'),
+          path: SINGLE_KEY
+        }
+      ]
+
+      const newInitialState = clonedeep({
+        ...initialState,
+        wallets: existingWallets
+      })
+
+      const expectedState = {
+        ...initialState,
+        selectedWalletIdx: 0,
+        wallets: [...existingWallets, ...newWallets]
+      }
+
+      expect(
+        states.walletList(newInitialState, { wallets: newWallets })
+      ).toEqual(expectedState)
+    })
+
+    test('it removes wallet duplicates', () => {
+      const dupWallets = [
+        {
+          address: 't1jdlflg3voaiblrvn2yfivvn5ifucwwv5f26nfza',
+          balance: new FilecoinNumber('1', 'fil'),
+          path: SINGLE_KEY
+        },
+        {
+          address: 't1jdlflg3voaiblrvn2yfivvn5ifucwwv5f26nfza',
+          balance: new FilecoinNumber('1', 'fil'),
+          path: SINGLE_KEY
+        }
+      ]
+
+      const newInitialState = clonedeep({
+        ...initialState,
+        wallets: dupWallets
+      })
+
+      const expectedState = {
+        ...initialState,
+        selectedWalletIdx: 0,
+        wallets: [dupWallets[0]]
+      }
+
+      expect(
+        states.walletList(newInitialState, { wallets: dupWallets })
+      ).toEqual(expectedState)
+    })
+
+    test('it sorts HD wallets based on their paths', () => {
+      const unsortedWallets = [
+        {
+          address: 't3jdlflg3voaiblrvn2yfivvn5ifucwwv5f26nfza',
+          balance: new FilecoinNumber('1', 'fil'),
+          path: createPath(1, 3)
+        },
+        {
+          address: 't0jdlflg3voaiblrvn2yfivvn5ifucwwv5f26nfza',
+          balance: new FilecoinNumber('1', 'fil'),
+          path: createPath(1, 0)
+        },
+        {
+          address: 't2jdlflg3voaiblrvn2yfivvn5ifucwwv5f26nfza',
+          balance: new FilecoinNumber('1', 'fil'),
+          path: createPath(1, 2)
+        },
+        {
+          address: 't1jdlflg3voaiblrvn2yfivvn5ifucwwv5f26nfza',
+          balance: new FilecoinNumber('1', 'fil'),
+          path: createPath(1, 1)
+        }
+      ]
+
+      const { wallets } = states.walletList(initialState, {
+        wallets: unsortedWallets
+      })
+
+      const sorted = wallets
+        .map(w => w.path.split('/')[5])
+        .every((val, i, arr) => !i || val >= arr[i - 1])
+
+      expect(sorted).toEqual(true)
     })
   })
 

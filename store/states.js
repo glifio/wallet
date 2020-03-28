@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import updateArrayItem from '../utils/updateArrayItem'
+import sortAndRemoveWalletDups from '../utils/sortAndRemoveWalletDups'
 import { setMsgInCache, removeMsgFromCache } from './cache'
 
 export const initialMessagesState = {
@@ -23,7 +24,11 @@ export const initialState = {
 export const walletList = (state, { wallets }) => ({
   ...state,
   // make sure we only ever add wallets to our list that include the right network prefix (blocks race conditions with ledger)
-  wallets: wallets.filter(wallet => wallet.address[0] === state.network)
+  wallets: sortAndRemoveWalletDups(
+    state.wallets,
+    wallets.filter(wallet => wallet.address[0] === state.network)
+  ),
+  selectedWalletIdx: state.selectedWalletIdx >= 0 ? state.selectedWalletIdx : 0
 })
 
 export const switchWallet = (state, { index }) => ({
