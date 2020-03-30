@@ -1,11 +1,12 @@
 import React, { forwardRef } from 'react'
+import styled from 'styled-components'
 import { string, func, bool, oneOf } from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import Box from '../Box'
 import Glyph from '../Glyph'
 import Button from '../Button'
 import { ButtonCopyAccountAddress } from '../IconButtons'
-import { BigTitle, Text, Title as AccountAddress } from '../Typography'
+import { BigTitle, Text, Label, Title as AccountAddress } from '../Typography'
 import truncate from '../../../utils/truncateAddress'
 import copyToClipboard from '../../../utils/copyToClipboard'
 import {
@@ -14,6 +15,17 @@ import {
   IMPORT_MNEMONIC,
   IMPORT_SINGLE_KEY
 } from '../../../constants'
+
+const LabelCopy = styled(Label)`
+  transition: 0.18s ease-in;
+  opacity: 0;
+`
+
+const CopyAddress = styled(Box)`
+  &:hover ${LabelCopy} {
+    opacity: 1;
+  }
+`
 
 const AccountCard = forwardRef(
   (
@@ -58,10 +70,13 @@ const AccountCard = forwardRef(
             <AccountAddress fontWeight={1} fontSize={5} margin={0}>
               {truncate(address)}
             </AccountAddress>
-            <ButtonCopyAccountAddress
-              border={0}
-              onClick={() => copyToClipboard(address)}
-            />
+            <CopyAddress display='flex' alignItems='center'>
+              <ButtonCopyAccountAddress
+                border={0}
+                onClick={() => copyToClipboard(address)}
+              />
+              <LabelCopy mt={0}>Copy</LabelCopy>
+            </CopyAddress>
           </Box>
         </Box>
         <Box display='flex'>
@@ -70,7 +85,9 @@ const AccountCard = forwardRef(
               variant='tertiary'
               title='Switch'
               onClick={onAccountSwitch}
+              height='max-content'
               p={2}
+              py={2}
             />
           )}
           {walletType === LEDGER && (
@@ -78,8 +95,10 @@ const AccountCard = forwardRef(
               variant='tertiary'
               title='View on Ledger'
               onClick={onShowOnLedger}
+              height='max-content'
               ml={2}
               p={2}
+              py={2}
               disabled={ledgerBusy}
             />
           )}
