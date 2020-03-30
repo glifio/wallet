@@ -81,7 +81,12 @@ Step1Helper.propTypes = {
 }
 
 export default () => {
-  const { ledger, setLedgerProvider, setWalletType } = useWalletProvider()
+  const {
+    ledger,
+    setLedgerProvider,
+    setWalletType,
+    resetState
+  } = useWalletProvider()
   const router = useRouter()
   if (!isValidBrowser()) {
     const params = new URLSearchParams(router.query)
@@ -121,7 +126,7 @@ export default () => {
       >
         <Button
           title='Back'
-          onClick={() => setWalletType(null)}
+          onClick={() => resetState()}
           variant='secondary'
           mr={2}
         />

@@ -13,7 +13,10 @@ import {
 import { IconLedger } from '../../../Shared/Icons'
 
 import { useWalletProvider } from '../../../../WalletProvider'
-import { error, walletList } from '../../../../store/actions'
+import {
+  walletList,
+  resetState as resetRdxState
+} from '../../../../store/actions'
 import {
   hasLedgerError,
   reportLedgerConfigError
@@ -94,7 +97,7 @@ Step2Helper.defaultProps = {
 }
 
 export default () => {
-  const { ledger, setWalletType, fetchDefaultWallet } = useWalletProvider()
+  const { ledger, fetchDefaultWallet, resetState } = useWalletProvider()
   const dispatch = useDispatch()
   const generalError = useSelector(state => state.error)
   const router = useRouter()
@@ -142,7 +145,10 @@ export default () => {
       >
         <Button
           title='Back'
-          onClick={() => setWalletType(null)}
+          onClick={() => {
+            dispatch(resetRdxState())
+            resetState()
+          }}
           variant='secondary'
           mr={2}
         />
