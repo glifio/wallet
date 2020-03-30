@@ -30,7 +30,7 @@ import { MESSAGE_HISTORY, SEND, RECEIVE } from './views'
 const WalletView = () => {
   const wallet = useWallet()
   const [childView, setChildView] = useState(MESSAGE_HISTORY)
-  const { ledger, walletType, connectLedger } = useWalletProvider()
+  const { ledger, connectLedger } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState(null)
   const [showLedgerError, setShowLedgerError] = useState(false)
   const [ledgerBusy, setLedgerBusy] = useState(false)
@@ -40,9 +40,9 @@ const WalletView = () => {
     const params = new URLSearchParams(router.query)
     let page = 0
     if (
-      (wallet && walletType === LEDGER) ||
-      walletType === CREATE_MNEMONIC ||
-      walletType === IMPORT_MNEMONIC
+      (wallet && wallet.type === LEDGER) ||
+      wallet.type === CREATE_MNEMONIC ||
+      wallet.type === IMPORT_MNEMONIC
     ) {
       page = Math.floor(wallet.path.split('/')[5] / ACCOUNT_BATCH_SIZE)
     }

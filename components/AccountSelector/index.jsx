@@ -46,12 +46,7 @@ const AccountSelector = () => {
     network: state.network,
     walletsInRdx: state.wallets
   }))
-  const {
-    ledger,
-    connectLedger,
-    walletProvider,
-    walletType
-  } = useWalletProvider()
+  const { ledger, connectLedger, walletProvider } = useWalletProvider()
   const router = useRouter()
   const params = new URLSearchParams(router.query)
   const page = Number(params.get('page'))
@@ -79,7 +74,7 @@ const AccountSelector = () => {
       setLoadingAccounts(true)
       try {
         let provider = walletProvider
-        if (walletType === LEDGER) {
+        if (wallet.type === LEDGER) {
           provider = await connectLedger()
         }
         if (provider) {
@@ -129,7 +124,7 @@ const AccountSelector = () => {
   }, [
     connectLedger,
     dispatch,
-    walletType,
+    wallet.type,
     walletsInRdx,
     walletProvider,
     network,

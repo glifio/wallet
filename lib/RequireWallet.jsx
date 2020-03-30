@@ -2,7 +2,7 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 import { oneOfType, node, oneOf } from 'prop-types'
 import Router from 'next/router'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { noWallet } from '../store/states'
 
 import { NO_WALLET_PROP_TYPE, WALLET_PROP_TYPE } from '../customPropTypes'
 
@@ -25,12 +25,6 @@ RequireWallet.propTypes = {
   wallet: oneOfType([NO_WALLET_PROP_TYPE, WALLET_PROP_TYPE]),
   children: node.isRequired,
   network: oneOf(['f', 't']).isRequired
-}
-
-const noWallet = {
-  address: '',
-  balance: new FilecoinNumber('0', 'fil'),
-  path: []
 }
 
 RequireWallet.defaultProps = {
