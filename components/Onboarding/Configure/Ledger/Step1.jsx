@@ -15,6 +15,7 @@ import { IconLedger } from '../../../Shared/Icons'
 import { useWalletProvider } from '../../../../WalletProvider'
 import isValidBrowser from '../../../../utils/isValidBrowser'
 import { hasLedgerError } from '../../../../utils/ledger/reportLedgerConfigError'
+import useReset from '../../../../utils/useReset'
 
 const Step1Helper = ({ inUseByAnotherApp, connectedFailure }) => {
   return (
@@ -81,13 +82,9 @@ Step1Helper.propTypes = {
 }
 
 export default () => {
-  const {
-    ledger,
-    setLedgerProvider,
-    setWalletType,
-    resetState
-  } = useWalletProvider()
+  const { ledger, setLedgerProvider, setWalletType } = useWalletProvider()
   const router = useRouter()
+  const resetState = useReset()
   if (!isValidBrowser()) {
     const params = new URLSearchParams(router.query)
     setWalletType(null)
