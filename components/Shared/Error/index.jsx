@@ -5,6 +5,7 @@ import Box from '../Box'
 import Button from '../Button'
 import Card from '../Card'
 import Glyph from '../Glyph'
+import OnboardCard from '../Card/OnboardCard'
 import { StyledATag } from '../Link'
 import { Text, Title } from '../Typography'
 
@@ -23,8 +24,8 @@ const ErrorView = ({ description, linkhref, linkDisplay, title }) => {
       alignItems='center'
       justifyContent='center'
     >
-      <Box display='flex' justifyContent='center'>
-        <Card
+      <Box display='flex' justifyContent='center' width='100%'>
+        <OnboardCard
           display='flex'
           flexDirection='column'
           justifyContent='space-between'
@@ -34,30 +35,26 @@ const ErrorView = ({ description, linkhref, linkDisplay, title }) => {
           height={300}
           ml={2}
         >
-          <Box display='flex' alignItems='center'>
-            <Glyph acronym='!' />
-          </Box>
           <Box>
-            <Title mb={2}>{title}</Title>
-          </Box>
-        </Card>
-        <Card
-          display='flex'
-          flexDirection='column'
-          justifyContent='space-between'
-          borderColor='silver'
-          height={300}
-          ml={2}
-        >
-          <Box display='flex' alignItems='center'>
+            <Glyph color='status.fail.foreground' acronym='Er' />
+            <Title mt={4} mb={2}>
+              {title}
+            </Title>
             <Text>{description}</Text>
           </Box>
+
           <Box>
-            <StyledATag rel='noopener' target='_blank' href={linkhref}>
+            <StyledATag
+              rel='noopener'
+              target='_blank'
+              href={linkhref}
+              fontSize={3}
+              color='core.white'
+            >
               {linkDisplay}
             </StyledATag>
           </Box>
-        </Card>
+        </OnboardCard>
       </Box>
       <Box>
         <Button mt={5} variant='secondary' title='Back' onClick={sendHome} />
