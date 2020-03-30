@@ -93,7 +93,7 @@ const AccountCard = forwardRef(
           {walletType === LEDGER && (
             <Button
               variant='tertiary'
-              title='View on Ledger'
+              title='Show on Ledger'
               onClick={onShowOnLedger}
               height='max-content'
               ml={2}
