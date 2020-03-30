@@ -11,7 +11,8 @@ import {
   FETCHED_CONFIRMED_MESSAGES_FAILURE,
   FETCHING_NEXT_PAGE,
   WALLET_LIST,
-  POPULATE_REDUX
+  POPULATE_REDUX,
+  RESET_STATE
 } from './actionTypes'
 
 export const walletList = wallets => ({
@@ -96,3 +97,9 @@ export const switchNetwork = (network, wallets = []) => ({
     wallets
   }
 })
+
+export const resetState = () => {
+  return {
+    type: RESET_STATE
+  }
+}

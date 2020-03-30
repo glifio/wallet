@@ -19,3 +19,5 @@ export const CLEAR_ERROR = 'CLEAR_ERROR'
 export const POPULATE_REDUX = 'POPULATE_REDUX'
 
 export const SWITCH_NETWORK = 'SWITCH_NETWORK'
+
+export const RESET_STATE = 'RESET_STATE'

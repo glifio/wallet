@@ -11,7 +11,8 @@ import {
   FETCHED_CONFIRMED_MESSAGES_FAILURE,
   FETCHING_NEXT_PAGE,
   POPULATE_REDUX,
-  SWITCH_NETWORK
+  SWITCH_NETWORK,
+  RESET_STATE
 } from './actionTypes'
 
 import {
@@ -27,7 +28,8 @@ import {
   fetchedConfirmedMessagesFailure,
   fetchingNextPage,
   populateRedux,
-  switchNetwork
+  switchNetwork,
+  initialState
 } from './states'
 
 export default (state, action) => {
@@ -67,6 +69,8 @@ export default (state, action) => {
       return populateRedux(Object.freeze(state), action.payload)
     case SWITCH_NETWORK:
       return switchNetwork(Object.freeze(state), action.payload)
+    case RESET_STATE:
+      return initialState
     default:
       return state
   }

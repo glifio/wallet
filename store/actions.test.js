@@ -189,4 +189,8 @@ describe('actions', () => {
 
     expect(actions.switchNetwork(network, wallets)).toEqual(expectedAction)
   })
+
+  test('resetState', () => {
+    expect(actions.resetState()).toEqual({ type: types.RESET_STATE })
+  })
 })
