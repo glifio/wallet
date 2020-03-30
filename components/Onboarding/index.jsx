@@ -1,16 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import ChooseWallet from './Choose'
 import ConfigureWallet from './Configure'
 import { useWalletProvider } from '../../WalletProvider'
 import { Box } from '../Shared'
-import useReset from '../../utils/useReset'
 
 export default () => {
   const { walletType } = useWalletProvider()
-  const resetState = useReset()
-  useEffect(() => {
-    resetState()
-  }, [resetState])
   return (
     <Box
       display='flex'

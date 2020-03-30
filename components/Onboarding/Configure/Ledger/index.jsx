@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Box } from '../../../Shared'
 
-import { useWalletProvider } from '../../../../WalletProvider'
 import Step1 from './Step1'
 import Step2 from './Step2'
 
 export default () => {
-  const { step } = useWalletProvider()
+  const [step, setStep] = useState(1)
   return (
     <Box
       display='flex'
@@ -16,7 +15,7 @@ export default () => {
       width='100%'
       maxWidth={13}
     >
-      {step === 1 && <Step1 />}
+      {step === 1 && <Step1 setStep={setStep} />}
       {step === 2 && <Step2 />}
     </Box>
   )

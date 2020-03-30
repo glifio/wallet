@@ -81,7 +81,7 @@ Step1Helper.propTypes = {
   inUseByAnotherApp: PropTypes.bool.isRequired
 }
 
-export default () => {
+const Step1 = ({ setStep }) => {
   const { ledger, setLedgerProvider, setWalletType } = useWalletProvider()
   const router = useRouter()
   const resetState = useReset()
@@ -129,7 +129,10 @@ export default () => {
         />
         <Button
           title='Yes, my Ledger device is connected.'
-          onClick={setLedgerProvider}
+          onClick={async () => {
+            const provider = await setLedgerProvider()
+            if (provider) setStep(2)
+          }}
           variant='primary'
           ml={2}
         />
@@ -137,3 +140,9 @@ export default () => {
     </>
   )
 }
+
+Step1.propTypes = {
+  setStep: PropTypes.func.isRequired
+}
+
+export default Step1
