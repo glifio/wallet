@@ -9,11 +9,14 @@ export default styled(Box).attrs(props => ({
   my: 1,
   ...props
 }))`
+  background-color: ${props => props.theme.colors.input.background.base}00;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  transition: 0.18s ease-in-out;
 
   &:hover {
     cursor: pointer;
+    background-color: ${props => props.theme.colors.input.background.base};
   }
 `
