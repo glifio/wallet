@@ -23,6 +23,7 @@ const ErrorView = ({ description, linkhref, linkDisplay, title }) => {
       height='90vh'
       alignItems='center'
       justifyContent='center'
+      p={4}
     >
       <Box display='flex' justifyContent='center' width='100%'>
         <OnboardCard
@@ -32,7 +33,6 @@ const ErrorView = ({ description, linkhref, linkDisplay, title }) => {
           borderColor='card.error.background'
           bg='card.error.background'
           color='card.error.foreground'
-          height={300}
           ml={2}
         >
           <Box>
