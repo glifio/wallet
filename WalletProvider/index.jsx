@@ -5,7 +5,8 @@ import reducer, {
   initialState,
   setWalletType,
   setError,
-  resetLedgerState
+  resetLedgerState,
+  resetState
 } from './state'
 import { setLedgerProvider } from '../utils/ledger/setLedgerProvider'
 import fetchDefaultWallet from './fetchDefaultWallet'
@@ -40,7 +41,8 @@ const WalletProviderWrapper = ({ network, children }) => {
           dispatch,
           network
         ]),
-        resetLedgerState: () => dispatch(resetLedgerState())
+        resetLedgerState: () => dispatch(resetLedgerState()),
+        resetState: useCallback(() => dispatch(resetState()), [dispatch])
       }}
     >
       {children}

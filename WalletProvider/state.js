@@ -29,6 +29,7 @@ const SET_WALLET_TYPE = 'SET_WALLET_TYPE'
 const CREATE_WALLET_PROVIDER = 'CREATE_WALLET_PROVIDER'
 const WALLET_ERROR = 'WALLET_ERROR'
 const CLEAR_ERROR = 'CLEAR_ERROR'
+const RESET_STATE = 'RESET_STATE'
 
 /* ACTIONS */
 export const setWalletType = walletType => ({
@@ -56,6 +57,10 @@ export const clearError = () => ({
 
 export const resetLedgerState = () => ({
   type: LEDGER_RESET_STATE
+})
+
+export const resetState = () => ({
+  type: RESET_STATE
 })
 
 /* STATE */
@@ -226,6 +231,8 @@ export default (state, action) => {
           ...initialLedgerState
         }
       }
+    case RESET_STATE:
+      return initialState
     default:
       return state
   }
