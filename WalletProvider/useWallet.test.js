@@ -1,9 +1,9 @@
-import { renderHook, act } from '@testing-library/react-hooks'
+import { renderHook } from '@testing-library/react-hooks'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { Provider } from 'react-redux'
 import WalletProviderWrapper, { useWalletProvider } from '.'
 import useWallet from './useWallet'
-import { initializeStore, flushPromises } from '../test-utils'
+import { initializeStore } from '../test-utils'
 import { LEDGER } from '../constants'
 
 describe('useWallet', () => {
