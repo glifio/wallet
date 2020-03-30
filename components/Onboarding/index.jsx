@@ -1,18 +1,16 @@
 import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
 import ChooseWallet from './Choose'
 import ConfigureWallet from './Configure'
 import { useWalletProvider } from '../../WalletProvider'
 import { Box } from '../Shared'
-import { resetState as resetRdxState } from '../../store/actions'
+import useReset from '../../utils/useReset'
 
 export default () => {
-  const { walletType, resetState } = useWalletProvider()
-  const dispatch = useDispatch()
+  const { walletType } = useWalletProvider()
+  const resetState = useReset()
   useEffect(() => {
     resetState()
-    dispatch(resetRdxState())
-  }, [resetState, dispatch])
+  }, [resetState])
   return (
     <Box
       display='flex'
