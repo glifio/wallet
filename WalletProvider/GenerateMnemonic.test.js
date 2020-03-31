@@ -31,6 +31,9 @@ describe('Mnemonic generator', () => {
           <div>Yo</div>
         </GenerateMnemonic>
       )
+
+      expect(mockSetMnemonic).not.toHaveBeenCalled()
+      expect(mockRustModule.mnemonic_generate).not.toHaveBeenCalled()
     })
 
     expect(mockSetMnemonic).toHaveBeenCalled()
