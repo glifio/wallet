@@ -392,12 +392,6 @@ const Send = ({ close }) => {
           )}
         </SendCardForm>
       </SendContainer>
-      <ButtonClose
-        alignSelf='flex-start'
-        ml={2}
-        type='button'
-        onClick={close}
-      />
     </>
   )
 }
