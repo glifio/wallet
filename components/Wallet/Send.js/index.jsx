@@ -346,7 +346,7 @@ const Send = ({ close }) => {
               <>
                 <Button
                   type='button'
-                  title='Cancel'
+                  title={step === 1 ? 'Cancel' : 'Back'}
                   variant='secondary'
                   border={0}
                   borderRight={1}
@@ -358,6 +358,10 @@ const Send = ({ close }) => {
                     resetLedgerState()
                     close()
                   }}
+                  css={`
+                    /* 'css' operation is used here to override its inherited border-radius property */
+                    border-radius: 0px;
+                  `}
                 />
                 <Button
                   border={0}
@@ -378,6 +382,10 @@ const Send = ({ close }) => {
                   title={step === 1 ? 'Next' : 'Confirm'}
                   variant='primary'
                   onClick={() => {}}
+                  css={`
+                    /* 'css' operation is used here to override its inherited border-radius property */
+                    border-radius: 0px;
+                  `}
                 />
               </>
             )}
