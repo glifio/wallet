@@ -311,7 +311,7 @@ const Send = ({ close }) => {
                   `}
                   onClick={() => setCustomizingGas(true)}
                 >
-                  Adjust transfer fee
+                  Advanced
                 </Text>
               </Box>
               <Box
