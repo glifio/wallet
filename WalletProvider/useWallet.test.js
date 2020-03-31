@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks'
+import { cleanup } from '@testing-library/react'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { Provider } from 'react-redux'
 import WalletProviderWrapper, { useWalletProvider } from '.'
@@ -7,6 +8,7 @@ import { initializeStore } from '../test-utils'
 import { LEDGER } from '../constants'
 
 describe('useWallet', () => {
+  afterEach(cleanup)
   test('it returns a nullWallet state when no wallet exists in redux', () => {
     const store = initializeStore()
     const wrapper = ({ children }) => (

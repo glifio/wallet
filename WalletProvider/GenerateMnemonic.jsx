@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
 export default dynamic({
@@ -18,7 +18,7 @@ export default dynamic({
         }
       }, [createdMnemonic, setCreatedMnemonic, setMnemonic])
 
-      return <></>
+      return null
     }
 
     GenerateMnemonic.propTypes = {
