@@ -7,6 +7,7 @@ import {
   Input,
   Label,
   Title,
+  Text,
   FloatingContainer,
   ContentContainer
 } from '../../Shared'
@@ -60,7 +61,7 @@ const GasCustomization = ({
 
   return (
     <ContentContainer>
-      <Label mt={3} mb={3}>
+      {/* <Label mt={3} mb={3}>
         Select a preset transfer speed
       </Label>
       <Box mb={4} display='flex' flexDirection='row'>
@@ -116,10 +117,22 @@ const GasCustomization = ({
           py={1}
           type='button'
         />
+      </Box> */}
+      <Box display='flex' justifyContent='space-between' alignItems='center'>
+        <Label mt={3} mb={3}>
+          Submit a custom fee
+        </Label>
+        <Label
+          mt={0}
+          color='core.primary'
+          css={`
+            text-decoration: underline;
+            cursor: pointer;
+          `}
+        >
+          What's this?
+        </Label>
       </Box>
-      <Label mt={3} mb={3}>
-        Submit a custom fee
-      </Label>
       <Input.Number
         mt={2}
         m='0'
@@ -149,7 +162,7 @@ const GasCustomization = ({
         mt={7}
         mx={1}
       >
-        <Label>New Transaction Fee</Label>
+        <Title>New Transaction Fee</Title>
         <Box display='flex' flexDirection='column' LabelAlign='right'>
           <Title fontSize={4} color='core.primary'>
             {estimatedGas
@@ -165,7 +178,7 @@ const GasCustomization = ({
           borderRadius={0}
           borderColor='core.lightgray'
           type='button'
-          title='Cancel'
+          title='Back'
           variant='secondary'
           onClick={() => {
             exit()
