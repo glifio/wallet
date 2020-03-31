@@ -61,17 +61,6 @@ const GasCustomization = ({
 
   return (
     <ContentContainer>
-      <Text>Would you like to manually set your transaction speed?</Text>
-      <Text
-        mt={0}
-        color='core.primary'
-        css={`
-          text-decoration: underline;
-          cursor: pointer;
-        `}
-      >
-        What's this?
-      </Text>
       {/* <Label mt={3} mb={3}>
         Select a preset transfer speed
       </Label>
@@ -129,9 +118,21 @@ const GasCustomization = ({
           type='button'
         />
       </Box> */}
-      <Label mt={3} mb={3}>
-        Submit a custom fee
-      </Label>
+      <Box display='flex' justifyContent='space-between' alignItems='center'>
+        <Label mt={3} mb={3}>
+          Submit a custom fee
+        </Label>
+        <Label
+          mt={0}
+          color='core.primary'
+          css={`
+            text-decoration: underline;
+            cursor: pointer;
+          `}
+        >
+          What's this?
+        </Label>
+      </Box>
       <Input.Number
         mt={2}
         m='0'
