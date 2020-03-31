@@ -34,6 +34,7 @@ const ErrorView = ({ description, linkhref, linkDisplay, title }) => {
           bg='card.error.background'
           color='card.error.foreground'
           ml={2}
+          minHeight={11}
         >
           <Box>
             <Glyph color='status.fail.foreground' acronym='Er' />
