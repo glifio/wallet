@@ -1,4 +1,4 @@
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 import Message from '@openworklabs/filecoin-message'
 import clonedeep from 'lodash.clonedeep'
 import * as states from './states'
@@ -280,11 +280,11 @@ describe('state manipulators', () => {
       const message = new Message({
         from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
-        value: '1000',
-        method: 0,
-        gasPrice: '1',
-        gasLimit: '1000',
-        nonce: 0
+        value: new BigNumber('1000'),
+        method: 1,
+        gasPrice: new BigNumber('1'),
+        gasLimit: 1000,
+        nonce: 1
       })
 
       expect(
@@ -301,19 +301,19 @@ describe('state manipulators', () => {
       const firstPendingMsg = new Message({
         from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
-        value: '1000',
-        method: 0,
-        gasPrice: '1',
-        gasLimit: '1000',
-        nonce: 0
+        value: new BigNumber('1000'),
+        method: 1,
+        gasPrice: new BigNumber('1'),
+        gasLimit: 1000,
+        nonce: 1
       })
       const secondPendingMsg = new Message({
         from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
-        value: '1000',
-        method: 0,
-        gasPrice: '1',
-        gasLimit: '1000',
+        value: new BigNumber('1000'),
+        method: 1,
+        gasPrice: new BigNumber('1'),
+        gasLimit: 1000,
         nonce: 1
       })
       const stateWPendingMsg = {
@@ -345,11 +345,11 @@ describe('state manipulators', () => {
       const message = new Message({
         from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
-        value: '1000',
-        method: 0,
-        gasPrice: '1',
-        gasLimit: '1000',
-        nonce: 0
+        value: new BigNumber('1000'),
+        method: 1,
+        gasPrice: new BigNumber('1'),
+        gasLimit: 1000,
+        nonce: 1
       })
       const msgCid = '123'
       message.cid = msgCid
@@ -357,10 +357,10 @@ describe('state manipulators', () => {
       const secondMsg = new Message({
         from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
-        value: '1000',
-        method: 0,
-        gasPrice: '1',
-        gasLimit: '1000',
+        value: new BigNumber('1000'),
+        method: 1,
+        gasPrice: new BigNumber('1'),
+        gasLimit: 1000,
         nonce: 1
       })
       secondMsg.cid = '456'
@@ -388,11 +388,11 @@ describe('state manipulators', () => {
       const message = new Message({
         from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
-        value: '1000',
-        method: 0,
-        gasPrice: '1',
-        gasLimit: '1000',
-        nonce: 0
+        value: new BigNumber('1000'),
+        method: 1,
+        gasPrice: new BigNumber('1'),
+        gasLimit: 1000,
+        nonce: 1
       })
       const msgCid = '123'
       message.cid = msgCid
@@ -400,10 +400,10 @@ describe('state manipulators', () => {
       const confirmedMsg = new Message({
         from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
-        value: '1000',
-        method: 0,
-        gasPrice: '1',
-        gasLimit: '1000',
+        value: new BigNumber('1000'),
+        method: 1,
+        gasPrice: new BigNumber('1'),
+        gasLimit: 1000,
         nonce: 1
       })
       confirmedMsg.cid = '456'
@@ -437,11 +437,11 @@ describe('state manipulators', () => {
         const message = new Message({
           from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
           to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
-          value: '1000',
-          method: 0,
-          gasPrice: '1',
-          gasLimit: '1000',
-          nonce: i
+          value: new BigNumber('1000'),
+          method: 1,
+          gasPrice: new BigNumber('1'),
+          gasLimit: 1000,
+          nonce: 1
         })
 
         message.cid = `Qmz${i}`
@@ -489,10 +489,10 @@ describe('state manipulators', () => {
         new Message({
           from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
           to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
-          value: '1000',
-          method: 0,
-          gasPrice: '1',
-          gasLimit: '1000',
+          value: new BigNumber('1000'),
+          method: 1,
+          gasPrice: new BigNumber('1'),
+          gasLimit: 1000,
           nonce: 1
         })
       ]
@@ -500,11 +500,11 @@ describe('state manipulators', () => {
         new Message({
           from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
           to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
-          value: '1000',
-          method: 0,
-          gasPrice: '1',
-          gasLimit: '1000',
-          nonce: 0
+          value: new BigNumber('1000'),
+          method: 1,
+          gasPrice: new BigNumber('1'),
+          gasLimit: 1000,
+          nonce: 1
         })
       ]
 
@@ -522,14 +522,14 @@ describe('state manipulators', () => {
   describe('fetchedConfirmedMessagesSuccess', () => {
     const messagesFromAPI = []
     beforeAll(() => {
-      for (let i = 0; i < 10; i += 1) {
+      for (let i = 1; i < 11; i += 1) {
         const message = new Message({
           from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
           to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
-          value: '1000',
-          method: 0,
-          gasPrice: '1',
-          gasLimit: '1000',
+          value: new BigNumber('1000'),
+          method: 1,
+          gasPrice: new BigNumber('1'),
+          gasLimit: 1000,
           nonce: i
         })
 
@@ -543,10 +543,10 @@ describe('state manipulators', () => {
         new Message({
           from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
           to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
-          value: '1000',
-          method: 0,
-          gasPrice: '1',
-          gasLimit: '1000',
+          value: new BigNumber('1000'),
+          method: 1,
+          gasPrice: new BigNumber('1'),
+          gasLimit: 1000,
           nonce: 1
         })
       ]
@@ -567,10 +567,10 @@ describe('state manipulators', () => {
       const msg = new Message({
         from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
-        value: '1000',
-        method: 0,
-        gasPrice: '1',
-        gasLimit: '1000',
+        value: new BigNumber('1000'),
+        method: 1,
+        gasPrice: new BigNumber('1'),
+        gasLimit: 1000,
         nonce: 1
       })
       const previouslyConfirmed = [msg]
@@ -613,10 +613,10 @@ describe('state manipulators', () => {
         new Message({
           from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
           to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
-          value: '1000',
-          method: 0,
-          gasPrice: '1',
-          gasLimit: '1000',
+          value: new BigNumber('1000'),
+          method: 1,
+          gasPrice: new BigNumber('1'),
+          gasLimit: 1000,
           nonce: 1
         })
       ]
@@ -624,11 +624,11 @@ describe('state manipulators', () => {
         new Message({
           from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
           to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
-          value: '1000',
-          method: 0,
-          gasPrice: '1',
-          gasLimit: '1000',
-          nonce: 0
+          value: new BigNumber('1000'),
+          method: 1,
+          gasPrice: new BigNumber('1'),
+          gasLimit: 1000,
+          nonce: 1
         })
       ]
 
@@ -685,14 +685,14 @@ describe('state manipulators', () => {
   describe('populateRedux', () => {
     test('it sets pending messages in state', () => {
       const pendingMsgs = []
-      for (let i = 0; i < 10; i += 1) {
+      for (let i = 1; i < 11; i += 1) {
         const message = new Message({
           from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
           to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
-          value: '1000',
-          method: 0,
-          gasPrice: '1',
-          gasLimit: '1000',
+          value: new BigNumber('1000'),
+          method: 1,
+          gasPrice: new BigNumber('1'),
+          gasLimit: 1000,
           nonce: i
         })
         pendingMsgs.push(message)

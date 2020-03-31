@@ -1,5 +1,5 @@
 import Message from '@openworklabs/filecoin-message'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 
 import * as actions from './actions'
 import * as types from './actionTypes'
@@ -54,11 +54,11 @@ describe('actions', () => {
     const message = new Message({
       from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
       to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
-      value: '1000',
-      method: 0,
-      gasPrice: '1',
-      gasLimit: '1000',
-      nonce: 0
+      value: new BigNumber('1000'),
+      method: 1,
+      gasPrice: new BigNumber('1'),
+      gasLimit: 1000,
+      nonce: 1
     })
     const expectedAction = {
       type: types.CONFIRM_MESSAGE,
@@ -94,11 +94,11 @@ describe('actions', () => {
       new Message({
         from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
-        value: '1000',
-        method: 0,
-        gasPrice: '1',
-        gasLimit: '1000',
-        nonce: 0
+        value: new BigNumber('1000'),
+        method: 1,
+        gasPrice: new BigNumber('1'),
+        gasLimit: 1000,
+        nonce: 1
       })
     ]
 
@@ -151,11 +151,11 @@ describe('actions', () => {
       new Message({
         from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
-        value: '1000',
-        method: 0,
-        gasPrice: '1',
-        gasLimit: '1000',
-        nonce: 0
+        value: new BigNumber('1000'),
+        method: 1,
+        gasPrice: new BigNumber('1'),
+        gasLimit: 1000,
+        nonce: 1
       })
     ]
 
