@@ -126,7 +126,7 @@ const Send = ({ close }) => {
         to: toAddress,
         from: wallet.address,
         value: new BigNumber(value.fil.toAttoFil()),
-        method: 1,
+        method: 0,
         gasPrice: new BigNumber(gasPrice.toAttoFil()),
         gasLimit: Number(gasLimit.toAttoFil()),
         nonce,
