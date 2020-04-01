@@ -170,7 +170,7 @@ export default class Home extends React.Component {
             <Box
               display='inline-block'
               py={2}
-              mr={[4, 6, 7, 8]}
+              mr={4}
               px={4}
               borderRadius={4}
               css={`
@@ -244,7 +244,7 @@ export default class Home extends React.Component {
             <Box
               display='inline-block'
               py={2}
-              mr={[4, 6, 7, 8]}
+              mr={4}
               px={4}
               borderRadius={4}
               css={`
@@ -268,7 +268,7 @@ export default class Home extends React.Component {
           </MenuItem>
 
           <MenuItem mr='8%' my={[2, 3]}>
-            <TitleCopy>a</TitleCopy>
+            <TitleCopy>A</TitleCopy>
           </MenuItem>
 
           <MenuItem mr='8%' my={[2, 3]}>
