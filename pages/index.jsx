@@ -8,13 +8,8 @@ import {
   MenuItem,
   Title,
   Text,
-  IconGlif,
-  BaseButton
+  IconGlif
 } from '../components/Shared'
-
-const Spacer = styled(Box)`
-  margin: ;
-`
 
 const TitleCopy = styled(Title)`
   /* Used this: https://stackoverflow.com/questions/14431411/pure-css-to-make-font-size-responsive-based-on-dynamic-amount-of-characters */
@@ -31,16 +26,57 @@ const ButtonSignUp = styled.button`
   border: 0;
   cursor: pointer;
   background: transparent;
+  transition: 0.18s ease-in;
 
   &:hover {
-    box-shadow: 0px 0px 8px #999;
+    transform:scale(1.05);
   }
   ${space}
   ${layout}
   ${typography}
-  ${border}
+  ${border} 
   ${color}
 `
+
+const InputEmail = styled.input`
+outline: 0;
+border: 0;
+${space}
+  ${layout}
+  ${typography}
+  ${border}
+
+  ${color}
+`
+
+const ShowSignUp = setClicked => {
+  return (
+    <>
+      <InputEmail
+        fontSize={[4, 5, 6]}
+        color='core.white'
+        bg='core.nearblack'
+        px={3}
+        py={2}
+        borderRadius={6}
+        textAlign='center'
+        placeholder='Your email, please'
+      />
+      <ButtonSignUp
+        color='core.white'
+        bg='core.nearblack'
+        fontSize={[4, 5, 6]}
+        border={1}
+        px={6}
+        py={2}
+        height='max-content'
+        borderRadius={6}
+      >
+        Submit
+      </ButtonSignUp>
+    </>
+  )
+}
 
 export default class Home extends React.Component {
   componentDidMount() {
@@ -69,7 +105,7 @@ export default class Home extends React.Component {
           <MenuItem>
             <Box
               display='inline-block'
-              py={4}
+              py={3}
               mr={[4, 6, 7, 8]}
               px={2}
               borderRadius={4}
@@ -82,55 +118,47 @@ export default class Home extends React.Component {
             </Box>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>is</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>an</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>interoperable</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>set</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>of</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>tools</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <Image width='200px' alt='' src='/static/imgtools.png' />
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
-            <TitleCopy>that</TitleCopy>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
+            <TitleCopy>for</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
-            <TitleCopy>function</TitleCopy>
-          </MenuItem>
-
-          <MenuItem mr='8%' my={[2, 3]}>
-            <TitleCopy>on</TitleCopy>
-          </MenuItem>
-
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>the</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>Filecoin</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>network.</TitleCopy>
           </MenuItem>
           <MenuItem
@@ -154,9 +182,11 @@ export default class Home extends React.Component {
               py={2}
               height='max-content'
               borderRadius={6}
+              onClick={() => setClicked(true)}
             >
               Sign Up
             </ButtonSignUp>
+            {setClicked && <ShowSignUp />}
           </MenuItem>
         </Menu>
         <Menu
@@ -171,7 +201,7 @@ export default class Home extends React.Component {
               display='inline-block'
               py={2}
               mr={4}
-              px={4}
+              px={3}
               borderRadius={4}
               css={`
                 background: linear-gradient(
@@ -193,15 +223,11 @@ export default class Home extends React.Component {
             <TitleCopy>Wallet</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
-            <TitleCopy>is</TitleCopy>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
+            <TitleCopy>A</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
-            <TitleCopy>a</TitleCopy>
-          </MenuItem>
-
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>lightweight</TitleCopy>
           </MenuItem>
 
@@ -209,27 +235,27 @@ export default class Home extends React.Component {
             <Image width='300px' alt='' src='/static/imgwallet.png' />
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>interface</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>for</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>sending</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>and</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>receiving</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>Filecoin</TitleCopy>
           </MenuItem>
         </Menu>
@@ -245,7 +271,7 @@ export default class Home extends React.Component {
               display='inline-block'
               py={2}
               mr={4}
-              px={4}
+              px={3}
               borderRadius={4}
               css={`
                 background: linear-gradient(
@@ -267,27 +293,27 @@ export default class Home extends React.Component {
             <TitleCopy>Node</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>A</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>fully</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>managed</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>Filecoin</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>node</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>you</TitleCopy>
           </MenuItem>
 
@@ -295,23 +321,23 @@ export default class Home extends React.Component {
             <Image width='200px' alt='' src='/static/imgnode.png' />
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>can</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>deploy</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>from</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>the</TitleCopy>
           </MenuItem>
 
-          <MenuItem mr='8%' my={[2, 3]}>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>command-line</TitleCopy>
           </MenuItem>
         </Menu>
