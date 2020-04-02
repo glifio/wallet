@@ -138,18 +138,18 @@ export default () => {
   const [subscribed, setSubscribed] = useState(false)
 
   return (
-    <section name='Introduction'>
-      <Box
-        display='block'
-        margin='0 auto'
-        py={[2, 4]}
-        pl={[3, 4, 6, 7]}
-        pr={[3, 4, 6]}
-        maxWidth='1680px'
-        width='100%'
-        minHeight='100vh'
-        // bg='core.white'
-      >
+    <Box
+      display='block'
+      margin='0 auto'
+      py={[2, 4]}
+      pl={[3, 4, 6, 7]}
+      pr={[3, 4, 6]}
+      maxWidth='1680px'
+      width='100%'
+      minHeight='100vh'
+      // bg='core.white'
+    >
+      <section name='Introduction'>
         <Menu
           display='flex'
           alignItems='center'
