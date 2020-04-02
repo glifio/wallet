@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { useWalletProvider } from '../../../../WalletProvider'
 import { Box, Button, Card, Text, Glyph } from '../../../Shared'
+import useReset from '../../../../utils/useReset'
 
 const Back = ({ setReturningHome }) => {
-  const { setWalletType } = useWalletProvider()
+  const resetState = useReset()
   return (
     <Box display='flex' flexDirection='column' alignItems='center' mt={8}>
       <Card
@@ -27,7 +27,7 @@ const Back = ({ setReturningHome }) => {
         />
         <Button
           title='Yes, take me home'
-          onClick={() => setWalletType(null)}
+          onClick={() => resetState()}
           variant='primary'
           ml={2}
         />

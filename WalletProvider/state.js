@@ -1,4 +1,3 @@
-import { LEDGER } from '../constants'
 import {
   initialLedgerState,
   LEDGER_USER_INITIATED_IMPORT,
@@ -18,18 +17,16 @@ import {
 export const initialState = {
   walletType: null,
   walletProvider: null,
-  walletConnected: false,
-  step: 1,
   error: '',
   ledger: initialLedgerState
 }
 
 /* ACTION TYPES */
-const SET_WALLET_TYPE = 'SET_WALLET_TYPE'
-const CREATE_WALLET_PROVIDER = 'CREATE_WALLET_PROVIDER'
-const WALLET_ERROR = 'WALLET_ERROR'
-const CLEAR_ERROR = 'CLEAR_ERROR'
-const RESET_STATE = 'RESET_STATE'
+export const SET_WALLET_TYPE = 'SET_WALLET_TYPE'
+export const CREATE_WALLET_PROVIDER = 'CREATE_WALLET_PROVIDER'
+export const WALLET_ERROR = 'WALLET_ERROR'
+export const CLEAR_ERROR = 'CLEAR_ERROR'
+export const RESET_STATE = 'RESET_STATE'
 
 /* ACTIONS */
 export const setWalletType = walletType => ({
@@ -63,51 +60,26 @@ export const resetState = () => ({
   type: RESET_STATE
 })
 
-/* STATE */
-const setWalletTypeInState = (state, { walletType }) => {
-  const newState = {
-    ...state,
-    walletType
-  }
-  if (walletType === LEDGER) {
-    newState.ledger = initialLedgerState
-  }
-
-  return newState
-}
-
-const createWalletProviderInState = (state, { provider }) => ({
-  ...state,
-  walletConnected: true,
-  walletProvider: provider,
-  step: 2
-})
-
-const setErrorInState = (state, { error }) => ({
-  ...state,
-  error
-})
-
-const clearErrorInState = state => ({
-  ...state,
-  error: ''
-})
-
 /* REDUCER */
 export default (state, action) => {
   switch (action.type) {
     case SET_WALLET_TYPE:
-      return setWalletTypeInState(Object.freeze(state), action.payload)
+      return { ...Object.freeze(state), walletType: action.payload.walletType }
     case CREATE_WALLET_PROVIDER:
-      return createWalletProviderInState(Object.freeze(state), action.payload)
+      return {
+        ...Object.freeze(state),
+        walletProvider: action.payload.provider
+      }
     case WALLET_ERROR:
-      return setErrorInState(Object.freeze(state), action.error)
+      return { ...Object.freeze(state), error: action.error }
     case CLEAR_ERROR:
-      return clearErrorInState(Object.freeze(state))
+      return { ...Object.freeze(state), error: '' }
+    case RESET_STATE:
+      return Object.freeze(initialState)
     // ledger cases
     case LEDGER_USER_INITIATED_IMPORT:
       return {
-        ...state,
+        ...Object.freeze(state),
         ledger: {
           ...state.ledger,
           connecting: true,
@@ -118,7 +90,7 @@ export default (state, action) => {
       }
     case LEDGER_NOT_FOUND:
       return {
-        ...state,
+        ...Object.freeze(state),
         ledger: {
           ...state.ledger,
           connecting: false,
@@ -129,7 +101,7 @@ export default (state, action) => {
       }
     case LEDGER_CONNECTED:
       return {
-        ...state,
+        ...Object.freeze(state),
         ledger: {
           ...state.ledger,
           connecting: false,
@@ -140,7 +112,7 @@ export default (state, action) => {
       }
     case LEDGER_ESTABLISHING_CONNECTION_W_FILECOIN_APP:
       return {
-        ...state,
+        ...Object.freeze(state),
         ledger: {
           ...state.ledger,
           establishingConnectionWFilecoinApp: true,
@@ -154,26 +126,28 @@ export default (state, action) => {
       }
     case LEDGER_LOCKED:
       return {
-        ...state,
+        ...Object.freeze(state),
         ledger: {
           ...state.ledger,
           locked: true,
           unlocked: false,
-          userImportFailure: true
+          userImportFailure: true,
+          establishingConnectionWFilecoinApp: false
         }
       }
     case LEDGER_UNLOCKED:
       return {
-        ...state,
+        ...Object.freeze(state),
         ledger: {
           ...state.ledger,
           locked: false,
-          unlocked: true
+          unlocked: true,
+          establishingConnectionWFilecoinApp: false
         }
       }
     case LEDGER_FILECOIN_APP_NOT_OPEN:
       return {
-        ...state,
+        ...Object.freeze(state),
         ledger: {
           ...state.ledger,
           establishingConnectionWFilecoinApp: false,
@@ -187,7 +161,7 @@ export default (state, action) => {
       }
     case LEDGER_FILECOIN_APP_OPEN:
       return {
-        ...state,
+        ...Object.freeze(state),
         ledger: {
           ...state.ledger,
           establishingConnectionWFilecoinApp: false,
@@ -202,37 +176,38 @@ export default (state, action) => {
       }
     case LEDGER_BUSY:
       return {
-        ...state,
+        ...Object.freeze(state),
         ledger: {
           ...state.ledger,
-          busy: true
+          busy: true,
+          establishingConnectionWFilecoinApp: false
         }
       }
     case LEDGER_REPLUG:
       return {
-        ...state,
+        ...Object.freeze(state),
         ledger: {
           ...state.ledger,
-          replug: true
+          replug: true,
+          establishingConnectionWFilecoinApp: false
         }
       }
     case LEDGER_USED_BY_ANOTHER_APP:
       return {
-        ...state,
+        ...Object.freeze(state),
         ledger: {
           ...state.ledger,
-          inUseByAnotherApp: true
+          inUseByAnotherApp: true,
+          establishingConnectionWFilecoinApp: false
         }
       }
     case LEDGER_RESET_STATE:
       return {
-        ...state,
+        ...Object.freeze(state),
         ledger: {
           ...initialLedgerState
         }
       }
-    case RESET_STATE:
-      return initialState
     default:
       return state
   }

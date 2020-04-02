@@ -35,7 +35,7 @@ export default dynamic({
       }
     }
 
-    const ProviderCreator = ({ privateKey, network, ready }) => {
+    const ProviderCreator = ({ privateKey, ready }) => {
       const [createdProvider, setCreatedProvider] = useState(false)
       const { dispatch, fetchDefaultWallet } = useWalletProvider()
       const dispatchRdx = useDispatch()
@@ -43,13 +43,11 @@ export default dynamic({
       useEffect(() => {
         const instantiateProvider = async () => {
           const provider = new Filecoin(SingleKeyProvider(privateKey), {
-            apiAddress: 'https://proxy.openworklabs.com/rpc/v0',
-            network
+            apiAddress: 'https://proxy.openworklabs.com/rpc/v0'
           })
           dispatch(createWalletProvider(provider))
           setCreatedProvider(true)
           const wallet = await fetchDefaultWallet(provider)
-          console.log('wallet', wallet)
           dispatchRdx(walletList([wallet]))
         }
 
@@ -60,7 +58,6 @@ export default dynamic({
         privateKey,
         createdProvider,
         setCreatedProvider,
-        network,
         dispatch,
         fetchDefaultWallet,
         router,
@@ -72,7 +69,6 @@ export default dynamic({
 
     ProviderCreator.propTypes = {
       privateKey: PropTypes.string.isRequired,
-      network: PropTypes.oneOf(['t', 'f']).isRequired,
       ready: PropTypes.bool
     }
 

@@ -45,7 +45,7 @@ export default dynamic({
       }
     }
 
-    const ProviderCreator = ({ mnemonic, network, ready }) => {
+    const ProviderCreator = ({ mnemonic, ready }) => {
       const [createdProvider, setCreatedProvider] = useState(false)
       const { dispatch, fetchDefaultWallet } = useWalletProvider()
       const dispatchRdx = useDispatch()
@@ -53,8 +53,7 @@ export default dynamic({
       useEffect(() => {
         const instantiateProvider = async () => {
           const provider = new Filecoin(HDWalletProvider(mnemonic), {
-            apiAddress: 'https://proxy.openworklabs.com/rpc/v0',
-            network
+            apiAddress: 'https://proxy.openworklabs.com/rpc/v0'
           })
           dispatch(createWalletProvider(provider))
           setCreatedProvider(true)
@@ -69,7 +68,6 @@ export default dynamic({
         mnemonic,
         createdProvider,
         setCreatedProvider,
-        network,
         dispatch,
         fetchDefaultWallet,
         router,
@@ -81,7 +79,6 @@ export default dynamic({
 
     ProviderCreator.propTypes = {
       mnemonic: MNEMONIC_PROPTYPE,
-      network: PropTypes.oneOf(['t', 'f']).isRequired,
       ready: PropTypes.bool
     }
 

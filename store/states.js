@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import updateArrayItem from '../utils/updateArrayItem'
 import sortAndRemoveWalletDups from '../utils/sortAndRemoveWalletDups'
 import { setMsgInCache, removeMsgFromCache } from './cache'
@@ -19,6 +20,12 @@ export const initialState = {
   error: null,
   messages: initialMessagesState,
   network: 't'
+}
+
+export const noWallet = {
+  address: '',
+  balance: new FilecoinNumber('0', 'fil'),
+  path: ''
 }
 
 export const walletList = (state, { wallets }) => ({

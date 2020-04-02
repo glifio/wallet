@@ -41,11 +41,7 @@ export default () => {
   return (
     <>
       {ready && (
-        <CreateSingleKeyProvider
-          network={network}
-          privateKey={privateKey}
-          ready={ready}
-        />
+        <CreateSingleKeyProvider privateKey={privateKey} ready={ready} />
       )}
       {loadingNextScreen ? (
         <LoadingScreen />

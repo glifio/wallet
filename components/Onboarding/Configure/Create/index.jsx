@@ -6,8 +6,7 @@ import {
   Button,
   OnboardCard,
   StepHeader,
-  LoadingScreen,
-  Label
+  LoadingScreen
 } from '../../../Shared'
 
 import CreateHDWalletProvider from '../../../../WalletProvider/Subproviders/HDWalletProvider'
@@ -70,7 +69,6 @@ export default () => {
           <GenerateMnemonic setMnemonic={setMnemonic} />
           {mnemonic && (
             <CreateHDWalletProvider
-              network={network}
               mnemonic={mnemonic}
               ready={walkthroughStep === 4}
             />

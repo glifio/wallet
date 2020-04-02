@@ -15,6 +15,7 @@ import { IconLedger } from '../../../Shared/Icons'
 import { useWalletProvider } from '../../../../WalletProvider'
 import isValidBrowser from '../../../../utils/isValidBrowser'
 import { hasLedgerError } from '../../../../utils/ledger/reportLedgerConfigError'
+import useReset from '../../../../utils/useReset'
 
 const Step1Helper = ({ inUseByAnotherApp, connectedFailure }) => {
   return (
@@ -80,9 +81,10 @@ Step1Helper.propTypes = {
   inUseByAnotherApp: PropTypes.bool.isRequired
 }
 
-export default () => {
+const Step1 = ({ setStep }) => {
   const { ledger, setLedgerProvider, setWalletType } = useWalletProvider()
   const router = useRouter()
+  const resetState = useReset()
   if (!isValidBrowser()) {
     const params = new URLSearchParams(router.query)
     setWalletType(null)
@@ -121,13 +123,16 @@ export default () => {
       >
         <Button
           title='Back'
-          onClick={() => setWalletType(null)}
+          onClick={() => resetState()}
           variant='secondary'
           mr={2}
         />
         <Button
           title='Yes, my Ledger device is connected.'
-          onClick={setLedgerProvider}
+          onClick={async () => {
+            const provider = await setLedgerProvider()
+            if (provider) setStep(2)
+          }}
           variant='primary'
           ml={2}
         />
@@ -135,3 +140,9 @@ export default () => {
     </>
   )
 }
+
+Step1.propTypes = {
+  setStep: PropTypes.func.isRequired
+}
+
+export default Step1
