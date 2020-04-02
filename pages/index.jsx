@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Router from 'next/router'
+import Link from 'next/link'
 import styled from 'styled-components'
 import { space, layout, typography, border, color } from 'styled-system'
 import {
@@ -41,38 +42,75 @@ const ButtonSignUp = styled.button`
 const InputEmail = styled.input`
 outline: 0;
 border: 0;
+::placeholder {
+  color: #444;
+}
 ${space}
-  ${layout}
-  ${typography}
-  ${border}
-
-  ${color}
+${layout}
+${typography}
+${border}
+${color}
 `
 
+const ExtLink = styled.a`
+text-decoration: none;
+${space}
+${layout}
+${typography}
+${border}
+${color}`
+
 const ShowSignUp = () => {
+  const [clicked, setClicked] = useState(false)
+
   return (
     <>
-      <InputEmail
-        fontSize={[4, 5, 6]}
-        color='core.white'
-        bg='core.nearblack'
-        px={3}
-        py={2}
-        borderRadius={6}
-        textAlign='center'
-        placeholder='Your email, please'
-      />
+      <Box display='flex' flexWrap='wrap' width={['100%', 'auto']}>
+        <InputEmail
+          width={['100%', 'auto']}
+          fontSize={[4, 5, 6]}
+          color='core.nearblack'
+          // bg='core.nearblack'
+          border={1}
+          borderWidth={2}
+          px={3}
+          py={3}
+          textAlign='center'
+          placeholder='Your email, please'
+          borderTopLeftRadius={[0, 2]}
+          borderBottomLeftRadius={[0, 2]}
+        />
+        <ButtonSignUp
+          width={['100%', 'auto']}
+          color='core.white'
+          bg='core.nearblack'
+          fontSize={[4, 5, 6]}
+          border={1}
+          borderColor='core.nearblack'
+          borderWidth={2}
+          borderTopRightRadius={[0, 2]}
+          borderBottomRightRadius={[0, 2]}
+          px={6}
+          py={3}
+          height='max-content'
+        >
+          Submit
+        </ButtonSignUp>
+      </Box>
       <ButtonSignUp
-        color='core.white'
-        bg='core.nearblack'
+        width={['100%', 'auto']}
+        background='transparent'
+        color='core.nearblack'
         fontSize={[4, 5, 6]}
         border={1}
         px={6}
         py={2}
+        my={2}
         height='max-content'
         borderRadius={6}
+        onClick={() => setClicked(false)}
       >
-        Submit
+        Cancel
       </ButtonSignUp>
     </>
   )
@@ -139,8 +177,12 @@ export default () => {
           <TitleCopy>tools</TitleCopy>
         </MenuItem>
 
-        <MenuItem mr='8%' my={[2, 3, 5]}>
-          <Image width='200px' alt='' src='/static/imgtools.png' />
+        <MenuItem height='100px' mr='8%' my={[2, 3, 5]}>
+          <Image
+            width='200px'
+            alt='Credit & Source: https://www.behance.net/gallery/14115935/Lapka-PEM-Achievement-Stones'
+            src='/static/imgtools.png'
+          />
         </MenuItem>
 
         <MenuItem mr='8%' my={[2, 3, 5]}>
@@ -167,23 +209,28 @@ export default () => {
           color='core.darkgray'
           my={[2, 3]}
         >
-          <Text fontSize={[4, 5, 6]} my={2}>
-            Be the first to learn when we launch
-          </Text>
-          <ButtonSignUp
-            background='transparent'
-            color='core.nearblack'
-            fontSize={[4, 5, 6]}
-            border={1}
-            px={6}
-            py={2}
-            height='max-content'
-            borderRadius={6}
-            onClick={() => setClicked(true)}
-          >
-            Sign Up
-          </ButtonSignUp>
-          {clicked && <ShowSignUp />}
+          {clicked ? (
+            <ShowSignUp />
+          ) : (
+            <>
+              <Text fontSize={[4, 5, 6]} my={2}>
+                Be the first to learn when we launch
+              </Text>
+              <ButtonSignUp
+                background='transparent'
+                color='core.nearblack'
+                fontSize={[4, 5, 6]}
+                border={1}
+                px={6}
+                py={2}
+                height='max-content'
+                borderRadius={6}
+                onClick={() => setClicked(true)}
+              >
+                Sign Up
+              </ButtonSignUp>
+            </>
+          )}
         </MenuItem>
       </Menu>
       <Menu
@@ -315,7 +362,11 @@ export default () => {
         </MenuItem>
 
         <MenuItem mr='8%' my={[2, 3]} height='120px'>
-          <Image width='200px' alt='' src='/static/imgnode.png' />
+          <Image
+            width='200px'
+            alt='Credit & Source: https://www.nontemporary.com/post/187451107349/rob-nick-carter'
+            src='/static/imgnode.png'
+          />
         </MenuItem>
 
         <MenuItem mr='8%' my={[2, 3, 5]}>
@@ -336,6 +387,27 @@ export default () => {
 
         <MenuItem mr='8%' my={[2, 3, 5]}>
           <TitleCopy>command-line</TitleCopy>
+        </MenuItem>
+      </Menu>
+
+      <Menu>
+        <MenuItem display='flex' alignItems='center' my={[2, 3, 5]}>
+          <IconGlif size={6} />
+          <Title my={0} mx={2}>
+            is an
+            <ExtLink
+              href='https://www.openworklabs.com'
+              color='core.primary'
+              borderBottom={1}
+              borderWidth={3}
+              fontSize={4}
+              mx={1}
+              target='_blank'
+            >
+              OWL
+            </ExtLink>{' '}
+            project {'\u00A9'} 2020
+          </Title>
         </MenuItem>
       </Menu>
     </Box>
