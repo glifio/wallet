@@ -3,17 +3,13 @@ import { renderHook } from '@testing-library/react-hooks'
 import { Provider } from 'react-redux'
 import WalletProvider from '@openworklabs/filecoin-wallet-provider'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
-import mockRustModule from '@zondax/filecoin-signer-wasm'
 
 import WalletProviderContextWrapper, { useWalletProvider } from '../'
-import { initializeStore, flushPromises } from '../../test-utils'
+import { initializeStore } from '../../test-utils'
 import { initialState } from '../../store/states'
 import HDWalletProvider from './HDWalletProvider'
 
 jest.mock('@zondax/filecoin-signer-wasm')
-mockRustModule.key_derive.mockImplementation(() => {
-  return { address: 't1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq' }
-})
 
 jest.mock('@openworklabs/filecoin-wallet-provider')
 const mockGetAccounts = jest
@@ -42,7 +38,6 @@ const createComponent = (state, ready = true) => {
       <WalletProviderContextWrapper network='t'>
         <HDWalletProvider
           ready={ready}
-          network='t'
           mnemonic='cave income cousin wood glare have forest alcohol social thing fame tissue essay surface coral flock brick destroy remind depart hover rose skin alarm'
         />
         {children}
@@ -62,6 +57,7 @@ describe('HDWallet', () => {
     jest.clearAllMocks()
   })
 
+  /** should add tests for the actual wallet sub provider methods getAccount and sign, but need this https://github.com/testing-library/react-hooks-testing-library/issues/331 */
   test('it adds the provider to the walletprovider context', async () => {
     const { Component } = createComponent()
     const { result, waitForNextUpdate } = renderHook(
