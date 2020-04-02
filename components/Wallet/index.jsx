@@ -111,6 +111,7 @@ const WalletView = () => {
                 background-color: ${props => props.theme.colors.core.secondary};
               }
             `}
+            onClick={() => window.location.reload()}
           >
             Logout
           </ButtonLogout>
