@@ -129,12 +129,11 @@ const MessageHistoryRow = ({
             </MenuItem>
             <MenuItem display='flex'>
               <Text color='core.silver' m={0} mb={0}>
-                {converter &&
-                  !converterError &&
+                {!converterError &&
                   makeFriendlyBalance(
                     converter.fromFIL(new BigNumber(value)),
                     7
-                  )}{' '}
+                  )}
               </Text>
             </MenuItem>
           </Menu>
@@ -151,9 +150,11 @@ const MessageHistoryRow = ({
               <Text color='core.nearblack' m={0}>
                 FIL
               </Text>
-              <Text color='core.silver' m={0} mb={0}>
-                USD
-              </Text>
+              {!converterError && (
+                <Text color='core.silver' m={0} mb={0}>
+                  USD
+                </Text>
+              )}
             </MenuItem>
           </Menu>
         </MenuItem>
