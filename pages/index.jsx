@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Router from 'next/router'
 import styled from 'styled-components'
+import axios from 'axios'
 import { space, layout, typography, border, color } from 'styled-system'
 import {
   Box,
@@ -49,7 +50,37 @@ ${space}
   ${color}
 `
 
-const ShowSignUp = () => {
+const postToMailChimp = async (setSubscribed, setError, email) => {
+  const url = `http://localhost:80/${email}`
+
+  try {
+    const res = await axios.post(
+      url,
+      { email },
+      { headers: { 'Content-Type': 'application/json' } }
+    )
+
+    // TODO—make this nicer
+    if (res.data.indexOf('already subscribed') > -1) {
+      setError("You're already subscribed")
+      return
+    }
+    if (res.data.indexOf('error') > -1) {
+      setError('We having an issue getting you subscribed.')
+      return
+    }
+
+    setSubscribed(true)
+    setError('')
+  } catch (error) {
+    setError(error.toString())
+  }
+}
+
+// eslint-disable-next-line react/prop-types
+const ShowSignUp = ({ setSubscribed, setError }) => {
+  const [email, setEmail] = useState('')
+
   return (
     <>
       <InputEmail
@@ -60,6 +91,7 @@ const ShowSignUp = () => {
         py={2}
         borderRadius={6}
         textAlign='center'
+        onChange={e => setEmail(e.target.value)}
         placeholder='Your email, please'
       />
       <ButtonSignUp
@@ -71,6 +103,7 @@ const ShowSignUp = () => {
         py={2}
         height='max-content'
         borderRadius={6}
+        onClick={() => postToMailChimp(setSubscribed, setError, email)}
       >
         Submit
       </ButtonSignUp>
@@ -80,6 +113,8 @@ const ShowSignUp = () => {
 
 export default () => {
   const [clicked, setClicked] = useState(false)
+  const [error, setError] = useState('')
+  const [subscribed, setSubscribed] = useState(false)
 
   return (
     <Box
@@ -170,20 +205,28 @@ export default () => {
           <Text fontSize={[4, 5, 6]} my={2}>
             Be the first to learn when we launch
           </Text>
-          <ButtonSignUp
-            background='transparent'
-            color='core.nearblack'
-            fontSize={[4, 5, 6]}
-            border={1}
-            px={6}
-            py={2}
-            height='max-content'
-            borderRadius={6}
-            onClick={() => setClicked(true)}
-          >
-            Sign Up
-          </ButtonSignUp>
-          {clicked && <ShowSignUp />}
+          {!subscribed && (
+            <>
+              <ButtonSignUp
+                background='transparent'
+                color='core.nearblack'
+                fontSize={[4, 5, 6]}
+                border={1}
+                px={6}
+                py={2}
+                height='max-content'
+                borderRadius={6}
+                onClick={() => setClicked(true)}
+              >
+                Sign Up
+              </ButtonSignUp>
+              {clicked && !subscribed && (
+                <ShowSignUp setSubscribed={setSubscribed} setError={setError} />
+              )}
+            </>
+          )}
+          {error && <div>{error}</div>}
+          {subscribed && <div>You're subscribed!</div>}
         </MenuItem>
       </Menu>
       <Menu
