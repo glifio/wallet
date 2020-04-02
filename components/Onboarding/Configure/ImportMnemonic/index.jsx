@@ -43,7 +43,6 @@ export default () => {
     <>
       {validMnemonic && (
         <CreateHDWalletProvider
-          network={network}
           mnemonic={validMnemonic}
           ready={!!validMnemonic}
         />
