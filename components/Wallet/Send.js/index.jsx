@@ -22,7 +22,6 @@ import {
   Title as Total,
   ContentContainer as SendContainer
 } from '../../Shared'
-import { ButtonClose } from '../../Shared/IconButtons'
 import ConfirmationCard from './ConfirmationCard'
 import GasCustomization from './GasCustomization'
 import ErrorCard from './ErrorCard'
@@ -32,6 +31,7 @@ import { LEDGER } from '../../../constants'
 import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfigError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
+import { useConverter } from '../../../lib/Converter'
 
 const SendCardForm = styled.form.attrs(() => ({
   display: 'flex',
@@ -210,6 +210,8 @@ const Send = ({ close }) => {
   const ledgerError = () =>
     wallet.type === LEDGER && reportLedgerConfigError(ledger)
 
+  const { converterError } = useConverter()
+
   return (
     <>
       <SendContainer>
@@ -336,7 +338,8 @@ const Send = ({ close }) => {
                       FIL
                     </BigTitle>
                     <Title color='core.darkgray'>
-                      {makeFriendlyBalance(value.fiat, 7)} USD
+                      {!converterError &&
+                        `${makeFriendlyBalance(value.fiat, 7)} USD`}
                     </Title>
                   </Box>
                 </Box>

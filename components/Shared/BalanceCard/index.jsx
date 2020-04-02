@@ -35,8 +35,10 @@ const BalanceCard = forwardRef(
             </Num>
           ) : (
             <Num size='l' color='core.darkgray'>
-              {makeFriendlyBalance(converter.fromFIL(balance.toFil()))}
-              USD
+              {!converterError &&
+                `${makeFriendlyBalance(
+                  converter.fromFIL(balance.toFil())
+                )} USD`}
             </Num>
           )}
         </Box>

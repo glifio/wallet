@@ -36,14 +36,16 @@ const Funds = forwardRef(
     },
     ref
   ) => {
-    const { converter } = useConverter()
-    const initialFilAmount = amount ? new FilecoinNumber(amount, 'attofil') : ''
-    const initialFiatAmount = amount
-      ? converter.fromFIL(new FilecoinNumber(amount, 'attofil').toFil())
-      : ''
+    const { converter, converterError } = useConverter()
+    const initialFilAmount =
+      amount && amount > 0 ? new FilecoinNumber(amount, 'attofil') : ''
+    const initialFiatAmount =
+      amount && amount > 0 && !converterError
+        ? converter.fromFIL(new FilecoinNumber(amount, 'attofil').toFil())
+        : ''
+
     const [filAmount, setFilAmount] = useState(initialFilAmount)
     const [fiatAmount, setFiatAmount] = useState(initialFiatAmount)
-
     const timeout = useRef()
 
     const checkBalance = val => {
@@ -61,7 +63,7 @@ const Funds = forwardRef(
     }
 
     const onTimerFil = async val => {
-      const fiatAmnt = converter.fromFIL(val)
+      const fiatAmnt = !converterError && converter.fromFIL(val)
       const validBalance = checkBalance(val)
       if (validBalance) {
         setFiatAmount(fiatAmnt)
@@ -75,7 +77,7 @@ const Funds = forwardRef(
     }
 
     const onTimerFiat = async val => {
-      const fil = converter.toFIL(val)
+      const fil = !converterError && converter.toFIL(val)
       const validBalance = checkBalance(fil)
       if (validBalance) {
         setFilAmount(fil)
@@ -205,7 +207,8 @@ const Funds = forwardRef(
                 clearTimeout(timeout.current)
                 const validBalance = checkBalance(filAmount)
                 if (validBalance) {
-                  const fiatAmnt = converter.fromFIL(filAmount)
+                  const fiatAmnt =
+                    !converterError && converter.fromFIL(filAmount)
                   setFiatAmount(fiatAmnt)
                   onAmountChange({ fil: filAmount, fiat: fiatAmnt })
                 } else {
@@ -238,7 +241,7 @@ const Funds = forwardRef(
               }}
               onBlur={async () => {
                 clearTimeout(timeout.current)
-                const fil = converter.toFIL(fiatAmount)
+                const fil = !converterError && converter.toFIL(fiatAmount)
                 const validBalance = checkBalance(fil)
                 if (validBalance) {
                   setFilAmount(fil)
@@ -253,12 +256,14 @@ const Funds = forwardRef(
               height='100%'
               onChange={onFiatChange}
               value={formatFiatValue(fiatAmount)}
-              placeholder='0 USD'
+              placeholder={
+                converterError ? 'Error fetching USD amount' : '0 USD'
+              }
               type='number'
               step={new FilecoinNumber('1', 'attofil').toFil()}
               min='0'
               valid={valid}
-              disabled={disabled}
+              disabled={disabled || converterError}
             />
           </Box>
         </Box>

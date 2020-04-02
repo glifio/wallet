@@ -36,7 +36,7 @@ const MessageDetailCard = styled(Card).attrs(() => ({
 `
 
 const MessageDetail = ({ address, close, message }) => {
-  const { converter } = useConverter()
+  const { converter, converterError } = useConverter()
   return (
     <MessageDetailCard>
       <Box
@@ -130,15 +130,16 @@ const MessageDetail = ({ address, close, message }) => {
               FIL
             </BigTitle>
             <Title color='core.darkgray'>
-              {makeFriendlyBalance(
-                converter.fromFIL(
-                  new FilecoinNumber(message.value, 'fil').plus(
-                    new FilecoinNumber(message.gas_used, 'attofil')
-                  )
-                ),
-                18
-              ).toString()}{' '}
-              USD
+              {!converterError &&
+                `${makeFriendlyBalance(
+                  converter.fromFIL(
+                    new FilecoinNumber(message.value, 'fil').plus(
+                      new FilecoinNumber(message.gas_used, 'attofil')
+                    )
+                  ),
+                  18
+                ).toString()}
+              USD`}
             </Title>
           </Box>
         </Box>
