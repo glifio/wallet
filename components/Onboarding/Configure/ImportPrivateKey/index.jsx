@@ -41,7 +41,11 @@ export default () => {
   return (
     <>
       {ready && (
-        <CreateSingleKeyProvider privateKey={privateKey} ready={ready} />
+        <CreateSingleKeyProvider
+          onError={setPrivateKeyError}
+          privateKey={privateKey}
+          ready={ready}
+        />
       )}
       {loadingNextScreen ? (
         <LoadingScreen />
