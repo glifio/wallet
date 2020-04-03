@@ -8,7 +8,7 @@ import {
   Card,
   Glyph,
   Button,
-  BaseButton,
+  BaseButton as ButtonCard,
   Title,
   Text,
   Label,
@@ -212,7 +212,7 @@ const AccountSelector = () => {
                       balance={makeFriendlyBalance(w.balance)}
                     />
                   ))}
-                <BaseButton
+                <ButtonCard
                   display='flex'
                   flexWrap='wrap'
                   alignContent='flex-start'
@@ -229,7 +229,7 @@ const AccountSelector = () => {
                     <MenuItem display='flex' alignItems='center'>
                       <Glyph
                         acronym='Cr'
-                        bg='core.white'
+                        bg='core.transparent'
                         borderColor='core.primary'
                         color='core.primary'
                       />
@@ -241,7 +241,7 @@ const AccountSelector = () => {
                       </Text>
                     </MenuItem>
                   </Menu>
-                </BaseButton>
+                </ButtonCard>
               </MenuItem>
             </Menu>
             <FloatingContainer>
