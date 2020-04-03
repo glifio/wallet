@@ -4,7 +4,7 @@ import { BigNumber } from '@openworklabs/filecoin-number'
 import { bool, string, func } from 'prop-types'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import { Menu, MenuItem } from '../Menu'
-import { Text } from '../Typography'
+import { Text, Label } from '../Typography'
 import { IconSend, IconReceive } from '../Icons'
 import truncate from '../../../utils/truncateAddress'
 import { useConverter } from '../../../lib/Converter'
@@ -15,10 +15,10 @@ const AddressText = ({ sentMsg, to, from }) => {
   if (sentMsg) {
     return (
       <>
-        <Text color='core.nearblack' my={0}>
+        <Label color='core.nearblack' my={0}>
           To
-        </Text>
-        <Text color='core.nearblack' m={0}>
+        </Label>
+        <Text fontSize={4} color='core.nearblack' m={0}>
           {truncate(to)}
         </Text>
       </>
@@ -30,7 +30,7 @@ const AddressText = ({ sentMsg, to, from }) => {
       <Text color='core.nearblack' my={0}>
         From
       </Text>
-      <Text color='core.nearblack' m={0}>
+      <Text fontSize={4} color='core.nearblack' m={0}>
         {truncate(from)}
       </Text>
     </>
@@ -82,7 +82,7 @@ const MessageHistoryRow = ({
     <MessageHistoryRowContainer onClick={() => selectMessage(cid)}>
       <Menu>
         <MenuItem display='flex' flexDirection='row'>
-          <Menu display='flex' flexDirection='column'>
+          <Menu display='flex' flexDirection='column' justifyContent='center'>
             <MenuItem>
               {sentMsg ? (
                 <IconSend status={status} />
@@ -91,19 +91,25 @@ const MessageHistoryRow = ({
               )}
             </MenuItem>
           </Menu>
-          <Menu display='flex' flexDirection='column' ml={[2, 4]}>
-            <MenuItem width={8}>
+          {/* <Menu display='flex' flexDirection='column' ml={[2, 4]}>
+             <MenuItem width={8}>
               <ActionText status={status} sentMsg={sentMsg} />
-            </MenuItem>
-            <MenuItem>
-              <Text color='core.silver' m={0}>
-                {dayjs.unix(timestamp).format('MMM DD, YYYY')}
-              </Text>
-            </MenuItem>
-          </Menu>
+            </MenuItem> 
+          </Menu> */}
           <Menu display='flex' flex-wrap='wrap' ml={[2, 4, 5]}>
-            <MenuItem overflow='hidden' maxWidth={9}>
+            <MenuItem overflow='hidden' width={9}>
               <AddressText sentMsg={sentMsg} to={to} from={from} m={0} />
+            </MenuItem>
+            <MenuItem
+              display='flex'
+              alignItems='flex-end'
+              justifyContent='center'
+              ml={4}
+              width={8}
+            >
+              <Text color='core.darkgray' m={0}>
+                {dayjs.unix(timestamp).format('MMM DD')}
+              </Text>
             </MenuItem>
           </Menu>
         </MenuItem>
@@ -128,7 +134,7 @@ const MessageHistoryRow = ({
               </Text>
             </MenuItem>
             <MenuItem display='flex'>
-              <Text color='core.silver' m={0} mb={0}>
+              <Text color='core.darkgray' m={0} mb={0}>
                 {!converterError &&
                   makeFriendlyBalance(
                     converter.fromFIL(new BigNumber(value)),
@@ -151,7 +157,7 @@ const MessageHistoryRow = ({
                 FIL
               </Text>
               {!converterError && (
-                <Text color='core.silver' m={0} mb={0}>
+                <Text color='core.darkgray' m={0} mb={0}>
                   USD
                 </Text>
               )}
