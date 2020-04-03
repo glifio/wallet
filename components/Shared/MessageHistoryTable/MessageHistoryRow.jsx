@@ -1,11 +1,12 @@
 import React from 'react'
+import styled, { keyframes } from 'styled-components'
 import dayjs from 'dayjs'
 import { BigNumber } from '@openworklabs/filecoin-number'
 import { bool, string, func } from 'prop-types'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import { Menu, MenuItem } from '../Menu'
 import { Text, Label } from '../Typography'
-import { IconSend, IconReceive } from '../Icons'
+import { IconSend, IconReceive, IconPending } from '../Icons'
 import truncate from '../../../utils/truncateAddress'
 import { useConverter } from '../../../lib/Converter'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
@@ -83,11 +84,14 @@ const MessageHistoryRow = ({
       <Menu>
         <MenuItem display='flex' flexDirection='row'>
           <Menu display='flex' flexDirection='column' justifyContent='center'>
-            <MenuItem>
+            <MenuItem position='relative'>
               {sentMsg ? (
                 <IconSend status={status} />
               ) : (
                 <IconReceive status={status} />
+              )}
+              {status === 'pending' && (
+                <IconPending position='absolute' top='6px' left={4} />
               )}
             </MenuItem>
           </Menu>
