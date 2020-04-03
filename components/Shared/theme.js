@@ -12,7 +12,8 @@ export const baseColors = {
     lightest: '#F6F8FE',
     lighter: '#EFF3FD',
     light: '#E4EBFC',
-    mid: '#d1ddfa'
+    mid: '#d1ddfa',
+    muted: '#e8ecf7'
   },
   green: {
     primary: '#1AD08F',
@@ -77,7 +78,8 @@ const colors = {
   },
   background: {
     app: baseColors.blue.lightest,
-    screen: baseColors.blue.lighter
+    screen: baseColors.blue.lighter,
+    messageHistory: baseColors.blue.muted
   },
   card: {
     account: {
