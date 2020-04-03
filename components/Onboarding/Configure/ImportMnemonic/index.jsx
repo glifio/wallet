@@ -43,6 +43,7 @@ export default () => {
     <>
       {validMnemonic && (
         <CreateHDWalletProvider
+          onError={setMnemonicError}
           mnemonic={validMnemonic}
           ready={!!validMnemonic}
         />
