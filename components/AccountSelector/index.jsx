@@ -4,19 +4,19 @@ import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import {
   Box,
+  Box as Wrapper,
   Card,
+  Glyph,
   Button,
   Title,
   Text,
   Label,
+  Menu,
+  MenuItem,
   AccountError,
   Loading,
   ButtonClose,
-  FloatingContainer,
-  ContentContainer,
-  Sidebar,
-  Content,
-  Wrapper
+  FloatingContainer
 } from '../Shared'
 import AccountCardAlt from '../Shared/AccountCardAlt'
 import { useWalletProvider } from '../../WalletProvider'
@@ -148,89 +148,99 @@ const AccountSelector = () => {
           <Label mt={3}>Loading Accounts</Label>
         </Box>
       ) : (
-        <Wrapper>
-          <Sidebar>
-            <>
-              {hasLedgerError({
-                ...ledger,
-                otherError: uncaughtError
-              }) ? (
-                <AccountError
-                  onTryAgain={() => {}}
-                  errorMsg={reportLedgerConfigError({
-                    ...ledger,
-                    otherError: uncaughtError
-                  })}
+        <Wrapper display='flex' flexDirection='column' justifyItems='center'>
+          <Box
+            display='flex'
+            flexDirection='column'
+            alignSelf='center'
+            maxWidth={19}
+            p={4}
+          >
+            {hasLedgerError({
+              ...ledger,
+              otherError: uncaughtError
+            }) && (
+              <AccountError
+                onTryAgain={() => {}}
+                errorMsg={reportLedgerConfigError({
+                  ...ledger,
+                  otherError: uncaughtError
+                })}
+              />
+            )}
+
+            <Menu m={2}>
+              <MenuItem display='flex' alignItems='center' color='core.primary'>
+                <Glyph
+                  acronym='Sw'
+                  bg='core.primary'
+                  borderColor='core.primary'
+                  color='core.white'
                 />
-              ) : (
-                <Card
-                  display='flex'
-                  flexDirection='column'
-                  justifyContent='space-between'
-                  width='300px'
-                  height='300px'
-                  borderRadius={2}
-                  p={3}
-                >
-                  <Title>Choose an account</Title>
-                  <Text m={0}>Select a wallet to use with Glif.</Text>
+                <Title ml={2}>Change & Create Accounts</Title>
+              </MenuItem>
+              <MenuItem>
+                <Text>Switch to a different account, or create a new one.</Text>
+              </MenuItem>
+            </Menu>
+            <Menu>
+              <MenuItem display='flex' flexWrap='wrap'>
+                {walletsInRdx
+                  .filter(
+                    w =>
+                      w.path.split('/')[5] >= page * ACCOUNT_BATCH_SIZE &&
+                      w.path.split('/')[5] <
+                        page * ACCOUNT_BATCH_SIZE + ACCOUNT_BATCH_SIZE
+                  )
+                  .map((w, i) => (
+                    <AccountCardAlt
+                      alignItems='center'
+                      onClick={() => {
+                        dispatch(switchWallet(page * ACCOUNT_BATCH_SIZE + i))
+                        const newParams = new URLSearchParams(router.query)
+                        const hasParams = Array.from(newParams).length > 0
+                        const query = hasParams
+                          ? `/wallet?${newParams.toString()}`
+                          : '/wallet'
+                        router.push(query)
+                      }}
+                      key={w.address}
+                      address={w.address}
+                      index={page * ACCOUNT_BATCH_SIZE + i}
+                      selected={w.address === wallet.address}
+                      balance={makeFriendlyBalance(w.balance)}
+                    />
+                  ))}
+                <Card width={11} height={11} m={2}>
+                  <Title>Create</Title>
+                  <Text>Click here to create a new account.</Text>
                 </Card>
-              )}
-            </>
-          </Sidebar>
-          <Content>
-            <ContentContainer>
-              {walletsInRdx
-                .filter(
-                  w =>
-                    w.path.split('/')[5] >= page * ACCOUNT_BATCH_SIZE &&
-                    w.path.split('/')[5] <
-                      page * ACCOUNT_BATCH_SIZE + ACCOUNT_BATCH_SIZE
-                )
-                .map((w, i) => (
-                  <AccountCardAlt
-                    alignItems='center'
-                    onClick={() => {
-                      dispatch(switchWallet(page * ACCOUNT_BATCH_SIZE + i))
-                      const newParams = new URLSearchParams(router.query)
-                      const hasParams = Array.from(newParams).length > 0
-                      const query = hasParams
-                        ? `/wallet?${newParams.toString()}`
-                        : '/wallet'
-                      router.push(query)
-                    }}
-                    key={w.address}
-                    address={w.address}
-                    index={page * ACCOUNT_BATCH_SIZE + i}
-                    selected={w.address === wallet.address}
-                    balance={makeFriendlyBalance(w.balance)}
-                  />
-                ))}
-              <FloatingContainer>
-                <Button
-                  border={0}
-                  borderRight={1}
-                  borderRadius={0}
-                  borderColor='core.lightgray'
-                  onClick={() => paginate(page - 1)}
-                  disabled={page === 0 || loadingAccounts}
-                  variant='secondary'
-                  role='button'
-                  title='Prev'
-                />
-                <Text m={0}>Page {page + 1}</Text>
-                <Button
-                  border={0}
-                  borderRadius={0}
-                  title='Next'
-                  onClick={() => paginate(page + 1)}
-                  role='button'
-                  variant='primary'
-                  disabled={loadingAccounts}
-                />
-              </FloatingContainer>
-            </ContentContainer>
-          </Content>
+              </MenuItem>
+            </Menu>
+            <FloatingContainer>
+              <Button
+                border={0}
+                borderRight={1}
+                borderRadius={0}
+                borderColor='core.lightgray'
+                onClick={() => paginate(page - 1)}
+                disabled={page === 0 || loadingAccounts}
+                variant='secondary'
+                role='button'
+                title='Prev'
+              />
+              <Text m={0}>Page {page + 1}</Text>
+              <Button
+                border={0}
+                borderRadius={0}
+                title='Next'
+                onClick={() => paginate(page + 1)}
+                role='button'
+                variant='primary'
+                disabled={loadingAccounts}
+              />
+            </FloatingContainer>
+          </Box>
         </Wrapper>
       )}
     </>
