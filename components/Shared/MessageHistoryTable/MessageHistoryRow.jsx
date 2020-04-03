@@ -27,9 +27,9 @@ const AddressText = ({ sentMsg, to, from }) => {
 
   return (
     <>
-      <Text color='core.nearblack' my={0}>
+      <Label color='core.nearblack' my={0}>
         From
-      </Text>
+      </Label>
       <Text fontSize={4} color='core.nearblack' m={0}>
         {truncate(from)}
       </Text>
