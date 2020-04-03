@@ -7,7 +7,8 @@ import {
   NetworkSwitcherGlyph,
   Wrapper,
   Sidebar,
-  Content
+  Content,
+  BaseButton as ButtonLogout
 } from '../Shared'
 import Send from './Send.js'
 import MessageView from './Message'
@@ -70,7 +71,7 @@ const WalletView = () => {
     <>
       <MsgConfirmer />
       <Wrapper>
-        <Sidebar>
+        <Sidebar height='100vh'>
           <NetworkSwitcherGlyph />
 
           {hasLedgerError({ ...ledger, otherError: uncaughtError }) &&
@@ -99,6 +100,21 @@ const WalletView = () => {
             onReceive={() => onViewChange(RECEIVE)}
             onSend={() => onViewChange(SEND)}
           />
+          <ButtonLogout
+            variant='secondary'
+            width='100%'
+            mt={4}
+            display='flex'
+            css={`
+              background-color: ${props => props.theme.colors.core.secondary}00;
+              &:hover {
+                background-color: ${props => props.theme.colors.core.secondary};
+              }
+            `}
+            onClick={() => window.location.reload()}
+          >
+            Logout
+          </ButtonLogout>
         </Sidebar>
         <Content>
           {childView === MESSAGE_HISTORY && <MessageView />}
