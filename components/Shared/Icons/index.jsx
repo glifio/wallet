@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import { oneOf } from 'prop-types'
+import { oneOf, string } from 'prop-types'
 import styled from 'styled-components'
 import { space, color, layout, flexbox, border, position } from 'styled-system'
 
@@ -19,7 +19,6 @@ export const IconGlif = forwardRef((props, ref) => (
     ref={ref}
     width='24'
     height='24'
-    // fill={fill}
     viewBox='0 0 24 24'
     xmlns='http://www.w3.org/2000/svg'
     {...props}
@@ -32,6 +31,14 @@ export const IconGlif = forwardRef((props, ref) => (
     />
   </IconBase>
 ))
+
+IconGlif.propTypes = {
+  fill: string
+}
+
+IconGlif.defaultProps = {
+  fill: ''
+}
 
 export const IconSuccess = forwardRef((props, ref) => (
   <IconBase
