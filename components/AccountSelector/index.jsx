@@ -8,6 +8,7 @@ import {
   Card,
   Glyph,
   Button,
+  BaseButton,
   Title,
   Text,
   Label,
@@ -211,10 +212,36 @@ const AccountSelector = () => {
                       balance={makeFriendlyBalance(w.balance)}
                     />
                   ))}
-                <Card width={11} height={11} m={2}>
-                  <Title>Create</Title>
-                  <Text>Click here to create a new account.</Text>
-                </Card>
+                <BaseButton
+                  display='flex'
+                  flexWrap='wrap'
+                  alignContent='flex-start'
+                  width={11}
+                  height={11}
+                  m={2}
+                  bg='core.transparent'
+                  borderColor='core.primary'
+                  color='core.primary'
+                  opacity='1'
+                  cursor='pointer'
+                >
+                  <Menu>
+                    <MenuItem display='flex' alignItems='center'>
+                      <Glyph
+                        acronym='Cr'
+                        bg='core.white'
+                        borderColor='core.primary'
+                        color='core.primary'
+                      />
+                      <Title ml={2}>Create</Title>
+                    </MenuItem>
+                    <MenuItem>
+                      <Text textAlign='left'>
+                        Click here to create a new account.
+                      </Text>
+                    </MenuItem>
+                  </Menu>
+                </BaseButton>
               </MenuItem>
             </Menu>
             <FloatingContainer>
