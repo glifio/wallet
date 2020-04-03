@@ -34,8 +34,14 @@ const AccountCardAlt = ({
         border={1}
         borderRadius={2}
         p={3}
+        opacity={selected ? '1' : '0.25'}
         bg={selected ? 'card.account.background' : 'hsla(0, 0%, 90%, 0)'}
         color={selected ? 'card.account.color' : 'colors.core.black'}
+        css={`
+          &:hover {
+            opacity: 1;
+          }
+        `}
       >
         <Box display='flex' alignItems='center' justifyContent='flex-start'>
           <Glyph
@@ -52,6 +58,7 @@ const AccountCardAlt = ({
             </Title>
           </Box>
         </Box>
+
         <Box display='flex' flexDirection='column'>
           <Text fontSize={3} my={0}>
             Balance
