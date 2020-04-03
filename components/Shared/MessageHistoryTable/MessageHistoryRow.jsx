@@ -80,7 +80,10 @@ const MessageHistoryRow = ({
   const { converter, converterError } = useConverter()
   const sentMsg = address === from
   return (
-    <MessageHistoryRowContainer onClick={() => selectMessage(cid)}>
+    <MessageHistoryRowContainer
+      status={status}
+      onClick={() => selectMessage(cid)}
+    >
       <Menu>
         <MenuItem display='flex' flexDirection='row'>
           <Menu display='flex' flexDirection='column' justifyContent='center'>
