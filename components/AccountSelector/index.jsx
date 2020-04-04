@@ -44,8 +44,6 @@ const AccountSelector = () => {
   }))
   const { ledger, connectLedger, walletProvider } = useWalletProvider()
   const router = useRouter()
-  const params = new URLSearchParams(router.query)
-  const page = Number(params.get('page'))
 
   const onClose = () => {
     const newSearchParams = new URLSearchParams(router.query)
