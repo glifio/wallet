@@ -1,6 +1,6 @@
 import React from 'react'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
-import { func } from 'prop-types'
+import { func, oneOf } from 'prop-types'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
 
@@ -13,7 +13,8 @@ import {
   Text,
   Label,
   Title,
-  IconMessageStatus
+  IconMessageStatus,
+  IconPending
 } from '../../Shared'
 import { ButtonClose } from '../../Shared/IconButtons'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../customPropTypes'
@@ -34,6 +35,18 @@ const MessageDetailCard = styled(Card).attrs(() => ({
   width: auto;
   background-color: ${props => props.theme.colors.background.screen};
 `
+
+const TxStatusText = ({ address, from, status }) => {
+  if (status === 'pending') return 'PENDING'
+  if (address === from) return 'SENT'
+  return 'RECEIVED'
+}
+
+TxStatusText.propTypes = {
+  address: ADDRESS_PROPTYPE,
+  from: ADDRESS_PROPTYPE,
+  status: oneOf(['pending', 'confirmed'])
+}
 
 const MessageDetail = ({ address, close, message }) => {
   const { converter, converterError } = useConverter()
@@ -75,7 +88,12 @@ const MessageDetail = ({ address, close, message }) => {
             `}
           />
           <Box m='0' display='flex' flexDirection='row' alignItems='flex-end'>
-            <IconMessageStatus status='confirmed' />
+            {message.status === 'confirmed' ? (
+              <IconMessageStatus status='confirmed' />
+            ) : (
+              <IconPending height={4} />
+            )}
+            <Box width={2} />
             <Label
               color={
                 message.status === 'confirmed'
@@ -83,7 +101,11 @@ const MessageDetail = ({ address, close, message }) => {
                   : 'status.pending.foreground'
               }
             >
-              {address === message.from ? 'SENT' : 'RECEIVED'}
+              <TxStatusText
+                address={address}
+                from={message.from}
+                status={message.status}
+              />
             </Label>
           </Box>
           <Box display='flex' flexDirection='row' mr={2}>

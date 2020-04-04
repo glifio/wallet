@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
 import {
   AccountCard,
@@ -29,7 +28,7 @@ import useWallet from '../../WalletProvider/useWallet'
 import Receive from '../Receive'
 import { MESSAGE_HISTORY, SEND, RECEIVE } from './views'
 
-const WalletView = () => {
+export default () => {
   const wallet = useWallet()
   const [childView, setChildView] = useState(MESSAGE_HISTORY)
   const { ledger, connectLedger } = useWalletProvider()
@@ -107,9 +106,9 @@ const WalletView = () => {
             mt={4}
             display='flex'
             css={`
-              background-color: ${props => props.theme.colors.core.secondary}00;
+              background-color: ${({ theme }) => theme.colors.core.secondary}00;
               &:hover {
-                background-color: ${props => props.theme.colors.core.secondary};
+                background-color: ${({ theme }) => theme.colors.core.secondary};
               }
             `}
             onClick={() => window.location.reload()}
@@ -136,9 +135,3 @@ const WalletView = () => {
     </>
   )
 }
-
-WalletView.propTypes = {
-  theme: PropTypes.object.isRequired
-}
-
-export default WalletView
