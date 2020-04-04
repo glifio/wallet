@@ -8,7 +8,20 @@ export const initialMessagesState = {
   loading: false,
   loadedSuccess: false,
   loadedFailure: false,
-  pending: [],
+  pending: [
+    {
+      cid: 'bafy2bzdcecudvhr2s3qsktbvowylx4l5jatusjxrgabvo6q7bjmywvr36io6a',
+      from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
+      to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
+      value: '1000',
+      method: 0,
+      gasprice: '1',
+      gaslimit: '1000',
+      gas_used: '122',
+      nonce: 0,
+      timestamp: '1585942380'
+    }
+  ],
   confirmed: [],
   paginating: false,
   total: -1
