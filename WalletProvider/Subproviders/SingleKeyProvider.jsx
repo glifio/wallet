@@ -18,7 +18,7 @@ export default dynamic({
     const SingleKeyProvider = privateKey => {
       return {
         getAccounts: async (_, __, network = 't') => {
-          return [rustModule.key_recover(privateKey).address]
+          return [rustModule.key_recover(privateKey, network === 't').address]
         },
         sign: async (_, filecoinMessage) => {
           const formattedMessage = toLowerCaseMsgFields(
