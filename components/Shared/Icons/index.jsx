@@ -141,13 +141,14 @@ export const IconPending = forwardRef((props, ref) => (
   </IconBasePending>
 ))
 
-export const IconSend = forwardRef((props, ref) => (
+export const IconSend = forwardRef((_, ref) => (
   <IconBase
     width='34'
     height='34'
     viewBox='0 0 34 34'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
+    ref={ref}
   >
     <rect
       x='33'
@@ -175,18 +176,14 @@ export const IconSend = forwardRef((props, ref) => (
   </IconBase>
 ))
 
-// Todo: Move or remove
-// IconSend.propTypes = {
-//   status: oneOf(['confirmed', 'pending']).isRequired
-// }
-
-export const IconReceive = forwardRef((props, ref) => (
+export const IconReceive = forwardRef((_, ref) => (
   <IconBase
     width='34'
     height='34'
     viewBox='0 0 34 34'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
+    ref={ref}
   >
     <rect
       x='1'

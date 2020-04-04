@@ -1,5 +1,4 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
 import dayjs from 'dayjs'
 import { BigNumber } from '@openworklabs/filecoin-number'
 import { bool, string, func } from 'prop-types'
