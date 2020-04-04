@@ -17,7 +17,8 @@ import {
   AccountError,
   Loading,
   ButtonClose,
-  FloatingContainer
+  StyledLink,
+  StyledATag
 } from '../Shared'
 import AccountCardAlt from '../Shared/AccountCardAlt'
 import { useWalletProvider } from '../../WalletProvider'
@@ -52,224 +53,137 @@ const AccountSelector = () => {
   const params = new URLSearchParams(router.query)
   const page = Number(params.get('page'))
 
-  const paginate = nextPage => {
-    const newSearchParams = new URLSearchParams(router.query)
-    newSearchParams.delete('page')
-    newSearchParams.set('page', nextPage)
-    router.push(`/wallet/accounts?${newSearchParams.toString()}`)
-  }
-
   const onClose = () => {
     const newSearchParams = new URLSearchParams(router.query)
     newSearchParams.delete('page')
-    const hasParams = Array.from(newSearchParams).length > 0
-    const query = hasParams
-      ? `/wallet?${newSearchParams.toString()}`
-      : '/wallet'
-    router.push(query)
     router.push(`/wallet?${newSearchParams.toString()}`)
   }
 
-  useEffect(() => {
-    const fetchAccounts = async () => {
-      setLoadingAccounts(true)
-      try {
-        let provider = walletProvider
-        if (wallet.type === LEDGER) {
-          provider = await connectLedger()
-        }
-        if (provider) {
-          const accounts = await provider.wallet.getAccounts(
-            page * ACCOUNT_BATCH_SIZE,
-            page * ACCOUNT_BATCH_SIZE + ACCOUNT_BATCH_SIZE,
-            network
-          )
-          const wallets = await Promise.all(
-            accounts.map(async (address, i) => {
-              const balance = await provider.getBalance(address)
-              const networkCode = network === 'f' ? 461 : 1
-              return {
-                balance,
-                address,
-                path: createPath(networkCode, page * ACCOUNT_BATCH_SIZE + i)
-              }
-            })
-          )
-          dispatch(walletList(wallets))
-        }
-      } catch (err) {
-        setUncaughtError(err)
+  const fetchNextAccount = async () => {
+    setLoadingAccounts(true)
+    try {
+      let provider = walletProvider
+      if (wallet.type === LEDGER) {
+        provider = await connectLedger()
       }
-      setLoadingAccounts(false)
-    }
 
-    // checks to see if the wallets already exists in redux
-    const needToFetch = () => {
-      const matchCount = walletsInRdx.reduce((matches, w) => {
-        const walletDerivationIndex = w.path.split('/')[5]
-        const derivationIndexRange = [
-          page * ACCOUNT_BATCH_SIZE,
-          page * ACCOUNT_BATCH_SIZE + ACCOUNT_BATCH_SIZE
-        ]
-        const match =
-          walletDerivationIndex >= derivationIndexRange[0] &&
-          walletDerivationIndex <= derivationIndexRange[1]
-        if (match) return matches + 1
-        return matches
-      }, 0)
-      return matchCount < ACCOUNT_BATCH_SIZE
+      if (provider) {
+        const [address] = await provider.wallet.getAccounts(
+          walletsInRdx.length,
+          walletsInRdx.length + 1,
+          network
+        )
+
+        const balance = await provider.getBalance(address)
+        const networkCode = network === 'f' ? 461 : 1
+        const wallet = {
+          balance,
+          address,
+          path: createPath(networkCode, walletsInRdx.length)
+        }
+
+        dispatch(walletList([wallet]))
+      }
+    } catch (err) {
+      setUncaughtError(err)
     }
-    if (needToFetch() && !loadingAccounts && !ledger.userImportFailure) {
-      fetchAccounts()
-    }
-  }, [
-    connectLedger,
-    dispatch,
-    wallet.type,
-    walletsInRdx,
-    walletProvider,
-    network,
-    page,
-    loadingAccounts,
-    ledger.userImportFailure
-  ])
+    setLoadingAccounts(false)
+  }
 
   return (
     <>
       <Close onClick={onClose} />
-      {loadingAccounts ? (
+      <Wrapper display='flex' flexDirection='column' justifyItems='center'>
         <Box
-          width='100%'
           display='flex'
           flexDirection='column'
-          alignItems='center'
-          mt={9}
+          alignSelf='center'
+          maxWidth={19}
+          p={4}
         >
-          <Loading width={3} height={3} />
-          <Label mt={3}>Loading Accounts</Label>
-        </Box>
-      ) : (
-        <Wrapper display='flex' flexDirection='column' justifyItems='center'>
-          <Box
-            display='flex'
-            flexDirection='column'
-            alignSelf='center'
-            maxWidth={19}
-            p={4}
-          >
-            {hasLedgerError({
-              ...ledger,
-              otherError: uncaughtError
-            }) && (
-              <AccountError
-                onTryAgain={() => {}}
-                errorMsg={reportLedgerConfigError({
-                  ...ledger,
-                  otherError: uncaughtError
-                })}
-              />
-            )}
+          {hasLedgerError({
+            ...ledger,
+            otherError: uncaughtError
+          }) && (
+            <AccountError
+              onTryAgain={() => {}}
+              errorMsg={reportLedgerConfigError({
+                ...ledger,
+                otherError: uncaughtError
+              })}
+            />
+          )}
 
-            <Menu m={2}>
-              <MenuItem display='flex' alignItems='center' color='core.primary'>
-                <Glyph
-                  acronym='Sw'
-                  bg='core.primary'
-                  borderColor='core.primary'
-                  color='core.white'
+          <Menu m={2}>
+            <MenuItem display='flex' alignItems='center' color='core.primary'>
+              <Glyph
+                acronym='Sw'
+                bg='core.primary'
+                borderColor='core.primary'
+                color='core.white'
+              />
+              <Title ml={2}>Switch Accounts</Title>
+            </MenuItem>
+            <MenuItem>
+              <Text>
+                Your single seed phrase creates hundreds of individual
+                &quot;accounts&quot;.
+                <br />
+                <StyledATag rel='noopener' target='_blank' href='/faqs'>
+                  Don&rsquo;t see an account you were previously using?
+                </StyledATag>
+              </Text>
+            </MenuItem>
+          </Menu>
+          <Menu>
+            <MenuItem display='flex' flexWrap='wrap'>
+              {walletsInRdx.map((w, i) => (
+                <AccountCardAlt
+                  alignItems='center'
+                  onClick={() => dispatch(switchWallet(i))}
+                  key={w.address}
+                  address={w.address}
+                  index={page * ACCOUNT_BATCH_SIZE + i}
+                  selected={w.address === wallet.address}
+                  balance={makeFriendlyBalance(w.balance)}
                 />
-                <Title ml={2}>Change & Create Accounts</Title>
-              </MenuItem>
-              <MenuItem>
-                <Text>Switch to a different account, or create a new one.</Text>
-              </MenuItem>
-            </Menu>
-            <Menu>
-              <MenuItem display='flex' flexWrap='wrap'>
-                {walletsInRdx
-                  .filter(
-                    w =>
-                      w.path.split('/')[5] >= page * ACCOUNT_BATCH_SIZE &&
-                      w.path.split('/')[5] <
-                        page * ACCOUNT_BATCH_SIZE + ACCOUNT_BATCH_SIZE
-                  )
-                  .map((w, i) => (
-                    <AccountCardAlt
-                      alignItems='center'
-                      onClick={() => {
-                        dispatch(switchWallet(page * ACCOUNT_BATCH_SIZE + i))
-                        const newParams = new URLSearchParams(router.query)
-                        const hasParams = Array.from(newParams).length > 0
-                        const query = hasParams
-                          ? `/wallet?${newParams.toString()}`
-                          : '/wallet'
-                        router.push(query)
-                      }}
-                      key={w.address}
-                      address={w.address}
-                      index={page * ACCOUNT_BATCH_SIZE + i}
-                      selected={w.address === wallet.address}
-                      balance={makeFriendlyBalance(w.balance)}
+              ))}
+              <ButtonCard
+                type='button'
+                onClick={fetchNextAccount}
+                display='flex'
+                flexWrap='wrap'
+                alignContent='flex-start'
+                width={11}
+                height={11}
+                m={2}
+                bg='core.transparent'
+                borderColor='core.primary'
+                color='core.primary'
+                opacity='1'
+                cursor='pointer'
+              >
+                <Menu>
+                  <MenuItem display='flex' alignItems='center'>
+                    <Glyph
+                      acronym='Cr'
+                      bg='core.transparent'
+                      borderColor='core.primary'
+                      color='core.primary'
                     />
-                  ))}
-                <ButtonCard
-                  display='flex'
-                  flexWrap='wrap'
-                  alignContent='flex-start'
-                  width={11}
-                  height={11}
-                  m={2}
-                  bg='core.transparent'
-                  borderColor='core.primary'
-                  color='core.primary'
-                  opacity='1'
-                  cursor='pointer'
-                >
-                  <Menu>
-                    <MenuItem display='flex' alignItems='center'>
-                      <Glyph
-                        acronym='Cr'
-                        bg='core.transparent'
-                        borderColor='core.primary'
-                        color='core.primary'
-                      />
-                      <Title ml={2}>Create</Title>
-                    </MenuItem>
-                    <MenuItem>
-                      <Text textAlign='left'>
-                        Click here to create a new account.
-                      </Text>
-                    </MenuItem>
-                  </Menu>
-                </ButtonCard>
-              </MenuItem>
-            </Menu>
-            <FloatingContainer>
-              <Button
-                border={0}
-                borderRight={1}
-                borderRadius={0}
-                borderColor='core.lightgray'
-                onClick={() => paginate(page - 1)}
-                disabled={page === 0 || loadingAccounts}
-                variant='secondary'
-                role='button'
-                title='Prev'
-              />
-              <Text m={0}>Page {page + 1}</Text>
-              <Button
-                border={0}
-                borderRadius={0}
-                title='Next'
-                onClick={() => paginate(page + 1)}
-                role='button'
-                variant='primary'
-                disabled={loadingAccounts}
-              />
-            </FloatingContainer>
-          </Box>
-        </Wrapper>
-      )}
+                    <Title ml={2}>Create</Title>
+                  </MenuItem>
+                  <MenuItem>
+                    <Text textAlign='left'>
+                      Click here to create a new account.
+                    </Text>
+                  </MenuItem>
+                </Menu>
+              </ButtonCard>
+            </MenuItem>
+          </Menu>
+        </Box>
+      </Wrapper>
     </>
   )
 }

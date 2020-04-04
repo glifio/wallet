@@ -13,12 +13,6 @@ import Send from './Send.js'
 import MessageView from './Message'
 import { useWalletProvider } from '../../WalletProvider'
 import {
-  LEDGER,
-  CREATE_MNEMONIC,
-  IMPORT_MNEMONIC,
-  ACCOUNT_BATCH_SIZE
-} from '../../constants'
-import {
   hasLedgerError,
   reportLedgerConfigError
 } from '../../utils/ledger/reportLedgerConfigError'
@@ -38,15 +32,6 @@ const WalletView = () => {
   const router = useRouter()
   const onAccountSwitch = () => {
     const params = new URLSearchParams(router.query)
-    let page = 0
-    if (
-      (wallet && wallet.type === LEDGER) ||
-      wallet.type === CREATE_MNEMONIC ||
-      wallet.type === IMPORT_MNEMONIC
-    ) {
-      page = Math.floor(wallet.path.split('/')[5] / ACCOUNT_BATCH_SIZE)
-    }
-    params.set('page', page)
     router.push(`/wallet/accounts?${params.toString()}`)
   }
 
@@ -72,7 +57,6 @@ const WalletView = () => {
       <Wrapper>
         <Sidebar>
           <NetworkSwitcherGlyph />
-
           {hasLedgerError({ ...ledger, otherError: uncaughtError }) &&
           showLedgerError ? (
             <AccountError

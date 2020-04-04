@@ -24,7 +24,6 @@ const AccountError = ({ errorMsg, onTryAgain }) => (
       <Text>Error</Text>
     </Box>
     <Box>
-      <Title>Ledger Device Problem</Title>
       <Text margin={0}>{errorMsg}</Text>
     </Box>
     <Box display='flex'>
