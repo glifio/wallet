@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
 import {
   AccountCard,
@@ -134,6 +135,10 @@ const WalletView = () => {
       </Wrapper>
     </>
   )
+}
+
+WalletView.propTypes = {
+  theme: PropTypes.object.isRequired
 }
 
 export default WalletView
