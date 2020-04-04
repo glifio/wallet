@@ -23,6 +23,7 @@ const AccountCardAlt = ({
           cursor: pointer;
           &:hover {
             background: ${!selected && 'hsla(0, 0%, 90%, 1)'};
+            opacity: 1;
           }
         `}
         onClick={onClick}
@@ -37,11 +38,6 @@ const AccountCardAlt = ({
         opacity={selected ? '1' : '0.25'}
         bg={selected ? 'card.account.background' : 'hsla(0, 0%, 90%, 0)'}
         color={selected ? 'card.account.color' : 'colors.core.black'}
-        css={`
-          &:hover {
-            opacity: 1;
-          }
-        `}
       >
         <Box display='flex' alignItems='center' justifyContent='flex-start'>
           <Glyph

@@ -1,30 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import {
   Box,
   Box as Wrapper,
-  Card,
   Glyph,
-  Button,
-  BaseButton as ButtonCard,
   Title,
   Text,
-  Label,
   Menu,
   MenuItem,
-  AccountError,
-  Loading,
   ButtonClose,
-  StyledLink,
   StyledATag
 } from '../Shared'
+import Create from './Create'
 import AccountCardAlt from '../Shared/AccountCardAlt'
 import { useWalletProvider } from '../../WalletProvider'
-import { ACCOUNT_BATCH_SIZE, LEDGER } from '../../constants'
+import { LEDGER } from '../../constants'
 import { walletList, switchWallet } from '../../store/actions'
-import sortAndRemoveWalletDups from '../../utils/sortAndRemoveWalletDups'
 import {
   hasLedgerError,
   reportLedgerConfigError
@@ -44,9 +37,10 @@ const AccountSelector = () => {
   const [loadingAccounts, setLoadingAccounts] = useState(false)
   const [uncaughtError, setUncaughtError] = useState(null)
   const dispatch = useDispatch()
-  const { walletsInRdx, network } = useSelector(state => ({
+  const { errorInRdx, walletsInRdx, network } = useSelector(state => ({
     network: state.network,
-    walletsInRdx: state.wallets
+    walletsInRdx: state.wallets,
+    errorInRdx: state.error
   }))
   const { ledger, connectLedger, walletProvider } = useWalletProvider()
   const router = useRouter()
@@ -57,6 +51,14 @@ const AccountSelector = () => {
     const newSearchParams = new URLSearchParams(router.query)
     newSearchParams.delete('page')
     router.push(`/wallet?${newSearchParams.toString()}`)
+  }
+
+  let errorMsg = ''
+
+  if (hasLedgerError({ ...ledger, otherError: uncaughtError })) {
+    errorMsg = reportLedgerConfigError({ ...ledger, otherError: uncaughtError })
+  } else if (errorInRdx) {
+    errorMsg = errorInRdx
   }
 
   const fetchNextAccount = async () => {
@@ -101,19 +103,6 @@ const AccountSelector = () => {
           maxWidth={19}
           p={4}
         >
-          {hasLedgerError({
-            ...ledger,
-            otherError: uncaughtError
-          }) && (
-            <AccountError
-              onTryAgain={() => {}}
-              errorMsg={reportLedgerConfigError({
-                ...ledger,
-                otherError: uncaughtError
-              })}
-            />
-          )}
-
           <Menu m={2}>
             <MenuItem display='flex' alignItems='center' color='core.primary'>
               <Glyph
@@ -143,43 +132,17 @@ const AccountSelector = () => {
                   onClick={() => dispatch(switchWallet(i))}
                   key={w.address}
                   address={w.address}
-                  index={page * ACCOUNT_BATCH_SIZE + i}
+                  index={i}
                   selected={w.address === wallet.address}
                   balance={makeFriendlyBalance(w.balance)}
                 />
               ))}
-              <ButtonCard
-                type='button'
+              <Create
+                errorMsg={errorMsg}
+                nextAccountIndex={walletsInRdx.length}
                 onClick={fetchNextAccount}
-                display='flex'
-                flexWrap='wrap'
-                alignContent='flex-start'
-                width={11}
-                height={11}
-                m={2}
-                bg='core.transparent'
-                borderColor='core.primary'
-                color='core.primary'
-                opacity='1'
-                cursor='pointer'
-              >
-                <Menu>
-                  <MenuItem display='flex' alignItems='center'>
-                    <Glyph
-                      acronym='Cr'
-                      bg='core.transparent'
-                      borderColor='core.primary'
-                      color='core.primary'
-                    />
-                    <Title ml={2}>Create</Title>
-                  </MenuItem>
-                  <MenuItem>
-                    <Text textAlign='left'>
-                      Click here to create a new account.
-                    </Text>
-                  </MenuItem>
-                </Menu>
-              </ButtonCard>
+                loading={loadingAccounts}
+              />
             </MenuItem>
           </Menu>
         </Box>

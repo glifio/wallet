@@ -3,7 +3,7 @@ import { string, func } from 'prop-types'
 import Box from '../Box'
 import Glyph from '../Glyph'
 import Button from '../Button'
-import { Title, Text } from '../Typography'
+import { Text } from '../Typography'
 
 const AccountError = ({ errorMsg, onTryAgain }) => (
   <Box
