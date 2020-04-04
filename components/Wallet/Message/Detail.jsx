@@ -37,10 +37,8 @@ const MessageDetailCard = styled(Card).attrs(() => ({
 `
 
 const TxStatusText = ({ address, from, status }) => {
-  const sent = address === from
-  if (status === 'pending' && sent) return 'SENDING'
-  if (status === 'pending') return 'RECEIVING'
-  if (sent) return 'SENT'
+  if (status === 'pending') return 'PENDING'
+  if (address === from) return 'SENT'
   return 'RECEIVED'
 }
 
