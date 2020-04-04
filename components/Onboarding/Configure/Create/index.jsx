@@ -69,6 +69,7 @@ export default () => {
           <GenerateMnemonic setMnemonic={setMnemonic} />
           {mnemonic && (
             <CreateHDWalletProvider
+              onError={setImportSeedError}
               mnemonic={mnemonic}
               ready={walkthroughStep === 4}
             />

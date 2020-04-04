@@ -3,17 +3,13 @@ import { renderHook } from '@testing-library/react-hooks'
 import { Provider } from 'react-redux'
 import WalletProvider from '@openworklabs/filecoin-wallet-provider'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
-import mockRustModule from '@zondax/filecoin-signer-wasm'
 
 import WalletProviderContextWrapper, { useWalletProvider } from '../'
-import { initializeStore } from '../../test-utils'
+import { initializeStore, flushPromises } from '../../test-utils'
 import { initialState } from '../../store/states'
 import SingleKeyProvider from './SingleKeyProvider'
 
 jest.mock('@zondax/filecoin-signer-wasm')
-mockRustModule.key_derive.mockImplementation(() => {
-  return { address: 't1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq' }
-})
 
 jest.mock('@openworklabs/filecoin-wallet-provider')
 const mockGetAccounts = jest
@@ -35,12 +31,16 @@ WalletProvider.mockImplementation(() => {
   }
 })
 
-const createComponent = (state, ready = true) => {
+const createComponent = (state, ready = true, onError = () => {}) => {
   const store = initializeStore(state ? state : Object.freeze(initialState))
   const Component = ({ children }) => (
     <Provider store={store}>
       <WalletProviderContextWrapper network='t'>
-        <SingleKeyProvider ready={ready} privateKey='xxxxyyyyzzzzz' />
+        <SingleKeyProvider
+          ready={ready}
+          privateKey='xxxxyyyyzzzzz'
+          onError={onError}
+        />
         {children}
       </WalletProviderContextWrapper>
     </Provider>
@@ -96,5 +96,18 @@ describe('HDWallet', () => {
       't1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq'
     )
     expect(state.wallets[0].balance.toString()).toBe('1')
+  })
+
+  test('it invokes the error handler if an error occurs', async () => {
+    const mockErrorHandler = jest.fn()
+    mockGetAccounts.mockImplementationOnce(() => {
+      throw new Error('test')
+    })
+    const { Component } = createComponent(null, true, mockErrorHandler)
+    await act(async () => {
+      render(<Component />)
+    })
+
+    expect(mockErrorHandler).toHaveBeenCalled()
   })
 })

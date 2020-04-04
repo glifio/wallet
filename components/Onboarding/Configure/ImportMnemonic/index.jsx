@@ -43,6 +43,7 @@ export default () => {
     <>
       {validMnemonic && (
         <CreateHDWalletProvider
+          onError={setMnemonicError}
           mnemonic={validMnemonic}
           ready={!!validMnemonic}
         />
@@ -60,9 +61,7 @@ export default () => {
             />
 
             <Title mt={3}>Input, Import & Proceed</Title>
-            <Text>
-              Please input your 12 or 24 word seed phrase below to continue{' '}
-            </Text>
+            <Text>Please input your seed phrase below to continue </Text>
             <Input.Mnemonic
               error={mnemonicError}
               setError={setMnemonicError}
