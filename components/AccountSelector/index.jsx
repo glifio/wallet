@@ -22,7 +22,6 @@ import AccountCardAlt from '../Shared/AccountCardAlt'
 import { useWalletProvider } from '../../WalletProvider'
 import { ACCOUNT_BATCH_SIZE, LEDGER } from '../../constants'
 import { walletList, switchWallet } from '../../store/actions'
-import sortAndRemoveWalletDups from '../../utils/sortAndRemoveWalletDups'
 import {
   hasLedgerError,
   reportLedgerConfigError
