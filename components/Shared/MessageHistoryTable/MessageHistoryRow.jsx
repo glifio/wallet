@@ -139,7 +139,7 @@ const MessageHistoryRow = ({
                 {!converterError &&
                   makeFriendlyBalance(
                     converter.fromFIL(new BigNumber(value)),
-                    7
+                    2
                   )}
               </Text>
             </MenuItem>

@@ -225,7 +225,7 @@ const Funds = forwardRef(
               type='number'
               step={new FilecoinNumber('1', 'attofil').toFil()}
               disabled={disabled}
-              valid={valid}
+              valid={valid && !!formatFilValue(filAmount)}
               {...props}
             />
           </Box>
@@ -262,7 +262,7 @@ const Funds = forwardRef(
               type='number'
               step={new FilecoinNumber('1', 'attofil').toFil()}
               min='0'
-              valid={valid}
+              valid={valid && !!formatFiatValue(fiatAmount)}
               disabled={disabled || converterError}
             />
           </Box>

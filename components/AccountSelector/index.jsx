@@ -202,7 +202,7 @@ const AccountSelector = () => {
                     address={w.address}
                     index={page * ACCOUNT_BATCH_SIZE + i}
                     selected={w.address === wallet.address}
-                    balance={makeFriendlyBalance(w.balance)}
+                    balance={makeFriendlyBalance(w.balance, 6)}
                   />
                 ))}
               <FloatingContainer>

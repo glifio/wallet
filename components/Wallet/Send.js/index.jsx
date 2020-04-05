@@ -20,7 +20,8 @@ import {
   Title,
   FloatingContainer,
   Title as Total,
-  ContentContainer as SendContainer
+  ContentContainer as SendContainer,
+  ApproximationToggleBtn
 } from '../../Shared'
 import ConfirmationCard from './ConfirmationCard'
 import GasCustomization from './GasCustomization'
@@ -97,6 +98,8 @@ const Send = ({ close }) => {
   const [customizingGas, setCustomizingGas] = useState(false)
 
   const [attemptingTx, setAttemptingTx] = useState(false)
+
+  const [showPrecise, setShowPrecise] = useState(false)
 
   const estimateGas = async gp => {
     // create a fake message
@@ -330,16 +333,42 @@ const Send = ({ close }) => {
                 >
                   <Total fontSize={4}>Total</Total>
                   <Box display='flex' flexDirection='column' textAlign='right'>
-                    <BigTitle color='core.primary'>
+                    <Box
+                      display='flex'
+                      flexDirection='row'
+                      justifyContent='flex-end'
+                      mb={2}
+                    >
+                      <ApproximationToggleBtn
+                        onClick={() => setShowPrecise(false)}
+                        clicked={!showPrecise}
+                      >
+                        Pretty
+                      </ApproximationToggleBtn>
+                      <Box width={2} />
+                      <ApproximationToggleBtn
+                        onClick={() => setShowPrecise(true)}
+                        clicked={showPrecise}
+                      >
+                        Precise
+                      </ApproximationToggleBtn>
+                    </Box>
+                    <BigTitle
+                      css={`
+                        word-wrap: break-word;
+                      `}
+                      color='core.primary'
+                    >
                       {makeFriendlyBalance(
                         new BigNumber(value.fil.toFil()),
-                        10
+                        10,
+                        !showPrecise
                       )}{' '}
                       FIL
                     </BigTitle>
                     <Title color='core.darkgray'>
                       {!converterError &&
-                        `${makeFriendlyBalance(value.fiat, 7)} USD`}
+                        `${makeFriendlyBalance(value.fiat, 2)} USD`}
                     </Title>
                   </Box>
                 </Box>
