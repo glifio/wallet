@@ -40,7 +40,7 @@ const Funds = forwardRef(
     const initialFilAmount =
       amount && amount > 0 ? new FilecoinNumber(amount, 'attofil') : ''
     const initialFiatAmount =
-      amount && amount > 0 && !converterError
+      amount && amount > 0 && converter && !converterError
         ? converter.fromFIL(new FilecoinNumber(amount, 'attofil').toFil())
         : ''
 

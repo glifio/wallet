@@ -137,10 +137,12 @@ const MessageHistoryRow = ({
             <MenuItem display='flex'>
               <Text color='core.darkgray' m={0} mb={0}>
                 {!converterError &&
-                  makeFriendlyBalance(
-                    converter.fromFIL(new BigNumber(value)),
-                    2
-                  )}
+                  (!converter
+                    ? 'Loading USD...'
+                    : makeFriendlyBalance(
+                        converter.fromFIL(new BigNumber(value)),
+                        2
+                      ))}
               </Text>
             </MenuItem>
           </Menu>

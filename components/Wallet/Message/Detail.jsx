@@ -181,15 +181,16 @@ const MessageDetail = ({ address, close, message }) => {
             </BigTitle>
             <Title color='core.darkgray' textAlign='right'>
               {!converterError &&
-                `${makeFriendlyBalance(
-                  converter.fromFIL(
-                    new FilecoinNumber(message.value, 'fil').plus(
-                      new FilecoinNumber(message.gas_used, 'attofil')
-                    )
-                  ),
-                  2
-                )}
-              USD`}
+                (converter
+                  ? `${makeFriendlyBalance(
+                      converter.fromFIL(
+                        new FilecoinNumber(message.value, 'fil').plus(
+                          new FilecoinNumber(message.gas_used, 'attofil')
+                        )
+                      ),
+                      2
+                    )} USD`
+                  : 'Loading USD...')}
             </Title>
           </Box>
         </Box>
