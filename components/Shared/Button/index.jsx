@@ -4,12 +4,13 @@ import BaseButton from './BaseButton'
 import theme from '../theme'
 
 const Button = forwardRef(
-  ({ disabled, onClick, variant, title, ...props }, ref) => (
+  ({ disabled, onClick, variant, title, type, ...props }, ref) => (
     <BaseButton
       variant={variant}
-      onClick={onClick}
+      onClick={onClick || null}
       disabled={disabled}
       ref={ref}
+      type={type}
       {...props}
     >
       {title}
@@ -19,9 +20,14 @@ const Button = forwardRef(
 
 Button.propTypes = {
   variant: oneOf(Object.keys(theme.colors.buttons)),
-  onClick: func.isRequired,
+  onClick: func,
   title: string.isRequired,
+  type: string,
   disabled: bool
+}
+
+Button.defaultProps = {
+  type: 'button'
 }
 
 export default Button
