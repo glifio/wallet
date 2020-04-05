@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Receive it renders correctly 1`] = `
+<div
+  class="Box-tuskkk-0 Address__Wrapper-sc-12hm3d7-0 bKmyJT"
+  width="14"
+>
+  <div
+    class="Box-tuskkk-0 fjrNYs"
+    display="flex"
+  >
+    <p
+      class="Typography__TextBase-sc-1uzug1e-2 LZLLr"
+      font-family="RT-Alias-Grotesk"
+      font-size="3"
+      font-weight="400"
+    >
+      t1
+    </p>
+    <p
+      class="Typography__TextBase-sc-1uzug1e-2 czlDxc"
+      font-family="RT-Alias-Grotesk"
+      font-size="3"
+      font-weight="400"
+    >
+      ●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
+    </p>
+    <p
+      class="Typography__TextBase-sc-1uzug1e-2 LZLLr"
+      font-family="RT-Alias-Grotesk"
+      font-size="3"
+      font-weight="400"
+    >
+      izpy
+    </p>
+  </div>
+  <div
+    class="Box-tuskkk-0 jcbfAF"
+    display="flex"
+    height="100%"
+  >
+    <button
+      class="Address__InlineButton-sc-12hm3d7-1 fdmssE"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+      width="7"
+    >
+      Copy
+    </button>
+    <button
+      class="Address__InlineButton-sc-12hm3d7-1 fdmssE"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+      width="7"
+    >
+      Reveal
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Receive it reveals the address when the user clicks reveal 1`] = `
+<div
+  class="Box-tuskkk-0 Address__Wrapper-sc-12hm3d7-0 bKmyJT"
+  width="14"
+>
+  <p
+    class="Typography__TextBase-sc-1uzug1e-2 gApeFg"
+    font-family="RT-Alias-Grotesk"
+    font-size="3"
+    font-weight="400"
+  >
+    t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy
+  </p>
+  <div
+    class="Box-tuskkk-0 jcbfAF"
+    display="flex"
+    height="100%"
+  >
+    <button
+      class="Address__InlineButton-sc-12hm3d7-1 fdmssE"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+      width="7"
+    >
+      Copy
+    </button>
+    <button
+      class="Address__InlineButton-sc-12hm3d7-1 fdmssE"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+      width="7"
+    >
+      Hide
+    </button>
+  </div>
+</div>
+`;
