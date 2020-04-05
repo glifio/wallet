@@ -58,7 +58,7 @@ const Create = ({ onClick, loading, nextAccountIndex, errorMsg }) => {
       <Menu>
         <MenuItem display='flex' alignItems='center'>
           <Glyph
-            acronym={nextAccountIndex}
+            acronym={nextAccountIndex.toString()}
             bg='core.transparent'
             borderColor='core.primary'
             color='core.primary'

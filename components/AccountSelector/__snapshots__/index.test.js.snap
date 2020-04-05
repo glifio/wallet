@@ -1,0 +1,917 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccountSelector it renders an error when an error exists 1`] = `
+Array [
+  <button
+    className="IconButtons__IconButtonBase-sc-1st7bxm-0 guMDqL AccountSelector__Close-sc-1ehbltc-0 gLTjRZ"
+    display="inline-block"
+    onClick={[Function]}
+  >
+    <svg
+      className="Icons__IconBase-jyp17t-0 hfFiWB"
+      fill="none"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clipRule="evenodd"
+        d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+        fill="#5E26FF"
+        fillRule="evenodd"
+      />
+    </svg>
+  </button>,
+  <div
+    className="Box-tuskkk-0 kEyUmE"
+    display="flex"
+  >
+    <div
+      className="Box-tuskkk-0 fmCbVG"
+      display="flex"
+    >
+      <ul
+        className="Menu-ptsh8v-0 beLJOu"
+      >
+        <li
+          className="Menu__MenuItem-ptsh8v-1 iVBIaJ"
+          color="core.primary"
+          display="flex"
+        >
+          <div
+            className="Box-tuskkk-0 gGywPU"
+            color="core.white"
+            display="flex"
+            size={6}
+          >
+            <h3
+              className="Glyph__GlyphText-sc-1xcgbq7-0 fuRHwt"
+            >
+              Sw
+            </h3>
+          </div>
+          <h2
+            className="Typography__H2Base-sc-1uzug1e-1 iJwnbF"
+            fontFamily="RT-Alias-Grotesk"
+            fontSize={4}
+            fontWeight={400}
+          >
+            Switch Accounts
+          </h2>
+        </li>
+        <li
+          className="Menu__MenuItem-ptsh8v-1 dHpiGi"
+        >
+          <p
+            className="Typography__TextBase-sc-1uzug1e-2 LZLLr"
+            fontFamily="RT-Alias-Grotesk"
+            fontSize={3}
+            fontWeight={400}
+          >
+            Your single seed phrase creates hundreds of individual "accounts".
+            <br />
+            <a
+              className="Link__StyledATag-sc-11kjldy-0 kCLHyJ"
+              color="core.primary"
+              href="/faqs"
+              rel="noopener"
+              target="_blank"
+            >
+              Don’t see an account you were previously using?
+            </a>
+          </p>
+        </li>
+      </ul>
+      <ul
+        className="Menu-ptsh8v-0 iNlWFF"
+      >
+        <li
+          className="Menu__MenuItem-ptsh8v-1 ioiZdt"
+          display="flex"
+        >
+          <div
+            className="Box-tuskkk-0 crStTC"
+            display="inline-block"
+          >
+            <div
+              className="Box-tuskkk-0 iBWkQW AccountCardAlt___StyledCard-sc-1tps9om-0 gDuFAz"
+              color="colors.core.black"
+              display="flex"
+              height={11}
+              onClick={[Function]}
+              opacity="0.25"
+              overflow="hidden"
+              width={11}
+            >
+              <div
+                className="Box-tuskkk-0 cgmsIS"
+                display="flex"
+              >
+                <div
+                  className="Box-tuskkk-0 erEoZW"
+                  color="colors.core.black"
+                  display="flex"
+                  size={6}
+                >
+                  <h3
+                    className="Glyph__GlyphText-sc-1xcgbq7-0 fuRHwt"
+                  >
+                    0
+                  </h3>
+                </div>
+                <div
+                  className="Box-tuskkk-0 hUQOCX"
+                  display="flex"
+                >
+                  <p
+                    className="Typography__TextBase-sc-1uzug1e-2 bGPlJv"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={3}
+                    fontWeight={400}
+                  >
+                    Address
+                  </p>
+                  <h2
+                    className="Typography__H2Base-sc-1uzug1e-1 eUzTBY"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={4}
+                    fontWeight={400}
+                  >
+                    t1jd...nfza
+                  </h2>
+                </div>
+              </div>
+              <div
+                className="Box-tuskkk-0 hUQOCX"
+                display="flex"
+              >
+                <p
+                  className="Typography__TextBase-sc-1uzug1e-2 bGPlJv"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={3}
+                  fontWeight={400}
+                >
+                  Balance
+                </p>
+                <h2
+                  className="Typography__H2Base-sc-1uzug1e-1 eUzTBY"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={4}
+                  fontWeight={400}
+                >
+                  1
+                  FIL
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div
+            className="Box-tuskkk-0 crStTC"
+            display="inline-block"
+          >
+            <div
+              className="Box-tuskkk-0 iBWkQW AccountCardAlt___StyledCard-sc-1tps9om-0 gDuFAz"
+              color="colors.core.black"
+              display="flex"
+              height={11}
+              onClick={[Function]}
+              opacity="0.25"
+              overflow="hidden"
+              width={11}
+            >
+              <div
+                className="Box-tuskkk-0 cgmsIS"
+                display="flex"
+              >
+                <div
+                  className="Box-tuskkk-0 erEoZW"
+                  color="colors.core.black"
+                  display="flex"
+                  size={6}
+                >
+                  <h3
+                    className="Glyph__GlyphText-sc-1xcgbq7-0 fuRHwt"
+                  >
+                    1
+                  </h3>
+                </div>
+                <div
+                  className="Box-tuskkk-0 hUQOCX"
+                  display="flex"
+                >
+                  <p
+                    className="Typography__TextBase-sc-1uzug1e-2 bGPlJv"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={3}
+                    fontWeight={400}
+                  >
+                    Address
+                  </p>
+                  <h2
+                    className="Typography__H2Base-sc-1uzug1e-1 eUzTBY"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={4}
+                    fontWeight={400}
+                  >
+                    t1dd...nfza
+                  </h2>
+                </div>
+              </div>
+              <div
+                className="Box-tuskkk-0 hUQOCX"
+                display="flex"
+              >
+                <p
+                  className="Typography__TextBase-sc-1uzug1e-2 bGPlJv"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={3}
+                  fontWeight={400}
+                >
+                  Balance
+                </p>
+                <h2
+                  className="Typography__H2Base-sc-1uzug1e-1 eUzTBY"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={4}
+                  fontWeight={400}
+                >
+                  2
+                  FIL
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div
+            className="Box-tuskkk-0 iBIMkc"
+            color="card.error.foreground"
+            display="flex"
+            height={11}
+            width={11}
+          >
+            <div
+              className="Box-tuskkk-0 cgmsIS"
+              display="flex"
+            >
+              <div
+                className="Box-tuskkk-0 ilXArz"
+                color="#000"
+                display="flex"
+                size={6}
+              >
+                <h3
+                  className="Glyph__GlyphText-sc-1xcgbq7-0 fuRHwt"
+                >
+                  Er
+                </h3>
+              </div>
+              <p
+                className="Typography__TextBase-sc-1uzug1e-2 LZLLr"
+                fontFamily="RT-Alias-Grotesk"
+                fontSize={3}
+                fontWeight={400}
+              >
+                Error
+              </p>
+            </div>
+            <div
+              className="Box-tuskkk-0 iThPXb"
+            >
+              <p
+                className="Typography__TextBase-sc-1uzug1e-2 bCWyBo"
+                fontFamily="RT-Alias-Grotesk"
+                fontSize={3}
+                fontWeight={400}
+              >
+                test error message
+              </p>
+            </div>
+            <div
+              className="Box-tuskkk-0 dsKMJn"
+              display="flex"
+            >
+              <button
+                className="BaseButton-sc-1iyr4rl-0 cwpdtc"
+                fontSize={3}
+                onClick={[Function]}
+              >
+                Try again
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>,
+]
+`;
+
+exports[`AccountSelector it renders the wallets in redux, and an option to create the next wallet 1`] = `
+Array [
+  <button
+    className="IconButtons__IconButtonBase-sc-1st7bxm-0 guMDqL AccountSelector__Close-sc-1ehbltc-0 gLTjRZ"
+    display="inline-block"
+    onClick={[Function]}
+  >
+    <svg
+      className="Icons__IconBase-jyp17t-0 hfFiWB"
+      fill="none"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clipRule="evenodd"
+        d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+        fill="#5E26FF"
+        fillRule="evenodd"
+      />
+    </svg>
+  </button>,
+  <div
+    className="Box-tuskkk-0 kEyUmE"
+    display="flex"
+  >
+    <div
+      className="Box-tuskkk-0 fmCbVG"
+      display="flex"
+    >
+      <ul
+        className="Menu-ptsh8v-0 beLJOu"
+      >
+        <li
+          className="Menu__MenuItem-ptsh8v-1 iVBIaJ"
+          color="core.primary"
+          display="flex"
+        >
+          <div
+            className="Box-tuskkk-0 gGywPU"
+            color="core.white"
+            display="flex"
+            size={6}
+          >
+            <h3
+              className="Glyph__GlyphText-sc-1xcgbq7-0 fuRHwt"
+            >
+              Sw
+            </h3>
+          </div>
+          <h2
+            className="Typography__H2Base-sc-1uzug1e-1 iJwnbF"
+            fontFamily="RT-Alias-Grotesk"
+            fontSize={4}
+            fontWeight={400}
+          >
+            Switch Accounts
+          </h2>
+        </li>
+        <li
+          className="Menu__MenuItem-ptsh8v-1 dHpiGi"
+        >
+          <p
+            className="Typography__TextBase-sc-1uzug1e-2 LZLLr"
+            fontFamily="RT-Alias-Grotesk"
+            fontSize={3}
+            fontWeight={400}
+          >
+            Your single seed phrase creates hundreds of individual "accounts".
+            <br />
+            <a
+              className="Link__StyledATag-sc-11kjldy-0 kCLHyJ"
+              color="core.primary"
+              href="/faqs"
+              rel="noopener"
+              target="_blank"
+            >
+              Don’t see an account you were previously using?
+            </a>
+          </p>
+        </li>
+      </ul>
+      <ul
+        className="Menu-ptsh8v-0 iNlWFF"
+      >
+        <li
+          className="Menu__MenuItem-ptsh8v-1 ioiZdt"
+          display="flex"
+        >
+          <div
+            className="Box-tuskkk-0 crStTC"
+            display="inline-block"
+          >
+            <div
+              className="Box-tuskkk-0 iBWkQW AccountCardAlt___StyledCard-sc-1tps9om-0 gDuFAz"
+              color="colors.core.black"
+              display="flex"
+              height={11}
+              onClick={[Function]}
+              opacity="0.25"
+              overflow="hidden"
+              width={11}
+            >
+              <div
+                className="Box-tuskkk-0 cgmsIS"
+                display="flex"
+              >
+                <div
+                  className="Box-tuskkk-0 erEoZW"
+                  color="colors.core.black"
+                  display="flex"
+                  size={6}
+                >
+                  <h3
+                    className="Glyph__GlyphText-sc-1xcgbq7-0 fuRHwt"
+                  >
+                    0
+                  </h3>
+                </div>
+                <div
+                  className="Box-tuskkk-0 hUQOCX"
+                  display="flex"
+                >
+                  <p
+                    className="Typography__TextBase-sc-1uzug1e-2 bGPlJv"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={3}
+                    fontWeight={400}
+                  >
+                    Address
+                  </p>
+                  <h2
+                    className="Typography__H2Base-sc-1uzug1e-1 eUzTBY"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={4}
+                    fontWeight={400}
+                  >
+                    t1jd...nfza
+                  </h2>
+                </div>
+              </div>
+              <div
+                className="Box-tuskkk-0 hUQOCX"
+                display="flex"
+              >
+                <p
+                  className="Typography__TextBase-sc-1uzug1e-2 bGPlJv"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={3}
+                  fontWeight={400}
+                >
+                  Balance
+                </p>
+                <h2
+                  className="Typography__H2Base-sc-1uzug1e-1 eUzTBY"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={4}
+                  fontWeight={400}
+                >
+                  1
+                  FIL
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div
+            className="Box-tuskkk-0 crStTC"
+            display="inline-block"
+          >
+            <div
+              className="Box-tuskkk-0 iBWkQW AccountCardAlt___StyledCard-sc-1tps9om-0 gDuFAz"
+              color="colors.core.black"
+              display="flex"
+              height={11}
+              onClick={[Function]}
+              opacity="0.25"
+              overflow="hidden"
+              width={11}
+            >
+              <div
+                className="Box-tuskkk-0 cgmsIS"
+                display="flex"
+              >
+                <div
+                  className="Box-tuskkk-0 erEoZW"
+                  color="colors.core.black"
+                  display="flex"
+                  size={6}
+                >
+                  <h3
+                    className="Glyph__GlyphText-sc-1xcgbq7-0 fuRHwt"
+                  >
+                    1
+                  </h3>
+                </div>
+                <div
+                  className="Box-tuskkk-0 hUQOCX"
+                  display="flex"
+                >
+                  <p
+                    className="Typography__TextBase-sc-1uzug1e-2 bGPlJv"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={3}
+                    fontWeight={400}
+                  >
+                    Address
+                  </p>
+                  <h2
+                    className="Typography__H2Base-sc-1uzug1e-1 eUzTBY"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={4}
+                    fontWeight={400}
+                  >
+                    t1dd...nfza
+                  </h2>
+                </div>
+              </div>
+              <div
+                className="Box-tuskkk-0 hUQOCX"
+                display="flex"
+              >
+                <p
+                  className="Typography__TextBase-sc-1uzug1e-2 bGPlJv"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={3}
+                  fontWeight={400}
+                >
+                  Balance
+                </p>
+                <h2
+                  className="Typography__H2Base-sc-1uzug1e-1 eUzTBY"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={4}
+                  fontWeight={400}
+                >
+                  2
+                  FIL
+                </h2>
+              </div>
+            </div>
+          </div>
+          <button
+            className="BaseButton-sc-1iyr4rl-0 jdfpgK"
+            color="core.primary"
+            cursor="pointer"
+            display="flex"
+            fontSize={3}
+            height={11}
+            onClick={[Function]}
+            opacity="1"
+            type="button"
+            width={11}
+          >
+            <ul
+              className="Menu-ptsh8v-0 iNlWFF"
+            >
+              <li
+                className="Menu__MenuItem-ptsh8v-1 iqOwkG"
+                display="flex"
+              >
+                <div
+                  className="Box-tuskkk-0 dsVYrt"
+                  color="core.primary"
+                  display="flex"
+                  size={6}
+                >
+                  <h3
+                    className="Glyph__GlyphText-sc-1xcgbq7-0 fuRHwt"
+                  >
+                    2
+                  </h3>
+                </div>
+                <h2
+                  className="Typography__H2Base-sc-1uzug1e-1 iJwnbF"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={4}
+                  fontWeight={400}
+                >
+                  Create
+                </h2>
+              </li>
+              <li
+                className="Menu__MenuItem-ptsh8v-1 dHpiGi"
+              >
+                <p
+                  className="Typography__TextBase-sc-1uzug1e-2 itqzBw"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={3}
+                  fontWeight={400}
+                >
+                  Click here to create account #
+                  2
+                  .
+                </p>
+              </li>
+            </ul>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>,
+]
+`;
+
+exports[`AccountSelector it updates redux with an additional wallet upon wallet creation 1`] = `
+Array [
+  <button
+    className="IconButtons__IconButtonBase-sc-1st7bxm-0 guMDqL AccountSelector__Close-sc-1ehbltc-0 gLTjRZ"
+    display="inline-block"
+    onClick={[Function]}
+  >
+    <svg
+      className="Icons__IconBase-jyp17t-0 hfFiWB"
+      fill="none"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clipRule="evenodd"
+        d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+        fill="#5E26FF"
+        fillRule="evenodd"
+      />
+    </svg>
+  </button>,
+  <div
+    className="Box-tuskkk-0 kEyUmE"
+    display="flex"
+  >
+    <div
+      className="Box-tuskkk-0 fmCbVG"
+      display="flex"
+    >
+      <ul
+        className="Menu-ptsh8v-0 beLJOu"
+      >
+        <li
+          className="Menu__MenuItem-ptsh8v-1 iVBIaJ"
+          color="core.primary"
+          display="flex"
+        >
+          <div
+            className="Box-tuskkk-0 gGywPU"
+            color="core.white"
+            display="flex"
+            size={6}
+          >
+            <h3
+              className="Glyph__GlyphText-sc-1xcgbq7-0 fuRHwt"
+            >
+              Sw
+            </h3>
+          </div>
+          <h2
+            className="Typography__H2Base-sc-1uzug1e-1 iJwnbF"
+            fontFamily="RT-Alias-Grotesk"
+            fontSize={4}
+            fontWeight={400}
+          >
+            Switch Accounts
+          </h2>
+        </li>
+        <li
+          className="Menu__MenuItem-ptsh8v-1 dHpiGi"
+        >
+          <p
+            className="Typography__TextBase-sc-1uzug1e-2 LZLLr"
+            fontFamily="RT-Alias-Grotesk"
+            fontSize={3}
+            fontWeight={400}
+          >
+            Your single seed phrase creates hundreds of individual "accounts".
+            <br />
+            <a
+              className="Link__StyledATag-sc-11kjldy-0 kCLHyJ"
+              color="core.primary"
+              href="/faqs"
+              rel="noopener"
+              target="_blank"
+            >
+              Don’t see an account you were previously using?
+            </a>
+          </p>
+        </li>
+      </ul>
+      <ul
+        className="Menu-ptsh8v-0 iNlWFF"
+      >
+        <li
+          className="Menu__MenuItem-ptsh8v-1 ioiZdt"
+          display="flex"
+        >
+          <div
+            className="Box-tuskkk-0 crStTC"
+            display="inline-block"
+          >
+            <div
+              className="Box-tuskkk-0 iBWkQW AccountCardAlt___StyledCard-sc-1tps9om-0 gDuFAz"
+              color="colors.core.black"
+              display="flex"
+              height={11}
+              onClick={[Function]}
+              opacity="0.25"
+              overflow="hidden"
+              width={11}
+            >
+              <div
+                className="Box-tuskkk-0 cgmsIS"
+                display="flex"
+              >
+                <div
+                  className="Box-tuskkk-0 erEoZW"
+                  color="colors.core.black"
+                  display="flex"
+                  size={6}
+                >
+                  <h3
+                    className="Glyph__GlyphText-sc-1xcgbq7-0 fuRHwt"
+                  >
+                    0
+                  </h3>
+                </div>
+                <div
+                  className="Box-tuskkk-0 hUQOCX"
+                  display="flex"
+                >
+                  <p
+                    className="Typography__TextBase-sc-1uzug1e-2 bGPlJv"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={3}
+                    fontWeight={400}
+                  >
+                    Address
+                  </p>
+                  <h2
+                    className="Typography__H2Base-sc-1uzug1e-1 eUzTBY"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={4}
+                    fontWeight={400}
+                  >
+                    t1jd...nfza
+                  </h2>
+                </div>
+              </div>
+              <div
+                className="Box-tuskkk-0 hUQOCX"
+                display="flex"
+              >
+                <p
+                  className="Typography__TextBase-sc-1uzug1e-2 bGPlJv"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={3}
+                  fontWeight={400}
+                >
+                  Balance
+                </p>
+                <h2
+                  className="Typography__H2Base-sc-1uzug1e-1 eUzTBY"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={4}
+                  fontWeight={400}
+                >
+                  1
+                  FIL
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div
+            className="Box-tuskkk-0 crStTC"
+            display="inline-block"
+          >
+            <div
+              className="Box-tuskkk-0 iBWkQW AccountCardAlt___StyledCard-sc-1tps9om-0 gDuFAz"
+              color="colors.core.black"
+              display="flex"
+              height={11}
+              onClick={[Function]}
+              opacity="0.25"
+              overflow="hidden"
+              width={11}
+            >
+              <div
+                className="Box-tuskkk-0 cgmsIS"
+                display="flex"
+              >
+                <div
+                  className="Box-tuskkk-0 erEoZW"
+                  color="colors.core.black"
+                  display="flex"
+                  size={6}
+                >
+                  <h3
+                    className="Glyph__GlyphText-sc-1xcgbq7-0 fuRHwt"
+                  >
+                    1
+                  </h3>
+                </div>
+                <div
+                  className="Box-tuskkk-0 hUQOCX"
+                  display="flex"
+                >
+                  <p
+                    className="Typography__TextBase-sc-1uzug1e-2 bGPlJv"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={3}
+                    fontWeight={400}
+                  >
+                    Address
+                  </p>
+                  <h2
+                    className="Typography__H2Base-sc-1uzug1e-1 eUzTBY"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={4}
+                    fontWeight={400}
+                  >
+                    t1dd...nfza
+                  </h2>
+                </div>
+              </div>
+              <div
+                className="Box-tuskkk-0 hUQOCX"
+                display="flex"
+              >
+                <p
+                  className="Typography__TextBase-sc-1uzug1e-2 bGPlJv"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={3}
+                  fontWeight={400}
+                >
+                  Balance
+                </p>
+                <h2
+                  className="Typography__H2Base-sc-1uzug1e-1 eUzTBY"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={4}
+                  fontWeight={400}
+                >
+                  2
+                  FIL
+                </h2>
+              </div>
+            </div>
+          </div>
+          <button
+            className="BaseButton-sc-1iyr4rl-0 jdfpgK"
+            color="core.primary"
+            cursor="pointer"
+            display="flex"
+            fontSize={3}
+            height={11}
+            onClick={[Function]}
+            opacity="1"
+            type="button"
+            width={11}
+          >
+            <ul
+              className="Menu-ptsh8v-0 iNlWFF"
+            >
+              <li
+                className="Menu__MenuItem-ptsh8v-1 iqOwkG"
+                display="flex"
+              >
+                <div
+                  className="Box-tuskkk-0 dsVYrt"
+                  color="core.primary"
+                  display="flex"
+                  size={6}
+                >
+                  <h3
+                    className="Glyph__GlyphText-sc-1xcgbq7-0 fuRHwt"
+                  >
+                    2
+                  </h3>
+                </div>
+                <h2
+                  className="Typography__H2Base-sc-1uzug1e-1 iJwnbF"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={4}
+                  fontWeight={400}
+                >
+                  Create
+                </h2>
+              </li>
+              <li
+                className="Menu__MenuItem-ptsh8v-1 dHpiGi"
+              >
+                <p
+                  className="Typography__TextBase-sc-1uzug1e-2 itqzBw"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={3}
+                  fontWeight={400}
+                >
+                  Click here to create account #
+                  2
+                  .
+                </p>
+              </li>
+            </ul>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>,
+]
+`;
