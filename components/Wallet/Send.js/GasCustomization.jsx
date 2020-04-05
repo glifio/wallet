@@ -7,24 +7,10 @@ import {
   Input,
   Label,
   Title,
-  Text,
   FloatingContainer,
   ContentContainer
 } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
-
-const gasToButtonMap = (gasLimit, gasPrice) => {
-  const options = {
-    '1000': {
-      '1': 'slow',
-      '2': 'medium',
-      '3': 'fast'
-    }
-  }
-  if (options[gasLimit.toAttoFil()]) {
-    return options[gasLimit.toAttoFil()][gasPrice.toAttoFil()] || 'custom'
-  }
-}
 
 const GasCustomization = ({
   gasPrice,
@@ -61,63 +47,6 @@ const GasCustomization = ({
 
   return (
     <ContentContainer>
-      {/* <Label mt={3} mb={3}>
-        Select a preset transfer speed
-      </Label>
-      <Box mb={4} display='flex' flexDirection='row'>
-        <Button
-          onClick={async () => {
-            setGasPriceLocal(new FilecoinNumber('1', 'attofil'))
-            setGasLimitLocal(new FilecoinNumber('1000', 'attofil'))
-            const gas = await estimateGas(new FilecoinNumber('1', 'attofil'))
-            setEstimatedGas(gas)
-          }}
-          color='core.primary'
-          backgroundColor='core.transparent'
-          borderColor='core.primary'
-          title='Slow'
-          mr={3}
-          type='button'
-        />
-        <Button
-          onClick={async () => {
-            const newGasPrice = new FilecoinNumber('2', 'attofil')
-            setGasPriceLocal(newGasPrice)
-            setGasLimitLocal(new FilecoinNumber('1000', 'attofil'))
-            const gas = await estimateGas(newGasPrice)
-            setEstimatedGas(gas)
-          }}
-          color='core.primary'
-          backgroundColor='core.transparent'
-          borderColor='core.primary'
-          title='Medium'
-          mr={3}
-          py={1}
-          px={3}
-          type='button'
-        />
-        <Button
-          onClick={async () => {
-            const newGasPrice = new FilecoinNumber('3', 'attofil')
-            setGasPriceLocal(newGasPrice)
-            setGasLimitLocal(new FilecoinNumber('1000', 'attofil'))
-            const gas = await estimateGas(newGasPrice)
-            setEstimatedGas(gas)
-          }}
-          variant={
-            gasToButtonMap(gasLimitLocal, gasPriceLocal) === 'fast'
-              ? 'tertiary-selected'
-              : 'tertiary'
-          }
-          color='core.primary'
-          backgroundColor='core.transparent'
-          borderColor='core.primary'
-          title='Fast'
-          mr={3}
-          py={1}
-          type='button'
-        />
-      </Box> */}
       <Box display='flex' justifyContent='space-between' alignItems='center'>
         <Label mt={3} mb={3}>
           Submit a custom fee
@@ -130,7 +59,7 @@ const GasCustomization = ({
             cursor: pointer;
           `}
         >
-          What's this?
+          What&rsquo;s this?
         </Label>
       </Box>
       <Input.Number

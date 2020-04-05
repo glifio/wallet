@@ -1,5 +1,6 @@
-import Document from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+import JSONLD from '../JSONLD'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -23,5 +24,27 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal()
     }
+  }
+
+  render() {
+    return (
+      <Html>
+        <Head>
+          <script
+            type='application/ld+json'
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }}
+          />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+          <script async defer src='https://cdn.simpleanalytics.io/hello.js' />
+          <noscript>
+            <img src='https://api.simpleanalytics.io/hello.gif' alt='' />
+          </noscript>
+        </body>
+      </Html>
+    )
   }
 }

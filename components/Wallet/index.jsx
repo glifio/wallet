@@ -7,7 +7,8 @@ import {
   NetworkSwitcherGlyph,
   Wrapper,
   Sidebar,
-  Content
+  Content,
+  BaseButton as ButtonLogout
 } from '../Shared'
 import Send from './Send.js'
 import MessageView from './Message'
@@ -21,7 +22,7 @@ import useWallet from '../../WalletProvider/useWallet'
 import Receive from '../Receive'
 import { MESSAGE_HISTORY, SEND, RECEIVE } from './views'
 
-const WalletView = () => {
+export default () => {
   const wallet = useWallet()
   const [childView, setChildView] = useState(MESSAGE_HISTORY)
   const { ledger, connectLedger } = useWalletProvider()
@@ -55,7 +56,7 @@ const WalletView = () => {
     <>
       <MsgConfirmer />
       <Wrapper>
-        <Sidebar>
+        <Sidebar height='100vh'>
           <NetworkSwitcherGlyph />
           {hasLedgerError({ ...ledger, otherError: uncaughtError }) &&
           showLedgerError ? (
@@ -83,6 +84,21 @@ const WalletView = () => {
             onReceive={() => onViewChange(RECEIVE)}
             onSend={() => onViewChange(SEND)}
           />
+          <ButtonLogout
+            variant='secondary'
+            width='100%'
+            mt={4}
+            display='flex'
+            css={`
+              background-color: ${({ theme }) => theme.colors.core.secondary}00;
+              &:hover {
+                background-color: ${({ theme }) => theme.colors.core.secondary};
+              }
+            `}
+            onClick={() => window.location.reload()}
+          >
+            Logout
+          </ButtonLogout>
         </Sidebar>
         <Content>
           {childView === MESSAGE_HISTORY && <MessageView />}
@@ -103,5 +119,3 @@ const WalletView = () => {
     </>
   )
 }
-
-export default WalletView

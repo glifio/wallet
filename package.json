@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "lint": "eslint '**/*.js'",
+    "lint": "eslint '**/*.js' '**/*.jsx'",
     "start": "next start",
     "test": "jest",
     "test:watch": "jest --watch"
@@ -16,7 +16,7 @@
     "@openworklabs/filecoin-message": "0.0.8",
     "@openworklabs/filecoin-number": "0.0.6",
     "@openworklabs/filecoin-wallet-provider": "0.0.17",
-    "@zondax/filecoin-signer-wasm": "^0.2.0",
+    "@zondax/filecoin-signer-wasm": "^0.3.1",
     "axios": "^0.19.2",
     "bip39": "^3.0.2",
     "dayjs": "^1.8.22",
