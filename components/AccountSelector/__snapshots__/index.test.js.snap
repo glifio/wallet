@@ -301,6 +301,7 @@ Array [
                 fontSize={3}
                 height="100%"
                 onClick={[Function]}
+                type="button"
               >
                 Try again
               </button>
