@@ -8,12 +8,12 @@ const makeFriendly = (bigNumber, denom) => {
 }
 
 const addComparisonOperator = (endNum, originalNum) => {
-  if (new BigNumber(endNum).isNaN()) return `~${endNum}`
+  if (new BigNumber(endNum).isNaN()) return endNum
   if (new BigNumber(originalNum).isEqualTo(new BigNumber(endNum))) return endNum
   if (new BigNumber(originalNum).isLessThan(new BigNumber(endNum)))
     return `< ${endNum}`
   if (new BigNumber(originalNum).isGreaterThan(new BigNumber(endNum)))
-    return `~${endNum}`
+    return endNum
 }
 
 export default (bigNumber, dp = 3, pretty = true) => {

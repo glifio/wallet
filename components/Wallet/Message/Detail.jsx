@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import dayjs from 'dayjs'
 
 import {
-  ApproximationToggleBtn,
   Box,
   BigTitle,
   Card,
@@ -51,7 +50,6 @@ TxStatusText.propTypes = {
 
 const MessageDetail = ({ address, close, message }) => {
   const { converter, converterError } = useConverter()
-  const [showPrecise, setShowPrecise] = useState(false)
   return (
     <MessageDetailCard>
       <Box
@@ -144,41 +142,17 @@ const MessageDetail = ({ address, close, message }) => {
         >
           <Label>Total</Label>
           <Box display='flex' flexDirection='column'>
-            <Box
-              display='flex'
-              flexDirection='row'
-              justifyContent='flex-end'
-              mb={2}
-            >
-              <ApproximationToggleBtn
-                onClick={() => setShowPrecise(false)}
-                clicked={!showPrecise}
-              >
-                Pretty
-              </ApproximationToggleBtn>
-              <Box width={2} />
-              <ApproximationToggleBtn
-                onClick={() => setShowPrecise(true)}
-                clicked={showPrecise}
-              >
-                Precise
-              </ApproximationToggleBtn>
-            </Box>
-            <BigTitle
+            <Title
               css={`
                 word-wrap: break-word;
               `}
               color='core.primary'
             >
-              {makeFriendlyBalance(
-                new FilecoinNumber(message.value, 'fil').plus(
-                  new FilecoinNumber(message.gas_used, 'attofil')
-                ),
-                10,
-                !showPrecise
-              )}{' '}
+              {new FilecoinNumber(message.value, 'fil')
+                .plus(new FilecoinNumber(message.gas_used, 'attofil'))
+                .toString()}{' '}
               FIL
-            </BigTitle>
+            </Title>
             <Title color='core.darkgray' textAlign='right'>
               {!converterError &&
                 (converter
