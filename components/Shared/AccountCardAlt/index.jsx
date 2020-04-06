@@ -3,6 +3,7 @@ import { string, number, bool, func } from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import Box from '../Box'
 import Glyph from '../Glyph'
+import Card from '../Card'
 import { Text, Title } from '../Typography'
 import truncate from '../../../utils/truncateAddress'
 
@@ -15,29 +16,26 @@ const AccountCardAlt = ({
   ...props
 }) => {
   return (
-    <Box my={2} display='flex' flexDirection='column' {...props}>
-      {selected && (
-        <Text my={1} width='100%' textAlign='left' color='core.primary'>
-          CURRENT
-        </Text>
-      )}
-      <Box
+    <Box m={2} display='inline-block' {...props}>
+      <Card
         css={`
           transition: 0.2s ease-in-out;
           cursor: pointer;
           &:hover {
             background: ${!selected && 'hsla(0, 0%, 90%, 1)'};
+            opacity: 1;
           }
         `}
         onClick={onClick}
         display='flex'
-        flexDirection='row'
+        flexDirection='column'
         justifyContent='space-between'
-        width='100%'
-        height={8}
+        width={11}
+        height={11}
         border={1}
         borderRadius={2}
         p={3}
+        opacity={selected ? '1' : '0.25'}
         bg={selected ? 'card.account.background' : 'hsla(0, 0%, 90%, 0)'}
         color={selected ? 'card.account.color' : 'colors.core.black'}
       >
@@ -56,6 +54,7 @@ const AccountCardAlt = ({
             </Title>
           </Box>
         </Box>
+
         <Box display='flex' flexDirection='column'>
           <Text fontSize={3} my={0}>
             Balance
@@ -64,7 +63,7 @@ const AccountCardAlt = ({
             {balance}FIL
           </Title>
         </Box>
-      </Box>
+      </Card>
     </Box>
   )
 }

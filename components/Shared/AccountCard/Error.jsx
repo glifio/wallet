@@ -3,7 +3,7 @@ import { string, func } from 'prop-types'
 import Box from '../Box'
 import Glyph from '../Glyph'
 import Button from '../Button'
-import { Title, Text } from '../Typography'
+import { Text } from '../Typography'
 
 const AccountError = ({ errorMsg, onTryAgain }) => (
   <Box
@@ -17,18 +17,25 @@ const AccountError = ({ errorMsg, onTryAgain }) => (
     bg='card.error.background'
     color='card.error.foreground'
     boxShadow={1}
-    mb={2}
+    m={2}
   >
     <Box display='flex' alignItems='center' justifyContent='flex-start'>
-      <Glyph mr={3} acronym='Er' />
+      <Glyph mr={3} acronym='Er' color='status.fail.foreground' />
       <Text>Error</Text>
     </Box>
     <Box>
-      <Title>Ledger Device Problem</Title>
       <Text margin={0}>{errorMsg}</Text>
     </Box>
     <Box display='flex'>
-      <Button variant='tertiary' title='Try again' onClick={onTryAgain} p={2} />
+      <Button
+        title='Try again'
+        onClick={onTryAgain}
+        height='100%'
+        backgroundColor='core.transparent'
+        borderColor='status.fail.foreground'
+        color='status.fail.foreground'
+        p={2}
+      />
     </Box>
   </Box>
 )
