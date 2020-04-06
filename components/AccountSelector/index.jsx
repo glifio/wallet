@@ -113,8 +113,9 @@ const AccountSelector = () => {
             </MenuItem>
             <MenuItem>
               <Text>
-                Your single seed phrase creates hundreds of individual
-                &quot;accounts&quot;.
+                Your single{' '}
+                {wallet.type === LEDGER ? 'Ledger Device ' : 'seed phrase'}{' '}
+                creates hundreds of individual &quot;accounts&quot;.
                 <br />
                 <StyledATag rel='noopener' target='_blank' href='/faqs'>
                   Don&rsquo;t see an account you were previously using?

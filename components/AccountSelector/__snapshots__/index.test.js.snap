@@ -69,7 +69,11 @@ Array [
             fontSize={3}
             fontWeight={400}
           >
-            Your single seed phrase creates hundreds of individual "accounts".
+            Your single
+             
+            seed phrase
+             
+            creates hundreds of individual "accounts".
             <br />
             <a
               className="Link__StyledATag-sc-11kjldy-0 gURXXN"
@@ -378,7 +382,11 @@ Array [
             fontSize={3}
             fontWeight={400}
           >
-            Your single seed phrase creates hundreds of individual "accounts".
+            Your single
+             
+            seed phrase
+             
+            creates hundreds of individual "accounts".
             <br />
             <a
               className="Link__StyledATag-sc-11kjldy-0 gURXXN"
