@@ -326,18 +326,26 @@ const Send = ({ close }) => {
                 <Box
                   display='flex'
                   flexDirection='row'
-                  alignItems='center'
+                  alignItems='flex-start'
                   justifyContent='space-between'
                   mt={3}
                   mx={1}
                 >
-                  <Total fontSize={4}>Total</Total>
-                  <Box display='flex' flexDirection='column' textAlign='right'>
+                  <Total fontSize={4} alignSelf='flex-start'>
+                    Total
+                  </Total>
+                  <Box
+                    display='flex'
+                    flexDirection='column'
+                    textAlign='right'
+                    pl={4}
+                  >
                     <Box
                       display='flex'
                       flexDirection='row'
                       justifyContent='flex-end'
                       mb={2}
+                      pl={4}
                     >
                       <ApproximationToggleBtn
                         onClick={() => setShowPrecise(false)}
