@@ -133,7 +133,7 @@ const AccountSelector = () => {
                   address={w.address}
                   index={i}
                   selected={w.address === wallet.address}
-                  balance={makeFriendlyBalance(w.balance)}
+                  balance={makeFriendlyBalance(w.balance, 6)}
                 />
               ))}
               <Create

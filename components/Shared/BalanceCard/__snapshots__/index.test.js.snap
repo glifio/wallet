@@ -1,0 +1,659 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BalanceCard it renders correctly 1`] = `
+<div
+  class="Box-tuskkk-0 kaJSFe"
+  display="flex"
+  width="300px"
+>
+  <div
+    class="Box-tuskkk-0 gUAjrr"
+    display="flex"
+  >
+    <h4
+      class="Typography__H4Base-sc-1uzug1e-3 dvsHEz"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+    >
+      Balance
+    </h4>
+    <div
+      class="Box-tuskkk-0 gUAjrr"
+      display="flex"
+    >
+      <h4
+        class="Typography__H4Base-sc-1uzug1e-3 bUeWBY ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        color="core.black"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Approx.
+      </h4>
+      <div
+        class="Box-tuskkk-0 jjDyck"
+        width="2"
+      />
+      <h4
+        class="Typography__H4Base-sc-1uzug1e-3 AYXIM ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        color="core.darkgray"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Exact
+      </h4>
+    </div>
+  </div>
+  <div
+    class="Box-tuskkk-0 fZmrbs"
+    overflow="hidden"
+  >
+    <h2
+      class="Typography__H2Base-sc-1uzug1e-1 kMGPcr BalanceCard___StyledNum-nx0aiw-0 eMLohY"
+      color="card.balance.color"
+      font-family="RT-Alias-Medium"
+      font-size="6"
+      font-weight="700"
+    >
+      100
+       FIL
+    </h2>
+    <h2
+      class="Typography__H2Base-sc-1uzug1e-1 jNkuEy"
+      color="core.darkgray"
+      font-family="RT-Alias-Medium"
+      font-size="5"
+      font-weight="700"
+    >
+      Loading USD
+    </h2>
+  </div>
+  <div
+    class="Box-tuskkk-0 MrVvn"
+    display="flex"
+  >
+    <button
+      class="BaseButton-sc-1iyr4rl-0 gIInmt"
+      font-size="3"
+      type="button"
+      width="120"
+    >
+      Receive
+    </button>
+    <button
+      class="BaseButton-sc-1iyr4rl-0 bpdjDz"
+      font-size="3"
+      type="button"
+      width="120"
+    >
+      Send
+    </button>
+  </div>
+</div>
+`;
+
+exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
+<div
+  class="Box-tuskkk-0 kaJSFe"
+  display="flex"
+  width="300px"
+>
+  <div
+    class="Box-tuskkk-0 gUAjrr"
+    display="flex"
+  >
+    <h4
+      class="Typography__H4Base-sc-1uzug1e-3 dvsHEz"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+    >
+      Balance
+    </h4>
+    <div
+      class="Box-tuskkk-0 gUAjrr"
+      display="flex"
+    >
+      <h4
+        class="Typography__H4Base-sc-1uzug1e-3 AYXIM ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        color="core.darkgray"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Approx.
+      </h4>
+      <div
+        class="Box-tuskkk-0 jjDyck"
+        width="2"
+      />
+      <h4
+        class="Typography__H4Base-sc-1uzug1e-3 bUeWBY ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        color="core.black"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Exact
+      </h4>
+    </div>
+  </div>
+  <div
+    class="Box-tuskkk-0 fZmrbs"
+    overflow="hidden"
+  >
+    <h2
+      class="Typography__H2Base-sc-1uzug1e-1 kMGPcr BalanceCard___StyledNum-nx0aiw-0 eMLohY"
+      color="card.balance.color"
+      font-family="RT-Alias-Medium"
+      font-size="6"
+      font-weight="700"
+    >
+      23488219.00001
+       FIL
+    </h2>
+    <h2
+      class="Typography__H2Base-sc-1uzug1e-1 jNkuEy"
+      color="core.darkgray"
+      font-family="RT-Alias-Medium"
+      font-size="5"
+      font-weight="700"
+    >
+      Loading USD
+    </h2>
+  </div>
+  <div
+    class="Box-tuskkk-0 MrVvn"
+    display="flex"
+  >
+    <button
+      class="BaseButton-sc-1iyr4rl-0 gIInmt"
+      font-size="3"
+      type="button"
+      width="120"
+    >
+      Receive
+    </button>
+    <button
+      class="BaseButton-sc-1iyr4rl-0 bpdjDz"
+      font-size="3"
+      type="button"
+      width="120"
+    >
+      Send
+    </button>
+  </div>
+</div>
+`;
+
+exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
+<div
+  class="Box-tuskkk-0 kaJSFe"
+  display="flex"
+  width="300px"
+>
+  <div
+    class="Box-tuskkk-0 gUAjrr"
+    display="flex"
+  >
+    <h4
+      class="Typography__H4Base-sc-1uzug1e-3 dvsHEz"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+    >
+      Balance
+    </h4>
+    <div
+      class="Box-tuskkk-0 gUAjrr"
+      display="flex"
+    >
+      <h4
+        class="Typography__H4Base-sc-1uzug1e-3 bUeWBY ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        color="core.black"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Approx.
+      </h4>
+      <div
+        class="Box-tuskkk-0 jjDyck"
+        width="2"
+      />
+      <h4
+        class="Typography__H4Base-sc-1uzug1e-3 AYXIM ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        color="core.darkgray"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Exact
+      </h4>
+    </div>
+  </div>
+  <div
+    class="Box-tuskkk-0 fZmrbs"
+    overflow="hidden"
+  >
+    <h2
+      class="Typography__H2Base-sc-1uzug1e-1 kMGPcr BalanceCard___StyledNum-nx0aiw-0 eMLohY"
+      color="card.balance.color"
+      font-family="RT-Alias-Medium"
+      font-size="6"
+      font-weight="700"
+    >
+      100.2B
+       FIL
+    </h2>
+    <h2
+      class="Typography__H2Base-sc-1uzug1e-1 jNkuEy"
+      color="core.darkgray"
+      font-family="RT-Alias-Medium"
+      font-size="5"
+      font-weight="700"
+    >
+      Loading USD
+    </h2>
+  </div>
+  <div
+    class="Box-tuskkk-0 MrVvn"
+    display="flex"
+  >
+    <button
+      class="BaseButton-sc-1iyr4rl-0 gIInmt"
+      font-size="3"
+      type="button"
+      width="120"
+    >
+      Receive
+    </button>
+    <button
+      class="BaseButton-sc-1iyr4rl-0 bpdjDz"
+      font-size="3"
+      type="button"
+      width="120"
+    >
+      Send
+    </button>
+  </div>
+</div>
+`;
+
+exports[`BalanceCard it renders pretty million dollar balances 1`] = `
+<div
+  class="Box-tuskkk-0 kaJSFe"
+  display="flex"
+  width="300px"
+>
+  <div
+    class="Box-tuskkk-0 gUAjrr"
+    display="flex"
+  >
+    <h4
+      class="Typography__H4Base-sc-1uzug1e-3 dvsHEz"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+    >
+      Balance
+    </h4>
+    <div
+      class="Box-tuskkk-0 gUAjrr"
+      display="flex"
+    >
+      <h4
+        class="Typography__H4Base-sc-1uzug1e-3 bUeWBY ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        color="core.black"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Approx.
+      </h4>
+      <div
+        class="Box-tuskkk-0 jjDyck"
+        width="2"
+      />
+      <h4
+        class="Typography__H4Base-sc-1uzug1e-3 AYXIM ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        color="core.darkgray"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Exact
+      </h4>
+    </div>
+  </div>
+  <div
+    class="Box-tuskkk-0 fZmrbs"
+    overflow="hidden"
+  >
+    <h2
+      class="Typography__H2Base-sc-1uzug1e-1 kMGPcr BalanceCard___StyledNum-nx0aiw-0 eMLohY"
+      color="card.balance.color"
+      font-family="RT-Alias-Medium"
+      font-size="6"
+      font-weight="700"
+    >
+      100.2M
+       FIL
+    </h2>
+    <h2
+      class="Typography__H2Base-sc-1uzug1e-1 jNkuEy"
+      color="core.darkgray"
+      font-family="RT-Alias-Medium"
+      font-size="5"
+      font-weight="700"
+    >
+      Loading USD
+    </h2>
+  </div>
+  <div
+    class="Box-tuskkk-0 MrVvn"
+    display="flex"
+  >
+    <button
+      class="BaseButton-sc-1iyr4rl-0 gIInmt"
+      font-size="3"
+      type="button"
+      width="120"
+    >
+      Receive
+    </button>
+    <button
+      class="BaseButton-sc-1iyr4rl-0 bpdjDz"
+      font-size="3"
+      type="button"
+      width="120"
+    >
+      Send
+    </button>
+  </div>
+</div>
+`;
+
+exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
+<div
+  class="Box-tuskkk-0 kaJSFe"
+  display="flex"
+  width="300px"
+>
+  <div
+    class="Box-tuskkk-0 gUAjrr"
+    display="flex"
+  >
+    <h4
+      class="Typography__H4Base-sc-1uzug1e-3 dvsHEz"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+    >
+      Balance
+    </h4>
+    <div
+      class="Box-tuskkk-0 gUAjrr"
+      display="flex"
+    >
+      <h4
+        class="Typography__H4Base-sc-1uzug1e-3 bUeWBY ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        color="core.black"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Approx.
+      </h4>
+      <div
+        class="Box-tuskkk-0 jjDyck"
+        width="2"
+      />
+      <h4
+        class="Typography__H4Base-sc-1uzug1e-3 AYXIM ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        color="core.darkgray"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Exact
+      </h4>
+    </div>
+  </div>
+  <div
+    class="Box-tuskkk-0 fZmrbs"
+    overflow="hidden"
+  >
+    <h2
+      class="Typography__H2Base-sc-1uzug1e-1 kMGPcr BalanceCard___StyledNum-nx0aiw-0 eMLohY"
+      color="card.balance.color"
+      font-family="RT-Alias-Medium"
+      font-size="6"
+      font-weight="700"
+    >
+      100.2K
+       FIL
+    </h2>
+    <h2
+      class="Typography__H2Base-sc-1uzug1e-1 jNkuEy"
+      color="core.darkgray"
+      font-family="RT-Alias-Medium"
+      font-size="5"
+      font-weight="700"
+    >
+      Loading USD
+    </h2>
+  </div>
+  <div
+    class="Box-tuskkk-0 MrVvn"
+    display="flex"
+  >
+    <button
+      class="BaseButton-sc-1iyr4rl-0 gIInmt"
+      font-size="3"
+      type="button"
+      width="120"
+    >
+      Receive
+    </button>
+    <button
+      class="BaseButton-sc-1iyr4rl-0 bpdjDz"
+      font-size="3"
+      type="button"
+      width="120"
+    >
+      Send
+    </button>
+  </div>
+</div>
+`;
+
+exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
+<div
+  class="Box-tuskkk-0 kaJSFe"
+  display="flex"
+  width="300px"
+>
+  <div
+    class="Box-tuskkk-0 gUAjrr"
+    display="flex"
+  >
+    <h4
+      class="Typography__H4Base-sc-1uzug1e-3 dvsHEz"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+    >
+      Balance
+    </h4>
+    <div
+      class="Box-tuskkk-0 gUAjrr"
+      display="flex"
+    >
+      <h4
+        class="Typography__H4Base-sc-1uzug1e-3 bUeWBY ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        color="core.black"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Approx.
+      </h4>
+      <div
+        class="Box-tuskkk-0 jjDyck"
+        width="2"
+      />
+      <h4
+        class="Typography__H4Base-sc-1uzug1e-3 AYXIM ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        color="core.darkgray"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Exact
+      </h4>
+    </div>
+  </div>
+  <div
+    class="Box-tuskkk-0 fZmrbs"
+    overflow="hidden"
+  >
+    <h2
+      class="Typography__H2Base-sc-1uzug1e-1 kMGPcr BalanceCard___StyledNum-nx0aiw-0 eMLohY"
+      color="card.balance.color"
+      font-family="RT-Alias-Medium"
+      font-size="6"
+      font-weight="700"
+    >
+      &lt; 0.001
+       FIL
+    </h2>
+    <h2
+      class="Typography__H2Base-sc-1uzug1e-1 jNkuEy"
+      color="core.darkgray"
+      font-family="RT-Alias-Medium"
+      font-size="5"
+      font-weight="700"
+    >
+      Loading USD
+    </h2>
+  </div>
+  <div
+    class="Box-tuskkk-0 MrVvn"
+    display="flex"
+  >
+    <button
+      class="BaseButton-sc-1iyr4rl-0 gIInmt"
+      font-size="3"
+      type="button"
+      width="120"
+    >
+      Receive
+    </button>
+    <button
+      class="BaseButton-sc-1iyr4rl-0 bpdjDz"
+      font-size="3"
+      type="button"
+      width="120"
+    >
+      Send
+    </button>
+  </div>
+</div>
+`;
+
+exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
+<div
+  class="Box-tuskkk-0 kaJSFe"
+  display="flex"
+  width="300px"
+>
+  <div
+    class="Box-tuskkk-0 gUAjrr"
+    display="flex"
+  >
+    <h4
+      class="Typography__H4Base-sc-1uzug1e-3 dvsHEz"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+    >
+      Balance
+    </h4>
+    <div
+      class="Box-tuskkk-0 gUAjrr"
+      display="flex"
+    >
+      <h4
+        class="Typography__H4Base-sc-1uzug1e-3 bUeWBY ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        color="core.black"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Approx.
+      </h4>
+      <div
+        class="Box-tuskkk-0 jjDyck"
+        width="2"
+      />
+      <h4
+        class="Typography__H4Base-sc-1uzug1e-3 AYXIM ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        color="core.darkgray"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Exact
+      </h4>
+    </div>
+  </div>
+  <div
+    class="Box-tuskkk-0 fZmrbs"
+    overflow="hidden"
+  >
+    <h2
+      class="Typography__H2Base-sc-1uzug1e-1 kMGPcr BalanceCard___StyledNum-nx0aiw-0 eMLohY"
+      color="card.balance.color"
+      font-family="RT-Alias-Medium"
+      font-size="6"
+      font-weight="700"
+    >
+      999.124
+       FIL
+    </h2>
+    <h2
+      class="Typography__H2Base-sc-1uzug1e-1 jNkuEy"
+      color="core.darkgray"
+      font-family="RT-Alias-Medium"
+      font-size="5"
+      font-weight="700"
+    >
+      Loading USD
+    </h2>
+  </div>
+  <div
+    class="Box-tuskkk-0 MrVvn"
+    display="flex"
+  >
+    <button
+      class="BaseButton-sc-1iyr4rl-0 gIInmt"
+      font-size="3"
+      type="button"
+      width="120"
+    >
+      Receive
+    </button>
+    <button
+      class="BaseButton-sc-1iyr4rl-0 bpdjDz"
+      font-size="3"
+      type="button"
+      width="120"
+    >
+      Send
+    </button>
+  </div>
+</div>
+`;

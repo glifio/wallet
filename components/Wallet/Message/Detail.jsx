@@ -6,7 +6,6 @@ import dayjs from 'dayjs'
 
 import {
   Box,
-  BigTitle,
   Card,
   Input,
   Glyph,
@@ -142,16 +141,18 @@ const MessageDetail = ({ address, close, message }) => {
         >
           <Label>Total</Label>
           <Box display='flex' flexDirection='column'>
-            <BigTitle color='core.primary'>
-              {makeFriendlyBalance(
-                new FilecoinNumber(message.value, 'fil').plus(
-                  new FilecoinNumber(message.gas_used, 'attofil')
-                ),
-                18
-              )}{' '}
+            <Title
+              css={`
+                word-wrap: break-word;
+              `}
+              color='core.primary'
+            >
+              {new FilecoinNumber(message.value, 'fil')
+                .plus(new FilecoinNumber(message.gas_used, 'attofil'))
+                .toString()}{' '}
               FIL
-            </BigTitle>
-            <Title color='core.darkgray'>
+            </Title>
+            <Title color='core.darkgray' textAlign='right'>
               {!converterError &&
                 (converter
                   ? `${makeFriendlyBalance(
@@ -160,7 +161,7 @@ const MessageDetail = ({ address, close, message }) => {
                           new FilecoinNumber(message.gas_used, 'attofil')
                         )
                       ),
-                      18
+                      2
                     )} USD`
                   : 'Loading USD...')}
             </Title>

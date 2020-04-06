@@ -11,7 +11,6 @@ import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
 import {
   Box,
-  BigTitle,
   Input,
   Stepper,
   Glyph,
@@ -323,23 +322,31 @@ const Send = ({ close }) => {
                 <Box
                   display='flex'
                   flexDirection='row'
-                  alignItems='center'
+                  alignItems='flex-start'
                   justifyContent='space-between'
                   mt={3}
                   mx={1}
                 >
-                  <Total fontSize={4}>Total</Total>
-                  <Box display='flex' flexDirection='column' textAlign='right'>
-                    <BigTitle color='core.primary'>
-                      {makeFriendlyBalance(
-                        new BigNumber(value.fil.toFil()),
-                        10
-                      )}{' '}
-                      FIL
-                    </BigTitle>
+                  <Total fontSize={4} alignSelf='flex-start'>
+                    Total
+                  </Total>
+                  <Box
+                    display='flex'
+                    flexDirection='column'
+                    textAlign='right'
+                    pl={4}
+                  >
+                    <Title
+                      css={`
+                        word-wrap: break-word;
+                      `}
+                      color='core.primary'
+                    >
+                      {value.fil.toFil()} FIL
+                    </Title>
                     <Title color='core.darkgray'>
                       {!converterError &&
-                        `${makeFriendlyBalance(value.fiat, 7)} USD`}
+                        `${makeFriendlyBalance(value.fiat, 2)} USD`}
                     </Title>
                   </Box>
                 </Box>
