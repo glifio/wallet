@@ -37,18 +37,18 @@ const BalanceCard = forwardRef(
               clicked={!preciseMode}
               onClick={() => setPreciseMode(false)}
             >
-              Pretty
+              Approx.
             </ApproximationToggleBtn>
             <Box width={2} />
             <ApproximationToggleBtn
               clicked={preciseMode}
               onClick={() => setPreciseMode(true)}
             >
-              Precise
+              Exact
             </ApproximationToggleBtn>
           </Box>
         </Box>
-        <Box overflow='hidden'>
+        <Box overflow='hidden' py={4}>
           <Num
             css='word-wrap: break-word;'
             size='xl'
