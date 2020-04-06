@@ -127,7 +127,7 @@ const AccountSelector = () => {
               {walletsInRdx.map((w, i) => (
                 <AccountCardAlt
                   alignItems='center'
-                  onClick={() => dispatch(switchWallet(i))}
+                  onClick={() => dispatch(switchWallet(i), onClose())}
                   key={w.address}
                   address={w.address}
                   index={i}
