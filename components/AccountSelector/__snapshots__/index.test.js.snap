@@ -72,8 +72,9 @@ Array [
             Your single seed phrase creates hundreds of individual "accounts".
             <br />
             <a
-              className="Link__StyledATag-sc-11kjldy-0 kCLHyJ"
+              className="Link__StyledATag-sc-11kjldy-0 gURXXN"
               color="core.primary"
+              fontSize={3}
               href="/faqs"
               rel="noopener"
               target="_blank"
@@ -243,7 +244,7 @@ Array [
             </div>
           </div>
           <div
-            className="Box-tuskkk-0 iBIMkc"
+            className="Box-tuskkk-0 eXipjK"
             color="card.error.foreground"
             display="flex"
             height={11}
@@ -254,8 +255,8 @@ Array [
               display="flex"
             >
               <div
-                className="Box-tuskkk-0 ilXArz"
-                color="#000"
+                className="Box-tuskkk-0 cAONNH"
+                color="status.fail.foreground"
                 display="flex"
                 size={6}
               >
@@ -291,8 +292,10 @@ Array [
               display="flex"
             >
               <button
-                className="BaseButton-sc-1iyr4rl-0 cwpdtc"
+                className="BaseButton-sc-1iyr4rl-0 cxMAgW"
+                color="status.fail.foreground"
                 fontSize={3}
+                height="100%"
                 onClick={[Function]}
               >
                 Try again
@@ -378,8 +381,9 @@ Array [
             Your single seed phrase creates hundreds of individual "accounts".
             <br />
             <a
-              className="Link__StyledATag-sc-11kjldy-0 kCLHyJ"
+              className="Link__StyledATag-sc-11kjldy-0 gURXXN"
               color="core.primary"
+              fontSize={3}
               href="/faqs"
               rel="noopener"
               target="_blank"
