@@ -165,7 +165,7 @@ Array [
                   fontSize={4}
                   fontWeight={400}
                 >
-                  1
+                  &gt; 999.9B
                   FIL
                 </h2>
               </div>
@@ -479,7 +479,7 @@ Array [
                   fontSize={4}
                   fontWeight={400}
                 >
-                  1
+                  &gt; 999.9B
                   FIL
                 </h2>
               </div>
