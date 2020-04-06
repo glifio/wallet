@@ -74,14 +74,13 @@ export default () => {
               <Title mt={3}>Import</Title>
               <Text>Please input your private key below</Text>
               <Input.PrivateKey
-                onKeyPress={e => {
-                  e.preventDefault()
-                  if (e.key === 'Enter') setReady(true)
-                }}
                 error={privateKeyError}
                 setError={setPrivateKeyError}
                 value={privateKey}
-                onChange={e => setPrivateKey(e.target.value)}
+                onChange={e => {
+                  setReady(false)
+                  setPrivateKey(e.target.value)
+                }}
               />
             </Box>
           </OnboardCard>
