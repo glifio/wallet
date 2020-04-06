@@ -11,7 +11,6 @@ import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
 import {
   Box,
-  BigTitle,
   Input,
   Stepper,
   Glyph,

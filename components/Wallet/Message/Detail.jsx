@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { func, oneOf } from 'prop-types'
 import styled from 'styled-components'
@@ -6,7 +6,6 @@ import dayjs from 'dayjs'
 
 import {
   Box,
-  BigTitle,
   Card,
   Input,
   Glyph,
