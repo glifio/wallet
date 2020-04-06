@@ -72,14 +72,13 @@ export default () => {
             <Title mt={3}>Input, Import & Proceed</Title>
             <Text>Please input your seed phrase below to continue </Text>
             <Input.Mnemonic
-              onKeyPress={e => {
-                e.preventDefault()
-                if (e.key === 'Enter') next()
-              }}
               error={mnemonicError}
               setError={setMnemonicError}
               value={mnemonic}
-              onChange={e => setMnemonic(e.target.value)}
+              onChange={e => {
+                setMnemonic(e.target.value)
+                setValidMnemonic('')
+              }}
             />
           </OnboardCard>
           <Box
