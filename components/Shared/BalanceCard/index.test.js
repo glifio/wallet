@@ -98,7 +98,7 @@ describe('BalanceCard', () => {
     )
 
     act(() => {
-      fireEvent.click(getByText('Precise'))
+      fireEvent.click(getByText('Exact'))
     })
 
     expect(container.firstChild).toMatchSnapshot()

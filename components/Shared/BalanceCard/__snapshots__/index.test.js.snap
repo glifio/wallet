@@ -29,7 +29,7 @@ exports[`BalanceCard it renders correctly 1`] = `
         font-size="2"
         font-weight="400"
       >
-        Pretty
+        Approx.
       </h4>
       <div
         class="Box-tuskkk-0 jjDyck"
@@ -42,12 +42,12 @@ exports[`BalanceCard it renders correctly 1`] = `
         font-size="2"
         font-weight="400"
       >
-        Precise
+        Exact
       </h4>
     </div>
   </div>
   <div
-    class="Box-tuskkk-0 DhWwA"
+    class="Box-tuskkk-0 fZmrbs"
     overflow="hidden"
   >
     <h2
@@ -121,7 +121,7 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
         font-size="2"
         font-weight="400"
       >
-        Pretty
+        Approx.
       </h4>
       <div
         class="Box-tuskkk-0 jjDyck"
@@ -134,12 +134,12 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
         font-size="2"
         font-weight="400"
       >
-        Precise
+        Exact
       </h4>
     </div>
   </div>
   <div
-    class="Box-tuskkk-0 DhWwA"
+    class="Box-tuskkk-0 fZmrbs"
     overflow="hidden"
   >
     <h2
@@ -213,7 +213,7 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
         font-size="2"
         font-weight="400"
       >
-        Pretty
+        Approx.
       </h4>
       <div
         class="Box-tuskkk-0 jjDyck"
@@ -226,12 +226,12 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
         font-size="2"
         font-weight="400"
       >
-        Precise
+        Exact
       </h4>
     </div>
   </div>
   <div
-    class="Box-tuskkk-0 DhWwA"
+    class="Box-tuskkk-0 fZmrbs"
     overflow="hidden"
   >
     <h2
@@ -305,7 +305,7 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
         font-size="2"
         font-weight="400"
       >
-        Pretty
+        Approx.
       </h4>
       <div
         class="Box-tuskkk-0 jjDyck"
@@ -318,12 +318,12 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
         font-size="2"
         font-weight="400"
       >
-        Precise
+        Exact
       </h4>
     </div>
   </div>
   <div
-    class="Box-tuskkk-0 DhWwA"
+    class="Box-tuskkk-0 fZmrbs"
     overflow="hidden"
   >
     <h2
@@ -397,7 +397,7 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
         font-size="2"
         font-weight="400"
       >
-        Pretty
+        Approx.
       </h4>
       <div
         class="Box-tuskkk-0 jjDyck"
@@ -410,12 +410,12 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
         font-size="2"
         font-weight="400"
       >
-        Precise
+        Exact
       </h4>
     </div>
   </div>
   <div
-    class="Box-tuskkk-0 DhWwA"
+    class="Box-tuskkk-0 fZmrbs"
     overflow="hidden"
   >
     <h2
@@ -489,7 +489,7 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
         font-size="2"
         font-weight="400"
       >
-        Pretty
+        Approx.
       </h4>
       <div
         class="Box-tuskkk-0 jjDyck"
@@ -502,12 +502,12 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
         font-size="2"
         font-weight="400"
       >
-        Precise
+        Exact
       </h4>
     </div>
   </div>
   <div
-    class="Box-tuskkk-0 DhWwA"
+    class="Box-tuskkk-0 fZmrbs"
     overflow="hidden"
   >
     <h2
@@ -581,7 +581,7 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
         font-size="2"
         font-weight="400"
       >
-        Pretty
+        Approx.
       </h4>
       <div
         class="Box-tuskkk-0 jjDyck"
@@ -594,12 +594,12 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
         font-size="2"
         font-weight="400"
       >
-        Precise
+        Exact
       </h4>
     </div>
   </div>
   <div
-    class="Box-tuskkk-0 DhWwA"
+    class="Box-tuskkk-0 fZmrbs"
     overflow="hidden"
   >
     <h2
