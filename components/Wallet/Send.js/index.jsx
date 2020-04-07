@@ -16,6 +16,7 @@ import {
   Glyph,
   Text,
   Button,
+  ButtonClose,
   Title,
   FloatingContainer,
   Title as Total,
@@ -260,6 +261,7 @@ const Send = ({ close }) => {
               >
                 Step 1
               </Stepper>
+              <ButtonClose />
             </Box>
           </Box>
           <Box mt={3}>
