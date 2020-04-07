@@ -9,10 +9,6 @@ import {
   CREATE_MNEMONIC,
   IMPORT_SINGLE_KEY
 } from '../../../constants'
-import {
-  FILECOIN_NUMBER_PROP,
-  ADDRESS_PROPTYPE
-} from '../../../customPropTypes'
 
 const TextHighlight = styled.span.attrs(() => ({
   fontSize: 3,
@@ -35,28 +31,24 @@ const LedgerConfirm = () => {
   )
 }
 
-const OtherWalletTypeConfirm = ({ toAddress, value }) => {
+const OtherWalletTypeConfirm = () => {
   return (
     <>
       <Text color='core.nearblack'>
-        To send the transaction, please review the
-        <TextHighlight>recipient</TextHighlight> and
-        <TextHighlight>amount</TextHighlight> and click the Confirm button at
+        To complete the transaction, please review the{' '}
+        <TextHighlight>recipient</TextHighlight> and{' '}
+        <TextHighlight>amount</TextHighlight> and click &rdquo;Confirm&rdquo; at
         the bottom of the page.
       </Text>
-      <Text>Remember: You cannot undo this transaction once you send it.</Text>
+      <Text>
+        <TextHighlight>Remember:</TextHighlight> Transactions are{' '}
+        <TextHighlight>final once sent.</TextHighlight>
+      </Text>
     </>
   )
 }
 
-OtherWalletTypeConfirm.propTypes = {
-  value: PropTypes.shape({
-    fil: FILECOIN_NUMBER_PROP
-  }).isRequired,
-  toAddress: ADDRESS_PROPTYPE
-}
-
-const ConfirmationCard = ({ value, walletType, toAddress }) => {
+const ConfirmationCard = ({ walletType }) => {
   return (
     <Card
       display='flex'
@@ -87,26 +79,18 @@ const ConfirmationCard = ({ value, walletType, toAddress }) => {
           </Text>
         </Box>
       </Box>
-      {walletType === LEDGER ? (
-        <LedgerConfirm />
-      ) : (
-        <OtherWalletTypeConfirm value={value} toAddress={toAddress} />
-      )}
+      {walletType === LEDGER ? <LedgerConfirm /> : <OtherWalletTypeConfirm />}
     </Card>
   )
 }
 
 ConfirmationCard.propTypes = {
-  value: PropTypes.shape({
-    fil: FILECOIN_NUMBER_PROP
-  }).isRequired,
   walletType: PropTypes.oneOf([
     LEDGER,
     IMPORT_MNEMONIC,
     CREATE_MNEMONIC,
     IMPORT_SINGLE_KEY
-  ]).isRequired,
-  toAddress: ADDRESS_PROPTYPE
+  ]).isRequired
 }
 
 export default ConfirmationCard

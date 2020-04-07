@@ -8,11 +8,11 @@ import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 import { validateAddressString } from '@openworklabs/filecoin-address'
 import Message from '@openworklabs/filecoin-message'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
+import noop from '../../../utils/noop'
 
 import {
   Box,
   Input,
-  Stepper,
   Glyph,
   Text,
   Button,
@@ -247,15 +247,16 @@ const Send = ({ close }) => {
               </Text>
             </Box>
             <Box display='flex' alignItems='center'>
-              <Stepper
-                textColor='core.primary'
-                completedDotColor='core.primary'
-                incompletedDotColor='core.silver'
-                step={step === 1 ? 1 : 2}
-                totalSteps={2}
-                mr={2}
+              <ButtonClose
+                role='button'
+                type='button'
+                onClick={() => {
+                  setAttemptingTx(false)
+                  setUncaughtError('')
+                  resetLedgerState()
+                  close()
+                }}
               />
-              <ButtonClose />
             </Box>
           </Box>
           <Box mt={3}>
@@ -359,17 +360,20 @@ const Send = ({ close }) => {
                 <>
                   <Button
                     type='button'
-                    title={step === 1 ? 'Cancel' : 'Back'}
+                    title='Cancel'
                     variant='secondary'
                     border={0}
                     borderRight={1}
                     borderRadius={0}
                     borderColor='core.lightgray'
                     onClick={() => {
-                      setAttemptingTx(false)
-                      setUncaughtError('')
-                      resetLedgerState()
-                      close()
+                      if (step === 2) setStep(1)
+                      else {
+                        setAttemptingTx(false)
+                        setUncaughtError('')
+                        resetLedgerState()
+                        close()
+                      }
                     }}
                     css={`
                       /* 'css' operation is used here to override its inherited border-radius property */
@@ -394,7 +398,7 @@ const Send = ({ close }) => {
                     type='submit'
                     title={step === 1 ? 'Next' : 'Confirm'}
                     variant='primary'
-                    onClick={() => {}}
+                    onClick={noop}
                     css={`
                       /* 'css' operation is used here to override its inherited border-radius property */
                       border-radius: 0px;
