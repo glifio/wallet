@@ -70,7 +70,12 @@ export default () => {
         `https://mailchimp-proxy.openworklabs.com/${email}`
       )
 
-      if (res.status !== 200) {
+      if (res.data.indexOf('success') === -1) {
+        if (res.data.indexOf('already subscribed') > -1) {
+          setError("You're already subscribed. :)")
+          return
+        }
+
         setError(
           "There was an issue getting you subscribed. We're on the case!"
         )
