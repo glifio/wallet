@@ -53,8 +53,11 @@ const Funds = forwardRef(
         setError('Please enter a valid amount.')
         return false
       }
-      // user enters a value that's greater than their balance - gas limit
+
+      if (new BigNumber(val).toString() === 'NaN') return false
+
       if (val.plus(gasLimit.toFil()).isGreaterThanOrEqualTo(balance)) {
+        // user enters a value that's greater than their balance - gas limit
         setError("The amount must be smaller than this account's balance")
         return false
       }
@@ -63,11 +66,12 @@ const Funds = forwardRef(
     }
 
     const onTimerFil = async val => {
-      const fiatAmnt = !converterError && converter.fromFIL(val)
-      const validBalance = checkBalance(val)
+      const fil = new FilecoinNumber(val, 'fil')
+      const fiatAmnt = !converterError && converter.fromFIL(fil)
+      const validBalance = checkBalance(fil)
       if (validBalance) {
         setFiatAmount(fiatAmnt)
-        onAmountChange({ fil: val, fiat: fiatAmnt })
+        onAmountChange({ fil, fiat: fiatAmnt })
       } else {
         onAmountChange({
           fil: new FilecoinNumber('0', 'fil'),
@@ -77,11 +81,13 @@ const Funds = forwardRef(
     }
 
     const onTimerFiat = async val => {
-      const fil = !converterError && converter.toFIL(val)
+      const fiat = new BigNumber(val)
+      const fil =
+        !converterError && new FilecoinNumber(converter.toFIL(fiat), 'fil')
       const validBalance = checkBalance(fil)
       if (validBalance) {
         setFilAmount(fil)
-        onAmountChange({ fil, fiat: val })
+        onAmountChange({ fil, fiat })
       } else {
         onAmountChange({
           fil: new FilecoinNumber('0', 'fil'),
@@ -102,7 +108,7 @@ const Funds = forwardRef(
         setError('Must pass numbers only')
       }
       // when user is setting decimals
-      else if (new BigNumber(e.target.value).isEqualTo(0)) {
+      else if (new BigNumber(e.target.value).isLessThan(1)) {
         const { value } = e.target
         // use strings > big numbers
         setFiatAmount(value)
@@ -134,7 +140,7 @@ const Funds = forwardRef(
         setError('Must pass numbers only')
       }
       // when user is setting decimals
-      else if (new FilecoinNumber(e.target.value, 'fil').isEqualTo(0)) {
+      else if (new FilecoinNumber(e.target.value, 'fil').isLessThan(1)) {
         const { value } = e.target
         // use strings > big numbers
         setFilAmount(value)
@@ -205,12 +211,12 @@ const Funds = forwardRef(
               }}
               onBlur={async () => {
                 clearTimeout(timeout.current)
-                const validBalance = checkBalance(filAmount)
+                const fil = new FilecoinNumber(filAmount, 'fil')
+                const validBalance = checkBalance(fil)
                 if (validBalance) {
-                  const fiatAmnt =
-                    !converterError && converter.fromFIL(filAmount)
+                  const fiatAmnt = !converterError && converter.fromFIL(fil)
                   setFiatAmount(fiatAmnt)
-                  onAmountChange({ fil: filAmount, fiat: fiatAmnt })
+                  onAmountChange({ fil, fiat: fiatAmnt })
                 } else {
                   onAmountChange({
                     fil: new FilecoinNumber('0', 'fil'),
