@@ -27,6 +27,7 @@ const LedgerConfirm = () => {
       <Text color='core.nearblack'>
         To send the transaction, please
         <TextHighlight>
+          {' '}
           confirm the transfer on your Ledger device.
         </TextHighlight>
       </Text>
