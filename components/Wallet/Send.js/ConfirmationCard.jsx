@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { typography } from 'styled-system'
 import PropTypes from 'prop-types'
-import { Box, Card, Glyph, Text } from '../../Shared'
+import { Box, Card, Glyph, Text, Stepper } from '../../Shared'
 import {
   LEDGER,
   IMPORT_MNEMONIC,
@@ -64,9 +64,10 @@ const ConfirmationCard = ({ walletType }) => {
         flexDirection='row'
         border='none'
         width='auto'
+        alignItems='center'
         justifyContent='space-between'
       >
-        <Box display='flex' alignItems='center'>
+        <Box display='flex' flexDirection='row' alignItems='center'>
           <Glyph
             acronym='Cf'
             textAlign='center'
@@ -77,6 +78,16 @@ const ConfirmationCard = ({ walletType }) => {
           <Text color='card.confirmation.foreground' ml={2}>
             Confirmation
           </Text>
+        </Box>
+        <Box display='flex' alignItems='center'>
+          <Stepper
+            textColor='card.confirmation.foreground'
+            completedDotColor='card.confirmation.foreground'
+            incompletedDotColor='core.silver'
+            step={2}
+            totalSteps={2}
+          />
+          <Box width={5} mx={2} />
         </Box>
       </Box>
       {walletType === LEDGER ? <LedgerConfirm /> : <OtherWalletTypeConfirm />}

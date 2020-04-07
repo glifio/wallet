@@ -20,7 +20,8 @@ import {
   Title,
   FloatingContainer,
   Title as Total,
-  ContentContainer as SendContainer
+  ContentContainer as SendContainer,
+  Stepper
 } from '../../Shared'
 import ConfirmationCard from './ConfirmationCard'
 import GasCustomization from './GasCustomization'
@@ -247,6 +248,14 @@ const Send = ({ close }) => {
               </Text>
             </Box>
             <Box display='flex' alignItems='center'>
+              <Stepper
+                textColor='core.primary'
+                completedDotColor='core.primary'
+                incompletedDotColor='core.silver'
+                step={1}
+                totalSteps={2}
+                mr={2}
+              />
               <ButtonClose
                 role='button'
                 type='button'
@@ -360,7 +369,7 @@ const Send = ({ close }) => {
                 <>
                   <Button
                     type='button'
-                    title='Cancel'
+                    title='Back'
                     variant='secondary'
                     border={0}
                     borderRight={1}
