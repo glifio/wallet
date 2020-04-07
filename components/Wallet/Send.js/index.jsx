@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
@@ -8,6 +8,7 @@ import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 import { validateAddressString } from '@openworklabs/filecoin-address'
 import Message from '@openworklabs/filecoin-message'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
+import noop from '../../../utils/noop'
 
 import {
   Box,
@@ -100,21 +101,33 @@ const Send = ({ close }) => {
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
 
-  const estimateGas = async gp => {
-    // create a fake message
-    const message = new Message({
-      to: wallet.address,
-      from: wallet.address,
-      value: value.fil.toAttoFil(),
-      method: 0,
-      gasPrice: gp.toAttoFil(),
-      gasLimit: '1000',
-      nonce: 0,
-      params: ''
-    })
+  const estimateGas = useCallback(
+    async (gp, gasLimit, value) => {
+      // create a fake message
+      const message = new Message({
+        to: wallet.address,
+        from: wallet.address,
+        value,
+        method: 0,
+        gasPrice: gp.toAttoFil(),
+        gasLimit: gasLimit.toAttoFil(),
+        nonce: 0,
+        params: ''
+      })
 
-    return walletProvider.estimateGas(message.encode())
-  }
+      return walletProvider.estimateGas(message.encode())
+    },
+    [wallet.address, walletProvider]
+  )
+
+  useEffect(() => {
+    const fetchInitialGas = async () => {
+      const gas = await estimateGas(gasPrice, gasLimit, value.fil.toAttoFil())
+      setEstimatedGasUsed(gas)
+    }
+
+    fetchInitialGas()
+  }, [estimateGas, setEstimatedGasUsed, gasPrice, gasLimit, value])
 
   const submitMsg = async () => {
     let provider = walletProvider
@@ -290,13 +303,6 @@ const Send = ({ close }) => {
               valid={isValidAmount(value.fil, wallet.balance, valueError)}
             />
             <Box display='flex' flexDirection='column'>
-              <Input.Text
-                onChange={() => {}}
-                label='Transfer Fee'
-                value='< 0.1FIL'
-                backgroundColor='background.screen'
-                disabled
-              />
               <Text
                 color='core.primary'
                 css={`
@@ -311,18 +317,23 @@ const Send = ({ close }) => {
                 Advanced
               </Text>
             </Box>
-            {customizingGas && (
-              <GasCustomization
-                estimateGas={estimateGas}
-                exit={() => setCustomizingGas(false)}
-                gasPrice={gasPrice}
-                gasLimit={gasLimit}
-                setGasPrice={setGasPrice}
-                setGasLimit={setGasLimit}
-                estimatedGas={estimatedGasUsed}
-                setEstimatedGas={setEstimatedGasUsed}
-              />
-            )}
+            <GasCustomization
+              show={customizingGas}
+              estimateGas={estimateGas}
+              gasPrice={gasPrice}
+              gasLimit={gasLimit}
+              setGasPrice={setGasPrice}
+              setGasLimit={setGasLimit}
+              setEstimatedGas={setEstimatedGasUsed}
+              value={value.fil.toAttoFil()}
+            />
+            <Input.Text
+              onChange={noop}
+              label='Estimated Fee'
+              value={customizingGas ? estimatedGasUsed.toAttoFil() : '< 0.1FIL'}
+              backgroundColor='background.screen'
+              disabled
+            />
             <Box
               display='flex'
               flexDirection='row'
@@ -346,11 +357,19 @@ const Send = ({ close }) => {
                   `}
                   color='core.primary'
                 >
-                  {value.fil.toFil()} FIL
+                  {value.fil.isGreaterThan(0)
+                    ? `${value.fil.plus(estimatedGasUsed).toString()}`
+                    : '0'}{' '}
+                  FIL
                 </Title>
                 <Title color='core.darkgray'>
-                  {!converterError &&
-                    `${makeFriendlyBalance(value.fiat, 2)} USD`}
+                  {!converterError && value.fil.isGreaterThan(0)
+                    ? `${makeFriendlyBalance(
+                        value.fiat.plus(estimatedGasUsed),
+                        2
+                      )}`
+                    : '0'}{' '}
+                  USD
                 </Title>
               </Box>
             </Box>
@@ -399,7 +418,7 @@ const Send = ({ close }) => {
                   type='submit'
                   title={step === 1 ? 'Next' : 'Confirm'}
                   variant='primary'
-                  onClick={() => {}}
+                  onClick={noop}
                   css={`
                     /* 'css' operation is used here to override its inherited border-radius property */
                     border-radius: 0px;
