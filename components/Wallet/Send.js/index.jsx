@@ -227,11 +227,7 @@ const Send = ({ close }) => {
           />
         )}
         {(step === 2 || step === 3) && !hasError() && (
-          <ConfirmationCard
-            walletType={wallet.type}
-            value={value}
-            toAddress={toAddress}
-          />
+          <ConfirmationCard walletType={wallet.type} />
         )}
         <SendCardForm onSubmit={onSubmit} autoComplete='off'>
           <Box
