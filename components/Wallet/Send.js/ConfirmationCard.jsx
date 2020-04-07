@@ -1,6 +1,8 @@
 import React from 'react'
+import styled from 'styled-components'
+import { typography } from 'styled-system'
 import PropTypes from 'prop-types'
-import { Box, Card, Input, Glyph, Stepper, Text } from '../../Shared'
+import { Box, Card, Glyph, Text } from '../../Shared'
 import {
   LEDGER,
   IMPORT_MNEMONIC,
@@ -12,20 +14,21 @@ import {
   ADDRESS_PROPTYPE
 } from '../../../customPropTypes'
 
+const TextHighlight = styled.span.attrs(() => ({
+  fontSize: 3,
+  fontWeight: 2
+}))`
+  ${typography}
+`
+
 const LedgerConfirm = () => {
   return (
     <>
-      <Text color='core.nearblack'>Thank you.</Text>
       <Text color='core.nearblack'>
-        To send the transaction,{' '}
-        <span
-          css={`
-            font-size: 1.25rem;
-            font-weight: 600;
-          `}
-        >
+        To send the transaction, please
+        <TextHighlight>
           confirm the transfer on your Ledger device.
-        </span>
+        </TextHighlight>
       </Text>
     </>
   )
@@ -34,21 +37,13 @@ const LedgerConfirm = () => {
 const OtherWalletTypeConfirm = ({ toAddress, value }) => {
   return (
     <>
-      <Text color='core.nearblack'>Please confirm that you want to:</Text>
-      <Input.Text
-        disabled
-        backgroundColor='card.confirmation.background'
-        color='card.confirmation.foreground'
-        label='Sending'
-        value={value.fil.toFil()}
-      />
-      <Input.Address
-        disabled
-        backgroundColor='card.confirmation.background'
-        color='card.confirmation.foreground'
-        label='To'
-        value={toAddress}
-      />
+      <Text color='core.nearblack'>
+        To send the transaction, please review the
+        <TextHighlight>recipient</TextHighlight> and
+        <TextHighlight>amount</TextHighlight> and click the Confirm button at
+        the bottom of the page.
+      </Text>
+      <Text>Remember: You cannot undo this transaction once you send it.</Text>
     </>
   )
 }
@@ -90,15 +85,6 @@ const ConfirmationCard = ({ value, walletType, toAddress }) => {
             Confirmation
           </Text>
         </Box>
-        <Stepper
-          textColor='card.confirmation.foreground'
-          completedDotColor='card.confirmation.foreground'
-          incompletedDotColor='core.silver'
-          step={2}
-          totalSteps={2}
-        >
-          Step 2
-        </Stepper>
       </Box>
       {walletType === LEDGER ? (
         <LedgerConfirm />
