@@ -36,7 +36,7 @@ const Step2Helper = ({
     borderColor='silver'
     width='100%'
     minHeight={9}
-    mt={5}
+    mt={4}
   >
     {hasLedgerError({
       connectedFailure,
@@ -68,11 +68,11 @@ const Step2Helper = ({
       </>
     ) : (
       <>
-        <Box display='flex' alignItems='center'>
+        <Box display='flex' alignItems='center' color='core.nearblack'>
           <Title>Unlock & Open</Title>
         </Box>
-        <Box>
-          <Text>Please unlock your Ledger device</Text>
+        <Box color='core.nearblack' mt={3}>
+          <Text>Please unlock your Ledger device.</Text>
           <Text>And make sure the Filecoin App is open</Text>
         </Box>
       </>
