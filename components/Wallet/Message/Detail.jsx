@@ -92,7 +92,6 @@ const MessageDetail = ({ address, close, message }) => {
             ) : (
               <IconPending height={4} />
             )}
-            <Box width={2} />
             <Label
               color={
                 message.status === 'confirmed'
@@ -108,7 +107,7 @@ const MessageDetail = ({ address, close, message }) => {
             </Label>
           </Box>
           <Box display='flex' flexDirection='row' mr={2}>
-            <Text my='0' mr={1} color='core.darkgray'>
+            <Text my='0' mr={3} color='core.darkgray'>
               {dayjs.unix(message.timestamp).format('MMM DD')}
             </Text>
             <Text my='0'>{dayjs.unix(message.timestamp).format('hh:mmA')}</Text>
