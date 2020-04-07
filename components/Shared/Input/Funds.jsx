@@ -84,16 +84,9 @@ const Funds = forwardRef(
       const fiat = new BigNumber(val)
       const fil =
         !converterError && new FilecoinNumber(converter.toFIL(fiat), 'fil')
-      const validBalance = checkBalance(fil)
-      if (validBalance) {
-        setFilAmount(fil)
-        onAmountChange({ fil, fiat })
-      } else {
-        onAmountChange({
-          fil: new FilecoinNumber('0', 'fil'),
-          fiat: new BigNumber('0')
-        })
-      }
+      checkBalance(fil)
+      setFilAmount(fil)
+      onAmountChange({ fil, fiat })
     }
 
     const onFiatChange = e => {
@@ -211,18 +204,7 @@ const Funds = forwardRef(
               }}
               onBlur={async () => {
                 clearTimeout(timeout.current)
-                const fil = new FilecoinNumber(filAmount, 'fil')
-                const validBalance = checkBalance(fil)
-                if (validBalance) {
-                  const fiatAmnt = !converterError && converter.fromFIL(fil)
-                  setFiatAmount(fiatAmnt)
-                  onAmountChange({ fil, fiat: fiatAmnt })
-                } else {
-                  onAmountChange({
-                    fil: new FilecoinNumber('0', 'fil'),
-                    fiat: new BigNumber('0')
-                  })
-                }
+                onTimerFil(filAmount)
               }}
               height='100%'
               onChange={onFilChange}
@@ -247,17 +229,7 @@ const Funds = forwardRef(
               }}
               onBlur={async () => {
                 clearTimeout(timeout.current)
-                const fil = !converterError && converter.toFIL(fiatAmount)
-                const validBalance = checkBalance(fil)
-                if (validBalance) {
-                  setFilAmount(fil)
-                  onAmountChange({ fil, fiat: fiatAmount })
-                } else {
-                  onAmountChange({
-                    fil: new FilecoinNumber('0', 'fil'),
-                    fiat: new BigNumber('0')
-                  })
-                }
+                onTimerFiat(fiatAmount)
               }}
               height='100%'
               onChange={onFiatChange}
