@@ -97,6 +97,7 @@ const Step1 = ({ setStep }) => {
     <>
       <OnboardCard
         maxWidth={13}
+        minHeight={9}
         width='100%'
         borderColor={error && 'status.fail.background'}
         bg={error ? 'status.fail.background' : 'core.transparent'}
