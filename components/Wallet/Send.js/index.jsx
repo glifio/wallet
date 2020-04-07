@@ -92,9 +92,12 @@ const Send = ({ close }) => {
   const [gasLimit, setGasLimit] = useState(
     new FilecoinNumber('1000', 'attofil')
   )
-  const [step, setStep] = useState(1)
+  const [estimatedGasUsed, setEstimatedGasUsed] = useState(
+    new FilecoinNumber('0', 'attofil')
+  )
   const [customizingGas, setCustomizingGas] = useState(false)
 
+  const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
 
   const estimateGas = async gp => {
@@ -105,7 +108,7 @@ const Send = ({ close }) => {
       value: value.fil.toAttoFil(),
       method: 0,
       gasPrice: gp.toAttoFil(),
-      gasLimit: '100000000',
+      gasLimit: '1000',
       nonce: 0,
       params: ''
     })
@@ -263,7 +266,52 @@ const Send = ({ close }) => {
             </Box>
           </Box>
           <Box mt={3}>
-            {customizingGas ? (
+            <Input.Address
+              name='recipient'
+              onChange={e => setToAddress(e.target.value)}
+              value={toAddress}
+              label='Recipient'
+              placeholder='t1...'
+              error={toAddressError}
+              setError={setToAddressError}
+              disabled={step === 2 && !hasError()}
+              valid={validateAddressString(toAddress)}
+            />
+            <Input.Funds
+              name='amount'
+              label='Amount'
+              amount={value.fil.toAttoFil()}
+              onAmountChange={setValue}
+              balance={wallet.balance}
+              error={valueError}
+              setError={setValueError}
+              gasLimit={gasLimit}
+              disabled={step === 2 && !hasError()}
+              valid={isValidAmount(value.fil, wallet.balance, valueError)}
+            />
+            <Box display='flex' flexDirection='column'>
+              <Input.Text
+                onChange={() => {}}
+                label='Transfer Fee'
+                value='< 0.1FIL'
+                backgroundColor='background.screen'
+                disabled
+              />
+              <Text
+                color='core.primary'
+                css={`
+                  &:hover {
+                    cursor: pointer;
+                  }
+                  text-decoration: underline;
+                  align-self: flex-end;
+                `}
+                onClick={() => setCustomizingGas(!customizingGas)}
+              >
+                Advanced
+              </Text>
+            </Box>
+            {customizingGas && (
               <GasCustomization
                 estimateGas={estimateGas}
                 exit={() => setCustomizingGas(false)}
@@ -271,143 +319,95 @@ const Send = ({ close }) => {
                 gasLimit={gasLimit}
                 setGasPrice={setGasPrice}
                 setGasLimit={setGasLimit}
+                estimatedGas={estimatedGasUsed}
+                setEstimatedGas={setEstimatedGasUsed}
               />
+            )}
+            <Box
+              display='flex'
+              flexDirection='row'
+              alignItems='flex-start'
+              justifyContent='space-between'
+              mt={3}
+              mx={1}
+            >
+              <Total fontSize={4} alignSelf='flex-start'>
+                Total
+              </Total>
+              <Box
+                display='flex'
+                flexDirection='column'
+                textAlign='right'
+                pl={4}
+              >
+                <Title
+                  css={`
+                    word-wrap: break-word;
+                  `}
+                  color='core.primary'
+                >
+                  {value.fil.toFil()} FIL
+                </Title>
+                <Title color='core.darkgray'>
+                  {!converterError &&
+                    `${makeFriendlyBalance(value.fiat, 2)} USD`}
+                </Title>
+              </Box>
+            </Box>
+          </Box>
+          <FloatingContainer>
+            {step === 2 && wallet.type === LEDGER ? (
+              <Text width='100%' textAlign='center' px={4}>
+                Confirm or reject the transaction on your Ledger Device.
+              </Text>
             ) : (
               <>
-                <Input.Address
-                  name='recipient'
-                  onChange={e => setToAddress(e.target.value)}
-                  value={toAddress}
-                  label='Recipient'
-                  placeholder='t1...'
-                  error={toAddressError}
-                  setError={setToAddressError}
-                  disabled={step === 2 && !hasError()}
-                  valid={validateAddressString(toAddress)}
+                <Button
+                  type='button'
+                  title={step === 1 ? 'Cancel' : 'Back'}
+                  variant='secondary'
+                  border={0}
+                  borderRight={1}
+                  borderRadius={0}
+                  borderColor='core.lightgray'
+                  onClick={() => {
+                    setAttemptingTx(false)
+                    setUncaughtError('')
+                    resetLedgerState()
+                    close()
+                  }}
+                  css={`
+                    /* 'css' operation is used here to override its inherited border-radius property */
+                    border-radius: 0px;
+                  `}
                 />
-                <Input.Funds
-                  name='amount'
-                  label='Amount'
-                  amount={value.fil.toAttoFil()}
-                  onAmountChange={setValue}
-                  balance={wallet.balance}
-                  error={valueError}
-                  setError={setValueError}
-                  gasLimit={gasLimit}
-                  disabled={step === 2 && !hasError()}
-                  valid={isValidAmount(value.fil, wallet.balance, valueError)}
+                <Button
+                  border={0}
+                  borderRadius={0}
+                  disabled={
+                    !!(
+                      hasError() ||
+                      !isValidForm(
+                        toAddress,
+                        value.fil,
+                        wallet.balance,
+                        toAddressError,
+                        valueError
+                      )
+                    )
+                  }
+                  type='submit'
+                  title={step === 1 ? 'Next' : 'Confirm'}
+                  variant='primary'
+                  onClick={() => {}}
+                  css={`
+                    /* 'css' operation is used here to override its inherited border-radius property */
+                    border-radius: 0px;
+                  `}
                 />
-                <Box display='flex' flexDirection='column'>
-                  <Input.Text
-                    onChange={() => {}}
-                    label='Transfer Fee'
-                    value='< 0.1FIL'
-                    backgroundColor='background.screen'
-                    disabled
-                  />
-                  <Text
-                    color='core.primary'
-                    css={`
-                      &:hover {
-                        cursor: pointer;
-                      }
-                      text-decoration: underline;
-                      align-self: flex-end;
-                    `}
-                    onClick={() => setCustomizingGas(true)}
-                  >
-                    Advanced
-                  </Text>
-                </Box>
-                <Box
-                  display='flex'
-                  flexDirection='row'
-                  alignItems='flex-start'
-                  justifyContent='space-between'
-                  mt={3}
-                  mx={1}
-                >
-                  <Total fontSize={4} alignSelf='flex-start'>
-                    Total
-                  </Total>
-                  <Box
-                    display='flex'
-                    flexDirection='column'
-                    textAlign='right'
-                    pl={4}
-                  >
-                    <Title
-                      css={`
-                        word-wrap: break-word;
-                      `}
-                      color='core.primary'
-                    >
-                      {value.fil.toFil()} FIL
-                    </Title>
-                    <Title color='core.darkgray'>
-                      {!converterError &&
-                        `${makeFriendlyBalance(value.fiat, 2)} USD`}
-                    </Title>
-                  </Box>
-                </Box>
               </>
             )}
-          </Box>
-          {!customizingGas && (
-            <FloatingContainer>
-              {step === 2 && wallet.type === LEDGER ? (
-                <Text width='100%' textAlign='center' px={4}>
-                  Confirm or reject the transaction on your Ledger Device.
-                </Text>
-              ) : (
-                <>
-                  <Button
-                    type='button'
-                    title={step === 1 ? 'Cancel' : 'Back'}
-                    variant='secondary'
-                    border={0}
-                    borderRight={1}
-                    borderRadius={0}
-                    borderColor='core.lightgray'
-                    onClick={() => {
-                      setAttemptingTx(false)
-                      setUncaughtError('')
-                      resetLedgerState()
-                      close()
-                    }}
-                    css={`
-                      /* 'css' operation is used here to override its inherited border-radius property */
-                      border-radius: 0px;
-                    `}
-                  />
-                  <Button
-                    border={0}
-                    borderRadius={0}
-                    disabled={
-                      !!(
-                        hasError() ||
-                        !isValidForm(
-                          toAddress,
-                          value.fil,
-                          wallet.balance,
-                          toAddressError,
-                          valueError
-                        )
-                      )
-                    }
-                    type='submit'
-                    title={step === 1 ? 'Next' : 'Confirm'}
-                    variant='primary'
-                    onClick={() => {}}
-                    css={`
-                      /* 'css' operation is used here to override its inherited border-radius property */
-                      border-radius: 0px;
-                    `}
-                  />
-                </>
-              )}
-            </FloatingContainer>
-          )}
+          </FloatingContainer>
         </SendCardForm>
       </SendContainer>
     </>
