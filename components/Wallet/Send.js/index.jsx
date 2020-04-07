@@ -251,12 +251,10 @@ const Send = ({ close }) => {
                 textColor='core.primary'
                 completedDotColor='core.primary'
                 incompletedDotColor='core.silver'
-                step={1}
+                step={step === 1 ? 1 : 2}
                 totalSteps={2}
                 mr={2}
-              >
-                Step 1
-              </Stepper>
+              />
               <ButtonClose />
             </Box>
           </Box>
