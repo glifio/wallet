@@ -13,14 +13,15 @@ import noop from '../../../utils/noop'
 import {
   Box,
   Input,
-  Stepper,
   Glyph,
   Text,
   Button,
+  ButtonClose,
   Title,
   FloatingContainer,
   Title as Total,
-  ContentContainer as SendContainer
+  ContentContainer as SendContainer,
+  Stepper
 } from '../../Shared'
 import ConfirmationCard from './ConfirmationCard'
 import GasCustomization from './GasCustomization'
@@ -242,11 +243,7 @@ const Send = ({ close }) => {
           />
         )}
         {(step === 2 || step === 3) && !hasError() && (
-          <ConfirmationCard
-            walletType={wallet.type}
-            value={value}
-            toAddress={toAddress}
-          />
+          <ConfirmationCard walletType={wallet.type} />
         )}
         <SendCardForm onSubmit={onSubmit} autoComplete='off'>
           <Box
@@ -273,9 +270,17 @@ const Send = ({ close }) => {
                 step={1}
                 totalSteps={2}
                 mr={2}
-              >
-                Step 1
-              </Stepper>
+              />
+              <ButtonClose
+                role='button'
+                type='button'
+                onClick={() => {
+                  setAttemptingTx(false)
+                  setUncaughtError('')
+                  resetLedgerState()
+                  close()
+                }}
+              />
             </Box>
           </Box>
           <Box mt={3}>
@@ -374,59 +379,64 @@ const Send = ({ close }) => {
               </Box>
             </Box>
           </Box>
-          <FloatingContainer>
-            {step === 2 && wallet.type === LEDGER ? (
-              <Text width='100%' textAlign='center' px={4}>
-                Confirm or reject the transaction on your Ledger Device.
-              </Text>
-            ) : (
-              <>
-                <Button
-                  type='button'
-                  title={step === 1 ? 'Cancel' : 'Back'}
-                  variant='secondary'
-                  border={0}
-                  borderRight={1}
-                  borderRadius={0}
-                  borderColor='core.lightgray'
-                  onClick={() => {
-                    setAttemptingTx(false)
-                    setUncaughtError('')
-                    resetLedgerState()
-                    close()
-                  }}
-                  css={`
-                    /* 'css' operation is used here to override its inherited border-radius property */
-                    border-radius: 0px;
-                  `}
-                />
-                <Button
-                  border={0}
-                  borderRadius={0}
-                  disabled={
-                    !!(
-                      hasError() ||
-                      !isValidForm(
-                        toAddress,
-                        value.fil,
-                        wallet.balance,
-                        toAddressError,
-                        valueError
+          {!customizingGas && (
+            <FloatingContainer>
+              {step === 2 && wallet.type === LEDGER ? (
+                <Text width='100%' textAlign='center' px={4}>
+                  Confirm or reject the transaction on your Ledger Device.
+                </Text>
+              ) : (
+                <>
+                  <Button
+                    type='button'
+                    title='Back'
+                    variant='secondary'
+                    border={0}
+                    borderRight={1}
+                    borderRadius={0}
+                    borderColor='core.lightgray'
+                    onClick={() => {
+                      if (step === 2) setStep(1)
+                      else {
+                        setAttemptingTx(false)
+                        setUncaughtError('')
+                        resetLedgerState()
+                        close()
+                      }
+                    }}
+                    css={`
+                      /* 'css' operation is used here to override its inherited border-radius property */
+                      border-radius: 0px;
+                    `}
+                  />
+                  <Button
+                    border={0}
+                    borderRadius={0}
+                    disabled={
+                      !!(
+                        hasError() ||
+                        !isValidForm(
+                          toAddress,
+                          value.fil,
+                          wallet.balance,
+                          toAddressError,
+                          valueError
+                        )
                       )
-                    )
-                  }
-                  type='submit'
-                  title={step === 1 ? 'Next' : 'Confirm'}
-                  variant='primary'
-                  onClick={noop}
-                  css={`
-                    /* 'css' operation is used here to override its inherited border-radius property */
-                    border-radius: 0px;
-                  `}
-                />
-              </>
-            )}
-          </FloatingContainer>
+                    }
+                    type='submit'
+                    title={step === 1 ? 'Next' : 'Confirm'}
+                    variant='primary'
+                    onClick={noop}
+                    css={`
+                      /* 'css' operation is used here to override its inherited border-radius property */
+                      border-radius: 0px;
+                    `}
+                  />
+                </>
+              )}
+            </FloatingContainer>
+          )}
         </SendCardForm>
       </SendContainer>
     </>
