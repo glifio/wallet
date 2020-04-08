@@ -7,6 +7,6 @@ export default () => {
   const router = useRouter()
   useEffect(() => {
     const onMobileBrowser = isMobileBrowser()
-    if (onMobileBrowser) router.replace('/error/mobile-browser')
+    if (onMobileBrowser) router.replace('/error/use-desktop-browser')
   }, [router])
 }
