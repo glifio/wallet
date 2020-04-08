@@ -4,9 +4,9 @@ import { useRouter } from 'next/router'
 import isMobileBrowser from '../utils/isMobileBrowser'
 
 export default () => {
-  const router = useRouter()
+  const { replace } = useRouter()
   useEffect(() => {
     const onMobileBrowser = isMobileBrowser()
-    if (onMobileBrowser) router.replace('/error/use-desktop-browser')
-  }, [router])
+    if (onMobileBrowser) replace('/error/use-desktop-browser')
+  }, [replace])
 }
