@@ -8,18 +8,20 @@ import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 import { validateAddressString } from '@openworklabs/filecoin-address'
 import Message from '@openworklabs/filecoin-message'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
+import noop from '../../../utils/noop'
 
 import {
   Box,
   Input,
-  Stepper,
   Glyph,
   Text,
   Button,
+  ButtonClose,
   Title,
   FloatingContainer,
   Title as Total,
-  ContentContainer as SendContainer
+  ContentContainer as SendContainer,
+  Stepper
 } from '../../Shared'
 import ConfirmationCard from './ConfirmationCard'
 import GasCustomization from './GasCustomization'
@@ -226,11 +228,7 @@ const Send = ({ close }) => {
           />
         )}
         {(step === 2 || step === 3) && !hasError() && (
-          <ConfirmationCard
-            walletType={wallet.type}
-            value={value}
-            toAddress={toAddress}
-          />
+          <ConfirmationCard walletType={wallet.type} />
         )}
         <SendCardForm onSubmit={onSubmit} autoComplete='off'>
           <Box
@@ -257,9 +255,17 @@ const Send = ({ close }) => {
                 step={1}
                 totalSteps={2}
                 mr={2}
-              >
-                Step 1
-              </Stepper>
+              />
+              <ButtonClose
+                role='button'
+                type='button'
+                onClick={() => {
+                  setAttemptingTx(false)
+                  setUncaughtError('')
+                  resetLedgerState()
+                  close()
+                }}
+              />
             </Box>
           </Box>
           <Box mt={3}>
@@ -363,17 +369,20 @@ const Send = ({ close }) => {
                 <>
                   <Button
                     type='button'
-                    title={step === 1 ? 'Cancel' : 'Back'}
+                    title='Back'
                     variant='secondary'
                     border={0}
                     borderRight={1}
                     borderRadius={0}
                     borderColor='core.lightgray'
                     onClick={() => {
-                      setAttemptingTx(false)
-                      setUncaughtError('')
-                      resetLedgerState()
-                      close()
+                      if (step === 2) setStep(1)
+                      else {
+                        setAttemptingTx(false)
+                        setUncaughtError('')
+                        resetLedgerState()
+                        close()
+                      }
                     }}
                     css={`
                       /* 'css' operation is used here to override its inherited border-radius property */
@@ -398,7 +407,7 @@ const Send = ({ close }) => {
                     type='submit'
                     title={step === 1 ? 'Next' : 'Confirm'}
                     variant='primary'
-                    onClick={() => {}}
+                    onClick={noop}
                     css={`
                       /* 'css' operation is used here to override its inherited border-radius property */
                       border-radius: 0px;
