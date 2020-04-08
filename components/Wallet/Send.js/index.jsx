@@ -310,7 +310,7 @@ const Send = ({ close }) => {
             <Box
               color='core.primary'
               type='button'
-              role='buton'
+              role='button'
               onClick={() => setCustomizingGas(!customizingGas)}
               css={`
                 &:hover {
