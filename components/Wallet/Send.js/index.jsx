@@ -307,21 +307,20 @@ const Send = ({ close }) => {
               disabled={step === 2 && !hasError()}
               valid={isValidAmount(value.fil, wallet.balance, valueError)}
             />
-            <Box display='flex' flexDirection='column'>
-              <Text
-                color='core.primary'
-                css={`
-                  &:hover {
-                    cursor: pointer;
-                  }
-                  text-decoration: underline;
-                  align-self: flex-end;
-                `}
-                onClick={() => setCustomizingGas(!customizingGas)}
-              >
-                Advanced
-              </Text>
-            </Box>
+            <Text
+              color='core.primary'
+              mb={0}
+              css={`
+                &:hover {
+                  cursor: pointer;
+                }
+                text-decoration: underline;
+                align-self: flex-end;
+              `}
+              onClick={() => setCustomizingGas(!customizingGas)}
+            >
+              {customizingGas ? 'Close' : 'Customize'}
+            </Text>
             <GasCustomization
               show={customizingGas}
               estimateGas={estimateGas}
