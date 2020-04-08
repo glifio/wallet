@@ -71,12 +71,9 @@ const Funds = forwardRef(
       const validBalance = checkBalance(fil)
       if (validBalance) {
         setFiatAmount(fiatAmnt)
-        onAmountChange({ fil, fiat: fiatAmnt })
+        onAmountChange(fil)
       } else {
-        onAmountChange({
-          fil: new FilecoinNumber('0', 'fil'),
-          fiat: new BigNumber('0')
-        })
+        onAmountChange(new FilecoinNumber('0', 'fil'))
       }
     }
 
@@ -86,7 +83,7 @@ const Funds = forwardRef(
         !converterError && new FilecoinNumber(converter.toFIL(fiat), 'fil')
       checkBalance(fil)
       setFilAmount(fil)
-      onAmountChange({ fil, fiat })
+      onAmountChange(fil)
     }
 
     const onFiatChange = e => {

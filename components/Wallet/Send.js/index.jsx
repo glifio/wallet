@@ -84,10 +84,7 @@ const Send = ({ close }) => {
   } = useWalletProvider()
   const [toAddress, setToAddress] = useState('')
   const [toAddressError, setToAddressError] = useState('')
-  const [value, setValue] = useState({
-    fil: new FilecoinNumber('0', 'fil'),
-    fiat: new BigNumber('0')
-  })
+  const [value, setValue] = useState(new FilecoinNumber('0', 'fil'))
   const [valueError, setValueError] = useState('')
   const [uncaughtError, setUncaughtError] = useState('')
   const [gasPrice, setGasPrice] = useState(new FilecoinNumber('1', 'attofil'))
@@ -123,7 +120,7 @@ const Send = ({ close }) => {
 
   useEffect(() => {
     const fetchInitialGas = async () => {
-      const gas = await estimateGas(gasPrice, gasLimit, value.fil.toAttoFil())
+      const gas = await estimateGas(gasPrice, gasLimit, value.toAttoFil())
       setEstimatedGasUsed(gas)
     }
 
@@ -141,7 +138,7 @@ const Send = ({ close }) => {
       const message = new Message({
         to: toAddress,
         from: wallet.address,
-        value: new BigNumber(value.fil.toAttoFil()).toFixed(0, 1),
+        value: new BigNumber(value.toAttoFil()).toFixed(0, 1),
         method: 0,
         gasPrice: gasPrice.toAttoFil(),
         gasLimit: gasLimit.toAttoFil(),
@@ -167,8 +164,7 @@ const Send = ({ close }) => {
     if (message) {
       dispatch(confirmMessage(toLowerCaseMsgFields(message)))
       setValue({
-        fil: new FilecoinNumber('0', 'fil'),
-        fiat: new BigNumber('0')
+        fil: new FilecoinNumber('0', 'fil')
       })
       setAttemptingTx(false)
       close()
@@ -181,7 +177,7 @@ const Send = ({ close }) => {
     if (
       !isValidForm(
         toAddress,
-        value.fil,
+        value,
         wallet.balance,
         toAddressError,
         valueError,
@@ -226,7 +222,7 @@ const Send = ({ close }) => {
   const ledgerError = () =>
     wallet.type === LEDGER && reportLedgerConfigError(ledger)
 
-  const { converterError } = useConverter()
+  const { converter, converterError } = useConverter()
 
   return (
     <>
@@ -298,14 +294,14 @@ const Send = ({ close }) => {
             <Input.Funds
               name='amount'
               label='Amount'
-              amount={value.fil.toAttoFil()}
+              amount={value.toAttoFil()}
               onAmountChange={setValue}
               balance={wallet.balance}
               error={valueError}
               setError={setValueError}
               gasLimit={gasLimit}
               disabled={step === 2 && !hasError()}
-              valid={isValidAmount(value.fil, wallet.balance, valueError)}
+              valid={isValidAmount(value, wallet.balance, valueError)}
             />
             <Box
               color='core.primary'
@@ -364,7 +360,7 @@ const Send = ({ close }) => {
               setGasPrice={setGasPrice}
               setGasLimit={setGasLimit}
               setEstimatedGas={setEstimatedGasUsed}
-              value={value.fil.toAttoFil()}
+              value={value.toAttoFil()}
             />
             <Input.Text
               onChange={noop}
@@ -396,15 +392,15 @@ const Send = ({ close }) => {
                   `}
                   color='core.primary'
                 >
-                  {value.fil.isGreaterThan(0)
-                    ? `${value.fil.plus(estimatedGasUsed).toString()}`
+                  {value.isGreaterThan(0)
+                    ? `${value.plus(estimatedGasUsed).toString()}`
                     : '0'}{' '}
                   FIL
                 </Title>
                 <Title color='core.darkgray'>
-                  {!converterError && value.fil.isGreaterThan(0)
+                  {!converterError && value.isGreaterThan(0)
                     ? `${makeFriendlyBalance(
-                        value.fiat.plus(estimatedGasUsed),
+                        converter.fromFIL(value.plus(estimatedGasUsed)),
                         2
                       )}`
                     : '0'}{' '}
@@ -451,7 +447,7 @@ const Send = ({ close }) => {
                         hasError() ||
                         !isValidForm(
                           toAddress,
-                          value.fil,
+                          value,
                           wallet.balance,
                           toAddressError,
                           valueError
