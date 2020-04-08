@@ -1,31 +1,13 @@
 import React, { forwardRef, useRef, useState } from 'react'
 import { func, string, bool, oneOfType } from 'prop-types'
 import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
-import { space, color, layout, border, flexbox } from 'styled-system'
-import styled from 'styled-components'
 
 import Box from '../Box'
-import { RawNumberInput } from './Number'
+import { DenomTag, RawNumberInput } from './Number'
 import { Text, Label } from '../Typography'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import noop from '../../../utils/noop'
 import { useConverter } from '../../../lib/Converter'
-
-export const DenomTag = styled(Box).attrs(props => ({
-  width: 6,
-  bg: 'core.primary',
-  color: 'core.white',
-  ...props
-}))`
-  text-align: center;
-  position: absolute;
-  border-radius: 4px;
-  ${color} 
-  ${space} 
-  ${layout}
-  ${border}
-  ${flexbox};
-`
 
 const formatFilValue = number => {
   if (!number) return ''
@@ -212,10 +194,10 @@ const Funds = forwardRef(
             >
               {'\u003D'}
             </Box>
-            <DenomTag top='30px' left='30px'>
+            <DenomTag top={4} left={5}>
               FIL
             </DenomTag>
-            <DenomTag top='110px' left='30px'>
+            <DenomTag top='105px' left={5}>
               USD
             </DenomTag>
             <RawNumberInput

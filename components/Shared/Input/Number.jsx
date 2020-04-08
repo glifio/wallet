@@ -1,5 +1,6 @@
 import { forwardRef } from 'react'
-import { func, string, bool } from 'prop-types'
+import { space, color, layout, border, flexbox } from 'styled-system'
+import { func, string, bool, node } from 'prop-types'
 import styled from 'styled-components'
 import BaseInput from './BaseInput'
 import InputWrapper from './InputWrapper'
@@ -16,9 +17,50 @@ export const RawNumberInput = styled(BaseInput).attrs(props => ({ ...props }))`
   -moz-appearance: textfield;
 `
 
+const Tag = styled(Box).attrs(props => ({
+  minWidth: 6,
+  bg: 'core.primary',
+  color: 'core.white',
+  p: 2,
+  ...props
+}))`
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  ${color} 
+  ${space} 
+  ${layout}
+  ${border}
+  ${flexbox};
+`
+
+export const DenomTag = props => (
+  <Box
+    css={`
+      position: relative;
+    `}
+  >
+    <Tag {...props}>{props.children}</Tag>
+  </Box>
+)
+
+DenomTag.propTypes = {
+  children: node
+}
+
 export const NumberInput = forwardRef(
   (
-    { onChange, value, placeholder, label, error, setError, valid, ...props },
+    {
+      denom,
+      onChange,
+      value,
+      placeholder,
+      label,
+      error,
+      setError,
+      valid,
+      ...props
+    },
     ref
   ) => {
     return (
@@ -28,6 +70,16 @@ export const NumberInput = forwardRef(
             <Box display='inline-block' px={3} minWidth={9} textAlign='center'>
               <Label>{label}</Label>
             </Box>
+          )}
+          {denom && (
+            <DenomTag
+              css={`
+                top: -16px;
+                left: 20px;
+              `}
+            >
+              {denom}
+            </DenomTag>
           )}
           <RawNumberInput
             type='number'
@@ -51,7 +103,8 @@ NumberInput.propTypes = {
   placeholder: string,
   disabled: bool,
   error: string,
-  valid: bool
+  valid: bool,
+  denom: string
 }
 
 NumberInput.defaultProps = {

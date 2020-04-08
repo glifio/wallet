@@ -57,6 +57,7 @@ const GasCustomization = ({
           <Input.Number
             mt={2}
             m='0'
+            denom='AttoFil'
             label='Gas Price'
             value={gasPrice.toAttoFil()}
             onChange={onGasPriceInputChange}
@@ -66,6 +67,7 @@ const GasCustomization = ({
               transform: translateY(-1px);
             `}
             m='0'
+            denom='AttoFil'
             label='Gas Limit'
             value={gasLimit.toAttoFil()}
             onChange={e =>

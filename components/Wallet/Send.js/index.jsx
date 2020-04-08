@@ -362,10 +362,18 @@ const Send = ({ close }) => {
               setEstimatedGas={setEstimatedGasUsed}
               value={value.toAttoFil()}
             />
+            <Input.DenomTag
+              css={`
+                left: ${({ theme }) => theme.space[9]}px;
+                top: ${({ theme }) => theme.space[5]}px;
+              `}
+            >
+              {customizingGas ? 'AttoFil' : 'FIL'}
+            </Input.DenomTag>
             <Input.Text
               onChange={noop}
               label='Estimated Fee'
-              value={customizingGas ? estimatedGasUsed.toAttoFil() : '< 0.1FIL'}
+              value={customizingGas ? estimatedGasUsed.toAttoFil() : '< 0.1'}
               backgroundColor='background.screen'
               disabled
             />

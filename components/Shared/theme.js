@@ -195,7 +195,7 @@ const theme = {
     mono:
       '"system-ui", "Segoe UI", Roboto Mono, Helvetica, Arial, monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";'
   },
-  space: [0, 4, 8, 16, 24, 32, 48, 64, 128, 256],
+  space: [0, 4, 8, 16, 24, 32, 48, 64, 128, 180, 256],
   sizes: [
     0,
     4,
