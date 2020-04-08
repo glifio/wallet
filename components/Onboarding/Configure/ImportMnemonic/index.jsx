@@ -67,6 +67,7 @@ export default () => {
               totalSteps={2}
               glyphAcronym='Sp'
               m={2}
+              showStepper={false}
             />
 
             <Title mt={3}>Input, Import & Proceed</Title>

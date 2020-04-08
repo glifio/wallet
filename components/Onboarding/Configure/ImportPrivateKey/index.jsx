@@ -62,6 +62,7 @@ export default () => {
               totalSteps={2}
               description='Import'
               glyphAcronym='Pk'
+              showStepper={false}
             />
             <Box
               width='auto'

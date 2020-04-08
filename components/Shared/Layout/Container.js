@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { layout } from 'styled-system'
+import { layout, margin } from 'styled-system'
 
 export default styled.div.attrs(props => ({
   maxWidth: props.maxWidth || 13,
@@ -11,4 +11,5 @@ export default styled.div.attrs(props => ({
   justify-content: center;
   flex-grow: 2;
   ${layout}
+  ${margin}
 `

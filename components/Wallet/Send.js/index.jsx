@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
@@ -8,18 +8,20 @@ import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 import { validateAddressString } from '@openworklabs/filecoin-address'
 import Message from '@openworklabs/filecoin-message'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
+import noop from '../../../utils/noop'
 
 import {
   Box,
   Input,
-  Stepper,
   Glyph,
   Text,
   Button,
+  ButtonClose,
   Title,
   FloatingContainer,
   Title as Total,
-  ContentContainer as SendContainer
+  ContentContainer as SendContainer,
+  Stepper
 } from '../../Shared'
 import ConfirmationCard from './ConfirmationCard'
 import GasCustomization from './GasCustomization'
@@ -92,26 +94,41 @@ const Send = ({ close }) => {
   const [gasLimit, setGasLimit] = useState(
     new FilecoinNumber('1000', 'attofil')
   )
-  const [step, setStep] = useState(1)
+  const [estimatedGasUsed, setEstimatedGasUsed] = useState(
+    new FilecoinNumber('0', 'attofil')
+  )
   const [customizingGas, setCustomizingGas] = useState(false)
 
+  const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
 
-  const estimateGas = async gp => {
-    // create a fake message
-    const message = new Message({
-      to: wallet.address,
-      from: wallet.address,
-      value: value.fil.toAttoFil(),
-      method: 0,
-      gasPrice: gp.toAttoFil(),
-      gasLimit: '100000000',
-      nonce: 0,
-      params: ''
-    })
+  const estimateGas = useCallback(
+    async (gp, gasLimit, value) => {
+      // create a fake message
+      const message = new Message({
+        to: wallet.address,
+        from: wallet.address,
+        value,
+        method: 0,
+        gasPrice: gp.toAttoFil(),
+        gasLimit: gasLimit.toAttoFil(),
+        nonce: 0,
+        params: ''
+      })
 
-    return walletProvider.estimateGas(message.encode())
-  }
+      return walletProvider.estimateGas(message.encode())
+    },
+    [wallet.address, walletProvider]
+  )
+
+  useEffect(() => {
+    const fetchInitialGas = async () => {
+      const gas = await estimateGas(gasPrice, gasLimit, value.fil.toAttoFil())
+      setEstimatedGasUsed(gas)
+    }
+
+    fetchInitialGas()
+  }, [estimateGas, setEstimatedGasUsed, gasPrice, gasLimit, value])
 
   const submitMsg = async () => {
     let provider = walletProvider
@@ -226,11 +243,7 @@ const Send = ({ close }) => {
           />
         )}
         {(step === 2 || step === 3) && !hasError() && (
-          <ConfirmationCard
-            walletType={wallet.type}
-            value={value}
-            toAddress={toAddress}
-          />
+          <ConfirmationCard walletType={wallet.type} />
         )}
         <SendCardForm onSubmit={onSubmit} autoComplete='off'>
           <Box
@@ -257,101 +270,148 @@ const Send = ({ close }) => {
                 step={1}
                 totalSteps={2}
                 mr={2}
-              >
-                Step 1
-              </Stepper>
+              />
+              <ButtonClose
+                role='button'
+                type='button'
+                onClick={() => {
+                  setAttemptingTx(false)
+                  setUncaughtError('')
+                  resetLedgerState()
+                  close()
+                }}
+              />
             </Box>
           </Box>
           <Box mt={3}>
-            {customizingGas ? (
-              <GasCustomization
-                estimateGas={estimateGas}
-                exit={() => setCustomizingGas(false)}
-                gasPrice={gasPrice}
-                gasLimit={gasLimit}
-                setGasPrice={setGasPrice}
-                setGasLimit={setGasLimit}
-              />
-            ) : (
-              <>
-                <Input.Address
-                  name='recipient'
-                  onChange={e => setToAddress(e.target.value)}
-                  value={toAddress}
-                  label='Recipient'
-                  placeholder='t1...'
-                  error={toAddressError}
-                  setError={setToAddressError}
-                  disabled={step === 2 && !hasError()}
-                  valid={validateAddressString(toAddress)}
-                />
-                <Input.Funds
-                  name='amount'
-                  label='Amount'
-                  amount={value.fil.toAttoFil()}
-                  onAmountChange={setValue}
-                  balance={wallet.balance}
-                  error={valueError}
-                  setError={setValueError}
-                  gasLimit={gasLimit}
-                  disabled={step === 2 && !hasError()}
-                  valid={isValidAmount(value.fil, wallet.balance, valueError)}
-                />
-                <Box display='flex' flexDirection='column'>
-                  <Input.Text
-                    onChange={() => {}}
-                    label='Transfer Fee'
-                    value='< 0.1FIL'
-                    backgroundColor='background.screen'
-                    disabled
-                  />
-                  <Text
-                    color='core.primary'
-                    css={`
-                      &:hover {
-                        cursor: pointer;
-                      }
-                      text-decoration: underline;
-                      align-self: flex-end;
-                    `}
-                    onClick={() => setCustomizingGas(true)}
-                  >
-                    Advanced
-                  </Text>
-                </Box>
-                <Box
-                  display='flex'
-                  flexDirection='row'
-                  alignItems='flex-start'
-                  justifyContent='space-between'
-                  mt={3}
-                  mx={1}
+            <Input.Address
+              name='recipient'
+              onChange={e => setToAddress(e.target.value)}
+              value={toAddress}
+              label='Recipient'
+              placeholder='t1...'
+              error={toAddressError}
+              setError={setToAddressError}
+              disabled={step === 2 && !hasError()}
+              valid={validateAddressString(toAddress)}
+            />
+            <Input.Funds
+              name='amount'
+              label='Amount'
+              amount={value.fil.toAttoFil()}
+              onAmountChange={setValue}
+              balance={wallet.balance}
+              error={valueError}
+              setError={setValueError}
+              gasLimit={gasLimit}
+              disabled={step === 2 && !hasError()}
+              valid={isValidAmount(value.fil, wallet.balance, valueError)}
+            />
+            <Box
+              color='core.primary'
+              type='button'
+              role='button'
+              onClick={() => setCustomizingGas(!customizingGas)}
+              css={`
+                &:hover {
+                  cursor: pointer;
+                }
+                align-self: flex-end;
+              `}
+              display='flex'
+              alignItems='center'
+              flexDirection='row'
+            >
+              {customizingGas ? (
+                <Text
+                  css={`
+                    font-size: 0.75rem;
+                  `}
+                  mr={1}
+                  mb={0}
+                  pt={2}
                 >
-                  <Total fontSize={4} alignSelf='flex-start'>
-                    Total
-                  </Total>
-                  <Box
-                    display='flex'
-                    flexDirection='column'
-                    textAlign='right'
-                    pl={4}
-                  >
-                    <Title
-                      css={`
-                        word-wrap: break-word;
-                      `}
-                      color='core.primary'
-                    >
-                      {value.fil.toFil()} FIL
-                    </Title>
-                    <Title color='core.darkgray'>
-                      {!converterError &&
-                        `${makeFriendlyBalance(value.fiat, 2)} USD`}
-                    </Title>
-                  </Box>
-                </Box>
-              </>
-            )}
+                  &#9650;
+                </Text>
+              ) : (
+                <Text
+                  css={`
+                    font-size: 0.75rem;
+                  `}
+                  mr={1}
+                  mb={0}
+                  pt={2}
+                >
+                  &#9660;
+                </Text>
+              )}
+              <Text
+                css={`
+                  text-decoration: underline;
+                  line-height: 2;
+                `}
+                mb={0}
+              >
+                {customizingGas ? 'Close' : 'Customize'}
+              </Text>
+            </Box>
+
+            <GasCustomization
+              show={customizingGas}
+              estimateGas={estimateGas}
+              gasPrice={gasPrice}
+              gasLimit={gasLimit}
+              setGasPrice={setGasPrice}
+              setGasLimit={setGasLimit}
+              setEstimatedGas={setEstimatedGasUsed}
+              value={value.fil.toAttoFil()}
+            />
+            <Input.Text
+              onChange={noop}
+              label='Estimated Fee'
+              value={customizingGas ? estimatedGasUsed.toAttoFil() : '< 0.1FIL'}
+              backgroundColor='background.screen'
+              disabled
+            />
+            <Box
+              display='flex'
+              flexDirection='row'
+              alignItems='flex-start'
+              justifyContent='space-between'
+              mt={3}
+              mx={1}
+            >
+              <Total fontSize={4} alignSelf='flex-start'>
+                Total
+              </Total>
+              <Box
+                display='flex'
+                flexDirection='column'
+                textAlign='right'
+                pl={4}
+              >
+                <Title
+                  css={`
+                    word-wrap: break-word;
+                  `}
+                  color='core.primary'
+                >
+                  {value.fil.isGreaterThan(0)
+                    ? `${value.fil.plus(estimatedGasUsed).toString()}`
+                    : '0'}{' '}
+                  FIL
+                </Title>
+                <Title color='core.darkgray'>
+                  {!converterError && value.fil.isGreaterThan(0)
+                    ? `${makeFriendlyBalance(
+                        value.fiat.plus(estimatedGasUsed),
+                        2
+                      )}`
+                    : '0'}{' '}
+                  USD
+                </Title>
+              </Box>
+            </Box>
           </Box>
           {!customizingGas && (
             <FloatingContainer>
@@ -363,17 +423,20 @@ const Send = ({ close }) => {
                 <>
                   <Button
                     type='button'
-                    title={step === 1 ? 'Cancel' : 'Back'}
+                    title='Back'
                     variant='secondary'
                     border={0}
                     borderRight={1}
                     borderRadius={0}
                     borderColor='core.lightgray'
                     onClick={() => {
-                      setAttemptingTx(false)
-                      setUncaughtError('')
-                      resetLedgerState()
-                      close()
+                      if (step === 2) setStep(1)
+                      else {
+                        setAttemptingTx(false)
+                        setUncaughtError('')
+                        resetLedgerState()
+                        close()
+                      }
                     }}
                     css={`
                       /* 'css' operation is used here to override its inherited border-radius property */
@@ -398,7 +461,7 @@ const Send = ({ close }) => {
                     type='submit'
                     title={step === 1 ? 'Next' : 'Confirm'}
                     variant='primary'
-                    onClick={() => {}}
+                    onClick={noop}
                     css={`
                       /* 'css' operation is used here to override its inherited border-radius property */
                       border-radius: 0px;
