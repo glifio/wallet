@@ -34,14 +34,14 @@ const GasCustomization = ({
   return (
     <>
       {show && (
-        <ContentContainer>
+        <ContentContainer mt={2}>
           <Box
             display='flex'
             justifyContent='space-between'
             alignItems='center'
           >
-            <Label mt={3} mb={3}>
-              Submit a custom fee
+            <Label my={3} color='core.darkgray'>
+              Transfers complete faster with a higher gas price.
             </Label>
             <Label
               mt={0}
@@ -72,9 +72,6 @@ const GasCustomization = ({
               setGasLimit(new FilecoinNumber(e.target.value || '0', 'attofil'))
             }
           />
-          <Label my={3} color='core.darkgray'>
-            Transfers complete faster with a higher gas price.
-          </Label>
         </ContentContainer>
       )}
     </>
