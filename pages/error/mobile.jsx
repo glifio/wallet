@@ -29,7 +29,7 @@ export default () => {
         </Box>
         <BigTitle my={5}>Not yet</BigTitle>
         <Title my={5} textAlign='left'>
-          Glif Wallet isn't ready for your phone, yet.
+          Glif Wallet isn't ready for your phone.
         </Title>
         <Title my={5} textAlign='left'>
           Please access it from your computer instead.
