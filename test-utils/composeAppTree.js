@@ -1,12 +1,19 @@
 import React from 'react'
+import cloneDeep from 'lodash.clonedeep'
+
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { Provider } from 'react-redux'
 
 import { initializeStore } from '../test-utils/index'
 import { initialState } from '../store/states'
 
-const defaultPreset = {}
+const presets = {
+  preOnboard: cloneDeep(initialState),
+  postOnboard: cloneDeep({ ...initialState, wallets: [] })
+}
+const preOnboard = {}
+const postOnboard = {}
 
-const composeAppTree = (preset = defaultPreset, options = {}) => {
+const composeAppTree = (preset = presets[preOnboard], options = {}) => {
   const state = {}
 }
