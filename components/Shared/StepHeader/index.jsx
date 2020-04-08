@@ -13,6 +13,7 @@ const StepHeader = ({
   Icon,
   loading,
   totalSteps,
+  showStepper,
   error
 }) => {
   return (
@@ -28,20 +29,21 @@ const StepHeader = ({
         {loading && !error && <Loading />}
         {!loading && !error && <Glyph Icon={Icon} acronym={glyphAcronym} />}
       </MenuItem>
-
-      <MenuItem>
-        <Stepper
-          textColor={error ? 'status.fail.foreground' : 'core.nearblack'}
-          completedDotColor={
-            error ? 'status.fail.foreground' : 'status.success.background'
-          }
-          incompletedDotColor='status.inactive'
-          step={currentStep}
-          totalSteps={totalSteps}
-          ml={4}
-          my={0}
-        />
-      </MenuItem>
+      {showStepper && (
+        <MenuItem>
+          <Stepper
+            textColor={error ? 'status.fail.foreground' : 'core.nearblack'}
+            completedDotColor={
+              error ? 'status.fail.foreground' : 'status.success.background'
+            }
+            incompletedDotColor='status.inactive'
+            step={currentStep}
+            totalSteps={totalSteps}
+            ml={4}
+            my={0}
+          />
+        </MenuItem>
+      )}
     </Menu>
   )
 }
@@ -52,13 +54,15 @@ StepHeader.propTypes = {
   glyphAcronym: PropTypes.string,
   Icon: PropTypes.object,
   totalSteps: PropTypes.number.isRequired,
-  error: PropTypes.bool
+  error: PropTypes.bool,
+  showStepper: PropTypes.bool
 }
 
 StepHeader.defaultProps = {
   loading: false,
   error: false,
-  glyphAcronym: ''
+  glyphAcronym: '',
+  showStepper: true
 }
 
 export default StepHeader
