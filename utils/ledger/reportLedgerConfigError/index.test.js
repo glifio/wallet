@@ -12,7 +12,7 @@ describe('reportLedgerConfigError', () => {
   })
 
   test('it gives ledgerLocked message', () => {
-    const error = reportLedgerConfigError({ ledgerLocked: true })
+    const error = reportLedgerConfigError({ locked: true })
     expect(error).toEqual('Is your Ledger device unlocked?')
   })
 
@@ -47,7 +47,7 @@ describe('hasLedgerError', () => {
   })
 
   test('returns true for ledgerLocked error', () => {
-    const error = hasLedgerError({ ledgerLocked: true })
+    const error = hasLedgerError({ locked: true })
     expect(error).toEqual(true)
   })
 
