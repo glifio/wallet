@@ -169,19 +169,26 @@ const theme = {
       fontFamily: 'RT-Alias-Grotesk'
     },
     num: {
+      m: {
+        fontSize: 4,
+        fontWeight: 400,
+        margin: 0,
+        lineHeight: 'title',
+        fontFamily: 'RT-Alias-Grotesk'
+      },
       l: {
         fontSize: 5,
         fontWeight: 700,
         margin: 0,
         lineHeight: 'title',
-        fontFamily: 'RT-Alias-Medium'
+        fontFamily: 'RT-Alias-Grotesk'
       },
       xl: {
         fontSize: 6,
         fontWeight: 700,
         margin: 0,
         lineHeight: 'solid',
-        fontFamily: 'RT-Alias-Medium'
+        fontFamily: 'RT-Alias-Grotesk'
       }
     }
   },
