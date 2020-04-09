@@ -407,64 +407,63 @@ const Send = ({ close }) => {
               </Box>
             </Box>
           </Box>
-          {!customizingGas && (
-            <FloatingContainer>
-              {step === 2 && wallet.type === LEDGER ? (
-                <Text width='100%' textAlign='center' px={4}>
-                  Confirm or reject the transaction on your Ledger Device.
-                </Text>
-              ) : (
-                <>
-                  <Button
-                    type='button'
-                    title='Back'
-                    variant='secondary'
-                    border={0}
-                    borderRight={1}
-                    borderRadius={0}
-                    borderColor='core.lightgray'
-                    onClick={() => {
-                      if (step === 2) setStep(1)
-                      else {
-                        setAttemptingTx(false)
-                        setUncaughtError('')
-                        resetLedgerState()
-                        close()
-                      }
-                    }}
-                    css={`
-                      /* 'css' operation is used here to override its inherited border-radius property */
-                      border-radius: 0px;
-                    `}
-                  />
-                  <Button
-                    border={0}
-                    borderRadius={0}
-                    disabled={
-                      !!(
-                        hasError() ||
-                        !isValidForm(
-                          toAddress,
-                          value,
-                          wallet.balance,
-                          toAddressError,
-                          valueError
-                        )
-                      )
+          <FloatingContainer>
+            {step === 2 && wallet.type === LEDGER && !hasError() ? (
+              <Text width='100%' textAlign='center' px={4}>
+                Confirm or reject the transaction on your Ledger Device.
+              </Text>
+            ) : (
+              <>
+                <Button
+                  type='button'
+                  title='Back'
+                  variant='secondary'
+                  border={0}
+                  borderRight={1}
+                  borderRadius={0}
+                  borderColor='core.lightgray'
+                  onClick={() => {
+                    setAttemptingTx(false)
+                    setUncaughtError('')
+                    resetLedgerState()
+                    if (step === 1) {
+                      close()
+                    } else {
+                      setStep(step - 1)
                     }
-                    type='submit'
-                    title={step === 1 ? 'Next' : 'Confirm'}
-                    variant='primary'
-                    onClick={noop}
-                    css={`
-                      /* 'css' operation is used here to override its inherited border-radius property */
-                      border-radius: 0px;
-                    `}
-                  />
-                </>
-              )}
-            </FloatingContainer>
-          )}
+                  }}
+                  css={`
+                    /* 'css' operation is used here to override its inherited border-radius property */
+                    border-radius: 0px;
+                  `}
+                />
+                <Button
+                  border={0}
+                  borderRadius={0}
+                  disabled={
+                    !!(
+                      hasError() ||
+                      !isValidForm(
+                        toAddress,
+                        value,
+                        wallet.balance,
+                        toAddressError,
+                        valueError
+                      )
+                    )
+                  }
+                  type='submit'
+                  title={step === 1 ? 'Next' : 'Confirm'}
+                  variant='primary'
+                  onClick={noop}
+                  css={`
+                    /* 'css' operation is used here to override its inherited border-radius property */
+                    border-radius: 0px;
+                  `}
+                />
+              </>
+            )}
+          </FloatingContainer>
         </SendCardForm>
       </SendContainer>
     </>
