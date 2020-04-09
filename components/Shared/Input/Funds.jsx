@@ -188,12 +188,17 @@ const Funds = forwardRef(
           flexGrow='1'
           width='100%'
           maxWidth={11}
-          p={3}
+          py={3}
+          px={4}
           textAlign='center'
           borderColor='input.border'
           bg={error && 'input.background.invalid'}
         >
-          {error ? <Text>{error}</Text> : <Label>Amount</Label>}
+          {error ? (
+            <Text textAlign='left'>{error}</Text>
+          ) : (
+            <Label>Amount</Label>
+          )}
         </Box>
         <Box display='inline-block' width='100%'>
           <Box position='relative' display='block' height='80px' width='100%'>
@@ -229,6 +234,7 @@ const Funds = forwardRef(
                 onTimerFil(filAmount)
               }}
               height='100%'
+              fontSize={5}
               onChange={onFilChange}
               value={formatFilValue(filAmount)}
               placeholder='0'
@@ -258,6 +264,7 @@ const Funds = forwardRef(
                 onTimerFiat(fiatAmount)
               }}
               height='100%'
+              fontSize={5}
               onChange={onFiatChange}
               value={formatFiatValue(fiatAmount)}
               placeholder={converterError ? 'Error fetching amount' : '0'}
