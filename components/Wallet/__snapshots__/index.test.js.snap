@@ -1,0 +1,305 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WalletView it renders correctly 1`] = `
+<div
+  class="SidebarLayout__Wrapper-gwfrwp-0 fSFMLo"
+>
+  <div
+    class="SidebarLayout__Sidebar-gwfrwp-1 VvNzW"
+    height="100vh"
+  >
+    <div
+      class="Box-tuskkk-0 gQWkUU"
+      display="flex"
+      width="100%"
+    >
+      <button
+        class="NetworkSwitcherGlyph__NetworkSwitcherButton-svtr5s-0 ecYeVS"
+        display="flex"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="1"
+      >
+        Testnet
+      </button>
+      <button
+        class="NetworkSwitcherGlyph__NetworkSwitcherButton-svtr5s-0 gWYxtz"
+        display="flex"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="1"
+      >
+        Mainnet
+      </button>
+    </div>
+    <div
+      class="Box-tuskkk-0 gcUhlS"
+      color="purple"
+      display="flex"
+      height="300px"
+      width="300px"
+    >
+      <div
+        class="Box-tuskkk-0 hyonjk"
+        color="card.account.color"
+        display="flex"
+      >
+        <div
+          class="Box-tuskkk-0 jFCwkq"
+          color="card.account.color"
+          display="flex"
+          size="6"
+        >
+          <h3
+            class="Glyph__GlyphText-sc-1xcgbq7-0 fuRHwt"
+          >
+            Ac
+          </h3>
+        </div>
+        <p
+          class="Typography__TextBase-sc-1uzug1e-2 LZLLr"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          Account
+        </p>
+      </div>
+      <div
+        class="Box-tuskkk-0 jGWrYN"
+        color="card.account.color"
+      >
+        <h1
+          class="Typography__H1Base-sc-1uzug1e-0 jFAtte"
+          font-family="RT-Alias-Medium"
+          font-size="6"
+          font-weight="700"
+        >
+          Prime
+        </h1>
+        <div
+          class="Box-tuskkk-0 cDDaVE"
+          display="flex"
+        >
+          <h2
+            class="Typography__H2Base-sc-1uzug1e-1 dXRWZg"
+            font-family="RT-Alias-Grotesk"
+            font-size="5"
+            font-weight="1"
+          >
+            t1z22 ... 6wgi
+          </h2>
+          <div
+            class="Box-tuskkk-0 AccountCard__CopyAddress-sc-56bj9g-1 iWpbSq"
+            display="flex"
+          >
+            <button
+              class="IconButtons__IconButtonBase-sc-1st7bxm-0 dibZhS"
+              display="inline-block"
+            >
+              <svg
+                class="Icons__IconBase-jyp17t-0 hfFiWB"
+                fill="none"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  fill="#1A0066"
+                  height="12"
+                  width="12"
+                  x="8"
+                  y="4"
+                />
+                <rect
+                  fill="#E0D7FE"
+                  height="12"
+                  width="12"
+                  x="4"
+                  y="8"
+                />
+              </svg>
+            </button>
+            <h4
+              class="Typography__H4Base-sc-1uzug1e-3 gfSgmy AccountCard__LabelCopy-sc-56bj9g-0 jsbuxv"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Copy
+            </h4>
+          </div>
+        </div>
+      </div>
+      <div
+        class="Box-tuskkk-0 dsKMJn"
+        display="flex"
+      >
+        <button
+          class="BaseButton-sc-1iyr4rl-0 bjpmLG"
+          font-size="3"
+          height="max-content"
+          type="button"
+        >
+          Switch
+        </button>
+      </div>
+    </div>
+    <div
+      class="Box-tuskkk-0 kaJSFe"
+      display="flex"
+      width="300px"
+    >
+      <div
+        class="Box-tuskkk-0 gUAjrr"
+        display="flex"
+      >
+        <h4
+          class="Typography__H4Base-sc-1uzug1e-3 dvsHEz"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          Balance
+        </h4>
+        <div
+          class="Box-tuskkk-0 gUAjrr"
+          display="flex"
+        >
+          <h4
+            class="Typography__H4Base-sc-1uzug1e-3 bUeWBY ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+            color="core.black"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Approx.
+          </h4>
+          <div
+            class="Box-tuskkk-0 jjDyck"
+            width="2"
+          />
+          <h4
+            class="Typography__H4Base-sc-1uzug1e-3 AYXIM ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+            color="core.darkgray"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Exact
+          </h4>
+        </div>
+      </div>
+      <div
+        class="Box-tuskkk-0 fZmrbs"
+        overflow="hidden"
+      >
+        <h2
+          class="Typography__H2Base-sc-1uzug1e-1 kMGPcr BalanceCard___StyledNum-nx0aiw-0 eMLohY"
+          color="card.balance.color"
+          font-family="RT-Alias-Medium"
+          font-size="6"
+          font-weight="700"
+        >
+          &gt; 999.9B
+           FIL
+        </h2>
+        <h2
+          class="Typography__H2Base-sc-1uzug1e-1 jNkuEy"
+          color="core.darkgray"
+          font-family="RT-Alias-Medium"
+          font-size="5"
+          font-weight="700"
+        >
+          5 USD
+        </h2>
+      </div>
+      <div
+        class="Box-tuskkk-0 MrVvn"
+        display="flex"
+      >
+        <button
+          class="BaseButton-sc-1iyr4rl-0 gIInmt"
+          font-size="3"
+          type="button"
+          width="120"
+        >
+          Receive
+        </button>
+        <button
+          class="BaseButton-sc-1iyr4rl-0 bpdjDz"
+          font-size="3"
+          type="button"
+          width="120"
+        >
+          Send
+        </button>
+      </div>
+    </div>
+    <button
+      class="BaseButton-sc-1iyr4rl-0 Wallet___StyledButtonLogout-enfiyv-0 dMwnLp"
+      display="flex"
+      font-size="3"
+      width="100%"
+    >
+      Logout
+    </button>
+  </div>
+  <div
+    class="SidebarLayout__Content-gwfrwp-2 eAcbru"
+  >
+    <div
+      class="Box-tuskkk-0 kgyUWF"
+      width="100%"
+    >
+      <div
+        class="Box-tuskkk-0 cgmsIS"
+        display="flex"
+      >
+        <div
+          class="Box-tuskkk-0 gKEPob"
+          color="core.primary"
+          display="flex"
+          size="6"
+        >
+          <h3
+            class="Glyph__GlyphText-sc-1xcgbq7-0 fuRHwt"
+          >
+            Tx
+          </h3>
+        </div>
+        <p
+          class="Typography__TextBase-sc-1uzug1e-2 kgUsKE"
+          color="core.primary"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          Transaction History
+        </p>
+      </div>
+      <div
+        class="Box-tuskkk-0 kCebST"
+        display="flex"
+      >
+        <span
+          class="LoaderGlyph__LoaderGlyphParent-fi66in-0 dqjuhj"
+        >
+          <span
+            class="LoaderGlyph__LoaderGlyphChild-fi66in-1 guWxTG"
+          />
+        </span>
+        <h4
+          class="Typography__H4Base-sc-1uzug1e-3 kTkIxR"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          Loading...
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>
+`;
