@@ -1,5 +1,4 @@
 import React from 'react'
-import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import Box from '../Box'
 import Button from '../Button'
@@ -8,13 +7,14 @@ import OnboardCard from '../Card/OnboardCard'
 import { StyledATag } from '../Link'
 import { Text, Title } from '../Typography'
 
-const WarningCard = ({ description, linkhref, linkDisplay, title }) => {
-  const router = useRouter()
-  const sendHome = () => {
-    const params = new URLSearchParams(router.query)
-    router.replace(`/onboard?${params.toString()}`)
-  }
-
+const WarningCard = ({
+  description,
+  linkhref,
+  linkDisplay,
+  title,
+  onBack,
+  onAccept
+}) => {
   return (
     <Box
       display='flex'
@@ -25,7 +25,12 @@ const WarningCard = ({ description, linkhref, linkDisplay, title }) => {
       justifyContent='center'
       p={4}
     >
-      <Box display='flex' justifyContent='center' width='100%'>
+      <Box
+        display='flex'
+        flexDirection='column'
+        justifyContent='center'
+        alignContent='center'
+      >
         <OnboardCard
           display='flex'
           flexDirection='column'
@@ -56,10 +61,15 @@ const WarningCard = ({ description, linkhref, linkDisplay, title }) => {
             </StyledATag>
           </Box>
         </OnboardCard>
-      </Box>
-      <Box display='flex' justifyContent='space-between'>
-        <Button mt={5} variant='secondary' title='Back' onClick={sendHome} />
-        <Button mt={5} variant='primary' title='I Understand' onClick='' />
+        <Box display='flex' justifyContent='space-between'>
+          <Button mt={5} variant='secondary' title='Back' onClick={onBack} />
+          <Button
+            mt={5}
+            variant='primary'
+            title='I Understand'
+            onClick={onAccept}
+          />
+        </Box>
       </Box>
     </Box>
   )
@@ -69,7 +79,9 @@ WarningCard.propTypes = {
   description: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   linkhref: PropTypes.string.isRequired,
-  linkDisplay: PropTypes.string.isRequired
+  linkDisplay: PropTypes.string.isRequired,
+  onBack: PropTypes.func.isRequired,
+  onAccept: PropTypes.func.isRequired
 }
 
 export default WarningCard
