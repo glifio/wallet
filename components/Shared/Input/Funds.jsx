@@ -12,14 +12,17 @@ import noop from '../../../utils/noop'
 import { useConverter } from '../../../lib/Converter'
 
 export const DenomTag = styled(Box).attrs(props => ({
-  width: 6,
-  bg: 'core.primary',
-  color: 'core.white',
+  display: 'flex',
+  height: '100%',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: 7,
+  fontSize: 3,
+  color: 'core.primary',
   ...props
 }))`
   text-align: center;
   position: absolute;
-  border-radius: 4px;
   ${color} 
   ${space} 
   ${layout}
@@ -209,15 +212,14 @@ const Funds = forwardRef(
               fontSize={5}
               fontFamily='sansSerif'
               paddingBottom='4px'
+              zIndex='999'
             >
               {'\u003D'}
             </Box>
-            <DenomTag top='30px' left='30px'>
+            <DenomTag top='0px' left='0px'>
               FIL
             </DenomTag>
-            <DenomTag top='110px' left='30px'>
-              USD
-            </DenomTag>
+
             <RawNumberInput
               onFocus={() => {
                 setError('')
@@ -238,11 +240,15 @@ const Funds = forwardRef(
             />
           </Box>
           <Box
+            position='relative'
             display='block'
             height='80px'
             borderTop={1}
             borderColor='input.border'
           >
+            <DenomTag top='0px' left='0px'>
+              USD
+            </DenomTag>
             <RawNumberInput
               onFocus={() => {
                 setError('')
