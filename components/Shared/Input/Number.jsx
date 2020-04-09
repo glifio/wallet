@@ -6,7 +6,10 @@ import InputWrapper from './InputWrapper'
 import Box from '../Box'
 import { Label } from '../Typography'
 
-export const RawNumberInput = styled(BaseInput).attrs(props => ({ ...props }))`
+export const RawNumberInput = styled(BaseInput).attrs(props => ({
+  fontSize: 5,
+  ...props
+}))`
   ::-webkit-outer-spin-button,
   ::-webkit-inner-spin-button {
     -webkit-appearance: none;

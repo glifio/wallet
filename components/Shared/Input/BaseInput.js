@@ -1,5 +1,12 @@
 import styled from 'styled-components'
-import { space, color, layout, border, flexbox } from 'styled-system'
+import {
+  space,
+  color,
+  layout,
+  border,
+  flexbox,
+  typography
+} from 'styled-system'
 
 export default styled.input.attrs(props => ({
   display: 'inline-block',
@@ -39,7 +46,7 @@ export default styled.input.attrs(props => ({
       return props.theme.colors.input.background.active
     }};
   }
-
+  ${typography}
   ${color}
   ${space}
   ${layout}
