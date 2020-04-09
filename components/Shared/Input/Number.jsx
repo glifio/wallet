@@ -1,5 +1,5 @@
 import { forwardRef } from 'react'
-import { func, string, bool } from 'prop-types'
+import { func, string, bool, obj } from 'prop-types'
 import styled from 'styled-components'
 import BaseInput from './BaseInput'
 import InputWrapper from './InputWrapper'
@@ -7,7 +7,6 @@ import Box from '../Box'
 import { Label } from '../Typography'
 
 export const RawNumberInput = styled(BaseInput).attrs(props => ({
-  fontSize: 5,
   ...props
 }))`
   ::-webkit-outer-spin-button,
@@ -21,7 +20,17 @@ export const RawNumberInput = styled(BaseInput).attrs(props => ({
 
 export const NumberInput = forwardRef(
   (
-    { onChange, value, placeholder, label, error, setError, valid, ...props },
+    {
+      onChange,
+      value,
+      placeholder,
+      label,
+      error,
+      setError,
+      valid,
+      fontSize,
+      ...props
+    },
     ref
   ) => {
     return (
@@ -40,6 +49,7 @@ export const NumberInput = forwardRef(
             error={error}
             setError={setError}
             placeholder={placeholder}
+            fontSize={fontSize}
           />
         </Box>
       </InputWrapper>
@@ -54,12 +64,14 @@ NumberInput.propTypes = {
   placeholder: string,
   disabled: bool,
   error: string,
-  valid: bool
+  valid: bool,
+  fontSize: obj
 }
 
 NumberInput.defaultProps = {
   value: '',
   disabled: false,
   onChange: () => {},
-  label: ''
+  label: '',
+  fontSize: 2
 }
