@@ -163,9 +163,7 @@ const Send = ({ close }) => {
     const message = await submitMsg()
     if (message) {
       dispatch(confirmMessage(toLowerCaseMsgFields(message)))
-      setValue({
-        fil: new FilecoinNumber('0', 'fil')
-      })
+      setValue(new FilecoinNumber('0', 'fil'))
       setAttemptingTx(false)
       close()
     }
