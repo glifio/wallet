@@ -15,6 +15,7 @@ import {
   Input,
   Glyph,
   Text,
+  Num,
   Button,
   ButtonClose,
   Title,
@@ -386,7 +387,8 @@ const Send = ({ close }) => {
                 textAlign='right'
                 pl={4}
               >
-                <Title
+                <Num
+                  size='l'
                   css={`
                     word-wrap: break-word;
                   `}
@@ -396,8 +398,8 @@ const Send = ({ close }) => {
                     ? `${value.plus(estimatedGasUsed).toString()}`
                     : '0'}{' '}
                   FIL
-                </Title>
-                <Title color='core.darkgray'>
+                </Num>
+                <Num size='m' color='core.darkgray'>
                   {!converterError && value.isGreaterThan(0)
                     ? `${makeFriendlyBalance(
                         converter.fromFIL(value.plus(estimatedGasUsed)),
@@ -405,7 +407,7 @@ const Send = ({ close }) => {
                       )}`
                     : '0'}{' '}
                   USD
-                </Title>
+                </Num>
               </Box>
             </Box>
           </Box>
