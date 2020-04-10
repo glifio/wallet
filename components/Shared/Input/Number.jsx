@@ -1,10 +1,40 @@
 import { forwardRef } from 'react'
-import { func, string, bool, obj } from 'prop-types'
+import { func, string, bool, obj, node } from 'prop-types'
+import { space, color, layout, border, flexbox } from 'styled-system'
 import styled from 'styled-components'
 import BaseInput from './BaseInput'
 import InputWrapper from './InputWrapper'
 import Box from '../Box'
 import { Label } from '../Typography'
+
+export const Tag = styled(Box).attrs(props => ({
+  display: 'flex',
+  height: '100%',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: 7,
+  fontSize: 3,
+  color: 'core.primary',
+  ...props
+}))`
+  text-align: center;
+  position: absolute;
+  ${color} 
+  ${space} 
+  ${layout}
+  ${border}
+  ${flexbox};
+`
+
+export const DenomTag = props => (
+  <Box>
+    <Tag {...props}>{props.children}</Tag>
+  </Box>
+)
+
+DenomTag.propTypes = {
+  children: node
+}
 
 export const RawNumberInput = styled(BaseInput).attrs(props => ({
   ...props
@@ -21,6 +51,7 @@ export const RawNumberInput = styled(BaseInput).attrs(props => ({
 export const NumberInput = forwardRef(
   (
     {
+      denom,
       onChange,
       value,
       placeholder,
@@ -35,11 +66,21 @@ export const NumberInput = forwardRef(
   ) => {
     return (
       <InputWrapper ref={ref} {...props}>
-        <Box display='flex' alignItems='center'>
+        <Box position='relative' display='flex' alignItems='center'>
           {label && (
             <Box display='inline-block' px={3} minWidth={9} textAlign='center'>
               <Label>{label}</Label>
             </Box>
+          )}
+          {denom && (
+            <DenomTag
+              css={`
+                top: 0px;
+                left: 0px;
+              `}
+            >
+              {denom}
+            </DenomTag>
           )}
           <RawNumberInput
             type='number'
@@ -65,7 +106,8 @@ NumberInput.propTypes = {
   disabled: bool,
   error: string,
   valid: bool,
-  fontSize: obj
+  fontSize: obj,
+  denom: string
 }
 
 NumberInput.defaultProps = {
