@@ -63,7 +63,7 @@ describe('isMobileOrTablet', () => {
 
     delete window.navigator
     window.navigator = {
-      vendor: 'Apple',
+      vendor: 'Google Inc.',
       userAgent:
         'Mozilla/5.0 (Linux; Android 7.0; Moto G (5) Build/NPPS25.137-93-4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109'
     }
