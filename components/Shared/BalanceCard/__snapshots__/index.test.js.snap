@@ -1,17 +1,177 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BalanceCard it renders correctly 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  min-height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  width: 8px;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  overflow: hidden;
+}
+
+.c11 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c12 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c12:hover {
+  opacity: 0.8;
+}
+
+.c13 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 8px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c13:hover {
+  opacity: 0.8;
+}
+
+.c8 {
+  color: #262626;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c10 {
+  color: #666666;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c3 {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c6 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c4:hover {
+  cursor: pointer;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c9 {
+  word-wrap: break-word;
+}
+
 <div
-  class="Box-tuskkk-0 kaJSFe"
+  class="c0"
   display="flex"
   width="300px"
 >
   <div
-    class="Box-tuskkk-0 gUAjrr"
+    class="c1"
     display="flex"
   >
     <h4
-      class="Typography__H4Base-sc-1uzug1e-3 dvsHEz"
+      class="c2"
       font-family="RT-Alias-Grotesk"
       font-size="2"
       font-weight="400"
@@ -19,11 +179,11 @@ exports[`BalanceCard it renders correctly 1`] = `
       Balance
     </h4>
     <div
-      class="Box-tuskkk-0 gUAjrr"
+      class="c1"
       display="flex"
     >
       <h4
-        class="Typography__H4Base-sc-1uzug1e-3 bUeWBY ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        class="c3 c4"
         color="core.black"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -32,11 +192,11 @@ exports[`BalanceCard it renders correctly 1`] = `
         Approx.
       </h4>
       <div
-        class="Box-tuskkk-0 jjDyck"
+        class="c5"
         width="2"
       />
       <h4
-        class="Typography__H4Base-sc-1uzug1e-3 AYXIM ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        class="c6 c4"
         color="core.darkgray"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -47,11 +207,11 @@ exports[`BalanceCard it renders correctly 1`] = `
     </div>
   </div>
   <div
-    class="Box-tuskkk-0 fZmrbs"
+    class="c7"
     overflow="hidden"
   >
     <h2
-      class="Typography__H2Base-sc-1uzug1e-1 kMGPcr BalanceCard___StyledNum-nx0aiw-0 eMLohY"
+      class="c8 c9"
       color="card.balance.color"
       font-family="RT-Alias-Medium"
       font-size="6"
@@ -61,7 +221,7 @@ exports[`BalanceCard it renders correctly 1`] = `
        FIL
     </h2>
     <h2
-      class="Typography__H2Base-sc-1uzug1e-1 jNkuEy"
+      class="c10"
       color="core.darkgray"
       font-family="RT-Alias-Medium"
       font-size="5"
@@ -71,11 +231,11 @@ exports[`BalanceCard it renders correctly 1`] = `
     </h2>
   </div>
   <div
-    class="Box-tuskkk-0 MrVvn"
+    class="c11"
     display="flex"
   >
     <button
-      class="BaseButton-sc-1iyr4rl-0 gIInmt"
+      class="c12"
       font-size="3"
       type="button"
       width="120"
@@ -83,7 +243,7 @@ exports[`BalanceCard it renders correctly 1`] = `
       Receive
     </button>
     <button
-      class="BaseButton-sc-1iyr4rl-0 bpdjDz"
+      class="c13"
       font-size="3"
       type="button"
       width="120"
@@ -95,17 +255,177 @@ exports[`BalanceCard it renders correctly 1`] = `
 `;
 
 exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  min-height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  width: 8px;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  overflow: hidden;
+}
+
+.c11 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c12 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c12:hover {
+  opacity: 0.8;
+}
+
+.c13 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 8px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c13:hover {
+  opacity: 0.8;
+}
+
+.c8 {
+  color: #262626;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c10 {
+  color: #666666;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c6 {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c3 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c4:hover {
+  cursor: pointer;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c9 {
+  word-wrap: break-word;
+}
+
 <div
-  class="Box-tuskkk-0 kaJSFe"
+  class="c0"
   display="flex"
   width="300px"
 >
   <div
-    class="Box-tuskkk-0 gUAjrr"
+    class="c1"
     display="flex"
   >
     <h4
-      class="Typography__H4Base-sc-1uzug1e-3 dvsHEz"
+      class="c2"
       font-family="RT-Alias-Grotesk"
       font-size="2"
       font-weight="400"
@@ -113,11 +433,11 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
       Balance
     </h4>
     <div
-      class="Box-tuskkk-0 gUAjrr"
+      class="c1"
       display="flex"
     >
       <h4
-        class="Typography__H4Base-sc-1uzug1e-3 AYXIM ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        class="c3 c4"
         color="core.darkgray"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -126,11 +446,11 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
         Approx.
       </h4>
       <div
-        class="Box-tuskkk-0 jjDyck"
+        class="c5"
         width="2"
       />
       <h4
-        class="Typography__H4Base-sc-1uzug1e-3 bUeWBY ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        class="c6 c4"
         color="core.black"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -141,11 +461,11 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
     </div>
   </div>
   <div
-    class="Box-tuskkk-0 fZmrbs"
+    class="c7"
     overflow="hidden"
   >
     <h2
-      class="Typography__H2Base-sc-1uzug1e-1 kMGPcr BalanceCard___StyledNum-nx0aiw-0 eMLohY"
+      class="c8 c9"
       color="card.balance.color"
       font-family="RT-Alias-Medium"
       font-size="6"
@@ -155,7 +475,7 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
        FIL
     </h2>
     <h2
-      class="Typography__H2Base-sc-1uzug1e-1 jNkuEy"
+      class="c10"
       color="core.darkgray"
       font-family="RT-Alias-Medium"
       font-size="5"
@@ -165,11 +485,11 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
     </h2>
   </div>
   <div
-    class="Box-tuskkk-0 MrVvn"
+    class="c11"
     display="flex"
   >
     <button
-      class="BaseButton-sc-1iyr4rl-0 gIInmt"
+      class="c12"
       font-size="3"
       type="button"
       width="120"
@@ -177,7 +497,7 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
       Receive
     </button>
     <button
-      class="BaseButton-sc-1iyr4rl-0 bpdjDz"
+      class="c13"
       font-size="3"
       type="button"
       width="120"
@@ -189,17 +509,177 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
 `;
 
 exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  min-height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  width: 8px;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  overflow: hidden;
+}
+
+.c11 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c12 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c12:hover {
+  opacity: 0.8;
+}
+
+.c13 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 8px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c13:hover {
+  opacity: 0.8;
+}
+
+.c8 {
+  color: #262626;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c10 {
+  color: #666666;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c3 {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c6 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c4:hover {
+  cursor: pointer;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c9 {
+  word-wrap: break-word;
+}
+
 <div
-  class="Box-tuskkk-0 kaJSFe"
+  class="c0"
   display="flex"
   width="300px"
 >
   <div
-    class="Box-tuskkk-0 gUAjrr"
+    class="c1"
     display="flex"
   >
     <h4
-      class="Typography__H4Base-sc-1uzug1e-3 dvsHEz"
+      class="c2"
       font-family="RT-Alias-Grotesk"
       font-size="2"
       font-weight="400"
@@ -207,11 +687,11 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
       Balance
     </h4>
     <div
-      class="Box-tuskkk-0 gUAjrr"
+      class="c1"
       display="flex"
     >
       <h4
-        class="Typography__H4Base-sc-1uzug1e-3 bUeWBY ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        class="c3 c4"
         color="core.black"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -220,11 +700,11 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
         Approx.
       </h4>
       <div
-        class="Box-tuskkk-0 jjDyck"
+        class="c5"
         width="2"
       />
       <h4
-        class="Typography__H4Base-sc-1uzug1e-3 AYXIM ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        class="c6 c4"
         color="core.darkgray"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -235,11 +715,11 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
     </div>
   </div>
   <div
-    class="Box-tuskkk-0 fZmrbs"
+    class="c7"
     overflow="hidden"
   >
     <h2
-      class="Typography__H2Base-sc-1uzug1e-1 kMGPcr BalanceCard___StyledNum-nx0aiw-0 eMLohY"
+      class="c8 c9"
       color="card.balance.color"
       font-family="RT-Alias-Medium"
       font-size="6"
@@ -249,7 +729,7 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
        FIL
     </h2>
     <h2
-      class="Typography__H2Base-sc-1uzug1e-1 jNkuEy"
+      class="c10"
       color="core.darkgray"
       font-family="RT-Alias-Medium"
       font-size="5"
@@ -259,11 +739,11 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
     </h2>
   </div>
   <div
-    class="Box-tuskkk-0 MrVvn"
+    class="c11"
     display="flex"
   >
     <button
-      class="BaseButton-sc-1iyr4rl-0 gIInmt"
+      class="c12"
       font-size="3"
       type="button"
       width="120"
@@ -271,7 +751,7 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
       Receive
     </button>
     <button
-      class="BaseButton-sc-1iyr4rl-0 bpdjDz"
+      class="c13"
       font-size="3"
       type="button"
       width="120"
@@ -283,17 +763,177 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
 `;
 
 exports[`BalanceCard it renders pretty million dollar balances 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  min-height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  width: 8px;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  overflow: hidden;
+}
+
+.c11 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c12 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c12:hover {
+  opacity: 0.8;
+}
+
+.c13 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 8px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c13:hover {
+  opacity: 0.8;
+}
+
+.c8 {
+  color: #262626;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c10 {
+  color: #666666;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c3 {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c6 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c4:hover {
+  cursor: pointer;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c9 {
+  word-wrap: break-word;
+}
+
 <div
-  class="Box-tuskkk-0 kaJSFe"
+  class="c0"
   display="flex"
   width="300px"
 >
   <div
-    class="Box-tuskkk-0 gUAjrr"
+    class="c1"
     display="flex"
   >
     <h4
-      class="Typography__H4Base-sc-1uzug1e-3 dvsHEz"
+      class="c2"
       font-family="RT-Alias-Grotesk"
       font-size="2"
       font-weight="400"
@@ -301,11 +941,11 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
       Balance
     </h4>
     <div
-      class="Box-tuskkk-0 gUAjrr"
+      class="c1"
       display="flex"
     >
       <h4
-        class="Typography__H4Base-sc-1uzug1e-3 bUeWBY ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        class="c3 c4"
         color="core.black"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -314,11 +954,11 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
         Approx.
       </h4>
       <div
-        class="Box-tuskkk-0 jjDyck"
+        class="c5"
         width="2"
       />
       <h4
-        class="Typography__H4Base-sc-1uzug1e-3 AYXIM ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        class="c6 c4"
         color="core.darkgray"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -329,11 +969,11 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
     </div>
   </div>
   <div
-    class="Box-tuskkk-0 fZmrbs"
+    class="c7"
     overflow="hidden"
   >
     <h2
-      class="Typography__H2Base-sc-1uzug1e-1 kMGPcr BalanceCard___StyledNum-nx0aiw-0 eMLohY"
+      class="c8 c9"
       color="card.balance.color"
       font-family="RT-Alias-Medium"
       font-size="6"
@@ -343,7 +983,7 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
        FIL
     </h2>
     <h2
-      class="Typography__H2Base-sc-1uzug1e-1 jNkuEy"
+      class="c10"
       color="core.darkgray"
       font-family="RT-Alias-Medium"
       font-size="5"
@@ -353,11 +993,11 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
     </h2>
   </div>
   <div
-    class="Box-tuskkk-0 MrVvn"
+    class="c11"
     display="flex"
   >
     <button
-      class="BaseButton-sc-1iyr4rl-0 gIInmt"
+      class="c12"
       font-size="3"
       type="button"
       width="120"
@@ -365,7 +1005,7 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
       Receive
     </button>
     <button
-      class="BaseButton-sc-1iyr4rl-0 bpdjDz"
+      class="c13"
       font-size="3"
       type="button"
       width="120"
@@ -377,17 +1017,177 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
 `;
 
 exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  min-height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  width: 8px;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  overflow: hidden;
+}
+
+.c11 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c12 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c12:hover {
+  opacity: 0.8;
+}
+
+.c13 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 8px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c13:hover {
+  opacity: 0.8;
+}
+
+.c8 {
+  color: #262626;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c10 {
+  color: #666666;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c3 {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c6 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c4:hover {
+  cursor: pointer;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c9 {
+  word-wrap: break-word;
+}
+
 <div
-  class="Box-tuskkk-0 kaJSFe"
+  class="c0"
   display="flex"
   width="300px"
 >
   <div
-    class="Box-tuskkk-0 gUAjrr"
+    class="c1"
     display="flex"
   >
     <h4
-      class="Typography__H4Base-sc-1uzug1e-3 dvsHEz"
+      class="c2"
       font-family="RT-Alias-Grotesk"
       font-size="2"
       font-weight="400"
@@ -395,11 +1195,11 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
       Balance
     </h4>
     <div
-      class="Box-tuskkk-0 gUAjrr"
+      class="c1"
       display="flex"
     >
       <h4
-        class="Typography__H4Base-sc-1uzug1e-3 bUeWBY ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        class="c3 c4"
         color="core.black"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -408,11 +1208,11 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
         Approx.
       </h4>
       <div
-        class="Box-tuskkk-0 jjDyck"
+        class="c5"
         width="2"
       />
       <h4
-        class="Typography__H4Base-sc-1uzug1e-3 AYXIM ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        class="c6 c4"
         color="core.darkgray"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -423,11 +1223,11 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
     </div>
   </div>
   <div
-    class="Box-tuskkk-0 fZmrbs"
+    class="c7"
     overflow="hidden"
   >
     <h2
-      class="Typography__H2Base-sc-1uzug1e-1 kMGPcr BalanceCard___StyledNum-nx0aiw-0 eMLohY"
+      class="c8 c9"
       color="card.balance.color"
       font-family="RT-Alias-Medium"
       font-size="6"
@@ -437,7 +1237,7 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
        FIL
     </h2>
     <h2
-      class="Typography__H2Base-sc-1uzug1e-1 jNkuEy"
+      class="c10"
       color="core.darkgray"
       font-family="RT-Alias-Medium"
       font-size="5"
@@ -447,11 +1247,11 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
     </h2>
   </div>
   <div
-    class="Box-tuskkk-0 MrVvn"
+    class="c11"
     display="flex"
   >
     <button
-      class="BaseButton-sc-1iyr4rl-0 gIInmt"
+      class="c12"
       font-size="3"
       type="button"
       width="120"
@@ -459,7 +1259,7 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
       Receive
     </button>
     <button
-      class="BaseButton-sc-1iyr4rl-0 bpdjDz"
+      class="c13"
       font-size="3"
       type="button"
       width="120"
@@ -471,17 +1271,177 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
 `;
 
 exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  min-height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  width: 8px;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  overflow: hidden;
+}
+
+.c11 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c12 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c12:hover {
+  opacity: 0.8;
+}
+
+.c13 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 8px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c13:hover {
+  opacity: 0.8;
+}
+
+.c8 {
+  color: #262626;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c10 {
+  color: #666666;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c3 {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c6 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c4:hover {
+  cursor: pointer;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c9 {
+  word-wrap: break-word;
+}
+
 <div
-  class="Box-tuskkk-0 kaJSFe"
+  class="c0"
   display="flex"
   width="300px"
 >
   <div
-    class="Box-tuskkk-0 gUAjrr"
+    class="c1"
     display="flex"
   >
     <h4
-      class="Typography__H4Base-sc-1uzug1e-3 dvsHEz"
+      class="c2"
       font-family="RT-Alias-Grotesk"
       font-size="2"
       font-weight="400"
@@ -489,11 +1449,11 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
       Balance
     </h4>
     <div
-      class="Box-tuskkk-0 gUAjrr"
+      class="c1"
       display="flex"
     >
       <h4
-        class="Typography__H4Base-sc-1uzug1e-3 bUeWBY ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        class="c3 c4"
         color="core.black"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -502,11 +1462,11 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
         Approx.
       </h4>
       <div
-        class="Box-tuskkk-0 jjDyck"
+        class="c5"
         width="2"
       />
       <h4
-        class="Typography__H4Base-sc-1uzug1e-3 AYXIM ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        class="c6 c4"
         color="core.darkgray"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -517,11 +1477,11 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
     </div>
   </div>
   <div
-    class="Box-tuskkk-0 fZmrbs"
+    class="c7"
     overflow="hidden"
   >
     <h2
-      class="Typography__H2Base-sc-1uzug1e-1 kMGPcr BalanceCard___StyledNum-nx0aiw-0 eMLohY"
+      class="c8 c9"
       color="card.balance.color"
       font-family="RT-Alias-Medium"
       font-size="6"
@@ -531,7 +1491,7 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
        FIL
     </h2>
     <h2
-      class="Typography__H2Base-sc-1uzug1e-1 jNkuEy"
+      class="c10"
       color="core.darkgray"
       font-family="RT-Alias-Medium"
       font-size="5"
@@ -541,11 +1501,11 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
     </h2>
   </div>
   <div
-    class="Box-tuskkk-0 MrVvn"
+    class="c11"
     display="flex"
   >
     <button
-      class="BaseButton-sc-1iyr4rl-0 gIInmt"
+      class="c12"
       font-size="3"
       type="button"
       width="120"
@@ -553,7 +1513,7 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
       Receive
     </button>
     <button
-      class="BaseButton-sc-1iyr4rl-0 bpdjDz"
+      class="c13"
       font-size="3"
       type="button"
       width="120"
@@ -565,17 +1525,177 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
 `;
 
 exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  min-height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  width: 8px;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  overflow: hidden;
+}
+
+.c11 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c12 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c12:hover {
+  opacity: 0.8;
+}
+
+.c13 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 8px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c13:hover {
+  opacity: 0.8;
+}
+
+.c8 {
+  color: #262626;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c10 {
+  color: #666666;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c3 {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c6 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c4:hover {
+  cursor: pointer;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c9 {
+  word-wrap: break-word;
+}
+
 <div
-  class="Box-tuskkk-0 kaJSFe"
+  class="c0"
   display="flex"
   width="300px"
 >
   <div
-    class="Box-tuskkk-0 gUAjrr"
+    class="c1"
     display="flex"
   >
     <h4
-      class="Typography__H4Base-sc-1uzug1e-3 dvsHEz"
+      class="c2"
       font-family="RT-Alias-Grotesk"
       font-size="2"
       font-weight="400"
@@ -583,11 +1703,11 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
       Balance
     </h4>
     <div
-      class="Box-tuskkk-0 gUAjrr"
+      class="c1"
       display="flex"
     >
       <h4
-        class="Typography__H4Base-sc-1uzug1e-3 bUeWBY ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        class="c3 c4"
         color="core.black"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -596,11 +1716,11 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
         Approx.
       </h4>
       <div
-        class="Box-tuskkk-0 jjDyck"
+        class="c5"
         width="2"
       />
       <h4
-        class="Typography__H4Base-sc-1uzug1e-3 AYXIM ApproximationToggleBtn-sc-1lufoap-0 enNeUo"
+        class="c6 c4"
         color="core.darkgray"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -611,11 +1731,11 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
     </div>
   </div>
   <div
-    class="Box-tuskkk-0 fZmrbs"
+    class="c7"
     overflow="hidden"
   >
     <h2
-      class="Typography__H2Base-sc-1uzug1e-1 kMGPcr BalanceCard___StyledNum-nx0aiw-0 eMLohY"
+      class="c8 c9"
       color="card.balance.color"
       font-family="RT-Alias-Medium"
       font-size="6"
@@ -625,7 +1745,7 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
        FIL
     </h2>
     <h2
-      class="Typography__H2Base-sc-1uzug1e-1 jNkuEy"
+      class="c10"
       color="core.darkgray"
       font-family="RT-Alias-Medium"
       font-size="5"
@@ -635,11 +1755,11 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
     </h2>
   </div>
   <div
-    class="Box-tuskkk-0 MrVvn"
+    class="c11"
     display="flex"
   >
     <button
-      class="BaseButton-sc-1iyr4rl-0 gIInmt"
+      class="c12"
       font-size="3"
       type="button"
       width="120"
@@ -647,7 +1767,7 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
       Receive
     </button>
     <button
-      class="BaseButton-sc-1iyr4rl-0 bpdjDz"
+      class="c13"
       font-size="3"
       type="button"
       width="120"
