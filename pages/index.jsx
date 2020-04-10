@@ -183,18 +183,18 @@ export default () => {
             <StyledButton
               color='core.white'
               bg='core.primary'
-              fontSize={[5, 5, 6]}
+              fontSize={[5, 6]}
               border={1}
               px={[3, 5, 6]}
               py={2}
-              mr='8%'
+              mr={[0, '8%']}
               height='max-content'
               borderRadius={6}
               onClick={() => router.push('/onboard')}
             >
               Login to Glif Wallet
             </StyledButton>
-            <Title fontSize={[4, 5, 6]} px={3} py={2}>
+            <Title fontSize={[5, 6]} px={3} py={2}>
               Or Learn More &#9662;
             </Title>
           </MenuItem>
@@ -368,24 +368,101 @@ export default () => {
         </Menu>
       </section>
       <section name='Made by OWL'>
-        <Menu>
-          <MenuItem display='flex' alignItems='center' my={[2, 3, 5]}>
-            <IconGlif size={6} />
-            <Title my={0} mx={2}>
-              is an
-              <ExtLink
-                href='https://www.openworklabs.com'
-                color='core.primary'
-                borderBottom={1}
-                borderWidth={3}
-                fontSize={4}
-                mx={1}
-                target='_blank'
-              >
-                OWL
-              </ExtLink>{' '}
-              project {'\u00A9'} 2020
-            </Title>
+        <Menu
+          display='flex'
+          flexWrap='wrap'
+          justifyContent='space-between'
+          alignItems='center'
+        >
+          <MenuItem>
+            <Menu>
+              <MenuItem display='flex' alignItems='center' my={[2, 3, 5]}>
+                <IconGlif size={6} />
+                <Title my={0} mx={2}>
+                  is an
+                  <ExtLink
+                    href='https://www.openworklabs.com'
+                    color='core.primary'
+                    borderBottom={1}
+                    borderWidth={3}
+                    fontSize={4}
+                    mx={1}
+                    target='_blank'
+                  >
+                    OWL
+                  </ExtLink>{' '}
+                  project {'\u00A9'} 2020
+                </Title>
+              </MenuItem>
+            </Menu>
+          </MenuItem>
+          <MenuItem>
+            <Menu
+              display='flex'
+              alignItems='center'
+              justifyContent='space-between'
+              width='100%'
+              maxWidth={12}
+            >
+              <MenuItem>
+                <Text fontSize={4} my={2}>
+                  Stay in the loop, get beta access to new Glifs
+                </Text>
+                <Box
+                  display='flex'
+                  flexWrap='wrap'
+                  width={['100%', 'auto']}
+                  my={4}
+                >
+                  <InputEmail
+                    width={['100%', 'auto']}
+                    fontSize={4}
+                    color='core.nearblack'
+                    border={1}
+                    borderWidth={2}
+                    px={3}
+                    py={3}
+                    textAlign='center'
+                    placeholder='Your email, please'
+                    borderTopLeftRadius={[0, 2]}
+                    borderBottomLeftRadius={[0, 2]}
+                    onChange={e => setEmail(e.target.value)}
+                  />
+                  <StyledButton
+                    width={['100%', 'auto']}
+                    color='core.white'
+                    bg='core.nearblack'
+                    fontSize={4}
+                    border={1}
+                    borderColor='core.nearblack'
+                    borderWidth={2}
+                    borderTopRightRadius={[0, 2]}
+                    borderBottomRightRadius={[0, 2]}
+                    px={6}
+                    py={3}
+                    height='max-content'
+                    onClick={postToMailChimp}
+                  >
+                    Submit
+                  </StyledButton>
+                </Box>
+
+                {error ? (
+                  <Title mt={2} color='red'>
+                    {error}
+                  </Title>
+                ) : (
+                  <Title mt={2} color='core.silver'>
+                    Glif don&rsquo;t spam! Unsub whenever.
+                  </Title>
+                )}
+                {subscribed && (
+                  <Title mt={2} color='status.success.background'>
+                    You&rsquo;re subscribed. Keep an eye out.
+                  </Title>
+                )}
+              </MenuItem>
+            </Menu>
           </MenuItem>
         </Menu>
       </section>
