@@ -25,9 +25,11 @@ const TextInput = ({
             <Label>{label}</Label>
           </Box>
         )}
-        <Box position='relative' width='100%'>
+        <Box position='relative' display='flex' width='100%'>
           {denom && (
             <DenomTag
+              backgroundColor='core.transparent'
+              height={7}
               css={`
                 top: 0px;
                 left: 0px;
