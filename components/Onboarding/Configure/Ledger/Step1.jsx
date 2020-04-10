@@ -13,7 +13,7 @@ import {
 import { IconLedger } from '../../../Shared/Icons'
 
 import { useWalletProvider } from '../../../../WalletProvider'
-import isValidBrowser from '../../../../utils/isValidBrowser'
+import isDesktopChromeBrowser from '../../../../utils/isDesktopChromeBrowser'
 import { hasLedgerError } from '../../../../utils/ledger/reportLedgerConfigError'
 import useReset from '../../../../utils/useReset'
 
@@ -82,14 +82,10 @@ Step1Helper.propTypes = {
 }
 
 const Step1 = ({ setStep }) => {
-  const { ledger, setLedgerProvider, setWalletType } = useWalletProvider()
+  const { ledger, setLedgerProvider } = useWalletProvider()
   const router = useRouter()
   const resetState = useReset()
-  if (!isValidBrowser()) {
-    const params = new URLSearchParams(router.query)
-    setWalletType(null)
-    router.push(`/error/unsupported-browser?${params.toString()}`)
-  }
+  if (!isDesktopChromeBrowser()) router.push(`/error/use-chrome`)
   const errFromRdx = useSelector(state => state.error)
   const error = hasLedgerError({ ...ledger, otherError: errFromRdx })
 
