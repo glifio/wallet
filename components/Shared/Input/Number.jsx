@@ -12,8 +12,8 @@ export const Tag = styled(Box).attrs(props => ({
   height: '100%',
   alignItems: 'center',
   justifyContent: 'center',
-  width: 7,
   fontSize: 3,
+  px: 3,
   color: 'core.primary',
   ...props
 }))`
@@ -26,11 +26,7 @@ export const Tag = styled(Box).attrs(props => ({
   ${flexbox};
 `
 
-export const DenomTag = props => (
-  <Box>
-    <Tag {...props}>{props.children}</Tag>
-  </Box>
-)
+export const DenomTag = props => <Tag {...props}>{props.children}</Tag>
 
 DenomTag.propTypes = {
   children: node
@@ -72,26 +68,28 @@ export const NumberInput = forwardRef(
               <Label>{label}</Label>
             </Box>
           )}
-          {denom && (
-            <DenomTag
-              css={`
-                top: 0px;
-                left: 0px;
-              `}
-            >
-              {denom}
-            </DenomTag>
-          )}
-          <RawNumberInput
-            type='number'
-            onChange={onChange}
-            value={value}
-            valid={valid}
-            error={error}
-            setError={setError}
-            placeholder={placeholder}
-            fontSize={fontSize}
-          />
+          <Box position='relative' width='100%'>
+            {denom && (
+              <DenomTag
+                css={`
+                  top: 0px;
+                  left: 0px;
+                `}
+              >
+                {denom}
+              </DenomTag>
+            )}
+            <RawNumberInput
+              type='number'
+              onChange={onChange}
+              value={value}
+              valid={valid}
+              error={error}
+              setError={setError}
+              placeholder={placeholder}
+              fontSize={fontSize}
+            />
+          </Box>
         </Box>
       </InputWrapper>
     )
