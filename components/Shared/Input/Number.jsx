@@ -9,16 +9,20 @@ import { Label } from '../Typography'
 
 export const Tag = styled(Box).attrs(props => ({
   display: 'flex',
-  height: '100%',
+  height: 8,
+  px: 3,
   alignItems: 'center',
   justifyContent: 'center',
   fontSize: 3,
-  px: 3,
+  borderLeft: 1,
+  borderColor: 'input.border',
+  minWidth: 7,
   color: 'core.primary',
+  backgroundColor: 'input.background.base',
   ...props
 }))`
   text-align: center;
-  position: absolute;
+  position: relative;
   ${color} 
   ${space} 
   ${layout}
@@ -33,6 +37,7 @@ DenomTag.propTypes = {
 }
 
 export const RawNumberInput = styled(BaseInput).attrs(props => ({
+  borderLeft: 0,
   ...props
 }))`
   ::-webkit-outer-spin-button,
@@ -68,9 +73,10 @@ export const NumberInput = forwardRef(
               <Label>{label}</Label>
             </Box>
           )}
-          <Box position='relative' width='100%'>
+          <Box position='relative' display='flex' width='100%'>
             {denom && (
               <DenomTag
+                height='64px'
                 css={`
                   top: 0px;
                   left: 0px;
