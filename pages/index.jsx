@@ -403,6 +403,7 @@ export default () => {
               justifyContent='space-between'
               width='100%'
               maxWidth={12}
+              mt={[4, 0, 0]}
             >
               <MenuItem>
                 <Text fontSize={4} my={2}>
