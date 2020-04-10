@@ -206,7 +206,13 @@ const Funds = forwardRef(
             >
               {'\u003D'}
             </Box>
-            <DenomTag top='0px' left='0px' backgroundColor='core.transparent'>
+            <DenomTag
+              top='0px'
+              left='0px'
+              backgroundColor={
+                valid ? 'input.background.valid' : 'input.background.base'
+              }
+            >
               FIL
             </DenomTag>
 
@@ -238,7 +244,13 @@ const Funds = forwardRef(
             borderColor='input.border'
             bg='input.background.base'
           >
-            <DenomTag top='0px' left='0px' backgroundColor='core.transparent'>
+            <DenomTag
+              top='0px'
+              left='0px'
+              backgroundColor={
+                valid ? 'input.background.valid' : 'input.background.base'
+              }
+            >
               USD
             </DenomTag>
             <RawNumberInput
