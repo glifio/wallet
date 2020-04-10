@@ -4,8 +4,10 @@ import BaseInput from './BaseInput'
 import Box from '../Box'
 import { Label } from '../Typography'
 import InputWrapper from './InputWrapper'
+import { DenomTag } from './Number'
 
 const TextInput = ({
+  denom,
   onChange,
   value,
   placeholder,
@@ -23,17 +25,29 @@ const TextInput = ({
             <Label>{label}</Label>
           </Box>
         )}
-        <BaseInput
-          py={3}
-          px={3}
-          onChange={onChange}
-          value={value}
-          placeholder={placeholder}
-          disabled={disabled}
-          error={error}
-          valid={valid}
-          {...props}
-        />
+        <Box position='relative' width='100%'>
+          {denom && (
+            <DenomTag
+              css={`
+                top: 0px;
+                left: 0px;
+              `}
+            >
+              {denom}
+            </DenomTag>
+          )}
+          <BaseInput
+            py={3}
+            px={3}
+            onChange={onChange}
+            value={value}
+            placeholder={placeholder}
+            disabled={disabled}
+            error={error}
+            valid={valid}
+            {...props}
+          />
+        </Box>
       </Box>
     </InputWrapper>
     {error && (
@@ -51,7 +65,8 @@ TextInput.propTypes = {
   placeholder: string,
   disabled: bool,
   error: string,
-  valid: bool
+  valid: bool,
+  denom: string
 }
 
 TextInput.defaultProps = {
