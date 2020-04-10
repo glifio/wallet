@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import axios from 'axios'
 import { space, layout, typography, border, color } from 'styled-system'
@@ -20,7 +21,7 @@ const Image = styled.img`
   z-index: -999;
 `
 
-const ButtonSignUp = styled.button`
+const StyledButton = styled.button`
   outline: none;
   border: 0;
   cursor: pointer;
@@ -60,6 +61,7 @@ const ExtLink = styled.a`
 `
 
 export default () => {
+  const router = useRouter()
   const [clicked, setClicked] = useState(false)
   const [error, setError] = useState('')
   const [subscribed, setSubscribed] = useState(false)
@@ -201,7 +203,7 @@ export default () => {
                         borderBottomLeftRadius={[0, 2]}
                         onChange={e => setEmail(e.target.value)}
                       />
-                      <ButtonSignUp
+                      <StyledButton
                         width={['100%', 'auto']}
                         color='core.white'
                         bg='core.nearblack'
@@ -217,7 +219,7 @@ export default () => {
                         onClick={postToMailChimp}
                       >
                         Submit
-                      </ButtonSignUp>
+                      </StyledButton>
                     </Box>
 
                     {error ? (
@@ -236,7 +238,7 @@ export default () => {
                     )}
                   </MenuItem>
                 </Menu>
-                <ButtonSignUp
+                <StyledButton
                   width={['100%', 'auto']}
                   background='transparent'
                   color='core.nearblack'
@@ -250,7 +252,7 @@ export default () => {
                   onClick={() => setClicked(false)}
                 >
                   Cancel
-                </ButtonSignUp>
+                </StyledButton>
               </>
             ) : (
               <>
@@ -258,7 +260,7 @@ export default () => {
                   Be the first to learn when we launch
                 </Text>
 
-                <ButtonSignUp
+                <StyledButton
                   background='transparent'
                   color='core.nearblack'
                   fontSize={[4, 5, 6]}
@@ -270,7 +272,7 @@ export default () => {
                   onClick={() => setClicked(true)}
                 >
                   Sign Up
-                </ButtonSignUp>
+                </StyledButton>
               </>
             )}
           </MenuItem>
@@ -284,7 +286,14 @@ export default () => {
           flexWrap='wrap'
           my={8}
         >
-          <MenuItem display='flex' alignItems='center' width='100%' mb={5}>
+          <MenuItem
+            display='flex'
+            flexWrap='wrap'
+            alignItems='center'
+            justifyContent=''
+            width='100%'
+            mb={5}
+          >
             <Box
               display='inline-block'
               py={2}
@@ -345,6 +354,21 @@ export default () => {
 
           <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>Filecoin</TitleCopy>
+          </MenuItem>
+          <MenuItem mr='8%' my={[2, 3, 5]}>
+            <StyledButton
+              color='core.white'
+              bg='core.primary'
+              fontSize={[4, 5, 6]}
+              border={1}
+              px={6}
+              py={2}
+              height='max-content'
+              borderRadius={6}
+              onClick={() => router.push('/onboard')}
+            >
+              Login
+            </StyledButton>
           </MenuItem>
         </Menu>
       </section>
