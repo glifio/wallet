@@ -5,30 +5,11 @@ import { space, color, layout, border, flexbox } from 'styled-system'
 import styled from 'styled-components'
 
 import Box from '../Box'
-import { RawNumberInput } from './Number'
+import { RawNumberInput, DenomTag } from './Number'
 import { Text, Label } from '../Typography'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import noop from '../../../utils/noop'
 import { useConverter } from '../../../lib/Converter'
-
-export const DenomTag = styled(Box).attrs(props => ({
-  display: 'flex',
-  height: '100%',
-  alignItems: 'center',
-  justifyContent: 'center',
-  width: 7,
-  fontSize: 3,
-  color: 'core.primary',
-  ...props
-}))`
-  text-align: center;
-  position: absolute;
-  ${color} 
-  ${space} 
-  ${layout}
-  ${border}
-  ${flexbox};
-`
 
 const formatFilValue = number => {
   if (!number) return ''
@@ -201,7 +182,13 @@ const Funds = forwardRef(
           )}
         </Box>
         <Box display='inline-block' width='100%'>
-          <Box position='relative' display='block' height='80px' width='100%'>
+          <Box
+            position='relative'
+            display='flex'
+            height='80px'
+            width='100%'
+            bg='input.background.base'
+          >
             <Box
               position='absolute'
               left='-24px'
@@ -221,7 +208,7 @@ const Funds = forwardRef(
             >
               {'\u003D'}
             </Box>
-            <DenomTag top='0px' left='0px'>
+            <DenomTag top='0px' left='0px' backgroundColor='core.transparent'>
               FIL
             </DenomTag>
 
@@ -247,12 +234,13 @@ const Funds = forwardRef(
           </Box>
           <Box
             position='relative'
-            display='block'
+            display='flex'
             height='80px'
             borderTop={1}
             borderColor='input.border'
+            bg='input.background.base'
           >
-            <DenomTag top='0px' left='0px'>
+            <DenomTag top='0px' left='0px' backgroundColor='core.transparent'>
               USD
             </DenomTag>
             <RawNumberInput
