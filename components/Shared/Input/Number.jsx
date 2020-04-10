@@ -9,7 +9,7 @@ import { Label } from '../Typography'
 
 export const Tag = styled(Box).attrs(props => ({
   display: 'flex',
-  height: 8,
+  height: '100%',
   px: 3,
   alignItems: 'center',
   justifyContent: 'center',
