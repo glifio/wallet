@@ -1,8 +1,6 @@
 import React, { forwardRef, useRef, useState } from 'react'
 import { func, string, bool, oneOfType } from 'prop-types'
 import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
-import { space, color, layout, border, flexbox } from 'styled-system'
-import styled from 'styled-components'
 
 import Box from '../Box'
 import { RawNumberInput, DenomTag } from './Number'
