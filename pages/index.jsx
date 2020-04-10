@@ -175,106 +175,28 @@ export default () => {
             display='flex'
             flexWrap='wrap'
             alignItems='baseline'
-            justifyContent='space-between'
+            justifyContent='flex-start'
             width='100%'
             color='core.darkgray'
             my={[2, 3]}
           >
-            {clicked ? (
-              <>
-                <Menu display='flex' alignItems='center'>
-                  <MenuItem>
-                    <Box
-                      display='flex'
-                      flexWrap='wrap'
-                      width={['100%', 'auto']}
-                    >
-                      <InputEmail
-                        width={['100%', 'auto']}
-                        fontSize={[4, 5, 6]}
-                        color='core.nearblack'
-                        border={1}
-                        borderWidth={2}
-                        px={3}
-                        py={3}
-                        textAlign='center'
-                        placeholder='Your email, please'
-                        borderTopLeftRadius={[0, 2]}
-                        borderBottomLeftRadius={[0, 2]}
-                        onChange={e => setEmail(e.target.value)}
-                      />
-                      <StyledButton
-                        width={['100%', 'auto']}
-                        color='core.white'
-                        bg='core.nearblack'
-                        fontSize={[4, 5, 6]}
-                        border={1}
-                        borderColor='core.nearblack'
-                        borderWidth={2}
-                        borderTopRightRadius={[0, 2]}
-                        borderBottomRightRadius={[0, 2]}
-                        px={6}
-                        py={3}
-                        height='max-content'
-                        onClick={postToMailChimp}
-                      >
-                        Submit
-                      </StyledButton>
-                    </Box>
-
-                    {error ? (
-                      <Title mt={2} color='red'>
-                        {error}
-                      </Title>
-                    ) : (
-                      <Title mt={2}>
-                        Glif don&rsquo;t spam! Unsub whenever.
-                      </Title>
-                    )}
-                    {subscribed && (
-                      <Title mt={2} color='status.success.background'>
-                        You&rsquo;re subscribed. Keep an eye out.
-                      </Title>
-                    )}
-                  </MenuItem>
-                </Menu>
-                <StyledButton
-                  width={['100%', 'auto']}
-                  background='transparent'
-                  color='core.nearblack'
-                  fontSize={[4, 5, 6]}
-                  border={1}
-                  px={6}
-                  py={2}
-                  my={2}
-                  height='max-content'
-                  borderRadius={6}
-                  onClick={() => setClicked(false)}
-                >
-                  Cancel
-                </StyledButton>
-              </>
-            ) : (
-              <>
-                <Text fontSize={[4, 5, 6]} my={2}>
-                  Be the first to learn when we launch
-                </Text>
-
-                <StyledButton
-                  background='transparent'
-                  color='core.nearblack'
-                  fontSize={[4, 5, 6]}
-                  border={1}
-                  px={6}
-                  py={2}
-                  height='max-content'
-                  borderRadius={6}
-                  onClick={() => setClicked(true)}
-                >
-                  Sign Up
-                </StyledButton>
-              </>
-            )}
+            <StyledButton
+              color='core.white'
+              bg='core.primary'
+              fontSize={[5, 5, 6]}
+              border={1}
+              px={[3, 5, 6]}
+              py={2}
+              mr='8%'
+              height='max-content'
+              borderRadius={6}
+              onClick={() => router.push('/onboard')}
+            >
+              Login to Glif Wallet
+            </StyledButton>
+            <Title fontSize={[4, 5, 6]} px={3} py={2}>
+              Or Learn More &#9662;
+            </Title>
           </MenuItem>
         </Menu>
       </section>
@@ -354,21 +276,6 @@ export default () => {
 
           <MenuItem mr='8%' my={[2, 3, 5]}>
             <TitleCopy>Filecoin</TitleCopy>
-          </MenuItem>
-          <MenuItem mr='8%' my={[2, 3, 5]}>
-            <StyledButton
-              color='core.white'
-              bg='core.primary'
-              fontSize={[4, 5, 6]}
-              border={1}
-              px={6}
-              py={2}
-              height='max-content'
-              borderRadius={6}
-              onClick={() => router.push('/onboard')}
-            >
-              Login
-            </StyledButton>
           </MenuItem>
         </Menu>
       </section>
