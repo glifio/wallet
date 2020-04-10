@@ -302,14 +302,16 @@ const Send = ({ close }) => {
               disabled={step === 2 && !hasError()}
               valid={isValidAmount(value, wallet.balance, valueError)}
             />
-
-            <Input.Text
-              onChange={noop}
-              label='Transaction Fee'
-              value={customizingGas ? estimatedGasUsed.toAttoFil() : '< 0.1FIL'}
-              backgroundColor='background.screen'
-              disabled
-            />
+            <Box position='relative' width='100%'>
+              <Input.Text
+                onChange={noop}
+                denom={customizingGas ? 'AttoFil' : 'FIL'}
+                label='Transaction Fee'
+                value={customizingGas ? estimatedGasUsed.toAttoFil() : '< 0.1'}
+                backgroundColor='background.screen'
+                disabled
+              />
+            </Box>
             <GasCustomization
               show={customizingGas}
               estimateGas={estimateGas}

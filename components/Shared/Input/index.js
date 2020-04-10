@@ -1,7 +1,7 @@
 import Address from './Address'
 import Funds from './Funds'
 import Mnemonic from './Mnemonic'
-import { NumberInput, RawNumberInput } from './Number'
+import { DenomTag, NumberInput, RawNumberInput } from './Number'
 import Text from './Text'
 import PrivateKey from './PrivateKey'
 
@@ -12,5 +12,6 @@ export default {
   Number: NumberInput,
   RawNumberInput,
   Text,
-  PrivateKey
+  PrivateKey,
+  DenomTag
 }

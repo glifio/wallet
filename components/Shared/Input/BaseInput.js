@@ -13,7 +13,7 @@ export default styled.input.attrs(props => ({
   height: props.height || 7,
   width: props.width || '100%',
   border: 0,
-  borderLeft: 1,
+  // borderLeft: 1,
   borderColor: 'input.border',
   borderTopRightRadius: 1,
   borderBottomRightRadius: 1
