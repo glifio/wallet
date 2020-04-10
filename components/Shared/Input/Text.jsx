@@ -21,7 +21,16 @@ const TextInput = ({
     <InputWrapper mt={3}>
       <Box display='flex' alignItems='center'>
         {label && (
-          <Box display='inline-block' px={3} minWidth={9} textAlign='center'>
+          <Box
+            display='flex'
+            px={3}
+            minWidth={9}
+            justifyContent='center'
+            alignItems='center'
+            height='64px'
+            borderRight={1}
+            borderColor='input.border'
+          >
             <Label>{label}</Label>
           </Box>
         )}
@@ -31,6 +40,7 @@ const TextInput = ({
               backgroundColor='core.transparent'
               height={7}
               css={`
+                border-left: 0;
                 top: 0px;
                 left: 0px;
               `}
