@@ -35,6 +35,17 @@ const TextInput = ({
           </Box>
         )}
         <Box position='relative' display='flex' width='100%'>
+          <BaseInput
+            py={3}
+            px={3}
+            onChange={onChange}
+            value={value}
+            placeholder={placeholder}
+            disabled={disabled}
+            error={error}
+            valid={valid}
+            {...props}
+          />
           {denom && (
             <DenomTag
               backgroundColor='core.transparent'
@@ -48,17 +59,6 @@ const TextInput = ({
               {denom}
             </DenomTag>
           )}
-          <BaseInput
-            py={3}
-            px={3}
-            onChange={onChange}
-            value={value}
-            placeholder={placeholder}
-            disabled={disabled}
-            error={error}
-            valid={valid}
-            {...props}
-          />
         </Box>
       </Box>
     </InputWrapper>

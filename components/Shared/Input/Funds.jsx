@@ -170,13 +170,15 @@ const Funds = forwardRef(
           py={3}
           px={4}
           textAlign='center'
+          color='input.border'
           borderColor='input.border'
+          borderRight={1}
           bg={error && 'input.background.invalid'}
         >
           {error ? (
             <Text textAlign='left'>{error}</Text>
           ) : (
-            <Label>Amount</Label>
+            <Label color='core.nearblack'>Amount</Label>
           )}
         </Box>
         <Box display='inline-block' width='100%'>
@@ -206,15 +208,6 @@ const Funds = forwardRef(
             >
               {'\u003D'}
             </Box>
-            <DenomTag
-              top='0px'
-              left='0px'
-              backgroundColor={
-                valid ? 'input.background.valid' : 'input.background.base'
-              }
-            >
-              FIL
-            </DenomTag>
 
             <RawNumberInput
               onFocus={() => {
@@ -235,6 +228,15 @@ const Funds = forwardRef(
               valid={valid && !!formatFilValue(filAmount)}
               {...props}
             />
+            <DenomTag
+              top='0px'
+              left='0px'
+              backgroundColor={
+                valid ? 'input.background.valid' : 'input.background.base'
+              }
+            >
+              FIL
+            </DenomTag>
           </Box>
           <Box
             position='relative'
@@ -244,15 +246,6 @@ const Funds = forwardRef(
             borderColor='input.border'
             bg='input.background.base'
           >
-            <DenomTag
-              top='0px'
-              left='0px'
-              backgroundColor={
-                valid ? 'input.background.valid' : 'input.background.base'
-              }
-            >
-              USD
-            </DenomTag>
             <RawNumberInput
               onFocus={() => {
                 setError('')
@@ -272,6 +265,15 @@ const Funds = forwardRef(
               valid={valid && !!formatFiatValue(fiatAmount)}
               disabled={disabled || converterError}
             />
+            <DenomTag
+              top='0px'
+              left='0px'
+              backgroundColor={
+                valid ? 'input.background.valid' : 'input.background.base'
+              }
+            >
+              USD
+            </DenomTag>
           </Box>
         </Box>
       </Box>
