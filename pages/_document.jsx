@@ -35,7 +35,6 @@ export default class MyDocument extends Document {
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }}
           />
-          <title>Glif</title>
           <meta
             name='description'
             content='A Filecoin web wallet, made by Open Work Labs.'
@@ -45,6 +44,18 @@ export default class MyDocument extends Document {
             content='Filecoin,Wallet,Web,Storage,Blockchain'
           />
           <meta property='og:image' content='static/imgnode.png' />
+          <link
+            rel='icon'
+            type='image/png'
+            sizes='32x32'
+            href='/static/favicon-32x32.png'
+          />
+          <link
+            rel='icon'
+            type='image/png'
+            sizes='16x16'
+            href='/static/favicon-32x32.png'
+          />
         </Head>
         <body>
           <Main />
