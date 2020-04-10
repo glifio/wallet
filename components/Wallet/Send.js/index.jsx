@@ -52,10 +52,15 @@ const SendCardForm = styled.form.attrs(() => ({
   ${flexbox}
 `
 
-const isValidAmount = (value, balance, error) => {
+// this is a bit confusing, sometimes the form can report errors, so we check those here too
+const isValidAmount = (value, balance, errorFromForms) => {
   const valueFieldFilledOut = value && value.isGreaterThan(0)
   const enoughInTheBank = balance.isGreaterThan(value)
-  return valueFieldFilledOut && enoughInTheBank && !error
+  return valueFieldFilledOut && enoughInTheBank && !errorFromForms
+}
+const isValidAddress = (address, errorFromForms) => {
+  const validToAddress = validateAddressString(address)
+  return !errorFromForms && validToAddress
 }
 
 const isValidForm = (
@@ -66,11 +71,9 @@ const isValidForm = (
   valueError,
   otherError
 ) => {
-  const validToAddress = validateAddressString(toAddress)
-  const errorFree =
-    validToAddress && !toAddressError && !valueError && !otherError
-  const validAmount = isValidAmount(value, balance)
-  return !!(errorFree && validAmount)
+  const validToAddress = isValidAddress(toAddress, toAddressError)
+  const validAmount = isValidAmount(value, balance, valueError)
+  return validToAddress && validAmount && !otherError
 }
 
 const Send = ({ close }) => {
@@ -172,6 +175,7 @@ const Send = ({ close }) => {
   const onSubmit = async e => {
     e.preventDefault()
     setAttemptingTx(true)
+
     if (
       !isValidForm(
         toAddress,
@@ -182,7 +186,13 @@ const Send = ({ close }) => {
         uncaughtError
       )
     ) {
-      setUncaughtError('Invalid form!')
+      if (!isValidAddress(toAddress, toAddressError))
+        setToAddressError('Invalid address.')
+      if (!isValidAmount(value, wallet.balance, valueError))
+        setValueError(
+          'Please enter a valid amount that is less than your Filecoin balance.'
+        )
+      return
     }
 
     if (wallet.type === LEDGER) {
@@ -440,20 +450,8 @@ const Send = ({ close }) => {
                 <Button
                   border={0}
                   borderRadius={0}
-                  disabled={
-                    !!(
-                      hasError() ||
-                      !isValidForm(
-                        toAddress,
-                        value,
-                        wallet.balance,
-                        toAddressError,
-                        valueError
-                      )
-                    )
-                  }
                   type='submit'
-                  title={step === 1 ? 'Next' : 'Confirm'}
+                  title={step === 1 ? 'Send' : 'Confirm'}
                   variant='primary'
                   onClick={noop}
                   css={`
