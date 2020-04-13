@@ -1,5 +1,5 @@
 import { forwardRef } from 'react'
-import { func, string, bool, number, node } from 'prop-types'
+import { func, string, bool, number } from 'prop-types'
 import { space, color, layout, border, flexbox } from 'styled-system'
 import styled from 'styled-components'
 import BaseInput from './BaseInput'
