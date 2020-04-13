@@ -1,0 +1,3776 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WalletView it renders correctly 1`] = `
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 8px;
+  color: purple;
+  background-color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  box-shadow: 0 0.7px 2.2px -8px rgba(0,0,0,0.18),0 1.7px 5.4px rgba(0,0,0,0.129),0 3.1px 10.1px rgba(0,0,0,0.107),0 5.6px 18.1px rgba(0,0,0,0.09),0 10.4px 33.8px rgba(0,0,0,0.073),0 25px 81px rgba(0,0,0,0.051);
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #E0D7FE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  margin-right: 16px;
+  color: #E0D7FE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #E0D7FE;
+}
+
+.c12 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  min-height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  width: 8px;
+}
+
+.c29 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  overflow: hidden;
+}
+
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: none;
+  max-width: 800px;
+  width: 100%;
+}
+
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  margin-right: 16px;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c42 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c8 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c21 {
+  cursor: pointer;
+  border: 1px solid #E0D7FE;
+  background-color: transparent;
+  border-color: #E0D7FE;
+  color: #E0D7FE;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c21:hover {
+  opacity: 0.8;
+}
+
+.c34 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c34:hover {
+  opacity: 0.8;
+}
+
+.c35 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 8px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c35:hover {
+  opacity: 0.8;
+}
+
+.c16 {
+  width: 24;
+  height: 24;
+}
+
+.c15 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+}
+
+.c15:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c11 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c13 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c30 {
+  color: #262626;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c32 {
+  color: #666666;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c9 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c41 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c17 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 0;
+}
+
+.c24 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c25 {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c28 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c45 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 16px;
+}
+
+.c19 {
+  -webkit-transition: 0.18s ease-in;
+  transition: 0.18s ease-in;
+  opacity: 0;
+}
+
+.c14 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c14:hover .c18 {
+  opacity: 1;
+}
+
+.c26:hover {
+  cursor: pointer;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c31 {
+  word-wrap: break-word;
+}
+
+.c43 {
+  display: inline-block;
+  height: 48px;
+  width: 48px;
+  background-color: #5E26FF;
+}
+
+.c44 {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  background-color: rgb(26,0,102);
+  -webkit-animation-name: bvGDKI;
+  animation-name: bvGDKI;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.c3 {
+  background: #1AD08F;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border: 0;
+  border-radius: 16px;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: RT-Alias-Grotesk;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c3:first-child {
+  margin-right: 8px;
+}
+
+.c3:hover {
+  cursor: pointer;
+  background: true;
+}
+
+.c4 {
+  background: transparent;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border: 0;
+  border-radius: 16px;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: RT-Alias-Grotesk;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c4:first-child {
+  margin-right: 8px;
+}
+
+.c4:hover {
+  cursor: pointer;
+  background: #C4C4C4;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c1 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin: 0.5rem;
+}
+
+.c37 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -webkit-box-flex: 999;
+  -webkit-flex-grow: 999;
+  -ms-flex-positive: 999;
+  flex-grow: 999;
+  padding-top: 24px;
+  margin: 0.5rem;
+  min-width: 53%;
+  margin-bottom: 6rem;
+}
+
+.c36 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-top: 24px;
+  padding: 16px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-width: 1px;
+  border-radius: 4px;
+  background-color: #E0D7FE00;
+}
+
+.c36:hover {
+  opacity: 0.8;
+}
+
+.c36:hover {
+  background-color: #E0D7FE;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    height="100vh"
+  >
+    <div
+      class="c2"
+      display="flex"
+      width="100%"
+    >
+      <button
+        class="c3"
+        display="flex"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="1"
+      >
+        Testnet
+      </button>
+      <button
+        class="c4"
+        display="flex"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="1"
+      >
+        Mainnet
+      </button>
+    </div>
+    <div
+      class="c5"
+      color="purple"
+      display="flex"
+      height="300px"
+      width="300px"
+    >
+      <div
+        class="c6"
+        color="card.account.color"
+        display="flex"
+      >
+        <div
+          class="c7"
+          color="card.account.color"
+          display="flex"
+          size="6"
+        >
+          <h3
+            class="c8"
+          >
+            Ac
+          </h3>
+        </div>
+        <p
+          class="c9"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          Account
+        </p>
+      </div>
+      <div
+        class="c10"
+        color="card.account.color"
+      >
+        <h1
+          class="c11"
+          font-family="RT-Alias-Medium"
+          font-size="6"
+          font-weight="700"
+        >
+          Prime
+        </h1>
+        <div
+          class="c12"
+          display="flex"
+        >
+          <h2
+            class="c13"
+            font-family="RT-Alias-Grotesk"
+            font-size="5"
+            font-weight="1"
+          >
+            t1z22 ... 6wgi
+          </h2>
+          <div
+            class="c14"
+            display="flex"
+          >
+            <button
+              class="c15"
+              display="inline-block"
+            >
+              <svg
+                class="c16"
+                fill="none"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  fill="#1A0066"
+                  height="12"
+                  width="12"
+                  x="8"
+                  y="4"
+                />
+                <rect
+                  fill="#E0D7FE"
+                  height="12"
+                  width="12"
+                  x="4"
+                  y="8"
+                />
+              </svg>
+            </button>
+            <h4
+              class="c17 c18 c19"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Copy
+            </h4>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c20"
+        display="flex"
+      >
+        <button
+          class="c21"
+          font-size="3"
+          height="max-content"
+          type="button"
+        >
+          Switch
+        </button>
+      </div>
+    </div>
+    <div
+      class="c22"
+      display="flex"
+      width="300px"
+    >
+      <div
+        class="c23"
+        display="flex"
+      >
+        <h4
+          class="c24"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          Balance
+        </h4>
+        <div
+          class="c23"
+          display="flex"
+        >
+          <h4
+            class="c25 c26"
+            color="core.black"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Approx.
+          </h4>
+          <div
+            class="c27"
+            width="2"
+          />
+          <h4
+            class="c28 c26"
+            color="core.darkgray"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Exact
+          </h4>
+        </div>
+      </div>
+      <div
+        class="c29"
+        overflow="hidden"
+      >
+        <h2
+          class="c30 c31"
+          color="card.balance.color"
+          font-family="RT-Alias-Medium"
+          font-size="6"
+          font-weight="700"
+        >
+          &gt; 999.9B
+           FIL
+        </h2>
+        <h2
+          class="c32"
+          color="core.darkgray"
+          font-family="RT-Alias-Medium"
+          font-size="5"
+          font-weight="700"
+        >
+          5 USD
+        </h2>
+      </div>
+      <div
+        class="c33"
+        display="flex"
+      >
+        <button
+          class="c34"
+          font-size="3"
+          type="button"
+          width="120"
+        >
+          Receive
+        </button>
+        <button
+          class="c35"
+          font-size="3"
+          type="button"
+          width="120"
+        >
+          Send
+        </button>
+      </div>
+    </div>
+    <button
+      class="c36"
+      display="flex"
+      font-size="3"
+      width="100%"
+    >
+      Logout
+    </button>
+  </div>
+  <div
+    class="c37"
+  >
+    <div
+      class="c38"
+      width="100%"
+    >
+      <div
+        class="c39"
+        display="flex"
+      >
+        <div
+          class="c40"
+          color="core.primary"
+          display="flex"
+          size="6"
+        >
+          <h3
+            class="c8"
+          >
+            Tx
+          </h3>
+        </div>
+        <p
+          class="c41"
+          color="core.primary"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          Transaction History
+        </p>
+      </div>
+      <div
+        class="c42"
+        display="flex"
+      >
+        <span
+          class="c43"
+        >
+          <span
+            class="c44"
+          />
+        </span>
+        <h4
+          class="c45"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          Loading...
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`WalletView it renders the receive flow when a user clicks receive 1`] = `
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 8px;
+  color: purple;
+  background-color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  box-shadow: 0 0.7px 2.2px -8px rgba(0,0,0,0.18),0 1.7px 5.4px rgba(0,0,0,0.129),0 3.1px 10.1px rgba(0,0,0,0.107),0 5.6px 18.1px rgba(0,0,0,0.09),0 10.4px 33.8px rgba(0,0,0,0.073),0 25px 81px rgba(0,0,0,0.051);
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #E0D7FE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  margin-right: 16px;
+  color: #E0D7FE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #E0D7FE;
+}
+
+.c12 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  min-height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  width: 8px;
+}
+
+.c29 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  overflow: hidden;
+}
+
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c41 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: #5E26FF;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c46 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 4px;
+  padding-right: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c48 {
+  min-width: 0;
+  box-sizing: border-box;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c8 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c21 {
+  cursor: pointer;
+  border: 1px solid #E0D7FE;
+  background-color: transparent;
+  border-color: #E0D7FE;
+  color: #E0D7FE;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c21:hover {
+  opacity: 0.8;
+}
+
+.c34 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c34:hover {
+  opacity: 0.8;
+}
+
+.c35 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 8px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c35:hover {
+  opacity: 0.8;
+}
+
+.c16 {
+  width: 24;
+  height: 24;
+}
+
+.c15 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+}
+
+.c15:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c43 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.c43:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c11 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c13 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c30 {
+  color: #262626;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c32 {
+  color: #666666;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c9 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c42 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 8px;
+}
+
+.c44 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.c47 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.c17 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 0;
+}
+
+.c24 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c25 {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c28 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c19 {
+  -webkit-transition: 0.18s ease-in;
+  transition: 0.18s ease-in;
+  opacity: 0;
+}
+
+.c14 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c14:hover .c18 {
+  opacity: 1;
+}
+
+.c26:hover {
+  cursor: pointer;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c31 {
+  word-wrap: break-word;
+}
+
+.c45 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 1px;
+  padding-left: 16px;
+  width: 640px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 70px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 16px;
+}
+
+.c49 {
+  display: inline-block;
+  height: 100%;
+  outline: none;
+  background-color: #E4EBFC;
+  padding: 0;
+  width: 64px;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c49:hover {
+  cursor: pointer;
+}
+
+.c3 {
+  background: #1AD08F;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border: 0;
+  border-radius: 16px;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: RT-Alias-Grotesk;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c3:first-child {
+  margin-right: 8px;
+}
+
+.c3:hover {
+  cursor: pointer;
+  background: true;
+}
+
+.c4 {
+  background: transparent;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border: 0;
+  border-radius: 16px;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: RT-Alias-Grotesk;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c4:first-child {
+  margin-right: 8px;
+}
+
+.c4:hover {
+  cursor: pointer;
+  background: #C4C4C4;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c1 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin: 0.5rem;
+}
+
+.c37 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -webkit-box-flex: 999;
+  -webkit-flex-grow: 999;
+  -ms-flex-positive: 999;
+  flex-grow: 999;
+  padding-top: 24px;
+  margin: 0.5rem;
+  min-width: 53%;
+  margin-bottom: 6rem;
+}
+
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  background-color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c36 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-top: 24px;
+  padding: 16px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-width: 1px;
+  border-radius: 4px;
+  background-color: #E0D7FE00;
+}
+
+.c36:hover {
+  opacity: 0.8;
+}
+
+.c36:hover {
+  background-color: #E0D7FE;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    height="100vh"
+  >
+    <div
+      class="c2"
+      display="flex"
+      width="100%"
+    >
+      <button
+        class="c3"
+        display="flex"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="1"
+      >
+        Testnet
+      </button>
+      <button
+        class="c4"
+        display="flex"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="1"
+      >
+        Mainnet
+      </button>
+    </div>
+    <div
+      class="c5"
+      color="purple"
+      display="flex"
+      height="300px"
+      width="300px"
+    >
+      <div
+        class="c6"
+        color="card.account.color"
+        display="flex"
+      >
+        <div
+          class="c7"
+          color="card.account.color"
+          display="flex"
+          size="6"
+        >
+          <h3
+            class="c8"
+          >
+            Ac
+          </h3>
+        </div>
+        <p
+          class="c9"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          Account
+        </p>
+      </div>
+      <div
+        class="c10"
+        color="card.account.color"
+      >
+        <h1
+          class="c11"
+          font-family="RT-Alias-Medium"
+          font-size="6"
+          font-weight="700"
+        >
+          Prime
+        </h1>
+        <div
+          class="c12"
+          display="flex"
+        >
+          <h2
+            class="c13"
+            font-family="RT-Alias-Grotesk"
+            font-size="5"
+            font-weight="1"
+          >
+            t1z22 ... 6wgi
+          </h2>
+          <div
+            class="c14"
+            display="flex"
+          >
+            <button
+              class="c15"
+              display="inline-block"
+            >
+              <svg
+                class="c16"
+                fill="none"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  fill="#1A0066"
+                  height="12"
+                  width="12"
+                  x="8"
+                  y="4"
+                />
+                <rect
+                  fill="#E0D7FE"
+                  height="12"
+                  width="12"
+                  x="4"
+                  y="8"
+                />
+              </svg>
+            </button>
+            <h4
+              class="c17 c18 c19"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Copy
+            </h4>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c20"
+        display="flex"
+      >
+        <button
+          class="c21"
+          font-size="3"
+          height="max-content"
+          type="button"
+        >
+          Switch
+        </button>
+      </div>
+    </div>
+    <div
+      class="c22"
+      display="flex"
+      width="300px"
+    >
+      <div
+        class="c23"
+        display="flex"
+      >
+        <h4
+          class="c24"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          Balance
+        </h4>
+        <div
+          class="c23"
+          display="flex"
+        >
+          <h4
+            class="c25 c26"
+            color="core.black"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Approx.
+          </h4>
+          <div
+            class="c27"
+            width="2"
+          />
+          <h4
+            class="c28 c26"
+            color="core.darkgray"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Exact
+          </h4>
+        </div>
+      </div>
+      <div
+        class="c29"
+        overflow="hidden"
+      >
+        <h2
+          class="c30 c31"
+          color="card.balance.color"
+          font-family="RT-Alias-Medium"
+          font-size="6"
+          font-weight="700"
+        >
+          &gt; 999.9B
+           FIL
+        </h2>
+        <h2
+          class="c32"
+          color="core.darkgray"
+          font-family="RT-Alias-Medium"
+          font-size="5"
+          font-weight="700"
+        >
+          5 USD
+        </h2>
+      </div>
+      <div
+        class="c33"
+        display="flex"
+      >
+        <button
+          class="c34"
+          font-size="3"
+          type="button"
+          width="120"
+        >
+          Receive
+        </button>
+        <button
+          class="c35"
+          font-size="3"
+          type="button"
+          width="120"
+        >
+          Send
+        </button>
+      </div>
+    </div>
+    <button
+      class="c36"
+      display="flex"
+      font-size="3"
+      width="100%"
+    >
+      Logout
+    </button>
+  </div>
+  <div
+    class="c37"
+  >
+    <div
+      class="c38"
+      display="flex"
+    >
+      <div
+        class="c39"
+        display="flex"
+      >
+        <div
+          class="c40"
+          display="flex"
+        >
+          <div
+            class="c41"
+            color="background.screen"
+            display="flex"
+            size="6"
+          >
+            <h3
+              class="c8"
+            >
+              Rc
+            </h3>
+          </div>
+          <p
+            class="c42"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            Receive Filecoin
+          </p>
+        </div>
+        <div
+          class="c40"
+          display="flex"
+        >
+          <button
+            class="c43"
+            display="inline-block"
+            type="button"
+          >
+            <svg
+              class="c16"
+              fill="none"
+              height="24"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+                fill="#5E26FF"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <p
+        class="c44"
+        font-family="RT-Alias-Grotesk"
+        font-size="3"
+        font-weight="400"
+      >
+        To receive Filecoin, share your address with the sender
+      </p>
+      <div
+        class="c45"
+        width="14"
+      >
+        <div
+          class="c46"
+          display="flex"
+        >
+          <p
+            class="c9"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            t1
+          </p>
+          <p
+            class="c47"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            ●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
+          </p>
+          <p
+            class="c9"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            6wgi
+          </p>
+        </div>
+        <div
+          class="c48"
+          display="flex"
+          height="100%"
+        >
+          <button
+            class="c49"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+            width="7"
+          >
+            Copy
+          </button>
+          <button
+            class="c49"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+            width="7"
+          >
+            Reveal
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`WalletView it renders the send flow when a user clicks send 1`] = `
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 8px;
+  color: purple;
+  background-color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  box-shadow: 0 0.7px 2.2px -8px rgba(0,0,0,0.18),0 1.7px 5.4px rgba(0,0,0,0.129),0 3.1px 10.1px rgba(0,0,0,0.107),0 5.6px 18.1px rgba(0,0,0,0.09),0 10.4px 33.8px rgba(0,0,0,0.073),0 25px 81px rgba(0,0,0,0.051);
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #E0D7FE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  margin-right: 16px;
+  color: #E0D7FE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #E0D7FE;
+}
+
+.c12 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  min-height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  width: 8px;
+}
+
+.c29 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  overflow: hidden;
+}
+
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c41 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c42 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: #5E26FF;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c44 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c46 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #5E26FF;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c47 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #999999;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c49 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.c51 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  min-width: 160px;
+  text-align: center;
+}
+
+.c53 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid;
+  border-radius: 1px;
+  border-color: #999999;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 160px;
+}
+
+.c54 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c55 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c56 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  height: 80px;
+  width: 100%;
+}
+
+.c57 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 32px;
+  padding-bottom: 4px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c61 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-top: 1px solid;
+  border-color: #999999;
+  display: block;
+  height: 80px;
+}
+
+.c68 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c70 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: right;
+}
+
+.c8 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c21 {
+  cursor: pointer;
+  border: 1px solid #E0D7FE;
+  background-color: transparent;
+  border-color: #E0D7FE;
+  color: #E0D7FE;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c21:hover {
+  opacity: 0.8;
+}
+
+.c34 {
+  cursor: not-allowed;
+  border: 1px solid #C4C4C4;
+  background-color: #C4C4C4;
+  border-color: #C4C4C4;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c34:hover {
+  opacity: 1;
+}
+
+.c35 {
+  cursor: not-allowed;
+  border: 1px solid #C4C4C4;
+  background-color: #C4C4C4;
+  border-color: #C4C4C4;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 8px;
+  padding: 16px;
+  width: 120px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c35:hover {
+  opacity: 1;
+}
+
+.c75 {
+  cursor: pointer;
+  border: 1px solid core.lightgray;
+  background-color: transparent;
+  border-color: core.lightgray;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border: 0;
+  border-right: 1px solid;
+  border-radius: 4px;
+  border-color: #C4C4C4;
+  border-width: 1px;
+}
+
+.c75:hover {
+  opacity: 0.8;
+}
+
+.c77 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border: 0;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.c77:hover {
+  opacity: 0.8;
+}
+
+.c16 {
+  width: 24;
+  height: 24;
+}
+
+.c15 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+}
+
+.c15:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c48 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.c48:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c11 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c13 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c30 {
+  color: #262626;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c32 {
+  color: #666666;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c69 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c71 {
+  color: #5E26FF;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c73 {
+  color: #666666;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c9 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c43 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 8px;
+}
+
+.c45 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c63 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 4px;
+  margin-bottom: 0;
+  padding-top: 8px;
+}
+
+.c65 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-bottom: 0;
+}
+
+.c17 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 0;
+}
+
+.c24 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c25 {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c28 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c19 {
+  -webkit-transition: 0.18s ease-in;
+  transition: 0.18s ease-in;
+  opacity: 0;
+}
+
+.c14 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c14:hover .c18 {
+  opacity: 1;
+}
+
+.c26:hover {
+  cursor: pointer;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c31 {
+  word-wrap: break-word;
+}
+
+.c52 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #E4EBFC;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c52:hover {
+  cursor: text;
+}
+
+.c52:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c67 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: transparent;
+  background-color: #EFF3FD;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c67:hover {
+  cursor: not-allowed;
+}
+
+.c67:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c50 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 16px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 1px;
+}
+
+.c60 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #E4EBFC;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  -moz-appearance: textfield;
+}
+
+.c60:hover {
+  cursor: text;
+}
+
+.c60:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c60::-webkit-outer-spin-button,
+.c60::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c58 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 30px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+.c59 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 110px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+.c74 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #C4C4C4;
+  background-color: #F6F8FE;
+  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
+  position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  bottom: 16px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  border-radius: 4px;
+  max-width: 560px;
+  width: 40%;
+}
+
+.c3 {
+  background: #1AD08F;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border: 0;
+  border-radius: 16px;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: RT-Alias-Grotesk;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c3:first-child {
+  margin-right: 8px;
+}
+
+.c3:hover {
+  cursor: pointer;
+  background: true;
+}
+
+.c4 {
+  background: transparent;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border: 0;
+  border-radius: 16px;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: RT-Alias-Grotesk;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c4:first-child {
+  margin-right: 8px;
+}
+
+.c4:hover {
+  cursor: pointer;
+  background: #C4C4C4;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c1 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin: 0.5rem;
+}
+
+.c37 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -webkit-box-flex: 999;
+  -webkit-flex-grow: 999;
+  -ms-flex-positive: 999;
+  flex-grow: 999;
+  padding-top: 24px;
+  margin: 0.5rem;
+  min-width: 53%;
+  margin-bottom: 6rem;
+}
+
+.c38 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  max-width: 560px;
+  min-width: 320px;
+}
+
+.c39 {
+  background-color: #EFF3FD;
+  border: 1px solid;
+  border-radius: 4px;
+  border-color: silver;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c62 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c62:hover {
+  cursor: pointer;
+}
+
+.c64 {
+  font-size: 0.75rem;
+}
+
+.c66 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  line-height: 2;
+}
+
+.c72 {
+  word-wrap: break-word;
+}
+
+.c76 {
+  border-radius: 0px;
+}
+
+.c78 {
+  border-radius: 0px;
+}
+
+.c36 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-top: 24px;
+  padding: 16px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-width: 1px;
+  border-radius: 4px;
+  background-color: #E0D7FE00;
+}
+
+.c36:hover {
+  opacity: 0.8;
+}
+
+.c36:hover {
+  background-color: #E0D7FE;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    height="100vh"
+  >
+    <div
+      class="c2"
+      display="flex"
+      width="100%"
+    >
+      <button
+        class="c3"
+        display="flex"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="1"
+      >
+        Testnet
+      </button>
+      <button
+        class="c4"
+        display="flex"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="1"
+      >
+        Mainnet
+      </button>
+    </div>
+    <div
+      class="c5"
+      color="purple"
+      display="flex"
+      height="300px"
+      width="300px"
+    >
+      <div
+        class="c6"
+        color="card.account.color"
+        display="flex"
+      >
+        <div
+          class="c7"
+          color="card.account.color"
+          display="flex"
+          size="6"
+        >
+          <h3
+            class="c8"
+          >
+            Ac
+          </h3>
+        </div>
+        <p
+          class="c9"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          Account
+        </p>
+      </div>
+      <div
+        class="c10"
+        color="card.account.color"
+      >
+        <h1
+          class="c11"
+          font-family="RT-Alias-Medium"
+          font-size="6"
+          font-weight="700"
+        >
+          Prime
+        </h1>
+        <div
+          class="c12"
+          display="flex"
+        >
+          <h2
+            class="c13"
+            font-family="RT-Alias-Grotesk"
+            font-size="5"
+            font-weight="1"
+          >
+            t1z22 ... 6wgi
+          </h2>
+          <div
+            class="c14"
+            display="flex"
+          >
+            <button
+              class="c15"
+              display="inline-block"
+            >
+              <svg
+                class="c16"
+                fill="none"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  fill="#1A0066"
+                  height="12"
+                  width="12"
+                  x="8"
+                  y="4"
+                />
+                <rect
+                  fill="#E0D7FE"
+                  height="12"
+                  width="12"
+                  x="4"
+                  y="8"
+                />
+              </svg>
+            </button>
+            <h4
+              class="c17 c18 c19"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Copy
+            </h4>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c20"
+        display="flex"
+      >
+        <button
+          class="c21"
+          font-size="3"
+          height="max-content"
+          type="button"
+        >
+          Switch
+        </button>
+      </div>
+    </div>
+    <div
+      class="c22"
+      display="flex"
+      width="300px"
+    >
+      <div
+        class="c23"
+        display="flex"
+      >
+        <h4
+          class="c24"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          Balance
+        </h4>
+        <div
+          class="c23"
+          display="flex"
+        >
+          <h4
+            class="c25 c26"
+            color="core.black"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Approx.
+          </h4>
+          <div
+            class="c27"
+            width="2"
+          />
+          <h4
+            class="c28 c26"
+            color="core.darkgray"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Exact
+          </h4>
+        </div>
+      </div>
+      <div
+        class="c29"
+        overflow="hidden"
+      >
+        <h2
+          class="c30 c31"
+          color="card.balance.color"
+          font-family="RT-Alias-Medium"
+          font-size="6"
+          font-weight="700"
+        >
+          &gt; 999.9B
+           FIL
+        </h2>
+        <h2
+          class="c32"
+          color="core.darkgray"
+          font-family="RT-Alias-Medium"
+          font-size="5"
+          font-weight="700"
+        >
+          5 USD
+        </h2>
+      </div>
+      <div
+        class="c33"
+        display="flex"
+      >
+        <button
+          class="c34"
+          disabled=""
+          font-size="3"
+          type="button"
+          width="120"
+        >
+          Receive
+        </button>
+        <button
+          class="c35"
+          disabled=""
+          font-size="3"
+          type="button"
+          width="120"
+        >
+          Send
+        </button>
+      </div>
+    </div>
+    <button
+      class="c36"
+      display="flex"
+      font-size="3"
+      width="100%"
+    >
+      Logout
+    </button>
+  </div>
+  <div
+    class="c37"
+  >
+    <div
+      class="c38"
+    >
+      <form
+        autocomplete="off"
+        class="c39"
+        display="flex"
+      >
+        <div
+          class="c40"
+          display="flex"
+        >
+          <div
+            class="c41"
+            display="flex"
+          >
+            <div
+              class="c42"
+              color="background.screen"
+              display="flex"
+              size="6"
+            >
+              <h3
+                class="c8"
+              >
+                To
+              </h3>
+            </div>
+            <p
+              class="c43"
+              color="core.primary"
+              font-family="RT-Alias-Grotesk"
+              font-size="3"
+              font-weight="400"
+            >
+              Sending Filecoin
+            </p>
+          </div>
+          <div
+            class="c41"
+            display="flex"
+          >
+            <div
+              class="c44"
+              display="flex"
+            >
+              <p
+                class="c45"
+                color="core.primary"
+                font-family="RT-Alias-Grotesk"
+                font-size="3"
+                font-weight="400"
+              >
+                Step 
+                1
+              </p>
+              <div
+                class="c41"
+                display="flex"
+              >
+                <div
+                  class="c46"
+                  display="inline-block"
+                  height="2"
+                  width="2"
+                />
+              </div>
+              <div
+                class="c41"
+                display="flex"
+              >
+                <div
+                  class="c47"
+                  display="inline-block"
+                  height="2"
+                  width="2"
+                />
+              </div>
+            </div>
+            <button
+              class="c48"
+              display="inline-block"
+              role="button"
+              type="button"
+            >
+              <svg
+                class="c16"
+                fill="none"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+                  fill="#5E26FF"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          class="c49"
+        >
+          <div
+            class="c50"
+          >
+            <div
+              class="c41"
+              display="flex"
+            >
+              <div
+                class="c51"
+                display="inline-block"
+              >
+                <h4
+                  class="c24"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Recipient
+                </h4>
+              </div>
+              <input
+                class="c52"
+                display="inline-block"
+                height="7"
+                name="recipient"
+                placeholder="t1..."
+                value=""
+                width="100%"
+              />
+            </div>
+          </div>
+          
+          <div
+            class="c53"
+            display="flex"
+            label="Amount"
+            name="amount"
+          >
+            <div
+              class="c54"
+              display="flex"
+              width="100%"
+            >
+              <h4
+                class="c24"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Amount
+              </h4>
+            </div>
+            <div
+              class="c55"
+              display="inline-block"
+              width="100%"
+            >
+              <div
+                class="c56"
+                display="block"
+                height="80px"
+                width="100%"
+              >
+                <div
+                  class="c57"
+                  display="flex"
+                  font-family="sansSerif"
+                  font-size="5"
+                  size="6"
+                >
+                  =
+                </div>
+                <div
+                  class="c58"
+                  color="core.white"
+                  width="6"
+                >
+                  FIL
+                </div>
+                <div
+                  class="c59"
+                  color="core.white"
+                  width="6"
+                >
+                  USD
+                </div>
+                <input
+                  class="c60"
+                  display="inline-block"
+                  height="100%"
+                  label="Amount"
+                  name="amount"
+                  placeholder="0"
+                  step="0.000000000000000001"
+                  type="number"
+                  value=""
+                  width="100%"
+                />
+              </div>
+              <div
+                class="c61"
+                display="block"
+                height="80px"
+              >
+                <input
+                  class="c60"
+                  display="inline-block"
+                  height="100%"
+                  min="0"
+                  placeholder="0"
+                  step="0.000000000000000001"
+                  type="number"
+                  value=""
+                  width="100%"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="c62"
+            color="core.primary"
+            display="flex"
+            role="button"
+            type="button"
+          >
+            <p
+              class="c63 c64"
+              font-family="RT-Alias-Grotesk"
+              font-size="3"
+              font-weight="400"
+            >
+              ▼
+            </p>
+            <p
+              class="c65 c66"
+              font-family="RT-Alias-Grotesk"
+              font-size="3"
+              font-weight="400"
+            >
+              Customize
+            </p>
+          </div>
+          <div
+            class="c50"
+          >
+            <div
+              class="c41"
+              display="flex"
+            >
+              <div
+                class="c51"
+                display="inline-block"
+              >
+                <h4
+                  class="c24"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Estimated Fee
+                </h4>
+              </div>
+              <input
+                class="c67"
+                disabled=""
+                display="inline-block"
+                height="7"
+                value="< 0.1FIL"
+                width="100%"
+              />
+            </div>
+          </div>
+          <div
+            class="c68"
+            display="flex"
+          >
+            <h2
+              class="c69"
+              font-family="RT-Alias-Grotesk"
+              font-size="4"
+              font-weight="400"
+            >
+              Total
+            </h2>
+            <div
+              class="c70"
+              display="flex"
+            >
+              <h2
+                class="c71 c72"
+                color="core.primary"
+                font-family="RT-Alias-Grotesk"
+                font-size="4"
+                font-weight="400"
+              >
+                0
+                 
+                FIL
+              </h2>
+              <h2
+                class="c73"
+                color="core.darkgray"
+                font-family="RT-Alias-Grotesk"
+                font-size="4"
+                font-weight="400"
+              >
+                0
+                 
+                USD
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div
+          class="c74"
+        >
+          <button
+            class="c75 c76"
+            font-size="3"
+            type="button"
+          >
+            Back
+          </button>
+          <button
+            class="c77 c78"
+            font-size="3"
+            type="submit"
+          >
+            Send
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;

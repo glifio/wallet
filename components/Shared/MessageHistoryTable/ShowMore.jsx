@@ -8,9 +8,7 @@ export default () => {
   const { paginating, showMore, confirmed, total } = useTransactionHistory()
   return (
     <>
-      {confirmed.length === total ? (
-        <></>
-      ) : (
+      {confirmed.length < total && (
         <MessageHistoryRowContainer
           css={`
             cursor: pointer;

@@ -12,5 +12,6 @@ module.exports = {
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
     '@zondax/filecoin-signer-wasm':
       '<rootDir>/test-utils/mock-filecoin-signer-wasm.js'
-  }
+  },
+  setupFilesAfterEnv: ['./jest.setup.js']
 }

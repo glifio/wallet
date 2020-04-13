@@ -1,6 +1,6 @@
-import isValidBrowser from '.'
+import isDesktopChromeBrowser from '.'
 
-describe('isValidBrowser', () => {
+describe('isDesktopChromeBrowser', () => {
   test('it invalidates IOSChrome', async () => {
     const { navigator } = window
 
@@ -11,7 +11,7 @@ describe('isValidBrowser', () => {
         'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1'
     }
 
-    expect(isValidBrowser()).toBe(false)
+    expect(isDesktopChromeBrowser()).toBe(false)
     window.navigator = navigator
   })
 
@@ -26,7 +26,7 @@ describe('isValidBrowser', () => {
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36'
     }
 
-    expect(isValidBrowser()).toBe(false)
+    expect(isDesktopChromeBrowser()).toBe(false)
     window.navigator = navigator
     window.chrome = chrome
   })
@@ -42,7 +42,7 @@ describe('isValidBrowser', () => {
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36'
     }
 
-    expect(isValidBrowser()).toBe(true)
+    expect(isDesktopChromeBrowser()).toBe(true)
     window.navigator = navigator
     window.chrome = chrome
   })
@@ -59,7 +59,7 @@ describe('isValidBrowser', () => {
       snapPrivate: {}
     }
 
-    expect(isValidBrowser()).toBe(false)
+    expect(isDesktopChromeBrowser()).toBe(false)
     window.opr = opr
   })
 
@@ -73,7 +73,7 @@ describe('isValidBrowser', () => {
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Edge/537.36'
     }
 
-    expect(isValidBrowser()).toBe(false)
+    expect(isDesktopChromeBrowser()).toBe(false)
     window.navigator = navigator
   })
 })

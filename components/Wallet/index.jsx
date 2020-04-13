@@ -83,6 +83,7 @@ export default () => {
             balance={wallet.balance}
             onReceive={() => onViewChange(RECEIVE)}
             onSend={() => onViewChange(SEND)}
+            disableButtons={childView === SEND}
           />
           <ButtonLogout
             variant='secondary'

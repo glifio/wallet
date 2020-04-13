@@ -34,6 +34,7 @@ const ErrorCard = ({ error, reset }) => {
       </Box>
       <Box
         display='flex'
+        flexWrap='wrap'
         justifyContent='space-between'
         alignItems='center'
         flexGrow='2'

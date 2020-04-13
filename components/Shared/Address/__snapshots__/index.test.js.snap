@@ -1,16 +1,104 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Receive it renders correctly 1`] = `
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 4px;
+  padding-right: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c3 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 1px;
+  padding-left: 16px;
+  width: 640px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 70px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 16px;
+}
+
+.c5 {
+  display: inline-block;
+  height: 100%;
+  outline: none;
+  background-color: #E4EBFC;
+  padding: 0;
+  width: 64px;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c5:hover {
+  cursor: pointer;
+}
+
 <div
-  class="Box-tuskkk-0 Address__Wrapper-sc-12hm3d7-0 bKmyJT"
+  class="c0"
   width="14"
 >
   <div
-    class="Box-tuskkk-0 fjrNYs"
+    class="c1"
     display="flex"
   >
     <p
-      class="Typography__TextBase-sc-1uzug1e-2 LZLLr"
+      class="c2"
       font-family="RT-Alias-Grotesk"
       font-size="3"
       font-weight="400"
@@ -18,7 +106,7 @@ exports[`Receive it renders correctly 1`] = `
       t1
     </p>
     <p
-      class="Typography__TextBase-sc-1uzug1e-2 czlDxc"
+      class="c3"
       font-family="RT-Alias-Grotesk"
       font-size="3"
       font-weight="400"
@@ -26,7 +114,7 @@ exports[`Receive it renders correctly 1`] = `
       ●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
     </p>
     <p
-      class="Typography__TextBase-sc-1uzug1e-2 LZLLr"
+      class="c2"
       font-family="RT-Alias-Grotesk"
       font-size="3"
       font-weight="400"
@@ -35,12 +123,12 @@ exports[`Receive it renders correctly 1`] = `
     </p>
   </div>
   <div
-    class="Box-tuskkk-0 jcbfAF"
+    class="c4"
     display="flex"
     height="100%"
   >
     <button
-      class="Address__InlineButton-sc-12hm3d7-1 fdmssE"
+      class="c5"
       font-family="RT-Alias-Grotesk"
       font-size="2"
       font-weight="400"
@@ -49,7 +137,7 @@ exports[`Receive it renders correctly 1`] = `
       Copy
     </button>
     <button
-      class="Address__InlineButton-sc-12hm3d7-1 fdmssE"
+      class="c5"
       font-family="RT-Alias-Grotesk"
       font-size="2"
       font-weight="400"
@@ -62,12 +150,79 @@ exports[`Receive it renders correctly 1`] = `
 `;
 
 exports[`Receive it reveals the address when the user clicks reveal 1`] = `
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c1 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  padding-left: 4px;
+  padding-right: 8px;
+}
+
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 1px;
+  padding-left: 16px;
+  width: 640px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 70px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 16px;
+}
+
+.c3 {
+  display: inline-block;
+  height: 100%;
+  outline: none;
+  background-color: #E4EBFC;
+  padding: 0;
+  width: 64px;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c3:hover {
+  cursor: pointer;
+}
+
 <div
-  class="Box-tuskkk-0 Address__Wrapper-sc-12hm3d7-0 bKmyJT"
+  class="c0"
   width="14"
 >
   <p
-    class="Typography__TextBase-sc-1uzug1e-2 gApeFg"
+    class="c1"
     font-family="RT-Alias-Grotesk"
     font-size="3"
     font-weight="400"
@@ -75,12 +230,12 @@ exports[`Receive it reveals the address when the user clicks reveal 1`] = `
     t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy
   </p>
   <div
-    class="Box-tuskkk-0 jcbfAF"
+    class="c2"
     display="flex"
     height="100%"
   >
     <button
-      class="Address__InlineButton-sc-12hm3d7-1 fdmssE"
+      class="c3"
       font-family="RT-Alias-Grotesk"
       font-size="2"
       font-weight="400"
@@ -89,7 +244,7 @@ exports[`Receive it reveals the address when the user clicks reveal 1`] = `
       Copy
     </button>
     <button
-      class="Address__InlineButton-sc-12hm3d7-1 fdmssE"
+      class="c3"
       font-family="RT-Alias-Grotesk"
       font-size="2"
       font-weight="400"

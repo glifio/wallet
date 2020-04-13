@@ -53,10 +53,15 @@ const SendCardForm = styled.form.attrs(() => ({
   ${flexbox}
 `
 
-const isValidAmount = (value, balance, error) => {
+// this is a bit confusing, sometimes the form can report errors, so we check those here too
+const isValidAmount = (value, balance, errorFromForms) => {
   const valueFieldFilledOut = value && value.isGreaterThan(0)
   const enoughInTheBank = balance.isGreaterThan(value)
-  return valueFieldFilledOut && enoughInTheBank && !error
+  return valueFieldFilledOut && enoughInTheBank && !errorFromForms
+}
+const isValidAddress = (address, errorFromForms) => {
+  const validToAddress = validateAddressString(address)
+  return !errorFromForms && validToAddress
 }
 
 const isValidForm = (
@@ -67,11 +72,9 @@ const isValidForm = (
   valueError,
   otherError
 ) => {
-  const validToAddress = validateAddressString(toAddress)
-  const errorFree =
-    validToAddress && !toAddressError && !valueError && !otherError
-  const validAmount = isValidAmount(value, balance)
-  return !!(errorFree && validAmount)
+  const validToAddress = isValidAddress(toAddress, toAddressError)
+  const validAmount = isValidAmount(value, balance, valueError)
+  return validToAddress && validAmount && !otherError
 }
 
 const Send = ({ close }) => {
@@ -173,6 +176,7 @@ const Send = ({ close }) => {
   const onSubmit = async e => {
     e.preventDefault()
     setAttemptingTx(true)
+
     if (
       !isValidForm(
         toAddress,
@@ -183,7 +187,13 @@ const Send = ({ close }) => {
         uncaughtError
       )
     ) {
-      setUncaughtError('Invalid form!')
+      if (!isValidAddress(toAddress, toAddressError))
+        setToAddressError('Invalid address.')
+      if (!isValidAmount(value, wallet.balance, valueError))
+        setValueError(
+          'Please enter a valid amount that is less than your Filecoin balance.'
+        )
+      return
     }
 
     if (wallet.type === LEDGER) {
@@ -413,64 +423,51 @@ const Send = ({ close }) => {
               </Box>
             </Box>
           </Box>
-          {!customizingGas && (
-            <FloatingContainer>
-              {step === 2 && wallet.type === LEDGER ? (
-                <Text width='100%' textAlign='center' px={4}>
-                  Confirm or reject the transaction on your Ledger Device.
-                </Text>
-              ) : (
-                <>
-                  <Button
-                    type='button'
-                    title='Back'
-                    variant='secondary'
-                    border={0}
-                    borderRight={1}
-                    borderRadius={0}
-                    borderColor='core.lightgray'
-                    onClick={() => {
-                      if (step === 2) setStep(1)
-                      else {
-                        setAttemptingTx(false)
-                        setUncaughtError('')
-                        resetLedgerState()
-                        close()
-                      }
-                    }}
-                    css={`
-                      /* 'css' operation is used here to override its inherited border-radius property */
-                      border-radius: 0px;
-                    `}
-                  />
-                  <Button
-                    border={0}
-                    borderRadius={0}
-                    disabled={
-                      !!(
-                        hasError() ||
-                        !isValidForm(
-                          toAddress,
-                          value,
-                          wallet.balance,
-                          toAddressError,
-                          valueError
-                        )
-                      )
+          <FloatingContainer>
+            {step === 2 && wallet.type === LEDGER && !hasError() ? (
+              <Text width='100%' textAlign='center' px={4}>
+                Confirm or reject the transaction on your Ledger Device.
+              </Text>
+            ) : (
+              <>
+                <Button
+                  type='button'
+                  title='Back'
+                  variant='secondary'
+                  border={0}
+                  borderRight={1}
+                  borderRadius={0}
+                  borderColor='core.lightgray'
+                  onClick={() => {
+                    setAttemptingTx(false)
+                    setUncaughtError('')
+                    resetLedgerState()
+                    if (step === 1) {
+                      close()
+                    } else {
+                      setStep(step - 1)
                     }
-                    type='submit'
-                    title={step === 1 ? 'Next' : 'Confirm'}
-                    variant='primary'
-                    onClick={noop}
-                    css={`
-                      /* 'css' operation is used here to override its inherited border-radius property */
-                      border-radius: 0px;
-                    `}
-                  />
-                </>
-              )}
-            </FloatingContainer>
-          )}
+                  }}
+                  css={`
+                    /* 'css' operation is used here to override its inherited border-radius property */
+                    border-radius: 0px;
+                  `}
+                />
+                <Button
+                  border={0}
+                  borderRadius={0}
+                  type='submit'
+                  title={step === 1 ? 'Send' : 'Confirm'}
+                  variant='primary'
+                  onClick={noop}
+                  css={`
+                    /* 'css' operation is used here to override its inherited border-radius property */
+                    border-radius: 0px;
+                  `}
+                />
+              </>
+            )}
+          </FloatingContainer>
         </SendCardForm>
       </SendContainer>
     </>

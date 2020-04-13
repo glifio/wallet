@@ -1,8 +1,11 @@
 import React, { useRef } from 'react'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { func, bool, string } from 'prop-types'
-import { Box, Input, Label, ContentContainer } from '../../Shared'
+import { Box, Label, ContentContainer, Input } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
+
+// this is a weird hack to get tests to run in jest...
+const NumberedInput = Input.Number
 
 const GasCustomization = ({
   gasPrice,
@@ -62,7 +65,7 @@ const GasCustomization = ({
             value={gasPrice.toAttoFil()}
             onChange={onGasPriceInputChange}
           />
-          <Input.Number
+          <NumberedInput
             css={`
               transform: translateY(-1px);
             `}
