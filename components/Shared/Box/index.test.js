@@ -10,8 +10,7 @@ describe('Box', () => {
   })
 
   test('renders the box with the right atributes', () => {
-    const { Tree } = composeMockAppTree('postOnboard')
-    const { container, getByText } = render(
+    const { container } = render(
       <Box
         position='flex'
         flexDirection='row'
