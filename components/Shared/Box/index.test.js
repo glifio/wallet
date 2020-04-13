@@ -8,7 +8,7 @@ describe('Box', () => {
     expect(container.firstChild).toMatchSnapshot()
   })
 
-  test('renders the box with the right atributes', () => {
+  test('renders the box with the right attributes', () => {
     const { container } = render(
       <Box
         position='flex'
