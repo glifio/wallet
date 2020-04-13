@@ -1,0 +1,2392 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Funds input changing values it calls the value change callback when the user focuses between inputs 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid;
+  border-radius: 1px;
+  border-color: #999999;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 160px;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  height: 80px;
+  width: 100%;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 32px;
+  padding-bottom: 4px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-top: 1px solid;
+  border-color: #999999;
+  display: block;
+  height: 80px;
+}
+
+.c2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c8 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #E4EBFC;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  -moz-appearance: textfield;
+}
+
+.c8:hover {
+  cursor: text;
+}
+
+.c8:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 30px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 110px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+<div
+  class="c0"
+  display="flex"
+  label="Amount"
+  name="amount"
+>
+  <div
+    class="c1"
+    display="flex"
+    width="100%"
+  >
+    <h4
+      class="c2"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+    >
+      Amount
+    </h4>
+  </div>
+  <div
+    class="c3"
+    display="inline-block"
+    width="100%"
+  >
+    <div
+      class="c4"
+      display="block"
+      height="80px"
+      width="100%"
+    >
+      <div
+        class="c5"
+        display="flex"
+        font-family="sansSerif"
+        font-size="5"
+        size="6"
+      >
+        =
+      </div>
+      <div
+        class="c6"
+        color="core.white"
+        width="6"
+      >
+        FIL
+      </div>
+      <div
+        class="c7"
+        color="core.white"
+        width="6"
+      >
+        USD
+      </div>
+      <input
+        class="BaseInput-u1913i-0 c8"
+        display="inline-block"
+        height="100%"
+        label="Amount"
+        name="amount"
+        placeholder="0"
+        step="0.000000000000000001"
+        type="number"
+        value="NaN"
+        width="100%"
+      />
+    </div>
+    <div
+      class="c9"
+      display="block"
+      height="80px"
+    >
+      <input
+        class="BaseInput-u1913i-0 c8"
+        display="inline-block"
+        height="100%"
+        min="0"
+        placeholder="0"
+        step="0.000000000000000001"
+        type="number"
+        value=""
+        width="100%"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Funds input changing values it does not call the value change callback when the user focuses between inputs 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid;
+  border-radius: 1px;
+  border-color: #999999;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 160px;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  height: 80px;
+  width: 100%;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 32px;
+  padding-bottom: 4px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-top: 1px solid;
+  border-color: #999999;
+  display: block;
+  height: 80px;
+}
+
+.c2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c8 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #E4EBFC;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  -moz-appearance: textfield;
+}
+
+.c8:hover {
+  cursor: text;
+}
+
+.c8:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 30px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 110px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+<div
+  class="c0"
+  display="flex"
+  label="Amount"
+  name="amount"
+>
+  <div
+    class="c1"
+    display="flex"
+    width="100%"
+  >
+    <h4
+      class="c2"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+    >
+      Amount
+    </h4>
+  </div>
+  <div
+    class="c3"
+    display="inline-block"
+    width="100%"
+  >
+    <div
+      class="c4"
+      display="block"
+      height="80px"
+      width="100%"
+    >
+      <div
+        class="c5"
+        display="flex"
+        font-family="sansSerif"
+        font-size="5"
+        size="6"
+      >
+        =
+      </div>
+      <div
+        class="c6"
+        color="core.white"
+        width="6"
+      >
+        FIL
+      </div>
+      <div
+        class="c7"
+        color="core.white"
+        width="6"
+      >
+        USD
+      </div>
+      <input
+        class="BaseInput-u1913i-0 c8"
+        display="inline-block"
+        height="100%"
+        label="Amount"
+        name="amount"
+        placeholder="0"
+        step="0.000000000000000001"
+        type="number"
+        value="NaN"
+        width="100%"
+      />
+    </div>
+    <div
+      class="c9"
+      display="block"
+      height="80px"
+    >
+      <input
+        class="BaseInput-u1913i-0 c8"
+        display="inline-block"
+        height="100%"
+        min="0"
+        placeholder="0"
+        step="0.000000000000000001"
+        type="number"
+        value=""
+        width="100%"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid;
+  border-radius: 1px;
+  border-color: #999999;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 160px;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  height: 80px;
+  width: 100%;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 32px;
+  padding-bottom: 4px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-top: 1px solid;
+  border-color: #999999;
+  display: block;
+  height: 80px;
+}
+
+.c2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c8 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #E4EBFC;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  -moz-appearance: textfield;
+}
+
+.c8:hover {
+  cursor: text;
+}
+
+.c8:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 30px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 110px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+<div
+  class="c0"
+  display="flex"
+  label="Amount"
+  name="amount"
+>
+  <div
+    class="c1"
+    display="flex"
+    width="100%"
+  >
+    <h4
+      class="c2"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+    >
+      Amount
+    </h4>
+  </div>
+  <div
+    class="c3"
+    display="inline-block"
+    width="100%"
+  >
+    <div
+      class="c4"
+      display="block"
+      height="80px"
+      width="100%"
+    >
+      <div
+        class="c5"
+        display="flex"
+        font-family="sansSerif"
+        font-size="5"
+        size="6"
+      >
+        =
+      </div>
+      <div
+        class="c6"
+        color="core.white"
+        width="6"
+      >
+        FIL
+      </div>
+      <div
+        class="c7"
+        color="core.white"
+        width="6"
+      >
+        USD
+      </div>
+      <input
+        class="BaseInput-u1913i-0 c8"
+        display="inline-block"
+        height="100%"
+        label="Amount"
+        name="amount"
+        placeholder="0"
+        step="0.000000000000000001"
+        type="number"
+        value="1"
+        width="100%"
+      />
+    </div>
+    <div
+      class="c9"
+      display="block"
+      height="80px"
+    >
+      <input
+        class="BaseInput-u1913i-0 c8"
+        display="inline-block"
+        height="100%"
+        min="0"
+        placeholder="0"
+        step="0.000000000000000001"
+        type="number"
+        value="5"
+        width="100%"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Funds input it renders correctly 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid;
+  border-radius: 1px;
+  border-color: #999999;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 160px;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  height: 80px;
+  width: 100%;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 32px;
+  padding-bottom: 4px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-top: 1px solid;
+  border-color: #999999;
+  display: block;
+  height: 80px;
+}
+
+.c2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c8 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #D2F5ED;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  -moz-appearance: textfield;
+}
+
+.c8:hover {
+  cursor: text;
+}
+
+.c8:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #D2F5ED;
+}
+
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 30px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 110px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+<div
+  class="c0"
+  display="flex"
+  label="Amount"
+  name="amount"
+>
+  <div
+    class="c1"
+    display="flex"
+    width="100%"
+  >
+    <h4
+      class="c2"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+    >
+      Amount
+    </h4>
+  </div>
+  <div
+    class="c3"
+    display="inline-block"
+    width="100%"
+  >
+    <div
+      class="c4"
+      display="block"
+      height="80px"
+      width="100%"
+    >
+      <div
+        class="c5"
+        display="flex"
+        font-family="sansSerif"
+        font-size="5"
+        size="6"
+      >
+        =
+      </div>
+      <div
+        class="c6"
+        color="core.white"
+        width="6"
+      >
+        FIL
+      </div>
+      <div
+        class="c7"
+        color="core.white"
+        width="6"
+      >
+        USD
+      </div>
+      <input
+        class="BaseInput-u1913i-0 c8"
+        display="inline-block"
+        height="100%"
+        label="Amount"
+        name="amount"
+        placeholder="0"
+        step="0.000000000000000001"
+        type="number"
+        value="1"
+        width="100%"
+      />
+    </div>
+    <div
+      class="c9"
+      display="block"
+      height="80px"
+    >
+      <input
+        class="BaseInput-u1913i-0 c8"
+        display="inline-block"
+        height="100%"
+        min="0"
+        placeholder="0"
+        step="0.000000000000000001"
+        type="number"
+        value="5"
+        width="100%"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Funds input it renders disabled and invalid state correctly 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid;
+  border-radius: 1px;
+  border-color: #999999;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 160px;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  height: 80px;
+  width: 100%;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 32px;
+  padding-bottom: 4px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-top: 1px solid;
+  border-color: #999999;
+  display: block;
+  height: 80px;
+}
+
+.c2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c8 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: transparent;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  -moz-appearance: textfield;
+}
+
+.c8:hover {
+  cursor: not-allowed;
+}
+
+.c8:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 30px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 110px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+<div
+  class="c0"
+  display="flex"
+  label="Amount"
+  name="amount"
+>
+  <div
+    class="c1"
+    display="flex"
+    width="100%"
+  >
+    <h4
+      class="c2"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+    >
+      Amount
+    </h4>
+  </div>
+  <div
+    class="c3"
+    display="inline-block"
+    width="100%"
+  >
+    <div
+      class="c4"
+      display="block"
+      height="80px"
+      width="100%"
+    >
+      <div
+        class="c5"
+        display="flex"
+        font-family="sansSerif"
+        font-size="5"
+        size="6"
+      >
+        =
+      </div>
+      <div
+        class="c6"
+        color="core.white"
+        width="6"
+      >
+        FIL
+      </div>
+      <div
+        class="c7"
+        color="core.white"
+        width="6"
+      >
+        USD
+      </div>
+      <input
+        class="BaseInput-u1913i-0 c8"
+        disabled=""
+        display="inline-block"
+        height="100%"
+        label="Amount"
+        name="amount"
+        placeholder="0"
+        step="0.000000000000000001"
+        type="number"
+        value="1"
+        width="100%"
+      />
+    </div>
+    <div
+      class="c9"
+      display="block"
+      height="80px"
+    >
+      <input
+        class="BaseInput-u1913i-0 c8"
+        disabled=""
+        display="inline-block"
+        height="100%"
+        min="0"
+        placeholder="0"
+        step="0.000000000000000001"
+        type="number"
+        value="5"
+        width="100%"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Funds input it renders disabled and valid state correctly 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid;
+  border-radius: 1px;
+  border-color: #999999;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 160px;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  height: 80px;
+  width: 100%;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 32px;
+  padding-bottom: 4px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-top: 1px solid;
+  border-color: #999999;
+  display: block;
+  height: 80px;
+}
+
+.c2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c8 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #D2F5ED;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  -moz-appearance: textfield;
+}
+
+.c8:hover {
+  cursor: not-allowed;
+}
+
+.c8:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #D2F5ED;
+}
+
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 30px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 110px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+<div
+  class="c0"
+  display="flex"
+  label="Amount"
+  name="amount"
+>
+  <div
+    class="c1"
+    display="flex"
+    width="100%"
+  >
+    <h4
+      class="c2"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+    >
+      Amount
+    </h4>
+  </div>
+  <div
+    class="c3"
+    display="inline-block"
+    width="100%"
+  >
+    <div
+      class="c4"
+      display="block"
+      height="80px"
+      width="100%"
+    >
+      <div
+        class="c5"
+        display="flex"
+        font-family="sansSerif"
+        font-size="5"
+        size="6"
+      >
+        =
+      </div>
+      <div
+        class="c6"
+        color="core.white"
+        width="6"
+      >
+        FIL
+      </div>
+      <div
+        class="c7"
+        color="core.white"
+        width="6"
+      >
+        USD
+      </div>
+      <input
+        class="BaseInput-u1913i-0 c8"
+        disabled=""
+        display="inline-block"
+        height="100%"
+        label="Amount"
+        name="amount"
+        placeholder="0"
+        step="0.000000000000000001"
+        type="number"
+        value="1"
+        width="100%"
+      />
+    </div>
+    <div
+      class="c9"
+      display="block"
+      height="80px"
+    >
+      <input
+        class="BaseInput-u1913i-0 c8"
+        disabled=""
+        display="inline-block"
+        height="100%"
+        min="0"
+        placeholder="0"
+        step="0.000000000000000001"
+        type="number"
+        value="5"
+        width="100%"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Funds input it renders disabled state correctly 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid;
+  border-radius: 1px;
+  border-color: #999999;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 160px;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  height: 80px;
+  width: 100%;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 32px;
+  padding-bottom: 4px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-top: 1px solid;
+  border-color: #999999;
+  display: block;
+  height: 80px;
+}
+
+.c2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c8 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: transparent;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  -moz-appearance: textfield;
+}
+
+.c8:hover {
+  cursor: not-allowed;
+}
+
+.c8:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 30px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 110px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+<div
+  class="c0"
+  display="flex"
+  label="Amount"
+  name="amount"
+>
+  <div
+    class="c1"
+    display="flex"
+    width="100%"
+  >
+    <h4
+      class="c2"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+    >
+      Amount
+    </h4>
+  </div>
+  <div
+    class="c3"
+    display="inline-block"
+    width="100%"
+  >
+    <div
+      class="c4"
+      display="block"
+      height="80px"
+      width="100%"
+    >
+      <div
+        class="c5"
+        display="flex"
+        font-family="sansSerif"
+        font-size="5"
+        size="6"
+      >
+        =
+      </div>
+      <div
+        class="c6"
+        color="core.white"
+        width="6"
+      >
+        FIL
+      </div>
+      <div
+        class="c7"
+        color="core.white"
+        width="6"
+      >
+        USD
+      </div>
+      <input
+        class="BaseInput-u1913i-0 c8"
+        disabled=""
+        display="inline-block"
+        height="100%"
+        label="Amount"
+        name="amount"
+        placeholder="0"
+        step="0.000000000000000001"
+        type="number"
+        value="1"
+        width="100%"
+      />
+    </div>
+    <div
+      class="c9"
+      display="block"
+      height="80px"
+    >
+      <input
+        class="BaseInput-u1913i-0 c8"
+        disabled=""
+        display="inline-block"
+        height="100%"
+        min="0"
+        placeholder="0"
+        step="0.000000000000000001"
+        type="number"
+        value="5"
+        width="100%"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Funds input it renders error states properly 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid;
+  border-radius: 1px;
+  border-color: #999999;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 160px;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding: 16px;
+  background-color: #FC6D6F;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  height: 80px;
+  width: 100%;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 32px;
+  padding-bottom: 4px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-top: 1px solid;
+  border-color: #999999;
+  display: block;
+  height: 80px;
+}
+
+.c2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c8 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #E4EBFC;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  -moz-appearance: textfield;
+}
+
+.c8:hover {
+  cursor: text;
+}
+
+.c8:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 30px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 110px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+<div
+  class="c0"
+  display="flex"
+  label="Amount"
+  name="amount"
+>
+  <div
+    class="c1"
+    display="flex"
+    width="100%"
+  >
+    <p
+      class="c2"
+      font-family="RT-Alias-Grotesk"
+      font-size="3"
+      font-weight="400"
+    >
+      specific error message
+    </p>
+  </div>
+  <div
+    class="c3"
+    display="inline-block"
+    width="100%"
+  >
+    <div
+      class="c4"
+      display="block"
+      height="80px"
+      width="100%"
+    >
+      <div
+        class="c5"
+        display="flex"
+        font-family="sansSerif"
+        font-size="5"
+        size="6"
+      >
+        =
+      </div>
+      <div
+        class="c6"
+        color="core.white"
+        width="6"
+      >
+        FIL
+      </div>
+      <div
+        class="c7"
+        color="core.white"
+        width="6"
+      >
+        USD
+      </div>
+      <input
+        class="BaseInput-u1913i-0 c8"
+        display="inline-block"
+        height="100%"
+        label="Amount"
+        name="amount"
+        placeholder="0"
+        step="0.000000000000000001"
+        type="number"
+        value="1"
+        width="100%"
+      />
+    </div>
+    <div
+      class="c9"
+      display="block"
+      height="80px"
+    >
+      <input
+        class="BaseInput-u1913i-0 c8"
+        display="inline-block"
+        height="100%"
+        min="0"
+        placeholder="0"
+        step="0.000000000000000001"
+        type="number"
+        value="5"
+        width="100%"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Funds input it renders invalid state correctly 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid;
+  border-radius: 1px;
+  border-color: #999999;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 160px;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  height: 80px;
+  width: 100%;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 32px;
+  padding-bottom: 4px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-top: 1px solid;
+  border-color: #999999;
+  display: block;
+  height: 80px;
+}
+
+.c2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c8 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #E4EBFC;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  -moz-appearance: textfield;
+}
+
+.c8:hover {
+  cursor: text;
+}
+
+.c8:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 30px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 110px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+<div
+  class="c0"
+  display="flex"
+  label="Amount"
+  name="amount"
+>
+  <div
+    class="c1"
+    display="flex"
+    width="100%"
+  >
+    <h4
+      class="c2"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+    >
+      Amount
+    </h4>
+  </div>
+  <div
+    class="c3"
+    display="inline-block"
+    width="100%"
+  >
+    <div
+      class="c4"
+      display="block"
+      height="80px"
+      width="100%"
+    >
+      <div
+        class="c5"
+        display="flex"
+        font-family="sansSerif"
+        font-size="5"
+        size="6"
+      >
+        =
+      </div>
+      <div
+        class="c6"
+        color="core.white"
+        width="6"
+      >
+        FIL
+      </div>
+      <div
+        class="c7"
+        color="core.white"
+        width="6"
+      >
+        USD
+      </div>
+      <input
+        class="BaseInput-u1913i-0 c8"
+        display="inline-block"
+        height="100%"
+        label="Amount"
+        name="amount"
+        placeholder="0"
+        step="0.000000000000000001"
+        type="number"
+        value="1"
+        width="100%"
+      />
+    </div>
+    <div
+      class="c9"
+      display="block"
+      height="80px"
+    >
+      <input
+        class="BaseInput-u1913i-0 c8"
+        display="inline-block"
+        height="100%"
+        min="0"
+        placeholder="0"
+        step="0.000000000000000001"
+        type="number"
+        value="5"
+        width="100%"
+      />
+    </div>
+  </div>
+</div>
+`;
