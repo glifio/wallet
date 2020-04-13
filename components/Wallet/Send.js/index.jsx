@@ -116,7 +116,10 @@ const Send = ({ close }) => {
         params: ''
       })
 
-      return walletProvider.estimateGas(message.encode())
+      // HMR causes this condition, we just make this check for easier dev purposes
+      return walletProvider
+        ? walletProvider.estimateGas(message.encode())
+        : new FilecoinNumber('0', 'attofil')
     },
     [wallet.address, walletProvider]
   )
@@ -175,7 +178,6 @@ const Send = ({ close }) => {
   const onSubmit = async e => {
     e.preventDefault()
     setAttemptingTx(true)
-
     if (
       !isValidForm(
         toAddress,
@@ -373,6 +375,7 @@ const Send = ({ close }) => {
             <Input.Text
               onChange={noop}
               label='Estimated Fee'
+              name='estimated-fee'
               value={customizingGas ? estimatedGasUsed.toAttoFil() : '< 0.1FIL'}
               backgroundColor='background.screen'
               disabled

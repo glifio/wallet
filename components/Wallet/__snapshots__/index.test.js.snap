@@ -3555,7 +3555,11 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Recipient
+                  <label
+                    for="recipient"
+                  >
+                    Recipient
+                  </label>
                 </h4>
               </div>
               <input
@@ -3697,7 +3701,11 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Estimated Fee
+                  <label
+                    for="estimated-fee"
+                  >
+                    Estimated Fee
+                  </label>
                 </h4>
               </div>
               <input
@@ -3705,6 +3713,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                 disabled=""
                 display="inline-block"
                 height="7"
+                name="estimated-fee"
                 value="< 0.1FIL"
                 width="100%"
               />
