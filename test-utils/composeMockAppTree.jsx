@@ -23,6 +23,15 @@ import { WalletProviderContext } from '../WalletProvider'
 import createPath from '../utils/createPath'
 import { IMPORT_MNEMONIC } from '../constants'
 
+const useRouter = jest.spyOn(require('next/router'), 'useRouter')
+
+const mockRouter = jest.fn(() => {})
+useRouter.mockImplementation(() => ({
+  query: 'network=t',
+  push: mockRouter,
+  replace: mockRouter
+}))
+
 jest.mock('@openworklabs/filecoin-wallet-provider')
 const mockGetAccounts = jest
   .fn()

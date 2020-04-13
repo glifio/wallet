@@ -20,7 +20,6 @@ const GasCustomization = ({
   const timeout = useRef(null)
 
   const onGasPriceInputChange = e => {
-    setEstimatedGas(new FilecoinNumber('0', 'attofil'))
     const val = e.target.value
     setGasPrice(new FilecoinNumber(val || '0', 'attofil'))
     clearTimeout(timeout.current)

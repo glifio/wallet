@@ -126,12 +126,21 @@ const Send = ({ close }) => {
 
   useEffect(() => {
     const fetchInitialGas = async () => {
-      const gas = await estimateGas(gasPrice, gasLimit, value.toAttoFil())
-      setEstimatedGasUsed(gas)
+      if (estimatedGasUsed.isEqualTo(0)) {
+        const gas = await estimateGas(gasPrice, gasLimit, value.toAttoFil())
+        setEstimatedGasUsed(gas)
+      }
     }
 
     fetchInitialGas()
-  }, [estimateGas, setEstimatedGasUsed, gasPrice, gasLimit, value])
+  }, [
+    estimateGas,
+    setEstimatedGasUsed,
+    estimatedGasUsed,
+    gasPrice,
+    gasLimit,
+    value
+  ])
 
   const submitMsg = async () => {
     let provider = walletProvider
