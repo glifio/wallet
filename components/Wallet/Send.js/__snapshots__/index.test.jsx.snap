@@ -1,0 +1,5087 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Send Flow snapshots it renders correctly 1`] = `
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: #5E26FF;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #5E26FF;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #999999;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c13 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-right: 1px solid;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 160px;
+  height: 64px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.c19 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid;
+  border-radius: 1px;
+  border-color: #999999;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 160px;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  border-right: 1px solid;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+  color: #999999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #E4EBFC;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  width: 100%;
+}
+
+.c24 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  z-index: 999;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 32px;
+  padding-bottom: 4px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-top: 1px solid;
+  border-color: #999999;
+  background-color: #E4EBFC;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+}
+
+.c28 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+}
+
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c37 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 32px;
+  margin-left: 4px;
+  margin-right: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: right;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c44 {
+  cursor: pointer;
+  border: 1px solid core.lightgray;
+  background-color: transparent;
+  border-color: core.lightgray;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border: 0;
+  border-right: 1px solid;
+  border-radius: 4px;
+  border-color: #C4C4C4;
+  border-width: 1px;
+}
+
+.c44:hover {
+  opacity: 0.8;
+}
+
+.c46 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border: 0;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.c46:hover {
+  opacity: 0.8;
+}
+
+.c12 {
+  width: 24;
+  height: 24;
+}
+
+.c11 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.c11:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c38 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c40 {
+  color: #5E26FF;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c42 {
+  color: #666666;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c6 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 8px;
+}
+
+.c8 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c33 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 4px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c35 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-bottom: 0;
+}
+
+.c16 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c21 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c18 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #E4EBFC;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c18:hover {
+  cursor: text;
+}
+
+.c18:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c29 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: transparent;
+  background-color: #EFF3FD;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c29:hover {
+  cursor: not-allowed;
+}
+
+.c29:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c14 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 16px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 1px;
+}
+
+.c26 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #E4EBFC;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  background-color: #E4EBFC;
+  color: #5E26FF;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  border-color: #999999;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c25 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #E4EBFC;
+  font-size: 2rem;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  border-left: 0;
+  -moz-appearance: textfield;
+}
+
+.c25:hover {
+  cursor: text;
+}
+
+.c25:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c25::-webkit-outer-spin-button,
+.c25::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c30 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: transparent;
+  color: #5E26FF;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  background-color: transparent;
+  color: #5E26FF;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  border-color: #999999;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-left: 0;
+  top: 0px;
+  left: 0px;
+}
+
+.c43 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #C4C4C4;
+  background-color: #F6F8FE;
+  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
+  position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  bottom: 16px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  border-radius: 4px;
+  max-width: 560px;
+  width: 40%;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  max-width: 560px;
+  min-width: 320px;
+}
+
+.c1 {
+  background-color: #EFF3FD;
+  border: 1px solid;
+  border-radius: 4px;
+  border-color: silver;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c31 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c31:hover {
+  cursor: pointer;
+}
+
+.c34 {
+  font-size: 0.75rem;
+}
+
+.c36 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  line-height: 2;
+}
+
+.c41 {
+  word-wrap: break-word;
+}
+
+.c45 {
+  border-radius: 0px;
+}
+
+.c47 {
+  border-radius: 0px;
+}
+
+<div
+  class="c0"
+>
+  <form
+    autocomplete="off"
+    class="c1"
+    display="flex"
+  >
+    <div
+      class="c2"
+      display="flex"
+    >
+      <div
+        class="c3"
+        display="flex"
+      >
+        <div
+          class="c4"
+          color="background.screen"
+          display="flex"
+          size="6"
+        >
+          <h3
+            class="c5"
+          >
+            To
+          </h3>
+        </div>
+        <p
+          class="c6"
+          color="core.primary"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          Sending Filecoin
+        </p>
+      </div>
+      <div
+        class="c3"
+        display="flex"
+      >
+        <div
+          class="c7"
+          display="flex"
+        >
+          <p
+            class="c8"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            Step 
+            1
+          </p>
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c9"
+              display="inline-block"
+              height="2"
+              width="2"
+            />
+          </div>
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c10"
+              display="inline-block"
+              height="2"
+              width="2"
+            />
+          </div>
+        </div>
+        <button
+          class="c11"
+          display="inline-block"
+          role="button"
+          type="button"
+        >
+          <svg
+            class="c12"
+            fill="none"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+              fill="#5E26FF"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="c13"
+    >
+      <div
+        class="c14"
+      >
+        <div
+          class="c3"
+          display="flex"
+        >
+          <div
+            class="c15"
+            display="flex"
+            height="64px"
+          >
+            <h4
+              class="c16"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Recipient
+            </h4>
+          </div>
+          <div
+            class="c17"
+            display="flex"
+            width="100%"
+          >
+            <input
+              class="c18"
+              display="inline-block"
+              height="7"
+              placeholder="t1..."
+              value=""
+              width="100%"
+            />
+            
+          </div>
+        </div>
+      </div>
+      
+      <div
+        class="c19"
+        display="flex"
+        label="Amount"
+        name="amount"
+      >
+        <div
+          class="c20"
+          color="input.border"
+          display="flex"
+          width="100%"
+        >
+          <h4
+            class="c21"
+            color="core.nearblack"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Amount
+          </h4>
+        </div>
+        <div
+          class="c22"
+          display="inline-block"
+          width="100%"
+        >
+          <div
+            class="c23"
+            display="flex"
+            height="80px"
+            width="100%"
+          >
+            <div
+              class="c24"
+              display="flex"
+              font-family="sansSerif"
+              font-size="5"
+              size="6"
+            >
+              =
+            </div>
+            <input
+              class="c25"
+              display="inline-block"
+              font-size="5"
+              height="100%"
+              label="Amount"
+              name="amount"
+              placeholder="0"
+              step="0.000000000000000001"
+              type="number"
+              value=""
+              width="100%"
+            />
+            <div
+              class="c26"
+              color="core.primary"
+              display="flex"
+              font-size="3"
+              height="100%"
+            >
+              FIL
+            </div>
+          </div>
+          <div
+            class="c27"
+            display="flex"
+            height="80px"
+          >
+            <input
+              class="c25"
+              display="inline-block"
+              font-size="5"
+              height="100%"
+              min="0"
+              placeholder="0"
+              step="0.000000000000000001"
+              type="number"
+              value=""
+              width="100%"
+            />
+            <div
+              class="c26"
+              color="core.primary"
+              display="flex"
+              font-size="3"
+              height="100%"
+            >
+              USD
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c28"
+        width="100%"
+      >
+        <div
+          class="c14"
+        >
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c15"
+              display="flex"
+              height="64px"
+            >
+              <h4
+                class="c16"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Transaction Fee
+              </h4>
+            </div>
+            <div
+              class="c17"
+              display="flex"
+              width="100%"
+            >
+              <input
+                class="c29"
+                disabled=""
+                display="inline-block"
+                height="7"
+                value="< 0.1"
+                width="100%"
+              />
+              <div
+                class="c30"
+                color="core.primary"
+                display="flex"
+                font-size="3"
+                height="7"
+              >
+                FIL
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c31"
+        color="core.primary"
+        display="flex"
+        role="button"
+        type="button"
+      >
+        <div
+          class="c32"
+          display="flex"
+        >
+          <p
+            class="c33 c34"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            ▼
+          </p>
+          <p
+            class="c35 c36"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            Customize
+          </p>
+        </div>
+      </div>
+      <div
+        class="c37"
+        display="flex"
+      >
+        <h2
+          class="c38"
+          font-family="RT-Alias-Grotesk"
+          font-size="4"
+          font-weight="400"
+        >
+          Total
+        </h2>
+        <div
+          class="c39"
+          display="flex"
+        >
+          <h2
+            class="c40 c41"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="5"
+            font-weight="700"
+          >
+            0
+             
+            FIL
+          </h2>
+          <h2
+            class="c42"
+            color="core.darkgray"
+            font-family="RT-Alias-Grotesk"
+            font-size="4"
+            font-weight="400"
+          >
+            0
+             
+            USD
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c43"
+    >
+      <button
+        class="c44 c45"
+        font-size="3"
+        type="button"
+      >
+        Back
+      </button>
+      <button
+        class="c46 c47"
+        font-size="3"
+        type="submit"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: #5E26FF;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #5E26FF;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #999999;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c13 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-right: 1px solid;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 160px;
+  height: 64px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid;
+  border-radius: 1px;
+  border-color: #999999;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 160px;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  border-right: 1px solid;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+  color: #999999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c24 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #E4EBFC;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  width: 100%;
+}
+
+.c25 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  z-index: 999;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 32px;
+  padding-bottom: 4px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c28 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-top: 1px solid;
+  border-color: #999999;
+  background-color: #E4EBFC;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+}
+
+.c29 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+}
+
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 32px;
+  margin-left: 4px;
+  margin-right: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: right;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c45 {
+  cursor: pointer;
+  border: 1px solid core.lightgray;
+  background-color: transparent;
+  border-color: core.lightgray;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border: 0;
+  border-right: 1px solid;
+  border-radius: 4px;
+  border-color: #C4C4C4;
+  border-width: 1px;
+}
+
+.c45:hover {
+  opacity: 0.8;
+}
+
+.c47 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border: 0;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.c47:hover {
+  opacity: 0.8;
+}
+
+.c12 {
+  width: 24;
+  height: 24;
+}
+
+.c11 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.c11:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c39 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c41 {
+  color: #5E26FF;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c43 {
+  color: #666666;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c6 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 8px;
+}
+
+.c8 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c34 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 4px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c36 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-bottom: 0;
+}
+
+.c16 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c22 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c19 {
+  color: #FC6D6F;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.c30 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: transparent;
+  background-color: #EFF3FD;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c30:hover {
+  cursor: not-allowed;
+}
+
+.c30:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c18 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #FC6D6F;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c18:hover {
+  cursor: text;
+}
+
+.c18:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #FC6D6F;
+}
+
+.c14 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 16px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 1px;
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #D2F5ED;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  background-color: #D2F5ED;
+  color: #5E26FF;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  border-color: #999999;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c26 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #D2F5ED;
+  font-size: 2rem;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  border-left: 0;
+  -moz-appearance: textfield;
+}
+
+.c26:hover {
+  cursor: text;
+}
+
+.c26:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #D2F5ED;
+}
+
+.c26::-webkit-outer-spin-button,
+.c26::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c31 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: transparent;
+  color: #5E26FF;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  background-color: transparent;
+  color: #5E26FF;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  border-color: #999999;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-left: 0;
+  top: 0px;
+  left: 0px;
+}
+
+.c44 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #C4C4C4;
+  background-color: #F6F8FE;
+  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
+  position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  bottom: 16px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  border-radius: 4px;
+  max-width: 560px;
+  width: 40%;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  max-width: 560px;
+  min-width: 320px;
+}
+
+.c1 {
+  background-color: #EFF3FD;
+  border: 1px solid;
+  border-radius: 4px;
+  border-color: silver;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c32:hover {
+  cursor: pointer;
+}
+
+.c35 {
+  font-size: 0.75rem;
+}
+
+.c37 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  line-height: 2;
+}
+
+.c42 {
+  word-wrap: break-word;
+}
+
+.c46 {
+  border-radius: 0px;
+}
+
+.c48 {
+  border-radius: 0px;
+}
+
+<div
+  class="c0"
+>
+  <form
+    autocomplete="off"
+    class="c1"
+    display="flex"
+  >
+    <div
+      class="c2"
+      display="flex"
+    >
+      <div
+        class="c3"
+        display="flex"
+      >
+        <div
+          class="c4"
+          color="background.screen"
+          display="flex"
+          size="6"
+        >
+          <h3
+            class="c5"
+          >
+            To
+          </h3>
+        </div>
+        <p
+          class="c6"
+          color="core.primary"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          Sending Filecoin
+        </p>
+      </div>
+      <div
+        class="c3"
+        display="flex"
+      >
+        <div
+          class="c7"
+          display="flex"
+        >
+          <p
+            class="c8"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            Step 
+            1
+          </p>
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c9"
+              display="inline-block"
+              height="2"
+              width="2"
+            />
+          </div>
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c10"
+              display="inline-block"
+              height="2"
+              width="2"
+            />
+          </div>
+        </div>
+        <button
+          class="c11"
+          display="inline-block"
+          role="button"
+          type="button"
+        >
+          <svg
+            class="c12"
+            fill="none"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+              fill="#5E26FF"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="c13"
+    >
+      <div
+        class="c14"
+      >
+        <div
+          class="c3"
+          display="flex"
+        >
+          <div
+            class="c15"
+            display="flex"
+            height="64px"
+          >
+            <h4
+              class="c16"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Recipient
+            </h4>
+          </div>
+          <div
+            class="c17"
+            display="flex"
+            width="100%"
+          >
+            <input
+              class="c18"
+              display="inline-block"
+              height="7"
+              placeholder="t1..."
+              value="t1z225tguggx4onbauimqvxz"
+              width="100%"
+            />
+            
+          </div>
+        </div>
+      </div>
+      <h4
+        class="c19"
+        color="status.fail.background"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Invalid address.
+      </h4>
+      <div
+        class="c20"
+        display="flex"
+        label="Amount"
+        name="amount"
+      >
+        <div
+          class="c21"
+          color="input.border"
+          display="flex"
+          width="100%"
+        >
+          <h4
+            class="c22"
+            color="core.nearblack"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Amount
+          </h4>
+        </div>
+        <div
+          class="c23"
+          display="inline-block"
+          width="100%"
+        >
+          <div
+            class="c24"
+            display="flex"
+            height="80px"
+            width="100%"
+          >
+            <div
+              class="c25"
+              display="flex"
+              font-family="sansSerif"
+              font-size="5"
+              size="6"
+            >
+              =
+            </div>
+            <input
+              class="c26"
+              display="inline-block"
+              font-size="5"
+              height="100%"
+              label="Amount"
+              name="amount"
+              placeholder="0"
+              step="0.000000000000000001"
+              type="number"
+              value="0.01"
+              width="100%"
+            />
+            <div
+              class="c27"
+              color="core.primary"
+              display="flex"
+              font-size="3"
+              height="100%"
+            >
+              FIL
+            </div>
+          </div>
+          <div
+            class="c28"
+            display="flex"
+            height="80px"
+          >
+            <input
+              class="c26"
+              display="inline-block"
+              font-size="5"
+              height="100%"
+              min="0"
+              placeholder="0"
+              step="0.000000000000000001"
+              type="number"
+              value="0.05"
+              width="100%"
+            />
+            <div
+              class="c27"
+              color="core.primary"
+              display="flex"
+              font-size="3"
+              height="100%"
+            >
+              USD
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c29"
+        width="100%"
+      >
+        <div
+          class="c14"
+        >
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c15"
+              display="flex"
+              height="64px"
+            >
+              <h4
+                class="c16"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Transaction Fee
+              </h4>
+            </div>
+            <div
+              class="c17"
+              display="flex"
+              width="100%"
+            >
+              <input
+                class="c30"
+                disabled=""
+                display="inline-block"
+                height="7"
+                value="< 0.1"
+                width="100%"
+              />
+              <div
+                class="c31"
+                color="core.primary"
+                display="flex"
+                font-size="3"
+                height="7"
+              >
+                FIL
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c32"
+        color="core.primary"
+        display="flex"
+        role="button"
+        type="button"
+      >
+        <div
+          class="c33"
+          display="flex"
+        >
+          <p
+            class="c34 c35"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            ▼
+          </p>
+          <p
+            class="c36 c37"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            Customize
+          </p>
+        </div>
+      </div>
+      <div
+        class="c38"
+        display="flex"
+      >
+        <h2
+          class="c39"
+          font-family="RT-Alias-Grotesk"
+          font-size="4"
+          font-weight="400"
+        >
+          Total
+        </h2>
+        <div
+          class="c40"
+          display="flex"
+        >
+          <h2
+            class="c41 c42"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="5"
+            font-weight="700"
+          >
+            0.010000000000000122
+             
+            FIL
+          </h2>
+          <h2
+            class="c43"
+            color="core.darkgray"
+            font-family="RT-Alias-Grotesk"
+            font-size="4"
+            font-weight="400"
+          >
+            0.05
+             
+            USD
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c44"
+    >
+      <button
+        class="c45 c46"
+        font-size="3"
+        type="button"
+      >
+        Back
+      </button>
+      <button
+        class="c47 c48"
+        font-size="3"
+        type="submit"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: #5E26FF;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #5E26FF;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #999999;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c13 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-right: 1px solid;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 160px;
+  height: 64px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid;
+  border-radius: 1px;
+  border-color: #999999;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 160px;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  border-right: 1px solid;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+  color: #999999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c24 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #E4EBFC;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  width: 100%;
+}
+
+.c25 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  z-index: 999;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 32px;
+  padding-bottom: 4px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c28 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-top: 1px solid;
+  border-color: #999999;
+  background-color: #E4EBFC;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+}
+
+.c29 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+}
+
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 32px;
+  margin-left: 4px;
+  margin-right: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: right;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c45 {
+  cursor: pointer;
+  border: 1px solid core.lightgray;
+  background-color: transparent;
+  border-color: core.lightgray;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border: 0;
+  border-right: 1px solid;
+  border-radius: 4px;
+  border-color: #C4C4C4;
+  border-width: 1px;
+}
+
+.c45:hover {
+  opacity: 0.8;
+}
+
+.c47 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border: 0;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.c47:hover {
+  opacity: 0.8;
+}
+
+.c12 {
+  width: 24;
+  height: 24;
+}
+
+.c11 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.c11:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c39 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c41 {
+  color: #5E26FF;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c43 {
+  color: #666666;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c6 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 8px;
+}
+
+.c8 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c34 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 4px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c36 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-bottom: 0;
+}
+
+.c16 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c22 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c19 {
+  color: #FC6D6F;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.c30 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: transparent;
+  background-color: #EFF3FD;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c30:hover {
+  cursor: not-allowed;
+}
+
+.c30:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c18 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #FC6D6F;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c18:hover {
+  cursor: text;
+}
+
+.c18:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #FC6D6F;
+}
+
+.c14 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 16px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 1px;
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #D2F5ED;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  background-color: #D2F5ED;
+  color: #5E26FF;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  border-color: #999999;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c26 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #D2F5ED;
+  font-size: 2rem;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  border-left: 0;
+  -moz-appearance: textfield;
+}
+
+.c26:hover {
+  cursor: text;
+}
+
+.c26:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #D2F5ED;
+}
+
+.c26::-webkit-outer-spin-button,
+.c26::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c31 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: transparent;
+  color: #5E26FF;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  background-color: transparent;
+  color: #5E26FF;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  border-color: #999999;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-left: 0;
+  top: 0px;
+  left: 0px;
+}
+
+.c44 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #C4C4C4;
+  background-color: #F6F8FE;
+  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
+  position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  bottom: 16px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  border-radius: 4px;
+  max-width: 560px;
+  width: 40%;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  max-width: 560px;
+  min-width: 320px;
+}
+
+.c1 {
+  background-color: #EFF3FD;
+  border: 1px solid;
+  border-radius: 4px;
+  border-color: silver;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c32:hover {
+  cursor: pointer;
+}
+
+.c35 {
+  font-size: 0.75rem;
+}
+
+.c37 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  line-height: 2;
+}
+
+.c42 {
+  word-wrap: break-word;
+}
+
+.c46 {
+  border-radius: 0px;
+}
+
+.c48 {
+  border-radius: 0px;
+}
+
+<div
+  class="c0"
+>
+  <form
+    autocomplete="off"
+    class="c1"
+    display="flex"
+  >
+    <div
+      class="c2"
+      display="flex"
+    >
+      <div
+        class="c3"
+        display="flex"
+      >
+        <div
+          class="c4"
+          color="background.screen"
+          display="flex"
+          size="6"
+        >
+          <h3
+            class="c5"
+          >
+            To
+          </h3>
+        </div>
+        <p
+          class="c6"
+          color="core.primary"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          Sending Filecoin
+        </p>
+      </div>
+      <div
+        class="c3"
+        display="flex"
+      >
+        <div
+          class="c7"
+          display="flex"
+        >
+          <p
+            class="c8"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            Step 
+            1
+          </p>
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c9"
+              display="inline-block"
+              height="2"
+              width="2"
+            />
+          </div>
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c10"
+              display="inline-block"
+              height="2"
+              width="2"
+            />
+          </div>
+        </div>
+        <button
+          class="c11"
+          display="inline-block"
+          role="button"
+          type="button"
+        >
+          <svg
+            class="c12"
+            fill="none"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+              fill="#5E26FF"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="c13"
+    >
+      <div
+        class="c14"
+      >
+        <div
+          class="c3"
+          display="flex"
+        >
+          <div
+            class="c15"
+            display="flex"
+            height="64px"
+          >
+            <h4
+              class="c16"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Recipient
+            </h4>
+          </div>
+          <div
+            class="c17"
+            display="flex"
+            width="100%"
+          >
+            <input
+              class="c18"
+              display="inline-block"
+              height="7"
+              placeholder="t1..."
+              value=""
+              width="100%"
+            />
+            
+          </div>
+        </div>
+      </div>
+      <h4
+        class="c19"
+        color="status.fail.background"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Invalid address.
+      </h4>
+      <div
+        class="c20"
+        display="flex"
+        label="Amount"
+        name="amount"
+      >
+        <div
+          class="c21"
+          color="input.border"
+          display="flex"
+          width="100%"
+        >
+          <h4
+            class="c22"
+            color="core.nearblack"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Amount
+          </h4>
+        </div>
+        <div
+          class="c23"
+          display="inline-block"
+          width="100%"
+        >
+          <div
+            class="c24"
+            display="flex"
+            height="80px"
+            width="100%"
+          >
+            <div
+              class="c25"
+              display="flex"
+              font-family="sansSerif"
+              font-size="5"
+              size="6"
+            >
+              =
+            </div>
+            <input
+              class="c26"
+              display="inline-block"
+              font-size="5"
+              height="100%"
+              label="Amount"
+              name="amount"
+              placeholder="0"
+              step="0.000000000000000001"
+              type="number"
+              value="0.01"
+              width="100%"
+            />
+            <div
+              class="c27"
+              color="core.primary"
+              display="flex"
+              font-size="3"
+              height="100%"
+            >
+              FIL
+            </div>
+          </div>
+          <div
+            class="c28"
+            display="flex"
+            height="80px"
+          >
+            <input
+              class="c26"
+              display="inline-block"
+              font-size="5"
+              height="100%"
+              min="0"
+              placeholder="0"
+              step="0.000000000000000001"
+              type="number"
+              value="0.05"
+              width="100%"
+            />
+            <div
+              class="c27"
+              color="core.primary"
+              display="flex"
+              font-size="3"
+              height="100%"
+            >
+              USD
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c29"
+        width="100%"
+      >
+        <div
+          class="c14"
+        >
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c15"
+              display="flex"
+              height="64px"
+            >
+              <h4
+                class="c16"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Transaction Fee
+              </h4>
+            </div>
+            <div
+              class="c17"
+              display="flex"
+              width="100%"
+            >
+              <input
+                class="c30"
+                disabled=""
+                display="inline-block"
+                height="7"
+                value="< 0.1"
+                width="100%"
+              />
+              <div
+                class="c31"
+                color="core.primary"
+                display="flex"
+                font-size="3"
+                height="7"
+              >
+                FIL
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c32"
+        color="core.primary"
+        display="flex"
+        role="button"
+        type="button"
+      >
+        <div
+          class="c33"
+          display="flex"
+        >
+          <p
+            class="c34 c35"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            ▼
+          </p>
+          <p
+            class="c36 c37"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            Customize
+          </p>
+        </div>
+      </div>
+      <div
+        class="c38"
+        display="flex"
+      >
+        <h2
+          class="c39"
+          font-family="RT-Alias-Grotesk"
+          font-size="4"
+          font-weight="400"
+        >
+          Total
+        </h2>
+        <div
+          class="c40"
+          display="flex"
+        >
+          <h2
+            class="c41 c42"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="5"
+            font-weight="700"
+          >
+            0.010000000000000122
+             
+            FIL
+          </h2>
+          <h2
+            class="c43"
+            color="core.darkgray"
+            font-family="RT-Alias-Grotesk"
+            font-size="4"
+            font-weight="400"
+          >
+            0.05
+             
+            USD
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c44"
+    >
+      <button
+        class="c45 c46"
+        font-size="3"
+        type="button"
+      >
+        Back
+      </button>
+      <button
+        class="c47 c48"
+        font-size="3"
+        type="submit"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Send Flow snapshots it renders the gas customization view 1`] = `
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: #5E26FF;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #5E26FF;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #999999;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c13 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-right: 1px solid;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 160px;
+  height: 64px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.c19 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid;
+  border-radius: 1px;
+  border-color: #999999;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 160px;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  border-right: 1px solid;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+  color: #999999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #E4EBFC;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  width: 100%;
+}
+
+.c24 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  z-index: 999;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 32px;
+  padding-bottom: 4px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-top: 1px solid;
+  border-color: #999999;
+  background-color: #E4EBFC;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+}
+
+.c28 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+}
+
+.c45 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c50 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 32px;
+  margin-left: 4px;
+  margin-right: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c52 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: right;
+}
+
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c37 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  min-width: 160px;
+  text-align: center;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c57 {
+  cursor: pointer;
+  border: 1px solid core.lightgray;
+  background-color: transparent;
+  border-color: core.lightgray;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border: 0;
+  border-right: 1px solid;
+  border-radius: 4px;
+  border-color: #C4C4C4;
+  border-width: 1px;
+}
+
+.c57:hover {
+  opacity: 0.8;
+}
+
+.c59 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border: 0;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.c59:hover {
+  opacity: 0.8;
+}
+
+.c12 {
+  width: 24;
+  height: 24;
+}
+
+.c11 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.c11:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c51 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c53 {
+  color: #5E26FF;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c55 {
+  color: #666666;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c6 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 8px;
+}
+
+.c8 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c46 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 4px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c48 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-bottom: 0;
+}
+
+.c16 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c21 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c33 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.c34 {
+  color: #5E26FF;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 0;
+}
+
+.c18 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #E4EBFC;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c18:hover {
+  cursor: text;
+}
+
+.c18:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c29 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: transparent;
+  background-color: #EFF3FD;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c29:hover {
+  cursor: not-allowed;
+}
+
+.c29:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c14 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 16px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 1px;
+}
+
+.c36 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 8px;
+  margin: 0;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 1px;
+}
+
+.c41 {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 1px;
+}
+
+.c26 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #E4EBFC;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  background-color: #E4EBFC;
+  color: #5E26FF;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  border-color: #999999;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  background-color: #E4EBFC;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  color: #5E26FF;
+  background-color: #E4EBFC;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  border-color: #999999;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  top: 0px;
+  left: 0px;
+}
+
+.c25 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #E4EBFC;
+  font-size: 2rem;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  border-left: 0;
+  -moz-appearance: textfield;
+}
+
+.c25:hover {
+  cursor: text;
+}
+
+.c25:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c25::-webkit-outer-spin-button,
+.c25::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c39 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #E4EBFC;
+  font-size: 1.125rem;
+  margin-top: 8px;
+  margin: 0;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  border-left: 0;
+  -moz-appearance: textfield;
+}
+
+.c39:hover {
+  cursor: text;
+}
+
+.c39:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c39::-webkit-outer-spin-button,
+.c39::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c43 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #E4EBFC;
+  font-size: 1.125rem;
+  margin: 0;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  border-left: 0;
+  -moz-appearance: textfield;
+}
+
+.c43:hover {
+  cursor: text;
+}
+
+.c43:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c43::-webkit-outer-spin-button,
+.c43::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c30 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: transparent;
+  color: #5E26FF;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  background-color: transparent;
+  color: #5E26FF;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  border-color: #999999;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-left: 0;
+  top: 0px;
+  left: 0px;
+}
+
+.c56 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #C4C4C4;
+  background-color: #F6F8FE;
+  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
+  position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  bottom: 16px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  border-radius: 4px;
+  max-width: 560px;
+  width: 40%;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  max-width: 560px;
+  min-width: 320px;
+}
+
+.c31 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  max-width: 560px;
+  min-width: 320px;
+  margin-top: 8px;
+}
+
+.c42 {
+  -webkit-transform: translateY(-1px);
+  -ms-transform: translateY(-1px);
+  transform: translateY(-1px);
+}
+
+.c35 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.c1 {
+  background-color: #EFF3FD;
+  border: 1px solid;
+  border-radius: 4px;
+  border-color: silver;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c44 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c44:hover {
+  cursor: pointer;
+}
+
+.c47 {
+  font-size: 0.75rem;
+}
+
+.c49 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  line-height: 2;
+}
+
+.c54 {
+  word-wrap: break-word;
+}
+
+.c58 {
+  border-radius: 0px;
+}
+
+.c60 {
+  border-radius: 0px;
+}
+
+<div
+  class="c0"
+>
+  <form
+    autocomplete="off"
+    class="c1"
+    display="flex"
+  >
+    <div
+      class="c2"
+      display="flex"
+    >
+      <div
+        class="c3"
+        display="flex"
+      >
+        <div
+          class="c4"
+          color="background.screen"
+          display="flex"
+          size="6"
+        >
+          <h3
+            class="c5"
+          >
+            To
+          </h3>
+        </div>
+        <p
+          class="c6"
+          color="core.primary"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          Sending Filecoin
+        </p>
+      </div>
+      <div
+        class="c3"
+        display="flex"
+      >
+        <div
+          class="c7"
+          display="flex"
+        >
+          <p
+            class="c8"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            Step 
+            1
+          </p>
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c9"
+              display="inline-block"
+              height="2"
+              width="2"
+            />
+          </div>
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c10"
+              display="inline-block"
+              height="2"
+              width="2"
+            />
+          </div>
+        </div>
+        <button
+          class="c11"
+          display="inline-block"
+          role="button"
+          type="button"
+        >
+          <svg
+            class="c12"
+            fill="none"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+              fill="#5E26FF"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="c13"
+    >
+      <div
+        class="c14"
+      >
+        <div
+          class="c3"
+          display="flex"
+        >
+          <div
+            class="c15"
+            display="flex"
+            height="64px"
+          >
+            <h4
+              class="c16"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Recipient
+            </h4>
+          </div>
+          <div
+            class="c17"
+            display="flex"
+            width="100%"
+          >
+            <input
+              class="c18"
+              display="inline-block"
+              height="7"
+              placeholder="t1..."
+              value=""
+              width="100%"
+            />
+            
+          </div>
+        </div>
+      </div>
+      
+      <div
+        class="c19"
+        display="flex"
+        label="Amount"
+        name="amount"
+      >
+        <div
+          class="c20"
+          color="input.border"
+          display="flex"
+          width="100%"
+        >
+          <h4
+            class="c21"
+            color="core.nearblack"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Amount
+          </h4>
+        </div>
+        <div
+          class="c22"
+          display="inline-block"
+          width="100%"
+        >
+          <div
+            class="c23"
+            display="flex"
+            height="80px"
+            width="100%"
+          >
+            <div
+              class="c24"
+              display="flex"
+              font-family="sansSerif"
+              font-size="5"
+              size="6"
+            >
+              =
+            </div>
+            <input
+              class="c25"
+              display="inline-block"
+              font-size="5"
+              height="100%"
+              label="Amount"
+              name="amount"
+              placeholder="0"
+              step="0.000000000000000001"
+              type="number"
+              value=""
+              width="100%"
+            />
+            <div
+              class="c26"
+              color="core.primary"
+              display="flex"
+              font-size="3"
+              height="100%"
+            >
+              FIL
+            </div>
+          </div>
+          <div
+            class="c27"
+            display="flex"
+            height="80px"
+          >
+            <input
+              class="c25"
+              display="inline-block"
+              font-size="5"
+              height="100%"
+              min="0"
+              placeholder="0"
+              step="0.000000000000000001"
+              type="number"
+              value=""
+              width="100%"
+            />
+            <div
+              class="c26"
+              color="core.primary"
+              display="flex"
+              font-size="3"
+              height="100%"
+            >
+              USD
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c28"
+        width="100%"
+      >
+        <div
+          class="c14"
+        >
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c15"
+              display="flex"
+              height="64px"
+            >
+              <h4
+                class="c16"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Transaction Fee
+              </h4>
+            </div>
+            <div
+              class="c17"
+              display="flex"
+              width="100%"
+            >
+              <input
+                class="c29"
+                disabled=""
+                display="inline-block"
+                height="7"
+                value="122"
+                width="100%"
+              />
+              <div
+                class="c30"
+                color="core.primary"
+                display="flex"
+                font-size="3"
+                height="7"
+              >
+                AttoFil
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c31"
+      >
+        <div
+          class="c32"
+          display="flex"
+        >
+          <h4
+            class="c33"
+            color="core.darkgray"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Transfers complete faster with a higher gas price.
+          </h4>
+          <h4
+            class="c34 c35"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            What’s this?
+          </h4>
+        </div>
+        <div
+          class="c36"
+        >
+          <div
+            class="c37"
+            display="flex"
+          >
+            <div
+              class="c38"
+              display="inline-block"
+            >
+              <h4
+                class="c16"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Gas Price
+              </h4>
+            </div>
+            <div
+              class="c17"
+              display="flex"
+              width="100%"
+            >
+              <input
+                class="c39"
+                display="inline-block"
+                font-size="2"
+                height="7"
+                type="number"
+                value="1"
+                width="100%"
+              />
+              <div
+                class="c40"
+                color="core.primary"
+                display="flex"
+                font-size="3"
+                height="64px"
+              >
+                AttoFil
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="c41 c42 GasCustomization___StyledNumberedInput-sc-13rr8o7-0 c42"
+        >
+          <div
+            class="c37"
+            display="flex"
+          >
+            <div
+              class="c38"
+              display="inline-block"
+            >
+              <h4
+                class="c16"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Gas Limit
+              </h4>
+            </div>
+            <div
+              class="c17"
+              display="flex"
+              width="100%"
+            >
+              <input
+                class="c43 c42 GasCustomization___StyledNumberedInput-sc-13rr8o7-0 c42 GasCustomization___StyledNumberedInput-sc-13rr8o7-0 c42"
+                display="inline-block"
+                font-size="2"
+                height="7"
+                type="number"
+                value="2000"
+                width="100%"
+              />
+              <div
+                class="c40"
+                color="core.primary"
+                display="flex"
+                font-size="3"
+                height="64px"
+              >
+                AttoFil
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c44"
+        color="core.primary"
+        display="flex"
+        role="button"
+        type="button"
+      >
+        <div
+          class="c45"
+          display="flex"
+        >
+          <p
+            class="c46 c47"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            ▲
+          </p>
+          <p
+            class="c48 c49"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            Close
+          </p>
+        </div>
+      </div>
+      <div
+        class="c50"
+        display="flex"
+      >
+        <h2
+          class="c51"
+          font-family="RT-Alias-Grotesk"
+          font-size="4"
+          font-weight="400"
+        >
+          Total
+        </h2>
+        <div
+          class="c52"
+          display="flex"
+        >
+          <h2
+            class="c53 c54"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="5"
+            font-weight="700"
+          >
+            0
+             
+            FIL
+          </h2>
+          <h2
+            class="c55"
+            color="core.darkgray"
+            font-family="RT-Alias-Grotesk"
+            font-size="4"
+            font-weight="400"
+          >
+            0
+             
+            USD
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c56"
+    >
+      <button
+        class="c57 c58"
+        font-size="3"
+        type="button"
+      >
+        Back
+      </button>
+      <button
+        class="c59 c60"
+        font-size="3"
+        type="submit"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+</div>
+`;

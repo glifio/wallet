@@ -3702,11 +3702,11 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                   class="c53"
                   display="inline-block"
                   height="7"
-                  name="recipient"
                   placeholder="t1..."
                   value=""
                   width="100%"
                 />
+                
               </div>
             </div>
           </div>

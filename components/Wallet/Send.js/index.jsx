@@ -116,19 +116,31 @@ const Send = ({ close }) => {
         params: ''
       })
 
-      return walletProvider.estimateGas(message.encode())
+      // HMR causes this condition, we just make this check for easier dev purposes
+      return walletProvider
+        ? walletProvider.estimateGas(message.encode())
+        : new FilecoinNumber('0', 'attofil')
     },
     [wallet.address, walletProvider]
   )
 
   useEffect(() => {
     const fetchInitialGas = async () => {
-      const gas = await estimateGas(gasPrice, gasLimit, value.toAttoFil())
-      setEstimatedGasUsed(gas)
+      if (estimatedGasUsed.isEqualTo(0)) {
+        const gas = await estimateGas(gasPrice, gasLimit, value.toAttoFil())
+        setEstimatedGasUsed(gas)
+      }
     }
 
     fetchInitialGas()
-  }, [estimateGas, setEstimatedGasUsed, gasPrice, gasLimit, value])
+  }, [
+    estimateGas,
+    setEstimatedGasUsed,
+    estimatedGasUsed,
+    gasPrice,
+    gasLimit,
+    value
+  ])
 
   const submitMsg = async () => {
     let provider = walletProvider
@@ -175,7 +187,6 @@ const Send = ({ close }) => {
   const onSubmit = async e => {
     e.preventDefault()
     setAttemptingTx(true)
-
     if (
       !isValidForm(
         toAddress,
@@ -380,7 +391,6 @@ const Send = ({ close }) => {
                 </Text>
               </Box>
             </Box>
-
             <Box
               display='flex'
               flexDirection='row'

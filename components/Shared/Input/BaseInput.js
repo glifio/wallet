@@ -15,7 +15,8 @@ export default styled.input.attrs(props => ({
   border: 0,
   borderColor: 'input.border',
   borderTopRightRadius: 1,
-  borderBottomRightRadius: 1
+  borderBottomRightRadius: 1,
+  ...props
 }))`
   flex-grow: 1;
   padding-left: ${props => props.theme.space[2]}px;

@@ -76,6 +76,7 @@ export const NumberInput = forwardRef(
               setError={setError}
               placeholder={placeholder}
               fontSize={fontSize}
+              {...props}
             />
             {denom && (
               <DenomTag

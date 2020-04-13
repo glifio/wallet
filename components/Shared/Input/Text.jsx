@@ -8,13 +8,11 @@ import { DenomTag } from './Number'
 
 const TextInput = ({
   denom,
-  onChange,
   value,
-  placeholder,
   label,
   error,
   disabled,
-  valid,
+  name,
   ...props
 }) => (
   <>
@@ -38,12 +36,9 @@ const TextInput = ({
           <BaseInput
             py={3}
             px={3}
-            onChange={onChange}
             value={value}
-            placeholder={placeholder}
             disabled={disabled}
             error={error}
-            valid={valid}
             {...props}
           />
           {denom && (
@@ -78,14 +73,17 @@ TextInput.propTypes = {
   disabled: bool,
   error: string,
   valid: bool,
-  denom: string
+  denom: string,
+  name: string
 }
 
 TextInput.defaultProps = {
   value: '',
   disabled: false,
   onChange: () => {},
-  label: ''
+  label: '',
+  denom: '',
+  name: ''
 }
 
 export default TextInput
