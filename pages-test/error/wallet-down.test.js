@@ -1,17 +1,17 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 
-import UseChrome from './use-chrome.jsx'
+import WalletDown from '../../pages/error/wallet-down.jsx'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 
 jest.mock('@openworklabs/filecoin-wallet-provider')
 
-describe('UseChrome', () => {
+describe('WalletDown', () => {
   afterEach(cleanup)
   test('it renders the error page', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     const { container } = render(
       <Tree>
-        <UseChrome />
+        <WalletDown />
       </Tree>
     )
 
@@ -23,14 +23,12 @@ describe('UseChrome', () => {
 
     render(
       <Tree>
-        <UseChrome />
+        <WalletDown />
       </Tree>
     )
 
     expect(
-      screen.getByText(
-        'Please install Google Chrome to continue using your Ledger device, or choose an alternative setup option'
-      )
+      screen.getByText("We're aware of the outage and will be back up shortly.")
     ).toBeInTheDocument()
   })
 
@@ -47,7 +45,7 @@ describe('UseChrome', () => {
     await act(async () => {
       res = render(
         <Tree>
-          <UseChrome />
+          <WalletDown />
         </Tree>
       )
       fireEvent.click(screen.getByText('Back'))
