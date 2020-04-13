@@ -7,7 +7,7 @@ import InputWrapper from './InputWrapper'
 import Box from '../Box'
 import { Label } from '../Typography'
 
-export const Tag = styled(Box).attrs(props => ({
+export const DenomTag = styled(Box).attrs(props => ({
   display: 'flex',
   height: '100%',
   px: 3,
@@ -28,12 +28,6 @@ export const Tag = styled(Box).attrs(props => ({
   ${border}
   ${flexbox};
 `
-
-export const DenomTag = props => <Tag {...props}>{props.children}</Tag>
-
-DenomTag.propTypes = {
-  children: node
-}
 
 export const RawNumberInput = styled(BaseInput).attrs(props => ({
   borderLeft: 0,

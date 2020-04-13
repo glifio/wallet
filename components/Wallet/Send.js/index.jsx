@@ -18,7 +18,6 @@ import {
   Num,
   Button,
   ButtonClose,
-  Title,
   FloatingContainer,
   Title as Total,
   ContentContainer as SendContainer,
