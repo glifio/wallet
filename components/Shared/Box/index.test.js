@@ -1,6 +1,5 @@
-import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
+import { cleanup, render } from '@testing-library/react'
 import Box from '.'
-import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 
 describe('Box', () => {
   afterEach(cleanup)
