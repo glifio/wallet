@@ -176,7 +176,9 @@ const Funds = forwardRef(
           bg={error && 'input.background.invalid'}
         >
           {error ? (
-            <Text textAlign='left'>{error}</Text>
+            <Text color='core.nearblack' textAlign='left'>
+              {error}
+            </Text>
           ) : (
             <Label color='core.nearblack'>Amount</Label>
           )}

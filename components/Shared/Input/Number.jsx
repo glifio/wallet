@@ -1,5 +1,5 @@
 import { forwardRef } from 'react'
-import { func, string, bool, obj, node } from 'prop-types'
+import { func, string, bool, number, node } from 'prop-types'
 import { space, color, layout, border, flexbox } from 'styled-system'
 import styled from 'styled-components'
 import BaseInput from './BaseInput'
@@ -109,7 +109,7 @@ NumberInput.propTypes = {
   disabled: bool,
   error: string,
   valid: bool,
-  fontSize: obj,
+  fontSize: number,
   denom: string
 }
 
