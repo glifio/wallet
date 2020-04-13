@@ -1,0 +1,4317 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Send Flow snapshots it renders correctly 1`] = `
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: #5E26FF;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #5E26FF;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #999999;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c13 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  min-width: 160px;
+  text-align: center;
+}
+
+.c18 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid;
+  border-radius: 1px;
+  border-color: #999999;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 160px;
+}
+
+.c19 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  height: 80px;
+  width: 100%;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 32px;
+  padding-bottom: 4px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c26 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-top: 1px solid;
+  border-color: #999999;
+  display: block;
+  height: 80px;
+}
+
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c35 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: right;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c40 {
+  cursor: pointer;
+  border: 1px solid core.lightgray;
+  background-color: transparent;
+  border-color: core.lightgray;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border: 0;
+  border-right: 1px solid;
+  border-radius: 4px;
+  border-color: #C4C4C4;
+  border-width: 1px;
+}
+
+.c40:hover {
+  opacity: 0.8;
+}
+
+.c42 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border: 0;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.c42:hover {
+  opacity: 0.8;
+}
+
+.c12 {
+  width: 24;
+  height: 24;
+}
+
+.c11 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.c11:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c34 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c36 {
+  color: #5E26FF;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c38 {
+  color: #666666;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c6 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 8px;
+}
+
+.c8 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c28 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 4px;
+  margin-bottom: 0;
+  padding-top: 8px;
+}
+
+.c30 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-bottom: 0;
+}
+
+.c16 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c17 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #E4EBFC;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c17:hover {
+  cursor: text;
+}
+
+.c17:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c32 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: transparent;
+  background-color: #EFF3FD;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c32:hover {
+  cursor: not-allowed;
+}
+
+.c32:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c14 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 16px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 1px;
+}
+
+.c25 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #E4EBFC;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  -moz-appearance: textfield;
+}
+
+.c25:hover {
+  cursor: text;
+}
+
+.c25:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c25::-webkit-outer-spin-button,
+.c25::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 30px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+.c24 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 110px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #C4C4C4;
+  background-color: #F6F8FE;
+  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
+  position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  bottom: 16px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  border-radius: 4px;
+  max-width: 560px;
+  width: 40%;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  max-width: 560px;
+  min-width: 320px;
+}
+
+.c1 {
+  background-color: #EFF3FD;
+  border: 1px solid;
+  border-radius: 4px;
+  border-color: silver;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c27:hover {
+  cursor: pointer;
+}
+
+.c29 {
+  font-size: 0.75rem;
+}
+
+.c31 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  line-height: 2;
+}
+
+.c37 {
+  word-wrap: break-word;
+}
+
+.c41 {
+  border-radius: 0px;
+}
+
+.c43 {
+  border-radius: 0px;
+}
+
+<div
+  class="c0"
+>
+  <form
+    autocomplete="off"
+    class="c1"
+    display="flex"
+  >
+    <div
+      class="c2"
+      display="flex"
+    >
+      <div
+        class="c3"
+        display="flex"
+      >
+        <div
+          class="c4"
+          color="background.screen"
+          display="flex"
+          size="6"
+        >
+          <h3
+            class="c5"
+          >
+            To
+          </h3>
+        </div>
+        <p
+          class="c6"
+          color="core.primary"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          Sending Filecoin
+        </p>
+      </div>
+      <div
+        class="c3"
+        display="flex"
+      >
+        <div
+          class="c7"
+          display="flex"
+        >
+          <p
+            class="c8"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            Step 
+            1
+          </p>
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c9"
+              display="inline-block"
+              height="2"
+              width="2"
+            />
+          </div>
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c10"
+              display="inline-block"
+              height="2"
+              width="2"
+            />
+          </div>
+        </div>
+        <button
+          class="c11"
+          display="inline-block"
+          role="button"
+          type="button"
+        >
+          <svg
+            class="c12"
+            fill="none"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+              fill="#5E26FF"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="c13"
+    >
+      <div
+        class="c14"
+      >
+        <div
+          class="c3"
+          display="flex"
+        >
+          <div
+            class="c15"
+            display="inline-block"
+          >
+            <h4
+              class="c16"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              <label
+                for="recipient"
+              >
+                Recipient
+              </label>
+            </h4>
+          </div>
+          <input
+            class="c17"
+            display="inline-block"
+            height="7"
+            name="recipient"
+            placeholder="t1..."
+            value=""
+            width="100%"
+          />
+        </div>
+      </div>
+      
+      <div
+        class="c18"
+        display="flex"
+        label="Amount"
+        name="amount"
+      >
+        <div
+          class="c19"
+          display="flex"
+          width="100%"
+        >
+          <h4
+            class="c16"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Amount
+          </h4>
+        </div>
+        <div
+          class="c20"
+          display="inline-block"
+          width="100%"
+        >
+          <div
+            class="c21"
+            display="block"
+            height="80px"
+            width="100%"
+          >
+            <div
+              class="c22"
+              display="flex"
+              font-family="sansSerif"
+              font-size="5"
+              size="6"
+            >
+              =
+            </div>
+            <div
+              class="c23"
+              color="core.white"
+              width="6"
+            >
+              FIL
+            </div>
+            <div
+              class="c24"
+              color="core.white"
+              width="6"
+            >
+              USD
+            </div>
+            <input
+              class="c25"
+              display="inline-block"
+              height="100%"
+              label="Amount"
+              name="amount"
+              placeholder="0"
+              step="0.000000000000000001"
+              type="number"
+              value=""
+              width="100%"
+            />
+          </div>
+          <div
+            class="c26"
+            display="block"
+            height="80px"
+          >
+            <input
+              class="c25"
+              display="inline-block"
+              height="100%"
+              min="0"
+              placeholder="0"
+              step="0.000000000000000001"
+              type="number"
+              value=""
+              width="100%"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="c27"
+        color="core.primary"
+        display="flex"
+        role="button"
+        type="button"
+      >
+        <p
+          class="c28 c29"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          ▼
+        </p>
+        <p
+          class="c30 c31"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          Customize
+        </p>
+      </div>
+      <div
+        class="c14"
+      >
+        <div
+          class="c3"
+          display="flex"
+        >
+          <div
+            class="c15"
+            display="inline-block"
+          >
+            <h4
+              class="c16"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              <label
+                for="estimated-fee"
+              >
+                Estimated Fee
+              </label>
+            </h4>
+          </div>
+          <input
+            class="c32"
+            disabled=""
+            display="inline-block"
+            height="7"
+            name="estimated-fee"
+            value="< 0.1FIL"
+            width="100%"
+          />
+        </div>
+      </div>
+      <div
+        class="c33"
+        display="flex"
+      >
+        <h2
+          class="c34"
+          font-family="RT-Alias-Grotesk"
+          font-size="4"
+          font-weight="400"
+        >
+          Total
+        </h2>
+        <div
+          class="c35"
+          display="flex"
+        >
+          <h2
+            class="c36 c37"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="4"
+            font-weight="400"
+          >
+            0
+             
+            FIL
+          </h2>
+          <h2
+            class="c38"
+            color="core.darkgray"
+            font-family="RT-Alias-Grotesk"
+            font-size="4"
+            font-weight="400"
+          >
+            0
+             
+            USD
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c39"
+    >
+      <button
+        class="c40 c41"
+        font-size="3"
+        type="button"
+      >
+        Back
+      </button>
+      <button
+        class="c42 c43"
+        font-size="3"
+        type="submit"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: #5E26FF;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #5E26FF;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #999999;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c13 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  min-width: 160px;
+  text-align: center;
+}
+
+.c19 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid;
+  border-radius: 1px;
+  border-color: #999999;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 160px;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  height: 80px;
+  width: 100%;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 32px;
+  padding-bottom: 4px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-top: 1px solid;
+  border-color: #999999;
+  display: block;
+  height: 80px;
+}
+
+.c34 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c36 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: right;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c41 {
+  cursor: pointer;
+  border: 1px solid core.lightgray;
+  background-color: transparent;
+  border-color: core.lightgray;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border: 0;
+  border-right: 1px solid;
+  border-radius: 4px;
+  border-color: #C4C4C4;
+  border-width: 1px;
+}
+
+.c41:hover {
+  opacity: 0.8;
+}
+
+.c43 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border: 0;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.c43:hover {
+  opacity: 0.8;
+}
+
+.c12 {
+  width: 24;
+  height: 24;
+}
+
+.c11 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.c11:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c35 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c37 {
+  color: #5E26FF;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c39 {
+  color: #666666;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c6 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 8px;
+}
+
+.c8 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c29 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 4px;
+  margin-bottom: 0;
+  padding-top: 8px;
+}
+
+.c31 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-bottom: 0;
+}
+
+.c16 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c18 {
+  color: #FC6D6F;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.c33 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: transparent;
+  background-color: #EFF3FD;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c33:hover {
+  cursor: not-allowed;
+}
+
+.c33:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c17 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #FC6D6F;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c17:hover {
+  cursor: text;
+}
+
+.c17:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #FC6D6F;
+}
+
+.c14 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 16px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 1px;
+}
+
+.c26 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #D2F5ED;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  -moz-appearance: textfield;
+}
+
+.c26:hover {
+  cursor: text;
+}
+
+.c26:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #D2F5ED;
+}
+
+.c26::-webkit-outer-spin-button,
+.c26::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c24 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 30px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+.c25 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 110px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #C4C4C4;
+  background-color: #F6F8FE;
+  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
+  position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  bottom: 16px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  border-radius: 4px;
+  max-width: 560px;
+  width: 40%;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  max-width: 560px;
+  min-width: 320px;
+}
+
+.c1 {
+  background-color: #EFF3FD;
+  border: 1px solid;
+  border-radius: 4px;
+  border-color: silver;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c28 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c28:hover {
+  cursor: pointer;
+}
+
+.c30 {
+  font-size: 0.75rem;
+}
+
+.c32 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  line-height: 2;
+}
+
+.c38 {
+  word-wrap: break-word;
+}
+
+.c42 {
+  border-radius: 0px;
+}
+
+.c44 {
+  border-radius: 0px;
+}
+
+<div
+  class="c0"
+>
+  <form
+    autocomplete="off"
+    class="c1"
+    display="flex"
+  >
+    <div
+      class="c2"
+      display="flex"
+    >
+      <div
+        class="c3"
+        display="flex"
+      >
+        <div
+          class="c4"
+          color="background.screen"
+          display="flex"
+          size="6"
+        >
+          <h3
+            class="c5"
+          >
+            To
+          </h3>
+        </div>
+        <p
+          class="c6"
+          color="core.primary"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          Sending Filecoin
+        </p>
+      </div>
+      <div
+        class="c3"
+        display="flex"
+      >
+        <div
+          class="c7"
+          display="flex"
+        >
+          <p
+            class="c8"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            Step 
+            1
+          </p>
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c9"
+              display="inline-block"
+              height="2"
+              width="2"
+            />
+          </div>
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c10"
+              display="inline-block"
+              height="2"
+              width="2"
+            />
+          </div>
+        </div>
+        <button
+          class="c11"
+          display="inline-block"
+          role="button"
+          type="button"
+        >
+          <svg
+            class="c12"
+            fill="none"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+              fill="#5E26FF"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="c13"
+    >
+      <div
+        class="c14"
+      >
+        <div
+          class="c3"
+          display="flex"
+        >
+          <div
+            class="c15"
+            display="inline-block"
+          >
+            <h4
+              class="c16"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              <label
+                for="recipient"
+              >
+                Recipient
+              </label>
+            </h4>
+          </div>
+          <input
+            class="c17"
+            display="inline-block"
+            height="7"
+            name="recipient"
+            placeholder="t1..."
+            value="t1z225tguggx4onbauimqvxz"
+            width="100%"
+          />
+        </div>
+      </div>
+      <h4
+        class="c18"
+        color="status.fail.background"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Invalid address.
+      </h4>
+      <div
+        class="c19"
+        display="flex"
+        label="Amount"
+        name="amount"
+      >
+        <div
+          class="c20"
+          display="flex"
+          width="100%"
+        >
+          <h4
+            class="c16"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Amount
+          </h4>
+        </div>
+        <div
+          class="c21"
+          display="inline-block"
+          width="100%"
+        >
+          <div
+            class="c22"
+            display="block"
+            height="80px"
+            width="100%"
+          >
+            <div
+              class="c23"
+              display="flex"
+              font-family="sansSerif"
+              font-size="5"
+              size="6"
+            >
+              =
+            </div>
+            <div
+              class="c24"
+              color="core.white"
+              width="6"
+            >
+              FIL
+            </div>
+            <div
+              class="c25"
+              color="core.white"
+              width="6"
+            >
+              USD
+            </div>
+            <input
+              class="c26"
+              display="inline-block"
+              height="100%"
+              label="Amount"
+              name="amount"
+              placeholder="0"
+              step="0.000000000000000001"
+              type="number"
+              value="0.01"
+              width="100%"
+            />
+          </div>
+          <div
+            class="c27"
+            display="block"
+            height="80px"
+          >
+            <input
+              class="c26"
+              display="inline-block"
+              height="100%"
+              min="0"
+              placeholder="0"
+              step="0.000000000000000001"
+              type="number"
+              value="0.05"
+              width="100%"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="c28"
+        color="core.primary"
+        display="flex"
+        role="button"
+        type="button"
+      >
+        <p
+          class="c29 c30"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          ▼
+        </p>
+        <p
+          class="c31 c32"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          Customize
+        </p>
+      </div>
+      <div
+        class="c14"
+      >
+        <div
+          class="c3"
+          display="flex"
+        >
+          <div
+            class="c15"
+            display="inline-block"
+          >
+            <h4
+              class="c16"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              <label
+                for="estimated-fee"
+              >
+                Estimated Fee
+              </label>
+            </h4>
+          </div>
+          <input
+            class="c33"
+            disabled=""
+            display="inline-block"
+            height="7"
+            name="estimated-fee"
+            value="< 0.1FIL"
+            width="100%"
+          />
+        </div>
+      </div>
+      <div
+        class="c34"
+        display="flex"
+      >
+        <h2
+          class="c35"
+          font-family="RT-Alias-Grotesk"
+          font-size="4"
+          font-weight="400"
+        >
+          Total
+        </h2>
+        <div
+          class="c36"
+          display="flex"
+        >
+          <h2
+            class="c37 c38"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="4"
+            font-weight="400"
+          >
+            0.010000000000000122
+             
+            FIL
+          </h2>
+          <h2
+            class="c39"
+            color="core.darkgray"
+            font-family="RT-Alias-Grotesk"
+            font-size="4"
+            font-weight="400"
+          >
+            0.05
+             
+            USD
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c40"
+    >
+      <button
+        class="c41 c42"
+        font-size="3"
+        type="button"
+      >
+        Back
+      </button>
+      <button
+        class="c43 c44"
+        font-size="3"
+        type="submit"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: #5E26FF;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #5E26FF;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #999999;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c13 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  min-width: 160px;
+  text-align: center;
+}
+
+.c19 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid;
+  border-radius: 1px;
+  border-color: #999999;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 160px;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  height: 80px;
+  width: 100%;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 32px;
+  padding-bottom: 4px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-top: 1px solid;
+  border-color: #999999;
+  display: block;
+  height: 80px;
+}
+
+.c34 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c36 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: right;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c41 {
+  cursor: pointer;
+  border: 1px solid core.lightgray;
+  background-color: transparent;
+  border-color: core.lightgray;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border: 0;
+  border-right: 1px solid;
+  border-radius: 4px;
+  border-color: #C4C4C4;
+  border-width: 1px;
+}
+
+.c41:hover {
+  opacity: 0.8;
+}
+
+.c43 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border: 0;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.c43:hover {
+  opacity: 0.8;
+}
+
+.c12 {
+  width: 24;
+  height: 24;
+}
+
+.c11 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.c11:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c35 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c37 {
+  color: #5E26FF;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c39 {
+  color: #666666;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c6 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 8px;
+}
+
+.c8 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c29 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 4px;
+  margin-bottom: 0;
+  padding-top: 8px;
+}
+
+.c31 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-bottom: 0;
+}
+
+.c16 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c18 {
+  color: #FC6D6F;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.c33 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: transparent;
+  background-color: #EFF3FD;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c33:hover {
+  cursor: not-allowed;
+}
+
+.c33:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c17 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #FC6D6F;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c17:hover {
+  cursor: text;
+}
+
+.c17:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #FC6D6F;
+}
+
+.c14 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 16px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 1px;
+}
+
+.c26 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #D2F5ED;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  -moz-appearance: textfield;
+}
+
+.c26:hover {
+  cursor: text;
+}
+
+.c26:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #D2F5ED;
+}
+
+.c26::-webkit-outer-spin-button,
+.c26::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c24 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 30px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+.c25 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 110px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #C4C4C4;
+  background-color: #F6F8FE;
+  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
+  position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  bottom: 16px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  border-radius: 4px;
+  max-width: 560px;
+  width: 40%;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  max-width: 560px;
+  min-width: 320px;
+}
+
+.c1 {
+  background-color: #EFF3FD;
+  border: 1px solid;
+  border-radius: 4px;
+  border-color: silver;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c28 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c28:hover {
+  cursor: pointer;
+}
+
+.c30 {
+  font-size: 0.75rem;
+}
+
+.c32 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  line-height: 2;
+}
+
+.c38 {
+  word-wrap: break-word;
+}
+
+.c42 {
+  border-radius: 0px;
+}
+
+.c44 {
+  border-radius: 0px;
+}
+
+<div
+  class="c0"
+>
+  <form
+    autocomplete="off"
+    class="c1"
+    display="flex"
+  >
+    <div
+      class="c2"
+      display="flex"
+    >
+      <div
+        class="c3"
+        display="flex"
+      >
+        <div
+          class="c4"
+          color="background.screen"
+          display="flex"
+          size="6"
+        >
+          <h3
+            class="c5"
+          >
+            To
+          </h3>
+        </div>
+        <p
+          class="c6"
+          color="core.primary"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          Sending Filecoin
+        </p>
+      </div>
+      <div
+        class="c3"
+        display="flex"
+      >
+        <div
+          class="c7"
+          display="flex"
+        >
+          <p
+            class="c8"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            Step 
+            1
+          </p>
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c9"
+              display="inline-block"
+              height="2"
+              width="2"
+            />
+          </div>
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c10"
+              display="inline-block"
+              height="2"
+              width="2"
+            />
+          </div>
+        </div>
+        <button
+          class="c11"
+          display="inline-block"
+          role="button"
+          type="button"
+        >
+          <svg
+            class="c12"
+            fill="none"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+              fill="#5E26FF"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="c13"
+    >
+      <div
+        class="c14"
+      >
+        <div
+          class="c3"
+          display="flex"
+        >
+          <div
+            class="c15"
+            display="inline-block"
+          >
+            <h4
+              class="c16"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              <label
+                for="recipient"
+              >
+                Recipient
+              </label>
+            </h4>
+          </div>
+          <input
+            class="c17"
+            display="inline-block"
+            height="7"
+            name="recipient"
+            placeholder="t1..."
+            value=""
+            width="100%"
+          />
+        </div>
+      </div>
+      <h4
+        class="c18"
+        color="status.fail.background"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Invalid address.
+      </h4>
+      <div
+        class="c19"
+        display="flex"
+        label="Amount"
+        name="amount"
+      >
+        <div
+          class="c20"
+          display="flex"
+          width="100%"
+        >
+          <h4
+            class="c16"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Amount
+          </h4>
+        </div>
+        <div
+          class="c21"
+          display="inline-block"
+          width="100%"
+        >
+          <div
+            class="c22"
+            display="block"
+            height="80px"
+            width="100%"
+          >
+            <div
+              class="c23"
+              display="flex"
+              font-family="sansSerif"
+              font-size="5"
+              size="6"
+            >
+              =
+            </div>
+            <div
+              class="c24"
+              color="core.white"
+              width="6"
+            >
+              FIL
+            </div>
+            <div
+              class="c25"
+              color="core.white"
+              width="6"
+            >
+              USD
+            </div>
+            <input
+              class="c26"
+              display="inline-block"
+              height="100%"
+              label="Amount"
+              name="amount"
+              placeholder="0"
+              step="0.000000000000000001"
+              type="number"
+              value="0.01"
+              width="100%"
+            />
+          </div>
+          <div
+            class="c27"
+            display="block"
+            height="80px"
+          >
+            <input
+              class="c26"
+              display="inline-block"
+              height="100%"
+              min="0"
+              placeholder="0"
+              step="0.000000000000000001"
+              type="number"
+              value="0.05"
+              width="100%"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="c28"
+        color="core.primary"
+        display="flex"
+        role="button"
+        type="button"
+      >
+        <p
+          class="c29 c30"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          ▼
+        </p>
+        <p
+          class="c31 c32"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          Customize
+        </p>
+      </div>
+      <div
+        class="c14"
+      >
+        <div
+          class="c3"
+          display="flex"
+        >
+          <div
+            class="c15"
+            display="inline-block"
+          >
+            <h4
+              class="c16"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              <label
+                for="estimated-fee"
+              >
+                Estimated Fee
+              </label>
+            </h4>
+          </div>
+          <input
+            class="c33"
+            disabled=""
+            display="inline-block"
+            height="7"
+            name="estimated-fee"
+            value="< 0.1FIL"
+            width="100%"
+          />
+        </div>
+      </div>
+      <div
+        class="c34"
+        display="flex"
+      >
+        <h2
+          class="c35"
+          font-family="RT-Alias-Grotesk"
+          font-size="4"
+          font-weight="400"
+        >
+          Total
+        </h2>
+        <div
+          class="c36"
+          display="flex"
+        >
+          <h2
+            class="c37 c38"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="4"
+            font-weight="400"
+          >
+            0.010000000000000122
+             
+            FIL
+          </h2>
+          <h2
+            class="c39"
+            color="core.darkgray"
+            font-family="RT-Alias-Grotesk"
+            font-size="4"
+            font-weight="400"
+          >
+            0.05
+             
+            USD
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c40"
+    >
+      <button
+        class="c41 c42"
+        font-size="3"
+        type="button"
+      >
+        Back
+      </button>
+      <button
+        class="c43 c44"
+        font-size="3"
+        type="submit"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Send Flow snapshots it renders the gas customization view 1`] = `
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: #5E26FF;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #5E26FF;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #999999;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c13 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  min-width: 160px;
+  text-align: center;
+}
+
+.c18 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid;
+  border-radius: 1px;
+  border-color: #999999;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 160px;
+}
+
+.c19 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  height: 80px;
+  width: 100%;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 32px;
+  padding-bottom: 4px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c26 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-top: 1px solid;
+  border-color: #999999;
+  display: block;
+  height: 80px;
+}
+
+.c43 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c45 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: right;
+}
+
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c50 {
+  cursor: pointer;
+  border: 1px solid core.lightgray;
+  background-color: transparent;
+  border-color: core.lightgray;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border: 0;
+  border-right: 1px solid;
+  border-radius: 4px;
+  border-color: #C4C4C4;
+  border-width: 1px;
+}
+
+.c50:hover {
+  opacity: 0.8;
+}
+
+.c52 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border: 0;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.c52:hover {
+  opacity: 0.8;
+}
+
+.c12 {
+  width: 24;
+  height: 24;
+}
+
+.c11 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.c11:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c44 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c46 {
+  color: #5E26FF;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c48 {
+  color: #666666;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c6 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 8px;
+}
+
+.c8 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c28 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 4px;
+  margin-bottom: 0;
+  padding-top: 8px;
+}
+
+.c30 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-bottom: 0;
+}
+
+.c16 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c34 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.c35 {
+  color: #5E26FF;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 0;
+}
+
+.c17 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #E4EBFC;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c17:hover {
+  cursor: text;
+}
+
+.c17:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c42 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: transparent;
+  background-color: #EFF3FD;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c42:hover {
+  cursor: not-allowed;
+}
+
+.c42:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c14 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 16px;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 1px;
+}
+
+.c37 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 8px;
+  margin: 0;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 1px;
+}
+
+.c39 {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 1px;
+}
+
+.c25 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #E4EBFC;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  -moz-appearance: textfield;
+}
+
+.c25:hover {
+  cursor: text;
+}
+
+.c25:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c25::-webkit-outer-spin-button,
+.c25::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c38 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #E4EBFC;
+  margin-top: 8px;
+  margin: 0;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  -moz-appearance: textfield;
+}
+
+.c38:hover {
+  cursor: text;
+}
+
+.c38:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c38::-webkit-outer-spin-button,
+.c38::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c41 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #E4EBFC;
+  margin: 0;
+  display: inline-block;
+  height: 64px;
+  width: 100%;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  -moz-appearance: textfield;
+}
+
+.c41:hover {
+  cursor: text;
+}
+
+.c41:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #d1ddfa;
+}
+
+.c41::-webkit-outer-spin-button,
+.c41::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 30px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+.c24 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 110px;
+  left: 30px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+  text-align: center;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 48px;
+}
+
+.c49 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #C4C4C4;
+  background-color: #F6F8FE;
+  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
+  position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  bottom: 16px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  border-radius: 4px;
+  max-width: 560px;
+  width: 40%;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  max-width: 560px;
+  min-width: 320px;
+}
+
+.c32 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  max-width: 560px;
+  min-width: 320px;
+  margin-top: 8px;
+}
+
+.c40 {
+  -webkit-transform: translateY(-1px);
+  -ms-transform: translateY(-1px);
+  transform: translateY(-1px);
+}
+
+.c36 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.c1 {
+  background-color: #EFF3FD;
+  border: 1px solid;
+  border-radius: 4px;
+  border-color: silver;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c27:hover {
+  cursor: pointer;
+}
+
+.c29 {
+  font-size: 0.75rem;
+}
+
+.c31 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  line-height: 2;
+}
+
+.c47 {
+  word-wrap: break-word;
+}
+
+.c51 {
+  border-radius: 0px;
+}
+
+.c53 {
+  border-radius: 0px;
+}
+
+<div
+  class="c0"
+>
+  <form
+    autocomplete="off"
+    class="c1"
+    display="flex"
+  >
+    <div
+      class="c2"
+      display="flex"
+    >
+      <div
+        class="c3"
+        display="flex"
+      >
+        <div
+          class="c4"
+          color="background.screen"
+          display="flex"
+          size="6"
+        >
+          <h3
+            class="c5"
+          >
+            To
+          </h3>
+        </div>
+        <p
+          class="c6"
+          color="core.primary"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          Sending Filecoin
+        </p>
+      </div>
+      <div
+        class="c3"
+        display="flex"
+      >
+        <div
+          class="c7"
+          display="flex"
+        >
+          <p
+            class="c8"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            Step 
+            1
+          </p>
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c9"
+              display="inline-block"
+              height="2"
+              width="2"
+            />
+          </div>
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c10"
+              display="inline-block"
+              height="2"
+              width="2"
+            />
+          </div>
+        </div>
+        <button
+          class="c11"
+          display="inline-block"
+          role="button"
+          type="button"
+        >
+          <svg
+            class="c12"
+            fill="none"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+              fill="#5E26FF"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="c13"
+    >
+      <div
+        class="c14"
+      >
+        <div
+          class="c3"
+          display="flex"
+        >
+          <div
+            class="c15"
+            display="inline-block"
+          >
+            <h4
+              class="c16"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              <label
+                for="recipient"
+              >
+                Recipient
+              </label>
+            </h4>
+          </div>
+          <input
+            class="c17"
+            display="inline-block"
+            height="7"
+            name="recipient"
+            placeholder="t1..."
+            value=""
+            width="100%"
+          />
+        </div>
+      </div>
+      
+      <div
+        class="c18"
+        display="flex"
+        label="Amount"
+        name="amount"
+      >
+        <div
+          class="c19"
+          display="flex"
+          width="100%"
+        >
+          <h4
+            class="c16"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Amount
+          </h4>
+        </div>
+        <div
+          class="c20"
+          display="inline-block"
+          width="100%"
+        >
+          <div
+            class="c21"
+            display="block"
+            height="80px"
+            width="100%"
+          >
+            <div
+              class="c22"
+              display="flex"
+              font-family="sansSerif"
+              font-size="5"
+              size="6"
+            >
+              =
+            </div>
+            <div
+              class="c23"
+              color="core.white"
+              width="6"
+            >
+              FIL
+            </div>
+            <div
+              class="c24"
+              color="core.white"
+              width="6"
+            >
+              USD
+            </div>
+            <input
+              class="c25"
+              display="inline-block"
+              height="100%"
+              label="Amount"
+              name="amount"
+              placeholder="0"
+              step="0.000000000000000001"
+              type="number"
+              value=""
+              width="100%"
+            />
+          </div>
+          <div
+            class="c26"
+            display="block"
+            height="80px"
+          >
+            <input
+              class="c25"
+              display="inline-block"
+              height="100%"
+              min="0"
+              placeholder="0"
+              step="0.000000000000000001"
+              type="number"
+              value=""
+              width="100%"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="c27"
+        color="core.primary"
+        display="flex"
+        role="button"
+        type="button"
+      >
+        <p
+          class="c28 c29"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          ▲
+        </p>
+        <p
+          class="c30 c31"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          Close
+        </p>
+      </div>
+      <div
+        class="c32"
+      >
+        <div
+          class="c33"
+          display="flex"
+        >
+          <h4
+            class="c34"
+            color="core.darkgray"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Transfers complete faster with a higher gas price.
+          </h4>
+          <h4
+            class="c35 c36"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            What’s this?
+          </h4>
+        </div>
+        <div
+          class="c37"
+        >
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c15"
+              display="inline-block"
+            >
+              <h4
+                class="c16"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Gas Price
+              </h4>
+            </div>
+            <input
+              class="c38"
+              display="inline-block"
+              height="7"
+              type="number"
+              value="1"
+              width="100%"
+            />
+          </div>
+        </div>
+        <div
+          class="c39 c40 GasCustomization___StyledNumberedInput-sc-13rr8o7-0 c40"
+        >
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c15"
+              display="inline-block"
+            >
+              <h4
+                class="c16"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Gas Limit
+              </h4>
+            </div>
+            <input
+              class="c41 c40 GasCustomization___StyledNumberedInput-sc-13rr8o7-0 c40 GasCustomization___StyledNumberedInput-sc-13rr8o7-0 c40"
+              display="inline-block"
+              height="7"
+              type="number"
+              value="2000"
+              width="100%"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="c14"
+      >
+        <div
+          class="c3"
+          display="flex"
+        >
+          <div
+            class="c15"
+            display="inline-block"
+          >
+            <h4
+              class="c16"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              <label
+                for="estimated-fee"
+              >
+                Estimated Fee
+              </label>
+            </h4>
+          </div>
+          <input
+            class="c42"
+            disabled=""
+            display="inline-block"
+            height="7"
+            name="estimated-fee"
+            value="122"
+            width="100%"
+          />
+        </div>
+      </div>
+      <div
+        class="c43"
+        display="flex"
+      >
+        <h2
+          class="c44"
+          font-family="RT-Alias-Grotesk"
+          font-size="4"
+          font-weight="400"
+        >
+          Total
+        </h2>
+        <div
+          class="c45"
+          display="flex"
+        >
+          <h2
+            class="c46 c47"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="4"
+            font-weight="400"
+          >
+            0
+             
+            FIL
+          </h2>
+          <h2
+            class="c48"
+            color="core.darkgray"
+            font-family="RT-Alias-Grotesk"
+            font-size="4"
+            font-weight="400"
+          >
+            0
+             
+            USD
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c49"
+    >
+      <button
+        class="c50 c51"
+        font-size="3"
+        type="button"
+      >
+        Back
+      </button>
+      <button
+        class="c52 c53"
+        font-size="3"
+        type="submit"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+</div>
+`;

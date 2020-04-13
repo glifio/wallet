@@ -320,4 +320,88 @@ describe('Send Flow', () => {
       expect()
     })
   })
+
+  describe('snapshots', () => {
+    test('it renders correctly', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
+      let res
+      await act(async () => {
+        res = render(
+          <Tree>
+            <Send close={close} />
+          </Tree>
+        )
+      })
+      expect(res.container.firstChild).toMatchSnapshot()
+    })
+    test('it renders invalid address errors correctly', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
+      const badAddress = 't1z225tguggx4onbauimqvxz'
+      const filAmount = new FilecoinNumber('.01', 'fil')
+      let res
+      await act(async () => {
+        res = render(
+          <Tree>
+            <Send close={close} />
+          </Tree>
+        )
+        fireEvent.change(screen.getByPlaceholderText(/t1.../), {
+          target: { value: badAddress }
+        })
+        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+          target: { value: filAmount }
+        })
+        await flushPromises()
+        fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        await flushPromises()
+        fireEvent.click(screen.getByText('Send'))
+        await flushPromises()
+      })
+      expect(res.container.firstChild).toMatchSnapshot()
+    })
+
+    test('it renders invalid value errors correctly', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
+      const filAmount = new FilecoinNumber('.01', 'fil')
+      let res
+      await act(async () => {
+        res = render(
+          <Tree>
+            <Send close={close} />
+          </Tree>
+        )
+        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+          target: { value: filAmount }
+        })
+        await flushPromises()
+        fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        await flushPromises()
+        fireEvent.click(screen.getByText('Send'))
+        await flushPromises()
+      })
+      expect(res.container.firstChild).toMatchSnapshot()
+    })
+
+    test('it renders the gas customization view', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
+      let res
+      await act(async () => {
+        res = render(
+          <Tree>
+            <Send close={close} />
+          </Tree>
+        )
+        fireEvent.click(screen.getByText('Customize'))
+        await flushPromises()
+
+        fireEvent.change(screen.getByDisplayValue('1000'), {
+          target: {
+            value: 2000
+          }
+        })
+        await flushPromises()
+      })
+      expect(res.container.firstChild).toMatchSnapshot()
+    })
+  })
 })
