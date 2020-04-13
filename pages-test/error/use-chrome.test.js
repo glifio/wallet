@@ -1,17 +1,17 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 
-import UseDesktopBrowser from './use-desktop-browser.jsx'
+import UseChrome from '../../pages/error/use-chrome.jsx'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 
 jest.mock('@openworklabs/filecoin-wallet-provider')
 
-describe('UseDesktopBrowser', () => {
+describe('UseChrome', () => {
   afterEach(cleanup)
   test('it renders the error page', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     const { container } = render(
       <Tree>
-        <UseDesktopBrowser />
+        <UseChrome />
       </Tree>
     )
 
@@ -23,12 +23,14 @@ describe('UseDesktopBrowser', () => {
 
     render(
       <Tree>
-        <UseDesktopBrowser />
+        <UseChrome />
       </Tree>
     )
 
     expect(
-      screen.getByText('Glif Wallet isn’t ready for your phone or tablet.')
+      screen.getByText(
+        'Please install Google Chrome to continue using your Ledger device, or choose an alternative setup option'
+      )
     ).toBeInTheDocument()
   })
 
@@ -38,20 +40,20 @@ describe('UseDesktopBrowser', () => {
     const mockRouterReplace = jest.fn(() => {})
     useRouter.mockImplementationOnce(() => ({
       query: 'network=t',
-      push: mockRouterReplace
+      replace: mockRouterReplace
     }))
 
     let res
     await act(async () => {
       res = render(
         <Tree>
-          <UseDesktopBrowser />
+          <UseChrome />
         </Tree>
       )
-      fireEvent.click(screen.getByText('Home'))
+      fireEvent.click(screen.getByText('Back'))
     })
 
     expect(mockRouterReplace).toHaveBeenCalled()
-    expect(mockRouterReplace).toHaveBeenCalledWith('/')
+    expect(mockRouterReplace).toHaveBeenCalledWith('/onboard?network=t')
   })
 })
