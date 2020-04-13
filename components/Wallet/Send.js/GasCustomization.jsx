@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { func, bool, string } from 'prop-types'
-import { Box, Label, ContentContainer, Input } from '../../Shared'
+import { Box, Label, ContentContainer, Input, StyledATag } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 
 // this is a weird hack to get tests to run in jest...
@@ -45,16 +45,15 @@ const GasCustomization = ({
             <Label my={3} color='core.darkgray'>
               Transfers complete faster with a higher gas price.
             </Label>
-            <Label
+            <StyledATag
+              rel='noopener noreferrer'
+              target='_blank'
               mt={0}
               color='core.primary'
-              css={`
-                text-decoration: underline;
-                cursor: pointer;
-              `}
+              href='https://kb.myetherwallet.com/en/transactions/what-is-gas/'
             >
               What&rsquo;s this?
-            </Label>
+            </StyledATag>
           </Box>
           <Input.Number
             mt={2}

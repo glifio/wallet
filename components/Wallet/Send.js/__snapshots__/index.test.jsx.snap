@@ -3794,7 +3794,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   width: 100%;
 }
 
-.c45 {
+.c44 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 8px;
@@ -3808,7 +3808,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   align-items: center;
 }
 
-.c50 {
+.c49 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
@@ -3831,7 +3831,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   justify-content: space-between;
 }
 
-.c52 {
+.c51 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -3862,7 +3862,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   align-items: center;
 }
 
-.c37 {
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -3876,7 +3876,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   align-items: center;
 }
 
-.c38 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 16px;
@@ -3892,7 +3892,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   font-size: 1.5rem;
 }
 
-.c57 {
+.c56 {
   cursor: pointer;
   border: 1px solid core.lightgray;
   background-color: transparent;
@@ -3910,11 +3910,11 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-width: 1px;
 }
 
-.c57:hover {
+.c56:hover {
   opacity: 0.8;
 }
 
-.c59 {
+.c58 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -3930,7 +3930,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-width: 1px;
 }
 
-.c59:hover {
+.c58:hover {
   opacity: 0.8;
 }
 
@@ -3955,7 +3955,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   transform: scale(1.25);
 }
 
-.c51 {
+.c50 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -3963,7 +3963,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin: 0;
 }
 
-.c53 {
+.c52 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -3972,7 +3972,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin: 0;
 }
 
-.c55 {
+.c54 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
@@ -4001,7 +4001,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin-bottom: 0;
 }
 
-.c46 {
+.c45 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
@@ -4011,7 +4011,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin-bottom: 0;
 }
 
-.c48 {
+.c47 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
@@ -4046,16 +4046,6 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin: 0;
   margin-top: 16px;
   margin-bottom: 16px;
-}
-
-.c34 {
-  color: #5E26FF;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-top: 0;
 }
 
 .c18 {
@@ -4142,7 +4132,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-radius: 1px;
 }
 
-.c36 {
+.c35 {
   display: inline-block;
   width: 100%;
   margin-top: 8px;
@@ -4152,7 +4142,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-radius: 1px;
 }
 
-.c41 {
+.c40 {
   display: inline-block;
   width: 100%;
   margin: 0;
@@ -4209,7 +4199,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   justify-content: center;
 }
 
-.c40 {
+.c39 {
   min-width: 0;
   box-sizing: border-box;
   border-color: #999999;
@@ -4299,7 +4289,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin: 0;
 }
 
-.c39 {
+.c38 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -4327,23 +4317,23 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   -moz-appearance: textfield;
 }
 
-.c39:hover {
+.c38:hover {
   cursor: text;
 }
 
-.c39:focus {
+.c38:focus {
   box-shadow: 0;
   outline: 0;
   background: #d1ddfa;
 }
 
-.c39::-webkit-outer-spin-button,
-.c39::-webkit-inner-spin-button {
+.c38::-webkit-outer-spin-button,
+.c38::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c43 {
+.c42 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -4370,18 +4360,18 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   -moz-appearance: textfield;
 }
 
-.c43:hover {
+.c42:hover {
   cursor: text;
 }
 
-.c43:focus {
+.c42:focus {
   box-shadow: 0;
   outline: 0;
   background: #d1ddfa;
 }
 
-.c43::-webkit-outer-spin-button,
-.c43::-webkit-inner-spin-button {
+.c42::-webkit-outer-spin-button,
+.c42::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -4435,7 +4425,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   left: 0px;
 }
 
-.c56 {
+.c55 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -4465,6 +4455,12 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-radius: 4px;
   max-width: 560px;
   width: 40%;
+}
+
+.c34 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  margin-top: 0;
 }
 
 .c0 {
@@ -4508,16 +4504,10 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin-top: 8px;
 }
 
-.c42 {
+.c41 {
   -webkit-transform: translateY(-1px);
   -ms-transform: translateY(-1px);
   transform: translateY(-1px);
-}
-
-.c35 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  cursor: pointer;
 }
 
 .c1 {
@@ -4539,7 +4529,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   justify-content: space-between;
 }
 
-.c44 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   color: #5E26FF;
@@ -4559,29 +4549,29 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   align-self: flex-end;
 }
 
-.c44:hover {
+.c43:hover {
   cursor: pointer;
 }
 
-.c47 {
+.c46 {
   font-size: 0.75rem;
 }
 
-.c49 {
+.c48 {
   -webkit-text-decoration: underline;
   text-decoration: underline;
   line-height: 2;
 }
 
-.c54 {
+.c53 {
   word-wrap: break-word;
 }
 
-.c58 {
+.c57 {
   border-radius: 0px;
 }
 
-.c60 {
+.c59 {
   border-radius: 0px;
 }
 
@@ -4891,25 +4881,26 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
           >
             Transfers complete faster with a higher gas price.
           </h4>
-          <h4
-            class="c34 c35"
+          <a
+            class="c34"
             color="core.primary"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
+            font-size="3"
+            href="https://kb.myetherwallet.com/en/transactions/what-is-gas/"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             What’s this?
-          </h4>
+          </a>
         </div>
         <div
-          class="c36"
+          class="c35"
         >
           <div
-            class="c37"
+            class="c36"
             display="flex"
           >
             <div
-              class="c38"
+              class="c37"
               display="inline-block"
             >
               <h4
@@ -4927,7 +4918,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
               width="100%"
             >
               <input
-                class="c39"
+                class="c38"
                 display="inline-block"
                 font-size="2"
                 height="7"
@@ -4936,7 +4927,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
                 width="100%"
               />
               <div
-                class="c40"
+                class="c39"
                 color="core.primary"
                 display="flex"
                 font-size="3"
@@ -4948,14 +4939,14 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
           </div>
         </div>
         <div
-          class="c41 c42 GasCustomization___StyledNumberedInput-sc-13rr8o7-0 c42"
+          class="c40 c41 GasCustomization___StyledNumberedInput-sc-13rr8o7-0 c41"
         >
           <div
-            class="c37"
+            class="c36"
             display="flex"
           >
             <div
-              class="c38"
+              class="c37"
               display="inline-block"
             >
               <h4
@@ -4973,7 +4964,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
               width="100%"
             >
               <input
-                class="c43 c42 GasCustomization___StyledNumberedInput-sc-13rr8o7-0 c42 GasCustomization___StyledNumberedInput-sc-13rr8o7-0 c42"
+                class="c42 c41 GasCustomization___StyledNumberedInput-sc-13rr8o7-0 c41 GasCustomization___StyledNumberedInput-sc-13rr8o7-0 c41"
                 display="inline-block"
                 font-size="2"
                 height="7"
@@ -4982,7 +4973,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
                 width="100%"
               />
               <div
-                class="c40"
+                class="c39"
                 color="core.primary"
                 display="flex"
                 font-size="3"
@@ -4995,18 +4986,18 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
         </div>
       </div>
       <div
-        class="c44"
+        class="c43"
         color="core.primary"
         display="flex"
         role="button"
         type="button"
       >
         <div
-          class="c45"
+          class="c44"
           display="flex"
         >
           <p
-            class="c46 c47"
+            class="c45 c46"
             font-family="RT-Alias-Grotesk"
             font-size="3"
             font-weight="400"
@@ -5014,7 +5005,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
             ▲
           </p>
           <p
-            class="c48 c49"
+            class="c47 c48"
             font-family="RT-Alias-Grotesk"
             font-size="3"
             font-weight="400"
@@ -5024,11 +5015,11 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
         </div>
       </div>
       <div
-        class="c50"
+        class="c49"
         display="flex"
       >
         <h2
-          class="c51"
+          class="c50"
           font-family="RT-Alias-Grotesk"
           font-size="4"
           font-weight="400"
@@ -5036,11 +5027,11 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
           Total
         </h2>
         <div
-          class="c52"
+          class="c51"
           display="flex"
         >
           <h2
-            class="c53 c54"
+            class="c52 c53"
             color="core.primary"
             font-family="RT-Alias-Grotesk"
             font-size="5"
@@ -5051,7 +5042,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
             FIL
           </h2>
           <h2
-            class="c55"
+            class="c54"
             color="core.darkgray"
             font-family="RT-Alias-Grotesk"
             font-size="4"
@@ -5065,17 +5056,17 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
       </div>
     </div>
     <div
-      class="c56"
+      class="c55"
     >
       <button
-        class="c57 c58"
+        class="c56 c57"
         font-size="3"
         type="button"
       >
         Back
       </button>
       <button
-        class="c59 c60"
+        class="c58 c59"
         font-size="3"
         type="submit"
       >
