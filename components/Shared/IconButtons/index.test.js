@@ -14,7 +14,7 @@ describe('ButtonClose', () => {
     expect(container.firstChild).toMatchSnapshot()
   })
 
-  test('Clicking ButtonClose calls onClick', () => {
+  test('clicking ButtonClose calls onClick', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     const mockOnClick = jest.fn()
     const { getByTitle } = render(
@@ -43,7 +43,7 @@ describe('ButtonCopyAccountAddress', () => {
     expect(container.firstChild).toMatchSnapshot()
   })
 
-  test('Clicking ButtonCopyAccountAddress calls onClick', () => {
+  test('clicking ButtonCopyAccountAddress calls onClick', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     const mockOnClick = jest.fn()
     const { getByTitle } = render(
