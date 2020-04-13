@@ -13,6 +13,7 @@ const TextInput = ({
   error,
   disabled,
   valid,
+  name,
   ...props
 }) => (
   <>
@@ -20,10 +21,13 @@ const TextInput = ({
       <Box display='flex' alignItems='center'>
         {label && (
           <Box display='inline-block' px={3} minWidth={9} textAlign='center'>
-            <Label>{label}</Label>
+            <Label>
+              <label htmlFor={name}>{label}</label>
+            </Label>
           </Box>
         )}
         <BaseInput
+          name={name}
           py={3}
           px={3}
           onChange={onChange}
@@ -51,14 +55,16 @@ TextInput.propTypes = {
   placeholder: string,
   disabled: bool,
   error: string,
-  valid: bool
+  valid: bool,
+  name: string
 }
 
 TextInput.defaultProps = {
   value: '',
   disabled: false,
   onChange: () => {},
-  label: ''
+  label: '',
+  name: ''
 }
 
 export default TextInput

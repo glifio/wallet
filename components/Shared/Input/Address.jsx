@@ -4,10 +4,7 @@ import { validateAddressString } from '@openworklabs/filecoin-address'
 import TextInput from './Text'
 
 const Address = forwardRef(
-  (
-    { onChange, value, placeholder, label, error, setError, valid, ...props },
-    ref
-  ) => {
+  ({ value, label, error, setError, ...props }, ref) => {
     return (
       <TextInput
         onBlur={() => {
@@ -19,11 +16,8 @@ const Address = forwardRef(
         }}
         ref={ref}
         label={label}
-        onChange={onChange}
         value={value}
-        placeholder={placeholder}
         error={error}
-        valid={valid}
         {...props}
       />
     )
