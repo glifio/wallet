@@ -344,6 +344,7 @@ const Send = ({ close }) => {
             />
             <Box
               color='core.primary'
+              bg='core.transparent'
               type='button'
               role='button'
               onClick={() => setCustomizingGas(!customizingGas)}
