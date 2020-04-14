@@ -2939,25 +2939,6 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background-color: #E4EBFC;
-  color: #5E26FF;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  min-width: 64px;
-  border-color: #999999;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
 }
 
 .c60 {
@@ -3028,25 +3009,6 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background-color: transparent;
-  color: #5E26FF;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 64px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 64px;
-  border-color: #999999;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   border-left: 0;
   top: 0px;
   left: 0px;
