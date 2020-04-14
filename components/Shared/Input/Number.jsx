@@ -1,6 +1,5 @@
 import { forwardRef } from 'react'
 import { func, string, bool, number } from 'prop-types'
-import { space, color, layout, border, flexbox } from 'styled-system'
 import styled from 'styled-components'
 import BaseInput from './BaseInput'
 import InputWrapper from './InputWrapper'
@@ -22,11 +21,6 @@ export const DenomTag = styled(Box).attrs(props => ({
 }))`
   text-align: center;
   position: relative;
-  ${color} 
-  ${space} 
-  ${layout}
-  ${border}
-  ${flexbox};
 `
 
 export const RawNumberInput = styled(BaseInput).attrs(props => ({
