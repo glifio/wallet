@@ -380,31 +380,15 @@ export default () => {
                 `}
               />
             </Box>
-            <TitleCopy>Node</TitleCopy>
+            <TitleCopy>Nodes</TitleCopy>
           </MenuItem>
 
           <MenuItem mr='8%' my={[2, 3, 5]}>
-            <TitleCopy>A</TitleCopy>
+            <TitleCopy>Public</TitleCopy>
           </MenuItem>
 
           <MenuItem mr='8%' my={[2, 3, 5]}>
-            <TitleCopy>fully</TitleCopy>
-          </MenuItem>
-
-          <MenuItem mr='8%' my={[2, 3, 5]}>
-            <TitleCopy>managed</TitleCopy>
-          </MenuItem>
-
-          <MenuItem mr='8%' my={[2, 3, 5]}>
-            <TitleCopy>Filecoin</TitleCopy>
-          </MenuItem>
-
-          <MenuItem mr='8%' my={[2, 3, 5]}>
-            <TitleCopy>node</TitleCopy>
-          </MenuItem>
-
-          <MenuItem mr='8%' my={[2, 3, 5]}>
-            <TitleCopy>you</TitleCopy>
+            <TitleCopy>and</TitleCopy>
           </MenuItem>
 
           <MenuItem mr='8%' my={[2, 3]} height='120px'>
@@ -416,23 +400,19 @@ export default () => {
           </MenuItem>
 
           <MenuItem mr='8%' my={[2, 3, 5]}>
-            <TitleCopy>can</TitleCopy>
+            <TitleCopy> dedicated</TitleCopy>
           </MenuItem>
 
           <MenuItem mr='8%' my={[2, 3, 5]}>
-            <TitleCopy>deploy</TitleCopy>
+            <TitleCopy>Filecoin</TitleCopy>
           </MenuItem>
 
           <MenuItem mr='8%' my={[2, 3, 5]}>
-            <TitleCopy>from</TitleCopy>
+            <TitleCopy>node</TitleCopy>
           </MenuItem>
 
           <MenuItem mr='8%' my={[2, 3, 5]}>
-            <TitleCopy>the</TitleCopy>
-          </MenuItem>
-
-          <MenuItem mr='8%' my={[2, 3, 5]}>
-            <TitleCopy>command-line</TitleCopy>
+            <TitleCopy> infrastructure</TitleCopy>
           </MenuItem>
         </Menu>
       </section>
