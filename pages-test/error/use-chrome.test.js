@@ -1,6 +1,6 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 
-import UseChrome from './use-chrome.jsx'
+import UseChrome from '../../pages/error/use-chrome.jsx'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 
 jest.mock('@openworklabs/filecoin-wallet-provider')
@@ -54,6 +54,6 @@ describe('UseChrome', () => {
     })
 
     expect(mockRouterReplace).toHaveBeenCalled()
-    expect(mockRouterReplace).toHaveBeenCalledWith('/onboard?network=t')
+    expect(mockRouterReplace).toHaveBeenCalledWith('/onboard')
   })
 })

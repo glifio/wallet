@@ -1,17 +1,17 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 
-import WalletDown from './wallet-down.jsx'
+import UseDesktopBrowser from '../../pages/error/use-desktop-browser.jsx'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 
 jest.mock('@openworklabs/filecoin-wallet-provider')
 
-describe('WalletDown', () => {
+describe('UseDesktopBrowser', () => {
   afterEach(cleanup)
   test('it renders the error page', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     const { container } = render(
       <Tree>
-        <WalletDown />
+        <UseDesktopBrowser />
       </Tree>
     )
 
@@ -23,12 +23,12 @@ describe('WalletDown', () => {
 
     render(
       <Tree>
-        <WalletDown />
+        <UseDesktopBrowser />
       </Tree>
     )
 
     expect(
-      screen.getByText("We're aware of the outage and will be back up shortly.")
+      screen.getByText('Glif Wallet isn’t ready for your phone or tablet.')
     ).toBeInTheDocument()
   })
 
@@ -38,20 +38,20 @@ describe('WalletDown', () => {
     const mockRouterReplace = jest.fn(() => {})
     useRouter.mockImplementationOnce(() => ({
       query: 'network=t',
-      replace: mockRouterReplace
+      push: mockRouterReplace
     }))
 
     let res
     await act(async () => {
       res = render(
         <Tree>
-          <WalletDown />
+          <UseDesktopBrowser />
         </Tree>
       )
-      fireEvent.click(screen.getByText('Back'))
+      fireEvent.click(screen.getByText('Home'))
     })
 
     expect(mockRouterReplace).toHaveBeenCalled()
-    expect(mockRouterReplace).toHaveBeenCalledWith('/onboard?network=t')
+    expect(mockRouterReplace).toHaveBeenCalledWith('/')
   })
 })
