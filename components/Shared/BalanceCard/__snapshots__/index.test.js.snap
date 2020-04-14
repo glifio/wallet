@@ -112,7 +112,7 @@ exports[`BalanceCard it renders correctly 1`] = `
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
-  font-family: RT-Alias-Medium;
+  font-family: RT-Alias-Grotesk;
   margin: 0;
 }
 
@@ -121,7 +121,7 @@ exports[`BalanceCard it renders correctly 1`] = `
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.2;
-  font-family: RT-Alias-Medium;
+  font-family: RT-Alias-Grotesk;
   margin: 0;
 }
 
@@ -213,7 +213,7 @@ exports[`BalanceCard it renders correctly 1`] = `
     <h2
       class="c8 c9"
       color="card.balance.color"
-      font-family="RT-Alias-Medium"
+      font-family="RT-Alias-Grotesk"
       font-size="6"
       font-weight="700"
     >
@@ -223,7 +223,7 @@ exports[`BalanceCard it renders correctly 1`] = `
     <h2
       class="c10"
       color="core.darkgray"
-      font-family="RT-Alias-Medium"
+      font-family="RT-Alias-Grotesk"
       font-size="5"
       font-weight="700"
     >
@@ -366,7 +366,7 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
-  font-family: RT-Alias-Medium;
+  font-family: RT-Alias-Grotesk;
   margin: 0;
 }
 
@@ -375,7 +375,7 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.2;
-  font-family: RT-Alias-Medium;
+  font-family: RT-Alias-Grotesk;
   margin: 0;
 }
 
@@ -467,7 +467,7 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
     <h2
       class="c8 c9"
       color="card.balance.color"
-      font-family="RT-Alias-Medium"
+      font-family="RT-Alias-Grotesk"
       font-size="6"
       font-weight="700"
     >
@@ -477,7 +477,7 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
     <h2
       class="c10"
       color="core.darkgray"
-      font-family="RT-Alias-Medium"
+      font-family="RT-Alias-Grotesk"
       font-size="5"
       font-weight="700"
     >
@@ -620,7 +620,7 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
-  font-family: RT-Alias-Medium;
+  font-family: RT-Alias-Grotesk;
   margin: 0;
 }
 
@@ -629,7 +629,7 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.2;
-  font-family: RT-Alias-Medium;
+  font-family: RT-Alias-Grotesk;
   margin: 0;
 }
 
@@ -721,7 +721,7 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
     <h2
       class="c8 c9"
       color="card.balance.color"
-      font-family="RT-Alias-Medium"
+      font-family="RT-Alias-Grotesk"
       font-size="6"
       font-weight="700"
     >
@@ -731,7 +731,7 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
     <h2
       class="c10"
       color="core.darkgray"
-      font-family="RT-Alias-Medium"
+      font-family="RT-Alias-Grotesk"
       font-size="5"
       font-weight="700"
     >
@@ -874,7 +874,7 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
-  font-family: RT-Alias-Medium;
+  font-family: RT-Alias-Grotesk;
   margin: 0;
 }
 
@@ -883,7 +883,7 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.2;
-  font-family: RT-Alias-Medium;
+  font-family: RT-Alias-Grotesk;
   margin: 0;
 }
 
@@ -975,7 +975,7 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
     <h2
       class="c8 c9"
       color="card.balance.color"
-      font-family="RT-Alias-Medium"
+      font-family="RT-Alias-Grotesk"
       font-size="6"
       font-weight="700"
     >
@@ -985,7 +985,7 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
     <h2
       class="c10"
       color="core.darkgray"
-      font-family="RT-Alias-Medium"
+      font-family="RT-Alias-Grotesk"
       font-size="5"
       font-weight="700"
     >
@@ -1128,7 +1128,7 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
-  font-family: RT-Alias-Medium;
+  font-family: RT-Alias-Grotesk;
   margin: 0;
 }
 
@@ -1137,7 +1137,7 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.2;
-  font-family: RT-Alias-Medium;
+  font-family: RT-Alias-Grotesk;
   margin: 0;
 }
 
@@ -1229,7 +1229,7 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
     <h2
       class="c8 c9"
       color="card.balance.color"
-      font-family="RT-Alias-Medium"
+      font-family="RT-Alias-Grotesk"
       font-size="6"
       font-weight="700"
     >
@@ -1239,7 +1239,7 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
     <h2
       class="c10"
       color="core.darkgray"
-      font-family="RT-Alias-Medium"
+      font-family="RT-Alias-Grotesk"
       font-size="5"
       font-weight="700"
     >
@@ -1382,7 +1382,7 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
-  font-family: RT-Alias-Medium;
+  font-family: RT-Alias-Grotesk;
   margin: 0;
 }
 
@@ -1391,7 +1391,7 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.2;
-  font-family: RT-Alias-Medium;
+  font-family: RT-Alias-Grotesk;
   margin: 0;
 }
 
@@ -1483,7 +1483,7 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
     <h2
       class="c8 c9"
       color="card.balance.color"
-      font-family="RT-Alias-Medium"
+      font-family="RT-Alias-Grotesk"
       font-size="6"
       font-weight="700"
     >
@@ -1493,7 +1493,7 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
     <h2
       class="c10"
       color="core.darkgray"
-      font-family="RT-Alias-Medium"
+      font-family="RT-Alias-Grotesk"
       font-size="5"
       font-weight="700"
     >
@@ -1636,7 +1636,7 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
-  font-family: RT-Alias-Medium;
+  font-family: RT-Alias-Grotesk;
   margin: 0;
 }
 
@@ -1645,7 +1645,7 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.2;
-  font-family: RT-Alias-Medium;
+  font-family: RT-Alias-Grotesk;
   margin: 0;
 }
 
@@ -1737,7 +1737,7 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
     <h2
       class="c8 c9"
       color="card.balance.color"
-      font-family="RT-Alias-Medium"
+      font-family="RT-Alias-Grotesk"
       font-size="6"
       font-weight="700"
     >
@@ -1747,7 +1747,7 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
     <h2
       class="c10"
       color="core.darkgray"
-      font-family="RT-Alias-Medium"
+      font-family="RT-Alias-Grotesk"
       font-size="5"
       font-weight="700"
     >

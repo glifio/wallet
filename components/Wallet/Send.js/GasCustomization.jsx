@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { func, bool, string } from 'prop-types'
-import { Box, Label, ContentContainer, Input } from '../../Shared'
+import { Box, Label, ContentContainer, Input, StyledATag } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 
 // this is a weird hack to get tests to run in jest...
@@ -45,35 +45,41 @@ const GasCustomization = ({
             <Label my={3} color='core.darkgray'>
               Transfers complete faster with a higher gas price.
             </Label>
-            <Label
+            <StyledATag
+              rel='noopener noreferrer'
+              target='_blank'
               mt={0}
               color='core.primary'
-              css={`
-                text-decoration: underline;
-                cursor: pointer;
-              `}
+              href='https://kb.myetherwallet.com/en/transactions/what-is-gas/'
             >
               What&rsquo;s this?
-            </Label>
+            </StyledATag>
           </Box>
-          <Input.Number
-            mt={2}
-            m='0'
-            label='Gas Price'
-            value={gasPrice.toAttoFil()}
-            onChange={onGasPriceInputChange}
-          />
-          <NumberedInput
-            css={`
-              transform: translateY(-1px);
-            `}
-            m='0'
-            label='Gas Limit'
-            value={gasLimit.toAttoFil()}
-            onChange={e =>
-              setGasLimit(new FilecoinNumber(e.target.value || '0', 'attofil'))
-            }
-          />
+          <Box border={1} borderColor='input.border'>
+            <Input.Number
+              border={0}
+              mt={2}
+              m='0'
+              denom='AttoFil'
+              label='Gas Price'
+              value={gasPrice.toAttoFil()}
+              onChange={onGasPriceInputChange}
+            />
+            <Box borderTop={1} borderColor='input.border'>
+              <NumberedInput
+                border={0}
+                m='0'
+                denom='AttoFil'
+                label='Gas Limit'
+                value={gasLimit.toAttoFil()}
+                onChange={e =>
+                  setGasLimit(
+                    new FilecoinNumber(e.target.value || '0', 'attofil')
+                  )
+                }
+              />
+            </Box>
+          </Box>
         </ContentContainer>
       )}
     </>

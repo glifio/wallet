@@ -15,9 +15,10 @@ import {
   Input,
   Glyph,
   Text,
+  Num,
   Button,
+  BaseButton,
   ButtonClose,
-  Title,
   FloatingContainer,
   Title as Total,
   ContentContainer as SendContainer,
@@ -322,55 +323,16 @@ const Send = ({ close }) => {
               disabled={step === 2 && !hasError()}
               valid={isValidAmount(value, wallet.balance, valueError)}
             />
-            <Box
-              color='core.primary'
-              type='button'
-              role='button'
-              onClick={() => setCustomizingGas(!customizingGas)}
-              css={`
-                &:hover {
-                  cursor: pointer;
-                }
-                align-self: flex-end;
-              `}
-              display='flex'
-              alignItems='center'
-              flexDirection='row'
-            >
-              {customizingGas ? (
-                <Text
-                  css={`
-                    font-size: 0.75rem;
-                  `}
-                  mr={1}
-                  mb={0}
-                  pt={2}
-                >
-                  &#9650;
-                </Text>
-              ) : (
-                <Text
-                  css={`
-                    font-size: 0.75rem;
-                  `}
-                  mr={1}
-                  mb={0}
-                  pt={2}
-                >
-                  &#9660;
-                </Text>
-              )}
-              <Text
-                css={`
-                  text-decoration: underline;
-                  line-height: 2;
-                `}
-                mb={0}
-              >
-                {customizingGas ? 'Close' : 'Customize'}
-              </Text>
+            <Box position='relative' width='100%'>
+              <Input.Text
+                onChange={noop}
+                denom={customizingGas ? 'AttoFil' : 'FIL'}
+                label='Transaction Fee'
+                value={customizingGas ? estimatedGasUsed.toAttoFil() : '< 0.1'}
+                backgroundColor='background.screen'
+                disabled
+              />
             </Box>
-
             <GasCustomization
               show={customizingGas}
               estimateGas={estimateGas}
@@ -381,20 +343,65 @@ const Send = ({ close }) => {
               setEstimatedGas={setEstimatedGasUsed}
               value={value.toAttoFil()}
             />
-            <Input.Text
-              onChange={noop}
-              label='Estimated Fee'
-              name='estimated-fee'
-              value={customizingGas ? estimatedGasUsed.toAttoFil() : '< 0.1FIL'}
-              backgroundColor='background.screen'
-              disabled
-            />
+            <BaseButton
+              color='core.primary'
+              bg='core.transparent'
+              border={0}
+              type='button'
+              role='button'
+              onClick={() => setCustomizingGas(!customizingGas)}
+              css={`
+                padding: 0;
+                outline: none;
+                &:hover {
+                  cursor: pointer;
+                }
+                align-self: flex-end;
+              `}
+              display='flex'
+              alignItems='center'
+              flexDirection='row'
+            >
+              <Box display='flex' alignItems='center' mt={2}>
+                {customizingGas ? (
+                  <Text
+                    css={`
+                      font-size: 0.75rem;
+                    `}
+                    mr={1}
+                    my={0}
+                  >
+                    &#9650;
+                  </Text>
+                ) : (
+                  <Text
+                    css={`
+                      font-size: 0.75rem;
+                    `}
+                    mr={1}
+                    my={0}
+                  >
+                    &#9660;
+                  </Text>
+                )}
+                <Text
+                  m={0}
+                  css={`
+                    text-decoration: underline;
+                    line-height: 2;
+                  `}
+                  mb={0}
+                >
+                  {customizingGas ? 'Close' : 'Customize'}
+                </Text>
+              </Box>
+            </BaseButton>
             <Box
               display='flex'
               flexDirection='row'
               alignItems='flex-start'
               justifyContent='space-between'
-              mt={3}
+              mt={5}
               mx={1}
             >
               <Total fontSize={4} alignSelf='flex-start'>
@@ -406,7 +413,8 @@ const Send = ({ close }) => {
                 textAlign='right'
                 pl={4}
               >
-                <Title
+                <Num
+                  size='l'
                   css={`
                     word-wrap: break-word;
                   `}
@@ -416,8 +424,8 @@ const Send = ({ close }) => {
                     ? `${value.plus(estimatedGasUsed).toString()}`
                     : '0'}{' '}
                   FIL
-                </Title>
-                <Title color='core.darkgray'>
+                </Num>
+                <Num size='m' color='core.darkgray'>
                   {!converterError && value.isGreaterThan(0)
                     ? `${makeFriendlyBalance(
                         converter.fromFIL(value.plus(estimatedGasUsed)),
@@ -425,7 +433,7 @@ const Send = ({ close }) => {
                       )}`
                     : '0'}{' '}
                   USD
-                </Title>
+                </Num>
               </Box>
             </Box>
           </Box>
