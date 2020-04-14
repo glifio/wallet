@@ -1,11 +1,11 @@
 import React from 'react'
-import { string, func } from 'prop-types'
+import { string, func, obj } from 'prop-types'
 import Box from '../Box'
 import Glyph from '../Glyph'
 import Button from '../Button'
 import { Text } from '../Typography'
 
-const AccountError = ({ errorMsg, onTryAgain }) => (
+const AccountError = ({ errorMsg, onTryAgain, ...props }) => (
   <Box
     display='flex'
     flexDirection='column'
@@ -17,7 +17,7 @@ const AccountError = ({ errorMsg, onTryAgain }) => (
     bg='card.error.background'
     color='card.error.foreground'
     boxShadow={1}
-    m={2}
+    {...props}
   >
     <Box display='flex' alignItems='center' justifyContent='flex-start'>
       <Glyph mr={3} acronym='Er' color='status.fail.foreground' />
@@ -35,6 +35,16 @@ const AccountError = ({ errorMsg, onTryAgain }) => (
         borderColor='status.fail.foreground'
         color='status.fail.foreground'
         p={2}
+      />
+      <Button
+        title='Cancel'
+        onClick=''
+        height='100%'
+        backgroundColor='core.transparent'
+        borderColor='status.fail.foreground'
+        color='status.fail.foreground'
+        p={2}
+        ml={3}
       />
     </Box>
   </Box>
