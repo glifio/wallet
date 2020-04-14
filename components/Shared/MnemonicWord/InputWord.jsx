@@ -21,15 +21,10 @@ const setBackgroundColor = ({ completed, empty, valid, importSeedError }) => {
 }
 
 const setInputColor = ({ completed, importSeedError }) => {
-  if (importSeedError) return 'status.fail.foreground'
+  if (importSeedError) return 'core.nearblack'
   if (!importSeedError && completed) return 'core.primary'
   return 'core.primary'
 }
-
-// const setInputColor = props => {
-//   if (props.completed) return 'core.white'
-//   return 'core.primary'
-// }
 
 export const MnemonicWordInput = styled.input.attrs(props => ({
   ...contentProps,
