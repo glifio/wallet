@@ -141,6 +141,7 @@ const AccountSelector = () => {
                 nextAccountIndex={walletsInRdx.length}
                 onClick={fetchNextAccount}
                 loading={loadingAccounts}
+                mb={2}
               />
             </MenuItem>
           </Menu>
