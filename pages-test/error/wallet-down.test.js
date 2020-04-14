@@ -52,6 +52,6 @@ describe('WalletDown', () => {
     })
 
     expect(mockRouterReplace).toHaveBeenCalled()
-    expect(mockRouterReplace).toHaveBeenCalledWith('/onboard?network=t')
+    expect(mockRouterReplace).toHaveBeenCalledWith('/onboard')
   })
 })
