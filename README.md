@@ -1,8 +1,8 @@
-# Glif
+# Glif Wallet
 
 <!-- Glif art/branding -->
 
-Glif is a Filecoin web wallet built with Next.js that allows you to:
+The Glif Wallet is a Filecoin web wallet built with Next.js that allows you to:
 
 - **send and receive** Filecoin with your Ledger device
 - **create** test accounts to send small amounts of FIL
