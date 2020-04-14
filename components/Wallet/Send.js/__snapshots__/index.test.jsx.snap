@@ -98,14 +98,38 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
 .c15 {
   min-width: 0;
   box-sizing: border-box;
+  border-right: 1px solid;
+  border-color: #999999;
   padding-left: 16px;
   padding-right: 16px;
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   min-width: 160px;
-  text-align: center;
+  height: 64px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c18 {
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.c19 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -120,11 +144,16 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   min-height: 160px;
 }
 
-.c19 {
+.c20 {
   min-width: 0;
   box-sizing: border-box;
   border-color: #999999;
-  padding: 16px;
+  border-right: 1px solid;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+  color: #999999;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -146,28 +175,33 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   text-align: center;
 }
 
-.c20 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c21 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  display: block;
+  background-color: #E4EBFC;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: 80px;
   width: 100%;
 }
 
-.c22 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
   left: -24px;
   bottom: -24px;
+  z-index: 999;
   border: 1px solid;
   border-color: #999999;
   border-radius: 32px;
@@ -191,19 +225,45 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c26 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
+  position: relative;
   border-top: 1px solid;
   border-color: #999999;
-  display: block;
+  background-color: #E4EBFC;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: 80px;
 }
 
-.c33 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
-  margin-top: 16px;
+  position: relative;
+  width: 100%;
+}
+
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c37 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 32px;
   margin-left: 4px;
   margin-right: 4px;
   display: -webkit-box;
@@ -223,7 +283,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c35 {
+.c39 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -243,7 +303,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c40 {
+.c44 {
   cursor: pointer;
   border: 1px solid core.lightgray;
   background-color: transparent;
@@ -261,11 +321,11 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   border-width: 1px;
 }
 
-.c40:hover {
+.c44:hover {
   opacity: 0.8;
 }
 
-.c42 {
+.c46 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -281,7 +341,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   border-width: 1px;
 }
 
-.c42:hover {
+.c46:hover {
   opacity: 0.8;
 }
 
@@ -306,24 +366,24 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   transform: scale(1.25);
 }
 
-.c34 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c36 {
-  color: #5E26FF;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
 .c38 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c40 {
+  color: #5E26FF;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c42 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
@@ -352,21 +412,22 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c28 {
+.c33 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   margin-right: 4px;
+  margin-top: 0;
   margin-bottom: 0;
-  padding-top: 8px;
 }
 
-.c30 {
+.c35 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
+  margin: 0;
   margin-bottom: 0;
 }
 
@@ -378,7 +439,17 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   margin: 0;
 }
 
-.c17 {
+.c21 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c18 {
+  min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -400,23 +471,23 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   height: 64px;
   width: 100%;
   border: 0;
-  border-left: 1px solid;
   border-color: #999999;
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
 }
 
-.c17:hover {
+.c18:hover {
   cursor: text;
 }
 
-.c17:focus {
+.c18:focus {
   box-shadow: 0;
   outline: 0;
   background: #d1ddfa;
 }
 
-.c32 {
+.c29 {
+  min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -439,17 +510,16 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   height: 64px;
   width: 100%;
   border: 0;
-  border-left: 1px solid;
   border-color: #999999;
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
 }
 
-.c32:hover {
+.c29:hover {
   cursor: not-allowed;
 }
 
-.c32:focus {
+.c29:focus {
   box-shadow: 0;
   outline: 0;
   background: #d1ddfa;
@@ -464,7 +534,37 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   border-radius: 1px;
 }
 
+.c26 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #E4EBFC;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+}
+
 .c25 {
+  min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -478,14 +578,15 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   text-align: right;
   cursor: text;
   background: #E4EBFC;
+  font-size: 2rem;
   height: 100%;
   display: inline-block;
   width: 100%;
   border: 0;
-  border-left: 1px solid;
   border-color: #999999;
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
+  border-left: 0;
   -moz-appearance: textfield;
 }
 
@@ -505,39 +606,37 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   margin: 0;
 }
 
-.c23 {
+.c30 {
   min-width: 0;
   box-sizing: border-box;
-  top: 30px;
-  left: 30px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 48px;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: transparent;
+  color: #5E26FF;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
   text-align: center;
-  position: absolute;
-  border-radius: 4px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 48px;
+  position: relative;
+  border-left: 0;
+  top: 0px;
+  left: 0px;
 }
 
-.c24 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 110px;
-  left: 30px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 48px;
-  text-align: center;
-  position: absolute;
-  border-radius: 4px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 48px;
-}
-
-.c39 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -608,10 +707,17 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c27 {
-  min-width: 0;
-  box-sizing: border-box;
-  color: #5E26FF;
+.c31 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: core.primary;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -623,34 +729,45 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  border: 0;
+  border-width: 1px;
+  border-radius: 4px;
+  color: #5E26FF;
+  background-color: transparent;
+  padding: 0;
+  outline: none;
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
 }
 
-.c27:hover {
+.c31:hover {
+  opacity: 0.8;
+}
+
+.c31:hover {
   cursor: pointer;
 }
 
-.c29 {
+.c34 {
   font-size: 0.75rem;
 }
 
-.c31 {
+.c36 {
   -webkit-text-decoration: underline;
   text-decoration: underline;
   line-height: 2;
 }
 
-.c37 {
+.c41 {
   word-wrap: break-word;
 }
 
-.c41 {
+.c45 {
   border-radius: 0px;
 }
 
-.c43 {
+.c47 {
   border-radius: 0px;
 }
 
@@ -769,7 +886,8 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
         >
           <div
             class="c15"
-            display="inline-block"
+            display="flex"
+            height="64px"
           >
             <h4
               class="c16"
@@ -777,38 +895,42 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              <label
-                for="recipient"
-              >
-                Recipient
-              </label>
+              Recipient
             </h4>
           </div>
-          <input
+          <div
             class="c17"
-            display="inline-block"
-            height="7"
-            name="recipient"
-            placeholder="t1..."
-            value=""
+            display="flex"
             width="100%"
-          />
+          >
+            <input
+              class="c18"
+              display="inline-block"
+              height="7"
+              placeholder="t1..."
+              value=""
+              width="100%"
+            />
+            
+          </div>
         </div>
       </div>
       
       <div
-        class="c18"
+        class="c19"
         display="flex"
         label="Amount"
         name="amount"
       >
         <div
-          class="c19"
+          class="c20"
+          color="input.border"
           display="flex"
           width="100%"
         >
           <h4
-            class="c16"
+            class="c21"
+            color="core.nearblack"
             font-family="RT-Alias-Grotesk"
             font-size="2"
             font-weight="400"
@@ -817,18 +939,18 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
           </h4>
         </div>
         <div
-          class="c20"
+          class="c22"
           display="inline-block"
           width="100%"
         >
           <div
-            class="c21"
-            display="block"
+            class="c23"
+            display="flex"
             height="80px"
             width="100%"
           >
             <div
-              class="c22"
+              class="c24"
               display="flex"
               font-family="sansSerif"
               font-size="5"
@@ -836,23 +958,10 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
             >
               =
             </div>
-            <div
-              class="c23"
-              color="core.white"
-              width="6"
-            >
-              FIL
-            </div>
-            <div
-              class="c24"
-              color="core.white"
-              width="6"
-            >
-              USD
-            </div>
             <input
               class="c25"
               display="inline-block"
+              font-size="5"
               height="100%"
               label="Amount"
               name="amount"
@@ -862,15 +971,25 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
               value=""
               width="100%"
             />
+            <div
+              class="c26"
+              color="core.primary"
+              display="flex"
+              font-size="3"
+              height="100%"
+            >
+              FIL
+            </div>
           </div>
           <div
-            class="c26"
-            display="block"
+            class="c27"
+            display="flex"
             height="80px"
           >
             <input
               class="c25"
               display="inline-block"
+              font-size="5"
               height="100%"
               min="0"
               placeholder="0"
@@ -879,74 +998,105 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
               value=""
               width="100%"
             />
+            <div
+              class="c26"
+              color="core.primary"
+              display="flex"
+              font-size="3"
+              height="100%"
+            >
+              USD
+            </div>
           </div>
         </div>
       </div>
       <div
-        class="c27"
+        class="c28"
+        width="100%"
+      >
+        <div
+          class="c14"
+        >
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c15"
+              display="flex"
+              height="64px"
+            >
+              <h4
+                class="c16"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Transaction Fee
+              </h4>
+            </div>
+            <div
+              class="c17"
+              display="flex"
+              width="100%"
+            >
+              <input
+                class="c29"
+                disabled=""
+                display="inline-block"
+                height="7"
+                value="< 0.1"
+                width="100%"
+              />
+              <div
+                class="c30"
+                color="core.primary"
+                display="flex"
+                font-size="3"
+                height="7"
+              >
+                FIL
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="c31"
         color="core.primary"
         display="flex"
+        font-size="3"
         role="button"
         type="button"
       >
-        <p
-          class="c28 c29"
-          font-family="RT-Alias-Grotesk"
-          font-size="3"
-          font-weight="400"
-        >
-          ▼
-        </p>
-        <p
-          class="c30 c31"
-          font-family="RT-Alias-Grotesk"
-          font-size="3"
-          font-weight="400"
-        >
-          Customize
-        </p>
-      </div>
-      <div
-        class="c14"
-      >
         <div
-          class="c3"
+          class="c32"
           display="flex"
         >
-          <div
-            class="c15"
-            display="inline-block"
+          <p
+            class="c33 c34"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
           >
-            <h4
-              class="c16"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              <label
-                for="estimated-fee"
-              >
-                Estimated Fee
-              </label>
-            </h4>
-          </div>
-          <input
-            class="c32"
-            disabled=""
-            display="inline-block"
-            height="7"
-            name="estimated-fee"
-            value="< 0.1FIL"
-            width="100%"
-          />
+            ▼
+          </p>
+          <p
+            class="c35 c36"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            Customize
+          </p>
         </div>
-      </div>
+      </button>
       <div
-        class="c33"
+        class="c37"
         display="flex"
       >
         <h2
-          class="c34"
+          class="c38"
           font-family="RT-Alias-Grotesk"
           font-size="4"
           font-weight="400"
@@ -954,22 +1104,22 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
           Total
         </h2>
         <div
-          class="c35"
+          class="c39"
           display="flex"
         >
           <h2
-            class="c36 c37"
+            class="c40 c41"
             color="core.primary"
             font-family="RT-Alias-Grotesk"
-            font-size="4"
-            font-weight="400"
+            font-size="5"
+            font-weight="700"
           >
             0
              
             FIL
           </h2>
           <h2
-            class="c38"
+            class="c42"
             color="core.darkgray"
             font-family="RT-Alias-Grotesk"
             font-size="4"
@@ -983,17 +1133,17 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="c39"
+      class="c43"
     >
       <button
-        class="c40 c41"
+        class="c44 c45"
         font-size="3"
         type="button"
       >
         Back
       </button>
       <button
-        class="c42 c43"
+        class="c46 c47"
         font-size="3"
         type="submit"
       >
@@ -1102,14 +1252,38 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
 .c15 {
   min-width: 0;
   box-sizing: border-box;
+  border-right: 1px solid;
+  border-color: #999999;
   padding-left: 16px;
   padding-right: 16px;
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   min-width: 160px;
-  text-align: center;
+  height: 64px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c19 {
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.c20 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1124,11 +1298,16 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   min-height: 160px;
 }
 
-.c20 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   border-color: #999999;
-  padding: 16px;
+  border-right: 1px solid;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+  color: #999999;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1150,28 +1329,33 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   text-align: center;
 }
 
-.c21 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c22 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  display: block;
+  background-color: #E4EBFC;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: 80px;
   width: 100%;
 }
 
-.c23 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
   left: -24px;
   bottom: -24px;
+  z-index: 999;
   border: 1px solid;
   border-color: #999999;
   border-radius: 32px;
@@ -1195,19 +1379,45 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c27 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
+  position: relative;
   border-top: 1px solid;
   border-color: #999999;
-  display: block;
+  background-color: #E4EBFC;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: 80px;
 }
 
-.c34 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
-  margin-top: 16px;
+  position: relative;
+  width: 100%;
+}
+
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 32px;
   margin-left: 4px;
   margin-right: 4px;
   display: -webkit-box;
@@ -1227,7 +1437,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   justify-content: space-between;
 }
 
-.c36 {
+.c40 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -1247,7 +1457,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c41 {
+.c45 {
   cursor: pointer;
   border: 1px solid core.lightgray;
   background-color: transparent;
@@ -1265,11 +1475,11 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   border-width: 1px;
 }
 
-.c41:hover {
+.c45:hover {
   opacity: 0.8;
 }
 
-.c43 {
+.c47 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -1285,7 +1495,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   border-width: 1px;
 }
 
-.c43:hover {
+.c47:hover {
   opacity: 0.8;
 }
 
@@ -1310,24 +1520,24 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   transform: scale(1.25);
 }
 
-.c35 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c37 {
-  color: #5E26FF;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
 .c39 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c41 {
+  color: #5E26FF;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c43 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
@@ -1356,21 +1566,22 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c29 {
+.c34 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   margin-right: 4px;
+  margin-top: 0;
   margin-bottom: 0;
-  padding-top: 8px;
 }
 
-.c31 {
+.c36 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
+  margin: 0;
   margin-bottom: 0;
 }
 
@@ -1382,7 +1593,16 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   margin: 0;
 }
 
-.c18 {
+.c22 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c19 {
   color: #FC6D6F;
   font-size: 1.125rem;
   font-weight: 400;
@@ -1393,7 +1613,8 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c33 {
+.c30 {
+  min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -1416,23 +1637,23 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   height: 64px;
   width: 100%;
   border: 0;
-  border-left: 1px solid;
   border-color: #999999;
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
 }
 
-.c33:hover {
+.c30:hover {
   cursor: not-allowed;
 }
 
-.c33:focus {
+.c30:focus {
   box-shadow: 0;
   outline: 0;
   background: #d1ddfa;
 }
 
-.c17 {
+.c18 {
+  min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -1454,17 +1675,16 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   height: 64px;
   width: 100%;
   border: 0;
-  border-left: 1px solid;
   border-color: #999999;
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
 }
 
-.c17:hover {
+.c18:hover {
   cursor: text;
 }
 
-.c17:focus {
+.c18:focus {
   box-shadow: 0;
   outline: 0;
   background: #FC6D6F;
@@ -1479,7 +1699,37 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   border-radius: 1px;
 }
 
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #D2F5ED;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+}
+
 .c26 {
+  min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -1493,14 +1743,15 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   text-align: right;
   cursor: text;
   background: #D2F5ED;
+  font-size: 2rem;
   height: 100%;
   display: inline-block;
   width: 100%;
   border: 0;
-  border-left: 1px solid;
   border-color: #999999;
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
+  border-left: 0;
   -moz-appearance: textfield;
 }
 
@@ -1520,39 +1771,37 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   margin: 0;
 }
 
-.c24 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
-  top: 30px;
-  left: 30px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 48px;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: transparent;
+  color: #5E26FF;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
   text-align: center;
-  position: absolute;
-  border-radius: 4px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 48px;
+  position: relative;
+  border-left: 0;
+  top: 0px;
+  left: 0px;
 }
 
-.c25 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 110px;
-  left: 30px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 48px;
-  text-align: center;
-  position: absolute;
-  border-radius: 4px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 48px;
-}
-
-.c40 {
+.c44 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -1623,10 +1872,17 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   justify-content: space-between;
 }
 
-.c28 {
-  min-width: 0;
-  box-sizing: border-box;
-  color: #5E26FF;
+.c32 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: core.primary;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1638,34 +1894,45 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  border: 0;
+  border-width: 1px;
+  border-radius: 4px;
+  color: #5E26FF;
+  background-color: transparent;
+  padding: 0;
+  outline: none;
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
 }
 
-.c28:hover {
+.c32:hover {
+  opacity: 0.8;
+}
+
+.c32:hover {
   cursor: pointer;
 }
 
-.c30 {
+.c35 {
   font-size: 0.75rem;
 }
 
-.c32 {
+.c37 {
   -webkit-text-decoration: underline;
   text-decoration: underline;
   line-height: 2;
 }
 
-.c38 {
+.c42 {
   word-wrap: break-word;
 }
 
-.c42 {
+.c46 {
   border-radius: 0px;
 }
 
-.c44 {
+.c48 {
   border-radius: 0px;
 }
 
@@ -1784,7 +2051,8 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
         >
           <div
             class="c15"
-            display="inline-block"
+            display="flex"
+            height="64px"
           >
             <h4
               class="c16"
@@ -1792,26 +2060,28 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              <label
-                for="recipient"
-              >
-                Recipient
-              </label>
+              Recipient
             </h4>
           </div>
-          <input
+          <div
             class="c17"
-            display="inline-block"
-            height="7"
-            name="recipient"
-            placeholder="t1..."
-            value="t1z225tguggx4onbauimqvxz"
+            display="flex"
             width="100%"
-          />
+          >
+            <input
+              class="c18"
+              display="inline-block"
+              height="7"
+              placeholder="t1..."
+              value="t1z225tguggx4onbauimqvxz"
+              width="100%"
+            />
+            
+          </div>
         </div>
       </div>
       <h4
-        class="c18"
+        class="c19"
         color="status.fail.background"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -1820,18 +2090,20 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
         Invalid address.
       </h4>
       <div
-        class="c19"
+        class="c20"
         display="flex"
         label="Amount"
         name="amount"
       >
         <div
-          class="c20"
+          class="c21"
+          color="input.border"
           display="flex"
           width="100%"
         >
           <h4
-            class="c16"
+            class="c22"
+            color="core.nearblack"
             font-family="RT-Alias-Grotesk"
             font-size="2"
             font-weight="400"
@@ -1840,18 +2112,18 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
           </h4>
         </div>
         <div
-          class="c21"
+          class="c23"
           display="inline-block"
           width="100%"
         >
           <div
-            class="c22"
-            display="block"
+            class="c24"
+            display="flex"
             height="80px"
             width="100%"
           >
             <div
-              class="c23"
+              class="c25"
               display="flex"
               font-family="sansSerif"
               font-size="5"
@@ -1859,23 +2131,10 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
             >
               =
             </div>
-            <div
-              class="c24"
-              color="core.white"
-              width="6"
-            >
-              FIL
-            </div>
-            <div
-              class="c25"
-              color="core.white"
-              width="6"
-            >
-              USD
-            </div>
             <input
               class="c26"
               display="inline-block"
+              font-size="5"
               height="100%"
               label="Amount"
               name="amount"
@@ -1885,15 +2144,25 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
               value="0.01"
               width="100%"
             />
+            <div
+              class="c27"
+              color="core.primary"
+              display="flex"
+              font-size="3"
+              height="100%"
+            >
+              FIL
+            </div>
           </div>
           <div
-            class="c27"
-            display="block"
+            class="c28"
+            display="flex"
             height="80px"
           >
             <input
               class="c26"
               display="inline-block"
+              font-size="5"
               height="100%"
               min="0"
               placeholder="0"
@@ -1902,74 +2171,105 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
               value="0.05"
               width="100%"
             />
+            <div
+              class="c27"
+              color="core.primary"
+              display="flex"
+              font-size="3"
+              height="100%"
+            >
+              USD
+            </div>
           </div>
         </div>
       </div>
       <div
-        class="c28"
+        class="c29"
+        width="100%"
+      >
+        <div
+          class="c14"
+        >
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c15"
+              display="flex"
+              height="64px"
+            >
+              <h4
+                class="c16"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Transaction Fee
+              </h4>
+            </div>
+            <div
+              class="c17"
+              display="flex"
+              width="100%"
+            >
+              <input
+                class="c30"
+                disabled=""
+                display="inline-block"
+                height="7"
+                value="< 0.1"
+                width="100%"
+              />
+              <div
+                class="c31"
+                color="core.primary"
+                display="flex"
+                font-size="3"
+                height="7"
+              >
+                FIL
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="c32"
         color="core.primary"
         display="flex"
+        font-size="3"
         role="button"
         type="button"
       >
-        <p
-          class="c29 c30"
-          font-family="RT-Alias-Grotesk"
-          font-size="3"
-          font-weight="400"
-        >
-          ▼
-        </p>
-        <p
-          class="c31 c32"
-          font-family="RT-Alias-Grotesk"
-          font-size="3"
-          font-weight="400"
-        >
-          Customize
-        </p>
-      </div>
-      <div
-        class="c14"
-      >
         <div
-          class="c3"
+          class="c33"
           display="flex"
         >
-          <div
-            class="c15"
-            display="inline-block"
+          <p
+            class="c34 c35"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
           >
-            <h4
-              class="c16"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              <label
-                for="estimated-fee"
-              >
-                Estimated Fee
-              </label>
-            </h4>
-          </div>
-          <input
-            class="c33"
-            disabled=""
-            display="inline-block"
-            height="7"
-            name="estimated-fee"
-            value="< 0.1FIL"
-            width="100%"
-          />
+            ▼
+          </p>
+          <p
+            class="c36 c37"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            Customize
+          </p>
         </div>
-      </div>
+      </button>
       <div
-        class="c34"
+        class="c38"
         display="flex"
       >
         <h2
-          class="c35"
+          class="c39"
           font-family="RT-Alias-Grotesk"
           font-size="4"
           font-weight="400"
@@ -1977,22 +2277,22 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
           Total
         </h2>
         <div
-          class="c36"
+          class="c40"
           display="flex"
         >
           <h2
-            class="c37 c38"
+            class="c41 c42"
             color="core.primary"
             font-family="RT-Alias-Grotesk"
-            font-size="4"
-            font-weight="400"
+            font-size="5"
+            font-weight="700"
           >
             0.010000000000000122
              
             FIL
           </h2>
           <h2
-            class="c39"
+            class="c43"
             color="core.darkgray"
             font-family="RT-Alias-Grotesk"
             font-size="4"
@@ -2006,17 +2306,17 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
       </div>
     </div>
     <div
-      class="c40"
+      class="c44"
     >
       <button
-        class="c41 c42"
+        class="c45 c46"
         font-size="3"
         type="button"
       >
         Back
       </button>
       <button
-        class="c43 c44"
+        class="c47 c48"
         font-size="3"
         type="submit"
       >
@@ -2125,14 +2425,38 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
 .c15 {
   min-width: 0;
   box-sizing: border-box;
+  border-right: 1px solid;
+  border-color: #999999;
   padding-left: 16px;
   padding-right: 16px;
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   min-width: 160px;
-  text-align: center;
+  height: 64px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c19 {
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.c20 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -2147,11 +2471,16 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   min-height: 160px;
 }
 
-.c20 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   border-color: #999999;
-  padding: 16px;
+  border-right: 1px solid;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+  color: #999999;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2173,28 +2502,33 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   text-align: center;
 }
 
-.c21 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c22 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  display: block;
+  background-color: #E4EBFC;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: 80px;
   width: 100%;
 }
 
-.c23 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
   left: -24px;
   bottom: -24px;
+  z-index: 999;
   border: 1px solid;
   border-color: #999999;
   border-radius: 32px;
@@ -2218,19 +2552,45 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c27 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
+  position: relative;
   border-top: 1px solid;
   border-color: #999999;
-  display: block;
+  background-color: #E4EBFC;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: 80px;
 }
 
-.c34 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
-  margin-top: 16px;
+  position: relative;
+  width: 100%;
+}
+
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 32px;
   margin-left: 4px;
   margin-right: 4px;
   display: -webkit-box;
@@ -2250,7 +2610,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   justify-content: space-between;
 }
 
-.c36 {
+.c40 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -2270,7 +2630,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c41 {
+.c45 {
   cursor: pointer;
   border: 1px solid core.lightgray;
   background-color: transparent;
@@ -2288,11 +2648,11 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   border-width: 1px;
 }
 
-.c41:hover {
+.c45:hover {
   opacity: 0.8;
 }
 
-.c43 {
+.c47 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -2308,7 +2668,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   border-width: 1px;
 }
 
-.c43:hover {
+.c47:hover {
   opacity: 0.8;
 }
 
@@ -2333,24 +2693,24 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   transform: scale(1.25);
 }
 
-.c35 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c37 {
-  color: #5E26FF;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
 .c39 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c41 {
+  color: #5E26FF;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c43 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
@@ -2379,21 +2739,22 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c29 {
+.c34 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   margin-right: 4px;
+  margin-top: 0;
   margin-bottom: 0;
-  padding-top: 8px;
 }
 
-.c31 {
+.c36 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
+  margin: 0;
   margin-bottom: 0;
 }
 
@@ -2405,7 +2766,16 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   margin: 0;
 }
 
-.c18 {
+.c22 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c19 {
   color: #FC6D6F;
   font-size: 1.125rem;
   font-weight: 400;
@@ -2416,7 +2786,8 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c33 {
+.c30 {
+  min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -2439,23 +2810,23 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   height: 64px;
   width: 100%;
   border: 0;
-  border-left: 1px solid;
   border-color: #999999;
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
 }
 
-.c33:hover {
+.c30:hover {
   cursor: not-allowed;
 }
 
-.c33:focus {
+.c30:focus {
   box-shadow: 0;
   outline: 0;
   background: #d1ddfa;
 }
 
-.c17 {
+.c18 {
+  min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -2477,17 +2848,16 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   height: 64px;
   width: 100%;
   border: 0;
-  border-left: 1px solid;
   border-color: #999999;
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
 }
 
-.c17:hover {
+.c18:hover {
   cursor: text;
 }
 
-.c17:focus {
+.c18:focus {
   box-shadow: 0;
   outline: 0;
   background: #FC6D6F;
@@ -2502,7 +2872,37 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   border-radius: 1px;
 }
 
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #D2F5ED;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+}
+
 .c26 {
+  min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -2516,14 +2916,15 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   text-align: right;
   cursor: text;
   background: #D2F5ED;
+  font-size: 2rem;
   height: 100%;
   display: inline-block;
   width: 100%;
   border: 0;
-  border-left: 1px solid;
   border-color: #999999;
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
+  border-left: 0;
   -moz-appearance: textfield;
 }
 
@@ -2543,39 +2944,37 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   margin: 0;
 }
 
-.c24 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
-  top: 30px;
-  left: 30px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 48px;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: transparent;
+  color: #5E26FF;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
   text-align: center;
-  position: absolute;
-  border-radius: 4px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 48px;
+  position: relative;
+  border-left: 0;
+  top: 0px;
+  left: 0px;
 }
 
-.c25 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 110px;
-  left: 30px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 48px;
-  text-align: center;
-  position: absolute;
-  border-radius: 4px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 48px;
-}
-
-.c40 {
+.c44 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -2646,10 +3045,17 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   justify-content: space-between;
 }
 
-.c28 {
-  min-width: 0;
-  box-sizing: border-box;
-  color: #5E26FF;
+.c32 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: core.primary;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2661,34 +3067,45 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  border: 0;
+  border-width: 1px;
+  border-radius: 4px;
+  color: #5E26FF;
+  background-color: transparent;
+  padding: 0;
+  outline: none;
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
 }
 
-.c28:hover {
+.c32:hover {
+  opacity: 0.8;
+}
+
+.c32:hover {
   cursor: pointer;
 }
 
-.c30 {
+.c35 {
   font-size: 0.75rem;
 }
 
-.c32 {
+.c37 {
   -webkit-text-decoration: underline;
   text-decoration: underline;
   line-height: 2;
 }
 
-.c38 {
+.c42 {
   word-wrap: break-word;
 }
 
-.c42 {
+.c46 {
   border-radius: 0px;
 }
 
-.c44 {
+.c48 {
   border-radius: 0px;
 }
 
@@ -2807,7 +3224,8 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
         >
           <div
             class="c15"
-            display="inline-block"
+            display="flex"
+            height="64px"
           >
             <h4
               class="c16"
@@ -2815,26 +3233,28 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              <label
-                for="recipient"
-              >
-                Recipient
-              </label>
+              Recipient
             </h4>
           </div>
-          <input
+          <div
             class="c17"
-            display="inline-block"
-            height="7"
-            name="recipient"
-            placeholder="t1..."
-            value=""
+            display="flex"
             width="100%"
-          />
+          >
+            <input
+              class="c18"
+              display="inline-block"
+              height="7"
+              placeholder="t1..."
+              value=""
+              width="100%"
+            />
+            
+          </div>
         </div>
       </div>
       <h4
-        class="c18"
+        class="c19"
         color="status.fail.background"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -2843,18 +3263,20 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
         Invalid address.
       </h4>
       <div
-        class="c19"
+        class="c20"
         display="flex"
         label="Amount"
         name="amount"
       >
         <div
-          class="c20"
+          class="c21"
+          color="input.border"
           display="flex"
           width="100%"
         >
           <h4
-            class="c16"
+            class="c22"
+            color="core.nearblack"
             font-family="RT-Alias-Grotesk"
             font-size="2"
             font-weight="400"
@@ -2863,18 +3285,18 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
           </h4>
         </div>
         <div
-          class="c21"
+          class="c23"
           display="inline-block"
           width="100%"
         >
           <div
-            class="c22"
-            display="block"
+            class="c24"
+            display="flex"
             height="80px"
             width="100%"
           >
             <div
-              class="c23"
+              class="c25"
               display="flex"
               font-family="sansSerif"
               font-size="5"
@@ -2882,23 +3304,10 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
             >
               =
             </div>
-            <div
-              class="c24"
-              color="core.white"
-              width="6"
-            >
-              FIL
-            </div>
-            <div
-              class="c25"
-              color="core.white"
-              width="6"
-            >
-              USD
-            </div>
             <input
               class="c26"
               display="inline-block"
+              font-size="5"
               height="100%"
               label="Amount"
               name="amount"
@@ -2908,15 +3317,25 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
               value="0.01"
               width="100%"
             />
+            <div
+              class="c27"
+              color="core.primary"
+              display="flex"
+              font-size="3"
+              height="100%"
+            >
+              FIL
+            </div>
           </div>
           <div
-            class="c27"
-            display="block"
+            class="c28"
+            display="flex"
             height="80px"
           >
             <input
               class="c26"
               display="inline-block"
+              font-size="5"
               height="100%"
               min="0"
               placeholder="0"
@@ -2925,74 +3344,105 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
               value="0.05"
               width="100%"
             />
+            <div
+              class="c27"
+              color="core.primary"
+              display="flex"
+              font-size="3"
+              height="100%"
+            >
+              USD
+            </div>
           </div>
         </div>
       </div>
       <div
-        class="c28"
+        class="c29"
+        width="100%"
+      >
+        <div
+          class="c14"
+        >
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c15"
+              display="flex"
+              height="64px"
+            >
+              <h4
+                class="c16"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Transaction Fee
+              </h4>
+            </div>
+            <div
+              class="c17"
+              display="flex"
+              width="100%"
+            >
+              <input
+                class="c30"
+                disabled=""
+                display="inline-block"
+                height="7"
+                value="< 0.1"
+                width="100%"
+              />
+              <div
+                class="c31"
+                color="core.primary"
+                display="flex"
+                font-size="3"
+                height="7"
+              >
+                FIL
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="c32"
         color="core.primary"
         display="flex"
+        font-size="3"
         role="button"
         type="button"
       >
-        <p
-          class="c29 c30"
-          font-family="RT-Alias-Grotesk"
-          font-size="3"
-          font-weight="400"
-        >
-          ▼
-        </p>
-        <p
-          class="c31 c32"
-          font-family="RT-Alias-Grotesk"
-          font-size="3"
-          font-weight="400"
-        >
-          Customize
-        </p>
-      </div>
-      <div
-        class="c14"
-      >
         <div
-          class="c3"
+          class="c33"
           display="flex"
         >
-          <div
-            class="c15"
-            display="inline-block"
+          <p
+            class="c34 c35"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
           >
-            <h4
-              class="c16"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              <label
-                for="estimated-fee"
-              >
-                Estimated Fee
-              </label>
-            </h4>
-          </div>
-          <input
-            class="c33"
-            disabled=""
-            display="inline-block"
-            height="7"
-            name="estimated-fee"
-            value="< 0.1FIL"
-            width="100%"
-          />
+            ▼
+          </p>
+          <p
+            class="c36 c37"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            Customize
+          </p>
         </div>
-      </div>
+      </button>
       <div
-        class="c34"
+        class="c38"
         display="flex"
       >
         <h2
-          class="c35"
+          class="c39"
           font-family="RT-Alias-Grotesk"
           font-size="4"
           font-weight="400"
@@ -3000,22 +3450,22 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
           Total
         </h2>
         <div
-          class="c36"
+          class="c40"
           display="flex"
         >
           <h2
-            class="c37 c38"
+            class="c41 c42"
             color="core.primary"
             font-family="RT-Alias-Grotesk"
-            font-size="4"
-            font-weight="400"
+            font-size="5"
+            font-weight="700"
           >
             0.010000000000000122
              
             FIL
           </h2>
           <h2
-            class="c39"
+            class="c43"
             color="core.darkgray"
             font-family="RT-Alias-Grotesk"
             font-size="4"
@@ -3029,17 +3479,17 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
       </div>
     </div>
     <div
-      class="c40"
+      class="c44"
     >
       <button
-        class="c41 c42"
+        class="c45 c46"
         font-size="3"
         type="button"
       >
         Back
       </button>
       <button
-        class="c43 c44"
+        class="c47 c48"
         font-size="3"
         type="submit"
       >
@@ -3148,14 +3598,38 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
 .c15 {
   min-width: 0;
   box-sizing: border-box;
+  border-right: 1px solid;
+  border-color: #999999;
   padding-left: 16px;
   padding-right: 16px;
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   min-width: 160px;
-  text-align: center;
+  height: 64px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c18 {
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.c19 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -3170,11 +3644,16 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   min-height: 160px;
 }
 
-.c19 {
+.c20 {
   min-width: 0;
   box-sizing: border-box;
   border-color: #999999;
-  padding: 16px;
+  border-right: 1px solid;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+  color: #999999;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3196,28 +3675,33 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   text-align: center;
 }
 
-.c20 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c21 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  display: block;
+  background-color: #E4EBFC;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: 80px;
   width: 100%;
 }
 
-.c22 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
   left: -24px;
   bottom: -24px;
+  z-index: 999;
   border: 1px solid;
   border-color: #999999;
   border-radius: 32px;
@@ -3241,19 +3725,45 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c26 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
+  position: relative;
   border-top: 1px solid;
   border-color: #999999;
-  display: block;
+  background-color: #E4EBFC;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: 80px;
 }
 
-.c43 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
-  margin-top: 16px;
+  position: relative;
+  width: 100%;
+}
+
+.c45 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c50 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 32px;
   margin-left: 4px;
   margin-right: 4px;
   display: -webkit-box;
@@ -3273,7 +3783,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   justify-content: space-between;
 }
 
-.c45 {
+.c52 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -3287,7 +3797,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   text-align: right;
 }
 
-.c33 {
+.c32 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3304,13 +3814,51 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   align-items: center;
 }
 
+.c35 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #999999;
+}
+
+.c37 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  min-width: 160px;
+  text-align: center;
+}
+
+.c41 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-top: 1px solid;
+  border-color: #999999;
+}
+
 .c5 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c50 {
+.c57 {
   cursor: pointer;
   border: 1px solid core.lightgray;
   background-color: transparent;
@@ -3328,11 +3876,11 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-width: 1px;
 }
 
-.c50:hover {
+.c57:hover {
   opacity: 0.8;
 }
 
-.c52 {
+.c59 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -3348,7 +3896,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-width: 1px;
 }
 
-.c52:hover {
+.c59:hover {
   opacity: 0.8;
 }
 
@@ -3373,7 +3921,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   transform: scale(1.25);
 }
 
-.c44 {
+.c51 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -3381,16 +3929,16 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin: 0;
 }
 
-.c46 {
+.c53 {
   color: #5E26FF;
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-size: 2rem;
+  font-weight: 700;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
   margin: 0;
 }
 
-.c48 {
+.c55 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
@@ -3419,21 +3967,22 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin-bottom: 0;
 }
 
-.c28 {
+.c46 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   margin-right: 4px;
+  margin-top: 0;
   margin-bottom: 0;
-  padding-top: 8px;
 }
 
-.c30 {
+.c48 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
+  margin: 0;
   margin-bottom: 0;
 }
 
@@ -3445,7 +3994,16 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin: 0;
 }
 
-.c34 {
+.c21 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c33 {
   color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
@@ -3456,17 +4014,8 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin-bottom: 16px;
 }
 
-.c35 {
-  color: #5E26FF;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-top: 0;
-}
-
-.c17 {
+.c18 {
+  min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -3488,23 +4037,23 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   height: 64px;
   width: 100%;
   border: 0;
-  border-left: 1px solid;
   border-color: #999999;
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
 }
 
-.c17:hover {
+.c18:hover {
   cursor: text;
 }
 
-.c17:focus {
+.c18:focus {
   box-shadow: 0;
   outline: 0;
   background: #d1ddfa;
 }
 
-.c42 {
+.c29 {
+  min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -3527,17 +4076,16 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   height: 64px;
   width: 100%;
   border: 0;
-  border-left: 1px solid;
   border-color: #999999;
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
 }
 
-.c42:hover {
+.c29:hover {
   cursor: not-allowed;
 }
 
-.c42:focus {
+.c29:focus {
   box-shadow: 0;
   outline: 0;
   background: #d1ddfa;
@@ -3552,26 +4100,85 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-radius: 1px;
 }
 
-.c37 {
+.c36 {
   display: inline-block;
   width: 100%;
   margin-top: 8px;
   margin: 0;
-  border: 1px solid;
+  border: 0;
   border-color: #999999;
   border-radius: 1px;
 }
 
-.c39 {
+.c42 {
   display: inline-block;
   width: 100%;
   margin: 0;
-  border: 1px solid;
+  border: 0;
   border-color: #999999;
   border-radius: 1px;
 }
 
+.c26 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #E4EBFC;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  background-color: #E4EBFC;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
 .c25 {
+  min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -3585,14 +4192,15 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   text-align: right;
   cursor: text;
   background: #E4EBFC;
+  font-size: 2rem;
   height: 100%;
   display: inline-block;
   width: 100%;
   border: 0;
-  border-left: 1px solid;
   border-color: #999999;
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
+  border-left: 0;
   -moz-appearance: textfield;
 }
 
@@ -3612,7 +4220,8 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin: 0;
 }
 
-.c38 {
+.c39 {
+  min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -3626,36 +4235,38 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   text-align: right;
   cursor: text;
   background: #E4EBFC;
+  font-size: 1.125rem;
   margin-top: 8px;
   margin: 0;
   display: inline-block;
   height: 64px;
   width: 100%;
   border: 0;
-  border-left: 1px solid;
   border-color: #999999;
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
+  border-left: 0;
   -moz-appearance: textfield;
 }
 
-.c38:hover {
+.c39:hover {
   cursor: text;
 }
 
-.c38:focus {
+.c39:focus {
   box-shadow: 0;
   outline: 0;
   background: #d1ddfa;
 }
 
-.c38::-webkit-outer-spin-button,
-.c38::-webkit-inner-spin-button {
+.c39::-webkit-outer-spin-button,
+.c39::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c41 {
+.c43 {
+  min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -3669,67 +4280,66 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   text-align: right;
   cursor: text;
   background: #E4EBFC;
+  font-size: 1.125rem;
   margin: 0;
   display: inline-block;
   height: 64px;
   width: 100%;
   border: 0;
-  border-left: 1px solid;
   border-color: #999999;
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
+  border-left: 0;
   -moz-appearance: textfield;
 }
 
-.c41:hover {
+.c43:hover {
   cursor: text;
 }
 
-.c41:focus {
+.c43:focus {
   box-shadow: 0;
   outline: 0;
   background: #d1ddfa;
 }
 
-.c41::-webkit-outer-spin-button,
-.c41::-webkit-inner-spin-button {
+.c43::-webkit-outer-spin-button,
+.c43::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c23 {
+.c30 {
   min-width: 0;
   box-sizing: border-box;
-  top: 30px;
-  left: 30px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 48px;
+  border-color: #999999;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: transparent;
+  color: #5E26FF;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
   text-align: center;
-  position: absolute;
-  border-radius: 4px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 48px;
+  position: relative;
+  border-left: 0;
+  top: 0px;
+  left: 0px;
 }
 
-.c24 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 110px;
-  left: 30px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 48px;
-  text-align: center;
-  position: absolute;
-  border-radius: 4px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 48px;
-}
-
-.c49 {
+.c56 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -3761,6 +4371,12 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   width: 40%;
 }
 
+.c34 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  margin-top: 0;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3781,7 +4397,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   min-width: 320px;
 }
 
-.c32 {
+.c31 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3800,18 +4416,6 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   max-width: 560px;
   min-width: 320px;
   margin-top: 8px;
-}
-
-.c40 {
-  -webkit-transform: translateY(-1px);
-  -ms-transform: translateY(-1px);
-  transform: translateY(-1px);
-}
-
-.c36 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  cursor: pointer;
 }
 
 .c1 {
@@ -3833,10 +4437,17 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   justify-content: space-between;
 }
 
-.c27 {
-  min-width: 0;
-  box-sizing: border-box;
-  color: #5E26FF;
+.c44 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: core.primary;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3848,34 +4459,45 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  border: 0;
+  border-width: 1px;
+  border-radius: 4px;
+  color: #5E26FF;
+  background-color: transparent;
+  padding: 0;
+  outline: none;
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
 }
 
-.c27:hover {
+.c44:hover {
+  opacity: 0.8;
+}
+
+.c44:hover {
   cursor: pointer;
 }
 
-.c29 {
+.c47 {
   font-size: 0.75rem;
 }
 
-.c31 {
+.c49 {
   -webkit-text-decoration: underline;
   text-decoration: underline;
   line-height: 2;
 }
 
-.c47 {
+.c54 {
   word-wrap: break-word;
 }
 
-.c51 {
+.c58 {
   border-radius: 0px;
 }
 
-.c53 {
+.c60 {
   border-radius: 0px;
 }
 
@@ -3994,7 +4616,8 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
         >
           <div
             class="c15"
-            display="inline-block"
+            display="flex"
+            height="64px"
           >
             <h4
               class="c16"
@@ -4002,38 +4625,42 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
               font-size="2"
               font-weight="400"
             >
-              <label
-                for="recipient"
-              >
-                Recipient
-              </label>
+              Recipient
             </h4>
           </div>
-          <input
+          <div
             class="c17"
-            display="inline-block"
-            height="7"
-            name="recipient"
-            placeholder="t1..."
-            value=""
+            display="flex"
             width="100%"
-          />
+          >
+            <input
+              class="c18"
+              display="inline-block"
+              height="7"
+              placeholder="t1..."
+              value=""
+              width="100%"
+            />
+            
+          </div>
         </div>
       </div>
       
       <div
-        class="c18"
+        class="c19"
         display="flex"
         label="Amount"
         name="amount"
       >
         <div
-          class="c19"
+          class="c20"
+          color="input.border"
           display="flex"
           width="100%"
         >
           <h4
-            class="c16"
+            class="c21"
+            color="core.nearblack"
             font-family="RT-Alias-Grotesk"
             font-size="2"
             font-weight="400"
@@ -4042,18 +4669,18 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
           </h4>
         </div>
         <div
-          class="c20"
+          class="c22"
           display="inline-block"
           width="100%"
         >
           <div
-            class="c21"
-            display="block"
+            class="c23"
+            display="flex"
             height="80px"
             width="100%"
           >
             <div
-              class="c22"
+              class="c24"
               display="flex"
               font-family="sansSerif"
               font-size="5"
@@ -4061,23 +4688,10 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
             >
               =
             </div>
-            <div
-              class="c23"
-              color="core.white"
-              width="6"
-            >
-              FIL
-            </div>
-            <div
-              class="c24"
-              color="core.white"
-              width="6"
-            >
-              USD
-            </div>
             <input
               class="c25"
               display="inline-block"
+              font-size="5"
               height="100%"
               label="Amount"
               name="amount"
@@ -4087,15 +4701,25 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
               value=""
               width="100%"
             />
+            <div
+              class="c26"
+              color="core.primary"
+              display="flex"
+              font-size="3"
+              height="100%"
+            >
+              FIL
+            </div>
           </div>
           <div
-            class="c26"
-            display="block"
+            class="c27"
+            display="flex"
             height="80px"
           >
             <input
               class="c25"
               display="inline-block"
+              font-size="5"
               height="100%"
               min="0"
               placeholder="0"
@@ -4104,42 +4728,78 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
               value=""
               width="100%"
             />
+            <div
+              class="c26"
+              color="core.primary"
+              display="flex"
+              font-size="3"
+              height="100%"
+            >
+              USD
+            </div>
           </div>
         </div>
       </div>
       <div
-        class="c27"
-        color="core.primary"
-        display="flex"
-        role="button"
-        type="button"
-      >
-        <p
-          class="c28 c29"
-          font-family="RT-Alias-Grotesk"
-          font-size="3"
-          font-weight="400"
-        >
-          ▲
-        </p>
-        <p
-          class="c30 c31"
-          font-family="RT-Alias-Grotesk"
-          font-size="3"
-          font-weight="400"
-        >
-          Close
-        </p>
-      </div>
-      <div
-        class="c32"
+        class="c28"
+        width="100%"
       >
         <div
-          class="c33"
+          class="c14"
+        >
+          <div
+            class="c3"
+            display="flex"
+          >
+            <div
+              class="c15"
+              display="flex"
+              height="64px"
+            >
+              <h4
+                class="c16"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Transaction Fee
+              </h4>
+            </div>
+            <div
+              class="c17"
+              display="flex"
+              width="100%"
+            >
+              <input
+                class="c29"
+                disabled=""
+                display="inline-block"
+                height="7"
+                value="122"
+                width="100%"
+              />
+              <div
+                class="c30"
+                color="core.primary"
+                display="flex"
+                font-size="3"
+                height="7"
+              >
+                AttoFil
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c31"
+      >
+        <div
+          class="c32"
           display="flex"
         >
           <h4
-            class="c34"
+            class="c33"
             color="core.darkgray"
             font-family="RT-Alias-Grotesk"
             font-size="2"
@@ -4147,118 +4807,154 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
           >
             Transfers complete faster with a higher gas price.
           </h4>
-          <h4
-            class="c35 c36"
+          <a
+            class="c34"
             color="core.primary"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
+            font-size="3"
+            href="https://kb.myetherwallet.com/en/transactions/what-is-gas/"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             What’s this?
-          </h4>
+          </a>
         </div>
         <div
-          class="c37"
+          class="c35"
         >
           <div
-            class="c3"
-            display="flex"
+            class="c36"
           >
             <div
-              class="c15"
-              display="inline-block"
+              class="c37"
+              display="flex"
             >
-              <h4
-                class="c16"
-                font-family="RT-Alias-Grotesk"
-                font-size="2"
-                font-weight="400"
+              <div
+                class="c38"
+                display="inline-block"
               >
-                Gas Price
-              </h4>
+                <h4
+                  class="c16"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Gas Price
+                </h4>
+              </div>
+              <div
+                class="c17"
+                display="flex"
+                width="100%"
+              >
+                <input
+                  class="c39"
+                  display="inline-block"
+                  font-size="2"
+                  height="7"
+                  type="number"
+                  value="1"
+                  width="100%"
+                />
+                <div
+                  class="c40"
+                  color="core.primary"
+                  display="flex"
+                  font-size="3"
+                  height="64px"
+                >
+                  AttoFil
+                </div>
+              </div>
             </div>
-            <input
-              class="c38"
-              display="inline-block"
-              height="7"
-              type="number"
-              value="1"
-              width="100%"
-            />
           </div>
-        </div>
-        <div
-          class="c39 c40 GasCustomization___StyledNumberedInput-sc-13rr8o7-0 c40"
-        >
           <div
-            class="c3"
-            display="flex"
+            class="c41"
           >
             <div
-              class="c15"
-              display="inline-block"
+              class="c42"
             >
-              <h4
-                class="c16"
-                font-family="RT-Alias-Grotesk"
-                font-size="2"
-                font-weight="400"
+              <div
+                class="c37"
+                display="flex"
               >
-                Gas Limit
-              </h4>
+                <div
+                  class="c38"
+                  display="inline-block"
+                >
+                  <h4
+                    class="c16"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    Gas Limit
+                  </h4>
+                </div>
+                <div
+                  class="c17"
+                  display="flex"
+                  width="100%"
+                >
+                  <input
+                    class="c43"
+                    display="inline-block"
+                    font-size="2"
+                    height="7"
+                    type="number"
+                    value="2000"
+                    width="100%"
+                  />
+                  <div
+                    class="c40"
+                    color="core.primary"
+                    display="flex"
+                    font-size="3"
+                    height="64px"
+                  >
+                    AttoFil
+                  </div>
+                </div>
+              </div>
             </div>
-            <input
-              class="c41 c40 GasCustomization___StyledNumberedInput-sc-13rr8o7-0 c40 GasCustomization___StyledNumberedInput-sc-13rr8o7-0 c40"
-              display="inline-block"
-              height="7"
-              type="number"
-              value="2000"
-              width="100%"
-            />
           </div>
         </div>
       </div>
-      <div
-        class="c14"
+      <button
+        class="c44"
+        color="core.primary"
+        display="flex"
+        font-size="3"
+        role="button"
+        type="button"
       >
         <div
-          class="c3"
+          class="c45"
           display="flex"
         >
-          <div
-            class="c15"
-            display="inline-block"
+          <p
+            class="c46 c47"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
           >
-            <h4
-              class="c16"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              <label
-                for="estimated-fee"
-              >
-                Estimated Fee
-              </label>
-            </h4>
-          </div>
-          <input
-            class="c42"
-            disabled=""
-            display="inline-block"
-            height="7"
-            name="estimated-fee"
-            value="122"
-            width="100%"
-          />
+            ▲
+          </p>
+          <p
+            class="c48 c49"
+            font-family="RT-Alias-Grotesk"
+            font-size="3"
+            font-weight="400"
+          >
+            Close
+          </p>
         </div>
-      </div>
+      </button>
       <div
-        class="c43"
+        class="c50"
         display="flex"
       >
         <h2
-          class="c44"
+          class="c51"
           font-family="RT-Alias-Grotesk"
           font-size="4"
           font-weight="400"
@@ -4266,22 +4962,22 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
           Total
         </h2>
         <div
-          class="c45"
+          class="c52"
           display="flex"
         >
           <h2
-            class="c46 c47"
+            class="c53 c54"
             color="core.primary"
             font-family="RT-Alias-Grotesk"
-            font-size="4"
-            font-weight="400"
+            font-size="5"
+            font-weight="700"
           >
             0
              
             FIL
           </h2>
           <h2
-            class="c48"
+            class="c55"
             color="core.darkgray"
             font-family="RT-Alias-Grotesk"
             font-size="4"
@@ -4295,17 +4991,17 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
       </div>
     </div>
     <div
-      class="c49"
+      class="c56"
     >
       <button
-        class="c50 c51"
+        class="c57 c58"
         font-size="3"
         type="button"
       >
         Back
       </button>
       <button
-        class="c52 c53"
+        class="c59 c60"
         font-size="3"
         type="submit"
       >

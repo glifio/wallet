@@ -54,6 +54,6 @@ describe('UseChrome', () => {
     })
 
     expect(mockRouterReplace).toHaveBeenCalled()
-    expect(mockRouterReplace).toHaveBeenCalledWith('/onboard?network=t')
+    expect(mockRouterReplace).toHaveBeenCalledWith('/onboard')
   })
 })

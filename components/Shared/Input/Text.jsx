@@ -4,15 +4,14 @@ import BaseInput from './BaseInput'
 import Box from '../Box'
 import { Label } from '../Typography'
 import InputWrapper from './InputWrapper'
+import { DenomTag } from './Number'
 
 const TextInput = ({
-  onChange,
+  denom,
   value,
-  placeholder,
   label,
   error,
   disabled,
-  valid,
   name,
   ...props
 }) => (
@@ -20,24 +19,42 @@ const TextInput = ({
     <InputWrapper mt={3}>
       <Box display='flex' alignItems='center'>
         {label && (
-          <Box display='inline-block' px={3} minWidth={9} textAlign='center'>
-            <Label>
-              <label htmlFor={name}>{label}</label>
-            </Label>
+          <Box
+            display='flex'
+            px={3}
+            minWidth={9}
+            justifyContent='center'
+            alignItems='center'
+            height='64px'
+            borderRight={1}
+            borderColor='input.border'
+          >
+            <Label>{label}</Label>
           </Box>
         )}
-        <BaseInput
-          name={name}
-          py={3}
-          px={3}
-          onChange={onChange}
-          value={value}
-          placeholder={placeholder}
-          disabled={disabled}
-          error={error}
-          valid={valid}
-          {...props}
-        />
+        <Box position='relative' display='flex' width='100%'>
+          <BaseInput
+            py={3}
+            px={3}
+            value={value}
+            disabled={disabled}
+            error={error}
+            {...props}
+          />
+          {denom && (
+            <DenomTag
+              backgroundColor='core.transparent'
+              height={7}
+              css={`
+                border-left: 0;
+                top: 0px;
+                left: 0px;
+              `}
+            >
+              {denom}
+            </DenomTag>
+          )}
+        </Box>
       </Box>
     </InputWrapper>
     {error && (
@@ -56,6 +73,7 @@ TextInput.propTypes = {
   disabled: bool,
   error: string,
   valid: bool,
+  denom: string,
   name: string
 }
 
@@ -64,6 +82,7 @@ TextInput.defaultProps = {
   disabled: false,
   onChange: () => {},
   label: '',
+  denom: '',
   name: ''
 }
 

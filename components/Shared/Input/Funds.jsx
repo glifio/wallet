@@ -1,31 +1,13 @@
 import React, { forwardRef, useRef, useState } from 'react'
 import { func, string, bool, oneOfType } from 'prop-types'
 import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
-import { space, color, layout, border, flexbox } from 'styled-system'
-import styled from 'styled-components'
 
 import Box from '../Box'
-import { RawNumberInput } from './Number'
+import { RawNumberInput, DenomTag } from './Number'
 import { Text, Label } from '../Typography'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import noop from '../../../utils/noop'
 import { useConverter } from '../../../lib/Converter'
-
-export const DenomTag = styled(Box).attrs(props => ({
-  width: 6,
-  bg: 'core.primary',
-  color: 'core.white',
-  ...props
-}))`
-  text-align: center;
-  position: absolute;
-  border-radius: 4px;
-  ${color} 
-  ${space} 
-  ${layout}
-  ${border}
-  ${flexbox};
-`
 
 const formatFilValue = number => {
   if (!number) return ''
@@ -185,15 +167,30 @@ const Funds = forwardRef(
           flexGrow='1'
           width='100%'
           maxWidth={11}
-          p={3}
+          py={3}
+          px={4}
           textAlign='center'
+          color='input.border'
           borderColor='input.border'
+          borderRight={1}
           bg={error && 'input.background.invalid'}
         >
-          {error ? <Text>{error}</Text> : <Label>Amount</Label>}
+          {error ? (
+            <Text color='core.nearblack' textAlign='left'>
+              {error}
+            </Text>
+          ) : (
+            <Label color='core.nearblack'>Amount</Label>
+          )}
         </Box>
         <Box display='inline-block' width='100%'>
-          <Box position='relative' display='block' height='80px' width='100%'>
+          <Box
+            position='relative'
+            display='flex'
+            height='80px'
+            width='100%'
+            bg='input.background.base'
+          >
             <Box
               position='absolute'
               left='-24px'
@@ -209,15 +206,11 @@ const Funds = forwardRef(
               fontSize={5}
               fontFamily='sansSerif'
               paddingBottom='4px'
+              zIndex='999'
             >
               {'\u003D'}
             </Box>
-            <DenomTag top='30px' left='30px'>
-              FIL
-            </DenomTag>
-            <DenomTag top='110px' left='30px'>
-              USD
-            </DenomTag>
+
             <RawNumberInput
               onFocus={() => {
                 setError('')
@@ -227,6 +220,7 @@ const Funds = forwardRef(
                 onTimerFil(filAmount)
               }}
               height='100%'
+              fontSize={5}
               onChange={onFilChange}
               value={formatFilValue(filAmount)}
               placeholder='0'
@@ -236,12 +230,23 @@ const Funds = forwardRef(
               valid={valid && !!formatFilValue(filAmount)}
               {...props}
             />
+            <DenomTag
+              top='0px'
+              left='0px'
+              backgroundColor={
+                valid ? 'input.background.valid' : 'input.background.base'
+              }
+            >
+              FIL
+            </DenomTag>
           </Box>
           <Box
-            display='block'
+            position='relative'
+            display='flex'
             height='80px'
             borderTop={1}
             borderColor='input.border'
+            bg='input.background.base'
           >
             <RawNumberInput
               onFocus={() => {
@@ -252,6 +257,7 @@ const Funds = forwardRef(
                 onTimerFiat(fiatAmount)
               }}
               height='100%'
+              fontSize={5}
               onChange={onFiatChange}
               value={formatFiatValue(fiatAmount)}
               placeholder={converterError ? 'Error fetching amount' : '0'}
@@ -261,6 +267,15 @@ const Funds = forwardRef(
               valid={valid && !!formatFiatValue(fiatAmount)}
               disabled={disabled || converterError}
             />
+            <DenomTag
+              top='0px'
+              left='0px'
+              backgroundColor={
+                valid ? 'input.background.valid' : 'input.background.base'
+              }
+            >
+              USD
+            </DenomTag>
           </Box>
         </Box>
       </Box>
