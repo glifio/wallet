@@ -78,7 +78,11 @@ const Reveal = ({ mnemonic, valid }) => {
         my={3}
         minHeight={7}
       >
-        <Title>Write down your seed phrase</Title>
+        <Title>
+          {valid
+            ? "Success! Please click 'Next' to access your wallet."
+            : 'Write down your seed phrase somewhere safe.'}
+        </Title>
         <Box mt={[2, 0]}>
           <Button
             height='max-content'

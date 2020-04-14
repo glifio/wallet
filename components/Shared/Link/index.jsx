@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 
 export const StyledATag = styled.a.attrs(props => ({
   color: 'core.primary',
+  fontSize: 3,
   ...props
 }))`
   ${color}

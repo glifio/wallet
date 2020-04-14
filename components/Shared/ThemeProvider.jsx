@@ -13,7 +13,6 @@ const ThemeProvider = ({ children, theme, ...rest }) => {
 }
 
 ThemeProvider.propTypes = {
-  /* eslint-disable react/forbid-prop-types */
   theme: PropTypes.object,
   children: PropTypes.node
 }

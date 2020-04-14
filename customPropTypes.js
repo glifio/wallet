@@ -1,8 +1,13 @@
-import { shape, string, oneOfType, number } from 'prop-types'
+import { shape, string, oneOfType, number, oneOf } from 'prop-types'
 import { validateAddressString } from '@openworklabs/filecoin-address'
 import { validatePath } from '@openworklabs/filecoin-wallet-provider'
 import { validateMnemonic } from 'bip39'
-import { SINGLE_KEY } from './constants'
+import {
+  SINGLE_KEY,
+  IMPORT_MNEMONIC,
+  IMPORT_SINGLE_KEY,
+  LEDGER
+} from './constants'
 
 export const ADDRESS_PROPTYPE = (props, propName, componentName) => {
   if (!validateAddressString(props[propName]))
@@ -48,13 +53,16 @@ export const HD_PATH_PROP = (props, propName, componentName) => {
 export const WALLET_PROP_TYPE = shape({
   balance: FILECOIN_NUMBER_PROP,
   address: ADDRESS_PROPTYPE,
-  path: HD_PATH_PROP
+  path: HD_PATH_PROP,
+  type: oneOf([IMPORT_MNEMONIC, IMPORT_SINGLE_KEY, LEDGER]),
+  index: number
 })
 
 export const NO_WALLET_PROP_TYPE = shape({
   balance: FILECOIN_NUMBER_PROP,
   address: string,
-  path: string
+  path: string,
+  index: number
 })
 
 export const MESSAGE_PROPS = shape({

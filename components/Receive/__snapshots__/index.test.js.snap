@@ -1,0 +1,631 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Receive it renders correctly 1`] = `
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: #5E26FF;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 4px;
+  padding-right: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c13 {
+  min-width: 0;
+  box-sizing: border-box;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c4 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c7 {
+  width: 24;
+  height: 24;
+}
+
+.c6 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.c6:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c5 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 8px;
+}
+
+.c8 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.c11 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c12 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 1px;
+  padding-left: 16px;
+  width: 640px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 70px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 16px;
+}
+
+.c14 {
+  display: inline-block;
+  height: 100%;
+  outline: none;
+  background-color: #E4EBFC;
+  padding: 0;
+  width: 64px;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c14:hover {
+  cursor: pointer;
+}
+
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  background-color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div
+  class="c0"
+  display="flex"
+>
+  <div
+    class="c1"
+    display="flex"
+  >
+    <div
+      class="c2"
+      display="flex"
+    >
+      <div
+        class="c3"
+        color="background.screen"
+        display="flex"
+        size="6"
+      >
+        <h3
+          class="c4"
+        >
+          Rc
+        </h3>
+      </div>
+      <p
+        class="c5"
+        color="core.primary"
+        font-family="RT-Alias-Grotesk"
+        font-size="3"
+        font-weight="400"
+      >
+        Receive Filecoin
+      </p>
+    </div>
+    <div
+      class="c2"
+      display="flex"
+    >
+      <button
+        class="c6"
+        display="inline-block"
+        type="button"
+      >
+        <svg
+          class="c7"
+          fill="none"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+            fill="#5E26FF"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <p
+    class="c8"
+    font-family="RT-Alias-Grotesk"
+    font-size="3"
+    font-weight="400"
+  >
+    To receive Filecoin, share your address with the sender
+  </p>
+  <div
+    class="c9"
+    width="14"
+  >
+    <div
+      class="c10"
+      display="flex"
+    >
+      <p
+        class="c11"
+        font-family="RT-Alias-Grotesk"
+        font-size="3"
+        font-weight="400"
+      >
+        t1
+      </p>
+      <p
+        class="c12"
+        font-family="RT-Alias-Grotesk"
+        font-size="3"
+        font-weight="400"
+      >
+        ●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
+      </p>
+      <p
+        class="c11"
+        font-family="RT-Alias-Grotesk"
+        font-size="3"
+        font-weight="400"
+      >
+        izpy
+      </p>
+    </div>
+    <div
+      class="c13"
+      display="flex"
+      height="100%"
+    >
+      <button
+        class="c14"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+        width="7"
+      >
+        Copy
+      </button>
+      <button
+        class="c14"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+        width="7"
+      >
+        Reveal
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Receive it reveals the address when the user clicks reveal 1`] = `
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: #5E26FF;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c11 {
+  min-width: 0;
+  box-sizing: border-box;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c4 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c7 {
+  width: 24;
+  height: 24;
+}
+
+.c6 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.c6:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c5 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 8px;
+}
+
+.c8 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.c10 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  padding-left: 4px;
+  padding-right: 8px;
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 1px;
+  padding-left: 16px;
+  width: 640px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 70px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 16px;
+}
+
+.c12 {
+  display: inline-block;
+  height: 100%;
+  outline: none;
+  background-color: #E4EBFC;
+  padding: 0;
+  width: 64px;
+  border: 0;
+  border-left: 1px solid;
+  border-color: #999999;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.c12:hover {
+  cursor: pointer;
+}
+
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  background-color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div
+  class="c0"
+  display="flex"
+>
+  <div
+    class="c1"
+    display="flex"
+  >
+    <div
+      class="c2"
+      display="flex"
+    >
+      <div
+        class="c3"
+        color="background.screen"
+        display="flex"
+        size="6"
+      >
+        <h3
+          class="c4"
+        >
+          Rc
+        </h3>
+      </div>
+      <p
+        class="c5"
+        color="core.primary"
+        font-family="RT-Alias-Grotesk"
+        font-size="3"
+        font-weight="400"
+      >
+        Receive Filecoin
+      </p>
+    </div>
+    <div
+      class="c2"
+      display="flex"
+    >
+      <button
+        class="c6"
+        display="inline-block"
+        type="button"
+      >
+        <svg
+          class="c7"
+          fill="none"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+            fill="#5E26FF"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <p
+    class="c8"
+    font-family="RT-Alias-Grotesk"
+    font-size="3"
+    font-weight="400"
+  >
+    To receive Filecoin, share your address with the sender
+  </p>
+  <div
+    class="c9"
+    width="14"
+  >
+    <p
+      class="c10"
+      font-family="RT-Alias-Grotesk"
+      font-size="3"
+      font-weight="400"
+    >
+      t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy
+    </p>
+    <div
+      class="c11"
+      display="flex"
+      height="100%"
+    >
+      <button
+        class="c12"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+        width="7"
+      >
+        Copy
+      </button>
+      <button
+        class="c12"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+        width="7"
+      >
+        Hide
+      </button>
+    </div>
+  </div>
+</div>
+`;

@@ -18,7 +18,7 @@ export default dynamic({
     const SingleKeyProvider = privateKey => {
       return {
         getAccounts: async (_, __, network = 't') => {
-          return [rustModule.key_recover(privateKey).address]
+          return [rustModule.key_recover(privateKey, network === 't').address]
         },
         sign: async (_, filecoinMessage) => {
           const formattedMessage = toLowerCaseMsgFields(
@@ -35,22 +35,24 @@ export default dynamic({
       }
     }
 
-    const ProviderCreator = ({ privateKey, network, ready }) => {
+    const ProviderCreator = ({ privateKey, ready, onError }) => {
       const [createdProvider, setCreatedProvider] = useState(false)
       const { dispatch, fetchDefaultWallet } = useWalletProvider()
       const dispatchRdx = useDispatch()
       const router = useRouter()
       useEffect(() => {
         const instantiateProvider = async () => {
-          const provider = new Filecoin(SingleKeyProvider(privateKey), {
-            apiAddress: 'https://proxy.openworklabs.com/rpc/v0',
-            network
-          })
-          dispatch(createWalletProvider(provider))
-          setCreatedProvider(true)
-          const wallet = await fetchDefaultWallet(provider)
-          console.log('wallet', wallet)
-          dispatchRdx(walletList([wallet]))
+          try {
+            const provider = new Filecoin(SingleKeyProvider(privateKey), {
+              apiAddress: 'https://proxy.openworklabs.com/rpc/v0'
+            })
+            dispatch(createWalletProvider(provider))
+            setCreatedProvider(true)
+            const wallet = await fetchDefaultWallet(provider)
+            dispatchRdx(walletList([wallet]))
+          } catch (err) {
+            onError(err.message || JSON.stringify(err))
+          }
         }
 
         if (ready && !createdProvider) {
@@ -60,20 +62,20 @@ export default dynamic({
         privateKey,
         createdProvider,
         setCreatedProvider,
-        network,
         dispatch,
         fetchDefaultWallet,
         router,
         dispatchRdx,
-        ready
+        ready,
+        onError
       ])
       return <></>
     }
 
     ProviderCreator.propTypes = {
       privateKey: PropTypes.string.isRequired,
-      network: PropTypes.oneOf(['t', 'f']).isRequired,
-      ready: PropTypes.bool
+      ready: PropTypes.bool,
+      onError: PropTypes.func.isRequired
     }
 
     ProviderCreator.defaultProps = {

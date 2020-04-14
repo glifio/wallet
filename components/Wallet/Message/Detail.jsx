@@ -1,19 +1,19 @@
 import React from 'react'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
-import { func } from 'prop-types'
+import { func, oneOf } from 'prop-types'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
 
 import {
   Box,
-  BigTitle,
   Card,
   Input,
   Glyph,
   Text,
   Label,
   Title,
-  IconMessageStatus
+  IconMessageStatus,
+  IconPending
 } from '../../Shared'
 import { ButtonClose } from '../../Shared/IconButtons'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../customPropTypes'
@@ -35,8 +35,20 @@ const MessageDetailCard = styled(Card).attrs(() => ({
   background-color: ${props => props.theme.colors.background.screen};
 `
 
+const TxStatusText = ({ address, from, status }) => {
+  if (status === 'pending') return 'PENDING'
+  if (address === from) return 'SENT'
+  return 'RECEIVED'
+}
+
+TxStatusText.propTypes = {
+  address: ADDRESS_PROPTYPE,
+  from: ADDRESS_PROPTYPE,
+  status: oneOf(['pending', 'confirmed'])
+}
+
 const MessageDetail = ({ address, close, message }) => {
-  const { converter } = useConverter()
+  const { converter, converterError } = useConverter()
   return (
     <MessageDetailCard>
       <Box
@@ -75,7 +87,11 @@ const MessageDetail = ({ address, close, message }) => {
             `}
           />
           <Box m='0' display='flex' flexDirection='row' alignItems='flex-end'>
-            <IconMessageStatus status='confirmed' />
+            {message.status === 'confirmed' ? (
+              <IconMessageStatus status='confirmed' />
+            ) : (
+              <IconPending height={4} />
+            )}
             <Label
               color={
                 message.status === 'confirmed'
@@ -83,11 +99,15 @@ const MessageDetail = ({ address, close, message }) => {
                   : 'status.pending.foreground'
               }
             >
-              {address === message.from ? 'SENT' : 'RECEIVED'}
+              <TxStatusText
+                address={address}
+                from={message.from}
+                status={message.status}
+              />
             </Label>
           </Box>
           <Box display='flex' flexDirection='row' mr={2}>
-            <Text my='0' mr={1} color='core.darkgray'>
+            <Text my='0' mr={3} color='core.darkgray'>
               {dayjs.unix(message.timestamp).format('MMM DD')}
             </Text>
             <Text my='0'>{dayjs.unix(message.timestamp).format('hh:mmA')}</Text>
@@ -120,25 +140,29 @@ const MessageDetail = ({ address, close, message }) => {
         >
           <Label>Total</Label>
           <Box display='flex' flexDirection='column'>
-            <BigTitle color='core.primary'>
-              {makeFriendlyBalance(
-                new FilecoinNumber(message.value, 'fil').plus(
-                  new FilecoinNumber(message.gas_used, 'attofil')
-                ),
-                18
-              ).toString()}{' '}
+            <Title
+              css={`
+                word-wrap: break-word;
+              `}
+              color='core.primary'
+            >
+              {new FilecoinNumber(message.value, 'fil')
+                .plus(new FilecoinNumber(message.gas_used, 'attofil'))
+                .toString()}{' '}
               FIL
-            </BigTitle>
-            <Title color='core.darkgray'>
-              {makeFriendlyBalance(
-                converter.fromFIL(
-                  new FilecoinNumber(message.value, 'fil').plus(
-                    new FilecoinNumber(message.gas_used, 'attofil')
-                  )
-                ),
-                18
-              ).toString()}{' '}
-              USD
+            </Title>
+            <Title color='core.darkgray' textAlign='right'>
+              {!converterError &&
+                (converter
+                  ? `${makeFriendlyBalance(
+                      converter.fromFIL(
+                        new FilecoinNumber(message.value, 'fil').plus(
+                          new FilecoinNumber(message.gas_used, 'attofil')
+                        )
+                      ),
+                      2
+                    )} USD`
+                  : 'Loading USD...')}
             </Title>
           </Box>
         </Box>

@@ -42,7 +42,7 @@ export default () => {
     <>
       {ready && (
         <CreateSingleKeyProvider
-          network={network}
+          onError={setPrivateKeyError}
           privateKey={privateKey}
           ready={ready}
         />
@@ -62,6 +62,7 @@ export default () => {
               totalSteps={2}
               description='Import'
               glyphAcronym='Pk'
+              showStepper={false}
             />
             <Box
               width='auto'
@@ -77,7 +78,10 @@ export default () => {
                 error={privateKeyError}
                 setError={setPrivateKeyError}
                 value={privateKey}
-                onChange={e => setPrivateKey(e.target.value)}
+                onChange={e => {
+                  setReady(false)
+                  setPrivateKey(e.target.value)
+                }}
               />
             </Box>
           </OnboardCard>

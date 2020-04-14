@@ -28,6 +28,15 @@ export default () => {
   }))
   const router = useRouter()
 
+  const next = () => {
+    try {
+      const isValid = validateMnemonic(mnemonic)
+      if (isValid) setValidMnemonic(mnemonic)
+    } catch (_) {
+      setMnemonicError('Invalid seed phrase.')
+    }
+  }
+
   useEffect(() => {
     if (wallets.length > 0) {
       const params = new URLSearchParams(router.query)
@@ -43,7 +52,7 @@ export default () => {
     <>
       {validMnemonic && (
         <CreateHDWalletProvider
-          network={network}
+          onError={setMnemonicError}
           mnemonic={validMnemonic}
           ready={!!validMnemonic}
         />
@@ -58,17 +67,19 @@ export default () => {
               totalSteps={2}
               glyphAcronym='Sp'
               m={2}
+              showStepper={false}
             />
 
             <Title mt={3}>Input, Import & Proceed</Title>
-            <Text>
-              Please input your 12 or 24 word seed phrase below to continue{' '}
-            </Text>
+            <Text>Please input your seed phrase below to continue </Text>
             <Input.Mnemonic
               error={mnemonicError}
               setError={setMnemonicError}
               value={mnemonic}
-              onChange={e => setMnemonic(e.target.value)}
+              onChange={e => {
+                setMnemonic(e.target.value)
+                setValidMnemonic('')
+              }}
             />
           </OnboardCard>
           <Box
@@ -87,14 +98,7 @@ export default () => {
             <Button
               title='Next'
               disabled={!!(mnemonic.length === 0 || mnemonicError)}
-              onClick={() => {
-                try {
-                  const isValid = validateMnemonic(mnemonic)
-                  if (isValid) setValidMnemonic(mnemonic)
-                } catch (_) {
-                  setMnemonicError('Invalid seed phrase.')
-                }
-              }}
+              onClick={next}
               variant='primary'
               ml={2}
             />

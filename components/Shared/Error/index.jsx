@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import Box from '../Box'
 import Button from '../Button'
-import Card from '../Card'
 import Glyph from '../Glyph'
 import OnboardCard from '../Card/OnboardCard'
 import { StyledATag } from '../Link'
@@ -34,6 +33,7 @@ const ErrorView = ({ description, linkhref, linkDisplay, title }) => {
           bg='card.error.background'
           color='card.error.foreground'
           ml={2}
+          minHeight={11}
         >
           <Box>
             <Glyph color='status.fail.foreground' acronym='Er' />

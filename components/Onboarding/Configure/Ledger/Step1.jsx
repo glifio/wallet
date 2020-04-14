@@ -13,8 +13,9 @@ import {
 import { IconLedger } from '../../../Shared/Icons'
 
 import { useWalletProvider } from '../../../../WalletProvider'
-import isValidBrowser from '../../../../utils/isValidBrowser'
+import isDesktopChromeBrowser from '../../../../utils/isDesktopChromeBrowser'
 import { hasLedgerError } from '../../../../utils/ledger/reportLedgerConfigError'
+import useReset from '../../../../utils/useReset'
 
 const Step1Helper = ({ inUseByAnotherApp, connectedFailure }) => {
   return (
@@ -80,14 +81,11 @@ Step1Helper.propTypes = {
   inUseByAnotherApp: PropTypes.bool.isRequired
 }
 
-export default () => {
-  const { ledger, setLedgerProvider, setWalletType } = useWalletProvider()
+const Step1 = ({ setStep }) => {
+  const { ledger, setLedgerProvider } = useWalletProvider()
   const router = useRouter()
-  if (!isValidBrowser()) {
-    const params = new URLSearchParams(router.query)
-    setWalletType(null)
-    router.push(`/error/unsupported-browser?${params.toString()}`)
-  }
+  const resetState = useReset()
+  if (!isDesktopChromeBrowser()) router.push(`/error/use-chrome`)
   const errFromRdx = useSelector(state => state.error)
   const error = hasLedgerError({ ...ledger, otherError: errFromRdx })
 
@@ -95,6 +93,7 @@ export default () => {
     <>
       <OnboardCard
         maxWidth={13}
+        minHeight={9}
         width='100%'
         borderColor={error && 'status.fail.background'}
         bg={error ? 'status.fail.background' : 'core.transparent'}
@@ -121,13 +120,16 @@ export default () => {
       >
         <Button
           title='Back'
-          onClick={() => setWalletType(null)}
+          onClick={() => resetState()}
           variant='secondary'
           mr={2}
         />
         <Button
           title='Yes, my Ledger device is connected.'
-          onClick={setLedgerProvider}
+          onClick={async () => {
+            const provider = await setLedgerProvider()
+            if (provider) setStep(2)
+          }}
           variant='primary'
           ml={2}
         />
@@ -135,3 +137,9 @@ export default () => {
     </>
   )
 }
+
+Step1.propTypes = {
+  setStep: PropTypes.func.isRequired
+}
+
+export default Step1

@@ -9,7 +9,8 @@ export default styled.input.attrs(props => ({
   borderLeft: 1,
   borderColor: 'input.border',
   borderTopRightRadius: 1,
-  borderBottomRightRadius: 1
+  borderBottomRightRadius: 1,
+  ...props
 }))`
   flex-grow: 1;
   padding-left: ${props => props.theme.space[2]}px;
@@ -22,6 +23,7 @@ export default styled.input.attrs(props => ({
   background: ${props => {
     if (props.valid) return props.theme.colors.input.background.valid
     if (props.error) return props.theme.colors.input.background.invalid
+    if (props.disabled) return props.theme.colors.core.transparent
     return props.theme.colors.input.background.base
   }};
 

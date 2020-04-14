@@ -7,17 +7,12 @@ import {
   NetworkSwitcherGlyph,
   Wrapper,
   Sidebar,
-  Content
+  Content,
+  BaseButton as ButtonLogout
 } from '../Shared'
 import Send from './Send.js'
 import MessageView from './Message'
 import { useWalletProvider } from '../../WalletProvider'
-import {
-  LEDGER,
-  CREATE_MNEMONIC,
-  IMPORT_MNEMONIC,
-  ACCOUNT_BATCH_SIZE
-} from '../../constants'
 import {
   hasLedgerError,
   reportLedgerConfigError
@@ -27,10 +22,10 @@ import useWallet from '../../WalletProvider/useWallet'
 import Receive from '../Receive'
 import { MESSAGE_HISTORY, SEND, RECEIVE } from './views'
 
-const WalletView = () => {
+export default () => {
   const wallet = useWallet()
   const [childView, setChildView] = useState(MESSAGE_HISTORY)
-  const { ledger, walletType, connectLedger } = useWalletProvider()
+  const { ledger, connectLedger } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState(null)
   const [showLedgerError, setShowLedgerError] = useState(false)
   const [ledgerBusy, setLedgerBusy] = useState(false)
@@ -38,15 +33,6 @@ const WalletView = () => {
   const router = useRouter()
   const onAccountSwitch = () => {
     const params = new URLSearchParams(router.query)
-    let page = 0
-    if (
-      (wallet && walletType === LEDGER) ||
-      walletType === CREATE_MNEMONIC ||
-      walletType === IMPORT_MNEMONIC
-    ) {
-      page = Math.floor(wallet.path.split('/')[5] / ACCOUNT_BATCH_SIZE)
-    }
-    params.set('page', page)
     router.push(`/wallet/accounts?${params.toString()}`)
   }
 
@@ -70,9 +56,8 @@ const WalletView = () => {
     <>
       <MsgConfirmer />
       <Wrapper>
-        <Sidebar>
+        <Sidebar height='100vh'>
           <NetworkSwitcherGlyph />
-
           {hasLedgerError({ ...ledger, otherError: uncaughtError }) &&
           showLedgerError ? (
             <AccountError
@@ -98,7 +83,23 @@ const WalletView = () => {
             balance={wallet.balance}
             onReceive={() => onViewChange(RECEIVE)}
             onSend={() => onViewChange(SEND)}
+            disableButtons={childView === SEND}
           />
+          <ButtonLogout
+            variant='secondary'
+            width='100%'
+            mt={4}
+            display='flex'
+            css={`
+              background-color: ${({ theme }) => theme.colors.core.secondary}00;
+              &:hover {
+                background-color: ${({ theme }) => theme.colors.core.secondary};
+              }
+            `}
+            onClick={() => window.location.reload()}
+          >
+            Logout
+          </ButtonLogout>
         </Sidebar>
         <Content>
           {childView === MESSAGE_HISTORY && <MessageView />}
@@ -119,5 +120,3 @@ const WalletView = () => {
     </>
   )
 }
-
-export default WalletView

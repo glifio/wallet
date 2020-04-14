@@ -6,7 +6,7 @@ export const ConverterContext = createContext({})
 
 export const ConverterWrapper = ({ children, currency }) => {
   const [converter, setConverter] = useState(null)
-  const [converterError, setConverterError] = useState(null)
+  const [converterError, setConverterError] = useState('')
   useEffect(() => {
     const setupConverter = async () => {
       try {
@@ -16,7 +16,7 @@ export const ConverterWrapper = ({ children, currency }) => {
         await converterInstance.cacheConversionRate()
         setConverter(converterInstance)
       } catch (err) {
-        setConverterError(new Error(err))
+        setConverterError(err.message || err)
       }
     }
 

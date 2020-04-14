@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "lint": "eslint '**/*.js'",
+    "lint": "eslint '**/*.js' '**/*.jsx'",
     "start": "next start",
     "test": "jest",
     "test:watch": "jest --watch"
@@ -16,7 +16,7 @@
     "@openworklabs/filecoin-message": "0.0.10",
     "@openworklabs/filecoin-number": "0.0.6",
     "@openworklabs/filecoin-wallet-provider": "0.0.17",
-    "@zondax/filecoin-signer-wasm": "^0.2.0",
+    "@zondax/filecoin-signer-wasm": "^0.3.1",
     "axios": "^0.19.2",
     "bip39": "^3.0.2",
     "dayjs": "^1.8.22",
@@ -33,7 +33,9 @@
     "styled-system": "^5.1.5"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.5.0",
     "@testing-library/react": "^10.0.1",
+    "@testing-library/react-hooks": "^3.2.1",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^25.1.0",
     "babel-plugin-styled-components": "^1.10.7",
@@ -46,7 +48,9 @@
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^1.7.0",
     "jest": "^25.1.0",
-    "prettier": "^1.19.1"
+    "jest-styled-components": "^7.0.2",
+    "prettier": "^1.19.1",
+    "react-test-renderer": "^16.13.1"
   },
   "license": "(Apache-2.0 OR MIT)"
 }

@@ -1,0 +1,1320 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccountSelector it renders an error when an error exists 1`] = `
+Array [
+  .c2 {
+  width: 24;
+  height: 24;
+}
+
+.c0 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c1 {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+<button
+    className="c0 c1"
+    display="inline-block"
+    onClick={[Function]}
+  >
+    <svg
+      className="c2"
+      fill="none"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clipRule="evenodd"
+        d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+        fill="#5E26FF"
+        fillRule="evenodd"
+      />
+    </svg>
+  </button>,
+  .c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1200px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: #5E26FF;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c11 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 8px;
+  display: inline-block;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c12 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  opacity: 0.25;
+  background-color: hsla(0,0%,90%,0);
+  color: colors.core.black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 320px;
+  overflow: hidden;
+  height: 320px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c14 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  margin-right: 16px;
+  color: colors.core.black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c16 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c19 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 16px;
+  margin: 8px;
+  background-color: #FC6D6F;
+  color: #660000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 320px;
+  height: 320px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  box-shadow: 0 0.7px 2.2px -8px rgba(0,0,0,0.18),0 1.7px 5.4px rgba(0,0,0,0.129),0 3.1px 10.1px rgba(0,0,0,0.107),0 5.6px 18.1px rgba(0,0,0,0.09),0 10.4px 33.8px rgba(0,0,0,0.073),0 25px 81px rgba(0,0,0,0.051);
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  margin-right: 16px;
+  color: #660000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c24 {
+  cursor: pointer;
+  border: 1px solid status.fail.foreground;
+  background-color: #1AD08F;
+  border-color: status.fail.foreground;
+  color: status.fail.foreground;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  height: 100%;
+  border-color: #660000;
+  border-width: 1px;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #660000;
+}
+
+.c24:hover {
+  opacity: 0.8;
+}
+
+.c6 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-left: 8px;
+}
+
+.c18 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c7 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c17 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c22 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin: 8px;
+}
+
+.c9 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c8 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+}
+
+.c13 {
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.c13:hover {
+  background: hsla(0,0%,90%,1);
+  opacity: 1;
+}
+
+<div
+    className="c0"
+    display="flex"
+  >
+    <div
+      className="c1"
+      display="flex"
+    >
+      <ul
+        className="c2"
+      >
+        <li
+          className="c3"
+          color="core.primary"
+          display="flex"
+        >
+          <div
+            className="c4"
+            color="core.white"
+            display="flex"
+            size={6}
+          >
+            <h3
+              className="c5"
+            >
+              Sw
+            </h3>
+          </div>
+          <h2
+            className="c6"
+            fontFamily="RT-Alias-Grotesk"
+            fontSize={4}
+            fontWeight={400}
+          >
+            Switch Accounts
+          </h2>
+        </li>
+        <li
+          className=""
+        >
+          <p
+            className="c7"
+            fontFamily="RT-Alias-Grotesk"
+            fontSize={3}
+            fontWeight={400}
+          >
+            Your single
+             
+            seed phrase
+             
+            creates hundreds of individual "accounts".
+            <br />
+            <a
+              className="c8"
+              color="core.primary"
+              fontSize={3}
+              href="/faqs"
+              rel="noopener"
+              target="_blank"
+            >
+              Don’t see an account you were previously using?
+            </a>
+          </p>
+        </li>
+      </ul>
+      <ul
+        className="c9"
+      >
+        <li
+          className="c10"
+          display="flex"
+        >
+          <div
+            className="c11"
+            display="inline-block"
+          >
+            <div
+              className="c12 c13"
+              color="colors.core.black"
+              display="flex"
+              height={11}
+              onClick={[Function]}
+              opacity="0.25"
+              overflow="hidden"
+              width={11}
+            >
+              <div
+                className="c14"
+                display="flex"
+              >
+                <div
+                  className="c15"
+                  color="colors.core.black"
+                  display="flex"
+                  size={6}
+                >
+                  <h3
+                    className="c5"
+                  >
+                    0
+                  </h3>
+                </div>
+                <div
+                  className="c16"
+                  display="flex"
+                >
+                  <p
+                    className="c17"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={3}
+                    fontWeight={400}
+                  >
+                    Address
+                  </p>
+                  <h2
+                    className="c18"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={4}
+                    fontWeight={400}
+                  >
+                    t1jdl ... nfza
+                  </h2>
+                </div>
+              </div>
+              <div
+                className="c16"
+                display="flex"
+              >
+                <p
+                  className="c17"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={3}
+                  fontWeight={400}
+                >
+                  Balance
+                </p>
+                <h2
+                  className="c18"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={4}
+                  fontWeight={400}
+                >
+                  &gt; 999.9B
+                  FIL
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div
+            className="c11"
+            display="inline-block"
+          >
+            <div
+              className="c12 c13"
+              color="colors.core.black"
+              display="flex"
+              height={11}
+              onClick={[Function]}
+              opacity="0.25"
+              overflow="hidden"
+              width={11}
+            >
+              <div
+                className="c14"
+                display="flex"
+              >
+                <div
+                  className="c15"
+                  color="colors.core.black"
+                  display="flex"
+                  size={6}
+                >
+                  <h3
+                    className="c5"
+                  >
+                    1
+                  </h3>
+                </div>
+                <div
+                  className="c16"
+                  display="flex"
+                >
+                  <p
+                    className="c17"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={3}
+                    fontWeight={400}
+                  >
+                    Address
+                  </p>
+                  <h2
+                    className="c18"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={4}
+                    fontWeight={400}
+                  >
+                    t1ddl ... nfza
+                  </h2>
+                </div>
+              </div>
+              <div
+                className="c16"
+                display="flex"
+              >
+                <p
+                  className="c17"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={3}
+                  fontWeight={400}
+                >
+                  Balance
+                </p>
+                <h2
+                  className="c18"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={4}
+                  fontWeight={400}
+                >
+                  2
+                  FIL
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div
+            className="c19"
+            color="card.error.foreground"
+            display="flex"
+            height={11}
+            width={11}
+          >
+            <div
+              className="c14"
+              display="flex"
+            >
+              <div
+                className="c20"
+                color="status.fail.foreground"
+                display="flex"
+                size={6}
+              >
+                <h3
+                  className="c5"
+                >
+                  Er
+                </h3>
+              </div>
+              <p
+                className="c7"
+                fontFamily="RT-Alias-Grotesk"
+                fontSize={3}
+                fontWeight={400}
+              >
+                Error
+              </p>
+            </div>
+            <div
+              className="c21"
+            >
+              <p
+                className="c22"
+                fontFamily="RT-Alias-Grotesk"
+                fontSize={3}
+                fontWeight={400}
+              >
+                test error message
+              </p>
+            </div>
+            <div
+              className="c23"
+              display="flex"
+            >
+              <button
+                className="c24"
+                color="status.fail.foreground"
+                fontSize={3}
+                height="100%"
+                onClick={[Function]}
+                type="button"
+              >
+                Try again
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>,
+]
+`;
+
+exports[`AccountSelector it renders the wallets in redux, and an option to create the next wallet 1`] = `
+Array [
+  .c2 {
+  width: 24;
+  height: 24;
+}
+
+.c0 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c1 {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+<button
+    className="c0 c1"
+    display="inline-block"
+    onClick={[Function]}
+  >
+    <svg
+      className="c2"
+      fill="none"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clipRule="evenodd"
+        d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+        fill="#5E26FF"
+        fillRule="evenodd"
+      />
+    </svg>
+  </button>,
+  .c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1200px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: #5E26FF;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c11 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 8px;
+  display: inline-block;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c12 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  opacity: 0.25;
+  background-color: hsla(0,0%,90%,0);
+  color: colors.core.black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 320px;
+  overflow: hidden;
+  height: 320px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c14 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  margin-right: 16px;
+  color: colors.core.black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c16 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: transparent;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c19 {
+  cursor: pointer;
+  border: 1px solid core.primary;
+  background-color: #1AD08F;
+  border-color: core.primary;
+  color: core.primary;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin: 8px;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 320px;
+  height: 320px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  border-color: #5E26FF;
+  border-width: 1px;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #5E26FF;
+  opacity: 1;
+}
+
+.c19:hover {
+  opacity: 0.8;
+}
+
+.c6 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-left: 8px;
+}
+
+.c18 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c7 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c17 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c22 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+}
+
+.c2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin: 8px;
+}
+
+.c9 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c8 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+}
+
+.c13 {
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.c13:hover {
+  background: hsla(0,0%,90%,1);
+  opacity: 1;
+}
+
+<div
+    className="c0"
+    display="flex"
+  >
+    <div
+      className="c1"
+      display="flex"
+    >
+      <ul
+        className="c2"
+      >
+        <li
+          className="c3"
+          color="core.primary"
+          display="flex"
+        >
+          <div
+            className="c4"
+            color="core.white"
+            display="flex"
+            size={6}
+          >
+            <h3
+              className="c5"
+            >
+              Sw
+            </h3>
+          </div>
+          <h2
+            className="c6"
+            fontFamily="RT-Alias-Grotesk"
+            fontSize={4}
+            fontWeight={400}
+          >
+            Switch Accounts
+          </h2>
+        </li>
+        <li
+          className=""
+        >
+          <p
+            className="c7"
+            fontFamily="RT-Alias-Grotesk"
+            fontSize={3}
+            fontWeight={400}
+          >
+            Your single
+             
+            seed phrase
+             
+            creates hundreds of individual "accounts".
+            <br />
+            <a
+              className="c8"
+              color="core.primary"
+              fontSize={3}
+              href="/faqs"
+              rel="noopener"
+              target="_blank"
+            >
+              Don’t see an account you were previously using?
+            </a>
+          </p>
+        </li>
+      </ul>
+      <ul
+        className="c9"
+      >
+        <li
+          className="c10"
+          display="flex"
+        >
+          <div
+            className="c11"
+            display="inline-block"
+          >
+            <div
+              className="c12 c13"
+              color="colors.core.black"
+              display="flex"
+              height={11}
+              onClick={[Function]}
+              opacity="0.25"
+              overflow="hidden"
+              width={11}
+            >
+              <div
+                className="c14"
+                display="flex"
+              >
+                <div
+                  className="c15"
+                  color="colors.core.black"
+                  display="flex"
+                  size={6}
+                >
+                  <h3
+                    className="c5"
+                  >
+                    0
+                  </h3>
+                </div>
+                <div
+                  className="c16"
+                  display="flex"
+                >
+                  <p
+                    className="c17"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={3}
+                    fontWeight={400}
+                  >
+                    Address
+                  </p>
+                  <h2
+                    className="c18"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={4}
+                    fontWeight={400}
+                  >
+                    t1jdl ... nfza
+                  </h2>
+                </div>
+              </div>
+              <div
+                className="c16"
+                display="flex"
+              >
+                <p
+                  className="c17"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={3}
+                  fontWeight={400}
+                >
+                  Balance
+                </p>
+                <h2
+                  className="c18"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={4}
+                  fontWeight={400}
+                >
+                  &gt; 999.9B
+                  FIL
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div
+            className="c11"
+            display="inline-block"
+          >
+            <div
+              className="c12 c13"
+              color="colors.core.black"
+              display="flex"
+              height={11}
+              onClick={[Function]}
+              opacity="0.25"
+              overflow="hidden"
+              width={11}
+            >
+              <div
+                className="c14"
+                display="flex"
+              >
+                <div
+                  className="c15"
+                  color="colors.core.black"
+                  display="flex"
+                  size={6}
+                >
+                  <h3
+                    className="c5"
+                  >
+                    1
+                  </h3>
+                </div>
+                <div
+                  className="c16"
+                  display="flex"
+                >
+                  <p
+                    className="c17"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={3}
+                    fontWeight={400}
+                  >
+                    Address
+                  </p>
+                  <h2
+                    className="c18"
+                    fontFamily="RT-Alias-Grotesk"
+                    fontSize={4}
+                    fontWeight={400}
+                  >
+                    t1ddl ... nfza
+                  </h2>
+                </div>
+              </div>
+              <div
+                className="c16"
+                display="flex"
+              >
+                <p
+                  className="c17"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={3}
+                  fontWeight={400}
+                >
+                  Balance
+                </p>
+                <h2
+                  className="c18"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={4}
+                  fontWeight={400}
+                >
+                  2
+                  FIL
+                </h2>
+              </div>
+            </div>
+          </div>
+          <button
+            className="c19"
+            color="core.primary"
+            cursor="pointer"
+            display="flex"
+            fontSize={3}
+            height={11}
+            onClick={[Function]}
+            opacity="1"
+            type="button"
+            width={11}
+          >
+            <ul
+              className="c9"
+            >
+              <li
+                className="c20"
+                display="flex"
+              >
+                <div
+                  className="c21"
+                  color="core.primary"
+                  display="flex"
+                  size={6}
+                >
+                  <h3
+                    className="c5"
+                  >
+                    2
+                  </h3>
+                </div>
+                <h2
+                  className="c6"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={4}
+                  fontWeight={400}
+                >
+                  Create
+                </h2>
+              </li>
+              <li
+                className=""
+              >
+                <p
+                  className="c22"
+                  fontFamily="RT-Alias-Grotesk"
+                  fontSize={3}
+                  fontWeight={400}
+                >
+                  Click here to create account #
+                  2
+                  .
+                </p>
+              </li>
+            </ul>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>,
+]
+`;
