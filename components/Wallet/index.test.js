@@ -1,5 +1,4 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
-import WalletProvider from '@openworklabs/filecoin-wallet-provider'
 
 import WalletView from '.'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'

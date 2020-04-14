@@ -37,6 +37,7 @@ export const NumberInput = forwardRef(
             error={error}
             setError={setError}
             placeholder={placeholder}
+            {...props}
           />
         </Box>
       </InputWrapper>

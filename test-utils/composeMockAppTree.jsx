@@ -23,6 +23,15 @@ import { WalletProviderContext } from '../WalletProvider'
 import createPath from '../utils/createPath'
 import { IMPORT_MNEMONIC } from '../constants'
 
+const useRouter = jest.spyOn(require('next/router'), 'useRouter')
+
+const mockRouter = jest.fn(() => {})
+useRouter.mockImplementation(() => ({
+  query: 'network=t',
+  push: mockRouter,
+  replace: mockRouter
+}))
+
 jest.mock('@openworklabs/filecoin-wallet-provider')
 const mockGetAccounts = jest
   .fn()
@@ -38,13 +47,18 @@ WalletProvider.mockImplementation(() => {
   return {
     wallet: {
       getAccounts: mockGetAccounts,
-      sign: jest.fn()
+      sign: jest.fn().mockImplementation(() => 'xxxyyyyzzzz')
     },
     getBalance: mockGetBalance,
     getNonce: jest.fn().mockImplementation(() => 0),
-    estimateGas: jest.fn().mockImplementation(() => ({ GasUsed: 122 }))
+    estimateGas: jest
+      .fn()
+      .mockImplementation(() => new FilecoinNumber('122', 'attofil')),
+    sendMessage: jest.fn().mockImplementation(() => 'QmZCid!')
   }
 })
+
+const mockWalletProviderInstance = new WalletProvider()
 
 const presets = {
   preOnboard: cloneDeep(initialState),
@@ -67,7 +81,7 @@ const composeWalletProviderState = (initialWalletProviderState, preset) => {
       return Object.freeze({
         ...initialWalletProviderState,
         walletType: IMPORT_MNEMONIC,
-        walletProvider: new WalletProvider()
+        walletProvider: mockWalletProviderInstance
       })
     }
     default:
@@ -158,5 +172,5 @@ export default (statePreset = 'preOnboard', options = {}) => {
     )
   }
 
-  return { Tree, store }
+  return { Tree, store, walletProvider: mockWalletProviderInstance }
 }
