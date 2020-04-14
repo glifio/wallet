@@ -17,6 +17,7 @@ import {
   Text,
   Num,
   Button,
+  BaseButton,
   ButtonClose,
   FloatingContainer,
   Title as Total,
@@ -342,13 +343,16 @@ const Send = ({ close }) => {
               setEstimatedGas={setEstimatedGasUsed}
               value={value.toAttoFil()}
             />
-            <Box
+            <BaseButton
               color='core.primary'
               bg='core.transparent'
+              border={0}
               type='button'
               role='button'
               onClick={() => setCustomizingGas(!customizingGas)}
               css={`
+                padding: 0;
+                outline: none;
                 &:hover {
                   cursor: pointer;
                 }
@@ -391,7 +395,7 @@ const Send = ({ close }) => {
                   {customizingGas ? 'Close' : 'Customize'}
                 </Text>
               </Box>
-            </Box>
+            </BaseButton>
             <Box
               display='flex'
               flexDirection='row'
