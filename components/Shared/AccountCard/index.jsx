@@ -70,12 +70,11 @@ const AccountCard = forwardRef(
             <AccountAddress fontWeight={1} fontSize={5} margin={0}>
               {truncate(address)}
             </AccountAddress>
-            <CopyAddress
-              display='flex'
-              alignItems='center'
-              onClick={() => copyToClipboard(address)}
-            >
-              <ButtonCopyAccountAddress border={0} />
+            <CopyAddress display='flex' alignItems='center'>
+              <ButtonCopyAccountAddress
+                border={0}
+                onClick={() => copyToClipboard(address)}
+              />
               <LabelCopy mt={0}>Copy</LabelCopy>
             </CopyAddress>
           </Box>
