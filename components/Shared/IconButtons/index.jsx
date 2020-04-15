@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
-import { func, object } from 'prop-types'
+import { object } from 'prop-types'
 import { layout, space, border, flexbox } from 'styled-system'
 import { IconClose, IconCopyAccountAddress } from '../Icons'
 
@@ -20,14 +20,13 @@ const IconButtonBase = styled.button`
   ${flexbox}
 `
 
-const IconButton = forwardRef(({ onClick, Icon, ...props }, ref) => (
-  <IconButtonBase display='inline-block' onClick={onClick} ref={ref} {...props}>
+const IconButton = forwardRef(({ Icon, ...props }, ref) => (
+  <IconButtonBase display='inline-block' ref={ref} {...props}>
     <Icon />
   </IconButtonBase>
 ))
 
 IconButton.propTypes = {
-  onClick: func.isRequired,
   Icon: object
 }
 

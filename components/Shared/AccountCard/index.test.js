@@ -1,6 +1,8 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 import AccountCard from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
+jest.mock('../../../utils/copyToClipboard')
+import copyToClipboard from '../../../utils/copyToClipboard'
 
 describe('AccountCard', () => {
   afterEach(cleanup)
@@ -14,6 +16,26 @@ describe('AccountCard', () => {
           alias='Prime'
           address={'t0123456789'}
           walletType={'LEDGER'}
+          onShowOnLedger={() => {}}
+          ledgerBusy={false}
+          mb={2}
+        />
+      </Tree>
+    )
+
+    expect(container.firstChild).toMatchSnapshot()
+  })
+
+  test('renders the card CREATE_MNEMONIC', () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+    const { container } = render(
+      <Tree>
+        <AccountCard
+          onAccountSwitch={() => {}}
+          color='purple'
+          alias='Prime'
+          address={'t0123456789'}
+          walletType={'CREATE_MNEMONIC'}
           onShowOnLedger={() => {}}
           ledgerBusy={false}
           mb={2}
@@ -95,32 +117,30 @@ describe('AccountCard', () => {
     expect(mockOnShowOnLedger).toHaveBeenCalled()
   })
 
-  // TODO fix this test
-  // test('clicking "Copy" calls copy', () => {
-  //   const { Tree } = composeMockAppTree('postOnboard')
-  //   const mockCopyToClipboard = jest.fn(() => Promise.resolve())
+  test('clicking "Copy" calls copy', async () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+    const mockCopyToClipboard = jest.fn(() => Promise.resolve('yo'))
+    copyToClipboard.mockImplementationOnce(mockCopyToClipboard)
 
-  //   console.log('copyToClipboard', copyToClipboard)
-  //   copyToClipboard.mockImplementationOnce(mockCopyToClipboard)
-  //   const { getByText } = render(
-  //     <Tree>
-  //       <AccountCard
-  //         onAccountSwitch={() => {}}
-  //         color='purple'
-  //         alias='Prime'
-  //         address='t0123'
-  //         walletType='LEDGER'
-  //         onShowOnLedger={() => {}}
-  //         ledgerBusy={false}
-  //         mb={2}
-  //       />
-  //     </Tree>
-  //   )
+    const { getByText } = render(
+      <Tree>
+        <AccountCard
+          onAccountSwitch={() => {}}
+          color='purple'
+          alias='Prime'
+          address='t0123'
+          walletType='LEDGER'
+          onShowOnLedger={() => {}}
+          ledgerBusy={false}
+          mb={2}
+        />
+      </Tree>
+    )
 
-  //   act(() => {
-  //     fireEvent.click(getByText('Copy'))
-  //   })
+    act(() => {
+      fireEvent.click(getByText('Copy'))
+    })
 
-  //   expect(mockCopyToClipboard).toHaveBeenCalled()
-  // })
+    expect(mockCopyToClipboard).toHaveBeenCalled()
+  })
 })
