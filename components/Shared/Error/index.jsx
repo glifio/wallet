@@ -7,12 +7,14 @@ import Glyph from '../Glyph'
 import OnboardCard from '../Card/OnboardCard'
 import { StyledATag } from '../Link'
 import { Text, Title } from '../Typography'
+import useReset from '../../../utils/useReset'
 
 const ErrorView = ({ description, linkhref, linkDisplay, title }) => {
   const router = useRouter()
+  const resetState = useReset()
   const sendHome = () => {
-    const params = new URLSearchParams(router.query)
-    router.replace(`/onboard?${params.toString()}`)
+    resetState()
+    router.replace(`/onboard`)
   }
   return (
     <Box

@@ -1,12 +1,32 @@
 import { forwardRef } from 'react'
-import { func, string, bool } from 'prop-types'
+import { func, string, bool, number } from 'prop-types'
 import styled from 'styled-components'
 import BaseInput from './BaseInput'
 import InputWrapper from './InputWrapper'
 import Box from '../Box'
 import { Label } from '../Typography'
 
-export const RawNumberInput = styled(BaseInput).attrs(props => ({ ...props }))`
+export const DenomTag = styled(Box).attrs(props => ({
+  display: 'flex',
+  height: '100%',
+  px: 3,
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontSize: 3,
+  borderColor: 'input.border',
+  minWidth: 7,
+  color: 'core.primary',
+  backgroundColor: 'input.background.base',
+  ...props
+}))`
+  text-align: center;
+  position: relative;
+`
+
+export const RawNumberInput = styled(BaseInput).attrs(props => ({
+  borderLeft: 0,
+  ...props
+}))`
   ::-webkit-outer-spin-button,
   ::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -18,27 +38,52 @@ export const RawNumberInput = styled(BaseInput).attrs(props => ({ ...props }))`
 
 export const NumberInput = forwardRef(
   (
-    { onChange, value, placeholder, label, error, setError, valid, ...props },
+    {
+      denom,
+      onChange,
+      value,
+      placeholder,
+      label,
+      error,
+      setError,
+      valid,
+      fontSize,
+      ...props
+    },
     ref
   ) => {
     return (
       <InputWrapper ref={ref} {...props}>
-        <Box display='flex' alignItems='center'>
+        <Box position='relative' display='flex' alignItems='center'>
           {label && (
             <Box display='inline-block' px={3} minWidth={9} textAlign='center'>
               <Label>{label}</Label>
             </Box>
           )}
-          <RawNumberInput
-            type='number'
-            onChange={onChange}
-            value={value}
-            valid={valid}
-            error={error}
-            setError={setError}
-            placeholder={placeholder}
-            {...props}
-          />
+          <Box position='relative' display='flex' width='100%'>
+            <RawNumberInput
+              type='number'
+              onChange={onChange}
+              value={value}
+              valid={valid}
+              error={error}
+              setError={setError}
+              placeholder={placeholder}
+              fontSize={fontSize}
+              {...props}
+            />
+            {denom && (
+              <DenomTag
+                height='64px'
+                css={`
+                  top: 0px;
+                  left: 0px;
+                `}
+              >
+                {denom}
+              </DenomTag>
+            )}
+          </Box>
         </Box>
       </InputWrapper>
     )
@@ -52,12 +97,15 @@ NumberInput.propTypes = {
   placeholder: string,
   disabled: bool,
   error: string,
-  valid: bool
+  valid: bool,
+  fontSize: number,
+  denom: string
 }
 
 NumberInput.defaultProps = {
   value: '',
   disabled: false,
   onChange: () => {},
-  label: ''
+  label: '',
+  fontSize: 2
 }

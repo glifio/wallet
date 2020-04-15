@@ -1,17 +1,24 @@
 import styled from 'styled-components'
-import { space, color, layout, border, flexbox } from 'styled-system'
+import {
+  space,
+  color,
+  layout,
+  border,
+  flexbox,
+  typography
+} from 'styled-system'
 
 export default styled.input.attrs(props => ({
   display: 'inline-block',
   height: props.height || 7,
   width: props.width || '100%',
   border: 0,
-  borderLeft: 1,
   borderColor: 'input.border',
   borderTopRightRadius: 1,
   borderBottomRightRadius: 1,
   ...props
 }))`
+  min-width: 0;
   flex-grow: 1;
   padding-left: ${props => props.theme.space[2]}px;
   padding-right: ${props => props.theme.space[2]}px;
@@ -40,7 +47,7 @@ export default styled.input.attrs(props => ({
       return props.theme.colors.input.background.active
     }};
   }
-
+  ${typography}
   ${color}
   ${space}
   ${layout}
