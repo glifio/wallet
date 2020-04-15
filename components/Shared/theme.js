@@ -104,7 +104,8 @@ const colors = {
       base: baseColors.blue.light,
       active: baseColors.blue.mid,
       valid: baseColors.green.light,
-      invalid: baseColors.red.light
+      invalid: baseColors.red.light,
+      disabled: baseColors.mono.transparent
     },
     border: core.silver
   },
