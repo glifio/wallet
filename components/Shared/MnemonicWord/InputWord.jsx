@@ -96,6 +96,7 @@ const MnemonicWord = ({
         onChange={e => setWord(e.target.value)}
         completed={completed}
         value={word}
+        importSeedError={importSeedError}
       />
     </StyledWrapper>
   )
