@@ -15,13 +15,14 @@ import contentProps from './contentProps'
 
 const setBackgroundColor = ({ completed, empty, valid, importSeedError }) => {
   if (importSeedError && (empty || !valid)) return 'status.fail.background'
-  if (!importSeedError && completed) return 'core.primary'
+  if (!importSeedError && completed) return 'core.secondary'
   if (!importSeedError && empty) return 'core.white'
-  return 'core.white'
+  return 'core.secondary'
 }
 
-const setInputColor = props => {
-  if (props.completed) return 'core.white'
+const setInputColor = ({ completed, importSeedError }) => {
+  if (importSeedError) return 'core.nearblack'
+  if (!importSeedError && completed) return 'core.primary'
   return 'core.primary'
 }
 
@@ -95,6 +96,7 @@ const MnemonicWord = ({
         onChange={e => setWord(e.target.value)}
         completed={completed}
         value={word}
+        importSeedError={importSeedError}
       />
     </StyledWrapper>
   )
