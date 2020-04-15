@@ -36,16 +36,6 @@ const AccountError = ({ errorMsg, onTryAgain, ...props }) => (
         color='status.fail.foreground'
         p={2}
       />
-      <Button
-        title='Cancel'
-        onClick=''
-        height='100%'
-        backgroundColor='core.transparent'
-        borderColor='status.fail.foreground'
-        color='status.fail.foreground'
-        p={2}
-        ml={3}
-      />
     </Box>
   </Box>
 )
