@@ -78,7 +78,7 @@ export default () => {
                 onClick={() => onChoose(IMPORT_MNEMONIC)}
                 glyphAcronym='Sp'
                 title='Import Seed Phrase'
-                description='Use your existing seed phrase'
+                description='Use your existing seed phrase from Glif or another wallet'
                 m={2}
               />
               <ImportWallet
