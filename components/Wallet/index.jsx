@@ -55,7 +55,13 @@ export default () => {
   return (
     <>
       <MsgConfirmer />
-      <Wrapper>
+      <Wrapper
+        css={`
+          /* Temp implementation to simplistically handle large scale displays. This should be removed and a more dynamic solution introduced  */
+          max-width: 1440px;
+          margin: 0 auto;
+        `}
+      >
         <Sidebar height='100vh'>
           <NetworkSwitcherGlyph />
           {hasLedgerError({ ...ledger, otherError: uncaughtError }) &&
