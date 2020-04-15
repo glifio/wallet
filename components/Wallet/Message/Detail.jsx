@@ -171,6 +171,14 @@ const MessageDetail = ({ address, close, message }) => {
             </Num>
           </Box>
         </Box>
+        <Box display='flex' flexWrap='wrap' mt={6}>
+          <Label color='core.silver' textAlign='left' m={1}>
+            Hash: T184h98haohaoih849h848hf4hf90301h8r183hz
+          </Label>
+          <Label color='core.primary' textAlign='left' m={1}>
+            View
+          </Label>
+        </Box>
       </Box>
     </MessageDetailCard>
   )
