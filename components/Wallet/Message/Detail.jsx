@@ -11,6 +11,8 @@ import {
   Glyph,
   Text,
   Label,
+  Title as Total,
+  Num,
   Title,
   IconMessageStatus,
   IconPending
@@ -133,14 +135,17 @@ const MessageDetail = ({ address, close, message }) => {
         <Box
           display='flex'
           flexDirection='row'
-          alignItems='center'
+          alignItems='flex-start'
           justifyContent='space-between'
-          mt={6}
+          mt={5}
           mx={1}
         >
-          <Label>Total</Label>
-          <Box display='flex' flexDirection='column'>
-            <Title
+          <Total fontSize={4} alignSelf='flex-start'>
+            Total
+          </Total>
+          <Box display='flex' flexDirection='column' textAlign='right' pl={4}>
+            <Num
+              size='l'
               css={`
                 word-wrap: break-word;
               `}
@@ -150,8 +155,8 @@ const MessageDetail = ({ address, close, message }) => {
                 .plus(new FilecoinNumber(message.gas_used, 'attofil'))
                 .toString()}{' '}
               FIL
-            </Title>
-            <Title color='core.darkgray' textAlign='right'>
+            </Num>
+            <Num size='m' color='core.darkgray'>
               {!converterError &&
                 (converter
                   ? `${makeFriendlyBalance(
@@ -163,7 +168,7 @@ const MessageDetail = ({ address, close, message }) => {
                       2
                     )} USD`
                   : 'Loading USD...')}
-            </Title>
+            </Num>
           </Box>
         </Box>
       </Box>
