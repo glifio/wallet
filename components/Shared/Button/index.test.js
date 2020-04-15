@@ -15,7 +15,7 @@ describe('Button', () => {
     expect(container.firstChild).toMatchSnapshot()
   })
 
-  test('renders the box with the right attributes', () => {
+  test('renders the button with the right attributes', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     const { container } = render(
       <Tree>
@@ -41,12 +41,12 @@ describe('Button', () => {
     )
   })
 
-  test('renders the box with the right atributes', () => {
+  test('clicking "Next" calls onClick', () => {
     const { Tree } = composeMockAppTree('postOnboard')
-    const mockOnAccountSwitch = jest.fn()
+    const mockOnClick = jest.fn()
     const { getByText } = render(
       <Tree>
-        <Button title='Next' disabled={false} onClick={mockOnAccountSwitch} />
+        <Button title='Next' disabled={false} onClick={mockOnClick} />
       </Tree>
     )
 
@@ -54,7 +54,7 @@ describe('Button', () => {
       fireEvent.click(getByText('Next'))
     })
 
-    expect(mockOnAccountSwitch).toHaveBeenCalled()
+    expect(mockOnClick).toHaveBeenCalled()
   })
 
   test('renders a disabled button with disabled color', () => {
