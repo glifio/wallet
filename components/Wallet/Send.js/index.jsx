@@ -109,10 +109,10 @@ const Send = ({ close }) => {
       const message = new Message({
         to: wallet.address,
         from: wallet.address,
-        value,
+        value: new BigNumber(value),
         method: 0,
-        gasPrice: gp.toAttoFil(),
-        gasLimit: gasLimit.toAttoFil(),
+        gasPrice: new BigNumber(gp.toAttoFil()),
+        gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
         nonce: 0,
         params: ''
       })
@@ -154,10 +154,10 @@ const Send = ({ close }) => {
       const message = new Message({
         to: toAddress,
         from: wallet.address,
-        value: new BigNumber(value.toAttoFil()).toFixed(0, 1),
+        value: new BigNumber(new BigNumber(value.toAttoFil()).toFixed(0, 1)),
         method: 0,
         gasPrice: new BigNumber(gasPrice.toAttoFil()),
-        gasLimit: Number(gasLimit.toAttoFil()),
+        gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
         nonce,
         params: ''
       })

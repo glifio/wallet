@@ -48,9 +48,9 @@ describe('Send Flow', () => {
       expect(walletProvider.getNonce).toHaveBeenCalledWith(address)
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
       const message = walletProvider.wallet.sign.mock.calls[0][1].encode()
-      expect(message.GasPrice).toBe('1')
-      expect(message.GasLimit).toBe('1000')
-      expect(message.Value).toBe('10000000000000000')
+      expect(message.GasPrice.toString()).toBe('1')
+      expect(message.GasLimit).toBe(1000)
+      expect(message.Value.toString()).toBe('10000000000000000')
       expect(message.To).toBe(address)
 
       expect(store.getState().messages.pending.length).toBe(1)
@@ -218,7 +218,7 @@ describe('Send Flow', () => {
 
       expect(walletProvider.getNonce).toHaveBeenCalled()
       const message = walletProvider.wallet.sign.mock.calls[0][1].encode()
-      expect(message.GasPrice).toBe('2')
+      expect(message.GasPrice.toString()).toBe('2')
       expect(store.getState().messages.pending.length).toBe(1)
     })
 
@@ -264,7 +264,7 @@ describe('Send Flow', () => {
       })
       expect(walletProvider.getNonce).toHaveBeenCalled()
       const message = walletProvider.wallet.sign.mock.calls[0][1].encode()
-      expect(message.GasLimit).toBe('2000')
+      expect(message.GasLimit).toBe(2000)
       expect(store.getState().messages.pending.length).toBe(1)
     })
 
