@@ -17,7 +17,7 @@ npm run dev
 
 If you want to develop using the Ledger integration, follow these steps to get the Ledger app onto your device: **_(Note: only use Ledger devices meant for testing purposes)_**
 
-1. Download the shell script for installing the app [here](https://57-227919429-gh.circle-artifacts.com/0/home/test/project/src/ledger/pkg/zxtool.sh).
+1. Download the latest `zxtool.sh` script for installing the app [here](https://github.com/ZondaX/ledger-filecoin/releases).
 2. Run the file. `zxtool.sh load`
 
 ### Versioning

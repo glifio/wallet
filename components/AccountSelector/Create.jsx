@@ -37,7 +37,8 @@ const LoadingCard = () => (
 
 const Create = ({ onClick, loading, nextAccountIndex, errorMsg }) => {
   if (loading) return <LoadingCard />
-  if (errorMsg) return <AccountError onTryAgain={onClick} errorMsg={errorMsg} />
+  if (errorMsg)
+    return <AccountError onTryAgain={onClick} errorMsg={errorMsg} m={2} />
 
   return (
     <ButtonCard

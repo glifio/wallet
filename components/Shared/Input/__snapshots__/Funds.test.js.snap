@@ -31,7 +31,7 @@ exports[`Funds input changing values it calls the value change callback when the
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -58,7 +58,6 @@ exports[`Funds input changing values it calls the value change callback when the
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -103,7 +102,6 @@ exports[`Funds input changing values it calls the value change callback when the
   position: relative;
   border-top: 1px solid;
   border-color: #999999;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -147,6 +145,7 @@ exports[`Funds input changing values it calls the value change callback when the
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
 }
 
 .c6 {
@@ -173,6 +172,7 @@ exports[`Funds input changing values it calls the value change callback when the
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
   border-left: 0;
+  background: #E4EBFC;
   -moz-appearance: textfield;
 }
 
@@ -319,7 +319,7 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -346,7 +346,6 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -391,7 +390,6 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   position: relative;
   border-top: 1px solid;
   border-color: #999999;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -435,6 +433,7 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
 }
 
 .c6 {
@@ -461,6 +460,7 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
   border-left: 0;
+  background: #E4EBFC;
   -moz-appearance: textfield;
 }
 
@@ -607,7 +607,7 @@ exports[`Funds input it renders correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -634,7 +634,6 @@ exports[`Funds input it renders correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -679,7 +678,6 @@ exports[`Funds input it renders correctly 1`] = `
   position: relative;
   border-top: 1px solid;
   border-color: #999999;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -723,6 +721,7 @@ exports[`Funds input it renders correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
 }
 
 .c6 {
@@ -749,6 +748,7 @@ exports[`Funds input it renders correctly 1`] = `
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
   border-left: 0;
+  background: #D2F5ED;
   -moz-appearance: textfield;
 }
 
@@ -895,7 +895,7 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 160px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -922,7 +922,6 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -967,7 +966,6 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   position: relative;
   border-top: 1px solid;
   border-color: #999999;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1011,6 +1009,7 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
 }
 
 .c6 {
@@ -1037,6 +1036,7 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
   border-left: 0;
+  background: transparent;
   -moz-appearance: textfield;
 }
 
@@ -1185,7 +1185,7 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 160px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1212,7 +1212,6 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1257,7 +1256,6 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   position: relative;
   border-top: 1px solid;
   border-color: #999999;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1301,6 +1299,7 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
 }
 
 .c6 {
@@ -1327,6 +1326,7 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
   border-left: 0;
+  background: #D2F5ED;
   -moz-appearance: textfield;
 }
 
@@ -1475,7 +1475,7 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 160px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1502,7 +1502,6 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1547,7 +1546,6 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   position: relative;
   border-top: 1px solid;
   border-color: #999999;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1591,6 +1589,7 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
 }
 
 .c6 {
@@ -1617,6 +1616,7 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
   border-left: 0;
+  background: transparent;
   -moz-appearance: textfield;
 }
 
@@ -1766,7 +1766,7 @@ exports[`Funds input it renders error states properly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1793,7 +1793,6 @@ exports[`Funds input it renders error states properly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1838,7 +1837,6 @@ exports[`Funds input it renders error states properly 1`] = `
   position: relative;
   border-top: 1px solid;
   border-color: #999999;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1882,6 +1880,7 @@ exports[`Funds input it renders error states properly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
 }
 
 .c6 {
@@ -1908,6 +1907,7 @@ exports[`Funds input it renders error states properly 1`] = `
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
   border-left: 0;
+  background: #E4EBFC;
   -moz-appearance: textfield;
 }
 
@@ -2054,7 +2054,7 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2081,7 +2081,6 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2126,7 +2125,6 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   position: relative;
   border-top: 1px solid;
   border-color: #999999;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2170,6 +2168,7 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
 }
 
 .c6 {
@@ -2196,6 +2195,7 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
   border-left: 0;
+  background: #E4EBFC;
   -moz-appearance: textfield;
 }
 

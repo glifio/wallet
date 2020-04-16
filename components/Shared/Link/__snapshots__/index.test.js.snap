@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StyledATag renders the StyledATag 1`] = `
+.c0 {
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+
+<a
+  class="c0"
+  color="core.white"
+  font-size="3"
+  href="https://openworklabs.com"
+  rel="noopener"
+  target="_blank"
+/>
+`;
