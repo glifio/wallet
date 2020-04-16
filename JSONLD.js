@@ -7,14 +7,14 @@ export default {
   sameAs: ['https://twitter.com/GLIFio'],
   owns: [
     {
-      '@type': 'Product',
+      '@type': 'WebApplication',
       name: 'Glif Wallet',
       description:
         'A web wallet to manage your Filecoin on your Ledger device.',
       category: 'Blockchain software'
     },
     {
-      '@type': 'Product',
+      '@type': 'WebApplication',
       name: 'Glif Nodes',
       description: 'Private and public gateways to the Filecoin network.',
       category: 'Blockchain software'
@@ -22,7 +22,7 @@ export default {
   ],
   knowsAbout: [
     {
-      '@type': 'Product',
+      '@type': 'SoftwareApplication',
       name: 'Filecoin',
       url: 'https://filecoin.io',
       category: 'Blockchain network'
