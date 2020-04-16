@@ -317,23 +317,6 @@ exports[`WalletView it renders correctly 1`] = `
   height: 24;
 }
 
-.c15 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  border: 0;
-}
-
-.c15:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
 .c11 {
   font-size: 3rem;
   font-weight: 700;
@@ -383,13 +366,15 @@ exports[`WalletView it renders correctly 1`] = `
   font-family: RT-Alias-Grotesk;
 }
 
-.c17 {
+.c18 {
+  color: #E0D7FE;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
   margin-top: 0;
+  margin-left: 4px;
 }
 
 .c24 {
@@ -427,15 +412,18 @@ exports[`WalletView it renders correctly 1`] = `
   margin-top: 16px;
 }
 
-.c19 {
-  -webkit-transition: 0.18s ease-in;
-  transition: 0.18s ease-in;
-  opacity: 0;
-}
-
-.c14 {
-  min-width: 0;
-  box-sizing: border-box;
+.c15 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 4px;
+  padding: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -444,9 +432,37 @@ exports[`WalletView it renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-width: 1px;
+  border-radius: 4px;
+  opacity: 1 !important;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  outline: none;
 }
 
-.c14:hover .c18 {
+.c15:hover {
+  opacity: 0.8;
+}
+
+.c17 {
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+}
+
+.c14:hover .c17 {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c19 {
+  -webkit-transition: 0.18s ease-in;
+  transition: 0.18s ease-in;
+  opacity: 0;
+}
+
+.c14:hover .c19 {
   opacity: 1;
 }
 
@@ -718,47 +734,44 @@ exports[`WalletView it renders correctly 1`] = `
           >
             t1z22 ... 6wgi
           </h2>
-          <div
-            class="c14"
+          <button
+            class="c14 c15"
             display="flex"
+            font-size="3"
           >
-            <button
-              class="c15"
-              display="inline-block"
+            <svg
+              class="c16 c17"
+              fill="none"
+              height="24"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                class="c16"
-                fill="none"
-                height="24"
-                viewBox="0 0 24 24"
-                width="24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  fill="#1A0066"
-                  height="12"
-                  width="12"
-                  x="8"
-                  y="4"
-                />
-                <rect
-                  fill="#E0D7FE"
-                  height="12"
-                  width="12"
-                  x="4"
-                  y="8"
-                />
-              </svg>
-            </button>
+              <rect
+                fill="#1A0066"
+                height="12"
+                width="12"
+                x="8"
+                y="4"
+              />
+              <rect
+                fill="#E0D7FE"
+                height="12"
+                width="12"
+                x="4"
+                y="8"
+              />
+            </svg>
             <h4
-              class="c17 c18 c19"
+              class="c18 c19"
+              color="core.secondary"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
             >
               Copy
             </h4>
-          </div>
+          </button>
         </div>
       </div>
       <div
@@ -1263,40 +1276,6 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
   height: 24;
 }
 
-.c15 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  border: 0;
-}
-
-.c15:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
-.c43 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: 8px;
-}
-
-.c43:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
 .c11 {
   font-size: 3rem;
   font-weight: 700;
@@ -1365,13 +1344,15 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
   margin-right: 4px;
 }
 
-.c17 {
+.c18 {
+  color: #E0D7FE;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
   margin-top: 0;
+  margin-left: 4px;
 }
 
 .c24 {
@@ -1400,15 +1381,18 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
   margin: 0;
 }
 
-.c19 {
-  -webkit-transition: 0.18s ease-in;
-  transition: 0.18s ease-in;
-  opacity: 0;
-}
-
-.c14 {
-  min-width: 0;
-  box-sizing: border-box;
+.c15 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 4px;
+  padding: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1417,9 +1401,37 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-width: 1px;
+  border-radius: 4px;
+  opacity: 1 !important;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  outline: none;
 }
 
-.c14:hover .c18 {
+.c15:hover {
+  opacity: 0.8;
+}
+
+.c17 {
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+}
+
+.c14:hover .c17 {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c19 {
+  -webkit-transition: 0.18s ease-in;
+  transition: 0.18s ease-in;
+  opacity: 0;
+}
+
+.c14:hover .c19 {
   opacity: 1;
 }
 
@@ -1556,6 +1568,23 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
 .c4:hover {
   cursor: pointer;
   background: #C4C4C4;
+}
+
+.c43 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.c43:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 .c0 {
@@ -1733,47 +1762,44 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
           >
             t1z22 ... 6wgi
           </h2>
-          <div
-            class="c14"
+          <button
+            class="c14 c15"
             display="flex"
+            font-size="3"
           >
-            <button
-              class="c15"
-              display="inline-block"
+            <svg
+              class="c16 c17"
+              fill="none"
+              height="24"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                class="c16"
-                fill="none"
-                height="24"
-                viewBox="0 0 24 24"
-                width="24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  fill="#1A0066"
-                  height="12"
-                  width="12"
-                  x="8"
-                  y="4"
-                />
-                <rect
-                  fill="#E0D7FE"
-                  height="12"
-                  width="12"
-                  x="4"
-                  y="8"
-                />
-              </svg>
-            </button>
+              <rect
+                fill="#1A0066"
+                height="12"
+                width="12"
+                x="8"
+                y="4"
+              />
+              <rect
+                fill="#E0D7FE"
+                height="12"
+                width="12"
+                x="4"
+                y="8"
+              />
+            </svg>
             <h4
-              class="c17 c18 c19"
+              class="c18 c19"
+              color="core.secondary"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
             >
               Copy
             </h4>
-          </div>
+          </button>
         </div>
       </div>
       <div
@@ -2610,39 +2636,6 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   height: 24;
 }
 
-.c15 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  border: 0;
-}
-
-.c15:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
-.c48 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-}
-
-.c48:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
 .c11 {
   font-size: 3rem;
   font-weight: 700;
@@ -2749,13 +2742,15 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin-bottom: 0;
 }
 
-.c17 {
+.c18 {
+  color: #E0D7FE;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
   margin-top: 0;
+  margin-left: 4px;
 }
 
 .c24 {
@@ -2793,15 +2788,18 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin: 0;
 }
 
-.c19 {
-  -webkit-transition: 0.18s ease-in;
-  transition: 0.18s ease-in;
-  opacity: 0;
-}
-
-.c14 {
-  min-width: 0;
-  box-sizing: border-box;
+.c15 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 4px;
+  padding: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2810,9 +2808,37 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-width: 1px;
+  border-radius: 4px;
+  opacity: 1 !important;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  outline: none;
 }
 
-.c14:hover .c18 {
+.c15:hover {
+  opacity: 0.8;
+}
+
+.c17 {
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+}
+
+.c14:hover .c17 {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c19 {
+  -webkit-transition: 0.18s ease-in;
+  transition: 0.18s ease-in;
+  opacity: 0;
+}
+
+.c14:hover .c19 {
   opacity: 1;
 }
 
@@ -3126,6 +3152,22 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   background: #C4C4C4;
 }
 
+.c48 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.c48:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3387,47 +3429,44 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
           >
             t1z22 ... 6wgi
           </h2>
-          <div
-            class="c14"
+          <button
+            class="c14 c15"
             display="flex"
+            font-size="3"
           >
-            <button
-              class="c15"
-              display="inline-block"
+            <svg
+              class="c16 c17"
+              fill="none"
+              height="24"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                class="c16"
-                fill="none"
-                height="24"
-                viewBox="0 0 24 24"
-                width="24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  fill="#1A0066"
-                  height="12"
-                  width="12"
-                  x="8"
-                  y="4"
-                />
-                <rect
-                  fill="#E0D7FE"
-                  height="12"
-                  width="12"
-                  x="4"
-                  y="8"
-                />
-              </svg>
-            </button>
+              <rect
+                fill="#1A0066"
+                height="12"
+                width="12"
+                x="8"
+                y="4"
+              />
+              <rect
+                fill="#E0D7FE"
+                height="12"
+                width="12"
+                x="4"
+                y="8"
+              />
+            </svg>
             <h4
-              class="c17 c18 c19"
+              class="c18 c19"
+              color="core.secondary"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
             >
               Copy
             </h4>
-          </div>
+          </button>
         </div>
       </div>
       <div

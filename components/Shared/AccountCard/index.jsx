@@ -23,6 +23,7 @@ const CopyAddress = styled(BaseButton)`
   border: 0;
   background: transparent;
   padding: 0;
+  outline: none;
 `
 
 const StyledIconCopyAccountAddress = styled(IconCopyAccountAddress)`

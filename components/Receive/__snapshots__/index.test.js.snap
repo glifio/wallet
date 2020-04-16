@@ -93,23 +93,6 @@ exports[`Receive it renders correctly 1`] = `
   height: 24;
 }
 
-.c6 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: 8px;
-}
-
-.c6:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
 .c5 {
   color: #5E26FF;
   font-size: 1.25rem;
@@ -187,6 +170,23 @@ exports[`Receive it renders correctly 1`] = `
 
 .c14:hover {
   cursor: pointer;
+}
+
+.c6 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.c6:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 .c0 {
@@ -415,23 +415,6 @@ exports[`Receive it reveals the address when the user clicks reveal 1`] = `
   height: 24;
 }
 
-.c6 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: 8px;
-}
-
-.c6:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
 .c5 {
   color: #5E26FF;
   font-size: 1.25rem;
@@ -502,6 +485,23 @@ exports[`Receive it reveals the address when the user clicks reveal 1`] = `
 
 .c12:hover {
   cursor: pointer;
+}
+
+.c6 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.c6:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 .c0 {
