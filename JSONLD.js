@@ -4,7 +4,6 @@ export default {
   name: 'Glif',
   description: 'An interoperable set of tools on the Filecoin network.',
   url: 'https://glif.io',
-  sameAs: ['https://twitter.com/GLIFio'],
   owns: [
     {
       '@type': 'WebApplication',
