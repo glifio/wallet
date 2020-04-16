@@ -72,6 +72,7 @@ export default () => {
                 ...ledger,
                 otherError: uncaughtError
               })}
+              mb={2}
             />
           ) : (
             <AccountCard

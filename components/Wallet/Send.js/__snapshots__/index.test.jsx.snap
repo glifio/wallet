@@ -159,7 +159,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -685,7 +685,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   -ms-flex-positive: 2;
   flex-grow: 2;
   max-width: 560px;
-  min-width: 320px;
+  min-width: 300px;
 }
 
 .c1 {
@@ -1313,7 +1313,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1850,7 +1850,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   -ms-flex-positive: 2;
   flex-grow: 2;
   max-width: 560px;
-  min-width: 320px;
+  min-width: 300px;
 }
 
 .c1 {
@@ -2486,7 +2486,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3023,7 +3023,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   -ms-flex-positive: 2;
   flex-grow: 2;
   max-width: 560px;
-  min-width: 320px;
+  min-width: 300px;
 }
 
 .c1 {
@@ -3659,7 +3659,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4394,7 +4394,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   -ms-flex-positive: 2;
   flex-grow: 2;
   max-width: 560px;
-  min-width: 320px;
+  min-width: 300px;
 }
 
 .c31 {
@@ -4414,7 +4414,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   -ms-flex-positive: 2;
   flex-grow: 2;
   max-width: 560px;
-  min-width: 320px;
+  min-width: 300px;
   margin-top: 8px;
 }
 
