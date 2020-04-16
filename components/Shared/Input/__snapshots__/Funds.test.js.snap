@@ -31,7 +31,7 @@ exports[`Funds input changing values it calls the value change callback when the
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -319,7 +319,7 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -607,7 +607,7 @@ exports[`Funds input it renders correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -895,7 +895,7 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1185,7 +1185,7 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1475,7 +1475,7 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1766,7 +1766,7 @@ exports[`Funds input it renders error states properly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2054,7 +2054,7 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;

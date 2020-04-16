@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box renders the box 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+<div
+  class="c0"
+/>
+`;

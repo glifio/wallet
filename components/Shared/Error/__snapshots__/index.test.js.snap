@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WalletDown it renders the error page 1`] = `
+exports[`Error renders the error 1`] = `
 .c0 {
   min-width: 0;
   box-sizing: border-box;
@@ -180,7 +180,7 @@ exports[`WalletDown it renders the error page 1`] = `
           font-size="4"
           font-weight="400"
         >
-          Glif is currently down
+          Ledger only supports Chrome
         </h2>
         <p
           class="c7"
@@ -188,7 +188,7 @@ exports[`WalletDown it renders the error page 1`] = `
           font-size="3"
           font-weight="400"
         >
-          We're aware of the outage and will be back up shortly.
+          Please install Google Chrome to continue using your Ledger device, or choose an alternative setup option
         </p>
       </div>
       <div
@@ -198,11 +198,11 @@ exports[`WalletDown it renders the error page 1`] = `
           class="c8"
           color="core.white"
           font-size="3"
-          href="https://twitter.com/"
+          href="https://www.google.com/chrome"
           rel="noopener"
           target="_blank"
         >
-          Follow @glifwallet for updates.
+          Install Google Chrome.
         </a>
       </div>
     </div>
