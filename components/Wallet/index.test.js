@@ -11,6 +11,7 @@ const spy = jest.spyOn(
   require('./Message/useFilscoutTransactionHistory.js'),
   'default'
 )
+
 const mockTxHistory = {
   showMore: jest.fn(),
   pending: [],
