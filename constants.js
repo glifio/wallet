@@ -9,3 +9,4 @@ export const IMPORT_SINGLE_KEY = 'IMPORT_SINGLE_KEY'
 
 /* API ENDPOINTS */
 export const FILSCAN = 'https://forceup.io:8700/v0/filscan'
+export const FILSCOUT = 'https://filscoutv2api.ipfsunion.cn'

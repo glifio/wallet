@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useReducer } from 'react'
 import cloneDeep from 'lodash.clonedeep'
+import axios from 'axios'
 
 import WalletProvider from '@openworklabs/filecoin-wallet-provider'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
@@ -24,6 +25,16 @@ import createPath from '../utils/createPath'
 import { IMPORT_MNEMONIC } from '../constants'
 
 const useRouter = jest.spyOn(require('next/router'), 'useRouter')
+const unix = jest.spyOn(require('dayjs'), 'unix')
+
+unix.mockImplementation(() => {
+  return {
+    format: fmt => {
+      if (fmt === 'MMM DD') return 'Jan 12'
+      if (fmt === 'hh:mmA') return '2:30PM'
+    }
+  }
+})
 
 const mockRouter = jest.fn(() => {})
 useRouter.mockImplementation(() => ({
