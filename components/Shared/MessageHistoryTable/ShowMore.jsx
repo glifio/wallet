@@ -2,7 +2,7 @@ import React from 'react'
 
 import MessageHistoryRowContainer from './MessageHistoryRowContainer'
 import { Text } from '../Typography'
-import useTransactionHistory from '../../Wallet/Message/useTransactionHistory'
+import useTransactionHistory from '../../Wallet/Message/useFilscanTransactionHistory'
 
 export default () => {
   const { paginating, showMore, confirmed, total } = useTransactionHistory()

@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import MessageDetail from './Detail'
 import { MessageHistoryTable } from '../../Shared'
 import useWallet from '../../../WalletProvider/useWallet'
-import useTransactionHistory from './useTransactionHistory'
+import useTransactionHistory from './useFilscanTransactionHistory'
 
 export default () => {
   const [selectedMessageCid, setSelectedMessageCid] = useState('')
   const wallet = useWallet()
-  const { pending, confirmed, loading } = useTransactionHistory(wallet.address)
+  const { pending, confirmed, loading } = useTransactionHistory()
 
   const messages = [...pending, ...confirmed]
   return (
