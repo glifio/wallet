@@ -4,28 +4,30 @@ export default {
   name: 'Glif',
   description: 'An interoperable set of tools on the Filecoin network.',
   url: 'https://glif.io',
-  sameAs: ['https://twitter.com/GLIFio'],
   owns: [
     {
-      '@type': 'Product',
+      '@type': 'WebApplication',
       name: 'Glif Wallet',
       description:
         'A web wallet to manage your Filecoin on your Ledger device.',
-      category: 'Blockchain software'
+      applicationCategory: 'Blockchain wallet',
+      operatingSystem: 'All'
     },
     {
-      '@type': 'Product',
+      '@type': 'WebApplication',
       name: 'Glif Nodes',
       description: 'Private and public gateways to the Filecoin network.',
-      category: 'Blockchain software'
+      applicationCategory: 'Blockchain node infrastructure',
+      operatingSystem: 'All'
     }
   ],
   knowsAbout: [
     {
-      '@type': 'Product',
+      '@type': 'SoftwareApplication',
       name: 'Filecoin',
       url: 'https://filecoin.io',
-      category: 'Blockchain network'
+      applicationCategory: 'Blockchain network',
+      operatingSystem: 'All'
     }
   ],
   parentOrganization: {

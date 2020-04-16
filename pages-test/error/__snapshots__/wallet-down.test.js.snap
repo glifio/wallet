@@ -55,7 +55,7 @@ exports[`WalletDown it renders the error page 1`] = `
   display: flex;
   width: 100%;
   max-width: 560px;
-  min-height: 320px;
+  min-height: 300px;
   overflow: hidden;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
