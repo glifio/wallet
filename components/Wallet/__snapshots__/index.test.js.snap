@@ -2413,7 +2413,6 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2458,7 +2457,6 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   position: relative;
   border-top: 1px solid;
   border-color: #999999;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2969,6 +2967,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
 }
 
 .c60 {
@@ -2995,6 +2994,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
   border-left: 0;
+  background: #E4EBFC;
   -moz-appearance: textfield;
 }
 
@@ -3039,6 +3039,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
   border-left: 0;
   top: 0px;
   left: 0px;
