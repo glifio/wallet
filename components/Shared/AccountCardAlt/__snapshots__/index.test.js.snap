@@ -22,9 +22,9 @@ exports[`AccountCardAlt renders the card 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 320px;
+  width: 300px;
   overflow: hidden;
-  height: 320px;
+  height: 300px;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;

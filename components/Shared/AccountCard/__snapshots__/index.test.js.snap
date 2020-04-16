@@ -153,23 +153,6 @@ exports[`AccountCard renders the card 1`] = `
   height: 24;
 }
 
-.c10 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  border: 0;
-}
-
-.c10:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
 .c6 {
   font-size: 3rem;
   font-weight: 700;
@@ -193,24 +176,29 @@ exports[`AccountCard renders the card 1`] = `
   font-family: RT-Alias-Grotesk;
 }
 
-.c12 {
+.c13 {
+  color: #E0D7FE;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
   margin-top: 0;
+  margin-left: 4px;
 }
 
-.c14 {
-  -webkit-transition: 0.18s ease-in;
-  transition: 0.18s ease-in;
-  opacity: 0;
-}
-
-.c9 {
-  min-width: 0;
-  box-sizing: border-box;
+.c10 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 4px;
+  padding: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -219,9 +207,37 @@ exports[`AccountCard renders the card 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-width: 1px;
+  border-radius: 4px;
+  opacity: 1 !important;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  outline: none;
 }
 
-.c9:hover .c13 {
+.c10:hover {
+  opacity: 0.8;
+}
+
+.c12 {
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+}
+
+.c9:hover .c12 {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c14 {
+  -webkit-transition: 0.18s ease-in;
+  transition: 0.18s ease-in;
+  opacity: 0;
+}
+
+.c9:hover .c14 {
   opacity: 1;
 }
 
@@ -282,47 +298,44 @@ exports[`AccountCard renders the card 1`] = `
       >
         t0123 ... 6789
       </h2>
-      <div
-        class="c9"
+      <button
+        class="c9 c10"
         display="flex"
+        font-size="3"
       >
-        <button
-          class="c10"
-          display="inline-block"
+        <svg
+          class="c11 c12"
+          fill="none"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            class="c11"
-            fill="none"
-            height="24"
-            viewBox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              fill="#1A0066"
-              height="12"
-              width="12"
-              x="8"
-              y="4"
-            />
-            <rect
-              fill="#E0D7FE"
-              height="12"
-              width="12"
-              x="4"
-              y="8"
-            />
-          </svg>
-        </button>
+          <rect
+            fill="#1A0066"
+            height="12"
+            width="12"
+            x="8"
+            y="4"
+          />
+          <rect
+            fill="#E0D7FE"
+            height="12"
+            width="12"
+            x="4"
+            y="8"
+          />
+        </svg>
         <h4
-          class="c12 c13 c14"
+          class="c13 c14"
+          color="core.secondary"
           font-family="RT-Alias-Grotesk"
           font-size="2"
           font-weight="400"
         >
           Copy
         </h4>
-      </div>
+      </button>
     </div>
   </div>
   <div
@@ -477,23 +490,6 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
   height: 24;
 }
 
-.c10 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  border: 0;
-}
-
-.c10:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
 .c6 {
   font-size: 3rem;
   font-weight: 700;
@@ -517,24 +513,29 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
   font-family: RT-Alias-Grotesk;
 }
 
-.c12 {
+.c13 {
+  color: #E0D7FE;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
   margin-top: 0;
+  margin-left: 4px;
 }
 
-.c14 {
-  -webkit-transition: 0.18s ease-in;
-  transition: 0.18s ease-in;
-  opacity: 0;
-}
-
-.c9 {
-  min-width: 0;
-  box-sizing: border-box;
+.c10 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 4px;
+  padding: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -543,9 +544,37 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-width: 1px;
+  border-radius: 4px;
+  opacity: 1 !important;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  outline: none;
 }
 
-.c9:hover .c13 {
+.c10:hover {
+  opacity: 0.8;
+}
+
+.c12 {
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+}
+
+.c9:hover .c12 {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c14 {
+  -webkit-transition: 0.18s ease-in;
+  transition: 0.18s ease-in;
+  opacity: 0;
+}
+
+.c9:hover .c14 {
   opacity: 1;
 }
 
@@ -606,47 +635,44 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
       >
         t0123 ... 6789
       </h2>
-      <div
-        class="c9"
+      <button
+        class="c9 c10"
         display="flex"
+        font-size="3"
       >
-        <button
-          class="c10"
-          display="inline-block"
+        <svg
+          class="c11 c12"
+          fill="none"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            class="c11"
-            fill="none"
-            height="24"
-            viewBox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              fill="#1A0066"
-              height="12"
-              width="12"
-              x="8"
-              y="4"
-            />
-            <rect
-              fill="#E0D7FE"
-              height="12"
-              width="12"
-              x="4"
-              y="8"
-            />
-          </svg>
-        </button>
+          <rect
+            fill="#1A0066"
+            height="12"
+            width="12"
+            x="8"
+            y="4"
+          />
+          <rect
+            fill="#E0D7FE"
+            height="12"
+            width="12"
+            x="4"
+            y="8"
+          />
+        </svg>
         <h4
-          class="c12 c13 c14"
+          class="c13 c14"
+          color="core.secondary"
           font-family="RT-Alias-Grotesk"
           font-size="2"
           font-weight="400"
         >
           Copy
         </h4>
-      </div>
+      </button>
     </div>
   </div>
   <div
