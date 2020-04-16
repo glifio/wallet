@@ -11,13 +11,15 @@ export default {
       name: 'Glif Wallet',
       description:
         'A web wallet to manage your Filecoin on your Ledger device.',
-      category: 'Blockchain software'
+      applicationCategory: 'Blockchain wallet',
+      operatingSystem: 'All'
     },
     {
       '@type': 'WebApplication',
       name: 'Glif Nodes',
       description: 'Private and public gateways to the Filecoin network.',
-      category: 'Blockchain software'
+      applicationCategory: 'Blockchain node infrastructure',
+      operatingSystem: 'All'
     }
   ],
   knowsAbout: [
@@ -25,7 +27,8 @@ export default {
       '@type': 'SoftwareApplication',
       name: 'Filecoin',
       url: 'https://filecoin.io',
-      category: 'Blockchain network'
+      applicationCategory: 'Blockchain network',
+      operatingSystem: 'All'
     }
   ],
   parentOrganization: {
