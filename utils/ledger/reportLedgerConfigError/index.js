@@ -7,8 +7,7 @@ export const reportLedgerConfigError = ({
   inUseByAnotherApp,
   otherError
 }) => {
-  if (connectedFailure)
-    return 'Is your Ledger device plugged in? Try again or refresh the page to return home'
+  if (connectedFailure) return 'Is your Ledger device plugged in?'
   if (busy) return 'Is your Ledger device busy?'
   if (locked) return 'Is your Ledger device unlocked?'
   if (filecoinAppNotOpen)
