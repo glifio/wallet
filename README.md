@@ -1,8 +1,8 @@
-# Glif
+# Glif Wallet
 
 <!-- Glif art/branding -->
 
-Glif is a Filecoin web wallet built with Next.js that allows you to:
+The Glif Wallet is a Filecoin web wallet built with Next.js that allows you to:
 
 - **send and receive** Filecoin with your Ledger device
 - **create** test accounts to send small amounts of FIL
@@ -17,7 +17,7 @@ npm run dev
 
 If you want to develop using the Ledger integration, follow these steps to get the Ledger app onto your device: **_(Note: only use Ledger devices meant for testing purposes)_**
 
-1. Download the shell script for installing the app [here](https://57-227919429-gh.circle-artifacts.com/0/home/test/project/src/ledger/pkg/zxtool.sh).
+1. Download the latest `zxtool.sh` script for installing the app [here](https://github.com/ZondaX/ledger-filecoin/releases).
 2. Run the file. `zxtool.sh load`
 
 ### Versioning

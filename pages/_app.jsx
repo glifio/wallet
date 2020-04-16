@@ -1,4 +1,5 @@
 import App from 'next/app'
+import Head from 'next/head'
 import React from 'react'
 import { Provider } from 'react-redux'
 import { theme, ThemeProvider } from '../components/Shared'
@@ -18,17 +19,22 @@ class MyApp extends App {
   render() {
     const { Component, pageProps, reduxStore, query, pathname } = this.props
     return (
-      <Provider store={reduxStore}>
-        <ConverterWrapper>
-          <WalletProviderWrapper network={reduxStore.getState().network}>
-            <NetworkChecker pathname={pathname} query={query} />
-            <BalancePoller />
-            <ThemeProvider theme={theme}>
-              <Component {...pageProps} />
-            </ThemeProvider>
-          </WalletProviderWrapper>
-        </ConverterWrapper>
-      </Provider>
+      <>
+        <Head>
+          <title>Glif</title>
+        </Head>
+        <Provider store={reduxStore}>
+          <ConverterWrapper>
+            <WalletProviderWrapper network={reduxStore.getState().network}>
+              <NetworkChecker pathname={pathname} query={query} />
+              <BalancePoller />
+              <ThemeProvider theme={theme}>
+                <Component {...pageProps} />
+              </ThemeProvider>
+            </WalletProviderWrapper>
+          </ConverterWrapper>
+        </Provider>
+      </>
     )
   }
 }

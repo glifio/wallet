@@ -576,16 +576,6 @@ exports[`WalletView it renders correctly 1`] = `
   background: #C4C4C4;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
 .c1 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -614,6 +604,18 @@ exports[`WalletView it renders correctly 1`] = `
   margin: 0.5rem;
   min-width: 53%;
   margin-bottom: 6rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .c36 {
@@ -647,7 +649,7 @@ exports[`WalletView it renders correctly 1`] = `
 }
 
 <div
-  class="c0"
+  class="SidebarLayout__Wrapper-gwfrwp-0 c0"
 >
   <div
     class="c1"
@@ -1587,16 +1589,6 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
   transform: scale(1.25);
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
 .c1 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -1644,6 +1636,18 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
   flex-direction: column;
 }
 
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 .c36 {
   cursor: pointer;
   border: 1px solid #262626;
@@ -1675,7 +1679,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
 }
 
 <div
-  class="c0"
+  class="SidebarLayout__Wrapper-gwfrwp-0 c0"
 >
   <div
     class="c1"
@@ -3168,16 +3172,6 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   transform: scale(1.25);
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
 .c1 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3311,6 +3305,18 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   border-radius: 0px;
 }
 
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 .c36 {
   cursor: pointer;
   border: 1px solid #262626;
@@ -3342,7 +3348,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
 }
 
 <div
-  class="c0"
+  class="SidebarLayout__Wrapper-gwfrwp-0 c0"
 >
   <div
     class="c1"
