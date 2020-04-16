@@ -221,26 +221,6 @@ exports[`WalletView it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c42 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
 .c8 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
@@ -366,6 +346,22 @@ exports[`WalletView it renders correctly 1`] = `
   font-family: RT-Alias-Grotesk;
 }
 
+.c42 {
+  color: #262626;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c43 {
+  color: #666666;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
 .c18 {
   color: #E0D7FE;
   font-size: 1.125rem;
@@ -401,15 +397,6 @@ exports[`WalletView it renders correctly 1`] = `
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c45 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-top: 16px;
 }
 
 .c15 {
@@ -474,26 +461,6 @@ exports[`WalletView it renders correctly 1`] = `
 
 .c31 {
   word-wrap: break-word;
-}
-
-.c43 {
-  display: inline-block;
-  height: 48px;
-  width: 48px;
-  background-color: #5E26FF;
-}
-
-.c44 {
-  display: inline-block;
-  height: 24px;
-  width: 24px;
-  background-color: rgb(26,0,102);
-  -webkit-animation-name: bvGDKI;
-  animation-name: bvGDKI;
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
 }
 
 .c3 {
@@ -923,26 +890,24 @@ exports[`WalletView it renders correctly 1`] = `
           Transaction History
         </p>
       </div>
-      <div
+      <p
         class="c42"
-        display="flex"
+        color="core.nearblack"
+        font-family="RT-Alias-Grotesk"
+        font-size="3"
+        font-weight="400"
       >
-        <span
-          class="c43"
-        >
-          <span
-            class="c44"
-          />
-        </span>
-        <h4
-          class="c45"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          Loading...
-        </h4>
-      </div>
+        How do I see my transaction history?
+      </p>
+      <p
+        class="c43"
+        color="core.darkgray"
+        font-family="RT-Alias-Grotesk"
+        font-size="3"
+        font-weight="400"
+      >
+        If you’re seeing this, you haven’t sent or received any FIL from this account yet. When you do, your transactions will appear.
+      </p>
     </div>
   </div>
 </div>
