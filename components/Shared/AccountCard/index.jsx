@@ -5,7 +5,8 @@ import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import Box from '../Box'
 import Glyph from '../Glyph'
 import Button from '../Button'
-import { ButtonCopyAccountAddress } from '../IconButtons'
+import BaseButton from '../Button/BaseButton'
+import { IconCopyAccountAddress } from '../Icons'
 import { BigTitle, Text, Label, Title as AccountAddress } from '../Typography'
 import truncate from '../../../utils/truncateAddress'
 import copyToClipboard from '../../../utils/copyToClipboard'
@@ -16,13 +17,26 @@ import {
   IMPORT_SINGLE_KEY
 } from '../../../constants'
 
+const CopyAddress = styled(BaseButton)`
+  /* !important is declared here to override BaseButton's opacity:0.8 on hover. The only instance of us using this declaration. */
+  opacity: 1 !important;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  outline: none;
+`
+
+const StyledIconCopyAccountAddress = styled(IconCopyAccountAddress)`
+  transition: 0.24s ease-in-out;
+  ${CopyAddress}:hover & {
+    transform: scale(1.25);
+  }
+`
+
 const LabelCopy = styled(Label)`
   transition: 0.18s ease-in;
   opacity: 0;
-`
-
-const CopyAddress = styled(Box)`
-  &:hover ${LabelCopy} {
+  ${CopyAddress}:hover & {
     opacity: 1;
   }
 `
@@ -70,12 +84,16 @@ const AccountCard = forwardRef(
             <AccountAddress fontWeight={1} fontSize={5} margin={0}>
               {truncate(address)}
             </AccountAddress>
-            <CopyAddress display='flex' alignItems='center'>
-              <ButtonCopyAccountAddress
-                border={0}
-                onClick={() => copyToClipboard(address)}
-              />
-              <LabelCopy mt={0}>Copy</LabelCopy>
+            <CopyAddress
+              display='flex'
+              alignItems='center'
+              ml={1}
+              onClick={() => copyToClipboard(address)}
+            >
+              <StyledIconCopyAccountAddress />
+              <LabelCopy mt={0} ml={1} color='core.secondary'>
+                Copy
+              </LabelCopy>
             </CopyAddress>
           </Box>
         </Box>
