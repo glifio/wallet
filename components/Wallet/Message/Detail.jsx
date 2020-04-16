@@ -13,7 +13,7 @@ import {
   Label,
   Title as Total,
   Num,
-  Title,
+  StyledATag,
   IconMessageStatus,
   IconPending
 } from '../../Shared'
@@ -180,12 +180,23 @@ const MessageDetail = ({ address, close, message }) => {
           <Label color='core.silver' textAlign='left' m={1}>
             Hash
           </Label>
-          <Label color='core.silver' textAlign='left' m={1}>
+          <Label
+            color='core.silver'
+            textAlign='left'
+            m={1}
+            css={`
+              text-overflow: ellipsis;
+              overflow: hidden;
+              white-space: no-wrap;
+            `}
+          >
             T184h98haohaoih849h848hf4hf90301h8r183hz
           </Label>
-          <Label color='core.primary' textAlign='left' m={1}>
-            View
-          </Label>
+          <StyledATag rel='noopener noreferrer' target='_blank' href='#'>
+            <Label color='core.primary' textAlign='left' m={1}>
+              View
+            </Label>
+          </StyledATag>
         </Box>
       </Box>
     </MessageDetailCard>
