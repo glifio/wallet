@@ -5,6 +5,8 @@ import composeMockAppTree from '../../test-utils/composeMockAppTree'
 
 jest.mock('@openworklabs/filecoin-wallet-provider')
 
+jest.spyOn(require('./Message/useFilscoutTransactionHistory.js'), 'default')
+
 describe('WalletView', () => {
   afterEach(cleanup)
   test('it renders correctly', () => {

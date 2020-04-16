@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useReducer } from 'react'
 import cloneDeep from 'lodash.clonedeep'
+import axios from 'axios'
 
 import WalletProvider from '@openworklabs/filecoin-wallet-provider'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'

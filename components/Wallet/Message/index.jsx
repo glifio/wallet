@@ -7,7 +7,14 @@ import useTransactionHistory from './useFilscanTransactionHistory'
 export default () => {
   const [selectedMessageCid, setSelectedMessageCid] = useState('')
   const wallet = useWallet()
-  const { pending, confirmed, loading } = useTransactionHistory()
+  const {
+    pending,
+    confirmed,
+    loading,
+    paginating,
+    showMore,
+    total
+  } = useTransactionHistory()
 
   const messages = [...pending, ...confirmed]
   return (
@@ -24,6 +31,9 @@ export default () => {
           messages={[...pending, ...confirmed]}
           loading={loading}
           selectMessage={setSelectedMessageCid}
+          paginating={paginating}
+          showMore={showMore}
+          total={total}
         />
       )}
     </>
