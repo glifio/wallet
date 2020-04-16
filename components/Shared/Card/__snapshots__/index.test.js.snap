@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card renders the card 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px;
+  border-radius: 2px;
+  border-width: 1px;
+  padding: 16px;
+  display: inline-block;
+  width: 300px;
+  overflow: hidden;
+}
+
+<div
+  class="c0"
+  display="inline-block"
+  overflow="hidden"
+  width="300"
+/>
+`;

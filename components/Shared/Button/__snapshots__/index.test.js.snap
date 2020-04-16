@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders the Button 1`] = `
+.c0 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c0:hover {
+  opacity: 0.8;
+}
+
+<button
+  class="c0"
+  font-size="3"
+  type="button"
+>
+  Next
+</button>
+`;
