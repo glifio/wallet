@@ -464,7 +464,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              Apr 13
+              Jan 12
             </p>
           </li>
         </ul>
@@ -633,7 +633,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              Apr 13
+              Jan 12
             </p>
           </li>
         </ul>
@@ -802,7 +802,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              Apr 13
+              Jan 12
             </p>
           </li>
         </ul>
@@ -971,7 +971,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              Apr 13
+              Jan 12
             </p>
           </li>
         </ul>
@@ -1140,7 +1140,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              Apr 13
+              Jan 12
             </p>
           </li>
         </ul>
@@ -1309,7 +1309,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              Apr 13
+              Jan 12
             </p>
           </li>
         </ul>
@@ -1478,7 +1478,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              Apr 09
+              Jan 12
             </p>
           </li>
         </ul>
@@ -1647,7 +1647,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              Apr 09
+              Jan 12
             </p>
           </li>
         </ul>
@@ -1816,7 +1816,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              Apr 09
+              Jan 12
             </p>
           </li>
         </ul>
@@ -1985,7 +1985,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              Apr 09
+              Jan 12
             </p>
           </li>
         </ul>
@@ -2154,7 +2154,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              Apr 09
+              Jan 12
             </p>
           </li>
         </ul>
@@ -2323,7 +2323,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              Apr 09
+              Jan 12
             </p>
           </li>
         </ul>
@@ -2492,7 +2492,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              Apr 09
+              Jan 12
             </p>
           </li>
         </ul>
@@ -2661,7 +2661,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              Apr 09
+              Jan 12
             </p>
           </li>
         </ul>
@@ -2830,7 +2830,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              Apr 09
+              Jan 12
             </p>
           </li>
         </ul>
@@ -3662,7 +3662,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           font-size="3"
           font-weight="400"
         >
-          Apr 13
+          Jan 12
         </p>
         <p
           class="c17"
@@ -3670,7 +3670,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           font-size="3"
           font-weight="400"
         >
-          03:04PM
+          2:30PM
         </p>
       </div>
     </div>
