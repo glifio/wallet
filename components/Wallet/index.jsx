@@ -21,7 +21,6 @@ import MsgConfirmer from '../../lib/confirm-message'
 import useWallet from '../../WalletProvider/useWallet'
 import Receive from '../Receive'
 import { MESSAGE_HISTORY, SEND, RECEIVE } from './views'
-import { route } from 'next/dist/next-server/server/router'
 
 export default () => {
   const wallet = useWallet()
