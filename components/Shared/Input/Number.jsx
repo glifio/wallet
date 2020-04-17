@@ -13,7 +13,6 @@ export const DenomTag = styled(Box).attrs(props => ({
   alignItems: 'center',
   justifyContent: 'center',
   fontSize: 3,
-  borderColor: 'input.border',
   minWidth: 7,
   color: 'core.primary',
   backgroundColor: 'input.background.base',
@@ -24,7 +23,6 @@ export const DenomTag = styled(Box).attrs(props => ({
 `
 
 export const RawNumberInput = styled(BaseInput).attrs(props => ({
-  borderLeft: 0,
   ...props
 }))`
   ::-webkit-outer-spin-button,
