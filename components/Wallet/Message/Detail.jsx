@@ -178,7 +178,7 @@ const MessageDetail = ({ address, close, message }) => {
           mt={6}
         >
           <Label color='core.silver' textAlign='left' m={1}>
-            Hash
+            Message Hash
           </Label>
           <Label
             color='core.silver'
@@ -190,11 +190,15 @@ const MessageDetail = ({ address, close, message }) => {
               white-space: no-wrap;
             `}
           >
-            T184h98haohaoih849h848hf4hf90301h8r183hz
+            {message.cid}
           </Label>
-          <StyledATag rel='noopener noreferrer' target='_blank' href='#'>
+          <StyledATag
+            rel='noopener noreferrer'
+            target='_blank'
+            href={`https://filscout.io/en/pc/message/${message.cid}`}
+          >
             <Label color='core.primary' textAlign='left' m={1}>
-              View
+              View on Filscout
             </Label>
           </StyledATag>
         </Box>
