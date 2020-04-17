@@ -142,5 +142,6 @@ describe('AccountCard', () => {
     })
 
     expect(mockCopyToClipboard).toHaveBeenCalled()
+    expect(screen.getByText('Copied')).toBeInTheDocument()
   })
 })
