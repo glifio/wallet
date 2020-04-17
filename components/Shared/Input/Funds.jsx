@@ -155,7 +155,6 @@ const Funds = forwardRef(
         minHeight='160px'
         borderColor='input.border'
         mt={3}
-        pl={2}
         ref={ref}
         {...props}
       >
@@ -165,13 +164,14 @@ const Funds = forwardRef(
           justifyContent='flex-start'
           flexGrow='1'
           width='100%'
-          maxWidth={9}
+          maxWidth={10}
           textAlign='center'
           color='input.border'
           bg={error && 'input.background.invalid'}
+          px={2}
         >
           {error ? (
-            <Text color='core.nearblack' textAlign='left' pr={2}>
+            <Text color='core.nearblack' textAlign='left'>
               {error}
             </Text>
           ) : (
