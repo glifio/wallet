@@ -17,40 +17,28 @@ const TextInput = ({
 }) => (
   <>
     <InputWrapper mt={3}>
-      <Box display='flex' alignItems='center'>
+      <Box display='flex' alignItems='center' pl={2}>
         {label && (
           <Box
             display='flex'
-            px={3}
-            minWidth={9}
             justifyContent='center'
             alignItems='center'
-            height='64px'
-            borderRight={1}
-            borderColor='input.border'
+            mr={3}
           >
-            <Label>{label}</Label>
+            <Label color='core.nearblack'>{label}</Label>
           </Box>
         )}
         <Box position='relative' display='flex' width='100%'>
           <BaseInput
-            py={3}
             px={3}
+            borderRadius={2}
             value={value}
             disabled={disabled}
             error={error}
             {...props}
           />
           {denom && (
-            <DenomTag
-              backgroundColor='core.transparent'
-              height={7}
-              css={`
-                border-left: 0;
-                top: 0px;
-                left: 0px;
-              `}
-            >
+            <DenomTag backgroundColor='core.transparent' height={7}>
               {denom}
             </DenomTag>
           )}
@@ -58,7 +46,7 @@ const TextInput = ({
       </Box>
     </InputWrapper>
     {error && (
-      <Label color='status.fail.background' mt={3} mb={0}>
+      <Label color='status.fail.background' mt={3} mb={0} textAlign='right'>
         {error}
       </Label>
     )}
