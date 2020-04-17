@@ -158,7 +158,7 @@ exports[`Receive it renders correctly 1`] = `
   display: inline-block;
   height: 100%;
   outline: none;
-  background-color: #E4EBFC;
+  background-color: #d1ddfa;
   padding: 0;
   width: 64px;
   border: 0;
@@ -473,7 +473,7 @@ exports[`Receive it reveals the address when the user clicks reveal 1`] = `
   display: inline-block;
   height: 100%;
   outline: none;
-  background-color: #E4EBFC;
+  background-color: #d1ddfa;
   padding: 0;
   width: 64px;
   border: 0;

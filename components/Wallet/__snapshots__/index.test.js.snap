@@ -4241,7 +4241,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
   display: inline-block;
   height: 100%;
   outline: none;
-  background-color: #E4EBFC;
+  background-color: #d1ddfa;
   padding: 0;
   width: 64px;
   border: 0;
@@ -5096,20 +5096,11 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
 .c51 {
   min-width: 0;
   box-sizing: border-box;
-  border-right: 1px solid;
-  border-color: #999999;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-width: 160px;
-  height: 64px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -5119,6 +5110,24 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
 .c52 {
   min-width: 0;
   box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c54 {
+  min-width: 0;
+  box-sizing: border-box;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -5127,12 +5136,10 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   width: 100%;
 }
 
-.c54 {
+.c56 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  border: 1px solid;
-  border-radius: 1px;
   border-color: #999999;
   margin-top: 16px;
   display: -webkit-box;
@@ -5142,30 +5149,26 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   min-height: 160px;
 }
 
-.c55 {
+.c57 {
   min-width: 0;
   box-sizing: border-box;
-  border-color: #999999;
-  border-right: 1px solid;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 8px;
+  padding-right: 8px;
   color: #999999;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 300px;
+  max-width: 240px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -5173,14 +5176,14 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   text-align: center;
 }
 
-.c57 {
+.c58 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c58 {
+.c59 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -5192,15 +5195,13 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   width: 100%;
 }
 
-.c59 {
+.c60 {
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
   left: -24px;
   bottom: -24px;
   z-index: 999;
-  border: 1px solid;
-  border-color: #999999;
   border-radius: 32px;
   padding-bottom: 4px;
   background-color: #ffffff;
@@ -5222,12 +5223,13 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c62 {
+.c63 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   border-top: 1px solid;
-  border-color: #999999;
+  border-color: #EFF3FD;
+  background-color: #d1ddfa;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5235,14 +5237,14 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   height: 80px;
 }
 
-.c63 {
+.c64 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   width: 100%;
 }
 
-.c67 {
+.c68 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 8px;
@@ -5256,7 +5258,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   align-items: center;
 }
 
-.c72 {
+.c73 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
@@ -5279,7 +5281,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   justify-content: space-between;
 }
 
-.c74 {
+.c75 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -5362,7 +5364,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   opacity: 1;
 }
 
-.c79 {
+.c80 {
   cursor: pointer;
   border: 1px solid core.lightgray;
   background-color: transparent;
@@ -5380,11 +5382,11 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   border-width: 1px;
 }
 
-.c79:hover {
+.c80:hover {
   opacity: 0.8;
 }
 
-.c81 {
+.c82 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -5400,7 +5402,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   border-width: 1px;
 }
 
-.c81:hover {
+.c82:hover {
   opacity: 0.8;
 }
 
@@ -5443,7 +5445,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin: 0;
 }
 
-.c73 {
+.c74 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -5451,7 +5453,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin: 0;
 }
 
-.c75 {
+.c76 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -5460,7 +5462,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin: 0;
 }
 
-.c77 {
+.c78 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
@@ -5496,7 +5498,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin-bottom: 0;
 }
 
-.c68 {
+.c69 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
@@ -5506,7 +5508,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin-bottom: 0;
 }
 
-.c70 {
+.c71 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
@@ -5552,7 +5554,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin: 0;
 }
 
-.c56 {
+.c53 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -5625,7 +5627,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   word-wrap: break-word;
 }
 
-.c53 {
+.c55 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -5639,31 +5641,30 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   font-size: 1.125rem;
   text-align: right;
   cursor: text;
-  background: #E4EBFC;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  background: #d1ddfa;
   padding-left: 16px;
   padding-right: 16px;
+  margin-top: 8px;
   display: inline-block;
   height: 64px;
   width: 100%;
+  border-radius: 4px;
   border: 0;
   border-color: #999999;
-  border-top-right-radius: 1px;
-  border-bottom-right-radius: 1px;
 }
 
-.c53:hover {
+.c55:hover {
+  background: #bacbf7;
   cursor: text;
 }
 
-.c53:focus {
+.c55:focus {
   box-shadow: 0;
   outline: 0;
-  background: #d1ddfa;
+  background: #bacbf7;
 }
 
-.c64 {
+.c65 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -5677,49 +5678,43 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   font-size: 1.125rem;
   text-align: right;
   cursor: text;
-  background: transparent;
   background-color: #EFF3FD;
-  padding-top: 16px;
-  padding-bottom: 16px;
   padding-left: 16px;
   padding-right: 16px;
   display: inline-block;
   height: 64px;
   width: 100%;
+  border-radius: 4px;
   border: 0;
   border-color: #999999;
-  border-top-right-radius: 1px;
-  border-bottom-right-radius: 1px;
 }
 
-.c64:hover {
-  cursor: not-allowed;
+.c65:hover {
+  background: transparent;
+  cursor: initial;
 }
 
-.c64:focus {
+.c65:focus {
   box-shadow: 0;
   outline: 0;
-  background: #d1ddfa;
+  background: #bacbf7;
 }
 
 .c50 {
   display: inline-block;
   width: 100%;
   margin-top: 16px;
-  border: 1px solid;
-  border-color: #999999;
   border-radius: 1px;
 }
 
-.c61 {
+.c62 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
   left: 0px;
-  border-color: #999999;
   padding-left: 16px;
   padding-right: 16px;
-  background-color: #E4EBFC;
+  background-color: #d1ddfa;
   color: #5E26FF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -5738,57 +5733,12 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: #E4EBFC;
-}
-
-.c60 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: right;
-  cursor: text;
-  background: #E4EBFC;
-  font-size: 2rem;
-  height: 100%;
-  display: inline-block;
-  width: 100%;
-  border: 0;
-  border-color: #999999;
-  border-top-right-radius: 1px;
-  border-bottom-right-radius: 1px;
-  border-left: 0;
-  background: #E4EBFC;
-  -moz-appearance: textfield;
-}
-
-.c60:hover {
-  cursor: text;
-}
-
-.c60:focus {
-  box-shadow: 0;
-  outline: 0;
   background: #d1ddfa;
 }
 
-.c60::-webkit-outer-spin-button,
-.c60::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c65 {
+.c66 {
   min-width: 0;
   box-sizing: border-box;
-  border-color: #999999;
   padding-left: 16px;
   padding-right: 16px;
   background-color: transparent;
@@ -5810,13 +5760,52 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: #E4EBFC;
-  border-left: 0;
-  top: 0px;
-  left: 0px;
+  background: #d1ddfa;
 }
 
-.c78 {
+.c61 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #d1ddfa;
+  font-size: 2rem;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-color: #999999;
+  background: #d1ddfa;
+  -moz-appearance: textfield;
+}
+
+.c61:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c61:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c61::-webkit-outer-spin-button,
+.c61::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c79 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -6013,7 +6002,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   justify-content: space-between;
 }
 
-.c66 {
+.c67 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -6047,33 +6036,33 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   align-self: flex-end;
 }
 
-.c66:hover {
+.c67:hover {
   opacity: 0.8;
 }
 
-.c66:hover {
+.c67:hover {
   cursor: pointer;
 }
 
-.c69 {
+.c70 {
   font-size: 0.75rem;
 }
 
-.c71 {
+.c72 {
   -webkit-text-decoration: underline;
   text-decoration: underline;
   line-height: 2;
 }
 
-.c76 {
+.c77 {
   word-wrap: break-word;
 }
 
-.c80 {
+.c81 {
   border-radius: 0px;
 }
 
-.c82 {
+.c83 {
   border-radius: 0px;
 }
 
@@ -6484,16 +6473,16 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
             class="c50"
           >
             <div
-              class="c41"
+              class="c51"
               display="flex"
             >
               <div
-                class="c51"
+                class="c52"
                 display="flex"
-                height="64px"
               >
                 <h4
-                  class="c24"
+                  class="c53"
+                  color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
@@ -6502,12 +6491,12 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                 </h4>
               </div>
               <div
-                class="c52"
+                class="c54"
                 display="flex"
                 width="100%"
               >
                 <input
-                  class="c53"
+                  class="c55"
                   display="inline-block"
                   height="7"
                   placeholder="t1..."
@@ -6520,19 +6509,19 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
           </div>
           
           <div
-            class="c54"
+            class="c56"
             display="flex"
             label="Amount"
             name="amount"
           >
             <div
-              class="c55"
+              class="c57"
               color="input.border"
               display="flex"
               width="100%"
             >
               <h4
-                class="c56"
+                class="c53"
                 color="core.nearblack"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
@@ -6542,18 +6531,18 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
               </h4>
             </div>
             <div
-              class="c57"
+              class="c58"
               display="inline-block"
               width="100%"
             >
               <div
-                class="c58"
+                class="c59"
                 display="flex"
                 height="80px"
                 width="100%"
               >
                 <div
-                  class="c59"
+                  class="c60"
                   display="flex"
                   font-family="sansSerif"
                   font-size="5"
@@ -6562,7 +6551,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                   =
                 </div>
                 <input
-                  class="c60"
+                  class="c61"
                   display="inline-block"
                   font-size="5"
                   height="100%"
@@ -6575,7 +6564,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                   width="100%"
                 />
                 <div
-                  class="c61"
+                  class="c62"
                   color="core.primary"
                   display="flex"
                   font-size="3"
@@ -6585,12 +6574,12 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                 </div>
               </div>
               <div
-                class="c62"
+                class="c63"
                 display="flex"
                 height="80px"
               >
                 <input
-                  class="c60"
+                  class="c61"
                   display="inline-block"
                   font-size="5"
                   height="100%"
@@ -6602,7 +6591,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                   width="100%"
                 />
                 <div
-                  class="c61"
+                  class="c62"
                   color="core.primary"
                   display="flex"
                   font-size="3"
@@ -6614,23 +6603,23 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
             </div>
           </div>
           <div
-            class="c63"
+            class="c64"
             width="100%"
           >
             <div
               class="c50"
             >
               <div
-                class="c41"
+                class="c51"
                 display="flex"
               >
                 <div
-                  class="c51"
+                  class="c52"
                   display="flex"
-                  height="64px"
                 >
                   <h4
-                    class="c24"
+                    class="c53"
+                    color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -6639,12 +6628,12 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                   </h4>
                 </div>
                 <div
-                  class="c52"
+                  class="c54"
                   display="flex"
                   width="100%"
                 >
                   <input
-                    class="c64"
+                    class="c65"
                     disabled=""
                     display="inline-block"
                     height="7"
@@ -6652,7 +6641,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                     width="100%"
                   />
                   <div
-                    class="c65"
+                    class="c66"
                     color="core.primary"
                     display="flex"
                     font-size="3"
@@ -6665,7 +6654,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
             </div>
           </div>
           <button
-            class="c66"
+            class="c67"
             color="core.primary"
             display="flex"
             font-size="3"
@@ -6673,11 +6662,11 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
             type="button"
           >
             <div
-              class="c67"
+              class="c68"
               display="flex"
             >
               <p
-                class="c68 c69"
+                class="c69 c70"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -6685,7 +6674,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                 ▼
               </p>
               <p
-                class="c70 c71"
+                class="c71 c72"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -6695,11 +6684,11 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
             </div>
           </button>
           <div
-            class="c72"
+            class="c73"
             display="flex"
           >
             <h2
-              class="c73"
+              class="c74"
               font-family="RT-Alias-Grotesk"
               font-size="4"
               font-weight="400"
@@ -6707,11 +6696,11 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
               Total
             </h2>
             <div
-              class="c74"
+              class="c75"
               display="flex"
             >
               <h2
-                class="c75 c76"
+                class="c76 c77"
                 color="core.primary"
                 font-family="RT-Alias-Grotesk"
                 font-size="5"
@@ -6722,7 +6711,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                 FIL
               </h2>
               <h2
-                class="c77"
+                class="c78"
                 color="core.darkgray"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
@@ -6736,17 +6725,17 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
           </div>
         </div>
         <div
-          class="c78"
+          class="c79"
         >
           <button
-            class="c79 c80"
+            class="c80 c81"
             font-size="3"
             type="button"
           >
             Back
           </button>
           <button
-            class="c81 c82"
+            class="c82 c83"
             font-size="3"
             type="submit"
           >
