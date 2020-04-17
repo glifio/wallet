@@ -166,7 +166,7 @@ const Funds = forwardRef(
           justifyContent='center'
           flexGrow='1'
           width='100%'
-          maxWidth={11}
+          maxWidth={disabled ? 9 : 11}
           py={3}
           px={4}
           textAlign='center'
@@ -184,13 +184,7 @@ const Funds = forwardRef(
           )}
         </Box>
         <Box display='inline-block' width='100%'>
-          <Box
-            position='relative'
-            display='flex'
-            height='80px'
-            width='100%'
-            bg='input.background.base'
-          >
+          <Box position='relative' display='flex' height='80px' width='100%'>
             <Box
               position='absolute'
               left='-24px'
@@ -246,7 +240,6 @@ const Funds = forwardRef(
             height='80px'
             borderTop={1}
             borderColor='input.border'
-            bg='input.background.base'
           >
             <RawNumberInput
               onFocus={() => {

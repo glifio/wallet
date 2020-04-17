@@ -137,8 +137,17 @@ exports[`Error renders the error 1`] = `
 }
 
 .c8 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
   color: #ffffff;
   font-size: 1.25rem;
+}
+
+.c8:hover {
+  border-bottom: 2px solid #5E26FF;
 }
 
 <div

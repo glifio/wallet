@@ -3151,7 +3151,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 300px;
+  max-width: 160px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3178,7 +3178,6 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3223,7 +3222,6 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   position: relative;
   border-top: 1px solid;
   border-color: #999999;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3234,7 +3232,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
 .c35 {
   min-width: 0;
   box-sizing: border-box;
-  margin-top: 48px;
+  margin-top: 32px;
   margin-left: 4px;
   margin-right: 4px;
   display: -webkit-box;
@@ -3244,10 +3242,41 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c37 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: right;
+}
+
+.c41 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 48px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -3271,7 +3300,6 @@ exports[`MessageHistory View it renders the message detail view after clicking o
 }
 
 .c36 {
-  color: #5E26FF;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -3280,12 +3308,20 @@ exports[`MessageHistory View it renders the message detail view after clicking o
 }
 
 .c38 {
+  color: #5E26FF;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c40 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
-  text-align: right;
   margin: 0;
 }
 
@@ -3342,6 +3378,37 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
+}
+
+.c42 {
+  color: #999999;
+  text-align: left;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 4px;
+}
+
+.c43 {
+  color: #999999;
+  text-align: left;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  max-width: 160px;
+  margin: 4px;
+}
+
+.c46 {
+  color: #5E26FF;
+  text-align: left;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 4px;
 }
 
 .c24 {
@@ -3457,6 +3524,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
 }
 
 .c31 {
@@ -3483,6 +3551,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
   border-left: 0;
+  background: transparent;
   -moz-appearance: textfield;
 }
 
@@ -3500,6 +3569,20 @@ exports[`MessageHistory View it renders the message detail view after clicking o
 .c31::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.c45 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.25rem;
+}
+
+.c45:hover {
+  border-bottom: 2px solid #5E26FF;
 }
 
 .c9 {
@@ -3541,8 +3624,14 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   align-self: flex-end;
 }
 
-.c37 {
+.c39 {
   word-wrap: break-word;
+}
+
+.c44 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: no-wrap;
 }
 
 @media screen and (min-width:40em) {
@@ -3892,31 +3981,31 @@ exports[`MessageHistory View it renders the message detail view after clicking o
       class="c35"
       display="flex"
     >
-      <h4
-        class="c22"
+      <h2
+        class="c36"
         font-family="RT-Alias-Grotesk"
-        font-size="2"
+        font-size="4"
         font-weight="400"
       >
         Total
-      </h4>
+      </h2>
       <div
-        class="c8"
+        class="c37"
         display="flex"
       >
         <h2
-          class="c36 c37"
+          class="c38 c39"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
-          font-size="4"
-          font-weight="400"
+          font-size="5"
+          font-weight="700"
         >
           0.000100000000000138
            
           FIL
         </h2>
         <h2
-          class="c38"
+          class="c40"
           color="core.darkgray"
           font-family="RT-Alias-Grotesk"
           font-size="4"
@@ -3925,6 +4014,47 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           &lt; 0.01 USD
         </h2>
       </div>
+    </div>
+    <div
+      class="c41"
+      display="flex"
+    >
+      <h4
+        class="c42"
+        color="core.silver"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Message Hash
+      </h4>
+      <h4
+        class="c43 c44"
+        color="core.silver"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        bafy2bzacea5463eugsz6f7dbwixzqxmwe2ouqeq6zukackb3xxotskdidqmjm
+      </h4>
+      <a
+        class="c45"
+        color="core.primary"
+        font-size="3"
+        href="https://filscout.io/en/pc/message/bafy2bzacea5463eugsz6f7dbwixzqxmwe2ouqeq6zukackb3xxotskdidqmjm"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <h4
+          class="c46"
+          color="core.primary"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          View on Filscout
+        </h4>
+      </a>
     </div>
   </div>
 </div>

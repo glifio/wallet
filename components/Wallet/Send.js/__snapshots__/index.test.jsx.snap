@@ -186,7 +186,6 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -231,7 +230,6 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   position: relative;
   border-top: 1px solid;
   border-color: #999999;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -545,6 +543,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
 }
 
 .c25 {
@@ -571,6 +570,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
   border-left: 0;
+  background: #E4EBFC;
   -moz-appearance: textfield;
 }
 
@@ -615,6 +615,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
   border-left: 0;
   top: 0px;
   left: 0px;
@@ -1340,7 +1341,6 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1385,7 +1385,6 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   position: relative;
   border-top: 1px solid;
   border-color: #999999;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1710,6 +1709,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
 }
 
 .c26 {
@@ -1736,6 +1736,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
   border-left: 0;
+  background: #D2F5ED;
   -moz-appearance: textfield;
 }
 
@@ -1780,6 +1781,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
   border-left: 0;
   top: 0px;
   left: 0px;
@@ -2513,7 +2515,6 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2558,7 +2559,6 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   position: relative;
   border-top: 1px solid;
   border-color: #999999;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2883,6 +2883,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
 }
 
 .c26 {
@@ -2909,6 +2910,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
   border-left: 0;
+  background: #D2F5ED;
   -moz-appearance: textfield;
 }
 
@@ -2953,6 +2955,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
   border-left: 0;
   top: 0px;
   left: 0px;
@@ -3686,7 +3689,6 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3731,7 +3733,6 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   position: relative;
   border-top: 1px solid;
   border-color: #999999;
-  background-color: #E4EBFC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4130,6 +4131,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
 }
 
 .c40 {
@@ -4157,6 +4159,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
   top: 0px;
   left: 0px;
 }
@@ -4185,6 +4188,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
   border-left: 0;
+  background: #E4EBFC;
   -moz-appearance: textfield;
 }
 
@@ -4230,6 +4234,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
   border-left: 0;
+  background: #E4EBFC;
   -moz-appearance: textfield;
 }
 
@@ -4274,6 +4279,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
   border-left: 0;
+  background: #E4EBFC;
   -moz-appearance: textfield;
 }
 
@@ -4318,6 +4324,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
+  background: #E4EBFC;
   border-left: 0;
   top: 0px;
   left: 0px;
@@ -4356,9 +4363,18 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
 }
 
 .c34 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
   color: #5E26FF;
   font-size: 1.25rem;
   margin-top: 0;
+}
+
+.c34:hover {
+  border-bottom: 2px solid #5E26FF;
 }
 
 .c11 {

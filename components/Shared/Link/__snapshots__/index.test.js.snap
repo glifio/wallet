@@ -2,8 +2,17 @@
 
 exports[`StyledATag renders the StyledATag 1`] = `
 .c0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
   color: #ffffff;
   font-size: 1.25rem;
+}
+
+.c0:hover {
+  border-bottom: 2px solid #5E26FF;
 }
 
 <a
