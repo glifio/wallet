@@ -120,7 +120,7 @@ const Send = ({ close }) => {
       // HMR causes this condition, we just make this check for easier dev purposes
       return walletProvider
         ? walletProvider.estimateGas(message.encode())
-        : new FilecoinNumber('0', 'attofil')
+        : new FilecoinNumber('122', 'attofil')
     },
     [wallet.address, walletProvider]
   )
@@ -129,7 +129,7 @@ const Send = ({ close }) => {
     const fetchInitialGas = async () => {
       if (estimatedGasUsed.isEqualTo(0)) {
         const gas = await estimateGas(gasPrice, gasLimit, value.toAttoFil())
-        setEstimatedGasUsed(gas)
+        if (!gas.isEqualTo(0)) setEstimatedGasUsed(gas)
       }
     }
 
