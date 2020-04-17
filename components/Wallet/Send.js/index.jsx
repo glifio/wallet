@@ -42,7 +42,8 @@ const SendCardForm = styled.form.attrs(() => ({
   p: 3,
   border: 1,
   borderRadius: 2,
-  borderColor: 'silver'
+  borderColor: 'silver',
+  spellcheck: false
 }))`
   background-color: ${props => props.theme.colors.background.screen};
   /* box-shadow: ${props => props.theme.shadows[2]}; */
