@@ -14,8 +14,6 @@ export default styled.input.attrs(props => ({
   width: props.width || '100%',
   border: 0,
   borderColor: 'input.border',
-  borderTopRightRadius: 1,
-  borderBottomRightRadius: 1,
   ...props
 }))`
   min-width: 0;
@@ -35,7 +33,13 @@ export default styled.input.attrs(props => ({
   }};
 
   &:hover {
-    cursor: ${props => (props.disabled ? 'not-allowed' : 'text')};
+    background: ${props => {
+      if (props.valid) return props.theme.colors.input.background.valid
+      if (props.error) return props.theme.colors.input.background.invalid
+      if (props.disabled) return props.theme.colors.core.transparent
+      return props.theme.colors.input.background.active
+    }};
+    cursor: ${props => (props.disabled ? 'initial' : 'text')};
   }
 
   &:focus {
