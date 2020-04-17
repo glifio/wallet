@@ -4363,9 +4363,18 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
 }
 
 .c34 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
   color: #5E26FF;
   font-size: 1.25rem;
   margin-top: 0;
+}
+
+.c34:hover {
+  border-bottom: 2px solid #5E26FF;
 }
 
 .c11 {
