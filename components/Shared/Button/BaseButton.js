@@ -16,11 +16,12 @@ const applyStyles = (styleProperty, props, disabledColor) => {
   return props.theme.colors.buttons.primary[styleProperty]
 }
 
-export default styled.button.attrs(() => ({
+export default styled.button.attrs(props => ({
   p: 3,
   fontSize: 3,
   borderWidth: 1,
-  borderRadius: 2
+  borderRadius: 2,
+  ...props
 }))`
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   /* We are applying both the explicit and shorthand border properties to resolve multiple, conflicting cross-browser rendering issues */
