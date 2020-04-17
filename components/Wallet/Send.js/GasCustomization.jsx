@@ -42,7 +42,7 @@ const GasCustomization = ({
             justifyContent='space-between'
             alignItems='center'
           >
-            <Label my={3} color='core.darkgray'>
+            <Label my={3} pl={2} color='core.darkgray'>
               Transfers complete faster with a higher gas price.
             </Label>
             <StyledATag
@@ -55,9 +55,8 @@ const GasCustomization = ({
               What&rsquo;s this?
             </StyledATag>
           </Box>
-          <Box border={1} borderColor='input.border'>
+          <Box borderColor='input.border' mt={3}>
             <Input.Number
-              border={0}
               mt={2}
               m='0'
               denom='AttoFil'
@@ -65,9 +64,8 @@ const GasCustomization = ({
               value={gasPrice.toAttoFil()}
               onChange={onGasPriceInputChange}
             />
-            <Box borderTop={1} borderColor='input.border'>
+            <Box borderColor='input.border'>
               <NumberedInput
-                border={0}
                 m='0'
                 denom='AttoFil'
                 label='Gas Limit'
