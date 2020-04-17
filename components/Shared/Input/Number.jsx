@@ -54,11 +54,21 @@ export const NumberInput = forwardRef(
       <InputWrapper ref={ref} {...props}>
         <Box position='relative' display='flex' alignItems='center'>
           {label && (
-            <Box display='inline-block' px={3} minWidth={9} textAlign='center'>
+            <Box
+              display='inline-block'
+              px={2}
+              minWidth={[9, 9, 10]}
+              textAlign='left'
+            >
               <Label>{label}</Label>
             </Box>
           )}
-          <Box position='relative' display='flex' width='100%'>
+          <Box
+            position='relative'
+            display='flex'
+            justifyContent='flex-end'
+            width='100%'
+          >
             <RawNumberInput
               type='number'
               onChange={onChange}
