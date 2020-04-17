@@ -14,7 +14,7 @@ const Mnemonic = forwardRef(
     const validate = mnemonic => {
       let validMnemonic = false
       try {
-        validMnemonic = validateMnemonic(mnemonic)
+        validMnemonic = validateMnemonic(mnemonic.trim())
       } catch (err) {
         validMnemonic = false
       }
