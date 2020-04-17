@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react'
+import { useEffect, useCallback, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios'
 
@@ -8,15 +8,14 @@ import {
   fetchingConfirmedMessages,
   fetchingNextPage
 } from '../../../store/actions'
-import { FILSCAN } from '../../../constants'
-import formatFilscanMessages from './formatFilscanMessages'
+import { FILSCOUT } from '../../../constants'
+import { formatFilscoutMessages } from './formatMessages'
 import useWallet from '../../../WalletProvider/useWallet'
-
-const PAGINATION_COUNT = 8
 
 export default () => {
   const { address } = useWallet()
   const dispatch = useDispatch()
+  const [page, setPage] = useState(1)
   const {
     loading,
     loadedSuccess,
@@ -40,33 +39,25 @@ export default () => {
   })
 
   const fetchInitialData = useCallback(
-    async (address, total, cachedCount) => {
-      if (total === cachedCount) return
+    async (address, page = 1) => {
       try {
-        const { data } = await axios.post(
-          `${FILSCAN}/messages/MessageByAddress`,
-          {
-            method: '',
-            begindex: cachedCount,
-            count: PAGINATION_COUNT,
-            address,
-            from_to: ''
-          }
+        const { data } = await axios.get(
+          `${FILSCOUT}/message/list?address=${address}&page=${page}&page_size=15`
         )
 
-        // filscan reports 3 as success code https://github.com/filecoin-shipyard/filscan-backend/blob/master/Filscan_Interface_v1.0.md#2public-response-parameters
-        if (data.res.code !== 3) {
+        if (data.code !== 200) {
           dispatch(
             fetchedConfirmedMessagesFailure(
-              new Error('Error fetching from Filscan: ', data.res.msg)
+              new Error('Error fetching from Filscout: ', data.error)
             )
           )
         } else {
-          const formattedMessages = formatFilscanMessages(data.data.data)
+          setPage(Number(data.data.pagination.page) + 1)
+          const formattedMessages = formatFilscoutMessages(data.data.data)
           dispatch(
             fetchedConfirmedMessagesSuccess(
               formattedMessages,
-              Number(data.data.total)
+              Number(data.data.pagination.total)
             )
           )
         }
@@ -77,15 +68,15 @@ export default () => {
     [dispatch]
   )
 
-  const showMore = useCallback(() => {
+  const showMore = () => {
     dispatch(fetchingNextPage())
-    fetchInitialData(address, total, confirmed.length)
-  }, [address, confirmed.length, total, fetchInitialData, dispatch])
+    fetchInitialData(address, page)
+  }
 
   useEffect(() => {
     if (!loading && !loadedFailure && !loadedSuccess) {
       dispatch(fetchingConfirmedMessages())
-      fetchInitialData(address, total, confirmed.length)
+      fetchInitialData(address)
     }
   }, [
     address,
@@ -94,6 +85,7 @@ export default () => {
     loading,
     loadedFailure,
     loadedSuccess,
+    page,
     fetchInitialData,
     dispatch
   ])
@@ -106,6 +98,7 @@ export default () => {
     confirmed,
     showMore,
     paginating,
-    total
+    total,
+    page
   }
 }

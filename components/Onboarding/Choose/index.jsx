@@ -36,7 +36,7 @@ export default () => {
       {localWalletType ? (
         <Warning
           title='Warning'
-          description='We do not recommend you use any browser-based wallet to transact large sums of Filecoin. Glif should only be used with a Ledger hardware wallet.'
+          description='We do not recommend you use this account to hold or transact significant sums of Filecoin. This account is for testing purposes only. For significant sums, Glif should only be used with a Ledger hardware wallet.'
           linkDisplay="Why isn't it secure?"
           linkhref='https://coinsutra.com/security-risks-bitcoin-wallets/'
           onBack={() => setLocalWalletType(null)}

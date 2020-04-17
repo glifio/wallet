@@ -7,6 +7,14 @@ import { flushPromises } from '../../../test-utils'
 
 jest.mock('@openworklabs/filecoin-wallet-provider')
 
+const useRouter = jest.spyOn(require('next/router'), 'useRouter')
+
+const mockRouterReplace = jest.fn(() => {})
+useRouter.mockImplementationOnce(() => ({
+  replace: mockRouterReplace,
+  query: 'network=t'
+}))
+
 describe('Send Flow', () => {
   let close = () => {}
   beforeEach(() => {
