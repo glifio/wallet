@@ -42,7 +42,7 @@ const GasCustomization = ({
             justifyContent='space-between'
             alignItems='center'
           >
-            <Label my={3} color='core.darkgray'>
+            <Label my={3} pl={2} color='core.darkgray'>
               Transfers complete faster with a higher gas price.
             </Label>
             <StyledATag
