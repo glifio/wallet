@@ -13,7 +13,6 @@ export const DenomTag = styled(Box).attrs(props => ({
   alignItems: 'center',
   justifyContent: 'center',
   fontSize: 3,
-  borderColor: 'input.border',
   minWidth: 7,
   color: 'core.primary',
   backgroundColor: 'input.background.base',
@@ -30,7 +29,6 @@ export const DenomTag = styled(Box).attrs(props => ({
 `
 
 export const RawNumberInput = styled(BaseInput).attrs(props => ({
-  borderLeft: 0,
   ...props
 }))`
   ::-webkit-outer-spin-button,
@@ -67,11 +65,21 @@ export const NumberInput = forwardRef(
       <InputWrapper ref={ref} {...props}>
         <Box position='relative' display='flex' alignItems='center'>
           {label && (
-            <Box display='inline-block' px={3} minWidth={9} textAlign='center'>
+            <Box
+              display='inline-block'
+              px={2}
+              minWidth={[9, 9, 10]}
+              textAlign='left'
+            >
               <Label>{label}</Label>
             </Box>
           )}
-          <Box position='relative' display='flex' width='100%'>
+          <Box
+            position='relative'
+            display='flex'
+            justifyContent='flex-end'
+            width='100%'
+          >
             <RawNumberInput
               type='number'
               onChange={onChange}

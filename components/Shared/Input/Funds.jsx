@@ -153,8 +153,6 @@ const Funds = forwardRef(
         position='relative'
         display='flex'
         minHeight='160px'
-        border={1}
-        borderRadius={1}
         borderColor='input.border'
         mt={3}
         ref={ref}
@@ -163,17 +161,14 @@ const Funds = forwardRef(
         <Box
           display='flex'
           alignItems='center'
-          justifyContent='center'
+          justifyContent='flex-start'
           flexGrow='1'
           width='100%'
-          maxWidth={disabled ? 9 : 11}
-          py={3}
-          px={4}
+          maxWidth={10}
           textAlign='center'
           color='input.border'
-          borderColor='input.border'
-          borderRight={1}
           bg={error && 'input.background.invalid'}
+          px={2}
         >
           {error ? (
             <Text color='core.nearblack' textAlign='left'>
@@ -193,8 +188,6 @@ const Funds = forwardRef(
               alignItems='center'
               justifyContent='center'
               backgroundColor='core.white'
-              border={1}
-              borderColor='input.border'
               borderRadius={5}
               size={6}
               fontSize={5}
@@ -239,7 +232,8 @@ const Funds = forwardRef(
             display='flex'
             height='80px'
             borderTop={1}
-            borderColor='input.border'
+            borderColor='background.screen'
+            bg='input.background.base'
           >
             <RawNumberInput
               onFocus={() => {

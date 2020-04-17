@@ -5,8 +5,6 @@ exports[`Funds input changing values it calls the value change callback when the
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  border: 1px solid;
-  border-radius: 1px;
   border-color: #999999;
   margin-top: 16px;
   display: -webkit-box;
@@ -19,27 +17,23 @@ exports[`Funds input changing values it calls the value change callback when the
 .c1 {
   min-width: 0;
   box-sizing: border-box;
-  border-color: #999999;
-  border-right: 1px solid;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 8px;
+  padding-right: 8px;
   color: #999999;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 300px;
+  max-width: 240px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -73,8 +67,6 @@ exports[`Funds input changing values it calls the value change callback when the
   left: -24px;
   bottom: -24px;
   z-index: 999;
-  border: 1px solid;
-  border-color: #999999;
   border-radius: 32px;
   padding-bottom: 4px;
   background-color: #ffffff;
@@ -101,7 +93,8 @@ exports[`Funds input changing values it calls the value change callback when the
   box-sizing: border-box;
   position: relative;
   border-top: 1px solid;
-  border-color: #999999;
+  border-color: #EFF3FD;
+  background-color: #d1ddfa;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -123,10 +116,9 @@ exports[`Funds input changing values it calls the value change callback when the
   box-sizing: border-box;
   top: 0px;
   left: 0px;
-  border-color: #999999;
   padding-left: 16px;
   padding-right: 16px;
-  background-color: #E4EBFC;
+  background-color: #d1ddfa;
   color: #5E26FF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -145,7 +137,7 @@ exports[`Funds input changing values it calls the value change callback when the
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: #E4EBFC;
+  background: #d1ddfa;
 }
 
 .c6 {
@@ -162,28 +154,26 @@ exports[`Funds input changing values it calls the value change callback when the
   font-size: 1.125rem;
   text-align: right;
   cursor: text;
-  background: #E4EBFC;
+  background: #d1ddfa;
   font-size: 2rem;
   height: 100%;
   display: inline-block;
   width: 100%;
   border: 0;
   border-color: #999999;
-  border-top-right-radius: 1px;
-  border-bottom-right-radius: 1px;
-  border-left: 0;
-  background: #E4EBFC;
+  background: #d1ddfa;
   -moz-appearance: textfield;
 }
 
 .c6:hover {
+  background: #bacbf7;
   cursor: text;
 }
 
 .c6:focus {
   box-shadow: 0;
   outline: 0;
-  background: #d1ddfa;
+  background: #bacbf7;
 }
 
 .c6::-webkit-outer-spin-button,
@@ -293,8 +283,6 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  border: 1px solid;
-  border-radius: 1px;
   border-color: #999999;
   margin-top: 16px;
   display: -webkit-box;
@@ -307,27 +295,23 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
 .c1 {
   min-width: 0;
   box-sizing: border-box;
-  border-color: #999999;
-  border-right: 1px solid;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 8px;
+  padding-right: 8px;
   color: #999999;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 300px;
+  max-width: 240px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -361,8 +345,6 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   left: -24px;
   bottom: -24px;
   z-index: 999;
-  border: 1px solid;
-  border-color: #999999;
   border-radius: 32px;
   padding-bottom: 4px;
   background-color: #ffffff;
@@ -389,7 +371,8 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   box-sizing: border-box;
   position: relative;
   border-top: 1px solid;
-  border-color: #999999;
+  border-color: #EFF3FD;
+  background-color: #d1ddfa;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -411,10 +394,9 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   box-sizing: border-box;
   top: 0px;
   left: 0px;
-  border-color: #999999;
   padding-left: 16px;
   padding-right: 16px;
-  background-color: #E4EBFC;
+  background-color: #d1ddfa;
   color: #5E26FF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -433,7 +415,7 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: #E4EBFC;
+  background: #d1ddfa;
 }
 
 .c6 {
@@ -450,28 +432,26 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   font-size: 1.125rem;
   text-align: right;
   cursor: text;
-  background: #E4EBFC;
+  background: #d1ddfa;
   font-size: 2rem;
   height: 100%;
   display: inline-block;
   width: 100%;
   border: 0;
   border-color: #999999;
-  border-top-right-radius: 1px;
-  border-bottom-right-radius: 1px;
-  border-left: 0;
-  background: #E4EBFC;
+  background: #d1ddfa;
   -moz-appearance: textfield;
 }
 
 .c6:hover {
+  background: #bacbf7;
   cursor: text;
 }
 
 .c6:focus {
   box-shadow: 0;
   outline: 0;
-  background: #d1ddfa;
+  background: #bacbf7;
 }
 
 .c6::-webkit-outer-spin-button,
@@ -581,8 +561,6 @@ exports[`Funds input it renders correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  border: 1px solid;
-  border-radius: 1px;
   border-color: #999999;
   margin-top: 16px;
   display: -webkit-box;
@@ -595,27 +573,23 @@ exports[`Funds input it renders correctly 1`] = `
 .c1 {
   min-width: 0;
   box-sizing: border-box;
-  border-color: #999999;
-  border-right: 1px solid;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 8px;
+  padding-right: 8px;
   color: #999999;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 300px;
+  max-width: 240px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -649,8 +623,6 @@ exports[`Funds input it renders correctly 1`] = `
   left: -24px;
   bottom: -24px;
   z-index: 999;
-  border: 1px solid;
-  border-color: #999999;
   border-radius: 32px;
   padding-bottom: 4px;
   background-color: #ffffff;
@@ -677,7 +649,8 @@ exports[`Funds input it renders correctly 1`] = `
   box-sizing: border-box;
   position: relative;
   border-top: 1px solid;
-  border-color: #999999;
+  border-color: #EFF3FD;
+  background-color: #d1ddfa;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -699,10 +672,9 @@ exports[`Funds input it renders correctly 1`] = `
   box-sizing: border-box;
   top: 0px;
   left: 0px;
-  border-color: #999999;
   padding-left: 16px;
   padding-right: 16px;
-  background-color: #D2F5ED;
+  background-color: #85e0cb;
   color: #5E26FF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -721,7 +693,7 @@ exports[`Funds input it renders correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: #E4EBFC;
+  background: #d1ddfa;
 }
 
 .c6 {
@@ -738,28 +710,26 @@ exports[`Funds input it renders correctly 1`] = `
   font-size: 1.125rem;
   text-align: right;
   cursor: text;
-  background: #D2F5ED;
+  background: #85e0cb;
   font-size: 2rem;
   height: 100%;
   display: inline-block;
   width: 100%;
   border: 0;
   border-color: #999999;
-  border-top-right-radius: 1px;
-  border-bottom-right-radius: 1px;
-  border-left: 0;
-  background: #D2F5ED;
+  background: #85e0cb;
   -moz-appearance: textfield;
 }
 
 .c6:hover {
+  background: #85e0cb;
   cursor: text;
 }
 
 .c6:focus {
   box-shadow: 0;
   outline: 0;
-  background: #D2F5ED;
+  background: #85e0cb;
 }
 
 .c6::-webkit-outer-spin-button,
@@ -869,8 +839,6 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  border: 1px solid;
-  border-radius: 1px;
   border-color: #999999;
   margin-top: 16px;
   display: -webkit-box;
@@ -883,27 +851,23 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
 .c1 {
   min-width: 0;
   box-sizing: border-box;
-  border-color: #999999;
-  border-right: 1px solid;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 8px;
+  padding-right: 8px;
   color: #999999;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 160px;
+  max-width: 240px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -937,8 +901,6 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   left: -24px;
   bottom: -24px;
   z-index: 999;
-  border: 1px solid;
-  border-color: #999999;
   border-radius: 32px;
   padding-bottom: 4px;
   background-color: #ffffff;
@@ -965,7 +927,8 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   box-sizing: border-box;
   position: relative;
   border-top: 1px solid;
-  border-color: #999999;
+  border-color: #EFF3FD;
+  background-color: #d1ddfa;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -987,10 +950,9 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   box-sizing: border-box;
   top: 0px;
   left: 0px;
-  border-color: #999999;
   padding-left: 16px;
   padding-right: 16px;
-  background-color: #E4EBFC;
+  background-color: #d1ddfa;
   color: #5E26FF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1009,7 +971,7 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: #E4EBFC;
+  background: #d1ddfa;
 }
 
 .c6 {
@@ -1026,28 +988,24 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   font-size: 1.125rem;
   text-align: right;
   cursor: text;
-  background: transparent;
   font-size: 2rem;
   height: 100%;
   display: inline-block;
   width: 100%;
   border: 0;
   border-color: #999999;
-  border-top-right-radius: 1px;
-  border-bottom-right-radius: 1px;
-  border-left: 0;
-  background: transparent;
   -moz-appearance: textfield;
 }
 
 .c6:hover {
-  cursor: not-allowed;
+  background: transparent;
+  cursor: initial;
 }
 
 .c6:focus {
   box-shadow: 0;
   outline: 0;
-  background: #d1ddfa;
+  background: #bacbf7;
 }
 
 .c6::-webkit-outer-spin-button,
@@ -1159,8 +1117,6 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  border: 1px solid;
-  border-radius: 1px;
   border-color: #999999;
   margin-top: 16px;
   display: -webkit-box;
@@ -1173,27 +1129,23 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
 .c1 {
   min-width: 0;
   box-sizing: border-box;
-  border-color: #999999;
-  border-right: 1px solid;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 8px;
+  padding-right: 8px;
   color: #999999;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 160px;
+  max-width: 240px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -1227,8 +1179,6 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   left: -24px;
   bottom: -24px;
   z-index: 999;
-  border: 1px solid;
-  border-color: #999999;
   border-radius: 32px;
   padding-bottom: 4px;
   background-color: #ffffff;
@@ -1255,7 +1205,8 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   box-sizing: border-box;
   position: relative;
   border-top: 1px solid;
-  border-color: #999999;
+  border-color: #EFF3FD;
+  background-color: #d1ddfa;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1277,10 +1228,9 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   box-sizing: border-box;
   top: 0px;
   left: 0px;
-  border-color: #999999;
   padding-left: 16px;
   padding-right: 16px;
-  background-color: #D2F5ED;
+  background-color: #85e0cb;
   color: #5E26FF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1299,7 +1249,7 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: #E4EBFC;
+  background: #d1ddfa;
 }
 
 .c6 {
@@ -1316,28 +1266,26 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   font-size: 1.125rem;
   text-align: right;
   cursor: text;
-  background: #D2F5ED;
+  background: #85e0cb;
   font-size: 2rem;
   height: 100%;
   display: inline-block;
   width: 100%;
   border: 0;
   border-color: #999999;
-  border-top-right-radius: 1px;
-  border-bottom-right-radius: 1px;
-  border-left: 0;
-  background: #D2F5ED;
+  background: #85e0cb;
   -moz-appearance: textfield;
 }
 
 .c6:hover {
-  cursor: not-allowed;
+  background: #85e0cb;
+  cursor: initial;
 }
 
 .c6:focus {
   box-shadow: 0;
   outline: 0;
-  background: #D2F5ED;
+  background: #85e0cb;
 }
 
 .c6::-webkit-outer-spin-button,
@@ -1449,8 +1397,6 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  border: 1px solid;
-  border-radius: 1px;
   border-color: #999999;
   margin-top: 16px;
   display: -webkit-box;
@@ -1463,27 +1409,23 @@ exports[`Funds input it renders disabled state correctly 1`] = `
 .c1 {
   min-width: 0;
   box-sizing: border-box;
-  border-color: #999999;
-  border-right: 1px solid;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 8px;
+  padding-right: 8px;
   color: #999999;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 160px;
+  max-width: 240px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -1517,8 +1459,6 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   left: -24px;
   bottom: -24px;
   z-index: 999;
-  border: 1px solid;
-  border-color: #999999;
   border-radius: 32px;
   padding-bottom: 4px;
   background-color: #ffffff;
@@ -1545,7 +1485,8 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   box-sizing: border-box;
   position: relative;
   border-top: 1px solid;
-  border-color: #999999;
+  border-color: #EFF3FD;
+  background-color: #d1ddfa;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1567,10 +1508,9 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   box-sizing: border-box;
   top: 0px;
   left: 0px;
-  border-color: #999999;
   padding-left: 16px;
   padding-right: 16px;
-  background-color: #E4EBFC;
+  background-color: #d1ddfa;
   color: #5E26FF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1589,7 +1529,7 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: #E4EBFC;
+  background: #d1ddfa;
 }
 
 .c6 {
@@ -1606,28 +1546,24 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   font-size: 1.125rem;
   text-align: right;
   cursor: text;
-  background: transparent;
   font-size: 2rem;
   height: 100%;
   display: inline-block;
   width: 100%;
   border: 0;
   border-color: #999999;
-  border-top-right-radius: 1px;
-  border-bottom-right-radius: 1px;
-  border-left: 0;
-  background: transparent;
   -moz-appearance: textfield;
 }
 
 .c6:hover {
-  cursor: not-allowed;
+  background: transparent;
+  cursor: initial;
 }
 
 .c6:focus {
   box-shadow: 0;
   outline: 0;
-  background: #d1ddfa;
+  background: #bacbf7;
 }
 
 .c6::-webkit-outer-spin-button,
@@ -1739,8 +1675,6 @@ exports[`Funds input it renders error states properly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  border: 1px solid;
-  border-radius: 1px;
   border-color: #999999;
   margin-top: 16px;
   display: -webkit-box;
@@ -1753,12 +1687,8 @@ exports[`Funds input it renders error states properly 1`] = `
 .c1 {
   min-width: 0;
   box-sizing: border-box;
-  border-color: #999999;
-  border-right: 1px solid;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 8px;
+  padding-right: 8px;
   color: #999999;
   background-color: #FC6D6F;
   display: -webkit-box;
@@ -1766,15 +1696,15 @@ exports[`Funds input it renders error states properly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 300px;
+  max-width: 240px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -1808,8 +1738,6 @@ exports[`Funds input it renders error states properly 1`] = `
   left: -24px;
   bottom: -24px;
   z-index: 999;
-  border: 1px solid;
-  border-color: #999999;
   border-radius: 32px;
   padding-bottom: 4px;
   background-color: #ffffff;
@@ -1836,7 +1764,8 @@ exports[`Funds input it renders error states properly 1`] = `
   box-sizing: border-box;
   position: relative;
   border-top: 1px solid;
-  border-color: #999999;
+  border-color: #EFF3FD;
+  background-color: #d1ddfa;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1858,10 +1787,9 @@ exports[`Funds input it renders error states properly 1`] = `
   box-sizing: border-box;
   top: 0px;
   left: 0px;
-  border-color: #999999;
   padding-left: 16px;
   padding-right: 16px;
-  background-color: #E4EBFC;
+  background-color: #d1ddfa;
   color: #5E26FF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1880,7 +1808,7 @@ exports[`Funds input it renders error states properly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: #E4EBFC;
+  background: #d1ddfa;
 }
 
 .c6 {
@@ -1897,28 +1825,26 @@ exports[`Funds input it renders error states properly 1`] = `
   font-size: 1.125rem;
   text-align: right;
   cursor: text;
-  background: #E4EBFC;
+  background: #d1ddfa;
   font-size: 2rem;
   height: 100%;
   display: inline-block;
   width: 100%;
   border: 0;
   border-color: #999999;
-  border-top-right-radius: 1px;
-  border-bottom-right-radius: 1px;
-  border-left: 0;
-  background: #E4EBFC;
+  background: #d1ddfa;
   -moz-appearance: textfield;
 }
 
 .c6:hover {
+  background: #bacbf7;
   cursor: text;
 }
 
 .c6:focus {
   box-shadow: 0;
   outline: 0;
-  background: #d1ddfa;
+  background: #bacbf7;
 }
 
 .c6::-webkit-outer-spin-button,
@@ -2028,8 +1954,6 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  border: 1px solid;
-  border-radius: 1px;
   border-color: #999999;
   margin-top: 16px;
   display: -webkit-box;
@@ -2042,27 +1966,23 @@ exports[`Funds input it renders invalid state correctly 1`] = `
 .c1 {
   min-width: 0;
   box-sizing: border-box;
-  border-color: #999999;
-  border-right: 1px solid;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 8px;
+  padding-right: 8px;
   color: #999999;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 300px;
+  max-width: 240px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -2096,8 +2016,6 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   left: -24px;
   bottom: -24px;
   z-index: 999;
-  border: 1px solid;
-  border-color: #999999;
   border-radius: 32px;
   padding-bottom: 4px;
   background-color: #ffffff;
@@ -2124,7 +2042,8 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   box-sizing: border-box;
   position: relative;
   border-top: 1px solid;
-  border-color: #999999;
+  border-color: #EFF3FD;
+  background-color: #d1ddfa;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2146,10 +2065,9 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   box-sizing: border-box;
   top: 0px;
   left: 0px;
-  border-color: #999999;
   padding-left: 16px;
   padding-right: 16px;
-  background-color: #E4EBFC;
+  background-color: #d1ddfa;
   color: #5E26FF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2168,7 +2086,7 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: #E4EBFC;
+  background: #d1ddfa;
 }
 
 .c6 {
@@ -2185,28 +2103,26 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   font-size: 1.125rem;
   text-align: right;
   cursor: text;
-  background: #E4EBFC;
+  background: #d1ddfa;
   font-size: 2rem;
   height: 100%;
   display: inline-block;
   width: 100%;
   border: 0;
   border-color: #999999;
-  border-top-right-radius: 1px;
-  border-bottom-right-radius: 1px;
-  border-left: 0;
-  background: #E4EBFC;
+  background: #d1ddfa;
   -moz-appearance: textfield;
 }
 
 .c6:hover {
+  background: #bacbf7;
   cursor: text;
 }
 
 .c6:focus {
   box-shadow: 0;
   outline: 0;
-  background: #d1ddfa;
+  background: #bacbf7;
 }
 
 .c6::-webkit-outer-spin-button,

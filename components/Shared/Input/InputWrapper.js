@@ -3,8 +3,6 @@ import { space, color, layout, border, flexbox } from 'styled-system'
 
 export default styled.div.attrs(props => {
   return {
-    border: 1,
-    borderColor: 'input.border',
     borderRadius: 1,
     ...props
   }
