@@ -13,11 +13,13 @@ export const baseColors = {
     lighter: '#EFF3FD',
     light: '#E4EBFC',
     mid: '#d1ddfa',
+    mid2: '#bacbf7',
     muted: '#e8ecf7'
   },
   green: {
     primary: '#1AD08F',
     light: '#D2F5ED',
+    muted: '#85e0cb',
     dark: '#007056',
     darker: '#08442F'
   },
@@ -101,9 +103,9 @@ const colors = {
   },
   input: {
     background: {
-      base: baseColors.blue.light,
-      active: baseColors.blue.mid,
-      valid: baseColors.green.light,
+      base: baseColors.blue.mid,
+      active: baseColors.blue.mid2,
+      valid: baseColors.green.muted,
       invalid: baseColors.red.light
     },
     border: core.silver
