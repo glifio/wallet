@@ -184,6 +184,7 @@ const MessageDetail = ({ address, close, message }) => {
             color='core.silver'
             textAlign='left'
             m={1}
+            maxWidth={9}
             css={`
               text-overflow: ellipsis;
               overflow: hidden;

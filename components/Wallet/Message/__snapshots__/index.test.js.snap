@@ -3390,7 +3390,18 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 4px;
 }
 
-.c45 {
+.c43 {
+  color: #999999;
+  text-align: left;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  max-width: 160px;
+  margin: 4px;
+}
+
+.c46 {
   color: #5E26FF;
   text-align: left;
   font-size: 1.125rem;
@@ -3560,7 +3571,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 0;
 }
 
-.c44 {
+.c45 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -3570,7 +3581,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   font-size: 1.25rem;
 }
 
-.c44:hover {
+.c45:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
@@ -3617,7 +3628,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   word-wrap: break-word;
 }
 
-.c43 {
+.c44 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: no-wrap;
@@ -4018,7 +4029,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         Message Hash
       </h4>
       <h4
-        class="c42 c43"
+        class="c43 c44"
         color="core.silver"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -4027,7 +4038,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         bafy2bzacea5463eugsz6f7dbwixzqxmwe2ouqeq6zukackb3xxotskdidqmjm
       </h4>
       <a
-        class="c44"
+        class="c45"
         color="core.primary"
         font-size="3"
         href="https://filscout.io/en/pc/message/bafy2bzacea5463eugsz6f7dbwixzqxmwe2ouqeq6zukackb3xxotskdidqmjm"
@@ -4035,7 +4046,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         target="_blank"
       >
         <h4
-          class="c45"
+          class="c46"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="2"
