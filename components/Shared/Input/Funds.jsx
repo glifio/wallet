@@ -179,13 +179,7 @@ const Funds = forwardRef(
           )}
         </Box>
         <Box display='inline-block' width='100%'>
-          <Box
-            position='relative'
-            display='flex'
-            height='80px'
-            width='100%'
-            bg='input.background.base'
-          >
+          <Box position='relative' display='flex' height='80px' width='100%'>
             <Box
               position='absolute'
               left='-24px'

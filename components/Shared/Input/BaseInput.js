@@ -28,7 +28,7 @@ export default styled.input.attrs(props => ({
   background: ${props => {
     if (props.valid) return props.theme.colors.input.background.valid
     if (props.error) return props.theme.colors.input.background.invalid
-    if (props.disabled) return props.theme.colors.core.transparent
+    if (props.disabled) return props.theme.colors.input.background.disabled
     return props.theme.colors.input.background.base
   }};
 

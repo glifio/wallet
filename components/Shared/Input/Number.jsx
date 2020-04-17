@@ -20,6 +20,12 @@ export const DenomTag = styled(Box).attrs(props => ({
 }))`
   text-align: center;
   position: relative;
+  background: ${props => {
+    if (props.valid) return props.theme.colors.input.background.valid
+    if (props.error) return props.theme.colors.input.background.invalid
+    if (props.disabled) return props.theme.colors.input.background.disabled
+    return props.theme.colors.input.background.base
+  }};
 `
 
 export const RawNumberInput = styled(BaseInput).attrs(props => ({
@@ -30,7 +36,12 @@ export const RawNumberInput = styled(BaseInput).attrs(props => ({
     -webkit-appearance: none;
     margin: 0;
   }
-
+  background: ${props => {
+    if (props.valid) return props.theme.colors.input.background.valid
+    if (props.error) return props.theme.colors.input.background.invalid
+    if (props.disabled) return props.theme.colors.input.background.disabled
+    return props.theme.colors.input.background.base
+  }};
   -moz-appearance: textfield;
 `
 
