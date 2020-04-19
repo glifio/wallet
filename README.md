@@ -42,3 +42,4 @@ Here are a few modules that we've broken out.
 - [Lotus JSON-RPC Engine](https://github.com/openworklabs/lotus-jsonrpc-engine/)
 - [Filecoin number type](https://github.com/openworklabs/filecoin-number)
 - [Filecoin message type](https://github.com/openworklabs/filecoin-message)
+- [Filecoin address type](https://github.com/openworklabs/filecoin-address)
