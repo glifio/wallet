@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, func, obj } from 'prop-types'
+import { string, func } from 'prop-types'
 import Box from '../Box'
 import Glyph from '../Glyph'
 import Button from '../Button'
