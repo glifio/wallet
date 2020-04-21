@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState } from 'react'
 import styled from 'styled-components'
 import { string, func, bool, oneOf } from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
@@ -54,6 +54,7 @@ const AccountCard = forwardRef(
     },
     ref
   ) => {
+    const [copied, setCopied] = useState(false)
     return (
       <Box
         display='flex'
@@ -88,11 +89,14 @@ const AccountCard = forwardRef(
               display='flex'
               alignItems='center'
               ml={1}
-              onClick={() => copyToClipboard(address)}
+              onClick={() => {
+                setCopied(true)
+                copyToClipboard(address)
+              }}
             >
               <StyledIconCopyAccountAddress />
               <LabelCopy mt={0} ml={1} color='core.secondary'>
-                Copy
+                {copied ? 'Copied' : 'Copy'}
               </LabelCopy>
             </CopyAddress>
           </Box>
