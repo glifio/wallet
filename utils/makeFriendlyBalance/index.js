@@ -26,7 +26,7 @@ export default (bigNumber, dp = 3, pretty = true) => {
   }
   if (bigNumber.isLessThan(0)) throw new Error('Cannot have a negative balance')
   if (bigNumber.isGreaterThan(0) && bigNumber.isLessThan(1)) {
-    if (bigNumber.dp(dp, BigNumber.ROUND_DOWN).isEqualTo('0')) {
+    if (bigNumber.dp(dp, BigNumber.ROUND_HALF_DOWN).isEqualTo('0')) {
       let abbrev = '0.'
       for (let i = 0; i < dp - 1; i += 1) {
         abbrev += '0'
@@ -35,13 +35,13 @@ export default (bigNumber, dp = 3, pretty = true) => {
     }
 
     return addComparisonOperator(
-      bigNumber.dp(dp, BigNumber.ROUND_DOWN).toString(),
+      bigNumber.dp(dp, BigNumber.ROUND_HALF_DOWN).toString(),
       bigNumber
     )
   }
   if (bigNumber.isGreaterThan(1) && bigNumber.isLessThan(1000)) {
     return addComparisonOperator(
-      bigNumber.dp(dp, BigNumber.ROUND_DOWN).toString(),
+      bigNumber.dp(dp, BigNumber.ROUND_HALF_DOWN).toString(),
       bigNumber
     )
   }
