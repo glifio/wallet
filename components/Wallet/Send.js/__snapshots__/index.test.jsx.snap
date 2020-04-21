@@ -312,11 +312,11 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   font-size: 1.125rem;
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
-  border-radius: 4px;
+  border-radius: 0;
   padding: 16px;
   border: 0;
   border-right: 1px solid;
-  border-radius: 4px;
+  border-radius: 0;
   border-color: #C4C4C4;
   border-width: 1px;
 }
@@ -334,10 +334,10 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   font-size: 1.125rem;
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
-  border-radius: 4px;
+  border-radius: 0;
   padding: 16px;
   border: 0;
-  border-radius: 4px;
+  border-radius: 0;
   border-width: 1px;
 }
 
@@ -1118,14 +1118,14 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
       class="c43"
     >
       <button
-        class="c44 c45"
+        class="c44 c45 Sendjs___StyledButton-sc-1crplc1-6 c45"
         font-size="3"
         type="button"
       >
         Back
       </button>
       <button
-        class="c46 c47"
+        class="c46 c47 Sendjs___StyledButton2-sc-1crplc1-7 c47"
         font-size="3"
         type="submit"
       >
@@ -1448,11 +1448,11 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   font-size: 1.125rem;
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
-  border-radius: 4px;
+  border-radius: 0;
   padding: 16px;
   border: 0;
   border-right: 1px solid;
-  border-radius: 4px;
+  border-radius: 0;
   border-color: #C4C4C4;
   border-width: 1px;
 }
@@ -1470,10 +1470,10 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   font-size: 1.125rem;
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
-  border-radius: 4px;
+  border-radius: 0;
   padding: 16px;
   border: 0;
-  border-radius: 4px;
+  border-radius: 0;
   border-width: 1px;
 }
 
@@ -2274,14 +2274,14 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
       class="c44"
     >
       <button
-        class="c45 c46"
+        class="c45 c46 Sendjs___StyledButton-sc-1crplc1-6 c46"
         font-size="3"
         type="button"
       >
         Back
       </button>
       <button
-        class="c47 c48"
+        class="c47 c48 Sendjs___StyledButton2-sc-1crplc1-7 c48"
         font-size="3"
         type="submit"
       >
@@ -2604,11 +2604,11 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   font-size: 1.125rem;
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
-  border-radius: 4px;
+  border-radius: 0;
   padding: 16px;
   border: 0;
   border-right: 1px solid;
-  border-radius: 4px;
+  border-radius: 0;
   border-color: #C4C4C4;
   border-width: 1px;
 }
@@ -2626,10 +2626,10 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   font-size: 1.125rem;
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
-  border-radius: 4px;
+  border-radius: 0;
   padding: 16px;
   border: 0;
-  border-radius: 4px;
+  border-radius: 0;
   border-width: 1px;
 }
 
@@ -3430,14 +3430,14 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
       class="c44"
     >
       <button
-        class="c45 c46"
+        class="c45 c46 Sendjs___StyledButton-sc-1crplc1-6 c46"
         font-size="3"
         type="button"
       >
         Back
       </button>
       <button
-        class="c47 c48"
+        class="c47 c48 Sendjs___StyledButton2-sc-1crplc1-7 c48"
         font-size="3"
         type="submit"
       >
@@ -3829,11 +3829,11 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   font-size: 1.125rem;
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
-  border-radius: 4px;
+  border-radius: 0;
   padding: 16px;
   border: 0;
   border-right: 1px solid;
-  border-radius: 4px;
+  border-radius: 0;
   border-color: #C4C4C4;
   border-width: 1px;
 }
@@ -3851,10 +3851,10 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   font-size: 1.125rem;
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
-  border-radius: 4px;
+  border-radius: 0;
   padding: 16px;
   border: 0;
-  border-radius: 4px;
+  border-radius: 0;
   border-width: 1px;
 }
 
@@ -4962,14 +4962,14 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
       class="c58"
     >
       <button
-        class="c59 c60"
+        class="c59 c60 Sendjs___StyledButton-sc-1crplc1-6 c60"
         font-size="3"
         type="button"
       >
         Back
       </button>
       <button
-        class="c61 c62"
+        class="c61 c62 Sendjs___StyledButton2-sc-1crplc1-7 c62"
         font-size="3"
         type="submit"
       >

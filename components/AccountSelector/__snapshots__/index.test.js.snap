@@ -270,7 +270,7 @@ Array [
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  padding: 16px;
+  padding: 8px;
   height: 100%;
   border-color: #660000;
   border-width: 1px;

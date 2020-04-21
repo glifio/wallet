@@ -30,8 +30,9 @@ export default () => {
 
   const next = () => {
     try {
-      const isValid = validateMnemonic(mnemonic)
-      if (isValid) setValidMnemonic(mnemonic)
+      const trimmed = mnemonic.trim()
+      const isValid = validateMnemonic(trimmed)
+      if (isValid) setValidMnemonic(trimmed)
     } catch (_) {
       setMnemonicError('Invalid seed phrase.')
     }
