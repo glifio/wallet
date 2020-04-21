@@ -636,4 +636,79 @@ describe('Funds input', () => {
       })
     })
   })
+
+  test('it sets ammounts automatically after multiple changes', async () => {
+    jest.useFakeTimers()
+    const { Tree } = composeMockAppTree('postOnboard')
+    const value = new FilecoinNumber('0', 'fil')
+    const balance = new FilecoinNumber('2', 'fil')
+    const gasLimit = new FilecoinNumber('1000', 'attofil')
+    await act(async () => {
+      render(
+        <Tree>
+          <Funds
+            name='amount'
+            label='Amount'
+            amount={value.toAttoFil()}
+            onAmountChange={onAmountChange}
+            balance={balance}
+            setError={setError}
+            gasLimit={gasLimit}
+            disabled={false}
+            valid={false}
+          />
+        </Tree>
+      )
+
+      fireEvent.click(screen.getAllByPlaceholderText('0')[1])
+      fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
+        target: {
+          value: '0'
+        }
+      })
+      await flushPromises()
+      fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
+        target: {
+          value: '0.'
+        }
+      })
+      await flushPromises()
+      fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
+        target: {
+          value: '0.0'
+        }
+      })
+      await flushPromises()
+      fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
+        target: {
+          value: '0.001'
+        }
+      })
+      await flushPromises()
+      fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
+        target: {
+          value: '0.0010'
+        }
+      })
+      await flushPromises()
+      fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
+        target: {
+          value: '0.00101'
+        }
+      })
+      await flushPromises()
+      fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
+        target: {
+          value: '0.001010'
+        }
+      })
+      await flushPromises()
+      jest.runOnlyPendingTimers()
+    })
+    await flushPromises()
+
+    expect(screen.getAllByPlaceholderText('0')[0].value).toBe('0.000202')
+    expect(screen.getAllByPlaceholderText('0')[1].value).toBe('0.001010')
+    expect(onAmountChange).toHaveBeenCalledTimes(1)
+  })
 })
