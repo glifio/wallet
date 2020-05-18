@@ -10,8 +10,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@ledgerhq/hw-transport-webhid": "5.7.0",
-    "@ledgerhq/hw-transport-webusb": "5.7.0",
+    "@ledgerhq/hw-transport-webusb": "^5.13.1",
     "@openworklabs/filecoin-address": "0.0.3",
     "@openworklabs/filecoin-message": "0.0.8",
     "@openworklabs/filecoin-number": "0.0.6",
