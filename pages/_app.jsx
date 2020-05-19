@@ -8,6 +8,7 @@ import WalletProviderWrapper from '../WalletProvider'
 import NetworkChecker from '../lib/check-network'
 import BalancePoller from '../lib/update-balance'
 import { ConverterWrapper } from '../lib/Converter'
+import { WasmLoader } from '../lib/WasmLoader'
 import '../stylesheets/normalize.css'
 import '../stylesheets/styles.css'
 
@@ -24,15 +25,17 @@ class MyApp extends App {
           <title>Glif</title>
         </Head>
         <Provider store={reduxStore}>
-          <ConverterWrapper>
-            <WalletProviderWrapper network={reduxStore.getState().network}>
-              <NetworkChecker pathname={pathname} query={query} />
-              <BalancePoller />
-              <ThemeProvider theme={theme}>
-                <Component {...pageProps} />
-              </ThemeProvider>
-            </WalletProviderWrapper>
-          </ConverterWrapper>
+          <WasmLoader>
+            <ConverterWrapper>
+              <WalletProviderWrapper network={reduxStore.getState().network}>
+                <NetworkChecker pathname={pathname} query={query} />
+                <BalancePoller />
+                <ThemeProvider theme={theme}>
+                  <Component {...pageProps} />
+                </ThemeProvider>
+              </WalletProviderWrapper>
+            </ConverterWrapper>
+          </WasmLoader>
         </Provider>
       </>
     )

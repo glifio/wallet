@@ -16,7 +16,15 @@ const fetchDefaultWallet = async (
   let provider = walletProvider
   if (walletType === LEDGER) {
     dispatch(resetLedgerState())
-    provider = await setLedgerProvider(dispatch, network)
+    provider = await setLedgerProvider(
+      dispatch,
+      network,
+      // this is a big time hack to get the class constructor
+      // since the class relies on some wasm code in its scope,
+      // we need the reference to the original class
+      // see prepareSubProviders file for how the constructor was created
+      walletProvider.wallet.constructor
+    )
     if (!provider) return null
     const configured = await checkLedgerConfiguration(dispatch, provider)
     if (!configured) return null

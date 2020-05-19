@@ -13,7 +13,7 @@ import {
 import { IconLedger } from '../../../Shared/Icons'
 
 import { useWalletProvider } from '../../../../WalletProvider'
-import { walletList } from '../../../../store/actions'
+import { walletList, error as rdxError } from '../../../../store/actions'
 import {
   hasLedgerError,
   reportLedgerConfigError
@@ -95,7 +95,7 @@ Step2Helper.defaultProps = {
 }
 
 export default () => {
-  const { ledger, fetchDefaultWallet } = useWalletProvider()
+  const { ledger, fetchDefaultWallet, walletProvider } = useWalletProvider()
   const dispatch = useDispatch()
   const resetState = useReset()
   const generalError = useSelector(state => state.error)
@@ -153,7 +153,7 @@ export default () => {
           onClick={async () => {
             setLoading(true)
             try {
-              const wallet = await fetchDefaultWallet()
+              const wallet = await fetchDefaultWallet(walletProvider)
               if (wallet) {
                 dispatch(walletList([wallet]))
                 const params = new URLSearchParams(router.query)
@@ -165,7 +165,7 @@ export default () => {
               }
             } catch (err) {
               setLoading(false)
-              dispatch(error(err))
+              dispatch(rdxError(err))
             }
           }}
           disabled={!ledger.userImportFailure && loading}

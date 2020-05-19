@@ -11,11 +11,13 @@ import reducer, {
 import { setLedgerProvider } from '../utils/ledger/setLedgerProvider'
 import fetchDefaultWallet from './fetchDefaultWallet'
 import connectLedger from './connectLedger'
+import { useWasm } from '../lib/WasmLoader'
 
 export const WalletProviderContext = createContext({})
 
 const WalletProviderWrapper = ({ network, children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
+  const { walletSubProviders } = useWasm()
   return (
     <WalletProviderContext.Provider
       value={{
@@ -34,13 +36,19 @@ const WalletProviderWrapper = ({ network, children }) => {
         setWalletError: errorMessage => dispatch(setError(errorMessage)),
         setWalletType: walletType => dispatch(setWalletType(walletType)),
         setLedgerProvider: useCallback(
-          () => setLedgerProvider(dispatch, network),
-          [dispatch, network]
+          () =>
+            setLedgerProvider(
+              dispatch,
+              network,
+              walletSubProviders.LedgerProvider
+            ),
+          [dispatch, network, walletSubProviders.LedgerProvider]
         ),
-        connectLedger: useCallback(() => connectLedger(dispatch, network), [
-          dispatch,
-          network
-        ]),
+        connectLedger: useCallback(
+          () =>
+            connectLedger(dispatch, network, walletSubProviders.LedgerProvider),
+          [dispatch, network, walletSubProviders.LedgerProvider]
+        ),
         resetLedgerState: () => dispatch(resetLedgerState()),
         resetState: useCallback(() => dispatch(resetState()), [dispatch])
       }}
