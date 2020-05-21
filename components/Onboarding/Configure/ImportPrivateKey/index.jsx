@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useState } from 'react'
+import Filecoin from '@openworklabs/filecoin-wallet-provider'
+import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
 import {
   Box,
@@ -11,42 +12,48 @@ import {
   StepHeader,
   LoadingScreen
 } from '../../../Shared'
-
+import { walletList } from '../../../../store/actions'
 import { useWalletProvider } from '../../../../WalletProvider'
-import CreateSingleKeyProvider from '../../../../WalletProvider/Subproviders/SingleKeyProvider'
+import { createWalletProvider } from '../../../../WalletProvider/state'
 
 export default () => {
-  const { setWalletType } = useWalletProvider()
+  const {
+    dispatch,
+    fetchDefaultWallet,
+    setWalletType,
+    walletSubproviders
+  } = useWalletProvider()
   const [privateKey, setPrivateKey] = useState('')
-  const [ready, setReady] = useState(false)
   const [privateKeyError, setPrivateKeyError] = useState('')
-  const { network, wallets } = useSelector(state => ({
-    network: state.network,
-    wallets: state.wallets
-  }))
+  const dispatchRdx = useDispatch()
   const [loadingNextScreen, setLoadingNextScreen] = useState(false)
   const router = useRouter()
 
-  useEffect(() => {
-    if (wallets.length > 0) {
-      const params = new URLSearchParams(router.query)
+  const instantiateProvider = async () => {
+    try {
       setLoadingNextScreen(true)
-      router.push(`/wallet?${params.toString()}`)
-    }
-    return () => {
       setPrivateKey('')
-      setReady(false)
+      const provider = new Filecoin(
+        new walletSubproviders.SingleKeyProvider(privateKey),
+        {
+          apiAddress: 'http://localhost:1234/rpc/v0',
+          token:
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.-LjrgzkGF4ptR76jJs1syi7l-Iiy4P_kiQdMjDIQ_n8'
+        }
+      )
+      dispatch(createWalletProvider(provider))
+      const wallet = await fetchDefaultWallet(provider)
+      dispatchRdx(walletList([wallet]))
+      const params = new URLSearchParams(router.query)
+      router.push(`/wallet?${params.toString()}`)
+    } catch (err) {
+      setLoadingNextScreen(false)
+      setPrivateKeyError(err.message || JSON.stringify(err))
     }
-  }, [router, wallets, network])
+  }
+
   return (
     <>
-      {ready && (
-        <CreateSingleKeyProvider
-          onError={setPrivateKeyError}
-          privateKey={privateKey}
-          ready={ready}
-        />
-      )}
       {loadingNextScreen ? (
         <LoadingScreen />
       ) : (
@@ -78,10 +85,7 @@ export default () => {
                 error={privateKeyError}
                 setError={setPrivateKeyError}
                 value={privateKey}
-                onChange={e => {
-                  setReady(false)
-                  setPrivateKey(e.target.value)
-                }}
+                onChange={e => setPrivateKey(e.target.value)}
               />
             </Box>
           </OnboardCard>
@@ -100,7 +104,7 @@ export default () => {
             <Button
               title='Next'
               disabled={!!(privateKey.length === 0 || privateKeyError)}
-              onClick={() => setReady(true)}
+              onClick={instantiateProvider}
               variant='primary'
               ml={2}
             />

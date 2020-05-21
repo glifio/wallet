@@ -9,7 +9,7 @@ export default rustModule => {
     }
 
     getAccounts = async (_, __, network = 't') => {
-      return [rustModule.key_recover(this.privateKey, network === 't').address]
+      return [rustModule.keyRecover(this.privateKey, network === 't').address]
     }
 
     sign = async (_, filecoinMessage) => {

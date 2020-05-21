@@ -17,7 +17,7 @@ export const WalletProviderContext = createContext({})
 
 const WalletProviderWrapper = ({ network, children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
-  const { walletSubProviders } = useWasm()
+  const { walletSubproviders } = useWasm()
   return (
     <WalletProviderContext.Provider
       value={{
@@ -40,17 +40,18 @@ const WalletProviderWrapper = ({ network, children }) => {
             setLedgerProvider(
               dispatch,
               network,
-              walletSubProviders.LedgerProvider
+              walletSubproviders.LedgerProvider
             ),
-          [dispatch, network, walletSubProviders.LedgerProvider]
+          [dispatch, network, walletSubproviders.LedgerProvider]
         ),
         connectLedger: useCallback(
           () =>
-            connectLedger(dispatch, network, walletSubProviders.LedgerProvider),
-          [dispatch, network, walletSubProviders.LedgerProvider]
+            connectLedger(dispatch, network, walletSubproviders.LedgerProvider),
+          [dispatch, network, walletSubproviders.LedgerProvider]
         ),
         resetLedgerState: () => dispatch(resetLedgerState()),
-        resetState: useCallback(() => dispatch(resetState()), [dispatch])
+        resetState: useCallback(() => dispatch(resetState()), [dispatch]),
+        walletSubproviders
       }}
     >
       {children}
