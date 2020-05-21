@@ -24,7 +24,7 @@ export default dynamic({
           for (let i = nStart; i < nEnd; i += 1) {
             const networkCode = network === 't' ? 1 : 461
             accounts.push(
-              rustModule.key_derive(mnemonic, createPath(networkCode, i))
+              rustModule.keyDerive(mnemonic, createPath(networkCode, i), '')
                 .address
             )
           }
@@ -32,10 +32,10 @@ export default dynamic({
         },
         sign: async (path, filecoinMessage) => {
           const formattedMessage = toLowerCaseMsgFields(
-            filecoinMessage.encode()
+            filecoinMessage.toString()
           )
-          const { private_hexstring } = rustModule.key_derive(mnemonic, path)
-          const { signature } = rustModule.transaction_sign(
+          const { private_hexstring } = rustModule.keyDerive(mnemonic, path, '')
+          const { signature } = rustModule.transactionSign(
             formattedMessage,
             private_hexstring
           )
@@ -54,7 +54,9 @@ export default dynamic({
         const instantiateProvider = async () => {
           try {
             const provider = new Filecoin(HDWalletProvider(mnemonic), {
-              apiAddress: 'https://proxy.openworklabs.com/rpc/v0'
+              apiAddress: 'http://localhost:1234/rpc/v0',
+              token:
+                'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.-LjrgzkGF4ptR76jJs1syi7l-Iiy4P_kiQdMjDIQ_n8'
             })
             dispatch(createWalletProvider(provider))
             setCreatedProvider(true)

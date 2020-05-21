@@ -113,7 +113,7 @@ const Send = ({ close }) => {
         value,
         method: 0,
         gasPrice: gp.toAttoFil(),
-        gasLimit: gasLimit.toAttoFil(),
+        gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
         nonce: 0,
         params: ''
       })
@@ -158,14 +158,18 @@ const Send = ({ close }) => {
         value: new BigNumber(value.toAttoFil()).toFixed(0, 1),
         method: 0,
         gasPrice: gasPrice.toAttoFil(),
-        gasLimit: gasLimit.toAttoFil(),
+        gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
         nonce,
         params: ''
       })
 
-      const signature = await provider.wallet.sign(wallet.path, message)
-      const messageObj = message.encode()
-      const msgCid = await provider.sendMessage(messageObj, signature)
+      const signedMessage = await provider.wallet.sign(wallet.path, message)
+      const messageObj = message.toString()
+      const msgCid = await provider.jsonRpcEngine.request(
+        'MpoolPush',
+        signedMessage
+      )
+      // const msgCid = await provider.sendMessage(messageObj, signature)
       messageObj.cid = msgCid['/']
       messageObj.timestamp = dayjs().unix()
       messageObj.gas_used = (

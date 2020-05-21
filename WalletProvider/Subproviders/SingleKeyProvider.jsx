@@ -22,10 +22,10 @@ export default dynamic({
         },
         sign: async (_, filecoinMessage) => {
           const formattedMessage = toLowerCaseMsgFields(
-            filecoinMessage.encode()
+            filecoinMessage.toString()
           )
-          const { private_hexstring } = rustModule.key_recover(privateKey)
-          const { signature } = rustModule.transaction_sign(
+          const { private_hexstring } = rustModule.keyRecover(privateKey)
+          const { signature } = rustModule.transactionSign(
             formattedMessage,
             private_hexstring
           )
@@ -44,7 +44,9 @@ export default dynamic({
         const instantiateProvider = async () => {
           try {
             const provider = new Filecoin(SingleKeyProvider(privateKey), {
-              apiAddress: 'https://proxy.openworklabs.com/rpc/v0'
+              apiAddress: 'http://localhost:1234/rpc/v0',
+              token:
+                'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.-LjrgzkGF4ptR76jJs1syi7l-Iiy4P_kiQdMjDIQ_n8'
             })
             dispatch(createWalletProvider(provider))
             setCreatedProvider(true)

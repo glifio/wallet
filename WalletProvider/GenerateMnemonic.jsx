@@ -12,7 +12,7 @@ export default dynamic({
 
       useEffect(() => {
         if (!createdMnemonic) {
-          setMnemonic(rustModule.mnemonic_generate())
+          setMnemonic(rustModule.generateMnemonic())
           setCreatedMnemonic(true)
         }
       }, [createdMnemonic, setCreatedMnemonic, setMnemonic])

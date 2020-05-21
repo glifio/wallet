@@ -21,8 +21,9 @@ export const setLedgerProvider = async (dispatch, network, LedgerProvider) => {
   try {
     const transport = await createTransport()
     const provider = new Filecoin(new LedgerProvider(transport), {
-      apiAddress: 'https://proxy.openworklabs.com/rpc/v0',
-      network
+      apiAddress: 'http://localhost:1234/rpc/v0',
+      token:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.-LjrgzkGF4ptR76jJs1syi7l-Iiy4P_kiQdMjDIQ_n8'
     })
     dispatch({ type: LEDGER_CONNECTED })
     dispatch(createWalletProvider(provider))

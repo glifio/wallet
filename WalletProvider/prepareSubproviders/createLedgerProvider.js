@@ -1,53 +1,12 @@
 import FilecoinApp from '@zondax/ledger-filecoin'
 import { mapSeries } from 'bluebird'
-import createPath from '../utils/createPath'
-import toLowerCaseMsgFields from '../utils/toLowerCaseMsgFields'
-import { HD_WALLET, SINGLE_KEY } from '../constants'
+import { LEDGER } from '../../constants'
 
-const createHDWalletProvider = rustModule => mnemonic => ({
-  getAccounts: async (nStart = 0, nEnd = 5, network = 't') => {
-    const accounts = []
-    for (let i = nStart; i < nEnd; i += 1) {
-      const networkCode = network === 't' ? 1 : 461
-      accounts.push(
-        rustModule.key_derive(mnemonic, createPath(networkCode, i)).address
-      )
-    }
-    return accounts
-  },
-  sign: async (path, filecoinMessage) => {
-    const formattedMessage = toLowerCaseMsgFields(filecoinMessage.encode())
-    const { private_hexstring } = rustModule.key_derive(mnemonic, path)
-    const { signature } = rustModule.transaction_sign(
-      formattedMessage,
-      private_hexstring
-    )
-    return signature.data
-  },
-  type: HD_WALLET
-})
-
-const createSingleKeyProvider = rustModule => privateKey => ({
-  getAccounts: async (_, __, network = 't') => {
-    return [rustModule.key_recover(privateKey, network === 't').address]
-  },
-  sign: async (_, filecoinMessage) => {
-    const formattedMessage = toLowerCaseMsgFields(filecoinMessage.encode())
-    const { private_hexstring } = rustModule.key_recover(privateKey)
-    const { signature } = rustModule.transaction_sign(
-      formattedMessage,
-      private_hexstring
-    )
-    return signature.data
-  },
-  type: SINGLE_KEY
-})
-
-const createLedgerProvider = rustModule => {
+export default rustModule => {
   return class LedgerProvider extends FilecoinApp {
     constructor(transport) {
       super(transport)
-      this.type = 'LEDGER'
+      this.type = LEDGER
       this.ledgerBusy = false
     }
 
@@ -123,8 +82,11 @@ const createLedgerProvider = rustModule => {
     sign = async (path, filecoinMessage) => {
       this.throwIfBusy()
       this.ledgerBusy = true
+      const serializedMessage = rustModule.transactionSerialize(
+        filecoinMessage.toString()
+      )
       const { signature_compact } = this.handleErrors(
-        await super.sign(path, await filecoinMessage.serialize())
+        await super.sign(path, Buffer.from(serializedMessage, 'hex'))
       )
       return signature_compact.toString('base64')
     }
@@ -138,9 +100,3 @@ const createLedgerProvider = rustModule => {
     }
   }
 }
-
-export default rustModule => ({
-  HDWalletProvider: createHDWalletProvider(rustModule),
-  SingleKeyProvider: createSingleKeyProvider(rustModule),
-  LedgerProvider: createLedgerProvider(rustModule)
-})
