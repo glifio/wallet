@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
+import Filecoin from '@openworklabs/filecoin-wallet-provider'
 import {
   Box,
   Button,
@@ -9,16 +10,14 @@ import {
   LoadingScreen
 } from '../../../Shared'
 
-import CreateHDWalletProvider from '../../../../WalletProvider/Subproviders/HDWalletProvider'
-import GenerateMnemonic from '../../../../WalletProvider/GenerateMnemonic'
 import Walkthrough from './Walkthrough'
 import Back from './Back'
+import { useWasm } from '../../../../lib/WasmLoader'
+import { walletList } from '../../../../store/actions'
+import { useWalletProvider } from '../../../../WalletProvider'
+import { createWalletProvider } from '../../../../WalletProvider/state'
 
 export default () => {
-  const { network, wallets } = useSelector(state => ({
-    network: state.network,
-    wallets: state.wallets
-  }))
   const router = useRouter()
   const [mnemonic, setMnemonic] = useState('')
   const [walkthroughStep, setWalkthroughStep] = useState(1)
@@ -26,7 +25,13 @@ export default () => {
   const [returningHome, setReturningHome] = useState(false)
   const [canContinue, setCanContinue] = useState(false)
   const [importSeedError, setImportSeedError] = useState(false)
-  const timeout = useRef()
+  const { generateMnemonic } = useWasm()
+  const {
+    dispatch,
+    fetchDefaultWallet,
+    walletSubproviders
+  } = useWalletProvider()
+  const dispatchRdx = useDispatch()
 
   const nextStep = () => {
     setImportSeedError(false)
@@ -36,44 +41,46 @@ export default () => {
     else if (walkthroughStep >= 3) setWalkthroughStep(walkthroughStep + 1)
   }
 
-  const waitForMnemonic = useCallback(
-    timer => {
-      clearTimeout(timeout.current)
-      timeout.current = setTimeout(() => {
-        if (!mnemonic) {
-          waitForMnemonic(200)
-        } else {
-          setLoading(false)
-        }
-      }, timer)
-    },
-    [mnemonic]
-  )
-
-  useEffect(() => waitForMnemonic(600), [waitForMnemonic])
+  useEffect(() => {
+    setMnemonic(generateMnemonic())
+    setLoading(false)
+  }, [setMnemonic, generateMnemonic])
 
   useEffect(() => {
-    if (wallets.length > 0) {
-      const params = new URLSearchParams(router.query)
-      router.push(`/wallet?${params.toString()}`)
+    const instantiateProvider = async () => {
+      try {
+        const provider = new Filecoin(
+          new walletSubproviders.HDWalletProvider(mnemonic),
+          {
+            apiAddress: 'http://localhost:1234/rpc/v0',
+            token:
+              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.-LjrgzkGF4ptR76jJs1syi7l-Iiy4P_kiQdMjDIQ_n8'
+          }
+        )
+        dispatch(createWalletProvider(provider))
+        const wallet = await fetchDefaultWallet(provider)
+        dispatchRdx(walletList([wallet]))
+        const params = new URLSearchParams(router.query)
+        router.push(`/wallet?${params.toString()}`)
+      } catch (err) {
+        setImportSeedError(err.message || JSON.stringify(err))
+      }
     }
-    return () => {
-      setMnemonic('')
-    }
-  }, [router, wallets, network])
+    if (walkthroughStep === 4) instantiateProvider()
+  }, [
+    dispatch,
+    dispatchRdx,
+    fetchDefaultWallet,
+    mnemonic,
+    router,
+    walkthroughStep,
+    walletSubproviders.HDWalletProvider
+  ])
 
   return (
     <>
       {!returningHome ? (
         <>
-          <GenerateMnemonic setMnemonic={setMnemonic} />
-          {mnemonic && (
-            <CreateHDWalletProvider
-              onError={setImportSeedError}
-              mnemonic={mnemonic}
-              ready={walkthroughStep === 4}
-            />
-          )}
           {loading || walkthroughStep === 4 ? (
             <LoadingScreen />
           ) : (
