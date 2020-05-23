@@ -52,7 +52,6 @@ const Step2Helper = ({
           <Title>Oops!</Title>
         </Box>
         <Box mt={3} color='status.fail.foreground'>
-          <Text mb={1}>We had trouble communicating with your device.</Text>
           <Text>
             {reportLedgerConfigError({
               connectedFailure,
@@ -123,7 +122,7 @@ export default () => {
           loading={!ledger.userImportFailure && loading}
           totalSteps={2}
           Icon={IconLedger}
-          error={error}
+          error={!!error}
         />
         <Step2Helper
           connectedFailure={ledger.connectedFailure}
@@ -164,6 +163,7 @@ export default () => {
                 router.push(query)
               }
             } catch (err) {
+              console.log(err)
               setLoading(false)
               dispatch(rdxError(err))
             }
