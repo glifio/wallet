@@ -51,10 +51,7 @@ export default () => {
       try {
         const provider = new Filecoin(
           new walletSubproviders.HDWalletProvider(mnemonic),
-          {
-            apiAddress:
-              'http://node.glif.io/0bf3778d-95f6-4066-9fd1-7ee9c8ff3624/rpc/v0'
-          }
+          { apiAddress: process.env.LOTUS_NODE_JSONRPC }
         )
         dispatch(createWalletProvider(provider))
         const wallet = await fetchDefaultWallet(provider)

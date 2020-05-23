@@ -35,12 +35,7 @@ export default () => {
       setPrivateKey('')
       const provider = new Filecoin(
         new walletSubproviders.SingleKeyProvider(privateKey),
-        {
-          apiAddress:
-            'http://node.glif.io/0bf3778d-95f6-4066-9fd1-7ee9c8ff3624/rpc/v0',
-          token:
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.BtTxZNmjMGr3e3Yaye0pe6FGJg810r2UZCxs6o0WQ8Q'
-        }
+        { apiAddress: process.env.LOTUS_NODE_JSONRPC }
       )
       dispatch(createWalletProvider(provider))
       const wallet = await fetchDefaultWallet(provider)
