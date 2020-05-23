@@ -40,9 +40,8 @@ export default () => {
         const provider = new Filecoin(
           new walletSubproviders.HDWalletProvider(mnemonic),
           {
-            apiAddress: 'http://localhost:1234/rpc/v0',
-            token:
-              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.-LjrgzkGF4ptR76jJs1syi7l-Iiy4P_kiQdMjDIQ_n8'
+            apiAddress:
+              'http://node.glif.io/0bf3778d-95f6-4066-9fd1-7ee9c8ff3624/rpc/v0'
           }
         )
         dispatch(createWalletProvider(provider))
