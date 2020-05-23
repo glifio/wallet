@@ -25,7 +25,7 @@ export default (bigNumber, dp = 3, pretty = true) => {
     throw new Error('Number must be a valid number')
   }
   if (bigNumber.isLessThan(0)) throw new Error('Cannot have a negative balance')
-  if (bigNumber.isGreaterThan(0) && bigNumber.isLessThan(1)) {
+  if (bigNumber.isGreaterThan(0) && bigNumber.isLessThanOrEqualTo(1)) {
     if (bigNumber.dp(dp, BigNumber.ROUND_HALF_DOWN).isEqualTo('0')) {
       let abbrev = '0.'
       for (let i = 0; i < dp - 1; i += 1) {
