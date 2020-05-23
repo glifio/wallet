@@ -163,7 +163,6 @@ export default () => {
                 router.push(query)
               }
             } catch (err) {
-              console.log(err)
               setLoading(false)
               dispatch(rdxError(err))
             }

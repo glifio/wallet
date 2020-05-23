@@ -1,5 +1,4 @@
 import createPath from '../../utils/createPath'
-import toLowerCaseMsgFields from '../../utils/toLowerCaseMsgFields'
 import { HD_WALLET } from '../../constants'
 
 export default rustModule => {
@@ -22,14 +21,13 @@ export default rustModule => {
     }
 
     sign = async (path, filecoinMessage) => {
-      const formattedMessage = toLowerCaseMsgFields(filecoinMessage.toString())
       const { private_hexstring } = rustModule.keyDerive(
         this.mnemonic,
         path,
         ''
       )
       const { signature } = rustModule.transactionSign(
-        formattedMessage,
+        filecoinMessage.toString(),
         private_hexstring
       )
       return signature.data

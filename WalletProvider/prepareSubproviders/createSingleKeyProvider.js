@@ -1,4 +1,3 @@
-import toLowerCaseMsgFields from '../../utils/toLowerCaseMsgFields'
 import { SINGLE_KEY } from '../../constants'
 
 export default rustModule => {
@@ -13,10 +12,9 @@ export default rustModule => {
     }
 
     sign = async (_, filecoinMessage) => {
-      const formattedMessage = toLowerCaseMsgFields(filecoinMessage.toString())
       const { private_hexstring } = rustModule.keyRecover(this.privateKey)
       const { signature } = rustModule.transactionSign(
-        formattedMessage,
+        filecoinMessage.toString(),
         private_hexstring
       )
       return signature.data
