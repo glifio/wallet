@@ -2,12 +2,29 @@ import { renderHook } from '@testing-library/react-hooks'
 import WalletProviderWrapper, { useWalletProvider } from '.'
 import { initialState } from './state'
 
+const spy = jest.spyOn(require('../lib/WasmLoader'), 'useWasm')
+
+const createMockSubprovider = () => {
+  return {
+    sign: jest.fn(),
+    getAccounts: jest.fn()
+  }
+}
+
+const walletSubproviders = {
+  HDWalletProvider: createMockSubprovider(),
+  SingleKeyProvider: createMockSubprovider(),
+  LedgerProvider: createMockSubprovider()
+}
+
+spy.mockReturnValue(walletSubproviders)
+
 describe('useWalletProvider', () => {
   test('it exposes the necessary methods to manipulate state', () => {
     const wrapper = ({ children }) => (
       <WalletProviderWrapper network='t'>{children}</WalletProviderWrapper>
     )
-    const { result } = renderHook(() => useWalletProvider(), { wrapper })
+    const { result } = renderHook(useWalletProvider, { wrapper })
     expect(typeof result.current.dispatch).toBe('function')
     expect(typeof result.current.fetchDefaultWallet).toBe('function')
     expect(typeof result.current.setWalletError).toBe('function')
