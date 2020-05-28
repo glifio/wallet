@@ -1079,7 +1079,7 @@ exports[`WalletView it renders correctly 1`] = `
           font-size="6"
           font-weight="700"
         >
-          &gt; 999.9B
+          1
            FIL
         </h2>
         <h2
@@ -4647,7 +4647,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
           font-size="6"
           font-weight="700"
         >
-          &gt; 999.9B
+          1
            FIL
         </h2>
         <h2
@@ -6314,7 +6314,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
           font-size="6"
           font-weight="700"
         >
-          &gt; 999.9B
+          1
            FIL
         </h2>
         <h2
