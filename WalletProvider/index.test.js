@@ -1,4 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks'
+import { cleanup } from '@testing-library/react'
+
 import WalletProviderWrapper, { useWalletProvider } from '.'
 import { initialState } from './state'
 
@@ -17,9 +19,11 @@ const walletSubproviders = {
   LedgerProvider: createMockSubprovider()
 }
 
-spy.mockReturnValue(walletSubproviders)
+spy.mockReturnValue({ walletSubproviders })
 
 describe('useWalletProvider', () => {
+  afterEach(cleanup)
+
   test('it exposes the necessary methods to manipulate state', () => {
     const wrapper = ({ children }) => (
       <WalletProviderWrapper network='t'>{children}</WalletProviderWrapper>

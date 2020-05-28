@@ -283,7 +283,7 @@ describe('state manipulators', () => {
         value: '1000',
         method: 0,
         gasPrice: '1',
-        gasLimit: '1000',
+        gasLimit: 1000,
         nonce: 0
       })
 
@@ -304,7 +304,7 @@ describe('state manipulators', () => {
         value: '1000',
         method: 0,
         gasPrice: '1',
-        gasLimit: '1000',
+        gasLimit: 1000,
         nonce: 0
       })
       const secondPendingMsg = new Message({
@@ -313,7 +313,7 @@ describe('state manipulators', () => {
         value: '1000',
         method: 0,
         gasPrice: '1',
-        gasLimit: '1000',
+        gasLimit: 1000,
         nonce: 1
       })
       const stateWPendingMsg = {
@@ -348,7 +348,7 @@ describe('state manipulators', () => {
         value: '1000',
         method: 0,
         gasPrice: '1',
-        gasLimit: '1000',
+        gasLimit: 1000,
         nonce: 0
       })
       const msgCid = '123'
@@ -360,7 +360,7 @@ describe('state manipulators', () => {
         value: '1000',
         method: 0,
         gasPrice: '1',
-        gasLimit: '1000',
+        gasLimit: 1000,
         nonce: 1
       })
       secondMsg.cid = '456'
@@ -391,7 +391,7 @@ describe('state manipulators', () => {
         value: '1000',
         method: 0,
         gasPrice: '1',
-        gasLimit: '1000',
+        gasLimit: 1000,
         nonce: 0
       })
       const msgCid = '123'
@@ -403,7 +403,7 @@ describe('state manipulators', () => {
         value: '1000',
         method: 0,
         gasPrice: '1',
-        gasLimit: '1000',
+        gasLimit: 1000,
         nonce: 1
       })
       confirmedMsg.cid = '456'
@@ -440,7 +440,7 @@ describe('state manipulators', () => {
           value: '1000',
           method: 0,
           gasPrice: '1',
-          gasLimit: '1000',
+          gasLimit: 1000,
           nonce: i
         })
 
@@ -492,7 +492,7 @@ describe('state manipulators', () => {
           value: '1000',
           method: 0,
           gasPrice: '1',
-          gasLimit: '1000',
+          gasLimit: 1000,
           nonce: 1
         })
       ]
@@ -503,7 +503,7 @@ describe('state manipulators', () => {
           value: '1000',
           method: 0,
           gasPrice: '1',
-          gasLimit: '1000',
+          gasLimit: 1000,
           nonce: 0
         })
       ]
@@ -529,7 +529,7 @@ describe('state manipulators', () => {
           value: '1000',
           method: 0,
           gasPrice: '1',
-          gasLimit: '1000',
+          gasLimit: 1000,
           nonce: i
         })
 
@@ -546,7 +546,7 @@ describe('state manipulators', () => {
           value: '1000',
           method: 0,
           gasPrice: '1',
-          gasLimit: '1000',
+          gasLimit: 1000,
           nonce: 1
         })
       ]
@@ -570,7 +570,7 @@ describe('state manipulators', () => {
         value: '1000',
         method: 0,
         gasPrice: '1',
-        gasLimit: '1000',
+        gasLimit: 1000,
         nonce: 1
       })
       const previouslyConfirmed = [msg]
@@ -616,7 +616,7 @@ describe('state manipulators', () => {
           value: '1000',
           method: 0,
           gasPrice: '1',
-          gasLimit: '1000',
+          gasLimit: 1000,
           nonce: 1
         })
       ]
@@ -627,7 +627,7 @@ describe('state manipulators', () => {
           value: '1000',
           method: 0,
           gasPrice: '1',
-          gasLimit: '1000',
+          gasLimit: 1000,
           nonce: 0
         })
       ]
@@ -692,7 +692,7 @@ describe('state manipulators', () => {
           value: '1000',
           method: 0,
           gasPrice: '1',
-          gasLimit: '1000',
+          gasLimit: 1000,
           nonce: i
         })
         pendingMsgs.push(message)

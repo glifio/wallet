@@ -57,7 +57,7 @@ describe('actions', () => {
       value: '1000',
       method: 0,
       gasPrice: '1',
-      gasLimit: '1000',
+      gasLimit: 1000,
       nonce: 0
     })
     const expectedAction = {
@@ -97,7 +97,7 @@ describe('actions', () => {
         value: '1000',
         method: 0,
         gasPrice: '1',
-        gasLimit: '1000',
+        gasLimit: 1000,
         nonce: 0
       })
     ]
@@ -154,7 +154,7 @@ describe('actions', () => {
         value: '1000',
         method: 0,
         gasPrice: '1',
-        gasLimit: '1000',
+        gasLimit: 1000,
         nonce: 0
       })
     ]
