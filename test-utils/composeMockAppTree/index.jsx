@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useReducer } from 'react'
 import { Provider } from 'react-redux'
+import { Converter } from '@openworklabs/filecoin-number'
 
 import { NetworkCheck } from '../../lib/check-network'
 import BalancePoller from '../../lib/update-balance'
@@ -11,12 +12,9 @@ import walletProviderReducer, {
   initialState as walletProviderInitialState
 } from '../../WalletProvider/state'
 import { WalletProviderContext } from '../../WalletProvider'
-import {
-  mockWalletProviderInstance,
-  defaultMockConverterInstance,
-  createMockWalletProviderContextFuncs,
-  mockWalletSubproviders
-} from './mocks'
+import { mockWalletProviderInstance } from '../mocks/mock-wallet-provider'
+import createMockWalletProviderContextFuncs from './createWalletProviderContextFuncs.js'
+import mockWalletSubproviders from '../mocks/mock-wallet-subproviders'
 import { presets, composeWalletProviderState } from './composeState'
 
 /**
@@ -32,9 +30,6 @@ import { presets, composeWalletProviderState } from './composeState'
 export default (statePreset = 'preOnboard', options = {}) => {
   const state = options.state || presets[statePreset]
   const store = initializeStore(state)
-
-  const mockConverterInstance =
-    options.mockConverterInstance || defaultMockConverterInstance
 
   const pathname = options.pathname || '/wallet'
   const query = options.query || { network: 't' }
@@ -58,7 +53,7 @@ export default (statePreset = 'preOnboard', options = {}) => {
       <Provider store={store}>
         <ConverterContext.Provider
           value={{
-            converter: mockConverterInstance,
+            converter: new Converter(),
             converterError: options.converterError || null
           }}
         >

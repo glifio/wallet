@@ -4,7 +4,7 @@ import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import createPath from '../../utils/createPath'
 import { IMPORT_MNEMONIC } from '../../constants'
 import { initialState } from '../../store/states'
-import { mockWalletProviderInstance } from './mocks'
+import { mockWalletProviderInstance } from '../mocks/mock-wallet-provider'
 
 export const presets = {
   preOnboard: cloneDeep(initialState),
