@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { number } from 'prop-types'
 import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
 import Filecoin from '@openworklabs/filecoin-wallet-provider'
@@ -17,10 +18,11 @@ import { walletList } from '../../../../store/actions'
 import { useWalletProvider } from '../../../../WalletProvider'
 import { createWalletProvider } from '../../../../WalletProvider/state'
 
-export default () => {
+// we pass this optional prop to make testing the core wallet functionality easier
+const Create = ({ initialWalkthroughStep }) => {
   const router = useRouter()
   const [mnemonic, setMnemonic] = useState('')
-  const [walkthroughStep, setWalkthroughStep] = useState(1)
+  const [walkthroughStep, setWalkthroughStep] = useState(initialWalkthroughStep)
   const [loading, setLoading] = useState(true)
   const [returningHome, setReturningHome] = useState(false)
   const [canContinue, setCanContinue] = useState(false)
@@ -145,3 +147,13 @@ export default () => {
     </>
   )
 }
+
+Create.propTypes = {
+  initialWalkthroughStep: number
+}
+
+Create.defaultProps = {
+  initialWalkthroughStep: 1
+}
+
+export default Create

@@ -11,6 +11,7 @@ import { initializeStore } from '..'
 import walletProviderReducer, {
   initialState as walletProviderInitialState
 } from '../../WalletProvider/state'
+import { WasmContext } from '../../lib/WasmLoader'
 import { WalletProviderContext } from '../../WalletProvider'
 import { mockWalletProviderInstance } from '../mocks/mock-wallet-provider'
 import createMockWalletProviderContextFuncs from './createWalletProviderContextFuncs.js'
@@ -51,33 +52,44 @@ export default (statePreset = 'preOnboard', options = {}) => {
 
     return (
       <Provider store={store}>
-        <ConverterContext.Provider
+        <WasmContext.Provider
           value={{
-            converter: new Converter(),
-            converterError: options.converterError || null
+            generateMnemonic: jest
+              .fn()
+              .mockImplementation(
+                () =>
+                  'slender spread awkward chicken noise useful thank dentist tip bronze ritual explain version spot collect whisper glow peanut bus local country album punch frown'
+              )
           }}
         >
-          <WalletProviderContext.Provider
+          <ConverterContext.Provider
             value={{
-              state: walletProviderState,
-              dispatch:
-                options.walletProviderDispatch || walletProviderDispatch,
-              walletSubproviders: {
-                ...mockWalletSubproviders
-              },
-              ...mockWalletProviderContextFuncs
+              converter: new Converter(),
+              converterError: options.converterError || null
             }}
           >
-            <NetworkCheck
-              networkFromRdx={store.getState().network}
-              pathname={pathname}
-              query={query}
-              switchNetwork={jest.fn()}
-            />
-            <BalancePoller />
-            <ThemeProvider theme={theme}>{children}</ThemeProvider>
-          </WalletProviderContext.Provider>
-        </ConverterContext.Provider>
+            <WalletProviderContext.Provider
+              value={{
+                state: walletProviderState,
+                dispatch:
+                  options.walletProviderDispatch || walletProviderDispatch,
+                walletSubproviders: {
+                  ...mockWalletSubproviders
+                },
+                ...mockWalletProviderContextFuncs
+              }}
+            >
+              <NetworkCheck
+                networkFromRdx={store.getState().network}
+                pathname={pathname}
+                query={query}
+                switchNetwork={jest.fn()}
+              />
+              <BalancePoller />
+              <ThemeProvider theme={theme}>{children}</ThemeProvider>
+            </WalletProviderContext.Provider>
+          </ConverterContext.Provider>
+        </WasmContext.Provider>
       </Provider>
     )
   }
