@@ -3,9 +3,9 @@ import composeMockAppTree from '../../../../test-utils/composeMockAppTree'
 import { mockRouterPush } from '../../../../test-utils/composeMockAppTree/mocks'
 import { flushPromises } from '../../../../test-utils'
 
-import ImportPrivateKey from '.'
+import ImportMnemonic from '.'
 
-describe('Import private key configuration', () => {
+describe('Import seed phrase configuration', () => {
   afterEach(() => {
     jest.clearAllMocks()
     cleanup()
@@ -15,7 +15,7 @@ describe('Import private key configuration', () => {
 
     const { container } = render(
       <Tree>
-        <ImportPrivateKey />
+        <ImportMnemonic />
       </Tree>
     )
     expect(container.firstChild).toMatchSnapshot()
@@ -29,13 +29,16 @@ describe('Import private key configuration', () => {
 
     const { container } = render(
       <Tree>
-        <ImportPrivateKey />
+        <ImportMnemonic />
       </Tree>
     )
 
     await act(async () => {
-      fireEvent.change(screen.getByPlaceholderText('Your private key'), {
-        target: { value: 'private key string' }
+      fireEvent.change(screen.getByPlaceholderText('Your seed phrase'), {
+        target: {
+          value:
+            'slender spread awkward chicken noise useful thank dentist tip bronze ritual explain version spot collect whisper glow peanut bus local country album punch frown'
+        }
       })
       await flushPromises()
 

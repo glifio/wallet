@@ -103,6 +103,15 @@ class MockSingleKeyProvider {
   sign = () => jest.fn()
 }
 
+class MockHDWalletProvider {
+  type = HD_WALLET
+
+  getAccounts = () => jest.fn()
+
+  sign = () => jest.fn()
+}
+
 export const mockWalletSubproviders = {
-  SingleKeyProvider: MockSingleKeyProvider
+  SingleKeyProvider: MockSingleKeyProvider,
+  HDWalletProvider: MockHDWalletProvider
 }
