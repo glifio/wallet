@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useState } from 'react'
+import Filecoin from '@openworklabs/filecoin-wallet-provider'
+import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
 import { validateMnemonic } from 'bip39'
 import {
@@ -12,52 +13,50 @@ import {
   StepHeader,
   LoadingScreen
 } from '../../../Shared'
-
+import { walletList } from '../../../../store/actions'
 import { useWalletProvider } from '../../../../WalletProvider'
-import CreateHDWalletProvider from '../../../../WalletProvider/Subproviders/HDWalletProvider'
+import { createWalletProvider } from '../../../../WalletProvider/state'
 
 export default () => {
-  const { setWalletType } = useWalletProvider()
+  const {
+    dispatch,
+    fetchDefaultWallet,
+    setWalletType,
+    walletSubproviders
+  } = useWalletProvider()
   const [mnemonic, setMnemonic] = useState('')
-  const [validMnemonic, setValidMnemonic] = useState('')
   const [mnemonicError, setMnemonicError] = useState('')
   const [loadingNextScreen, setLoadingNextScreen] = useState(false)
-  const { network, wallets } = useSelector(state => ({
-    network: state.network,
-    wallets: state.wallets
-  }))
+  const dispatchRdx = useDispatch()
   const router = useRouter()
 
-  const next = () => {
+  const instantiateProvider = async () => {
+    setLoadingNextScreen(true)
+    setMnemonic('')
     try {
       const trimmed = mnemonic.trim()
       const isValid = validateMnemonic(trimmed)
-      if (isValid) setValidMnemonic(trimmed)
-    } catch (_) {
-      setMnemonicError('Invalid seed phrase.')
+      if (isValid) {
+        const provider = new Filecoin(
+          new walletSubproviders.HDWalletProvider(mnemonic),
+          { apiAddress: process.env.LOTUS_NODE_JSONRPC }
+        )
+        dispatch(createWalletProvider(provider))
+        const wallet = await fetchDefaultWallet(provider)
+        dispatchRdx(walletList([wallet]))
+        const params = new URLSearchParams(router.query)
+        router.push(`/wallet?${params.toString()}`)
+      } else {
+        setMnemonicError('Invalid seed phrase')
+      }
+    } catch (err) {
+      setLoadingNextScreen(false)
+      setMnemonicError(err.message || JSON.stringify(err))
     }
   }
 
-  useEffect(() => {
-    if (wallets.length > 0) {
-      const params = new URLSearchParams(router.query)
-      setLoadingNextScreen(true)
-      router.push(`/wallet?${params.toString()}`)
-    }
-    return () => {
-      setMnemonic('')
-      setValidMnemonic('')
-    }
-  }, [router, wallets, network])
   return (
     <>
-      {validMnemonic && (
-        <CreateHDWalletProvider
-          onError={setMnemonicError}
-          mnemonic={validMnemonic}
-          ready={!!validMnemonic}
-        />
-      )}
       {loadingNextScreen ? (
         <LoadingScreen />
       ) : (
@@ -77,10 +76,7 @@ export default () => {
               error={mnemonicError}
               setError={setMnemonicError}
               value={mnemonic}
-              onChange={e => {
-                setMnemonic(e.target.value)
-                setValidMnemonic('')
-              }}
+              onChange={e => setMnemonic(e.target.value)}
             />
           </OnboardCard>
           <Box
@@ -99,7 +95,7 @@ export default () => {
             <Button
               title='Next'
               disabled={!!(mnemonic.length === 0 || mnemonicError)}
-              onClick={next}
+              onClick={instantiateProvider}
               variant='primary'
               ml={2}
             />

@@ -1,0 +1,1384 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Choosing a wallet it renders correctly 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 90vh;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-bottom: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  margin: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  overflow: hidden;
+  height: 240px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: space-between;
+  align-content: space-between;
+}
+
+.c8 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c13 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: block;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #1AD08F;
+  color: #08442F;
+  display: inline-block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 1.25rem;
+}
+
+.c18 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #FF9E80;
+  color: #661800;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 1.25rem;
+}
+
+.c19 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  margin: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: space-between;
+  align-content: space-between;
+}
+
+.c17 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c11 {
+  width: 40px;
+  height: 40px;
+}
+
+.c2 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+}
+
+.c3 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  max-width: 480px;
+}
+
+.c12 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 16px;
+}
+
+.c14 {
+  color: #262626;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c7 {
+  cursor: pointer;
+  -webkit-transition: 0.13s ease-in-out;
+  transition: 0.13s ease-in-out;
+}
+
+.c7:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.c16 {
+  cursor: pointer;
+  -webkit-transition: 0.13s ease-in-out;
+  transition: 0.13s ease-in-out;
+}
+
+.c16:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+<div
+  class="c0"
+  display="flex"
+>
+  <div
+    class="c1"
+  >
+    <h1
+      class="c2"
+      font-family="RT-Alias-Medium"
+      font-size="6"
+      font-weight="700"
+    >
+      Glif
+    </h1>
+    <p
+      class="c3"
+      font-family="RT-Alias-Grotesk"
+      font-size="3"
+      font-weight="400"
+    >
+      Create or login to your wallet to access the Filecoin network.
+    </p>
+  </div>
+  <div
+    class="c4"
+    display="flex"
+  >
+    <div
+      class="c5"
+      display="flex"
+    >
+      <div
+        class="c6 c7"
+        display="flex"
+        height="240px"
+        overflow="hidden"
+        role="button"
+        width="300"
+      >
+        <div
+          class="c8"
+        >
+          <div
+            class="c9"
+            display="flex"
+          >
+            <div
+              class="c10"
+              color="#000"
+              display="flex"
+              size="6"
+            >
+              <svg
+                class="c11"
+                fill="none"
+                height="40px"
+                viewBox="0 0 24 24"
+                width="40px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M10.0934 4H17.4067H17.4148C18.8148 4 19.9676 5.15197 19.9676 6.55279V13.866H10.0934V4ZM6.55349 4.00065H7.81386V7.81378H4.00065V6.55344C4.00065 5.15342 5.15345 4.00065 6.55349 4.00065ZM4 10.0934H7.81321V13.9066H4V10.0934ZM17.4479 19.9679H16.1875V16.1869H20.0007V17.4071V17.4151C20.0007 18.8151 18.8487 19.9679 17.4479 19.9679ZM10.0938 16.1869H13.907V20H10.0938V16.1869ZM4 17.4472V16.1869H7.81321V20H6.55284C5.15279 20 4 18.8472 4 17.4472Z"
+                  fill="#333333"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <p
+              class="c12"
+              font-family="RT-Alias-Grotesk"
+              font-size="3"
+              font-weight="400"
+            >
+              Ledger Device
+            </p>
+          </div>
+          <div
+            class="c13"
+            display="block"
+          >
+            <p
+              class="c14"
+              color="core.nearblack"
+              font-family="RT-Alias-Grotesk"
+              font-size="3"
+              font-weight="400"
+            >
+              Use your Ledger device
+            </p>
+          </div>
+        </div>
+        <div
+          class="c15"
+          color="status.success.foreground"
+          display="inline-block"
+          font-size="3"
+          width="max-content"
+        >
+          Most Secure
+        </div>
+      </div>
+      <div
+        class="c6 c16"
+        display="flex"
+        height="240"
+        overflow="hidden"
+        role="button"
+        width="300"
+      >
+        <div
+          class="c8"
+        >
+          <div
+            class="c9"
+            display="flex"
+          >
+            <div
+              class="c10"
+              color="#000"
+              display="flex"
+              size="6"
+            >
+              <h3
+                class="c17"
+              >
+                Sp
+              </h3>
+            </div>
+            <p
+              class="c12"
+              font-family="RT-Alias-Grotesk"
+              font-size="3"
+              font-weight="400"
+            >
+              Seed Phrase
+            </p>
+          </div>
+          <div
+            class="c13"
+            display="block"
+          >
+            <p
+              class="c14"
+              color="core.nearblack"
+              font-family="RT-Alias-Grotesk"
+              font-size="3"
+              font-weight="400"
+            >
+              New to crypto? We’ll create a new seed phrase for you
+            </p>
+          </div>
+        </div>
+        <div
+          class="c18"
+          color="status.warning.foreground"
+          font-size="3"
+          width="max-content"
+        >
+          Quick Start
+        </div>
+      </div>
+    </div>
+    <div
+      class="c19"
+      display="flex"
+    >
+      <div
+        class="c20 c7"
+        display="flex"
+        overflow="hidden"
+        role="button"
+        width="300"
+      >
+        <div
+          class="c8"
+        >
+          <div
+            class="c9"
+            display="flex"
+          >
+            <div
+              class="c10"
+              color="#000"
+              display="flex"
+              size="6"
+            >
+              <h3
+                class="c17"
+              >
+                Sp
+              </h3>
+            </div>
+            <p
+              class="c12"
+              font-family="RT-Alias-Grotesk"
+              font-size="3"
+              font-weight="400"
+            >
+              Import Seed Phrase
+            </p>
+          </div>
+          <div
+            class="c13"
+            display="block"
+          >
+            <p
+              class="c14"
+              color="core.nearblack"
+              font-family="RT-Alias-Grotesk"
+              font-size="3"
+              font-weight="400"
+            >
+              Use your existing seed phrase from Glif or another wallet
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c20 c7"
+        display="flex"
+        overflow="hidden"
+        role="button"
+        width="300"
+      >
+        <div
+          class="c8"
+        >
+          <div
+            class="c9"
+            display="flex"
+          >
+            <div
+              class="c10"
+              color="#000"
+              display="flex"
+              size="6"
+            >
+              <h3
+                class="c17"
+              >
+                Pk
+              </h3>
+            </div>
+            <p
+              class="c12"
+              font-family="RT-Alias-Grotesk"
+              font-size="3"
+              font-weight="400"
+            >
+              Import Private Key
+            </p>
+          </div>
+          <div
+            class="c13"
+            display="block"
+          >
+            <p
+              class="c14"
+              color="core.nearblack"
+              font-family="RT-Alias-Grotesk"
+              font-size="3"
+              font-weight="400"
+            >
+              Use your existing private key
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Choosing a wallet it renders warning text for create wallet option 1`] = `
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 90vh;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: #FF9E80;
+  padding: 16px;
+  margin-left: 8px;
+  background-color: #FF9E80;
+  color: #661800;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 560px;
+  min-height: 300px;
+  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  color: #661800;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c10 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-top: 32px;
+  padding: 16px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c10:hover {
+  opacity: 0.8;
+}
+
+.c11 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-top: 32px;
+  padding: 16px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c11:hover {
+  opacity: 0.8;
+}
+
+.c6 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.c7 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c8 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+
+.c8:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+<div
+  class="c0"
+  display="flex"
+  height="90vh"
+  width="100%"
+>
+  <div
+    class="c1"
+    display="flex"
+  >
+    <div
+      class="c2"
+      color="status.warning.foreground"
+      display="flex"
+      overflow="hidden"
+      width="100%"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+          color="status.warning.foreground"
+          display="flex"
+          size="6"
+        >
+          <h3
+            class="c5"
+          >
+            Wn
+          </h3>
+        </div>
+        <h2
+          class="c6"
+          font-family="RT-Alias-Grotesk"
+          font-size="4"
+          font-weight="400"
+        >
+          Warning
+        </h2>
+        <p
+          class="c7"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          We do not recommend you use this account to hold or transact significant sums of Filecoin. This account is for testing purposes only. For significant sums, Glif should only be used with a Ledger hardware wallet.
+        </p>
+      </div>
+      <div
+        class="c3"
+      >
+        <a
+          class="c8"
+          color="core.white"
+          font-size="3"
+          href="https://coinsutra.com/security-risks-bitcoin-wallets/"
+          rel="noopener"
+          target="_blank"
+        >
+          Why isn't it secure?
+        </a>
+      </div>
+    </div>
+    <div
+      class="c9"
+      display="flex"
+    >
+      <button
+        class="c10"
+        font-size="3"
+        type="button"
+      >
+        Back
+      </button>
+      <button
+        class="c11"
+        font-size="3"
+        type="button"
+      >
+        I Understand
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Choosing a wallet it renders warning text for import private key option 1`] = `
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 90vh;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: #FF9E80;
+  padding: 16px;
+  margin-left: 8px;
+  background-color: #FF9E80;
+  color: #661800;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 560px;
+  min-height: 300px;
+  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  color: #661800;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c10 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-top: 32px;
+  padding: 16px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c10:hover {
+  opacity: 0.8;
+}
+
+.c11 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-top: 32px;
+  padding: 16px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c11:hover {
+  opacity: 0.8;
+}
+
+.c6 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.c7 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c8 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+
+.c8:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+<div
+  class="c0"
+  display="flex"
+  height="90vh"
+  width="100%"
+>
+  <div
+    class="c1"
+    display="flex"
+  >
+    <div
+      class="c2"
+      color="status.warning.foreground"
+      display="flex"
+      overflow="hidden"
+      width="100%"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+          color="status.warning.foreground"
+          display="flex"
+          size="6"
+        >
+          <h3
+            class="c5"
+          >
+            Wn
+          </h3>
+        </div>
+        <h2
+          class="c6"
+          font-family="RT-Alias-Grotesk"
+          font-size="4"
+          font-weight="400"
+        >
+          Warning
+        </h2>
+        <p
+          class="c7"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          We do not recommend you use this account to hold or transact significant sums of Filecoin. This account is for testing purposes only. For significant sums, Glif should only be used with a Ledger hardware wallet.
+        </p>
+      </div>
+      <div
+        class="c3"
+      >
+        <a
+          class="c8"
+          color="core.white"
+          font-size="3"
+          href="https://coinsutra.com/security-risks-bitcoin-wallets/"
+          rel="noopener"
+          target="_blank"
+        >
+          Why isn't it secure?
+        </a>
+      </div>
+    </div>
+    <div
+      class="c9"
+      display="flex"
+    >
+      <button
+        class="c10"
+        font-size="3"
+        type="button"
+      >
+        Back
+      </button>
+      <button
+        class="c11"
+        font-size="3"
+        type="button"
+      >
+        I Understand
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Choosing a wallet it renders warning text for import seed option 1`] = `
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 90vh;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: #FF9E80;
+  padding: 16px;
+  margin-left: 8px;
+  background-color: #FF9E80;
+  color: #661800;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 560px;
+  min-height: 300px;
+  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  color: #661800;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c10 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-top: 32px;
+  padding: 16px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c10:hover {
+  opacity: 0.8;
+}
+
+.c11 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-top: 32px;
+  padding: 16px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c11:hover {
+  opacity: 0.8;
+}
+
+.c6 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.c7 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c8 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+
+.c8:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+<div
+  class="c0"
+  display="flex"
+  height="90vh"
+  width="100%"
+>
+  <div
+    class="c1"
+    display="flex"
+  >
+    <div
+      class="c2"
+      color="status.warning.foreground"
+      display="flex"
+      overflow="hidden"
+      width="100%"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+          color="status.warning.foreground"
+          display="flex"
+          size="6"
+        >
+          <h3
+            class="c5"
+          >
+            Wn
+          </h3>
+        </div>
+        <h2
+          class="c6"
+          font-family="RT-Alias-Grotesk"
+          font-size="4"
+          font-weight="400"
+        >
+          Warning
+        </h2>
+        <p
+          class="c7"
+          font-family="RT-Alias-Grotesk"
+          font-size="3"
+          font-weight="400"
+        >
+          We do not recommend you use this account to hold or transact significant sums of Filecoin. This account is for testing purposes only. For significant sums, Glif should only be used with a Ledger hardware wallet.
+        </p>
+      </div>
+      <div
+        class="c3"
+      >
+        <a
+          class="c8"
+          color="core.white"
+          font-size="3"
+          href="https://coinsutra.com/security-risks-bitcoin-wallets/"
+          rel="noopener"
+          target="_blank"
+        >
+          Why isn't it secure?
+        </a>
+      </div>
+    </div>
+    <div
+      class="c9"
+      display="flex"
+    >
+      <button
+        class="c10"
+        font-size="3"
+        type="button"
+      >
+        Back
+      </button>
+      <button
+        class="c11"
+        font-size="3"
+        type="button"
+      >
+        I Understand
+      </button>
+    </div>
+  </div>
+</div>
+`;

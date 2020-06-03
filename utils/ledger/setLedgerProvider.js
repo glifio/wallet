@@ -1,6 +1,4 @@
-import Filecoin, {
-  LedgerProvider
-} from '@openworklabs/filecoin-wallet-provider'
+import Filecoin from '@openworklabs/filecoin-wallet-provider'
 
 import {
   LEDGER_USER_INITIATED_IMPORT,
@@ -18,13 +16,12 @@ import {
 import { createWalletProvider } from '../../WalletProvider/state'
 import createTransport from './createTransport'
 
-export const setLedgerProvider = async (dispatch, network) => {
+export const setLedgerProvider = async (dispatch, network, LedgerProvider) => {
   dispatch({ type: LEDGER_USER_INITIATED_IMPORT })
   try {
     const transport = await createTransport()
     const provider = new Filecoin(new LedgerProvider(transport), {
-      apiAddress: 'https://proxy.openworklabs.com/rpc/v0',
-      network
+      apiAddress: process.env.LOTUS_NODE_JSONRPC
     })
     dispatch({ type: LEDGER_CONNECTED })
     dispatch(createWalletProvider(provider))

@@ -1,19 +1,11 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 
 import Send from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import { flushPromises } from '../../../test-utils'
 
 jest.mock('@openworklabs/filecoin-wallet-provider')
-
-const useRouter = jest.spyOn(require('next/router'), 'useRouter')
-
-const mockRouterReplace = jest.fn(() => {})
-useRouter.mockImplementationOnce(() => ({
-  replace: mockRouterReplace,
-  query: 'network=t'
-}))
 
 describe('Send Flow', () => {
   let close = () => {}
@@ -56,9 +48,11 @@ describe('Send Flow', () => {
       expect(walletProvider.getNonce).toHaveBeenCalledWith(address)
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
       const message = walletProvider.wallet.sign.mock.calls[0][1].encode()
-      expect(message.GasPrice).toBe('1')
-      expect(message.GasLimit).toBe('1000')
-      expect(message.Value).toBe('10000000000000000')
+      expect(message.GasPrice instanceof BigNumber).toBe(true)
+      expect(message.GasPrice.toString()).toBe('1')
+      expect(message.GasLimit).toBe(1000)
+      expect(message.Value instanceof BigNumber).toBe(true)
+      expect(message.Value.toString()).toBe('10000000000000000')
       expect(message.To).toBe(address)
 
       expect(store.getState().messages.pending.length).toBe(1)
@@ -226,7 +220,7 @@ describe('Send Flow', () => {
 
       expect(walletProvider.getNonce).toHaveBeenCalled()
       const message = walletProvider.wallet.sign.mock.calls[0][1].encode()
-      expect(message.GasPrice).toBe('2')
+      expect(message.GasPrice.toString()).toBe('2')
       expect(store.getState().messages.pending.length).toBe(1)
     })
 
@@ -272,7 +266,7 @@ describe('Send Flow', () => {
       })
       expect(walletProvider.getNonce).toHaveBeenCalled()
       const message = walletProvider.wallet.sign.mock.calls[0][1].encode()
-      expect(message.GasLimit).toBe('2000')
+      expect(message.GasLimit).toBe(2000)
       expect(store.getState().messages.pending.length).toBe(1)
     })
 

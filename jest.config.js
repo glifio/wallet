@@ -11,7 +11,13 @@ module.exports = {
   moduleNameMapper: {
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
     '@zondax/filecoin-signer-wasm':
-      '<rootDir>/test-utils/mock-filecoin-signer-wasm.js'
+      '<rootDir>/test-utils/mocks/mock-filecoin-signer-wasm.js',
+    dayjs: '<rootDir>/test-utils/mocks/mock-dates.js',
+    'next/router': '<rootDir>/test-utils/mocks/mock-routing.js',
+    '@openworklabs/filecoin-number':
+      '<rootDir>/test-utils/mocks/mock-filecoin-number.js',
+    '@openworklabs/filecoin-wallet-provider':
+      '<rootDir>/test-utils/mocks/mock-wallet-provider.js'
   },
   setupFilesAfterEnv: ['./jest.setup.js']
 }

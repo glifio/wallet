@@ -1,0 +1,509 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Import private key configuration it renders correctly 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  display: inline-block;
+  width: 100%;
+  max-width: 560px;
+  min-height: 240px;
+  overflow: hidden;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-style: solid;
+  color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-color: #C4C4C4;
+  margin: 8px;
+  width: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c12 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c13 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 48px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c18 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-right: 8px;
+  padding: 16px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c18:hover {
+  opacity: 0.8;
+}
+
+.c19 {
+  cursor: not-allowed;
+  border: 1px solid #C4C4C4;
+  background-color: #C4C4C4;
+  border-color: #C4C4C4;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 8px;
+  padding: 16px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c19:hover {
+  opacity: 1;
+}
+
+.c7 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 16px;
+}
+
+.c8 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c10 {
+  color: #FC6D6F;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.c14 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c16 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: right;
+  cursor: text;
+  background: #d1ddfa;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 480px;
+  display: inline-block;
+  height: 64px;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c16:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c16:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c11 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 16px;
+  border-radius: 1px;
+}
+
+.c2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border-color: silver;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+<div
+  class="c0"
+  display="flex"
+>
+  <div
+    class="c1"
+    display="inline-block"
+    overflow="hidden"
+    width="100%"
+  >
+    <ul
+      class="c2"
+      display="flex"
+      width="100%"
+    >
+      <li
+        class="c3"
+        display="flex"
+      >
+        <div
+          class="c4"
+          color="#000"
+          display="flex"
+          size="6"
+        >
+          <h3
+            class="c5"
+          >
+            Pk
+          </h3>
+        </div>
+      </li>
+    </ul>
+    <div
+      class="c6"
+      display="flex"
+      width="auto"
+    >
+      <h2
+        class="c7"
+        font-family="RT-Alias-Grotesk"
+        font-size="4"
+        font-weight="400"
+      >
+        Import
+      </h2>
+      <p
+        class="c8"
+        font-family="RT-Alias-Grotesk"
+        font-size="3"
+        font-weight="400"
+      >
+        Please input your private key below
+      </p>
+      <div
+        class="c9"
+        display="flex"
+      >
+        <h4
+          class="c10"
+          color="status.fail.background"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        />
+        <div
+          class="c11"
+        >
+          <div
+            class="c12"
+            display="flex"
+          >
+            <div
+              class="c13"
+              display="flex"
+            >
+              <h4
+                class="c14"
+                color="core.nearblack"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Private key
+              </h4>
+            </div>
+            <div
+              class="c15"
+              display="flex"
+              width="100%"
+            >
+              <input
+                class="c16"
+                display="inline-block"
+                height="7"
+                placeholder="Your private key"
+                type="password"
+                value=""
+                width="12"
+              />
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="c17"
+    display="flex"
+    width="100%"
+  >
+    <button
+      class="c18"
+      font-size="3"
+      type="button"
+    >
+      Back
+    </button>
+    <button
+      class="c19"
+      disabled=""
+      font-size="3"
+      type="button"
+    >
+      Next
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Import private key configuration it sends the user to wallet view, with a wallet in state upon successful config 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c3 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 16px;
+}
+
+.c1 {
+  display: inline-block;
+  height: 48px;
+  width: 48px;
+  background-color: #5E26FF;
+}
+
+.c2 {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  background-color: rgb(26,0,102);
+  -webkit-animation-name: bvGDKI;
+  animation-name: bvGDKI;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+<div
+  class="c0"
+  display="flex"
+>
+  <span
+    class="c1"
+  >
+    <span
+      class="c2"
+    />
+  </span>
+  <h4
+    class="c3"
+    font-family="RT-Alias-Grotesk"
+    font-size="2"
+    font-weight="400"
+  >
+    Loading...
+  </h4>
+</div>
+`;
