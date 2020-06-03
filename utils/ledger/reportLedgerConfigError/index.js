@@ -24,7 +24,7 @@ export const hasLedgerError = ({
   locked,
   filecoinAppNotOpen,
   replug,
-  ledgerBusy,
+  busy,
   inUseByAnotherApp,
   otherError
 }) =>
@@ -32,6 +32,6 @@ export const hasLedgerError = ({
   locked ||
   filecoinAppNotOpen ||
   replug ||
-  ledgerBusy ||
+  busy ||
   inUseByAnotherApp ||
   otherError

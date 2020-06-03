@@ -22,10 +22,10 @@ import useReset from '../../../../utils/useReset'
 
 const Step2Helper = ({
   connectedFailure,
-  ledgerLocked,
+  locked,
   filecoinAppNotOpen,
   replug,
-  ledgerBusy,
+  busy,
   inUseByAnotherApp,
   otherError
 }) => (
@@ -40,10 +40,10 @@ const Step2Helper = ({
   >
     {hasLedgerError({
       connectedFailure,
-      ledgerLocked,
+      locked,
       filecoinAppNotOpen,
       replug,
-      ledgerBusy,
+      busy,
       inUseByAnotherApp,
       otherError
     }) ? (
@@ -55,10 +55,10 @@ const Step2Helper = ({
           <Text>
             {reportLedgerConfigError({
               connectedFailure,
-              ledgerLocked,
+              locked,
               filecoinAppNotOpen,
               replug,
-              ledgerBusy,
+              busy,
               inUseByAnotherApp,
               otherError
             })}
@@ -81,10 +81,10 @@ const Step2Helper = ({
 
 Step2Helper.propTypes = {
   connectedFailure: PropTypes.bool.isRequired,
-  ledgerLocked: PropTypes.bool.isRequired,
+  locked: PropTypes.bool.isRequired,
   filecoinAppNotOpen: PropTypes.bool.isRequired,
   replug: PropTypes.bool.isRequired,
-  ledgerBusy: PropTypes.bool.isRequired,
+  busy: PropTypes.bool.isRequired,
   inUseByAnotherApp: PropTypes.bool.isRequired,
   otherError: PropTypes.instanceOf(Error)
 }
@@ -100,7 +100,6 @@ export default () => {
   const generalError = useSelector(state => state.error)
   const router = useRouter()
   const [loading, setLoading] = useState(false)
-
   const error = hasLedgerError({
     ...ledger,
     otherError: generalError
@@ -126,10 +125,10 @@ export default () => {
         />
         <Step2Helper
           connectedFailure={ledger.connectedFailure}
-          ledgerLocked={ledger.locked}
+          locked={ledger.locked}
           filecoinAppNotOpen={ledger.filecoinAppNotOpen}
           replug={ledger.replug}
-          ledgerBusy={ledger.busy}
+          busy={ledger.busy}
           inUseByAnotherApp={ledger.inUseByAnotherApp}
           otherError={generalError}
         />

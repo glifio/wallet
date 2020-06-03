@@ -62,7 +62,7 @@ describe('hasLedgerError', () => {
   })
 
   test('returns true for ledgerBusy error', () => {
-    const error = hasLedgerError({ ledgerBusy: true })
+    const error = hasLedgerError({ busy: true })
     expect(error).toEqual(true)
   })
 
