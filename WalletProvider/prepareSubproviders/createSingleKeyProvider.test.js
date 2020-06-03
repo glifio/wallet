@@ -3,8 +3,6 @@ import createSingleKeyProvider from './createSingleKeyProvider'
 import mockRustModule from '@zondax/filecoin-signer-wasm'
 import { SINGLE_KEY } from '../../constants'
 
-jest.mock('@zondax/filecoin-signer-wasm')
-
 const privateKey = 'xxxxxxtttttzzzzzzz'
 
 const followsSubproviderInterface = subprovider =>

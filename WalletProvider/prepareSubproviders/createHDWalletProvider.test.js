@@ -3,8 +3,6 @@ import createHDWalletProvider from './createHDWalletProvider'
 import mockRustModule from '@zondax/filecoin-signer-wasm'
 import { HD_WALLET } from '../../constants'
 
-jest.mock('@zondax/filecoin-signer-wasm')
-
 const mnemonic =
   'slender spread awkward chicken noise useful thank dentist tip bronze ritual explain version spot collect whisper glow peanut bus local country album punch frown'
 
