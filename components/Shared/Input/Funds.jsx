@@ -169,9 +169,11 @@ const Funds = forwardRef(
           color='input.border'
           bg={error && 'input.background.invalid'}
           px={2}
+          mr={2}
+          borderRadius={2}
         >
           {error ? (
-            <Text color='core.nearblack' textAlign='left'>
+            <Text color='core.nearblack' textAlign='center'>
               {error}
             </Text>
           ) : (
@@ -179,7 +181,15 @@ const Funds = forwardRef(
           )}
         </Box>
         <Box display='inline-block' width='100%'>
-          <Box position='relative' display='flex' height='80px' width='100%'>
+          <Box
+            position='relative'
+            display='flex'
+            height='80px'
+            width='100%'
+            borderBottom={1}
+            borderColor='background.screen'
+            borderTopLeftRadius={2}
+          >
             <Box
               position='absolute'
               left='-24px'
@@ -208,6 +218,7 @@ const Funds = forwardRef(
               }}
               height='100%'
               fontSize={5}
+              borderTopLeftRadius={2}
               onChange={onFilChange}
               value={formatFilValue(filAmount)}
               placeholder='0'
@@ -220,6 +231,7 @@ const Funds = forwardRef(
             <DenomTag
               top='0px'
               left='0px'
+              borderTopRightRadius={2}
               backgroundColor={
                 valid ? 'input.background.valid' : 'input.background.base'
               }
@@ -234,6 +246,7 @@ const Funds = forwardRef(
             borderTop={1}
             borderColor='background.screen'
             bg='input.background.base'
+            borderRadius={2}
           >
             <RawNumberInput
               onFocus={() => {
@@ -245,6 +258,7 @@ const Funds = forwardRef(
               }}
               height='100%'
               fontSize={5}
+              borderBottomLeftRadius={2}
               onChange={onFiatChange}
               value={formatFiatValue(fiatAmount)}
               placeholder={converterError ? 'Error fetching amount' : '0'}
@@ -257,9 +271,11 @@ const Funds = forwardRef(
             <DenomTag
               top='0px'
               left='0px'
+              borderBottomRightRadius={2}
               backgroundColor={
                 valid ? 'input.background.valid' : 'input.background.base'
               }
+              borderBottomLeftRadius='4px'
             >
               USD
             </DenomTag>
