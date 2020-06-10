@@ -55,27 +55,37 @@ const GasCustomization = ({
               What&rsquo;s this?
             </StyledATag>
           </Box>
-          <Box borderColor='input.border' mt={3}>
-            <Input.Number
-              mt={2}
-              m='0'
-              denom='AttoFil'
-              label='Gas Price'
-              value={gasPrice.toAttoFil()}
-              onChange={onGasPriceInputChange}
-            />
-            <Box borderColor='input.border'>
-              <NumberedInput
+          <Box>
+            <Box mt={3}>
+              <Input.Number
+                mt={2}
                 m='0'
+                borderBottom='1px solid'
+                color='background.screen'
+                borderTopLeftRadius={2}
+                denomBorderTopRightRadius={2}
                 denom='AttoFil'
-                label='Gas Limit'
-                value={gasLimit.toAttoFil()}
-                onChange={e =>
-                  setGasLimit(
-                    new FilecoinNumber(e.target.value || '0', 'attofil')
-                  )
-                }
+                label='Gas Price'
+                value={gasPrice.toAttoFil()}
+                onChange={onGasPriceInputChange}
               />
+              <Box borderColor='background.screen'>
+                <NumberedInput
+                  m='0'
+                  borderTop='1px solid'
+                  color='background.screen'
+                  borderBottomLeftRadius={2}
+                  denomBorderBottomRightRadius={2}
+                  denom='AttoFil'
+                  label='Gas Limit'
+                  value={gasLimit.toAttoFil()}
+                  onChange={e =>
+                    setGasLimit(
+                      new FilecoinNumber(e.target.value || '0', 'attofil')
+                    )
+                  }
+                />
+              </Box>
             </Box>
           </Box>
         </ContentContainer>
