@@ -38,7 +38,13 @@ const TextInput = ({
             {...props}
           />
           {denom && (
-            <DenomTag backgroundColor='core.transparent' height={7}>
+            <DenomTag
+              height={7}
+              css={`
+                background-color: ${props =>
+                  props.theme.colors.core.transparent};
+              `}
+            >
               {denom}
             </DenomTag>
           )}
