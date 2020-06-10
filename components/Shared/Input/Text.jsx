@@ -16,7 +16,7 @@ const TextInput = ({
   ...props
 }) => (
   <>
-    <InputWrapper mt={3}>
+    <InputWrapper>
       <Box display='flex' alignItems='center' pl={2}>
         {label && (
           <Box
@@ -28,7 +28,7 @@ const TextInput = ({
             <Label color='core.nearblack'>{label}</Label>
           </Box>
         )}
-        <Box position='relative' display='flex' width='100%'>
+        <Box position='relative' display='flex' flex='1'>
           <BaseInput
             px={3}
             borderRadius={2}
