@@ -300,7 +300,7 @@ const Send = ({ close }) => {
               />
             </Box>
           </Box>
-          <Box mt={3}>
+          <Box mt={5}>
             <Input.Address
               name='recipient'
               onChange={e => setToAddress(e.target.value)}
