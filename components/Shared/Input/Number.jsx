@@ -57,6 +57,14 @@ export const NumberInput = forwardRef(
       setError,
       valid,
       fontSize,
+      border,
+      color,
+      borderTop,
+      borderBottom,
+      denomBorderTopLeftRadius,
+      denomBorderBottomLeftRadius,
+      denomBorderTopRightRadius,
+      denomBorderBottomRightRadius,
       ...props
     },
     ref
@@ -79,6 +87,9 @@ export const NumberInput = forwardRef(
             display='flex'
             justifyContent='flex-end'
             width='100%'
+            color={color}
+            borderTop={borderTop}
+            borderBottom={borderBottom}
           >
             <RawNumberInput
               type='number'
@@ -93,6 +104,10 @@ export const NumberInput = forwardRef(
             />
             {denom && (
               <DenomTag
+                borderTopLeftRadius={denomBorderTopLeftRadius}
+                borderBottomLeftRadius={denomBorderBottomLeftRadius}
+                borderTopRightRadius={denomBorderTopRightRadius}
+                borderBottomRightRadius={denomBorderBottomRightRadius}
                 height='64px'
                 css={`
                   top: 0px;
@@ -118,7 +133,16 @@ NumberInput.propTypes = {
   error: string,
   valid: bool,
   fontSize: number,
-  denom: string
+  color: string,
+  border: string,
+  borderColor: string,
+  borderTop: string,
+  borderBottom: string,
+  denom: string,
+  denomBorderTopLeftRadius: number,
+  denomBorderBottomLeftRadius: number,
+  denomBorderTopRightRadius: number,
+  denomBorderBottomRightRadius: number
 }
 
 NumberInput.defaultProps = {
