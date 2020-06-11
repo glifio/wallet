@@ -156,9 +156,7 @@ export default () => {
                 dispatch(walletList([wallet]))
                 const params = new URLSearchParams(router.query)
                 const hasParams = Array.from(params).length > 0
-                const query = hasParams
-                  ? `/wallet?${params.toString()}`
-                  : '/wallet'
+                const query = hasParams ? `/home?${params.toString()}` : `/home`
                 router.push(query)
               }
             } catch (err) {

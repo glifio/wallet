@@ -52,6 +52,6 @@ describe('WalletDown', () => {
     })
 
     expect(mockRouterReplace).toHaveBeenCalled()
-    expect(mockRouterReplace).toHaveBeenCalledWith('/onboard')
+    expect(mockRouterReplace).toHaveBeenCalledWith('/')
   })
 })

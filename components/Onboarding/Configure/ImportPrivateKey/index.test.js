@@ -43,7 +43,7 @@ describe('Import private key configuration', () => {
       await flushPromises()
     })
     expect(container.firstChild).toMatchSnapshot()
-    expect(mockRouterPush).toHaveBeenCalledWith('/wallet?network=t')
+    expect(mockRouterPush).toHaveBeenCalledWith('/home?network=t')
     expect(mockWalletProviderDispatch.mock.calls[0][0].type).toBe(
       'CREATE_WALLET_PROVIDER'
     )

@@ -48,7 +48,7 @@ const AccountSelector = () => {
   const onClose = () => {
     const newSearchParams = new URLSearchParams(router.query)
     newSearchParams.delete('page')
-    router.push(`/wallet?${newSearchParams.toString()}`)
+    router.push(`/home?${newSearchParams.toString()}`)
   }
 
   let errorMsg = ''

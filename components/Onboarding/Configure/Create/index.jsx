@@ -59,7 +59,7 @@ const Create = ({ initialWalkthroughStep }) => {
         const wallet = await fetchDefaultWallet(provider)
         dispatchRdx(walletList([wallet]))
         const params = new URLSearchParams(router.query)
-        router.push(`/wallet?${params.toString()}`)
+        router.push(`/home?${params.toString()}`)
       } catch (err) {
         setImportSeedError(err.message || JSON.stringify(err))
       }
