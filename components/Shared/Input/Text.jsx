@@ -17,7 +17,7 @@ const TextInput = ({
 }) => (
   <>
     <InputWrapper>
-      <Box display='flex' alignItems='center' pl={2}>
+      <Box display='flex' alignItems='center'>
         {label && (
           <Box
             display='flex'
