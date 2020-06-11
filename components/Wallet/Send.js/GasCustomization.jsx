@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { func, bool, string } from 'prop-types'
-import { Box, Label, ContentContainer, Input, StyledATag } from '../../Shared'
+import { Box, Label, Container, Input, StyledATag } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 
 // this is a weird hack to get tests to run in jest...
@@ -36,7 +36,7 @@ const GasCustomization = ({
   return (
     <>
       {show && (
-        <ContentContainer mt={2}>
+        <Box mt={2} p={3} borderTop={1} borderBottom={1} borderColor='silver'>
           <Box
             display='flex'
             justifyContent='space-between'
@@ -88,7 +88,7 @@ const GasCustomization = ({
               </Box>
             </Box>
           </Box>
-        </ContentContainer>
+        </Box>
       )}
     </>
   )
