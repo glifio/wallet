@@ -82,7 +82,13 @@ const AccountCard = forwardRef(
         <Box color='card.account.color'>
           <BigTitle>{alias}</BigTitle>
           <Box display='flex' alignContent='center'>
-            <AccountAddress fontWeight={1} fontSize={5} margin={0}>
+            <AccountAddress
+              fontWeight={1}
+              fontSize={5}
+              margin={0}
+              overflow='hidden'
+              whiteSpace='nowrap'
+            >
               {truncate(address)}
             </AccountAddress>
             <CopyAddress
