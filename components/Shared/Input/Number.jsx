@@ -15,7 +15,7 @@ export const DenomTag = styled(Box).attrs(props => ({
   fontSize: 3,
   minWidth: 7,
   color: 'core.primary',
-  backgroundColor: 'input.background.base',
+  backgroundColor: props.backgroundColor || 'input.background.base',
   ...props
 }))`
   text-align: center;
@@ -61,6 +61,7 @@ export const NumberInput = forwardRef(
       color,
       borderTop,
       borderBottom,
+      backgroundColor,
       denomBorderTopLeftRadius,
       denomBorderBottomLeftRadius,
       denomBorderTopRightRadius,
@@ -104,6 +105,7 @@ export const NumberInput = forwardRef(
             />
             {denom && (
               <DenomTag
+                backgroundColor={backgroundColor}
                 borderTopLeftRadius={denomBorderTopLeftRadius}
                 borderBottomLeftRadius={denomBorderBottomLeftRadius}
                 borderTopRightRadius={denomBorderTopRightRadius}
@@ -138,6 +140,7 @@ NumberInput.propTypes = {
   borderColor: string,
   borderTop: string,
   borderBottom: string,
+  backgroundColor: string,
   denom: string,
   denomBorderTopLeftRadius: number,
   denomBorderBottomLeftRadius: number,
