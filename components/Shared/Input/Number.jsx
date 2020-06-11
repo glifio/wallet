@@ -6,6 +6,8 @@ import InputWrapper from './InputWrapper'
 import Box from '../Box'
 import { Label } from '../Typography'
 
+import { inputBackgroundColor } from './inputBackgroundColors'
+
 export const DenomTag = styled(Box).attrs(props => ({
   display: 'flex',
   height: '100%',
@@ -15,33 +17,22 @@ export const DenomTag = styled(Box).attrs(props => ({
   fontSize: 3,
   minWidth: 7,
   color: 'core.primary',
-  backgroundColor: props.backgroundColor || 'input.background.base',
+  // DELETE THIS COMMENT ONCE THESE ARE CLEANEDUP
+  borderBottomLeftRadius: '4px',
+  borderBottomRightRadius: 2,
   ...props
 }))`
   text-align: center;
   position: relative;
-  background: ${props => {
-    if (props.valid) return props.theme.colors.input.background.valid
-    if (props.error) return props.theme.colors.input.background.invalid
-    if (props.disabled) return props.theme.colors.input.background.disabled
-    return props.theme.colors.input.background.base
-  }};
+  background: ${props => inputBackgroundColor(props)};
 `
 
-export const RawNumberInput = styled(BaseInput).attrs(props => ({
-  ...props
-}))`
+export const RawNumberInput = styled(BaseInput)`
   ::-webkit-outer-spin-button,
   ::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
-  background: ${props => {
-    if (props.valid) return props.theme.colors.input.background.valid
-    if (props.error) return props.theme.colors.input.background.invalid
-    if (props.disabled) return props.theme.colors.input.background.disabled
-    return props.theme.colors.input.background.base
-  }};
   -moz-appearance: textfield;
 `
 
@@ -49,6 +40,7 @@ export const NumberInput = forwardRef(
   (
     {
       denom,
+      disabled,
       onChange,
       value,
       placeholder,
@@ -62,10 +54,6 @@ export const NumberInput = forwardRef(
       borderTop,
       borderBottom,
       backgroundColor,
-      denomBorderTopLeftRadius,
-      denomBorderBottomLeftRadius,
-      denomBorderTopRightRadius,
-      denomBorderBottomRightRadius,
       ...props
     },
     ref
@@ -97,6 +85,7 @@ export const NumberInput = forwardRef(
               onChange={onChange}
               value={value}
               valid={valid}
+              disabled={disabled}
               error={error}
               setError={setError}
               placeholder={placeholder}
@@ -106,15 +95,11 @@ export const NumberInput = forwardRef(
             {denom && (
               <DenomTag
                 backgroundColor={backgroundColor}
-                borderTopLeftRadius={denomBorderTopLeftRadius}
-                borderBottomLeftRadius={denomBorderBottomLeftRadius}
-                borderTopRightRadius={denomBorderTopRightRadius}
-                borderBottomRightRadius={denomBorderBottomRightRadius}
                 height='64px'
-                css={`
-                  top: 0px;
-                  left: 0px;
-                `}
+                top='0px'
+                left='0px'
+                valid={valid}
+                disabled={disabled}
               >
                 {denom}
               </DenomTag>
@@ -141,11 +126,7 @@ NumberInput.propTypes = {
   borderTop: string,
   borderBottom: string,
   backgroundColor: string,
-  denom: string,
-  denomBorderTopLeftRadius: number,
-  denomBorderBottomLeftRadius: number,
-  denomBorderTopRightRadius: number,
-  denomBorderBottomRightRadius: number
+  denom: string
 }
 
 NumberInput.defaultProps = {

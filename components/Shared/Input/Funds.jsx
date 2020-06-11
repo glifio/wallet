@@ -226,15 +226,12 @@ const Funds = forwardRef(
               step={new FilecoinNumber('1', 'attofil').toFil()}
               disabled={disabled}
               valid={valid && !!formatFilValue(filAmount)}
-              {...props}
             />
             <DenomTag
               top='0px'
               left='0px'
-              borderTopRightRadius={2}
-              backgroundColor={
-                valid ? 'input.background.valid' : 'input.background.base'
-              }
+              valid={valid && !!formatFilValue(filAmount)}
+              disabled={disabled}
             >
               FIL
             </DenomTag>
@@ -243,9 +240,6 @@ const Funds = forwardRef(
             position='relative'
             display='flex'
             height='80px'
-            borderTop={1}
-            borderColor='background.screen'
-            bg='input.background.base'
             borderRadius={2}
           >
             <RawNumberInput
@@ -271,11 +265,8 @@ const Funds = forwardRef(
             <DenomTag
               top='0px'
               left='0px'
-              borderBottomRightRadius={2}
-              backgroundColor={
-                valid ? 'input.background.valid' : 'input.background.base'
-              }
-              borderBottomLeftRadius='4px'
+              valid={valid && !!formatFiatValue(fiatAmount)}
+              disabled={disabled || converterError}
             >
               USD
             </DenomTag>
