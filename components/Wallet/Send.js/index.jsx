@@ -39,7 +39,7 @@ const SendCardForm = styled.form.attrs(() => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  p: 3,
+  py: 3,
   border: 1,
   borderRadius: 2,
   borderColor: 'silver',
@@ -267,6 +267,7 @@ const Send = ({ close }) => {
             display='flex'
             alignItems='center'
             justifyContent='space-between'
+            px={3}
           >
             <Box display='flex' alignItems='center'>
               <Glyph
@@ -300,39 +301,42 @@ const Send = ({ close }) => {
               />
             </Box>
           </Box>
-          <Box mt={3}>
-            <Input.Address
-              name='recipient'
-              onChange={e => setToAddress(e.target.value)}
-              value={toAddress}
-              label='Recipient'
-              placeholder='t1...'
-              error={toAddressError}
-              setError={setToAddressError}
-              disabled={step === 2 && !hasError()}
-              valid={validateAddressString(toAddress)}
-            />
-            <Input.Funds
-              name='amount'
-              label='Amount'
-              amount={value.toAttoFil()}
-              onAmountChange={setValue}
-              balance={wallet.balance}
-              error={valueError}
-              setError={setValueError}
-              gasLimit={gasLimit}
-              disabled={step === 2 && !hasError()}
-              valid={isValidAmount(value, wallet.balance, valueError)}
-            />
-            <Box position='relative' width='100%'>
-              <Input.Text
-                onChange={noop}
-                denom={customizingGas ? 'AttoFil' : 'FIL'}
-                label='Transaction Fee'
-                value={customizingGas ? estimatedGasUsed.toAttoFil() : '< 0.1'}
-                backgroundColor='background.screen'
-                disabled
+          <Box mt={5}>
+            <Box px={3}>
+              <Input.Address
+                name='recipient'
+                onChange={e => setToAddress(e.target.value)}
+                value={toAddress}
+                label='Recipient'
+                placeholder='t1...'
+                error={toAddressError}
+                setError={setToAddressError}
+                disabled={step === 2 && !hasError()}
+                valid={validateAddressString(toAddress)}
               />
+              <Input.Funds
+                name='amount'
+                label='Amount'
+                amount={value.toAttoFil()}
+                onAmountChange={setValue}
+                balance={wallet.balance}
+                error={valueError}
+                setError={setValueError}
+                gasLimit={gasLimit}
+                disabled={step === 2 && !hasError()}
+                valid={isValidAmount(value, wallet.balance, valueError)}
+              />
+              <Box position='relative' width='100%'>
+                <Input.Text
+                  onChange={noop}
+                  denom={customizingGas ? 'AttoFil' : 'FIL'}
+                  label='Transaction Fee'
+                  value={
+                    customizingGas ? estimatedGasUsed.toAttoFil() : '< 0.1'
+                  }
+                  disabled
+                />
+              </Box>
             </Box>
             <GasCustomization
               show={customizingGas}
@@ -356,6 +360,7 @@ const Send = ({ close }) => {
                 outline: none;
                 &:hover {
                   cursor: pointer;
+                  opacity: 1;
                 }
                 align-self: flex-end;
               `}
@@ -363,7 +368,7 @@ const Send = ({ close }) => {
               alignItems='center'
               flexDirection='row'
             >
-              <Box display='flex' alignItems='center' mt={2}>
+              <Box display='flex' alignItems='center' px={3} mt={2}>
                 {customizingGas ? (
                   <Text
                     css={`
@@ -380,16 +385,22 @@ const Send = ({ close }) => {
                       font-size: 0.75rem;
                     `}
                     mr={1}
-                    my={0}
+                    mt={3}
                   >
                     &#9660;
                   </Text>
                 )}
                 <Text
-                  m={0}
+                  display='inline-block'
+                  my={2}
                   css={`
-                    text-decoration: underline;
-                    line-height: 2;
+                    transition: 0.24s ease-in-out;
+                    border-bottom: 2px solid
+                      ${({ theme }) => theme.colors.core.primary}00;
+                    &:hover {
+                      border-bottom: 2px solid
+                        ${({ theme }) => theme.colors.core.primary};
+                    }
                   `}
                   mb={0}
                 >
@@ -404,6 +415,7 @@ const Send = ({ close }) => {
               justifyContent='space-between'
               mt={5}
               mx={1}
+              px={3}
             >
               <Total fontSize={4} alignSelf='flex-start'>
                 Total

@@ -6,6 +6,8 @@ import InputWrapper from './InputWrapper'
 import Box from '../Box'
 import { Label } from '../Typography'
 
+import { inputBackgroundColor } from './inputBackgroundColors'
+
 export const DenomTag = styled(Box).attrs(props => ({
   display: 'flex',
   height: '100%',
@@ -15,33 +17,19 @@ export const DenomTag = styled(Box).attrs(props => ({
   fontSize: 3,
   minWidth: 7,
   color: 'core.primary',
-  backgroundColor: 'input.background.base',
   ...props
 }))`
   text-align: center;
   position: relative;
-  background: ${props => {
-    if (props.valid) return props.theme.colors.input.background.valid
-    if (props.error) return props.theme.colors.input.background.invalid
-    if (props.disabled) return props.theme.colors.input.background.disabled
-    return props.theme.colors.input.background.base
-  }};
+  background: ${props => inputBackgroundColor(props)};
 `
 
-export const RawNumberInput = styled(BaseInput).attrs(props => ({
-  ...props
-}))`
+export const RawNumberInput = styled(BaseInput)`
   ::-webkit-outer-spin-button,
   ::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
-  background: ${props => {
-    if (props.valid) return props.theme.colors.input.background.valid
-    if (props.error) return props.theme.colors.input.background.invalid
-    if (props.disabled) return props.theme.colors.input.background.disabled
-    return props.theme.colors.input.background.base
-  }};
   -moz-appearance: textfield;
 `
 
@@ -49,6 +37,7 @@ export const NumberInput = forwardRef(
   (
     {
       denom,
+      disabled,
       onChange,
       value,
       placeholder,
@@ -56,7 +45,10 @@ export const NumberInput = forwardRef(
       error,
       setError,
       valid,
-      fontSize,
+      // top, bottom, and middle are props to pass if you are stacking numbered inputs
+      top,
+      bottom,
+      middle,
       ...props
     },
     ref
@@ -79,25 +71,31 @@ export const NumberInput = forwardRef(
             display='flex'
             justifyContent='flex-end'
             width='100%'
+            borderBottom='1px solid'
+            borderTop='1px solid'
+            color='background.screen'
           >
             <RawNumberInput
               type='number'
               onChange={onChange}
               value={value}
               valid={valid}
+              disabled={disabled}
               error={error}
               setError={setError}
               placeholder={placeholder}
-              fontSize={fontSize}
-              {...props}
+              borderBottomLeftRadius={bottom && !middle && 2}
+              borderTopLeftRadius={top && !middle && 2}
             />
             {denom && (
               <DenomTag
                 height='64px'
-                css={`
-                  top: 0px;
-                  left: 0px;
-                `}
+                top='0px'
+                left='0px'
+                valid={valid}
+                disabled={disabled}
+                borderTopRightRadius={top && !middle && 2}
+                borderBottomRightRadius={bottom && !middle && 2}
               >
                 {denom}
               </DenomTag>
@@ -117,7 +115,9 @@ NumberInput.propTypes = {
   disabled: bool,
   error: string,
   valid: bool,
-  fontSize: number,
+  top: bool,
+  bottom: bool,
+  middle: bool,
   denom: string
 }
 
@@ -126,5 +126,7 @@ NumberInput.defaultProps = {
   disabled: false,
   onChange: () => {},
   label: '',
-  fontSize: 2
+  top: true,
+  bottom: true,
+  middle: false
 }

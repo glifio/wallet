@@ -95,7 +95,6 @@ exports[`Import private key configuration it renders correctly 1`] = `
 .c12 {
   min-width: 0;
   box-sizing: border-box;
-  padding-left: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -132,7 +131,9 @@ exports[`Import private key configuration it renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c17 {
@@ -270,7 +271,6 @@ exports[`Import private key configuration it renders correctly 1`] = `
 .c11 {
   display: inline-block;
   width: 100%;
-  margin-top: 16px;
   border-radius: 1px;
 }
 
@@ -394,7 +394,6 @@ exports[`Import private key configuration it renders correctly 1`] = `
             <div
               class="c15"
               display="flex"
-              width="100%"
             >
               <input
                 class="c16"

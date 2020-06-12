@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { func, bool, string } from 'prop-types'
-import { Box, Label, ContentContainer, Input, StyledATag } from '../../Shared'
+import { Box, Label, Input, StyledATag } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 
 // this is a weird hack to get tests to run in jest...
@@ -36,7 +36,7 @@ const GasCustomization = ({
   return (
     <>
       {show && (
-        <ContentContainer mt={2}>
+        <Box mt={2} p={3} borderTop={1} borderBottom={1} borderColor='silver'>
           <Box
             display='flex'
             justifyContent='space-between'
@@ -55,30 +55,36 @@ const GasCustomization = ({
               What&rsquo;s this?
             </StyledATag>
           </Box>
-          <Box borderColor='input.border' mt={3}>
-            <Input.Number
-              mt={2}
-              m='0'
-              denom='AttoFil'
-              label='Gas Price'
-              value={gasPrice.toAttoFil()}
-              onChange={onGasPriceInputChange}
-            />
-            <Box borderColor='input.border'>
-              <NumberedInput
+          <Box>
+            <Box mt={3}>
+              <Input.Number
+                top
+                bottom={false}
+                mt={2}
                 m='0'
                 denom='AttoFil'
-                label='Gas Limit'
-                value={gasLimit.toAttoFil()}
-                onChange={e =>
-                  setGasLimit(
-                    new FilecoinNumber(e.target.value || '0', 'attofil')
-                  )
-                }
+                label='Gas Price'
+                value={gasPrice.toAttoFil()}
+                onChange={onGasPriceInputChange}
               />
+              <Box borderColor='background.screen'>
+                <NumberedInput
+                  bottom
+                  top={false}
+                  m='0'
+                  denom='AttoFil'
+                  label='Gas Limit'
+                  value={gasLimit.toAttoFil()}
+                  onChange={e =>
+                    setGasLimit(
+                      new FilecoinNumber(e.target.value || '0', 'attofil')
+                    )
+                  }
+                />
+              </Box>
             </Box>
           </Box>
-        </ContentContainer>
+        </Box>
       )}
     </>
   )

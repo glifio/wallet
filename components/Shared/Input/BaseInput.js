@@ -8,6 +8,11 @@ import {
   typography
 } from 'styled-system'
 
+import {
+  inputBackgroundColor,
+  inputBackgroundColorHover
+} from './inputBackgroundColors'
+
 export default styled.input.attrs(props => ({
   display: 'inline-block',
   height: props.height || 7,
@@ -25,20 +30,10 @@ export default styled.input.attrs(props => ({
   font-size: ${props => props.theme.fontSizes[2]};
   text-align: right;
   cursor: text;
-  background: ${props => {
-    if (props.valid) return props.theme.colors.input.background.valid
-    if (props.error) return props.theme.colors.input.background.invalid
-    if (props.disabled) return props.theme.colors.input.background.disabled
-    return props.theme.colors.input.background.base
-  }};
+  background: ${props => inputBackgroundColor(props)};
 
   &:hover {
-    background: ${props => {
-      if (props.valid) return props.theme.colors.input.background.valid
-      if (props.error) return props.theme.colors.input.background.invalid
-      if (props.disabled) return props.theme.colors.core.transparent
-      return props.theme.colors.input.background.active
-    }};
+    background: ${props => inputBackgroundColorHover(props)};
     cursor: ${props => (props.disabled ? 'initial' : 'text')};
   }
 

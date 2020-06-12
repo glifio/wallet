@@ -52,6 +52,7 @@ const Mnemonic = forwardRef(
           </Box>
 
           <TextInput
+            mt={3}
             backgroundRadius={6}
             onBlur={() => validate(value)}
             onFocus={() => {

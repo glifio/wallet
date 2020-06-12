@@ -16,8 +16,8 @@ const TextInput = ({
   ...props
 }) => (
   <>
-    <InputWrapper mt={3}>
-      <Box display='flex' alignItems='center' pl={2}>
+    <InputWrapper>
+      <Box display='flex' alignItems='center'>
         {label && (
           <Box
             display='flex'
@@ -28,7 +28,7 @@ const TextInput = ({
             <Label color='core.nearblack'>{label}</Label>
           </Box>
         )}
-        <Box position='relative' display='flex' width='100%'>
+        <Box position='relative' display='flex' flex='1'>
           <BaseInput
             px={3}
             borderRadius={2}
@@ -38,7 +38,7 @@ const TextInput = ({
             {...props}
           />
           {denom && (
-            <DenomTag backgroundColor='core.transparent' height={7}>
+            <DenomTag height={7} backgroundColor='core.transparent'>
               {denom}
             </DenomTag>
           )}

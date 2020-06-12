@@ -105,7 +105,6 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
 .c14 {
   min-width: 0;
   box-sizing: border-box;
-  padding-left: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -142,7 +141,9 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c19 {
@@ -261,6 +262,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   background: #d1ddfa;
   padding-left: 16px;
   padding-right: 16px;
+  margin-top: 16px;
   width: 480px;
   display: inline-block;
   height: 64px;
@@ -283,7 +285,6 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
 .c13 {
   display: inline-block;
   width: 100%;
-  margin-top: 16px;
   border-radius: 1px;
 }
 
@@ -447,7 +448,6 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
             <div
               class="c17"
               display="flex"
-              width="100%"
             >
               <input
                 class="c18"
