@@ -226,6 +226,7 @@ const Funds = forwardRef(
               step={new FilecoinNumber('1', 'attofil').toFil()}
               disabled={disabled}
               valid={valid && !!formatFilValue(filAmount)}
+              {...props}
             />
             <DenomTag
               top='0px'
@@ -261,13 +262,13 @@ const Funds = forwardRef(
               step={new FilecoinNumber('1', 'attofil').toFil()}
               min='0'
               valid={valid && !!formatFiatValue(fiatAmount)}
-              disabled={disabled || converterError}
+              disabled={!!(disabled || converterError)}
             />
             <DenomTag
               top='0px'
               left='0px'
               valid={valid && !!formatFiatValue(fiatAmount)}
-              disabled={disabled || converterError}
+              disabled={!!(disabled || converterError)}
               borderBottomRightRadius={2}
             >
               USD

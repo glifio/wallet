@@ -334,7 +334,6 @@ const Send = ({ close }) => {
                   value={
                     customizingGas ? estimatedGasUsed.toAttoFil() : '< 0.1'
                   }
-                  backgroundColor='background.screen'
                   disabled
                 />
               </Box>
@@ -397,10 +396,10 @@ const Send = ({ close }) => {
                   css={`
                     transition: 0.24s ease-in-out;
                     border-bottom: 2px solid
-                      ${props => props.theme.colors.core.primary}00;
+                      ${({ theme }) => theme.colors.core.primary}00;
                     &:hover {
                       border-bottom: 2px solid
-                        ${props => props.theme.colors.core.primary};
+                        ${({ theme }) => theme.colors.core.primary};
                     }
                   `}
                   mb={0}

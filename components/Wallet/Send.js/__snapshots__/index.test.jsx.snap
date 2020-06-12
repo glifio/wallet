@@ -205,7 +205,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   position: absolute;
   left: -24px;
   bottom: -24px;
-  z-index: 999;
+  z-index: 99;
   border-radius: 32px;
   padding-bottom: 4px;
   background-color: #ffffff;
@@ -231,10 +231,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  border-top: 1px solid;
-  border-color: #EFF3FD;
   border-radius: 4px;
-  background-color: #d1ddfa;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -482,7 +479,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   font-size: 1.125rem;
   text-align: right;
   cursor: text;
-  background-color: #EFF3FD;
+  background: transparent;
   padding-left: 16px;
   padding-right: 16px;
   display: inline-block;
@@ -518,7 +515,6 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   border-top-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
-  background-color: #d1ddfa;
   color: #5E26FF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -546,10 +542,8 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   top: 0px;
   left: 0px;
   border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
-  background-color: #d1ddfa;
   color: #5E26FF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -569,6 +563,33 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   text-align: center;
   position: relative;
   background: #d1ddfa;
+}
+
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: transparent;
+  color: #5E26FF;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  background: core.transparent;
 }
 
 .c25 {
@@ -593,7 +614,6 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   border-top-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  background: #d1ddfa;
   -moz-appearance: textfield;
 }
 
@@ -636,7 +656,6 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  background: #d1ddfa;
   -moz-appearance: textfield;
 }
 
@@ -655,34 +674,6 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
 .c28::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-.c32 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  background-color: #d1ddfa;
-  height: 64px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: #d1ddfa;
-  background-color: transparent;
 }
 
 .c45 {
@@ -1433,7 +1424,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   position: absolute;
   left: -24px;
   bottom: -24px;
-  z-index: 999;
+  z-index: 99;
   border-radius: 32px;
   padding-bottom: 4px;
   background-color: #ffffff;
@@ -1459,10 +1450,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  border-top: 1px solid;
-  border-color: #EFF3FD;
   border-radius: 4px;
-  background-color: #d1ddfa;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1685,7 +1673,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   font-size: 1.125rem;
   text-align: right;
   cursor: text;
-  background-color: #EFF3FD;
+  background: transparent;
   padding-left: 16px;
   padding-right: 16px;
   display: inline-block;
@@ -1750,6 +1738,33 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   border-radius: 1px;
 }
 
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: transparent;
+  color: #5E26FF;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  background: core.transparent;
+}
+
 .c27 {
   min-width: 0;
   box-sizing: border-box;
@@ -1758,7 +1773,6 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   border-top-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
-  background-color: #85e0cb;
   color: #5E26FF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1777,7 +1791,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: #d1ddfa;
+  background: #85e0cb;
 }
 
 .c30 {
@@ -1786,10 +1800,8 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   top: 0px;
   left: 0px;
   border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
-  background-color: #85e0cb;
   color: #5E26FF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1808,7 +1820,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: #d1ddfa;
+  background: #85e0cb;
 }
 
 .c26 {
@@ -1833,7 +1845,6 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   border-top-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  background: #85e0cb;
   -moz-appearance: textfield;
 }
 
@@ -1876,7 +1887,6 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  background: #85e0cb;
   -moz-appearance: textfield;
 }
 
@@ -1895,34 +1905,6 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
 .c29::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-.c33 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  background-color: #d1ddfa;
-  height: 64px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: #d1ddfa;
-  background-color: transparent;
 }
 
 .c46 {
@@ -2681,7 +2663,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   position: absolute;
   left: -24px;
   bottom: -24px;
-  z-index: 999;
+  z-index: 99;
   border-radius: 32px;
   padding-bottom: 4px;
   background-color: #ffffff;
@@ -2707,10 +2689,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  border-top: 1px solid;
-  border-color: #EFF3FD;
   border-radius: 4px;
-  background-color: #d1ddfa;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2933,7 +2912,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   font-size: 1.125rem;
   text-align: right;
   cursor: text;
-  background-color: #EFF3FD;
+  background: transparent;
   padding-left: 16px;
   padding-right: 16px;
   display: inline-block;
@@ -2998,6 +2977,33 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   border-radius: 1px;
 }
 
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: transparent;
+  color: #5E26FF;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  background: core.transparent;
+}
+
 .c27 {
   min-width: 0;
   box-sizing: border-box;
@@ -3006,7 +3012,6 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   border-top-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
-  background-color: #85e0cb;
   color: #5E26FF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -3025,7 +3030,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: #d1ddfa;
+  background: #85e0cb;
 }
 
 .c30 {
@@ -3034,10 +3039,8 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   top: 0px;
   left: 0px;
   border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
-  background-color: #85e0cb;
   color: #5E26FF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -3056,7 +3059,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: #d1ddfa;
+  background: #85e0cb;
 }
 
 .c26 {
@@ -3081,7 +3084,6 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   border-top-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  background: #85e0cb;
   -moz-appearance: textfield;
 }
 
@@ -3124,7 +3126,6 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  background: #85e0cb;
   -moz-appearance: textfield;
 }
 
@@ -3143,34 +3144,6 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
 .c29::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-.c33 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  background-color: #d1ddfa;
-  height: 64px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: #d1ddfa;
-  background-color: transparent;
 }
 
 .c46 {
@@ -3929,7 +3902,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   position: absolute;
   left: -24px;
   bottom: -24px;
-  z-index: 999;
+  z-index: 99;
   border-radius: 32px;
   padding-bottom: 4px;
   background-color: #ffffff;
@@ -3955,10 +3928,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: relative;
-  border-top: 1px solid;
-  border-color: #EFF3FD;
   border-radius: 4px;
-  background-color: #d1ddfa;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3973,7 +3943,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   width: 100%;
 }
 
-.c52 {
+.c51 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 16px;
@@ -3989,7 +3959,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   align-items: center;
 }
 
-.c57 {
+.c56 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
@@ -4014,7 +3984,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   justify-content: space-between;
 }
 
-.c59 {
+.c58 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -4095,6 +4065,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   box-sizing: border-box;
   position: relative;
   border-bottom: 1px solid;
+  border-top: 1px solid;
   color: #EFF3FD;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4113,30 +4084,13 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-color: #EFF3FD;
 }
 
-.c48 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-top: 1px solid;
-  color: #EFF3FD;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
 .c5 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c64 {
+.c63 {
   cursor: pointer;
   border: 1px solid core.lightgray;
   background-color: transparent;
@@ -4154,11 +4108,11 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-width: 1px;
 }
 
-.c64:hover {
+.c63:hover {
   opacity: 0.8;
 }
 
-.c66 {
+.c65 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -4174,7 +4128,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-width: 1px;
 }
 
-.c66:hover {
+.c65:hover {
   opacity: 0.8;
 }
 
@@ -4183,7 +4137,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   height: 24;
 }
 
-.c58 {
+.c57 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -4191,7 +4145,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin: 0;
 }
 
-.c60 {
+.c59 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -4200,7 +4154,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin: 0;
 }
 
-.c62 {
+.c61 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
@@ -4229,7 +4183,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin-bottom: 0;
 }
 
-.c55 {
+.c54 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
@@ -4239,7 +4193,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin-bottom: 0;
 }
 
-.c53 {
+.c52 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
@@ -4329,7 +4283,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   font-size: 1.125rem;
   text-align: right;
   cursor: text;
-  background-color: #EFF3FD;
+  background: transparent;
   padding-left: 16px;
   padding-right: 16px;
   display: inline-block;
@@ -4362,7 +4316,6 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   width: 100%;
   margin-top: 8px;
   margin: 0;
-  border-top-left-radius: 4px;
   border-radius: 1px;
 }
 
@@ -4370,7 +4323,6 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   display: inline-block;
   width: 100%;
   margin: 0;
-  border-bottom-left-radius: 4px;
   border-radius: 1px;
 }
 
@@ -4382,7 +4334,6 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-top-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
-  background-color: #d1ddfa;
   color: #5E26FF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4410,10 +4361,8 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   top: 0px;
   left: 0px;
   border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
-  background-color: #d1ddfa;
   color: #5E26FF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4435,14 +4384,42 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   background: #d1ddfa;
 }
 
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: transparent;
+  color: #5E26FF;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  background: core.transparent;
+}
+
 .c45 {
   min-width: 0;
   box-sizing: border-box;
+  top: 0px;
+  left: 0px;
   border-top-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
-  background-color: #d1ddfa;
   height: 64px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4461,18 +4438,17 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   text-align: center;
   position: relative;
   background: #d1ddfa;
-  top: 0px;
-  left: 0px;
 }
 
-.c50 {
+.c49 {
   min-width: 0;
   box-sizing: border-box;
+  top: 0px;
+  left: 0px;
   border-bottom-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
-  background-color: #d1ddfa;
   height: 64px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4491,8 +4467,6 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   text-align: center;
   position: relative;
   background: #d1ddfa;
-  top: 0px;
-  left: 0px;
 }
 
 .c25 {
@@ -4517,7 +4491,6 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-top-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  background: #d1ddfa;
   -moz-appearance: textfield;
 }
 
@@ -4560,7 +4533,6 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  background: #d1ddfa;
   -moz-appearance: textfield;
 }
 
@@ -4596,16 +4568,12 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   text-align: right;
   cursor: text;
   background: #d1ddfa;
-  font-size: 1.125rem;
-  margin-top: 8px;
-  margin: 0;
   display: inline-block;
   height: 64px;
   width: 100%;
   border-top-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  background: #d1ddfa;
   -moz-appearance: textfield;
 }
 
@@ -4626,7 +4594,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin: 0;
 }
 
-.c49 {
+.c48 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -4641,64 +4609,33 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   text-align: right;
   cursor: text;
   background: #d1ddfa;
-  font-size: 1.125rem;
-  margin: 0;
   display: inline-block;
   height: 64px;
   width: 100%;
   border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  background: #d1ddfa;
   -moz-appearance: textfield;
 }
 
-.c49:hover {
+.c48:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c49:focus {
+.c48:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c49::-webkit-outer-spin-button,
-.c49::-webkit-inner-spin-button {
+.c48::-webkit-outer-spin-button,
+.c48::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c32 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  background-color: #d1ddfa;
-  height: 64px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: #d1ddfa;
-  background-color: transparent;
-}
-
-.c63 {
+.c62 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -4801,7 +4738,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   justify-content: space-between;
 }
 
-.c51 {
+.c50 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -4835,38 +4772,38 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   align-self: flex-end;
 }
 
-.c51:hover {
+.c50:hover {
   opacity: 0.8;
 }
 
-.c51:hover {
+.c50:hover {
   cursor: pointer;
   opacity: 1;
 }
 
-.c54 {
+.c53 {
   font-size: 0.75rem;
 }
 
-.c56 {
+.c55 {
   -webkit-transition: 0.24s ease-in-out;
   transition: 0.24s ease-in-out;
   border-bottom: 2px solid #5E26FF00;
 }
 
-.c56:hover {
+.c55:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c61 {
+.c60 {
   word-wrap: break-word;
 }
 
-.c65 {
+.c64 {
   border-radius: 0px;
 }
 
-.c67 {
+.c66 {
   border-radius: 0px;
 }
 
@@ -5236,7 +5173,6 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
                   <input
                     class="c44"
                     display="inline-block"
-                    font-size="2"
                     height="7"
                     type="number"
                     value="1"
@@ -5278,22 +5214,21 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
                     </h4>
                   </div>
                   <div
-                    class="c48"
+                    class="c43"
                     color="background.screen"
                     display="flex"
                     width="100%"
                   >
                     <input
-                      class="c49"
+                      class="c48"
                       display="inline-block"
-                      font-size="2"
                       height="7"
                       type="number"
                       value="2000"
                       width="100%"
                     />
                     <div
-                      class="c50"
+                      class="c49"
                       color="core.primary"
                       display="flex"
                       font-size="3"
@@ -5309,7 +5244,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
         </div>
       </div>
       <button
-        class="c51"
+        class="c50"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -5317,11 +5252,11 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
         type="button"
       >
         <div
-          class="c52"
+          class="c51"
           display="flex"
         >
           <p
-            class="c53 c54"
+            class="c52 c53"
             font-family="RT-Alias-Grotesk"
             font-size="3"
             font-weight="400"
@@ -5329,7 +5264,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
             ▲
           </p>
           <p
-            class="c55 c56"
+            class="c54 c55"
             display="inline-block"
             font-family="RT-Alias-Grotesk"
             font-size="3"
@@ -5340,11 +5275,11 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
         </div>
       </button>
       <div
-        class="c57"
+        class="c56"
         display="flex"
       >
         <h2
-          class="c58"
+          class="c57"
           font-family="RT-Alias-Grotesk"
           font-size="4"
           font-weight="400"
@@ -5352,11 +5287,11 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
           Total
         </h2>
         <div
-          class="c59"
+          class="c58"
           display="flex"
         >
           <h2
-            class="c60 c61"
+            class="c59 c60"
             color="core.primary"
             font-family="RT-Alias-Grotesk"
             font-size="5"
@@ -5367,7 +5302,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
             FIL
           </h2>
           <h2
-            class="c62"
+            class="c61"
             color="core.darkgray"
             font-family="RT-Alias-Grotesk"
             font-size="4"
@@ -5381,17 +5316,17 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
       </div>
     </div>
     <div
-      class="c63"
+      class="c62"
     >
       <button
-        class="c64 c65 Sendjs___StyledButton-sc-1crplc1-6 c65"
+        class="c63 c64 Sendjs___StyledButton-sc-1crplc1-6 c64"
         font-size="3"
         type="button"
       >
         Back
       </button>
       <button
-        class="c66 c67 Sendjs___StyledButton2-sc-1crplc1-7 c67"
+        class="c65 c66 Sendjs___StyledButton2-sc-1crplc1-7 c66"
         font-size="3"
         type="submit"
       >

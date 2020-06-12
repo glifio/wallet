@@ -262,6 +262,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   background: #d1ddfa;
   padding-left: 16px;
   padding-right: 16px;
+  margin-top: 16px;
   width: 480px;
   display: inline-block;
   height: 64px;
