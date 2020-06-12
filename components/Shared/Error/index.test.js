@@ -66,6 +66,6 @@ describe('Error', () => {
     })
 
     expect(mockRouterReplace).toHaveBeenCalled()
-    expect(mockRouterReplace).toHaveBeenCalledWith('/onboard')
+    expect(mockRouterReplace).toHaveBeenCalledWith('/')
   })
 })

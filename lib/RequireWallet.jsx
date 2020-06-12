@@ -10,8 +10,8 @@ export class RequireWallet extends Component {
   componentDidMount() {
     if (!this.props.wallet.address) {
       const route = Router.query.network
-        ? `/onboard?network=${Router.query.network}`
-        : `/onboard?network=${this.props.network}`
+        ? `/?network=${Router.query.network}`
+        : `/?network=${this.props.network}`
       Router.replace(route)
     }
   }

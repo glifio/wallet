@@ -33,7 +33,7 @@ export default () => {
   const router = useRouter()
   const onAccountSwitch = () => {
     const params = new URLSearchParams(router.query)
-    router.push(`/wallet/accounts?${params.toString()}`)
+    router.push(`/home/accounts?${params.toString()}`)
   }
 
   const onShowOnLedger = async () => {

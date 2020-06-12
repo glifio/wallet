@@ -14,7 +14,7 @@ const ErrorView = ({ description, linkhref, linkDisplay, title }) => {
   const resetState = useReset()
   const sendHome = () => {
     resetState()
-    router.replace(`/onboard`)
+    router.replace(`/`)
   }
   return (
     <Box

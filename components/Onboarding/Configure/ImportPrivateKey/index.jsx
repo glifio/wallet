@@ -41,7 +41,7 @@ export default () => {
       const wallet = await fetchDefaultWallet(provider)
       dispatchRdx(walletList([wallet]))
       const params = new URLSearchParams(router.query)
-      router.push(`/wallet?${params.toString()}`)
+      router.push(`/home?${params.toString()}`)
     } catch (err) {
       setLoadingNextScreen(false)
       setPrivateKeyError(err.message || JSON.stringify(err))
