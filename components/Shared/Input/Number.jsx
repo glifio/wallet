@@ -17,9 +17,6 @@ export const DenomTag = styled(Box).attrs(props => ({
   fontSize: 3,
   minWidth: 7,
   color: 'core.primary',
-  // DELETE THIS COMMENT ONCE THESE ARE CLEANEDUP
-  borderBottomLeftRadius: '4px',
-  borderBottomRightRadius: 2,
   ...props
 }))`
   text-align: center;
@@ -48,12 +45,10 @@ export const NumberInput = forwardRef(
       error,
       setError,
       valid,
-      fontSize,
-      border,
-      color,
-      borderTop,
-      borderBottom,
-      backgroundColor,
+      // top, bottom, and middle are props to pass if you are stacking numbered inputs
+      top,
+      bottom,
+      middle,
       ...props
     },
     ref
@@ -76,9 +71,9 @@ export const NumberInput = forwardRef(
             display='flex'
             justifyContent='flex-end'
             width='100%'
-            color={color}
-            borderTop={borderTop}
-            borderBottom={borderBottom}
+            borderBottom='1px solid'
+            borderTop='1px solid'
+            color='background.screen'
           >
             <RawNumberInput
               type='number'
@@ -89,17 +84,18 @@ export const NumberInput = forwardRef(
               error={error}
               setError={setError}
               placeholder={placeholder}
-              fontSize={fontSize}
-              {...props}
+              borderBottomLeftRadius={bottom && !middle && 2}
+              borderTopLeftRadius={top && !middle && 2}
             />
             {denom && (
               <DenomTag
-                backgroundColor={backgroundColor}
                 height='64px'
                 top='0px'
                 left='0px'
                 valid={valid}
                 disabled={disabled}
+                borderTopRightRadius={top && !middle && 2}
+                borderBottomRightRadius={bottom && !middle && 2}
               >
                 {denom}
               </DenomTag>
@@ -119,13 +115,9 @@ NumberInput.propTypes = {
   disabled: bool,
   error: string,
   valid: bool,
-  fontSize: number,
-  color: string,
-  border: string,
-  borderColor: string,
-  borderTop: string,
-  borderBottom: string,
-  backgroundColor: string,
+  top: bool,
+  bottom: bool,
+  middle: bool,
   denom: string
 }
 
@@ -134,5 +126,7 @@ NumberInput.defaultProps = {
   disabled: false,
   onChange: () => {},
   label: '',
-  fontSize: 2
+  top: true,
+  bottom: true,
+  middle: false
 }

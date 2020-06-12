@@ -203,7 +203,7 @@ const Funds = forwardRef(
               fontSize={5}
               fontFamily='sansSerif'
               paddingBottom='4px'
-              zIndex='999'
+              zIndex='2'
             >
               {'\u003D'}
             </Box>
@@ -230,6 +230,7 @@ const Funds = forwardRef(
             <DenomTag
               top='0px'
               left='0px'
+              borderTopRightRadius={2}
               valid={valid && !!formatFilValue(filAmount)}
               disabled={disabled}
             >
@@ -267,6 +268,7 @@ const Funds = forwardRef(
               left='0px'
               valid={valid && !!formatFiatValue(fiatAmount)}
               disabled={disabled || converterError}
+              borderBottomRightRadius={2}
             >
               USD
             </DenomTag>

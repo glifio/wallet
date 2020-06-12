@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { func, bool, string } from 'prop-types'
-import { Box, Label, Container, Input, StyledATag } from '../../Shared'
+import { Box, Label, Input, StyledATag } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 
 // this is a weird hack to get tests to run in jest...
@@ -58,12 +58,10 @@ const GasCustomization = ({
           <Box>
             <Box mt={3}>
               <Input.Number
+                top
+                bottom={false}
                 mt={2}
                 m='0'
-                borderBottom='1px solid'
-                color='background.screen'
-                borderTopLeftRadius={2}
-                denomBorderTopRightRadius={2}
                 denom='AttoFil'
                 label='Gas Price'
                 value={gasPrice.toAttoFil()}
@@ -71,11 +69,9 @@ const GasCustomization = ({
               />
               <Box borderColor='background.screen'>
                 <NumberedInput
+                  bottom
+                  top={false}
                   m='0'
-                  borderTop='1px solid'
-                  color='background.screen'
-                  borderBottomLeftRadius={2}
-                  denomBorderBottomRightRadius={2}
                   denom='AttoFil'
                   label='Gas Limit'
                   value={gasLimit.toAttoFil()}
