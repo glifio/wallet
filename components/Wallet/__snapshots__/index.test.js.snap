@@ -315,6 +315,7 @@ exports[`WalletView it renders correctly 1`] = `
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
+  overflow: hidden;
   margin: 0;
 }
 
@@ -966,6 +967,7 @@ exports[`WalletView it renders correctly 1`] = `
             font-family="RT-Alias-Grotesk"
             font-size="5"
             font-weight="1"
+            overflow="hidden"
           >
             t1z22 ... 6wgi
           </h2>
@@ -4054,6 +4056,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
+  overflow: hidden;
   margin: 0;
 }
 
@@ -4534,6 +4537,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
             font-family="RT-Alias-Grotesk"
             font-size="5"
             font-weight="1"
+            overflow="hidden"
           >
             t1z22 ... 6wgi
           </h2>
@@ -5428,6 +5432,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
+  overflow: hidden;
   margin: 0;
 }
 
@@ -6281,6 +6286,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
             font-family="RT-Alias-Grotesk"
             font-size="5"
             font-weight="1"
+            overflow="hidden"
           >
             t1z22 ... 6wgi
           </h2>
