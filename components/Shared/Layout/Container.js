@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { layout, margin } from 'styled-system'
+import { layout, margin, color } from 'styled-system'
 
 export default styled.div.attrs(props => ({
   maxWidth: props.maxWidth || 13,
@@ -12,4 +12,5 @@ export default styled.div.attrs(props => ({
   flex-grow: 2;
   ${layout}
   ${margin}
+  ${color}
 `

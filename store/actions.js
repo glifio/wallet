@@ -12,7 +12,8 @@ import {
   FETCHING_NEXT_PAGE,
   WALLET_LIST,
   POPULATE_REDUX,
-  RESET_STATE
+  RESET_STATE,
+  SET_INVESTOR_UUID
 } from './actionTypes'
 
 export const walletList = wallets => ({
@@ -101,5 +102,14 @@ export const switchNetwork = (network, wallets = []) => ({
 export const resetState = () => {
   return {
     type: RESET_STATE
+  }
+}
+
+export const setInvestorUUID = uuid => {
+  return {
+    type: SET_INVESTOR_UUID,
+    payload: {
+      uuid
+    }
   }
 }
