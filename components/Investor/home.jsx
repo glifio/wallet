@@ -48,10 +48,10 @@ export default () => {
     >
       <OnboardCard>
         <StepHeader currentStep={4} totalSteps={4} Icon={IconLedger} />
-        <Title mt={3}>Send Email</Title>
+        <Title mt={3}>Confirm ID and Filecoin address</Title>
         <Text>
-          Please send an email to investors@protocol.ai with the following in
-          the body:
+          Once confirmed, we&apos;ll generate an email with your investor ID and
+          associated Filecoin address to send to Protocol Labs.
         </Text>
         <Input.Text
           value={investor}
@@ -76,7 +76,7 @@ export default () => {
       >
         <Button title='Back' onClick={back} variant='secondary' mr={2} />
         <Button
-          title='Generate email for me!'
+          title='Generate email'
           onClick={onClick}
           variant='primary'
           ml={2}

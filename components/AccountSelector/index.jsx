@@ -174,7 +174,9 @@ const AccountSelector = ({ investor }) => {
                   borderColor='core.primary'
                   color='core.white'
                 />
-                <Title ml={2}>Switch Accounts</Title>
+                <Title ml={2}>
+                  {investor ? 'Select Account' : 'Switch Accounts'}
+                </Title>
               </MenuItem>
               <MenuItem>
                 <Text>
