@@ -56,7 +56,7 @@ describe('useTransactionHistory', () => {
     expect(store.getState().messages.loadedSuccess).toBeTruthy()
   })
 
-  test.only('it fetches more data when showMore gets called', async () => {
+  test('it fetches more data when showMore gets called', async () => {
     const secondarySampleSuccessResponse = {
       data: {
         code: 200,
@@ -97,6 +97,78 @@ describe('useTransactionHistory', () => {
     expect(confirmed[11]).toHaveProperty('cid', expect.any(String))
     expect(confirmed[11]).toHaveProperty('gas_used', expect.any(String))
     expect(confirmed[11]).toHaveProperty('timestamp', expect.any(String))
+    expect(store.getState().messages.loadedFailure).toBeFalsy()
+    expect(store.getState().messages.loadedSuccess).toBeTruthy()
+  })
+
+  test('it fetches new data when refresh gets called', async () => {
+    const secondarySampleSuccessResponse = {
+      data: {
+        code: 200,
+        data: {
+          data: secondaryFilscoutMockData,
+          pagination: { total: 47, page: 1, page_size: 15 }
+        },
+        error: 'ok'
+      }
+    }
+    axios.get
+      .mockResolvedValueOnce(sampleSuccessResponse)
+      .mockResolvedValueOnce(secondarySampleSuccessResponse)
+
+    const { Tree, store } = composeMockAppTree('postOnboard')
+
+    const {
+      result: { current },
+      waitForNextUpdate
+    } = renderHook(useTransactionHistory, {
+      wrapper: Tree
+    })
+
+    await act(async () => {
+      current.refresh()
+      await waitForNextUpdate()
+    })
+
+    const { confirmed, total } = store.getState().messages
+    expect(total).toBe(47)
+    expect(confirmed.length).toBeGreaterThan(15)
+    expect(store.getState().messages.loadedFailure).toBeFalsy()
+    expect(store.getState().messages.loadedSuccess).toBeTruthy()
+  })
+
+  test('it does not add duplicate data to redux', async () => {
+    const secondarySampleSuccessResponse = {
+      data: {
+        code: 200,
+        data: {
+          data: filscoutMockData,
+          pagination: { total: 47, page: 1, page_size: 15 }
+        },
+        error: 'ok'
+      }
+    }
+    axios.get
+      .mockResolvedValueOnce(sampleSuccessResponse)
+      .mockResolvedValueOnce(secondarySampleSuccessResponse)
+
+    const { Tree, store } = composeMockAppTree('postOnboard')
+
+    const {
+      result: { current },
+      waitForNextUpdate
+    } = renderHook(useTransactionHistory, {
+      wrapper: Tree
+    })
+
+    await act(async () => {
+      current.refresh()
+      await waitForNextUpdate()
+    })
+
+    const { confirmed, total } = store.getState().messages
+    expect(total).toBe(47)
+    expect(confirmed.length).toBe(15)
     expect(store.getState().messages.loadedFailure).toBeFalsy()
     expect(store.getState().messages.loadedSuccess).toBeTruthy()
   })
