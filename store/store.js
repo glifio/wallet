@@ -6,7 +6,10 @@ import reducer from './reducer'
 import deserialize from './deserializeState'
 
 function initializeStore(state = initialState) {
-  const middleware = [thunkMiddleware, createLogger()]
+  const middleware = process.env.IS_DEV
+    ? [thunkMiddleware, createLogger()]
+    : [thunkMiddleware]
+
   return createStore(
     reducer,
     deserialize(state),
