@@ -13,6 +13,7 @@ export default () => {
     loading,
     paginating,
     showMore,
+    refresh,
     total
   } = useTransactionHistory()
 
@@ -33,6 +34,7 @@ export default () => {
           selectMessage={setSelectedMessageCid}
           paginating={paginating}
           showMore={showMore}
+          refresh={refresh}
           total={total}
         />
       )}

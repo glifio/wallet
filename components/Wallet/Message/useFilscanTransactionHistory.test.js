@@ -17,7 +17,17 @@ const sampleSuccessResponse = {
   }
 }
 
-for (let i = 0; i < 10; i++) {
+const secondSampleSuccessResponse = {
+  data: {
+    data: {
+      data: [],
+      total: '20'
+    },
+    res: { code: 3, msg: 'success' }
+  }
+}
+
+for (let i = 0; i < 20; i++) {
   const sampleMessageFromFilscan = {
     block_cids: [
       'bafy2bzacedhezqvd2nae4wuiilkygot6m63brn4ex7vj5tfpkjwwzddkxjuyq'
@@ -48,7 +58,9 @@ for (let i = 0; i < 10; i++) {
     size: '63'
   }
 
-  sampleSuccessResponse.data.data.data.push(sampleMessageFromFilscan)
+  if (i < 10)
+    sampleSuccessResponse.data.data.data.push(sampleMessageFromFilscan)
+  else secondSampleSuccessResponse.data.data.data.push(sampleMessageFromFilscan)
 }
 
 describe('useTransactionHistory', () => {
@@ -86,7 +98,9 @@ describe('useTransactionHistory', () => {
   })
 
   test('it fetches more data when showMore gets called', async () => {
-    axios.post.mockResolvedValue(sampleSuccessResponse)
+    axios.post
+      .mockResolvedValueOnce(sampleSuccessResponse)
+      .mockResolvedValueOnce(secondSampleSuccessResponse)
 
     const { Tree, store } = composeMockAppTree('postOnboard')
 

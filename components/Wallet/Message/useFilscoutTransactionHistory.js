@@ -38,11 +38,11 @@ export default () => {
     }
   })
 
-  const fetchInitialData = useCallback(
-    async (address, page = 1) => {
+  const fetchData = useCallback(
+    async (address, page = 1, pageSize = 15) => {
       try {
         const { data } = await axios.get(
-          `${FILSCOUT}/message/list?address=${address}&page=${page}&page_size=15`
+          `${FILSCOUT}/message/list?address=${address}&page=${page}&page_size=${pageSize}`
         )
 
         if (data.code !== 200) {
@@ -70,13 +70,18 @@ export default () => {
 
   const showMore = () => {
     dispatch(fetchingNextPage())
-    fetchInitialData(address, page)
+    fetchData(address, page)
+  }
+
+  const refresh = () => {
+    dispatch(fetchingConfirmedMessages())
+    fetchData(address, 1, 30)
   }
 
   useEffect(() => {
     if (!loading && !loadedFailure && !loadedSuccess) {
       dispatch(fetchingConfirmedMessages())
-      fetchInitialData(address)
+      fetchData(address)
     }
   }, [
     address,
@@ -86,7 +91,7 @@ export default () => {
     loadedFailure,
     loadedSuccess,
     page,
-    fetchInitialData,
+    fetchData,
     dispatch
   ])
 
@@ -97,6 +102,7 @@ export default () => {
     pending,
     confirmed,
     showMore,
+    refresh,
     paginating,
     total,
     page

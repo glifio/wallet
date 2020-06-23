@@ -573,6 +573,7 @@ describe('state manipulators', () => {
         gasLimit: 1000,
         nonce: 1
       })
+      msg.cid = 'Qmz11'
       const previouslyConfirmed = [msg]
 
       const state = {
@@ -588,7 +589,7 @@ describe('state manipulators', () => {
       expect(nextState.messages.confirmed.length).toBe(
         messagesFromAPI.length + 1
       )
-      expect(nextState.messages.confirmed[0]).toEqual(msg)
+      expect(nextState.messages.confirmed[10]).toEqual(msg)
     })
 
     test('it sets the loading states properly', () => {

@@ -20,13 +20,30 @@ exports[`MessageHistory View it renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
 }
 
-.c2 {
+.c3 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -49,18 +66,37 @@ exports[`MessageHistory View it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c3 {
+.c4 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c10 {
+.c6 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding: 16px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c6:hover {
+  opacity: 0.8;
+}
+
+.c12 {
   width: 34;
   height: 34;
 }
 
-.c4 {
+.c5 {
   color: #5E26FF;
   font-size: 1.25rem;
   font-weight: 400;
@@ -68,7 +104,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
   font-family: RT-Alias-Grotesk;
 }
 
-.c14 {
+.c16 {
   color: #262626;
   font-size: 1.5rem;
   font-weight: 400;
@@ -77,7 +113,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
   margin: 0;
 }
 
-.c16 {
+.c18 {
   color: #666666;
   font-size: 1.25rem;
   font-weight: 400;
@@ -86,7 +122,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
   margin: 0;
 }
 
-.c20 {
+.c22 {
   color: #262626;
   font-size: 1.25rem;
   font-weight: 400;
@@ -95,7 +131,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
   margin: 0;
 }
 
-.c21 {
+.c23 {
   color: #666666;
   font-size: 1.25rem;
   font-weight: 400;
@@ -105,7 +141,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c24 {
+.c26 {
   color: #5E26FF;
   font-size: 1.25rem;
   font-weight: 400;
@@ -115,7 +151,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
   width: 100%;
 }
 
-.c13 {
+.c15 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -126,13 +162,13 @@ exports[`MessageHistory View it renders correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c6 {
+.c8 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c8 {
+.c10 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -149,7 +185,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c11 {
+.c13 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -160,7 +196,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
   display: flex;
 }
 
-.c17 {
+.c19 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -181,7 +217,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
   flex-grow: 999;
 }
 
-.c18 {
+.c20 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -199,7 +235,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
   align-items: flex-end;
 }
 
-.c22 {
+.c24 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -217,7 +253,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
   align-items: flex-start;
 }
 
-.c7 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -227,16 +263,16 @@ exports[`MessageHistory View it renders correctly 1`] = `
   flex-direction: row;
 }
 
-.c9 {
+.c11 {
   position: relative;
 }
 
-.c12 {
+.c14 {
   overflow: hidden;
   width: 160px;
 }
 
-.c15 {
+.c17 {
   margin-left: 24px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -253,14 +289,14 @@ exports[`MessageHistory View it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c19 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c5 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -291,12 +327,12 @@ exports[`MessageHistory View it renders correctly 1`] = `
   transition: 0.18s ease-in-out;
 }
 
-.c5:hover {
+.c7:hover {
   cursor: pointer;
   background-color: #EFF3FD;
 }
 
-.c23 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -328,19 +364,19 @@ exports[`MessageHistory View it renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c23:hover {
+.c25:hover {
   cursor: pointer;
   background-color: #EFF3FD;
 }
 
 @media screen and (min-width:40em) {
-  .c11 {
+  .c13 {
     margin-left: 24px;
   }
 }
 
 @media screen and (min-width:52em) {
-  .c11 {
+  .c13 {
     margin-left: 32px;
   }
 }
@@ -355,45 +391,57 @@ exports[`MessageHistory View it renders correctly 1`] = `
   >
     <div
       class="c2"
-      color="core.primary"
       display="flex"
-      size="6"
     >
-      <h3
+      <div
         class="c3"
+        color="core.primary"
+        display="flex"
+        size="6"
       >
-        Tx
-      </h3>
+        <h3
+          class="c4"
+        >
+          Tx
+        </h3>
+      </div>
+      <p
+        class="c5"
+        color="core.primary"
+        font-family="RT-Alias-Grotesk"
+        font-size="3"
+        font-weight="400"
+      >
+        Transaction History
+      </p>
     </div>
-    <p
-      class="c4"
-      color="core.primary"
-      font-family="RT-Alias-Grotesk"
+    <button
+      class="c6"
       font-size="3"
-      font-weight="400"
+      type="button"
     >
-      Transaction History
-    </p>
+      Refresh
+    </button>
   </div>
   <div
-    class="c5"
+    class="c7"
   >
     <ul
-      class="c6"
+      class="c8"
     >
       <li
-        class="c7"
+        class="c9"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c10"
           display="flex"
         >
           <li
-            class="c9"
+            class="c11"
           >
             <svg
-              class="c10"
+              class="c12"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -425,16 +473,16 @@ exports[`MessageHistory View it renders correctly 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c13"
           display="flex"
         >
           <li
-            class="c12"
+            class="c14"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c15"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -443,7 +491,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="4"
@@ -453,12 +501,12 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c17"
             display="flex"
             width="8"
           >
             <p
-              class="c16"
+              class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -471,22 +519,22 @@ exports[`MessageHistory View it renders correctly 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c19"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c20"
           display="flex"
         >
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -496,11 +544,11 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -515,14 +563,14 @@ exports[`MessageHistory View it renders correctly 1`] = `
         class=""
       >
         <ul
-          class="c22"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -531,7 +579,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               FIL
             </p>
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -545,24 +593,24 @@ exports[`MessageHistory View it renders correctly 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c7"
   >
     <ul
-      class="c6"
+      class="c8"
     >
       <li
-        class="c7"
+        class="c9"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c10"
           display="flex"
         >
           <li
-            class="c9"
+            class="c11"
           >
             <svg
-              class="c10"
+              class="c12"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -594,16 +642,16 @@ exports[`MessageHistory View it renders correctly 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c13"
           display="flex"
         >
           <li
-            class="c12"
+            class="c14"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c15"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -612,7 +660,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="4"
@@ -622,12 +670,12 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c17"
             display="flex"
             width="8"
           >
             <p
-              class="c16"
+              class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -640,22 +688,22 @@ exports[`MessageHistory View it renders correctly 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c19"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c20"
           display="flex"
         >
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -665,11 +713,11 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -684,14 +732,14 @@ exports[`MessageHistory View it renders correctly 1`] = `
         class=""
       >
         <ul
-          class="c22"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -700,7 +748,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               FIL
             </p>
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -714,24 +762,24 @@ exports[`MessageHistory View it renders correctly 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c7"
   >
     <ul
-      class="c6"
+      class="c8"
     >
       <li
-        class="c7"
+        class="c9"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c10"
           display="flex"
         >
           <li
-            class="c9"
+            class="c11"
           >
             <svg
-              class="c10"
+              class="c12"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -763,16 +811,16 @@ exports[`MessageHistory View it renders correctly 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c13"
           display="flex"
         >
           <li
-            class="c12"
+            class="c14"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c15"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -781,7 +829,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="4"
@@ -791,12 +839,12 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c17"
             display="flex"
             width="8"
           >
             <p
-              class="c16"
+              class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -809,22 +857,22 @@ exports[`MessageHistory View it renders correctly 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c19"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c20"
           display="flex"
         >
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -834,11 +882,11 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -853,14 +901,14 @@ exports[`MessageHistory View it renders correctly 1`] = `
         class=""
       >
         <ul
-          class="c22"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -869,7 +917,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               FIL
             </p>
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -883,24 +931,24 @@ exports[`MessageHistory View it renders correctly 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c7"
   >
     <ul
-      class="c6"
+      class="c8"
     >
       <li
-        class="c7"
+        class="c9"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c10"
           display="flex"
         >
           <li
-            class="c9"
+            class="c11"
           >
             <svg
-              class="c10"
+              class="c12"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -932,16 +980,16 @@ exports[`MessageHistory View it renders correctly 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c13"
           display="flex"
         >
           <li
-            class="c12"
+            class="c14"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c15"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -950,7 +998,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="4"
@@ -960,12 +1008,12 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c17"
             display="flex"
             width="8"
           >
             <p
-              class="c16"
+              class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -978,22 +1026,22 @@ exports[`MessageHistory View it renders correctly 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c19"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c20"
           display="flex"
         >
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1003,11 +1051,11 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1022,14 +1070,14 @@ exports[`MessageHistory View it renders correctly 1`] = `
         class=""
       >
         <ul
-          class="c22"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1038,7 +1086,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               FIL
             </p>
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1052,24 +1100,24 @@ exports[`MessageHistory View it renders correctly 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c7"
   >
     <ul
-      class="c6"
+      class="c8"
     >
       <li
-        class="c7"
+        class="c9"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c10"
           display="flex"
         >
           <li
-            class="c9"
+            class="c11"
           >
             <svg
-              class="c10"
+              class="c12"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -1101,16 +1149,16 @@ exports[`MessageHistory View it renders correctly 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c13"
           display="flex"
         >
           <li
-            class="c12"
+            class="c14"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c15"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1119,7 +1167,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="4"
@@ -1129,12 +1177,12 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c17"
             display="flex"
             width="8"
           >
             <p
-              class="c16"
+              class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1147,22 +1195,22 @@ exports[`MessageHistory View it renders correctly 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c19"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c20"
           display="flex"
         >
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1172,11 +1220,11 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1191,14 +1239,14 @@ exports[`MessageHistory View it renders correctly 1`] = `
         class=""
       >
         <ul
-          class="c22"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1207,7 +1255,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               FIL
             </p>
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1221,24 +1269,24 @@ exports[`MessageHistory View it renders correctly 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c7"
   >
     <ul
-      class="c6"
+      class="c8"
     >
       <li
-        class="c7"
+        class="c9"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c10"
           display="flex"
         >
           <li
-            class="c9"
+            class="c11"
           >
             <svg
-              class="c10"
+              class="c12"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -1270,16 +1318,16 @@ exports[`MessageHistory View it renders correctly 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c13"
           display="flex"
         >
           <li
-            class="c12"
+            class="c14"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c15"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1288,7 +1336,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="4"
@@ -1298,12 +1346,12 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c17"
             display="flex"
             width="8"
           >
             <p
-              class="c16"
+              class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1316,22 +1364,22 @@ exports[`MessageHistory View it renders correctly 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c19"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c20"
           display="flex"
         >
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1341,11 +1389,11 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1360,14 +1408,14 @@ exports[`MessageHistory View it renders correctly 1`] = `
         class=""
       >
         <ul
-          class="c22"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1376,7 +1424,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               FIL
             </p>
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1390,24 +1438,24 @@ exports[`MessageHistory View it renders correctly 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c7"
   >
     <ul
-      class="c6"
+      class="c8"
     >
       <li
-        class="c7"
+        class="c9"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c10"
           display="flex"
         >
           <li
-            class="c9"
+            class="c11"
           >
             <svg
-              class="c10"
+              class="c12"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -1439,16 +1487,16 @@ exports[`MessageHistory View it renders correctly 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c13"
           display="flex"
         >
           <li
-            class="c12"
+            class="c14"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c15"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1457,7 +1505,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="4"
@@ -1467,12 +1515,12 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c17"
             display="flex"
             width="8"
           >
             <p
-              class="c16"
+              class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1485,22 +1533,22 @@ exports[`MessageHistory View it renders correctly 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c19"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c20"
           display="flex"
         >
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1510,11 +1558,11 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1529,14 +1577,14 @@ exports[`MessageHistory View it renders correctly 1`] = `
         class=""
       >
         <ul
-          class="c22"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1545,7 +1593,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               FIL
             </p>
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1559,24 +1607,24 @@ exports[`MessageHistory View it renders correctly 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c7"
   >
     <ul
-      class="c6"
+      class="c8"
     >
       <li
-        class="c7"
+        class="c9"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c10"
           display="flex"
         >
           <li
-            class="c9"
+            class="c11"
           >
             <svg
-              class="c10"
+              class="c12"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -1608,16 +1656,16 @@ exports[`MessageHistory View it renders correctly 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c13"
           display="flex"
         >
           <li
-            class="c12"
+            class="c14"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c15"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1626,7 +1674,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="4"
@@ -1636,12 +1684,12 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c17"
             display="flex"
             width="8"
           >
             <p
-              class="c16"
+              class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1654,22 +1702,22 @@ exports[`MessageHistory View it renders correctly 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c19"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c20"
           display="flex"
         >
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1679,11 +1727,11 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1698,14 +1746,14 @@ exports[`MessageHistory View it renders correctly 1`] = `
         class=""
       >
         <ul
-          class="c22"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1714,7 +1762,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               FIL
             </p>
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1728,24 +1776,24 @@ exports[`MessageHistory View it renders correctly 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c7"
   >
     <ul
-      class="c6"
+      class="c8"
     >
       <li
-        class="c7"
+        class="c9"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c10"
           display="flex"
         >
           <li
-            class="c9"
+            class="c11"
           >
             <svg
-              class="c10"
+              class="c12"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -1777,16 +1825,16 @@ exports[`MessageHistory View it renders correctly 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c13"
           display="flex"
         >
           <li
-            class="c12"
+            class="c14"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c15"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1795,7 +1843,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="4"
@@ -1805,12 +1853,12 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c17"
             display="flex"
             width="8"
           >
             <p
-              class="c16"
+              class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1823,22 +1871,22 @@ exports[`MessageHistory View it renders correctly 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c19"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c20"
           display="flex"
         >
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1848,11 +1896,11 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1867,14 +1915,14 @@ exports[`MessageHistory View it renders correctly 1`] = `
         class=""
       >
         <ul
-          class="c22"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1883,7 +1931,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               FIL
             </p>
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1897,24 +1945,24 @@ exports[`MessageHistory View it renders correctly 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c7"
   >
     <ul
-      class="c6"
+      class="c8"
     >
       <li
-        class="c7"
+        class="c9"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c10"
           display="flex"
         >
           <li
-            class="c9"
+            class="c11"
           >
             <svg
-              class="c10"
+              class="c12"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -1946,16 +1994,16 @@ exports[`MessageHistory View it renders correctly 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c13"
           display="flex"
         >
           <li
-            class="c12"
+            class="c14"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c15"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1964,7 +2012,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="4"
@@ -1974,12 +2022,12 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c17"
             display="flex"
             width="8"
           >
             <p
-              class="c16"
+              class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1992,22 +2040,22 @@ exports[`MessageHistory View it renders correctly 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c19"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c20"
           display="flex"
         >
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2017,11 +2065,11 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2036,14 +2084,14 @@ exports[`MessageHistory View it renders correctly 1`] = `
         class=""
       >
         <ul
-          class="c22"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2052,7 +2100,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               FIL
             </p>
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2066,24 +2114,24 @@ exports[`MessageHistory View it renders correctly 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c7"
   >
     <ul
-      class="c6"
+      class="c8"
     >
       <li
-        class="c7"
+        class="c9"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c10"
           display="flex"
         >
           <li
-            class="c9"
+            class="c11"
           >
             <svg
-              class="c10"
+              class="c12"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -2115,16 +2163,16 @@ exports[`MessageHistory View it renders correctly 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c13"
           display="flex"
         >
           <li
-            class="c12"
+            class="c14"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c15"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -2133,7 +2181,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="4"
@@ -2143,12 +2191,12 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c17"
             display="flex"
             width="8"
           >
             <p
-              class="c16"
+              class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2161,22 +2209,22 @@ exports[`MessageHistory View it renders correctly 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c19"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c20"
           display="flex"
         >
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2186,11 +2234,11 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2205,14 +2253,14 @@ exports[`MessageHistory View it renders correctly 1`] = `
         class=""
       >
         <ul
-          class="c22"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2221,7 +2269,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               FIL
             </p>
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2235,24 +2283,24 @@ exports[`MessageHistory View it renders correctly 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c7"
   >
     <ul
-      class="c6"
+      class="c8"
     >
       <li
-        class="c7"
+        class="c9"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c10"
           display="flex"
         >
           <li
-            class="c9"
+            class="c11"
           >
             <svg
-              class="c10"
+              class="c12"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -2284,16 +2332,16 @@ exports[`MessageHistory View it renders correctly 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c13"
           display="flex"
         >
           <li
-            class="c12"
+            class="c14"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c15"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -2302,7 +2350,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="4"
@@ -2312,12 +2360,12 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c17"
             display="flex"
             width="8"
           >
             <p
-              class="c16"
+              class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2330,22 +2378,22 @@ exports[`MessageHistory View it renders correctly 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c19"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c20"
           display="flex"
         >
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2355,11 +2403,11 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2374,14 +2422,14 @@ exports[`MessageHistory View it renders correctly 1`] = `
         class=""
       >
         <ul
-          class="c22"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2390,7 +2438,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               FIL
             </p>
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2404,24 +2452,24 @@ exports[`MessageHistory View it renders correctly 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c7"
   >
     <ul
-      class="c6"
+      class="c8"
     >
       <li
-        class="c7"
+        class="c9"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c10"
           display="flex"
         >
           <li
-            class="c9"
+            class="c11"
           >
             <svg
-              class="c10"
+              class="c12"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -2453,16 +2501,16 @@ exports[`MessageHistory View it renders correctly 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c13"
           display="flex"
         >
           <li
-            class="c12"
+            class="c14"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c15"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -2471,7 +2519,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="4"
@@ -2481,12 +2529,12 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c17"
             display="flex"
             width="8"
           >
             <p
-              class="c16"
+              class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2499,22 +2547,22 @@ exports[`MessageHistory View it renders correctly 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c19"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c20"
           display="flex"
         >
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2524,11 +2572,11 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2543,14 +2591,14 @@ exports[`MessageHistory View it renders correctly 1`] = `
         class=""
       >
         <ul
-          class="c22"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2559,7 +2607,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               FIL
             </p>
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2573,24 +2621,24 @@ exports[`MessageHistory View it renders correctly 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c7"
   >
     <ul
-      class="c6"
+      class="c8"
     >
       <li
-        class="c7"
+        class="c9"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c10"
           display="flex"
         >
           <li
-            class="c9"
+            class="c11"
           >
             <svg
-              class="c10"
+              class="c12"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -2622,16 +2670,16 @@ exports[`MessageHistory View it renders correctly 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c13"
           display="flex"
         >
           <li
-            class="c12"
+            class="c14"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c15"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -2640,7 +2688,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="4"
@@ -2650,12 +2698,12 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c17"
             display="flex"
             width="8"
           >
             <p
-              class="c16"
+              class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2668,22 +2716,22 @@ exports[`MessageHistory View it renders correctly 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c19"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c20"
           display="flex"
         >
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2693,11 +2741,11 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2712,14 +2760,14 @@ exports[`MessageHistory View it renders correctly 1`] = `
         class=""
       >
         <ul
-          class="c22"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2728,7 +2776,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               FIL
             </p>
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2742,24 +2790,24 @@ exports[`MessageHistory View it renders correctly 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c7"
   >
     <ul
-      class="c6"
+      class="c8"
     >
       <li
-        class="c7"
+        class="c9"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c10"
           display="flex"
         >
           <li
-            class="c9"
+            class="c11"
           >
             <svg
-              class="c10"
+              class="c12"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -2791,16 +2839,16 @@ exports[`MessageHistory View it renders correctly 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c13"
           display="flex"
         >
           <li
-            class="c12"
+            class="c14"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c15"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -2809,7 +2857,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="4"
@@ -2819,12 +2867,12 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c17"
             display="flex"
             width="8"
           >
             <p
-              class="c16"
+              class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2837,22 +2885,22 @@ exports[`MessageHistory View it renders correctly 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c19"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c20"
           display="flex"
         >
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2862,11 +2910,11 @@ exports[`MessageHistory View it renders correctly 1`] = `
             </p>
           </li>
           <li
-            class="c19"
+            class="c21"
             display="flex"
           >
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2881,14 +2929,14 @@ exports[`MessageHistory View it renders correctly 1`] = `
         class=""
       >
         <ul
-          class="c22"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2897,7 +2945,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               FIL
             </p>
             <p
-              class="c21"
+              class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -2911,10 +2959,10 @@ exports[`MessageHistory View it renders correctly 1`] = `
     </ul>
   </div>
   <div
-    class="c23"
+    class="c25"
   >
     <p
-      class="c24"
+      class="c26"
       color="core.primary"
       font-family="RT-Alias-Grotesk"
       font-size="3"
