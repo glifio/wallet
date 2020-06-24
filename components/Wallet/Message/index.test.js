@@ -13,6 +13,7 @@ const mockTxHistory = {
     ...msg,
     status: 'confirmed'
   })),
+  refresh: jest.fn(),
   paginating: false,
   loading: false,
   loadedSuccess: true,

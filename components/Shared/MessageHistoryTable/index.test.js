@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from '@testing-library/react'
+import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 import { BigNumber } from '@openworklabs/filecoin-number'
 import MessageHistoryTable from './index'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
@@ -163,5 +163,56 @@ describe('MessageHistoryTable', () => {
     )
 
     expect(screen.getAllByText(friendlyValue)).toBeTruthy()
+  })
+
+  test('shows a refresh tx history button', () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+    render(
+      <Tree>
+        <MessageHistoryTable
+          address='t01'
+          messages={formatFilscanMessages(filscanMockData).map(msg => ({
+            ...msg,
+            status: 'confirmed'
+          }))}
+          loading={false}
+          selectMessage={setSelectedMessageCid}
+          paginating={false}
+          showMore={showMore}
+          total={filscanMockData.length}
+          refresh={noop}
+        />
+      </Tree>
+    )
+
+    expect(screen.getAllByText('Refresh')).toBeTruthy()
+  })
+
+  test('shows a refresh tx history button', () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+    const spy = jest.fn()
+    render(
+      <Tree>
+        <MessageHistoryTable
+          address='t01'
+          messages={formatFilscanMessages(filscanMockData).map(msg => ({
+            ...msg,
+            status: 'confirmed'
+          }))}
+          loading={false}
+          selectMessage={setSelectedMessageCid}
+          paginating={false}
+          showMore={showMore}
+          total={filscanMockData.length}
+          refresh={spy}
+        />
+      </Tree>
+    )
+
+    act(() => {
+      fireEvent.click(screen.getByText('Refresh'))
+    })
+
+    expect(spy).toHaveBeenCalled()
   })
 })

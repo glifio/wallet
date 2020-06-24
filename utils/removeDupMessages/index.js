@@ -12,5 +12,5 @@ export default (oldMessages, newMessages) => {
       },
       [...newMessages]
     )
-    .sort((a, b) => b.timestamp - a.timestamp)
+    .sort((a, b) => Number(b.timestamp) - Number(a.timestamp))
 }

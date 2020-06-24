@@ -1,6 +1,5 @@
-import { act, renderHook } from '@testing-library/react-hooks'
+import { act, renderHook, cleanup } from '@testing-library/react-hooks'
 import axios from 'axios'
-import { cleanup } from '@testing-library/react'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import {
   filscanMockData,
@@ -96,6 +95,58 @@ describe('useTransactionHistory', () => {
     expect(confirmed[11]).toHaveProperty('cid', expect.any(String))
     expect(confirmed[11]).toHaveProperty('gas_used', expect.any(String))
     expect(confirmed[11]).toHaveProperty('timestamp', expect.any(String))
+    expect(store.getState().messages.loadedFailure).toBeFalsy()
+    expect(store.getState().messages.loadedSuccess).toBeTruthy()
+  })
+
+  test('it does not add duplicate data to redux', async () => {
+    axios.post
+      .mockResolvedValueOnce(sampleSuccessResponse)
+      .mockResolvedValueOnce(sampleSuccessResponse)
+
+    const { Tree, store } = composeMockAppTree('postOnboard')
+
+    const {
+      result: { current },
+      waitForNextUpdate
+    } = renderHook(useTransactionHistory, {
+      wrapper: Tree
+    })
+
+    await act(async () => {
+      current.refresh()
+      await waitForNextUpdate()
+    })
+
+    const { confirmed, total } = store.getState().messages
+    expect(total).toBe(20)
+    expect(confirmed.length).toBe(filscanMockData.length)
+    expect(store.getState().messages.loadedFailure).toBeFalsy()
+    expect(store.getState().messages.loadedSuccess).toBeTruthy()
+  })
+
+  test('it fetches new data when refresh gets called', async () => {
+    axios.post
+      .mockResolvedValueOnce(sampleSuccessResponse)
+      .mockResolvedValueOnce(secondSampleSuccessResponse)
+
+    const { Tree, store } = composeMockAppTree('postOnboard')
+
+    const {
+      result: { current },
+      waitForNextUpdate
+    } = renderHook(useTransactionHistory, {
+      wrapper: Tree
+    })
+
+    await act(async () => {
+      current.refresh()
+      await waitForNextUpdate()
+    })
+
+    const { confirmed, total } = store.getState().messages
+    expect(total).toBe(20)
+    expect(confirmed.length).toBeGreaterThan(10)
     expect(store.getState().messages.loadedFailure).toBeFalsy()
     expect(store.getState().messages.loadedSuccess).toBeTruthy()
   })
