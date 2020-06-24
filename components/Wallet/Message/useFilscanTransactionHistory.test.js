@@ -2,6 +2,10 @@ import { act, renderHook } from '@testing-library/react-hooks'
 import axios from 'axios'
 import { cleanup } from '@testing-library/react'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
+import {
+  filscanMockData,
+  secondaryFilscanMockData
+} from '../../../test-utils/mockData'
 
 import useTransactionHistory from './useFilscanTransactionHistory'
 
@@ -10,7 +14,7 @@ jest.mock('axios')
 const sampleSuccessResponse = {
   data: {
     data: {
-      data: [],
+      data: filscanMockData,
       total: '20'
     },
     res: { code: 3, msg: 'success' }
@@ -20,47 +24,11 @@ const sampleSuccessResponse = {
 const secondSampleSuccessResponse = {
   data: {
     data: {
-      data: [],
+      data: secondaryFilscanMockData,
       total: '20'
     },
     res: { code: 3, msg: 'success' }
   }
-}
-
-for (let i = 0; i < 20; i++) {
-  const sampleMessageFromFilscan = {
-    block_cids: [
-      'bafy2bzacedhezqvd2nae4wuiilkygot6m63brn4ex7vj5tfpkjwwzddkxjuyq'
-    ],
-    cid: `bafy2bzacebqph7t55ncquxehaacec6poc7g376xiqtj5elklupctpltvywd4o${i}`,
-    exit_code: '',
-    gas_used: '',
-    height: i,
-    method_name: 'Transfer',
-    msg: {
-      from:
-        i % 2 === 0
-          ? 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
-          : 't137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy',
-      gaslimit: '10000',
-      gasprice: '0',
-      method: '0',
-      nonce: i,
-      params: '',
-      from:
-        i % 2 === 0
-          ? 't137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy'
-          : 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi',
-      value: '0.005'
-    },
-    msgcreate: `158646683${i}`,
-    return: '',
-    size: '63'
-  }
-
-  if (i < 10)
-    sampleSuccessResponse.data.data.data.push(sampleMessageFromFilscan)
-  else secondSampleSuccessResponse.data.data.data.push(sampleMessageFromFilscan)
 }
 
 describe('useTransactionHistory', () => {
@@ -83,12 +51,12 @@ describe('useTransactionHistory', () => {
 
     const { confirmed, total } = store.getState().messages
     expect(total).toBe(20)
-    expect(confirmed.length).toBe(10)
+    expect(confirmed.length).toBe(8)
     expect(confirmed[0]).toHaveProperty('from', expect.any(String))
     expect(confirmed[0]).toHaveProperty('gaslimit', expect.any(String))
     expect(confirmed[0]).toHaveProperty('gasprice', expect.any(String))
     expect(confirmed[0]).toHaveProperty('method', expect.any(String))
-    expect(confirmed[0]).toHaveProperty('nonce', expect.any(Number))
+    expect(confirmed[0]).toHaveProperty('nonce', expect.any(String))
     expect(confirmed[0]).toHaveProperty('value', expect.any(String))
     expect(confirmed[0]).toHaveProperty('cid', expect.any(String))
     expect(confirmed[0]).toHaveProperty('gas_used', expect.any(String))
@@ -123,7 +91,7 @@ describe('useTransactionHistory', () => {
     expect(confirmed[11]).toHaveProperty('gaslimit', expect.any(String))
     expect(confirmed[11]).toHaveProperty('gasprice', expect.any(String))
     expect(confirmed[11]).toHaveProperty('method', expect.any(String))
-    expect(confirmed[11]).toHaveProperty('nonce', expect.any(Number))
+    expect(confirmed[11]).toHaveProperty('nonce')
     expect(confirmed[11]).toHaveProperty('value', expect.any(String))
     expect(confirmed[11]).toHaveProperty('cid', expect.any(String))
     expect(confirmed[11]).toHaveProperty('gas_used', expect.any(String))

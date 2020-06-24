@@ -10,7 +10,7 @@ describe('removeDupMessages', () => {
     expect(msgArr.length).toBe(filscoutMockData.length)
   })
 
-  test.only('it will add unique messages', () => {
+  test('it will add unique messages', () => {
     const msgArr = removeDupMessages(
       filscoutMockData,
       secondaryFilscoutMockData
@@ -19,4 +19,6 @@ describe('removeDupMessages', () => {
       filscoutMockData.length + secondaryFilscoutMockData.length
     )
   })
+
+  test.todo('it sorts messages by timestamp')
 })

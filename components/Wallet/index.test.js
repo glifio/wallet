@@ -3,19 +3,19 @@ import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 import WalletView from '.'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 
-import { filscoutMockData } from '../../test-utils/mockData'
-import { formatFilscoutMessages } from './Message/formatMessages'
+import { filscanMockData } from '../../test-utils/mockData'
+import { formatFilscanMessages } from './Message/formatMessages'
 
 jest.mock('@openworklabs/filecoin-wallet-provider')
 const spy = jest.spyOn(
-  require('./Message/useFilscoutTransactionHistory.js'),
+  require('./Message/useFilscanTransactionHistory.js'),
   'default'
 )
 
 const mockTxHistory = {
   showMore: jest.fn(),
   pending: [],
-  confirmed: formatFilscoutMessages(filscoutMockData).map(msg => ({
+  confirmed: formatFilscanMessages(filscanMockData).map(msg => ({
     ...msg,
     status: 'confirmed'
   })),
