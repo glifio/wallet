@@ -3,6 +3,7 @@ import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import updateArrayItem from '../utils/updateArrayItem'
 import sortAndRemoveWalletDups from '../utils/sortAndRemoveWalletDups'
 import { setMsgInCache, removeMsgFromCache } from './cache'
+import removeDupMessages from '../utils/removeDupMessages'
 
 export const initialMessagesState = {
   loading: false,
@@ -106,7 +107,7 @@ export const fetchedConfirmedMessagesSuccess = (
     loading: false,
     loadedSuccess: true,
     loadedFailure: false,
-    confirmed: [...state.messages.confirmed, ...messages],
+    confirmed: removeDupMessages(state.messages.confirmed, messages),
     total: total || state.messages.total,
     paginating: false
   }

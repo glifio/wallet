@@ -82,6 +82,11 @@ export default () => {
     fetchData(address, total, confirmed.length)
   }, [address, confirmed.length, total, fetchData, dispatch])
 
+  const refresh = useCallback(() => {
+    dispatch(fetchingConfirmedMessages())
+    fetchData(address, total, 0)
+  }, [address, total, fetchData, dispatch])
+
   useEffect(() => {
     if (!loading && !loadedFailure && !loadedSuccess) {
       dispatch(fetchingConfirmedMessages())
@@ -105,6 +110,7 @@ export default () => {
     pending,
     confirmed,
     showMore,
+    refresh,
     paginating,
     total
   }

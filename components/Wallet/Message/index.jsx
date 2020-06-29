@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import MessageDetail from './Detail'
 import { MessageHistoryTable } from '../../Shared'
 import useWallet from '../../../WalletProvider/useWallet'
-import useTransactionHistory from './useFilscoutTransactionHistory'
+import useTransactionHistory from './useFilscanTransactionHistory'
 
 export default () => {
   const [selectedMessageCid, setSelectedMessageCid] = useState('')
@@ -13,6 +13,7 @@ export default () => {
     loading,
     paginating,
     showMore,
+    refresh,
     total
   } = useTransactionHistory()
 
@@ -33,6 +34,7 @@ export default () => {
           selectMessage={setSelectedMessageCid}
           paginating={paginating}
           showMore={showMore}
+          refresh={refresh}
           total={total}
         />
       )}
