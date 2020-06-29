@@ -12,7 +12,7 @@
   "dependencies": {
     "@ledgerhq/hw-transport-webusb": "^5.13.1",
     "@openworklabs/filecoin-address": "0.0.3",
-    "@openworklabs/filecoin-message": "0.0.12",
+    "@openworklabs/filecoin-message": "0.0.13",
     "@openworklabs/filecoin-number": "0.0.6",
     "@openworklabs/filecoin-wallet-provider": "0.0.18",
     "@zondax/filecoin-signer-wasm": "^0.4.1",
