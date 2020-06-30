@@ -17,7 +17,6 @@ const UUID = () => {
   const router = useRouter()
   const dispatch = useDispatch()
   const [localInvestorUUID, setLocalInvestorUUID] = useState('')
-  const [error, setError] = useState('')
 
   const onClick = () => {
     // validate investorUUID by hashing it and checking against a valid list
@@ -27,13 +26,7 @@ const UUID = () => {
   return (
     <Box width='100%' maxWidth={13}>
       <OnboardCard>
-        <StepHeader
-          currentStep={1}
-          totalSteps={4}
-          Icon={IconLedger}
-          error={!!error}
-          color={error ? 'status.fail.foreground' : 'core.transparent'}
-        />
+        <StepHeader currentStep={1} totalSteps={4} Icon={IconLedger} />
         <Title mt={3}>Investor ID</Title>
         <Text>Please input your investor ID below to continue </Text>
         <Input.Text
