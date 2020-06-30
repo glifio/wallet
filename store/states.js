@@ -20,7 +20,8 @@ export const initialState = {
   selectedWalletIdx: -1,
   error: null,
   messages: initialMessagesState,
-  network: 't'
+  network: 't',
+  investor: ''
 }
 
 export const noWallet = {
@@ -156,4 +157,9 @@ export const switchNetwork = (state, { network, wallets }) => ({
   network,
   wallets,
   messages: initialMessagesState
+})
+
+export const setInvestorUUID = (state, { uuid }) => ({
+  ...state,
+  investor: uuid
 })

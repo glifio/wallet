@@ -16,6 +16,15 @@ export class RequireWallet extends Component {
     }
   }
 
+  componentDidUpdate() {
+    if (!this.props.wallet.address) {
+      const route = Router.query.network
+        ? `/?network=${Router.query.network}`
+        : `/?network=${this.props.network}`
+      Router.replace(route)
+    }
+  }
+
   render() {
     return <>{this.props.wallet.address && this.props.children}</>
   }

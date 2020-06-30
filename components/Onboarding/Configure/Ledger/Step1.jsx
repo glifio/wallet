@@ -81,13 +81,18 @@ Step1Helper.propTypes = {
   inUseByAnotherApp: PropTypes.bool.isRequired
 }
 
-const Step1 = ({ setStep }) => {
+const Step1 = ({ investor, setStep }) => {
   const { ledger, setLedgerProvider } = useWalletProvider()
   const router = useRouter()
   const resetState = useReset()
   if (!isDesktopChromeBrowser()) router.push(`/error/use-chrome`)
   const errFromRdx = useSelector(state => state.error)
   const error = hasLedgerError({ ...ledger, otherError: errFromRdx })
+
+  const back = () => {
+    if (investor) router.replace('/')
+    else resetState()
+  }
 
   return (
     <>
@@ -99,9 +104,9 @@ const Step1 = ({ setStep }) => {
         bg={error ? 'status.fail.background' : 'core.transparent'}
       >
         <StepHeader
-          currentStep={1}
+          currentStep={investor ? 2 : 1}
           loading={ledger.connecting}
-          totalSteps={2}
+          totalSteps={investor ? 4 : 2}
           Icon={IconLedger}
           error={error}
           color={error ? 'status.fail.foreground' : 'core.transparent'}
@@ -118,12 +123,7 @@ const Step1 = ({ setStep }) => {
         justifyContent='space-between'
         width='100%'
       >
-        <Button
-          title='Back'
-          onClick={() => resetState()}
-          variant='secondary'
-          mr={2}
-        />
+        <Button title='Back' onClick={back} variant='secondary' mr={2} />
         <Button
           title='Yes, my Ledger device is connected.'
           onClick={async () => {
@@ -139,7 +139,8 @@ const Step1 = ({ setStep }) => {
 }
 
 Step1.propTypes = {
-  setStep: PropTypes.func.isRequired
+  setStep: PropTypes.func.isRequired,
+  investor: PropTypes.bool.isRequired
 }
 
 export default Step1

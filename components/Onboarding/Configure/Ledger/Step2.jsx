@@ -93,7 +93,7 @@ Step2Helper.defaultProps = {
   otherError: null
 }
 
-export default () => {
+const Step2 = ({ investor }) => {
   const { ledger, fetchDefaultWallet, walletProvider } = useWalletProvider()
   const dispatch = useDispatch()
   const resetState = useReset()
@@ -105,6 +105,33 @@ export default () => {
     otherError: generalError
   })
 
+  const routeToNextPage = () => {
+    const params = new URLSearchParams(router.query)
+    const query = investor
+      ? `/investor/accounts?${params.toString()}`
+      : `/home?${params.toString()}`
+    router.push(query)
+  }
+
+  const onClick = async () => {
+    setLoading(true)
+    try {
+      const wallet = await fetchDefaultWallet(walletProvider)
+      if (wallet) {
+        dispatch(walletList([wallet]))
+        routeToNextPage()
+      }
+    } catch (err) {
+      setLoading(false)
+      dispatch(rdxError(err))
+    }
+  }
+
+  const back = () => {
+    if (investor) router.replace('/')
+    else resetState()
+  }
+
   return (
     <>
       <OnboardCard
@@ -115,11 +142,11 @@ export default () => {
         bg={error ? 'status.fail.background' : 'core.transparent'}
       >
         <StepHeader
-          currentStep={2}
+          currentStep={investor ? 3 : 2}
           description='Please complete the following steps so Filament can interface with
           your Ledger device.'
           loading={!ledger.userImportFailure && loading}
-          totalSteps={2}
+          totalSteps={investor ? 4 : 2}
           Icon={IconLedger}
           error={!!error}
         />
@@ -140,30 +167,10 @@ export default () => {
         justifyContent='space-between'
         width='100%'
       >
-        <Button
-          title='Back'
-          onClick={() => resetState()}
-          variant='secondary'
-          mr={2}
-        />
+        <Button title='Back' onClick={back} variant='secondary' mr={2} />
         <Button
           title='My Ledger device is unlocked & Filecoin app open'
-          onClick={async () => {
-            setLoading(true)
-            try {
-              const wallet = await fetchDefaultWallet(walletProvider)
-              if (wallet) {
-                dispatch(walletList([wallet]))
-                const params = new URLSearchParams(router.query)
-                const hasParams = Array.from(params).length > 0
-                const query = hasParams ? `/home?${params.toString()}` : `/home`
-                router.push(query)
-              }
-            } catch (err) {
-              setLoading(false)
-              dispatch(rdxError(err))
-            }
-          }}
+          onClick={onClick}
           disabled={!ledger.userImportFailure && loading}
           variant='primary'
           ml={2}
@@ -172,3 +179,9 @@ export default () => {
     </>
   )
 }
+
+Step2.propTypes = {
+  investor: PropTypes.bool.isRequired
+}
+
+export default Step2

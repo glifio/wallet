@@ -12,7 +12,8 @@ import {
   FETCHING_NEXT_PAGE,
   POPULATE_REDUX,
   SWITCH_NETWORK,
-  RESET_STATE
+  RESET_STATE,
+  SET_INVESTOR_UUID
 } from './actionTypes'
 
 import {
@@ -29,6 +30,7 @@ import {
   fetchingNextPage,
   populateRedux,
   switchNetwork,
+  setInvestorUUID,
   initialState
 } from './states'
 
@@ -71,6 +73,8 @@ export default (state, action) => {
       return switchNetwork(Object.freeze(state), action.payload)
     case RESET_STATE:
       return initialState
+    case SET_INVESTOR_UUID:
+      return setInvestorUUID(Object.freeze(state), action.payload)
     default:
       return state
   }
