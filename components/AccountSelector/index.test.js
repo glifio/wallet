@@ -1,55 +1,47 @@
 import React from 'react'
-import AccountSelector from '.'
-import renderer from 'react-test-renderer'
+import { render, act, waitFor, screen, cleanup } from '@testing-library/react'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
-import { Provider } from 'react-redux'
+import AccountSelector from '.'
 
-import { initializeStore } from '../../test-utils'
-import { initialState } from '../../store/states'
+import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import createPath from '../../utils/createPath'
-import { theme, ThemeProvider } from '../Shared'
-
-const wallets = [
-  {
-    address: 't1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
-    balance: new FilecoinNumber('1', 'fil'),
-    path: createPath(1, 0)
-  },
-  {
-    address: 't1ddlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
-    balance: new FilecoinNumber('2', 'fil'),
-    path: createPath(1, 1)
-  }
-]
 
 describe('AccountSelector', () => {
-  test('it renders the wallets in redux, and an option to create the next wallet', () => {
-    const store = initializeStore(Object.freeze({ ...initialState, wallets }))
-    const tree = renderer
-      .create(
-        <Provider store={store}>
-          <ThemeProvider theme={theme}>
-            <AccountSelector />
-          </ThemeProvider>
-        </Provider>
-      )
-      .toJSON()
-    expect(tree).toMatchSnapshot()
+  afterEach(cleanup)
+  test('it renders the loading screen first', () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+    let res = render(<AccountSelector />, { wrapper: Tree })
+
+    expect(res.container.children[1]).toMatchSnapshot()
   })
 
-  test('it renders an error when an error exists', () => {
-    const store = initializeStore(
-      Object.freeze({ ...initialState, wallets, error: 'test error message' })
-    )
-    const tree = renderer
-      .create(
-        <Provider store={store}>
-          <ThemeProvider theme={theme}>
-            <AccountSelector />
-          </ThemeProvider>
-        </Provider>
-      )
-      .toJSON()
-    expect(tree).toMatchSnapshot()
+  test('it renders the wallets in redux with the investor copy when the investor prop is passed', async () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+    let res
+    await act(async () => {
+      res = render(<AccountSelector investor />, { wrapper: Tree })
+    })
+    // IMPORTANT; the investor prop causes the X button to not get rendered, which is normally the firstChild of the container here
+    expect(res.container.firstChild).toMatchSnapshot()
+  })
+
+  test('it renders the wallets in redux, and an option to create the next wallet', async () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+    let res
+    await act(async () => {
+      res = render(<AccountSelector />, { wrapper: Tree })
+    })
+
+    expect(res.container.children[1]).toMatchSnapshot()
+  })
+
+  test.only('it renders an error when an error exists', async () => {
+    const { Tree } = composeMockAppTree('postOnboardWithError')
+    let res
+    await act(async () => {
+      res = render(<AccountSelector />, { wrapper: Tree })
+    })
+    expect(screen.getAllByText('error for testing')[0]).toBeInTheDocument()
+    expect(res.container.children[1]).toMatchSnapshot()
   })
 })
