@@ -1,9 +1,11 @@
 import { BigNumber } from '@openworklabs/filecoin-number'
 
 const makeFriendly = (bigNumber, denom) => {
-  const stringifiedNumber = bigNumber.toString()
-  const base = stringifiedNumber.slice(0, 3)
-  const dangler = stringifiedNumber.slice(3, 4)
+  const stringifiedNumber = bigNumber.toFixed(0)
+  let idx = Number(stringifiedNumber.length) % 3
+  if (idx === 0) idx = 3
+  const base = stringifiedNumber.slice(0, idx)
+  const dangler = stringifiedNumber.slice(idx, idx + 1)
   return `${base}.${dangler}${denom}`
 }
 
@@ -39,26 +41,23 @@ export default (bigNumber, dp = 3, pretty = true) => {
       bigNumber
     )
   }
-  if (bigNumber.isGreaterThan(1) && bigNumber.isLessThan(1000)) {
-    return addComparisonOperator(
-      bigNumber.dp(dp, BigNumber.ROUND_HALF_DOWN).toString(),
-      bigNumber
-    )
+  if (bigNumber.isGreaterThan(1) && bigNumber.isLessThanOrEqualTo(1000)) {
+    return bigNumber.dp(dp, BigNumber.ROUND_HALF_DOWN).toString()
   }
-  if (bigNumber.isGreaterThanOrEqualTo(1000) && bigNumber.isLessThan(1000000)) {
-    return addComparisonOperator(makeFriendly(bigNumber, 'K'), bigNumber)
+  if (bigNumber.isGreaterThan(1000) && bigNumber.isLessThan(1000000)) {
+    return makeFriendly(bigNumber, 'K')
   }
   if (
     bigNumber.isGreaterThanOrEqualTo(1000000) &&
     bigNumber.isLessThan(1000000000)
   ) {
-    return addComparisonOperator(makeFriendly(bigNumber, 'M'), bigNumber)
+    return makeFriendly(bigNumber, 'M')
   }
   if (
     bigNumber.isGreaterThanOrEqualTo(1000000000) &&
     bigNumber.isLessThan(1000000000000)
   ) {
-    return addComparisonOperator(makeFriendly(bigNumber, 'B'), bigNumber)
+    return makeFriendly(bigNumber, 'B')
   }
   return '> 999.9B'
 }
