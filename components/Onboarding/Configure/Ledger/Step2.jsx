@@ -93,7 +93,7 @@ Step2Helper.defaultProps = {
   otherError: null
 }
 
-const Step2 = ({ investor }) => {
+const Step2 = ({ investor, msig }) => {
   const { ledger, fetchDefaultWallet, walletProvider } = useWalletProvider()
   const dispatch = useDispatch()
   const resetState = useReset()
@@ -107,9 +107,10 @@ const Step2 = ({ investor }) => {
 
   const routeToNextPage = () => {
     const params = new URLSearchParams(router.query)
-    const query = investor
-      ? `/investor/accounts?${params.toString()}`
-      : `/home?${params.toString()}`
+    let query = ''
+    if (investor) query = `/investor/accounts?${params.toString()}`
+    else if (msig) query = `/msig/accounts?${params.toString()}`
+    else query = `/home?${params.toString()}`
     router.push(query)
   }
 
@@ -181,7 +182,8 @@ const Step2 = ({ investor }) => {
 }
 
 Step2.propTypes = {
-  investor: PropTypes.bool.isRequired
+  investor: PropTypes.bool.isRequired,
+  msig: PropTypes.bool.isRequired
 }
 
 export default Step2
