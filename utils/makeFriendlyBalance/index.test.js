@@ -55,6 +55,12 @@ describe('makeFriendlyBalance', () => {
   })
 
   test('it prettifies numbers between 1-1000', () => {
+    expect(makeFriendlyBalance(new BigNumber('1'), 3)).toEqual('1')
+    expect(makeFriendlyBalance(new BigNumber('1.2'), 3)).toEqual('1.2')
+    expect(makeFriendlyBalance(new BigNumber('1.23'), 3)).toEqual('1.23')
+    expect(makeFriendlyBalance(new BigNumber('10'), 3)).toEqual('10')
+    expect(makeFriendlyBalance(new BigNumber('10.2'), 3)).toEqual('10.2')
+    expect(makeFriendlyBalance(new BigNumber('10.234'), 3)).toEqual('10.234')
     expect(makeFriendlyBalance(new BigNumber('100'), 16)).toEqual('100')
     expect(makeFriendlyBalance(new BigNumber('100.000124'), 4)).toEqual(
       '100.0001'
@@ -65,18 +71,32 @@ describe('makeFriendlyBalance', () => {
     expect(makeFriendlyBalance(new BigNumber('100.000124'), 7)).toEqual(
       '100.000124'
     )
+
+    expect(makeFriendlyBalance(new BigNumber('1000'), 7)).toEqual('1000')
+    expect(makeFriendlyBalance(new BigNumber('1000.23'), 3)).toEqual('1.0K')
   })
 
   test('it adds 1 approximation point and "K" to the end of numbers between 1000 and 999999.9999.....', () => {
     expect(makeFriendlyBalance(new BigNumber('100002'), 7)).toEqual('100.0K')
-    expect(makeFriendlyBalance(new BigNumber('100002.02343267'), 7)).toEqual(
-      '100.0K'
+    expect(makeFriendlyBalance(new BigNumber('100202.02343267'), 7)).toEqual(
+      '100.2K'
     )
-    expect(makeFriendlyBalance(new BigNumber('100102'), 7)).toEqual('100.1K')
-    expect(makeFriendlyBalance(new BigNumber('100999'), 7)).toEqual('100.9K')
+    expect(makeFriendlyBalance(new BigNumber('10002.02343267'), 7)).toEqual(
+      '10.0K'
+    )
+    expect(makeFriendlyBalance(new BigNumber('100102.23'), 7)).toEqual('100.1K')
+    expect(makeFriendlyBalance(new BigNumber('100999.3'), 7)).toEqual('100.9K')
+    expect(makeFriendlyBalance(new BigNumber('100999.3'), 7)).toEqual('100.9K')
+    expect(makeFriendlyBalance(new BigNumber('1002.02343267'), 7)).toEqual(
+      '1.0K'
+    )
   })
 
   test('it adds 1 approximation point and "M" to the end of numbers between 1000000 and 999999999.9999.....', () => {
+    expect(makeFriendlyBalance(new BigNumber('1202000'), 7)).toEqual('1.2M')
+    expect(makeFriendlyBalance(new BigNumber('12020002.2345'), 7)).toEqual(
+      '12.0M'
+    )
     expect(makeFriendlyBalance(new BigNumber('100002000'), 7)).toEqual('100.0M')
     expect(makeFriendlyBalance(new BigNumber('100002000.02343267'), 7)).toEqual(
       '100.0M'
