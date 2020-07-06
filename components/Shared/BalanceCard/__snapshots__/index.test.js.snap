@@ -725,7 +725,7 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
       font-size="6"
       font-weight="700"
     >
-      100.2B
+      10.0B
        FIL
     </h2>
     <h2
@@ -979,7 +979,7 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
       font-size="6"
       font-weight="700"
     >
-      100.2M
+      10.0M
        FIL
     </h2>
     <h2
@@ -1233,7 +1233,7 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
       font-size="6"
       font-weight="700"
     >
-      100.2K
+      10.0K
        FIL
     </h2>
     <h2
