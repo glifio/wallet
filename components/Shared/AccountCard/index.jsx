@@ -1,45 +1,17 @@
-import React, { forwardRef, useState } from 'react'
-import styled from 'styled-components'
+import React, { forwardRef } from 'react'
 import { string, func, bool, oneOf } from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import Box from '../Box'
 import Glyph from '../Glyph'
 import Button from '../Button'
-import BaseButton from '../Button/BaseButton'
-import { IconCopyAccountAddress } from '../Icons'
-import { BigTitle, Text, Label, Title as AccountAddress } from '../Typography'
-import truncate from '../../../utils/truncateAddress'
-import copyToClipboard from '../../../utils/copyToClipboard'
+import { CopyAddress } from '../Copy'
+import { BigTitle, Text } from '../Typography'
 import {
   LEDGER,
   CREATE_MNEMONIC,
   IMPORT_MNEMONIC,
   IMPORT_SINGLE_KEY
 } from '../../../constants'
-
-const CopyAddress = styled(BaseButton)`
-  /* !important is declared here to override BaseButton's opacity:0.8 on hover. The only instance of us using this declaration. */
-  opacity: 1 !important;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  outline: none;
-`
-
-const StyledIconCopyAccountAddress = styled(IconCopyAccountAddress)`
-  transition: 0.24s ease-in-out;
-  ${CopyAddress}:hover & {
-    transform: scale(1.25);
-  }
-`
-
-const LabelCopy = styled(Label)`
-  transition: 0.18s ease-in;
-  opacity: 0;
-  ${CopyAddress}:hover & {
-    opacity: 1;
-  }
-`
 
 const AccountCard = forwardRef(
   (
@@ -54,7 +26,6 @@ const AccountCard = forwardRef(
     },
     ref
   ) => {
-    const [copied, setCopied] = useState(false)
     return (
       <Box
         display='flex'
@@ -81,31 +52,7 @@ const AccountCard = forwardRef(
         </Box>
         <Box color='card.account.color'>
           <BigTitle>{alias}</BigTitle>
-          <Box display='flex' alignContent='center'>
-            <AccountAddress
-              fontWeight={1}
-              fontSize={5}
-              margin={0}
-              overflow='hidden'
-              whiteSpace='nowrap'
-            >
-              {truncate(address)}
-            </AccountAddress>
-            <CopyAddress
-              display='flex'
-              alignItems='center'
-              ml={1}
-              onClick={() => {
-                setCopied(true)
-                copyToClipboard(address)
-              }}
-            >
-              <StyledIconCopyAccountAddress />
-              <LabelCopy mt={0} ml={1} color='core.secondary'>
-                {copied ? 'Copied' : 'Copy'}
-              </LabelCopy>
-            </CopyAddress>
-          </Box>
+          <CopyAddress address={address} />
         </Box>
         <Box display='flex'>
           {walletType !== IMPORT_SINGLE_KEY && (

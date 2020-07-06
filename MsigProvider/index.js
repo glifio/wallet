@@ -5,8 +5,8 @@ import { useWasm } from '../lib/WasmLoader'
 import { useWalletProvider } from '../WalletProvider'
 
 const emptyActorState = {
-  Balance: new FilecoinNumber('0', 'attofil'),
-  AvailableBalance: new FilecoinNumber('0', 'attofil')
+  Balance: new FilecoinNumber('4999', 'attofil'),
+  AvailableBalance: new FilecoinNumber('4999', 'attofil')
 }
 
 // Taking a small shortcut here for now, this hook should only be called once per msig
@@ -71,5 +71,5 @@ export const useMsig = msigActorID => {
   //   const sig = transactionSignLotus(proposal, privateKey)
   // }, [proposeMultisig, walletProvider, transactionSignLotus])
   if (!actorState) return emptyActorState
-  return { ...actorState }
+  return { Address: msigActorID, ...actorState }
 }

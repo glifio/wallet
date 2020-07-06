@@ -22,7 +22,7 @@ export const initialState = {
   messages: initialMessagesState,
   network: 't',
   investor: '',
-  msigActorAddress: ''
+  msigActorAddress: 't01005'
 }
 
 export const noWallet = {
