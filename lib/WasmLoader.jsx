@@ -10,7 +10,6 @@ export const WasmLoader = dynamic({
   loader: async () => {
     const rustModule = await import('@zondax/filecoin-signer')
     const walletSubproviders = prepareSubproviders(rustModule)
-    console.log(rustModule)
     const WasmProvider = ({ children }) => {
       return (
         <WasmContext.Provider

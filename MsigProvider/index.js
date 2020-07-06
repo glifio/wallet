@@ -1,20 +1,44 @@
-import { useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import LotusRPCEngine from '@openworklabs/lotus-jsonrpc-engine'
 import { useWasm } from '../lib/WasmLoader'
 import { useWalletProvider } from '../WalletProvider'
-import useWallet from '../WalletProvider/useWallet'
 
 export const useMsig = msigActorID => {
   const {
     createMultisig,
     proposeMultisig,
     transactionSerialize,
-    transactionSignLotus
+    transactionSignLotus,
+    serializeParams
   } = useWasm()
   const { walletProvider } = useWalletProvider()
-  const { path } = useWallet()
+  const [actorState, setActorState] = useState(null)
 
-  console.log(path)
-  const init = async () => {}
+  useEffect(() => {
+    const fetchActorState = async () => {
+      const lotus = new LotusRPCEngine({
+        apiAddress: process.env.LOTUS_NODE_JSONRPC
+      })
+      const res = await Promise.all([
+        lotus.request('StateReadState', msigActorID, null),
+        lotus.request('MsigGetAvailableBalance', msigActorID, null)
+      ])
+
+      if (res.length === 2) {
+        const nextState = {
+          balance: res[0].Balance,
+          availableBalance: res[1],
+          ...res[0].State
+        }
+        setActorState(nextState)
+      } else {
+        // handle errors
+      }
+    }
+    if (!actorState && msigActorID) {
+      fetchActorState()
+    }
+  }, [actorState, msigActorID, setActorState, walletProvider])
 
   const createActor = useCallback(async () => {
     const createMsg = await createMultisig(
@@ -27,9 +51,6 @@ export const useMsig = msigActorID => {
     )
 
     const serializedMsg = transactionSerialize(createMsg)
-
-    console.log(serializedMsg)
-
     return serializedMsg
   }, [createMultisig, transactionSerialize])
 

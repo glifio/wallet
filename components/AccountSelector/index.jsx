@@ -109,7 +109,7 @@ const AccountSelector = ({ investor, msig }) => {
     const searchParams = new URLSearchParams(router.query)
     let route = ''
     if (investor) route = `/investor/home?${searchParams.toString()}`
-    else if (msig) route = `/msig/home?${searchParams.toString()}`
+    else if (msig) route = `/msig/choose?${searchParams.toString()}`
     else route = `/home?${searchParams.toString()}`
     router.push(route)
   }

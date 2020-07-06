@@ -15,6 +15,7 @@
     "@openworklabs/filecoin-message": "0.0.13",
     "@openworklabs/filecoin-number": "0.0.6",
     "@openworklabs/filecoin-wallet-provider": "0.0.18",
+    "@openworklabs/lotus-jsonrpc-engine": "^0.1.2",
     "@zondax/filecoin-signer-wasm": "^0.4.1",
     "@zondax/ledger-filecoin": "^0.11.0",
     "axios": "^0.19.2",

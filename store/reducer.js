@@ -13,7 +13,8 @@ import {
   POPULATE_REDUX,
   SWITCH_NETWORK,
   RESET_STATE,
-  SET_INVESTOR_UUID
+  SET_INVESTOR_UUID,
+  SET_MSIG_ACTOR_ADDRESS
 } from './actionTypes'
 
 import {
@@ -31,6 +32,7 @@ import {
   populateRedux,
   switchNetwork,
   setInvestorUUID,
+  setMsigActorAddress,
   initialState
 } from './states'
 
@@ -75,6 +77,8 @@ export default (state, action) => {
       return initialState
     case SET_INVESTOR_UUID:
       return setInvestorUUID(Object.freeze(state), action.payload)
+    case SET_MSIG_ACTOR_ADDRESS:
+      return setMsigActorAddress(Object.freeze(state), action.payload)
     default:
       return state
   }

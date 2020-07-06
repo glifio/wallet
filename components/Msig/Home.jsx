@@ -1,10 +1,10 @@
 import React from 'react'
-
-import { useMsig } from '../../msig'
+import { useSelector } from 'react-redux'
+import { useMsig } from '../../MsigProvider'
 
 export default () => {
-  const msig = useMsig()
-  console.log(msig)
+  const msigActorAddress = useSelector(state => state.msigActorAddress)
+  const msig = useMsig(msigActorAddress)
   return (
     <div>
       <button type='button' onClick={msig.createActor}>
