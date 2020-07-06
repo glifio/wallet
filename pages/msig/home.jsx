@@ -10,8 +10,8 @@ export default () => {
     return <></>
   }
   return (
-    <RequireWallet>
-      <MsigHome />
-    </RequireWallet>
+    // <RequireWallet>
+    <MsigHome />
+    // </RequireWallet>
   )
 }

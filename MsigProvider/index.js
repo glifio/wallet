@@ -1,8 +1,15 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import LotusRPCEngine from '@openworklabs/lotus-jsonrpc-engine'
 import { useWasm } from '../lib/WasmLoader'
 import { useWalletProvider } from '../WalletProvider'
 
+const emptyActorState = {
+  Balance: new FilecoinNumber('0', 'attofil'),
+  AvailableBalance: new FilecoinNumber('0', 'attofil')
+}
+
+// Taking a small shortcut here for now, this hook should only be called once per msig
 export const useMsig = msigActorID => {
   const {
     createMultisig,
@@ -26,8 +33,8 @@ export const useMsig = msigActorID => {
 
       if (res.length === 2) {
         const nextState = {
-          balance: res[0].Balance,
-          availableBalance: res[1],
+          Balance: new FilecoinNumber(res[0].Balance, 'attofil'),
+          AvailableBalance: new FilecoinNumber(res[1], 'attofil'),
           ...res[0].State
         }
         setActorState(nextState)
@@ -40,30 +47,29 @@ export const useMsig = msigActorID => {
     }
   }, [actorState, msigActorID, setActorState, walletProvider])
 
-  const createActor = useCallback(async () => {
-    const createMsg = await createMultisig(
-      't3vp4tgaz7shvxyqainnsbz62o3jbgz2cq4nz5jk7chve6cbg236spb5kogaiclwv23t67yxm5dfkf5rdwjdrq',
-      [
-        't3vp4tgaz7shvxyqainnsbz62o3jbgz2cq4nz5jk7chve6cbg236spb5kogaiclwv23t67yxm5dfkf5rdwjdrq'
-      ],
-      '1000',
-      1
-    )
+  // const createActor = useCallback(async () => {
+  //   const createMsg = await createMultisig(
+  //     't3vp4tgaz7shvxyqainnsbz62o3jbgz2cq4nz5jk7chve6cbg236spb5kogaiclwv23t67yxm5dfkf5rdwjdrq',
+  //     [
+  //       't3vp4tgaz7shvxyqainnsbz62o3jbgz2cq4nz5jk7chve6cbg236spb5kogaiclwv23t67yxm5dfkf5rdwjdrq'
+  //     ],
+  //     '1000',
+  //     1
+  //   )
 
-    const serializedMsg = transactionSerialize(createMsg)
-    return serializedMsg
-  }, [createMultisig, transactionSerialize])
+  //   const serializedMsg = transactionSerialize(createMsg)
+  //   return serializedMsg
+  // }, [createMultisig, transactionSerialize])
 
-  const propose = useCallback(async () => {
-    const to = 't137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy'
-    const from = 't137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy'
+  // const propose = useCallback(async () => {
+  //   const to = 't137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy'
+  //   const from = 't137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy'
 
-    const proposal = proposeMultisig('t01003', to, from, '1')
-    proposal.nonce = await walletProvider.getNonce(from)
-    const privateKey = 'YbDPh1vq3fBClzbiwDt6WjniAdZn8tNcCwcBO2hDwyk='
-    const sig = transactionSignLotus(proposal, privateKey)
-
-    console.log(sig)
-  }, [proposeMultisig, walletProvider, transactionSignLotus])
-  return { createActor, propose }
+  //   const proposal = proposeMultisig('t01003', to, from, '1')
+  //   proposal.nonce = await walletProvider.getNonce(from)
+  //   const privateKey = 'YbDPh1vq3fBClzbiwDt6WjniAdZn8tNcCwcBO2hDwyk='
+  //   const sig = transactionSignLotus(proposal, privateKey)
+  // }, [proposeMultisig, walletProvider, transactionSignLotus])
+  if (!actorState) return emptyActorState
+  return { ...actorState }
 }
