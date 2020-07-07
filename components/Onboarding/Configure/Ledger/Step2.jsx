@@ -146,7 +146,7 @@ const Step2 = ({ investor }) => {
           description='Please complete the following steps so Filament can interface with
           your Ledger device.'
           loading={!ledger.userImportFailure && loading}
-          totalSteps={investor ? 4 : 2}
+          totalSteps={investor ? 5 : 2}
           Icon={IconLedger}
           error={!!error}
         />

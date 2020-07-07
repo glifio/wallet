@@ -159,7 +159,7 @@ export const switchNetwork = (state, { network, wallets }) => ({
   messages: initialMessagesState
 })
 
-export const setInvestorUUID = (state, { uuid }) => ({
+export const setInvestorId = (state, { uuid }) => ({
   ...state,
   investor: uuid
 })
