@@ -14,7 +14,7 @@
     "@openworklabs/filecoin-address": "0.0.3",
     "@openworklabs/filecoin-message": "0.0.13",
     "@openworklabs/filecoin-number": "0.0.6",
-    "@openworklabs/filecoin-wallet-provider": "0.0.18",
+    "@openworklabs/filecoin-wallet-provider": "0.0.19",
     "@zondax/filecoin-signer-wasm": "^0.4.1",
     "@zondax/ledger-filecoin": "^0.11.0",
     "axios": "^0.19.2",
