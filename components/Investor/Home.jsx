@@ -88,7 +88,9 @@ const PostConfirm = ({ investorString }) => {
         >
           {copied ? 'Copied' : 'Copy string'}
         </Copy>
-        <Input.Text value={investorString} onChange={noop} disabled />
+        <Text m={0} p={2} bg='background.text'>
+          {investorString}
+        </Text>
       </Box>
     </>
   )
