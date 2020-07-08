@@ -1,10 +1,8 @@
 import React from 'react'
-import { render, act, waitFor, screen, cleanup } from '@testing-library/react'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { render, act, screen, cleanup } from '@testing-library/react'
 import AccountSelector from '.'
 
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
-import createPath from '../../utils/createPath'
 
 describe('AccountSelector', () => {
   afterEach(cleanup)
@@ -35,7 +33,7 @@ describe('AccountSelector', () => {
     expect(res.container.children[1]).toMatchSnapshot()
   })
 
-  test.only('it renders an error when an error exists', async () => {
+  test('it renders an error when an error exists', async () => {
     const { Tree } = composeMockAppTree('postOnboardWithError')
     let res
     await act(async () => {

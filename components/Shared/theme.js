@@ -81,6 +81,7 @@ const colors = {
   background: {
     app: baseColors.blue.lightest,
     screen: baseColors.blue.lighter,
+    text: baseColors.blue.light,
     messageHistory: baseColors.blue.muted
   },
   card: {
