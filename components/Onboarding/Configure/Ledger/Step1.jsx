@@ -108,7 +108,7 @@ const Step1 = ({ investor, setStep }) => {
           loading={ledger.connecting}
           totalSteps={investor ? 5 : 2}
           Icon={IconLedger}
-          error={error}
+          error={!!error}
           color={error ? 'status.fail.foreground' : 'core.transparent'}
         />
         <Step1Helper
