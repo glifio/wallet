@@ -97,7 +97,8 @@ const Step2 = ({ investor }) => {
   const { ledger, fetchDefaultWallet, walletProvider } = useWalletProvider()
   const dispatch = useDispatch()
   const resetState = useReset()
-  const generalError = useSelector(state => state.error)
+  // TODO: fix hack to ignore proptype errors => || null
+  const generalError = useSelector(state => state.error || null)
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const error = hasLedgerError({

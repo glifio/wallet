@@ -88,7 +88,14 @@ const PostConfirm = ({ investorString }) => {
         >
           {copied ? 'Copied' : 'Copy string'}
         </Copy>
-        <Text m={0} p={2} bg='background.text'>
+        <Text
+          css={`
+            word-break: break-all;
+          `}
+          m={0}
+          p={2}
+          bg='background.text'
+        >
           {investorString}
         </Text>
       </Box>
