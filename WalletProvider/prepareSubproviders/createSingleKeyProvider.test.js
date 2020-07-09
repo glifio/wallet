@@ -1,6 +1,6 @@
 import Message from '@openworklabs/filecoin-message'
 import createSingleKeyProvider from './createSingleKeyProvider'
-import mockRustModule from '@zondax/filecoin-signer-wasm'
+import mockRustModule from '@zondax/filecoin-signing-tools'
 import { SINGLE_KEY } from '../../constants'
 
 const privateKey = 'xxxxxxtttttzzzzzzz'
