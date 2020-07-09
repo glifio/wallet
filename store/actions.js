@@ -106,7 +106,7 @@ export const resetState = () => {
   }
 }
 
-export const setInvestorUUID = uuid => {
+export const setInvestorId = uuid => {
   return {
     type: SET_INVESTOR_UUID,
     payload: {

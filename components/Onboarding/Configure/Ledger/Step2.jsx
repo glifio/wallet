@@ -97,7 +97,8 @@ const Step2 = ({ investor, msig }) => {
   const { ledger, fetchDefaultWallet, walletProvider } = useWalletProvider()
   const dispatch = useDispatch()
   const resetState = useReset()
-  const generalError = useSelector(state => state.error)
+  // TODO: fix hack to ignore proptype errors => || null
+  const generalError = useSelector(state => state.error || null)
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const error = hasLedgerError({
@@ -147,7 +148,7 @@ const Step2 = ({ investor, msig }) => {
           description='Please complete the following steps so Filament can interface with
           your Ledger device.'
           loading={!ledger.userImportFailure && loading}
-          totalSteps={investor ? 4 : 2}
+          totalSteps={investor ? 5 : 2}
           Icon={IconLedger}
           error={!!error}
         />

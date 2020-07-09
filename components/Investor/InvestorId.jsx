@@ -11,29 +11,35 @@ import {
   Title
 } from '../Shared'
 import { IconLedger } from '../Shared/Icons'
-import { setInvestorUUID } from '../../store/actions'
+import { setInvestorId } from '../../store/actions'
+import { isValidInvestorId } from '../../utils/investor'
 
-const UUID = () => {
+export default () => {
   const router = useRouter()
   const dispatch = useDispatch()
-  const [localInvestorUUID, setLocalInvestorUUID] = useState('')
+  const [localInvestorId, setLocalInvestorId] = useState('')
+  const [error, setError] = useState('')
 
   const onClick = () => {
-    // validate investorUUID by hashing it and checking against a valid list
-    dispatch(setInvestorUUID(localInvestorUUID))
+    if (isValidInvestorId(localInvestorId)) {
+      dispatch(setInvestorId(localInvestorId))
+    } else {
+      setError('Invalid investor ID.')
+    }
   }
 
   return (
     <Box width='100%' maxWidth={13}>
       <OnboardCard>
-        <StepHeader currentStep={1} totalSteps={4} Icon={IconLedger} />
+        <StepHeader currentStep={1} totalSteps={5} Icon={IconLedger} />
         <Title mt={3}>Investor ID</Title>
         <Text>Please input your investor ID below to continue </Text>
         <Input.Text
-          value={localInvestorUUID}
-          onChange={e => setLocalInvestorUUID(e.target.value)}
+          value={localInvestorId}
+          onChange={e => setLocalInvestorId(e.target.value)}
           label='ID'
-          placeholder='twd-dfsads-f21412-fxsm'
+          placeholder='ID'
+          error={error}
         />
       </OnboardCard>
       <Box
@@ -54,5 +60,3 @@ const UUID = () => {
     </Box>
   )
 }
-
-export default UUID

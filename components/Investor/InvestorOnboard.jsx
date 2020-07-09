@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import Ledger from '../Onboarding/Configure/Ledger'
 import { Box } from '../Shared'
-import EnterUUID from './UUID'
+import EnterId from './InvestorId'
 
 export default () => {
   const { investor } = useSelector(state => ({
@@ -17,7 +17,7 @@ export default () => {
       alignItems='center'
       padding={[2, 3, 5]}
     >
-      {investor ? <Ledger investor /> : <EnterUUID />}
+      {investor ? <Ledger investor /> : <EnterId />}
     </Box>
   )
 }
