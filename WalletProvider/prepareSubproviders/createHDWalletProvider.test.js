@@ -1,6 +1,6 @@
 import Message from '@openworklabs/filecoin-message'
 import createHDWalletProvider from './createHDWalletProvider'
-import mockRustModule from '@zondax/filecoin-signer-wasm'
+import mockRustModule from '@zondax/filecoin-signing-tools'
 import { HD_WALLET } from '../../constants'
 
 const mnemonic =

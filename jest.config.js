@@ -10,7 +10,7 @@ module.exports = {
   ],
   moduleNameMapper: {
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
-    '@zondax/filecoin-signer-wasm':
+    '@zondax/filecoin-signing-tools':
       '<rootDir>/test-utils/mocks/mock-filecoin-signer-wasm.js',
     dayjs: '<rootDir>/test-utils/mocks/mock-dates.js',
     'next/router': '<rootDir>/test-utils/mocks/mock-routing.js',
