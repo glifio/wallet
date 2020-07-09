@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import dayjs from 'dayjs'
 import { useDispatch } from 'react-redux'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
+import Message from '@openworklabs/filecoin-message'
 
 import { useWalletProvider } from '../../../WalletProvider'
+import useWallet from '../../../WalletProvider/useWallet'
 import {
   Box,
   Button,
@@ -20,6 +23,7 @@ import {
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 import noop from '../../../utils/noop'
 import GasCustomization from '../../Wallet/Send.js/GasCustomization'
+import { useWasm } from '../../../lib/WasmLoader'
 
 const CardHeader = ({ address, balance }) => {
   return (
@@ -67,6 +71,8 @@ const Withdrawing = ({ address, balance }) => {
     connectLedger,
     resetLedgerState
   } = useWalletProvider()
+  const wallet = useWallet()
+  const { serializeParams } = useWasm()
   const [step, setStep] = useState(2)
   const [attemptingTx, setAttemptingTx] = useState(false)
   const [toAddress, setToAddress] = useState('')
@@ -84,9 +90,45 @@ const Withdrawing = ({ address, balance }) => {
 
   const estimateGas = noop
 
-  const onSubmit = e => {
+  const onSubmit = async e => {
     e.preventDefault()
-    console.log()
+    setAttemptingTx(true)
+    const provider = await connectLedger()
+
+    if (provider) {
+      const nonce = await provider.getNonce(wallet.address)
+      const params = {
+        to: toAddress,
+        value: value.toAttoFil(),
+        method: 0,
+        params: ''
+      }
+
+      const serializedParams = serializeParams(params).toString('hex')
+
+      const message = new Message({
+        to: address,
+        from: wallet.address,
+        value: '0',
+        method: 2,
+        gasPrice: gasPrice.toAttoFil(),
+        gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
+        nonce,
+        params: serializedParams
+      })
+
+      const signedMessage = await provider.wallet.sign(wallet.path, message)
+      // const messageObj = message.toString()
+      // const msgCid = await provider.sendMessage(messageObj, signedMessage)
+      // messageObj.cid = msgCid['/']
+      // messageObj.timestamp = dayjs().unix()
+      // messageObj.gas_used = (
+      //   await walletProvider.estimateGas(messageObj)
+      // ).toAttoFil()
+      // messageObj.Value = new FilecoinNumber(messageObj.value, 'attofil').toFil()
+      // return messageObj
+    }
+    return null
   }
 
   return (
@@ -106,7 +148,7 @@ const Withdrawing = ({ address, balance }) => {
           justifyContent='space-between'
         >
           <Box>
-            {/* <StepHeader
+            <StepHeader
               title='Withdrawing Filecoin'
               currentStep={1}
               totalSteps={3}
@@ -115,7 +157,7 @@ const Withdrawing = ({ address, balance }) => {
             <Text textAlign='center'>
               First, please confirm the account you&apos;re sending from, and
               the recipient you want to send to.
-            </Text> */}
+            </Text>
             <CardHeader address={address} balance={balance} />
             <Box width='100%' p={3} border={0} bg='background.screen'>
               <Input.Address
