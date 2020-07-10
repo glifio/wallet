@@ -8,6 +8,7 @@ import { validateAddressString } from '@openworklabs/filecoin-address'
 
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
+import { useConverter } from '../../../lib/Converter'
 import {
   Box,
   Button,
@@ -15,7 +16,9 @@ import {
   StepHeader,
   Input,
   Text,
-  IconLedger
+  IconLedger,
+  Num,
+  Title
 } from '../../Shared'
 import {
   ADDRESS_PROPTYPE,
@@ -42,7 +45,9 @@ const Withdrawing = ({ address, balance, close }) => {
   } = useWalletProvider()
   const wallet = useWallet()
   const { serializeParams } = useWasm()
-  const [step, setStep] = useState(3)
+  const { converter, converterError } = useConverter()
+
+  const [step, setStep] = useState(2)
   const [attemptingTx, setAttemptingTx] = useState(false)
   const [toAddress, setToAddress] = useState('')
   const [toAddressError, setToAddressError] = useState('')
@@ -51,46 +56,43 @@ const Withdrawing = ({ address, balance, close }) => {
   const [uncaughtError, setUncaughtError] = useState('')
   const [gasPrice, setGasPrice] = useState(new FilecoinNumber('1', 'attofil'))
   const [gasLimit, setGasLimit] = useState(
-    new FilecoinNumber('1000', 'attofil')
+    new FilecoinNumber('5000', 'attofil')
   )
   const [estimatedGasUsed, setEstimatedGasUsed] = useState(
     new FilecoinNumber('0', 'attofil')
   )
-  const [customizingGas, setCustomizingGas] = useState(true)
+  const [customizingGas, setCustomizingGas] = useState(false)
 
-  const estimateGas = useCallback(
-    async (gp, gasLimit, value) => {
-      // create a fake message
-      const params = {
-        to: wallet.address,
-        value,
-        method: 0,
-        params: ''
-      }
+  const estimateGas = async (gp, gasLimit, value) => {
+    // create a fake message
+    const params = {
+      to: toAddress,
+      value,
+      method: 0,
+      params: ''
+    }
 
-      const serializedParams = Buffer.from(
-        serializeParams(params),
-        'hex'
-      ).toString('base64')
+    const serializedParams = Buffer.from(
+      serializeParams(params),
+      'hex'
+    ).toString('base64')
 
-      const message = new Message({
-        to: address,
-        from: 't01',
-        value: '0',
-        method: 2,
-        gasPrice: gp.toAttoFil(),
-        gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
-        nonce: 0,
-        params: serializedParams
-      })
+    const message = new Message({
+      to: address,
+      from: wallet.address,
+      value: '0',
+      method: 2,
+      gasPrice: gp.toAttoFil(),
+      gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
+      nonce: 0,
+      params: serializedParams
+    })
 
-      // HMR causes this condition, we just make this check for easier dev purposes
-      return walletProvider
-        ? walletProvider.estimateGas(message.encode())
-        : new FilecoinNumber('122', 'attofil')
-    },
-    [address, serializeParams, wallet.address, walletProvider]
-  )
+    // HMR causes this condition, we just make this check for easier dev purposes
+    return walletProvider
+      ? walletProvider.estimateGas(message)
+      : new FilecoinNumber('122', 'attofil')
+  }
 
   const onSubmit = async e => {
     e.preventDefault()
@@ -265,6 +267,36 @@ const Withdrawing = ({ address, balance, close }) => {
               close={() => setCustomizingGas(false)}
             />
           )}
+          <Box
+            display='flex'
+            flexDirection='row'
+            alignItems='flex-start'
+            justifyContent='space-between'
+            py={3}
+            px={3}
+            bg='background.screen'
+          >
+            <Title fontSize={4} alignSelf='flex-start'>
+              Total
+            </Title>
+            <Box display='flex' flexDirection='column' textAlign='right' pl={4}>
+              <Num
+                size='l'
+                css={`
+                  word-wrap: break-word;
+                `}
+                color='core.primary'
+              >
+                {value.toFil()} FIL
+              </Num>
+              <Num size='m' color='core.darkgray'>
+                {!converterError && value.isGreaterThan(0)
+                  ? `${makeFriendlyBalance(converter.fromFIL(value), 2)}`
+                  : '0'}{' '}
+                USD
+              </Num>
+            </Box>
+          </Box>
           <Box
             display='flex'
             flexDirection='row'

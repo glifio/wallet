@@ -120,7 +120,7 @@ const Send = ({ close }) => {
 
       // HMR causes this condition, we just make this check for easier dev purposes
       return walletProvider
-        ? walletProvider.estimateGas(message.encode())
+        ? walletProvider.estimateGas(message)
         : new FilecoinNumber('122', 'attofil')
     },
     [wallet.address, walletProvider]
