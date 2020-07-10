@@ -29,6 +29,7 @@ export default () => {
         )}
         {childView === WITHDRAWING && (
           <Withdrawing
+            close={() => setChildView(MSIG_STATE)}
             balance={msig.AvailableBalance}
             address={msigActorAddress}
           />

@@ -1,6 +1,5 @@
 import React, { forwardRef } from 'react'
 import { func, string, bool } from 'prop-types'
-import { validateAddressString } from '@openworklabs/filecoin-address'
 import TextInput from './Text'
 
 const Address = forwardRef(
@@ -8,13 +7,6 @@ const Address = forwardRef(
     return (
       <TextInput
         mt={2}
-        onBlur={() => {
-          const isValidAddress = validateAddressString(value)
-          if (value && !isValidAddress) setError(`Invalid ${label} address.`)
-        }}
-        onFocus={() => {
-          if (error) setError('')
-        }}
         ref={ref}
         label={label}
         value={value}

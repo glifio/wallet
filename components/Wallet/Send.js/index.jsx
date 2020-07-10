@@ -313,6 +313,14 @@ const Send = ({ close }) => {
                 setError={setToAddressError}
                 disabled={step === 2 && !hasError()}
                 valid={validateAddressString(toAddress)}
+                onBlur={() => {
+                  const isValidAddress = validateAddressString(value)
+                  if (toAddress && !isValidAddress)
+                    setToAddressError(`Invalid Recipient address.`)
+                }}
+                onFocus={() => {
+                  if (toAddressError) setToAddressError('')
+                }}
               />
               <Input.Funds
                 name='amount'
