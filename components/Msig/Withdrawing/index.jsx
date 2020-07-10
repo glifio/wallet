@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import PropTypes from 'prop-types'
 import dayjs from 'dayjs'
 import { useDispatch } from 'react-redux'
@@ -12,82 +12,19 @@ import {
   Box,
   Button,
   ButtonClose,
-  FloatingContainer,
   StepHeader,
   Input,
   Text,
-  Glyph
+  IconLedger
 } from '../../Shared'
 import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
 } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
-import noop from '../../../utils/noop'
-import GasCustomization from '../../Wallet/Send.js/GasCustomization'
+import GasCustomization from './GasCustomization'
 import { useWasm } from '../../../lib/WasmLoader'
-
-const CardHeader = ({ address, balance }) => {
-  return (
-    <Box
-      width='100%'
-      p={3}
-      border={1}
-      borderTopRightRadius={3}
-      borderTopLeftRadius={3}
-      bg='core.primary'
-      color='core.white'
-    >
-      <Box
-        display='flex'
-        flexDirection='row'
-        alignItems='center'
-        justifyContent='space-between'
-      >
-        <Box display='flex' flexDirection='row'>
-          <Glyph acronym='Ac' color='white' mr={3} />
-          <Box display='flex' flexDirection='column' alignItems='flex-start'>
-            <Text m={0}>From</Text>
-            <Text m={0}>{address}</Text>
-          </Box>
-        </Box>
-        <Box display='flex' flexDirection='column' alignItems='flex-start'>
-          <Text m={0}>Balance</Text>
-          <Text m={0}>{makeFriendlyBalance(balance, 6, true)} FIL</Text>
-        </Box>
-      </Box>
-    </Box>
-  )
-}
-
-CardHeader.propTypes = {
-  address: ADDRESS_PROPTYPE,
-  balance: FILECOIN_NUMBER_PROP
-}
-
-const HeaderText = ({ step }) => {
-  let text = ''
-
-  switch (step) {
-    case 1:
-      text =
-        "First, please confirm the account you're sending from, and the recipient you want to send to."
-      break
-    case 2:
-      text = "Next, please choose an amount of FIL you'd like to withdraw."
-      break
-    case 3:
-      text = 'Please review the transaction details.'
-      break
-    default:
-      text = ''
-  }
-  return <Text textAlign='center'>{text}</Text>
-}
-
-HeaderText.propTypes = {
-  step: PropTypes.number.isRequired
-}
+import { CardHeader, HeaderText } from './Headers'
 
 const isValidAmount = (value, balance, errorFromForms) => {
   const valueFieldFilledOut = value && value.isGreaterThan(0)
@@ -105,7 +42,7 @@ const Withdrawing = ({ address, balance, close }) => {
   } = useWalletProvider()
   const wallet = useWallet()
   const { serializeParams } = useWasm()
-  const [step, setStep] = useState(1)
+  const [step, setStep] = useState(3)
   const [attemptingTx, setAttemptingTx] = useState(false)
   const [toAddress, setToAddress] = useState('')
   const [toAddressError, setToAddressError] = useState('')
@@ -119,9 +56,41 @@ const Withdrawing = ({ address, balance, close }) => {
   const [estimatedGasUsed, setEstimatedGasUsed] = useState(
     new FilecoinNumber('0', 'attofil')
   )
-  const [customizingGas, setCustomizingGas] = useState(false)
+  const [customizingGas, setCustomizingGas] = useState(true)
 
-  const estimateGas = noop
+  const estimateGas = useCallback(
+    async (gp, gasLimit, value) => {
+      // create a fake message
+      const params = {
+        to: wallet.address,
+        value,
+        method: 0,
+        params: ''
+      }
+
+      const serializedParams = Buffer.from(
+        serializeParams(params),
+        'hex'
+      ).toString('base64')
+
+      const message = new Message({
+        to: address,
+        from: 't01',
+        value: '0',
+        method: 2,
+        gasPrice: gp.toAttoFil(),
+        gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
+        nonce: 0,
+        params: serializedParams
+      })
+
+      // HMR causes this condition, we just make this check for easier dev purposes
+      return walletProvider
+        ? walletProvider.estimateGas(message.encode())
+        : new FilecoinNumber('122', 'attofil')
+    },
+    [address, serializeParams, wallet.address, walletProvider]
+  )
 
   const onSubmit = async e => {
     e.preventDefault()
@@ -143,8 +112,6 @@ const Withdrawing = ({ address, balance, close }) => {
           params: ''
         }
 
-        const serializedParams = serializeParams(params).toString('hex')
-
         const message = new Message({
           to: address,
           from: wallet.address,
@@ -153,7 +120,7 @@ const Withdrawing = ({ address, balance, close }) => {
           gasPrice: gasPrice.toAttoFil(),
           gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
           nonce,
-          params: serializedParams
+          params
         })
 
         const signedMessage = await provider.wallet.sign(wallet.path, message)
@@ -173,6 +140,7 @@ const Withdrawing = ({ address, balance, close }) => {
 
   const isSubmitBtnDisabled = () => {
     if (uncaughtError) return false
+    if (customizingGas) return true
     if (step === 1 && !toAddress) return true
     if (step === 2 && !isValidAmount(value, balance, valueError)) return true
   }
@@ -197,6 +165,7 @@ const Withdrawing = ({ address, balance, close }) => {
         display='flex'
         flexDirection='column'
         alignItems='center'
+        mb={7}
       >
         <Box
           maxWidth={14}
@@ -214,68 +183,104 @@ const Withdrawing = ({ address, balance, close }) => {
               glyphAcronym='Wd'
             />
             <HeaderText step={step} />
-            <CardHeader address={address} balance={balance} />
-            <Box width='100%' p={3} border={0} bg='background.screen'>
-              <Input.Address
-                label='Recipient'
-                value={toAddress}
-                onChange={e => setToAddress(e.target.value)}
-                error={toAddressError}
-                disabled={step === 3}
-                onFocus={() => {
-                  if (toAddressError) setToAddressError('')
-                }}
-              />
-            </Box>
-            {step > 1 && (
-              <Box width='100%' p={3} border={0} bg='background.screen'>
-                <Input.Funds
-                  name='amount'
-                  label='Amount'
-                  amount={value.toAttoFil()}
-                  onAmountChange={setValue}
-                  balance={balance}
-                  error={valueError}
-                  setError={setValueError}
-                  // since the ledger device pays the gas fee, we dont include that in the funds input
-                  gasLimit={new FilecoinNumber('0', 'attofil')}
-                  disabled={step === 3}
-                />
-              </Box>
-            )}
-            {step > 2 && (
-              <Box width='100%' p={3} border={0} bg='background.screen'>
-                <Input.Text
-                  onChange={noop}
-                  denom={customizingGas ? 'AttoFil' : 'FIL'}
-                  label='Transaction Fee'
-                  value={
-                    customizingGas ? estimatedGasUsed.toAttoFil() : '< 0.1'
-                  }
-                  disabled
-                />
-              </Box>
+            <CardHeader
+              address={address}
+              balance={balance}
+              customizingGas={customizingGas}
+            />
+            {!customizingGas && (
+              <>
+                <Box width='100%' p={3} border={0} bg='background.screen'>
+                  <Input.Address
+                    label='Recipient'
+                    value={toAddress}
+                    onChange={e => setToAddress(e.target.value)}
+                    error={toAddressError}
+                    disabled={step === 3}
+                    onFocus={() => {
+                      if (toAddressError) setToAddressError('')
+                    }}
+                  />
+                </Box>
+                {step > 1 && (
+                  <Box width='100%' p={3} border={0} bg='background.screen'>
+                    <Input.Funds
+                      name='amount'
+                      label='Amount'
+                      amount={value.toAttoFil()}
+                      onAmountChange={setValue}
+                      balance={balance}
+                      error={valueError}
+                      setError={setValueError}
+                      // since the ledger device pays the gas fee, we dont include that in the funds input
+                      gasLimit={new FilecoinNumber('0', 'attofil')}
+                      disabled={step === 3}
+                    />
+                  </Box>
+                )}
+                {step > 2 && (
+                  <Box
+                    display='flex'
+                    flexDirection='row'
+                    justifyContent='space-between'
+                    width='100%'
+                    p={3}
+                    border={0}
+                    bg='background.screen'
+                  >
+                    <Box>
+                      <Text margin={0}>Transaction Fee</Text>
+                      <Text margin={0} color='core.darkgray'>
+                        Paid via <IconLedger />{' '}
+                        {makeFriendlyBalance(wallet.balance, 6, true)} FIL
+                      </Text>
+                    </Box>
+                    <Box display='flex' flexDirection='row'>
+                      <Button
+                        title='Change'
+                        variant='secondary'
+                        onClick={() => setCustomizingGas(true)}
+                      />
+                      <Text ml={2} color='core.primary'>
+                        {'< 0.0001 FIL'}
+                      </Text>
+                    </Box>
+                  </Box>
+                )}
+              </>
             )}
           </Box>
-          <GasCustomization
-            show={step > 2}
-            estimateGas={estimateGas}
-            gasPrice={gasPrice}
-            gasLimit={gasLimit}
-            setGasPrice={setGasPrice}
-            setGasLimit={setGasLimit}
-            setEstimatedGas={setEstimatedGasUsed}
-            value={value.toAttoFil()}
-          />
-          <FloatingContainer margin='auto' left='0' right='0'>
+          {customizingGas && (
+            <GasCustomization
+              show
+              estimateGas={estimateGas}
+              gasPrice={gasPrice}
+              gasLimit={gasLimit}
+              setGasPrice={setGasPrice}
+              setGasLimit={setGasLimit}
+              setEstimatedGas={setEstimatedGasUsed}
+              estimatedGasUsed={estimatedGasUsed}
+              value={value.toAttoFil()}
+              walletBalance={makeFriendlyBalance(wallet.balance, 6, true)}
+              close={() => setCustomizingGas(false)}
+            />
+          )}
+          <Box
+            display='flex'
+            flexDirection='row'
+            justifyContent='space-between'
+            position='fixed'
+            bottom='3'
+            margin='auto'
+            left='0'
+            right='0'
+            maxWidth={14}
+            width={13}
+            minWidth={12}
+          >
             <Button
-              type='button'
               title='Back'
               variant='secondary'
-              border={0}
-              borderRight={1}
-              borderRadius={0}
-              borderColor='core.lightgray'
               onClick={() => {
                 setAttemptingTx(false)
                 setUncaughtError('')
@@ -286,6 +291,7 @@ const Withdrawing = ({ address, balance, close }) => {
                   setStep(step - 1)
                 }
               }}
+              disabled={customizingGas}
             />
             <Button
               variant='primary'
@@ -293,7 +299,7 @@ const Withdrawing = ({ address, balance, close }) => {
               disabled={isSubmitBtnDisabled()}
               onClick={onSubmit}
             />
-          </FloatingContainer>
+          </Box>
         </Box>
       </Box>
     </>
