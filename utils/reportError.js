@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Router from 'next/router'
 
 export default async (id, shouldSendToErrorPage, ...args) => {
   const errorText = args.reduce(
@@ -11,4 +12,5 @@ export default async (id, shouldSendToErrorPage, ...args) => {
     'https://errors.glif.io',
     JSON.stringify({ text: errorText })
   )
+  if (shouldSendToErrorPage) Router.push('/error/wallet-down')
 }
