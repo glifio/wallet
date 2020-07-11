@@ -21,6 +21,7 @@ import MsgConfirmer from '../../lib/confirm-message'
 import useWallet from '../../WalletProvider/useWallet'
 import Receive from '../Receive'
 import { MESSAGE_HISTORY, SEND, RECEIVE } from './views'
+import reportError from '../../utils/reportError'
 
 export default () => {
   const wallet = useWallet()
@@ -45,6 +46,7 @@ export default () => {
       if (provider) await provider.wallet.showAddressAndPubKey(wallet.path)
       else setShowLedgerError(true)
     } catch (err) {
+      reportError(8, false, err.message, err.stack)
       setUncaughtError(err)
     }
     setLedgerBusy(false)

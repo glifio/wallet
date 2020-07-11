@@ -34,6 +34,7 @@ import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfi
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
 import { useConverter } from '../../../lib/Converter'
+import reportError from '../../../utils/reportError'
 
 const SendCardForm = styled.form.attrs(() => ({
   display: 'flex',
@@ -213,6 +214,7 @@ const Send = ({ close }) => {
       try {
         await sendMsg()
       } catch (err) {
+        reportError(9, false, err.message, err.stack)
         setUncaughtError(err.message)
         setStep(1)
       }
@@ -226,6 +228,7 @@ const Send = ({ close }) => {
         try {
           await sendMsg()
         } catch (err) {
+          reportError(10, false, err.message, err.stack)
           setUncaughtError(err.message)
           setStep(2)
         }

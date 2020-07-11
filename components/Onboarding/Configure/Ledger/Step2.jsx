@@ -124,7 +124,7 @@ const Step2 = ({ investor }) => {
       }
     } catch (err) {
       setLoading(false)
-      dispatch(rdxError(err))
+      dispatch(rdxError(err.message))
     }
   }
 

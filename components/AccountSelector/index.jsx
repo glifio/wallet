@@ -27,6 +27,7 @@ import {
 import makeFriendlyBalance from '../../utils/makeFriendlyBalance'
 import useWallet from '../../WalletProvider/useWallet'
 import createPath from '../../utils/createPath'
+import reportError from '../../utils/reportError'
 
 const Close = styled(ButtonClose)`
   position: absolute;
@@ -82,6 +83,7 @@ const AccountSelector = ({ investor }) => {
             setLoadingPage(false)
           }
         } catch (err) {
+          reportError(14, false, err.message, err.stack)
           setUncaughtError(err)
           setLoadingPage(false)
         }
@@ -147,6 +149,7 @@ const AccountSelector = ({ investor }) => {
         dispatch(walletList([wallet]))
       }
     } catch (err) {
+      reportError(15, false, err.message, err.stack)
       setUncaughtError(err)
     }
     setLoadingAccounts(false)
