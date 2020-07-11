@@ -44,7 +44,12 @@ export const setLedgerProvider = async (dispatch, network, LedgerProvider) => {
     ) {
       dispatch({ type: LEDGER_REPLUG })
     }
-    reportError(5, false, err.message, err.stack)
+    reportError(
+      5,
+      false,
+      `Unhandled error in setLedgerProvider: ${err.message}`,
+      err.stack
+    )
     return false
   }
 }

@@ -3,6 +3,7 @@ import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { func, bool, string } from 'prop-types'
 import { Box, Label, Input, StyledATag } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
+import reportError from '../../../utils/reportError'
 
 // this is a weird hack to get tests to run in jest...
 const NumberedInput = Input.Number
@@ -24,12 +25,16 @@ const GasCustomization = ({
     setGasPrice(new FilecoinNumber(val || '0', 'attofil'))
     clearTimeout(timeout.current)
     timeout.current = setTimeout(async () => {
-      const gas = await estimateGas(
-        new FilecoinNumber(val || '0', 'attofil'),
-        gasLimit,
-        value
-      )
-      setEstimatedGas(gas)
+      try {
+        const gas = await estimateGas(
+          new FilecoinNumber(val || '0', 'attofil'),
+          gasLimit,
+          value
+        )
+        setEstimatedGas(gas)
+      } catch (err) {
+        reportError(11, false, err.message, err.stack)
+      }
     }, 500)
   }
 
