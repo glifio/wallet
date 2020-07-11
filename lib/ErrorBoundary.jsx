@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import reportError from '../utils/reportError'
+import { ErrorView } from '../components/Shared'
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -13,12 +14,19 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    reportError(19, true, error, errorInfo)
+    reportError(19, false, error, errorInfo)
   }
 
   render() {
     if (this.state.hasError) {
-      return null
+      return (
+        <ErrorView
+          title='Glif is currently down'
+          description="We're aware of the outage and will be back up shortly."
+          linkDisplay='Follow @glifwallet for updates.'
+          linkhref='https://twitter.com/'
+        />
+      )
     }
     return this.props.children
   }
