@@ -8,7 +8,7 @@ describe('reportLedgerConfigError', () => {
 
   test('it gives busy message', () => {
     const error = reportLedgerConfigError({ busy: true })
-    expect(error).toEqual('Is your Ledger device busy?')
+    expect(error).toEqual('Is your Ledger device locked or busy?')
   })
 
   test('it gives ledgerLocked message', () => {
@@ -34,7 +34,7 @@ describe('reportLedgerConfigError', () => {
   })
 
   test('it gives otherError message', () => {
-    const errorStub = { message: 'Error message' }
+    const errorStub = 'Error message'
     const error = reportLedgerConfigError({ otherError: errorStub })
     expect(error).toEqual('Error message')
   })
