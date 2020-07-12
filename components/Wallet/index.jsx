@@ -27,7 +27,7 @@ export default () => {
   const wallet = useWallet()
   const [childView, setChildView] = useState(MESSAGE_HISTORY)
   const { ledger, connectLedger } = useWalletProvider()
-  const [uncaughtError, setUncaughtError] = useState(null)
+  const [uncaughtError, setUncaughtError] = useState('')
   const [showLedgerError, setShowLedgerError] = useState(false)
   const [ledgerBusy, setLedgerBusy] = useState(false)
 
@@ -40,14 +40,14 @@ export default () => {
   const onShowOnLedger = async () => {
     setLedgerBusy(true)
     try {
-      setUncaughtError(null)
+      setUncaughtError('')
       setShowLedgerError(false)
       const provider = await connectLedger()
       if (provider) await provider.wallet.showAddressAndPubKey(wallet.path)
       else setShowLedgerError(true)
     } catch (err) {
       reportError(8, false, err.message, err.stack)
-      setUncaughtError(err)
+      setUncaughtError(err.message)
     }
     setLedgerBusy(false)
   }
