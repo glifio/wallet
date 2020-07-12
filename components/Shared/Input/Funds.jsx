@@ -17,7 +17,8 @@ const formatFilValue = number => {
 
 const formatFiatValue = number => {
   if (!number) return ''
-  if (BigNumber.isBigNumber(number)) return number.toString()
+  if (BigNumber.isBigNumber(number))
+    return new BigNumber(number.toFixed(2, 1)).toString()
   return number
 }
 
