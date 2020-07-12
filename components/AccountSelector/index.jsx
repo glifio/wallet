@@ -39,7 +39,7 @@ const AccountSelector = ({ investor }) => {
   const wallet = useWallet()
   const [loadingAccounts, setLoadingAccounts] = useState(false)
   const [loadingPage, setLoadingPage] = useState(true)
-  const [uncaughtError, setUncaughtError] = useState(null)
+  const [uncaughtError, setUncaughtError] = useState('')
   const dispatch = useDispatch()
   const { errorInRdx, walletsInRdx, network } = useSelector(state => ({
     network: state.network,
@@ -84,7 +84,7 @@ const AccountSelector = ({ investor }) => {
           }
         } catch (err) {
           reportError(14, false, err.message, err.stack)
-          setUncaughtError(err)
+          setUncaughtError(err.message)
           setLoadingPage(false)
         }
       } else {
@@ -150,7 +150,7 @@ const AccountSelector = ({ investor }) => {
       }
     } catch (err) {
       reportError(15, false, err.message, err.stack)
-      setUncaughtError(err)
+      setUncaughtError(err.message)
     }
     setLoadingAccounts(false)
   }

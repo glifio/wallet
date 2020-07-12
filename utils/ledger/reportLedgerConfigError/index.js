@@ -16,7 +16,7 @@ export const reportLedgerConfigError = ({
     return 'Please unplug and replug your Ledger device, and try again.'
   if (inUseByAnotherApp)
     return 'Please quit any other App using your Ledger device.'
-  if (otherError) return otherError && otherError.message
+  if (otherError) return otherError
 }
 
 export const hasLedgerError = ({
