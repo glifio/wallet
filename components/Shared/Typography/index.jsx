@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import { color, typography, layout, space } from 'styled-system'
+import { color, typography, layout, space, border } from 'styled-system'
 import styled from 'styled-components'
 import { node, oneOf } from 'prop-types'
 
@@ -40,6 +40,7 @@ const TextBase = styled.p`
   ${typography}
   ${layout}
   ${space}
+  ${border}
 `
 
 export const Text = forwardRef((props, ref) => {
