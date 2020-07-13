@@ -171,7 +171,7 @@ const Send = ({ close }) => {
       messageObj.cid = msgCid['/']
       messageObj.timestamp = dayjs().unix()
       messageObj.gas_used = (
-        await walletProvider.estimateGas(messageObj)
+        await walletProvider.estimateGas(message.encode())
       ).toAttoFil()
       messageObj.Value = new FilecoinNumber(messageObj.value, 'attofil').toFil()
       return messageObj
