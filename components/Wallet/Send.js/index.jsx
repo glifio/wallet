@@ -318,7 +318,7 @@ const Send = ({ close }) => {
                 disabled={step === 2 && !hasError()}
                 valid={validateAddressString(toAddress)}
                 onBlur={() => {
-                  const isValidAddress = validateAddressString(value)
+                  const isValidAddress = validateAddressString(toAddress)
                   if (toAddress && !isValidAddress)
                     setToAddressError(`Invalid Recipient address.`)
                 }}
