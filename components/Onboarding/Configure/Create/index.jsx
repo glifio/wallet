@@ -17,6 +17,7 @@ import { useWasm } from '../../../../lib/WasmLoader'
 import { walletList } from '../../../../store/actions'
 import { useWalletProvider } from '../../../../WalletProvider'
 import { createWalletProvider } from '../../../../WalletProvider/state'
+import reportError from '../../../../utils/reportError'
 
 // we pass this optional prop to make testing the core wallet functionality easier
 const Create = ({ initialWalkthroughStep }) => {
@@ -61,6 +62,7 @@ const Create = ({ initialWalkthroughStep }) => {
         const params = new URLSearchParams(router.query)
         router.push(`/home?${params.toString()}`)
       } catch (err) {
+        reportError(16, false, err.message, err.stack)
         setImportSeedError(err.message || JSON.stringify(err))
       }
     }

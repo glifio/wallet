@@ -16,6 +16,7 @@ import {
 import { walletList } from '../../../../store/actions'
 import { useWalletProvider } from '../../../../WalletProvider'
 import { createWalletProvider } from '../../../../WalletProvider/state'
+import reportError from '../../../../utils/reportError'
 
 export default () => {
   const {
@@ -50,6 +51,7 @@ export default () => {
         setMnemonicError('Invalid seed phrase')
       }
     } catch (err) {
+      reportError(17, false, err.message, err.stack)
       setLoadingNextScreen(false)
       setMnemonicError(err.message || JSON.stringify(err))
     }

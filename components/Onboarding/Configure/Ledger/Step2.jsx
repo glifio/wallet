@@ -86,11 +86,11 @@ Step2Helper.propTypes = {
   replug: PropTypes.bool.isRequired,
   busy: PropTypes.bool.isRequired,
   inUseByAnotherApp: PropTypes.bool.isRequired,
-  otherError: PropTypes.instanceOf(Error)
+  otherError: PropTypes.string
 }
 
 Step2Helper.defaultProps = {
-  otherError: null
+  otherError: ''
 }
 
 const Step2 = ({ investor, msig }) => {
@@ -124,8 +124,9 @@ const Step2 = ({ investor, msig }) => {
         routeToNextPage()
       }
     } catch (err) {
+      dispatch(rdxError(err.message))
+    } finally {
       setLoading(false)
-      dispatch(rdxError(err))
     }
   }
 
@@ -173,7 +174,7 @@ const Step2 = ({ investor, msig }) => {
         <Button
           title='My Ledger device is unlocked & Filecoin app open'
           onClick={onClick}
-          disabled={!ledger.userImportFailure && loading}
+          disabled={loading}
           variant='primary'
           ml={2}
         />

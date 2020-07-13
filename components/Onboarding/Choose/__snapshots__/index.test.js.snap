@@ -25,11 +25,11 @@ exports[`Choosing a wallet it renders correctly 1`] = `
 .c1 {
   min-width: 0;
   box-sizing: border-box;
-  margin-bottom: 24px;
+  margin-bottom: 4px;
   text-align: center;
 }
 
-.c4 {
+.c5 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -46,7 +46,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   flex-direction: column;
 }
 
-.c5 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   margin-bottom: 32px;
@@ -63,7 +63,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -90,12 +90,12 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   align-content: space-between;
 }
 
-.c8 {
+.c9 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c9 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -108,7 +108,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   align-items: center;
 }
 
-.c10 {
+.c11 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -130,13 +130,13 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c13 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   display: block;
 }
 
-.c15 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -155,7 +155,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   font-size: 1.25rem;
 }
 
-.c18 {
+.c19 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -173,7 +173,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   font-size: 1.25rem;
 }
 
-.c19 {
+.c20 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -189,7 +189,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c20 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -215,13 +215,13 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   align-content: space-between;
 }
 
-.c17 {
+.c18 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c11 {
+.c12 {
   width: 40px;
   height: 40px;
 }
@@ -240,9 +240,22 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   max-width: 480px;
+  margin-bottom: 4px;
 }
 
-.c12 {
+.c4 {
+  color: #5E26FF;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  padding: 8px;
+  border: 1px solid;
+  border-radius: 4px;
+}
+
+.c13 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
@@ -250,7 +263,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   margin-left: 16px;
 }
 
-.c14 {
+.c15 {
   color: #262626;
   font-size: 1.25rem;
   font-weight: 400;
@@ -259,25 +272,25 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   margin: 0;
 }
 
-.c7 {
+.c8 {
   cursor: pointer;
   -webkit-transition: 0.13s ease-in-out;
   transition: 0.13s ease-in-out;
 }
 
-.c7:hover {
+.c8:hover {
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
 }
 
-.c16 {
+.c17 {
   cursor: pointer;
   -webkit-transition: 0.13s ease-in-out;
   transition: 0.13s ease-in-out;
 }
 
-.c16:hover {
+.c17:hover {
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
@@ -307,16 +320,25 @@ exports[`Choosing a wallet it renders correctly 1`] = `
       Create or login to your wallet to access the Filecoin network.
     </p>
   </div>
-  <div
+  <p
     class="c4"
+    color="core.primary"
+    font-family="RT-Alias-Grotesk"
+    font-size="3"
+    font-weight="400"
+  >
+    Please check that you are visiting https://wallet.glif.io
+  </p>
+  <div
+    class="c5"
     display="flex"
   >
     <div
-      class="c5"
+      class="c6"
       display="flex"
     >
       <div
-        class="c6 c7"
+        class="c7 c8"
         display="flex"
         height="240px"
         overflow="hidden"
@@ -324,20 +346,20 @@ exports[`Choosing a wallet it renders correctly 1`] = `
         width="300"
       >
         <div
-          class="c8"
+          class="c9"
         >
           <div
-            class="c9"
+            class="c10"
             display="flex"
           >
             <div
-              class="c10"
+              class="c11"
               color="#000"
               display="flex"
               size="6"
             >
               <svg
-                class="c11"
+                class="c12"
                 fill="none"
                 height="40px"
                 viewBox="0 0 24 24"
@@ -353,7 +375,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
               </svg>
             </div>
             <p
-              class="c12"
+              class="c13"
               font-family="RT-Alias-Grotesk"
               font-size="3"
               font-weight="400"
@@ -362,11 +384,11 @@ exports[`Choosing a wallet it renders correctly 1`] = `
             </p>
           </div>
           <div
-            class="c13"
+            class="c14"
             display="block"
           >
             <p
-              class="c14"
+              class="c15"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -377,7 +399,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
           </div>
         </div>
         <div
-          class="c15"
+          class="c16"
           color="status.success.foreground"
           display="inline-block"
           font-size="3"
@@ -387,7 +409,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="c6 c16"
+        class="c7 c17"
         display="flex"
         height="240"
         overflow="hidden"
@@ -395,26 +417,26 @@ exports[`Choosing a wallet it renders correctly 1`] = `
         width="300"
       >
         <div
-          class="c8"
+          class="c9"
         >
           <div
-            class="c9"
+            class="c10"
             display="flex"
           >
             <div
-              class="c10"
+              class="c11"
               color="#000"
               display="flex"
               size="6"
             >
               <h3
-                class="c17"
+                class="c18"
               >
                 Sp
               </h3>
             </div>
             <p
-              class="c12"
+              class="c13"
               font-family="RT-Alias-Grotesk"
               font-size="3"
               font-weight="400"
@@ -423,11 +445,11 @@ exports[`Choosing a wallet it renders correctly 1`] = `
             </p>
           </div>
           <div
-            class="c13"
+            class="c14"
             display="block"
           >
             <p
-              class="c14"
+              class="c15"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -438,7 +460,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
           </div>
         </div>
         <div
-          class="c18"
+          class="c19"
           color="status.warning.foreground"
           font-size="3"
           width="max-content"
@@ -448,37 +470,37 @@ exports[`Choosing a wallet it renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="c19"
+      class="c20"
       display="flex"
     >
       <div
-        class="c20 c7"
+        class="c21 c8"
         display="flex"
         overflow="hidden"
         role="button"
         width="300"
       >
         <div
-          class="c8"
+          class="c9"
         >
           <div
-            class="c9"
+            class="c10"
             display="flex"
           >
             <div
-              class="c10"
+              class="c11"
               color="#000"
               display="flex"
               size="6"
             >
               <h3
-                class="c17"
+                class="c18"
               >
                 Sp
               </h3>
             </div>
             <p
-              class="c12"
+              class="c13"
               font-family="RT-Alias-Grotesk"
               font-size="3"
               font-weight="400"
@@ -487,11 +509,11 @@ exports[`Choosing a wallet it renders correctly 1`] = `
             </p>
           </div>
           <div
-            class="c13"
+            class="c14"
             display="block"
           >
             <p
-              class="c14"
+              class="c15"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -503,33 +525,33 @@ exports[`Choosing a wallet it renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="c20 c7"
+        class="c21 c8"
         display="flex"
         overflow="hidden"
         role="button"
         width="300"
       >
         <div
-          class="c8"
+          class="c9"
         >
           <div
-            class="c9"
+            class="c10"
             display="flex"
           >
             <div
-              class="c10"
+              class="c11"
               color="#000"
               display="flex"
               size="6"
             >
               <h3
-                class="c17"
+                class="c18"
               >
                 Pk
               </h3>
             </div>
             <p
-              class="c12"
+              class="c13"
               font-family="RT-Alias-Grotesk"
               font-size="3"
               font-weight="400"
@@ -538,11 +560,11 @@ exports[`Choosing a wallet it renders correctly 1`] = `
             </p>
           </div>
           <div
-            class="c13"
+            class="c14"
             display="block"
           >
             <p
-              class="c14"
+              class="c15"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"

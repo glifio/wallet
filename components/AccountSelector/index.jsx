@@ -27,6 +27,7 @@ import {
 import makeFriendlyBalance from '../../utils/makeFriendlyBalance'
 import useWallet from '../../WalletProvider/useWallet'
 import createPath from '../../utils/createPath'
+import reportError from '../../utils/reportError'
 
 const Close = styled(ButtonClose)`
   position: absolute;
@@ -38,7 +39,7 @@ const AccountSelector = ({ investor, msig }) => {
   const wallet = useWallet()
   const [loadingAccounts, setLoadingAccounts] = useState(false)
   const [loadingPage, setLoadingPage] = useState(true)
-  const [uncaughtError, setUncaughtError] = useState(null)
+  const [uncaughtError, setUncaughtError] = useState('')
   const dispatch = useDispatch()
   const { errorInRdx, walletsInRdx, network } = useSelector(state => ({
     network: state.network,
@@ -50,6 +51,7 @@ const AccountSelector = ({ investor, msig }) => {
 
   const [loadedFirstFiveWallets, setLoadedFirstFiveWallets] = useState(false)
 
+  // automatically generate the first 5 wallets for the user to select from to avoid confusion for non tech folks
   useEffect(() => {
     const loadFirstFiveWallets = async () => {
       if (walletsInRdx.length < 1) {
@@ -82,7 +84,8 @@ const AccountSelector = ({ investor, msig }) => {
             setLoadingPage(false)
           }
         } catch (err) {
-          setUncaughtError(err)
+          reportError(14, false, err.message, err.stack)
+          setUncaughtError(err.message)
           setLoadingPage(false)
         }
       } else {
@@ -148,7 +151,8 @@ const AccountSelector = ({ investor, msig }) => {
         dispatch(walletList([wallet]))
       }
     } catch (err) {
-      setUncaughtError(err)
+      reportError(15, false, err.message, err.stack)
+      setUncaughtError(err.message)
     }
     setLoadingAccounts(false)
   }

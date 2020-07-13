@@ -15,6 +15,7 @@ import {
 } from './ledgerStateManagement'
 import { createWalletProvider } from '../../WalletProvider/state'
 import createTransport from './createTransport'
+import reportError from '../reportError'
 
 export const setLedgerProvider = async (dispatch, network, LedgerProvider) => {
   dispatch({ type: LEDGER_USER_INITIATED_IMPORT })
@@ -45,6 +46,12 @@ export const setLedgerProvider = async (dispatch, network, LedgerProvider) => {
     ) {
       dispatch({ type: LEDGER_REPLUG })
     }
+    reportError(
+      5,
+      false,
+      `Unhandled error in setLedgerProvider: ${err.message}`,
+      err.stack
+    )
     return false
   }
 }
@@ -77,8 +84,7 @@ export const checkLedgerConfiguration = async (dispatch, walletProvider) => {
     ) {
       dispatch({ type: LEDGER_FILECOIN_APP_NOT_OPEN })
     } else {
-      // forward other unhandled errors along
-      throw new Error(err)
+      reportError(6, false, err.message, err.stack)
     }
     return false
   }

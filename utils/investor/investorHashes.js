@@ -1,3 +1,4 @@
+// these are hashed IDs that Ian from PL gave. He said its safe to expose this information
 const investorHashes = new Set([
   'fb97c41fb9a1e8fce8ed5386b2201abecbf5d90c6fa5b1a9f246034f9ba4c9a1',
   '7aad702d0dd9ed3a8a1b40974cfd9784317dc2a0608e24ab9bb21dbe653bff8b',

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, IconLedger, Warning } from '../../Shared'
+import { Box, IconLedger, Text, Warning } from '../../Shared'
 import ImportWallet from './Import'
 import CreateWallet from './Create'
 import Hello from './Hello'
@@ -50,8 +50,10 @@ export default () => {
           alignItems='center'
           minHeight='90vh'
         >
-          <Hello textAlign='center' mb={4} />
-
+          <Hello textAlign='center' mb={1} />
+          <Text m={0} color='core.primary' border={1} borderRadius={2} p={2}>
+            Please check that you are visiting https://wallet.glif.io
+          </Text>
           <Box
             display='flex'
             justifyContent='center'

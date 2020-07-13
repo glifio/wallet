@@ -15,6 +15,7 @@ import {
 import { walletList } from '../../../../store/actions'
 import { useWalletProvider } from '../../../../WalletProvider'
 import { createWalletProvider } from '../../../../WalletProvider/state'
+import reportError from '../../../../utils/reportError'
 
 export default () => {
   const {
@@ -43,6 +44,7 @@ export default () => {
       const params = new URLSearchParams(router.query)
       router.push(`/home?${params.toString()}`)
     } catch (err) {
+      reportError(18, false, err.message, err.stack)
       setLoadingNextScreen(false)
       setPrivateKeyError(err.message || JSON.stringify(err))
     }

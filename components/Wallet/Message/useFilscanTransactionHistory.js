@@ -11,6 +11,7 @@ import {
 import { FILSCAN } from '../../../constants'
 import { formatFilscanMessages } from './formatMessages'
 import useWallet from '../../../WalletProvider/useWallet'
+import reportError from '../../../utils/reportError'
 
 const PAGINATION_COUNT = 8
 
@@ -61,6 +62,7 @@ export default () => {
               new Error('Error fetching from Filscan: ', data.res.msg)
             )
           )
+          reportError(12, false, 'Error fetching from Filscan: ', data.res.msg)
         } else {
           const formattedMessages = formatFilscanMessages(data.data.data)
           dispatch(
@@ -71,7 +73,8 @@ export default () => {
           )
         }
       } catch (err) {
-        dispatch(fetchedConfirmedMessagesFailure(new Error(err.message)))
+        reportError(13, false, err.message, err.stack)
+        dispatch(fetchedConfirmedMessagesFailure(err))
       }
     },
     [dispatch]

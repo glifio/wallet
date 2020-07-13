@@ -2,9 +2,15 @@ import createPath from '../../utils/createPath'
 import { HD_WALLET } from '../../constants'
 
 export default rustModule => {
+  // this is a v weird pattern
+  // but we close over this private variable to protect it from being accessed from the outside world
+  // in the future we could transform this whole closure system into functions and away from a mix of
+  // closures && classes, but for now we're still using the `new` keyword (bc of the ledger provider)
+  // so this is the fastest approach
+  let privMnemonic = ''
   return class HDWalletProvider {
     constructor(mnemonic) {
-      this.mnemonic = mnemonic
+      privMnemonic = mnemonic
       this.type = HD_WALLET
     }
 
@@ -13,7 +19,7 @@ export default rustModule => {
       for (let i = nStart; i < nEnd; i += 1) {
         const networkCode = network === 't' ? 1 : 461
         accounts.push(
-          rustModule.keyDerive(this.mnemonic, createPath(networkCode, i), '')
+          rustModule.keyDerive(privMnemonic, createPath(networkCode, i), '')
             .address
         )
       }
@@ -21,11 +27,7 @@ export default rustModule => {
     }
 
     sign = async (path, filecoinMessage) => {
-      const { private_hexstring } = rustModule.keyDerive(
-        this.mnemonic,
-        path,
-        ''
-      )
+      const { private_hexstring } = rustModule.keyDerive(privMnemonic, path, '')
       const { signature } = rustModule.transactionSign(
         filecoinMessage.toString(),
         private_hexstring
