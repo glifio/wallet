@@ -5,6 +5,7 @@ import prepareSubproviders from '../WalletProvider/prepareSubproviders'
 
 export const WasmContext = createContext({ loaded: false })
 
+// Loads the wasm asyncronously and exposes it via a hook
 export const WasmLoader = dynamic({
   ssr: false,
   loader: async () => {

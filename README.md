@@ -30,7 +30,9 @@ Version **x.y.z**:
 - When releasing **new features** or **non-critical fixes**, we make a **minor release** by changing the **y** number (e.g. 1.3.3 to 1.4.0).
 - When releasing **breaking changes**, we make a **major release** by changing the **x** number (e.g. 1.4.0 to 2.0.0).
 
-<!-- ### Deploy -->
+### Deploy
+
+Our CI/CD pipeline continuously builds an openworklabs/filecoin-web-wallet docker image. The versioning of the docker image aligns with the package.json version of this repository. To deploy, simply run `make VERSION=<version>`. This will pull the docker image at `<version>` from DockerHub, stop and remove any filecoin-web-wallet docker container that's already running,and then re-run the newer image on port 80.
 
 <!-- ### Contributing -->
 

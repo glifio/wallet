@@ -6,6 +6,7 @@ import { noWallet } from '../store/states'
 
 import { NO_WALLET_PROP_TYPE, WALLET_PROP_TYPE } from '../customPropTypes'
 
+// Gatekeep pages that require a wallet (like the home screen)
 export class RequireWallet extends Component {
   componentDidMount() {
     if (!this.props.wallet.address) {

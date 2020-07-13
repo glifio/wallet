@@ -7,6 +7,7 @@ import { clearError, resetLedgerState } from './state'
 import createPath from '../utils/createPath'
 import reportError from '../utils/reportError'
 
+// a helper function for getting the default wallet associated with the wallet provider
 const fetchDefaultWallet = async (
   dispatch,
   network = 't',

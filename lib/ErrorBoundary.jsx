@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import reportError from '../utils/reportError'
 import { ErrorView } from '../components/Shared'
 
+// This component catches all uncaught react and syncronous JS errors
+// and forwards the user to an error page + sends us the error report
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props)

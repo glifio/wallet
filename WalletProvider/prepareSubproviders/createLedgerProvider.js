@@ -7,6 +7,9 @@ export default rustModule => {
     constructor(transport) {
       super(transport)
       this.type = LEDGER
+      // one thing to note here - we normally use this variable to not make parallel calls to the Ledger device
+      // sometimes we reinstantiate the LedgerProvider class, which could cause problems with this strategy not working
+      // this can be mitigated by switching to the closure system > classes
       this.ledgerBusy = false
     }
 

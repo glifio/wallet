@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { string, node, oneOf } from 'prop-types'
 import Router from 'next/router'
 
+// This component makes sure the right investor information is in redux before allowing the user to move forward
 export class RequireInvestor extends Component {
   componentDidMount() {
     if (!this.props.investor) {

@@ -13,10 +13,12 @@ export default rustModule => {
       this.type = SINGLE_KEY
     }
 
+    /* the first two params in this function are `from` and `to` indexes, which don't matter for a single private key */
     getAccounts = async (_, __, network = 't') => {
       return [rustModule.keyRecover(privPrivateKey, network === 't').address]
     }
 
+    /* the first param in this function is `path`, which doesn't matter for a single private key */
     sign = async (_, filecoinMessage) => {
       const { private_hexstring } = rustModule.keyRecover(privPrivateKey)
       const { signature } = rustModule.transactionSign(
