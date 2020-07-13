@@ -19,6 +19,8 @@ import mockWalletSubproviders from '../mocks/mock-wallet-subproviders'
 import { presets, composeWalletProviderState } from './composeState'
 
 /**
+ * This function is a wrapper that mocks everything the filecoin app needs for testing
+ *
  * VALID OPTIONS:
  * mockConverterInstance (an object that stubs the converter functionality)
  * walletProviderReducer (a reducer to stub the state handling of the wallet provider)

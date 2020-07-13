@@ -16,6 +16,9 @@ export const isValidInvestorId = investorId => {
 const VAL_DELINEATOR = ','
 const HASH_DELINEATOR = ':'
 
+/*
+ * This function is used to create the string for investors to paste into their CoinList account
+ */
 export const encodeInvestorValsForCoinList = (...vals) => {
   const stringifiedValues = vals.join(VAL_DELINEATOR)
   const hash = crypto.createHash('sha256')

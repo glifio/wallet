@@ -51,6 +51,7 @@ const AccountSelector = ({ investor }) => {
 
   const [loadedFirstFiveWallets, setLoadedFirstFiveWallets] = useState(false)
 
+  // automatically generate the first 5 wallets for the user to select from to avoid confusion for non tech folks
   useEffect(() => {
     const loadFirstFiveWallets = async () => {
       if (walletsInRdx.length < 5) {

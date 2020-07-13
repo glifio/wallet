@@ -147,6 +147,7 @@ const Send = ({ close }) => {
 
   const submitMsg = async () => {
     let provider = walletProvider
+    // attempt to establish a new connection with the ledger device if the user selected ledger
     if (wallet.type === LEDGER) {
       provider = await connectLedger()
     }

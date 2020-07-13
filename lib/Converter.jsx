@@ -41,6 +41,7 @@ ConverterWrapper.defaultProps = {
   children: <></>
 }
 
+// The converter is used to switch between FIL <> USD
 export const useConverter = () => {
   return useContext(ConverterContext)
 }
