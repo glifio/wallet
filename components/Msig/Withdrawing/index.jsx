@@ -96,7 +96,7 @@ const Withdrawing = ({ address, balance, close }) => {
 
     // HMR causes this condition, we just make this check for easier dev purposes
     return walletProvider
-      ? walletProvider.estimateGas(message)
+      ? walletProvider.estimateGas(message.encode())
       : new FilecoinNumber('122', 'attofil')
   }
 
