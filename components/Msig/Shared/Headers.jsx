@@ -59,7 +59,7 @@ CardHeader.propTypes = {
   customizingGas: PropTypes.bool.isRequired
 }
 
-export const HeaderText = ({ step }) => {
+export const WithdrawHeaderText = ({ step }) => {
   let text = ''
 
   switch (step) {
@@ -79,6 +79,27 @@ export const HeaderText = ({ step }) => {
   return <Text textAlign='center'>{text}</Text>
 }
 
-HeaderText.propTypes = {
+WithdrawHeaderText.propTypes = {
+  step: PropTypes.number.isRequired
+}
+
+export const ChangeOwnerHeaderText = ({ step }) => {
+  let text = ''
+
+  switch (step) {
+    case 2:
+      text =
+        'Please input the new Filecoin address you want to be the owner of your multisig wallet.'
+      break
+    case 3:
+      text = 'Please review the transaction details.'
+      break
+    default:
+      text = ''
+  }
+  return <Text textAlign='center'>{text}</Text>
+}
+
+ChangeOwnerHeaderText.propTypes = {
   step: PropTypes.number.isRequired
 }

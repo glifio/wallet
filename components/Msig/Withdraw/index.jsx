@@ -24,9 +24,8 @@ import {
   FILECOIN_NUMBER_PROP
 } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
-import GasCustomization from './GasCustomization'
+import { GasCustomization, CardHeader, WithdrawHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
-import { CardHeader, HeaderText } from './Headers'
 import ErrorCard from '../../Wallet/Send.js/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send.js/ConfirmationCard'
 import { LEDGER } from '../../../constants'
@@ -237,7 +236,7 @@ const Withdrawing = ({ address, balance, close }) => {
                     totalSteps={4}
                     glyphAcronym='Wd'
                   />
-                  <HeaderText step={step} />
+                  <WithdrawHeaderText step={step} />
                 </>
               )}
 

@@ -29,7 +29,13 @@ export default () => {
             setWithdrawing={() => setChildView(WITHDRAW)}
           />
         )}
-        {childView === CHANGE_OWNER && <ChangeOwner />}
+        {childView === CHANGE_OWNER && (
+          <ChangeOwner
+            close={() => setChildView(MSIG_STATE)}
+            balance={msig.AvailableBalance}
+            address={msigActorAddress}
+          />
+        )}
         {childView === WITHDRAW && (
           <Withdraw
             close={() => setChildView(MSIG_STATE)}
