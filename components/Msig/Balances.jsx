@@ -16,7 +16,7 @@ import {
 import { ADDRESS_PROPTYPE, FILECOIN_NUMBER_PROP } from '../../customPropTypes'
 import makeFriendlyBalance from '../../utils/makeFriendlyBalance'
 
-const LeftBalance = ({ address, available, setWithdrawing }) => {
+const AvailableBalance = ({ address, available, setWithdrawing }) => {
   return (
     <Card
       p={3}
@@ -91,13 +91,13 @@ const LeftBalance = ({ address, available, setWithdrawing }) => {
   )
 }
 
-LeftBalance.propTypes = {
+AvailableBalance.propTypes = {
   available: FILECOIN_NUMBER_PROP,
   address: ADDRESS_PROPTYPE,
   setWithdrawing: func.isRequired
 }
 
-const RightBalance = ({ total }) => (
+const TotalBalance = ({ total }) => (
   <Card
     border={0}
     overflow='hidden'
@@ -132,24 +132,19 @@ const RightBalance = ({ total }) => (
   </Card>
 )
 
-RightBalance.propTypes = {
+TotalBalance.propTypes = {
   total: FILECOIN_NUMBER_PROP
 }
 
 const Balances = ({ address, available, setWithdrawing, total }) => {
   return (
-    <Box
-      display='flex'
-      flexDirection='row'
-      justifyContent='space-around'
-      width='100%'
-    >
-      <LeftBalance
+    <Box display='flex' flexDirection='column' alignItems='center' width='100%'>
+      <AvailableBalance
         address={address}
         available={available}
         setWithdrawing={setWithdrawing}
       />
-      <RightBalance total={total} />
+      <TotalBalance total={total} />
     </Box>
   )
 }
