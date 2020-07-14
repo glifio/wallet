@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import dayjs from 'dayjs'
 import { useDispatch } from 'react-redux'
@@ -114,6 +114,11 @@ const Withdrawing = ({ address, balance, close }) => {
           params: ''
         }
 
+        const serializedParams = Buffer.from(
+          serializeParams(params),
+          'hex'
+        ).toString('base64')
+
         const message = new Message({
           to: address,
           from: wallet.address,
@@ -122,19 +127,22 @@ const Withdrawing = ({ address, balance, close }) => {
           gasPrice: gasPrice.toAttoFil(),
           gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
           nonce,
-          params
+          params: serializedParams
         })
 
         const signedMessage = await provider.wallet.sign(wallet.path, message)
-        // const messageObj = message.toString()
-        // const msgCid = await provider.sendMessage(messageObj, signedMessage)
-        // messageObj.cid = msgCid['/']
-        // messageObj.timestamp = dayjs().unix()
-        // messageObj.gas_used = (
-        //   await walletProvider.estimateGas(messageObj)
-        // ).toAttoFil()
-        // messageObj.Value = new FilecoinNumber(messageObj.value, 'attofil').toFil()
-        // return messageObj
+        const messageObj = message.toString()
+        const msgCid = await provider.sendMessage(messageObj, signedMessage)
+        messageObj.cid = msgCid['/']
+        messageObj.timestamp = dayjs().unix()
+        messageObj.gas_used = (
+          await walletProvider.estimateGas(message.encode())
+        ).toAttoFil()
+        messageObj.Value = new FilecoinNumber(
+          messageObj.value,
+          'attofil'
+        ).toFil()
+        return messageObj
       }
       return null
     }
