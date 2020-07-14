@@ -5,7 +5,7 @@ const makeFriendly = (bigNumber, denom) => {
   let idx = Number(stringifiedNumber.length) % 3
   if (idx === 0) idx = 3
   const base = stringifiedNumber.slice(0, idx)
-  const dangler = stringifiedNumber.slice(idx, idx + 1)
+  const dangler = stringifiedNumber.slice(idx, idx + 3)
   return `${base}.${dangler}${denom}`
 }
 
@@ -28,7 +28,7 @@ export default (bigNumber, dp = 3, pretty = true) => {
   }
   if (bigNumber.isLessThan(0)) throw new Error('Cannot have a negative balance')
   if (bigNumber.isGreaterThan(0) && bigNumber.isLessThanOrEqualTo(1)) {
-    if (bigNumber.dp(dp, BigNumber.ROUND_HALF_DOWN).isEqualTo('0')) {
+    if (bigNumber.dp(dp, BigNumber.ROUND_DOWN).isEqualTo('0')) {
       let abbrev = '0.'
       for (let i = 0; i < dp - 1; i += 1) {
         abbrev += '0'
@@ -37,12 +37,12 @@ export default (bigNumber, dp = 3, pretty = true) => {
     }
 
     return addComparisonOperator(
-      bigNumber.dp(dp, BigNumber.ROUND_HALF_DOWN).toString(),
+      bigNumber.dp(dp, BigNumber.ROUND_DOWN).toString(),
       bigNumber
     )
   }
   if (bigNumber.isGreaterThan(1) && bigNumber.isLessThanOrEqualTo(1000)) {
-    return bigNumber.dp(dp, BigNumber.ROUND_HALF_DOWN).toString()
+    return bigNumber.dp(dp, BigNumber.ROUND_DOWN).toString()
   }
   if (bigNumber.isGreaterThan(1000) && bigNumber.isLessThan(1000000)) {
     return makeFriendly(bigNumber, 'K')

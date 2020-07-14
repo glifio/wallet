@@ -121,7 +121,7 @@ const Send = ({ close }) => {
 
       // HMR causes this condition, we just make this check for easier dev purposes
       return walletProvider
-        ? walletProvider.estimateGas(message.encode())
+        ? walletProvider.estimateGas(message)
         : new FilecoinNumber('122', 'attofil')
     },
     [wallet.address, walletProvider]
@@ -157,7 +157,7 @@ const Send = ({ close }) => {
       const message = new Message({
         to: toAddress,
         from: wallet.address,
-        value: new BigNumber(value.toAttoFil()).toFixed(0, 1),
+        value: value.toAttoFil(),
         method: 0,
         gasPrice: gasPrice.toAttoFil(),
         gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
@@ -317,6 +317,14 @@ const Send = ({ close }) => {
                 setError={setToAddressError}
                 disabled={step === 2 && !hasError()}
                 valid={validateAddressString(toAddress)}
+                onBlur={() => {
+                  const isValidAddress = validateAddressString(toAddress)
+                  if (toAddress && !isValidAddress)
+                    setToAddressError(`Invalid Recipient address.`)
+                }}
+                onFocus={() => {
+                  if (toAddressError) setToAddressError('')
+                }}
               />
               <Input.Funds
                 name='amount'

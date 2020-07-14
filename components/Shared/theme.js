@@ -51,7 +51,8 @@ const core = {
   lightgray: baseColors.mono.lightgray,
   silver: baseColors.mono.silver,
   white: baseColors.mono.white,
-  transparent: baseColors.mono.transparent
+  transparent: baseColors.mono.transparent,
+  yellow: baseColors.yellow.deep
 }
 
 const colors = {
