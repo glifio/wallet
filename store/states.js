@@ -21,7 +21,7 @@ export const initialState = {
   error: '',
   messages: initialMessagesState,
   network: 't',
-  investor: '',
+  investor: 't01002',
   msigActorAddress: ''
 }
 
