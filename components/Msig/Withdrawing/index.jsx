@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import dayjs from 'dayjs'
-import { useDispatch } from 'react-redux'
 import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 import Message from '@openworklabs/filecoin-message'
 import { validateAddressString } from '@openworklabs/filecoin-address'
@@ -28,6 +27,14 @@ import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 import GasCustomization from './GasCustomization'
 import { useWasm } from '../../../lib/WasmLoader'
 import { CardHeader, HeaderText } from './Headers'
+import ErrorCard from '../../Wallet/Send.js/ErrorCard'
+import ConfirmationCard from '../../Wallet/Send.js/ConfirmationCard'
+import { LEDGER } from '../../../constants'
+import {
+  reportLedgerConfigError,
+  hasLedgerError
+} from '../../../utils/ledger/reportLedgerConfigError'
+import reportError from '../../../utils/reportError'
 
 const isValidAmount = (value, balance, errorFromForms) => {
   const valueFieldFilledOut = value && value.isGreaterThan(0)
@@ -36,7 +43,6 @@ const isValidAmount = (value, balance, errorFromForms) => {
 }
 
 const Withdrawing = ({ address, balance, close }) => {
-  const dispatch = useDispatch()
   const {
     ledger,
     walletProvider,
@@ -47,7 +53,7 @@ const Withdrawing = ({ address, balance, close }) => {
   const { serializeParams } = useWasm()
   const { converter, converterError } = useConverter()
 
-  const [step, setStep] = useState(2)
+  const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
   const [toAddress, setToAddress] = useState('')
   const [toAddressError, setToAddressError] = useState('')
@@ -94,63 +100,78 @@ const Withdrawing = ({ address, balance, close }) => {
       : new FilecoinNumber('122', 'attofil')
   }
 
+  const sendMsg = async () => {
+    const provider = await connectLedger()
+
+    if (provider) {
+      const nonce = await provider.getNonce(wallet.address)
+      const params = {
+        to: toAddress,
+        value: value.toAttoFil(),
+        method: 0,
+        params: ''
+      }
+
+      const serializedParams = Buffer.from(
+        serializeParams(params),
+        'hex'
+      ).toString('base64')
+
+      const message = new Message({
+        to: address,
+        from: wallet.address,
+        value: '0',
+        method: 2,
+        gasPrice: gasPrice.toAttoFil(),
+        gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
+        nonce,
+        params: serializedParams
+      })
+
+      const signedMessage = await provider.wallet.sign(wallet.path, message)
+      const messageObj = message.toString()
+      const msgCid = await provider.sendMessage(messageObj, signedMessage)
+      messageObj.cid = msgCid['/']
+      messageObj.timestamp = dayjs().unix()
+      messageObj.gas_used = (
+        await walletProvider.estimateGas(message.encode())
+      ).toAttoFil()
+      messageObj.Value = new FilecoinNumber(messageObj.value, 'attofil').toFil()
+      return messageObj
+    }
+    return null
+  }
+
   const onSubmit = async e => {
     e.preventDefault()
     if (step === 1 && validateAddressString(toAddress)) {
       setStep(2)
     } else if (step === 1 && !validateAddressString(toAddress)) {
       setToAddressError('Invalid to address')
-    } else if (step === 2 && !valueError) setStep(3)
-    else if (step === 3) {
+    } else if (step === 2 && !valueError) {
+      setStep(3)
+    } else if (step === 3) {
       setAttemptingTx(true)
-      const provider = await connectLedger()
-
-      if (provider) {
-        const nonce = await provider.getNonce(wallet.address)
-        const params = {
-          to: toAddress,
-          value: value.toAttoFil(),
-          method: 0,
-          params: ''
+      try {
+        const msg = await sendMsg()
+        setAttemptingTx(false)
+        if (msg) {
+          setValue(new FilecoinNumber('0', 'fil'))
+          close()
         }
-
-        const serializedParams = Buffer.from(
-          serializeParams(params),
-          'hex'
-        ).toString('base64')
-
-        const message = new Message({
-          to: address,
-          from: wallet.address,
-          value: '0',
-          method: 2,
-          gasPrice: gasPrice.toAttoFil(),
-          gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
-          nonce,
-          params: serializedParams
-        })
-
-        const signedMessage = await provider.wallet.sign(wallet.path, message)
-        const messageObj = message.toString()
-        const msgCid = await provider.sendMessage(messageObj, signedMessage)
-        messageObj.cid = msgCid['/']
-        messageObj.timestamp = dayjs().unix()
-        messageObj.gas_used = (
-          await walletProvider.estimateGas(message.encode())
-        ).toAttoFil()
-        messageObj.Value = new FilecoinNumber(
-          messageObj.value,
-          'attofil'
-        ).toFil()
-        return messageObj
+      } catch (err) {
+        reportError(20, false, err.message, err.stack)
+        setUncaughtError(err.message)
+        setAttemptingTx(false)
+        setStep(2)
       }
-      return null
     }
   }
 
   const isSubmitBtnDisabled = () => {
     if (uncaughtError) return false
     if (customizingGas) return true
+    if (attemptingTx) return true
     if (step === 1 && !toAddress) return true
     if (step === 2 && !isValidAmount(value, balance, valueError)) return true
   }
@@ -186,13 +207,40 @@ const Withdrawing = ({ address, balance, close }) => {
           justifyContent='space-between'
         >
           <Box>
-            <StepHeader
-              title='Withdrawing Filecoin'
-              currentStep={step}
-              totalSteps={4}
-              glyphAcronym='Wd'
-            />
-            <HeaderText step={step} />
+            {hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
+              <ErrorCard
+                error={reportLedgerConfigError({
+                  ...ledger,
+                  otherError: uncaughtError
+                })}
+                reset={() => {
+                  setAttemptingTx(false)
+                  setUncaughtError('')
+                  resetLedgerState()
+                  setStep(2)
+                }}
+              />
+            )}
+            {attemptingTx && (
+              <ConfirmationCard
+                walletType={LEDGER}
+                currentStep={4}
+                totalSteps={4}
+              />
+            )}
+            {!attemptingTx &&
+              !hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
+                <>
+                  <StepHeader
+                    title='Withdrawing Filecoin'
+                    currentStep={step}
+                    totalSteps={4}
+                    glyphAcronym='Wd'
+                  />
+                  <HeaderText step={step} />
+                </>
+              )}
+
             <CardHeader
               address={address}
               balance={balance}
@@ -331,7 +379,7 @@ const Withdrawing = ({ address, balance, close }) => {
                   setStep(step - 1)
                 }
               }}
-              disabled={customizingGas}
+              disabled={customizingGas || attemptingTx}
             />
             <Button
               variant='primary'
