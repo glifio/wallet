@@ -17,7 +17,10 @@ const AccountInfo = ({
   msigAddress,
   setChangingOwner,
   showOnDevice,
-  walletAddress
+  walletAddress,
+  reset,
+  ledgerBusy,
+  error
 }) => {
   return (
     <Box>
@@ -68,21 +71,44 @@ const AccountInfo = ({
         p={3}
         mt={3}
       >
-        <Box display='flex' flexDirection='row'>
-          <IconLedger />
-          <Text m={0} ml={2} lineHeight='2'>
-            Linked to Ledger Device
-          </Text>
-        </Box>
-        <Box display='flex' flexDirection='row'>
-          <Text color='core.primary'>{truncateAddress(walletAddress)}</Text>
-          <Button
-            type='button'
-            variant='secondary'
-            title='Show on device'
-            onClick={showOnDevice}
-          />
-        </Box>
+        {error ? (
+          <>
+            <Box display='flex' flexDirection='row'>
+              <IconLedger />
+              <Text m={0} ml={2} lineHeight='2'>
+                Error
+              </Text>
+            </Box>
+            <Box display='flex' flexDirection='column'>
+              <Text color='core.primary'>{error}</Text>
+              <Button
+                type='button'
+                variant='secondary'
+                title='Retry'
+                onClick={reset}
+              />
+            </Box>
+          </>
+        ) : (
+          <>
+            <Box display='flex' flexDirection='row'>
+              <IconLedger />
+              <Text m={0} ml={2} lineHeight='2'>
+                Linked to Ledger Device
+              </Text>
+            </Box>
+            <Box display='flex' flexDirection='row'>
+              <Text color='core.primary'>{truncateAddress(walletAddress)}</Text>
+              <Button
+                type='button'
+                variant='secondary'
+                title='Show on device'
+                disabled={ledgerBusy}
+                onClick={showOnDevice}
+              />
+            </Box>
+          </>
+        )}
       </Box>
     </Box>
   )
@@ -92,7 +118,14 @@ AccountInfo.propTypes = {
   msigAddress: ADDRESS_PROPTYPE,
   walletAddress: ADDRESS_PROPTYPE,
   setChangingOwner: PropTypes.func.isRequired,
-  showOnDevice: PropTypes.func.isRequired
+  showOnDevice: PropTypes.func.isRequired,
+  ledgerBusy: PropTypes.bool.isRequired,
+  error: PropTypes.string,
+  reset: PropTypes.func.isRequired
+}
+
+AccountInfo.defaultProps = {
+  error: ''
 }
 
 export default AccountInfo

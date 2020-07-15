@@ -41,7 +41,7 @@ const ChangeOwner = ({ address, balance, close }) => {
     resetLedgerState
   } = useWalletProvider()
   const wallet = useWallet()
-  const { serializeParams } = useWasm()
+  const { serializeParams, transactionSerialize } = useWasm()
 
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
@@ -57,34 +57,46 @@ const ChangeOwner = ({ address, balance, close }) => {
   )
   const [customizingGas, setCustomizingGas] = useState(false)
 
-  const estimateGas = async (gp, gasLimit, value) => {
-    // create a fake message
-    const params = {
-      to: toAddress,
-      value,
-      method: 0,
-      params: ''
+  const estimateGas = async (gp, gasLimit) => {
+    let message
+    try {
+      // create a fake message
+      const innerParams = {
+        to: toAddress,
+        from: wallet.address
+      }
+
+      const serializedInnerParams = Buffer.from(
+        serializeParams(innerParams),
+        'hex'
+      ).toString('base64')
+
+      const innerMessage = {
+        to: address,
+        value: '0',
+        method: 7,
+        params: serializedInnerParams
+      }
+
+      const serializedInnerMessage = transactionSerialize(innerMessage)
+
+      message = new Message({
+        to: address,
+        from: wallet.address,
+        value: '0',
+        method: 2,
+        gasPrice: gp.toAttoFil(),
+        gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
+        nonce: 0,
+        params: serializedInnerMessage
+      })
+    } catch (err) {
+      reportError(23, false, err)
+      setUncaughtError(err.message)
     }
-
-    const serializedParams = Buffer.from(
-      serializeParams(params),
-      'hex'
-    ).toString('base64')
-
-    const message = new Message({
-      to: address,
-      from: wallet.address,
-      value: '0',
-      method: 2,
-      gasPrice: gp.toAttoFil(),
-      gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
-      nonce: 0,
-      params: serializedParams
-    })
-
     // HMR causes this condition, we just make this check for easier dev purposes
     return walletProvider
-      ? walletProvider.estimateGas(message)
+      ? walletProvider.estimateGas(message.encode())
       : new FilecoinNumber('122', 'attofil')
   }
 
@@ -93,17 +105,24 @@ const ChangeOwner = ({ address, balance, close }) => {
 
     if (provider) {
       const nonce = await provider.getNonce(wallet.address)
-      const params = {
+      const innerParams = {
         to: toAddress,
-        value: '0',
-        method: 0,
-        params: ''
+        from: wallet.address
       }
 
-      const serializedParams = Buffer.from(
-        serializeParams(params),
+      const serializedInnerParams = Buffer.from(
+        serializeParams(innerParams),
         'hex'
       ).toString('base64')
+
+      const innerMessage = {
+        to: address,
+        value: '0',
+        method: 7,
+        params: serializedInnerParams
+      }
+
+      const serializedInnerMessage = transactionSerialize(innerMessage)
 
       const message = new Message({
         to: address,
@@ -113,7 +132,7 @@ const ChangeOwner = ({ address, balance, close }) => {
         gasPrice: gasPrice.toAttoFil(),
         gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
         nonce,
-        params: serializedParams
+        params: serializedInnerMessage
       })
 
       const signedMessage = await provider.wallet.sign(wallet.path, message)
