@@ -6,11 +6,12 @@ import composeMockAppTree from '../../test-utils/composeMockAppTree'
 
 describe('AccountSelector', () => {
   afterEach(cleanup)
-  test('it renders the loading screen first', () => {
+  test('it renders the loading screen first', async () => {
     const { Tree } = composeMockAppTree('postOnboard')
-    let res = render(<AccountSelector />, { wrapper: Tree })
-
-    expect(res.container.children[1]).toMatchSnapshot()
+    await act(async () => {
+      let res = render(<AccountSelector />, { wrapper: Tree })
+      expect(res.container.children[1]).toMatchSnapshot()
+    })
   })
 
   test('it renders the wallets in redux with the investor copy when the investor prop is passed', async () => {
