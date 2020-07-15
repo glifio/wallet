@@ -24,25 +24,30 @@ const WalletProviderWrapper = ({ network, children }) => {
         state,
         dispatch,
         fetchDefaultWallet: useCallback(
-          walletProvider =>
+          // a lot of times here, we instantiate the walletProvider AND fetch the default wallet back-to-back
+          // which could lead to race conditions, since the wallet provider's state may not have updated in time
+          // thats why we allow you to pass the walletProvider here, and fallback to the provider in state in other circumstances
+          (walletProvider = state.walletProvider) =>
             fetchDefaultWallet(
               dispatch,
               network,
               state.walletType,
-              walletProvider
+              walletProvider,
+              walletSubproviders
             ),
-          [dispatch, network, state.walletType]
+          [
+            dispatch,
+            network,
+            state.walletType,
+            state.walletProvider,
+            walletSubproviders
+          ]
         ),
         setWalletError: errorMessage => dispatch(setError(errorMessage)),
         setWalletType: walletType => dispatch(setWalletType(walletType)),
         setLedgerProvider: useCallback(
-          () =>
-            setLedgerProvider(
-              dispatch,
-              network,
-              walletSubproviders.LedgerProvider
-            ),
-          [dispatch, network, walletSubproviders.LedgerProvider]
+          () => setLedgerProvider(dispatch, walletSubproviders.LedgerProvider),
+          [dispatch, walletSubproviders.LedgerProvider]
         ),
         connectLedger: useCallback(
           () =>

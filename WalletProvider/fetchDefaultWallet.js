@@ -12,7 +12,8 @@ const fetchDefaultWallet = async (
   dispatch,
   network = 't',
   walletType,
-  walletProvider
+  walletProvider,
+  walletSubProviders
 ) => {
   dispatch(clearError())
   let provider = walletProvider
@@ -20,19 +21,16 @@ const fetchDefaultWallet = async (
     dispatch(resetLedgerState())
     provider = await setLedgerProvider(
       dispatch,
-      network,
-      // this is a big time hack to get the class constructor
-      // since the class relies on some wasm code in its scope,
-      // we need the reference to the original class
-      // see prepareSubProviders file for how the constructor was created
-      walletProvider.wallet.constructor
+      // this arg gets passed in because we need the variables in its scope
+      // see prepareSubproviders to look at the closed over variables
+      walletSubProviders.LedgerProvider
     )
     if (!provider) return null
     const configured = await checkLedgerConfiguration(dispatch, provider)
     if (!configured) return null
   }
   try {
-    const [defaultAddress] = await provider.wallet.getAccounts(0, 1, network)
+    const [defaultAddress] = await provider.wallet.getAccounts(network, 0, 1)
     const balance = await provider.getBalance(defaultAddress)
     const networkCode = network === 'f' ? 461 : 1
 
