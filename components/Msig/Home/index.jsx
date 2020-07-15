@@ -1,30 +1,43 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useMsig } from '../../../MsigProvider'
-import Balances from '../Balances'
-import Withdrawing from '../Withdrawing'
+import Withdraw from '../Withdraw'
+import ChangeOwner from '../ChangeOwner'
 import { Box } from '../../Shared'
+import State from './State'
+import useWallet from '../../../WalletProvider/useWallet'
 
 const MSIG_STATE = 'MSIG_STATE'
-const WITHDRAWING = 'WITHDRAWING'
+const WITHDRAW = 'WITHDRAW'
+const CHANGE_OWNER = 'CHANGE_OWNER'
 
 export default () => {
   const msigActorAddress = useSelector(state => state.msigActorAddress)
   const msig = useMsig(msigActorAddress)
+  const { address } = useWallet()
   const [childView, setChildView] = useState(MSIG_STATE)
   return (
     <>
       <Box p={3}>
         {childView === MSIG_STATE && (
-          <Balances
-            address={msigActorAddress}
+          <State
+            msigAddress={msigActorAddress}
+            walletAddress={address}
             available={msig.AvailableBalance}
             total={msig.Balance}
-            setWithdrawing={() => setChildView(WITHDRAWING)}
+            setChangingOwner={() => setChildView(CHANGE_OWNER)}
+            setWithdrawing={() => setChildView(WITHDRAW)}
           />
         )}
-        {childView === WITHDRAWING && (
-          <Withdrawing
+        {childView === CHANGE_OWNER && (
+          <ChangeOwner
+            close={() => setChildView(MSIG_STATE)}
+            balance={msig.AvailableBalance}
+            address={msigActorAddress}
+          />
+        )}
+        {childView === WITHDRAW && (
+          <Withdraw
             close={() => setChildView(MSIG_STATE)}
             balance={msig.AvailableBalance}
             address={msigActorAddress}

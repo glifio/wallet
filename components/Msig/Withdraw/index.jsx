@@ -24,9 +24,8 @@ import {
   FILECOIN_NUMBER_PROP
 } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
-import GasCustomization from './GasCustomization'
+import { GasCustomization, CardHeader, WithdrawHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
-import { CardHeader, HeaderText } from './Headers'
 import ErrorCard from '../../Wallet/Send.js/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send.js/ConfirmationCard'
 import { LEDGER } from '../../../constants'
@@ -237,7 +236,7 @@ const Withdrawing = ({ address, balance, close }) => {
                     totalSteps={4}
                     glyphAcronym='Wd'
                   />
-                  <HeaderText step={step} />
+                  <WithdrawHeaderText step={step} />
                 </>
               )}
 
@@ -323,36 +322,43 @@ const Withdrawing = ({ address, balance, close }) => {
               close={() => setCustomizingGas(false)}
             />
           )}
-          <Box
-            display='flex'
-            flexDirection='row'
-            alignItems='flex-start'
-            justifyContent='space-between'
-            py={3}
-            px={3}
-            bg='background.screen'
-          >
-            <Title fontSize={4} alignSelf='flex-start'>
-              Total
-            </Title>
-            <Box display='flex' flexDirection='column' textAlign='right' pl={4}>
-              <Num
-                size='l'
-                css={`
-                  word-wrap: break-word;
-                `}
-                color='core.primary'
+          {step > 2 && !customizingGas && (
+            <Box
+              display='flex'
+              flexDirection='row'
+              alignItems='flex-start'
+              justifyContent='space-between'
+              py={3}
+              px={3}
+              bg='background.screen'
+            >
+              <Title fontSize={4} alignSelf='flex-start'>
+                Total
+              </Title>
+              <Box
+                display='flex'
+                flexDirection='column'
+                textAlign='right'
+                pl={4}
               >
-                {value.toFil()} FIL
-              </Num>
-              <Num size='m' color='core.darkgray'>
-                {!converterError && value.isGreaterThan(0)
-                  ? `${makeFriendlyBalance(converter.fromFIL(value), 2)}`
-                  : '0'}{' '}
-                USD
-              </Num>
+                <Num
+                  size='l'
+                  css={`
+                    word-wrap: break-word;
+                  `}
+                  color='core.primary'
+                >
+                  {value.toFil()} FIL
+                </Num>
+                <Num size='m' color='core.darkgray'>
+                  {!converterError && value.isGreaterThan(0)
+                    ? `${makeFriendlyBalance(converter.fromFIL(value), 2)}`
+                    : '0'}{' '}
+                  USD
+                </Num>
+              </Box>
             </Box>
-          </Box>
+          )}
           <Box
             display='flex'
             flexDirection='row'
