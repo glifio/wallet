@@ -795,7 +795,7 @@ exports[`WalletView it renders correctly 1`] = `
 }
 
 .c4 {
-  background: transparent;
+  background: #C4C4C4;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   outline: none;
@@ -830,7 +830,6 @@ exports[`WalletView it renders correctly 1`] = `
 }
 
 .c4:hover {
-  cursor: pointer;
   background: #C4C4C4;
 }
 
@@ -941,6 +940,7 @@ exports[`WalletView it renders correctly 1`] = `
       </button>
       <button
         class="c4"
+        disabled=""
         display="flex"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -3164,7 +3164,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
 }
 
 .c4 {
-  background: transparent;
+  background: #C4C4C4;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   outline: none;
@@ -3199,7 +3199,6 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
 }
 
 .c4:hover {
-  cursor: pointer;
   background: #C4C4C4;
 }
 
@@ -3340,6 +3339,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
       </button>
       <button
         class="c4"
+        disabled=""
         display="flex"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -4822,7 +4822,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
 }
 
 .c4 {
-  background: transparent;
+  background: #C4C4C4;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   outline: none;
@@ -4857,7 +4857,6 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
 }
 
 .c4:hover {
-  cursor: pointer;
   background: #C4C4C4;
 }
 
@@ -5089,6 +5088,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
       </button>
       <button
         class="c4"
+        disabled=""
         display="flex"
         font-family="RT-Alias-Grotesk"
         font-size="2"

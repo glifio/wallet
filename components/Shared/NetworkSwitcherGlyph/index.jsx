@@ -22,6 +22,7 @@ const NetworkSwitcherButton = styled.button.attrs(() => ({
   borderRadius: 4
 }))`
   background: ${props => {
+    if (props.disabled) return props.theme.colors.status.inactive
     if (props.connected && props.active)
       return props.theme.colors.status.success.background
     if (props.error) return props.theme.colors.status.error.background
@@ -34,7 +35,7 @@ const NetworkSwitcherButton = styled.button.attrs(() => ({
   }
 
   &:hover {
-    cursor: pointer;
+    ${props => !props.disabled && 'cursor: pointer;'}
     background: ${props => props.active || props.theme.colors.core.lightgray};
   }
   outline: none;
@@ -72,6 +73,7 @@ const NetworkSwitcherGlyph = ({ ...props }) => {
       <NetworkSwitcherButton
         active={networkFromRedux === 'f'}
         onClick={() => onNetworkSwitch('f')}
+        disabled
       >
         Mainnet
       </NetworkSwitcherButton>
