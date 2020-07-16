@@ -13,7 +13,7 @@ describe('createHDWalletProvider', () => {
 
   test('it returns an HDWallet subprovider that follows the wallet subprovider interface', () => {
     const SingleKeyProvider = createSingleKeyProvider(mockRustModule)
-    const singleKeyProvider = new SingleKeyProvider(privateKey)
+    const singleKeyProvider = SingleKeyProvider(privateKey)
     expect(followsSubproviderInterface(singleKeyProvider)).toBe(true)
     expect(singleKeyProvider.type).toBe(SINGLE_KEY)
   })
@@ -33,8 +33,8 @@ describe('createHDWalletProvider', () => {
           nonce: 0
         })
         const SingleKeyProvider = createSingleKeyProvider(mockRustModule)
-        const singleKeyProvider = new SingleKeyProvider(privateKey)
-        await singleKeyProvider.sign('', msg)
+        const singleKeyProvider = SingleKeyProvider(privateKey)
+        await singleKeyProvider.sign(msg)
         expect(mockRustModule.transactionSign).toHaveBeenCalled()
       })
     })
@@ -44,9 +44,9 @@ describe('createHDWalletProvider', () => {
 
       test('it returns an array of accounts', async () => {
         const SingleKeyProvider = createSingleKeyProvider(mockRustModule)
-        const singleKeyProvider = new SingleKeyProvider(privateKey)
+        const singleKeyProvider = SingleKeyProvider(privateKey)
         // these first 2 args dont matter for single key provider, since you can only generate 1 account
-        const accounts = await singleKeyProvider.getAccounts(0, 5, 't')
+        const accounts = await singleKeyProvider.getAccounts('t')
         expect(accounts.length).toBe(1)
         expect(mockRustModule.keyRecover).toHaveBeenCalledTimes(1)
       })

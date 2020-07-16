@@ -23,7 +23,7 @@ export default () => {
     dispatch,
     fetchDefaultWallet,
     setWalletType,
-    walletSubproviders
+    walletSubproviders: { HDWalletProvider }
   } = useWalletProvider()
   const [mnemonic, setMnemonic] = useState('')
   const [mnemonicError, setMnemonicError] = useState('')
@@ -38,10 +38,9 @@ export default () => {
       const trimmed = mnemonic.trim()
       const isValid = validateMnemonic(trimmed)
       if (isValid) {
-        const provider = new Filecoin(
-          new walletSubproviders.HDWalletProvider(mnemonic),
-          { apiAddress: process.env.LOTUS_NODE_JSONRPC }
-        )
+        const provider = new Filecoin(HDWalletProvider(mnemonic), {
+          apiAddress: process.env.LOTUS_NODE_JSONRPC
+        })
         dispatch(createWalletProvider(provider))
         const wallet = await fetchDefaultWallet(provider)
         dispatchRdx(walletList([wallet]))

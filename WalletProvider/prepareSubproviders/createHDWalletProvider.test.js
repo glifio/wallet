@@ -14,7 +14,7 @@ describe('createHDWalletProvider', () => {
 
   test('it returns an HDWallet subprovider that follows the wallet subprovider interface', () => {
     const HDWalletProvider = createHDWalletProvider(mockRustModule)
-    const hdWalletProvider = new HDWalletProvider(mnemonic)
+    const hdWalletProvider = HDWalletProvider(mnemonic)
     expect(followsSubproviderInterface(hdWalletProvider)).toBe(true)
     expect(hdWalletProvider.type).toBe(HD_WALLET)
   })
@@ -34,8 +34,8 @@ describe('createHDWalletProvider', () => {
           nonce: 0
         })
         const HDWalletProvider = createHDWalletProvider(mockRustModule)
-        const hdWalletProvider = new HDWalletProvider(mnemonic)
-        await hdWalletProvider.sign("m/44'/461'/0/0/2", msg)
+        const hdWalletProvider = HDWalletProvider(mnemonic)
+        await hdWalletProvider.sign(msg, "m/44'/461'/0/0/2")
         expect(mockRustModule.transactionSign).toHaveBeenCalled()
       })
     })
@@ -45,8 +45,8 @@ describe('createHDWalletProvider', () => {
 
       test('it returns an array of accounts', async () => {
         const HDWalletProvider = createHDWalletProvider(mockRustModule)
-        const hdWalletProvider = new HDWalletProvider(mnemonic)
-        const accounts = await hdWalletProvider.getAccounts(0, 5, 't')
+        const hdWalletProvider = HDWalletProvider(mnemonic)
+        const accounts = await hdWalletProvider.getAccounts('t', 0, 5)
         expect(accounts.length).toBe(5)
         expect(mockRustModule.keyDerive).toHaveBeenCalledTimes(5)
       })

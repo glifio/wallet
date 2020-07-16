@@ -1,13 +1,15 @@
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 
-const mockGetAccounts = jest.fn().mockImplementation((start = 0, end = 1) => {
-  const accounts = []
-  for (let i = start; i < end; i++) {
-    accounts.push(`t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb${i}uq`)
-  }
+const mockGetAccounts = jest
+  .fn()
+  .mockImplementation((network = 't', start = 0, end = 1) => {
+    const accounts = []
+    for (let i = start; i < end; i++) {
+      accounts.push(`t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb${i}uq`)
+    }
 
-  return Promise.resolve(accounts)
-})
+    return Promise.resolve(accounts)
+  })
 
 const mockGetBalance = jest
   .fn()

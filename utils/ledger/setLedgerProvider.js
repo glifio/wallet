@@ -17,11 +17,11 @@ import { createWalletProvider } from '../../WalletProvider/state'
 import createTransport from './createTransport'
 import reportError from '../reportError'
 
-export const setLedgerProvider = async (dispatch, network, LedgerProvider) => {
+export const setLedgerProvider = async (dispatch, LedgerProvider) => {
   dispatch({ type: LEDGER_USER_INITIATED_IMPORT })
   try {
     const transport = await createTransport()
-    const provider = new Filecoin(new LedgerProvider(transport), {
+    const provider = new Filecoin(LedgerProvider(transport), {
       apiAddress: process.env.LOTUS_NODE_JSONRPC
     })
     dispatch({ type: LEDGER_CONNECTED })
