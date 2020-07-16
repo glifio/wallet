@@ -20,7 +20,7 @@ const transactionSign = jest
   .mockImplementation(() => ({ signature: { data: 'xxxyyyyzzzz' } }))
 
 const transactionSerialize = jest.fn().mockImplementation(() => {
-  return new Buffer('MOCK SIGNATURE DATA')
+  return Buffer.from('MOCK SIGNATURE DATA')
 })
 
 module.exports = {

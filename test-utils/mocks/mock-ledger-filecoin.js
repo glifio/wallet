@@ -1,11 +1,12 @@
 const errorFreeReturn = {
-  error_message: 'no errors'
+  error_message: 'no errors',
+  device_locked: false
 }
 
 export const mockSign = jest.fn().mockImplementation(async (path, msg) => {
   return Promise.resolve({
     ...errorFreeReturn,
-    signature_compact: new Buffer('fake signature')
+    signature_compact: Buffer.from('fake signature')
   })
 })
 
