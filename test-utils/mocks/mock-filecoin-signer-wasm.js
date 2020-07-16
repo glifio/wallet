@@ -19,4 +19,14 @@ const transactionSign = jest
   .fn()
   .mockImplementation(() => ({ signature: { data: 'xxxyyyyzzzz' } }))
 
-module.exports = { keyRecover, keyDerive, mnemonicGenerate, transactionSign }
+const transactionSerialize = jest.fn().mockImplementation(() => {
+  return Buffer.from('MOCK SIGNATURE DATA')
+})
+
+module.exports = {
+  keyRecover,
+  keyDerive,
+  mnemonicGenerate,
+  transactionSign,
+  transactionSerialize
+}

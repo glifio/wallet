@@ -15,10 +15,15 @@ const mockGetBalance = jest
   .fn()
   .mockImplementation(() => Promise.resolve(new FilecoinNumber('1', 'fil')))
 
+const mockSuprovider = {
+  type: 'MOCK',
+  getAccounts: mockGetAccounts,
+  sign: jest.fn().mockImplementation(() => 'xxxyyyyzzzz')
+}
+
 class MockWalletProvider {
-  wallet = {
-    getAccounts: mockGetAccounts,
-    sign: jest.fn().mockImplementation(() => 'xxxyyyyzzzz')
+  constructor(subprovider = mockSuprovider) {
+    this.wallet = subprovider
   }
 
   getBalance = mockGetBalance

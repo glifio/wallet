@@ -16,31 +16,23 @@ export const LEDGER_BUSY = 'LEDGER_BUSY'
 export const LEDGER_USED_BY_ANOTHER_APP = 'LEDGER_USED_BY_ANOTHER_APP'
 
 export const initialLedgerState = {
-  userInitiatedImport: false,
   userImportFailure: false,
   connecting: false,
   connectedFailure: false,
-  connectedSuccess: false,
   locked: false,
   unlocked: false,
   busy: false,
-  establishingConnectionWFilecoinApp: false,
-  filecoinAppOpen: false,
   filecoinAppNotOpen: false,
   replug: false,
   inUseByAnotherApp: false
 }
 
 export const LEDGER_STATE_PROPTYPES = {
-  userInitiatedImport: PropTypes.bool.isRequired,
   userImportFailure: PropTypes.bool.isRequired,
   connecting: PropTypes.bool.isRequired,
   connectedFailure: PropTypes.bool.isRequired,
-  connectedSuccess: PropTypes.bool.isRequired,
   locked: PropTypes.bool.isRequired,
   unlocked: PropTypes.bool.isRequired,
   busy: PropTypes.bool.isRequired,
-  establishingConnectionWFilecoinApp: PropTypes.bool.isRequired,
-  filecoinAppOpen: PropTypes.bool.isRequired,
   filecoinAppNotOpen: PropTypes.bool.isRequired
 }

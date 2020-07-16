@@ -35,14 +35,14 @@ export const setLedgerProvider = async (dispatch, LedgerProvider) => {
       dispatch({ type: LEDGER_USED_BY_ANOTHER_APP })
     } else if (
       err.message &&
-      !err.message.toLowerCase().includes('device is already open')
-    ) {
-      dispatch({ type: LEDGER_NOT_FOUND })
-    } else if (
-      err.message &&
       err.message.toLowerCase().includes('transporterror: invalid channel')
     ) {
       dispatch({ type: LEDGER_REPLUG })
+    } else if (
+      err.message &&
+      err.message.toLowerCase().includes('no device selected')
+    ) {
+      dispatch({ type: LEDGER_NOT_FOUND })
     }
     reportError(
       5,
@@ -58,6 +58,7 @@ export const checkLedgerConfiguration = async (dispatch, walletProvider) => {
   dispatch({ type: LEDGER_ESTABLISHING_CONNECTION_W_FILECOIN_APP })
   try {
     const response = await walletProvider.wallet.getVersion()
+
     if (response.device_locked) {
       dispatch({ type: LEDGER_LOCKED })
       return false
