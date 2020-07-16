@@ -103,7 +103,6 @@ describe('connectLedger', () => {
 
       await connectLedger(mockDispatch, mockLedgerProvider)
       expect(nextState.ledger.unlocked).toBe(true)
-      expect(nextState.ledger.filecoinAppOpen).toBe(false)
       expect(nextState.ledger.filecoinAppNotOpen).toBe(true)
     })
   })

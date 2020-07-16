@@ -83,9 +83,7 @@ export default (state, action) => {
         ledger: {
           ...state.ledger,
           connecting: true,
-          connectedFailure: false,
-          connectedSuccess: false,
-          userInitiatedImport: true
+          connectedFailure: false
         }
       }
     case LEDGER_NOT_FOUND:
@@ -95,7 +93,6 @@ export default (state, action) => {
           ...state.ledger,
           connecting: false,
           connectedFailure: true,
-          connectedSuccess: false,
           userImportFailure: true
         }
       }
@@ -106,7 +103,6 @@ export default (state, action) => {
           ...state.ledger,
           connecting: false,
           connectedFailure: false,
-          connectedSuccess: true,
           inUseByAnotherApp: false
         }
       }
@@ -115,8 +111,6 @@ export default (state, action) => {
         ...Object.freeze(state),
         ledger: {
           ...state.ledger,
-          establishingConnectionWFilecoinApp: true,
-          filecoinAppOpen: false,
           filecoinAppNotOpen: false,
           locked: false,
           unlocked: false,
@@ -131,8 +125,7 @@ export default (state, action) => {
           ...state.ledger,
           locked: true,
           unlocked: false,
-          userImportFailure: true,
-          establishingConnectionWFilecoinApp: false
+          userImportFailure: true
         }
       }
     case LEDGER_UNLOCKED:
@@ -141,8 +134,7 @@ export default (state, action) => {
         ledger: {
           ...state.ledger,
           locked: false,
-          unlocked: true,
-          establishingConnectionWFilecoinApp: false
+          unlocked: true
         }
       }
     case LEDGER_FILECOIN_APP_NOT_OPEN:
@@ -150,8 +142,6 @@ export default (state, action) => {
         ...Object.freeze(state),
         ledger: {
           ...state.ledger,
-          establishingConnectionWFilecoinApp: false,
-          filecoinAppOpen: false,
           filecoinAppNotOpen: true,
           userImportFailure: true,
           // counterintuitive - but the only way we could have known this
@@ -164,8 +154,6 @@ export default (state, action) => {
         ...Object.freeze(state),
         ledger: {
           ...state.ledger,
-          establishingConnectionWFilecoinApp: false,
-          filecoinAppOpen: true,
           filecoinAppNotOpen: false,
           locked: false,
           unlocked: true,
@@ -179,8 +167,7 @@ export default (state, action) => {
         ...Object.freeze(state),
         ledger: {
           ...state.ledger,
-          busy: true,
-          establishingConnectionWFilecoinApp: false
+          busy: true
         }
       }
     case LEDGER_REPLUG:
@@ -188,8 +175,7 @@ export default (state, action) => {
         ...Object.freeze(state),
         ledger: {
           ...state.ledger,
-          replug: true,
-          establishingConnectionWFilecoinApp: false
+          replug: true
         }
       }
     case LEDGER_USED_BY_ANOTHER_APP:
@@ -197,8 +183,7 @@ export default (state, action) => {
         ...Object.freeze(state),
         ledger: {
           ...state.ledger,
-          inUseByAnotherApp: true,
-          establishingConnectionWFilecoinApp: false
+          inUseByAnotherApp: true
         }
       }
     case LEDGER_RESET_STATE:
