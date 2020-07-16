@@ -4,7 +4,7 @@ import {
 } from '../utils/ledger/setLedgerProvider'
 import { clearError, resetLedgerState } from './state'
 
-const connectWithLedger = async (dispatch, network = 't', LedgerProvider) => {
+const connectWithLedger = async (dispatch, LedgerProvider) => {
   dispatch(clearError())
   dispatch(resetLedgerState())
   const provider = await setLedgerProvider(dispatch, LedgerProvider)

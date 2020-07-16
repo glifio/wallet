@@ -50,9 +50,8 @@ const WalletProviderWrapper = ({ network, children }) => {
           [dispatch, walletSubproviders.LedgerProvider]
         ),
         connectLedger: useCallback(
-          () =>
-            connectLedger(dispatch, network, walletSubproviders.LedgerProvider),
-          [dispatch, network, walletSubproviders.LedgerProvider]
+          () => connectLedger(dispatch, walletSubproviders.LedgerProvider),
+          [dispatch, walletSubproviders.LedgerProvider]
         ),
         resetLedgerState: () => dispatch(resetLedgerState()),
         resetState: useCallback(() => dispatch(resetState()), [dispatch]),
