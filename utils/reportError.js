@@ -9,7 +9,7 @@ export default async (id, shouldSendToErrorPage, ...args) => {
     },
     [`WALLET:${id}\n`]
   )
-  if (!process.env.IS_DEV) {
+  if (process.env.IS_PROD) {
     await axios.post(
       'https://errors.glif.io',
       JSON.stringify({ text: errorText })
