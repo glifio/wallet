@@ -72,7 +72,6 @@ const computeScore = (height, heightsToCompare) => {
     heightsToCompare.reduce((sum, h) => sum + h, 0) /
       Number(heightsToCompare.length)
   )
-
   return Math.abs(height - avg) > 15 ? 1 : 2
 }
 
