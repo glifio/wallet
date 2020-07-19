@@ -55,7 +55,7 @@ const collectHeights = async () => {
   const calls = []
 
   for (let i = 0; i < 5; i += 1) {
-    calls.push(getHeightFromRPC('https://proxy.openworklabs.com/rpc/v0'))
+    calls.push(getHeightFromRPC(`https://node.glif.io/0${i}/rpc/v0`))
   }
 
   calls.push(filscanHeight(), filscoutHeight())
@@ -84,7 +84,7 @@ export default async (apiAddress, token = '') => {
 
   const heights = await collectHeights()
   // if we cant make any comparisons, were assuming the network is unhealthy
-  if (heights.length < 2) return 0
+  if (heights.length < 2) return 1
 
   try {
     const chainHead = await client.request('ChainHead')
