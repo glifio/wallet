@@ -2,14 +2,14 @@ import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 
 import MessageView from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
-import { filscanMockData } from '../../../test-utils/mockData'
-import { formatFilscanMessages } from './formatMessages'
+import { filscoutMockData } from '../../../test-utils/mockData'
+import { formatFilscoutMessages } from './formatMessages'
 
-const spy = jest.spyOn(require('./useFilscanTransactionHistory.js'), 'default')
+const spy = jest.spyOn(require('./useTransactionHistory.js'), 'default')
 const mockTxHistory = {
   showMore: jest.fn(),
   pending: [],
-  confirmed: formatFilscanMessages(filscanMockData).map(msg => ({
+  confirmed: formatFilscoutMessages(filscoutMockData).map(msg => ({
     ...msg,
     status: 'confirmed'
   })),

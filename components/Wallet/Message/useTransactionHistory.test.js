@@ -1,32 +1,24 @@
-import { act, renderHook, cleanup } from '@testing-library/react-hooks'
+import { act, renderHook } from '@testing-library/react-hooks'
 import axios from 'axios'
+import { cleanup } from '@testing-library/react'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import {
-  filscanMockData,
-  secondaryFilscanMockData
+  filscoutMockData,
+  secondaryFilscoutMockData
 } from '../../../test-utils/mockData'
 
-import useTransactionHistory from './useFilscanTransactionHistory'
+import useTransactionHistory from './useTransactionHistory'
 
 jest.mock('axios')
 
 const sampleSuccessResponse = {
   data: {
+    code: 200,
     data: {
-      data: filscanMockData,
-      total: '20'
+      data: filscoutMockData,
+      pagination: { total: 47, page: 1, page_size: 15 }
     },
-    res: { code: 3, msg: 'success' }
-  }
-}
-
-const secondSampleSuccessResponse = {
-  data: {
-    data: {
-      data: secondaryFilscanMockData,
-      total: '20'
-    },
-    res: { code: 3, msg: 'success' }
+    error: 'ok'
   }
 }
 
@@ -38,7 +30,7 @@ describe('useTransactionHistory', () => {
   })
 
   test('it fetches and stores the transaction history in redux', async () => {
-    axios.post.mockResolvedValue(sampleSuccessResponse)
+    axios.get.mockResolvedValue(sampleSuccessResponse)
 
     const { Tree, store } = composeMockAppTree('postOnboard')
 
@@ -49,13 +41,13 @@ describe('useTransactionHistory', () => {
     await waitForNextUpdate()
 
     const { confirmed, total } = store.getState().messages
-    expect(total).toBe(20)
-    expect(confirmed.length).toBe(8)
+    expect(total).toBe(47)
+    expect(confirmed.length).toBe(15)
     expect(confirmed[0]).toHaveProperty('from', expect.any(String))
     expect(confirmed[0]).toHaveProperty('gaslimit', expect.any(String))
     expect(confirmed[0]).toHaveProperty('gasprice', expect.any(String))
     expect(confirmed[0]).toHaveProperty('method', expect.any(String))
-    expect(confirmed[0]).toHaveProperty('nonce', expect.any(String))
+    expect(confirmed[0]).toHaveProperty('nonce', expect.any(Number))
     expect(confirmed[0]).toHaveProperty('value', expect.any(String))
     expect(confirmed[0]).toHaveProperty('cid', expect.any(String))
     expect(confirmed[0]).toHaveProperty('gas_used', expect.any(String))
@@ -65,9 +57,19 @@ describe('useTransactionHistory', () => {
   })
 
   test('it fetches more data when showMore gets called', async () => {
-    axios.post
+    const secondarySampleSuccessResponse = {
+      data: {
+        code: 200,
+        data: {
+          data: secondaryFilscoutMockData,
+          pagination: { total: 47, page: 1, page_size: 15 }
+        },
+        error: 'ok'
+      }
+    }
+    axios.get
       .mockResolvedValueOnce(sampleSuccessResponse)
-      .mockResolvedValueOnce(secondSampleSuccessResponse)
+      .mockResolvedValueOnce(secondarySampleSuccessResponse)
 
     const { Tree, store } = composeMockAppTree('postOnboard')
 
@@ -84,13 +86,13 @@ describe('useTransactionHistory', () => {
     })
 
     const { confirmed, total } = store.getState().messages
-    expect(total).toBe(20)
-    expect(confirmed.length).toBeGreaterThan(10)
+    expect(total).toBe(47)
+    expect(confirmed.length).toBeGreaterThan(15)
     expect(confirmed[11]).toHaveProperty('from', expect.any(String))
     expect(confirmed[11]).toHaveProperty('gaslimit', expect.any(String))
     expect(confirmed[11]).toHaveProperty('gasprice', expect.any(String))
     expect(confirmed[11]).toHaveProperty('method', expect.any(String))
-    expect(confirmed[11]).toHaveProperty('nonce')
+    expect(confirmed[11]).toHaveProperty('nonce', expect.any(Number))
     expect(confirmed[11]).toHaveProperty('value', expect.any(String))
     expect(confirmed[11]).toHaveProperty('cid', expect.any(String))
     expect(confirmed[11]).toHaveProperty('gas_used', expect.any(String))
@@ -99,36 +101,20 @@ describe('useTransactionHistory', () => {
     expect(store.getState().messages.loadedSuccess).toBeTruthy()
   })
 
-  test('it does not add duplicate data to redux', async () => {
-    axios.post
-      .mockResolvedValueOnce(sampleSuccessResponse)
-      .mockResolvedValueOnce(sampleSuccessResponse)
-
-    const { Tree, store } = composeMockAppTree('postOnboard')
-
-    const {
-      result: { current },
-      waitForNextUpdate
-    } = renderHook(useTransactionHistory, {
-      wrapper: Tree
-    })
-
-    await act(async () => {
-      current.refresh()
-      await waitForNextUpdate()
-    })
-
-    const { confirmed, total } = store.getState().messages
-    expect(total).toBe(20)
-    expect(confirmed.length).toBe(filscanMockData.length)
-    expect(store.getState().messages.loadedFailure).toBeFalsy()
-    expect(store.getState().messages.loadedSuccess).toBeTruthy()
-  })
-
   test('it fetches new data when refresh gets called', async () => {
-    axios.post
+    const secondarySampleSuccessResponse = {
+      data: {
+        code: 200,
+        data: {
+          data: secondaryFilscoutMockData,
+          pagination: { total: 47, page: 1, page_size: 15 }
+        },
+        error: 'ok'
+      }
+    }
+    axios.get
       .mockResolvedValueOnce(sampleSuccessResponse)
-      .mockResolvedValueOnce(secondSampleSuccessResponse)
+      .mockResolvedValueOnce(secondarySampleSuccessResponse)
 
     const { Tree, store } = composeMockAppTree('postOnboard')
 
@@ -145,24 +131,57 @@ describe('useTransactionHistory', () => {
     })
 
     const { confirmed, total } = store.getState().messages
-    expect(total).toBe(20)
-    expect(confirmed.length).toBeGreaterThan(10)
+    expect(total).toBe(47)
+    expect(confirmed.length).toBeGreaterThan(15)
     expect(store.getState().messages.loadedFailure).toBeFalsy()
     expect(store.getState().messages.loadedSuccess).toBeTruthy()
   })
 
-  test('it handles errors from filscan', async () => {
+  test('it does not add duplicate data to redux', async () => {
+    const secondarySampleSuccessResponse = {
+      data: {
+        code: 200,
+        data: {
+          data: filscoutMockData,
+          pagination: { total: 47, page: 1, page_size: 15 }
+        },
+        error: 'ok'
+      }
+    }
+    axios.get
+      .mockResolvedValueOnce(sampleSuccessResponse)
+      .mockResolvedValueOnce(secondarySampleSuccessResponse)
+
+    const { Tree, store } = composeMockAppTree('postOnboard')
+
+    const {
+      result: { current },
+      waitForNextUpdate
+    } = renderHook(useTransactionHistory, {
+      wrapper: Tree
+    })
+
+    await act(async () => {
+      current.refresh()
+      await waitForNextUpdate()
+    })
+
+    const { confirmed, total } = store.getState().messages
+    expect(total).toBe(47)
+    expect(confirmed.length).toBe(15)
+    expect(store.getState().messages.loadedFailure).toBeFalsy()
+    expect(store.getState().messages.loadedSuccess).toBeTruthy()
+  })
+
+  test('it handles errors from filscout', async () => {
     const sampleFailResponse = {
       data: {
-        data: {
-          data: [],
-          total: '20'
-        },
-        res: { code: 4, msg: '' }
+        code: 500,
+        error: 'kobe!'
       }
     }
 
-    axios.post.mockResolvedValue(sampleFailResponse)
+    axios.get.mockResolvedValue(sampleFailResponse)
 
     const { Tree, store } = composeMockAppTree('postOnboard')
 

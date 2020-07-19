@@ -2,8 +2,8 @@ import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 import { BigNumber } from '@openworklabs/filecoin-number'
 import MessageHistoryTable from './index'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
-import { filscanMockData } from '../../../test-utils/mockData'
-import { formatFilscanMessages } from '../../Wallet/Message/formatMessages'
+import { filscoutMockData } from '../../../test-utils/mockData'
+import { formatFilscoutMessages } from '../../Wallet/Message/formatMessages'
 import noop from '../../../utils/noop'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
@@ -23,7 +23,7 @@ describe('MessageHistoryTable', () => {
       <Tree>
         <MessageHistoryTable
           address='t01'
-          messages={formatFilscanMessages(filscanMockData).map(msg => ({
+          messages={formatFilscoutMessages(filscoutMockData).map(msg => ({
             ...msg,
             status: 'confirmed'
           }))}
@@ -31,7 +31,7 @@ describe('MessageHistoryTable', () => {
           selectMessage={setSelectedMessageCid}
           paginating={false}
           showMore={showMore}
-          total={filscanMockData.length}
+          total={filscoutMockData.length}
           refresh={noop}
         />
       </Tree>
@@ -46,7 +46,7 @@ describe('MessageHistoryTable', () => {
       <Tree>
         <MessageHistoryTable
           address='t01'
-          messages={formatFilscanMessages(filscanMockData).map(msg => ({
+          messages={formatFilscoutMessages(filscoutMockData).map(msg => ({
             ...msg,
             status: 'confirmed'
           }))}
@@ -91,7 +91,7 @@ describe('MessageHistoryTable', () => {
       <Tree>
         <MessageHistoryTable
           address='t01'
-          messages={formatFilscanMessages(filscanMockData).map(msg => ({
+          messages={formatFilscoutMessages(filscoutMockData).map(msg => ({
             ...msg,
             status: 'confirmed'
           }))}
@@ -114,7 +114,7 @@ describe('MessageHistoryTable', () => {
       <Tree>
         <MessageHistoryTable
           address='t01'
-          messages={formatFilscanMessages(filscanMockData).map(msg => ({
+          messages={formatFilscoutMessages(filscoutMockData).map(msg => ({
             ...msg,
             status: 'confirmed'
           }))}
@@ -122,7 +122,7 @@ describe('MessageHistoryTable', () => {
           selectMessage={setSelectedMessageCid}
           paginating={false}
           showMore={showMore}
-          total={filscanMockData.length}
+          total={filscoutMockData.length}
           refresh={noop}
         />
       </Tree>
@@ -144,7 +144,7 @@ describe('MessageHistoryTable', () => {
       <Tree>
         <MessageHistoryTable
           address='t01'
-          messages={formatFilscanMessages(filscanMockData).map(msg => ({
+          messages={formatFilscoutMessages(filscoutMockData).map(msg => ({
             ...msg,
             status: 'confirmed'
           }))}
@@ -152,14 +152,14 @@ describe('MessageHistoryTable', () => {
           selectMessage={setSelectedMessageCid}
           paginating={false}
           showMore={showMore}
-          total={filscanMockData.length}
+          total={filscoutMockData.length}
           refresh={noop}
         />
       </Tree>
     )
 
     const friendlyValue = makeFriendlyBalance(
-      new BigNumber(filscanMockData[0].msg.value)
+      new BigNumber(filscoutMockData[0].value)
     )
 
     expect(screen.getAllByText(friendlyValue)).toBeTruthy()
@@ -171,7 +171,7 @@ describe('MessageHistoryTable', () => {
       <Tree>
         <MessageHistoryTable
           address='t01'
-          messages={formatFilscanMessages(filscanMockData).map(msg => ({
+          messages={formatFilscoutMessages(filscoutMockData).map(msg => ({
             ...msg,
             status: 'confirmed'
           }))}
@@ -179,7 +179,7 @@ describe('MessageHistoryTable', () => {
           selectMessage={setSelectedMessageCid}
           paginating={false}
           showMore={showMore}
-          total={filscanMockData.length}
+          total={filscoutMockData.length}
           refresh={noop}
         />
       </Tree>
@@ -195,7 +195,7 @@ describe('MessageHistoryTable', () => {
       <Tree>
         <MessageHistoryTable
           address='t01'
-          messages={formatFilscanMessages(filscanMockData).map(msg => ({
+          messages={formatFilscoutMessages(filscoutMockData).map(msg => ({
             ...msg,
             status: 'confirmed'
           }))}
@@ -203,7 +203,7 @@ describe('MessageHistoryTable', () => {
           selectMessage={setSelectedMessageCid}
           paginating={false}
           showMore={showMore}
-          total={filscanMockData.length}
+          total={filscoutMockData.length}
           refresh={spy}
         />
       </Tree>

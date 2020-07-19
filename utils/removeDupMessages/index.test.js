@@ -1,46 +1,47 @@
 import removeDupMessages from '.'
 import {
-  filscanMockData,
-  secondaryFilscanMockData
+  filscoutMockData,
+  secondaryFilscoutMockData
 } from '../../test-utils/mockData'
-import { formatFilscanMessages } from '../../components/Wallet/Message/formatMessages'
+import { formatFilscoutMessages } from '../../components/Wallet/Message/formatMessages'
 
-const formattedFilscanMockData = formatFilscanMessages(filscanMockData)
-const formattedSecondaryFilscanMockData = formatFilscanMessages(
-  secondaryFilscanMockData
+const formattedFilscoutMockData = formatFilscoutMessages(filscoutMockData)
+const formattedSecondaryFilscoutMockData = formatFilscoutMessages(
+  secondaryFilscoutMockData
 )
 
 describe('removeDupMessages', () => {
   test('it will not add two identical messages to the same array', () => {
     const msgArr = removeDupMessages(
-      formattedFilscanMockData,
-      formattedFilscanMockData
+      formattedFilscoutMockData,
+      formattedFilscoutMockData
     )
-    expect(msgArr.length).toBe(formattedFilscanMockData.length)
+    expect(msgArr.length).toBe(formattedFilscoutMockData.length)
   })
 
   test('it will add unique messages', () => {
     const msgArr = removeDupMessages(
-      formattedFilscanMockData,
-      formattedSecondaryFilscanMockData
+      formattedFilscoutMockData,
+      formattedSecondaryFilscoutMockData
     )
     expect(msgArr.length).toBe(
-      formattedFilscanMockData.length + formattedSecondaryFilscanMockData.length
+      formattedFilscoutMockData.length +
+        formattedSecondaryFilscoutMockData.length
     )
   })
 
   test('it sorts messages by timestamp', () => {
     const msgArr = removeDupMessages(
-      formattedSecondaryFilscanMockData,
+      formattedSecondaryFilscoutMockData,
       // make these messages with very new timestamps
-      formattedFilscanMockData.map((msg, i) => ({
+      formattedFilscoutMockData.map((msg, i) => ({
         ...msg,
         timestamp: i.toString()
       }))
     )
 
     // this is just checking to make sure the messages come back in order
-    expect(msgArr[0].cid).toBe(formattedSecondaryFilscanMockData[0].cid)
-    expect(msgArr[msgArr.length - 1].cid).toBe(formattedFilscanMockData[0].cid)
+    expect(msgArr[0].cid).toBe(formattedSecondaryFilscoutMockData[0].cid)
+    expect(msgArr[msgArr.length - 1].cid).toBe(formattedFilscoutMockData[0].cid)
   })
 })
