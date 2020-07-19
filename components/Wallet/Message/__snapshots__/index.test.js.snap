@@ -4135,7 +4135,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         class="c46"
         color="core.primary"
         font-size="3"
-        href="https://filscan.io/#/message/detail?cid=bafy2bzacea5463eugsz6f7dbwixzqxmwe2ouqeq6zukackb3xxotskdidqmjm"
+        href="https://filscout.io/en/pc/message/bafy2bzacea5463eugsz6f7dbwixzqxmwe2ouqeq6zukackb3xxotskdidqmjm"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -4146,7 +4146,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           font-size="2"
           font-weight="400"
         >
-          View on Filscan
+          View on Filscout
         </h4>
       </a>
     </div>
