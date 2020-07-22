@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from 'react'
+import { useEffect, useRef, useState, useCallback, forwardRef } from 'react'
 import PropTypes from 'prop-types'
 import styled, { keyframes } from 'styled-components'
 import calcConnectionStrength from './connectionStrength'
@@ -35,74 +35,81 @@ const ColoredDot = styled.span`
   border-radius: 50%;
   display: inline-block;
   margin: 4px;
-  animation: ColoredDotAnimator 0.24s linear;
+  animation: ${ColoredDotAnimator} 0.24s linear;
 `
 
-const NodeConnectedWidget = ({
-  apiAddress,
-  onConnectionStrengthChange,
-  token
-}) => {
-  const [connectionStrength, setConnectionStrength] = useState(-1)
-  const timeout = useRef()
+const NodeConnectedWidget = forwardRef(
+  ({ apiAddress, onConnectionStrengthChange, token, ...props }, ref) => {
+    const [connectionStrength, setConnectionStrength] = useState(-1)
+    const [polling, setPolling] = useState(false)
+    const timeout = useRef()
 
-  const pollConnection = useCallback(
-    async (pollTimer = 10000) => {
-      clearTimeout(timeout.current)
-      timeout.current = setTimeout(async () => {
-        try {
-          const strength = await calcConnectionStrength(apiAddress, token)
-          if (strength !== connectionStrength) {
-            setConnectionStrength(strength)
-            onConnectionStrengthChange(strength)
+    const pollConnection = useCallback(
+      async (pollTimer = 10000) => {
+        clearTimeout(timeout.current)
+        timeout.current = setTimeout(async () => {
+          try {
+            const strength = await calcConnectionStrength(apiAddress, token)
+            if (strength !== connectionStrength) {
+              setConnectionStrength(strength)
+              onConnectionStrengthChange(strength)
+            }
+
+            return pollConnection()
+          } catch (err) {
+            reportError('NodeConnectedWidget:1', false, err.message, err.stack)
           }
+        }, pollTimer)
+      },
+      [apiAddress, connectionStrength, onConnectionStrengthChange, token]
+    )
 
-          return pollConnection()
-        } catch (err) {
-          reportError('NodeConnectedWidget:1', false, err.message, err.stack)
+    useEffect(() => {
+      if (!polling) pollConnection(0)
+      setPolling(true)
+      return () => {
+        if (polling) {
+          setPolling(false)
+          clearTimeout(timeout.current)
         }
-      }, pollTimer)
-    },
-    [apiAddress, connectionStrength, onConnectionStrengthChange, token]
-  )
+      }
+    }, [polling, setPolling, pollConnection])
 
-  useEffect(() => {
-    pollConnection(0)
-    return () => {
-      if (timeout.current) clearTimeout(timeout.current)
+    const nodeConnectedText = () => {
+      // Connecting to node..
+      if (connectionStrength === -1) return 'Connecting..'
+      if (connectionStrength === 0)
+        // Could not establish connection with our node
+        return 'Disconnected'
+      // Connected to an unhealthy node
+      if (connectionStrength === 1) return 'Disconnected'
+      // Node connected
+      if (connectionStrength === 2) return 'Connected'
     }
-  }, [pollConnection])
 
-  const nodeConnectedText = () => {
-    // Connecting to node..
-    if (connectionStrength === -1) return 'Connecting..'
-    if (connectionStrength === 0)
-      // Could not establish connection with our node
-      return 'Disconnected'
-    // Connected to an unhealthy node
-    if (connectionStrength === 1) return 'Disconnected'
-    // Node connected
-    if (connectionStrength === 2) return 'Connected'
+    return (
+      <Box
+        display='inline-flex'
+        justifyContent='space-around'
+        alignItems='center'
+        minWidth={9}
+        width={9}
+        height={6}
+        p={2}
+        border={1}
+        borderColor='core.lightgray'
+        borderRadius={3}
+        {...props}
+        ref={ref}
+      >
+        <ColoredDot connectionStrength={connectionStrength} />
+        <Text display='inline' textAlign='center' m={0}>
+          {nodeConnectedText()}
+        </Text>
+      </Box>
+    )
   }
-
-  return (
-    <Box
-      display='inline-flex'
-      justifyContent='space-between'
-      alignItems='center'
-      minWidth={9}
-      p={2}
-      border={1}
-      borderColor='core.lightgray'
-      borderRadius={3}
-    >
-      <ColoredDot connectionStrength={connectionStrength} />
-      <Text display='inline' textAlign='center' m={0} ml={3}>
-        {nodeConnectedText()}
-      </Text>
-    </Box>
-  )
-}
+)
 
 NodeConnectedWidget.propTypes = {
   apiAddress: PropTypes.string.isRequired,

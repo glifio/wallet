@@ -10,6 +10,9 @@ import axios from 'axios'
 import LotusRPCEngine from '@openworklabs/lotus-jsonrpc-engine'
 
 import { FILSCOUT, FILSCAN } from '../../../constants'
+import reportError from '../../../utils/reportError'
+
+const TIPSET_PADDING = 15
 
 const filscoutHeight = async () => {
   try {
@@ -54,7 +57,7 @@ const filterOutBadNodes = heights => heights.filter(height => height > 0)
 const collectHeights = async () => {
   const calls = []
 
-  for (let i = 0; i < 5; i += 1) {
+  for (let i = 1; i <= 5; i += 1) {
     calls.push(getHeightFromRPC(`https://node.glif.io/0${i}/rpc/v0`))
   }
 
@@ -64,15 +67,15 @@ const collectHeights = async () => {
   return filterOutBadNodes(heights)
 }
 
-// simple compute - take the average of the heightsToCompare,
-// if the height is greater than +/- 15 away from the average,
-// its an unhealthy node
+// simple compute - sort the array,
+// see if the node is TIPSET_PADDING blocks + than the highest height, or
+// TIPSET_PADDING blocks - the lowest height
 const computeScore = (height, heightsToCompare) => {
-  const avg = Math.round(
-    heightsToCompare.reduce((sum, h) => sum + h, 0) /
-      Number(heightsToCompare.length)
-  )
-  return Math.abs(height - avg) > 15 ? 1 : 2
+  heightsToCompare.sort((a, b) => a - b)
+  const nodeFarAhead =
+    height > heightsToCompare[heightsToCompare.length - 1] + TIPSET_PADDING
+  const nodeFarBehind = height < heightsToCompare[0] - TIPSET_PADDING
+  return nodeFarAhead || nodeFarBehind ? 1 : 2
 }
 
 export default async (apiAddress, token = '') => {
@@ -89,6 +92,12 @@ export default async (apiAddress, token = '') => {
     const chainHead = await client.request('ChainHead')
     return computeScore(chainHead.Height, heights)
   } catch (err) {
+    reportError(
+      'components/Shared/NodeConnected/connectionStrength.js:1',
+      false,
+      err.message,
+      err.stack
+    )
     return 0
   }
 }
