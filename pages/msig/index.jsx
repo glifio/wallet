@@ -5,7 +5,7 @@ import { MsigOnboard } from '../../components/Msig'
 export default () => {
   useDesktopBrowser()
   const router = useRouter()
-  if (!process.env.IS_DEV) {
+  if (process.env.IS_PROD) {
     router.replace('/')
     return <></>
   }
