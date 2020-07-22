@@ -5,7 +5,7 @@ import RequireWallet from '../../lib/RequireWallet'
 
 export default () => {
   const router = useRouter()
-  if (!process.env.IS_DEV) {
+  if (process.env.IS_PROD) {
     router.replace('/')
     return <></>
   }
