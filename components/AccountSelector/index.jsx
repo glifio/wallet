@@ -63,9 +63,9 @@ const AccountSelector = ({ investor, msig }) => {
 
           if (provider) {
             const addresses = await provider.wallet.getAccounts(
+              network,
               walletsInRdx.length,
-              1,
-              network
+              5
             )
 
             await Promise.all(
@@ -135,9 +135,9 @@ const AccountSelector = ({ investor, msig }) => {
 
       if (provider) {
         const [address] = await provider.wallet.getAccounts(
+          network,
           walletsInRdx.length,
-          walletsInRdx.length + 1,
-          network
+          walletsInRdx.length + 1
         )
 
         const balance = await provider.getBalance(address)

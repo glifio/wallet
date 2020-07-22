@@ -196,10 +196,10 @@ const MessageDetail = ({ address, close, message }) => {
           <StyledATag
             rel='noopener noreferrer'
             target='_blank'
-            href={`https://filscan.io/#/message/detail?cid=${message.cid}`}
+            href={`https://filscout.io/en/pc/message/${message.cid}`}
           >
             <Label color='core.primary' textAlign='left' m={1}>
-              View on Filscan
+              View on Filscout
             </Label>
           </StyledATag>
         </Box>

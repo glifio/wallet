@@ -9,9 +9,11 @@ export default async (id, shouldSendToErrorPage, ...args) => {
     },
     [`WALLET:${id}\n`]
   )
-  await axios.post(
-    'https://errors.glif.io',
-    JSON.stringify({ text: errorText })
-  )
+  if (process.env.IS_PROD) {
+    await axios.post(
+      'https://errors.glif.io',
+      JSON.stringify({ text: errorText })
+    )
+  }
   if (shouldSendToErrorPage) Router.push('/error/wallet-down')
 }

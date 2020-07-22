@@ -189,7 +189,7 @@ exports[`WalletDown it renders the error page 1`] = `
           font-size="4"
           font-weight="400"
         >
-          Glif is currently down
+          Oops! Something went wrong.
         </h2>
         <p
           class="c7"
@@ -197,7 +197,7 @@ exports[`WalletDown it renders the error page 1`] = `
           font-size="3"
           font-weight="400"
         >
-          We're aware of the outage and will be back up shortly.
+          We've been notified of the problem.
         </p>
       </div>
       <div
@@ -207,11 +207,11 @@ exports[`WalletDown it renders the error page 1`] = `
           class="c8"
           color="core.white"
           font-size="3"
-          href="https://twitter.com/"
+          href="https://twitter.com/openworklabs"
           rel="noopener"
           target="_blank"
         >
-          Follow @glifwallet for updates.
+          Follow @openworklabs for updates.
         </a>
       </div>
     </div>

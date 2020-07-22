@@ -22,7 +22,7 @@ export default () => {
     dispatch,
     fetchDefaultWallet,
     setWalletType,
-    walletSubproviders
+    walletSubproviders: { SingleKeyProvider }
   } = useWalletProvider()
   const [privateKey, setPrivateKey] = useState('')
   const [privateKeyError, setPrivateKeyError] = useState('')
@@ -34,10 +34,9 @@ export default () => {
     try {
       setLoadingNextScreen(true)
       setPrivateKey('')
-      const provider = new Filecoin(
-        new walletSubproviders.SingleKeyProvider(privateKey),
-        { apiAddress: process.env.LOTUS_NODE_JSONRPC }
-      )
+      const provider = new Filecoin(SingleKeyProvider(privateKey), {
+        apiAddress: process.env.LOTUS_NODE_JSONRPC
+      })
       dispatch(createWalletProvider(provider))
       const wallet = await fetchDefaultWallet(provider)
       dispatchRdx(walletList([wallet]))

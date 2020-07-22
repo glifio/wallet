@@ -17,11 +17,11 @@ import { createWalletProvider } from '../../WalletProvider/state'
 import createTransport from './createTransport'
 import reportError from '../reportError'
 
-export const setLedgerProvider = async (dispatch, network, LedgerProvider) => {
+export const setLedgerProvider = async (dispatch, LedgerProvider) => {
   dispatch({ type: LEDGER_USER_INITIATED_IMPORT })
   try {
     const transport = await createTransport()
-    const provider = new Filecoin(new LedgerProvider(transport), {
+    const provider = new Filecoin(LedgerProvider(transport), {
       apiAddress: process.env.LOTUS_NODE_JSONRPC,
       token:
         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.o3TfBPHxe3i6xW2Lo9x9W0mlvFOtJsJXBWmYBSMH2yI'
@@ -37,14 +37,14 @@ export const setLedgerProvider = async (dispatch, network, LedgerProvider) => {
       dispatch({ type: LEDGER_USED_BY_ANOTHER_APP })
     } else if (
       err.message &&
-      !err.message.toLowerCase().includes('device is already open')
-    ) {
-      dispatch({ type: LEDGER_NOT_FOUND })
-    } else if (
-      err.message &&
       err.message.toLowerCase().includes('transporterror: invalid channel')
     ) {
       dispatch({ type: LEDGER_REPLUG })
+    } else if (
+      err.message &&
+      err.message.toLowerCase().includes('no device selected')
+    ) {
+      dispatch({ type: LEDGER_NOT_FOUND })
     }
     reportError(
       5,
@@ -60,6 +60,7 @@ export const checkLedgerConfiguration = async (dispatch, walletProvider) => {
   dispatch({ type: LEDGER_ESTABLISHING_CONNECTION_W_FILECOIN_APP })
   try {
     const response = await walletProvider.wallet.getVersion()
+
     if (response.device_locked) {
       dispatch({ type: LEDGER_LOCKED })
       return false

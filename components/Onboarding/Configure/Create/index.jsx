@@ -32,8 +32,9 @@ const Create = ({ initialWalkthroughStep }) => {
   const {
     dispatch,
     fetchDefaultWallet,
-    walletSubproviders
+    walletSubproviders: { HDWalletProvider }
   } = useWalletProvider()
+
   const dispatchRdx = useDispatch()
 
   const nextStep = () => {
@@ -52,10 +53,9 @@ const Create = ({ initialWalkthroughStep }) => {
   useEffect(() => {
     const instantiateProvider = async () => {
       try {
-        const provider = new Filecoin(
-          new walletSubproviders.HDWalletProvider(mnemonic),
-          { apiAddress: process.env.LOTUS_NODE_JSONRPC }
-        )
+        const provider = new Filecoin(HDWalletProvider(mnemonic), {
+          apiAddress: process.env.LOTUS_NODE_JSONRPC
+        })
         dispatch(createWalletProvider(provider))
         const wallet = await fetchDefaultWallet(provider)
         dispatchRdx(walletList([wallet]))
@@ -74,7 +74,7 @@ const Create = ({ initialWalkthroughStep }) => {
     mnemonic,
     router,
     walkthroughStep,
-    walletSubproviders.HDWalletProvider
+    HDWalletProvider
   ])
 
   return (
