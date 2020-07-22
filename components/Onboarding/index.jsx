@@ -3,7 +3,6 @@ import ChooseWallet from './Choose'
 import ConfigureWallet from './Configure'
 import { Box } from '../Shared'
 import useWallet from '../../WalletProvider/useWallet'
-import NodeConnectedWidget from '../Shared/NodeConnected'
 
 export default () => {
   const wallet = useWallet()
@@ -15,7 +14,6 @@ export default () => {
       alignContent='center'
       padding={[2, 3, 5]}
     >
-      <NodeConnectedWidget apiAddress={process.env.LOTUS_NODE_JSONRPC} />
       {wallet.type ? (
         <ConfigureWallet walletType={wallet.type} />
       ) : (
