@@ -17,7 +17,9 @@ module.exports = {
     '@openworklabs/filecoin-number':
       '<rootDir>/test-utils/mocks/mock-filecoin-number.js',
     '@openworklabs/filecoin-wallet-provider':
-      '<rootDir>/test-utils/mocks/mock-wallet-provider.js'
+      '<rootDir>/test-utils/mocks/mock-wallet-provider.js',
+    '@zondax/ledger-filecoin':
+      '<rootDir>/test-utils/mocks/mock-ledger-filecoin.js'
   },
   setupFilesAfterEnv: ['./jest.setup.js']
 }

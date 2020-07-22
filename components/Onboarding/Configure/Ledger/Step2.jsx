@@ -94,7 +94,7 @@ Step2Helper.defaultProps = {
 }
 
 const Step2 = ({ investor, msig }) => {
-  const { ledger, fetchDefaultWallet, walletProvider } = useWalletProvider()
+  const { ledger, fetchDefaultWallet } = useWalletProvider()
   const dispatch = useDispatch()
   const resetState = useReset()
   // TODO: fix hack to ignore proptype errors => || null
@@ -118,7 +118,7 @@ const Step2 = ({ investor, msig }) => {
   const onClick = async () => {
     setLoading(true)
     try {
-      const wallet = await fetchDefaultWallet(walletProvider)
+      const wallet = await fetchDefaultWallet()
       if (wallet) {
         dispatch(walletList([wallet]))
         routeToNextPage()

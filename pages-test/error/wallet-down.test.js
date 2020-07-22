@@ -28,7 +28,7 @@ describe('WalletDown', () => {
     )
 
     expect(
-      screen.getByText("We're aware of the outage and will be back up shortly.")
+      screen.getByText("We've been notified of the problem.")
     ).toBeInTheDocument()
   })
 

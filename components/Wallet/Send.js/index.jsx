@@ -165,7 +165,7 @@ const Send = ({ close }) => {
         params: ''
       })
 
-      const signedMessage = await provider.wallet.sign(wallet.path, message)
+      const signedMessage = await provider.wallet.sign(message, wallet.path)
       const messageObj = message.toString()
       const msgCid = await provider.sendMessage(messageObj, signedMessage)
       messageObj.cid = msgCid['/']

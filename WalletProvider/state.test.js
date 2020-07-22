@@ -123,54 +123,32 @@ describe('WalletProvider', () => {
       })
       test('ledger user initiated import', () => {
         const {
-          ledger: {
-            connecting,
-            connectedFailure,
-            connectedSuccess,
-            userInitiatedImport
-          }
+          ledger: { connecting, connectedFailure }
         } = reducer(initialState, {
           type: LEDGER_USER_INITIATED_IMPORT
         })
         expect(connecting).toEqual(true)
         expect(connectedFailure).toEqual(false)
-        expect(connectedSuccess).toEqual(false)
-        expect(userInitiatedImport).toEqual(true)
       })
 
       test('ledger not found', () => {
         const {
-          ledger: {
-            connecting,
-            connectedFailure,
-            connectedSuccess,
-            userInitiatedImport
-          }
+          ledger: { connecting, connectedFailure }
         } = reducer(postImportInitiationState, {
           type: LEDGER_NOT_FOUND
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(true)
-        expect(connectedSuccess).toEqual(false)
-        expect(userInitiatedImport).toEqual(true)
       })
 
       test('ledger connected', () => {
         const {
-          ledger: {
-            connecting,
-            connectedFailure,
-            connectedSuccess,
-            userInitiatedImport,
-            inUseByAnotherApp
-          }
+          ledger: { connecting, connectedFailure, inUseByAnotherApp }
         } = reducer(postImportInitiationState, {
           type: LEDGER_CONNECTED
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(false)
-        expect(connectedSuccess).toEqual(true)
-        expect(userInitiatedImport).toEqual(true)
         expect(inUseByAnotherApp).toEqual(false)
       })
 
@@ -179,11 +157,7 @@ describe('WalletProvider', () => {
           ledger: {
             connecting,
             connectedFailure,
-            connectedSuccess,
-            userInitiatedImport,
             inUseByAnotherApp,
-            establishingConnectionWFilecoinApp,
-            filecoinAppOpen,
             filecoinAppNotOpen,
             locked,
             unlocked,
@@ -195,11 +169,7 @@ describe('WalletProvider', () => {
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(false)
-        expect(connectedSuccess).toEqual(true)
-        expect(userInitiatedImport).toEqual(true)
         expect(inUseByAnotherApp).toEqual(false)
-        expect(establishingConnectionWFilecoinApp).toEqual(true)
-        expect(filecoinAppOpen).toEqual(false)
         expect(filecoinAppNotOpen).toEqual(false)
         expect(locked).toEqual(false)
         expect(unlocked).toEqual(false)
@@ -212,11 +182,7 @@ describe('WalletProvider', () => {
           ledger: {
             connecting,
             connectedFailure,
-            connectedSuccess,
-            userInitiatedImport,
             inUseByAnotherApp,
-            establishingConnectionWFilecoinApp,
-            filecoinAppOpen,
             filecoinAppNotOpen,
             locked,
             unlocked,
@@ -228,11 +194,7 @@ describe('WalletProvider', () => {
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(false)
-        expect(connectedSuccess).toEqual(true)
-        expect(userInitiatedImport).toEqual(true)
         expect(inUseByAnotherApp).toEqual(false)
-        expect(establishingConnectionWFilecoinApp).toEqual(false)
-        expect(filecoinAppOpen).toEqual(false)
         expect(filecoinAppNotOpen).toEqual(false)
         expect(locked).toEqual(true)
         expect(unlocked).toEqual(false)
@@ -245,11 +207,7 @@ describe('WalletProvider', () => {
           ledger: {
             connecting,
             connectedFailure,
-            connectedSuccess,
-            userInitiatedImport,
             inUseByAnotherApp,
-            establishingConnectionWFilecoinApp,
-            filecoinAppOpen,
             filecoinAppNotOpen,
             locked,
             unlocked,
@@ -261,11 +219,7 @@ describe('WalletProvider', () => {
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(false)
-        expect(connectedSuccess).toEqual(true)
-        expect(userInitiatedImport).toEqual(true)
         expect(inUseByAnotherApp).toEqual(false)
-        expect(establishingConnectionWFilecoinApp).toEqual(false)
-        expect(filecoinAppOpen).toEqual(false)
         expect(filecoinAppNotOpen).toEqual(false)
         expect(locked).toEqual(false)
         expect(unlocked).toEqual(true)
@@ -278,11 +232,7 @@ describe('WalletProvider', () => {
           ledger: {
             connecting,
             connectedFailure,
-            connectedSuccess,
-            userInitiatedImport,
             inUseByAnotherApp,
-            establishingConnectionWFilecoinApp,
-            filecoinAppOpen,
             filecoinAppNotOpen,
             locked,
             unlocked,
@@ -294,11 +244,7 @@ describe('WalletProvider', () => {
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(false)
-        expect(connectedSuccess).toEqual(true)
-        expect(userInitiatedImport).toEqual(true)
         expect(inUseByAnotherApp).toEqual(false)
-        expect(establishingConnectionWFilecoinApp).toEqual(false)
-        expect(filecoinAppOpen).toEqual(false)
         expect(filecoinAppNotOpen).toEqual(true)
         expect(locked).toEqual(false)
         expect(unlocked).toEqual(true)
@@ -311,11 +257,7 @@ describe('WalletProvider', () => {
           ledger: {
             connecting,
             connectedFailure,
-            connectedSuccess,
-            userInitiatedImport,
             inUseByAnotherApp,
-            establishingConnectionWFilecoinApp,
-            filecoinAppOpen,
             filecoinAppNotOpen,
             locked,
             unlocked,
@@ -327,11 +269,7 @@ describe('WalletProvider', () => {
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(false)
-        expect(connectedSuccess).toEqual(true)
-        expect(userInitiatedImport).toEqual(true)
         expect(inUseByAnotherApp).toEqual(false)
-        expect(establishingConnectionWFilecoinApp).toEqual(false)
-        expect(filecoinAppOpen).toEqual(true)
         expect(filecoinAppNotOpen).toEqual(false)
         expect(locked).toEqual(false)
         expect(unlocked).toEqual(true)
@@ -344,11 +282,7 @@ describe('WalletProvider', () => {
           ledger: {
             connecting,
             connectedFailure,
-            connectedSuccess,
-            userInitiatedImport,
             inUseByAnotherApp,
-            establishingConnectionWFilecoinApp,
-            filecoinAppOpen,
             filecoinAppNotOpen,
             locked,
             unlocked,
@@ -360,11 +294,7 @@ describe('WalletProvider', () => {
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(false)
-        expect(connectedSuccess).toEqual(true)
-        expect(userInitiatedImport).toEqual(true)
         expect(inUseByAnotherApp).toEqual(false)
-        expect(establishingConnectionWFilecoinApp).toEqual(false)
-        expect(filecoinAppOpen).toEqual(false)
         expect(filecoinAppNotOpen).toEqual(false)
         expect(locked).toEqual(false)
         expect(unlocked).toEqual(false)
@@ -377,11 +307,7 @@ describe('WalletProvider', () => {
           ledger: {
             connecting,
             connectedFailure,
-            connectedSuccess,
-            userInitiatedImport,
             inUseByAnotherApp,
-            establishingConnectionWFilecoinApp,
-            filecoinAppOpen,
             filecoinAppNotOpen,
             locked,
             unlocked,
@@ -393,11 +319,7 @@ describe('WalletProvider', () => {
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(false)
-        expect(connectedSuccess).toEqual(true)
-        expect(userInitiatedImport).toEqual(true)
         expect(inUseByAnotherApp).toEqual(false)
-        expect(establishingConnectionWFilecoinApp).toEqual(false)
-        expect(filecoinAppOpen).toEqual(false)
         expect(filecoinAppNotOpen).toEqual(false)
         expect(locked).toEqual(false)
         expect(unlocked).toEqual(false)
@@ -410,11 +332,7 @@ describe('WalletProvider', () => {
           ledger: {
             connecting,
             connectedFailure,
-            connectedSuccess,
-            userInitiatedImport,
             inUseByAnotherApp,
-            establishingConnectionWFilecoinApp,
-            filecoinAppOpen,
             filecoinAppNotOpen,
             locked,
             unlocked,
@@ -426,11 +344,7 @@ describe('WalletProvider', () => {
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(false)
-        expect(connectedSuccess).toEqual(true)
-        expect(userInitiatedImport).toEqual(true)
         expect(inUseByAnotherApp).toEqual(true)
-        expect(establishingConnectionWFilecoinApp).toEqual(false)
-        expect(filecoinAppOpen).toEqual(false)
         expect(filecoinAppNotOpen).toEqual(false)
         expect(locked).toEqual(false)
         expect(unlocked).toEqual(false)
