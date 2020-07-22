@@ -20,30 +20,25 @@ export const useMsig = msigActorID => {
         apiAddress: process.env.LOTUS_NODE_JSONRPC
       })
       try {
-        setActorState({
-          Balance: new FilecoinNumber(50, 'fil'),
-          AvailableBalance: new FilecoinNumber(100, 'fil')
-        })
-        // const res = await Promise.all([
-        //   lotus.request('StateReadState', msigActorID, null),
-        //   lotus.request('MsigGetAvailableBalance', msigActorID, null)
-        // ])
+        const res = await Promise.all([
+          lotus.request('StateReadState', msigActorID, null),
+          lotus.request('MsigGetAvailableBalance', msigActorID, null)
+        ])
 
-        // if (res.length === 2) {
-        //   const nextState = {
-        //     Balance: new FilecoinNumber(res[0].Balance, 'attofil'),
-        //     AvailableBalance: new FilecoinNumber(res[1], 'attofil'),
-        //     ...res[0].State
-        //   }
-        //   console.log(res[0])
-        //   setActorState(nextState)
-        // } else {
-        //   reportError(
-        //     21,
-        //     true,
-        //     'Something went wrong fetching msig states, without catching an error'
-        //   )
-        // }
+        if (res.length === 2) {
+          const nextState = {
+            Balance: new FilecoinNumber(res[0].Balance, 'attofil'),
+            AvailableBalance: new FilecoinNumber(res[1], 'attofil'),
+            ...res[0].State
+          }
+          setActorState(nextState)
+        } else {
+          reportError(
+            21,
+            true,
+            'Something went wrong fetching msig states, without catching an error'
+          )
+        }
       } catch (err) {
         reportError(22, true, err.message, err.stack)
       }
