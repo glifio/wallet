@@ -5,7 +5,13 @@ import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
 const AvailableBalance = ({ available }) => {
   return (
-    <Box display='flex' flexDirection='column' alignItems='center'>
+    <Box
+      display='flex'
+      flexDirection='column'
+      alignItems='center'
+      width='100%'
+      p={4}
+    >
       <Label mb={1} textAlign='center'>
         Available
       </Label>
@@ -21,7 +27,13 @@ AvailableBalance.propTypes = {
 }
 
 const TotalBalance = ({ total }) => (
-  <Box display='flex' flexDirection='column' alignItems='center'>
+  <Box
+    display='flex'
+    flexDirection='column'
+    alignItems='center'
+    width='100%'
+    p={4}
+  >
     <Label mb={1} textAlign='center'>
       Total Vesting
     </Label>
@@ -37,7 +49,12 @@ TotalBalance.propTypes = {
 
 const Balances = ({ available, total }) => {
   return (
-    <Box display='flex' flexDirection='column' alignItems='center' width='100%'>
+    <Box
+      display='flex'
+      flexDirection='column'
+      alignItems='center'
+      justifyContent='center'
+    >
       <AvailableBalance available={available} />
       <TotalBalance total={total} />
     </Box>

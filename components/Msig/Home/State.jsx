@@ -36,7 +36,7 @@ const State = ({
     resetState()
   }
   return (
-    <Box display='flex' flexDirection='row'>
+    <Box display='flex' flexDirection='row' minHeight='100vh'>
       <AccountInfo
         msigAddress={msigAddress}
         walletAddress={walletAddress}
@@ -49,13 +49,21 @@ const State = ({
         setChangingOwner={setChangingOwner}
         reset={reset}
       />
-      <Box display='flex' flexDirection='column'>
+      <Box
+        display='flex'
+        flexDirection='column'
+        flexGrow='1'
+        alignItems='center'
+        justifyContent='center'
+        minHeight='100%'
+      >
         <Balances available={available} total={total} />
         <Button
           type='button'
           variant='primary'
           onClick={setWithdrawing}
           title='Withdraw'
+          maxWidth={9}
         />
       </Box>
     </Box>
