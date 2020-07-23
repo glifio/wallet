@@ -2,15 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
-import {
-  Box,
-  Glyph,
-  CopyAddress,
-  Text,
-  BigTitle,
-  Button,
-  IconLedger
-} from '../../Shared'
+import { Box, Glyph, CopyAddress, Text, Button, IconLedger } from '../../Shared'
 import truncateAddress from '../../../utils/truncateAddress'
 
 const AccountInfo = ({
@@ -24,32 +16,32 @@ const AccountInfo = ({
 }) => {
   return (
     <Box>
-      <Box
-        display='flex'
-        flexDirection='column'
-        justifyContent='space-between'
-        width='300px'
-        height='300px'
-        borderRadius={3}
-        p={3}
-        color='card.account.color'
-        bg='card.account.background'
-        boxShadow={1}
-      >
+      <Box display='flex' flexDirection='column' boxShadow={2} borderRadius={3}>
         <Box
           display='flex'
-          alignItems='center'
-          justifyContent='flex-start'
+          flexDirection='column'
+          width={11}
+          height={8}
+          borderTopLeftRadius={3}
+          borderTopRightRadius={3}
+          p={3}
           color='card.account.color'
+          bg='card.account.background'
         >
-          <Glyph mr={3} color='card.account.color' acronym='Ms' />
-          <Text>Multisig Actor</Text>
-        </Box>
-        <Box color='card.account.color'>
-          <BigTitle>Address</BigTitle>
-          <CopyAddress address={msigAddress} />
-        </Box>
-        <Box>
+          <Box
+            display='flex'
+            alignItems='center'
+            justifyContent='flex-start'
+            color='card.account.color'
+          >
+            <Glyph mr={3} color='card.account.color' acronym='Ms' />
+            <Box color='card.account.color'>
+              <Text m={0}>Multisig Actor</Text>
+              <CopyAddress address={msigAddress} />
+            </Box>
+          </Box>
+
+          {/* <Box>
           <Button
             variant='tertiary'
             title='Change Owner'
@@ -58,57 +50,67 @@ const AccountInfo = ({
             p={2}
             py={2}
           />
+        </Box> */}
         </Box>
-      </Box>
-      <Box
-        display='flex'
-        flexDirection='column'
-        justifyContent='space-between'
-        width='300px'
-        height='auto'
-        borderRadius={3}
-        border={1}
-        p={3}
-        mt={3}
-      >
-        {error ? (
-          <>
-            <Box display='flex' flexDirection='row'>
-              <IconLedger />
-              <Text m={0} ml={2} lineHeight='2'>
-                Error
-              </Text>
-            </Box>
-            <Box display='flex' flexDirection='column'>
-              <Text color='core.primary'>{error}</Text>
-              <Button
-                type='button'
-                variant='secondary'
-                title='Retry'
-                onClick={reset}
-              />
-            </Box>
-          </>
-        ) : (
-          <>
-            <Box display='flex' flexDirection='row'>
-              <IconLedger />
-              <Text m={0} ml={2} lineHeight='2'>
-                Linked to Ledger Device
-              </Text>
-            </Box>
-            <Box display='flex' flexDirection='row'>
-              <Text color='core.primary'>{truncateAddress(walletAddress)}</Text>
-              <Button
-                type='button'
-                variant='secondary'
-                title='Show on device'
-                disabled={ledgerBusy}
-                onClick={showOnDevice}
-              />
-            </Box>
-          </>
-        )}
+        <Box
+          display='flex'
+          flexDirection='column'
+          justifyContent='space-between'
+          width={11}
+          height='auto'
+          borderBottomLeftRadius={3}
+          borderBottomRightRadius={3}
+          p={3}
+        >
+          {error ? (
+            <>
+              <Box display='flex' flexDirection='row'>
+                <IconLedger />
+                <Text m={0} ml={2} lineHeight='2'>
+                  Error
+                </Text>
+              </Box>
+              <Box display='flex' flexDirection='column'>
+                <Text color='core.primary'>{error}</Text>
+                <Button
+                  type='button'
+                  variant='secondary'
+                  title='Retry'
+                  onClick={reset}
+                />
+              </Box>
+            </>
+          ) : (
+            <>
+              <Box display='flex' flexDirection='row'>
+                <Box>
+                  <IconLedger />
+                </Box>
+                <Text m={0} ml={2} fontSize={3} lineHeight='2'>
+                  Linked to Ledger Device
+                </Text>
+              </Box>
+              <Box
+                display='flex'
+                flexDirection='row'
+                justifyContent='space-between'
+              >
+                <Text color='core.primary'>
+                  {truncateAddress(walletAddress)}
+                </Text>
+                <Button
+                  p={2}
+                  border={0}
+                  type='button'
+                  variant='secondary'
+                  title='VIEW'
+                  disabled={ledgerBusy}
+                  onClick={showOnDevice}
+                />
+              </Box>
+            </>
+          )}
+        </Box>
       </Box>
     </Box>
   )
