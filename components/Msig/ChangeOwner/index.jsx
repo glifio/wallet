@@ -41,7 +41,7 @@ const ChangeOwner = ({ address, balance, close }) => {
     resetLedgerState
   } = useWalletProvider()
   const wallet = useWallet()
-  const { serializeParams, transactionSerialize } = useWasm()
+  const { serializeParams } = useWasm()
 
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
@@ -62,14 +62,14 @@ const ChangeOwner = ({ address, balance, close }) => {
     try {
       // create a fake message
       const innerParams = {
-        to: toAddress,
-        from: wallet.address
+        To: toAddress,
+        From: wallet.address
       }
 
       const serializedInnerParams = Buffer.from(
         serializeParams(innerParams),
         'hex'
-      ).toString('base64')
+      ).toString('hex')
 
       const innerMessage = {
         to: address,
@@ -78,7 +78,10 @@ const ChangeOwner = ({ address, balance, close }) => {
         params: serializedInnerParams
       }
 
-      const serializedInnerMessage = transactionSerialize(innerMessage)
+      const serializedInnerMessage = Buffer.from(
+        serializeParams(innerMessage),
+        'hex'
+      ).toString('base64')
 
       message = new Message({
         to: address,
@@ -92,7 +95,7 @@ const ChangeOwner = ({ address, balance, close }) => {
       })
     } catch (err) {
       reportError(23, false, err)
-      setUncaughtError(err.message)
+      setUncaughtError(err.message || err)
     }
     // HMR causes this condition, we just make this check for easier dev purposes
     return walletProvider
@@ -113,7 +116,7 @@ const ChangeOwner = ({ address, balance, close }) => {
       const serializedInnerParams = Buffer.from(
         serializeParams(innerParams),
         'hex'
-      ).toString('base64')
+      ).toString('hex')
 
       const innerMessage = {
         to: address,
@@ -122,9 +125,12 @@ const ChangeOwner = ({ address, balance, close }) => {
         params: serializedInnerParams
       }
 
-      const serializedInnerMessage = transactionSerialize(innerMessage)
+      const serializedInnerMessage = Buffer.from(
+        serializeParams(innerMessage),
+        'hex'
+      )
 
-      const message = new Message({
+      const messageForSigning = new Message({
         to: address,
         from: wallet.address,
         value: '0',
@@ -132,16 +138,31 @@ const ChangeOwner = ({ address, balance, close }) => {
         gasPrice: gasPrice.toAttoFil(),
         gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
         nonce,
-        params: serializedInnerMessage
+        params: serializedInnerMessage.toString('hex')
       })
 
-      const signedMessage = await provider.wallet.sign(wallet.path, message)
-      const messageObj = message.toString()
+      const signedMessage = await provider.wallet.sign(
+        messageForSigning,
+        wallet.path
+      )
+
+      const messageForLotus = new Message({
+        to: address,
+        from: wallet.address,
+        value: '0',
+        method: 2,
+        gasPrice: gasPrice.toAttoFil(),
+        gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
+        nonce,
+        params: serializedInnerMessage.toString('base64')
+      })
+
+      const messageObj = messageForLotus.toString()
       const msgCid = await provider.sendMessage(messageObj, signedMessage)
       messageObj.cid = msgCid['/']
       messageObj.timestamp = dayjs().unix()
       messageObj.gas_used = (
-        await walletProvider.estimateGas(message.encode())
+        await walletProvider.estimateGas(messageForLotus.encode())
       ).toAttoFil()
       messageObj.Value = new FilecoinNumber(messageObj.value, 'attofil').toFil()
       return messageObj
@@ -165,7 +186,7 @@ const ChangeOwner = ({ address, balance, close }) => {
         }
       } catch (err) {
         reportError(20, false, err.message, err.stack)
-        setUncaughtError(err.message)
+        setUncaughtError(err.message || err)
         setAttemptingTx(false)
         setStep(2)
       }
