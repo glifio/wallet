@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Label, BigTitle } from '../../Shared'
+import { Box, Label, Num } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
@@ -15,9 +15,9 @@ const AvailableBalance = ({ available }) => {
       <Label mb={1} textAlign='center'>
         Available
       </Label>
-      <BigTitle color='core.primary'>
+      <Num size='xxl' color='core.primary'>
         {makeFriendlyBalance(available, 6, true)}
-      </BigTitle>
+      </Num>
     </Box>
   )
 }
@@ -37,9 +37,9 @@ const TotalBalance = ({ total }) => (
     <Label mb={1} textAlign='center'>
       Total Vesting
     </Label>
-    <BigTitle color='core.primary'>
+    <Num size='xxl' color='core.primary'>
       {makeFriendlyBalance(total, 6, true)}
-    </BigTitle>
+    </Num>
   </Box>
 )
 
