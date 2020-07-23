@@ -35,9 +35,12 @@ const AccountInfo = ({
             color='card.account.color'
           >
             <Glyph mr={3} color='card.account.color' acronym='Ms' />
-            <Box color='card.account.color'>
-              <Text m={0}>Multisig Actor</Text>
-              <CopyAddress address={msigAddress} />
+            <Box flexGrow='1' color='card.account.color'>
+              <Text m={0}>Multisig Account</Text>
+              <CopyAddress
+                justifyContent='space-between'
+                address={msigAddress}
+              />
             </Box>
           </Box>
 
@@ -82,31 +85,36 @@ const AccountInfo = ({
             </>
           ) : (
             <>
-              <Box display='flex' flexDirection='row'>
-                <Box>
-                  <IconLedger />
-                </Box>
-                <Text m={0} ml={2} fontSize={3} lineHeight='2'>
-                  Linked to Ledger Device
-                </Text>
-              </Box>
               <Box
                 display='flex'
                 flexDirection='row'
                 justifyContent='space-between'
               >
-                <Text color='core.primary'>
-                  {truncateAddress(walletAddress)}
-                </Text>
-                <Button
-                  p={2}
-                  border={0}
-                  type='button'
-                  variant='secondary'
-                  title='VIEW'
-                  disabled={ledgerBusy}
-                  onClick={showOnDevice}
-                />
+                <Box>
+                  <IconLedger />
+                </Box>
+                <Box display='flex' flexDirection='column'>
+                  <Text m={0} fontSize={3}>
+                    Linked to Ledger Device
+                  </Text>
+                  <Box
+                    display='flex'
+                    justifyContent='space-between'
+                    alignItems='center'
+                    flexGrow='1'
+                  >
+                    <Text m={0}>{truncateAddress(walletAddress)}</Text>
+                    <Button
+                      p={2}
+                      border={0}
+                      type='button'
+                      variant='secondary'
+                      title='VIEW'
+                      disabled={ledgerBusy}
+                      onClick={showOnDevice}
+                    />
+                  </Box>
+                </Box>
               </Box>
             </>
           )}
