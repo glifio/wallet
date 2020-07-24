@@ -12,7 +12,7 @@ export const CardHeader = ({ address, balance, customizingGas }) => {
     <Box
       width='100%'
       p={3}
-      border={1}
+      border={0}
       borderTopRightRadius={3}
       borderTopLeftRadius={3}
       bg='core.primary'
