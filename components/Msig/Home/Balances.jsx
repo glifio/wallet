@@ -1,22 +1,51 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
-import { Box, Label, Num, BaseButton } from '../../Shared'
+import styled, { keyframes } from 'styled-components'
+import { Box, Num, BaseButton } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
+// import { getByPlaceholderText } from '@testing-library/react'
+
+const ArrowFlow = keyframes`
+0% { transform:translateX(8px); opacity:0; }
+100% { transform:translateX(-8px); opacity:1; }
+`
+
+const Arrow = () => (
+  <Box
+    width={5}
+    display='flex'
+    fontSize={4}
+    alignItems='center'
+    justifyContent='center'
+    css={`
+      animation: ${ArrowFlow} 2s linear infinite;
+    `}
+  >
+    ←
+  </Box>
+)
 
 const TabButton = styled(BaseButton)`
+  position: relative;
+  height: ${props => props.theme.sizes[6]}px;
+  width: ${props => props.theme.sizes[9]}px;
   color: ${props => props.theme.colors.core.nearblack};
   margin-left: ${props => props.theme.sizes[3]}px;
   margin-right: ${props => props.theme.sizes[3]}px;
+  padding: 0;
   background: transparent;
-  align-content: center;
+  align-items: center;
   border: 1px solid;
   border-radius: ${props => props.theme.radii[6]};
-  padding-top: ${props => props.theme.sizes[3]}px;
-  padding-bottom: ${props => props.theme.sizes[3]}px;
-  padding-left: ${props => props.theme.sizes[4]}px;
-  padding-right: ${props => props.theme.sizes[4]}px;
+
   transition: 0.24s ease-in-out;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: ${props => props.theme.colors.core.secondary};
+  }
 
   &:hover {
     transform: translateY(-6%);
@@ -79,6 +108,7 @@ const Balances = ({ available, total }) => {
         <TabButton onClick={() => setViewAvailable(!viewAvailable)}>
           Available
         </TabButton>
+        <Arrow />
         <TabButton onClick={() => setViewAvailable(!viewAvailable)}>
           Total Vesting
         </TabButton>
