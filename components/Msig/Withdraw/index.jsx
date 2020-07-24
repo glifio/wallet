@@ -253,126 +253,143 @@ const Withdrawing = ({ address, balance, close }) => {
                   <WithdrawHeaderText step={step} />
                 </>
               )}
-
-            <CardHeader
-              address={address}
-              balance={balance}
-              customizingGas={customizingGas}
-            />
-            {!customizingGas && (
-              <>
-                <Box width='100%' p={3} border={0} bg='background.screen'>
-                  <Input.Address
-                    label='Recipient'
-                    value={toAddress}
-                    onChange={e => setToAddress(e.target.value)}
-                    error={toAddressError}
-                    disabled={step === 3}
-                    onFocus={() => {
-                      if (toAddressError) setToAddressError('')
-                    }}
-                  />
-                </Box>
-                {step > 1 && (
+            <Box boxShadow={2} borderRadius={4}>
+              <CardHeader
+                address={address}
+                balance={balance}
+                customizingGas={customizingGas}
+              />
+              {!customizingGas && (
+                <>
                   <Box width='100%' p={3} border={0} bg='background.screen'>
-                    <Input.Funds
-                      name='amount'
-                      label='Amount'
-                      amount={value.toAttoFil()}
-                      onAmountChange={setValue}
-                      balance={balance}
-                      error={valueError}
-                      setError={setValueError}
-                      // since the ledger device pays the gas fee, we dont include that in the funds input
-                      gasLimit={new FilecoinNumber('0', 'attofil')}
+                    <Input.Address
+                      label='Recipient'
+                      value={toAddress}
+                      onChange={e => setToAddress(e.target.value)}
+                      error={toAddressError}
                       disabled={step === 3}
+                      onFocus={() => {
+                        if (toAddressError) setToAddressError('')
+                      }}
                     />
                   </Box>
-                )}
-                {step > 2 && (
+                  {step > 1 && (
+                    <Box
+                      width='100%'
+                      p={3}
+                      border={0}
+                      bg='background.screen'
+                      // boxShadow={2}
+                    >
+                      <Input.Funds
+                        name='amount'
+                        label='Amount'
+                        amount={value.toAttoFil()}
+                        onAmountChange={setValue}
+                        balance={balance}
+                        error={valueError}
+                        setError={setValueError}
+                        // since the ledger device pays the gas fee, we dont include that in the funds input
+                        gasLimit={new FilecoinNumber('0', 'attofil')}
+                        disabled={step === 3}
+                      />
+                    </Box>
+                  )}
+                  {step > 2 && (
+                    <Box
+                      display='flex'
+                      flexDirection='row'
+                      justifyContent='space-between'
+                      width='100%'
+                      p={3}
+                      border={0}
+                      bg='background.screen'
+                    >
+                      <Box>
+                        <Text margin={0}>Transaction Fee</Text>
+                        <Box display='flex' alignItems='center'>
+                          <Text margin={0} color='core.darkgray'>
+                            Paid via
+                          </Text>
+                          <IconLedger height='32px' />{' '}
+                          <Text margin={0} color='core.darkgray'>
+                            {makeFriendlyBalance(wallet.balance, 2, true)} FIL
+                          </Text>
+                        </Box>
+                      </Box>
+                      <Box display='flex' flexDirection='row'>
+                        <Button
+                          p={2}
+                          alignSelf='center'
+                          title='Change'
+                          variant='secondary'
+                          onClick={() => setCustomizingGas(true)}
+                        />
+                        <Text ml={2} color='core.primary'>
+                          {'< 0.0001 FIL'}
+                        </Text>
+                      </Box>
+                    </Box>
+                  )}
+                </>
+              )}
+              {customizingGas && (
+                <GasCustomization
+                  show
+                  estimateGas={estimateGas}
+                  gasPrice={gasPrice}
+                  gasLimit={gasLimit}
+                  setGasPrice={setGasPrice}
+                  setGasLimit={setGasLimit}
+                  setEstimatedGas={setEstimatedGasUsed}
+                  estimatedGasUsed={estimatedGasUsed}
+                  value={value.toAttoFil()}
+                  walletBalance={makeFriendlyBalance(wallet.balance, 6, true)}
+                  close={() => setCustomizingGas(false)}
+                />
+              )}
+              {step > 2 && !customizingGas && (
+                <Box
+                  display='flex'
+                  flexDirection='row'
+                  alignItems='flex-start'
+                  justifyContent='space-between'
+                  py={3}
+                  px={3}
+                  bg='background.screen'
+                  borderBottomLeftRadius={3}
+                  borderBottomRightRadius={3}
+                >
+                  <Title fontSize={4} alignSelf='flex-start'>
+                    Total
+                  </Title>
                   <Box
                     display='flex'
-                    flexDirection='row'
-                    justifyContent='space-between'
-                    width='100%'
-                    p={3}
-                    border={0}
-                    bg='background.screen'
+                    flexDirection='column'
+                    textAlign='right'
+                    pl={4}
                   >
-                    <Box>
-                      <Text margin={0}>Transaction Fee</Text>
-                      <Text margin={0} color='core.darkgray'>
-                        Paid via <IconLedger />{' '}
-                        {makeFriendlyBalance(wallet.balance, 6, true)} FIL
-                      </Text>
-                    </Box>
-                    <Box display='flex' flexDirection='row'>
-                      <Button
-                        title='Change'
-                        variant='secondary'
-                        onClick={() => setCustomizingGas(true)}
-                      />
-                      <Text ml={2} color='core.primary'>
-                        {'< 0.0001 FIL'}
-                      </Text>
-                    </Box>
+                    <Num
+                      size='l'
+                      css={`
+                        word-wrap: break-word;
+                      `}
+                      color='core.primary'
+                    >
+                      {value.toFil()} FIL
+                    </Num>
+                    <Num size='m' color='core.darkgray'>
+                      {!converterError && value.isGreaterThan(0)
+                        ? `${makeFriendlyBalance(converter.fromFIL(value), 2)}`
+                        : '0'}{' '}
+                      USD
+                    </Num>
                   </Box>
-                )}
-              </>
-            )}
-          </Box>
-          {customizingGas && (
-            <GasCustomization
-              show
-              estimateGas={estimateGas}
-              gasPrice={gasPrice}
-              gasLimit={gasLimit}
-              setGasPrice={setGasPrice}
-              setGasLimit={setGasLimit}
-              setEstimatedGas={setEstimatedGasUsed}
-              estimatedGasUsed={estimatedGasUsed}
-              value={value.toAttoFil()}
-              walletBalance={makeFriendlyBalance(wallet.balance, 6, true)}
-              close={() => setCustomizingGas(false)}
-            />
-          )}
-          {step > 2 && !customizingGas && (
-            <Box
-              display='flex'
-              flexDirection='row'
-              alignItems='flex-start'
-              justifyContent='space-between'
-              py={3}
-              px={3}
-              bg='background.screen'
-            >
-              <Title fontSize={4} alignSelf='flex-start'>
-                Total
-              </Title>
-              <Box
-                display='flex'
-                flexDirection='column'
-                textAlign='right'
-                pl={4}
-              >
-                <Num
-                  size='l'
-                  css={`
-                    word-wrap: break-word;
-                  `}
-                  color='core.primary'
-                >
-                  {value.toFil()} FIL
-                </Num>
-                <Num size='m' color='core.darkgray'>
-                  {!converterError && value.isGreaterThan(0)
-                    ? `${makeFriendlyBalance(converter.fromFIL(value), 2)}`
-                    : '0'}{' '}
-                  USD
-                </Num>
-              </Box>
+                </Box>
+              )}
             </Box>
-          )}
+          </Box>
+
           <Box
             display='flex'
             flexDirection='row'
