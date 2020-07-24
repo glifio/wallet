@@ -55,7 +55,6 @@ const State = ({
         flexGrow='1'
         alignItems='center'
         justifyContent='center'
-        minHeight='100%'
       >
         <Balances available={available} total={total} />
         <Button
