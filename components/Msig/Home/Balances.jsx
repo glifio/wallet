@@ -37,9 +37,12 @@ const TabButton = styled(BaseButton)`
   align-items: center;
   border: 1px solid;
   border-radius: ${props => props.theme.radii[6]};
+  box-shadow: ${props =>
+    props.selected ? props.theme.shadows[2] : props.theme.shadows[0]};
 
   transition: 0.24s ease-in-out;
 
+  /* Used to visually render the real-time balance amount  */
   &:before {
     position: absolute;
     top: 0;
@@ -96,7 +99,6 @@ TotalBalance.propTypes = {
 
 const Balances = ({ available, total }) => {
   const [viewAvailable, setViewAvailable] = useState(true)
-
   return (
     <Box
       display='flex'
@@ -105,19 +107,29 @@ const Balances = ({ available, total }) => {
       justifyContent='center'
     >
       <Box display='flex' flexGrow='1' justifyContent='space-between'>
-        <TabButton onClick={() => setViewAvailable(!viewAvailable)}>
+        <TabButton
+          onClick={() => setViewAvailable(true)}
+          selected={viewAvailable}
+          percentage={available / total}
+        >
           Available
         </TabButton>
         <Arrow />
-        <TabButton onClick={() => setViewAvailable(!viewAvailable)}>
+        <TabButton
+          onClick={() => setViewAvailable(false)}
+          selected={!viewAvailable}
+          percentage={1 - available / total}
+        >
           Total Vesting
         </TabButton>
       </Box>
-      {viewAvailable ? (
-        <AvailableBalance available={available} />
-      ) : (
-        <TotalBalance total={total} />
-      )}
+      <Box my={5}>
+        {viewAvailable ? (
+          <AvailableBalance available={available} />
+        ) : (
+          <TotalBalance total={total} />
+        )}
+      </Box>
     </Box>
   )
 }
