@@ -15,7 +15,7 @@ const AccountInfo = ({
   error
 }) => {
   return (
-    <Box>
+    <Box position='absolute'>
       <Box display='flex' flexDirection='column' boxShadow={2} borderRadius={3}>
         <Box
           display='flex'
