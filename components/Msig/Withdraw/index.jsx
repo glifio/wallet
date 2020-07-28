@@ -250,7 +250,10 @@ const Withdrawing = ({ address, balance, close }) => {
                     totalSteps={4}
                     glyphAcronym='Wd'
                   />
-                  <WithdrawHeaderText step={step} />
+                  <WithdrawHeaderText
+                    step={step}
+                    customizingGas={customizingGas}
+                  />
                 </>
               )}
             <Box boxShadow={2} borderRadius={4}>
