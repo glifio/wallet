@@ -90,11 +90,12 @@ const GasCustomization = ({
 
   return (
     <form onSubmit={onSubmit}>
-      <Box mt={2} p={3}>
+      <Box p={3} bg='background.screen'>
         <Box display='flex' justifyContent='space-between' alignItems='center'>
           <Label my={3} pl={2} color='core.darkgray'>
             Transfers complete faster with a higher gas price.
           </Label>
+
           <StyledATag
             rel='noopener noreferrer'
             target='_blank'
@@ -146,23 +147,38 @@ const GasCustomization = ({
       >
         <Box>
           <Text margin={0}>Transaction Fee</Text>
+          <Box display='flex' alignItems='center'>
+            <Text margin={0} color='core.darkgray'>
+              Paid via
+            </Text>
+            <IconLedger height='32px' />{' '}
+            <Text margin={0} color='core.darkgray'>
+              {walletBalance} FIL
+            </Text>
+          </Box>
+        </Box>
+
+        {/* <Box>
+          <Text margin={0}>Transaction Fee</Text>
           <Text margin={0} color='core.darkgray'>
             Paid via <IconLedger /> {walletBalance} FIL
           </Text>
-        </Box>
-        <Text ml={2} color='core.primary'>
+        </Box> */}
+        <Text ml={2} color={error ? 'status.fail.background' : 'core.primary'}>
           {error
-            ? 'Error fetching tx fee'
+            ? 'Error fetching transaction fee'
             : `${estimatedGasFeeLocal.toAttoFil()} AttoFil`}
         </Text>
       </Box>
-      <Box borderBottom={1} borderColor='core.lightgray' />
+
       <Box
         display='flex'
         flexDirection='row'
         justifyContent='space-between'
         bg='background.screen'
         p={3}
+        borderBottomLeftRadius={3}
+        borderBottomRightRadius={3}
       >
         <Button
           variant='secondary'
