@@ -57,14 +57,22 @@ const TabButton = styled(BaseButton)`
 
   /* Used to visually render the real-time balance amount  */
   &:before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
+    height: 100%;
+    width: 80%;
     background: ${props => props.theme.colors.core.secondary};
+    z-index: -9;
+    border-radius: ${props => props.theme.radii[6]};
   }
 
   &:hover {
-    transform: translateY(-6%);
+    cursor: ${props => (props.selected ? 'default' : 'pointer')};
+    transform: ${props =>
+      props.selected ? 'translateY(0%)' : 'translateY(-6%)'};
+    opacity: ${props => (props.selected ? '1' : '')};
   }
 
   &:focus {
@@ -136,7 +144,7 @@ const Balances = ({ available, total }) => {
           Total Vesting
         </TabButton>
       </Box>
-      <Box my={5}>
+      <Box my={6}>
         {viewAvailable ? (
           <AvailableBalance available={available} />
         ) : (
