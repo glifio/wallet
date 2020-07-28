@@ -47,7 +47,8 @@ const TabButton = styled(BaseButton)`
   padding: 0;
   background: transparent;
   align-items: center;
-  border: 1px solid;
+  border: ${props =>
+    props.selected ? '1px solid #44444400' : '1px solid #444444'};
   border-radius: ${props => props.theme.radii[6]};
   box-shadow: ${props =>
     props.selected ? props.theme.shadows[2] : props.theme.shadows[0]};
