@@ -32,7 +32,7 @@ export const CardHeader = ({ address, balance, customizingGas }) => {
             </>
           ) : (
             <>
-              <Glyph acronym='Ac' color='white' mr={3} />
+              <Glyph acronym='Ms' color='white' mr={3} />
               <Box
                 display='flex'
                 flexDirection='column'
@@ -59,7 +59,7 @@ CardHeader.propTypes = {
   customizingGas: PropTypes.bool.isRequired
 }
 
-export const WithdrawHeaderText = ({ step }) => {
+export const WithdrawHeaderText = ({ step, customizingGas }) => {
   let text = ''
 
   switch (step) {
@@ -76,6 +76,10 @@ export const WithdrawHeaderText = ({ step }) => {
     default:
       text = ''
   }
+
+  if (customizingGas)
+    text = 'Please select the custom gas fee for this transaction.'
+
   return <Text textAlign='center'>{text}</Text>
 }
 
