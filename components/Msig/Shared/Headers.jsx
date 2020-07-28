@@ -24,11 +24,11 @@ export const CardHeader = ({ address, balance, customizingGas }) => {
         alignItems='center'
         justifyContent='space-between'
       >
-        <Box display='flex' flexDirection='row'>
+        <Box display='flex' flexDirection='row' alignItems='center'>
           {customizingGas ? (
             <>
               <Glyph acronym='Tf' color='white' mr={3} />
-              <Text>Custom transaction fee</Text>
+              <Text m={0}>Custom transaction fee</Text>
             </>
           ) : (
             <>
