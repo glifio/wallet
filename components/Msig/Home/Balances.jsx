@@ -6,8 +6,20 @@ import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 // import { getByPlaceholderText } from '@testing-library/react'
 
 const ArrowFlow = keyframes`
-0% { transform:translateX(8px); opacity:0; }
-100% { transform:translateX(-8px); opacity:1; }
+    0% {
+        transform: translate(50%);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 `
 
 const Arrow = () => (
@@ -18,7 +30,7 @@ const Arrow = () => (
     alignItems='center'
     justifyContent='center'
     css={`
-      animation: ${ArrowFlow} 2s linear infinite;
+      animation: ${ArrowFlow} 2.4s linear infinite;
     `}
   >
     ←
