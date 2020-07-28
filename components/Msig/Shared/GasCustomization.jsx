@@ -10,6 +10,8 @@ import {
   StyledATag,
   Label
 } from '../../Shared'
+import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
+import useWallet from '../../../WalletProvider/useWallet'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 
 // this is a weird hack to get tests to run in jest...
@@ -24,7 +26,7 @@ const GasCustomization = ({
   setGasLimit,
   setEstimatedGas,
   value,
-  walletBalance
+  makeFriendlyWalletBalance
 }) => {
   const [gasPriceLocal, setGasPriceLocal] = useState(gasPrice)
   const [gasLimitLocal, setGasLimitLocal] = useState(gasLimit)
@@ -87,6 +89,8 @@ const GasCustomization = ({
     setEstimatedGas(estimatedGasFeeLocal)
     close()
   }
+
+  const wallet = useWallet()
 
   return (
     <form onSubmit={onSubmit}>
@@ -153,7 +157,7 @@ const GasCustomization = ({
             </Text>
             <IconLedger height='32px' />{' '}
             <Text margin={0} color='core.darkgray'>
-              {walletBalance} FIL
+              {makeFriendlyBalance(wallet.balance, 2, true)} FIL
             </Text>
           </Box>
         </Box>
@@ -201,7 +205,7 @@ GasCustomization.propTypes = {
   estimateGas: func.isRequired,
   setEstimatedGas: func.isRequired,
   value: string.isRequired,
-  walletBalance: string.isRequired
+  makeFriendlyBalance: string.isRequired
 }
 
 export default GasCustomization
