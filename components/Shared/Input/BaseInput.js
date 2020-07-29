@@ -15,7 +15,7 @@ import {
 
 export default styled.input.attrs(props => ({
   display: 'inline-block',
-  height: props.height || 7,
+  height: props.height || 6,
   width: props.width || '100%',
   border: 0,
   borderColor: 'input.border',
