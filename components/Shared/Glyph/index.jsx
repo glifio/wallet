@@ -18,6 +18,7 @@ const Glyph = forwardRef(
       justifyContent='center'
       size={6}
       borderWidth='0.1875rem'
+      borderRadius={3}
       borderStyle={0}
       backgroundColor={backgroundColor}
       color={color}
