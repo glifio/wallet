@@ -50,13 +50,11 @@ const TabButton = styled(BaseButton)`
   border: ${props =>
     props.selected ? '1px solid #44444400' : '1px solid #444444'};
   border-radius: ${props => props.theme.radii[6]};
-  box-shadow: ${props =>
-    props.selected ? props.theme.shadows[2] : props.theme.shadows[0]};
 
   transition: 0.24s ease-in-out;
 
-  /* Used to visually render the real-time balance amount  */
-  &:before {
+  /* Displays a visual reference (dynamic background) to the real-time vested (i,e. available) balance  */
+  &:after {
     content: '';
     position: absolute;
     top: 0;
@@ -66,6 +64,20 @@ const TabButton = styled(BaseButton)`
     background: ${props => props.theme.colors.core.secondary};
     z-index: -9;
     border-radius: ${props => props.theme.radii[6]};
+  }
+
+  /* Creates the performative "box-shadow" animation (via opacity animation) */
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: ${props => (props.selected ? '1' : '0')};
+    border-radius: ${props => props.theme.radii[6]};
+    box-shadow: ${props => props.theme.shadows[2]};
+    transition: 0.24s ease-in-out;
   }
 
   &:hover {
