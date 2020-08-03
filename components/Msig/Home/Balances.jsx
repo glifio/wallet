@@ -50,21 +50,7 @@ const TabButton = styled(BaseButton)`
   border: ${props =>
     props.selected ? '1px solid #C4C4C400' : '1px solid #C4C4C4'};
   border-radius: ${props => props.theme.radii[6]};
-
   transition: 0.24s ease-in-out;
-
-  /* Displays a visual reference (dynamic background) to the real-time vested (i,e. available) balance  */
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 80%;
-    background: ${props => props.theme.colors.core.secondary};
-    z-index: -9;
-    border-radius: ${props => props.theme.radii[6]};
-  }
 
   /* Creates the performative "box-shadow" animation (via opacity animation) */
   &:before {
@@ -91,6 +77,28 @@ const TabButton = styled(BaseButton)`
 
   &:focus {
     outline: 0;
+  }
+`
+/* Displays a visual reference (dynamic background) to the real-time vested (i,e. available) balance  */
+const TabButtonFill = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: ${props => props.theme.radii[6]};
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: ${props => props.fillPercentage}%;
+    background: ${props => props.theme.colors.core.secondary};
+    z-index: -9;
+    border-radius: ${props => props.theme.radii[6]};
   }
 `
 
@@ -134,6 +142,10 @@ TotalBalance.propTypes = {
 
 const Balances = ({ available, total }) => {
   const [viewAvailable, setViewAvailable] = useState(true)
+  const percentageOfTotalAvailable = available
+    .dividedBy(total)
+    .multipliedBy(100)
+
   return (
     <Box
       display='flex'
@@ -145,16 +157,17 @@ const Balances = ({ available, total }) => {
         <TabButton
           onClick={() => setViewAvailable(true)}
           selected={viewAvailable}
-          percentage={available / total}
         >
+          <TabButtonFill fillPercentage={percentageOfTotalAvailable} />
           Available
         </TabButton>
         <Arrow />
         <TabButton
           onClick={() => setViewAvailable(false)}
           selected={!viewAvailable}
-          percentage={1 - available / total}
+          fillPercentage={100 - percentageOfTotalAvailable}
         >
+          <TabButtonFill fillPercentage={100 - percentageOfTotalAvailable} />
           Total Vesting
         </TabButton>
       </Box>
