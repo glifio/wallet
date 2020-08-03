@@ -48,7 +48,7 @@ const TabButton = styled(BaseButton)`
   background: transparent;
   align-items: center;
   border: ${props =>
-    props.selected ? '1px solid #44444400' : '1px solid #444444'};
+    props.selected ? '1px solid #C4C4C400' : '1px solid #C4C4C4'};
   border-radius: ${props => props.theme.radii[6]};
 
   transition: 0.24s ease-in-out;
@@ -82,9 +82,11 @@ const TabButton = styled(BaseButton)`
 
   &:hover {
     cursor: ${props => (props.selected ? 'default' : 'pointer')};
-    transform: ${props =>
-      props.selected ? 'translateY(0%)' : 'translateY(-6%)'};
     opacity: ${props => (props.selected ? '1' : '')};
+
+    &:before {
+      opacity: ${props => (props.selected ? '' : '0.75')};
+    }
   }
 
   &:focus {
