@@ -2,7 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
-import { Box, Glyph, CopyAddress, Text, Button, IconLedger } from '../../Shared'
+import {
+  Box,
+  Glyph,
+  CopyAddress,
+  Text,
+  Button,
+  IconLedger,
+  Title as AccountAddress
+} from '../../Shared'
 import truncateAddress from '../../../utils/truncateAddress'
 
 const AccountInfo = ({
@@ -16,7 +24,14 @@ const AccountInfo = ({
 }) => {
   return (
     <Box position='absolute'>
-      <Box display='flex' flexDirection='column' boxShadow={2} borderRadius={3}>
+      <Box
+        display='flex'
+        flexDirection='column'
+        justifyContent='center'
+        alignItems='center'
+        boxShadow={2}
+        borderRadius={3}
+      >
         <Box
           display='flex'
           flexDirection='column'
@@ -85,31 +100,34 @@ const AccountInfo = ({
             </>
           ) : (
             <>
-              <Box
-                display='flex'
-                flexDirection='row'
-                justifyContent='space-between'
-              >
+              <Box display='flex' flexDirection='row'>
                 <Box>
-                  <IconLedger />
+                  {' '}
+                  <Glyph
+                    mr={3}
+                    Icon={IconLedger}
+                    color='core.nearblack'
+                    fill='#444'
+                  />
                 </Box>
                 <Box display='flex' flexDirection='column'>
-                  <Text m={0} fontSize={3}>
-                    Linked to Ledger Device
-                  </Text>
+                  <Text m={0}>Linked to Ledger Device</Text>
                   <Box
                     display='flex'
                     justifyContent='space-between'
                     alignItems='center'
                     flexGrow='1'
                   >
-                    <Text m={0}>{truncateAddress(walletAddress)}</Text>
+                    <AccountAddress m={0}>
+                      {truncateAddress(walletAddress)}
+                    </AccountAddress>
                     <Button
-                      p={2}
+                      p={0}
                       border={0}
                       type='button'
                       variant='secondary'
-                      title='VIEW'
+                      title='View'
+                      color='core.primary'
                       disabled={ledgerBusy}
                       onClick={showOnDevice}
                     />
