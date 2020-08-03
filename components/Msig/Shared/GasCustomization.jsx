@@ -96,9 +96,9 @@ const GasCustomization = ({
     <form onSubmit={onSubmit}>
       <Box p={3} bg='background.screen'>
         <Box display='flex' justifyContent='space-between' alignItems='center'>
-          <Label my={3} pl={2} color='core.darkgray'>
+          <Text my={3} pl={2} color='core.darkgray'>
             Transfers complete faster with a higher gas price.
-          </Label>
+          </Text>
 
           <StyledATag
             rel='noopener noreferrer'
