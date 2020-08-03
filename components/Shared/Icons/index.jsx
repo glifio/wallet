@@ -258,6 +258,28 @@ export const IconApproximatelyEquals = forwardRef((props, ref) => (
   </IconBase>
 ))
 
+export const IconViewAccountAddress = forwardRef((props, ref) => (
+  <IconBase
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+    ref={ref}
+    {...props}
+  >
+    <path
+      d='M12 20C16.4183 20 20 16.4183 20 12H4C4 16.4183 7.58172 20 12 20Z'
+      fill='#1A0066'
+    />
+    <path
+      d='M12 4C7.58172 4 4 7.58172 4 12L20 12C20 7.58172 16.4183 4 12 4Z'
+      fill='#E0D7FE'
+    />
+    <circle cx='12' cy='12' r='3' fill='white' />
+  </IconBase>
+))
+
 export const IconCopyAccountAddress = forwardRef((props, ref) => (
   <IconBase
     width='24'
