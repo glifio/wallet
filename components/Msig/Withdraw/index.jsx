@@ -357,7 +357,8 @@ const Withdrawing = ({ address, balance, close }) => {
                   flexDirection='row'
                   alignItems='flex-start'
                   justifyContent='space-between'
-                  py={3}
+                  pt={6}
+                  pb={3}
                   px={3}
                   bg='background.screen'
                   borderBottomLeftRadius={3}
