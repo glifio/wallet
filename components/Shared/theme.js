@@ -168,7 +168,7 @@ const theme = {
       fontFamily: 'RT-Alias-Grotesk'
     },
     text: {
-      fontSize: 3,
+      fontSize: 2,
       fontColor: core.nearblack,
       fontWeight: 400,
       lineHeight: 'copy',

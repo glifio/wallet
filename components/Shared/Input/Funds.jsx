@@ -155,7 +155,6 @@ const Funds = forwardRef(
         display='flex'
         minHeight='160px'
         borderColor='input.border'
-        mt={3}
         ref={ref}
         {...props}
       >

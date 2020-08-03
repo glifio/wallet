@@ -89,7 +89,7 @@ export const NumberInput = forwardRef(
             />
             {denom && (
               <DenomTag
-                height='64px'
+                height={6}
                 top='0px'
                 left='0px'
                 valid={valid}
