@@ -111,12 +111,9 @@ const Withdrawing = ({ address, balance, close }) => {
         params: ''
       }
 
-      const serializedParams = Buffer.from(
-        serializeParams(params),
-        'hex'
-      ).toString('base64')
+      const serializedParams = Buffer.from(serializeParams(params), 'hex')
 
-      const message = new Message({
+      const messageForSigning = new Message({
         to: address,
         from: wallet.address,
         value: '0',
@@ -124,16 +121,33 @@ const Withdrawing = ({ address, balance, close }) => {
         gasPrice: gasPrice.toAttoFil(),
         gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
         nonce,
-        params: serializedParams
+        // signature requires hex params
+        params: serializedParams.toString('hex')
       })
 
-      const signedMessage = await provider.wallet.sign(wallet.path, message)
-      const messageObj = message.toString()
+      const signedMessage = await provider.wallet.sign(
+        messageForSigning,
+        wallet.path
+      )
+
+      const messageForLotus = new Message({
+        to: address,
+        from: wallet.address,
+        value: '0',
+        method: 2,
+        gasPrice: gasPrice.toAttoFil(),
+        gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
+        nonce,
+        // lotus requires base64 params
+        params: serializedParams.toString('base64')
+      })
+
+      const messageObj = messageForLotus.toString()
       const msgCid = await provider.sendMessage(messageObj, signedMessage)
       messageObj.cid = msgCid['/']
       messageObj.timestamp = dayjs().unix()
       messageObj.gas_used = (
-        await walletProvider.estimateGas(message.encode())
+        await walletProvider.estimateGas(messageForLotus.encode())
       ).toAttoFil()
       messageObj.Value = new FilecoinNumber(messageObj.value, 'attofil').toFil()
       return messageObj
@@ -159,8 +173,8 @@ const Withdrawing = ({ address, balance, close }) => {
           close()
         }
       } catch (err) {
-        reportError(20, false, err.message, err.stack)
-        setUncaughtError(err.message)
+        reportError(20, false, err, err.message, err.stack)
+        setUncaughtError(err.message || err)
         setAttemptingTx(false)
         setStep(2)
       }
