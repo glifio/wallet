@@ -180,16 +180,23 @@ const AccountSelector = ({ investor, msig }) => {
                   color='core.white'
                 />
                 <Title ml={2}>
-                  {investor ? 'Select Account' : 'Switch Accounts'}
+                  {investor || msig ? 'Select Account' : 'Switch Accounts'}
                 </Title>
               </MenuItem>
               <MenuItem>
-                {investor ? (
+                {investor && (
                   <Text>
                     Please select the Ledger account you wish to own and sign
                     for your multisig investor wallet.
                   </Text>
-                ) : (
+                )}
+                {msig && (
+                  <Text>
+                    Please select the Ledger account that owns your multisig
+                    investor wallet.
+                  </Text>
+                )}
+                {!investor && !msig && (
                   <Text>
                     Your single{' '}
                     {wallet.type === LEDGER ? 'Ledger Device ' : 'seed phrase'}{' '}
