@@ -35,7 +35,7 @@ const Close = styled(ButtonClose)`
   right: ${props => props.theme.sizes[3]}px;
 `
 
-const AccountSelector = ({ investor }) => {
+const AccountSelector = ({ investor, msig }) => {
   const wallet = useWallet()
   const [loadingAccounts, setLoadingAccounts] = useState(false)
   const [loadingPage, setLoadingPage] = useState(true)
@@ -54,7 +54,7 @@ const AccountSelector = ({ investor }) => {
   // automatically generate the first 5 wallets for the user to select from to avoid confusion for non tech folks
   useEffect(() => {
     const loadFirstFiveWallets = async () => {
-      if (walletsInRdx.length < 5) {
+      if (walletsInRdx.length < 1) {
         try {
           let provider = walletProvider
           if (wallet.type === LEDGER) {
@@ -110,9 +110,10 @@ const AccountSelector = ({ investor }) => {
 
   const onClose = () => {
     const searchParams = new URLSearchParams(router.query)
-    const route = investor
-      ? `/investor/home?${searchParams.toString()}`
-      : `/home?${searchParams.toString()}`
+    let route = ''
+    if (investor) route = `/investor/home?${searchParams.toString()}`
+    else if (msig) route = `/msig/choose?${searchParams.toString()}`
+    else route = `/home?${searchParams.toString()}`
     router.push(route)
   }
 
@@ -231,11 +232,13 @@ const AccountSelector = ({ investor }) => {
 }
 
 AccountSelector.propTypes = {
-  investor: bool
+  investor: bool,
+  msig: bool
 }
 
 AccountSelector.defaultProps = {
-  investor: false
+  investor: false,
+  msig: false
 }
 
 export default AccountSelector

@@ -81,7 +81,7 @@ Step1Helper.propTypes = {
   inUseByAnotherApp: PropTypes.bool.isRequired
 }
 
-const Step1 = ({ investor, setStep }) => {
+const Step1 = ({ investor, msig, setStep }) => {
   const { ledger, setLedgerProvider } = useWalletProvider()
   const router = useRouter()
   const resetState = useReset()
@@ -90,7 +90,7 @@ const Step1 = ({ investor, setStep }) => {
   const error = hasLedgerError({ ...ledger, otherError: errFromRdx })
 
   const back = () => {
-    if (investor) router.replace('/')
+    if (investor || msig) router.replace('/')
     else resetState()
   }
 
@@ -140,7 +140,8 @@ const Step1 = ({ investor, setStep }) => {
 
 Step1.propTypes = {
   setStep: PropTypes.func.isRequired,
-  investor: PropTypes.bool.isRequired
+  investor: PropTypes.bool.isRequired,
+  msig: PropTypes.bool.isRequired
 }
 
 export default Step1
