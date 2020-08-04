@@ -173,7 +173,7 @@ const Funds = forwardRef(
           borderRadius={2}
         >
           {error ? (
-            <Text color='core.nearblack' textAlign='center'>
+            <Text color='core.nearblack' textAlign='center' px={2}>
               {error}
             </Text>
           ) : (

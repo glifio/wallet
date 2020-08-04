@@ -46,6 +46,7 @@ export const CopyAddress = forwardRef(({ address, ...props }, ref) => {
         {truncate(address)}
       </AccountAddress>
       <Copy
+        height='auto'
         display='flex'
         alignItems='center'
         ml={1}

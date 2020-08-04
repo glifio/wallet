@@ -51,15 +51,20 @@ export default () => {
           minHeight='90vh'
         >
           <Hello textAlign='center' mb={1} />
-          <Text m={0} color='core.primary' border={1} borderRadius={2} p={2}>
-            Please check that you are visiting https://wallet.glif.io
-          </Text>
           <Box
-            display='flex'
-            justifyContent='center'
-            flexDirection='column'
-            mr={3}
+            backgroundColor='status.warning.background'
+            color='status.warning.foreground'
+            borderRadius={2}
+            py={2}
+            px={3}
+            my={3}
           >
+            <Text m={0}>
+              For your protection, please check that you are visiting
+              https://wallet.glif.io
+            </Text>
+          </Box>
+          <Box display='flex' justifyContent='center' flexDirection='column'>
             <Box display='flex' flexWrap='wrap' justifyContent='center' mb={5}>
               <ImportWallet
                 onClick={() => onChoose(LEDGER)}

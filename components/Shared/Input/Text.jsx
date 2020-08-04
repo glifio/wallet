@@ -28,7 +28,7 @@ const TextInput = ({
             <Label color='core.nearblack'>{label}</Label>
           </Box>
         )}
-        <Box position='relative' display='flex' flex='1'>
+        <Box position='relative' display='flex' flex='1' alignItems='center'>
           <BaseInput
             px={3}
             borderRadius={2}
@@ -45,11 +45,11 @@ const TextInput = ({
         </Box>
       </Box>
     </InputWrapper>
-    {error && (
-      <Label color='status.fail.background' mt={3} mb={0} textAlign='right'>
+    <Box height={6} py={2}>
+      <Label color='status.fail.background' textAlign='right'>
         {error}
       </Label>
-    )}
+    </Box>
   </>
 )
 
