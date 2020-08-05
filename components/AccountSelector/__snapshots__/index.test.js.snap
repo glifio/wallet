@@ -490,6 +490,302 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
           </div>
         </div>
         <div
+          class="c11"
+          display="inline-block"
+        >
+          <div
+            class="c12 c13"
+            color="colors.core.black"
+            display="flex"
+            height="11"
+            overflow="hidden"
+            width="11"
+          >
+            <div
+              class="c14"
+              display="flex"
+            >
+              <div
+                class="c15"
+                color="colors.core.black"
+                display="flex"
+                size="6"
+              >
+                <h3
+                  class="c5"
+                >
+                  1
+                </h3>
+              </div>
+              <div
+                class="c16"
+                display="flex"
+              >
+                <p
+                  class="c17"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="3"
+                  font-weight="400"
+                >
+                  Address
+                </p>
+                <h2
+                  class="c18"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="4"
+                  font-weight="400"
+                >
+                  t1mbk ... b1uq
+                </h2>
+              </div>
+            </div>
+            <div
+              class="c16"
+              display="flex"
+            >
+              <p
+                class="c17"
+                font-family="RT-Alias-Grotesk"
+                font-size="3"
+                font-weight="400"
+              >
+                Balance
+              </p>
+              <h2
+                class="c18"
+                font-family="RT-Alias-Grotesk"
+                font-size="4"
+                font-weight="400"
+              >
+                1
+                FIL
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div
+          class="c11"
+          display="inline-block"
+        >
+          <div
+            class="c12 c13"
+            color="colors.core.black"
+            display="flex"
+            height="11"
+            overflow="hidden"
+            width="11"
+          >
+            <div
+              class="c14"
+              display="flex"
+            >
+              <div
+                class="c15"
+                color="colors.core.black"
+                display="flex"
+                size="6"
+              >
+                <h3
+                  class="c5"
+                >
+                  2
+                </h3>
+              </div>
+              <div
+                class="c16"
+                display="flex"
+              >
+                <p
+                  class="c17"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="3"
+                  font-weight="400"
+                >
+                  Address
+                </p>
+                <h2
+                  class="c18"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="4"
+                  font-weight="400"
+                >
+                  t1mbk ... b2uq
+                </h2>
+              </div>
+            </div>
+            <div
+              class="c16"
+              display="flex"
+            >
+              <p
+                class="c17"
+                font-family="RT-Alias-Grotesk"
+                font-size="3"
+                font-weight="400"
+              >
+                Balance
+              </p>
+              <h2
+                class="c18"
+                font-family="RT-Alias-Grotesk"
+                font-size="4"
+                font-weight="400"
+              >
+                1
+                FIL
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div
+          class="c11"
+          display="inline-block"
+        >
+          <div
+            class="c12 c13"
+            color="colors.core.black"
+            display="flex"
+            height="11"
+            overflow="hidden"
+            width="11"
+          >
+            <div
+              class="c14"
+              display="flex"
+            >
+              <div
+                class="c15"
+                color="colors.core.black"
+                display="flex"
+                size="6"
+              >
+                <h3
+                  class="c5"
+                >
+                  3
+                </h3>
+              </div>
+              <div
+                class="c16"
+                display="flex"
+              >
+                <p
+                  class="c17"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="3"
+                  font-weight="400"
+                >
+                  Address
+                </p>
+                <h2
+                  class="c18"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="4"
+                  font-weight="400"
+                >
+                  t1mbk ... b3uq
+                </h2>
+              </div>
+            </div>
+            <div
+              class="c16"
+              display="flex"
+            >
+              <p
+                class="c17"
+                font-family="RT-Alias-Grotesk"
+                font-size="3"
+                font-weight="400"
+              >
+                Balance
+              </p>
+              <h2
+                class="c18"
+                font-family="RT-Alias-Grotesk"
+                font-size="4"
+                font-weight="400"
+              >
+                1
+                FIL
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div
+          class="c11"
+          display="inline-block"
+        >
+          <div
+            class="c12 c13"
+            color="colors.core.black"
+            display="flex"
+            height="11"
+            overflow="hidden"
+            width="11"
+          >
+            <div
+              class="c14"
+              display="flex"
+            >
+              <div
+                class="c15"
+                color="colors.core.black"
+                display="flex"
+                size="6"
+              >
+                <h3
+                  class="c5"
+                >
+                  4
+                </h3>
+              </div>
+              <div
+                class="c16"
+                display="flex"
+              >
+                <p
+                  class="c17"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="3"
+                  font-weight="400"
+                >
+                  Address
+                </p>
+                <h2
+                  class="c18"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="4"
+                  font-weight="400"
+                >
+                  t1mbk ... b4uq
+                </h2>
+              </div>
+            </div>
+            <div
+              class="c16"
+              display="flex"
+            >
+              <p
+                class="c17"
+                font-family="RT-Alias-Grotesk"
+                font-size="3"
+                font-weight="400"
+              >
+                Balance
+              </p>
+              <h2
+                class="c18"
+                font-family="RT-Alias-Grotesk"
+                font-size="4"
+                font-weight="400"
+              >
+                1
+                FIL
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div
           class="c19"
           color="card.error.foreground"
           display="flex"
@@ -791,10 +1087,74 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   flex-direction: column;
 }
 
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: transparent;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .c5 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
+}
+
+.c18 {
+  cursor: pointer;
+  border: 1px solid core.primary;
+  background-color: #1AD08F;
+  border-color: core.primary;
+  color: core.primary;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  height: 300px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  border-color: #5E26FF;
+  border-width: 1px;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #5E26FF;
+  opacity: 1;
+}
+
+.c18:hover {
+  opacity: 0.8;
 }
 
 .c6 {
@@ -832,6 +1192,14 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   margin-bottom: 0;
 }
 
+.c21 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+}
+
 .c2 {
   list-style: none;
   margin: 0;
@@ -865,6 +1233,17 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c12 {
@@ -1305,6 +1684,61 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
             </div>
           </div>
         </div>
+        <button
+          class="c18"
+          color="core.primary"
+          cursor="pointer"
+          display="flex"
+          font-size="3"
+          height="11"
+          opacity="1"
+          type="button"
+          width="11"
+        >
+          <ul
+            class="c8"
+          >
+            <li
+              class="c19"
+              display="flex"
+            >
+              <div
+                class="c20"
+                color="core.primary"
+                display="flex"
+                size="6"
+              >
+                <h3
+                  class="c5"
+                >
+                  5
+                </h3>
+              </div>
+              <h2
+                class="c6"
+                font-family="RT-Alias-Grotesk"
+                font-size="4"
+                font-weight="400"
+              >
+                Create
+              </h2>
+            </li>
+            <li
+              class=""
+            >
+              <p
+                class="c21"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Click here to create account #
+                5
+                .
+              </p>
+            </li>
+          </ul>
+        </button>
       </li>
     </ul>
   </div>
@@ -1456,10 +1890,74 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   flex-direction: column;
 }
 
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: transparent;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .c5 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
+}
+
+.c19 {
+  cursor: pointer;
+  border: 1px solid core.primary;
+  background-color: #1AD08F;
+  border-color: core.primary;
+  color: core.primary;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  height: 300px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  border-color: #5E26FF;
+  border-width: 1px;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #5E26FF;
+  opacity: 1;
+}
+
+.c19:hover {
+  opacity: 0.8;
 }
 
 .c6 {
@@ -1497,6 +1995,14 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-bottom: 0;
 }
 
+.c22 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+}
+
 .c2 {
   list-style: none;
   margin: 0;
@@ -1530,6 +2036,17 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c8 {
@@ -1999,6 +2516,61 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
             </div>
           </div>
         </div>
+        <button
+          class="c19"
+          color="core.primary"
+          cursor="pointer"
+          display="flex"
+          font-size="3"
+          height="11"
+          opacity="1"
+          type="button"
+          width="11"
+        >
+          <ul
+            class="c9"
+          >
+            <li
+              class="c20"
+              display="flex"
+            >
+              <div
+                class="c21"
+                color="core.primary"
+                display="flex"
+                size="6"
+              >
+                <h3
+                  class="c5"
+                >
+                  5
+                </h3>
+              </div>
+              <h2
+                class="c6"
+                font-family="RT-Alias-Grotesk"
+                font-size="4"
+                font-weight="400"
+              >
+                Create
+              </h2>
+            </li>
+            <li
+              class=""
+            >
+              <p
+                class="c22"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Click here to create account #
+                5
+                .
+              </p>
+            </li>
+          </ul>
+        </button>
       </li>
     </ul>
   </div>
