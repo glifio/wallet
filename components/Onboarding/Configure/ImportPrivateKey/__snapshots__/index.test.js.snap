@@ -39,6 +39,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   color: #000;
   display: -webkit-box;
@@ -134,9 +135,21 @@ exports[`Import private key configuration it renders correctly 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 48px;
+}
+
+.c19 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 48px;
@@ -157,7 +170,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c18 {
+.c20 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -168,16 +181,20 @@ exports[`Import private key configuration it renders correctly 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-right: 8px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
 
-.c18:hover {
+.c20:hover {
   opacity: 0.8;
 }
 
-.c19 {
+.c21 {
   cursor: not-allowed;
   border: 1px solid #C4C4C4;
   background-color: #C4C4C4;
@@ -187,12 +204,16 @@ exports[`Import private key configuration it renders correctly 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-left: 8px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
 
-.c19:hover {
+.c21:hover {
   opacity: 1;
 }
 
@@ -206,7 +227,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
 }
 
 .c8 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -225,6 +246,16 @@ exports[`Import private key configuration it renders correctly 1`] = `
 
 .c14 {
   color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c18 {
+  color: #FC6D6F;
+  text-align: right;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -251,7 +282,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
   padding-right: 16px;
   width: 480px;
   display: inline-block;
-  height: 64px;
+  height: 48px;
   border-radius: 4px;
   border: 0;
   border-color: #999999;
@@ -354,7 +385,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
       <p
         class="c8"
         font-family="RT-Alias-Grotesk"
-        font-size="3"
+        font-size="2"
         font-weight="400"
       >
         Please input your private key below
@@ -398,7 +429,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
               <input
                 class="c16"
                 display="inline-block"
-                height="7"
+                height="6"
                 placeholder="Your private key"
                 type="password"
                 value=""
@@ -408,25 +439,39 @@ exports[`Import private key configuration it renders correctly 1`] = `
             </div>
           </div>
         </div>
+        <div
+          class="c17"
+          height="6"
+        >
+          <h4
+            class="c18"
+            color="status.fail.background"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          />
+        </div>
       </div>
     </div>
   </div>
   <div
-    class="c17"
+    class="c19"
     display="flex"
     width="100%"
   >
     <button
-      class="c18"
+      class="c20"
       font-size="3"
+      height="6"
       type="button"
     >
       Back
     </button>
     <button
-      class="c19"
+      class="c21"
       disabled=""
       font-size="3"
+      height="6"
       type="button"
     >
       Next

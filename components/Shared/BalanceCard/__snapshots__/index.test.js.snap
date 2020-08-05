@@ -76,8 +76,12 @@ exports[`BalanceCard it renders correctly 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -97,8 +101,12 @@ exports[`BalanceCard it renders correctly 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-left: 8px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -237,6 +245,7 @@ exports[`BalanceCard it renders correctly 1`] = `
     <button
       class="c12"
       font-size="3"
+      height="6"
       type="button"
       width="120"
     >
@@ -245,6 +254,7 @@ exports[`BalanceCard it renders correctly 1`] = `
     <button
       class="c13"
       font-size="3"
+      height="6"
       type="button"
       width="120"
     >
@@ -330,8 +340,12 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -351,8 +365,12 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-left: 8px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -491,6 +509,7 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
     <button
       class="c12"
       font-size="3"
+      height="6"
       type="button"
       width="120"
     >
@@ -499,6 +518,7 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
     <button
       class="c13"
       font-size="3"
+      height="6"
       type="button"
       width="120"
     >
@@ -584,8 +604,12 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -605,8 +629,12 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-left: 8px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -745,6 +773,7 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
     <button
       class="c12"
       font-size="3"
+      height="6"
       type="button"
       width="120"
     >
@@ -753,6 +782,7 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
     <button
       class="c13"
       font-size="3"
+      height="6"
       type="button"
       width="120"
     >
@@ -838,8 +868,12 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -859,8 +893,12 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-left: 8px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -999,6 +1037,7 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
     <button
       class="c12"
       font-size="3"
+      height="6"
       type="button"
       width="120"
     >
@@ -1007,6 +1046,7 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
     <button
       class="c13"
       font-size="3"
+      height="6"
       type="button"
       width="120"
     >
@@ -1092,8 +1132,12 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -1113,8 +1157,12 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-left: 8px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -1253,6 +1301,7 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
     <button
       class="c12"
       font-size="3"
+      height="6"
       type="button"
       width="120"
     >
@@ -1261,6 +1310,7 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
     <button
       class="c13"
       font-size="3"
+      height="6"
       type="button"
       width="120"
     >
@@ -1346,8 +1396,12 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -1367,8 +1421,12 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-left: 8px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -1507,6 +1565,7 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
     <button
       class="c12"
       font-size="3"
+      height="6"
       type="button"
       width="120"
     >
@@ -1515,6 +1574,7 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
     <button
       class="c13"
       font-size="3"
+      height="6"
       type="button"
       width="120"
     >
@@ -1600,8 +1660,12 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -1621,8 +1685,12 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-left: 8px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -1761,6 +1829,7 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
     <button
       class="c12"
       font-size="3"
+      height="6"
       type="button"
       width="120"
     >
@@ -1769,6 +1838,7 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
     <button
       class="c13"
       font-size="3"
+      height="6"
       type="button"
       width="120"
     >

@@ -54,6 +54,7 @@ exports[`AccountCardAlt renders the card 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
   color: #E0D7FE;

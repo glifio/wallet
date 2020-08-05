@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`WalletView it renders correctly 1`] = `
-.c2 {
+.c1 {
   min-width: 0;
   box-sizing: border-box;
-  margin-bottom: 8px;
+  padding: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -62,6 +62,7 @@ exports[`WalletView it renders correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
   color: #E0D7FE;
@@ -219,6 +220,7 @@ exports[`WalletView it renders correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
   color: #5E26FF;
@@ -257,6 +259,8 @@ exports[`WalletView it renders correctly 1`] = `
   padding: 8px;
   padding-top: 8px;
   padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -278,8 +282,12 @@ exports[`WalletView it renders correctly 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -299,8 +307,12 @@ exports[`WalletView it renders correctly 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-left: 8px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -319,7 +331,11 @@ exports[`WalletView it renders correctly 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -374,7 +390,7 @@ exports[`WalletView it renders correctly 1`] = `
 }
 
 .c9 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -382,7 +398,7 @@ exports[`WalletView it renders correctly 1`] = `
 
 .c42 {
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -399,7 +415,7 @@ exports[`WalletView it renders correctly 1`] = `
 
 .c55 {
   color: #666666;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -408,7 +424,7 @@ exports[`WalletView it renders correctly 1`] = `
 
 .c59 {
   color: #262626;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -417,7 +433,7 @@ exports[`WalletView it renders correctly 1`] = `
 
 .c60 {
   color: #666666;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -427,7 +443,7 @@ exports[`WalletView it renders correctly 1`] = `
 
 .c63 {
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -494,11 +510,15 @@ exports[`WalletView it renders correctly 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-left: 4px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 48px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -754,8 +774,48 @@ exports[`WalletView it renders correctly 1`] = `
   background-color: #EFF3FD;
 }
 
-.c3 {
+.c2 {
   background: #1AD08F;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border: 0;
+  border-radius: 16px;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: RT-Alias-Grotesk;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c2:first-child {
+  margin-right: 8px;
+}
+
+.c2:hover {
+  cursor: pointer;
+  background: true;
+}
+
+.c3 {
+  background: #C4C4C4;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   outline: none;
@@ -790,55 +850,15 @@ exports[`WalletView it renders correctly 1`] = `
 }
 
 .c3:hover {
-  cursor: pointer;
-  background: true;
+  background: #C4C4C4;
 }
 
 .c4 {
-  background: #C4C4C4;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  outline: none;
-  border: 0;
-  border-radius: 16px;
-  font-size: 1.125rem;
-  font-weight: 400;
-  font-family: RT-Alias-Grotesk;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.c4:first-child {
-  margin-right: 8px;
-}
-
-.c4:hover {
-  background: #C4C4C4;
-}
-
-.c1 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  margin: 0.5rem;
+  margin: 0 0.5rem 0.5rem 0.5rem;
 }
 
 .c37 {
@@ -858,9 +878,8 @@ exports[`WalletView it renders correctly 1`] = `
   -ms-flex-positive: 999;
   flex-grow: 999;
   padding-top: 24px;
-  margin: 0.5rem;
+  margin: 0 0.5rem 6rem 0.5rem;
   min-width: 53%;
-  margin-bottom: 6rem;
 }
 
 .c0 {
@@ -886,12 +905,16 @@ exports[`WalletView it renders correctly 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-top: 24px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
   background-color: #E0D7FE00;
@@ -922,33 +945,33 @@ exports[`WalletView it renders correctly 1`] = `
 >
   <div
     class="c1"
-    height="100vh"
+    display="flex"
+    width="100%"
   >
-    <div
+    <button
       class="c2"
       display="flex"
-      width="100%"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="1"
     >
-      <button
-        class="c3"
-        display="flex"
-        font-family="RT-Alias-Grotesk"
-        font-size="2"
-        font-weight="1"
-      >
-        Testnet
-      </button>
-      <button
-        class="c4"
-        disabled=""
-        display="flex"
-        font-family="RT-Alias-Grotesk"
-        font-size="2"
-        font-weight="1"
-      >
-        Mainnet
-      </button>
-    </div>
+      Testnet
+    </button>
+    <button
+      class="c3"
+      disabled=""
+      display="flex"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="1"
+    >
+      Mainnet
+    </button>
+  </div>
+  <div
+    class="c4"
+    height="100vh"
+  >
     <div
       class="c5"
       color="purple"
@@ -976,7 +999,7 @@ exports[`WalletView it renders correctly 1`] = `
         <p
           class="c9"
           font-family="RT-Alias-Grotesk"
-          font-size="3"
+          font-size="2"
           font-weight="400"
         >
           Account
@@ -1011,6 +1034,7 @@ exports[`WalletView it renders correctly 1`] = `
             class="c14 c15"
             display="flex"
             font-size="3"
+            height="6"
           >
             <svg
               class="c16 c17"
@@ -1137,6 +1161,7 @@ exports[`WalletView it renders correctly 1`] = `
         <button
           class="c34"
           font-size="3"
+          height="6"
           type="button"
           width="120"
         >
@@ -1145,6 +1170,7 @@ exports[`WalletView it renders correctly 1`] = `
         <button
           class="c35"
           font-size="3"
+          height="6"
           type="button"
           width="120"
         >
@@ -1156,6 +1182,7 @@ exports[`WalletView it renders correctly 1`] = `
       class="c36"
       display="flex"
       font-size="3"
+      height="6"
       width="100%"
     >
       Logout
@@ -1192,7 +1219,7 @@ exports[`WalletView it renders correctly 1`] = `
             class="c42"
             color="core.primary"
             font-family="RT-Alias-Grotesk"
-            font-size="3"
+            font-size="2"
             font-weight="400"
           >
             Transaction History
@@ -1201,6 +1228,7 @@ exports[`WalletView it renders correctly 1`] = `
         <button
           class="c43"
           font-size="3"
+          height="6"
           type="button"
         >
           Refresh
@@ -1292,7 +1320,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c55"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   Jan 12
@@ -1320,7 +1348,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   23
@@ -1334,7 +1362,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   115
@@ -1356,7 +1384,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   FIL
@@ -1365,7 +1393,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   USD
@@ -1461,7 +1489,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c55"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   Jan 12
@@ -1489,7 +1517,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   0.0001
@@ -1503,7 +1531,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   &lt; 0.01
@@ -1525,7 +1553,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   FIL
@@ -1534,7 +1562,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   USD
@@ -1630,7 +1658,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c55"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   Jan 12
@@ -1658,7 +1686,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   0.0000001
@@ -1672,7 +1700,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   &lt; 0.01
@@ -1694,7 +1722,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   FIL
@@ -1703,7 +1731,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   USD
@@ -1799,7 +1827,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c55"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   Jan 12
@@ -1827,7 +1855,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   0.0001
@@ -1841,7 +1869,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   &lt; 0.01
@@ -1863,7 +1891,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   FIL
@@ -1872,7 +1900,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   USD
@@ -1968,7 +1996,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c55"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   Jan 12
@@ -1996,7 +2024,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   0.00001
@@ -2010,7 +2038,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   &lt; 0.01
@@ -2032,7 +2060,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   FIL
@@ -2041,7 +2069,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   USD
@@ -2137,7 +2165,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c55"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   Jan 12
@@ -2165,7 +2193,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   0.001
@@ -2179,7 +2207,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   &lt; 0.01
@@ -2201,7 +2229,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   FIL
@@ -2210,7 +2238,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   USD
@@ -2306,7 +2334,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c55"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   Jan 12
@@ -2334,7 +2362,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   0.0001
@@ -2348,7 +2376,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   &lt; 0.01
@@ -2370,7 +2398,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   FIL
@@ -2379,7 +2407,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   USD
@@ -2475,7 +2503,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c55"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   Jan 12
@@ -2503,7 +2531,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   &lt; 0.0000001
@@ -2517,7 +2545,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   &lt; 0.01
@@ -2539,7 +2567,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   FIL
@@ -2548,7 +2576,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   USD
@@ -2644,7 +2672,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c55"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   Jan 12
@@ -2672,7 +2700,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   0.005
@@ -2686,7 +2714,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   0.02
@@ -2708,7 +2736,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   FIL
@@ -2717,7 +2745,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   USD
@@ -2813,7 +2841,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c55"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   Jan 12
@@ -2841,7 +2869,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   0.0001
@@ -2855,7 +2883,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   &lt; 0.01
@@ -2877,7 +2905,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   FIL
@@ -2886,7 +2914,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   USD
@@ -2982,7 +3010,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c55"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   Jan 12
@@ -3010,7 +3038,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   0.00001
@@ -3024,7 +3052,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   &lt; 0.01
@@ -3046,7 +3074,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   FIL
@@ -3055,7 +3083,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   USD
@@ -3151,7 +3179,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c55"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   Jan 12
@@ -3179,7 +3207,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   0.00001
@@ -3193,7 +3221,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   &lt; 0.01
@@ -3215,7 +3243,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   FIL
@@ -3224,7 +3252,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   USD
@@ -3320,7 +3348,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c55"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   Jan 12
@@ -3348,7 +3376,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   0.0001
@@ -3362,7 +3390,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   &lt; 0.01
@@ -3384,7 +3412,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   FIL
@@ -3393,7 +3421,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   USD
@@ -3489,7 +3517,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c55"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   Jan 12
@@ -3517,7 +3545,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   0.0001
@@ -3531,7 +3559,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   &lt; 0.01
@@ -3553,7 +3581,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   FIL
@@ -3562,7 +3590,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   USD
@@ -3658,7 +3686,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c55"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   Jan 12
@@ -3686,7 +3714,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   0.00001
@@ -3700,7 +3728,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   &lt; 0.01
@@ -3722,7 +3750,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c59"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   FIL
@@ -3731,7 +3759,7 @@ exports[`WalletView it renders correctly 1`] = `
                   class="c60"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
-                  font-size="3"
+                  font-size="2"
                   font-weight="400"
                 >
                   USD
@@ -3748,7 +3776,7 @@ exports[`WalletView it renders correctly 1`] = `
           class="c63"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
-          font-size="3"
+          font-size="2"
           font-weight="400"
           role="button"
           width="100%"
@@ -3762,10 +3790,10 @@ exports[`WalletView it renders correctly 1`] = `
 `;
 
 exports[`WalletView it renders the receive flow when a user clicks receive 1`] = `
-.c2 {
+.c1 {
   min-width: 0;
   box-sizing: border-box;
-  margin-bottom: 8px;
+  padding: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3823,6 +3851,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
   color: #E0D7FE;
@@ -3968,6 +3997,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   border-color: #5E26FF;
   background-color: #5E26FF;
@@ -4034,6 +4064,8 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
   padding: 8px;
   padding-top: 8px;
   padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -4055,8 +4087,12 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -4076,8 +4112,12 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-left: 8px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -4127,7 +4167,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
 }
 
 .c9 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -4135,7 +4175,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
 
 .c42 {
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -4143,7 +4183,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
 }
 
 .c44 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -4152,7 +4192,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
 }
 
 .c47 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -4208,11 +4248,15 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-left: 4px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 48px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4306,8 +4350,48 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
   cursor: pointer;
 }
 
-.c3 {
+.c2 {
   background: #1AD08F;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border: 0;
+  border-radius: 16px;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: RT-Alias-Grotesk;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c2:first-child {
+  margin-right: 8px;
+}
+
+.c2:hover {
+  cursor: pointer;
+  background: true;
+}
+
+.c3 {
+  background: #C4C4C4;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   outline: none;
@@ -4342,46 +4426,6 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
 }
 
 .c3:hover {
-  cursor: pointer;
-  background: true;
-}
-
-.c4 {
-  background: #C4C4C4;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  outline: none;
-  border: 0;
-  border-radius: 16px;
-  font-size: 1.125rem;
-  font-weight: 400;
-  font-family: RT-Alias-Grotesk;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.c4:first-child {
-  margin-right: 8px;
-}
-
-.c4:hover {
   background: #C4C4C4;
 }
 
@@ -4402,12 +4446,12 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
   transform: scale(1.25);
 }
 
-.c1 {
+.c4 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  margin: 0.5rem;
+  margin: 0 0.5rem 0.5rem 0.5rem;
 }
 
 .c37 {
@@ -4427,9 +4471,8 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
   -ms-flex-positive: 999;
   flex-grow: 999;
   padding-top: 24px;
-  margin: 0.5rem;
+  margin: 0 0.5rem 6rem 0.5rem;
   min-width: 53%;
-  margin-bottom: 6rem;
 }
 
 .c38 {
@@ -4472,12 +4515,16 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-top: 24px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
   background-color: #E0D7FE00;
@@ -4504,33 +4551,33 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
 >
   <div
     class="c1"
-    height="100vh"
+    display="flex"
+    width="100%"
   >
-    <div
+    <button
       class="c2"
       display="flex"
-      width="100%"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="1"
     >
-      <button
-        class="c3"
-        display="flex"
-        font-family="RT-Alias-Grotesk"
-        font-size="2"
-        font-weight="1"
-      >
-        Testnet
-      </button>
-      <button
-        class="c4"
-        disabled=""
-        display="flex"
-        font-family="RT-Alias-Grotesk"
-        font-size="2"
-        font-weight="1"
-      >
-        Mainnet
-      </button>
-    </div>
+      Testnet
+    </button>
+    <button
+      class="c3"
+      disabled=""
+      display="flex"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="1"
+    >
+      Mainnet
+    </button>
+  </div>
+  <div
+    class="c4"
+    height="100vh"
+  >
     <div
       class="c5"
       color="purple"
@@ -4558,7 +4605,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
         <p
           class="c9"
           font-family="RT-Alias-Grotesk"
-          font-size="3"
+          font-size="2"
           font-weight="400"
         >
           Account
@@ -4593,6 +4640,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
             class="c14 c15"
             display="flex"
             font-size="3"
+            height="6"
           >
             <svg
               class="c16 c17"
@@ -4719,6 +4767,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
         <button
           class="c34"
           font-size="3"
+          height="6"
           type="button"
           width="120"
         >
@@ -4727,6 +4776,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
         <button
           class="c35"
           font-size="3"
+          height="6"
           type="button"
           width="120"
         >
@@ -4738,6 +4788,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
       class="c36"
       display="flex"
       font-size="3"
+      height="6"
       width="100%"
     >
       Logout
@@ -4774,7 +4825,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
             class="c42"
             color="core.primary"
             font-family="RT-Alias-Grotesk"
-            font-size="3"
+            font-size="2"
             font-weight="400"
           >
             Receive Filecoin
@@ -4810,7 +4861,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
       <p
         class="c44"
         font-family="RT-Alias-Grotesk"
-        font-size="3"
+        font-size="2"
         font-weight="400"
       >
         To receive Filecoin, share your address with the sender
@@ -4826,7 +4877,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
           <p
             class="c9"
             font-family="RT-Alias-Grotesk"
-            font-size="3"
+            font-size="2"
             font-weight="400"
           >
             t1
@@ -4834,7 +4885,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
           <p
             class="c47"
             font-family="RT-Alias-Grotesk"
-            font-size="3"
+            font-size="2"
             font-weight="400"
           >
             ●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
@@ -4842,7 +4893,7 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
           <p
             class="c9"
             font-family="RT-Alias-Grotesk"
-            font-size="3"
+            font-size="2"
             font-weight="400"
           >
             6wgi
@@ -4879,10 +4930,10 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
 `;
 
 exports[`WalletView it renders the send flow when a user clicks send 1`] = `
-.c2 {
+.c1 {
   min-width: 0;
   box-sizing: border-box;
-  margin-bottom: 8px;
+  padding: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4940,6 +4991,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
   color: #E0D7FE;
@@ -5087,6 +5139,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   border-color: #5E26FF;
   background-color: #5E26FF;
@@ -5183,14 +5236,25 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c56 {
   min-width: 0;
   box-sizing: border-box;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 48px;
+}
+
+.c58 {
+  min-width: 0;
+  box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5198,7 +5262,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   min-height: 160px;
 }
 
-.c57 {
+.c59 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -5227,14 +5291,14 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   text-align: center;
 }
 
-.c58 {
+.c60 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c59 {
+.c61 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -5249,7 +5313,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   width: 100%;
 }
 
-.c60 {
+.c62 {
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
@@ -5277,7 +5341,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c63 {
+.c65 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -5289,14 +5353,14 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   height: 80px;
 }
 
-.c66 {
+.c68 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   width: 100%;
 }
 
-.c70 {
+.c72 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 16px;
@@ -5312,7 +5376,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   align-items: center;
 }
 
-.c75 {
+.c77 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
@@ -5337,7 +5401,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   justify-content: space-between;
 }
 
-.c77 {
+.c79 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -5370,6 +5434,8 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   padding: 8px;
   padding-top: 8px;
   padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -5390,8 +5456,12 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -5410,8 +5480,12 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-left: 8px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 120px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -5420,7 +5494,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   opacity: 1;
 }
 
-.c82 {
+.c84 {
   cursor: pointer;
   border: 1px solid core.lightgray;
   background-color: transparent;
@@ -5430,7 +5504,11 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 0;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border: 0;
   border-right: 1px solid;
   border-radius: 0;
@@ -5438,11 +5516,11 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   border-width: 1px;
 }
 
-.c82:hover {
+.c84:hover {
   opacity: 0.8;
 }
 
-.c84 {
+.c86 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -5452,13 +5530,17 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 0;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border: 0;
   border-radius: 0;
   border-width: 1px;
 }
 
-.c84:hover {
+.c86:hover {
   opacity: 0.8;
 }
 
@@ -5502,7 +5584,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin: 0;
 }
 
-.c76 {
+.c78 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -5510,7 +5592,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin: 0;
 }
 
-.c78 {
+.c80 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -5519,7 +5601,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin: 0;
 }
 
-.c80 {
+.c82 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
@@ -5529,7 +5611,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
 }
 
 .c9 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -5537,7 +5619,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
 
 .c43 {
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -5546,7 +5628,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
 
 .c45 {
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -5555,8 +5637,8 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin-bottom: 0;
 }
 
-.c71 {
-  font-size: 1.25rem;
+.c73 {
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -5564,8 +5646,8 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin-top: 16px;
 }
 
-.c73 {
-  font-size: 1.25rem;
+.c75 {
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -5620,6 +5702,16 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin: 0;
 }
 
+.c57 {
+  color: #FC6D6F;
+  text-align: right;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
 .c15 {
   cursor: pointer;
   border: 1px solid #1AD08F;
@@ -5631,11 +5723,15 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-left: 4px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 48px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -5703,7 +5799,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   padding-right: 16px;
   margin-top: 8px;
   display: inline-block;
-  height: 64px;
+  height: 48px;
   width: 100%;
   border-radius: 4px;
   border: 0;
@@ -5721,7 +5817,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   background: #bacbf7;
 }
 
-.c67 {
+.c69 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -5739,19 +5835,19 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   padding-left: 16px;
   padding-right: 16px;
   display: inline-block;
-  height: 64px;
+  height: 48px;
   width: 100%;
   border-radius: 4px;
   border: 0;
   border-color: #999999;
 }
 
-.c67:hover {
+.c69:hover {
   background: transparent;
   cursor: initial;
 }
 
-.c67:focus {
+.c69:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
@@ -5763,7 +5859,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   border-radius: 1px;
 }
 
-.c62 {
+.c64 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -5792,7 +5888,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   background: #d1ddfa;
 }
 
-.c65 {
+.c67 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -5821,7 +5917,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   background: #d1ddfa;
 }
 
-.c68 {
+.c70 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 16px;
@@ -5848,7 +5944,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   background: core.transparent;
 }
 
-.c61 {
+.c63 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -5873,24 +5969,24 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   -moz-appearance: textfield;
 }
 
-.c61:hover {
+.c63:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c61:focus {
+.c63:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c61::-webkit-outer-spin-button,
-.c61::-webkit-inner-spin-button {
+.c63::-webkit-outer-spin-button,
+.c63::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c64 {
+.c66 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -5915,24 +6011,24 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   -moz-appearance: textfield;
 }
 
-.c64:hover {
+.c66:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c64:focus {
+.c66:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c64::-webkit-outer-spin-button,
-.c64::-webkit-inner-spin-button {
+.c66::-webkit-outer-spin-button,
+.c66::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c81 {
+.c83 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -5964,8 +6060,48 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   width: 40%;
 }
 
-.c3 {
+.c2 {
   background: #1AD08F;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border: 0;
+  border-radius: 16px;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: RT-Alias-Grotesk;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c2:first-child {
+  margin-right: 8px;
+}
+
+.c2:hover {
+  cursor: pointer;
+  background: true;
+}
+
+.c3 {
+  background: #C4C4C4;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   outline: none;
@@ -6000,46 +6136,6 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
 }
 
 .c3:hover {
-  cursor: pointer;
-  background: true;
-}
-
-.c4 {
-  background: #C4C4C4;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  outline: none;
-  border: 0;
-  border-radius: 16px;
-  font-size: 1.125rem;
-  font-weight: 400;
-  font-family: RT-Alias-Grotesk;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.c4:first-child {
-  margin-right: 8px;
-}
-
-.c4:hover {
   background: #C4C4C4;
 }
 
@@ -6059,12 +6155,12 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   transform: scale(1.25);
 }
 
-.c1 {
+.c4 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  margin: 0.5rem;
+  margin: 0 0.5rem 0.5rem 0.5rem;
 }
 
 .c37 {
@@ -6084,9 +6180,8 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   -ms-flex-positive: 999;
   flex-grow: 999;
   padding-top: 24px;
-  margin: 0.5rem;
+  margin: 0 0.5rem 6rem 0.5rem;
   min-width: 53%;
-  margin-bottom: 6rem;
 }
 
 .c38 {
@@ -6129,7 +6224,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   justify-content: space-between;
 }
 
-.c69 {
+.c71 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -6139,11 +6234,15 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 48px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -6163,38 +6262,38 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   align-self: flex-end;
 }
 
-.c69:hover {
+.c71:hover {
   opacity: 0.8;
 }
 
-.c69:hover {
+.c71:hover {
   cursor: pointer;
   opacity: 1;
 }
 
-.c72 {
+.c74 {
   font-size: 0.75rem;
 }
 
-.c74 {
+.c76 {
   -webkit-transition: 0.24s ease-in-out;
   transition: 0.24s ease-in-out;
   border-bottom: 2px solid #5E26FF00;
 }
 
-.c74:hover {
+.c76:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c79 {
+.c81 {
   word-wrap: break-word;
 }
 
-.c83 {
+.c85 {
   border-radius: 0px;
 }
 
-.c85 {
+.c87 {
   border-radius: 0px;
 }
 
@@ -6221,12 +6320,16 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-top: 24px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
   background-color: #E0D7FE00;
@@ -6253,33 +6356,33 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
 >
   <div
     class="c1"
-    height="100vh"
+    display="flex"
+    width="100%"
   >
-    <div
+    <button
       class="c2"
       display="flex"
-      width="100%"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="1"
     >
-      <button
-        class="c3"
-        display="flex"
-        font-family="RT-Alias-Grotesk"
-        font-size="2"
-        font-weight="1"
-      >
-        Testnet
-      </button>
-      <button
-        class="c4"
-        disabled=""
-        display="flex"
-        font-family="RT-Alias-Grotesk"
-        font-size="2"
-        font-weight="1"
-      >
-        Mainnet
-      </button>
-    </div>
+      Testnet
+    </button>
+    <button
+      class="c3"
+      disabled=""
+      display="flex"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="1"
+    >
+      Mainnet
+    </button>
+  </div>
+  <div
+    class="c4"
+    height="100vh"
+  >
     <div
       class="c5"
       color="purple"
@@ -6307,7 +6410,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
         <p
           class="c9"
           font-family="RT-Alias-Grotesk"
-          font-size="3"
+          font-size="2"
           font-weight="400"
         >
           Account
@@ -6342,6 +6445,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
             class="c14 c15"
             display="flex"
             font-size="3"
+            height="6"
           >
             <svg
               class="c16 c17"
@@ -6469,6 +6573,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
           class="c34"
           disabled=""
           font-size="3"
+          height="6"
           type="button"
           width="120"
         >
@@ -6478,6 +6583,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
           class="c35"
           disabled=""
           font-size="3"
+          height="6"
           type="button"
           width="120"
         >
@@ -6489,6 +6595,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
       class="c36"
       display="flex"
       font-size="3"
+      height="6"
       width="100%"
     >
       Logout
@@ -6529,7 +6636,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
               class="c43"
               color="core.primary"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Sending Filecoin
@@ -6547,7 +6654,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                 class="c45"
                 color="core.primary"
                 font-family="RT-Alias-Grotesk"
-                font-size="3"
+                font-size="2"
                 font-weight="400"
               >
                 Step 
@@ -6634,7 +6741,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                   <input
                     class="c55"
                     display="inline-block"
-                    height="7"
+                    height="6"
                     placeholder="t1..."
                     value=""
                     width="100%"
@@ -6643,15 +6750,26 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                 </div>
               </div>
             </div>
-            
             <div
               class="c56"
+              height="6"
+            >
+              <h4
+                class="c57"
+                color="status.fail.background"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              />
+            </div>
+            <div
+              class="c58"
               display="flex"
               label="Amount"
               name="amount"
             >
               <div
-                class="c57"
+                class="c59"
                 color="input.border"
                 display="flex"
                 width="100%"
@@ -6667,18 +6785,18 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                 </h4>
               </div>
               <div
-                class="c58"
+                class="c60"
                 display="inline-block"
                 width="100%"
               >
                 <div
-                  class="c59"
+                  class="c61"
                   display="flex"
                   height="80px"
                   width="100%"
                 >
                   <div
-                    class="c60"
+                    class="c62"
                     display="flex"
                     font-family="sansSerif"
                     font-size="5"
@@ -6687,7 +6805,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                     =
                   </div>
                   <input
-                    class="c61"
+                    class="c63"
                     display="inline-block"
                     font-size="5"
                     height="100%"
@@ -6700,7 +6818,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                     width="100%"
                   />
                   <div
-                    class="c62"
+                    class="c64"
                     color="core.primary"
                     display="flex"
                     font-size="3"
@@ -6710,12 +6828,12 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                   </div>
                 </div>
                 <div
-                  class="c63"
+                  class="c65"
                   display="flex"
                   height="80px"
                 >
                   <input
-                    class="c64"
+                    class="c66"
                     display="inline-block"
                     font-size="5"
                     height="100%"
@@ -6727,7 +6845,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                     width="100%"
                   />
                   <div
-                    class="c65"
+                    class="c67"
                     color="core.primary"
                     display="flex"
                     font-size="3"
@@ -6739,7 +6857,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
               </div>
             </div>
             <div
-              class="c66"
+              class="c68"
               width="100%"
             >
               <div
@@ -6768,15 +6886,15 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                     display="flex"
                   >
                     <input
-                      class="c67"
+                      class="c69"
                       disabled=""
                       display="inline-block"
-                      height="7"
+                      height="6"
                       value="< 0.1"
                       width="100%"
                     />
                     <div
-                      class="c68"
+                      class="c70"
                       color="core.primary"
                       display="flex"
                       font-size="3"
@@ -6787,33 +6905,46 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                   </div>
                 </div>
               </div>
+              <div
+                class="c56"
+                height="6"
+              >
+                <h4
+                  class="c57"
+                  color="status.fail.background"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                />
+              </div>
             </div>
           </div>
           <button
-            class="c69"
+            class="c71"
             color="core.primary"
             display="flex"
             font-size="3"
+            height="6"
             role="button"
             type="button"
           >
             <div
-              class="c70"
+              class="c72"
               display="flex"
             >
               <p
-                class="c71 c72"
+                class="c73 c74"
                 font-family="RT-Alias-Grotesk"
-                font-size="3"
+                font-size="2"
                 font-weight="400"
               >
                 ▼
               </p>
               <p
-                class="c73 c74"
+                class="c75 c76"
                 display="inline-block"
                 font-family="RT-Alias-Grotesk"
-                font-size="3"
+                font-size="2"
                 font-weight="400"
               >
                 Customize
@@ -6821,11 +6952,11 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
             </div>
           </button>
           <div
-            class="c75"
+            class="c77"
             display="flex"
           >
             <h2
-              class="c76"
+              class="c78"
               font-family="RT-Alias-Grotesk"
               font-size="4"
               font-weight="400"
@@ -6833,11 +6964,11 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
               Total
             </h2>
             <div
-              class="c77"
+              class="c79"
               display="flex"
             >
               <h2
-                class="c78 c79"
+                class="c80 c81"
                 color="core.primary"
                 font-family="RT-Alias-Grotesk"
                 font-size="5"
@@ -6848,7 +6979,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                 FIL
               </h2>
               <h2
-                class="c80"
+                class="c82"
                 color="core.darkgray"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
@@ -6862,18 +6993,20 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
           </div>
         </div>
         <div
-          class="c81"
+          class="c83"
         >
           <button
-            class="c82 c83 Sendjs___StyledButton-sc-1crplc1-6 c83"
+            class="c84 c85 Sendjs___StyledButton-sc-1crplc1-6 c85"
             font-size="3"
+            height="6"
             type="button"
           >
             Back
           </button>
           <button
-            class="c84 c85 Sendjs___StyledButton2-sc-1crplc1-7 c85"
+            class="c86 c87 Sendjs___StyledButton2-sc-1crplc1-7 c87"
             font-size="3"
+            height="6"
             type="submit"
           >
             Send

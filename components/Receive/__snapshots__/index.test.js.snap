@@ -35,6 +35,7 @@ exports[`Receive it renders correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   border-color: #5E26FF;
   background-color: #5E26FF;
@@ -95,7 +96,7 @@ exports[`Receive it renders correctly 1`] = `
 
 .c5 {
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -103,7 +104,7 @@ exports[`Receive it renders correctly 1`] = `
 }
 
 .c8 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -112,14 +113,14 @@ exports[`Receive it renders correctly 1`] = `
 }
 
 .c11 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
 }
 
 .c12 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -234,7 +235,7 @@ exports[`Receive it renders correctly 1`] = `
         class="c5"
         color="core.primary"
         font-family="RT-Alias-Grotesk"
-        font-size="3"
+        font-size="2"
         font-weight="400"
       >
         Receive Filecoin
@@ -270,7 +271,7 @@ exports[`Receive it renders correctly 1`] = `
   <p
     class="c8"
     font-family="RT-Alias-Grotesk"
-    font-size="3"
+    font-size="2"
     font-weight="400"
   >
     To receive Filecoin, share your address with the sender
@@ -286,7 +287,7 @@ exports[`Receive it renders correctly 1`] = `
       <p
         class="c11"
         font-family="RT-Alias-Grotesk"
-        font-size="3"
+        font-size="2"
         font-weight="400"
       >
         t1
@@ -294,7 +295,7 @@ exports[`Receive it renders correctly 1`] = `
       <p
         class="c12"
         font-family="RT-Alias-Grotesk"
-        font-size="3"
+        font-size="2"
         font-weight="400"
       >
         ●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
@@ -302,7 +303,7 @@ exports[`Receive it renders correctly 1`] = `
       <p
         class="c11"
         font-family="RT-Alias-Grotesk"
-        font-size="3"
+        font-size="2"
         font-weight="400"
       >
         izpy
@@ -371,6 +372,7 @@ exports[`Receive it reveals the address when the user clicks reveal 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   border-color: #5E26FF;
   background-color: #5E26FF;
@@ -417,7 +419,7 @@ exports[`Receive it reveals the address when the user clicks reveal 1`] = `
 
 .c5 {
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -425,7 +427,7 @@ exports[`Receive it reveals the address when the user clicks reveal 1`] = `
 }
 
 .c8 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -434,7 +436,7 @@ exports[`Receive it reveals the address when the user clicks reveal 1`] = `
 }
 
 .c10 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -549,7 +551,7 @@ exports[`Receive it reveals the address when the user clicks reveal 1`] = `
         class="c5"
         color="core.primary"
         font-family="RT-Alias-Grotesk"
-        font-size="3"
+        font-size="2"
         font-weight="400"
       >
         Receive Filecoin
@@ -585,7 +587,7 @@ exports[`Receive it reveals the address when the user clicks reveal 1`] = `
   <p
     class="c8"
     font-family="RT-Alias-Grotesk"
-    font-size="3"
+    font-size="2"
     font-weight="400"
   >
     To receive Filecoin, share your address with the sender
@@ -597,7 +599,7 @@ exports[`Receive it reveals the address when the user clicks reveal 1`] = `
     <p
       class="c10"
       font-family="RT-Alias-Grotesk"
-      font-size="3"
+      font-size="2"
       font-weight="400"
     >
       t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy

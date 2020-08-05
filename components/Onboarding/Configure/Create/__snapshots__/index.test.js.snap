@@ -52,6 +52,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   color: #000;
   display: -webkit-box;
@@ -141,6 +142,10 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   margin-top: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c20 {
@@ -176,10 +181,11 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
   border-radius: 4px;
   margin-left: 8px;
   margin-right: 8px;
-  padding: 16px;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -199,7 +205,11 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-right: 8px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -219,7 +229,11 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-left: 8px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -238,7 +252,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
 
 .c7 {
   color: #262626;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -249,7 +263,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
 
 .c18 {
   color: #1AD08F;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -397,10 +411,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border-radius: 4px;
-  padding: 16px;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 48px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   border: 1px solid;
   border-radius: 4px;
 }
@@ -476,7 +499,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
             class="c7"
             color="core.nearblack"
             font-family="RT-Alias-Grotesk"
-            font-size="3"
+            font-size="2"
             font-weight="400"
           >
             Step 
@@ -532,20 +555,22 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       </h2>
       <div
         class="c12"
+        display="flex"
       >
         <button
           class="c13"
           font-size="3"
-          height="max-content"
+          height="6"
           type="button"
         >
           Copy
         </button>
         <a
           class="c14"
+          display="flex"
           download="dontlookhere.txt"
           font-size="3"
-          height="max-content"
+          height="6"
           role="button"
         >
           Download
@@ -573,7 +598,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               1
@@ -608,7 +633,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               2
@@ -643,7 +668,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               3
@@ -678,7 +703,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               4
@@ -713,7 +738,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               5
@@ -748,7 +773,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               6
@@ -783,7 +808,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               7
@@ -818,7 +843,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               8
@@ -853,7 +878,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               9
@@ -888,7 +913,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               10
@@ -923,7 +948,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               11
@@ -958,7 +983,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               12
@@ -993,7 +1018,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               13
@@ -1028,7 +1053,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               14
@@ -1063,7 +1088,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               15
@@ -1098,7 +1123,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               16
@@ -1133,7 +1158,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               17
@@ -1168,7 +1193,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               18
@@ -1203,7 +1228,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               19
@@ -1238,7 +1263,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               20
@@ -1273,7 +1298,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               21
@@ -1308,7 +1333,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               22
@@ -1343,7 +1368,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               23
@@ -1378,7 +1403,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
               class="c18"
               color="status.success.background"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               24
@@ -1406,6 +1431,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
     <button
       class="c21"
       font-size="3"
+      height="6"
       type="button"
     >
       Back
@@ -1413,6 +1439,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
     <button
       class="c22"
       font-size="3"
+      height="6"
       type="button"
     >
       Next

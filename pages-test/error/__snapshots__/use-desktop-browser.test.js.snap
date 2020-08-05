@@ -55,7 +55,11 @@ exports[`UseDesktopBrowser it renders the error page 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-top: 32px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -146,6 +150,7 @@ exports[`UseDesktopBrowser it renders the error page 1`] = `
     <button
       class="c6"
       font-size="3"
+      height="6"
       type="button"
     >
       Home

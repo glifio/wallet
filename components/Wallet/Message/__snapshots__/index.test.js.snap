@@ -47,6 +47,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
   color: #5E26FF;
@@ -82,7 +83,11 @@ exports[`MessageHistory View it renders correctly 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -98,7 +103,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
 
 .c5 {
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -115,7 +120,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
 
 .c18 {
   color: #666666;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -124,7 +129,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
 
 .c22 {
   color: #262626;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -133,7 +138,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
 
 .c23 {
   color: #666666;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -143,7 +148,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
 
 .c26 {
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -409,7 +414,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
         class="c5"
         color="core.primary"
         font-family="RT-Alias-Grotesk"
-        font-size="3"
+        font-size="2"
         font-weight="400"
       >
         Transaction History
@@ -418,6 +423,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
     <button
       class="c6"
       font-size="3"
+      height="6"
       type="button"
     >
       Refresh
@@ -509,7 +515,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Jan 12
@@ -537,7 +543,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               23
@@ -551,7 +557,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               115
@@ -573,7 +579,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               FIL
@@ -582,7 +588,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               USD
@@ -678,7 +684,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Jan 12
@@ -706,7 +712,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               0.0001
@@ -720,7 +726,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               &lt; 0.01
@@ -742,7 +748,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               FIL
@@ -751,7 +757,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               USD
@@ -847,7 +853,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Jan 12
@@ -875,7 +881,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               0.0000001
@@ -889,7 +895,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               &lt; 0.01
@@ -911,7 +917,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               FIL
@@ -920,7 +926,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               USD
@@ -1016,7 +1022,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Jan 12
@@ -1044,7 +1050,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               0.0001
@@ -1058,7 +1064,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               &lt; 0.01
@@ -1080,7 +1086,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               FIL
@@ -1089,7 +1095,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               USD
@@ -1185,7 +1191,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Jan 12
@@ -1213,7 +1219,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               0.00001
@@ -1227,7 +1233,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               &lt; 0.01
@@ -1249,7 +1255,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               FIL
@@ -1258,7 +1264,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               USD
@@ -1354,7 +1360,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Jan 12
@@ -1382,7 +1388,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               0.001
@@ -1396,7 +1402,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               &lt; 0.01
@@ -1418,7 +1424,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               FIL
@@ -1427,7 +1433,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               USD
@@ -1523,7 +1529,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Jan 12
@@ -1551,7 +1557,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               0.0001
@@ -1565,7 +1571,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               &lt; 0.01
@@ -1587,7 +1593,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               FIL
@@ -1596,7 +1602,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               USD
@@ -1692,7 +1698,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Jan 12
@@ -1720,7 +1726,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               &lt; 0.0000001
@@ -1734,7 +1740,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               &lt; 0.01
@@ -1756,7 +1762,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               FIL
@@ -1765,7 +1771,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               USD
@@ -1861,7 +1867,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Jan 12
@@ -1889,7 +1895,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               0.005
@@ -1903,7 +1909,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               0.02
@@ -1925,7 +1931,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               FIL
@@ -1934,7 +1940,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               USD
@@ -2030,7 +2036,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Jan 12
@@ -2058,7 +2064,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               0.0001
@@ -2072,7 +2078,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               &lt; 0.01
@@ -2094,7 +2100,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               FIL
@@ -2103,7 +2109,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               USD
@@ -2199,7 +2205,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Jan 12
@@ -2227,7 +2233,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               0.00001
@@ -2241,7 +2247,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               &lt; 0.01
@@ -2263,7 +2269,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               FIL
@@ -2272,7 +2278,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               USD
@@ -2368,7 +2374,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Jan 12
@@ -2396,7 +2402,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               0.00001
@@ -2410,7 +2416,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               &lt; 0.01
@@ -2432,7 +2438,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               FIL
@@ -2441,7 +2447,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               USD
@@ -2537,7 +2543,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Jan 12
@@ -2565,7 +2571,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               0.0001
@@ -2579,7 +2585,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               &lt; 0.01
@@ -2601,7 +2607,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               FIL
@@ -2610,7 +2616,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               USD
@@ -2706,7 +2712,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Jan 12
@@ -2734,7 +2740,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               0.0001
@@ -2748,7 +2754,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               &lt; 0.01
@@ -2770,7 +2776,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               FIL
@@ -2779,7 +2785,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               USD
@@ -2875,7 +2881,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c18"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Jan 12
@@ -2903,7 +2909,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               0.00001
@@ -2917,7 +2923,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               &lt; 0.01
@@ -2939,7 +2945,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c22"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               FIL
@@ -2948,7 +2954,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c23"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               USD
@@ -2965,7 +2971,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
       class="c26"
       color="core.primary"
       font-family="RT-Alias-Grotesk"
-      font-size="3"
+      font-size="2"
       font-weight="400"
       role="button"
       width="100%"
@@ -3054,6 +3060,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   border-color: #5E26FF;
   background-color: #5E26FF;
@@ -3164,14 +3171,25 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c25 {
   min-width: 0;
   box-sizing: border-box;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 48px;
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3179,7 +3197,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   min-height: 160px;
 }
 
-.c26 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -3208,14 +3226,14 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   text-align: center;
 }
 
-.c27 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c28 {
+.c30 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -3230,7 +3248,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   width: 100%;
 }
 
-.c29 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
@@ -3258,7 +3276,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c32 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -3270,7 +3288,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   height: 80px;
 }
 
-.c36 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
@@ -3293,7 +3311,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   justify-content: space-between;
 }
 
-.c38 {
+.c40 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -3307,7 +3325,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   text-align: right;
 }
 
-.c42 {
+.c44 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 48px;
@@ -3340,7 +3358,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   height: 24px;
 }
 
-.c37 {
+.c39 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -3348,7 +3366,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 0;
 }
 
-.c39 {
+.c41 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -3357,7 +3375,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 0;
 }
 
-.c41 {
+.c43 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
@@ -3368,7 +3386,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
 
 .c7 {
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -3377,7 +3395,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
 
 .c16 {
   color: #666666;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -3387,7 +3405,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
 }
 
 .c17 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -3413,7 +3431,17 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 0;
 }
 
-.c43 {
+.c26 {
+  color: #FC6D6F;
+  text-align: right;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c45 {
   color: #999999;
   text-align: left;
   font-size: 1.125rem;
@@ -3423,7 +3451,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 4px;
 }
 
-.c44 {
+.c46 {
   color: #999999;
   text-align: left;
   font-size: 1.125rem;
@@ -3434,7 +3462,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 4px;
 }
 
-.c47 {
+.c49 {
   color: #5E26FF;
   text-align: left;
   font-size: 1.125rem;
@@ -3463,7 +3491,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   padding-right: 16px;
   margin-top: 8px;
   display: inline-block;
-  height: 64px;
+  height: 48px;
   width: 100%;
   border-radius: 4px;
   border: 0;
@@ -3481,7 +3509,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   background: #bacbf7;
 }
 
-.c35 {
+.c37 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3500,19 +3528,19 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   padding-left: 16px;
   padding-right: 16px;
   display: inline-block;
-  height: 64px;
+  height: 48px;
   width: 100%;
   border-radius: 4px;
   border: 0;
   border-color: #999999;
 }
 
-.c35:hover {
+.c37:hover {
   background: transparent;
   cursor: initial;
 }
 
-.c35:focus {
+.c37:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
@@ -3524,7 +3552,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   border-radius: 1px;
 }
 
-.c31 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -3553,7 +3581,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   background: transparent;
 }
 
-.c34 {
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -3582,7 +3610,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   background: transparent;
 }
 
-.c30 {
+.c32 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3607,24 +3635,24 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   -moz-appearance: textfield;
 }
 
-.c30:hover {
+.c32:hover {
   background: transparent;
   cursor: initial;
 }
 
-.c30:focus {
+.c32:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c30::-webkit-outer-spin-button,
-.c30::-webkit-inner-spin-button {
+.c32::-webkit-outer-spin-button,
+.c32::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c33 {
+.c35 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3649,24 +3677,24 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   -moz-appearance: textfield;
 }
 
-.c33:hover {
+.c35:hover {
   background: transparent;
   cursor: initial;
 }
 
-.c33:focus {
+.c35:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c33::-webkit-outer-spin-button,
-.c33::-webkit-inner-spin-button {
+.c35::-webkit-outer-spin-button,
+.c35::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c46 {
+.c48 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -3676,7 +3704,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   font-size: 1.25rem;
 }
 
-.c46:hover {
+.c48:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
@@ -3719,11 +3747,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   align-self: flex-end;
 }
 
-.c40 {
+.c42 {
   word-wrap: break-word;
 }
 
-.c45 {
+.c47 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: no-wrap;
@@ -3774,7 +3802,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         class="c7"
         color="core.primary"
         font-family="RT-Alias-Grotesk"
-        font-size="3"
+        font-size="2"
         font-weight="400"
       >
         Transaction Details
@@ -3843,7 +3871,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           class="c16"
           color="core.darkgray"
           font-family="RT-Alias-Grotesk"
-          font-size="3"
+          font-size="2"
           font-weight="400"
         >
           Jan 12
@@ -3851,7 +3879,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         <p
           class="c17"
           font-family="RT-Alias-Grotesk"
-          font-size="3"
+          font-size="2"
           font-weight="400"
         >
           2:30PM
@@ -3891,7 +3919,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
             class="c24"
             disabled=""
             display="inline-block"
-            height="7"
+            height="6"
             placeholder="f1..."
             value="t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy"
             width="100%"
@@ -3899,6 +3927,18 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           
         </div>
       </div>
+    </div>
+    <div
+      class="c25"
+      height="6"
+    >
+      <h4
+        class="c26"
+        color="status.fail.background"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      />
     </div>
     <div
       class="c19"
@@ -3929,7 +3969,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
             class="c24"
             disabled=""
             display="inline-block"
-            height="7"
+            height="6"
             placeholder="f1..."
             value="t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy"
             width="100%"
@@ -3940,11 +3980,23 @@ exports[`MessageHistory View it renders the message detail view after clicking o
     </div>
     <div
       class="c25"
+      height="6"
+    >
+      <h4
+        class="c26"
+        color="status.fail.background"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      />
+    </div>
+    <div
+      class="c27"
       display="flex"
       label="Amount"
     >
       <div
-        class="c26"
+        class="c28"
         color="input.border"
         display="flex"
         width="100%"
@@ -3960,18 +4012,18 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         </h4>
       </div>
       <div
-        class="c27"
+        class="c29"
         display="inline-block"
         width="100%"
       >
         <div
-          class="c28"
+          class="c30"
           display="flex"
           height="80px"
           width="100%"
         >
           <div
-            class="c29"
+            class="c31"
             display="flex"
             font-family="sansSerif"
             font-size="5"
@@ -3980,7 +4032,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
             =
           </div>
           <input
-            class="c30"
+            class="c32"
             disabled=""
             display="inline-block"
             font-size="5"
@@ -3993,7 +4045,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
             width="100%"
           />
           <div
-            class="c31"
+            class="c33"
             color="core.primary"
             disabled=""
             display="flex"
@@ -4004,12 +4056,12 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           </div>
         </div>
         <div
-          class="c32"
+          class="c34"
           display="flex"
           height="80px"
         >
           <input
-            class="c33"
+            class="c35"
             disabled=""
             display="inline-block"
             font-size="5"
@@ -4022,7 +4074,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
             width="100%"
           />
           <div
-            class="c34"
+            class="c36"
             color="core.primary"
             disabled=""
             display="flex"
@@ -4060,10 +4112,10 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           display="flex"
         >
           <input
-            class="c35"
+            class="c37"
             disabled=""
             display="inline-block"
-            height="7"
+            height="6"
             value="138"
             width="100%"
           />
@@ -4072,11 +4124,23 @@ exports[`MessageHistory View it renders the message detail view after clicking o
       </div>
     </div>
     <div
-      class="c36"
+      class="c25"
+      height="6"
+    >
+      <h4
+        class="c26"
+        color="status.fail.background"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      />
+    </div>
+    <div
+      class="c38"
       display="flex"
     >
       <h2
-        class="c37"
+        class="c39"
         font-family="RT-Alias-Grotesk"
         font-size="4"
         font-weight="400"
@@ -4084,11 +4148,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         Total
       </h2>
       <div
-        class="c38"
+        class="c40"
         display="flex"
       >
         <h2
-          class="c39 c40"
+          class="c41 c42"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="5"
@@ -4099,7 +4163,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           FIL
         </h2>
         <h2
-          class="c41"
+          class="c43"
           color="core.darkgray"
           font-family="RT-Alias-Grotesk"
           font-size="4"
@@ -4110,11 +4174,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
       </div>
     </div>
     <div
-      class="c42"
+      class="c44"
       display="flex"
     >
       <h4
-        class="c43"
+        class="c45"
         color="core.silver"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -4123,7 +4187,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         Message Hash
       </h4>
       <h4
-        class="c44 c45"
+        class="c46 c47"
         color="core.silver"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -4132,7 +4196,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         bafy2bzacea5463eugsz6f7dbwixzqxmwe2ouqeq6zukackb3xxotskdidqmjm
       </h4>
       <a
-        class="c46"
+        class="c48"
         color="core.primary"
         font-size="3"
         href="https://filscout.io/en/pc/message/bafy2bzacea5463eugsz6f7dbwixzqxmwe2ouqeq6zukackb3xxotskdidqmjm"
@@ -4140,7 +4204,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         target="_blank"
       >
         <h4
-          class="c47"
+          class="c49"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="2"
