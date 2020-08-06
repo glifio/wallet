@@ -3180,14 +3180,6 @@ exports[`MessageHistory View it renders the message detail view after clicking o
 .c25 {
   min-width: 0;
   box-sizing: border-box;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  height: 48px;
-}
-
-.c27 {
-  min-width: 0;
-  box-sizing: border-box;
   position: relative;
   border-color: #999999;
   display: -webkit-box;
@@ -3197,7 +3189,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   min-height: 160px;
 }
 
-.c28 {
+.c26 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -3226,14 +3218,14 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   text-align: center;
 }
 
-.c29 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c30 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -3248,7 +3240,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   width: 100%;
 }
 
-.c31 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
@@ -3276,7 +3268,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c34 {
+.c32 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -3288,7 +3280,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   height: 80px;
 }
 
-.c38 {
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
@@ -3311,7 +3303,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   justify-content: space-between;
 }
 
-.c40 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -3325,7 +3317,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   text-align: right;
 }
 
-.c44 {
+.c42 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 48px;
@@ -3358,7 +3350,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   height: 24px;
 }
 
-.c39 {
+.c37 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -3366,7 +3358,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 0;
 }
 
-.c41 {
+.c39 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -3375,7 +3367,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 0;
 }
 
-.c43 {
+.c41 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
@@ -3431,17 +3423,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 0;
 }
 
-.c26 {
-  color: #FC6D6F;
-  text-align: right;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c45 {
+.c43 {
   color: #999999;
   text-align: left;
   font-size: 1.125rem;
@@ -3451,7 +3433,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 4px;
 }
 
-.c46 {
+.c44 {
   color: #999999;
   text-align: left;
   font-size: 1.125rem;
@@ -3462,7 +3444,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 4px;
 }
 
-.c49 {
+.c47 {
   color: #5E26FF;
   text-align: left;
   font-size: 1.125rem;
@@ -3489,7 +3471,6 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   background: transparent;
   padding-left: 16px;
   padding-right: 16px;
-  margin-top: 8px;
   display: inline-block;
   height: 48px;
   width: 100%;
@@ -3509,7 +3490,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   background: #bacbf7;
 }
 
-.c37 {
+.c35 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3535,12 +3516,12 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   border-color: #999999;
 }
 
-.c37:hover {
+.c35:hover {
   background: transparent;
   cursor: initial;
 }
 
-.c37:focus {
+.c35:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
@@ -3552,7 +3533,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   border-radius: 1px;
 }
 
-.c33 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -3581,7 +3562,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   background: transparent;
 }
 
-.c36 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -3610,7 +3591,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   background: transparent;
 }
 
-.c32 {
+.c30 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3635,24 +3616,24 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   -moz-appearance: textfield;
 }
 
-.c32:hover {
+.c30:hover {
   background: transparent;
   cursor: initial;
 }
 
-.c32:focus {
+.c30:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c32::-webkit-outer-spin-button,
-.c32::-webkit-inner-spin-button {
+.c30::-webkit-outer-spin-button,
+.c30::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c35 {
+.c33 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3677,24 +3658,24 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   -moz-appearance: textfield;
 }
 
-.c35:hover {
+.c33:hover {
   background: transparent;
   cursor: initial;
 }
 
-.c35:focus {
+.c33:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c35::-webkit-outer-spin-button,
-.c35::-webkit-inner-spin-button {
+.c33::-webkit-outer-spin-button,
+.c33::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c48 {
+.c46 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -3704,7 +3685,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   font-size: 1.25rem;
 }
 
-.c48:hover {
+.c46:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
@@ -3747,11 +3728,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   align-self: flex-end;
 }
 
-.c42 {
+.c40 {
   word-wrap: break-word;
 }
 
-.c47 {
+.c45 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: no-wrap;
@@ -3929,18 +3910,6 @@ exports[`MessageHistory View it renders the message detail view after clicking o
       </div>
     </div>
     <div
-      class="c25"
-      height="6"
-    >
-      <h4
-        class="c26"
-        color="status.fail.background"
-        font-family="RT-Alias-Grotesk"
-        font-size="2"
-        font-weight="400"
-      />
-    </div>
-    <div
       class="c19"
     >
       <div
@@ -3980,23 +3949,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
     </div>
     <div
       class="c25"
-      height="6"
-    >
-      <h4
-        class="c26"
-        color="status.fail.background"
-        font-family="RT-Alias-Grotesk"
-        font-size="2"
-        font-weight="400"
-      />
-    </div>
-    <div
-      class="c27"
       display="flex"
       label="Amount"
     >
       <div
-        class="c28"
+        class="c26"
         color="input.border"
         display="flex"
         width="100%"
@@ -4012,18 +3969,18 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         </h4>
       </div>
       <div
-        class="c29"
+        class="c27"
         display="inline-block"
         width="100%"
       >
         <div
-          class="c30"
+          class="c28"
           display="flex"
           height="80px"
           width="100%"
         >
           <div
-            class="c31"
+            class="c29"
             display="flex"
             font-family="sansSerif"
             font-size="5"
@@ -4032,7 +3989,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
             =
           </div>
           <input
-            class="c32"
+            class="c30"
             disabled=""
             display="inline-block"
             font-size="5"
@@ -4045,7 +4002,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
             width="100%"
           />
           <div
-            class="c33"
+            class="c31"
             color="core.primary"
             disabled=""
             display="flex"
@@ -4056,12 +4013,12 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           </div>
         </div>
         <div
-          class="c34"
+          class="c32"
           display="flex"
           height="80px"
         >
           <input
-            class="c35"
+            class="c33"
             disabled=""
             display="inline-block"
             font-size="5"
@@ -4074,7 +4031,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
             width="100%"
           />
           <div
-            class="c36"
+            class="c34"
             color="core.primary"
             disabled=""
             display="flex"
@@ -4112,7 +4069,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           display="flex"
         >
           <input
-            class="c37"
+            class="c35"
             disabled=""
             display="inline-block"
             height="6"
@@ -4124,23 +4081,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
       </div>
     </div>
     <div
-      class="c25"
-      height="6"
-    >
-      <h4
-        class="c26"
-        color="status.fail.background"
-        font-family="RT-Alias-Grotesk"
-        font-size="2"
-        font-weight="400"
-      />
-    </div>
-    <div
-      class="c38"
+      class="c36"
       display="flex"
     >
       <h2
-        class="c39"
+        class="c37"
         font-family="RT-Alias-Grotesk"
         font-size="4"
         font-weight="400"
@@ -4148,11 +4093,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         Total
       </h2>
       <div
-        class="c40"
+        class="c38"
         display="flex"
       >
         <h2
-          class="c41 c42"
+          class="c39 c40"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="5"
@@ -4163,7 +4108,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           FIL
         </h2>
         <h2
-          class="c43"
+          class="c41"
           color="core.darkgray"
           font-family="RT-Alias-Grotesk"
           font-size="4"
@@ -4174,11 +4119,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
       </div>
     </div>
     <div
-      class="c44"
+      class="c42"
       display="flex"
     >
       <h4
-        class="c45"
+        class="c43"
         color="core.silver"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -4187,7 +4132,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         Message Hash
       </h4>
       <h4
-        class="c46 c47"
+        class="c44 c45"
         color="core.silver"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -4196,7 +4141,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         bafy2bzacea5463eugsz6f7dbwixzqxmwe2ouqeq6zukackb3xxotskdidqmjm
       </h4>
       <a
-        class="c48"
+        class="c46"
         color="core.primary"
         font-size="3"
         href="https://filscout.io/en/pc/message/bafy2bzacea5463eugsz6f7dbwixzqxmwe2ouqeq6zukackb3xxotskdidqmjm"
@@ -4204,7 +4149,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         target="_blank"
       >
         <h4
-          class="c49"
+          class="c47"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="2"

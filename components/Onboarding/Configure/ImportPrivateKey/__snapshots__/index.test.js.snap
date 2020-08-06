@@ -93,7 +93,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
   align-items: flex-end;
 }
 
-.c12 {
+.c11 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -106,7 +106,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
   align-items: center;
 }
 
-.c13 {
+.c12 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -124,7 +124,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
   align-items: center;
 }
 
-.c15 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -141,15 +141,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
   align-items: center;
 }
 
-.c17 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  height: 48px;
-}
-
-.c19 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 48px;
@@ -170,7 +162,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c20 {
+.c17 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -190,11 +182,11 @@ exports[`Import private key configuration it renders correctly 1`] = `
   border-radius: 4px;
 }
 
-.c20:hover {
+.c17:hover {
   opacity: 0.8;
 }
 
-.c21 {
+.c18 {
   cursor: not-allowed;
   border: 1px solid #C4C4C4;
   background-color: #C4C4C4;
@@ -213,7 +205,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
   border-radius: 4px;
 }
 
-.c21:hover {
+.c18:hover {
   opacity: 1;
 }
 
@@ -233,18 +225,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
   font-family: RT-Alias-Grotesk;
 }
 
-.c10 {
-  color: #FC6D6F;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-top: 16px;
-  margin-bottom: 0;
-}
-
-.c14 {
+.c13 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -253,17 +234,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
   margin: 0;
 }
 
-.c18 {
-  color: #FC6D6F;
-  text-align: right;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c16 {
+.c15 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -288,18 +259,18 @@ exports[`Import private key configuration it renders correctly 1`] = `
   border-color: #999999;
 }
 
-.c16:hover {
+.c15:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c16:focus {
+.c15:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c11 {
+.c10 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
@@ -394,26 +365,19 @@ exports[`Import private key configuration it renders correctly 1`] = `
         class="c9"
         display="flex"
       >
-        <h4
-          class="c10"
-          color="status.fail.background"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        />
         <div
-          class="c11"
+          class="c10"
         >
           <div
-            class="c12"
+            class="c11"
             display="flex"
           >
             <div
-              class="c13"
+              class="c12"
               display="flex"
             >
               <h4
-                class="c14"
+                class="c13"
                 color="core.nearblack"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
@@ -423,11 +387,11 @@ exports[`Import private key configuration it renders correctly 1`] = `
               </h4>
             </div>
             <div
-              class="c15"
+              class="c14"
               display="flex"
             >
               <input
-                class="c16"
+                class="c15"
                 display="inline-block"
                 height="6"
                 placeholder="Your private key"
@@ -439,28 +403,17 @@ exports[`Import private key configuration it renders correctly 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="c17"
-          height="6"
-        >
-          <h4
-            class="c18"
-            color="status.fail.background"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
-          />
-        </div>
+        
       </div>
     </div>
   </div>
   <div
-    class="c19"
+    class="c16"
     display="flex"
     width="100%"
   >
     <button
-      class="c20"
+      class="c17"
       font-size="3"
       height="6"
       type="button"
@@ -468,7 +421,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
       Back
     </button>
     <button
-      class="c21"
+      class="c18"
       disabled=""
       font-size="3"
       height="6"

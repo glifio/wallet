@@ -143,14 +143,6 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
 .c20 {
   min-width: 0;
   box-sizing: border-box;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  height: 48px;
-}
-
-.c22 {
-  min-width: 0;
-  box-sizing: border-box;
   position: relative;
   border-color: #999999;
   display: -webkit-box;
@@ -160,7 +152,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   min-height: 160px;
 }
 
-.c23 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -189,14 +181,14 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   text-align: center;
 }
 
-.c24 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c25 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -211,7 +203,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   width: 100%;
 }
 
-.c26 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
@@ -239,7 +231,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c29 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -251,14 +243,14 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   height: 80px;
 }
 
-.c32 {
+.c30 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   width: 100%;
 }
 
-.c36 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 16px;
@@ -274,7 +266,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   align-items: center;
 }
 
-.c41 {
+.c39 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
@@ -299,7 +291,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c43 {
+.c41 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -319,7 +311,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c48 {
+.c46 {
   cursor: pointer;
   border: 1px solid core.lightgray;
   background-color: transparent;
@@ -341,11 +333,11 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   border-width: 1px;
 }
 
-.c48:hover {
+.c46:hover {
   opacity: 0.8;
 }
 
-.c50 {
+.c48 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -365,7 +357,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   border-width: 1px;
 }
 
-.c50:hover {
+.c48:hover {
   opacity: 0.8;
 }
 
@@ -374,7 +366,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   height: 24;
 }
 
-.c42 {
+.c40 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -382,7 +374,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   margin: 0;
 }
 
-.c44 {
+.c42 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -391,7 +383,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   margin: 0;
 }
 
-.c46 {
+.c44 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
@@ -420,7 +412,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c37 {
+.c35 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -429,7 +421,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   margin-top: 16px;
 }
 
-.c39 {
+.c37 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -441,16 +433,6 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
 
 .c17 {
   color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c21 {
-  color: #FC6D6F;
-  text-align: right;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -475,7 +457,6 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   background: #d1ddfa;
   padding-left: 16px;
   padding-right: 16px;
-  margin-top: 8px;
   display: inline-block;
   height: 48px;
   width: 100%;
@@ -495,7 +476,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   background: #bacbf7;
 }
 
-.c33 {
+.c31 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -520,12 +501,12 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   border-color: #999999;
 }
 
-.c33:hover {
+.c31:hover {
   background: transparent;
   cursor: initial;
 }
 
-.c33:focus {
+.c31:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
@@ -537,7 +518,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   border-radius: 1px;
 }
 
-.c28 {
+.c26 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -566,7 +547,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   background: #d1ddfa;
 }
 
-.c31 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -595,7 +576,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   background: #d1ddfa;
 }
 
-.c34 {
+.c32 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 16px;
@@ -622,7 +603,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   background: core.transparent;
 }
 
-.c27 {
+.c25 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -647,24 +628,24 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   -moz-appearance: textfield;
 }
 
-.c27:hover {
+.c25:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c27:focus {
+.c25:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c27::-webkit-outer-spin-button,
-.c27::-webkit-inner-spin-button {
+.c25::-webkit-outer-spin-button,
+.c25::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c30 {
+.c28 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -689,24 +670,24 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   -moz-appearance: textfield;
 }
 
-.c30:hover {
+.c28:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c30:focus {
+.c28:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c30::-webkit-outer-spin-button,
-.c30::-webkit-inner-spin-button {
+.c28::-webkit-outer-spin-button,
+.c28::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c47 {
+.c45 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -794,7 +775,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c35 {
+.c33 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -832,38 +813,38 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   align-self: flex-end;
 }
 
-.c35:hover {
+.c33:hover {
   opacity: 0.8;
 }
 
-.c35:hover {
+.c33:hover {
   cursor: pointer;
   opacity: 1;
 }
 
-.c38 {
+.c36 {
   font-size: 0.75rem;
 }
 
-.c40 {
+.c38 {
   -webkit-transition: 0.24s ease-in-out;
   transition: 0.24s ease-in-out;
   border-bottom: 2px solid #5E26FF00;
 }
 
-.c40:hover {
+.c38:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c45 {
+.c43 {
   word-wrap: break-word;
 }
 
-.c49 {
+.c47 {
   border-radius: 0px;
 }
 
-.c51 {
+.c49 {
   border-radius: 0px;
 }
 
@@ -1013,26 +994,15 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
             </div>
           </div>
         </div>
+        
         <div
           class="c20"
-          height="6"
-        >
-          <h4
-            class="c21"
-            color="status.fail.background"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
-          />
-        </div>
-        <div
-          class="c22"
           display="flex"
           label="Amount"
           name="amount"
         >
           <div
-            class="c23"
+            class="c21"
             color="input.border"
             display="flex"
             width="100%"
@@ -1048,18 +1018,18 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
             </h4>
           </div>
           <div
-            class="c24"
+            class="c22"
             display="inline-block"
             width="100%"
           >
             <div
-              class="c25"
+              class="c23"
               display="flex"
               height="80px"
               width="100%"
             >
               <div
-                class="c26"
+                class="c24"
                 display="flex"
                 font-family="sansSerif"
                 font-size="5"
@@ -1068,7 +1038,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
                 =
               </div>
               <input
-                class="c27"
+                class="c25"
                 display="inline-block"
                 font-size="5"
                 height="100%"
@@ -1081,7 +1051,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
                 width="100%"
               />
               <div
-                class="c28"
+                class="c26"
                 color="core.primary"
                 display="flex"
                 font-size="3"
@@ -1091,12 +1061,12 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
               </div>
             </div>
             <div
-              class="c29"
+              class="c27"
               display="flex"
               height="80px"
             >
               <input
-                class="c30"
+                class="c28"
                 display="inline-block"
                 font-size="5"
                 height="100%"
@@ -1108,7 +1078,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
                 width="100%"
               />
               <div
-                class="c31"
+                class="c29"
                 color="core.primary"
                 display="flex"
                 font-size="3"
@@ -1120,7 +1090,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
           </div>
         </div>
         <div
-          class="c32"
+          class="c30"
           width="100%"
         >
           <div
@@ -1149,7 +1119,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
                 display="flex"
               >
                 <input
-                  class="c33"
+                  class="c31"
                   disabled=""
                   display="inline-block"
                   height="6"
@@ -1157,7 +1127,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
                   width="100%"
                 />
                 <div
-                  class="c34"
+                  class="c32"
                   color="core.primary"
                   display="flex"
                   font-size="3"
@@ -1168,22 +1138,10 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
               </div>
             </div>
           </div>
-          <div
-            class="c20"
-            height="6"
-          >
-            <h4
-              class="c21"
-              color="status.fail.background"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            />
-          </div>
         </div>
       </div>
       <button
-        class="c35"
+        class="c33"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -1192,11 +1150,11 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
         type="button"
       >
         <div
-          class="c36"
+          class="c34"
           display="flex"
         >
           <p
-            class="c37 c38"
+            class="c35 c36"
             font-family="RT-Alias-Grotesk"
             font-size="2"
             font-weight="400"
@@ -1204,7 +1162,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
             ▼
           </p>
           <p
-            class="c39 c40"
+            class="c37 c38"
             display="inline-block"
             font-family="RT-Alias-Grotesk"
             font-size="2"
@@ -1215,11 +1173,11 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
         </div>
       </button>
       <div
-        class="c41"
+        class="c39"
         display="flex"
       >
         <h2
-          class="c42"
+          class="c40"
           font-family="RT-Alias-Grotesk"
           font-size="4"
           font-weight="400"
@@ -1227,11 +1185,11 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
           Total
         </h2>
         <div
-          class="c43"
+          class="c41"
           display="flex"
         >
           <h2
-            class="c44 c45"
+            class="c42 c43"
             color="core.primary"
             font-family="RT-Alias-Grotesk"
             font-size="5"
@@ -1242,7 +1200,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
             FIL
           </h2>
           <h2
-            class="c46"
+            class="c44"
             color="core.darkgray"
             font-family="RT-Alias-Grotesk"
             font-size="4"
@@ -1256,10 +1214,10 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="c47"
+      class="c45"
     >
       <button
-        class="c48 c49 Sendjs___StyledButton-sc-1crplc1-6 c49"
+        class="c46 c47 Sendjs___StyledButton-sc-1crplc1-6 c47"
         font-size="3"
         height="6"
         type="button"
@@ -1267,7 +1225,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
         Back
       </button>
       <button
-        class="c50 c51 Sendjs___StyledButton2-sc-1crplc1-7 c51"
+        class="c48 c49 Sendjs___StyledButton2-sc-1crplc1-7 c49"
         font-size="3"
         height="6"
         type="submit"
@@ -1419,14 +1377,6 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   align-items: center;
 }
 
-.c20 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  height: 48px;
-}
-
 .c22 {
   min-width: 0;
   box-sizing: border-box;
@@ -1589,6 +1539,14 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  text-align: right;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 8px;
+  margin-bottom: 0;
   text-align: right;
 }
 
@@ -1790,7 +1748,6 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   background: #FC6D6F;
   padding-left: 16px;
   padding-right: 16px;
-  margin-top: 8px;
   display: inline-block;
   height: 48px;
   width: 100%;
@@ -2294,7 +2251,6 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
         </div>
         <div
           class="c20"
-          height="6"
         >
           <h4
             class="c21"
@@ -2448,18 +2404,6 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="c20"
-            height="6"
-          >
-            <h4
-              class="c21"
-              color="status.fail.background"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            />
           </div>
         </div>
       </div>
@@ -2700,14 +2644,6 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   align-items: center;
 }
 
-.c20 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  height: 48px;
-}
-
 .c22 {
   min-width: 0;
   box-sizing: border-box;
@@ -2870,6 +2806,14 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  text-align: right;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 8px;
+  margin-bottom: 0;
   text-align: right;
 }
 
@@ -3071,7 +3015,6 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   background: #FC6D6F;
   padding-left: 16px;
   padding-right: 16px;
-  margin-top: 8px;
   display: inline-block;
   height: 48px;
   width: 100%;
@@ -3575,7 +3518,6 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
         </div>
         <div
           class="c20"
-          height="6"
         >
           <h4
             class="c21"
@@ -3729,18 +3671,6 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="c20"
-            height="6"
-          >
-            <h4
-              class="c21"
-              color="status.fail.background"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            />
           </div>
         </div>
       </div>
@@ -3984,14 +3914,6 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
 .c20 {
   min-width: 0;
   box-sizing: border-box;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  height: 48px;
-}
-
-.c22 {
-  min-width: 0;
-  box-sizing: border-box;
   position: relative;
   border-color: #999999;
   display: -webkit-box;
@@ -4001,7 +3923,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   min-height: 160px;
 }
 
-.c23 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -4030,14 +3952,14 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   text-align: center;
 }
 
-.c24 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c25 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -4052,7 +3974,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   width: 100%;
 }
 
-.c26 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
@@ -4080,7 +4002,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c29 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -4092,14 +4014,14 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   height: 80px;
 }
 
-.c32 {
+.c30 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   width: 100%;
 }
 
-.c53 {
+.c51 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 16px;
@@ -4115,7 +4037,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   align-items: center;
 }
 
-.c58 {
+.c56 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
@@ -4140,7 +4062,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   justify-content: space-between;
 }
 
-.c60 {
+.c58 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -4154,7 +4076,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   text-align: right;
 }
 
-.c35 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   border-top: 1px solid;
@@ -4164,7 +4086,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   padding: 16px;
 }
 
-.c36 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -4181,18 +4103,18 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   align-items: center;
 }
 
-.c39 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c40 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 16px;
 }
 
-.c42 {
+.c40 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -4206,7 +4128,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   align-items: center;
 }
 
-.c43 {
+.c41 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 8px;
@@ -4216,7 +4138,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   text-align: left;
 }
 
-.c45 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -4234,7 +4156,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   justify-content: flex-end;
 }
 
-.c48 {
+.c46 {
   min-width: 0;
   box-sizing: border-box;
   border-color: #EFF3FD;
@@ -4246,7 +4168,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   font-size: 1.5rem;
 }
 
-.c65 {
+.c63 {
   cursor: pointer;
   border: 1px solid core.lightgray;
   background-color: transparent;
@@ -4268,11 +4190,11 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-width: 1px;
 }
 
-.c65:hover {
+.c63:hover {
   opacity: 0.8;
 }
 
-.c67 {
+.c65 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -4292,7 +4214,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-width: 1px;
 }
 
-.c67:hover {
+.c65:hover {
   opacity: 0.8;
 }
 
@@ -4301,7 +4223,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   height: 24;
 }
 
-.c59 {
+.c57 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -4309,7 +4231,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin: 0;
 }
 
-.c61 {
+.c59 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -4318,7 +4240,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin: 0;
 }
 
-.c63 {
+.c61 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
@@ -4347,7 +4269,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin-bottom: 0;
 }
 
-.c56 {
+.c54 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -4357,7 +4279,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin-bottom: 0;
 }
 
-.c54 {
+.c52 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -4376,17 +4298,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin: 0;
 }
 
-.c21 {
-  color: #FC6D6F;
-  text-align: right;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c37 {
+.c35 {
   color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
@@ -4398,7 +4310,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   padding-left: 8px;
 }
 
-.c44 {
+.c42 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -4423,7 +4335,6 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   background: #d1ddfa;
   padding-left: 16px;
   padding-right: 16px;
-  margin-top: 8px;
   display: inline-block;
   height: 48px;
   width: 100%;
@@ -4443,7 +4354,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   background: #bacbf7;
 }
 
-.c33 {
+.c31 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -4468,12 +4379,12 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-color: #999999;
 }
 
-.c33:hover {
+.c31:hover {
   background: transparent;
   cursor: initial;
 }
 
-.c33:focus {
+.c31:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
@@ -4485,7 +4396,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-radius: 1px;
 }
 
-.c41 {
+.c39 {
   display: inline-block;
   width: 100%;
   margin-top: 8px;
@@ -4493,14 +4404,14 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   border-radius: 1px;
 }
 
-.c49 {
+.c47 {
   display: inline-block;
   width: 100%;
   margin: 0;
   border-radius: 1px;
 }
 
-.c28 {
+.c26 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -4529,7 +4440,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   background: #d1ddfa;
 }
 
-.c31 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -4558,7 +4469,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   background: #d1ddfa;
 }
 
-.c34 {
+.c32 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 16px;
@@ -4585,7 +4496,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   background: core.transparent;
 }
 
-.c47 {
+.c45 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -4614,7 +4525,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   background: #d1ddfa;
 }
 
-.c51 {
+.c49 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -4643,7 +4554,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   background: #d1ddfa;
 }
 
-.c27 {
+.c25 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -4668,24 +4579,24 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   -moz-appearance: textfield;
 }
 
-.c27:hover {
+.c25:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c27:focus {
+.c25:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c27::-webkit-outer-spin-button,
-.c27::-webkit-inner-spin-button {
+.c25::-webkit-outer-spin-button,
+.c25::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c30 {
+.c28 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -4710,24 +4621,24 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   -moz-appearance: textfield;
 }
 
-.c30:hover {
+.c28:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c30:focus {
+.c28:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c30::-webkit-outer-spin-button,
-.c30::-webkit-inner-spin-button {
+.c28::-webkit-outer-spin-button,
+.c28::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c46 {
+.c44 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -4751,24 +4662,24 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   -moz-appearance: textfield;
 }
 
-.c46:hover {
+.c44:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c46:focus {
+.c44:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c46::-webkit-outer-spin-button,
-.c46::-webkit-inner-spin-button {
+.c44::-webkit-outer-spin-button,
+.c44::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c50 {
+.c48 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -4792,24 +4703,24 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   -moz-appearance: textfield;
 }
 
-.c50:hover {
+.c48:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c50:focus {
+.c48:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c50::-webkit-outer-spin-button,
-.c50::-webkit-inner-spin-button {
+.c48::-webkit-outer-spin-button,
+.c48::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c64 {
+.c62 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -4841,7 +4752,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   width: 40%;
 }
 
-.c38 {
+.c36 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -4852,7 +4763,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   margin-top: 0;
 }
 
-.c38:hover {
+.c36:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
@@ -4912,7 +4823,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   justify-content: space-between;
 }
 
-.c52 {
+.c50 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -4950,49 +4861,49 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   align-self: flex-end;
 }
 
-.c52:hover {
+.c50:hover {
   opacity: 0.8;
 }
 
-.c52:hover {
+.c50:hover {
   cursor: pointer;
   opacity: 1;
 }
 
-.c55 {
+.c53 {
   font-size: 0.75rem;
 }
 
-.c57 {
+.c55 {
   -webkit-transition: 0.24s ease-in-out;
   transition: 0.24s ease-in-out;
   border-bottom: 2px solid #5E26FF00;
 }
 
-.c57:hover {
+.c55:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c62 {
+.c60 {
   word-wrap: break-word;
+}
+
+.c64 {
+  border-radius: 0px;
 }
 
 .c66 {
   border-radius: 0px;
 }
 
-.c68 {
-  border-radius: 0px;
-}
-
 @media screen and (min-width:40em) {
-  .c43 {
+  .c41 {
     min-width: 160px;
   }
 }
 
 @media screen and (min-width:52em) {
-  .c43 {
+  .c41 {
     min-width: 240px;
   }
 }
@@ -5143,26 +5054,15 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
             </div>
           </div>
         </div>
+        
         <div
           class="c20"
-          height="6"
-        >
-          <h4
-            class="c21"
-            color="status.fail.background"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
-          />
-        </div>
-        <div
-          class="c22"
           display="flex"
           label="Amount"
           name="amount"
         >
           <div
-            class="c23"
+            class="c21"
             color="input.border"
             display="flex"
             width="100%"
@@ -5178,18 +5078,18 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
             </h4>
           </div>
           <div
-            class="c24"
+            class="c22"
             display="inline-block"
             width="100%"
           >
             <div
-              class="c25"
+              class="c23"
               display="flex"
               height="80px"
               width="100%"
             >
               <div
-                class="c26"
+                class="c24"
                 display="flex"
                 font-family="sansSerif"
                 font-size="5"
@@ -5198,7 +5098,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
                 =
               </div>
               <input
-                class="c27"
+                class="c25"
                 display="inline-block"
                 font-size="5"
                 height="100%"
@@ -5211,7 +5111,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
                 width="100%"
               />
               <div
-                class="c28"
+                class="c26"
                 color="core.primary"
                 display="flex"
                 font-size="3"
@@ -5221,12 +5121,12 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
               </div>
             </div>
             <div
-              class="c29"
+              class="c27"
               display="flex"
               height="80px"
             >
               <input
-                class="c30"
+                class="c28"
                 display="inline-block"
                 font-size="5"
                 height="100%"
@@ -5238,7 +5138,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
                 width="100%"
               />
               <div
-                class="c31"
+                class="c29"
                 color="core.primary"
                 display="flex"
                 font-size="3"
@@ -5250,7 +5150,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
           </div>
         </div>
         <div
-          class="c32"
+          class="c30"
           width="100%"
         >
           <div
@@ -5279,7 +5179,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
                 display="flex"
               >
                 <input
-                  class="c33"
+                  class="c31"
                   disabled=""
                   display="inline-block"
                   height="6"
@@ -5287,7 +5187,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
                   width="100%"
                 />
                 <div
-                  class="c34"
+                  class="c32"
                   color="core.primary"
                   display="flex"
                   font-size="3"
@@ -5298,29 +5198,17 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
               </div>
             </div>
           </div>
-          <div
-            class="c20"
-            height="6"
-          >
-            <h4
-              class="c21"
-              color="status.fail.background"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            />
-          </div>
         </div>
       </div>
       <div
-        class="c35"
+        class="c33"
       >
         <div
-          class="c36"
+          class="c34"
           display="flex"
         >
           <h4
-            class="c37"
+            class="c35"
             color="core.darkgray"
             font-family="RT-Alias-Grotesk"
             font-size="2"
@@ -5329,7 +5217,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
             Transfers complete faster with a higher gas price.
           </h4>
           <a
-            class="c38"
+            class="c36"
             color="core.primary"
             font-size="3"
             href="https://kb.myetherwallet.com/en/transactions/what-is-gas/"
@@ -5340,24 +5228,24 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
           </a>
         </div>
         <div
-          class="c39"
+          class="c37"
         >
           <div
-            class="c40"
+            class="c38"
           >
             <div
-              class="c41"
+              class="c39"
             >
               <div
-                class="c42"
+                class="c40"
                 display="flex"
               >
                 <div
-                  class="c43"
+                  class="c41"
                   display="inline-block"
                 >
                   <h4
-                    class="c44"
+                    class="c42"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -5366,13 +5254,13 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
                   </h4>
                 </div>
                 <div
-                  class="c45"
+                  class="c43"
                   color="background.screen"
                   display="flex"
                   width="100%"
                 >
                   <input
-                    class="c46"
+                    class="c44"
                     display="inline-block"
                     height="6"
                     type="number"
@@ -5380,7 +5268,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
                     width="100%"
                   />
                   <div
-                    class="c47"
+                    class="c45"
                     color="core.primary"
                     display="flex"
                     font-size="3"
@@ -5392,21 +5280,21 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
               </div>
             </div>
             <div
-              class="c48"
+              class="c46"
             >
               <div
-                class="c49"
+                class="c47"
               >
                 <div
-                  class="c42"
+                  class="c40"
                   display="flex"
                 >
                   <div
-                    class="c43"
+                    class="c41"
                     display="inline-block"
                   >
                     <h4
-                      class="c44"
+                      class="c42"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -5415,13 +5303,13 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
                     </h4>
                   </div>
                   <div
-                    class="c45"
+                    class="c43"
                     color="background.screen"
                     display="flex"
                     width="100%"
                   >
                     <input
-                      class="c50"
+                      class="c48"
                       display="inline-block"
                       height="6"
                       type="number"
@@ -5429,7 +5317,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
                       width="100%"
                     />
                     <div
-                      class="c51"
+                      class="c49"
                       color="core.primary"
                       display="flex"
                       font-size="3"
@@ -5445,7 +5333,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
         </div>
       </div>
       <button
-        class="c52"
+        class="c50"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -5454,11 +5342,11 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
         type="button"
       >
         <div
-          class="c53"
+          class="c51"
           display="flex"
         >
           <p
-            class="c54 c55"
+            class="c52 c53"
             font-family="RT-Alias-Grotesk"
             font-size="2"
             font-weight="400"
@@ -5466,7 +5354,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
             ▲
           </p>
           <p
-            class="c56 c57"
+            class="c54 c55"
             display="inline-block"
             font-family="RT-Alias-Grotesk"
             font-size="2"
@@ -5477,11 +5365,11 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
         </div>
       </button>
       <div
-        class="c58"
+        class="c56"
         display="flex"
       >
         <h2
-          class="c59"
+          class="c57"
           font-family="RT-Alias-Grotesk"
           font-size="4"
           font-weight="400"
@@ -5489,11 +5377,11 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
           Total
         </h2>
         <div
-          class="c60"
+          class="c58"
           display="flex"
         >
           <h2
-            class="c61 c62"
+            class="c59 c60"
             color="core.primary"
             font-family="RT-Alias-Grotesk"
             font-size="5"
@@ -5504,7 +5392,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
             FIL
           </h2>
           <h2
-            class="c63"
+            class="c61"
             color="core.darkgray"
             font-family="RT-Alias-Grotesk"
             font-size="4"
@@ -5518,10 +5406,10 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
       </div>
     </div>
     <div
-      class="c64"
+      class="c62"
     >
       <button
-        class="c65 c66 Sendjs___StyledButton-sc-1crplc1-6 c66"
+        class="c63 c64 Sendjs___StyledButton-sc-1crplc1-6 c64"
         font-size="3"
         height="6"
         type="button"
@@ -5529,7 +5417,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
         Back
       </button>
       <button
-        class="c67 c68 Sendjs___StyledButton2-sc-1crplc1-7 c68"
+        class="c65 c66 Sendjs___StyledButton2-sc-1crplc1-7 c66"
         font-size="3"
         height="6"
         type="submit"
