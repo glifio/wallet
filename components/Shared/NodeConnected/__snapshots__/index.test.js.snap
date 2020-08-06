@@ -26,7 +26,7 @@ exports[`nodeConnectedWidget nodeConnectedWidget UI Component it pushes to the e
 }
 
 .c2 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -59,7 +59,7 @@ exports[`nodeConnectedWidget nodeConnectedWidget UI Component it pushes to the e
     class="c2"
     display="inline"
     font-family="RT-Alias-Grotesk"
-    font-size="3"
+    font-size="2"
     font-weight="400"
   >
     Disconnected
@@ -93,7 +93,7 @@ exports[`nodeConnectedWidget nodeConnectedWidget UI Component it renders connect
 }
 
 .c2 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -126,7 +126,7 @@ exports[`nodeConnectedWidget nodeConnectedWidget UI Component it renders connect
     class="c2"
     display="inline"
     font-family="RT-Alias-Grotesk"
-    font-size="3"
+    font-size="2"
     font-weight="400"
   >
     Connected
@@ -160,7 +160,7 @@ exports[`nodeConnectedWidget nodeConnectedWidget UI Component it renders connect
 }
 
 .c2 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -193,7 +193,7 @@ exports[`nodeConnectedWidget nodeConnectedWidget UI Component it renders connect
     class="c2"
     display="inline"
     font-family="RT-Alias-Grotesk"
-    font-size="3"
+    font-size="2"
     font-weight="400"
   >
     Connecting..

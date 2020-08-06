@@ -29,7 +29,11 @@ const applyStyles = (styleProperty, props, disabledColor) => {
 }
 
 const DownloadButton = styled.a.attrs(() => ({
-  p: 3,
+  display: 'flex',
+  alignItems: 'center',
+  height: 6,
+  px: 3,
+  py: 2,
   fontSize: 3,
   border: 1,
   borderRadius: 2,
@@ -83,9 +87,8 @@ const Reveal = ({ mnemonic, valid }) => {
             ? "Success! Please click 'Next' to access your wallet."
             : 'Write down your seed phrase somewhere safe.'}
         </Title>
-        <Box mt={[2, 0]}>
+        <Box display='flex' mt={[2, 0]}>
           <Button
-            height='max-content'
             onClick={() => {
               copyToClipboard(mnemonic)
               setCopied(true)

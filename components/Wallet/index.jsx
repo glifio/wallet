@@ -64,8 +64,9 @@ export default () => {
           margin: 0 auto;
         `}
       >
+        <NetworkSwitcherGlyph />
+
         <Sidebar height='100vh'>
-          <NetworkSwitcherGlyph />
           {hasLedgerError({ ...ledger, otherError: uncaughtError }) &&
           showLedgerError ? (
             <AccountError

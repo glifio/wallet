@@ -18,7 +18,8 @@ export const BigTitle = forwardRef(({ children, ...props }, ref) => (
   </H1Base>
 ))
 
-BigTitle.propTypes = { children: node.isRequired }
+BigTitle.propTypes = { children: node }
+BigTitle.defaultProps = { children: <></> }
 
 const H2Base = styled.h2`
   ${color}
@@ -33,7 +34,8 @@ export const Title = forwardRef(({ children, ...props }, ref) => (
   </H2Base>
 ))
 
-Title.propTypes = { children: node.isRequired }
+Title.propTypes = { children: node }
+Title.defaultProps = { children: <></> }
 
 const TextBase = styled.p`
   ${color}
@@ -51,7 +53,8 @@ export const Text = forwardRef((props, ref) => {
   )
 })
 
-Text.propTypes = { children: node.isRequired }
+Text.propTypes = { children: node }
+Text.defaultProps = { children: <></> }
 
 const H4Base = styled.h4`
   ${color}
@@ -66,7 +69,8 @@ export const Label = forwardRef(({ children, ...props }, ref) => (
   </H4Base>
 ))
 
-Label.propTypes = { children: node.isRequired }
+Label.propTypes = { children: node }
+Label.defaultProps = { children: <></> }
 
 export const Num = forwardRef(({ children, size, ...props }, ref) => (
   <H2Base ref={ref} {...theme.textStyles.num[size]} {...props}>

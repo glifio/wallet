@@ -47,6 +47,7 @@ exports[`AccountCard renders the card 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
   color: #E0D7FE;
@@ -112,6 +113,8 @@ exports[`AccountCard renders the card 1`] = `
   padding: 8px;
   padding-top: 8px;
   padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -137,6 +140,8 @@ exports[`AccountCard renders the card 1`] = `
   padding: 8px;
   padding-top: 8px;
   padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -171,7 +176,7 @@ exports[`AccountCard renders the card 1`] = `
 }
 
 .c4 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -199,11 +204,15 @@ exports[`AccountCard renders the card 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-left: 4px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 48px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -269,7 +278,7 @@ exports[`AccountCard renders the card 1`] = `
     <p
       class="c4"
       font-family="RT-Alias-Grotesk"
-      font-size="3"
+      font-size="2"
       font-weight="400"
     >
       Account
@@ -304,6 +313,7 @@ exports[`AccountCard renders the card 1`] = `
         class="c9 c10"
         display="flex"
         font-size="3"
+        height="6"
       >
         <svg
           class="c11 c12"
@@ -411,6 +421,7 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
   color: #E0D7FE;
@@ -476,6 +487,8 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
   padding: 8px;
   padding-top: 8px;
   padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -510,7 +523,7 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
 }
 
 .c4 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -538,11 +551,15 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-left: 4px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 48px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -608,7 +625,7 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
     <p
       class="c4"
       font-family="RT-Alias-Grotesk"
-      font-size="3"
+      font-size="2"
       font-weight="400"
     >
       Account
@@ -643,6 +660,7 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
         class="c9 c10"
         display="flex"
         font-size="3"
+        height="6"
       >
         <svg
           class="c11 c12"

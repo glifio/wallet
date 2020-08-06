@@ -6,7 +6,6 @@ exports[`Funds input changing values it calls the value change callback when the
   box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -358,7 +357,6 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -706,7 +704,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
 
 exports[`Funds input changing values it sets the right FIL amount when the user sets FIL and then fiat 2`] = `
 <div
-  class="Box-tuskkk-0 ilbNQt"
+  class="Box-tuskkk-0 kNDARb"
   display="flex"
   label="Amount"
   name="amount"
@@ -807,7 +805,6 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1159,7 +1156,6 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1507,7 +1503,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
 
 exports[`Funds input changing values it sets the right FIL amount when the user sets fiat twice 2`] = `
 <div
-  class="Box-tuskkk-0 ilbNQt"
+  class="Box-tuskkk-0 kNDARb"
   display="flex"
   label="Amount"
   name="amount"
@@ -1608,7 +1604,6 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1960,7 +1955,6 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2308,7 +2302,7 @@ exports[`Funds input changing values it sets the right fiat amount when the user
 
 exports[`Funds input changing values it sets the right fiat amount when the user sets FIL twice 2`] = `
 <div
-  class="Box-tuskkk-0 ilbNQt"
+  class="Box-tuskkk-0 kNDARb"
   display="flex"
   label="Amount"
   name="amount"
@@ -2409,7 +2403,6 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2757,7 +2750,7 @@ exports[`Funds input changing values it sets the right fiat amount when the user
 
 exports[`Funds input changing values it sets the right fiat amount when the user sets fiat and then FIL 2`] = `
 <div
-  class="Box-tuskkk-0 ilbNQt"
+  class="Box-tuskkk-0 kNDARb"
   display="flex"
   label="Amount"
   name="amount"
@@ -2858,7 +2851,6 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3210,7 +3202,6 @@ exports[`Funds input it renders correctly 1`] = `
   box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3562,7 +3553,6 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3918,7 +3908,6 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4274,7 +4263,6 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4630,7 +4618,6 @@ exports[`Funds input it renders error states properly 1`] = `
   box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4732,11 +4719,13 @@ exports[`Funds input it renders error states properly 1`] = `
 
 .c2 {
   color: #262626;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   text-align: center;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .c7 {
@@ -4897,7 +4886,7 @@ exports[`Funds input it renders error states properly 1`] = `
       class="c2"
       color="core.nearblack"
       font-family="RT-Alias-Grotesk"
-      font-size="3"
+      font-size="2"
       font-weight="400"
     >
       specific error message
@@ -4983,7 +4972,6 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

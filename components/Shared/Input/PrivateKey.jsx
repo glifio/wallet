@@ -1,20 +1,17 @@
 import React, { forwardRef } from 'react'
 import { func, string, bool } from 'prop-types'
 import TextInput from './Text'
-import { Label } from '../Typography'
 import Box from '../Box'
 
 const PrivateKey = forwardRef(
   ({ onChange, value, placeholder, error, setError, valid, ...props }, ref) => {
     return (
       <Box display='flex' flexDirection='column' alignItems='flex-end'>
-        <Label color='status.fail.background' mt={3} mb={0}>
-          {error}
-        </Label>
         <TextInput
           onFocus={() => {
             if (error) setError('')
           }}
+          error={error}
           ref={ref}
           label='Private key'
           onChange={onChange}

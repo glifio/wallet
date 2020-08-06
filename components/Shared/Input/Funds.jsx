@@ -155,7 +155,6 @@ const Funds = forwardRef(
         display='flex'
         minHeight='160px'
         borderColor='input.border'
-        mt={3}
         ref={ref}
         {...props}
       >
@@ -174,7 +173,7 @@ const Funds = forwardRef(
           borderRadius={2}
         >
           {error ? (
-            <Text color='core.nearblack' textAlign='center'>
+            <Text color='core.nearblack' textAlign='center' px={2}>
               {error}
             </Text>
           ) : (

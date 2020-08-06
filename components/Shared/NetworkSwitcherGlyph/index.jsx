@@ -61,7 +61,7 @@ const NetworkSwitcherGlyph = ({ ...props }) => {
       display='flex'
       width='100%'
       justifyContent='flex-start'
-      mb={2}
+      p={2}
       {...props}
     >
       <NetworkSwitcherButton

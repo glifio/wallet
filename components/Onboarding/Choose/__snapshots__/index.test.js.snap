@@ -29,10 +29,23 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   text-align: center;
 }
 
-.c5 {
+.c4 {
   min-width: 0;
   box-sizing: border-box;
-  margin-right: 16px;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: #FF9E80;
+  color: #661800;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -46,7 +59,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
   margin-bottom: 32px;
@@ -63,7 +76,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c7 {
+.c8 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -90,12 +103,12 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   align-content: space-between;
 }
 
-.c9 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c10 {
+.c11 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -108,10 +121,11 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   align-items: center;
 }
 
-.c11 {
+.c12 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   color: #000;
   display: -webkit-box;
@@ -130,13 +144,13 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c14 {
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   display: block;
 }
 
-.c16 {
+.c17 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -155,7 +169,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   font-size: 1.25rem;
 }
 
-.c19 {
+.c20 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -173,7 +187,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   font-size: 1.25rem;
 }
 
-.c20 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -189,7 +203,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c21 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -215,13 +229,13 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   align-content: space-between;
 }
 
-.c18 {
+.c19 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c12 {
+.c13 {
   width: 40px;
   height: 40px;
 }
@@ -235,7 +249,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
 }
 
 .c3 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -243,54 +257,50 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   margin-bottom: 4px;
 }
 
-.c4 {
-  color: #5E26FF;
-  font-size: 1.25rem;
+.c5 {
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-  padding: 8px;
-  border: 1px solid;
-  border-radius: 4px;
 }
 
-.c13 {
-  font-size: 1.25rem;
+.c14 {
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   margin-left: 16px;
 }
 
-.c15 {
+.c16 {
   color: #262626;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   margin: 0;
 }
 
-.c8 {
+.c9 {
   cursor: pointer;
   -webkit-transition: 0.13s ease-in-out;
   transition: 0.13s ease-in-out;
 }
 
-.c8:hover {
+.c9:hover {
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
 }
 
-.c17 {
+.c18 {
   cursor: pointer;
   -webkit-transition: 0.13s ease-in-out;
   transition: 0.13s ease-in-out;
 }
 
-.c17:hover {
+.c18:hover {
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
@@ -314,31 +324,35 @@ exports[`Choosing a wallet it renders correctly 1`] = `
     <p
       class="c3"
       font-family="RT-Alias-Grotesk"
-      font-size="3"
+      font-size="2"
       font-weight="400"
     >
       Create or login to your wallet to access the Filecoin network.
     </p>
   </div>
-  <p
-    class="c4"
-    color="core.primary"
-    font-family="RT-Alias-Grotesk"
-    font-size="3"
-    font-weight="400"
-  >
-    Please check that you are visiting https://wallet.glif.io
-  </p>
   <div
-    class="c5"
+    class="c4"
+    color="status.warning.foreground"
+  >
+    <p
+      class="c5"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+    >
+      For your protection, please check that you are visiting https://wallet.glif.io
+    </p>
+  </div>
+  <div
+    class="c6"
     display="flex"
   >
     <div
-      class="c6"
+      class="c7"
       display="flex"
     >
       <div
-        class="c7 c8"
+        class="c8 c9"
         display="flex"
         height="240px"
         overflow="hidden"
@@ -346,20 +360,20 @@ exports[`Choosing a wallet it renders correctly 1`] = `
         width="300"
       >
         <div
-          class="c9"
+          class="c10"
         >
           <div
-            class="c10"
+            class="c11"
             display="flex"
           >
             <div
-              class="c11"
+              class="c12"
               color="#000"
               display="flex"
               size="6"
             >
               <svg
-                class="c12"
+                class="c13"
                 fill="none"
                 height="40px"
                 viewBox="0 0 24 24"
@@ -375,23 +389,23 @@ exports[`Choosing a wallet it renders correctly 1`] = `
               </svg>
             </div>
             <p
-              class="c13"
+              class="c14"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Ledger Device
             </p>
           </div>
           <div
-            class="c14"
+            class="c15"
             display="block"
           >
             <p
-              class="c15"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Use your Ledger device
@@ -399,7 +413,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
           </div>
         </div>
         <div
-          class="c16"
+          class="c17"
           color="status.success.foreground"
           display="inline-block"
           font-size="3"
@@ -409,7 +423,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="c7 c17"
+        class="c8 c18"
         display="flex"
         height="240"
         overflow="hidden"
@@ -417,42 +431,42 @@ exports[`Choosing a wallet it renders correctly 1`] = `
         width="300"
       >
         <div
-          class="c9"
+          class="c10"
         >
           <div
-            class="c10"
+            class="c11"
             display="flex"
           >
             <div
-              class="c11"
+              class="c12"
               color="#000"
               display="flex"
               size="6"
             >
               <h3
-                class="c18"
+                class="c19"
               >
                 Sp
               </h3>
             </div>
             <p
-              class="c13"
+              class="c14"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Seed Phrase
             </p>
           </div>
           <div
-            class="c14"
+            class="c15"
             display="block"
           >
             <p
-              class="c15"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               New to crypto? We’ll create a new seed phrase for you
@@ -460,7 +474,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
           </div>
         </div>
         <div
-          class="c19"
+          class="c20"
           color="status.warning.foreground"
           font-size="3"
           width="max-content"
@@ -470,53 +484,53 @@ exports[`Choosing a wallet it renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="c20"
+      class="c21"
       display="flex"
     >
       <div
-        class="c21 c8"
+        class="c22 c9"
         display="flex"
         overflow="hidden"
         role="button"
         width="300"
       >
         <div
-          class="c9"
+          class="c10"
         >
           <div
-            class="c10"
+            class="c11"
             display="flex"
           >
             <div
-              class="c11"
+              class="c12"
               color="#000"
               display="flex"
               size="6"
             >
               <h3
-                class="c18"
+                class="c19"
               >
                 Sp
               </h3>
             </div>
             <p
-              class="c13"
+              class="c14"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Import Seed Phrase
             </p>
           </div>
           <div
-            class="c14"
+            class="c15"
             display="block"
           >
             <p
-              class="c15"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Use your existing seed phrase from Glif or another wallet
@@ -525,49 +539,49 @@ exports[`Choosing a wallet it renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="c21 c8"
+        class="c22 c9"
         display="flex"
         overflow="hidden"
         role="button"
         width="300"
       >
         <div
-          class="c9"
+          class="c10"
         >
           <div
-            class="c10"
+            class="c11"
             display="flex"
           >
             <div
-              class="c11"
+              class="c12"
               color="#000"
               display="flex"
               size="6"
             >
               <h3
-                class="c18"
+                class="c19"
               >
                 Pk
               </h3>
             </div>
             <p
-              class="c13"
+              class="c14"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Import Private Key
             </p>
           </div>
           <div
-            class="c14"
+            class="c15"
             display="block"
           >
             <p
-              class="c15"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Use your existing private key
@@ -660,6 +674,7 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   color: #661800;
   display: -webkit-box;
@@ -708,7 +723,11 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-top: 32px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -728,7 +747,11 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-top: 32px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -748,7 +771,7 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
 }
 
 .c7 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -811,7 +834,7 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
         <p
           class="c7"
           font-family="RT-Alias-Grotesk"
-          font-size="3"
+          font-size="2"
           font-weight="400"
         >
           We do not recommend you use this account to hold or transact significant sums of Filecoin. This account is for testing purposes only. For significant sums, Glif should only be used with a Ledger hardware wallet.
@@ -839,6 +862,7 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
       <button
         class="c10"
         font-size="3"
+        height="6"
         type="button"
       >
         Back
@@ -846,6 +870,7 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
       <button
         class="c11"
         font-size="3"
+        height="6"
         type="button"
       >
         I Understand
@@ -935,6 +960,7 @@ exports[`Choosing a wallet it renders warning text for import private key option
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   color: #661800;
   display: -webkit-box;
@@ -983,7 +1009,11 @@ exports[`Choosing a wallet it renders warning text for import private key option
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-top: 32px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -1003,7 +1033,11 @@ exports[`Choosing a wallet it renders warning text for import private key option
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-top: 32px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -1023,7 +1057,7 @@ exports[`Choosing a wallet it renders warning text for import private key option
 }
 
 .c7 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -1086,7 +1120,7 @@ exports[`Choosing a wallet it renders warning text for import private key option
         <p
           class="c7"
           font-family="RT-Alias-Grotesk"
-          font-size="3"
+          font-size="2"
           font-weight="400"
         >
           We do not recommend you use this account to hold or transact significant sums of Filecoin. This account is for testing purposes only. For significant sums, Glif should only be used with a Ledger hardware wallet.
@@ -1114,6 +1148,7 @@ exports[`Choosing a wallet it renders warning text for import private key option
       <button
         class="c10"
         font-size="3"
+        height="6"
         type="button"
       >
         Back
@@ -1121,6 +1156,7 @@ exports[`Choosing a wallet it renders warning text for import private key option
       <button
         class="c11"
         font-size="3"
+        height="6"
         type="button"
       >
         I Understand
@@ -1210,6 +1246,7 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   color: #661800;
   display: -webkit-box;
@@ -1258,7 +1295,11 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-top: 32px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -1278,7 +1319,11 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-top: 32px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -1298,7 +1343,7 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
 }
 
 .c7 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -1361,7 +1406,7 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
         <p
           class="c7"
           font-family="RT-Alias-Grotesk"
-          font-size="3"
+          font-size="2"
           font-weight="400"
         >
           We do not recommend you use this account to hold or transact significant sums of Filecoin. This account is for testing purposes only. For significant sums, Glif should only be used with a Ledger hardware wallet.
@@ -1389,6 +1434,7 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
       <button
         class="c10"
         font-size="3"
+        height="6"
         type="button"
       >
         Back
@@ -1396,6 +1442,7 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
       <button
         class="c11"
         font-size="3"
+        height="6"
         type="button"
       >
         I Understand

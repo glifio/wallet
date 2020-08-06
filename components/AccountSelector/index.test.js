@@ -41,6 +41,9 @@ describe('AccountSelector', () => {
       res = render(<AccountSelector />, { wrapper: Tree })
     })
     expect(screen.getAllByText('error for testing')[0]).toBeInTheDocument()
+    for (let i = 0; i < 5; i++) {
+      expect(screen.getAllByText('Address')[i]).toBeInTheDocument()
+    }
     expect(res.container.children[1]).toMatchSnapshot()
   })
 })
