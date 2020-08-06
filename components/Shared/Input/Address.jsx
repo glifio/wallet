@@ -7,7 +7,6 @@ const Address = forwardRef(
   ({ value, label, error, setError, ...props }, ref) => {
     return (
       <TextInput
-        mt={2}
         onBlur={() => {
           const isValidAddress = validateAddressString(value)
           if (value && !isValidAddress) setError(`Invalid ${label} address.`)

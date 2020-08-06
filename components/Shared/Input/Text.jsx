@@ -45,11 +45,13 @@ const TextInput = ({
         </Box>
       </Box>
     </InputWrapper>
-    <Box height={6} py={2}>
-      <Label color='status.fail.background' textAlign='right'>
-        {error}
-      </Label>
-    </Box>
+    {error && (
+      <Box textAlign='right' pt={2} mb={0}>
+        <Label color='status.fail.background' m={0} textAlign='right'>
+          {error}
+        </Label>
+      </Box>
+    )}
   </>
 )
 
