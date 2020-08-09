@@ -3,7 +3,6 @@ import styled, { keyframes } from 'styled-components'
 import { Box, Num, BaseButton } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
-// import { getByPlaceholderText } from '@testing-library/react'
 
 const ArrowFlow = keyframes`
     0% {

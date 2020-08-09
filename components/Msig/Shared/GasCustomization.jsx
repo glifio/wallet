@@ -1,15 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { func, string } from 'prop-types'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
-import {
-  Box,
-  Button,
-  Text,
-  IconLedger,
-  Input,
-  StyledATag,
-  Label
-} from '../../Shared'
+import { Box, Button, Text, IconLedger, Input, StyledATag } from '../../Shared'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 import useWallet from '../../../WalletProvider/useWallet'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
@@ -25,8 +17,7 @@ const GasCustomization = ({
   setGasPrice,
   setGasLimit,
   setEstimatedGas,
-  value,
-  makeFriendlyWalletBalance
+  value
 }) => {
   const [gasPriceLocal, setGasPriceLocal] = useState(gasPrice)
   const [gasLimitLocal, setGasLimitLocal] = useState(gasLimit)
@@ -204,8 +195,7 @@ GasCustomization.propTypes = {
   setGasLimit: func.isRequired,
   estimateGas: func.isRequired,
   setEstimatedGas: func.isRequired,
-  value: string.isRequired,
-  makeFriendlyBalance: string.isRequired
+  value: string.isRequired
 }
 
 export default GasCustomization
