@@ -18,7 +18,7 @@ export default () => {
   const [childView, setChildView] = useState(MSIG_STATE)
   return (
     <>
-      <Box p={3}>
+      <Box minHeight='100vh' p={3}>
         {childView === MSIG_STATE && (
           <State
             msigAddress={msigActorAddress}

@@ -12,7 +12,7 @@ export const CardHeader = ({ address, balance, customizingGas }) => {
     <Box
       width='100%'
       p={3}
-      border={1}
+      border={0}
       borderTopRightRadius={3}
       borderTopLeftRadius={3}
       bg='core.primary'
@@ -24,15 +24,15 @@ export const CardHeader = ({ address, balance, customizingGas }) => {
         alignItems='center'
         justifyContent='space-between'
       >
-        <Box display='flex' flexDirection='row'>
+        <Box display='flex' flexDirection='row' alignItems='center'>
           {customizingGas ? (
             <>
               <Glyph acronym='Tf' color='white' mr={3} />
-              <Text>Custom transaction fee</Text>
+              <Text m={0}>Custom transaction fee</Text>
             </>
           ) : (
             <>
-              <Glyph acronym='Ac' color='white' mr={3} />
+              <Glyph acronym='Ms' color='white' mr={3} />
               <Box
                 display='flex'
                 flexDirection='column'
@@ -59,7 +59,7 @@ CardHeader.propTypes = {
   customizingGas: PropTypes.bool.isRequired
 }
 
-export const WithdrawHeaderText = ({ step }) => {
+export const WithdrawHeaderText = ({ step, customizingGas }) => {
   let text = ''
 
   switch (step) {
@@ -76,6 +76,10 @@ export const WithdrawHeaderText = ({ step }) => {
     default:
       text = ''
   }
+
+  if (customizingGas)
+    text = 'Please select the custom gas fee for this transaction.'
+
   return <Text textAlign='center'>{text}</Text>
 }
 

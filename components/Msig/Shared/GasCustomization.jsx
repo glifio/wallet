@@ -1,15 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { func, string } from 'prop-types'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
-import {
-  Box,
-  Button,
-  Text,
-  IconLedger,
-  Input,
-  StyledATag,
-  Label
-} from '../../Shared'
+import { Box, Button, Text, IconLedger, Input, StyledATag } from '../../Shared'
+import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
+import useWallet from '../../../WalletProvider/useWallet'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 
 // this is a weird hack to get tests to run in jest...
@@ -23,8 +17,7 @@ const GasCustomization = ({
   setGasPrice,
   setGasLimit,
   setEstimatedGas,
-  value,
-  walletBalance
+  value
 }) => {
   const [gasPriceLocal, setGasPriceLocal] = useState(gasPrice)
   const [gasLimitLocal, setGasLimitLocal] = useState(gasLimit)
@@ -88,13 +81,16 @@ const GasCustomization = ({
     close()
   }
 
+  const wallet = useWallet()
+
   return (
     <form onSubmit={onSubmit}>
-      <Box mt={2} p={3}>
+      <Box p={3} bg='background.screen'>
         <Box display='flex' justifyContent='space-between' alignItems='center'>
-          <Label my={3} pl={2} color='core.darkgray'>
+          <Text my={3} pl={2} color='core.darkgray'>
             Transfers complete faster with a higher gas price.
-          </Label>
+          </Text>
+
           <StyledATag
             rel='noopener noreferrer'
             target='_blank'
@@ -146,23 +142,38 @@ const GasCustomization = ({
       >
         <Box>
           <Text margin={0}>Transaction Fee</Text>
+          <Box display='flex' alignItems='center'>
+            <Text margin={0} color='core.darkgray'>
+              Paid via
+            </Text>
+            <IconLedger height='32px' />{' '}
+            <Text margin={0} color='core.darkgray'>
+              {makeFriendlyBalance(wallet.balance, 2, true)} FIL
+            </Text>
+          </Box>
+        </Box>
+
+        {/* <Box>
+          <Text margin={0}>Transaction Fee</Text>
           <Text margin={0} color='core.darkgray'>
             Paid via <IconLedger /> {walletBalance} FIL
           </Text>
-        </Box>
-        <Text ml={2} color='core.primary'>
+        </Box> */}
+        <Text ml={2} color={error ? 'status.fail.background' : 'core.primary'}>
           {error
-            ? 'Error fetching tx fee'
+            ? 'Error fetching transaction fee'
             : `${estimatedGasFeeLocal.toAttoFil()} AttoFil`}
         </Text>
       </Box>
-      <Box borderBottom={1} borderColor='core.lightgray' />
+
       <Box
         display='flex'
         flexDirection='row'
         justifyContent='space-between'
         bg='background.screen'
         p={3}
+        borderBottomLeftRadius={3}
+        borderBottomRightRadius={3}
       >
         <Button
           variant='secondary'
@@ -184,8 +195,7 @@ GasCustomization.propTypes = {
   setGasLimit: func.isRequired,
   estimateGas: func.isRequired,
   setEstimatedGas: func.isRequired,
-  value: string.isRequired,
-  walletBalance: string.isRequired
+  value: string.isRequired
 }
 
 export default GasCustomization
