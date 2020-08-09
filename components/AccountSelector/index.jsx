@@ -122,7 +122,7 @@ const AccountSelector = ({ investor, msig }) => {
   if (hasLedgerError({ ...ledger, otherError: uncaughtError })) {
     errorMsg = reportLedgerConfigError({ ...ledger, otherError: uncaughtError })
   } else if (errorInRdx) {
-    errorMsg = errorInRdx
+    errorMsg = errorInRdx.message
   }
 
   const fetchNextAccount = async () => {
