@@ -1,6 +1,8 @@
 import crypto from 'crypto'
+import axios from 'axios'
 
 import investorIdHashes from './investorHashes'
+import reportError from '../reportError'
 
 export const createHash = val =>
   crypto
@@ -42,4 +44,27 @@ export const decodeInvestorValsForCoinList = hexString => {
   }
 
   return vals.split(VAL_DELINEATOR)
+}
+
+export const sendMagicStringToPL = async (
+  address,
+  hashedInvestorId,
+  magicString
+) => {
+  try {
+    const res = await axios.post(process.env.MAGIC_STRING_ENDPOINT, {
+      address,
+      hash: hashedInvestorId,
+      magicString
+    })
+    if (res.status !== 200) throw new Error(res.statusText)
+  } catch (err) {
+    reportError(
+      'investor/sendMagicStringToPL/',
+      false,
+      address,
+      hashedInvestorId,
+      magicString
+    )
+  }
 }

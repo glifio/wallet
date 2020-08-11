@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, IconLedger, Text, Warning } from '../../Shared'
+import { Box, IconLedger, StyledATag, Text, Warning } from '../../Shared'
 import ImportWallet from './Import'
 import CreateWallet from './Create'
 import Hello from './Hello'
@@ -97,6 +97,12 @@ export default () => {
               />
             </Box>
           </Box>
+          <StyledATag
+            mt={4}
+            href={`${window.location.protocol}//${window.location.host}/investor`}
+          >
+            Filecoin investors go hurr
+          </StyledATag>
         </Box>
       )}
     </>

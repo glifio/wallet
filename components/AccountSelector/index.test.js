@@ -18,7 +18,7 @@ describe('AccountSelector', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     let res
     await act(async () => {
-      res = render(<AccountSelector investor />, { wrapper: Tree })
+      res = render(<AccountSelector premainnetInvestor />, { wrapper: Tree })
     })
     // IMPORTANT; the investor prop causes the X button to not get rendered, which is normally the firstChild of the container here
     expect(res.container.firstChild).toMatchSnapshot()

@@ -14,7 +14,11 @@ import {
   Title
 } from '../Shared'
 import { IconLedger } from '../Shared/Icons'
-import { encodeInvestorValsForCoinList } from '../../utils/investor'
+import {
+  encodeInvestorValsForCoinList,
+  sendMagicStringToPL,
+  createHash
+} from '../../utils/investor'
 import copyToClipboard from '../../utils/copyToClipboard'
 import noop from '../../utils/noop'
 import useWallet from '../../WalletProvider/useWallet'
@@ -116,10 +120,12 @@ export default () => {
   const [confirmed, setConfirmed] = useState(false)
   const [investorString, setInvestorString] = useState('')
 
-  const onClick = () => {
+  const onClick = async () => {
     if (confirmed) window.location.href = 'https://coinlist.co/login'
     else {
-      setInvestorString(encodeInvestorValsForCoinList(address, investor))
+      const encodedString = encodeInvestorValsForCoinList(address, investor)
+      setInvestorString(encodedString)
+      await sendMagicStringToPL(address, createHash(investor), encodedString)
       setConfirmed(true)
     }
   }

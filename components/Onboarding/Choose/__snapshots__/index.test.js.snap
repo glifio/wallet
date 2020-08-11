@@ -282,6 +282,21 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   margin: 0;
 }
 
+.c23 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.25rem;
+  margin-top: 24px;
+}
+
+.c23:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
 .c9 {
   cursor: pointer;
   -webkit-transition: 0.13s ease-in-out;
@@ -591,6 +606,14 @@ exports[`Choosing a wallet it renders correctly 1`] = `
       </div>
     </div>
   </div>
+  <a
+    class="c23"
+    color="core.primary"
+    font-size="3"
+    href="http://localhost/investor"
+  >
+    Filecoin investors go hurr
+  </a>
 </div>
 `;
 
