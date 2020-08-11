@@ -90,6 +90,7 @@ export default rustModule => {
         const { signature_compact } = handleErrors(
           await ledgerApp.sign(path, Buffer.from(serializedMessage, 'hex'))
         )
+        ledgerBusy = false
         return signature_compact.toString('base64')
       },
 
