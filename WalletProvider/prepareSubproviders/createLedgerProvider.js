@@ -13,7 +13,7 @@ const handleErrors = response => {
     response.error_message &&
     response.error_message
       .toLowerCase()
-      .includes('transporterror: invalild channel')
+      .includes('transporterror: invalid channel')
   ) {
     throw new Error(
       'Lost connection with Ledger. Please unplug and replug device.'
