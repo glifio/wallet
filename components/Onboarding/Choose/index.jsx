@@ -65,7 +65,7 @@ export default () => {
             </Text>
           </Box>
           <Box display='flex' justifyContent='center' flexDirection='column'>
-            <Box display='flex' flexWrap='wrap' justifyContent='center' mb={5}>
+            <Box display='flex' flexWrap='wrap' justifyContent='center' mb={3}>
               <ImportWallet
                 onClick={() => onChoose(LEDGER)}
                 Icon={IconLedger}
@@ -80,6 +80,16 @@ export default () => {
               />
               <CreateWallet onClick={() => onChoose(CREATE_MNEMONIC)} m={2} />
             </Box>
+            <ImportWallet
+              width='100%'
+              maxWidth='614px'
+              mb={3}
+              alignSelf='center'
+              onClick={`${window.location.protocol}//${window.location.host}/investor`}
+              glyphAcronym='Is'
+              title='Investor Setup'
+              description='Investors can setup their accounts here'
+            />
             <Box display='flex' flexWrap='wrap' justifyContent='center'>
               <ImportWallet
                 onClick={() => onChoose(IMPORT_MNEMONIC)}
@@ -97,12 +107,6 @@ export default () => {
               />
             </Box>
           </Box>
-          <StyledATag
-            mt={4}
-            href={`${window.location.protocol}//${window.location.host}/investor`}
-          >
-            Filecoin investors go hurr
-          </StyledATag>
         </Box>
       )}
     </>
