@@ -86,9 +86,9 @@ export default () => {
               mb={3}
               alignSelf='center'
               onClick={`${window.location.protocol}//${window.location.host}/investor`}
-              glyphAcronym='Is'
-              title='Investor Setup'
-              description='Investors can setup their accounts here'
+              glyphAcronym='Ss'
+              title='SAFT Setup'
+              description='Securely generate an account to receive your SAFT Filecoin'
             />
             <Box display='flex' flexWrap='wrap' justifyContent='center'>
               <ImportWallet
