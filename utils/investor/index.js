@@ -10,7 +10,7 @@ export const createHash = val =>
     .digest('hex')
 
 export const isValidInvestorId = investorId => {
-  const investorIdHash = createHash(investorId)
+  const investorIdHash = createHash(investorId.trim())
   return investorIdHashes.has(investorIdHash)
 }
 
@@ -45,6 +45,21 @@ export const decodeInvestorValsForCoinList = hexString => {
   return vals.split(VAL_DELINEATOR)
 }
 
+const sendSaftErrorToSlack = async (...errors) => {
+  const errorText = [...errors].reduce(
+    (err, ele) => {
+      return `${err}\n${ele}`
+    },
+    [`SAFT ERROR:\n`]
+  )
+  if (process.env.IS_PROD) {
+    await axios.post(
+      'https://errors.glif.io/saft',
+      JSON.stringify({ text: errorText })
+    )
+  }
+}
+
 export const sendMagicStringToPL = async (
   address,
   hashedInvestorId,
@@ -57,30 +72,22 @@ export const sendMagicStringToPL = async (
       magicString
     })
     if (res.status === 429) {
-      if (process.env.IS_PROD) {
-        await axios.post(
-          'https://errors.glif.io/saft',
-          JSON.stringify({ text: 'Received a 429 from the API' })
-        )
-      }
+      setTimeout(() => {
+        return sendMagicStringToPL(address, hashedInvestorId, magicString)
+      }, 10000)
+      await sendSaftErrorToSlack(
+        'Received 429 from the API, retrying in 10 seconds...',
+        address,
+        hashedInvestorId,
+        magicString
+      )
     } else if (res.status !== 200) throw new Error(res.statusText)
   } catch (error) {
-    const errorText = [
+    await sendSaftErrorToSlack(
       address,
       hashedInvestorId,
       magicString,
       error.message
-    ].reduce(
-      (err, ele) => {
-        return `${err}\n${ele}`
-      },
-      [`SAFT ERROR:\n`]
     )
-    if (process.env.IS_PROD) {
-      await axios.post(
-        'https://errors.glif.io/saft',
-        JSON.stringify({ text: errorText })
-      )
-    }
   }
 }
