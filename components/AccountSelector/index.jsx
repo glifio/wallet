@@ -121,7 +121,7 @@ const AccountSelector = ({ premainnetInvestor }) => {
   const onClose = () => {
     const searchParams = new URLSearchParams(router.query)
     const route = premainnetInvestor
-      ? `/investor/home?${searchParams.toString()}`
+      ? `/saft/home?${searchParams.toString()}`
       : `/home?${searchParams.toString()}`
     router.push(route)
   }

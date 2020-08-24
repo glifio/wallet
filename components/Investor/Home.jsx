@@ -134,7 +134,7 @@ export default () => {
     if (confirmed) setConfirmed(false)
     else {
       const params = new URLSearchParams(router.query)
-      router.push(`/investor/accounts?${params.toString()}`)
+      router.push(`/saft/accounts?${params.toString()}`)
     }
   }
 

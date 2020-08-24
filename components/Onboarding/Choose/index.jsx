@@ -87,7 +87,7 @@ export default () => {
               maxWidth='614px'
               mb={3}
               alignSelf='center'
-              onClick={() => router.push('/investor')}
+              onClick={() => router.push('/saft')}
               glyphAcronym='Ss'
               title='SAFT Setup'
               description='Securely generate an account to receive your SAFT Filecoin'
