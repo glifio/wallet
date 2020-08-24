@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Box, IconLedger, StyledATag, Text, Warning } from '../../Shared'
+import { useRouter } from 'next/router'
+import { Box, IconLedger, Text, Warning } from '../../Shared'
 import ImportWallet from './Import'
 import CreateWallet from './Create'
 import Hello from './Hello'
@@ -15,6 +16,7 @@ export default () => {
   const { setWalletType } = useWalletProvider()
   // this could be cleaner, but we use this to more easily navigate to/from the warning card
   const [localWalletType, setLocalWalletType] = useState(null)
+  const router = useRouter()
 
   const onChoose = type => {
     if (
@@ -85,7 +87,7 @@ export default () => {
               maxWidth='614px'
               mb={3}
               alignSelf='center'
-              onClick={`${window.location.protocol}//${window.location.host}/investor`}
+              onClick={() => router.push('/investor')}
               glyphAcronym='Ss'
               title='SAFT Setup'
               description='Securely generate an account to receive your SAFT Filecoin'

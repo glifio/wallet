@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { func } from 'prop-types'
 import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
 import {
@@ -14,7 +15,7 @@ import { IconLedger } from '../Shared/Icons'
 import { setInvestorId } from '../../store/actions'
 import { isValidInvestorId } from '../../utils/investor'
 
-export default () => {
+const EnterInvestorId = ({ setWalletType }) => {
   const router = useRouter()
   const dispatch = useDispatch()
   const [localInvestorId, setLocalInvestorId] = useState('')
@@ -51,7 +52,10 @@ export default () => {
       >
         <Button
           title='Back'
-          onClick={() => router.replace('/')}
+          onClick={() => {
+            setWalletType(null)
+            router.replace('/')
+          }}
           variant='secondary'
           mr={2}
         />
@@ -60,3 +64,9 @@ export default () => {
     </Box>
   )
 }
+
+EnterInvestorId.propTypes = {
+  setWalletType: func.isRequired
+}
+
+export default EnterInvestorId
