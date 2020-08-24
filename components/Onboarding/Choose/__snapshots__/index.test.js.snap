@@ -62,7 +62,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
 .c7 {
   min-width: 0;
   box-sizing: border-box;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -190,6 +190,36 @@ exports[`Choosing a wallet it renders correctly 1`] = `
 .c21 {
   min-width: 0;
   box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  max-width: 614px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: space-between;
+  align-content: space-between;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -203,7 +233,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c22 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -280,21 +310,6 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c23 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.25rem;
-  margin-top: 24px;
-}
-
-.c23:hover {
-  border-bottom: 2px solid #5E26FF;
 }
 
 .c9 {
@@ -499,11 +514,62 @@ exports[`Choosing a wallet it renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="c21"
+      class="c21 c9"
+      display="flex"
+      overflow="hidden"
+      role="button"
+      width="100%"
+    >
+      <div
+        class="c10"
+      >
+        <div
+          class="c11"
+          display="flex"
+        >
+          <div
+            class="c12"
+            color="#000"
+            display="flex"
+            size="6"
+          >
+            <h3
+              class="c19"
+            >
+              Ss
+            </h3>
+          </div>
+          <p
+            class="c14"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            SAFT Setup
+          </p>
+        </div>
+        <div
+          class="c15"
+          display="block"
+        >
+          <p
+            class="c16"
+            color="core.nearblack"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Securely generate an account to receive your SAFT Filecoin
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c22"
       display="flex"
     >
       <div
-        class="c22 c9"
+        class="c23 c9"
         display="flex"
         overflow="hidden"
         role="button"
@@ -554,7 +620,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="c22 c9"
+        class="c23 c9"
         display="flex"
         overflow="hidden"
         role="button"
@@ -606,14 +672,6 @@ exports[`Choosing a wallet it renders correctly 1`] = `
       </div>
     </div>
   </div>
-  <a
-    class="c23"
-    color="core.primary"
-    font-size="3"
-    href="http://localhost/investor"
-  >
-    Filecoin investors go hurr
-  </a>
 </div>
 `;
 
