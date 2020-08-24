@@ -2,7 +2,6 @@ import crypto from 'crypto'
 import axios from 'axios'
 
 import investorIdHashes from './investorHashes'
-import reportError from '../reportError'
 
 export const createHash = val =>
   crypto
@@ -57,14 +56,31 @@ export const sendMagicStringToPL = async (
       hash: hashedInvestorId,
       magicString
     })
-    if (res.status !== 200) throw new Error(res.statusText)
-  } catch (err) {
-    reportError(
-      'investor/sendMagicStringToPL/',
-      false,
+    if (res.status === 429) {
+      if (process.env.IS_PROD) {
+        await axios.post(
+          'https://errors.glif.io/saft',
+          JSON.stringify({ text: 'Received a 429 from the API' })
+        )
+      }
+    } else if (res.status !== 200) throw new Error(res.statusText)
+  } catch (error) {
+    const errorText = [
       address,
       hashedInvestorId,
-      magicString
+      magicString,
+      error.message
+    ].reduce(
+      (err, ele) => {
+        return `${err}\n${ele}`
+      },
+      [`SAFT ERROR:\n`]
     )
+    if (process.env.IS_PROD) {
+      await axios.post(
+        'https://errors.glif.io/saft',
+        JSON.stringify({ text: errorText })
+      )
+    }
   }
 }
