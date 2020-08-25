@@ -15,7 +15,6 @@ import {
   DisplayWord as Word,
   MenuItem,
   Text,
-  Title,
   MnemonicWordContainer
 } from '../../../../Shared'
 import { MNEMONIC_PROPTYPE } from '../../../../../customPropTypes'
@@ -73,7 +72,6 @@ const Reveal = ({ mnemonic, valid }) => {
 
   return (
     <>
-      <Title>Record</Title>
       <Box
         display='flex'
         flexDirection='row'
