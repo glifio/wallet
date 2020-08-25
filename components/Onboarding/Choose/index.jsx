@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useRouter } from 'next/router'
 import {
   Box,
   IconLedger,
@@ -11,7 +12,6 @@ import {
   InlineBox
 } from '../../Shared'
 import HeaderGlyph from '../../Shared/Glyph/HeaderGlyph'
-import { useRouter } from 'next/router'
 import ImportWallet from './Import'
 import CreateWallet from './Create'
 import {
@@ -97,7 +97,6 @@ export default () => {
                 <InlineBox
                   backgroundColor='status.warning.background'
                   color='status.warning.foreground'
-                  borderRadius={2}
                   py={1}
                   px={3}
                   mr={2}
@@ -122,19 +121,6 @@ export default () => {
             justifyContent='space-evenly'
             margin='auto'
           >
-            {/* <Box
-              backgroundColor='status.warning.background'
-              color='status.warning.foreground'
-              borderRadius={2}
-              py={2}
-              px={3}
-              my={3}
-            >
-              <Text m={0}>
-                For your protection, please check that you are visiting
-                https://wallet.glif.io
-              </Text>
-            </Box> */}
             <Box
               display='flex'
               justifyContent='center'
@@ -148,7 +134,6 @@ export default () => {
                 onClick={() => onChoose(LEDGER)}
                 Icon={IconLedger}
                 title='Ledger Device'
-                // description='Use your Ledger device'
                 tag='Most Secure'
                 display='flex'
                 justifyContent='space-between'
