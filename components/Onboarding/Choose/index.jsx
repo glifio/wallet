@@ -97,10 +97,11 @@ export default () => {
                   color='status.warning.foreground'
                   borderRadius={2}
                   py={1}
-                  px={2}
+                  px={3}
                   mr={2}
                   my={3}
                   fontSize={4}
+                  borderRadius={6}
                 >
                   Remember
                 </InlineBox>
