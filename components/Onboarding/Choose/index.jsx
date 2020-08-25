@@ -11,6 +11,7 @@ import {
   InlineBox
 } from '../../Shared'
 import HeaderGlyph from '../../Shared/Glyph/HeaderGlyph'
+import { useRouter } from 'next/router'
 import ImportWallet from './Import'
 import CreateWallet from './Create'
 import {
@@ -25,6 +26,7 @@ export default () => {
   const { setWalletType } = useWalletProvider()
   // this could be cleaner, but we use this to more easily navigate to/from the warning card
   const [localWalletType, setLocalWalletType] = useState(null)
+  const router = useRouter()
 
   const onChoose = type => {
     if (
@@ -142,7 +144,6 @@ export default () => {
               flexGrow='1'
             >
               <Text>Access via</Text>
-
               <ImportWallet
                 onClick={() => onChoose(LEDGER)}
                 Icon={IconLedger}
@@ -154,7 +155,6 @@ export default () => {
                 flexDirection='column'
                 mb={6}
               />
-
               <Text mt={0} maxWidth={11}>
                 Securely generate an account to receive your SAFT Filecoin
               </Text>

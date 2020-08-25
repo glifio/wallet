@@ -1456,7 +1456,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                 font-size="4"
                 font-weight="400"
               >
-                1
+                0
                 FIL
               </h2>
             </div>
@@ -1530,7 +1530,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                 font-size="4"
                 font-weight="400"
               >
-                1
+                0
                 FIL
               </h2>
             </div>
@@ -1604,7 +1604,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                 font-size="4"
                 font-weight="400"
               >
-                1
+                0
                 FIL
               </h2>
             </div>
@@ -1678,7 +1678,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                 font-size="4"
                 font-weight="400"
               >
-                1
+                0
                 FIL
               </h2>
             </div>
