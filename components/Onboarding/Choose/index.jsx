@@ -146,7 +146,7 @@ export default () => {
               <ImportWallet
                 mb={4}
                 alignSelf='center'
-                onClick={`${window.location.protocol}//${window.location.host}/investor`}
+                onClick={() => router.push('/saft')}
                 glyphAcronym='Ss'
                 title='SAFT Setup'
               />
