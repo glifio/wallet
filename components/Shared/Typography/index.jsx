@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import { color, typography, layout, space, border } from 'styled-system'
 import styled from 'styled-components'
-import { node, oneOf } from 'prop-types'
+import { node, oneOf, number } from 'prop-types'
 
 import theme from '../theme'
 
@@ -11,6 +11,14 @@ const H1Base = styled.h1`
   ${layout}
   ${space}
 `
+
+export const Header = forwardRef(({ children, ...props }, ref) => (
+  <H1Base ref={ref} {...theme.textStyles.header} {...props}>
+    {children}
+  </H1Base>
+))
+
+Header.propTypes = { children: node.isRequired }
 
 export const BigTitle = forwardRef(({ children, ...props }, ref) => (
   <H1Base ref={ref} {...theme.textStyles.bigTitle} {...props}>
@@ -81,4 +89,15 @@ export const Num = forwardRef(({ children, size, ...props }, ref) => (
 Num.propTypes = {
   children: node.isRequired,
   size: oneOf(Object.keys(theme.textStyles.num))
+}
+
+export const Highlight = styled.span`
+  border-radius: ${props => props.theme.radii[6]};
+  padding: 0rem 1rem;
+  margin-right: 0.5rem;
+  background-color: #ffc0cb;
+  ${typography}
+`
+Highlight.propTypes = {
+  fontSize: number.isRequired
 }
