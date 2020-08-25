@@ -15,23 +15,23 @@ import contentProps from './contentProps'
 
 const setBackgroundColor = ({ completed, empty, valid, importSeedError }) => {
   if (importSeedError && (empty || !valid)) return 'status.fail.background'
-  if (!importSeedError && completed) return 'core.secondary'
-  if (!importSeedError && empty) return 'core.white'
+  if (!importSeedError && completed) return 'core.primary'
+  if (!importSeedError && empty) return 'core.transparent'
   return 'core.secondary'
 }
 
 const setInputColor = ({ completed, importSeedError }) => {
   if (importSeedError) return 'core.nearblack'
-  if (!importSeedError && completed) return 'core.primary'
+  if (!importSeedError && completed) return 'core.secondary'
   return 'core.primary'
 }
 
 export const MnemonicWordInput = styled.input.attrs(props => ({
   ...contentProps,
-  borderRadius: 0,
+  borderRadius: 6,
+  border: 1,
   color: setInputColor(props)
 }))`
-  max-width: 70%;
   &:focus {
     box-shadow: 0;
     outline: 0;
@@ -73,25 +73,21 @@ const MnemonicWord = ({
   ])
 
   return (
-    <StyledWrapper
-      onBlur={() => setCompleted(true)}
-      backgroundColor={setBackgroundColor({
-        completed,
-        importSeedError,
-        valid: word === wordToMatch,
-        empty: !word
-      })}
-      border={1}
-      borderColor={
-        !word || word !== wordToMatch
-          ? importSeedError && 'status.fail.background'
-          : 'core.primary'
-      }
-    >
-      <Circle color='core.primary' backgroundColor='core.secondary'>
-        {num}
-      </Circle>
+    <StyledWrapper>
+      <Circle color='core.black'>{num}</Circle>
       <MnemonicWordInput
+        onBlur={() => setCompleted(true)}
+        backgroundColor={setBackgroundColor({
+          completed,
+          importSeedError,
+          valid: word === wordToMatch,
+          empty: !word
+        })}
+        borderColor={
+          !word || word !== wordToMatch
+            ? importSeedError && 'status.fail.background'
+            : 'core.primary'
+        }
         onFocus={() => setCompleted(false)}
         onChange={e => setWord(e.target.value)}
         completed={completed}

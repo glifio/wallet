@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import {
   Box,
+  Text,
   Title,
   MenuItem,
   DisplayWord as Word,
@@ -38,13 +39,13 @@ const WordPrompt = ({
         my={3}
         minHeight={7}
       >
-        <Title
+        <Text
           color={importSeedError ? 'status.fail.background' : 'core.nearblack'}
         >
           {importSeedError
             ? 'One or more of your seed phrase words was incorrect. Please try again.'
             : 'Add the correct words to the empty inputs'}
-        </Title>
+        </Text>
       </Box>
       <MnemonicWordContainer
         display='flex'

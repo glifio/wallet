@@ -14,6 +14,7 @@ import {
   Button,
   DisplayWord as Word,
   MenuItem,
+  Text,
   Title,
   MnemonicWordContainer
 } from '../../../../Shared'
@@ -72,6 +73,7 @@ const Reveal = ({ mnemonic, valid }) => {
 
   return (
     <>
+      <Title>Record</Title>
       <Box
         display='flex'
         flexDirection='row'
@@ -82,11 +84,11 @@ const Reveal = ({ mnemonic, valid }) => {
         my={3}
         minHeight={7}
       >
-        <Title>
+        <Text>
           {valid
             ? "Success! Please click 'Next' to access your wallet."
             : 'Write down your seed phrase somewhere safe.'}
-        </Title>
+        </Text>
         <Box display='flex' mt={[2, 0]}>
           <Button
             onClick={() => {
