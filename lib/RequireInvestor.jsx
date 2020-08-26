@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 import { string, node, oneOf } from 'prop-types'
 import Router from 'next/router'
+import { MAINNET, TESTNET } from '../constants'
 
 // This component makes sure the right investor information is in redux before allowing the user to move forward
 export class RequireInvestor extends Component {
@@ -30,7 +31,7 @@ export class RequireInvestor extends Component {
 
 RequireInvestor.propTypes = {
   investor: string.isRequired,
-  network: oneOf(['f', 't']).isRequired,
+  network: oneOf([MAINNET, TESTNET]).isRequired,
   children: node.isRequired
 }
 

@@ -17,6 +17,7 @@ import { mockWalletProviderInstance } from '../mocks/mock-wallet-provider'
 import createMockWalletProviderContextFuncs from './createWalletProviderContextFuncs.js'
 import mockWalletSubproviders from '../mocks/mock-wallet-subproviders'
 import { presets, composeWalletProviderState } from './composeState'
+import { TESTNET } from '../../constants'
 
 /**
  * This function is a wrapper that mocks everything the filecoin app needs for testing
@@ -27,7 +28,7 @@ import { presets, composeWalletProviderState } from './composeState'
  * walletProviderInitialState(a reducer to stub the state of the walletProvider context)
  * walletProviderDispatch(a dispatcher to mock/read calls to the walletProvider's state)
  * pathname
- * query (usually { network: 'f' } or { network: 't' })
+ * query (usually { network: 'f' } or { network: TESTNET })
  */
 
 export default (statePreset = 'preOnboard', options = {}) => {
@@ -35,7 +36,7 @@ export default (statePreset = 'preOnboard', options = {}) => {
   const store = initializeStore(state)
 
   const pathname = options.pathname || '/wallet'
-  const query = options.query || { network: 't' }
+  const query = options.query || { network: TESTNET }
 
   const Tree = ({ children }) => {
     const [initialWalletProviderState, walletProviderDispatch] = useReducer(

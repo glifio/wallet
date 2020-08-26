@@ -5,7 +5,7 @@ import {
   mockGetAddressAndPubKey,
   mockSign
 } from '../../test-utils/mocks/mock-ledger-filecoin'
-import { LEDGER } from '../../constants'
+import { LEDGER, TESTNET } from '../../constants'
 import createLedgerProvider from './createLedgerProvider'
 
 const followsSubproviderInterface = subprovider =>
@@ -28,7 +28,7 @@ describe('createLedgerProvider', () => {
       const ledgerProvider = LedgerProvider({})
       ledgerProvider.getVersion()
       const funcShouldThrow = async () =>
-        await ledgerProvider.getAccounts('t', 0, 5)
+        await ledgerProvider.getAccounts(TESTNET, 0, 5)
       return expect(funcShouldThrow).rejects.toThrow(
         'Ledger is busy, please check device or unplug and replug it in.'
       )
@@ -60,7 +60,7 @@ describe('createLedgerProvider', () => {
       test('it returns an array of accounts', async () => {
         const LedgerProvider = createLedgerProvider(mockRustModule)
         const ledgerProvider = LedgerProvider({})
-        const accounts = await ledgerProvider.getAccounts('t', 0, 5)
+        const accounts = await ledgerProvider.getAccounts(TESTNET, 0, 5)
         expect(accounts.length).toBe(5)
         expect(mockGetAddressAndPubKey).toHaveBeenCalledTimes(5)
       })

@@ -1,4 +1,11 @@
-import { SINGLE_KEY, LEDGER } from '../constants'
+import {
+  SINGLE_KEY,
+  LEDGER,
+  MAINNET,
+  MAINNET_PATH_CODE,
+  TESTNET_PATH_CODE,
+  TESTNET
+} from '../constants'
 import {
   checkLedgerConfiguration,
   setLedgerProvider
@@ -9,7 +16,7 @@ import createPath from '../utils/createPath'
 // a helper function for getting the default wallet associated with the wallet provider
 const fetchDefaultWallet = async (
   dispatch,
-  network = 't',
+  network = TESTNET,
   walletType,
   walletProvider,
   walletSubProviders
@@ -31,7 +38,8 @@ const fetchDefaultWallet = async (
 
   const [defaultAddress] = await provider.wallet.getAccounts(network, 0, 1)
   const balance = await provider.getBalance(defaultAddress)
-  const networkCode = network === 'f' ? 461 : 1
+  const networkCode =
+    network === MAINNET ? MAINNET_PATH_CODE : TESTNET_PATH_CODE
 
   let path = createPath(networkCode, 0)
   if (provider.wallet.type === SINGLE_KEY) path = SINGLE_KEY

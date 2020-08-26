@@ -1,7 +1,7 @@
 import Message from '@openworklabs/filecoin-message'
 import createHDWalletProvider from './createHDWalletProvider'
 import mockRustModule from '@zondax/filecoin-signing-tools'
-import { HD_WALLET } from '../../constants'
+import { HD_WALLET, TESTNET } from '../../constants'
 
 const mnemonic =
   'slender spread awkward chicken noise useful thank dentist tip bronze ritual explain version spot collect whisper glow peanut bus local country album punch frown'
@@ -46,7 +46,7 @@ describe('createHDWalletProvider', () => {
       test('it returns an array of accounts', async () => {
         const HDWalletProvider = createHDWalletProvider(mockRustModule)
         const hdWalletProvider = HDWalletProvider(mnemonic)
-        const accounts = await hdWalletProvider.getAccounts('t', 0, 5)
+        const accounts = await hdWalletProvider.getAccounts(TESTNET, 0, 5)
         expect(accounts.length).toBe(5)
         expect(mockRustModule.keyDerive).toHaveBeenCalledTimes(5)
       })
