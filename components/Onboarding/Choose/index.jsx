@@ -106,8 +106,8 @@ export default () => {
                 >
                   Remember
                 </InlineBox>
-                For your protection, please check your browser's URL bar that
-                you're visiting https://wallet.glif.io
+                For your protection, please check your browser&apos;s URL bar
+                that you&apos;re visiting https://wallet.glif.io
               </Title>
             </Box>
           </Box>
