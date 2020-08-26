@@ -37,11 +37,6 @@ const Import = ({
         </Text>
       </Box>
     </Card>
-    <Box display='block' margin='0 auto' maxWidth={11}>
-      <Text m={0} color='core.nearblack'>
-        {description}
-      </Text>
-    </Box>
   </>
 )
 
@@ -50,7 +45,7 @@ Import.propTypes = {
   glyphAcronym: PropTypes.string,
   Icon: PropTypes.object,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   tag: PropTypes.string
 }
 
