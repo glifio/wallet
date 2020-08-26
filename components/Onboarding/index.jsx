@@ -20,6 +20,7 @@ export default () => {
       >
         {nodeConnecting && (
           <NodeConnectingGlyph
+            mockStrength={!process.env.IS_PROD && 2}
             apiAddress={process.env.LOTUS_NODE_JSONRPC}
             onConnectionStrengthChange={newStrength => {
               // give a little extra time
