@@ -39,7 +39,10 @@ const ColoredDot = styled.span`
 `
 
 const NodeConnectedWidget = forwardRef(
-  ({ apiAddress, onConnectionStrengthChange, token, ...props }, ref) => {
+  (
+    { apiAddress, onConnectionStrengthChange, token, mockStrength, ...props },
+    ref
+  ) => {
     const [connectionStrength, setConnectionStrength] = useState(-1)
     const [polling, setPolling] = useState(false)
     const timeout = useRef()
@@ -49,7 +52,8 @@ const NodeConnectedWidget = forwardRef(
         clearTimeout(timeout.current)
         timeout.current = setTimeout(async () => {
           try {
-            const strength = await calcConnectionStrength(apiAddress, token)
+            const strength =
+              mockStrength || (await calcConnectionStrength(apiAddress, token))
             if (strength !== connectionStrength) {
               setConnectionStrength(strength)
               onConnectionStrengthChange(strength)
@@ -61,11 +65,17 @@ const NodeConnectedWidget = forwardRef(
           }
         }, pollTimer)
       },
-      [apiAddress, connectionStrength, onConnectionStrengthChange, token]
+      [
+        apiAddress,
+        connectionStrength,
+        onConnectionStrengthChange,
+        token,
+        mockStrength
+      ]
     )
 
     useEffect(() => {
-      if (!polling) pollConnection(0)
+      if (!polling && !mockStrength) pollConnection(0)
       setPolling(true)
       return () => {
         if (polling) {
@@ -73,7 +83,7 @@ const NodeConnectedWidget = forwardRef(
           clearTimeout(timeout.current)
         }
       }
-    }, [polling, setPolling, pollConnection])
+    }, [mockStrength, polling, setPolling, pollConnection])
 
     const nodeConnectedText = () => {
       // Connecting to node..
@@ -117,12 +127,14 @@ NodeConnectedWidget.propTypes = {
   // 0 - disconnected
   // 1 - node unhealthy
   // 2 - healthy
-  onConnectionStrengthChange: PropTypes.func
+  onConnectionStrengthChange: PropTypes.func,
+  mockStrength: PropTypes.oneOf([0, 1, 2])
 }
 
 NodeConnectedWidget.defaultProps = {
   onConnectionStrengthChange: noop,
-  token: ''
+  token: '',
+  mockStrength: -1
 }
 
 export default NodeConnectedWidget
