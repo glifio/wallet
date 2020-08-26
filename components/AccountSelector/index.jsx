@@ -13,7 +13,6 @@ import {
   Menu,
   MenuItem,
   ButtonClose,
-  StyledATag,
   LoadingScreen
 } from '../Shared'
 import Create from './Create'
