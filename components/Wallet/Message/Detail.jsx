@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import RPCEngine from '@openworklabs/lotus-jsonrpc-engine'
 import { func, oneOf } from 'prop-types'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
@@ -51,6 +52,46 @@ TxStatusText.propTypes = {
 
 const MessageDetail = ({ address, close, message }) => {
   const { converter, converterError } = useConverter()
+  const [gasUsed, setGasUsed] = useState(
+    new FilecoinNumber(message.gas_used, 'attofil')
+  )
+  const [fetchedGasUsed, setFetchedGasUsed] = useState(false)
+  /* eslint-disable no-unused-vars */
+  const [errorExitCode, setErrorExitCode] = useState(null)
+
+  const loadingGasUsed = gasUsed.toAttoFil() === '0' && !fetchedGasUsed
+  // if this is a SENT transaction, add the fee to the total
+  const shouldAddGasUsedToTotal = address === message.from
+
+  useEffect(() => {
+    const fetchGasUsed = async msgCid => {
+      const lotus = new RPCEngine({
+        apiAddress: process.env.LOTUS_NODE_JSONRPC
+      })
+
+      const { Receipt } = await lotus.request('StateSearchMsg', {
+        '/': msgCid
+      })
+
+      if (Receipt.ExitCode === 0) {
+        setGasUsed(new FilecoinNumber(Receipt.GasUsed, 'attofil'))
+      } else {
+        setErrorExitCode(Receipt.ExitCode)
+      }
+      setFetchedGasUsed(true)
+    }
+
+    if (!fetchedGasUsed) {
+      fetchGasUsed(message.cid)
+    }
+  }, [
+    message.cid,
+    fetchedGasUsed,
+    setFetchedGasUsed,
+    setGasUsed,
+    setErrorExitCode
+  ])
+
   return (
     <MessageDetailCard>
       <Box
@@ -128,7 +169,7 @@ const MessageDetail = ({ address, close, message }) => {
         <Input.Text
           onChange={noop}
           label='Transfer Fee'
-          value={message.gas_used}
+          value={loadingGasUsed ? 'Loading...' : `${gasUsed.toAttoFil()} aFIL`}
           backgroundColor='background.screen'
           disabled
         />
@@ -152,7 +193,7 @@ const MessageDetail = ({ address, close, message }) => {
               color='core.primary'
             >
               {new FilecoinNumber(message.value, 'fil')
-                .plus(new FilecoinNumber(message.gas_used, 'attofil'))
+                .plus(shouldAddGasUsedToTotal ? gasUsed : 0)
                 .toString()}{' '}
               FIL
             </Num>
@@ -162,7 +203,7 @@ const MessageDetail = ({ address, close, message }) => {
                   ? `${makeFriendlyBalance(
                       converter.fromFIL(
                         new FilecoinNumber(message.value, 'fil').plus(
-                          new FilecoinNumber(message.gas_used, 'attofil')
+                          shouldAddGasUsedToTotal ? gasUsed : 0
                         )
                       ),
                       2

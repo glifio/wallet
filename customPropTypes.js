@@ -79,11 +79,7 @@ export const MESSAGE_PROPS = shape({
    */
   value: string.isRequired,
   /**
-   * Gas price set in the message
-   */
-  gasprice: string.isRequired,
-  /**
-   * Amount of gas used in the message (not required for pending transactions)
+   * Amount of gas used in the message
    */
   gas_used: string,
   /**

@@ -13,9 +13,7 @@ export const formatFilscoutMessages = messages =>
   messages.map(message => {
     const formattedMsg = {
       ...message,
-      gaslimit: message.gas_limit.toString(),
-      gasprice: message.gas_price.toString(),
-      gas_used: message.gas_used.toString(),
+      gas_used: '0',
       timestamp: message.timestamp.toString()
     }
     return formattedMsg

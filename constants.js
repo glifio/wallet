@@ -9,7 +9,7 @@ export const IMPORT_SINGLE_KEY = 'IMPORT_SINGLE_KEY'
 
 /* API ENDPOINTS */
 export const FILSCAN = 'https://api.filscan.io:8700/v0/filscan'
-export const FILSCOUT = 'https://filscoutv2api.ipfsunion.cn'
+export const FILSCOUT = 'https://filscoutv3api.ipfsunion.cn'
 
 /* NETWORK VARS */
 export const MAINNET = 'f'
