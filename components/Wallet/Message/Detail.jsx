@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
-import RPCEngine from '@openworklabs/lotus-jsonrpc-engine'
 import { func, oneOf } from 'prop-types'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
@@ -23,6 +22,7 @@ import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import { useConverter } from '../../../lib/Converter'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 import noop from '../../../utils/noop'
+import { useWalletProvider } from '../../../WalletProvider'
 
 const MessageDetailCard = styled(Card).attrs(() => ({
   my: 2,
@@ -51,45 +51,36 @@ TxStatusText.propTypes = {
 }
 
 const MessageDetail = ({ address, close, message }) => {
+  const { walletProvider } = useWalletProvider()
   const { converter, converterError } = useConverter()
-  const [gasUsed, setGasUsed] = useState(
-    new FilecoinNumber(message.gas_used, 'attofil')
+  const [fee, setFee] = useState(
+    new FilecoinNumber(
+      message.status === 'pending' ? message.maxFee : message.paidFee,
+      'attofil'
+    )
   )
-  const [fetchedGasUsed, setFetchedGasUsed] = useState(false)
-  /* eslint-disable no-unused-vars */
-  const [errorExitCode, setErrorExitCode] = useState(null)
+  const [fetchedTransactionFee, setFetchedTransactionFee] = useState(false)
 
-  const loadingGasUsed = gasUsed.toAttoFil() === '0' && !fetchedGasUsed
+  const loadingFee = fee.toAttoFil() === '0' && !fetchedTransactionFee
   // if this is a SENT transaction, add the fee to the total
-  const shouldAddGasUsedToTotal = address === message.from
+  const shouldAddFeeToTotal = address === message.from
 
   useEffect(() => {
     const fetchGasUsed = async msgCid => {
-      const lotus = new RPCEngine({
-        apiAddress: process.env.LOTUS_NODE_JSONRPC
-      })
-
-      const { Receipt } = await lotus.request('StateSearchMsg', {
-        '/': msgCid
-      })
-
-      if (Receipt.ExitCode === 0) {
-        setGasUsed(new FilecoinNumber(Receipt.GasUsed, 'attofil'))
-      } else {
-        setErrorExitCode(Receipt.ExitCode)
-      }
-      setFetchedGasUsed(true)
+      const transactionFee = await walletProvider.gasLookupTxFee(msgCid)
+      setFee(transactionFee)
+      setFetchedTransactionFee(true)
     }
 
-    if (!fetchedGasUsed) {
+    if (!fetchedTransactionFee) {
       fetchGasUsed(message.cid)
     }
   }, [
     message.cid,
-    fetchedGasUsed,
-    setFetchedGasUsed,
-    setGasUsed,
-    setErrorExitCode
+    fetchedTransactionFee,
+    setFetchedTransactionFee,
+    setFee,
+    walletProvider
   ])
 
   return (
@@ -169,7 +160,7 @@ const MessageDetail = ({ address, close, message }) => {
         <Input.Text
           onChange={noop}
           label='Transfer Fee'
-          value={loadingGasUsed ? 'Loading...' : `${gasUsed.toAttoFil()} aFIL`}
+          value={loadingFee ? 'Loading...' : `${fee.toAttoFil()} aFIL`}
           backgroundColor='background.screen'
           disabled
         />
@@ -193,7 +184,7 @@ const MessageDetail = ({ address, close, message }) => {
               color='core.primary'
             >
               {new FilecoinNumber(message.value, 'fil')
-                .plus(shouldAddGasUsedToTotal ? gasUsed : 0)
+                .plus(shouldAddFeeToTotal ? fee : 0)
                 .toString()}{' '}
               FIL
             </Num>
@@ -203,7 +194,7 @@ const MessageDetail = ({ address, close, message }) => {
                   ? `${makeFriendlyBalance(
                       converter.fromFIL(
                         new FilecoinNumber(message.value, 'fil').plus(
-                          shouldAddGasUsedToTotal ? gasUsed : 0
+                          shouldAddFeeToTotal ? fee : 0
                         )
                       ),
                       2

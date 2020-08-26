@@ -116,13 +116,24 @@ const Send = ({ close }) => {
         params: ''
       })
 
-      const signedMessage = await provider.wallet.sign(message, wallet.path)
-      const messageObj = message.toString()
-      const msgCid = await provider.sendMessage(messageObj, signedMessage)
-      messageObj.cid = msgCid['/']
+      const msgWithGas = await provider.gasEstimateMessageGas(
+        message.toLotusType()
+      )
+
+      // const signedMessage = await provider.wallet.sign(message, wallet.path)
+      const messageObj = msgWithGas.toLotusType()
+      // const msgCid = await provider.sendMessage(
+      //   msgWithGas.toLotusType(),
+      //   signedMessage
+      // )
+      messageObj.cid =
+        'bafy2bzaceb37nnx3j34tmvcrpdlhndxjdn3lurmwmlxeylrjyyvqydgkbljng'
+      // messageObj.cid = msgCid['/']
       messageObj.timestamp = dayjs().unix()
-      messageObj.gas_used = new FilecoinNumber('122222', 'attofil').toAttoFil()
-      messageObj.Value = new FilecoinNumber(messageObj.value, 'attofil').toFil()
+      const maxFee = await provider.gasEstimateMaxFee(msgWithGas.toLotusType())
+      messageObj.maxFee = maxFee.toAttoFil()
+
+      messageObj.value = new FilecoinNumber(messageObj.Value, 'attofil').toFil()
       return messageObj
     }
   }
