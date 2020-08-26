@@ -16,23 +16,6 @@ describe('Choosing a wallet', () => {
     expect(container.firstChild).toMatchSnapshot()
   })
 
-  test('Ledger & SAFT login is visibile by default', () => {
-    const { Tree } = composeMockAppTree('postOnboard')
-
-    const { container } = render(
-      <Tree>
-        <Choose />
-      </Tree>
-    )
-    act(() => {
-      fireEvent.click(
-        screen.getByText('SAFT Setup'),
-        screen.getByText('Ledger Device')
-      )
-    })
-    expect(container.firstChild).toMatchSnapshot()
-  })
-
   test('It renders all wallet options when in dev mode', () => {
     const { Tree } = composeMockAppTree('postOnboard')
 
@@ -44,9 +27,11 @@ describe('Choosing a wallet', () => {
     act(() => {
       fireEvent.click(screen.getByText('Dev Mode'))
     })
+    expect(screen.queryByText('Ledger Device')).toBeInTheDocument()
+    expect(screen.queryByText('SAFT Setup')).toBeInTheDocument()
     expect(screen.getByText('Generate Seed Phrase')).toBeInTheDocument()
     expect(screen.getByText('Import Seed Phrase')).toBeInTheDocument()
     expect(screen.getByText('Import Private Key')).toBeInTheDocument()
+    expect(container.firstChild).toMatchSnapshot()
   })
-  expect(container.firstChild).toMatchSnapshot()
 })
