@@ -16,7 +16,7 @@ describe('Choosing a wallet', () => {
     expect(container.firstChild).toMatchSnapshot()
   })
 
-  test('it renders warning text for create wallet option', () => {
+  test('Ledger & SAFT login is visibile by default', () => {
     const { Tree } = composeMockAppTree('postOnboard')
 
     const { container } = render(
@@ -26,15 +26,14 @@ describe('Choosing a wallet', () => {
     )
     act(() => {
       fireEvent.click(
-        screen.getByText(
-          'New to crypto? We’ll create a new seed phrase for you'
-        )
+        screen.getByText('SAFT Setup'),
+        screen.getByText('Ledger Device')
       )
     })
     expect(container.firstChild).toMatchSnapshot()
   })
 
-  test('it renders warning text for import seed option', () => {
+  test('It renders all wallet options when in dev mode', () => {
     const { Tree } = composeMockAppTree('postOnboard')
 
     const { container } = render(
@@ -43,22 +42,11 @@ describe('Choosing a wallet', () => {
       </Tree>
     )
     act(() => {
-      fireEvent.click(screen.getByText('Import Seed Phrase'))
+      fireEvent.click(screen.getByText('Dev Mode'))
     })
-    expect(container.firstChild).toMatchSnapshot()
+    expect(screen.getByText('Generate Seed Phrase')).toBeInTheDocument()
+    expect(screen.getByText('Import Seed Phrase')).toBeInTheDocument()
+    expect(screen.getByText('Import Private Key')).toBeInTheDocument()
   })
-
-  test('it renders warning text for import private key option', () => {
-    const { Tree } = composeMockAppTree('postOnboard')
-
-    const { container } = render(
-      <Tree>
-        <Choose />
-      </Tree>
-    )
-    act(() => {
-      fireEvent.click(screen.getByText('Import Private Key'))
-    })
-    expect(container.firstChild).toMatchSnapshot()
-  })
+  expect(container.firstChild).toMatchSnapshot()
 })
