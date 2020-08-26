@@ -77,9 +77,19 @@ const NodeConnectedWidget = forwardRef(
     )
 
     useEffect(() => {
-      if (!polling && mockStrength === -1) pollConnection(0)
+      if (mockStrength > -1) {
+        setConnectionStrength(mockStrength)
+        onConnectionStrengthChange(mockStrength)
+      } else if (!polling && mockStrength === -1) pollConnection(0)
       setPolling(true)
-    }, [mockStrength, polling, setPolling, pollConnection])
+    }, [
+      mockStrength,
+      polling,
+      setPolling,
+      pollConnection,
+      setConnectionStrength,
+      onConnectionStrengthChange
+    ])
 
     const nodeConnectedText = () => {
       // Connecting to node..
