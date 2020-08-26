@@ -242,14 +242,6 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
   opacity: 0.8;
 }
 
-.c11 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
 .c7 {
   color: #262626;
   font-size: 1.125rem;
@@ -261,8 +253,15 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
   margin-bottom: 0;
 }
 
+.c11 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
 .c18 {
-  color: #1AD08F;
+  color: #000;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -303,15 +302,11 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
 .c16 {
   min-width: 0;
   box-sizing: border-box;
-  border: 1px solid;
-  border-color: #1AD08F;
   border-radius: 100px;
-  padding-top: 8px;
-  padding-bottom: 8px;
   margin-top: 8px;
   margin-bottom: 8px;
   margin-right: 8px;
-  background-color: #1AD08F;
+  height: 48px;
   width: 160px;
   max-width: 480px;
   -webkit-align-items: center;
@@ -334,10 +329,10 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
   border-radius: 100px;
   margin-left: 8px;
   margin-right: 8px;
-  background-color: #08442F;
-  height: 32px;
-  width: 48px;
-  font-size: 1.25rem;
+  color: #08442F;
+  height: 24px;
+  width: 16px;
+  font-size: 1rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -350,18 +345,15 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-flex: 2;
-  -webkit-flex-grow: 2;
-  -ms-flex-positive: 2;
-  flex-grow: 2;
 }
 
 .c19 {
   min-width: 0;
   box-sizing: border-box;
+  border-color: #1AD08F;
   border-radius: 100px;
   border: 0;
-  background-color: transparent;
+  background-color: #1AD08F;
   color: darkgreen;
   display: -webkit-box;
   display: -webkit-flex;
@@ -373,7 +365,11 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  text-align: left;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
   font-size: 1.25rem;
   line-height: 2;
 }
@@ -545,14 +541,14 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       class="c10"
       display="flex"
     >
-      <h2
+      <p
         class="c11"
         font-family="RT-Alias-Grotesk"
-        font-size="4"
+        font-size="2"
         font-weight="400"
       >
         Success! Please click 'Next' to access your wallet.
-      </h2>
+      </p>
       <div
         class="c12"
         display="flex"
@@ -586,17 +582,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -621,17 +619,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -656,17 +656,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -691,17 +693,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -726,17 +730,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -761,17 +767,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -796,17 +804,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -831,17 +841,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -866,17 +878,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -901,17 +915,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -936,17 +952,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -971,17 +989,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1006,17 +1026,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1041,17 +1063,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1076,17 +1100,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1111,17 +1137,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1146,17 +1174,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1181,17 +1211,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1216,17 +1248,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1251,17 +1285,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1286,17 +1322,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1321,17 +1359,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1356,17 +1396,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1391,17 +1433,19 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
       >
         <div
           class="c16"
+          height="6"
           width="9"
         >
           <div
             class="c17"
-            font-size="3"
-            height="5"
-            width="6"
+            color="status.success.foreground"
+            font-size="1"
+            height="4"
+            width="3"
           >
             <p
               class="c18"
-              color="status.success.background"
+              color="core.black"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
