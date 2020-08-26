@@ -100,6 +100,7 @@ export default () => {
             width='100%'
             mt={4}
             display='flex'
+            alignItems='center'
             css={`
               background-color: ${({ theme }) => theme.colors.core.secondary}00;
               &:hover {
