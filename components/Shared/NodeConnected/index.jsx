@@ -77,12 +77,6 @@ const NodeConnectedWidget = forwardRef(
     useEffect(() => {
       if (!polling && !mockStrength) pollConnection(0)
       setPolling(true)
-      return () => {
-        if (polling) {
-          setPolling(false)
-          clearTimeout(timeout.current)
-        }
-      }
     }, [mockStrength, polling, setPolling, pollConnection])
 
     const nodeConnectedText = () => {

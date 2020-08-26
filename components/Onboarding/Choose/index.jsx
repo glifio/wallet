@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useRouter } from 'next/router'
 import { Box, IconLedger, Text, Warning } from '../../Shared'
 import ImportWallet from './Import'
 import CreateWallet from './Create'
@@ -15,6 +16,7 @@ export default () => {
   const { setWalletType } = useWalletProvider()
   // this could be cleaner, but we use this to more easily navigate to/from the warning card
   const [localWalletType, setLocalWalletType] = useState(null)
+  const router = useRouter()
 
   const onChoose = type => {
     if (
@@ -65,7 +67,7 @@ export default () => {
             </Text>
           </Box>
           <Box display='flex' justifyContent='center' flexDirection='column'>
-            <Box display='flex' flexWrap='wrap' justifyContent='center' mb={5}>
+            <Box display='flex' flexWrap='wrap' justifyContent='center' mb={3}>
               <ImportWallet
                 onClick={() => onChoose(LEDGER)}
                 Icon={IconLedger}
@@ -80,6 +82,16 @@ export default () => {
               />
               <CreateWallet onClick={() => onChoose(CREATE_MNEMONIC)} m={2} />
             </Box>
+            <ImportWallet
+              width='100%'
+              maxWidth='614px'
+              mb={3}
+              alignSelf='center'
+              onClick={() => router.push('/saft')}
+              glyphAcronym='Ss'
+              title='SAFT Setup'
+              description='Securely generate an account to receive your SAFT Filecoin'
+            />
             <Box display='flex' flexWrap='wrap' justifyContent='center'>
               <ImportWallet
                 onClick={() => onChoose(IMPORT_MNEMONIC)}
