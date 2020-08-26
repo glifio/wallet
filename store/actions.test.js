@@ -3,6 +3,7 @@ import { FilecoinNumber } from '@openworklabs/filecoin-number'
 
 import * as actions from './actions'
 import * as types from './actionTypes'
+import { MAINNET } from '../constants'
 
 describe('actions', () => {
   test('walletList', () => {
@@ -170,7 +171,7 @@ describe('actions', () => {
   })
 
   test('switchNetwork', () => {
-    const network = 'f'
+    const network = MAINNET
     const wallets = [
       {
         address: 't1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',

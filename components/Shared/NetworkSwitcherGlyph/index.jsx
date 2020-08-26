@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import { bool, func } from 'prop-types'
 import { border, typography, layout, flexbox, space } from 'styled-system'
 import Box from '../Box'
+import { TESTNET, MAINNET } from '../../../constants'
 
 const NetworkSwitcherButton = styled.button.attrs(() => ({
   display: 'flex',
@@ -65,14 +66,14 @@ const NetworkSwitcherGlyph = ({ ...props }) => {
       {...props}
     >
       <NetworkSwitcherButton
-        active={networkFromRedux === 't'}
-        onClick={() => onNetworkSwitch('t')}
+        active={networkFromRedux === TESTNET}
+        onClick={() => onNetworkSwitch(TESTNET)}
       >
         Testnet
       </NetworkSwitcherButton>
       <NetworkSwitcherButton
-        active={networkFromRedux === 'f'}
-        onClick={() => onNetworkSwitch('f')}
+        active={networkFromRedux === MAINNET}
+        onClick={() => onNetworkSwitch(MAINNET)}
         disabled
       >
         Mainnet

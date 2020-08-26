@@ -12,6 +12,7 @@ import { setLedgerProvider } from '../utils/ledger/setLedgerProvider'
 import fetchDefaultWallet from './fetchDefaultWallet'
 import connectLedger from './connectLedger'
 import { useWasm } from '../lib/WasmLoader'
+import { TESTNET, MAINNET } from '../constants'
 
 export const WalletProviderContext = createContext({})
 
@@ -65,7 +66,7 @@ const WalletProviderWrapper = ({ network, children }) => {
 
 WalletProviderWrapper.propTypes = {
   children: PropTypes.node.isRequired,
-  network: PropTypes.oneOf(['t', 'f']).isRequired
+  network: PropTypes.oneOf([TESTNET, MAINNET]).isRequired
 }
 
 export const useWalletProvider = () => {
