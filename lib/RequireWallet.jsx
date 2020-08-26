@@ -5,6 +5,7 @@ import Router from 'next/router'
 import { noWallet } from '../store/states'
 
 import { NO_WALLET_PROP_TYPE, WALLET_PROP_TYPE } from '../customPropTypes'
+import { MAINNET, TESTNET } from '../constants'
 
 // Gatekeep pages that require a wallet (like the home screen)
 export class RequireWallet extends Component {
@@ -34,7 +35,7 @@ export class RequireWallet extends Component {
 RequireWallet.propTypes = {
   wallet: oneOfType([NO_WALLET_PROP_TYPE, WALLET_PROP_TYPE]),
   children: node.isRequired,
-  network: oneOf(['f', 't']).isRequired
+  network: oneOf([MAINNET, TESTNET]).isRequired
 }
 
 RequireWallet.defaultProps = {

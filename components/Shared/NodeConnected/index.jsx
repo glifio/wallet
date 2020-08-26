@@ -53,7 +53,9 @@ const NodeConnectedWidget = forwardRef(
         timeout.current = setTimeout(async () => {
           try {
             const strength =
-              mockStrength || (await calcConnectionStrength(apiAddress, token))
+              mockStrength === -1
+                ? await calcConnectionStrength(apiAddress, token)
+                : mockStrength
             if (strength !== connectionStrength) {
               setConnectionStrength(strength)
               onConnectionStrengthChange(strength)
@@ -75,7 +77,7 @@ const NodeConnectedWidget = forwardRef(
     )
 
     useEffect(() => {
-      if (!polling && !mockStrength) pollConnection(0)
+      if (!polling && mockStrength === -1) pollConnection(0)
       setPolling(true)
     }, [mockStrength, polling, setPolling, pollConnection])
 
@@ -122,7 +124,7 @@ NodeConnectedWidget.propTypes = {
   // 1 - node unhealthy
   // 2 - healthy
   onConnectionStrengthChange: PropTypes.func,
-  mockStrength: PropTypes.oneOf([0, 1, 2])
+  mockStrength: PropTypes.oneOf([-1, 0, 1, 2])
 }
 
 NodeConnectedWidget.defaultProps = {

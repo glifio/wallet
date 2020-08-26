@@ -1,8 +1,9 @@
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { TESTNET } from '../../constants'
 
 const mockGetAccounts = jest
   .fn()
-  .mockImplementation((network = 't', start = 0, end = 1) => {
+  .mockImplementation((network = TESTNET, start = 0, end = 1) => {
     const accounts = []
     for (let i = start; i < end; i++) {
       accounts.push(`t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb${i}uq`)

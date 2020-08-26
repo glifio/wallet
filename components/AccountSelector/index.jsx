@@ -19,7 +19,12 @@ import {
 import Create from './Create'
 import AccountCardAlt from '../Shared/AccountCardAlt'
 import { useWalletProvider } from '../../WalletProvider'
-import { LEDGER } from '../../constants'
+import {
+  LEDGER,
+  MAINNET,
+  MAINNET_PATH_CODE,
+  TESTNET_PATH_CODE
+} from '../../constants'
 import { walletList, switchWallet } from '../../store/actions'
 import {
   hasLedgerError,
@@ -80,7 +85,8 @@ const AccountSelector = ({ premainnetInvestor }) => {
             await Promise.all(
               addresses.map(async address => {
                 const balance = await fetchBalance(address, provider)
-                const networkCode = network === 'f' ? 461 : 1
+                const networkCode =
+                  network === MAINNET ? MAINNET_PATH_CODE : TESTNET_PATH_CODE
                 const wallet = {
                   balance,
                   address,
@@ -150,7 +156,8 @@ const AccountSelector = ({ premainnetInvestor }) => {
         )
 
         const balance = await fetchBalance(address, provider)
-        const networkCode = network === 'f' ? 461 : 1
+        const networkCode =
+          network === MAINNET ? MAINNET_PATH_CODE : TESTNET_PATH_CODE
         const wallet = {
           balance,
           address,

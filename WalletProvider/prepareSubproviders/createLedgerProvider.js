@@ -1,6 +1,12 @@
 import FilecoinApp from '@zondax/ledger-filecoin'
 import { mapSeries } from 'bluebird'
-import { LEDGER } from '../../constants'
+import {
+  LEDGER,
+  TESTNET,
+  MAINNET,
+  MAINNET_PATH_CODE,
+  TESTNET_PATH_CODE
+} from '../../constants'
 
 const handleErrors = response => {
   if (
@@ -63,10 +69,11 @@ export default rustModule => {
         })
       },
 
-      getAccounts: async (network = 't', nStart = 0, nEnd = 5) => {
+      getAccounts: async (network = TESTNET, nStart = 0, nEnd = 5) => {
         throwIfBusy(ledgerBusy)
         ledgerBusy = true
-        const networkCode = network === 'f' ? 461 : 1
+        const networkCode =
+          network === MAINNET ? MAINNET_PATH_CODE : TESTNET_PATH_CODE
         const paths = []
         for (let i = nStart; i < nEnd; i += 1) {
           paths.push(`m/44'/${networkCode}'/0/0/${i}`)
