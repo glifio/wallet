@@ -136,7 +136,7 @@ const AccountSelector = ({ premainnetInvestor }) => {
   if (hasLedgerError({ ...ledger, otherError: uncaughtError })) {
     errorMsg = reportLedgerConfigError({ ...ledger, otherError: uncaughtError })
   } else if (errorInRdx) {
-    errorMsg = errorInRdx
+    errorMsg = errorInRdx.message || errorInRdx
   }
 
   const fetchNextAccount = async () => {
