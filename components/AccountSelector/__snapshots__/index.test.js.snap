@@ -56,7 +56,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   justify-content: center;
 }
 
-.c11 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   margin: 8px;
@@ -67,7 +67,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   align-items: center;
 }
 
-.c12 {
+.c11 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -92,7 +92,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   justify-content: space-between;
 }
 
-.c14 {
+.c13 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -109,7 +109,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   justify-content: flex-start;
 }
 
-.c15 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -133,7 +133,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   justify-content: center;
 }
 
-.c16 {
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -145,7 +145,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   flex-direction: column;
 }
 
-.c19 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -169,7 +169,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   box-shadow: 0 0.7px 2.2px -8px rgba(0,0,0,0.18),0 1.7px 5.4px rgba(0,0,0,0.129),0 3.1px 10.1px rgba(0,0,0,0.107),0 5.6px 18.1px rgba(0,0,0,0.09),0 10.4px 33.8px rgba(0,0,0,0.073),0 25px 81px rgba(0,0,0,0.051);
 }
 
-.c20 {
+.c19 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -193,12 +193,12 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   justify-content: center;
 }
 
-.c21 {
+.c20 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c23 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -213,7 +213,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   font-size: 1.5rem;
 }
 
-.c24 {
+.c23 {
   cursor: pointer;
   border: 1px solid status.fail.foreground;
   background-color: #1AD08F;
@@ -236,7 +236,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   color: #660000;
 }
 
-.c24:hover {
+.c23:hover {
   opacity: 0.8;
 }
 
@@ -249,7 +249,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   margin-left: 8px;
 }
 
-.c18 {
+.c17 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -266,7 +266,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   font-family: RT-Alias-Grotesk;
 }
 
-.c17 {
+.c16 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
@@ -275,7 +275,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   margin-bottom: 0;
 }
 
-.c22 {
+.c21 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -290,7 +290,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   margin: 8px;
 }
 
-.c9 {
+.c8 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -308,7 +308,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   align-items: center;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -318,27 +318,13 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   flex-wrap: wrap;
 }
 
-.c8 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.25rem;
-}
-
-.c8:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
-.c13 {
+.c12 {
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   cursor: pointer;
 }
 
-.c13:hover {
+.c12:hover {
   background: hsla(0,0%,90%,1);
   opacity: 1;
 }
@@ -395,32 +381,22 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
            
           creates hundreds of individual "accounts".
           <br />
-          <a
-            class="c8"
-            color="core.primary"
-            font-size="3"
-            href="/faqs"
-            rel="noopener"
-            target="_blank"
-          >
-            Don’t see an account you were previously using?
-          </a>
         </p>
       </li>
     </ul>
     <ul
-      class="c9"
+      class="c8"
     >
       <li
-        class="c10"
+        class="c9"
         display="flex"
       >
         <div
-          class="c11"
+          class="c10"
           display="inline-block"
         >
           <div
-            class="c12 c13"
+            class="c11 c12"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -428,11 +404,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             width="11"
           >
             <div
-              class="c14"
+              class="c13"
               display="flex"
             >
               <div
-                class="c15"
+                class="c14"
                 color="colors.core.black"
                 display="flex"
                 size="6"
@@ -444,11 +420,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 </h3>
               </div>
               <div
-                class="c16"
+                class="c15"
                 display="flex"
               >
                 <p
-                  class="c17"
+                  class="c16"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -456,7 +432,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   Address
                 </p>
                 <h2
-                  class="c18"
+                  class="c17"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -466,11 +442,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
               </div>
             </div>
             <div
-              class="c16"
+              class="c15"
               display="flex"
             >
               <p
-                class="c17"
+                class="c16"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -478,7 +454,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 Balance
               </p>
               <h2
-                class="c18"
+                class="c17"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -490,11 +466,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
           </div>
         </div>
         <div
-          class="c11"
+          class="c10"
           display="inline-block"
         >
           <div
-            class="c12 c13"
+            class="c11 c12"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -502,11 +478,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             width="11"
           >
             <div
-              class="c14"
+              class="c13"
               display="flex"
             >
               <div
-                class="c15"
+                class="c14"
                 color="colors.core.black"
                 display="flex"
                 size="6"
@@ -518,11 +494,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 </h3>
               </div>
               <div
-                class="c16"
+                class="c15"
                 display="flex"
               >
                 <p
-                  class="c17"
+                  class="c16"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -530,7 +506,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   Address
                 </p>
                 <h2
-                  class="c18"
+                  class="c17"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -540,11 +516,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
               </div>
             </div>
             <div
-              class="c16"
+              class="c15"
               display="flex"
             >
               <p
-                class="c17"
+                class="c16"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -552,7 +528,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 Balance
               </p>
               <h2
-                class="c18"
+                class="c17"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -564,11 +540,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
           </div>
         </div>
         <div
-          class="c11"
+          class="c10"
           display="inline-block"
         >
           <div
-            class="c12 c13"
+            class="c11 c12"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -576,11 +552,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             width="11"
           >
             <div
-              class="c14"
+              class="c13"
               display="flex"
             >
               <div
-                class="c15"
+                class="c14"
                 color="colors.core.black"
                 display="flex"
                 size="6"
@@ -592,11 +568,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 </h3>
               </div>
               <div
-                class="c16"
+                class="c15"
                 display="flex"
               >
                 <p
-                  class="c17"
+                  class="c16"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -604,7 +580,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   Address
                 </p>
                 <h2
-                  class="c18"
+                  class="c17"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -614,11 +590,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
               </div>
             </div>
             <div
-              class="c16"
+              class="c15"
               display="flex"
             >
               <p
-                class="c17"
+                class="c16"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -626,7 +602,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 Balance
               </p>
               <h2
-                class="c18"
+                class="c17"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -638,11 +614,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
           </div>
         </div>
         <div
-          class="c11"
+          class="c10"
           display="inline-block"
         >
           <div
-            class="c12 c13"
+            class="c11 c12"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -650,11 +626,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             width="11"
           >
             <div
-              class="c14"
+              class="c13"
               display="flex"
             >
               <div
-                class="c15"
+                class="c14"
                 color="colors.core.black"
                 display="flex"
                 size="6"
@@ -666,11 +642,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 </h3>
               </div>
               <div
-                class="c16"
+                class="c15"
                 display="flex"
               >
                 <p
-                  class="c17"
+                  class="c16"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -678,7 +654,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   Address
                 </p>
                 <h2
-                  class="c18"
+                  class="c17"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -688,11 +664,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
               </div>
             </div>
             <div
-              class="c16"
+              class="c15"
               display="flex"
             >
               <p
-                class="c17"
+                class="c16"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -700,7 +676,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 Balance
               </p>
               <h2
-                class="c18"
+                class="c17"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -712,11 +688,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
           </div>
         </div>
         <div
-          class="c11"
+          class="c10"
           display="inline-block"
         >
           <div
-            class="c12 c13"
+            class="c11 c12"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -724,11 +700,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             width="11"
           >
             <div
-              class="c14"
+              class="c13"
               display="flex"
             >
               <div
-                class="c15"
+                class="c14"
                 color="colors.core.black"
                 display="flex"
                 size="6"
@@ -740,11 +716,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 </h3>
               </div>
               <div
-                class="c16"
+                class="c15"
                 display="flex"
               >
                 <p
-                  class="c17"
+                  class="c16"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -752,7 +728,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   Address
                 </p>
                 <h2
-                  class="c18"
+                  class="c17"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -762,11 +738,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
               </div>
             </div>
             <div
-              class="c16"
+              class="c15"
               display="flex"
             >
               <p
-                class="c17"
+                class="c16"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -774,7 +750,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 Balance
               </p>
               <h2
-                class="c18"
+                class="c17"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -786,18 +762,18 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
           </div>
         </div>
         <div
-          class="c19"
+          class="c18"
           color="card.error.foreground"
           display="flex"
           height="11"
           width="11"
         >
           <div
-            class="c14"
+            class="c13"
             display="flex"
           >
             <div
-              class="c20"
+              class="c19"
               color="status.fail.foreground"
               display="flex"
               size="6"
@@ -818,10 +794,10 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             </p>
           </div>
           <div
-            class="c21"
+            class="c20"
           >
             <p
-              class="c22"
+              class="c21"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -830,11 +806,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             </p>
           </div>
           <div
-            class="c23"
+            class="c22"
             display="flex"
           >
             <button
-              class="c24"
+              class="c23"
               color="status.fail.foreground"
               font-size="3"
               height="100%"
@@ -1801,7 +1777,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: center;
 }
 
-.c11 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   margin: 8px;
@@ -1812,7 +1788,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   align-items: center;
 }
 
-.c12 {
+.c11 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -1837,7 +1813,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: space-between;
 }
 
-.c14 {
+.c13 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1854,7 +1830,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: flex-start;
 }
 
-.c15 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -1878,7 +1854,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: center;
 }
 
-.c16 {
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1890,7 +1866,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   flex-direction: column;
 }
 
-.c21 {
+.c20 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -1921,7 +1897,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   font-size: 1.5rem;
 }
 
-.c19 {
+.c18 {
   cursor: pointer;
   border: 1px solid core.primary;
   background-color: #1AD08F;
@@ -1956,7 +1932,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   opacity: 1;
 }
 
-.c19:hover {
+.c18:hover {
   opacity: 0.8;
 }
 
@@ -1969,7 +1945,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-left: 8px;
 }
 
-.c18 {
+.c17 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -1986,7 +1962,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   font-family: RT-Alias-Grotesk;
 }
 
-.c17 {
+.c16 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
@@ -1995,7 +1971,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-bottom: 0;
 }
 
-.c22 {
+.c21 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -2010,7 +1986,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin: 8px;
 }
 
-.c9 {
+.c8 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -2028,7 +2004,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   align-items: center;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2038,7 +2014,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   flex-wrap: wrap;
 }
 
-.c20 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2049,27 +2025,13 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   align-items: center;
 }
 
-.c8 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.25rem;
-}
-
-.c8:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
-.c13 {
+.c12 {
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   cursor: pointer;
 }
 
-.c13:hover {
+.c12:hover {
   background: hsla(0,0%,90%,1);
   opacity: 1;
 }
@@ -2126,32 +2088,22 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
            
           creates hundreds of individual "accounts".
           <br />
-          <a
-            class="c8"
-            color="core.primary"
-            font-size="3"
-            href="/faqs"
-            rel="noopener"
-            target="_blank"
-          >
-            Don’t see an account you were previously using?
-          </a>
         </p>
       </li>
     </ul>
     <ul
-      class="c9"
+      class="c8"
     >
       <li
-        class="c10"
+        class="c9"
         display="flex"
       >
         <div
-          class="c11"
+          class="c10"
           display="inline-block"
         >
           <div
-            class="c12 c13"
+            class="c11 c12"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -2159,11 +2111,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
             width="11"
           >
             <div
-              class="c14"
+              class="c13"
               display="flex"
             >
               <div
-                class="c15"
+                class="c14"
                 color="colors.core.black"
                 display="flex"
                 size="6"
@@ -2175,11 +2127,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 </h3>
               </div>
               <div
-                class="c16"
+                class="c15"
                 display="flex"
               >
                 <p
-                  class="c17"
+                  class="c16"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -2187,7 +2139,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   Address
                 </p>
                 <h2
-                  class="c18"
+                  class="c17"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -2197,11 +2149,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               </div>
             </div>
             <div
-              class="c16"
+              class="c15"
               display="flex"
             >
               <p
-                class="c17"
+                class="c16"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -2209,7 +2161,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 Balance
               </p>
               <h2
-                class="c18"
+                class="c17"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -2221,11 +2173,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
           </div>
         </div>
         <div
-          class="c11"
+          class="c10"
           display="inline-block"
         >
           <div
-            class="c12 c13"
+            class="c11 c12"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -2233,11 +2185,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
             width="11"
           >
             <div
-              class="c14"
+              class="c13"
               display="flex"
             >
               <div
-                class="c15"
+                class="c14"
                 color="colors.core.black"
                 display="flex"
                 size="6"
@@ -2249,11 +2201,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 </h3>
               </div>
               <div
-                class="c16"
+                class="c15"
                 display="flex"
               >
                 <p
-                  class="c17"
+                  class="c16"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -2261,7 +2213,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   Address
                 </p>
                 <h2
-                  class="c18"
+                  class="c17"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -2271,11 +2223,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               </div>
             </div>
             <div
-              class="c16"
+              class="c15"
               display="flex"
             >
               <p
-                class="c17"
+                class="c16"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -2283,7 +2235,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 Balance
               </p>
               <h2
-                class="c18"
+                class="c17"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -2295,11 +2247,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
           </div>
         </div>
         <div
-          class="c11"
+          class="c10"
           display="inline-block"
         >
           <div
-            class="c12 c13"
+            class="c11 c12"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -2307,11 +2259,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
             width="11"
           >
             <div
-              class="c14"
+              class="c13"
               display="flex"
             >
               <div
-                class="c15"
+                class="c14"
                 color="colors.core.black"
                 display="flex"
                 size="6"
@@ -2323,11 +2275,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 </h3>
               </div>
               <div
-                class="c16"
+                class="c15"
                 display="flex"
               >
                 <p
-                  class="c17"
+                  class="c16"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -2335,7 +2287,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   Address
                 </p>
                 <h2
-                  class="c18"
+                  class="c17"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -2345,11 +2297,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               </div>
             </div>
             <div
-              class="c16"
+              class="c15"
               display="flex"
             >
               <p
-                class="c17"
+                class="c16"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -2357,7 +2309,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 Balance
               </p>
               <h2
-                class="c18"
+                class="c17"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -2369,11 +2321,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
           </div>
         </div>
         <div
-          class="c11"
+          class="c10"
           display="inline-block"
         >
           <div
-            class="c12 c13"
+            class="c11 c12"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -2381,11 +2333,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
             width="11"
           >
             <div
-              class="c14"
+              class="c13"
               display="flex"
             >
               <div
-                class="c15"
+                class="c14"
                 color="colors.core.black"
                 display="flex"
                 size="6"
@@ -2397,11 +2349,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 </h3>
               </div>
               <div
-                class="c16"
+                class="c15"
                 display="flex"
               >
                 <p
-                  class="c17"
+                  class="c16"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -2409,7 +2361,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   Address
                 </p>
                 <h2
-                  class="c18"
+                  class="c17"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -2419,11 +2371,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               </div>
             </div>
             <div
-              class="c16"
+              class="c15"
               display="flex"
             >
               <p
-                class="c17"
+                class="c16"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -2431,7 +2383,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 Balance
               </p>
               <h2
-                class="c18"
+                class="c17"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -2443,11 +2395,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
           </div>
         </div>
         <div
-          class="c11"
+          class="c10"
           display="inline-block"
         >
           <div
-            class="c12 c13"
+            class="c11 c12"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -2455,11 +2407,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
             width="11"
           >
             <div
-              class="c14"
+              class="c13"
               display="flex"
             >
               <div
-                class="c15"
+                class="c14"
                 color="colors.core.black"
                 display="flex"
                 size="6"
@@ -2471,11 +2423,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 </h3>
               </div>
               <div
-                class="c16"
+                class="c15"
                 display="flex"
               >
                 <p
-                  class="c17"
+                  class="c16"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -2483,7 +2435,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   Address
                 </p>
                 <h2
-                  class="c18"
+                  class="c17"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -2493,11 +2445,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               </div>
             </div>
             <div
-              class="c16"
+              class="c15"
               display="flex"
             >
               <p
-                class="c17"
+                class="c16"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -2505,7 +2457,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 Balance
               </p>
               <h2
-                class="c18"
+                class="c17"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -2517,7 +2469,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
           </div>
         </div>
         <button
-          class="c19"
+          class="c18"
           color="core.primary"
           cursor="pointer"
           display="flex"
@@ -2528,14 +2480,14 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
           width="11"
         >
           <ul
-            class="c9"
+            class="c8"
           >
             <li
-              class="c20"
+              class="c19"
               display="flex"
             >
               <div
-                class="c21"
+                class="c20"
                 color="core.primary"
                 display="flex"
                 size="6"
@@ -2559,7 +2511,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               class=""
             >
               <p
-                class="c22"
+                class="c21"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"
