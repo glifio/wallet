@@ -45,7 +45,7 @@ HeaderGlyph.propTypes = {
   alt: string,
   text: string.isRequired,
   imageUrl: string.isRequired,
-  alt: string
+  color: string
 }
 
 HeaderGlyph.defaultProps = {
