@@ -40,6 +40,12 @@ const Import = ({
   </>
 )
 
+Import.defaultProps = {
+  description: '',
+  Icon: {},
+  glyphAcronym: ''
+}
+
 Import.propTypes = {
   onClick: PropTypes.func.isRequired,
   glyphAcronym: PropTypes.string,
