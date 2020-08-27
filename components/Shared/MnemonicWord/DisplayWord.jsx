@@ -27,7 +27,7 @@ export const Word = styled(Box).attrs(props => ({
 const DisplayWord = ({ word, num, valid }) => {
   return (
     <StyledWrapper>
-      <Circle color={valid ? 'status.success.foreground' : 'core.black'}>
+      <Circle color='core.black'>
         <Text fontSize={2} color='core.black'>
           {num}
         </Text>
