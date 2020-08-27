@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import {
   Box,
@@ -21,6 +22,8 @@ import {
   IMPORT_SINGLE_KEY
 } from '../../../constants'
 import { useWalletProvider } from '../../../WalletProvider'
+
+const DevMode = styled(ImportWallet)``
 
 export default () => {
   const { setWalletType } = useWalletProvider()
@@ -201,7 +204,7 @@ export default () => {
               )}
             </Box>
             {!devMode && (
-              <ImportWallet
+              <DevMode
                 mt={7}
                 alignSelf='center'
                 justifySelf='flex-end'
