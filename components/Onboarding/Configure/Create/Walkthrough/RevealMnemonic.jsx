@@ -82,11 +82,12 @@ const Reveal = ({ mnemonic, valid }) => {
         my={3}
         minHeight={7}
       >
-        <Text>
-          {valid
-            ? "Success! Please click 'Next' to access your wallet."
-            : 'Write down your seed phrase somewhere safe.'}
-        </Text>
+        {valid ? (
+          <Text>Success! Please click 'Next' to access your wallet.</Text>
+        ) : (
+          <Text>Write down your seed phrase somewhere safe.</Text>
+        )}
+
         <Box display='flex' mt={[2, 0]}>
           <Button
             onClick={() => {
