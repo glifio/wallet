@@ -27,7 +27,7 @@ export default rustModule => {
       sign: async (filecoinMessage, path) => {
         const { private_hexstring } = rustModule.keyDerive(MNEMONIC, path, '')
         const { signature } = rustModule.transactionSign(
-          filecoinMessage.toString(),
+          filecoinMessage,
           private_hexstring
         )
         return signature.data

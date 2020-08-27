@@ -120,15 +120,17 @@ const Send = ({ close }) => {
         message.toLotusType()
       )
 
-      // const signedMessage = await provider.wallet.sign(message, wallet.path)
+      const signedMessage = await provider.wallet.sign(
+        msgWithGas.toSerializeableType(),
+        wallet.path
+      )
+
       const messageObj = msgWithGas.toLotusType()
-      // const msgCid = await provider.sendMessage(
-      //   msgWithGas.toLotusType(),
-      //   signedMessage
-      // )
-      messageObj.cid =
-        'bafy2bzaceb37nnx3j34tmvcrpdlhndxjdn3lurmwmlxeylrjyyvqydgkbljng'
-      // messageObj.cid = msgCid['/']
+      const msgCid = await provider.sendMessage(
+        msgWithGas.toLotusType(),
+        signedMessage
+      )
+      messageObj.cid = msgCid['/']
       messageObj.timestamp = dayjs().unix()
       const maxFee = await provider.gasEstimateMaxFee(msgWithGas.toLotusType())
       messageObj.maxFee = maxFee.toAttoFil()
@@ -191,7 +193,7 @@ const Send = ({ close }) => {
           await sendMsg()
         } catch (err) {
           reportError(10, false, err.message, err.stack)
-          setUncaughtError(err.message)
+          setUncaughtError(err.message || err)
           setStep(2)
         }
       }

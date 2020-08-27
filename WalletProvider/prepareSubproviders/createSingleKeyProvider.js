@@ -12,7 +12,7 @@ export default rustModule => {
       sign: async filecoinMessage => {
         const { private_hexstring } = rustModule.keyRecover(PRIVATE_KEY)
         const { signature } = rustModule.transactionSign(
-          filecoinMessage.toString(),
+          filecoinMessage,
           private_hexstring
         )
         return signature.data
