@@ -329,7 +329,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
   border-radius: 100px;
   margin-left: 8px;
   margin-right: 8px;
-  color: #08442F;
+  color: #000;
   height: 24px;
   width: 16px;
   font-size: 1rem;
@@ -587,7 +587,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -624,7 +624,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -661,7 +661,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -698,7 +698,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -735,7 +735,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -772,7 +772,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -809,7 +809,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -846,7 +846,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -883,7 +883,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -920,7 +920,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -957,7 +957,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -994,7 +994,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -1031,7 +1031,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -1068,7 +1068,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -1105,7 +1105,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -1142,7 +1142,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -1179,7 +1179,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -1216,7 +1216,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -1253,7 +1253,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -1290,7 +1290,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -1327,7 +1327,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -1364,7 +1364,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -1401,7 +1401,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
@@ -1438,7 +1438,7 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
         >
           <div
             class="c17"
-            color="status.success.foreground"
+            color="core.black"
             font-size="1"
             height="4"
             width="3"
