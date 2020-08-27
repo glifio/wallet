@@ -1,4 +1,5 @@
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { Message } from '@openworklabs/filecoin-message'
 import { TESTNET } from '../../constants'
 
 const mockGetAccounts = jest
@@ -29,9 +30,36 @@ class MockWalletProvider {
 
   getBalance = mockGetBalance
   getNonce = jest.fn().mockImplementation(() => 0)
-  estimateGas = jest
+  gasEstimateMessageGas = jest.fn().mockImplementation(
+    ({
+      To,
+      From,
+      Value,
+      GasPremium,
+      GasFeeCap,
+      GasLimit,
+      Method,
+      Nonce,
+      Params
+    }) =>
+      new Message({
+        to: To,
+        from: From,
+        value: Value,
+        gasPremium: '1',
+        gasFeeCap: '1',
+        gasLimit: 10000000,
+        method: Method,
+        nonce: Nonce,
+        params: Params
+      })
+  )
+  gasLookupTxFee = jest
     .fn()
-    .mockImplementation(() => new FilecoinNumber('122', 'attofil'))
+    .mockImplementation(async () => new FilecoinNumber('1000000', 'attofil'))
+  gasEstimateMaxFee = jest
+    .fn()
+    .mockImplementation(async () => new FilecoinNumber('1000000', 'attofil'))
   sendMessage = jest.fn().mockImplementation(() => 'QmZCid!')
 }
 

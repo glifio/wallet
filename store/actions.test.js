@@ -1,4 +1,4 @@
-import Message from '@openworklabs/filecoin-message'
+import { Message } from '@openworklabs/filecoin-message'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 
 import * as actions from './actions'

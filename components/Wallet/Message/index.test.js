@@ -59,4 +59,19 @@ describe('MessageHistory View', () => {
     expect(screen.getByText('Transaction Details')).toBeInTheDocument()
     expect(spy).toHaveBeenCalled()
   })
+
+  test.only('it renders the gas fee as loading', () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+    const { container } = render(
+      <Tree>
+        <MessageView />
+      </Tree>
+    )
+
+    act(() => {
+      fireEvent.click(screen.getAllByText('From')[0])
+    })
+
+    expect(screen.queryByDisplayValue('Loading...')).toBeInTheDocument()
+  })
 })

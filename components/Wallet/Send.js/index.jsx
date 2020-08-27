@@ -289,7 +289,7 @@ const Send = ({ close }) => {
                 balance={wallet.balance}
                 error={valueError}
                 setError={setValueError}
-                gasLimit={new FilecoinNumber('0', 'attofil')}
+                estimatedTransactionFee={estimatedTransactionFee}
                 disabled={step === 2 && !hasError()}
                 valid={isValidAmount(value, wallet.balance, valueError)}
               />
