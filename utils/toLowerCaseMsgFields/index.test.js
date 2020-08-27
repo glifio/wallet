@@ -17,8 +17,6 @@ describe('toLowerCaseMsgFields', () => {
       from: 't1pyfq7dg6sq65acyomqvzvbgwni4zllglqffw5dy',
       nonce: 10,
       value: new BigNumber('11416382733294334924'),
-      gasPrice: new BigNumber('52109833521870826202'),
-      gasLimit: 100,
       method: 102,
       params: '+'
     })
@@ -36,8 +34,6 @@ describe('toLowerCaseMsgFields', () => {
           from: 't1pyfq7dg6sq65acyomqvzvbgwni4zllglqffw5dy',
           nonce: 10,
           value: new BigNumber('11416382733294334924'),
-          gasPrice: new BigNumber('52109833521870826202'),
-          gasLimit: 100,
           method: 102
         })
       )

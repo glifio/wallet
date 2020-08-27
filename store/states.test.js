@@ -282,8 +282,6 @@ describe('state manipulators', () => {
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
         value: '1000',
         method: 0,
-        gasPrice: '1',
-        gasLimit: 1000,
         nonce: 0
       })
 
@@ -303,8 +301,6 @@ describe('state manipulators', () => {
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
         value: '1000',
         method: 0,
-        gasPrice: '1',
-        gasLimit: 1000,
         nonce: 0
       })
       const secondPendingMsg = new Message({
@@ -312,8 +308,6 @@ describe('state manipulators', () => {
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
         value: '1000',
         method: 0,
-        gasPrice: '1',
-        gasLimit: 1000,
         nonce: 1
       })
       const stateWPendingMsg = {
@@ -347,8 +341,6 @@ describe('state manipulators', () => {
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
         value: '1000',
         method: 0,
-        gasPrice: '1',
-        gasLimit: 1000,
         nonce: 0
       })
       const msgCid = '123'
@@ -359,8 +351,6 @@ describe('state manipulators', () => {
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
         value: '1000',
         method: 0,
-        gasPrice: '1',
-        gasLimit: 1000,
         nonce: 1
       })
       secondMsg.cid = '456'
@@ -390,8 +380,6 @@ describe('state manipulators', () => {
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
         value: '1000',
         method: 0,
-        gasPrice: '1',
-        gasLimit: 1000,
         nonce: 0
       })
       const msgCid = '123'
@@ -402,8 +390,6 @@ describe('state manipulators', () => {
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
         value: '1000',
         method: 0,
-        gasPrice: '1',
-        gasLimit: 1000,
         nonce: 1
       })
       confirmedMsg.cid = '456'
@@ -439,8 +425,6 @@ describe('state manipulators', () => {
           to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
           value: '1000',
           method: 0,
-          gasPrice: '1',
-          gasLimit: 1000,
           nonce: i
         })
 
@@ -491,8 +475,6 @@ describe('state manipulators', () => {
           to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
           value: '1000',
           method: 0,
-          gasPrice: '1',
-          gasLimit: 1000,
           nonce: 1
         })
       ]
@@ -502,8 +484,6 @@ describe('state manipulators', () => {
           to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
           value: '1000',
           method: 0,
-          gasPrice: '1',
-          gasLimit: 1000,
           nonce: 0
         })
       ]
@@ -528,8 +508,6 @@ describe('state manipulators', () => {
           to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
           value: '1000',
           method: 0,
-          gasPrice: '1',
-          gasLimit: 1000,
           nonce: i
         })
 
@@ -545,8 +523,6 @@ describe('state manipulators', () => {
           to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
           value: '1000',
           method: 0,
-          gasPrice: '1',
-          gasLimit: 1000,
           nonce: 1
         })
       ]
@@ -569,8 +545,6 @@ describe('state manipulators', () => {
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
         value: '1000',
         method: 0,
-        gasPrice: '1',
-        gasLimit: 1000,
         nonce: 1
       })
       msg.cid = 'Qmz11'
@@ -616,8 +590,6 @@ describe('state manipulators', () => {
           to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
           value: '1000',
           method: 0,
-          gasPrice: '1',
-          gasLimit: 1000,
           nonce: 1
         })
       ]
@@ -627,8 +599,6 @@ describe('state manipulators', () => {
           to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
           value: '1000',
           method: 0,
-          gasPrice: '1',
-          gasLimit: 1000,
           nonce: 0
         })
       ]
@@ -692,8 +662,6 @@ describe('state manipulators', () => {
           to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
           value: '1000',
           method: 0,
-          gasPrice: '1',
-          gasLimit: 1000,
           nonce: i
         })
         pendingMsgs.push(message)

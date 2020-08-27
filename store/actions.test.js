@@ -57,8 +57,6 @@ describe('actions', () => {
       to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
       value: '1000',
       method: 0,
-      gasPrice: '1',
-      gasLimit: 1000,
       nonce: 0
     })
     const expectedAction = {
@@ -97,10 +95,8 @@ describe('actions', () => {
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
         value: '1000',
         method: 0,
-        gasPrice: '1',
-        gasLimit: 1000,
         nonce: 0
-      })
+      }).toLotusType()
     ]
 
     const total = 1
@@ -154,8 +150,6 @@ describe('actions', () => {
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
         value: '1000',
         method: 0,
-        gasPrice: '1',
-        gasLimit: 1000,
         nonce: 0
       })
     ]
