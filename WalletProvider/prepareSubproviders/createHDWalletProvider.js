@@ -28,7 +28,7 @@ export default rustModule => {
         const { private_hexstring } = rustModule.keyDerive(MNEMONIC, path, '')
         const { signature } = rustModule.transactionSign(
           filecoinMessage,
-          private_hexstring
+          Buffer.from(private_hexstring, 'hex').toString('base64')
         )
         return signature.data
       },
