@@ -17,31 +17,17 @@ const CreateWallet = ({ onClick, ...props }) => (
     flexDirection='column'
     justifyContent='space-between'
     alignContent='space-between'
-    height={240}
+    height={7}
+    p={2}
     {...props}
   >
     <Box>
       <Box display='flex' alignItems='center'>
-        <Glyph acronym='Sp' />
-        <Text ml={3}>Seed Phrase</Text>
-      </Box>
-      <Box display='block'>
-        <Text m={0} color='core.nearblack'>
-          New to crypto? We&rsquo;ll create a new seed phrase for you
+        <Glyph acronym='Sp' border={0} />
+        <Text ml={4} my={0}>
+          Generate Seed Phrase
         </Text>
       </Box>
-    </Box>
-    <Box
-      width='max-content'
-      py={2}
-      px={4}
-      borderRadius={6}
-      fontSize={3}
-      my={2}
-      backgroundColor='status.warning.background'
-      color='status.warning.foreground'
-    >
-      Quick Start
     </Box>
   </Card>
 )

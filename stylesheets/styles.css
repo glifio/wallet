@@ -2,6 +2,8 @@
   box-sizing: border-box;
   font-size: 1rem;
   font-family: 'RT-Alias-Grotesk', 'system-ui', 'Segoe UI', 'Roboto', Helvetica;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
