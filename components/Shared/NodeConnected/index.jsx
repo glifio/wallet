@@ -48,7 +48,7 @@ const NodeConnectedWidget = forwardRef(
     const timeout = useRef()
 
     const pollConnection = useCallback(
-      async (pollTimer = 10000) => {
+      async (pollTimer = 100000) => {
         clearTimeout(timeout.current)
         timeout.current = setTimeout(async () => {
           try {
