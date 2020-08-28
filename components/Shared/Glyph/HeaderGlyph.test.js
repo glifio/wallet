@@ -1,4 +1,4 @@
-import { cleanup, render } from '@testing-library/react'
+import { cleanup, render, screen } from '@testing-library/react'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import HeaderGlyph from './HeaderGlyph'
 
@@ -17,6 +17,6 @@ describe('HeaderGlyph', () => {
       </Tree>
     )
     expect(container.firstChild).toMatchSnapshot()
-    expect(screen.getAllByText('Wallet')).toBeInTheDocument()
+    expect(screen.getByText('Wallet')).toBeInTheDocument()
   })
 })

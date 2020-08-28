@@ -13,10 +13,12 @@ describe('Choosing a wallet', () => {
         <Choose />
       </Tree>
     )
+
     expect(container.firstChild).toMatchSnapshot()
+    expect(screen.getByText('Wallet')).toBeInTheDocument()
   })
 
-  test('It renders all wallet options when in dev mode', () => {
+  test('it renders all wallet options when in dev mode', () => {
     const { Tree } = composeMockAppTree('postOnboard')
 
     const { container } = render(
