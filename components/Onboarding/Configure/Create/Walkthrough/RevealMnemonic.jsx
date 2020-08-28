@@ -83,7 +83,9 @@ const Reveal = ({ mnemonic, valid }) => {
         minHeight={7}
       >
         {valid ? (
-          <Text>Success! Please click 'Next' to access your wallet.</Text>
+          <Text>
+            Success! Please click &apos;Next&apos; to access your wallet.
+          </Text>
         ) : (
           <Text>Write down your seed phrase somewhere safe.</Text>
         )}
