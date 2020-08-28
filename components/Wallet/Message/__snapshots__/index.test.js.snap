@@ -4073,7 +4073,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
             disabled=""
             display="inline-block"
             height="6"
-            value="138"
+            value="1000000 aFIL"
             width="100%"
           />
           
@@ -4103,7 +4103,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           font-size="5"
           font-weight="700"
         >
-          23.000000000000000138
+          23
            
           FIL
         </h2>

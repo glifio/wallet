@@ -11,6 +11,7 @@ const mockTxHistory = {
   pending: [],
   confirmed: formatFilscoutMessages(filscoutMockData).map(msg => ({
     ...msg,
+    gas_used: msg.gas_used.toString(),
     status: 'confirmed'
   })),
   refresh: jest.fn(),
@@ -30,33 +31,51 @@ describe('MessageHistory View', () => {
     jest.clearAllMocks()
   })
 
-  test('it renders correctly', () => {
+  test('it renders correctly', async () => {
     const { Tree } = composeMockAppTree('postOnboard')
-    const { container } = render(
-      <Tree>
-        <MessageView />
-      </Tree>
-    )
+    await act(() => {
+      const { container } = render(
+        <Tree>
+          <MessageView />
+        </Tree>
+      )
 
-    expect(container.firstChild).toMatchSnapshot()
-    expect(screen.getByText('Transaction History')).toBeInTheDocument()
-    expect(spy).toHaveBeenCalled()
+      expect(container.firstChild).toMatchSnapshot()
+      expect(screen.getByText('Transaction History')).toBeInTheDocument()
+      expect(spy).toHaveBeenCalled()
+    })
   })
 
-  test('it renders the message detail view after clicking on a message', () => {
+  test('it renders the message detail view after clicking on a message', async () => {
     const { Tree } = composeMockAppTree('postOnboard')
-    const { container } = render(
-      <Tree>
-        <MessageView />
-      </Tree>
-    )
 
-    act(() => {
+    let container = {}
+    await act(async () => {
+      const res = await render(
+        <Tree>
+          <MessageView />
+        </Tree>
+      )
+      container = res.container
       fireEvent.click(screen.getAllByText('From')[0])
     })
 
     expect(container.firstChild).toMatchSnapshot()
     expect(screen.getByText('Transaction Details')).toBeInTheDocument()
     expect(spy).toHaveBeenCalled()
+  })
+
+  test('it renders the gas fee as loading', async () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+
+    await act(async () => {
+      await render(
+        <Tree>
+          <MessageView />
+        </Tree>
+      )
+      fireEvent.click(screen.getAllByText('From')[0])
+      expect(screen.queryByDisplayValue('Loading...')).toBeInTheDocument()
+    })
   })
 })

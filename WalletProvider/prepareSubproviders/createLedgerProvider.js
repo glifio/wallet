@@ -92,7 +92,7 @@ export default rustModule => {
         throwIfBusy(ledgerBusy)
         ledgerBusy = true
         const serializedMessage = rustModule.transactionSerialize(
-          filecoinMessage.toString()
+          filecoinMessage
         )
         const { signature_compact } = handleErrors(
           await ledgerApp.sign(path, Buffer.from(serializedMessage, 'hex'))

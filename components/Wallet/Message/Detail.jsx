@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { func, oneOf } from 'prop-types'
 import styled from 'styled-components'
@@ -22,6 +22,7 @@ import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import { useConverter } from '../../../lib/Converter'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 import noop from '../../../utils/noop'
+import { useWalletProvider } from '../../../WalletProvider'
 
 const MessageDetailCard = styled(Card).attrs(() => ({
   my: 2,
@@ -50,7 +51,38 @@ TxStatusText.propTypes = {
 }
 
 const MessageDetail = ({ address, close, message }) => {
+  const { walletProvider } = useWalletProvider()
   const { converter, converterError } = useConverter()
+  const [fee, setFee] = useState(
+    new FilecoinNumber(
+      message.status === 'pending' ? message.maxFee : message.paidFee,
+      'attofil'
+    )
+  )
+  const [fetchedTransactionFee, setFetchedTransactionFee] = useState(false)
+
+  const loadingFee = fee.toAttoFil() === '0' && !fetchedTransactionFee
+  // if this is a SENT transaction, add the fee to the total
+  const shouldAddFeeToTotal = address === message.from
+
+  useEffect(() => {
+    const fetchGasUsed = async msgCid => {
+      const transactionFee = await walletProvider.gasLookupTxFee(msgCid)
+      setFee(transactionFee)
+      setFetchedTransactionFee(true)
+    }
+
+    if (!fetchedTransactionFee) {
+      fetchGasUsed(message.cid)
+    }
+  }, [
+    message.cid,
+    fetchedTransactionFee,
+    setFetchedTransactionFee,
+    setFee,
+    walletProvider
+  ])
+
   return (
     <MessageDetailCard>
       <Box
@@ -128,7 +160,7 @@ const MessageDetail = ({ address, close, message }) => {
         <Input.Text
           onChange={noop}
           label='Transfer Fee'
-          value={message.gas_used}
+          value={loadingFee ? 'Loading...' : `${fee.toAttoFil()} aFIL`}
           backgroundColor='background.screen'
           disabled
         />
@@ -152,7 +184,7 @@ const MessageDetail = ({ address, close, message }) => {
               color='core.primary'
             >
               {new FilecoinNumber(message.value, 'fil')
-                .plus(new FilecoinNumber(message.gas_used, 'attofil'))
+                .plus(shouldAddFeeToTotal ? fee : 0)
                 .toString()}{' '}
               FIL
             </Num>
@@ -162,7 +194,7 @@ const MessageDetail = ({ address, close, message }) => {
                   ? `${makeFriendlyBalance(
                       converter.fromFIL(
                         new FilecoinNumber(message.value, 'fil').plus(
-                          new FilecoinNumber(message.gas_used, 'attofil')
+                          shouldAddFeeToTotal ? fee : 0
                         )
                       ),
                       2
