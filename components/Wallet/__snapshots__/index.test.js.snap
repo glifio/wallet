@@ -915,6 +915,10 @@ exports[`WalletView it renders correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   border-width: 1px;
   border-radius: 4px;
   background-color: #E0D7FE00;
@@ -4525,6 +4529,10 @@ exports[`WalletView it renders the receive flow when a user clicks receive 1`] =
   display: -ms-flexbox;
   display: flex;
   height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   border-width: 1px;
   border-radius: 4px;
   background-color: #E0D7FE00;
@@ -6215,6 +6223,10 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   display: -ms-flexbox;
   display: flex;
   height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   border-width: 1px;
   border-radius: 4px;
   background-color: #E0D7FE00;

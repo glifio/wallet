@@ -14,7 +14,7 @@ import {
   Button,
   DisplayWord as Word,
   MenuItem,
-  Title,
+  Text,
   MnemonicWordContainer
 } from '../../../../Shared'
 import { MNEMONIC_PROPTYPE } from '../../../../../customPropTypes'
@@ -82,11 +82,14 @@ const Reveal = ({ mnemonic, valid }) => {
         my={3}
         minHeight={7}
       >
-        <Title>
-          {valid
-            ? "Success! Please click 'Next' to access your wallet."
-            : 'Write down your seed phrase somewhere safe.'}
-        </Title>
+        {valid ? (
+          <Text>
+            Success! Please click &apos;Next&apos; to access your wallet.
+          </Text>
+        ) : (
+          <Text>Write down your seed phrase somewhere safe.</Text>
+        )}
+
         <Box display='flex' mt={[2, 0]}>
           <Button
             onClick={() => {

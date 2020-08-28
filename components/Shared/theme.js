@@ -143,6 +143,13 @@ const theme = {
     copy: 1.4
   },
   textStyles: {
+    header: {
+      fontSize: 'calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360))',
+      fontWeight: 400,
+      margin: 0,
+      lineHeight: 'title',
+      fontFamily: 'RT-Alias-Grotesk'
+    },
     bigTitle: {
       fontSize: 6,
       fontWeight: 700,
