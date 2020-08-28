@@ -36,4 +36,59 @@ describe('Choosing a wallet', () => {
     expect(screen.getByText('Import Private Key')).toBeInTheDocument()
     expect(container.firstChild).toMatchSnapshot()
   })
+
+  test('it renders warning text for create wallet option', () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+
+    const { container } = render(
+      <Tree>
+        <Choose />
+      </Tree>
+    )
+    // not sure why this fails with 1 act
+    act(() => {
+      fireEvent.click(screen.getByText('Dev Mode'))
+    })
+    act(() => {
+      fireEvent.click(screen.getByText('Generate Seed Phrase'))
+    })
+    expect(container.firstChild).toMatchSnapshot()
+    expect(screen.getByText(/Warning/)).toBeInTheDocument()
+  })
+
+  test('it renders warning text for import seed option', () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+
+    const { container } = render(
+      <Tree>
+        <Choose />
+      </Tree>
+    )
+    act(() => {
+      fireEvent.click(screen.getByText('Dev Mode'))
+    })
+    act(() => {
+      fireEvent.click(screen.getByText('Import Seed Phrase'))
+    })
+    expect(container.firstChild).toMatchSnapshot()
+    expect(screen.getByText(/Warning/)).toBeInTheDocument()
+  })
+
+  test('it renders warning text for import private key option', () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+
+    const { container } = render(
+      <Tree>
+        <Choose />
+      </Tree>
+    )
+    act(() => {
+      fireEvent.click(screen.getByText('Dev Mode'))
+    })
+    act(() => {
+      fireEvent.click(screen.getByText('Import Private Key'))
+    })
+    expect(container.firstChild).toMatchSnapshot()
+    expect(screen.getByText(/Warning/)).toBeInTheDocument()
+  })
 })
