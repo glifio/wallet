@@ -93,7 +93,7 @@ Step2Helper.defaultProps = {
   otherError: ''
 }
 
-const Step2 = ({ investor, msig }) => {
+const Step2 = ({ premainnetInvestor, msig }) => {
   const { ledger, fetchDefaultWallet } = useWalletProvider()
   const dispatch = useDispatch()
   const resetState = useReset()
@@ -109,7 +109,7 @@ const Step2 = ({ investor, msig }) => {
   const routeToNextPage = () => {
     const params = new URLSearchParams(router.query)
     let query = ''
-    if (investor) query = `/investor/accounts?${params.toString()}`
+    if (premainnetInvestor) query = `/saft/accounts?${params.toString()}`
     else if (msig) query = `/msig/accounts?${params.toString()}`
     else query = `/home?${params.toString()}`
     router.push(query)
@@ -131,7 +131,7 @@ const Step2 = ({ investor, msig }) => {
   }
 
   const back = () => {
-    if (investor) router.replace('/')
+    if (premainnetInvestor) router.replace('/')
     else resetState()
   }
 
@@ -145,11 +145,11 @@ const Step2 = ({ investor, msig }) => {
         bg={error ? 'status.fail.background' : 'core.transparent'}
       >
         <StepHeader
-          currentStep={investor ? 3 : 2}
+          currentStep={premainnetInvestor ? 3 : 2}
           description='Please complete the following steps so Filament can interface with
           your Ledger device.'
           loading={!ledger.userImportFailure && loading}
-          totalSteps={investor ? 5 : 2}
+          totalSteps={premainnetInvestor ? 5 : 2}
           Icon={IconLedger}
           error={!!error}
         />
@@ -184,7 +184,7 @@ const Step2 = ({ investor, msig }) => {
 }
 
 Step2.propTypes = {
-  investor: PropTypes.bool.isRequired,
+  premainnetInvestor: PropTypes.bool.isRequired,
   msig: PropTypes.bool.isRequired
 }
 

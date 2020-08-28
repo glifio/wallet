@@ -1,6 +1,12 @@
 import FilecoinApp from '@zondax/ledger-filecoin'
 import { mapSeries } from 'bluebird'
-import { LEDGER } from '../../constants'
+import {
+  LEDGER,
+  TESTNET,
+  MAINNET,
+  MAINNET_PATH_CODE,
+  TESTNET_PATH_CODE
+} from '../../constants'
 
 const handleErrors = response => {
   if (
@@ -13,7 +19,7 @@ const handleErrors = response => {
     response.error_message &&
     response.error_message
       .toLowerCase()
-      .includes('transporterror: invalild channel')
+      .includes('transporterror: invalid channel')
   ) {
     throw new Error(
       'Lost connection with Ledger. Please unplug and replug device.'
@@ -63,10 +69,11 @@ export default rustModule => {
         })
       },
 
-      getAccounts: async (network = 't', nStart = 0, nEnd = 5) => {
+      getAccounts: async (network = TESTNET, nStart = 0, nEnd = 5) => {
         throwIfBusy(ledgerBusy)
         ledgerBusy = true
-        const networkCode = network === 'f' ? 461 : 1
+        const networkCode =
+          network === MAINNET ? MAINNET_PATH_CODE : TESTNET_PATH_CODE
         const paths = []
         for (let i = nStart; i < nEnd; i += 1) {
           paths.push(`m/44'/${networkCode}'/0/0/${i}`)
@@ -85,11 +92,12 @@ export default rustModule => {
         throwIfBusy(ledgerBusy)
         ledgerBusy = true
         const serializedMessage = rustModule.transactionSerialize(
-          filecoinMessage.toString()
+          filecoinMessage
         )
         const { signature_compact } = handleErrors(
           await ledgerApp.sign(path, Buffer.from(serializedMessage, 'hex'))
         )
+        ledgerBusy = false
         return signature_compact.toString('base64')
       },
 

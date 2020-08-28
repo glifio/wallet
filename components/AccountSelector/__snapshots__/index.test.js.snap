@@ -35,6 +35,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   border-color: #5E26FF;
   background-color: #5E26FF;
@@ -55,7 +56,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   justify-content: center;
 }
 
-.c11 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   margin: 8px;
@@ -66,7 +67,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   align-items: center;
 }
 
-.c12 {
+.c11 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -91,7 +92,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   justify-content: space-between;
 }
 
-.c14 {
+.c13 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -108,10 +109,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   justify-content: flex-start;
 }
 
-.c15 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
   color: colors.core.black;
@@ -131,7 +133,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   justify-content: center;
 }
 
-.c16 {
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -143,7 +145,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   flex-direction: column;
 }
 
-.c19 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -167,10 +169,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   box-shadow: 0 0.7px 2.2px -8px rgba(0,0,0,0.18),0 1.7px 5.4px rgba(0,0,0,0.129),0 3.1px 10.1px rgba(0,0,0,0.107),0 5.6px 18.1px rgba(0,0,0,0.09),0 10.4px 33.8px rgba(0,0,0,0.073),0 25px 81px rgba(0,0,0,0.051);
 }
 
-.c20 {
+.c19 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
   color: #660000;
@@ -190,12 +193,12 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   justify-content: center;
 }
 
-.c21 {
+.c20 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c23 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -210,7 +213,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   font-size: 1.5rem;
 }
 
-.c24 {
+.c23 {
   cursor: pointer;
   border: 1px solid status.fail.foreground;
   background-color: #1AD08F;
@@ -221,6 +224,10 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   padding: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   height: 100%;
   border-color: #660000;
   border-width: 1px;
@@ -229,7 +236,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   color: #660000;
 }
 
-.c24:hover {
+.c23:hover {
   opacity: 0.8;
 }
 
@@ -242,7 +249,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   margin-left: 8px;
 }
 
-.c18 {
+.c17 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -253,13 +260,13 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
 }
 
 .c7 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
 }
 
-.c17 {
+.c16 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
@@ -268,8 +275,8 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   margin-bottom: 0;
 }
 
-.c22 {
-  font-size: 1.25rem;
+.c21 {
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -283,7 +290,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   margin: 8px;
 }
 
-.c9 {
+.c8 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -301,7 +308,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   align-items: center;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -311,27 +318,13 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   flex-wrap: wrap;
 }
 
-.c8 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.25rem;
-}
-
-.c8:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
-.c13 {
+.c12 {
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   cursor: pointer;
 }
 
-.c13:hover {
+.c12:hover {
   background: hsla(0,0%,90%,1);
   opacity: 1;
 }
@@ -379,7 +372,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
         <p
           class="c7"
           font-family="RT-Alias-Grotesk"
-          font-size="3"
+          font-size="2"
           font-weight="400"
         >
           Your single
@@ -388,32 +381,22 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
            
           creates hundreds of individual "accounts".
           <br />
-          <a
-            class="c8"
-            color="core.primary"
-            font-size="3"
-            href="/faqs"
-            rel="noopener"
-            target="_blank"
-          >
-            Don’t see an account you were previously using?
-          </a>
         </p>
       </li>
     </ul>
     <ul
-      class="c9"
+      class="c8"
     >
       <li
-        class="c10"
+        class="c9"
         display="flex"
       >
         <div
-          class="c11"
+          class="c10"
           display="inline-block"
         >
           <div
-            class="c12 c13"
+            class="c11 c12"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -421,11 +404,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             width="11"
           >
             <div
-              class="c14"
+              class="c13"
               display="flex"
             >
               <div
-                class="c15"
+                class="c14"
                 color="colors.core.black"
                 display="flex"
                 size="6"
@@ -437,11 +420,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 </h3>
               </div>
               <div
-                class="c16"
+                class="c15"
                 display="flex"
               >
                 <p
-                  class="c17"
+                  class="c16"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -449,7 +432,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   Address
                 </p>
                 <h2
-                  class="c18"
+                  class="c17"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -459,11 +442,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
               </div>
             </div>
             <div
-              class="c16"
+              class="c15"
               display="flex"
             >
               <p
-                class="c17"
+                class="c16"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -471,7 +454,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 Balance
               </p>
               <h2
-                class="c18"
+                class="c17"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -483,11 +466,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
           </div>
         </div>
         <div
-          class="c11"
+          class="c10"
           display="inline-block"
         >
           <div
-            class="c12 c13"
+            class="c11 c12"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -495,11 +478,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             width="11"
           >
             <div
-              class="c14"
+              class="c13"
               display="flex"
             >
               <div
-                class="c15"
+                class="c14"
                 color="colors.core.black"
                 display="flex"
                 size="6"
@@ -511,11 +494,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 </h3>
               </div>
               <div
-                class="c16"
+                class="c15"
                 display="flex"
               >
                 <p
-                  class="c17"
+                  class="c16"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -523,7 +506,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   Address
                 </p>
                 <h2
-                  class="c18"
+                  class="c17"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -533,11 +516,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
               </div>
             </div>
             <div
-              class="c16"
+              class="c15"
               display="flex"
             >
               <p
-                class="c17"
+                class="c16"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -545,7 +528,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 Balance
               </p>
               <h2
-                class="c18"
+                class="c17"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -557,11 +540,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
           </div>
         </div>
         <div
-          class="c11"
+          class="c10"
           display="inline-block"
         >
           <div
-            class="c12 c13"
+            class="c11 c12"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -569,11 +552,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             width="11"
           >
             <div
-              class="c14"
+              class="c13"
               display="flex"
             >
               <div
-                class="c15"
+                class="c14"
                 color="colors.core.black"
                 display="flex"
                 size="6"
@@ -585,11 +568,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 </h3>
               </div>
               <div
-                class="c16"
+                class="c15"
                 display="flex"
               >
                 <p
-                  class="c17"
+                  class="c16"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -597,7 +580,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   Address
                 </p>
                 <h2
-                  class="c18"
+                  class="c17"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -607,11 +590,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
               </div>
             </div>
             <div
-              class="c16"
+              class="c15"
               display="flex"
             >
               <p
-                class="c17"
+                class="c16"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -619,7 +602,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 Balance
               </p>
               <h2
-                class="c18"
+                class="c17"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -631,11 +614,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
           </div>
         </div>
         <div
-          class="c11"
+          class="c10"
           display="inline-block"
         >
           <div
-            class="c12 c13"
+            class="c11 c12"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -643,11 +626,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             width="11"
           >
             <div
-              class="c14"
+              class="c13"
               display="flex"
             >
               <div
-                class="c15"
+                class="c14"
                 color="colors.core.black"
                 display="flex"
                 size="6"
@@ -659,11 +642,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 </h3>
               </div>
               <div
-                class="c16"
+                class="c15"
                 display="flex"
               >
                 <p
-                  class="c17"
+                  class="c16"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -671,7 +654,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   Address
                 </p>
                 <h2
-                  class="c18"
+                  class="c17"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -681,11 +664,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
               </div>
             </div>
             <div
-              class="c16"
+              class="c15"
               display="flex"
             >
               <p
-                class="c17"
+                class="c16"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -693,7 +676,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 Balance
               </p>
               <h2
-                class="c18"
+                class="c17"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -705,11 +688,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
           </div>
         </div>
         <div
-          class="c11"
+          class="c10"
           display="inline-block"
         >
           <div
-            class="c12 c13"
+            class="c11 c12"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -717,11 +700,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             width="11"
           >
             <div
-              class="c14"
+              class="c13"
               display="flex"
             >
               <div
-                class="c15"
+                class="c14"
                 color="colors.core.black"
                 display="flex"
                 size="6"
@@ -733,11 +716,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 </h3>
               </div>
               <div
-                class="c16"
+                class="c15"
                 display="flex"
               >
                 <p
-                  class="c17"
+                  class="c16"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -745,7 +728,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   Address
                 </p>
                 <h2
-                  class="c18"
+                  class="c17"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -755,11 +738,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
               </div>
             </div>
             <div
-              class="c16"
+              class="c15"
               display="flex"
             >
               <p
-                class="c17"
+                class="c16"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -767,7 +750,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 Balance
               </p>
               <h2
-                class="c18"
+                class="c17"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -779,18 +762,18 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
           </div>
         </div>
         <div
-          class="c19"
+          class="c18"
           color="card.error.foreground"
           display="flex"
           height="11"
           width="11"
         >
           <div
-            class="c14"
+            class="c13"
             display="flex"
           >
             <div
-              class="c20"
+              class="c19"
               color="status.fail.foreground"
               display="flex"
               size="6"
@@ -804,30 +787,30 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             <p
               class="c7"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               Error
             </p>
           </div>
           <div
-            class="c21"
+            class="c20"
           >
             <p
-              class="c22"
+              class="c21"
               font-family="RT-Alias-Grotesk"
-              font-size="3"
+              font-size="2"
               font-weight="400"
             >
               error for testing
             </p>
           </div>
           <div
-            class="c23"
+            class="c22"
             display="flex"
           >
             <button
-              class="c24"
+              class="c23"
               color="status.fail.foreground"
               font-size="3"
               height="100%"
@@ -970,6 +953,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   border-color: #5E26FF;
   background-color: #5E26FF;
@@ -1047,6 +1031,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
   color: colors.core.black;
@@ -1082,6 +1067,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   border-color: #5E26FF;
   background-color: transparent;
@@ -1119,7 +1105,10 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin: 8px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1164,7 +1153,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
 }
 
 .c7 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -1180,7 +1169,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
 }
 
 .c21 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -1287,10 +1276,818 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
         <p
           class="c7"
           font-family="RT-Alias-Grotesk"
-          font-size="3"
+          font-size="2"
           font-weight="400"
         >
           Please select the Ledger account you wish to own and sign for your multisig investor wallet.
+        </p>
+      </li>
+    </ul>
+    <ul
+      class="c8"
+    >
+      <li
+        class="c9"
+        display="flex"
+      >
+        <div
+          class="c10"
+          display="inline-block"
+        >
+          <div
+            class="c11 c12"
+            color="colors.core.black"
+            display="flex"
+            height="11"
+            overflow="hidden"
+            width="11"
+          >
+            <div
+              class="c13"
+              display="flex"
+            >
+              <div
+                class="c14"
+                color="colors.core.black"
+                display="flex"
+                size="6"
+              >
+                <h3
+                  class="c5"
+                >
+                  0
+                </h3>
+              </div>
+              <div
+                class="c15"
+                display="flex"
+              >
+                <p
+                  class="c16"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="3"
+                  font-weight="400"
+                >
+                  Address
+                </p>
+                <h2
+                  class="c17"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="4"
+                  font-weight="400"
+                >
+                  t1z22 ... 6wgi
+                </h2>
+              </div>
+            </div>
+            <div
+              class="c15"
+              display="flex"
+            >
+              <p
+                class="c16"
+                font-family="RT-Alias-Grotesk"
+                font-size="3"
+                font-weight="400"
+              >
+                Balance
+              </p>
+              <h2
+                class="c17"
+                font-family="RT-Alias-Grotesk"
+                font-size="4"
+                font-weight="400"
+              >
+                1
+                FIL
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div
+          class="c10"
+          display="inline-block"
+        >
+          <div
+            class="c11 c12"
+            color="colors.core.black"
+            display="flex"
+            height="11"
+            overflow="hidden"
+            width="11"
+          >
+            <div
+              class="c13"
+              display="flex"
+            >
+              <div
+                class="c14"
+                color="colors.core.black"
+                display="flex"
+                size="6"
+              >
+                <h3
+                  class="c5"
+                >
+                  1
+                </h3>
+              </div>
+              <div
+                class="c15"
+                display="flex"
+              >
+                <p
+                  class="c16"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="3"
+                  font-weight="400"
+                >
+                  Address
+                </p>
+                <h2
+                  class="c17"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="4"
+                  font-weight="400"
+                >
+                  t1mbk ... b1uq
+                </h2>
+              </div>
+            </div>
+            <div
+              class="c15"
+              display="flex"
+            >
+              <p
+                class="c16"
+                font-family="RT-Alias-Grotesk"
+                font-size="3"
+                font-weight="400"
+              >
+                Balance
+              </p>
+              <h2
+                class="c17"
+                font-family="RT-Alias-Grotesk"
+                font-size="4"
+                font-weight="400"
+              >
+                0
+                FIL
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div
+          class="c10"
+          display="inline-block"
+        >
+          <div
+            class="c11 c12"
+            color="colors.core.black"
+            display="flex"
+            height="11"
+            overflow="hidden"
+            width="11"
+          >
+            <div
+              class="c13"
+              display="flex"
+            >
+              <div
+                class="c14"
+                color="colors.core.black"
+                display="flex"
+                size="6"
+              >
+                <h3
+                  class="c5"
+                >
+                  2
+                </h3>
+              </div>
+              <div
+                class="c15"
+                display="flex"
+              >
+                <p
+                  class="c16"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="3"
+                  font-weight="400"
+                >
+                  Address
+                </p>
+                <h2
+                  class="c17"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="4"
+                  font-weight="400"
+                >
+                  t1mbk ... b2uq
+                </h2>
+              </div>
+            </div>
+            <div
+              class="c15"
+              display="flex"
+            >
+              <p
+                class="c16"
+                font-family="RT-Alias-Grotesk"
+                font-size="3"
+                font-weight="400"
+              >
+                Balance
+              </p>
+              <h2
+                class="c17"
+                font-family="RT-Alias-Grotesk"
+                font-size="4"
+                font-weight="400"
+              >
+                0
+                FIL
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div
+          class="c10"
+          display="inline-block"
+        >
+          <div
+            class="c11 c12"
+            color="colors.core.black"
+            display="flex"
+            height="11"
+            overflow="hidden"
+            width="11"
+          >
+            <div
+              class="c13"
+              display="flex"
+            >
+              <div
+                class="c14"
+                color="colors.core.black"
+                display="flex"
+                size="6"
+              >
+                <h3
+                  class="c5"
+                >
+                  3
+                </h3>
+              </div>
+              <div
+                class="c15"
+                display="flex"
+              >
+                <p
+                  class="c16"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="3"
+                  font-weight="400"
+                >
+                  Address
+                </p>
+                <h2
+                  class="c17"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="4"
+                  font-weight="400"
+                >
+                  t1mbk ... b3uq
+                </h2>
+              </div>
+            </div>
+            <div
+              class="c15"
+              display="flex"
+            >
+              <p
+                class="c16"
+                font-family="RT-Alias-Grotesk"
+                font-size="3"
+                font-weight="400"
+              >
+                Balance
+              </p>
+              <h2
+                class="c17"
+                font-family="RT-Alias-Grotesk"
+                font-size="4"
+                font-weight="400"
+              >
+                0
+                FIL
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div
+          class="c10"
+          display="inline-block"
+        >
+          <div
+            class="c11 c12"
+            color="colors.core.black"
+            display="flex"
+            height="11"
+            overflow="hidden"
+            width="11"
+          >
+            <div
+              class="c13"
+              display="flex"
+            >
+              <div
+                class="c14"
+                color="colors.core.black"
+                display="flex"
+                size="6"
+              >
+                <h3
+                  class="c5"
+                >
+                  4
+                </h3>
+              </div>
+              <div
+                class="c15"
+                display="flex"
+              >
+                <p
+                  class="c16"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="3"
+                  font-weight="400"
+                >
+                  Address
+                </p>
+                <h2
+                  class="c17"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="4"
+                  font-weight="400"
+                >
+                  t1mbk ... b4uq
+                </h2>
+              </div>
+            </div>
+            <div
+              class="c15"
+              display="flex"
+            >
+              <p
+                class="c16"
+                font-family="RT-Alias-Grotesk"
+                font-size="3"
+                font-weight="400"
+              >
+                Balance
+              </p>
+              <h2
+                class="c17"
+                font-family="RT-Alias-Grotesk"
+                font-size="4"
+                font-weight="400"
+              >
+                0
+                FIL
+              </h2>
+            </div>
+          </div>
+        </div>
+        <button
+          class="c18"
+          color="core.primary"
+          cursor="pointer"
+          display="flex"
+          font-size="3"
+          height="11"
+          opacity="1"
+          type="button"
+          width="11"
+        >
+          <ul
+            class="c8"
+          >
+            <li
+              class="c19"
+              display="flex"
+            >
+              <div
+                class="c20"
+                color="core.primary"
+                display="flex"
+                size="6"
+              >
+                <h3
+                  class="c5"
+                >
+                  5
+                </h3>
+              </div>
+              <h2
+                class="c6"
+                font-family="RT-Alias-Grotesk"
+                font-size="4"
+                font-weight="400"
+              >
+                Create
+              </h2>
+            </li>
+            <li
+              class=""
+            >
+              <p
+                class="c21"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Click here to create account #
+                5
+                .
+              </p>
+            </li>
+          </ul>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`AccountSelector it renders the wallets in redux, and an option to create the next wallet 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1200px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: #5E26FF;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 8px;
+  display: inline-block;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c11 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  background-color: hsla(0,0%,90%,0);
+  color: colors.core.black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  overflow: hidden;
+  height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c13 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c14 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  margin-right: 16px;
+  color: colors.core.black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: transparent;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c18 {
+  cursor: pointer;
+  border: 1px solid core.primary;
+  background-color: #1AD08F;
+  border-color: core.primary;
+  color: core.primary;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  height: 300px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  border-color: #5E26FF;
+  border-width: 1px;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #5E26FF;
+  opacity: 1;
+}
+
+.c18:hover {
+  opacity: 0.8;
+}
+
+.c6 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-left: 8px;
+}
+
+.c17 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c7 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c16 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c21 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+}
+
+.c2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin: 8px;
+}
+
+.c8 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c12 {
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.c12:hover {
+  background: hsla(0,0%,90%,1);
+  opacity: 1;
+}
+
+<div
+  class="c0"
+  display="flex"
+>
+  <div
+    class="c1"
+    display="flex"
+  >
+    <ul
+      class="c2"
+    >
+      <li
+        class="c3"
+        color="core.primary"
+        display="flex"
+      >
+        <div
+          class="c4"
+          color="core.white"
+          display="flex"
+          size="6"
+        >
+          <h3
+            class="c5"
+          >
+            Sw
+          </h3>
+        </div>
+        <h2
+          class="c6"
+          font-family="RT-Alias-Grotesk"
+          font-size="4"
+          font-weight="400"
+        >
+          Switch Accounts
+        </h2>
+      </li>
+      <li
+        class=""
+      >
+        <p
+          class="c7"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          Your single
+           
+          seed phrase
+           
+          creates hundreds of individual "accounts".
+          <br />
         </p>
       </li>
     </ul>
@@ -1716,833 +2513,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
               <p
                 class="c21"
                 font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Click here to create account #
-                5
-                .
-              </p>
-            </li>
-          </ul>
-        </button>
-      </li>
-    </ul>
-  </div>
-</div>
-`;
-
-exports[`AccountSelector it renders the wallets in redux, and an option to create the next wallet 1`] = `
-.c0 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  justify-items: center;
-}
-
-.c1 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding: 24px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 1200px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-}
-
-.c4 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-style: solid;
-  border-color: #5E26FF;
-  background-color: #5E26FF;
-  color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c11 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin: 8px;
-  display: inline-block;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c12 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 1px solid;
-  border-radius: 4px;
-  border-width: 1px;
-  padding: 16px;
-  background-color: hsla(0,0%,90%,0);
-  color: colors.core.black;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 300px;
-  overflow: hidden;
-  height: 300px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c14 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-}
-
-.c15 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-style: solid;
-  margin-right: 16px;
-  color: colors.core.black;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c16 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c21 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-style: solid;
-  border-color: #5E26FF;
-  background-color: transparent;
-  color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c5 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c19 {
-  cursor: pointer;
-  border: 1px solid core.primary;
-  background-color: #1AD08F;
-  border-color: core.primary;
-  color: core.primary;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  margin: 8px;
-  padding: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 300px;
-  height: 300px;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-content: flex-start;
-  -ms-flex-line-pack: start;
-  align-content: flex-start;
-  border-color: #5E26FF;
-  border-width: 1px;
-  border-radius: 4px;
-  background-color: transparent;
-  color: #5E26FF;
-  opacity: 1;
-}
-
-.c19:hover {
-  opacity: 0.8;
-}
-
-.c6 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-left: 8px;
-}
-
-.c18 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c7 {
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-}
-
-.c17 {
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c22 {
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  text-align: left;
-}
-
-.c2 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin: 8px;
-}
-
-.c9 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.c3 {
-  color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.c20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c8 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.25rem;
-}
-
-.c8:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
-.c13 {
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  cursor: pointer;
-}
-
-.c13:hover {
-  background: hsla(0,0%,90%,1);
-  opacity: 1;
-}
-
-<div
-  class="c0"
-  display="flex"
->
-  <div
-    class="c1"
-    display="flex"
-  >
-    <ul
-      class="c2"
-    >
-      <li
-        class="c3"
-        color="core.primary"
-        display="flex"
-      >
-        <div
-          class="c4"
-          color="core.white"
-          display="flex"
-          size="6"
-        >
-          <h3
-            class="c5"
-          >
-            Sw
-          </h3>
-        </div>
-        <h2
-          class="c6"
-          font-family="RT-Alias-Grotesk"
-          font-size="4"
-          font-weight="400"
-        >
-          Switch Accounts
-        </h2>
-      </li>
-      <li
-        class=""
-      >
-        <p
-          class="c7"
-          font-family="RT-Alias-Grotesk"
-          font-size="3"
-          font-weight="400"
-        >
-          Your single
-           
-          seed phrase
-           
-          creates hundreds of individual "accounts".
-          <br />
-          <a
-            class="c8"
-            color="core.primary"
-            font-size="3"
-            href="/faqs"
-            rel="noopener"
-            target="_blank"
-          >
-            Don’t see an account you were previously using?
-          </a>
-        </p>
-      </li>
-    </ul>
-    <ul
-      class="c9"
-    >
-      <li
-        class="c10"
-        display="flex"
-      >
-        <div
-          class="c11"
-          display="inline-block"
-        >
-          <div
-            class="c12 c13"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c14"
-              display="flex"
-            >
-              <div
-                class="c15"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c5"
-                >
-                  0
-                </h3>
-              </div>
-              <div
-                class="c16"
-                display="flex"
-              >
-                <p
-                  class="c17"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c18"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1z22 ... 6wgi
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c16"
-              display="flex"
-            >
-              <p
-                class="c17"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c18"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div
-          class="c11"
-          display="inline-block"
-        >
-          <div
-            class="c12 c13"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c14"
-              display="flex"
-            >
-              <div
-                class="c15"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c5"
-                >
-                  1
-                </h3>
-              </div>
-              <div
-                class="c16"
-                display="flex"
-              >
-                <p
-                  class="c17"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c18"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1mbk ... b1uq
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c16"
-              display="flex"
-            >
-              <p
-                class="c17"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c18"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div
-          class="c11"
-          display="inline-block"
-        >
-          <div
-            class="c12 c13"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c14"
-              display="flex"
-            >
-              <div
-                class="c15"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c5"
-                >
-                  2
-                </h3>
-              </div>
-              <div
-                class="c16"
-                display="flex"
-              >
-                <p
-                  class="c17"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c18"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1mbk ... b2uq
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c16"
-              display="flex"
-            >
-              <p
-                class="c17"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c18"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div
-          class="c11"
-          display="inline-block"
-        >
-          <div
-            class="c12 c13"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c14"
-              display="flex"
-            >
-              <div
-                class="c15"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c5"
-                >
-                  3
-                </h3>
-              </div>
-              <div
-                class="c16"
-                display="flex"
-              >
-                <p
-                  class="c17"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c18"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1mbk ... b3uq
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c16"
-              display="flex"
-            >
-              <p
-                class="c17"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c18"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div
-          class="c11"
-          display="inline-block"
-        >
-          <div
-            class="c12 c13"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c14"
-              display="flex"
-            >
-              <div
-                class="c15"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c5"
-                >
-                  4
-                </h3>
-              </div>
-              <div
-                class="c16"
-                display="flex"
-              >
-                <p
-                  class="c17"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c18"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1mbk ... b4uq
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c16"
-              display="flex"
-            >
-              <p
-                class="c17"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c18"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <button
-          class="c19"
-          color="core.primary"
-          cursor="pointer"
-          display="flex"
-          font-size="3"
-          height="11"
-          opacity="1"
-          type="button"
-          width="11"
-        >
-          <ul
-            class="c9"
-          >
-            <li
-              class="c20"
-              display="flex"
-            >
-              <div
-                class="c21"
-                color="core.primary"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c5"
-                >
-                  5
-                </h3>
-              </div>
-              <h2
-                class="c6"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                Create
-              </h2>
-            </li>
-            <li
-              class=""
-            >
-              <p
-                class="c22"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
+                font-size="2"
                 font-weight="400"
               >
                 Click here to create account #

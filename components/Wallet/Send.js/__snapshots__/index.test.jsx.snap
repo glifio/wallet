@@ -37,6 +37,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   border-color: #5E26FF;
   background-color: #5E26FF;
@@ -133,6 +134,10 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c20 {
@@ -140,7 +145,6 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -246,23 +250,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   width: 100%;
 }
 
-.c34 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-top: 8px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c39 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
@@ -287,7 +275,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c41 {
+.c35 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -307,7 +295,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c46 {
+.c40 {
   cursor: pointer;
   border: 1px solid core.lightgray;
   background-color: transparent;
@@ -317,7 +305,11 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 0;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border: 0;
   border-right: 1px solid;
   border-radius: 0;
@@ -325,11 +317,11 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   border-width: 1px;
 }
 
-.c46:hover {
+.c40:hover {
   opacity: 0.8;
 }
 
-.c48 {
+.c42 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -339,13 +331,17 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 0;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border: 0;
   border-radius: 0;
   border-width: 1px;
 }
 
-.c48:hover {
+.c42:hover {
   opacity: 0.8;
 }
 
@@ -354,7 +350,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   height: 24;
 }
 
-.c40 {
+.c34 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -362,7 +358,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   margin: 0;
 }
 
-.c42 {
+.c36 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -371,7 +367,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   margin: 0;
 }
 
-.c44 {
+.c38 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
@@ -382,7 +378,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
 
 .c6 {
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -391,31 +387,12 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
 
 .c8 {
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   margin-right: 8px;
   margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c35 {
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-right: 4px;
-  margin-top: 16px;
-}
-
-.c37 {
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  display: inline-block;
-  margin-top: 8px;
   margin-bottom: 0;
 }
 
@@ -445,9 +422,8 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   background: #d1ddfa;
   padding-left: 16px;
   padding-right: 16px;
-  margin-top: 8px;
   display: inline-block;
-  height: 64px;
+  height: 48px;
   width: 100%;
   border-radius: 4px;
   border: 0;
@@ -483,7 +459,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   padding-left: 16px;
   padding-right: 16px;
   display: inline-block;
-  height: 64px;
+  height: 48px;
   width: 100%;
   border-radius: 4px;
   border: 0;
@@ -676,7 +652,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   margin: 0;
 }
 
-.c45 {
+.c39 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -764,72 +740,15 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c33 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: core.primary;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  border: 0;
-  border-width: 1px;
-  border-radius: 4px;
-  color: #5E26FF;
-  background-color: transparent;
-  padding: 0;
-  outline: none;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-}
-
-.c33:hover {
-  opacity: 0.8;
-}
-
-.c33:hover {
-  cursor: pointer;
-  opacity: 1;
-}
-
-.c36 {
-  font-size: 0.75rem;
-}
-
-.c38 {
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-}
-
-.c38:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
-.c43 {
+.c37 {
   word-wrap: break-word;
 }
 
-.c47 {
+.c41 {
   border-radius: 0px;
 }
 
-.c49 {
+.c43 {
   border-radius: 0px;
 }
 
@@ -865,7 +784,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
           class="c6"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
-          font-size="3"
+          font-size="2"
           font-weight="400"
         >
           Sending Filecoin
@@ -883,7 +802,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
             class="c8"
             color="core.primary"
             font-family="RT-Alias-Grotesk"
-            font-size="3"
+            font-size="2"
             font-weight="400"
           >
             Step 
@@ -970,7 +889,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
               <input
                 class="c19"
                 display="inline-block"
-                height="7"
+                height="6"
                 placeholder="t1..."
                 value=""
                 width="100%"
@@ -1107,8 +1026,8 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
                   class="c31"
                   disabled=""
                   display="inline-block"
-                  height="7"
-                  value="< 0.1"
+                  height="6"
+                  value="< 0.0001"
                   width="100%"
                 />
                 <div
@@ -1125,43 +1044,12 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
           </div>
         </div>
       </div>
-      <button
-        class="c33"
-        color="core.primary"
-        display="flex"
-        font-size="3"
-        role="button"
-        type="button"
-      >
-        <div
-          class="c34"
-          display="flex"
-        >
-          <p
-            class="c35 c36"
-            font-family="RT-Alias-Grotesk"
-            font-size="3"
-            font-weight="400"
-          >
-            ▼
-          </p>
-          <p
-            class="c37 c38"
-            display="inline-block"
-            font-family="RT-Alias-Grotesk"
-            font-size="3"
-            font-weight="400"
-          >
-            Customize
-          </p>
-        </div>
-      </button>
       <div
-        class="c39"
+        class="c33"
         display="flex"
       >
         <h2
-          class="c40"
+          class="c34"
           font-family="RT-Alias-Grotesk"
           font-size="4"
           font-weight="400"
@@ -1169,11 +1057,11 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
           Total
         </h2>
         <div
-          class="c41"
+          class="c35"
           display="flex"
         >
           <h2
-            class="c42 c43"
+            class="c36 c37"
             color="core.primary"
             font-family="RT-Alias-Grotesk"
             font-size="5"
@@ -1184,7 +1072,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
             FIL
           </h2>
           <h2
-            class="c44"
+            class="c38"
             color="core.darkgray"
             font-family="RT-Alias-Grotesk"
             font-size="4"
@@ -1198,18 +1086,20 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="c45"
+      class="c39"
     >
       <button
-        class="c46 c47 Sendjs___StyledButton-sc-1crplc1-6 c47"
+        class="c40 c41 Sendjs___StyledButton-sc-1crplc1-2 c41"
         font-size="3"
+        height="6"
         type="button"
       >
         Back
       </button>
       <button
-        class="c48 c49 Sendjs___StyledButton2-sc-1crplc1-7 c49"
+        class="c42 c43 Sendjs___StyledButton2-sc-1crplc1-3 c43"
         font-size="3"
+        height="6"
         type="submit"
       >
         Send
@@ -1256,6 +1146,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   border-color: #5E26FF;
   background-color: #5E26FF;
@@ -1352,14 +1243,17 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c21 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1367,7 +1261,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   min-height: 160px;
 }
 
-.c22 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -1396,14 +1290,14 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   text-align: center;
 }
 
-.c23 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c24 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1418,7 +1312,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   width: 100%;
 }
 
-.c25 {
+.c26 {
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
@@ -1446,7 +1340,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c28 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1458,7 +1352,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   height: 80px;
 }
 
-.c31 {
+.c32 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1466,22 +1360,6 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
 }
 
 .c35 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-top: 8px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c40 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
@@ -1506,7 +1384,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   justify-content: space-between;
 }
 
-.c42 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -1520,13 +1398,21 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   text-align: right;
 }
 
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 8px;
+  margin-bottom: 0;
+  text-align: right;
+}
+
 .c5 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c47 {
+.c42 {
   cursor: pointer;
   border: 1px solid core.lightgray;
   background-color: transparent;
@@ -1536,7 +1422,11 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 0;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border: 0;
   border-right: 1px solid;
   border-radius: 0;
@@ -1544,11 +1434,11 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   border-width: 1px;
 }
 
-.c47:hover {
+.c42:hover {
   opacity: 0.8;
 }
 
-.c49 {
+.c44 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -1558,13 +1448,17 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 0;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border: 0;
   border-radius: 0;
   border-width: 1px;
 }
 
-.c49:hover {
+.c44:hover {
   opacity: 0.8;
 }
 
@@ -1573,7 +1467,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   height: 24;
 }
 
-.c41 {
+.c36 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -1581,7 +1475,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   margin: 0;
 }
 
-.c43 {
+.c38 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -1590,7 +1484,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   margin: 0;
 }
 
-.c45 {
+.c40 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
@@ -1601,7 +1495,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
 
 .c6 {
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -1610,31 +1504,12 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
 
 .c8 {
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   margin-right: 8px;
   margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c36 {
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-right: 4px;
-  margin-top: 16px;
-}
-
-.c38 {
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  display: inline-block;
-  margin-top: 8px;
   margin-bottom: 0;
 }
 
@@ -1647,7 +1522,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   margin: 0;
 }
 
-.c20 {
+.c21 {
   color: #FC6D6F;
   text-align: right;
   font-size: 1.125rem;
@@ -1655,11 +1530,9 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-  margin-top: 16px;
-  margin-bottom: 0;
 }
 
-.c32 {
+.c33 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -1677,19 +1550,19 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   padding-left: 16px;
   padding-right: 16px;
   display: inline-block;
-  height: 64px;
+  height: 48px;
   width: 100%;
   border-radius: 4px;
   border: 0;
   border-color: #999999;
 }
 
-.c32:hover {
+.c33:hover {
   background: transparent;
   cursor: initial;
 }
 
-.c32:focus {
+.c33:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
@@ -1712,9 +1585,8 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   background: #FC6D6F;
   padding-left: 16px;
   padding-right: 16px;
-  margin-top: 8px;
   display: inline-block;
-  height: 64px;
+  height: 48px;
   width: 100%;
   border-radius: 4px;
   border: 0;
@@ -1738,7 +1610,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   border-radius: 1px;
 }
 
-.c33 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 16px;
@@ -1765,7 +1637,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   background: core.transparent;
 }
 
-.c27 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -1794,7 +1666,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   background: #85e0cb;
 }
 
-.c30 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -1823,7 +1695,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   background: #85e0cb;
 }
 
-.c26 {
+.c27 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -1848,24 +1720,24 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   -moz-appearance: textfield;
 }
 
-.c26:hover {
+.c27:hover {
   background: #85e0cb;
   cursor: text;
 }
 
-.c26:focus {
+.c27:focus {
   box-shadow: 0;
   outline: 0;
   background: #85e0cb;
 }
 
-.c26::-webkit-outer-spin-button,
-.c26::-webkit-inner-spin-button {
+.c27::-webkit-outer-spin-button,
+.c27::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c29 {
+.c30 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -1890,24 +1762,24 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   -moz-appearance: textfield;
 }
 
-.c29:hover {
+.c30:hover {
   background: #85e0cb;
   cursor: text;
 }
 
-.c29:focus {
+.c30:focus {
   box-shadow: 0;
   outline: 0;
   background: #85e0cb;
 }
 
-.c29::-webkit-outer-spin-button,
-.c29::-webkit-inner-spin-button {
+.c30::-webkit-outer-spin-button,
+.c30::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c46 {
+.c41 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -1995,72 +1867,15 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   justify-content: space-between;
 }
 
-.c34 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: core.primary;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  border: 0;
-  border-width: 1px;
-  border-radius: 4px;
-  color: #5E26FF;
-  background-color: transparent;
-  padding: 0;
-  outline: none;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-}
-
-.c34:hover {
-  opacity: 0.8;
-}
-
-.c34:hover {
-  cursor: pointer;
-  opacity: 1;
-}
-
-.c37 {
-  font-size: 0.75rem;
-}
-
 .c39 {
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-}
-
-.c39:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
-.c44 {
   word-wrap: break-word;
 }
 
-.c48 {
+.c43 {
   border-radius: 0px;
 }
 
-.c50 {
+.c45 {
   border-radius: 0px;
 }
 
@@ -2096,7 +1911,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
           class="c6"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
-          font-size="3"
+          font-size="2"
           font-weight="400"
         >
           Sending Filecoin
@@ -2114,7 +1929,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
             class="c8"
             color="core.primary"
             font-family="RT-Alias-Grotesk"
-            font-size="3"
+            font-size="2"
             font-weight="400"
           >
             Step 
@@ -2201,7 +2016,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
               <input
                 class="c19"
                 display="inline-block"
-                height="7"
+                height="6"
                 placeholder="t1..."
                 value="t1z225tguggx4onbauimqvxz"
                 width="100%"
@@ -2210,23 +2025,27 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
             </div>
           </div>
         </div>
-        <h4
-          class="c20"
-          color="status.fail.background"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          Invalid address.
-        </h4>
         <div
-          class="c21"
+          class="c20"
+        >
+          <h4
+            class="c21"
+            color="status.fail.background"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Invalid address.
+          </h4>
+        </div>
+        <div
+          class="c22"
           display="flex"
           label="Amount"
           name="amount"
         >
           <div
-            class="c22"
+            class="c23"
             color="input.border"
             display="flex"
             width="100%"
@@ -2242,18 +2061,18 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
             </h4>
           </div>
           <div
-            class="c23"
+            class="c24"
             display="inline-block"
             width="100%"
           >
             <div
-              class="c24"
+              class="c25"
               display="flex"
               height="80px"
               width="100%"
             >
               <div
-                class="c25"
+                class="c26"
                 display="flex"
                 font-family="sansSerif"
                 font-size="5"
@@ -2262,7 +2081,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
                 =
               </div>
               <input
-                class="c26"
+                class="c27"
                 display="inline-block"
                 font-size="5"
                 height="100%"
@@ -2275,7 +2094,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
                 width="100%"
               />
               <div
-                class="c27"
+                class="c28"
                 color="core.primary"
                 display="flex"
                 font-size="3"
@@ -2285,12 +2104,12 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
               </div>
             </div>
             <div
-              class="c28"
+              class="c29"
               display="flex"
               height="80px"
             >
               <input
-                class="c29"
+                class="c30"
                 display="inline-block"
                 font-size="5"
                 height="100%"
@@ -2302,7 +2121,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
                 width="100%"
               />
               <div
-                class="c30"
+                class="c31"
                 color="core.primary"
                 display="flex"
                 font-size="3"
@@ -2314,7 +2133,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
           </div>
         </div>
         <div
-          class="c31"
+          class="c32"
           width="100%"
         >
           <div
@@ -2343,15 +2162,15 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
                 display="flex"
               >
                 <input
-                  class="c32"
+                  class="c33"
                   disabled=""
                   display="inline-block"
-                  height="7"
-                  value="< 0.1"
+                  height="6"
+                  value="< 0.0001"
                   width="100%"
                 />
                 <div
-                  class="c33"
+                  class="c34"
                   color="core.primary"
                   display="flex"
                   font-size="3"
@@ -2364,43 +2183,12 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
           </div>
         </div>
       </div>
-      <button
-        class="c34"
-        color="core.primary"
-        display="flex"
-        font-size="3"
-        role="button"
-        type="button"
-      >
-        <div
-          class="c35"
-          display="flex"
-        >
-          <p
-            class="c36 c37"
-            font-family="RT-Alias-Grotesk"
-            font-size="3"
-            font-weight="400"
-          >
-            ▼
-          </p>
-          <p
-            class="c38 c39"
-            display="inline-block"
-            font-family="RT-Alias-Grotesk"
-            font-size="3"
-            font-weight="400"
-          >
-            Customize
-          </p>
-        </div>
-      </button>
       <div
-        class="c40"
+        class="c35"
         display="flex"
       >
         <h2
-          class="c41"
+          class="c36"
           font-family="RT-Alias-Grotesk"
           font-size="4"
           font-weight="400"
@@ -2408,22 +2196,22 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
           Total
         </h2>
         <div
-          class="c42"
+          class="c37"
           display="flex"
         >
           <h2
-            class="c43 c44"
+            class="c38 c39"
             color="core.primary"
             font-family="RT-Alias-Grotesk"
             font-size="5"
             font-weight="700"
           >
-            0.010000000000000122
+            0.010000000000122222
              
             FIL
           </h2>
           <h2
-            class="c45"
+            class="c40"
             color="core.darkgray"
             font-family="RT-Alias-Grotesk"
             font-size="4"
@@ -2437,18 +2225,20 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
       </div>
     </div>
     <div
-      class="c46"
+      class="c41"
     >
       <button
-        class="c47 c48 Sendjs___StyledButton-sc-1crplc1-6 c48"
+        class="c42 c43 Sendjs___StyledButton-sc-1crplc1-2 c43"
         font-size="3"
+        height="6"
         type="button"
       >
         Back
       </button>
       <button
-        class="c49 c50 Sendjs___StyledButton2-sc-1crplc1-7 c50"
+        class="c44 c45 Sendjs___StyledButton2-sc-1crplc1-3 c45"
         font-size="3"
+        height="6"
         type="submit"
       >
         Send
@@ -2495,6 +2285,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   border-color: #5E26FF;
   background-color: #5E26FF;
@@ -2591,14 +2382,17 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c21 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2606,7 +2400,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   min-height: 160px;
 }
 
-.c22 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -2635,14 +2429,14 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   text-align: center;
 }
 
-.c23 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c24 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -2657,7 +2451,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   width: 100%;
 }
 
-.c25 {
+.c26 {
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
@@ -2685,7 +2479,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c28 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -2697,7 +2491,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   height: 80px;
 }
 
-.c31 {
+.c32 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -2705,22 +2499,6 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
 }
 
 .c35 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-top: 8px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c40 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
@@ -2745,7 +2523,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   justify-content: space-between;
 }
 
-.c42 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -2759,13 +2537,21 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   text-align: right;
 }
 
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 8px;
+  margin-bottom: 0;
+  text-align: right;
+}
+
 .c5 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c47 {
+.c42 {
   cursor: pointer;
   border: 1px solid core.lightgray;
   background-color: transparent;
@@ -2775,7 +2561,11 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 0;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border: 0;
   border-right: 1px solid;
   border-radius: 0;
@@ -2783,11 +2573,11 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   border-width: 1px;
 }
 
-.c47:hover {
+.c42:hover {
   opacity: 0.8;
 }
 
-.c49 {
+.c44 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -2797,13 +2587,17 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 0;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border: 0;
   border-radius: 0;
   border-width: 1px;
 }
 
-.c49:hover {
+.c44:hover {
   opacity: 0.8;
 }
 
@@ -2812,7 +2606,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   height: 24;
 }
 
-.c41 {
+.c36 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -2820,7 +2614,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   margin: 0;
 }
 
-.c43 {
+.c38 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -2829,7 +2623,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   margin: 0;
 }
 
-.c45 {
+.c40 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
@@ -2840,7 +2634,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
 
 .c6 {
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -2849,31 +2643,12 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
 
 .c8 {
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   margin-right: 8px;
   margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c36 {
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-right: 4px;
-  margin-top: 16px;
-}
-
-.c38 {
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  display: inline-block;
-  margin-top: 8px;
   margin-bottom: 0;
 }
 
@@ -2886,7 +2661,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   margin: 0;
 }
 
-.c20 {
+.c21 {
   color: #FC6D6F;
   text-align: right;
   font-size: 1.125rem;
@@ -2894,11 +2669,9 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-  margin-top: 16px;
-  margin-bottom: 0;
 }
 
-.c32 {
+.c33 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -2916,19 +2689,19 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   padding-left: 16px;
   padding-right: 16px;
   display: inline-block;
-  height: 64px;
+  height: 48px;
   width: 100%;
   border-radius: 4px;
   border: 0;
   border-color: #999999;
 }
 
-.c32:hover {
+.c33:hover {
   background: transparent;
   cursor: initial;
 }
 
-.c32:focus {
+.c33:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
@@ -2951,9 +2724,8 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   background: #FC6D6F;
   padding-left: 16px;
   padding-right: 16px;
-  margin-top: 8px;
   display: inline-block;
-  height: 64px;
+  height: 48px;
   width: 100%;
   border-radius: 4px;
   border: 0;
@@ -2977,7 +2749,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   border-radius: 1px;
 }
 
-.c33 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 16px;
@@ -3004,7 +2776,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   background: core.transparent;
 }
 
-.c27 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -3033,7 +2805,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   background: #85e0cb;
 }
 
-.c30 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -3062,7 +2834,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   background: #85e0cb;
 }
 
-.c26 {
+.c27 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3087,24 +2859,24 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   -moz-appearance: textfield;
 }
 
-.c26:hover {
+.c27:hover {
   background: #85e0cb;
   cursor: text;
 }
 
-.c26:focus {
+.c27:focus {
   box-shadow: 0;
   outline: 0;
   background: #85e0cb;
 }
 
-.c26::-webkit-outer-spin-button,
-.c26::-webkit-inner-spin-button {
+.c27::-webkit-outer-spin-button,
+.c27::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c29 {
+.c30 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3129,24 +2901,24 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   -moz-appearance: textfield;
 }
 
-.c29:hover {
+.c30:hover {
   background: #85e0cb;
   cursor: text;
 }
 
-.c29:focus {
+.c30:focus {
   box-shadow: 0;
   outline: 0;
   background: #85e0cb;
 }
 
-.c29::-webkit-outer-spin-button,
-.c29::-webkit-inner-spin-button {
+.c30::-webkit-outer-spin-button,
+.c30::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c46 {
+.c41 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -3234,72 +3006,15 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   justify-content: space-between;
 }
 
-.c34 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: core.primary;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  border: 0;
-  border-width: 1px;
-  border-radius: 4px;
-  color: #5E26FF;
-  background-color: transparent;
-  padding: 0;
-  outline: none;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-}
-
-.c34:hover {
-  opacity: 0.8;
-}
-
-.c34:hover {
-  cursor: pointer;
-  opacity: 1;
-}
-
-.c37 {
-  font-size: 0.75rem;
-}
-
 .c39 {
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-}
-
-.c39:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
-.c44 {
   word-wrap: break-word;
 }
 
-.c48 {
+.c43 {
   border-radius: 0px;
 }
 
-.c50 {
+.c45 {
   border-radius: 0px;
 }
 
@@ -3335,7 +3050,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
           class="c6"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
-          font-size="3"
+          font-size="2"
           font-weight="400"
         >
           Sending Filecoin
@@ -3353,7 +3068,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
             class="c8"
             color="core.primary"
             font-family="RT-Alias-Grotesk"
-            font-size="3"
+            font-size="2"
             font-weight="400"
           >
             Step 
@@ -3440,7 +3155,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
               <input
                 class="c19"
                 display="inline-block"
-                height="7"
+                height="6"
                 placeholder="t1..."
                 value=""
                 width="100%"
@@ -3449,23 +3164,27 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
             </div>
           </div>
         </div>
-        <h4
-          class="c20"
-          color="status.fail.background"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          Invalid address.
-        </h4>
         <div
-          class="c21"
+          class="c20"
+        >
+          <h4
+            class="c21"
+            color="status.fail.background"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Invalid address.
+          </h4>
+        </div>
+        <div
+          class="c22"
           display="flex"
           label="Amount"
           name="amount"
         >
           <div
-            class="c22"
+            class="c23"
             color="input.border"
             display="flex"
             width="100%"
@@ -3481,18 +3200,18 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
             </h4>
           </div>
           <div
-            class="c23"
+            class="c24"
             display="inline-block"
             width="100%"
           >
             <div
-              class="c24"
+              class="c25"
               display="flex"
               height="80px"
               width="100%"
             >
               <div
-                class="c25"
+                class="c26"
                 display="flex"
                 font-family="sansSerif"
                 font-size="5"
@@ -3501,7 +3220,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
                 =
               </div>
               <input
-                class="c26"
+                class="c27"
                 display="inline-block"
                 font-size="5"
                 height="100%"
@@ -3514,7 +3233,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
                 width="100%"
               />
               <div
-                class="c27"
+                class="c28"
                 color="core.primary"
                 display="flex"
                 font-size="3"
@@ -3524,12 +3243,12 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
               </div>
             </div>
             <div
-              class="c28"
+              class="c29"
               display="flex"
               height="80px"
             >
               <input
-                class="c29"
+                class="c30"
                 display="inline-block"
                 font-size="5"
                 height="100%"
@@ -3541,7 +3260,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
                 width="100%"
               />
               <div
-                class="c30"
+                class="c31"
                 color="core.primary"
                 display="flex"
                 font-size="3"
@@ -3553,7 +3272,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
           </div>
         </div>
         <div
-          class="c31"
+          class="c32"
           width="100%"
         >
           <div
@@ -3582,15 +3301,15 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
                 display="flex"
               >
                 <input
-                  class="c32"
+                  class="c33"
                   disabled=""
                   display="inline-block"
-                  height="7"
-                  value="< 0.1"
+                  height="6"
+                  value="< 0.0001"
                   width="100%"
                 />
                 <div
-                  class="c33"
+                  class="c34"
                   color="core.primary"
                   display="flex"
                   font-size="3"
@@ -3603,43 +3322,12 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
           </div>
         </div>
       </div>
-      <button
-        class="c34"
-        color="core.primary"
-        display="flex"
-        font-size="3"
-        role="button"
-        type="button"
-      >
-        <div
-          class="c35"
-          display="flex"
-        >
-          <p
-            class="c36 c37"
-            font-family="RT-Alias-Grotesk"
-            font-size="3"
-            font-weight="400"
-          >
-            ▼
-          </p>
-          <p
-            class="c38 c39"
-            display="inline-block"
-            font-family="RT-Alias-Grotesk"
-            font-size="3"
-            font-weight="400"
-          >
-            Customize
-          </p>
-        </div>
-      </button>
       <div
-        class="c40"
+        class="c35"
         display="flex"
       >
         <h2
-          class="c41"
+          class="c36"
           font-family="RT-Alias-Grotesk"
           font-size="4"
           font-weight="400"
@@ -3647,22 +3335,22 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
           Total
         </h2>
         <div
-          class="c42"
+          class="c37"
           display="flex"
         >
           <h2
-            class="c43 c44"
+            class="c38 c39"
             color="core.primary"
             font-family="RT-Alias-Grotesk"
             font-size="5"
             font-weight="700"
           >
-            0.010000000000000122
+            0.010000000000122222
              
             FIL
           </h2>
           <h2
-            class="c45"
+            class="c40"
             color="core.darkgray"
             font-family="RT-Alias-Grotesk"
             font-size="4"
@@ -3676,18 +3364,20 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
       </div>
     </div>
     <div
-      class="c46"
+      class="c41"
     >
       <button
-        class="c47 c48 Sendjs___StyledButton-sc-1crplc1-6 c48"
+        class="c42 c43 Sendjs___StyledButton-sc-1crplc1-2 c43"
         font-size="3"
+        height="6"
         type="button"
       >
         Back
       </button>
       <button
-        class="c49 c50 Sendjs___StyledButton2-sc-1crplc1-7 c50"
+        class="c44 c45 Sendjs___StyledButton2-sc-1crplc1-3 c45"
         font-size="3"
+        height="6"
         type="submit"
       >
         Send
@@ -3734,6 +3424,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   border-color: #5E26FF;
   background-color: #5E26FF;
@@ -3830,6 +3521,10 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c20 {
@@ -3837,7 +3532,6 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   box-sizing: border-box;
   position: relative;
   border-color: #999999;
-  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4100,7 +3794,11 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 0;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border: 0;
   border-right: 1px solid;
   border-radius: 0;
@@ -4122,7 +3820,11 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 0;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border: 0;
   border-radius: 0;
   border-width: 1px;
@@ -4165,7 +3867,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
 
 .c6 {
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -4174,7 +3876,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
 
 .c8 {
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -4184,7 +3886,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
 }
 
 .c54 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -4194,7 +3896,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
 }
 
 .c52 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -4249,9 +3951,8 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   background: #d1ddfa;
   padding-left: 16px;
   padding-right: 16px;
-  margin-top: 8px;
   display: inline-block;
-  height: 64px;
+  height: 48px;
   width: 100%;
   border-radius: 4px;
   border: 0;
@@ -4287,7 +3988,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   padding-left: 16px;
   padding-right: 16px;
   display: inline-block;
-  height: 64px;
+  height: 48px;
   width: 100%;
   border-radius: 4px;
   border: 0;
@@ -4420,7 +4121,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
-  height: 64px;
+  height: 48px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4449,7 +4150,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
-  height: 64px;
+  height: 48px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4569,7 +4270,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   cursor: text;
   background: #d1ddfa;
   display: inline-block;
-  height: 64px;
+  height: 48px;
   width: 100%;
   border-top-left-radius: 4px;
   border: 0;
@@ -4610,7 +4311,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   cursor: text;
   background: #d1ddfa;
   display: inline-block;
-  height: 64px;
+  height: 48px;
   width: 100%;
   border-bottom-left-radius: 4px;
   border: 0;
@@ -4748,11 +4449,15 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 48px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4851,7 +4556,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
           class="c6"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
-          font-size="3"
+          font-size="2"
           font-weight="400"
         >
           Sending Filecoin
@@ -4869,7 +4574,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
             class="c8"
             color="core.primary"
             font-family="RT-Alias-Grotesk"
-            font-size="3"
+            font-size="2"
             font-weight="400"
           >
             Step 
@@ -4956,7 +4661,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
               <input
                 class="c19"
                 display="inline-block"
-                height="7"
+                height="6"
                 placeholder="t1..."
                 value=""
                 width="100%"
@@ -5093,7 +4798,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
                   class="c31"
                   disabled=""
                   display="inline-block"
-                  height="7"
+                  height="6"
                   value="122"
                   width="100%"
                 />
@@ -5173,7 +4878,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
                   <input
                     class="c44"
                     display="inline-block"
-                    height="7"
+                    height="6"
                     type="number"
                     value="1"
                     width="100%"
@@ -5183,7 +4888,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
                     color="core.primary"
                     display="flex"
                     font-size="3"
-                    height="64px"
+                    height="6"
                   >
                     AttoFil
                   </div>
@@ -5222,7 +4927,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
                     <input
                       class="c48"
                       display="inline-block"
-                      height="7"
+                      height="6"
                       type="number"
                       value="2000"
                       width="100%"
@@ -5232,7 +4937,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
                       color="core.primary"
                       display="flex"
                       font-size="3"
-                      height="64px"
+                      height="6"
                     >
                       AttoFil
                     </div>
@@ -5248,6 +4953,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
         color="core.primary"
         display="flex"
         font-size="3"
+        height="6"
         role="button"
         type="button"
       >
@@ -5258,7 +4964,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
           <p
             class="c52 c53"
             font-family="RT-Alias-Grotesk"
-            font-size="3"
+            font-size="2"
             font-weight="400"
           >
             ▲
@@ -5267,7 +4973,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
             class="c54 c55"
             display="inline-block"
             font-family="RT-Alias-Grotesk"
-            font-size="3"
+            font-size="2"
             font-weight="400"
           >
             Close
@@ -5321,6 +5027,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
       <button
         class="c63 c64 Sendjs___StyledButton-sc-1crplc1-6 c64"
         font-size="3"
+        height="6"
         type="button"
       >
         Back
@@ -5328,6 +5035,7 @@ exports[`Send Flow snapshots it renders the gas customization view 1`] = `
       <button
         class="c65 c66 Sendjs___StyledButton2-sc-1crplc1-7 c66"
         font-size="3"
+        height="6"
         type="submit"
       >
         Send

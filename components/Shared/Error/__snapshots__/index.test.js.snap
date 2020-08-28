@@ -75,6 +75,7 @@ exports[`Error renders the error 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   color: #660000;
   display: -webkit-box;
@@ -110,7 +111,11 @@ exports[`Error renders the error 1`] = `
   transition: 0.18s ease-in-out;
   border-radius: 4px;
   margin-top: 32px;
-  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -130,7 +135,7 @@ exports[`Error renders the error 1`] = `
 }
 
 .c7 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -194,7 +199,7 @@ exports[`Error renders the error 1`] = `
         <p
           class="c7"
           font-family="RT-Alias-Grotesk"
-          font-size="3"
+          font-size="2"
           font-weight="400"
         >
           Please install Google Chrome to continue using your Ledger device, or choose an alternative setup option
@@ -222,6 +227,7 @@ exports[`Error renders the error 1`] = `
     <button
       class="c9"
       font-size="3"
+      height="6"
       type="button"
     >
       Back

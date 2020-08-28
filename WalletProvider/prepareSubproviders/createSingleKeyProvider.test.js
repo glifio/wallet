@@ -1,7 +1,7 @@
-import Message from '@openworklabs/filecoin-message'
+import { Message } from '@openworklabs/filecoin-message'
 import createSingleKeyProvider from './createSingleKeyProvider'
 import mockRustModule from '@zondax/filecoin-signing-tools'
-import { SINGLE_KEY } from '../../constants'
+import { TESTNET, SINGLE_KEY } from '../../constants'
 
 const privateKey = 'xxxxxxtttttzzzzzzz'
 
@@ -28,13 +28,11 @@ describe('createHDWalletProvider', () => {
           to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
           value: '1000',
           method: 0,
-          gasPrice: '1',
-          gasLimit: 1000,
           nonce: 0
         })
         const SingleKeyProvider = createSingleKeyProvider(mockRustModule)
         const singleKeyProvider = SingleKeyProvider(privateKey)
-        await singleKeyProvider.sign(msg)
+        await singleKeyProvider.sign(msg.toLotusType())
         expect(mockRustModule.transactionSign).toHaveBeenCalled()
       })
     })
@@ -46,7 +44,7 @@ describe('createHDWalletProvider', () => {
         const SingleKeyProvider = createSingleKeyProvider(mockRustModule)
         const singleKeyProvider = SingleKeyProvider(privateKey)
         // these first 2 args dont matter for single key provider, since you can only generate 1 account
-        const accounts = await singleKeyProvider.getAccounts('t')
+        const accounts = await singleKeyProvider.getAccounts(TESTNET)
         expect(accounts.length).toBe(1)
         expect(mockRustModule.keyRecover).toHaveBeenCalledTimes(1)
       })

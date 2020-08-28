@@ -39,7 +39,10 @@ const ColoredDot = styled.span`
 `
 
 const NodeConnectedWidget = forwardRef(
-  ({ apiAddress, onConnectionStrengthChange, token, ...props }, ref) => {
+  (
+    { apiAddress, onConnectionStrengthChange, token, mockStrength, ...props },
+    ref
+  ) => {
     const [connectionStrength, setConnectionStrength] = useState(-1)
     const [polling, setPolling] = useState(false)
     const timeout = useRef()
@@ -49,7 +52,10 @@ const NodeConnectedWidget = forwardRef(
         clearTimeout(timeout.current)
         timeout.current = setTimeout(async () => {
           try {
-            const strength = await calcConnectionStrength(apiAddress, token)
+            const strength =
+              mockStrength === -1
+                ? await calcConnectionStrength(apiAddress, token)
+                : mockStrength
             if (strength !== connectionStrength) {
               setConnectionStrength(strength)
               onConnectionStrengthChange(strength)
@@ -61,19 +67,29 @@ const NodeConnectedWidget = forwardRef(
           }
         }, pollTimer)
       },
-      [apiAddress, connectionStrength, onConnectionStrengthChange, token]
+      [
+        apiAddress,
+        connectionStrength,
+        onConnectionStrengthChange,
+        token,
+        mockStrength
+      ]
     )
 
     useEffect(() => {
-      if (!polling) pollConnection(0)
+      if (mockStrength > -1) {
+        setConnectionStrength(mockStrength)
+        onConnectionStrengthChange(mockStrength)
+      } else if (!polling && mockStrength === -1) pollConnection(0)
       setPolling(true)
-      return () => {
-        if (polling) {
-          setPolling(false)
-          clearTimeout(timeout.current)
-        }
-      }
-    }, [polling, setPolling, pollConnection])
+    }, [
+      mockStrength,
+      polling,
+      setPolling,
+      pollConnection,
+      setConnectionStrength,
+      onConnectionStrengthChange
+    ])
 
     const nodeConnectedText = () => {
       // Connecting to node..
@@ -117,12 +133,14 @@ NodeConnectedWidget.propTypes = {
   // 0 - disconnected
   // 1 - node unhealthy
   // 2 - healthy
-  onConnectionStrengthChange: PropTypes.func
+  onConnectionStrengthChange: PropTypes.func,
+  mockStrength: PropTypes.oneOf([-1, 0, 1, 2])
 }
 
 NodeConnectedWidget.defaultProps = {
   onConnectionStrengthChange: noop,
-  token: ''
+  token: '',
+  mockStrength: -1
 }
 
 export default NodeConnectedWidget

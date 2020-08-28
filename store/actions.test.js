@@ -1,8 +1,9 @@
-import Message from '@openworklabs/filecoin-message'
+import { Message } from '@openworklabs/filecoin-message'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 
 import * as actions from './actions'
 import * as types from './actionTypes'
+import { MAINNET } from '../constants'
 
 describe('actions', () => {
   test('walletList', () => {
@@ -56,8 +57,6 @@ describe('actions', () => {
       to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
       value: '1000',
       method: 0,
-      gasPrice: '1',
-      gasLimit: 1000,
       nonce: 0
     })
     const expectedAction = {
@@ -96,10 +95,8 @@ describe('actions', () => {
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
         value: '1000',
         method: 0,
-        gasPrice: '1',
-        gasLimit: 1000,
         nonce: 0
-      })
+      }).toLotusType()
     ]
 
     const total = 1
@@ -153,8 +150,6 @@ describe('actions', () => {
         to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
         value: '1000',
         method: 0,
-        gasPrice: '1',
-        gasLimit: 1000,
         nonce: 0
       })
     ]
@@ -170,7 +165,7 @@ describe('actions', () => {
   })
 
   test('switchNetwork', () => {
-    const network = 'f'
+    const network = MAINNET
     const wallets = [
       {
         address: 't1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',

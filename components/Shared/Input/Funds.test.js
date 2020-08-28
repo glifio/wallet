@@ -19,7 +19,7 @@ describe('Funds input', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     const value = new FilecoinNumber('1', 'fil')
     const balance = new FilecoinNumber('2', 'fil')
-    const gasLimit = new FilecoinNumber('1000', 'attofil')
+    const estimatedTransactionFee = new FilecoinNumber('1000', 'attofil')
     await act(async () => {
       const { container } = render(
         <Tree>
@@ -30,7 +30,7 @@ describe('Funds input', () => {
             onAmountChange={onAmountChange}
             balance={balance}
             setError={setError}
-            gasLimit={gasLimit}
+            estimatedTransactionFee={estimatedTransactionFee}
             valid
           />
         </Tree>
@@ -44,7 +44,7 @@ describe('Funds input', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     const value = new FilecoinNumber('1', 'fil')
     const balance = new FilecoinNumber('2', 'fil')
-    const gasLimit = new FilecoinNumber('1000', 'attofil')
+    const estimatedTransactionFee = new FilecoinNumber('1000', 'attofil')
     await act(async () => {
       const { container } = render(
         <Tree>
@@ -55,7 +55,7 @@ describe('Funds input', () => {
             onAmountChange={onAmountChange}
             balance={balance}
             setError={setError}
-            gasLimit={gasLimit}
+            estimatedTransactionFee={estimatedTransactionFee}
             valid={false}
           />
         </Tree>
@@ -69,7 +69,7 @@ describe('Funds input', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     const value = new FilecoinNumber('1', 'fil')
     const balance = new FilecoinNumber('2', 'fil')
-    const gasLimit = new FilecoinNumber('1000', 'attofil')
+    const estimatedTransactionFee = new FilecoinNumber('1000', 'attofil')
     await act(async () => {
       const { container } = render(
         <Tree>
@@ -80,7 +80,7 @@ describe('Funds input', () => {
             onAmountChange={onAmountChange}
             balance={balance}
             setError={setError}
-            gasLimit={gasLimit}
+            estimatedTransactionFee={estimatedTransactionFee}
             disabled
           />
         </Tree>
@@ -95,7 +95,7 @@ describe('Funds input', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     const value = new FilecoinNumber('1', 'fil')
     const balance = new FilecoinNumber('2', 'fil')
-    const gasLimit = new FilecoinNumber('1000', 'attofil')
+    const estimatedTransactionFee = new FilecoinNumber('1000', 'attofil')
     await act(async () => {
       const { container } = render(
         <Tree>
@@ -106,7 +106,7 @@ describe('Funds input', () => {
             onAmountChange={onAmountChange}
             balance={balance}
             setError={setError}
-            gasLimit={gasLimit}
+            estimatedTransactionFee={estimatedTransactionFee}
             disabled
             valid
           />
@@ -122,7 +122,7 @@ describe('Funds input', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     const value = new FilecoinNumber('1', 'fil')
     const balance = new FilecoinNumber('2', 'fil')
-    const gasLimit = new FilecoinNumber('1000', 'attofil')
+    const estimatedTransactionFee = new FilecoinNumber('1000', 'attofil')
     await act(async () => {
       const { container } = render(
         <Tree>
@@ -133,7 +133,7 @@ describe('Funds input', () => {
             onAmountChange={onAmountChange}
             balance={balance}
             setError={setError}
-            gasLimit={gasLimit}
+            estimatedTransactionFee={estimatedTransactionFee}
             disabled
             valid={false}
           />
@@ -149,7 +149,7 @@ describe('Funds input', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     const value = new FilecoinNumber('1', 'fil')
     const balance = new FilecoinNumber('2', 'fil')
-    const gasLimit = new FilecoinNumber('1000', 'attofil')
+    const estimatedTransactionFee = new FilecoinNumber('1000', 'attofil')
     await act(async () => {
       const { container } = render(
         <Tree>
@@ -160,7 +160,7 @@ describe('Funds input', () => {
             onAmountChange={onAmountChange}
             balance={balance}
             setError={setError}
-            gasLimit={gasLimit}
+            estimatedTransactionFee={estimatedTransactionFee}
             disabled={false}
             valid={false}
           />
@@ -176,7 +176,7 @@ describe('Funds input', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     const value = new FilecoinNumber('1', 'fil')
     const balance = new FilecoinNumber('2', 'fil')
-    const gasLimit = new FilecoinNumber('1000', 'attofil')
+    const estimatedTransactionFee = new FilecoinNumber('1000', 'attofil')
     await act(async () => {
       const { container } = render(
         <Tree>
@@ -187,7 +187,7 @@ describe('Funds input', () => {
             onAmountChange={onAmountChange}
             balance={balance}
             setError={setError}
-            gasLimit={gasLimit}
+            estimatedTransactionFee={estimatedTransactionFee}
             disabled={false}
             valid={false}
             error='specific error message'
@@ -205,7 +205,7 @@ describe('Funds input', () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
-      const gasLimit = new FilecoinNumber('1000', 'attofil')
+      const estimatedTransactionFee = new FilecoinNumber('1000', 'attofil')
       let res
       await act(async () => {
         res = render(
@@ -217,7 +217,7 @@ describe('Funds input', () => {
               onAmountChange={onAmountChange}
               balance={balance}
               setError={setError}
-              gasLimit={gasLimit}
+              estimatedTransactionFee={estimatedTransactionFee}
               disabled={false}
               valid={false}
             />
@@ -241,7 +241,7 @@ describe('Funds input', () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
-      const gasLimit = new FilecoinNumber('1000', 'attofil')
+      const estimatedTransactionFee = new FilecoinNumber('1000', 'attofil')
       let res
       await act(async () => {
         res = render(
@@ -253,7 +253,7 @@ describe('Funds input', () => {
               onAmountChange={onAmountChange}
               balance={balance}
               setError={setError}
-              gasLimit={gasLimit}
+              estimatedTransactionFee={estimatedTransactionFee}
               disabled={false}
               valid={false}
             />
@@ -278,7 +278,7 @@ describe('Funds input', () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
-      const gasLimit = new FilecoinNumber('1000', 'attofil')
+      const estimatedTransactionFee = new FilecoinNumber('1000', 'attofil')
       let res
       await act(async () => {
         res = render(
@@ -290,7 +290,7 @@ describe('Funds input', () => {
               onAmountChange={onAmountChange}
               balance={balance}
               setError={setError}
-              gasLimit={gasLimit}
+              estimatedTransactionFee={estimatedTransactionFee}
               disabled={false}
               valid={false}
             />
@@ -315,7 +315,7 @@ describe('Funds input', () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
-      const gasLimit = new FilecoinNumber('1000', 'attofil')
+      const estimatedTransactionFee = new FilecoinNumber('1000', 'attofil')
       let res
       await act(async () => {
         res = render(
@@ -327,7 +327,7 @@ describe('Funds input', () => {
               onAmountChange={onAmountChange}
               balance={balance}
               setError={setError}
-              gasLimit={gasLimit}
+              estimatedTransactionFee={estimatedTransactionFee}
               disabled={false}
               valid={false}
             />
@@ -365,7 +365,7 @@ describe('Funds input', () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
-      const gasLimit = new FilecoinNumber('1000', 'attofil')
+      const estimatedTransactionFee = new FilecoinNumber('1000', 'attofil')
       let res
       await act(async () => {
         res = render(
@@ -377,7 +377,7 @@ describe('Funds input', () => {
               onAmountChange={onAmountChange}
               balance={balance}
               setError={setError}
-              gasLimit={gasLimit}
+              estimatedTransactionFee={estimatedTransactionFee}
               disabled={false}
               valid={false}
             />
@@ -415,7 +415,7 @@ describe('Funds input', () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
-      const gasLimit = new FilecoinNumber('1000', 'attofil')
+      const estimatedTransactionFee = new FilecoinNumber('1000', 'attofil')
       let res
       await act(async () => {
         res = render(
@@ -427,7 +427,7 @@ describe('Funds input', () => {
               onAmountChange={onAmountChange}
               balance={balance}
               setError={setError}
-              gasLimit={gasLimit}
+              estimatedTransactionFee={estimatedTransactionFee}
               disabled={false}
               valid={false}
             />
@@ -465,7 +465,7 @@ describe('Funds input', () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
-      const gasLimit = new FilecoinNumber('1000', 'attofil')
+      const estimatedTransactionFee = new FilecoinNumber('1000', 'attofil')
       let res
       await act(async () => {
         res = render(
@@ -477,7 +477,7 @@ describe('Funds input', () => {
               onAmountChange={onAmountChange}
               balance={balance}
               setError={setError}
-              gasLimit={gasLimit}
+              estimatedTransactionFee={estimatedTransactionFee}
               disabled={false}
               valid={false}
             />
@@ -515,7 +515,7 @@ describe('Funds input', () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
-      const gasLimit = new FilecoinNumber('1000', 'attofil')
+      const estimatedTransactionFee = new FilecoinNumber('1000', 'attofil')
       let res
       await act(async () => {
         res = render(
@@ -527,7 +527,7 @@ describe('Funds input', () => {
               onAmountChange={onAmountChange}
               balance={balance}
               setError={setError}
-              gasLimit={gasLimit}
+              estimatedTransactionFee={estimatedTransactionFee}
               disabled={false}
               valid={false}
             />
@@ -553,7 +553,7 @@ describe('Funds input', () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
-      const gasLimit = new FilecoinNumber('1000', 'attofil')
+      const estimatedTransactionFee = new FilecoinNumber('1000', 'attofil')
       let res
       await act(async () => {
         res = render(
@@ -565,7 +565,7 @@ describe('Funds input', () => {
               onAmountChange={onAmountChange}
               balance={balance}
               setError={setError}
-              gasLimit={gasLimit}
+              estimatedTransactionFee={estimatedTransactionFee}
               disabled={false}
               valid={false}
             />
@@ -591,7 +591,7 @@ describe('Funds input', () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
-      const gasLimit = new FilecoinNumber('1000', 'attofil')
+      const estimatedTransactionFee = new FilecoinNumber('1000', 'attofil')
       let res
       await act(async () => {
         res = render(
@@ -603,7 +603,7 @@ describe('Funds input', () => {
               onAmountChange={onAmountChange}
               balance={balance}
               setError={setError}
-              gasLimit={gasLimit}
+              estimatedTransactionFee={estimatedTransactionFee}
               disabled={false}
               valid={false}
             />
@@ -642,7 +642,7 @@ describe('Funds input', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     const value = new FilecoinNumber('0', 'fil')
     const balance = new FilecoinNumber('2', 'fil')
-    const gasLimit = new FilecoinNumber('1000', 'attofil')
+    const estimatedTransactionFee = new FilecoinNumber('1000', 'attofil')
     await act(async () => {
       render(
         <Tree>
@@ -653,7 +653,7 @@ describe('Funds input', () => {
             onAmountChange={onAmountChange}
             balance={balance}
             setError={setError}
-            gasLimit={gasLimit}
+            estimatedTransactionFee={estimatedTransactionFee}
             disabled={false}
             valid={false}
           />

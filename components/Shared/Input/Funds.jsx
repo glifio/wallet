@@ -29,7 +29,7 @@ const Funds = forwardRef(
       balance,
       error,
       setError,
-      gasLimit,
+      estimatedTransactionFee,
       disabled,
       valid,
       amount,
@@ -57,7 +57,11 @@ const Funds = forwardRef(
 
       if (new BigNumber(val).toString() === 'NaN') return false
 
-      if (val.plus(gasLimit.toFil()).isGreaterThanOrEqualTo(balance)) {
+      if (
+        val
+          .plus(estimatedTransactionFee.toFil())
+          .isGreaterThanOrEqualTo(balance)
+      ) {
         // user enters a value that's greater than their balance - gas limit
         setError("The amount must be smaller than this account's balance")
         return false
@@ -155,7 +159,6 @@ const Funds = forwardRef(
         display='flex'
         minHeight='160px'
         borderColor='input.border'
-        mt={3}
         ref={ref}
         {...props}
       >
@@ -174,7 +177,7 @@ const Funds = forwardRef(
           borderRadius={2}
         >
           {error ? (
-            <Text color='core.nearblack' textAlign='center'>
+            <Text color='core.nearblack' textAlign='center' px={2}>
               {error}
             </Text>
           ) : (
@@ -303,7 +306,7 @@ Funds.propTypes = {
   /**
    * Gas limit selected by user (to make sure we dont go over the user's balance)
    */
-  gasLimit: FILECOIN_NUMBER_PROP,
+  estimatedTransactionFee: FILECOIN_NUMBER_PROP,
   disabled: bool,
   valid: bool,
   amount: oneOfType([string, FILECOIN_NUMBER_PROP])
@@ -315,7 +318,7 @@ Funds.defaultProps = {
   setError: noop,
   onAmountChange: noop,
   amount: '',
-  gasLimit: new FilecoinNumber('1000', 'attofil')
+  estimatedTransactionFee: new FilecoinNumber('1000', 'attofil')
 }
 
 export default Funds

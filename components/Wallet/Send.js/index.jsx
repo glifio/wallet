@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
@@ -6,7 +6,7 @@ import { border, layout, space, flexbox, position } from 'styled-system'
 import { useDispatch } from 'react-redux'
 import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
 import { validateAddressString } from '@openworklabs/filecoin-address'
-import Message from '@openworklabs/filecoin-message'
+import { Message } from '@openworklabs/filecoin-message'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 import noop from '../../../utils/noop'
 
@@ -17,7 +17,6 @@ import {
   Text,
   Num,
   Button,
-  BaseButton,
   ButtonClose,
   FloatingContainer,
   Title as Total,
@@ -25,7 +24,6 @@ import {
   Stepper
 } from '../../Shared'
 import ConfirmationCard from './ConfirmationCard'
-import GasCustomization from './GasCustomization'
 import ErrorCard from './ErrorCard'
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
@@ -93,57 +91,12 @@ const Send = ({ close }) => {
   const [value, setValue] = useState(new FilecoinNumber('0', 'fil'))
   const [valueError, setValueError] = useState('')
   const [uncaughtError, setUncaughtError] = useState('')
-  const [gasPrice, setGasPrice] = useState(new FilecoinNumber('1', 'attofil'))
-  const [gasLimit, setGasLimit] = useState(
-    new FilecoinNumber('1000', 'attofil')
+  const [estimatedTransactionFee, setEstimatedTransactionFee] = useState(
+    new FilecoinNumber('122222', 'attofil')
   )
-  const [estimatedGasUsed, setEstimatedGasUsed] = useState(
-    new FilecoinNumber('0', 'attofil')
-  )
-  const [customizingGas, setCustomizingGas] = useState(false)
 
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
-
-  const estimateGas = useCallback(
-    async (gp, gasLimit, value) => {
-      // create a fake message
-      const message = new Message({
-        to: wallet.address,
-        from: wallet.address,
-        value,
-        method: 0,
-        gasPrice: gp.toAttoFil(),
-        gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
-        nonce: 0,
-        params: ''
-      })
-
-      // HMR causes this condition, we just make this check for easier dev purposes
-      return walletProvider
-        ? walletProvider.estimateGas(message.encode())
-        : new FilecoinNumber('122', 'attofil')
-    },
-    [wallet.address, walletProvider]
-  )
-
-  useEffect(() => {
-    const fetchInitialGas = async () => {
-      if (estimatedGasUsed.isEqualTo(0)) {
-        const gas = await estimateGas(gasPrice, gasLimit, value.toAttoFil())
-        if (!gas.isEqualTo(0)) setEstimatedGasUsed(gas)
-      }
-    }
-
-    fetchInitialGas()
-  }, [
-    estimateGas,
-    setEstimatedGasUsed,
-    estimatedGasUsed,
-    gasPrice,
-    gasLimit,
-    value
-  ])
 
   const submitMsg = async () => {
     let provider = walletProvider
@@ -159,21 +112,31 @@ const Send = ({ close }) => {
         from: wallet.address,
         value: value.toAttoFil(),
         method: 0,
-        gasPrice: gasPrice.toAttoFil(),
-        gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
         nonce,
         params: ''
       })
 
-      const signedMessage = await provider.wallet.sign(message, wallet.path)
-      const messageObj = message.toString()
-      const msgCid = await provider.sendMessage(messageObj, signedMessage)
+      const msgWithGas = await provider.gasEstimateMessageGas(
+        message.toLotusType()
+      )
+
+      const signedMessage = await provider.wallet.sign(
+        msgWithGas.toSerializeableType(),
+        wallet.path
+      )
+
+      const messageObj = msgWithGas.toLotusType()
+      const msgCid = await provider.sendMessage(
+        msgWithGas.toLotusType(),
+        signedMessage
+      )
       messageObj.cid = msgCid['/']
       messageObj.timestamp = dayjs().unix()
-      messageObj.gas_used = (
-        await walletProvider.estimateGas(message.encode())
-      ).toAttoFil()
-      messageObj.Value = new FilecoinNumber(messageObj.value, 'attofil').toFil()
+      const maxFee = await provider.gasEstimateMaxFee(msgWithGas.toLotusType())
+      messageObj.maxFee = maxFee.toAttoFil()
+      // dont know how much was actually paid in this message yet, so we mark it as 0
+      messageObj.paidFee = '0'
+      messageObj.value = new FilecoinNumber(messageObj.Value, 'attofil').toFil()
       return messageObj
     }
   }
@@ -230,7 +193,7 @@ const Send = ({ close }) => {
           await sendMsg()
         } catch (err) {
           reportError(10, false, err.message, err.stack)
-          setUncaughtError(err.message)
+          setUncaughtError(err.message || err)
           setStep(2)
         }
       }
@@ -334,92 +297,20 @@ const Send = ({ close }) => {
                 balance={wallet.balance}
                 error={valueError}
                 setError={setValueError}
-                gasLimit={gasLimit}
+                estimatedTransactionFee={estimatedTransactionFee}
                 disabled={step === 2 && !hasError()}
                 valid={isValidAmount(value, wallet.balance, valueError)}
               />
               <Box position='relative' width='100%'>
                 <Input.Text
                   onChange={noop}
-                  denom={customizingGas ? 'AttoFil' : 'FIL'}
+                  denom='FIL'
                   label='Transaction Fee'
-                  value={
-                    customizingGas ? estimatedGasUsed.toAttoFil() : '< 0.1'
-                  }
+                  value='< 0.0001'
                   disabled
                 />
               </Box>
             </Box>
-            <GasCustomization
-              show={customizingGas}
-              estimateGas={estimateGas}
-              gasPrice={gasPrice}
-              gasLimit={gasLimit}
-              setGasPrice={setGasPrice}
-              setGasLimit={setGasLimit}
-              setEstimatedGas={setEstimatedGasUsed}
-              value={value.toAttoFil()}
-            />
-            <BaseButton
-              color='core.primary'
-              bg='core.transparent'
-              border={0}
-              type='button'
-              role='button'
-              onClick={() => setCustomizingGas(!customizingGas)}
-              css={`
-                padding: 0;
-                outline: none;
-                &:hover {
-                  cursor: pointer;
-                  opacity: 1;
-                }
-                align-self: flex-end;
-              `}
-              display='flex'
-              alignItems='center'
-              flexDirection='row'
-            >
-              <Box display='flex' alignItems='center' px={3} mt={2}>
-                {customizingGas ? (
-                  <Text
-                    css={`
-                      font-size: 0.75rem;
-                    `}
-                    mr={1}
-                    my={0}
-                  >
-                    &#9650;
-                  </Text>
-                ) : (
-                  <Text
-                    css={`
-                      font-size: 0.75rem;
-                    `}
-                    mr={1}
-                    mt={3}
-                  >
-                    &#9660;
-                  </Text>
-                )}
-                <Text
-                  display='inline-block'
-                  my={2}
-                  css={`
-                    transition: 0.24s ease-in-out;
-                    border-bottom: 2px solid
-                      ${({ theme }) => theme.colors.core.primary}00;
-                    &:hover {
-                      border-bottom: 2px solid
-                        ${({ theme }) => theme.colors.core.primary};
-                    }
-                  `}
-                  mb={0}
-                >
-                  {customizingGas ? 'Close' : 'Customize'}
-                </Text>
-              </Box>
-            </BaseButton>
             <Box
               display='flex'
               flexDirection='row'
@@ -446,14 +337,14 @@ const Send = ({ close }) => {
                   color='core.primary'
                 >
                   {value.isGreaterThan(0)
-                    ? `${value.plus(estimatedGasUsed).toString()}`
+                    ? `${value.plus(estimatedTransactionFee).toString()}`
                     : '0'}{' '}
                   FIL
                 </Num>
                 <Num size='m' color='core.darkgray'>
                   {!converterError && value.isGreaterThan(0)
                     ? `${makeFriendlyBalance(
-                        converter.fromFIL(value.plus(estimatedGasUsed)),
+                        converter.fromFIL(value.plus(estimatedTransactionFee)),
                         2
                       )}`
                     : '0'}{' '}

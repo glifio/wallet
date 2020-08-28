@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 
 export const Sidebar = styled.div`
   flex-grow: 1;
-  margin: 0.5rem;
+  margin: 0 0.5rem 0.5rem 0.5rem;
 `
 export const Content = styled.div`
   display: flex;
@@ -15,7 +15,6 @@ export const Content = styled.div`
   flex-basis: 0;
   flex-grow: 999;
   padding-top: ${props => props.theme.sizes[4]}px;
-  margin: 0.5rem;
+  margin: 0 0.5rem 6rem 0.5rem;
   min-width: 53%;
-  margin-bottom: 6rem;
 `

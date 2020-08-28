@@ -64,8 +64,9 @@ export default () => {
           margin: 0 auto;
         `}
       >
+        <NetworkSwitcherGlyph />
+
         <Sidebar height='100vh'>
-          <NetworkSwitcherGlyph />
           {hasLedgerError({ ...ledger, otherError: uncaughtError }) &&
           showLedgerError ? (
             <AccountError
@@ -99,6 +100,7 @@ export default () => {
             width='100%'
             mt={4}
             display='flex'
+            alignItems='center'
             css={`
               background-color: ${({ theme }) => theme.colors.core.secondary}00;
               &:hover {

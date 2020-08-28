@@ -5,6 +5,7 @@ exports[`Glyph renders the glyph 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
+  border-radius: 8px;
   border-style: solid;
   border-color: #5E26FF;
   background-color: #5E26FF;

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { bool } from 'prop-types'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
+import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import {
   Box,
   Box as Wrapper,
@@ -12,13 +13,17 @@ import {
   Menu,
   MenuItem,
   ButtonClose,
-  StyledATag,
   LoadingScreen
 } from '../Shared'
 import Create from './Create'
 import AccountCardAlt from '../Shared/AccountCardAlt'
 import { useWalletProvider } from '../../WalletProvider'
-import { LEDGER } from '../../constants'
+import {
+  LEDGER,
+  MAINNET,
+  MAINNET_PATH_CODE,
+  TESTNET_PATH_CODE
+} from '../../constants'
 import { walletList, switchWallet } from '../../store/actions'
 import {
   hasLedgerError,
@@ -35,7 +40,7 @@ const Close = styled(ButtonClose)`
   right: ${props => props.theme.sizes[3]}px;
 `
 
-const AccountSelector = ({ investor, msig }) => {
+const AccountSelector = ({ premainnetInvestor, msig }) => {
   const wallet = useWallet()
   const [loadingAccounts, setLoadingAccounts] = useState(false)
   const [loadingPage, setLoadingPage] = useState(true)
@@ -50,6 +55,14 @@ const AccountSelector = ({ investor, msig }) => {
   const router = useRouter()
 
   const [loadedFirstFiveWallets, setLoadedFirstFiveWallets] = useState(false)
+
+  const fetchBalance = useCallback(
+    (address, provider) => {
+      if (premainnetInvestor) return new FilecoinNumber(0, 'fil')
+      return provider.getBalance(address)
+    },
+    [premainnetInvestor]
+  )
 
   // automatically generate the first 5 wallets for the user to select from to avoid confusion for non tech folks
   useEffect(() => {
@@ -70,8 +83,9 @@ const AccountSelector = ({ investor, msig }) => {
 
             await Promise.all(
               addresses.map(async address => {
-                const balance = await provider.getBalance(address)
-                const networkCode = network === 'f' ? 461 : 1
+                const balance = await fetchBalance(address, provider)
+                const networkCode =
+                  network === MAINNET ? MAINNET_PATH_CODE : TESTNET_PATH_CODE
                 const wallet = {
                   balance,
                   address,
@@ -105,13 +119,14 @@ const AccountSelector = ({ investor, msig }) => {
     wallet.type,
     walletProvider,
     walletsInRdx.length,
-    loadedFirstFiveWallets
+    loadedFirstFiveWallets,
+    fetchBalance
   ])
 
   const onClose = () => {
     const searchParams = new URLSearchParams(router.query)
     let route = ''
-    if (investor) route = `/investor/home?${searchParams.toString()}`
+    if (premainnetInvestor) route = `/saft/home?${searchParams.toString()}`
     else if (msig) route = `/msig/choose?${searchParams.toString()}`
     else route = `/home?${searchParams.toString()}`
     router.push(route)
@@ -122,7 +137,7 @@ const AccountSelector = ({ investor, msig }) => {
   if (hasLedgerError({ ...ledger, otherError: uncaughtError })) {
     errorMsg = reportLedgerConfigError({ ...ledger, otherError: uncaughtError })
   } else if (errorInRdx) {
-    errorMsg = errorInRdx
+    errorMsg = errorInRdx.message || errorInRdx
   }
 
   const fetchNextAccount = async () => {
@@ -140,8 +155,9 @@ const AccountSelector = ({ investor, msig }) => {
           walletsInRdx.length + 1
         )
 
-        const balance = await provider.getBalance(address)
-        const networkCode = network === 'f' ? 461 : 1
+        const balance = await fetchBalance(address, provider)
+        const networkCode =
+          network === MAINNET ? MAINNET_PATH_CODE : TESTNET_PATH_CODE
         const wallet = {
           balance,
           address,
@@ -159,7 +175,7 @@ const AccountSelector = ({ investor, msig }) => {
 
   return (
     <>
-      {!investor && <Close onClick={onClose} />}
+      {!premainnetInvestor && <Close onClick={onClose} />}
       <Wrapper display='flex' flexDirection='column' justifyItems='center'>
         {loadingPage ? (
           <LoadingScreen height='100vh' />
@@ -180,11 +196,13 @@ const AccountSelector = ({ investor, msig }) => {
                   color='core.white'
                 />
                 <Title ml={2}>
-                  {investor || msig ? 'Select Account' : 'Switch Accounts'}
+                  {premainnetInvestor || msig
+                    ? 'Select Account'
+                    : 'Switch Accounts'}
                 </Title>
               </MenuItem>
               <MenuItem>
-                {investor && (
+                {premainnetInvestor && (
                   <Text>
                     Please select the Ledger account you wish to own and sign
                     for your multisig investor wallet.
@@ -196,15 +214,12 @@ const AccountSelector = ({ investor, msig }) => {
                     investor wallet.
                   </Text>
                 )}
-                {!investor && !msig && (
+                {!premainnetInvestor && !msig && (
                   <Text>
                     Your single{' '}
                     {wallet.type === LEDGER ? 'Ledger Device ' : 'seed phrase'}{' '}
                     creates hundreds of individual &quot;accounts&quot;.
                     <br />
-                    <StyledATag rel='noopener' target='_blank' href='/faqs'>
-                      Don&rsquo;t see an account you were previously using?
-                    </StyledATag>
                   </Text>
                 )}
               </MenuItem>
@@ -239,12 +254,12 @@ const AccountSelector = ({ investor, msig }) => {
 }
 
 AccountSelector.propTypes = {
-  investor: bool,
+  premainnetInvestor: bool,
   msig: bool
 }
 
 AccountSelector.defaultProps = {
-  investor: false,
+  premainnetInvestor: false,
   msig: false
 }
 

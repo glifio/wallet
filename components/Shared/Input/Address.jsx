@@ -6,7 +6,6 @@ const Address = forwardRef(
   ({ value, label, error, setError, ...props }, ref) => {
     return (
       <TextInput
-        mt={2}
         ref={ref}
         label={label}
         value={value}

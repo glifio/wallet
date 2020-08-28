@@ -14,7 +14,7 @@ import {
   Button,
   DisplayWord as Word,
   MenuItem,
-  Title,
+  Text,
   MnemonicWordContainer
 } from '../../../../Shared'
 import { MNEMONIC_PROPTYPE } from '../../../../../customPropTypes'
@@ -29,7 +29,11 @@ const applyStyles = (styleProperty, props, disabledColor) => {
 }
 
 const DownloadButton = styled.a.attrs(() => ({
-  p: 3,
+  display: 'flex',
+  alignItems: 'center',
+  height: 6,
+  px: 3,
+  py: 2,
   fontSize: 3,
   border: 1,
   borderRadius: 2,
@@ -78,14 +82,16 @@ const Reveal = ({ mnemonic, valid }) => {
         my={3}
         minHeight={7}
       >
-        <Title>
-          {valid
-            ? "Success! Please click 'Next' to access your wallet."
-            : 'Write down your seed phrase somewhere safe.'}
-        </Title>
-        <Box mt={[2, 0]}>
+        {valid ? (
+          <Text>
+            Success! Please click &apos;Next&apos; to access your wallet.
+          </Text>
+        ) : (
+          <Text>Write down your seed phrase somewhere safe.</Text>
+        )}
+
+        <Box display='flex' mt={[2, 0]}>
           <Button
-            height='max-content'
             onClick={() => {
               copyToClipboard(mnemonic)
               setCopied(true)

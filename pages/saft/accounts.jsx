@@ -6,7 +6,7 @@ export default () => {
   useDesktopBrowser()
   return (
     <RenderChildrenIfWalletConnected>
-      <AccountSelector investor />
+      <AccountSelector premainnetInvestor />
     </RenderChildrenIfWalletConnected>
   )
 }
