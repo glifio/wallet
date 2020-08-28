@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { bool, func } from 'prop-types'
 import { border, typography, layout, flexbox, space } from 'styled-system'
 import Box from '../Box'
 import { TESTNET, MAINNET } from '../../../constants'
+import { error } from '../../../store/actions'
 
 const NetworkSwitcherButton = styled.button.attrs(() => ({
   display: 'flex',
@@ -50,11 +51,13 @@ const NetworkSwitcherButton = styled.button.attrs(() => ({
 const NetworkSwitcherGlyph = ({ ...props }) => {
   const router = useRouter()
   const networkFromRedux = useSelector(state => state.network)
+  const dispatch = useDispatch()
   const onNetworkSwitch = network => {
     if (network !== networkFromRedux) {
       const searchParams = new URLSearchParams(router.query)
       searchParams.set('network', network)
       router.replace(`${router.pathname}?${searchParams.toString()}`)
+      dispatch(error(''))
     }
   }
   return (
