@@ -38,7 +38,7 @@ export const CopyAddress = forwardRef(({ address, ...props }, ref) => {
     <Box ref={ref} display='flex' alignContent='center' {...props}>
       <AccountAddress
         fontWeight={1}
-        fontSize={5}
+        fontSize={4}
         margin={0}
         overflow='hidden'
         whiteSpace='nowrap'
