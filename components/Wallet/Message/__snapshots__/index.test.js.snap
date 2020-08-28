@@ -4073,7 +4073,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
             disabled=""
             display="inline-block"
             height="6"
-            value="Loading..."
+            value="1000000 aFIL"
             width="100%"
           />
           
