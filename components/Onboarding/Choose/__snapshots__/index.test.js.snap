@@ -392,22 +392,6 @@ exports[`Choosing a wallet it renders all wallet options when in dev mode 1`] = 
   margin-top: 0;
 }
 
-.c9 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 100px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-right: 8px;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  background-color: #FF9E80;
-  color: #661800;
-  font-size: 1.5rem;
-}
-
 .c2 {
   min-width: 0;
   box-sizing: border-box;
@@ -441,6 +425,22 @@ exports[`Choosing a wallet it renders all wallet options when in dev mode 1`] = 
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-right: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: #FF9E80;
+  color: #661800;
+  font-size: 1.5rem;
 }
 
 .c14 {
@@ -1139,22 +1139,6 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   margin-top: 0;
 }
 
-.c9 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 100px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-right: 8px;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  background-color: #FF9E80;
-  color: #661800;
-  font-size: 1.5rem;
-}
-
 .c2 {
   min-width: 0;
   box-sizing: border-box;
@@ -1188,6 +1172,22 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-right: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: #FF9E80;
+  color: #661800;
+  font-size: 1.5rem;
 }
 
 .c14 {
