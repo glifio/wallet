@@ -48,9 +48,14 @@ export default () => {
   const [subscribed, setSubscribed] = useState(false)
   const [email, setEmail] = useState('')
   const postToMailChimp = async () => {
+    if (!email) {
+      setError('Please enter a valid email')
+      return
+    }
+    setError('')
     try {
       const res = await axios.post(
-        `https://mailchimp-proxy.openworklabs.com/${email}`
+        `https://mailchimp-proxy.openworklabs.com/saft?email=${email.trim()}`
       )
 
       if (res.data.indexOf('success') === -1) {
@@ -64,7 +69,6 @@ export default () => {
         )
       } else {
         setSubscribed(true)
-        setError('')
       }
     } catch (error) {
       setError(error.toString())
@@ -206,14 +210,8 @@ export default () => {
                     </ButtonSignUp>
                   </Box>
                   <Box textAlign='center' my={3}>
-                    {error ? (
-                      <Text color='red'>{error}</Text>
-                    ) : (
-                      <Text>
-                        We will only send you a single notification email.
-                      </Text>
-                    )}
-                    {subscribed && (
+                    {error && <Text color='red'>{error}</Text>}
+                    {subscribed && !error && (
                       <Text color='status.success.background'>
                         You&rsquo;re subscribed. Keep an eye out.
                       </Text>
@@ -224,17 +222,6 @@ export default () => {
             </>
           </MenuItem>
         </Menu>
-        {/* <Title>
-          Follow{' '}
-          <StyledATag
-            fontSize={4}
-            href='twitter.com/openworklabs'
-            target='_blank'
-          >
-            @openworklabs
-          </StyledATag>{' '}
-          to get notified when we launch.
-        </Title> */}
       </Box>
     </Box>
   )
