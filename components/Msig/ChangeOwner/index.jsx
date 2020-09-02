@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import dayjs from 'dayjs'
-import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
-import Message from '@openworklabs/filecoin-message'
+import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { Message } from '@openworklabs/filecoin-message'
 import { validateAddressString } from '@openworklabs/filecoin-address'
 
 import { useWalletProvider } from '../../../WalletProvider'
@@ -21,7 +21,7 @@ import {
   FILECOIN_NUMBER_PROP
 } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
-import { GasCustomization, CardHeader, ChangeOwnerHeaderText } from '../Shared'
+import { CardHeader, ChangeOwnerHeaderText } from '../Shared'
 import Preface from './Preface'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send.js/ErrorCard'
@@ -34,12 +34,7 @@ import {
 import reportError from '../../../utils/reportError'
 
 const ChangeOwner = ({ address, balance, close }) => {
-  const {
-    ledger,
-    walletProvider,
-    connectLedger,
-    resetLedgerState
-  } = useWalletProvider()
+  const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
   const wallet = useWallet()
   const { serializeParams } = useWasm()
 
@@ -48,60 +43,6 @@ const ChangeOwner = ({ address, balance, close }) => {
   const [toAddress, setToAddress] = useState('')
   const [toAddressError, setToAddressError] = useState('')
   const [uncaughtError, setUncaughtError] = useState('')
-  const [gasPrice, setGasPrice] = useState(new FilecoinNumber('1', 'attofil'))
-  const [gasLimit, setGasLimit] = useState(
-    new FilecoinNumber('5000', 'attofil')
-  )
-  const [estimatedGasUsed, setEstimatedGasUsed] = useState(
-    new FilecoinNumber('0', 'attofil')
-  )
-  const [customizingGas, setCustomizingGas] = useState(false)
-
-  const estimateGas = async (gp, gasLimit) => {
-    let message
-    try {
-      // create a fake message
-      const innerParams = {
-        To: toAddress,
-        From: wallet.address
-      }
-
-      const serializedInnerParams = Buffer.from(
-        serializeParams(innerParams),
-        'hex'
-      ).toString('hex')
-
-      const innerMessage = {
-        to: address,
-        value: '0',
-        method: 7,
-        params: serializedInnerParams
-      }
-
-      const serializedInnerMessage = Buffer.from(
-        serializeParams(innerMessage),
-        'hex'
-      ).toString('base64')
-
-      message = new Message({
-        to: address,
-        from: wallet.address,
-        value: '0',
-        method: 2,
-        gasPrice: gp.toAttoFil(),
-        gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
-        nonce: 0,
-        params: serializedInnerMessage
-      })
-    } catch (err) {
-      reportError(23, false, err)
-      setUncaughtError(err.message || err)
-    }
-    // HMR causes this condition, we just make this check for easier dev purposes
-    return walletProvider
-      ? walletProvider.estimateGas(message.encode())
-      : new FilecoinNumber('122', 'attofil')
-  }
 
   const sendMsg = async () => {
     const provider = await connectLedger()
@@ -135,36 +76,28 @@ const ChangeOwner = ({ address, balance, close }) => {
         from: wallet.address,
         value: '0',
         method: 2,
-        gasPrice: gasPrice.toAttoFil(),
-        gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
-        nonce,
-        params: serializedInnerMessage.toString('hex')
-      })
-
-      const signedMessage = await provider.wallet.sign(
-        messageForSigning,
-        wallet.path
-      )
-
-      const messageForLotus = new Message({
-        to: address,
-        from: wallet.address,
-        value: '0',
-        method: 2,
-        gasPrice: gasPrice.toAttoFil(),
-        gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
         nonce,
         params: serializedInnerMessage.toString('base64')
       })
 
-      const messageObj = messageForLotus.toString()
+      const msgWithGas = await provider.gasEstimateMessageGas(
+        messageForSigning.toLotusType()
+      )
+
+      const signedMessage = await provider.wallet.sign(
+        msgWithGas.toSerializeableType(),
+        wallet.path
+      )
+
+      const messageObj = msgWithGas.toLotusType()
       const msgCid = await provider.sendMessage(messageObj, signedMessage)
       messageObj.cid = msgCid['/']
       messageObj.timestamp = dayjs().unix()
-      messageObj.gas_used = (
-        await walletProvider.estimateGas(messageForLotus.encode())
-      ).toAttoFil()
-      messageObj.Value = new FilecoinNumber(messageObj.value, 'attofil').toFil()
+      const maxFee = await provider.gasEstimateMaxFee(msgWithGas.toLotusType())
+      messageObj.maxFee = maxFee.toAttoFil()
+      // dont know how much was actually paid in this message yet, so we mark it as 0
+      messageObj.paidFee = '0'
+      messageObj.value = new FilecoinNumber(messageObj.Value, 'attofil').toFil()
       return messageObj
     }
     return null
@@ -196,7 +129,6 @@ const ChangeOwner = ({ address, balance, close }) => {
   const isSubmitBtnDisabled = () => {
     if (step === 1) return false
     if (uncaughtError) return false
-    if (customizingGas) return true
     if (attemptingTx) return true
   }
 
@@ -269,10 +201,10 @@ const ChangeOwner = ({ address, balance, close }) => {
               <CardHeader
                 address={address}
                 balance={balance}
-                customizingGas={customizingGas}
+                customizingGas={false}
               />
             )}
-            {step > 1 && !customizingGas && (
+            {step > 1 && (
               <>
                 <Box width='100%' p={3} border={0} bg='background.screen'>
                   <Input.Address
@@ -304,11 +236,6 @@ const ChangeOwner = ({ address, balance, close }) => {
                       </Text>
                     </Box>
                     <Box display='flex' flexDirection='row'>
-                      <Button
-                        title='Change'
-                        variant='secondary'
-                        onClick={() => setCustomizingGas(true)}
-                      />
                       <Text ml={2} color='core.primary'>
                         {'< 0.0001 FIL'}
                       </Text>
@@ -318,22 +245,6 @@ const ChangeOwner = ({ address, balance, close }) => {
               </>
             )}
           </Box>
-          {customizingGas && (
-            <GasCustomization
-              show
-              estimateGas={estimateGas}
-              gasPrice={gasPrice}
-              gasLimit={gasLimit}
-              setGasPrice={setGasPrice}
-              setGasLimit={setGasLimit}
-              setEstimatedGas={setEstimatedGasUsed}
-              estimatedGasUsed={estimatedGasUsed}
-              value='0'
-              walletBalance={makeFriendlyBalance(wallet.balance, 6, true)}
-              close={() => setCustomizingGas(false)}
-            />
-          )}
-
           <Box
             display='flex'
             flexDirection='row'
@@ -360,7 +271,7 @@ const ChangeOwner = ({ address, balance, close }) => {
                   setStep(step - 1)
                 }
               }}
-              disabled={customizingGas || attemptingTx}
+              disabled={attemptingTx}
             />
             <Button
               variant='primary'
