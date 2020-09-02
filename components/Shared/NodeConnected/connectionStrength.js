@@ -9,7 +9,7 @@
 import axios from 'axios'
 import LotusRPCEngine from '@openworklabs/lotus-jsonrpc-engine'
 
-import { FILSCOUT, FILSCAN } from '../../../constants'
+import { FILSCOUT, FILSCAN_JSONRPC } from '../../../constants'
 import reportError from '../../../utils/reportError'
 
 const TIPSET_PADDING = 15
@@ -29,11 +29,15 @@ const filscoutHeight = async () => {
 
 const filscanHeight = async () => {
   try {
-    const { data } = await axios.get(`${FILSCAN}/BaseInformation`)
-    if (data.res.code !== 3) {
+    const { data } = await axios.post(FILSCAN_JSONRPC, {
+      id: 1,
+      params: [],
+      method: 'filscan.StatChainInfo'
+    })
+    if (!data.result || !data.result.data) {
       return 0
     }
-    return Number(data.data.tipset_height)
+    return data.result.data.latest_height
   } catch (err) {
     return 0
   }
@@ -58,7 +62,7 @@ const collectHeights = async () => {
   const calls = []
 
   for (let i = 1; i <= 5; i += 1) {
-    calls.push(getHeightFromRPC(`https://node.glif.io/0${i}/rpc/v0`))
+    calls.push(getHeightFromRPC(`https://node.glif.io/space0${i}/lotus/rpc/v0`))
   }
 
   calls.push(filscanHeight(), filscoutHeight())

@@ -1,7 +1,5 @@
-import useDesktopBrowser from '../../lib/useDesktopBrowser'
-import { InvestorOnboard } from '../../components/Investor'
+import Landing from '../../components/Investor/Landing'
 
 export default () => {
-  useDesktopBrowser()
-  return <InvestorOnboard />
+  return <Landing />
 }
