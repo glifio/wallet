@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import { useRouter } from 'next/router'
 import axios from 'axios'
 import styled from 'styled-components'
 import { space, layout, typography, border, color } from 'styled-system'
 import {
   Box,
+  Button,
+  StyledATag,
   Title,
   Text,
   HeaderGlyph,
@@ -12,6 +15,7 @@ import {
   Menu,
   MenuItem
 } from '../Shared'
+import InvestorOnboard from './InvestorOnboard'
 
 const ButtonSignUp = styled.button`
   outline: none;
@@ -47,6 +51,8 @@ export default () => {
   const [error, setError] = useState('')
   const [subscribed, setSubscribed] = useState(false)
   const [email, setEmail] = useState('')
+  const router = useRouter()
+
   const postToMailChimp = async () => {
     if (!email) {
       setError('Please enter a valid email')
@@ -75,154 +81,184 @@ export default () => {
     }
   }
 
-  return (
-    <Box
-      display='flex'
-      flexWrap='wrap'
-      minHeight='90vh'
-      alignItems='center'
-      justifyContent='center'
-      flexGrow='1'
-    >
-      <Box
-        display='flex'
-        maxWidth={13}
-        width={['100%', '100%', '40%']}
-        flexDirection='column'
-        alignItems='flex-start'
-        alignContent='center'
-        mb={4}
-        p={4}
-      >
-        <HeaderGlyph
-          alt='Source: https://unsplash.com/photos/OVO8nK-7Rfs'
-          text='VAULT'
-          imageUrl='/imgvault.png'
-          color='white'
-          fill='white'
-        />
+  const onClick = () => {
+    const searchParams = new URLSearchParams(router.query)
+    searchParams.set('setup', 'true')
+    router.replace(`/vault?${searchParams.toString()}`)
+  }
 
+  const searchParams = new URLSearchParams(router.query)
+  const showSetup = !!searchParams.get('setup')
+
+  return (
+    <>
+      {showSetup ? (
+        <InvestorOnboard />
+      ) : (
         <Box
           display='flex'
-          flexDirection='column'
-          mt={[2, 4, 4]}
-          alignSelf='center'
-          textAlign='left'
-        >
-          <Header>Use your Ledger device to hold your Filecoin SAFT.</Header>
-          <Title mt={3} lineHeight='140%'>
-            <InlineBox
-              backgroundColor='status.warning.background'
-              color='status.warning.foreground'
-              py={1}
-              px={3}
-              mr={2}
-              my={3}
-              fontSize={4}
-              borderRadius={6}
-            >
-              Launching this week
-            </InlineBox>
-          </Title>
-        </Box>
-      </Box>
-      <Box
-        display='flex'
-        flexDirection='column'
-        width='auto'
-        minWidth={11}
-        flexGrow='1'
-        flexWrap='wrap'
-        justifyContent='space-evenly'
-        margin='auto'
-      >
-        <Box
-          display='flex'
-          justifyContent='center'
-          flexDirection='column'
-          alignItems='center'
-          textAlign='center'
-          flexGrow='1'
-        />
-        <Menu
-          position='relative'
-          display='flex'
-          alignItems='center'
-          justifyContent='center'
           flexWrap='wrap'
+          minHeight='90vh'
+          alignItems='center'
+          justifyContent='center'
+          flexGrow='1'
         >
-          <MenuItem
+          <Box
             display='flex'
-            flexWrap='wrap'
-            justifyContent={['center', 'space-between']}
-            width='100%'
-            maxWidth={12}
-            color='core.darkgray'
-            my={[2, 3]}
+            maxWidth={13}
+            width={['100%', '100%', '40%']}
+            flexDirection='column'
+            alignItems='flex-start'
+            alignContent='center'
+            mb={4}
+            p={4}
           >
-            <>
-              <Menu
+            <HeaderGlyph
+              alt='Source: https://unsplash.com/photos/OVO8nK-7Rfs'
+              text='VAULT'
+              imageUrl='/imgvault.png'
+              color='white'
+              fill='white'
+            />
+
+            <Box
+              display='flex'
+              flexDirection='column'
+              mt={[2, 4, 4]}
+              alignSelf='center'
+              textAlign='left'
+            >
+              <Header>
+                Use your Ledger device to manage your Filecoin SAFT.
+              </Header>
+              <Title mt={3} lineHeight='140%'>
+                <InlineBox
+                  backgroundColor='status.warning.background'
+                  color='status.warning.foreground'
+                  py={1}
+                  px={3}
+                  mr={2}
+                  my={3}
+                  fontSize={4}
+                  borderRadius={6}
+                >
+                  Launching this week
+                </InlineBox>
+              </Title>
+            </Box>
+          </Box>
+          <Box
+            display='flex'
+            flexDirection='column'
+            width='auto'
+            minWidth={11}
+            flexGrow='1'
+            flexWrap='wrap'
+            justifyContent='space-evenly'
+            margin='auto'
+          >
+            <Box
+              display='flex'
+              justifyContent='center'
+              flexDirection='column'
+              alignItems='center'
+              textAlign='center'
+              flexGrow='1'
+            />
+            <Menu
+              position='relative'
+              display='flex'
+              alignItems='center'
+              justifyContent='center'
+              flexWrap='wrap'
+            >
+              <MenuItem
                 display='flex'
-                alignItems='center'
-                justifyContent='center'
-                flexDirection='column'
+                flexWrap='wrap'
+                justifyContent={['center', 'space-between']}
+                width='100%'
+                maxWidth={12}
+                color='core.darkgray'
+                my={[2, 3]}
               >
-                <MenuItem>
-                  <Title my={3}>Receive an email when we launch</Title>
-                </MenuItem>
-                <MenuItem textAlign='center'>
-                  <Box
+                <>
+                  <Menu
                     display='flex'
-                    flexWrap='wrap'
+                    alignItems='center'
                     justifyContent='center'
-                    maxWidth={12}
+                    flexDirection='column'
                   >
-                    <InputEmail
-                      width='100%'
-                      fontSize={4}
-                      color='core.nearblack'
-                      border={1}
-                      borderWidth={2}
-                      px={3}
-                      py={3}
-                      textAlign='center'
-                      placeholder='Your email'
-                      borderTopLeftRadius={4}
-                      borderTopRightRadius={4}
-                      onChange={e => setEmail(e.target.value)}
-                    />
-                    <ButtonSignUp
-                      width='100%'
-                      color='core.white'
-                      bg='core.nearblack'
-                      fontSize={4}
-                      border={1}
-                      borderColor='core.nearblack'
-                      borderWidth={2}
-                      borderBottomLeftRadius={4}
-                      borderBottomRightRadius={4}
-                      px={6}
-                      py={3}
-                      height='max-content'
-                      onClick={postToMailChimp}
-                    >
-                      Submit
-                    </ButtonSignUp>
-                  </Box>
-                  <Box textAlign='center' my={3}>
-                    {error && <Text color='red'>{error}</Text>}
-                    {subscribed && !error && (
-                      <Text color='status.success.background'>
-                        You&rsquo;re subscribed. Keep an eye out.
-                      </Text>
-                    )}
-                  </Box>
-                </MenuItem>
-              </Menu>
-            </>
-          </MenuItem>
-        </Menu>
-      </Box>
-    </Box>
+                    <MenuItem>
+                      <Title my={3}>Receive an email for updates</Title>
+                    </MenuItem>
+                    <MenuItem textAlign='center'>
+                      <Box
+                        display='flex'
+                        flexWrap='wrap'
+                        justifyContent='center'
+                        maxWidth={12}
+                      >
+                        <InputEmail
+                          width='100%'
+                          fontSize={4}
+                          color='core.nearblack'
+                          border={1}
+                          borderWidth={2}
+                          px={3}
+                          py={3}
+                          textAlign='center'
+                          placeholder='Your email'
+                          borderTopLeftRadius={4}
+                          borderTopRightRadius={4}
+                          onChange={e => setEmail(e.target.value)}
+                        />
+                        <ButtonSignUp
+                          width='100%'
+                          color='core.white'
+                          bg='core.nearblack'
+                          fontSize={4}
+                          border={1}
+                          borderColor='core.nearblack'
+                          borderWidth={2}
+                          borderBottomLeftRadius={4}
+                          borderBottomRightRadius={4}
+                          px={6}
+                          py={3}
+                          height='max-content'
+                          onClick={postToMailChimp}
+                        >
+                          Submit
+                        </ButtonSignUp>
+                      </Box>
+                      <Box textAlign='center' my={3}>
+                        {error && <Text color='red'>{error}</Text>}
+                        {subscribed && !error && (
+                          <Text color='status.success.background'>
+                            You&rsquo;re subscribed. Keep an eye out.
+                          </Text>
+                        )}
+                      </Box>
+                    </MenuItem>
+                    <MenuItem mt={5}>
+                      <Box display='flex' flexDirection='column'>
+                        <Button
+                          onClick={onClick}
+                          variant='primary'
+                          title='Get started >>>'
+                          my={3}
+                        />
+                        <StyledATag href=''>
+                          Follow along with this guided tutorial.
+                        </StyledATag>
+                      </Box>
+                    </MenuItem>
+                  </Menu>
+                </>
+              </MenuItem>
+            </Menu>
+          </Box>
+        </Box>
+      )}
+    </>
   )
 }
