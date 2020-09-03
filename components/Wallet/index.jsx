@@ -81,7 +81,6 @@ export default () => {
             <AccountCard
               onAccountSwitch={onAccountSwitch}
               color='purple'
-              alias='Prime'
               address={wallet.address}
               walletType={wallet.type}
               onShowOnLedger={onShowOnLedger}

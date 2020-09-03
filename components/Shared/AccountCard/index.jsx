@@ -45,7 +45,6 @@ const AccountCard = forwardRef(
   (
     {
       address,
-      alias,
       onAccountSwitch,
       onShowOnLedger,
       ledgerBusy,
@@ -141,10 +140,6 @@ AccountCard.propTypes = {
    * Filecoin address
    */
   address: ADDRESS_PROPTYPE,
-  /**
-   * Human readable alias of Filecoin address
-   */
-  alias: string.isRequired,
   /**
    * Sets background-color of the card
    */
