@@ -111,7 +111,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
 
 .c16 {
   color: #262626;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
@@ -500,7 +500,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="4"
+              font-size="3"
               font-weight="400"
             >
               t137s ... izpy
@@ -669,7 +669,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="4"
+              font-size="3"
               font-weight="400"
             >
               t137s ... izpy
@@ -838,7 +838,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="4"
+              font-size="3"
               font-weight="400"
             >
               t137s ... izpy
@@ -1007,7 +1007,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="4"
+              font-size="3"
               font-weight="400"
             >
               t137s ... izpy
@@ -1176,7 +1176,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="4"
+              font-size="3"
               font-weight="400"
             >
               t137s ... izpy
@@ -1345,7 +1345,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="4"
+              font-size="3"
               font-weight="400"
             >
               t137s ... izpy
@@ -1514,7 +1514,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="4"
+              font-size="3"
               font-weight="400"
             >
               t137s ... izpy
@@ -1683,7 +1683,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="4"
+              font-size="3"
               font-weight="400"
             >
               t137s ... izpy
@@ -1852,7 +1852,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="4"
+              font-size="3"
               font-weight="400"
             >
               t3wjx ... ooea
@@ -2021,7 +2021,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="4"
+              font-size="3"
               font-weight="400"
             >
               t137s ... izpy
@@ -2190,7 +2190,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="4"
+              font-size="3"
               font-weight="400"
             >
               t137s ... izpy
@@ -2359,7 +2359,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="4"
+              font-size="3"
               font-weight="400"
             >
               t137s ... izpy
@@ -2528,7 +2528,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="4"
+              font-size="3"
               font-weight="400"
             >
               t137s ... izpy
@@ -2697,7 +2697,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="4"
+              font-size="3"
               font-weight="400"
             >
               t137s ... izpy
@@ -2866,7 +2866,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
-              font-size="4"
+              font-size="3"
               font-weight="400"
             >
               t137s ... izpy
@@ -3040,25 +3040,6 @@ exports[`MessageHistory View it renders the message detail view after clicking o
 .c4 {
   min-width: 0;
   box-sizing: border-box;
-  background-color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c5 {
-  min-width: 0;
-  box-sizing: border-box;
   border-width: 0.1875rem;
   border-radius: 8px;
   border-style: solid;
@@ -3081,7 +3062,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   justify-content: center;
 }
 
-.c8 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3093,7 +3074,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   flex-direction: column;
 }
 
-.c12 {
+.c11 {
   min-width: 0;
   box-sizing: border-box;
   margin: 0;
@@ -3110,7 +3091,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   align-items: flex-end;
 }
 
-.c15 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 8px;
@@ -3123,10 +3104,16 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   flex-direction: row;
 }
 
-.c18 {
+.c17 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 4px;
+}
+
+.c18 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
 }
 
 .c20 {
@@ -3182,6 +3169,8 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   box-sizing: border-box;
   position: relative;
   border-color: #999999;
+  margin-top: 16px;
+  margin-bottom: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3334,18 +3323,18 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   justify-content: space-between;
 }
 
-.c6 {
+.c5 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c11 {
+.c10 {
   width: 24;
   height: 24;
 }
 
-.c13 {
+.c12 {
   width: 24px;
   height: 24px;
 }
@@ -3356,6 +3345,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
   margin: 0;
+  margin-top: 4px;
 }
 
 .c39 {
@@ -3376,7 +3366,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 0;
 }
 
-.c7 {
+.c6 {
   color: #5E26FF;
   font-size: 1.125rem;
   font-weight: 400;
@@ -3385,7 +3375,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin-left: 8px;
 }
 
-.c16 {
+.c15 {
   color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
@@ -3396,7 +3386,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin-right: 16px;
 }
 
-.c17 {
+.c16 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -3405,7 +3395,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin-bottom: 0;
 }
 
-.c14 {
+.c13 {
   color: #1AD08F;
   font-size: 1.125rem;
   font-weight: 400;
@@ -3607,6 +3597,8 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   cursor: text;
   background: transparent;
   font-size: 2rem;
+  margin-top: 16px;
+  margin-bottom: 16px;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -3689,7 +3681,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   border-bottom: 2px solid #5E26FF;
 }
 
-.c9 {
+.c8 {
   outline: 0;
   border: 0;
   background: transparent;
@@ -3700,7 +3692,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin-left: 8px;
 }
 
-.c9:hover {
+.c8:hover {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
@@ -3722,7 +3714,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   background-color: #EFF3FD;
 }
 
-.c10 {
+.c9 {
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
@@ -3762,25 +3754,18 @@ exports[`MessageHistory View it renders the message detail view after clicking o
     >
       <div
         class="c4"
+        color="background.screen"
         display="flex"
-        height="6"
-        width="6"
+        size="6"
       >
-        <div
+        <h3
           class="c5"
-          color="background.screen"
-          display="flex"
-          size="6"
         >
-          <h3
-            class="c6"
-          >
-            Td
-          </h3>
-        </div>
+          Td
+        </h3>
       </div>
       <p
-        class="c7"
+        class="c6"
         color="core.primary"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -3790,16 +3775,16 @@ exports[`MessageHistory View it renders the message detail view after clicking o
       </p>
     </div>
     <div
-      class="c8"
+      class="c7"
       display="flex"
     >
       <button
-        class="c9 c10"
+        class="c8 c9"
         display="inline-block"
         type="button"
       >
         <svg
-          class="c11"
+          class="c10"
           fill="none"
           height="24"
           viewBox="0 0 24 24"
@@ -3815,11 +3800,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         </svg>
       </button>
       <div
-        class="c12"
+        class="c11"
         display="flex"
       >
         <svg
-          class="c13"
+          class="c12"
           fill="none"
           height="24px"
           viewBox="0 0 24 24"
@@ -3835,7 +3820,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           />
         </svg>
         <h4
-          class="c14"
+          class="c13"
           color="status.success.background"
           font-family="RT-Alias-Grotesk"
           font-size="2"
@@ -3845,11 +3830,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         </h4>
       </div>
       <div
-        class="c15"
+        class="c14"
         display="flex"
       >
         <p
-          class="c16"
+          class="c15"
           color="core.darkgray"
           font-family="RT-Alias-Grotesk"
           font-size="2"
@@ -3858,7 +3843,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           Jan 12
         </p>
         <p
-          class="c17"
+          class="c16"
           font-family="RT-Alias-Grotesk"
           font-size="2"
           font-weight="400"
@@ -3869,81 +3854,85 @@ exports[`MessageHistory View it renders the message detail view after clicking o
     </div>
   </div>
   <div
-    class="c18"
+    class="c17"
   >
     <div
-      class="c19"
+      class="c18"
     >
       <div
-        class="c20"
-        display="flex"
+        class="c19"
       >
         <div
-          class="c21"
+          class="c20"
           display="flex"
         >
-          <h4
-            class="c22"
-            color="core.nearblack"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
+          <div
+            class="c21"
+            display="flex"
           >
-            From
-          </h4>
-        </div>
-        <div
-          class="c23"
-          display="flex"
-        >
-          <input
-            class="c24"
-            disabled=""
-            display="inline-block"
-            height="6"
-            placeholder="f1..."
-            value="t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy"
-            width="100%"
-          />
-          
+            <h4
+              class="c22"
+              color="core.nearblack"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              From
+            </h4>
+          </div>
+          <div
+            class="c23"
+            display="flex"
+          >
+            <input
+              class="c24"
+              disabled=""
+              display="inline-block"
+              height="6"
+              placeholder="f1..."
+              value="t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy"
+              width="100%"
+            />
+            
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      class="c19"
-    >
       <div
-        class="c20"
-        display="flex"
+        class="c19"
       >
         <div
-          class="c21"
+          class="c20"
           display="flex"
         >
-          <h4
-            class="c22"
-            color="core.nearblack"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
+          <div
+            class="c21"
+            display="flex"
           >
-            To
-          </h4>
-        </div>
-        <div
-          class="c23"
-          display="flex"
-        >
-          <input
-            class="c24"
-            disabled=""
-            display="inline-block"
-            height="6"
-            placeholder="f1..."
-            value="t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy"
-            width="100%"
-          />
-          
+            <h4
+              class="c22"
+              color="core.nearblack"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              To
+            </h4>
+          </div>
+          <div
+            class="c23"
+            display="flex"
+          >
+            <input
+              class="c24"
+              disabled=""
+              display="inline-block"
+              height="6"
+              placeholder="f1..."
+              value="t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy"
+              width="100%"
+            />
+            
+          </div>
         </div>
       </div>
     </div>

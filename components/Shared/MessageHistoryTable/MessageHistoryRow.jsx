@@ -18,7 +18,7 @@ const AddressText = ({ sentMsg, to, from }) => {
         <Label color='core.nearblack' my={0}>
           To
         </Label>
-        <Text fontSize={4} color='core.nearblack' m={0}>
+        <Text fontSize={3} color='core.nearblack' m={0}>
           {truncate(to)}
         </Text>
       </>
@@ -30,7 +30,7 @@ const AddressText = ({ sentMsg, to, from }) => {
       <Label color='core.nearblack' my={0}>
         From
       </Label>
-      <Text fontSize={4} color='core.nearblack' m={0}>
+      <Text fontSize={3} color='core.nearblack' m={0}>
         {truncate(from)}
       </Text>
     </>

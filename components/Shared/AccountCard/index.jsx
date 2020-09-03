@@ -7,7 +7,7 @@ import Glyph from '../Glyph'
 import Button from '../Button'
 import BaseButton from '../Button/BaseButton'
 import { IconCopyAccountAddress } from '../Icons'
-import { BigTitle, Text, Label, Title as AccountAddress } from '../Typography'
+import { Text, Label, Title as AccountAddress } from '../Typography'
 import truncate from '../../../utils/truncateAddress'
 import copyToClipboard from '../../../utils/copyToClipboard'
 import {
@@ -45,7 +45,6 @@ const AccountCard = forwardRef(
   (
     {
       address,
-      alias,
       onAccountSwitch,
       onShowOnLedger,
       ledgerBusy,
@@ -80,8 +79,8 @@ const AccountCard = forwardRef(
           <Text>Account</Text>
         </Box>
         <Box color='card.account.color'>
-          <BigTitle>{alias}</BigTitle>
-          <Box display='flex' alignContent='center'>
+          <Text m={0}>Your Address</Text>
+          <Box display='flex' alignItems='center'>
             <AccountAddress
               fontWeight={1}
               fontSize={5}
@@ -94,7 +93,7 @@ const AccountCard = forwardRef(
             <CopyAddress
               display='flex'
               alignItems='center'
-              ml={1}
+              ml={2}
               onClick={() => {
                 setCopied(true)
                 copyToClipboard(address)
@@ -141,10 +140,6 @@ AccountCard.propTypes = {
    * Filecoin address
    */
   address: ADDRESS_PROPTYPE,
-  /**
-   * Human readable alias of Filecoin address
-   */
-  alias: string.isRequired,
   /**
    * Sets background-color of the card
    */
