@@ -141,9 +141,10 @@ const MessageDetail = ({ address, close, message }) => {
         </Box>
       </Box>
       <Box mt={1}>
-        <Input.Address value={message.from} label='From' disabled mt={3} />
-        <Input.Address value={message.to} label='To' disabled />
-
+        <Box mt={3}>
+          <Input.Address value={message.from} label='From' disabled />
+          <Input.Address value={message.to} label='To' disabled />
+        </Box>
         <Input.Funds
           my={3}
           balance={new FilecoinNumber('0.1', 'fil')}
