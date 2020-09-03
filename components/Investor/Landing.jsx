@@ -247,7 +247,11 @@ export default () => {
                           title='Get started >>>'
                           my={3}
                         />
-                        <StyledATag href=''>
+                        <StyledATag
+                          target='_blank'
+                          href='https://paper.dropbox.com/doc/Self-Custodied-SAFT-Guide--A65usBCOBC6H0c2e_JUleP63Ag-dHxZu59oAeSw03RrRpCrd'
+                          rel='noopener'
+                        >
                           Follow along with this guided tutorial.
                         </StyledATag>
                       </Box>
