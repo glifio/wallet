@@ -5,6 +5,7 @@ import { color, typography, layout, space, position } from 'styled-system'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import {
+  BaseButton,
   Box,
   Button,
   Input,
@@ -20,6 +21,10 @@ import {
   createHash
 } from '../../utils/investor'
 import copyToClipboard from '../../utils/copyToClipboard'
+import {
+  hasLedgerError,
+  reportLedgerConfigError
+} from '../../utils/ledger/reportLedgerConfigError'
 import noop from '../../utils/noop'
 import useWallet from '../../WalletProvider/useWallet'
 import { ADDRESS_PROPTYPE } from '../../customPropTypes'
@@ -45,7 +50,32 @@ export const Copy = styled.p.attrs(props => ({
   ${space}
 `
 
-const PreConfirm = ({ address, investor }) => {
+const PreConfirm = ({ address, investor, path }) => {
+  const { connectLedger, ledger } = useWalletProvider()
+  const [ledgerBusy, setLedgerBusy] = useState(false)
+  const [err, setErr] = useState('')
+
+  const showOnDevice = async () => {
+    setLedgerBusy(true)
+    try {
+      setErr('')
+      const provider = await connectLedger()
+      if (provider) await provider.wallet.showAddressAndPubKey(path)
+    } catch (err) {
+      setErr(err.message)
+    }
+    setLedgerBusy(false)
+  }
+
+  const showLedgerError = hasLedgerError({ ...ledger, otherError: err })
+  const showLedgerText = () => {
+    if (!ledgerBusy && !showLedgerError) return 'Show address on device'
+    if (ledgerBusy && !showLedgerError)
+      return 'Confirm address matches on device.'
+    if (showLedgerError) return 'Try again'
+    return ''
+  }
+
   return (
     <>
       <StepHeader currentStep={4} totalSteps={5} Icon={IconLedger} />
@@ -60,19 +90,60 @@ const PreConfirm = ({ address, investor }) => {
         label='InvestorID'
         disabled
       />
-      <Input.Text
-        value={address}
-        onChange={noop}
-        label='Filecoin address'
-        disabled
-      />
+      <Box display='flex' flexDirection='column' alignItems='flex-start'>
+        <Input.Text
+          value={address}
+          onChange={noop}
+          label='Filecoin address'
+          disabled
+        />
+        <Box
+          display='flex'
+          flexDirection='row'
+          alignItems='center'
+          justifyContent='space-between'
+          width='100%'
+        >
+          <BaseButton
+            mt={3}
+            m='0'
+            p='0'
+            // these are needed for manual overrides
+            px='0'
+            py='0'
+            height='auto'
+            bg='core.transparent'
+            color='core.primary'
+            css={`
+              cursor: pointer;
+              outline: none;
+              &:hover {
+                text-decoration: underline;
+              }
+            `}
+            border='none'
+            onClick={showOnDevice}
+          >
+            {showLedgerText()}
+          </BaseButton>
+          {showLedgerError && (
+            <Text color='status.fail.background'>
+              {reportLedgerConfigError({
+                ...ledger,
+                otherError: err
+              })}
+            </Text>
+          )}
+        </Box>
+      </Box>
     </>
   )
 }
 
 PreConfirm.propTypes = {
   address: ADDRESS_PROPTYPE,
-  investor: PropTypes.string.isRequired
+  investor: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired
 }
 
 const PostConfirm = ({ investorString }) => {
@@ -117,8 +188,7 @@ export default () => {
   const { investor } = useSelector(state => ({
     investor: state.investor
   }))
-  const { walletProvider } = useWalletProvider()
-  const { address } = useWallet()
+  const { address, path } = useWallet()
   const [confirmed, setConfirmed] = useState(false)
   const [investorString, setInvestorString] = useState('')
 
@@ -151,11 +221,11 @@ export default () => {
       alignSelf='center'
       padding={[2, 3, 5]}
     >
-      <OnboardCard>
+      <OnboardCard maxWidth={15}>
         {confirmed ? (
           <PostConfirm investorString={investorString} />
         ) : (
-          <PreConfirm address={address} investor={investor} />
+          <PreConfirm address={address} investor={investor} path={path} />
         )}
       </OnboardCard>
       <Box
