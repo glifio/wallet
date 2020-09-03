@@ -25,12 +25,15 @@ describe('AccountSelector', () => {
   })
 
   test('it renders the wallets in redux, and an option to create the next wallet', async () => {
-    const { Tree } = composeMockAppTree('postOnboard')
+    const { Tree, store } = composeMockAppTree('postOnboard')
     let res
     await act(async () => {
       res = render(<AccountSelector />, { wrapper: Tree })
     })
-
+    expect(store.getState().wallets.length).toBe(5)
+    store.getState().wallets.forEach((w, i) => {
+      expect(Number(w.path.split('/')[5])).toBe(Number(i))
+    })
     expect(res.container.children[1]).toMatchSnapshot()
   })
 

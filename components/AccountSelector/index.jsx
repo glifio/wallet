@@ -82,14 +82,17 @@ const AccountSelector = ({ premainnetInvestor }) => {
             )
 
             await Promise.all(
-              addresses.map(async address => {
+              addresses.map(async (address, i) => {
                 const balance = await fetchBalance(address, provider)
                 const networkCode =
                   network === MAINNET ? MAINNET_PATH_CODE : TESTNET_PATH_CODE
                 const wallet = {
                   balance,
                   address,
-                  path: createPath(networkCode, walletsInRdx.length)
+                  path: createPath(
+                    networkCode,
+                    Number(i) + Number(walletsInRdx.length)
+                  )
                 }
 
                 dispatch(walletList([wallet]))
@@ -126,7 +129,7 @@ const AccountSelector = ({ premainnetInvestor }) => {
   const onClose = () => {
     const searchParams = new URLSearchParams(router.query)
     const route = premainnetInvestor
-      ? `/saft/home?${searchParams.toString()}`
+      ? `/vault/home?${searchParams.toString()}`
       : `/home?${searchParams.toString()}`
     router.push(route)
   }
