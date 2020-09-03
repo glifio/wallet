@@ -96,8 +96,8 @@ export default () => {
       >
         <HeaderGlyph
           alt='Source: https://unsplash.com/photos/OVO8nK-7Rfs'
-          text='SAFT'
-          imageUrl='/imgsaft.png'
+          text='VAULT'
+          imageUrl='/imgvault.png'
           color='white'
           fill='white'
         />

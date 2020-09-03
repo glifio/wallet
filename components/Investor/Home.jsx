@@ -23,6 +23,7 @@ import copyToClipboard from '../../utils/copyToClipboard'
 import noop from '../../utils/noop'
 import useWallet from '../../WalletProvider/useWallet'
 import { ADDRESS_PROPTYPE } from '../../customPropTypes'
+import { useWalletProvider } from '../../WalletProvider'
 
 export const Copy = styled.p.attrs(props => ({
   color: 'core.primary',
@@ -116,6 +117,7 @@ export default () => {
   const { investor } = useSelector(state => ({
     investor: state.investor
   }))
+  const { walletProvider } = useWalletProvider()
   const { address } = useWallet()
   const [confirmed, setConfirmed] = useState(false)
   const [investorString, setInvestorString] = useState('')
@@ -134,7 +136,7 @@ export default () => {
     if (confirmed) setConfirmed(false)
     else {
       const params = new URLSearchParams(router.query)
-      router.push(`/saft/accounts?${params.toString()}`)
+      router.push(`/vault/accounts?${params.toString()}`)
     }
   }
 
