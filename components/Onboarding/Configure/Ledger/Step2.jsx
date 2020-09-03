@@ -109,7 +109,7 @@ const Step2 = ({ investor }) => {
   const routeToNextPage = () => {
     const params = new URLSearchParams(router.query)
     const query = investor
-      ? `/saft/accounts?${params.toString()}`
+      ? `/vault/accounts?${params.toString()}`
       : `/home?${params.toString()}`
     router.push(query)
   }

@@ -149,7 +149,7 @@ export default () => {
               <ImportWallet
                 mb={4}
                 alignSelf='center'
-                onClick={() => router.push('/saft')}
+                onClick={() => router.push('/vault')}
                 glyphAcronym='Ss'
                 title='SAFT Setup'
               />

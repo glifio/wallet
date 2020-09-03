@@ -15,7 +15,7 @@ export default () => {
   const router = useRouter()
   const [mounted, setMounted] = useState(false)
   const { setWalletType } = useWalletProvider()
-  if (!isDesktopChromeBrowser()) router.push(`/error/use-chrome-saft`)
+  if (!isDesktopChromeBrowser()) router.push(`/error/use-chrome-vault`)
 
   useEffect(() => {
     if (!mounted) {
