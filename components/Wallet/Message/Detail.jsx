@@ -92,21 +92,13 @@ const MessageDetail = ({ address, close, message }) => {
         justifyContent='space-between'
       >
         <Box display='flex' flexDirection='row' alignItems='center'>
-          <Box
-            display='flex'
-            flexDirection='column'
-            justifyContent='center'
-            width={6}
-            height={6}
+          <Glyph
+            acronym='Td'
+            color='background.screen'
+            borderColor='core.primary'
             backgroundColor='core.primary'
-          >
-            <Glyph
-              acronym='Td'
-              color='background.screen'
-              borderColor='core.primary'
-              backgroundColor='core.primary'
-            />
-          </Box>
+          />
+
           <Text color='core.primary' ml={2}>
             Transaction Details
           </Text>
@@ -149,9 +141,11 @@ const MessageDetail = ({ address, close, message }) => {
         </Box>
       </Box>
       <Box mt={1}>
-        <Input.Address value={message.from} label='From' disabled />
+        <Input.Address value={message.from} label='From' disabled mt={3} />
         <Input.Address value={message.to} label='To' disabled />
+
         <Input.Funds
+          my={3}
           balance={new FilecoinNumber('0.1', 'fil')}
           label='Amount'
           disabled
@@ -172,7 +166,7 @@ const MessageDetail = ({ address, close, message }) => {
           mt={5}
           mx={1}
         >
-          <Total fontSize={4} alignSelf='flex-start'>
+          <Total mt={1} fontSize={4} alignSelf='flex-start'>
             Total
           </Total>
           <Box display='flex' flexDirection='column' textAlign='right' pl={4}>
