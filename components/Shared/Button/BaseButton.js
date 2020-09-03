@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import {
+  position,
   space,
   layout,
   borderRadius,
@@ -42,6 +43,7 @@ export default styled.button.attrs(props => ({
   ${borderRadius}
   ${space}
   ${layout}
+  ${position}
   ${flexbox}
   ${border}
   ${color}
