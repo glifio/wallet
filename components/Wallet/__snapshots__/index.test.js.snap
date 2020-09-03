@@ -3762,1150 +3762,6 @@ exports[`WalletView it renders correctly 1`] = `
 </div>
 `;
 
-exports[`WalletView it renders the receive flow when a user clicks receive 1`] = `
-.c1 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding: 8px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-}
-
-.c5 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 8px;
-  color: purple;
-  background-color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 300px;
-  height: 300px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  box-shadow: 0 0.7px 2.2px -8px rgba(0,0,0,0.18),0 1.7px 5.4px rgba(0,0,0,0.129),0 3.1px 10.1px rgba(0,0,0,0.107),0 5.6px 18.1px rgba(0,0,0,0.09),0 10.4px 33.8px rgba(0,0,0,0.073),0 25px 81px rgba(0,0,0,0.051);
-}
-
-.c6 {
-  min-width: 0;
-  box-sizing: border-box;
-  color: #E0D7FE;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-}
-
-.c7 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  margin-right: 16px;
-  color: #E0D7FE;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c10 {
-  min-width: 0;
-  box-sizing: border-box;
-  color: #E0D7FE;
-}
-
-.c12 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-}
-
-.c20 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c22 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 1px solid;
-  border-radius: 8px;
-  padding: 16px;
-  background-color: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 300px;
-  min-height: 300px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c23 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c27 {
-  min-width: 0;
-  box-sizing: border-box;
-  width: 8px;
-}
-
-.c29 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  overflow: hidden;
-}
-
-.c33 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c39 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c40 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c41 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  border-color: #5E26FF;
-  background-color: #5E26FF;
-  color: #EFF3FD;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c46 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 4px;
-  padding-right: 8px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c48 {
-  min-width: 0;
-  box-sizing: border-box;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c8 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c21 {
-  cursor: pointer;
-  border: 1px solid #E0D7FE;
-  background-color: transparent;
-  border-color: #E0D7FE;
-  color: #E0D7FE;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c21:hover {
-  opacity: 0.8;
-}
-
-.c34 {
-  cursor: pointer;
-  border: 1px solid #262626;
-  background-color: transparent;
-  border-color: #262626;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  width: 120px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c34:hover {
-  opacity: 0.8;
-}
-
-.c35 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: #08442F;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  margin-left: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  width: 120px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c35:hover {
-  opacity: 0.8;
-}
-
-.c16 {
-  width: 24;
-  height: 24;
-}
-
-.c11 {
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1;
-  font-family: RT-Alias-Medium;
-  margin: 0;
-}
-
-.c13 {
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  overflow: hidden;
-  margin: 0;
-}
-
-.c30 {
-  color: #262626;
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c32 {
-  color: #666666;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c9 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-}
-
-.c42 {
-  color: #5E26FF;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-left: 8px;
-}
-
-.c44 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-top: 48px;
-  margin-bottom: 48px;
-}
-
-.c47 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-left: 4px;
-  margin-right: 4px;
-}
-
-.c18 {
-  color: #E0D7FE;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-top: 0;
-  margin-left: 4px;
-}
-
-.c24 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c25 {
-  color: #000;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c28 {
-  color: #666666;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c15 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: #08442F;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  margin-left: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-width: 1px;
-  border-radius: 4px;
-  opacity: 1 !important;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  outline: none;
-}
-
-.c15:hover {
-  opacity: 0.8;
-}
-
-.c17 {
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-}
-
-.c14:hover .c17 {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
-.c19 {
-  -webkit-transition: 0.18s ease-in;
-  transition: 0.18s ease-in;
-  opacity: 0;
-}
-
-.c14:hover .c19 {
-  opacity: 1;
-}
-
-.c26:hover {
-  cursor: pointer;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c31 {
-  word-wrap: break-word;
-}
-
-.c45 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 1px solid;
-  border-color: #999999;
-  border-radius: 1px;
-  padding-left: 16px;
-  width: 640px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 70px;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding-left: 16px;
-}
-
-.c49 {
-  display: inline-block;
-  height: 100%;
-  outline: none;
-  background-color: #d1ddfa;
-  padding: 0;
-  width: 64px;
-  border: 0;
-  border-left: 1px solid;
-  border-color: #999999;
-  border-top-right-radius: 1px;
-  border-bottom-right-radius: 1px;
-}
-
-.c49:hover {
-  cursor: pointer;
-}
-
-.c2 {
-  background: #1AD08F;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  outline: none;
-  border: 0;
-  border-radius: 16px;
-  font-size: 1.125rem;
-  font-weight: 400;
-  font-family: RT-Alias-Grotesk;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.c2:first-child {
-  margin-right: 8px;
-}
-
-.c2:hover {
-  cursor: pointer;
-  background: true;
-}
-
-.c3 {
-  background: #C4C4C4;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  outline: none;
-  border: 0;
-  border-radius: 16px;
-  font-size: 1.125rem;
-  font-weight: 400;
-  font-family: RT-Alias-Grotesk;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.c3:first-child {
-  margin-right: 8px;
-}
-
-.c3:hover {
-  background: #C4C4C4;
-}
-
-.c43 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: 8px;
-}
-
-.c43:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
-.c4 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin: 0 0.5rem 0.5rem 0.5rem;
-}
-
-.c37 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-flex-basis: 0;
-  -ms-flex-preferred-size: 0;
-  flex-basis: 0;
-  -webkit-box-flex: 999;
-  -webkit-flex-grow: 999;
-  -ms-flex-positive: 999;
-  flex-grow: 999;
-  padding-top: 24px;
-  margin: 0 0.5rem 6rem 0.5rem;
-  min-width: 53%;
-}
-
-.c38 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: none;
-  border-radius: 4px;
-  border-width: 1px;
-  padding: 16px;
-  background-color: #EFF3FD;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
-.c36 {
-  cursor: pointer;
-  border: 1px solid #262626;
-  background-color: transparent;
-  border-color: #262626;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  margin-top: 24px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-width: 1px;
-  border-radius: 4px;
-  background-color: #E0D7FE00;
-}
-
-.c36:hover {
-  opacity: 0.8;
-}
-
-.c36:hover {
-  background-color: #E0D7FE;
-}
-
-@media screen and (min-width:40em) {
-
-}
-
-@media screen and (min-width:52em) {
-
-}
-
-<div
-  class="SidebarLayout__Wrapper-gwfrwp-0 c0"
->
-  <div
-    class="c1"
-    display="flex"
-    width="100%"
-  >
-    <button
-      class="c2"
-      display="flex"
-      font-family="RT-Alias-Grotesk"
-      font-size="2"
-      font-weight="1"
-    >
-      Testnet
-    </button>
-    <button
-      class="c3"
-      disabled=""
-      display="flex"
-      font-family="RT-Alias-Grotesk"
-      font-size="2"
-      font-weight="1"
-    >
-      Mainnet
-    </button>
-  </div>
-  <div
-    class="c4"
-    height="100vh"
-  >
-    <div
-      class="c5"
-      color="purple"
-      display="flex"
-      height="300px"
-      width="300px"
-    >
-      <div
-        class="c6"
-        color="card.account.color"
-        display="flex"
-      >
-        <div
-          class="c7"
-          color="card.account.color"
-          display="flex"
-          size="6"
-        >
-          <h3
-            class="c8"
-          >
-            Ac
-          </h3>
-        </div>
-        <p
-          class="c9"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          Account
-        </p>
-      </div>
-      <div
-        class="c10"
-        color="card.account.color"
-      >
-        <h1
-          class="c11"
-          font-family="RT-Alias-Medium"
-          font-size="6"
-          font-weight="700"
-        >
-          Prime
-        </h1>
-        <div
-          class="c12"
-          display="flex"
-        >
-          <h2
-            class="c13"
-            font-family="RT-Alias-Grotesk"
-            font-size="5"
-            font-weight="1"
-            overflow="hidden"
-          >
-            t1z22 ... 6wgi
-          </h2>
-          <button
-            class="c14 c15"
-            display="flex"
-            font-size="3"
-            height="6"
-          >
-            <svg
-              class="c16 c17"
-              fill="none"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                fill="#1A0066"
-                height="12"
-                width="12"
-                x="8"
-                y="4"
-              />
-              <rect
-                fill="#E0D7FE"
-                height="12"
-                width="12"
-                x="4"
-                y="8"
-              />
-            </svg>
-            <h4
-              class="c18 c19"
-              color="core.secondary"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Copy
-            </h4>
-          </button>
-        </div>
-      </div>
-      <div
-        class="c20"
-        display="flex"
-      >
-        <button
-          class="c21"
-          font-size="3"
-          height="max-content"
-          type="button"
-        >
-          Switch
-        </button>
-      </div>
-    </div>
-    <div
-      class="c22"
-      display="flex"
-      width="300px"
-    >
-      <div
-        class="c23"
-        display="flex"
-      >
-        <h4
-          class="c24"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          Balance
-        </h4>
-        <div
-          class="c23"
-          display="flex"
-        >
-          <h4
-            class="c25 c26"
-            color="core.black"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
-          >
-            Approx.
-          </h4>
-          <div
-            class="c27"
-            width="2"
-          />
-          <h4
-            class="c28 c26"
-            color="core.darkgray"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
-          >
-            Exact
-          </h4>
-        </div>
-      </div>
-      <div
-        class="c29"
-        overflow="hidden"
-      >
-        <h2
-          class="c30 c31"
-          color="card.balance.color"
-          font-family="RT-Alias-Grotesk"
-          font-size="6"
-          font-weight="700"
-        >
-          1
-           FIL
-        </h2>
-        <h2
-          class="c32"
-          color="core.darkgray"
-          font-family="RT-Alias-Grotesk"
-          font-size="5"
-          font-weight="700"
-        >
-          5 USD
-        </h2>
-      </div>
-      <div
-        class="c33"
-        display="flex"
-      >
-        <button
-          class="c34"
-          font-size="3"
-          height="6"
-          type="button"
-          width="120"
-        >
-          Receive
-        </button>
-        <button
-          class="c35"
-          font-size="3"
-          height="6"
-          type="button"
-          width="120"
-        >
-          Send
-        </button>
-      </div>
-    </div>
-    <button
-      class="c36"
-      display="flex"
-      font-size="3"
-      height="6"
-      width="100%"
-    >
-      Logout
-    </button>
-  </div>
-  <div
-    class="c37"
-  >
-    <div
-      class="c38"
-      display="flex"
-    >
-      <div
-        class="c39"
-        display="flex"
-      >
-        <div
-          class="c40"
-          display="flex"
-        >
-          <div
-            class="c41"
-            color="background.screen"
-            display="flex"
-            size="6"
-          >
-            <h3
-              class="c8"
-            >
-              Rc
-            </h3>
-          </div>
-          <p
-            class="c42"
-            color="core.primary"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
-          >
-            Receive Filecoin
-          </p>
-        </div>
-        <div
-          class="c40"
-          display="flex"
-        >
-          <button
-            class="c43"
-            display="inline-block"
-            type="button"
-          >
-            <svg
-              class="c16"
-              fill="none"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
-                fill="#5E26FF"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <p
-        class="c44"
-        font-family="RT-Alias-Grotesk"
-        font-size="2"
-        font-weight="400"
-      >
-        To receive Filecoin, share your address with the sender
-      </p>
-      <div
-        class="c45"
-        width="14"
-      >
-        <div
-          class="c46"
-          display="flex"
-        >
-          <p
-            class="c9"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
-          >
-            t1
-          </p>
-          <p
-            class="c47"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
-          >
-            ●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
-          </p>
-          <p
-            class="c9"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
-          >
-            6wgi
-          </p>
-        </div>
-        <div
-          class="c48"
-          display="flex"
-          height="100%"
-        >
-          <button
-            class="c49"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
-            width="7"
-          >
-            Copy
-          </button>
-          <button
-            class="c49"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
-            width="7"
-          >
-            Reveal
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`WalletView it renders the send flow when a user clicks send 1`] = `
 .c1 {
   min-width: 0;
@@ -5001,9 +3857,10 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c20 {
@@ -5080,7 +3937,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   justify-content: space-between;
 }
 
-.c40 {
+.c39 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 16px;
@@ -5099,20 +3956,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   justify-content: space-between;
 }
 
-.c41 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c42 {
+.c40 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -5137,7 +3981,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   justify-content: center;
 }
 
-.c44 {
+.c42 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 8px;
@@ -5147,7 +3991,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   display: flex;
 }
 
-.c46 {
+.c44 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -5159,7 +4003,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   height: 8px;
 }
 
-.c47 {
+.c45 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -5171,20 +4015,20 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   height: 8px;
 }
 
-.c49 {
+.c47 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
 }
 
-.c50 {
+.c48 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 16px;
   padding-right: 16px;
 }
 
-.c52 {
+.c50 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -5202,7 +4046,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   align-items: center;
 }
 
-.c54 {
+.c52 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -5219,7 +4063,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   align-items: center;
 }
 
-.c56 {
+.c54 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -5231,7 +4075,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   min-height: 160px;
 }
 
-.c57 {
+.c55 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -5260,14 +4104,14 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   text-align: center;
 }
 
-.c58 {
+.c56 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c59 {
+.c57 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -5282,7 +4126,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   width: 100%;
 }
 
-.c60 {
+.c58 {
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
@@ -5310,7 +4154,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c63 {
+.c61 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -5322,14 +4166,14 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   height: 80px;
 }
 
-.c66 {
+.c64 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   width: 100%;
 }
 
-.c69 {
+.c67 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
@@ -5354,7 +4198,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   justify-content: space-between;
 }
 
-.c71 {
+.c69 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -5413,8 +4257,11 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   padding-bottom: 8px;
   padding-left: 16px;
   padding-right: 16px;
-  width: 120px;
   height: 48px;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   border-width: 1px;
   border-radius: 4px;
 }
@@ -5423,31 +4270,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   opacity: 1;
 }
 
-.c35 {
-  cursor: not-allowed;
-  border: 1px solid #C4C4C4;
-  background-color: #C4C4C4;
-  border-color: #C4C4C4;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  margin-left: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  width: 120px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c35:hover {
-  opacity: 1;
-}
-
-.c76 {
+.c74 {
   cursor: pointer;
   border: 1px solid core.lightgray;
   background-color: transparent;
@@ -5469,11 +4292,11 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   border-width: 1px;
 }
 
-.c76:hover {
+.c74:hover {
   opacity: 0.8;
 }
 
-.c78 {
+.c76 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -5493,21 +4316,13 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   border-width: 1px;
 }
 
-.c78:hover {
+.c76:hover {
   opacity: 0.8;
 }
 
 .c16 {
   width: 24;
   height: 24;
-}
-
-.c11 {
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1;
-  font-family: RT-Alias-Medium;
-  margin: 0;
 }
 
 .c13 {
@@ -5537,7 +4352,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin: 0;
 }
 
-.c70 {
+.c68 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -5545,7 +4360,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin: 0;
 }
 
-.c72 {
+.c70 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -5554,7 +4369,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin: 0;
 }
 
-.c74 {
+.c72 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
@@ -5570,7 +4385,15 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   font-family: RT-Alias-Grotesk;
 }
 
-.c43 {
+.c11 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c41 {
   color: #5E26FF;
   font-size: 1.125rem;
   font-weight: 400;
@@ -5579,7 +4402,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin-left: 8px;
 }
 
-.c45 {
+.c43 {
   color: #5E26FF;
   font-size: 1.125rem;
   font-weight: 400;
@@ -5627,7 +4450,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin: 0;
 }
 
-.c53 {
+.c51 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -5646,7 +4469,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  margin-left: 4px;
+  margin-left: 8px;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 16px;
@@ -5704,7 +4527,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   word-wrap: break-word;
 }
 
-.c55 {
+.c53 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -5729,18 +4552,18 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   border-color: #999999;
 }
 
-.c55:hover {
+.c53:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c55:focus {
+.c53:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c67 {
+.c65 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -5765,24 +4588,24 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   border-color: #999999;
 }
 
-.c67:hover {
+.c65:hover {
   background: transparent;
   cursor: initial;
 }
 
-.c67:focus {
+.c65:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c51 {
+.c49 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
 }
 
-.c62 {
+.c60 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -5811,7 +4634,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   background: #d1ddfa;
 }
 
-.c65 {
+.c63 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -5840,7 +4663,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   background: #d1ddfa;
 }
 
-.c68 {
+.c66 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 16px;
@@ -5867,7 +4690,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   background: core.transparent;
 }
 
-.c61 {
+.c59 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -5892,24 +4715,24 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   -moz-appearance: textfield;
 }
 
-.c61:hover {
+.c59:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c61:focus {
+.c59:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c61::-webkit-outer-spin-button,
-.c61::-webkit-inner-spin-button {
+.c59::-webkit-outer-spin-button,
+.c59::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c64 {
+.c62 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -5934,24 +4757,24 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   -moz-appearance: textfield;
 }
 
-.c64:hover {
+.c62:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c64:focus {
+.c62:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c64::-webkit-outer-spin-button,
-.c64::-webkit-inner-spin-button {
+.c62::-webkit-outer-spin-button,
+.c62::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c75 {
+.c73 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -6062,7 +4885,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   background: #C4C4C4;
 }
 
-.c48 {
+.c46 {
   outline: 0;
   border: 0;
   background: transparent;
@@ -6072,7 +4895,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   display: inline-block;
 }
 
-.c48:hover {
+.c46:hover {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
@@ -6086,7 +4909,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin: 0 0.5rem 0.5rem 0.5rem;
 }
 
-.c37 {
+.c36 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6102,12 +4925,12 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   -webkit-flex-grow: 999;
   -ms-flex-positive: 999;
   flex-grow: 999;
-  padding-top: 24px;
+  padding-top: 16px;
   margin: 0 0.5rem 6rem 0.5rem;
   min-width: 53%;
 }
 
-.c38 {
+.c37 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6127,7 +4950,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   min-width: 300px;
 }
 
-.c39 {
+.c38 {
   background-color: #EFF3FD;
   border: 1px solid;
   border-radius: 4px;
@@ -6147,15 +4970,15 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   justify-content: space-between;
 }
 
-.c73 {
+.c71 {
   word-wrap: break-word;
 }
 
-.c77 {
+.c75 {
   border-radius: 0px;
 }
 
-.c79 {
+.c77 {
   border-radius: 0px;
 }
 
@@ -6171,7 +4994,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   margin: 0 auto;
 }
 
-.c36 {
+.c35 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -6201,11 +5024,11 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   background-color: #E0D7FE00;
 }
 
-.c36:hover {
+.c35:hover {
   opacity: 0.8;
 }
 
-.c36:hover {
+.c35:hover {
   background-color: #E0D7FE;
 }
 
@@ -6286,14 +5109,14 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
         class="c10"
         color="card.account.color"
       >
-        <h1
+        <p
           class="c11"
-          font-family="RT-Alias-Medium"
-          font-size="6"
-          font-weight="700"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
         >
-          Prime
-        </h1>
+          Your Address
+        </p>
         <div
           class="c12"
           display="flex"
@@ -6441,24 +5264,13 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
           font-size="3"
           height="6"
           type="button"
-          width="120"
-        >
-          Receive
-        </button>
-        <button
-          class="c35"
-          disabled=""
-          font-size="3"
-          height="6"
-          type="button"
-          width="120"
         >
           Send
         </button>
       </div>
     </div>
     <button
-      class="c36"
+      class="c35"
       display="flex"
       font-size="3"
       height="6"
@@ -6468,26 +5280,26 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
     </button>
   </div>
   <div
-    class="c37"
+    class="c36"
   >
     <div
-      class="c38"
+      class="c37"
     >
       <form
         autocomplete="off"
-        class="c39"
+        class="c38"
         display="flex"
       >
         <div
-          class="c40"
+          class="c39"
           display="flex"
         >
           <div
-            class="c41"
+            class="c12"
             display="flex"
           >
             <div
-              class="c42"
+              class="c40"
               color="background.screen"
               display="flex"
               size="6"
@@ -6499,7 +5311,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
               </h3>
             </div>
             <p
-              class="c43"
+              class="c41"
               color="core.primary"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -6509,15 +5321,15 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
             </p>
           </div>
           <div
-            class="c41"
+            class="c12"
             display="flex"
           >
             <div
-              class="c44"
+              class="c42"
               display="flex"
             >
               <p
-                class="c45"
+                class="c43"
                 color="core.primary"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
@@ -6527,22 +5339,22 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                 1
               </p>
               <div
-                class="c41"
+                class="c12"
                 display="flex"
               >
                 <div
-                  class="c46"
+                  class="c44"
                   display="inline-block"
                   height="2"
                   width="2"
                 />
               </div>
               <div
-                class="c41"
+                class="c12"
                 display="flex"
               >
                 <div
-                  class="c47"
+                  class="c45"
                   display="inline-block"
                   height="2"
                   width="2"
@@ -6550,7 +5362,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
               </div>
             </div>
             <button
-              class="c48"
+              class="c46"
               display="inline-block"
               role="button"
               type="button"
@@ -6574,24 +5386,24 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
           </div>
         </div>
         <div
-          class="c49"
+          class="c47"
         >
           <div
-            class="c50"
+            class="c48"
           >
             <div
-              class="c51"
+              class="c49"
             >
               <div
-                class="c41"
+                class="c12"
                 display="flex"
               >
                 <div
-                  class="c52"
+                  class="c50"
                   display="flex"
                 >
                   <h4
-                    class="c53"
+                    class="c51"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -6601,11 +5413,11 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                   </h4>
                 </div>
                 <div
-                  class="c54"
+                  class="c52"
                   display="flex"
                 >
                   <input
-                    class="c55"
+                    class="c53"
                     display="inline-block"
                     height="6"
                     placeholder="t1..."
@@ -6618,19 +5430,19 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
             </div>
             
             <div
-              class="c56"
+              class="c54"
               display="flex"
               label="Amount"
               name="amount"
             >
               <div
-                class="c57"
+                class="c55"
                 color="input.border"
                 display="flex"
                 width="100%"
               >
                 <h4
-                  class="c53"
+                  class="c51"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -6640,18 +5452,18 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                 </h4>
               </div>
               <div
-                class="c58"
+                class="c56"
                 display="inline-block"
                 width="100%"
               >
                 <div
-                  class="c59"
+                  class="c57"
                   display="flex"
                   height="80px"
                   width="100%"
                 >
                   <div
-                    class="c60"
+                    class="c58"
                     display="flex"
                     font-family="sansSerif"
                     font-size="5"
@@ -6660,7 +5472,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                     =
                   </div>
                   <input
-                    class="c61"
+                    class="c59"
                     display="inline-block"
                     font-size="5"
                     height="100%"
@@ -6673,7 +5485,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                     width="100%"
                   />
                   <div
-                    class="c62"
+                    class="c60"
                     color="core.primary"
                     display="flex"
                     font-size="3"
@@ -6683,12 +5495,12 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                   </div>
                 </div>
                 <div
-                  class="c63"
+                  class="c61"
                   display="flex"
                   height="80px"
                 >
                   <input
-                    class="c64"
+                    class="c62"
                     display="inline-block"
                     font-size="5"
                     height="100%"
@@ -6700,7 +5512,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                     width="100%"
                   />
                   <div
-                    class="c65"
+                    class="c63"
                     color="core.primary"
                     display="flex"
                     font-size="3"
@@ -6712,22 +5524,22 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
               </div>
             </div>
             <div
-              class="c66"
+              class="c64"
               width="100%"
             >
               <div
-                class="c51"
+                class="c49"
               >
                 <div
-                  class="c41"
+                  class="c12"
                   display="flex"
                 >
                   <div
-                    class="c52"
+                    class="c50"
                     display="flex"
                   >
                     <h4
-                      class="c53"
+                      class="c51"
                       color="core.nearblack"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -6737,11 +5549,11 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                     </h4>
                   </div>
                   <div
-                    class="c54"
+                    class="c52"
                     display="flex"
                   >
                     <input
-                      class="c67"
+                      class="c65"
                       disabled=""
                       display="inline-block"
                       height="6"
@@ -6749,7 +5561,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                       width="100%"
                     />
                     <div
-                      class="c68"
+                      class="c66"
                       color="core.primary"
                       display="flex"
                       font-size="3"
@@ -6763,11 +5575,11 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
             </div>
           </div>
           <div
-            class="c69"
+            class="c67"
             display="flex"
           >
             <h2
-              class="c70"
+              class="c68"
               font-family="RT-Alias-Grotesk"
               font-size="4"
               font-weight="400"
@@ -6775,11 +5587,11 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
               Total
             </h2>
             <div
-              class="c71"
+              class="c69"
               display="flex"
             >
               <h2
-                class="c72 c73"
+                class="c70 c71"
                 color="core.primary"
                 font-family="RT-Alias-Grotesk"
                 font-size="5"
@@ -6790,7 +5602,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
                 FIL
               </h2>
               <h2
-                class="c74"
+                class="c72"
                 color="core.darkgray"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
@@ -6804,10 +5616,10 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
           </div>
         </div>
         <div
-          class="c75"
+          class="c73"
         >
           <button
-            class="c76 c77 Sendjs___StyledButton-sc-1crplc1-2 c77"
+            class="c74 c75 Sendjs___StyledButton-sc-1crplc1-2 c75"
             font-size="3"
             height="6"
             type="button"
@@ -6815,7 +5627,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
             Back
           </button>
           <button
-            class="c78 c79 Sendjs___StyledButton2-sc-1crplc1-3 c79"
+            class="c76 c77 Sendjs___StyledButton2-sc-1crplc1-3 c77"
             font-size="3"
             height="6"
             type="submit"

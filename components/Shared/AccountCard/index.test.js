@@ -61,7 +61,7 @@ describe('AccountCard', () => {
     )
 
     expect(screen.getByText('t0123', { exact: false })).toBeInTheDocument()
-    expect(screen.getByText('Prime')).toBeInTheDocument()
+    expect(screen.getByText('Your Address')).toBeInTheDocument()
   })
 
   test('clicking "Switch" calls onAccountSwitch', () => {

@@ -19,7 +19,6 @@ import {
 } from '../../utils/ledger/reportLedgerConfigError'
 import MsgConfirmer from '../../lib/confirm-message'
 import useWallet from '../../WalletProvider/useWallet'
-import Receive from '../Receive'
 import { MESSAGE_HISTORY, SEND, RECEIVE } from './views'
 import reportError from '../../utils/reportError'
 
@@ -117,12 +116,6 @@ export default () => {
             <Send
               close={() => setChildView(MESSAGE_HISTORY)}
               setSending={() => setChildView(SEND)}
-            />
-          )}
-          {childView === RECEIVE && (
-            <Receive
-              close={() => setChildView(MESSAGE_HISTORY)}
-              address={wallet.address}
             />
           )}
         </Content>
