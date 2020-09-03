@@ -67,7 +67,7 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
   // automatically generate the first 5 wallets for the user to select from to avoid confusion for non tech folks
   useEffect(() => {
     const loadFirstFiveWallets = async () => {
-      if (walletsInRdx.length < 1) {
+      if (walletsInRdx.length < 5) {
         try {
           let provider = walletProvider
           if (wallet.type === LEDGER) {

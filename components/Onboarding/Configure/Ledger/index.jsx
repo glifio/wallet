@@ -5,7 +5,7 @@ import { Box } from '../../../Shared'
 import Step1 from './Step1'
 import Step2 from './Step2'
 
-const Ledger = ({ investor, msig }) => {
+const Ledger = ({ premainnetInvestor, msig }) => {
   const [step, setStep] = useState(1)
   return (
     <Box
@@ -17,20 +17,26 @@ const Ledger = ({ investor, msig }) => {
       maxWidth={13}
     >
       {step === 1 && (
-        <Step1 investor={investor} msig={msig} setStep={setStep} />
+        <Step1
+          premainnetInvestor={premainnetInvestor}
+          msig={msig}
+          setStep={setStep}
+        />
       )}
-      {step === 2 && <Step2 investor={investor} msig={msig} />}
+      {step === 2 && (
+        <Step2 premainnetInvestor={premainnetInvestor} msig={msig} />
+      )}
     </Box>
   )
 }
 
 Ledger.propTypes = {
-  investor: bool,
+  premainnetInvestor: bool,
   msig: bool
 }
 
 Ledger.defaultProps = {
-  investor: false,
+  premainnetInvestor: false,
   msig: false
 }
 

@@ -15,7 +15,6 @@ import truncateAddress from '../../../utils/truncateAddress'
 
 const AccountInfo = ({
   msigAddress,
-  setChangingOwner,
   showOnDevice,
   walletAddress,
   reset,
@@ -58,17 +57,6 @@ const AccountInfo = ({
               />
             </Box>
           </Box>
-
-          {/* <Box>
-          <Button
-            variant='tertiary'
-            title='Change Owner'
-            onClick={setChangingOwner}
-            height='max-content'
-            p={2}
-            py={2}
-          />
-        </Box> */}
         </Box>
         <Box
           display='flex'
@@ -145,7 +133,6 @@ const AccountInfo = ({
 AccountInfo.propTypes = {
   msigAddress: ADDRESS_PROPTYPE,
   walletAddress: ADDRESS_PROPTYPE,
-  setChangingOwner: PropTypes.func.isRequired,
   showOnDevice: PropTypes.func.isRequired,
   ledgerBusy: PropTypes.bool.isRequired,
   error: PropTypes.string,

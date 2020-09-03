@@ -57,7 +57,7 @@ const ChangeOwner = ({ address, balance, close }) => {
       const serializedInnerParams = Buffer.from(
         serializeParams(innerParams),
         'hex'
-      ).toString('hex')
+      ).toString('base64')
 
       const innerMessage = {
         to: address,
@@ -107,6 +107,8 @@ const ChangeOwner = ({ address, balance, close }) => {
     e.preventDefault()
     if (step === 1) {
       setStep(2)
+    } else if (step === 2 && !validateAddressString(toAddress)) {
+      setToAddressError('Invalid to address')
     } else if (step === 2 && validateAddressString(toAddress)) {
       setStep(3)
     } else if (step === 3) {

@@ -1,5 +1,6 @@
 import Landing from '../../components/Investor/Landing'
+import InvestorOnboard from '../../components/Investor/InvestorOnboard'
 
 export default () => {
-  return <Landing />
+  return <InvestorOnboard />
 }

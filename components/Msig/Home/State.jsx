@@ -9,7 +9,6 @@ import { Box, Button } from '../../Shared'
 import AccountInfo from './AccountInfo'
 import useWallet from '../../../WalletProvider/useWallet'
 import { useWalletProvider } from '../../../WalletProvider'
-import reportError from '../../../utils/reportError'
 import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfigError'
 
 const State = ({
@@ -46,7 +45,6 @@ const State = ({
           ...ledger,
           otherError: uncaughtError
         })}
-        setChangingOwner={setChangingOwner}
         reset={reset}
       />
       <Box
@@ -62,7 +60,17 @@ const State = ({
           variant='primary'
           onClick={setWithdrawing}
           title='Withdraw'
-          maxWidth={9}
+          maxWidth={10}
+          minWidth={9}
+          mb={3}
+        />
+        <Button
+          type='button'
+          variant='secondary'
+          onClick={setChangingOwner}
+          title='Change Owner'
+          maxWidth={10}
+          minWidth={9}
         />
       </Box>
     </Box>

@@ -34,7 +34,7 @@ export default () => {
       padding={[2, 3, 5]}
     >
       {investor ? (
-        <Ledger investor />
+        <Ledger premainnetInvestor />
       ) : (
         <EnterId setWalletType={setWalletType} />
       )}
