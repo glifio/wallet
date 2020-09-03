@@ -140,6 +140,7 @@ export default () => {
                 variant='primary'
                 title='Get started'
                 my={3}
+                boxShadow={2}
               />
               <StyledATag
                 fontSize={2}
