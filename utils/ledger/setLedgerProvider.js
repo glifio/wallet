@@ -24,7 +24,7 @@ export const setLedgerProvider = async (dispatch, LedgerProvider) => {
     const provider = new Filecoin(LedgerProvider(transport), {
       apiAddress: process.env.LOTUS_NODE_JSONRPC,
       token:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.U0enkb7d8sV-csljTduixTLzPM01a5hC8GnMzR2-JJM'
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.Wh45GUnIlFgcCmTPTCkkVoF6nFFAU63oXXCwoSHPGIw'
     })
     dispatch({ type: LEDGER_CONNECTED })
     dispatch(createWalletProvider(provider))

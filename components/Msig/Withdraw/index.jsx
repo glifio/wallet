@@ -122,8 +122,12 @@ const Withdrawing = ({ address, balance, close }) => {
           close()
         }
       } catch (err) {
-        reportError(20, false, err, err.message, err.stack)
-        setUncaughtError(err.message || err)
+        if (err.message.includes('19')) {
+          setUncaughtError('Insufficient Multisig wallet available balance.')
+        } else {
+          reportError(20, false, err, err.message, err.stack)
+          setUncaughtError(err.message || err)
+        }
         setAttemptingTx(false)
         setStep(2)
       }
