@@ -46,6 +46,30 @@ describe('createHDWalletProvider', () => {
         const hdWalletProvider = HDWalletProvider(mnemonic)
         const accounts = await hdWalletProvider.getAccounts(TESTNET, 0, 5)
         expect(accounts.length).toBe(5)
+      })
+
+      test('it calls the wasm keyDerive method', async () => {
+        const HDWalletProvider = createHDWalletProvider(mockRustModule)
+        const hdWalletProvider = HDWalletProvider(mnemonic)
+        await hdWalletProvider.getAccounts(TESTNET, 0, 5)
+        expect(mockRustModule.keyDerive).toHaveBeenCalledTimes(5)
+      })
+
+      test('it passes the right, hardened paths', async () => {
+        const HDWalletProvider = createHDWalletProvider(mockRustModule)
+        const hdWalletProvider = HDWalletProvider(mnemonic)
+        await hdWalletProvider.getAccounts(TESTNET, 0, 5)
+        mockRustModule.keyDerive.mock.calls.forEach(([_, path], walletIdx) => {
+          // check to make sure the path fits m/44'/1'/0'/0/0
+          path.split('/').forEach((v, i) => {
+            // expect apostrophe at the end if its in the first 3 vals after "m"
+            if (i === 0) expect(v).toBe('m')
+            else if (i < 4) expect(v[v.length - 1]).toBe("'")
+            else expect(v[v.length - 1]).not.toBe("'")
+
+            if (i === 5) expect(v).toBe(walletIdx.toString())
+          })
+        })
         expect(mockRustModule.keyDerive).toHaveBeenCalledTimes(5)
       })
     })
