@@ -120,8 +120,20 @@ const ChangeOwner = ({ address, balance, close }) => {
           close()
         }
       } catch (err) {
-        reportError(20, false, err.message, err.stack)
-        setUncaughtError(err.message || err)
+        if (err.message.includes('19')) {
+          setUncaughtError('Insufficient Multisig wallet available balance.')
+        } else if (err.message.includes('2')) {
+          setUncaughtError(
+            `${wallet.address} has insufficient funds to pay for the transaction.`
+          )
+        } else if (err.message.includes('18')) {
+          setUncaughtError(
+            `${toAddress} is not a signer of the multisig wallet ${address}.`
+          )
+        } else {
+          reportError(20, false, err.message, err.stack)
+          setUncaughtError(err.message || err)
+        }
         setAttemptingTx(false)
         setStep(2)
       }
