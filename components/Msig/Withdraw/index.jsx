@@ -130,7 +130,7 @@ const Withdrawing = ({ address, balance, close }) => {
           )
         } else if (err.message.includes('18')) {
           setUncaughtError(
-            `${toAddress} is not a signer of the multisig wallet ${address}.`
+            `${wallet.address} is not a signer of the multisig wallet ${address}.`
           )
         } else {
           reportError(20, false, err, err.message, err.stack)
