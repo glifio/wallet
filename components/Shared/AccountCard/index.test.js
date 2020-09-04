@@ -13,7 +13,6 @@ describe('AccountCard', () => {
         <AccountCard
           onAccountSwitch={() => {}}
           color='purple'
-          alias='Prime'
           address={'t0123456789'}
           walletType={'LEDGER'}
           onShowOnLedger={() => {}}
@@ -33,7 +32,6 @@ describe('AccountCard', () => {
         <AccountCard
           onAccountSwitch={() => {}}
           color='purple'
-          alias='Prime'
           address={'t0123456789'}
           walletType={'CREATE_MNEMONIC'}
           onShowOnLedger={() => {}}
@@ -46,14 +44,13 @@ describe('AccountCard', () => {
     expect(container.firstChild).toMatchSnapshot()
   })
 
-  test('renders alias and address', () => {
+  test('renders the address', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     render(
       <Tree>
         <AccountCard
           onAccountSwitch={() => {}}
           color='purple'
-          alias='Prime'
           address='t0123'
           walletType='LEDGER'
           onShowOnLedger={() => {}}
@@ -64,7 +61,7 @@ describe('AccountCard', () => {
     )
 
     expect(screen.getByText('t0123', { exact: false })).toBeInTheDocument()
-    expect(screen.getByText('Prime')).toBeInTheDocument()
+    expect(screen.getByText('Your Address')).toBeInTheDocument()
   })
 
   test('clicking "Switch" calls onAccountSwitch', () => {
@@ -75,7 +72,6 @@ describe('AccountCard', () => {
         <AccountCard
           onAccountSwitch={mockOnAccountSwitch}
           color='purple'
-          alias='Prime'
           address='t0123'
           walletType='LEDGER'
           onShowOnLedger={() => {}}
@@ -100,7 +96,6 @@ describe('AccountCard', () => {
         <AccountCard
           onAccountSwitch={() => {}}
           color='purple'
-          alias='Prime'
           address='t0123'
           walletType='LEDGER'
           onShowOnLedger={mockOnShowOnLedger}
@@ -127,7 +122,6 @@ describe('AccountCard', () => {
         <AccountCard
           onAccountSwitch={() => {}}
           color='purple'
-          alias='Prime'
           address='t0123'
           walletType='LEDGER'
           onShowOnLedger={() => {}}

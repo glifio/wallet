@@ -62,6 +62,23 @@ describe('createLedgerProvider', () => {
         expect(accounts.length).toBe(5)
         expect(mockGetAddressAndPubKey).toHaveBeenCalledTimes(5)
       })
+
+      test('it generates accounts with the right, hardened paths', async () => {
+        const LedgerProvider = createLedgerProvider(mockRustModule)
+        const ledgerProvider = LedgerProvider({})
+        await ledgerProvider.getAccounts(TESTNET, 0, 5)
+        mockGetAddressAndPubKey.mock.calls.forEach(([path], walletIdx) => {
+          // check to make sure the path fits m/44'/1'/0'/0/0
+          path.split('/').forEach((v, i) => {
+            // expect apostrophe at the end if its in the first 3 vals after "m"
+            if (i === 0) expect(v).toBe('m')
+            else if (i < 4) expect(v[v.length - 1]).toBe("'")
+            else expect(v[v.length - 1]).not.toBe("'")
+
+            if (i === 5) expect(v).toBe(walletIdx.toString())
+          })
+        })
+      })
     })
   })
 })

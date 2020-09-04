@@ -80,9 +80,10 @@ exports[`AccountCard renders the card 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c15 {
@@ -158,14 +159,6 @@ exports[`AccountCard renders the card 1`] = `
   height: 24;
 }
 
-.c6 {
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1;
-  font-family: RT-Alias-Medium;
-  margin: 0;
-}
-
 .c8 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -180,6 +173,14 @@ exports[`AccountCard renders the card 1`] = `
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
+}
+
+.c6 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
 }
 
 .c13 {
@@ -203,7 +204,7 @@ exports[`AccountCard renders the card 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  margin-left: 4px;
+  margin-left: 8px;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 16px;
@@ -288,14 +289,14 @@ exports[`AccountCard renders the card 1`] = `
     class="c5"
     color="card.account.color"
   >
-    <h1
+    <p
       class="c6"
-      font-family="RT-Alias-Medium"
-      font-size="6"
-      font-weight="700"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
     >
-      Prime
-    </h1>
+      Your Address
+    </p>
     <div
       class="c7"
       display="flex"
@@ -454,9 +455,10 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c15 {
@@ -505,14 +507,6 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
   height: 24;
 }
 
-.c6 {
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1;
-  font-family: RT-Alias-Medium;
-  margin: 0;
-}
-
 .c8 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -527,6 +521,14 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
+}
+
+.c6 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
 }
 
 .c13 {
@@ -550,7 +552,7 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  margin-left: 4px;
+  margin-left: 8px;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 16px;
@@ -635,14 +637,14 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
     class="c5"
     color="card.account.color"
   >
-    <h1
+    <p
       class="c6"
-      font-family="RT-Alias-Medium"
-      font-size="6"
-      font-weight="700"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
     >
-      Prime
-    </h1>
+      Your Address
+    </p>
     <div
       class="c7"
       display="flex"

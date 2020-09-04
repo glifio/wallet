@@ -70,22 +70,4 @@ describe('WalletView', () => {
     expect(screen.getByText('Sending Filecoin')).toBeInTheDocument()
     expect(res.container.firstChild).toMatchSnapshot()
   })
-
-  test('it renders the receive flow when a user clicks receive', async () => {
-    const { Tree } = composeMockAppTree('postOnboard')
-
-    let res
-    // this isn't necessary, per se, but it silences the warnings
-    await act(async () => {
-      res = render(
-        <Tree>
-          <WalletView />
-        </Tree>
-      )
-      fireEvent.click(screen.getByText('Receive'))
-    })
-
-    expect(screen.getByText('Receive Filecoin')).toBeInTheDocument()
-    expect(res.container.firstChild).toMatchSnapshot()
-  })
 })

@@ -109,7 +109,7 @@ const Step2 = ({ premainnetInvestor, msig }) => {
   const routeToNextPage = () => {
     const params = new URLSearchParams(router.query)
     let query = ''
-    if (premainnetInvestor) query = `/saft/accounts?${params.toString()}`
+    if (premainnetInvestor) query = `/vault/accounts?${params.toString()}`
     else if (msig) query = `/msig/accounts?${params.toString()}`
     else query = `/home?${params.toString()}`
     router.push(query)

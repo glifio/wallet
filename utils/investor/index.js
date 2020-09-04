@@ -45,12 +45,12 @@ export const decodeInvestorValsForCoinList = hexString => {
   return vals.split(VAL_DELINEATOR)
 }
 
-const sendSaftErrorToSlack = async (...errors) => {
+const sendVaultErrorToSlack = async (...errors) => {
   const errorText = [...errors].reduce(
     (err, ele) => {
       return `${err}\n${ele}`
     },
-    [`SAFT ERROR:\n`]
+    [`VAULT ERROR:\n`]
   )
   if (process.env.IS_PROD) {
     await axios.post(
@@ -75,7 +75,7 @@ export const sendMagicStringToPL = async (
       setTimeout(() => {
         return sendMagicStringToPL(address, hashedInvestorId, magicString)
       }, 10000)
-      await sendSaftErrorToSlack(
+      await sendVaultErrorToSlack(
         'Received 429 from the API, retrying in 10 seconds...',
         address,
         hashedInvestorId,
@@ -83,7 +83,7 @@ export const sendMagicStringToPL = async (
       )
     } else if (res.status !== 200) throw new Error(res.statusText)
   } catch (error) {
-    await sendSaftErrorToSlack(
+    await sendVaultErrorToSlack(
       address,
       hashedInvestorId,
       magicString,

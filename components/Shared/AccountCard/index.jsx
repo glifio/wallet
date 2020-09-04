@@ -5,7 +5,7 @@ import Box from '../Box'
 import Glyph from '../Glyph'
 import Button from '../Button'
 import { CopyAddress } from '../Copy'
-import { BigTitle, Text } from '../Typography'
+import { Text } from '../Typography'
 import {
   LEDGER,
   CREATE_MNEMONIC,
@@ -17,7 +17,6 @@ const AccountCard = forwardRef(
   (
     {
       address,
-      alias,
       onAccountSwitch,
       onShowOnLedger,
       ledgerBusy,
@@ -51,7 +50,7 @@ const AccountCard = forwardRef(
           <Text>Account</Text>
         </Box>
         <Box color='card.account.color'>
-          <BigTitle>{alias}</BigTitle>
+          <Text m={0}>Your address</Text>
           <CopyAddress address={address} />
         </Box>
         <Box display='flex'>
@@ -88,10 +87,6 @@ AccountCard.propTypes = {
    * Filecoin address
    */
   address: ADDRESS_PROPTYPE,
-  /**
-   * Human readable alias of Filecoin address
-   */
-  alias: string.isRequired,
   /**
    * Sets background-color of the card
    */
