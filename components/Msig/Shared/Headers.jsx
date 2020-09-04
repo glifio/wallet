@@ -84,7 +84,8 @@ export const WithdrawHeaderText = ({ step, customizingGas }) => {
 }
 
 WithdrawHeaderText.propTypes = {
-  step: PropTypes.number.isRequired
+  step: PropTypes.number.isRequired,
+  customizingGas: PropTypes.bool.isRequired
 }
 
 export const ChangeOwnerHeaderText = ({ step }) => {
