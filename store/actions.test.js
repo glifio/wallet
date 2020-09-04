@@ -190,10 +190,11 @@ describe('actions', () => {
   })
 
   test('setMsigActor', () => {
+    const msig = 't01004'
     const expectedAction = {
       type: types.SET_MSIG_ACTOR_ADDRESS,
       payload: {
-        msigActor: {}
+        msigActorAddress: msig
       }
     }
     expect(actions.setMsigActor(msig)).toEqual(expectedAction)
