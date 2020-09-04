@@ -48,7 +48,7 @@ export const CopyAddress = forwardRef(({ address, ...props }, ref) => {
       <Copy
         display='flex'
         alignItems='center'
-        ml={1}
+        ml={2}
         onClick={() => {
           setCopied(true)
           copyToClipboard(address)

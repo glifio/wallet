@@ -50,7 +50,7 @@ const AccountCard = forwardRef(
           <Text>Account</Text>
         </Box>
         <Box color='card.account.color'>
-          <Text m={0}>Your address</Text>
+          <Text m={0}>Your Address</Text>
           <CopyAddress address={address} />
         </Box>
         <Box display='flex'>
