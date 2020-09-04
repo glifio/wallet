@@ -48,7 +48,7 @@ const OtherWalletTypeConfirm = () => {
   )
 }
 
-const ConfirmationCard = ({ walletType }) => {
+const ConfirmationCard = ({ walletType, currentStep, totalSteps }) => {
   return (
     <Card
       display='flex'
@@ -84,8 +84,8 @@ const ConfirmationCard = ({ walletType }) => {
             textColor='card.confirmation.foreground'
             completedDotColor='card.confirmation.foreground'
             incompletedDotColor='core.silver'
-            step={2}
-            totalSteps={2}
+            step={currentStep}
+            totalSteps={totalSteps}
           />
           <Box width={5} mx={2} />
         </Box>
@@ -96,12 +96,20 @@ const ConfirmationCard = ({ walletType }) => {
 }
 
 ConfirmationCard.propTypes = {
+  currentStep: PropTypes.number,
+  totalSteps: PropTypes.number,
   walletType: PropTypes.oneOf([
     LEDGER,
     IMPORT_MNEMONIC,
     CREATE_MNEMONIC,
     IMPORT_SINGLE_KEY
   ]).isRequired
+}
+
+ConfirmationCard.defaultProps = {
+  // defaults fit criteria for normal send flow
+  currentStep: 2,
+  totalSteps: 2
 }
 
 export default ConfirmationCard

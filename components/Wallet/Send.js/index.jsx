@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import dayjs from 'dayjs'
 import { border, layout, space, flexbox, position } from 'styled-system'
 import { useDispatch } from 'react-redux'
-import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { validateAddressString } from '@openworklabs/filecoin-address'
 import { Message } from '@openworklabs/filecoin-message'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
@@ -110,7 +110,7 @@ const Send = ({ close }) => {
       const message = new Message({
         to: toAddress,
         from: wallet.address,
-        value: new BigNumber(value.toAttoFil()).toFixed(0, 1),
+        value: value.toAttoFil(),
         method: 0,
         nonce,
         params: ''
@@ -280,6 +280,14 @@ const Send = ({ close }) => {
                 setError={setToAddressError}
                 disabled={step === 2 && !hasError()}
                 valid={validateAddressString(toAddress)}
+                onBlur={() => {
+                  const isValidAddress = validateAddressString(toAddress)
+                  if (toAddress && !isValidAddress)
+                    setToAddressError(`Invalid Recipient address.`)
+                }}
+                onFocus={() => {
+                  if (toAddressError) setToAddressError('')
+                }}
               />
               <Input.Funds
                 name='amount'

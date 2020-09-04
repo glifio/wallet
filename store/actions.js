@@ -13,7 +13,8 @@ import {
   WALLET_LIST,
   POPULATE_REDUX,
   RESET_STATE,
-  SET_INVESTOR_UUID
+  SET_INVESTOR_ID,
+  SET_MSIG_ACTOR_ADDRESS
 } from './actionTypes'
 
 export const walletList = wallets => ({
@@ -107,9 +108,18 @@ export const resetState = () => {
 
 export const setInvestorId = uuid => {
   return {
-    type: SET_INVESTOR_UUID,
+    type: SET_INVESTOR_ID,
     payload: {
       uuid
+    }
+  }
+}
+
+export const setMsigActor = msigActorAddress => {
+  return {
+    type: SET_MSIG_ACTOR_ADDRESS,
+    payload: {
+      msigActorAddress
     }
   }
 }

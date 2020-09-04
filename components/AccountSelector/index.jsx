@@ -40,7 +40,7 @@ const Close = styled(ButtonClose)`
   right: ${props => props.theme.sizes[3]}px;
 `
 
-const AccountSelector = ({ premainnetInvestor }) => {
+const AccountSelector = ({ premainnetInvestor, msig }) => {
   const wallet = useWallet()
   const [loadingAccounts, setLoadingAccounts] = useState(false)
   const [loadingPage, setLoadingPage] = useState(true)
@@ -128,9 +128,10 @@ const AccountSelector = ({ premainnetInvestor }) => {
 
   const onClose = () => {
     const searchParams = new URLSearchParams(router.query)
-    const route = premainnetInvestor
-      ? `/vault/home?${searchParams.toString()}`
-      : `/home?${searchParams.toString()}`
+    let route = ''
+    if (premainnetInvestor) route = `/vault/home?${searchParams.toString()}`
+    else if (msig) route = `/msig/choose?${searchParams.toString()}`
+    else route = `/home?${searchParams.toString()}`
     router.push(route)
   }
 
@@ -198,16 +199,25 @@ const AccountSelector = ({ premainnetInvestor }) => {
                   color='core.white'
                 />
                 <Title ml={2}>
-                  {premainnetInvestor ? 'Select Account' : 'Switch Accounts'}
+                  {premainnetInvestor || msig
+                    ? 'Select Account'
+                    : 'Switch Accounts'}
                 </Title>
               </MenuItem>
               <MenuItem>
-                {premainnetInvestor ? (
+                {premainnetInvestor && (
                   <Text>
                     Please select the Ledger account you wish to own and sign
                     for your multisig investor wallet.
                   </Text>
-                ) : (
+                )}
+                {msig && (
+                  <Text>
+                    Please select the Ledger account that owns your multisig
+                    investor wallet.
+                  </Text>
+                )}
+                {!premainnetInvestor && !msig && (
                   <Text>
                     Your single{' '}
                     {wallet.type === LEDGER ? 'Ledger Device ' : 'seed phrase'}{' '}
@@ -247,11 +257,13 @@ const AccountSelector = ({ premainnetInvestor }) => {
 }
 
 AccountSelector.propTypes = {
-  premainnetInvestor: bool
+  premainnetInvestor: bool,
+  msig: bool
 }
 
 AccountSelector.defaultProps = {
-  premainnetInvestor: false
+  premainnetInvestor: false,
+  msig: false
 }
 
 export default AccountSelector

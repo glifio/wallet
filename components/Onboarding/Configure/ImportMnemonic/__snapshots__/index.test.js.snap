@@ -31,7 +31,23 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   overflow: hidden;
 }
 
-.c4 {
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -52,22 +68,6 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c8 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .c9 {
@@ -160,7 +160,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c6 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
@@ -213,7 +213,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   opacity: 1;
 }
 
-.c6 {
+.c7 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -222,7 +222,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   margin-top: 16px;
 }
 
-.c7 {
+.c8 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -330,7 +330,8 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
+  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -356,26 +357,32 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
       display="flex"
       width="100%"
     >
-      <li
+      <div
         class="c3"
         display="flex"
       >
-        <div
+        <li
           class="c4"
-          color="#000"
           display="flex"
-          size="6"
         >
-          <h3
+          <div
             class="c5"
+            color="#000"
+            display="flex"
+            size="6"
           >
-            Sp
-          </h3>
-        </div>
-      </li>
+            <h3
+              class="c6"
+            >
+              Sp
+            </h3>
+          </div>
+        </li>
+        
+      </div>
     </ul>
     <h2
-      class="c6"
+      class="c7"
       font-family="RT-Alias-Grotesk"
       font-size="4"
       font-weight="400"
@@ -383,7 +390,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
       Input, Import & Proceed
     </h2>
     <p
-      class="c7"
+      class="c8"
       font-family="RT-Alias-Grotesk"
       font-size="2"
       font-weight="400"
@@ -391,7 +398,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
       Please input your seed phrase below to continue 
     </p>
     <div
-      class="c8"
+      class="c3"
       display="flex"
     >
       <div

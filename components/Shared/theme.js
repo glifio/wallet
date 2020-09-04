@@ -51,7 +51,8 @@ const core = {
   lightgray: baseColors.mono.lightgray,
   silver: baseColors.mono.silver,
   white: baseColors.mono.white,
-  transparent: baseColors.mono.transparent
+  transparent: baseColors.mono.transparent,
+  yellow: baseColors.yellow.deep
 }
 
 const colors = {
@@ -134,7 +135,16 @@ const colors = {
 
 const theme = {
   colors,
-  fontSizes: ['0rem', '1rem', '1.125rem', '1.25rem', '1.5rem', '2rem', '3rem'],
+  fontSizes: [
+    '0rem',
+    '1rem',
+    '1.125rem',
+    '1.25rem',
+    '1.5rem',
+    '2rem',
+    '3rem',
+    '5rem'
+  ],
   fontWeights: [0, 400, 600, 900],
   letterSpacings: [0, 1, 2, 4, 8],
   lineHeights: {
@@ -195,6 +205,13 @@ const theme = {
       },
       xl: {
         fontSize: 6,
+        fontWeight: 700,
+        margin: 0,
+        lineHeight: 'solid',
+        fontFamily: 'RT-Alias-Grotesk'
+      },
+      xxl: {
+        fontSize: 7,
         fontWeight: 700,
         margin: 0,
         lineHeight: 'solid',

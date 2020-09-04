@@ -334,7 +334,7 @@ exports[`WalletView it renders correctly 1`] = `
 }
 
 .c13 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
@@ -1007,7 +1007,7 @@ exports[`WalletView it renders correctly 1`] = `
           <h2
             class="c13"
             font-family="RT-Alias-Grotesk"
-            font-size="5"
+            font-size="4"
             font-weight="1"
             overflow="hidden"
           >
@@ -4326,7 +4326,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
 }
 
 .c13 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
@@ -5124,7 +5124,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
           <h2
             class="c13"
             font-family="RT-Alias-Grotesk"
-            font-size="5"
+            font-size="4"
             font-weight="1"
             overflow="hidden"
           >
