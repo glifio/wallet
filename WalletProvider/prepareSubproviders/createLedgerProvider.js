@@ -7,6 +7,7 @@ import {
   MAINNET_PATH_CODE,
   TESTNET_PATH_CODE
 } from '../../constants'
+import createPath from '../../utils/createPath'
 
 const handleErrors = response => {
   if (
@@ -76,7 +77,7 @@ export default rustModule => {
           network === MAINNET ? MAINNET_PATH_CODE : TESTNET_PATH_CODE
         const paths = []
         for (let i = nStart; i < nEnd; i += 1) {
-          paths.push(`m/44'/${networkCode}'/0/0/${i}`)
+          paths.push(createPath(networkCode, i))
         }
         const addresses = await mapSeries(paths, async path => {
           const { addrString } = handleErrors(
