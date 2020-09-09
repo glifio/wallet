@@ -10,6 +10,7 @@ import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
 const Copy = styled(BaseButton)`
   /* !important is declared here to override BaseButton's opacity:0.8 on hover. The only instance of us using this declaration. */
+  height: auto;
   opacity: 1 !important;
   border: 0;
   background: transparent;
