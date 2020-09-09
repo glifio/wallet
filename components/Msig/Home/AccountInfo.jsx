@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
@@ -12,6 +13,10 @@ import {
   Title as AccountAddress
 } from '../../Shared'
 import truncateAddress from '../../../utils/truncateAddress'
+
+const ViewAddress = styled(Button)`
+  padding: 0;
+`
 
 const AccountInfo = ({
   msigAddress,
@@ -51,10 +56,7 @@ const AccountInfo = ({
             <Glyph mr={3} color='card.account.color' acronym='Ms' />
             <Box flexGrow='1' color='card.account.color'>
               <Text m={0}>Multisig Account</Text>
-              <CopyAddress
-                justifyContent='space-between'
-                address={msigAddress}
-              />
+              <CopyAddress address={msigAddress} />
             </Box>
           </Box>
         </Box>
@@ -98,7 +100,7 @@ const AccountInfo = ({
                     fill='#444'
                   />
                 </Box>
-                <Box display='flex' flexDirection='column'>
+                <Box display='flex' flexDirection='column' height={6}>
                   <Text m={0}>Linked to Ledger Device</Text>
                   <Box
                     display='flex'
@@ -109,8 +111,8 @@ const AccountInfo = ({
                     <AccountAddress m={0}>
                       {truncateAddress(walletAddress)}
                     </AccountAddress>
-                    <Button
-                      p={0}
+                    <ViewAddress
+                      height='auto'
                       border={0}
                       type='button'
                       variant='secondary'
