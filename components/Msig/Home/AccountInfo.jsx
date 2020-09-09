@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
@@ -13,10 +12,6 @@ import {
   Title as AccountAddress
 } from '../../Shared'
 import truncateAddress from '../../../utils/truncateAddress'
-
-const ViewAddress = styled(Button)`
-  padding: 0;
-`
 
 const AccountInfo = ({
   msigAddress,
@@ -111,8 +106,10 @@ const AccountInfo = ({
                     <AccountAddress m={0}>
                       {truncateAddress(walletAddress)}
                     </AccountAddress>
-                    <ViewAddress
+                    <Button
                       height='auto'
+                      py={0}
+                      px={0}
                       border={0}
                       type='button'
                       variant='secondary'
