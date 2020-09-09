@@ -51,10 +51,7 @@ const AccountInfo = ({
             <Glyph mr={3} color='card.account.color' acronym='Ms' />
             <Box flexGrow='1' color='card.account.color'>
               <Text m={0}>Multisig Account</Text>
-              <CopyAddress
-                justifyContent='space-between'
-                address={msigAddress}
-              />
+              <CopyAddress address={msigAddress} />
             </Box>
           </Box>
         </Box>
@@ -98,7 +95,7 @@ const AccountInfo = ({
                     fill='#444'
                   />
                 </Box>
-                <Box display='flex' flexDirection='column'>
+                <Box display='flex' flexDirection='column' height={6}>
                   <Text m={0}>Linked to Ledger Device</Text>
                   <Box
                     display='flex'
@@ -110,7 +107,9 @@ const AccountInfo = ({
                       {truncateAddress(walletAddress)}
                     </AccountAddress>
                     <Button
-                      p={0}
+                      height='auto'
+                      py={0}
+                      px={0}
                       border={0}
                       type='button'
                       variant='secondary'
