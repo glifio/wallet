@@ -504,6 +504,7 @@ exports[`WalletView it renders correctly 1`] = `
   align-items: center;
   border-width: 1px;
   border-radius: 4px;
+  height: auto;
   opacity: 1 !important;
   border: 0;
   background: transparent;
@@ -4485,6 +4486,7 @@ exports[`WalletView it renders the send flow when a user clicks send 1`] = `
   align-items: center;
   border-width: 1px;
   border-radius: 4px;
+  height: auto;
   opacity: 1 !important;
   border: 0;
   background: transparent;
