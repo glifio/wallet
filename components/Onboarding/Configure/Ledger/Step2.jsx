@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'
@@ -19,6 +20,8 @@ import {
   reportLedgerConfigError
 } from '../../../../utils/ledger/reportLedgerConfigError'
 import useReset from '../../../../utils/useReset'
+import createPath from '../../../../utils/createPath'
+import { MAINNET, MAINNET_PATH_CODE } from '../../../../constants'
 
 const Step2Helper = ({
   connectedFailure,
@@ -94,7 +97,7 @@ Step2Helper.defaultProps = {
 }
 
 const Step2 = ({ premainnetInvestor, msig }) => {
-  const { ledger, fetchDefaultWallet } = useWalletProvider()
+  const { ledger, fetchDefaultWallet, walletProvider } = useWalletProvider()
   const dispatch = useDispatch()
   const resetState = useReset()
   // TODO: fix hack to ignore proptype errors => || null
@@ -124,7 +127,19 @@ const Step2 = ({ premainnetInvestor, msig }) => {
         routeToNextPage()
       }
     } catch (err) {
-      dispatch(rdxError(err.message))
+      // catch errors due to node connection and continue forward for saft
+      if (premainnetInvestor) {
+        const [address] = await walletProvider.wallet.getAccounts(MAINNET, 0, 1)
+        const wallet = {
+          address,
+          balance: new FilecoinNumber('0', 'fil'),
+          path: createPath(MAINNET_PATH_CODE, 0)
+        }
+        dispatch(walletList([wallet]))
+        routeToNextPage()
+      } else {
+        dispatch(rdxError(err.message))
+      }
     } finally {
       setLoading(false)
     }

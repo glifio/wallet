@@ -24,9 +24,9 @@ export default () => {
           }
           return pollBalance(wallet.address, latestBalance, provider)
         } catch (err) {
-          reportError(4, true, err.message, err.stack)
+          reportError(4, false, err.message, err.stack)
         }
-      }, 3000)
+      }, 10000)
 
       return () => {
         if (timeout.current) {
