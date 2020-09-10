@@ -3,6 +3,8 @@ import composeMockAppTree from '../../../../test-utils/composeMockAppTree'
 import Step1 from './Step1'
 import Step2 from './Step2'
 import { initialLedgerState } from '../../../../utils/ledger/ledgerStateManagement'
+import { mockRouterPush } from '../../../../test-utils/mocks/mock-routing'
+import { flushPromises } from '../../../../test-utils'
 
 describe('Ledger configuration', () => {
   describe('Step1', () => {
@@ -304,6 +306,57 @@ describe('Ledger configuration', () => {
       ).toBeInTheDocument()
 
       expect(container.firstChild).toMatchSnapshot()
+    })
+
+    test('it pushes to the right url', async () => {
+      const { Tree } = composeMockAppTree('preOnboard')
+      const { container } = render(
+        <Tree>
+          <Step2 premainnetInvestor={false} msig={false} setStep={() => {}} />
+        </Tree>
+      )
+
+      await act(async () => {
+        fireEvent.click(
+          screen.getByText('My Ledger device is unlocked & Filecoin app open')
+        )
+        await flushPromises()
+      })
+      expect(mockRouterPush).toHaveBeenCalledWith('/home?network=t')
+    })
+
+    test('it pushes to the right url for premainnetInvestor', async () => {
+      const { Tree } = composeMockAppTree('preOnboard')
+      const { container } = render(
+        <Tree>
+          <Step2 premainnetInvestor={true} msig={false} setStep={() => {}} />
+        </Tree>
+      )
+
+      await act(async () => {
+        fireEvent.click(
+          screen.getByText('My Ledger device is unlocked & Filecoin app open')
+        )
+        await flushPromises()
+      })
+      expect(mockRouterPush).toHaveBeenCalledWith('/vault/accounts?network=t')
+    })
+
+    test('it pushes to the right url for msig', async () => {
+      const { Tree } = composeMockAppTree('preOnboard')
+      const { container } = render(
+        <Tree>
+          <Step2 premainnetInvestor={false} msig={true} setStep={() => {}} />
+        </Tree>
+      )
+
+      await act(async () => {
+        fireEvent.click(
+          screen.getByText('My Ledger device is unlocked & Filecoin app open')
+        )
+        await flushPromises()
+      })
+      expect(mockRouterPush).toHaveBeenCalledWith('/msig/accounts?network=t')
     })
   })
 })
