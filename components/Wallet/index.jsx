@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { useRouter } from 'next/router'
 import {
   AccountCard,
@@ -19,18 +19,30 @@ import {
 } from '../../utils/ledger/reportLedgerConfigError'
 import MsgConfirmer from '../../lib/confirm-message'
 import useWallet from '../../WalletProvider/useWallet'
-import { MESSAGE_HISTORY, SEND, RECEIVE } from './views'
+import { MESSAGE_HISTORY, SEND } from './views'
 import reportError from '../../utils/reportError'
 
 export default () => {
   const wallet = useWallet()
-  const [childView, setChildView] = useState(MESSAGE_HISTORY)
+  const router = useRouter()
+  const childView = router.pathname.includes('home') ? MESSAGE_HISTORY : SEND
   const { ledger, connectLedger } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState('')
   const [showLedgerError, setShowLedgerError] = useState(false)
   const [ledgerBusy, setLedgerBusy] = useState(false)
 
-  const router = useRouter()
+  const setChildView = useCallback(
+    view => {
+      const params = new URLSearchParams(router.query)
+      if (view === MESSAGE_HISTORY) {
+        router.push(`/home?${params.toString()}`)
+      } else if (view === SEND) {
+        router.push(`/send?${params.toString()}`)
+      }
+    },
+    [router]
+  )
+
   const onAccountSwitch = () => {
     const params = new URLSearchParams(router.query)
     router.push(`/home/accounts?${params.toString()}`)
@@ -63,7 +75,6 @@ export default () => {
           margin: 0 auto;
         `}
       >
-        <NetworkSwitcherGlyph />
         {childView === SEND ? (
           <Content>
             <Send
@@ -73,6 +84,7 @@ export default () => {
           </Content>
         ) : (
           <>
+            <NetworkSwitcherGlyph />
             <Sidebar height='100vh'>
               {hasLedgerError({ ...ledger, otherError: uncaughtError }) &&
               showLedgerError ? (
@@ -97,7 +109,6 @@ export default () => {
               )}
               <BalanceCard
                 balance={wallet.balance}
-                onReceive={() => onViewChange(RECEIVE)}
                 onSend={() => onViewChange(SEND)}
                 disableButtons={childView === SEND}
               />
