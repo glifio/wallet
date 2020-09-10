@@ -35,7 +35,7 @@ const State = ({
     resetState()
   }
   return (
-    <Box display='flex' flexDirection='row' minHeight='100vh'>
+    <Box display='flex' flexDirection='row' minHeight='100vh' width='100%'>
       <AccountInfo
         msigAddress={msigAddress}
         walletAddress={walletAddress}
