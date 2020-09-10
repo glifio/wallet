@@ -29,7 +29,6 @@ import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
 import { useConverter } from '../../../lib/Converter'
 import reportError from '../../../utils/reportError'
-import truncateAddress from '../../../utils/truncateAddress'
 
 // this is a bit confusing, sometimes the form can report errors, so we check those here too
 const isValidAmount = (value, balance, errorFromForms) => {
@@ -214,6 +213,7 @@ const Send = ({ close }) => {
     if (step === 4 && wallet.type !== LEDGER) return 'Send'
     if (step === 4 && wallet.type === LEDGER) return 'Confirm on device.'
     if (step < 4) return 'Next'
+    return 'Next'
   }
 
   return (
@@ -279,7 +279,7 @@ const Send = ({ close }) => {
             )}
             <Box boxShadow={2} borderRadius={4}>
               <CardHeader
-                address={truncateAddress(wallet.address)}
+                address={wallet.address}
                 balance={wallet.balance}
                 customizingGas={false}
               />
@@ -291,6 +291,7 @@ const Send = ({ close }) => {
                   onChange={e => setToAddress(e.target.value)}
                   error={toAddressError}
                   disabled={step > 1}
+                  placeholder='t1...'
                   onFocus={() => {
                     if (toAddressError) setToAddressError('')
                   }}
@@ -405,7 +406,7 @@ const Send = ({ close }) => {
               variant='primary'
               title={submitBtnText()}
               disabled={isSubmitBtnDisabled()}
-              type='submit'
+              type='button'
               onClick={onSubmit}
             />
           </Box>

@@ -6,6 +6,7 @@ import {
   FILECOIN_NUMBER_PROP
 } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
+import truncateAddress from '../../../utils/truncateAddress'
 
 export const CardHeader = ({ address, balance, customizingGas }) => {
   return (
@@ -39,7 +40,7 @@ export const CardHeader = ({ address, balance, customizingGas }) => {
                 alignItems='flex-start'
               >
                 <Text m={0}>From</Text>
-                <Text m={0}>{address}</Text>
+                <Text m={0}>{truncateAddress(address)}</Text>
               </Box>
             </>
           )}
