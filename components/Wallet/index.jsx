@@ -64,61 +64,67 @@ export default () => {
         `}
       >
         <NetworkSwitcherGlyph />
-
-        <Sidebar height='100vh'>
-          {hasLedgerError({ ...ledger, otherError: uncaughtError }) &&
-          showLedgerError ? (
-            <AccountError
-              onTryAgain={onShowOnLedger}
-              errorMsg={reportLedgerConfigError({
-                ...ledger,
-                otherError: uncaughtError
-              })}
-              mb={2}
-            />
-          ) : (
-            <AccountCard
-              onAccountSwitch={onAccountSwitch}
-              color='purple'
-              address={wallet.address}
-              walletType={wallet.type}
-              onShowOnLedger={onShowOnLedger}
-              ledgerBusy={ledgerBusy}
-              mb={2}
-            />
-          )}
-          <BalanceCard
-            balance={wallet.balance}
-            onReceive={() => onViewChange(RECEIVE)}
-            onSend={() => onViewChange(SEND)}
-            disableButtons={childView === SEND}
-          />
-          <ButtonLogout
-            variant='secondary'
-            width='100%'
-            mt={4}
-            display='flex'
-            alignItems='center'
-            css={`
-              background-color: ${({ theme }) => theme.colors.core.secondary}00;
-              &:hover {
-                background-color: ${({ theme }) => theme.colors.core.secondary};
-              }
-            `}
-            onClick={() => window.location.reload()}
-          >
-            Logout
-          </ButtonLogout>
-        </Sidebar>
-        <Content>
-          {childView === MESSAGE_HISTORY && <MessageView />}
-          {childView === SEND && (
+        {childView === SEND ? (
+          <Content>
             <Send
               close={() => setChildView(MESSAGE_HISTORY)}
               setSending={() => setChildView(SEND)}
             />
-          )}
-        </Content>
+          </Content>
+        ) : (
+          <>
+            <Sidebar height='100vh'>
+              {hasLedgerError({ ...ledger, otherError: uncaughtError }) &&
+              showLedgerError ? (
+                <AccountError
+                  onTryAgain={onShowOnLedger}
+                  errorMsg={reportLedgerConfigError({
+                    ...ledger,
+                    otherError: uncaughtError
+                  })}
+                  mb={2}
+                />
+              ) : (
+                <AccountCard
+                  onAccountSwitch={onAccountSwitch}
+                  color='purple'
+                  address={wallet.address}
+                  walletType={wallet.type}
+                  onShowOnLedger={onShowOnLedger}
+                  ledgerBusy={ledgerBusy}
+                  mb={2}
+                />
+              )}
+              <BalanceCard
+                balance={wallet.balance}
+                onReceive={() => onViewChange(RECEIVE)}
+                onSend={() => onViewChange(SEND)}
+                disableButtons={childView === SEND}
+              />
+              <ButtonLogout
+                variant='secondary'
+                width='100%'
+                mt={4}
+                display='flex'
+                alignItems='center'
+                css={`
+                  background-color: ${({ theme }) =>
+                    theme.colors.core.secondary}00;
+                  &:hover {
+                    background-color: ${({ theme }) =>
+                      theme.colors.core.secondary};
+                  }
+                `}
+                onClick={() => window.location.reload()}
+              >
+                Logout
+              </ButtonLogout>
+            </Sidebar>
+            <Content>
+              {childView === MESSAGE_HISTORY && <MessageView />}
+            </Content>
+          </>
+        )}
       </Wrapper>
     </>
   )
