@@ -150,6 +150,18 @@ const Step2 = ({ premainnetInvestor, msig }) => {
     else resetState()
   }
 
+  const calculateCurrentSteps = () => {
+    if (premainnetInvestor) return 3
+    if (msig) return 2
+    return 2
+  }
+
+  const calculateTotalSteps = () => {
+    if (premainnetInvestor) return 5
+    if (msig) return 3
+    return 2
+  }
+
   return (
     <>
       <OnboardCard
@@ -160,11 +172,11 @@ const Step2 = ({ premainnetInvestor, msig }) => {
         bg={error ? 'status.fail.background' : 'core.transparent'}
       >
         <StepHeader
-          currentStep={premainnetInvestor ? 3 : 2}
+          currentStep={calculateCurrentSteps()}
           description='Please complete the following steps so Filament can interface with
           your Ledger device.'
           loading={!ledger.userImportFailure && loading}
-          totalSteps={premainnetInvestor ? 5 : 2}
+          totalSteps={calculateTotalSteps()}
           Icon={IconLedger}
           error={!!error}
         />
