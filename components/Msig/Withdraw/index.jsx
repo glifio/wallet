@@ -167,15 +167,16 @@ const Withdrawing = ({ address, balance, close }) => {
       <Box
         width='100%'
         display='flex'
+        flex='1'
         flexDirection='column'
         alignItems='center'
-        mb={7}
       >
         <Box
           maxWidth={14}
           width={13}
           minWidth={12}
           display='flex'
+          flex='1'
           flexDirection='column'
           justifyContent='space-between'
         >
@@ -326,13 +327,11 @@ const Withdrawing = ({ address, balance, close }) => {
 
           <Box
             display='flex'
+            flex='1'
             flexDirection='row'
             justifyContent='space-between'
-            position='fixed'
-            bottom='3'
+            alignItems='flex-end'
             margin='auto'
-            left='0'
-            right='0'
             maxWidth={14}
             width={13}
             minWidth={12}
