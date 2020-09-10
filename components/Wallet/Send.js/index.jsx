@@ -384,7 +384,7 @@ const Send = ({ close }) => {
             maxWidth={14}
             width={13}
             minWidth={12}
-            mt={2}
+            my={3}
           >
             <Button
               title='Back'
