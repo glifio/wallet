@@ -43,15 +43,20 @@ export const useMsig = msigActorID => {
           router.push(`/error/not-a-signer?${params.toString()}`)
         }
 
-        const AvailableBalance = await lotus.request(
+        // confusing - MsigGetAval returns locked, not avail see https://github.com/filecoin-project/lotus/issues/3699
+        const lockedBal = await lotus.request(
           'MsigGetAvailableBalance',
           msigActorID,
           null
         )
 
+        const balance = new FilecoinNumber(Balance, 'attofil')
+
         const nextState = {
-          Balance: new FilecoinNumber(Balance, 'attofil'),
-          AvailableBalance: new FilecoinNumber(AvailableBalance, 'attofil'),
+          Balance: balance,
+          AvailableBalance: balance.minus(
+            new FilecoinNumber(lockedBal, 'attofil')
+          ),
           ...State
         }
         setActorState(nextState)
