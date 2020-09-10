@@ -8,6 +8,8 @@ export default async (id, shouldSendToErrorPage, ...args) => {
       'https://errors.glif.io',
       JSON.stringify({ text: `WALLET:${id}` })
     )
+  } else {
+    console.error('ERROR:', ...args)
   }
   if (shouldSendToErrorPage) Router.push('/error/wallet-down')
   /* eslint-disable no-console */

@@ -30,6 +30,18 @@ export const presets = {
       }
     ],
     selectedWalletIdx: 0
+  }),
+  postInvestorOnboard: cloneDeep({
+    ...initialState,
+    wallets: [
+      {
+        address: 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi',
+        balance: new FilecoinNumber('1', 'fil'),
+        path: createPath(1, 0)
+      }
+    ],
+    selectedWalletIdx: 0,
+    investor: 'Qmcv45ZPc3oEwsbcHMRcs3AG59Rp8EUFr6Dm512KUswpRA'
   })
 }
 

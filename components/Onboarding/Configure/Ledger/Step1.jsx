@@ -94,6 +94,18 @@ const Step1 = ({ premainnetInvestor, msig, setStep }) => {
     else resetState()
   }
 
+  const calculateCurrentSteps = () => {
+    if (premainnetInvestor) return 2
+    if (msig) return 1
+    return 1
+  }
+
+  const calculateTotalSteps = () => {
+    if (premainnetInvestor) return 5
+    if (msig) return 3
+    return 2
+  }
+
   return (
     <>
       <OnboardCard
@@ -104,9 +116,9 @@ const Step1 = ({ premainnetInvestor, msig, setStep }) => {
         bg={error ? 'status.fail.background' : 'core.transparent'}
       >
         <StepHeader
-          currentStep={premainnetInvestor ? 2 : 1}
+          currentStep={calculateCurrentSteps()}
           loading={ledger.connecting}
-          totalSteps={premainnetInvestor ? 5 : 2}
+          totalSteps={calculateTotalSteps()}
           Icon={IconLedger}
           error={!!error}
           color={error ? 'status.fail.foreground' : 'core.transparent'}
