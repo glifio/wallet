@@ -16,5 +16,6 @@ export const Content = styled.div`
   flex-grow: 999;
   padding-top: ${props => props.theme.sizes[3]}px;
   margin: 0 0.5rem 0.5rem 0.5rem;
+  min-height: 100vh;
   min-width: 53%;
 `
