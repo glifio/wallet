@@ -14,7 +14,8 @@ import {
   StepHeader,
   Input,
   Text,
-  IconLedger
+  IconLedger,
+  Form
 } from '../../Shared'
 import {
   ADDRESS_PROPTYPE,
@@ -161,13 +162,7 @@ const ChangeOwner = ({ address, balance, close }) => {
           close()
         }}
       />
-      <Box
-        width='100%'
-        display='flex'
-        flexDirection='column'
-        alignItems='center'
-        mb={7}
-      >
+      <Form onSubmit={onSubmit}>
         <Box
           maxWidth={14}
           width={13}
@@ -291,11 +286,11 @@ const ChangeOwner = ({ address, balance, close }) => {
               variant='primary'
               title='Next'
               disabled={isSubmitBtnDisabled()}
-              onClick={onSubmit}
+              type='submit'
             />
           </Box>
         </Box>
-      </Box>
+      </Form>
     </>
   )
 }

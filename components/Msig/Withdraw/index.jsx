@@ -17,7 +17,8 @@ import {
   Text,
   IconLedger,
   Num,
-  Title
+  Title,
+  Form
 } from '../../Shared'
 import {
   ADDRESS_PROPTYPE,
@@ -164,13 +165,7 @@ const Withdrawing = ({ address, balance, close }) => {
           close()
         }}
       />
-      <Box
-        width='100%'
-        display='flex'
-        flex='1'
-        flexDirection='column'
-        alignItems='center'
-      >
+      <Form onSubmit={onSubmit}>
         <Box
           maxWidth={14}
           width={13}
@@ -220,39 +215,36 @@ const Withdrawing = ({ address, balance, close }) => {
                 balance={balance}
                 customizingGas={false}
               />
-
-              <>
+              <Box width='100%' p={3} border={0} bg='background.screen'>
+                <Input.Address
+                  label='Recipient'
+                  value={toAddress}
+                  onChange={e => setToAddress(e.target.value)}
+                  error={toAddressError}
+                  disabled={step === 3}
+                  onFocus={() => {
+                    if (toAddressError) setToAddressError('')
+                  }}
+                />
+              </Box>
+              {step > 1 && (
                 <Box width='100%' p={3} border={0} bg='background.screen'>
-                  <Input.Address
-                    label='Recipient'
-                    value={toAddress}
-                    onChange={e => setToAddress(e.target.value)}
-                    error={toAddressError}
+                  <Input.Funds
+                    name='amount'
+                    label='Amount'
+                    amount={value.toAttoFil()}
+                    onAmountChange={setValue}
+                    balance={balance}
+                    error={valueError}
+                    setError={setValueError}
+                    // since the ledger device pays the gas fee, we dont include that in the funds input
+                    estimatedTransactionFee={new FilecoinNumber('0', 'attofil')}
                     disabled={step === 3}
-                    onFocus={() => {
-                      if (toAddressError) setToAddressError('')
-                    }}
                   />
                 </Box>
-                {step > 1 && (
-                  <Box width='100%' p={3} border={0} bg='background.screen'>
-                    <Input.Funds
-                      name='amount'
-                      label='Amount'
-                      amount={value.toAttoFil()}
-                      onAmountChange={setValue}
-                      balance={balance}
-                      error={valueError}
-                      setError={setValueError}
-                      // since the ledger device pays the gas fee, we dont include that in the funds input
-                      estimatedTransactionFee={
-                        new FilecoinNumber('0', 'attofil')
-                      }
-                      disabled={step === 3}
-                    />
-                  </Box>
-                )}
-                {step > 2 && (
+              )}
+              {step > 2 && (
+                <>
                   <Box
                     display='flex'
                     flexDirection='row'
@@ -262,65 +254,62 @@ const Withdrawing = ({ address, balance, close }) => {
                     border={0}
                     bg='background.screen'
                   >
-                    <Box>
-                      <Text margin={0}>Transaction Fee</Text>
-                      <Box display='flex' alignItems='center'>
-                        <Text margin={0} color='core.darkgray'>
-                          Paid via
-                        </Text>
-                        <IconLedger height='32px' />{' '}
-                        <Text margin={0} color='core.darkgray'>
-                          {makeFriendlyBalance(wallet.balance, 2, true)} FIL
-                        </Text>
-                      </Box>
-                    </Box>
-                    <Box display='flex' flexDirection='row'>
-                      <Text ml={2} color='core.primary'>
-                        {'< 0.0001 FIL'}
+                    <Text margin={0}>Transaction Fee</Text>
+                    <Box display='flex' alignItems='center'>
+                      <Text margin={0} color='core.darkgray'>
+                        Paid via
+                      </Text>
+                      <IconLedger height='32px' />{' '}
+                      <Text margin={0} color='core.darkgray'>
+                        {makeFriendlyBalance(wallet.balance, 2, true)} FIL
                       </Text>
                     </Box>
+                    <Text ml={2} color='core.primary'>
+                      {'< 0.0001 FIL'}
+                    </Text>
                   </Box>
-                )}
-              </>
-              {step > 2 && (
-                <Box
-                  display='flex'
-                  flexDirection='row'
-                  alignItems='flex-start'
-                  justifyContent='space-between'
-                  pt={6}
-                  pb={3}
-                  px={3}
-                  bg='background.screen'
-                  borderBottomLeftRadius={3}
-                  borderBottomRightRadius={3}
-                >
-                  <Title fontSize={4} alignSelf='flex-start'>
-                    Total
-                  </Title>
                   <Box
                     display='flex'
-                    flexDirection='column'
-                    textAlign='right'
-                    pl={4}
+                    flexDirection='row'
+                    alignItems='flex-start'
+                    justifyContent='space-between'
+                    pt={6}
+                    pb={3}
+                    px={3}
+                    bg='background.screen'
+                    borderBottomLeftRadius={3}
+                    borderBottomRightRadius={3}
                   >
-                    <Num
-                      size='l'
-                      css={`
-                        word-wrap: break-word;
-                      `}
-                      color='core.primary'
+                    <Title fontSize={4} alignSelf='flex-start'>
+                      Total
+                    </Title>
+                    <Box
+                      display='flex'
+                      flexDirection='column'
+                      textAlign='right'
+                      pl={4}
                     >
-                      {value.toFil()} FIL
-                    </Num>
-                    <Num size='m' color='core.darkgray'>
-                      {!converterError && value.isGreaterThan(0)
-                        ? `${makeFriendlyBalance(converter.fromFIL(value), 2)}`
-                        : '0'}{' '}
-                      USD
-                    </Num>
+                      <Num
+                        size='l'
+                        css={`
+                          word-wrap: break-word;
+                        `}
+                        color='core.primary'
+                      >
+                        {value.toFil()} FIL
+                      </Num>
+                      <Num size='m' color='core.darkgray'>
+                        {!converterError && value.isGreaterThan(0)
+                          ? `${makeFriendlyBalance(
+                              converter.fromFIL(value),
+                              2
+                            )}`
+                          : '0'}{' '}
+                        USD
+                      </Num>
+                    </Box>
                   </Box>
-                </Box>
+                </>
               )}
             </Box>
           </Box>
@@ -355,11 +344,11 @@ const Withdrawing = ({ address, balance, close }) => {
               variant='primary'
               title='Next'
               disabled={isSubmitBtnDisabled()}
-              onClick={onSubmit}
+              type='submit'
             />
           </Box>
         </Box>
-      </Box>
+      </Form>
     </>
   )
 }
