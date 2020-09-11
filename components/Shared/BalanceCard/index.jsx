@@ -9,7 +9,7 @@ import { useConverter } from '../../../lib/Converter'
 import ApproximationToggleBtn from './ApproximationToggleBtn'
 
 const BalanceCard = forwardRef(
-  ({ balance, onSend, onReceive, disableButtons, ...props }, ref) => {
+  ({ balance, onSend, disableButtons, ...props }, ref) => {
     const { converter, converterError } = useConverter()
     const [preciseMode, setPreciseMode] = useState(false)
     return (
@@ -93,10 +93,6 @@ BalanceCard.propTypes = {
    * action fired when send button is clicked
    */
   onSend: func.isRequired,
-  /**
-   * action fired when receive button is clicked
-   */
-  onReceive: func.isRequired,
   /**
    * determines if the buttons should be disabled or not
    */

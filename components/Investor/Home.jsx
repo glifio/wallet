@@ -87,6 +87,7 @@ const PreConfirm = ({ address, investor, path }) => {
       <Input.Text
         value={investor}
         onChange={noop}
+        placeholder='InvestorID'
         label='InvestorID'
         disabled
       />
@@ -94,6 +95,7 @@ const PreConfirm = ({ address, investor, path }) => {
         <Input.Text
           value={address}
           onChange={noop}
+          placeholder='Filecoin address'
           label='Filecoin address'
           disabled
         />

@@ -32,17 +32,23 @@ describe('Send Flow', () => {
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/t1.../), {
-          target: { value: address }
+          target: { value: address },
+          preventDefault: () => {}
         })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
         await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         await flushPromises()
-        fireEvent.click(screen.getByText('Send'))
+        fireEvent.click(screen.getByText('Next'))
         await flushPromises()
-        fireEvent.click(screen.getByText('Confirm'))
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.click(screen.getByText('Send'))
         await flushPromises()
       })
       expect(walletProvider.getNonce).toHaveBeenCalledWith(address)
@@ -64,7 +70,6 @@ describe('Send Flow', () => {
     test('it does not allow a user to send a message if address is poorly formed', async () => {
       const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
       const badAddress = 't1z225tguggx4onbauimqvxz'
-      const filAmount = new FilecoinNumber('.01', 'fil')
       await act(async () => {
         render(
           <Tree>
@@ -72,42 +77,36 @@ describe('Send Flow', () => {
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/t1.../), {
-          target: { value: badAddress }
-        })
-        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
-          target: { value: filAmount }
+          target: { value: badAddress },
+          preventDefault: () => {}
         })
         await flushPromises()
-        fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
-        await flushPromises()
-        fireEvent.click(screen.getByText('Send'))
+        fireEvent.click(screen.getByText('Next'))
         await flushPromises()
       })
-      expect(screen.getByText(/Invalid address/)).toBeInTheDocument()
+      expect(screen.getByText(/Invalid to address/)).toBeInTheDocument()
       expect(walletProvider.getNonce).not.toHaveBeenCalled()
       expect(walletProvider.wallet.sign).not.toHaveBeenCalled()
       expect(store.getState().messages.pending.length).toBe(0)
     })
 
-    test('it does not allow a user to send a message if address is left blank', async () => {
+    test('it does not allow a user to proceed if address is left blank', async () => {
       const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
-      const filAmount = new FilecoinNumber('.01', 'fil')
       await act(async () => {
         render(
           <Tree>
             <Send close={close} />
           </Tree>
         )
-        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
-          target: { value: filAmount }
+        fireEvent.change(screen.getByPlaceholderText(/t1.../), {
+          target: { value: '' },
+          preventDefault: () => {}
         })
         await flushPromises()
-        fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
-        await flushPromises()
-        fireEvent.click(screen.getByText('Send'))
+        fireEvent.click(screen.getByText('Next'))
         await flushPromises()
       })
-      expect(screen.getByText(/Invalid address/)).toBeInTheDocument()
+      expect(screen.getByText(/Step 1/)).toBeInTheDocument()
       expect(walletProvider.getNonce).not.toHaveBeenCalled()
       expect(walletProvider.wallet.sign).not.toHaveBeenCalled()
       expect(store.getState().messages.pending.length).toBe(0)
@@ -129,20 +128,26 @@ describe('Send Flow', () => {
         )
 
         fireEvent.change(screen.getByPlaceholderText(/t1.../), {
-          target: { value: address }
+          target: { value: address },
+          preventDefault: () => {}
         })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
         await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         await flushPromises()
-        fireEvent.click(screen.getByText('Send'))
+        fireEvent.click(screen.getByText('Next'))
         await flushPromises()
       })
-      // expect(
-      //   screen.getByText(/Please enter a valid amount/)
-      // ).toBeInTheDocument()
+      expect(
+        screen.getByText(
+          /The amount must be smaller than this account's balance/
+        )
+      ).toBeInTheDocument()
       expect(walletProvider.getNonce).not.toHaveBeenCalled()
       expect(walletProvider.wallet.sign).not.toHaveBeenCalled()
       expect(store.getState().messages.pending.length).toBe(0)
@@ -160,15 +165,19 @@ describe('Send Flow', () => {
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/t1.../), {
-          target: { value: address }
+          target: { value: address },
+          preventDefault: () => {}
         })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
         await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         await flushPromises()
-        fireEvent.click(screen.getByText('Send'))
+        fireEvent.click(screen.getByText('Next'))
         await flushPromises()
       })
       expect(
@@ -308,25 +317,32 @@ describe('Send Flow', () => {
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/t1.../), {
-          target: { value: address }
+          target: { value: address },
+          preventDefault: () => {}
         })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
         await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         await flushPromises()
-        fireEvent.click(screen.getByText('Send'))
+        fireEvent.click(screen.getByText('Next'))
         await flushPromises()
-        fireEvent.click(screen.getByText('Confirm'))
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.click(screen.getByText('Send'))
         await flushPromises()
       })
       await flushPromises()
-      expect()
+      expect(close).toHaveBeenCalled()
     })
   })
 
   describe('snapshots', () => {
+    afterEach(cleanup)
     test('it renders correctly', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
       let res
@@ -337,11 +353,120 @@ describe('Send Flow', () => {
           </Tree>
         )
       })
-      expect(res.container.firstChild).toMatchSnapshot()
+      expect(res.container).toMatchSnapshot()
     })
+
+    test('it renders step 2 correctly', async () => {
+      const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
+      const { Tree } = composeMockAppTree('postOnboard')
+      let res
+      await act(async () => {
+        res = render(
+          <Tree>
+            <Send close={close} />
+          </Tree>
+        )
+        fireEvent.change(screen.getByPlaceholderText(/t1.../), {
+          target: { value: address },
+          preventDefault: () => {}
+        })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+      })
+      expect(res.container).toMatchSnapshot()
+    })
+
+    test('it renders step 3 correctly', async () => {
+      const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
+      const filAmount = new FilecoinNumber('.01', 'fil')
+
+      const { Tree } = composeMockAppTree('postOnboard')
+      let res
+      await act(async () => {
+        res = render(
+          <Tree>
+            <Send close={close} />
+          </Tree>
+        )
+        fireEvent.change(screen.getByPlaceholderText(/t1.../), {
+          target: { value: address },
+          preventDefault: () => {}
+        })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+          target: { value: filAmount }
+        })
+        await flushPromises()
+        fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+      })
+      expect(screen.getByText(/Step 3/)).toBeInTheDocument()
+      expect(res.container).toMatchSnapshot()
+    })
+
+    test('it renders step 4 correctly', async () => {
+      const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
+      const filAmount = new FilecoinNumber('.01', 'fil')
+
+      const { Tree } = composeMockAppTree('postOnboard')
+      let res
+      await act(async () => {
+        res = render(
+          <Tree>
+            <Send close={close} />
+          </Tree>
+        )
+        fireEvent.change(screen.getByPlaceholderText(/t1.../), {
+          target: { value: address },
+          preventDefault: () => {}
+        })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+          target: { value: filAmount }
+        })
+        await flushPromises()
+        fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+      })
+      expect(screen.getByText(/Step 4/)).toBeInTheDocument()
+      expect(res.container).toMatchSnapshot()
+    })
+
     test('it renders invalid address errors correctly', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const badAddress = 't1z225tguggx4onbauimqvxz'
+      let res
+      await act(async () => {
+        res = render(
+          <Tree>
+            <Send close={close} />
+          </Tree>
+        )
+        fireEvent.change(screen.getByPlaceholderText(/t1.../), {
+          target: { value: badAddress },
+          preventDefault: () => {}
+        })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+      })
+      expect(res.container).toMatchSnapshot()
+    })
+
+    test('it renders invalid value errors correctly', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
+      const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
       const filAmount = new FilecoinNumber('.01', 'fil')
       let res
       await act(async () => {
@@ -351,40 +476,22 @@ describe('Send Flow', () => {
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/t1.../), {
-          target: { value: badAddress }
+          target: { value: address },
+          preventDefault: () => {}
         })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
         await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         await flushPromises()
-        fireEvent.click(screen.getByText('Send'))
+        fireEvent.click(screen.getByText('Next'))
         await flushPromises()
       })
-      expect(res.container.firstChild).toMatchSnapshot()
-    })
-
-    test('it renders invalid value errors correctly', async () => {
-      const { Tree } = composeMockAppTree('postOnboard')
-      const filAmount = new FilecoinNumber('.01', 'fil')
-      let res
-      await act(async () => {
-        res = render(
-          <Tree>
-            <Send close={close} />
-          </Tree>
-        )
-        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
-          target: { value: filAmount }
-        })
-        await flushPromises()
-        fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
-        await flushPromises()
-        fireEvent.click(screen.getByText('Send'))
-        await flushPromises()
-      })
-      expect(res.container.firstChild).toMatchSnapshot()
+      expect(res.container).toMatchSnapshot()
     })
 
     test.skip('it renders the gas customization view', async () => {

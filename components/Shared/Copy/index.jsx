@@ -8,8 +8,9 @@ import truncate from '../../../utils/truncateAddress'
 import copyToClipboard from '../../../utils/copyToClipboard'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
-export const Copy = styled(BaseButton)`
+const Copy = styled(BaseButton)`
   /* !important is declared here to override BaseButton's opacity:0.8 on hover. The only instance of us using this declaration. */
+  height: auto;
   opacity: 1 !important;
   border: 0;
   background: transparent;
@@ -17,14 +18,14 @@ export const Copy = styled(BaseButton)`
   outline: none;
 `
 
-export const StyledIconCopyAccountAddress = styled(IconCopyAccountAddress)`
+const StyledIconCopyAccountAddress = styled(IconCopyAccountAddress)`
   transition: 0.24s ease-in-out;
   ${Copy}:hover & {
     transform: scale(1.25);
   }
 `
 
-export const LabelCopy = styled(Label)`
+const LabelCopy = styled(Label)`
   transition: 0.18s ease-in;
   opacity: 0;
   ${Copy}:hover & {
@@ -35,7 +36,7 @@ export const LabelCopy = styled(Label)`
 export const CopyAddress = forwardRef(({ address, ...props }, ref) => {
   const [copied, setCopied] = useState(false)
   return (
-    <Box ref={ref} display='flex' alignContent='center' {...props}>
+    <Box ref={ref} display='flex' alignItems='center' {...props}>
       <AccountAddress
         fontWeight={1}
         fontSize={4}
@@ -46,10 +47,9 @@ export const CopyAddress = forwardRef(({ address, ...props }, ref) => {
         {truncate(address)}
       </AccountAddress>
       <Copy
-        height='auto'
         display='flex'
         alignItems='center'
-        ml={1}
+        ml={2}
         onClick={() => {
           setCopied(true)
           copyToClipboard(address)

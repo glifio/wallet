@@ -21,7 +21,8 @@ export const initialState = {
   error: '',
   messages: initialMessagesState,
   network: TESTNET,
-  investor: ''
+  investor: '',
+  msigActorAddress: ''
 }
 
 export const noWallet = {
@@ -162,4 +163,9 @@ export const switchNetwork = (state, { network, wallets }) => ({
 export const setInvestorId = (state, { uuid }) => ({
   ...state,
   investor: uuid
+})
+
+export const setMsigActorAddress = (state, { msigActorAddress }) => ({
+  ...state,
+  msigActorAddress
 })

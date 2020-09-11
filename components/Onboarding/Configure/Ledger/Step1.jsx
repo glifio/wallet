@@ -81,7 +81,7 @@ Step1Helper.propTypes = {
   inUseByAnotherApp: PropTypes.bool.isRequired
 }
 
-const Step1 = ({ investor, setStep }) => {
+const Step1 = ({ premainnetInvestor, msig, setStep }) => {
   const { ledger, setLedgerProvider } = useWalletProvider()
   const router = useRouter()
   const resetState = useReset()
@@ -90,8 +90,20 @@ const Step1 = ({ investor, setStep }) => {
   const error = hasLedgerError({ ...ledger, otherError: errFromRdx })
 
   const back = () => {
-    if (investor) router.replace('/')
-    else resetState()
+    if (premainnetInvestor || msig) router.replace('/')
+    resetState()
+  }
+
+  const calculateCurrentSteps = () => {
+    if (premainnetInvestor) return 2
+    if (msig) return 1
+    return 1
+  }
+
+  const calculateTotalSteps = () => {
+    if (premainnetInvestor) return 5
+    if (msig) return 3
+    return 2
   }
 
   return (
@@ -104,9 +116,9 @@ const Step1 = ({ investor, setStep }) => {
         bg={error ? 'status.fail.background' : 'core.transparent'}
       >
         <StepHeader
-          currentStep={investor ? 2 : 1}
+          currentStep={calculateCurrentSteps()}
           loading={ledger.connecting}
-          totalSteps={investor ? 5 : 2}
+          totalSteps={calculateTotalSteps()}
           Icon={IconLedger}
           error={!!error}
           color={error ? 'status.fail.foreground' : 'core.transparent'}
@@ -140,7 +152,8 @@ const Step1 = ({ investor, setStep }) => {
 
 Step1.propTypes = {
   setStep: PropTypes.func.isRequired,
-  investor: PropTypes.bool.isRequired
+  premainnetInvestor: PropTypes.bool.isRequired,
+  msig: PropTypes.bool.isRequired
 }
 
 export default Step1

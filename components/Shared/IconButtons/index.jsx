@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { func, object } from 'prop-types'
-import { layout, space, border, flexbox } from 'styled-system'
+import { layout, space, border, flexbox, position } from 'styled-system'
 import { IconClose, IconCopyAccountAddress } from '../Icons'
 
 const IconButtonBase = styled.button`
@@ -18,6 +18,7 @@ const IconButtonBase = styled.button`
   ${space}
   ${border}
   ${flexbox}
+  ${position}
 `
 
 const IconButton = forwardRef(({ onClick, Icon, ...props }, ref) => (

@@ -188,4 +188,15 @@ describe('actions', () => {
   test('resetState', () => {
     expect(actions.resetState()).toEqual({ type: types.RESET_STATE })
   })
+
+  test('setMsigActor', () => {
+    const msig = 't01004'
+    const expectedAction = {
+      type: types.SET_MSIG_ACTOR_ADDRESS,
+      payload: {
+        msigActorAddress: msig
+      }
+    }
+    expect(actions.setMsigActor(msig)).toEqual(expectedAction)
+  })
 })

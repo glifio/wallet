@@ -160,7 +160,7 @@ exports[`AccountCard renders the card 1`] = `
 }
 
 .c8 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
@@ -220,6 +220,7 @@ exports[`AccountCard renders the card 1`] = `
   align-items: center;
   border-width: 1px;
   border-radius: 4px;
+  height: auto;
   opacity: 1 !important;
   border: 0;
   background: transparent;
@@ -304,7 +305,7 @@ exports[`AccountCard renders the card 1`] = `
       <h2
         class="c8"
         font-family="RT-Alias-Grotesk"
-        font-size="5"
+        font-size="4"
         font-weight="1"
         overflow="hidden"
       >
@@ -508,7 +509,7 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
 }
 
 .c8 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
@@ -568,6 +569,7 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
   align-items: center;
   border-width: 1px;
   border-radius: 4px;
+  height: auto;
   opacity: 1 !important;
   border: 0;
   background: transparent;
@@ -652,7 +654,7 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
       <h2
         class="c8"
         font-family="RT-Alias-Grotesk"
-        font-size="5"
+        font-size="4"
         font-weight="1"
         overflow="hidden"
       >
