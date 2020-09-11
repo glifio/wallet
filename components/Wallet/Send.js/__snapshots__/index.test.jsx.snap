@@ -1,26 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Send Flow snapshots it renders correctly 1`] = `
-.c2 {
-  min-width: 0;
-  box-sizing: border-box;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .c3 {
   min-width: 0;
   box-sizing: border-box;
@@ -430,6 +410,21 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   border-radius: 1px;
 }
 
+.c2 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flexDirection: column;
+  -ms-flexDirection: column;
+  flexDirection: column;
+  alignItems: center;
+}
+
 .c5 {
   list-style: none;
   margin: 0;
@@ -504,10 +499,8 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
       />
     </svg>
   </button>
-  <div
+  <form
     class="c2"
-    display="flex"
-    width="100%"
   >
     <div
       class="c3"
@@ -765,37 +758,17 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
           disabled=""
           font-size="3"
           height="6"
-          type="button"
+          type="submit"
         >
           Next
         </button>
       </div>
     </div>
-  </div>
+  </form>
 </div>
 `;
 
 exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
-.c2 {
-  min-width: 0;
-  box-sizing: border-box;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .c3 {
   min-width: 0;
   box-sizing: border-box;
@@ -1224,6 +1197,21 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   border-radius: 1px;
 }
 
+.c2 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flexDirection: column;
+  -ms-flexDirection: column;
+  flexDirection: column;
+  alignItems: center;
+}
+
 .c5 {
   list-style: none;
   margin: 0;
@@ -1298,10 +1286,8 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
       />
     </svg>
   </button>
-  <div
+  <form
     class="c2"
-    display="flex"
-    width="100%"
   >
     <div
       class="c3"
@@ -1570,37 +1556,17 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
           class="c33"
           font-size="3"
           height="6"
-          type="button"
+          type="submit"
         >
           Next
         </button>
       </div>
     </div>
-  </div>
+  </form>
 </div>
 `;
 
 exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
-.c2 {
-  min-width: 0;
-  box-sizing: border-box;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .c3 {
   min-width: 0;
   box-sizing: border-box;
@@ -2348,6 +2314,21 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   margin: 0;
 }
 
+.c2 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flexDirection: column;
+  -ms-flexDirection: column;
+  flexDirection: column;
+  alignItems: center;
+}
+
 .c5 {
   list-style: none;
   margin: 0;
@@ -2426,10 +2407,8 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
       />
     </svg>
   </button>
-  <div
+  <form
     class="c2"
-    display="flex"
-    width="100%"
   >
     <div
       class="c3"
@@ -2852,37 +2831,17 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
           class="c48"
           font-size="3"
           height="6"
-          type="button"
+          type="submit"
         >
           Next
         </button>
       </div>
     </div>
-  </div>
+  </form>
 </div>
 `;
 
 exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
-.c2 {
-  min-width: 0;
-  box-sizing: border-box;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .c3 {
   min-width: 0;
   box-sizing: border-box;
@@ -3537,6 +3496,21 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
   margin: 0;
 }
 
+.c2 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flexDirection: column;
+  -ms-flexDirection: column;
+  flexDirection: column;
+  alignItems: center;
+}
+
 .c5 {
   list-style: none;
   margin: 0;
@@ -3611,10 +3585,8 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
       />
     </svg>
   </button>
-  <div
+  <form
     class="c2"
-    display="flex"
-    width="100%"
   >
     <div
       class="c3"
@@ -3972,37 +3944,17 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
           disabled=""
           font-size="3"
           height="6"
-          type="button"
+          type="submit"
         >
           Next
         </button>
       </div>
     </div>
-  </div>
+  </form>
 </div>
 `;
 
 exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
-.c2 {
-  min-width: 0;
-  box-sizing: border-box;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .c3 {
   min-width: 0;
   box-sizing: border-box;
@@ -4750,6 +4702,21 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   margin: 0;
 }
 
+.c2 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flexDirection: column;
+  -ms-flexDirection: column;
+  flexDirection: column;
+  alignItems: center;
+}
+
 .c5 {
   list-style: none;
   margin: 0;
@@ -4828,10 +4795,8 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
       />
     </svg>
   </button>
-  <div
+  <form
     class="c2"
-    display="flex"
-    width="100%"
   >
     <div
       class="c3"
@@ -5254,37 +5219,17 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
           class="c48"
           font-size="3"
           height="6"
-          type="button"
+          type="submit"
         >
           Next
         </button>
       </div>
     </div>
-  </div>
+  </form>
 </div>
 `;
 
 exports[`Send Flow snapshots it renders step 3 correctly 2`] = `
-.c2 {
-  min-width: 0;
-  box-sizing: border-box;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .c3 {
   min-width: 0;
   box-sizing: border-box;
@@ -6020,6 +5965,21 @@ exports[`Send Flow snapshots it renders step 3 correctly 2`] = `
   margin: 0;
 }
 
+.c2 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flexDirection: column;
+  -ms-flexDirection: column;
+  flexDirection: column;
+  alignItems: center;
+}
+
 .c5 {
   list-style: none;
   margin: 0;
@@ -6098,10 +6058,8 @@ exports[`Send Flow snapshots it renders step 3 correctly 2`] = `
       />
     </svg>
   </button>
-  <div
+  <form
     class="c2"
-    display="flex"
-    width="100%"
   >
     <div
       class="c3"
@@ -6524,13 +6482,13 @@ exports[`Send Flow snapshots it renders step 3 correctly 2`] = `
           class="c47"
           font-size="3"
           height="6"
-          type="button"
+          type="submit"
         >
           Send
         </button>
       </div>
     </div>
-  </div>
+  </form>
 </div>
 `;
 

@@ -15,7 +15,8 @@ import {
   Button,
   ButtonClose,
   StepHeader,
-  Title
+  Title,
+  Form
 } from '../../Shared'
 import { CardHeader } from '../../Msig/Shared'
 import ConfirmationCard from './ConfirmationCard'
@@ -231,13 +232,7 @@ const Send = ({ close }) => {
           close()
         }}
       />
-      <Box
-        width='100%'
-        display='flex'
-        flex='1'
-        flexDirection='column'
-        alignItems='center'
-      >
+      <Form onSubmit={onSubmit}>
         <Box
           maxWidth={14}
           width={13}
@@ -406,12 +401,11 @@ const Send = ({ close }) => {
               variant='primary'
               title={submitBtnText()}
               disabled={isSubmitBtnDisabled()}
-              type='button'
-              onClick={onSubmit}
+              type='submit'
             />
           </Box>
         </Box>
-      </Box>
+      </Form>
     </>
   )
 }
