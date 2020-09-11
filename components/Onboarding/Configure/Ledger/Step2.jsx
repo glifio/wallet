@@ -146,8 +146,8 @@ const Step2 = ({ premainnetInvestor, msig }) => {
   }
 
   const back = () => {
-    if (premainnetInvestor) router.replace('/')
-    else resetState()
+    if (premainnetInvestor || msig) router.replace('/')
+    resetState()
   }
 
   const calculateCurrentSteps = () => {
