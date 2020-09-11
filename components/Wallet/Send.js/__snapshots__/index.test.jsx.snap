@@ -419,10 +419,13 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  -webkit-flexDirection: column;
-  -ms-flexDirection: column;
-  flexDirection: column;
-  alignItems: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c5 {
@@ -1206,10 +1209,13 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  -webkit-flexDirection: column;
-  -ms-flexDirection: column;
-  flexDirection: column;
-  alignItems: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c5 {
@@ -2323,10 +2329,13 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  -webkit-flexDirection: column;
-  -ms-flexDirection: column;
-  flexDirection: column;
-  alignItems: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c5 {
@@ -3505,10 +3514,13 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  -webkit-flexDirection: column;
-  -ms-flexDirection: column;
-  flexDirection: column;
-  alignItems: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c5 {
@@ -4711,10 +4723,13 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  -webkit-flexDirection: column;
-  -ms-flexDirection: column;
-  flexDirection: column;
-  alignItems: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c5 {
@@ -5974,10 +5989,13 @@ exports[`Send Flow snapshots it renders step 3 correctly 2`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  -webkit-flexDirection: column;
-  -ms-flexDirection: column;
-  flexDirection: column;
-  alignItems: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c5 {

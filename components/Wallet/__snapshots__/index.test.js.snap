@@ -4183,10 +4183,13 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  -webkit-flexDirection: column;
-  -ms-flexDirection: column;
-  flexDirection: column;
-  alignItems: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c7 {

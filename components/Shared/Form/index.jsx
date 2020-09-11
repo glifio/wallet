@@ -5,8 +5,8 @@ const Form = styled.form`
   width: 100%;
   display: flex;
   flex: 1;
-  flexDirection: column;
-  alignItems: center;
+  flex-direction: column;
+  align-items: center;
   ${position}
   ${space}
   ${layout}
