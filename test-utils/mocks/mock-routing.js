@@ -4,7 +4,8 @@ export const mockRouterPush = jest.fn(() => {})
 export const useRouter = jest.fn().mockImplementation(() => ({
   query: 'network=t',
   push: mockRouterPush,
-  replace: mockRouterReplace
+  replace: mockRouterReplace,
+  pathname: ''
 }))
 
 export default {

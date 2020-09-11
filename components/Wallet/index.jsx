@@ -77,10 +77,7 @@ export default () => {
       >
         {childView === SEND ? (
           <Content>
-            <Send
-              close={() => setChildView(MESSAGE_HISTORY)}
-              setSending={() => setChildView(SEND)}
-            />
+            <Send close={() => setChildView(MESSAGE_HISTORY)} />
           </Content>
         ) : (
           <>
