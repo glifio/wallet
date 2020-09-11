@@ -17,7 +17,8 @@ import {
   Text,
   IconLedger,
   Num,
-  Title
+  Title,
+  Form
 } from '../../Shared'
 import {
   ADDRESS_PROPTYPE,
@@ -164,13 +165,7 @@ const Withdrawing = ({ address, balance, close }) => {
           close()
         }}
       />
-      <Box
-        width='100%'
-        display='flex'
-        flex='1'
-        flexDirection='column'
-        alignItems='center'
-      >
+      <Form onSubmit={onSubmit}>
         <Box
           maxWidth={14}
           width={13}
@@ -349,11 +344,11 @@ const Withdrawing = ({ address, balance, close }) => {
               variant='primary'
               title='Next'
               disabled={isSubmitBtnDisabled()}
-              onClick={onSubmit}
+              type='submit'
             />
           </Box>
         </Box>
-      </Box>
+      </Form>
     </>
   )
 }
