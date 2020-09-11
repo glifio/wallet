@@ -21,7 +21,6 @@ const HeaderText = ({ step, customizingGas, walletType }) => {
     case 4:
       if (walletType === LEDGER)
         text = 'Please confirm the transaction on your Ledger device.'
-      else text = 'Click Send at the bottom to send your Filecoin message.'
       break
     default:
       text = ''

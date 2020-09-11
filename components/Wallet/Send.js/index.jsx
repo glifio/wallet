@@ -120,7 +120,6 @@ const Send = ({ close }) => {
   }
 
   const sendMsg = async () => {
-    setAttemptingTx(true)
     try {
       const message = await send()
       if (message) {
@@ -168,6 +167,7 @@ const Send = ({ close }) => {
       populateErrors()
     } else if (step === 3) {
       setStep(4)
+      setAttemptingTx(true)
       // confirmation step happens on ledger device, so we send message one step earlier
       if (wallet.type === LEDGER) {
         await sendMsg()
@@ -203,18 +203,18 @@ const Send = ({ close }) => {
 
   const isSubmitBtnDisabled = () => {
     if (uncaughtError) return false
-    if (attemptingTx) return true
     if (step === 1 && !toAddress) return true
     if (step === 2 && !isValidAmount(value, wallet.balance, valueError))
       return true
     if (step === 4 && wallet.type === LEDGER) return true
+    if (step > 4) return true
   }
 
   const submitBtnText = () => {
     if (step === 4 && wallet.type !== LEDGER) return 'Send'
     if (step === 4 && wallet.type === LEDGER) return 'Confirm on device.'
     if (step < 4) return 'Next'
-    return 'Next'
+    if (step > 4) return 'Send'
   }
 
   return (
@@ -255,7 +255,11 @@ const Send = ({ close }) => {
               />
             )}
             {!hasError() && attemptingTx && (
-              <ConfirmationCard walletType={wallet.type} />
+              <ConfirmationCard
+                walletType={wallet.type}
+                currentStep={4}
+                totalSteps={4}
+              />
             )}
             {!hasError() && !attemptingTx && (
               <>

@@ -404,16 +404,12 @@ describe('Send Flow', () => {
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
-        // fireEvent.click(screen.getByText('Next'))
-        // await flushPromises()
-        // fireEvent.click(screen.getByText('Send'))
-        // await flushPromises()
       })
       expect(screen.getByText(/Step 3/)).toBeInTheDocument()
       expect(res.container).toMatchSnapshot()
     })
 
-    test('it renders step 3 correctly', async () => {
+    test('it renders step 4 correctly', async () => {
       const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
       const filAmount = new FilecoinNumber('.01', 'fil')
 
