@@ -2,6 +2,7 @@ import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 
 import UseDesktopBrowser from '../../pages/error/use-desktop-browser.jsx'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
+import { flushPromises } from '../../test-utils/index.js'
 
 jest.mock('@openworklabs/filecoin-wallet-provider')
 
@@ -32,14 +33,13 @@ describe('UseDesktopBrowser', () => {
     ).toBeInTheDocument()
   })
 
-  test('it renders the home page after clicking back', async () => {
+  test('it sends the user to glif home page after clicking Home', async () => {
     const { Tree } = composeMockAppTree('preOnboard')
-    const useRouter = jest.spyOn(require('next/router'), 'useRouter')
-    const mockRouterReplace = jest.fn(() => {})
-    useRouter.mockImplementationOnce(() => ({
-      query: 'network=t',
-      push: mockRouterReplace
-    }))
+    delete window.location
+
+    window.location = {
+      href: ''
+    }
 
     let res
     await act(async () => {
@@ -49,9 +49,9 @@ describe('UseDesktopBrowser', () => {
         </Tree>
       )
       fireEvent.click(screen.getByText('Home'))
+      await flushPromises()
     })
 
-    expect(mockRouterReplace).toHaveBeenCalled()
-    expect(mockRouterReplace).toHaveBeenCalledWith('/')
+    expect(window.location.href).toBe('https://www.glif.io')
   })
 })
