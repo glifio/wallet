@@ -8,5 +8,5 @@ export default () => {
   useEffect(() => {
     const onMobileBrowser = isMobileOrTableBrowser()
     if (onMobileBrowser) replace('/error/use-desktop-browser')
-  }, [replace])
+  })
 }

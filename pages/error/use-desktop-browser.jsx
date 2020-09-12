@@ -1,10 +1,7 @@
 import React from 'react'
-import { useRouter } from 'next/router'
 import { IconGlif, Box, BigTitle, Title, Button } from '../../components/Shared'
 
 export default () => {
-  const router = useRouter()
-
   return (
     <Box
       display='flex'
@@ -38,7 +35,9 @@ export default () => {
           mt={5}
           variant='secondary'
           title='Home'
-          onClick={() => router.push('/')}
+          onClick={() => {
+            window.location.href = 'https://www.glif.io'
+          }}
         />
       </Box>
     </Box>
