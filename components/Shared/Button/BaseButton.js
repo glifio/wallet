@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 import {
+  position,
   space,
   layout,
   borderRadius,
   flexbox,
   color,
-  border
+  border,
+  shadow
 } from 'styled-system'
 
 const applyStyles = (styleProperty, props, disabledColor) => {
@@ -42,7 +44,9 @@ export default styled.button.attrs(props => ({
   ${borderRadius}
   ${space}
   ${layout}
+  ${position}
   ${flexbox}
   ${border}
   ${color}
+  ${shadow}
 `
