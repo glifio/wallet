@@ -33,7 +33,7 @@ const MessageDetailCard = styled(Card).attrs(() => ({
 }))`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: auto;
   background-color: ${props => props.theme.colors.background.screen};
 `
