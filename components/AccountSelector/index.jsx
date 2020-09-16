@@ -206,10 +206,16 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
               </MenuItem>
               <MenuItem>
                 {premainnetInvestor && (
-                  <Text>
-                    Please select the Ledger account you wish to own and sign
-                    for your multisig investor wallet.
-                  </Text>
+                  <>
+                    <Text>
+                      Please select the Ledger account you wish to own and sign
+                      for your multisig investor wallet.
+                    </Text>
+                    <Text>
+                      Any of these accounts can accept Filecoin. If in doubt,
+                      select account 0.
+                    </Text>
+                  </>
                 )}
                 {msig && (
                   <Text>

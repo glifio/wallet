@@ -3451,6 +3451,20 @@ exports[`Ledger configuration Step2 it renders msig step2 correctly, with the ri
   justify-content: space-between;
 }
 
+.c16 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.25rem;
+}
+
+.c16:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
 <div
   class="c0"
   display="inline-block"
@@ -3587,6 +3601,16 @@ exports[`Ledger configuration Step2 it renders msig step2 correctly, with the ri
       >
         And make sure the Filecoin App is open
       </p>
+      <a
+        class="c16"
+        color="core.primary"
+        font-size="3"
+        href="https://paper.dropbox.com/doc/Install-the-Filecoin-App-on-your-Ledger-Device--A7wuBpET2_FTgmjTLebkfmSAAg-FFy4WD4kcYPNjuw4V1PQF"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Click here for installation instructions.
+      </a>
     </div>
   </div>
 </div>
@@ -3788,6 +3812,20 @@ exports[`Ledger configuration Step2 it renders normal wallet step2 correctly, wi
   justify-content: space-between;
 }
 
+.c15 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.25rem;
+}
+
+.c15:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
 <div
   class="c0"
   display="inline-block"
@@ -3913,6 +3951,16 @@ exports[`Ledger configuration Step2 it renders normal wallet step2 correctly, wi
       >
         And make sure the Filecoin App is open
       </p>
+      <a
+        class="c15"
+        color="core.primary"
+        font-size="3"
+        href="https://paper.dropbox.com/doc/Install-the-Filecoin-App-on-your-Ledger-Device--A7wuBpET2_FTgmjTLebkfmSAAg-FFy4WD4kcYPNjuw4V1PQF"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Click here for installation instructions.
+      </a>
     </div>
   </div>
 </div>
@@ -4126,6 +4174,20 @@ exports[`Ledger configuration Step2 it renders premainnet saft step2 correctly, 
   justify-content: space-between;
 }
 
+.c16 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.25rem;
+}
+
+.c16:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
 <div
   class="c0"
   display="inline-block"
@@ -4284,6 +4346,16 @@ exports[`Ledger configuration Step2 it renders premainnet saft step2 correctly, 
       >
         And make sure the Filecoin App is open
       </p>
+      <a
+        class="c16"
+        color="core.primary"
+        font-size="3"
+        href="https://paper.dropbox.com/doc/Install-the-Filecoin-App-on-your-Ledger-Device--A7wuBpET2_FTgmjTLebkfmSAAg-FFy4WD4kcYPNjuw4V1PQF"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Click here for installation instructions.
+      </a>
     </div>
   </div>
 </div>

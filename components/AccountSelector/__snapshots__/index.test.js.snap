@@ -1281,6 +1281,14 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
         >
           Please select the Ledger account you wish to own and sign for your multisig investor wallet.
         </p>
+        <p
+          class="c7"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          Any of these accounts can accept Filecoin. If in doubt, select account 0.
+        </p>
       </li>
     </ul>
     <ul
