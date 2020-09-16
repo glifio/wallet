@@ -859,7 +859,6 @@ exports[`WalletView it renders correctly 1`] = `
   flex-grow: 999;
   padding-top: 16px;
   margin: 0 0.5rem 0.5rem 0.5rem;
-  min-height: 100vh;
   min-width: 53%;
 }
 
@@ -4261,7 +4260,6 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   flex-grow: 999;
   padding-top: 16px;
   margin: 0 0.5rem 0.5rem 0.5rem;
-  min-height: 100vh;
   min-width: 53%;
 }
 
