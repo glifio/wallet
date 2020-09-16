@@ -1,5 +1,8 @@
 import React from 'react'
-import { Box, IconGlif, BigTitle, Title, Button } from '../../components/Shared'
+import Box from '../../components/Shared/Box'
+import Button from '../../components/Shared/Button'
+import { BigTitle, Title } from '../../components/Shared/Typography'
+import { IconGlif } from '../../components/Shared/Icons'
 
 export default () => (
   <Box
