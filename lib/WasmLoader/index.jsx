@@ -1,9 +1,9 @@
 import React, { useContext, createContext } from 'react'
-import Router from 'next/router'
 import dynamic from 'next/dynamic'
 import { node } from 'prop-types'
-import prepareSubproviders from '../WalletProvider/prepareSubproviders'
-import reportError from '../utils/reportError'
+import prepareSubproviders from '../../WalletProvider/prepareSubproviders'
+import reportError from '../../utils/reportError'
+import CantLoadWasm from './CantLoadWasm'
 
 export const WasmContext = createContext({ loaded: false })
 
@@ -12,19 +12,21 @@ export const WasmLoader = dynamic({
   ssr: false,
   loader: async () => {
     let rustModule = {}
+    let loadError = null
     try {
       rustModule = await import('@zondax/filecoin-signing-tools')
     } catch (err) {
       reportError('lib/WasmLoader:1', false)
-      Router.push('/error/use-desktop-browser')
+      loadError = true
     }
+
     const walletSubproviders = prepareSubproviders(rustModule)
     const WasmProvider = ({ children }) => {
       return (
         <WasmContext.Provider
           value={{ ...rustModule, walletSubproviders, loaded: true }}
         >
-          {children}
+          {loadError ? <CantLoadWasm /> : children}
         </WasmContext.Provider>
       )
     }
