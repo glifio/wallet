@@ -810,7 +810,7 @@ exports[`investor Home it sends the magic string to PL 1`] = `
   height: 8px;
 }
 
-.c16 {
+.c17 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 48px;
@@ -829,7 +829,7 @@ exports[`investor Home it sends the magic string to PL 1`] = `
   justify-content: space-between;
 }
 
-.c12 {
+.c13 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -845,7 +845,7 @@ exports[`investor Home it sends the magic string to PL 1`] = `
   align-items: flex-end;
 }
 
-.c17 {
+.c18 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -865,11 +865,11 @@ exports[`investor Home it sends the magic string to PL 1`] = `
   border-radius: 4px;
 }
 
-.c17:hover {
+.c18:hover {
   opacity: 0.8;
 }
 
-.c18 {
+.c19 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -889,13 +889,22 @@ exports[`investor Home it sends the magic string to PL 1`] = `
   border-radius: 4px;
 }
 
-.c18:hover {
+.c19:hover {
   opacity: 0.8;
 }
 
 .c6 {
   width: 40px;
   height: 40px;
+}
+
+.c11 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 16px;
 }
 
 .c8 {
@@ -909,14 +918,14 @@ exports[`investor Home it sends the magic string to PL 1`] = `
   margin-bottom: 0;
 }
 
-.c11 {
+.c12 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
 }
 
-.c14 {
+.c15 {
   background-color: #E4EBFC;
   font-size: 1.125rem;
   font-weight: 400;
@@ -958,7 +967,7 @@ exports[`investor Home it sends the magic string to PL 1`] = `
   justify-content: space-between;
 }
 
-.c13 {
+.c14 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -970,12 +979,12 @@ exports[`investor Home it sends the magic string to PL 1`] = `
   margin: 0;
 }
 
-.c13:hover {
+.c14:hover {
   cursor: pointer;
   border-bottom: 2px solid #5E26FF;
 }
 
-.c15 {
+.c16 {
   word-break: break-all;
 }
 
@@ -1115,27 +1124,43 @@ exports[`investor Home it sends the magic string to PL 1`] = `
         </div>
       </li>
     </ul>
-    <p
+    <h2
       class="c11"
+      font-family="RT-Alias-Grotesk"
+      font-size="4"
+      font-weight="400"
+    >
+      Almost done!
+    </h2>
+    <p
+      class="c12"
       font-family="RT-Alias-Grotesk"
       font-size="2"
       font-weight="400"
     >
-      All set! Please log in to your CoinList account and paste this string in exactly how it appears.
+      Please log in to your CoinList account and paste this string in exactly how it appears.
+    </p>
+    <p
+      class="c12"
+      font-family="RT-Alias-Grotesk"
+      font-size="2"
+      font-weight="400"
+    >
+      You do not need to save this magic string.
     </p>
     <div
-      class="c12"
+      class="c13"
       display="flex"
     >
       <p
-        class="c13"
+        class="c14"
         color="core.primary"
         font-size="3"
       >
         Copy string
       </p>
       <p
-        class="c14 c15"
+        class="c15 c16"
         font-family="RT-Alias-Grotesk"
         font-size="2"
         font-weight="400"
@@ -1145,12 +1170,12 @@ exports[`investor Home it sends the magic string to PL 1`] = `
     </div>
   </div>
   <div
-    class="c16"
+    class="c17"
     display="flex"
     width="100%"
   >
     <button
-      class="c17"
+      class="c18"
       font-size="3"
       height="6"
       type="button"
@@ -1158,7 +1183,7 @@ exports[`investor Home it sends the magic string to PL 1`] = `
       Back
     </button>
     <button
-      class="c18"
+      class="c19"
       font-size="3"
       height="6"
       type="button"
