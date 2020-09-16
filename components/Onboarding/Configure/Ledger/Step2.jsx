@@ -9,7 +9,8 @@ import {
   OnboardCard,
   Text,
   Title,
-  StepHeader
+  StepHeader,
+  StyledATag
 } from '../../../Shared'
 import { IconLedger } from '../../../Shared/Icons'
 
@@ -76,6 +77,13 @@ const Step2Helper = ({
         <Box color='core.nearblack' mt={3}>
           <Text>Please unlock your Ledger device.</Text>
           <Text>And make sure the Filecoin App is open</Text>
+          <StyledATag
+            target='_blank'
+            rel='noopener noreferrer'
+            href='https://paper.dropbox.com/doc/Install-the-Filecoin-App-on-your-Ledger-Device--A7wuBpET2_FTgmjTLebkfmSAAg-FFy4WD4kcYPNjuw4V1PQF'
+          >
+            Click here for installation instructions.
+          </StyledATag>
         </Box>
       </>
     )}
