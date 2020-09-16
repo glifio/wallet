@@ -26,19 +26,19 @@ class MyApp extends App {
           <title>Glif</title>
         </Head>
         <Provider store={reduxStore}>
-          <WasmLoader>
-            <ConverterWrapper>
-              <WalletProviderWrapper network={reduxStore.getState().network}>
-                <NetworkChecker pathname={pathname} query={query} />
-                <BalancePoller />
-                <ThemeProvider theme={theme}>
+          <ThemeProvider theme={theme}>
+            <WasmLoader>
+              <ConverterWrapper>
+                <WalletProviderWrapper network={reduxStore.getState().network}>
+                  <NetworkChecker pathname={pathname} query={query} />
+                  <BalancePoller />
                   <ErrorBoundary>
                     <Component {...pageProps} />
                   </ErrorBoundary>
-                </ThemeProvider>
-              </WalletProviderWrapper>
-            </ConverterWrapper>
-          </WasmLoader>
+                </WalletProviderWrapper>
+              </ConverterWrapper>
+            </WasmLoader>
+          </ThemeProvider>
         </Provider>
       </>
     )

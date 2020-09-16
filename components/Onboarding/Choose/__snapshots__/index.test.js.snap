@@ -296,12 +296,6 @@ exports[`Choosing a wallet it renders all wallet options when in dev mode 1`] = 
   align-items: center;
 }
 
-.c21 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
 .c28 {
   cursor: pointer;
   border: 1px solid #E0D7FE;
@@ -327,16 +321,6 @@ exports[`Choosing a wallet it renders all wallet options when in dev mode 1`] = 
 
 .c28:hover {
   opacity: 0.8;
-}
-
-.c3 {
-  width: 64px;
-  height: 64px;
-}
-
-.c17 {
-  width: 40px;
-  height: 40px;
 }
 
 .c5 {
@@ -390,6 +374,22 @@ exports[`Choosing a wallet it renders all wallet options when in dev mode 1`] = 
   font-family: RT-Alias-Grotesk;
   max-width: 300px;
   margin-top: 0;
+}
+
+.c3 {
+  width: 64px;
+  height: 64px;
+}
+
+.c17 {
+  width: 40px;
+  height: 40px;
+}
+
+.c21 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .c2 {
@@ -1070,22 +1070,6 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   justify-self: flex-end;
 }
 
-.c21 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c3 {
-  width: 64px;
-  height: 64px;
-}
-
-.c17 {
-  width: 40px;
-  height: 40px;
-}
-
 .c5 {
   color: black;
   font-size: calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360));
@@ -1137,6 +1121,22 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   font-family: RT-Alias-Grotesk;
   max-width: 300px;
   margin-top: 0;
+}
+
+.c3 {
+  width: 64px;
+  height: 64px;
+}
+
+.c17 {
+  width: 40px;
+  height: 40px;
+}
+
+.c21 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .c2 {
@@ -1563,12 +1563,6 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   justify-content: space-between;
 }
 
-.c5 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
 .c10 {
   cursor: pointer;
   border: 1px solid #262626;
@@ -1632,6 +1626,12 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .c8 {
@@ -1873,12 +1873,6 @@ exports[`Choosing a wallet it renders warning text for import private key option
   justify-content: space-between;
 }
 
-.c5 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
 .c10 {
   cursor: pointer;
   border: 1px solid #262626;
@@ -1942,6 +1936,12 @@ exports[`Choosing a wallet it renders warning text for import private key option
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .c8 {
@@ -2183,12 +2183,6 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   justify-content: space-between;
 }
 
-.c5 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
 .c10 {
   cursor: pointer;
   border: 1px solid #262626;
@@ -2252,6 +2246,12 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .c8 {
