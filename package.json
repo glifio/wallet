@@ -1,6 +1,6 @@
 {
   "name": "filecoin-web-wallet",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "scripts": {
     "dev": "next",
     "build": "next build",

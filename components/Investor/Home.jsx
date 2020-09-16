@@ -153,10 +153,12 @@ const PostConfirm = ({ investorString }) => {
   return (
     <>
       <StepHeader currentStep={5} totalSteps={5} Icon={IconLedger} />
+      <Title mt={3}>Almost done!</Title>
       <Text>
-        All set! Please log in to your CoinList account and paste this string in
-        exactly how it appears.
+        Please log in to your CoinList account and paste this string in exactly
+        how it appears.
       </Text>
+      <Text>You do not need to save this magic string.</Text>
       <Box display='flex' flexDirection='column' alignItems='flex-end'>
         <Copy
           onClick={() => {
