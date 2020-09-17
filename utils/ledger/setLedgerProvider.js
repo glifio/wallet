@@ -83,6 +83,7 @@ export const checkLedgerConfiguration = async (dispatch, walletProvider) => {
     ) {
       dispatch({ type: LEDGER_FILECOIN_APP_NOT_OPEN })
     } else {
+      dispatch({ type: LEDGER_REPLUG })
       reportError(6, false, err.message, err.stack)
     }
     return false
