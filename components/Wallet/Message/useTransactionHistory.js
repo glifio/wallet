@@ -46,6 +46,11 @@ export default () => {
           `${FILSCOUT}/message/list?address=${address}&page=${page}&page_size=${pageSize}`
         )
 
+        if (!data) {
+          dispatch(fetchedConfirmedMessagesSuccess([], 0))
+          return
+        }
+
         if (data.code !== 200) {
           dispatch(
             fetchedConfirmedMessagesFailure(

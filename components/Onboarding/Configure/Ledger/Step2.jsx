@@ -23,6 +23,7 @@ import {
 import useReset from '../../../../utils/useReset'
 import createPath from '../../../../utils/createPath'
 import { MAINNET, MAINNET_PATH_CODE } from '../../../../constants'
+import reportError from '../../../../utils/reportError'
 
 const Step2Helper = ({
   connectedFailure,
@@ -137,14 +138,23 @@ const Step2 = ({ premainnetInvestor, msig }) => {
     } catch (err) {
       // catch errors due to node connection and continue forward for saft
       if (premainnetInvestor) {
-        const [address] = await walletProvider.wallet.getAccounts(MAINNET, 0, 1)
-        const wallet = {
-          address,
-          balance: new FilecoinNumber('0', 'fil'),
-          path: createPath(MAINNET_PATH_CODE, 0)
+        try {
+          const [address] = await walletProvider.wallet.getAccounts(
+            MAINNET,
+            0,
+            1
+          )
+          const wallet = {
+            address,
+            balance: new FilecoinNumber('0', 'fil'),
+            path: createPath(MAINNET_PATH_CODE, 0)
+          }
+          dispatch(walletList([wallet]))
+          routeToNextPage()
+        } catch (_) {
+          // this is a noop since if this call failed, the outer catch statement would catch this gracefully
+          reportError('/Onboarding/Configure/Ledger:1', false)
         }
-        dispatch(walletList([wallet]))
-        routeToNextPage()
       } else {
         dispatch(rdxError(err.message))
       }

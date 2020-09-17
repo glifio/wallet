@@ -194,4 +194,24 @@ describe('useTransactionHistory', () => {
     expect(store.getState().messages.loadedFailure).toBeTruthy()
     expect(store.getState().messages.loadedSuccess).toBeFalsy()
   })
+
+  test('it handles unknown addresses', async () => {
+    const sampleUnknownResponse = {
+      data: ''
+    }
+
+    axios.get.mockResolvedValue(sampleUnknownResponse)
+
+    const { Tree, store } = composeMockAppTree('postOnboard')
+
+    const { waitForNextUpdate } = renderHook(useTransactionHistory, {
+      wrapper: Tree
+    })
+
+    await waitForNextUpdate()
+
+    expect(store.getState().messages.loadedFailure).toBeFalsy()
+    expect(store.getState().messages.loadedSuccess).toBeTruthy()
+    expect(store.getState().messages.confirmed.length).toBe(0)
+  })
 })
