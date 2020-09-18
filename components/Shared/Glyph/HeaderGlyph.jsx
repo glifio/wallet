@@ -44,7 +44,7 @@ const HeaderGlyph = ({ alt, color, text, imageUrl }) => {
           transform: rotate(-90deg);
         `}
       />
-      <Header color={color} ml={3} zIndex={3}>
+      <Header color={color} ml={3}>
         {text}
       </Header>
     </Box>
