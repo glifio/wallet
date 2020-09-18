@@ -55,13 +55,14 @@ HeaderGlyph.propTypes = {
   alt: string,
   text: string.isRequired,
   imageUrl: string.isRequired,
-  imageOpacity: string.isRequired,
+  imageOpacity: string,
   color: string,
   fill: string
 }
 
 HeaderGlyph.defaultProps = {
   alt: '',
+  imageOpacity: '1',
   color: 'core.black',
   fill: '#000'
 }
