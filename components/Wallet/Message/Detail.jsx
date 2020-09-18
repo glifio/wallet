@@ -143,7 +143,8 @@ const MessageDetail = ({ address, close, message }) => {
       <Box mt={1}>
         <Box mt={3}>
           <Input.Address value={message.from} label='From' disabled />
-          <Input.Address value={message.to} label='To' disabled mt={3} />
+          <Box height={3} />
+          <Input.Address value={message.to} label='To' disabled/>
         </Box>
         <Input.Funds
           my={3}
