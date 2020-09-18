@@ -4,7 +4,7 @@ import Box from '../Box'
 import { IconGlif } from '../Icons'
 import { Header } from '../Typography'
 
-const HeaderGlyph = ({ alt, color, text, imageUrl }) => {
+const HeaderGlyph = ({ alt, color, text, imageUrl, fill, imageOpacity }) => {
   return (
     <Box
       position='relative'
@@ -18,11 +18,11 @@ const HeaderGlyph = ({ alt, color, text, imageUrl }) => {
       borderRadius={4}
       width={['100%', 'auto']}
       height='120px'
+      opacity='1'
       css={`
         &:before {
           content: '';
           position: absolute;
-
           top: 0px;
           right: 0px;
           bottom: 0px;
@@ -31,14 +31,14 @@ const HeaderGlyph = ({ alt, color, text, imageUrl }) => {
           background: url(${imageUrl}) center no-repeat;
           background-size: 100%;
           border-radius: 16px;
-          opacity: 0.7;
+          opacity: ${imageOpacity};
           z-index: -9;
           alt: ${alt};
         }
       `}
     >
       <IconGlif
-        fill='#000'
+        fill={fill}
         size={7}
         css={`
           transform: rotate(-90deg);
@@ -55,12 +55,15 @@ HeaderGlyph.propTypes = {
   alt: string,
   text: string.isRequired,
   imageUrl: string.isRequired,
-  color: string
+  imageOpacity: string.isRequired,
+  color: string,
+  fill: string
 }
 
 HeaderGlyph.defaultProps = {
   alt: '',
-  color: 'core.black'
+  color: 'core.black',
+  fill: '#000'
 }
 
 export default HeaderGlyph
