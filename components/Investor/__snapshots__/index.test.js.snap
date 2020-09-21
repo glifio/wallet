@@ -137,10 +137,11 @@ exports[`investor Home it renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  min-width: 48px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -321,9 +322,9 @@ exports[`investor Home it renders correctly 1`] = `
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
-  background: transparent;
+  background: #bacbf7;
   padding-left: 16px;
   padding-right: 16px;
   display: inline-block;
@@ -335,7 +336,7 @@ exports[`investor Home it renders correctly 1`] = `
 }
 
 .c18:hover {
-  background: transparent;
+  background: #bacbf7;
   cursor: initial;
 }
 
@@ -1334,10 +1335,11 @@ exports[`investor Investor Onboard it rejects bad investor IDs correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  min-width: 48px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1498,7 +1500,7 @@ exports[`investor Investor Onboard it rejects bad investor IDs correctly 1`] = `
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #FC6D6F;
   padding-left: 16px;
@@ -1932,10 +1934,11 @@ exports[`investor Investor Onboard it renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  min-width: 48px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2078,7 +2081,7 @@ exports[`investor Investor Onboard it renders correctly 1`] = `
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   padding-left: 16px;
