@@ -1018,7 +1018,7 @@ exports[`WalletView it renders correctly 1`] = `
             font-weight="1"
             overflow="hidden"
           >
-            t1z22 ... 6wgi
+            t1z225 ... 6z6wgi
           </h2>
           <button
             class="c14 c15"
@@ -1288,7 +1288,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137s ... izpy
+                  t137sj ... 2vizpy
                 </p>
               </li>
               <li
@@ -1457,7 +1457,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137s ... izpy
+                  t137sj ... 2vizpy
                 </p>
               </li>
               <li
@@ -1626,7 +1626,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137s ... izpy
+                  t137sj ... 2vizpy
                 </p>
               </li>
               <li
@@ -1795,7 +1795,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137s ... izpy
+                  t137sj ... 2vizpy
                 </p>
               </li>
               <li
@@ -1964,7 +1964,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137s ... izpy
+                  t137sj ... 2vizpy
                 </p>
               </li>
               <li
@@ -2133,7 +2133,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137s ... izpy
+                  t137sj ... 2vizpy
                 </p>
               </li>
               <li
@@ -2302,7 +2302,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137s ... izpy
+                  t137sj ... 2vizpy
                 </p>
               </li>
               <li
@@ -2471,7 +2471,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137s ... izpy
+                  t137sj ... 2vizpy
                 </p>
               </li>
               <li
@@ -2640,7 +2640,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t3wjx ... ooea
+                  t3wjxu ... meooea
                 </p>
               </li>
               <li
@@ -2809,7 +2809,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137s ... izpy
+                  t137sj ... 2vizpy
                 </p>
               </li>
               <li
@@ -2978,7 +2978,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137s ... izpy
+                  t137sj ... 2vizpy
                 </p>
               </li>
               <li
@@ -3147,7 +3147,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137s ... izpy
+                  t137sj ... 2vizpy
                 </p>
               </li>
               <li
@@ -3316,7 +3316,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137s ... izpy
+                  t137sj ... 2vizpy
                 </p>
               </li>
               <li
@@ -3485,7 +3485,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137s ... izpy
+                  t137sj ... 2vizpy
                 </p>
               </li>
               <li
@@ -3654,7 +3654,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137s ... izpy
+                  t137sj ... 2vizpy
                 </p>
               </li>
               <li
@@ -4478,7 +4478,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
                       font-size="2"
                       font-weight="400"
                     >
-                      t1z22 ... 6wgi
+                      t1z225 ... 6z6wgi
                     </p>
                   </div>
                 </div>
