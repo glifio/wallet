@@ -37,6 +37,11 @@ const MessageDetailCard = styled(Card).attrs(() => ({
   width: auto;
   background-color: ${props => props.theme.colors.background.screen};
 `
+const TransactionFeeDisplay = styled(Input.Text)`
+  &:hover {
+    background: transparent;
+  }
+`
 
 const TxStatusText = ({ address, from, status }) => {
   if (status === 'pending') return 'PENDING'
@@ -143,6 +148,7 @@ const MessageDetail = ({ address, close, message }) => {
       <Box mt={1}>
         <Box mt={3}>
           <Input.Address value={message.from} label='From' disabled />
+          <Box height={3} />
           <Input.Address value={message.to} label='To' disabled />
         </Box>
         <Input.Funds
@@ -152,7 +158,8 @@ const MessageDetail = ({ address, close, message }) => {
           disabled
           amount={new FilecoinNumber(message.value, 'fil').toAttoFil()}
         />
-        <Input.Text
+        <TransactionFeeDisplay
+          textAlign='right'
           onChange={noop}
           label='Transfer Fee'
           value={loadingFee ? 'Loading...' : `${fee.toAttoFil()} aFIL`}

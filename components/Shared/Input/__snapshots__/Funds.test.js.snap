@@ -68,18 +68,20 @@ exports[`Funds input changing values it calls the value change callback when the
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
-  left: -24px;
-  bottom: -24px;
+  left: -20px;
+  bottom: -20px;
   z-index: 99;
   border-radius: 32px;
+  border: 1px solid;
+  border-color: #C4C4C4;
   padding-bottom: 4px;
   background-color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -183,10 +185,12 @@ exports[`Funds input changing values it calls the value change callback when the
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -225,10 +229,12 @@ exports[`Funds input changing values it calls the value change callback when the
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -293,7 +299,6 @@ exports[`Funds input changing values it calls the value change callback when the
         display="flex"
         font-family="sansSerif"
         font-size="5"
-        size="6"
       >
         =
       </div>
@@ -419,18 +424,20 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
-  left: -24px;
-  bottom: -24px;
+  left: -20px;
+  bottom: -20px;
   z-index: 99;
   border-radius: 32px;
+  border: 1px solid;
+  border-color: #C4C4C4;
   padding-bottom: 4px;
   background-color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -534,10 +541,12 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -576,10 +585,12 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -644,7 +655,6 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
         display="flex"
         font-family="sansSerif"
         font-size="5"
-        size="6"
       >
         =
       </div>
@@ -737,16 +747,15 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
       width="100%"
     >
       <div
-        class="Box-tuskkk-0 cyvysm"
+        class="Box-tuskkk-0 fDbiCK"
         display="flex"
         font-family="sansSerif"
         font-size="5"
-        size="6"
       >
         =
       </div>
       <input
-        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 dSlJKE"
+        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 fFwszn"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -774,7 +783,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
       height="80px"
     >
       <input
-        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 hvfnSA"
+        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 CkJYn"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -867,18 +876,20 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
-  left: -24px;
-  bottom: -24px;
+  left: -20px;
+  bottom: -20px;
   z-index: 99;
   border-radius: 32px;
+  border: 1px solid;
+  border-color: #C4C4C4;
   padding-bottom: 4px;
   background-color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -982,10 +993,12 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -1024,10 +1037,12 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -1092,7 +1107,6 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
         display="flex"
         font-family="sansSerif"
         font-size="5"
-        size="6"
       >
         =
       </div>
@@ -1218,18 +1232,20 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
-  left: -24px;
-  bottom: -24px;
+  left: -20px;
+  bottom: -20px;
   z-index: 99;
   border-radius: 32px;
+  border: 1px solid;
+  border-color: #C4C4C4;
   padding-bottom: 4px;
   background-color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1333,10 +1349,12 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -1375,10 +1393,12 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -1443,7 +1463,6 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
         display="flex"
         font-family="sansSerif"
         font-size="5"
-        size="6"
       >
         =
       </div>
@@ -1536,16 +1555,15 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
       width="100%"
     >
       <div
-        class="Box-tuskkk-0 cyvysm"
+        class="Box-tuskkk-0 fDbiCK"
         display="flex"
         font-family="sansSerif"
         font-size="5"
-        size="6"
       >
         =
       </div>
       <input
-        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 dSlJKE"
+        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 fFwszn"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -1573,7 +1591,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
       height="80px"
     >
       <input
-        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 hvfnSA"
+        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 CkJYn"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -1666,18 +1684,20 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
-  left: -24px;
-  bottom: -24px;
+  left: -20px;
+  bottom: -20px;
   z-index: 99;
   border-radius: 32px;
+  border: 1px solid;
+  border-color: #C4C4C4;
   padding-bottom: 4px;
   background-color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1781,10 +1801,12 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -1823,10 +1845,12 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -1891,7 +1915,6 @@ exports[`Funds input changing values it sets the right fiat amount when the user
         display="flex"
         font-family="sansSerif"
         font-size="5"
-        size="6"
       >
         =
       </div>
@@ -2017,18 +2040,20 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
-  left: -24px;
-  bottom: -24px;
+  left: -20px;
+  bottom: -20px;
   z-index: 99;
   border-radius: 32px;
+  border: 1px solid;
+  border-color: #C4C4C4;
   padding-bottom: 4px;
   background-color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2132,10 +2157,12 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -2174,10 +2201,12 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -2242,7 +2271,6 @@ exports[`Funds input changing values it sets the right fiat amount when the user
         display="flex"
         font-family="sansSerif"
         font-size="5"
-        size="6"
       >
         =
       </div>
@@ -2335,16 +2363,15 @@ exports[`Funds input changing values it sets the right fiat amount when the user
       width="100%"
     >
       <div
-        class="Box-tuskkk-0 cyvysm"
+        class="Box-tuskkk-0 fDbiCK"
         display="flex"
         font-family="sansSerif"
         font-size="5"
-        size="6"
       >
         =
       </div>
       <input
-        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 dSlJKE"
+        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 fFwszn"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -2372,7 +2399,7 @@ exports[`Funds input changing values it sets the right fiat amount when the user
       height="80px"
     >
       <input
-        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 hvfnSA"
+        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 CkJYn"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -2465,18 +2492,20 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
-  left: -24px;
-  bottom: -24px;
+  left: -20px;
+  bottom: -20px;
   z-index: 99;
   border-radius: 32px;
+  border: 1px solid;
+  border-color: #C4C4C4;
   padding-bottom: 4px;
   background-color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2580,10 +2609,12 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -2622,10 +2653,12 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -2690,7 +2723,6 @@ exports[`Funds input changing values it sets the right fiat amount when the user
         display="flex"
         font-family="sansSerif"
         font-size="5"
-        size="6"
       >
         =
       </div>
@@ -2783,16 +2815,15 @@ exports[`Funds input changing values it sets the right fiat amount when the user
       width="100%"
     >
       <div
-        class="Box-tuskkk-0 cyvysm"
+        class="Box-tuskkk-0 fDbiCK"
         display="flex"
         font-family="sansSerif"
         font-size="5"
-        size="6"
       >
         =
       </div>
       <input
-        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 dSlJKE"
+        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 fFwszn"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -2820,7 +2851,7 @@ exports[`Funds input changing values it sets the right fiat amount when the user
       height="80px"
     >
       <input
-        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 hvfnSA"
+        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 CkJYn"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -2913,18 +2944,20 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
-  left: -24px;
-  bottom: -24px;
+  left: -20px;
+  bottom: -20px;
   z-index: 99;
   border-radius: 32px;
+  border: 1px solid;
+  border-color: #C4C4C4;
   padding-bottom: 4px;
   background-color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3028,10 +3061,12 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -3070,10 +3105,12 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -3138,7 +3175,6 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
         display="flex"
         font-family="sansSerif"
         font-size="5"
-        size="6"
       >
         =
       </div>
@@ -3264,18 +3300,20 @@ exports[`Funds input it renders correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
-  left: -24px;
-  bottom: -24px;
+  left: -20px;
+  bottom: -20px;
   z-index: 99;
   border-radius: 32px;
+  border: 1px solid;
+  border-color: #C4C4C4;
   padding-bottom: 4px;
   background-color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3379,10 +3417,12 @@ exports[`Funds input it renders correctly 1`] = `
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #85e0cb;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -3421,10 +3461,12 @@ exports[`Funds input it renders correctly 1`] = `
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #85e0cb;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -3489,7 +3531,6 @@ exports[`Funds input it renders correctly 1`] = `
         display="flex"
         font-family="sansSerif"
         font-size="5"
-        size="6"
       >
         =
       </div>
@@ -3615,18 +3656,20 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
-  left: -24px;
-  bottom: -24px;
+  left: -20px;
+  bottom: -20px;
   z-index: 99;
   border-radius: 32px;
+  border: 1px solid;
+  border-color: #C4C4C4;
   padding-bottom: 4px;
   background-color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3686,7 +3729,7 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: transparent;
+  background: #bacbf7;
 }
 
 .c10 {
@@ -3715,7 +3758,7 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: transparent;
+  background: #bacbf7;
 }
 
 .c6 {
@@ -3730,10 +3773,12 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
-  background: transparent;
+  background: #bacbf7;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -3744,7 +3789,7 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
 }
 
 .c6:hover {
-  background: transparent;
+  background: #bacbf7;
   cursor: initial;
 }
 
@@ -3772,10 +3817,12 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
-  background: transparent;
+  background: #bacbf7;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -3786,7 +3833,7 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
 }
 
 .c9:hover {
-  background: transparent;
+  background: #bacbf7;
   cursor: initial;
 }
 
@@ -3840,7 +3887,6 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
         display="flex"
         font-family="sansSerif"
         font-size="5"
-        size="6"
       >
         =
       </div>
@@ -3970,18 +4016,20 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
-  left: -24px;
-  bottom: -24px;
+  left: -20px;
+  bottom: -20px;
   z-index: 99;
   border-radius: 32px;
+  border: 1px solid;
+  border-color: #C4C4C4;
   padding-bottom: 4px;
   background-color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4041,7 +4089,7 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: transparent;
+  background: #bacbf7;
 }
 
 .c10 {
@@ -4070,7 +4118,7 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: transparent;
+  background: #bacbf7;
 }
 
 .c6 {
@@ -4085,10 +4133,12 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
-  background: transparent;
+  background: #bacbf7;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -4099,7 +4149,7 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
 }
 
 .c6:hover {
-  background: transparent;
+  background: #bacbf7;
   cursor: initial;
 }
 
@@ -4127,10 +4177,12 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
-  background: transparent;
+  background: #bacbf7;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -4141,7 +4193,7 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
 }
 
 .c9:hover {
-  background: transparent;
+  background: #bacbf7;
   cursor: initial;
 }
 
@@ -4195,7 +4247,6 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
         display="flex"
         font-family="sansSerif"
         font-size="5"
-        size="6"
       >
         =
       </div>
@@ -4325,18 +4376,20 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
-  left: -24px;
-  bottom: -24px;
+  left: -20px;
+  bottom: -20px;
   z-index: 99;
   border-radius: 32px;
+  border: 1px solid;
+  border-color: #C4C4C4;
   padding-bottom: 4px;
   background-color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4396,7 +4449,7 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: transparent;
+  background: #bacbf7;
 }
 
 .c10 {
@@ -4425,7 +4478,7 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: transparent;
+  background: #bacbf7;
 }
 
 .c6 {
@@ -4440,10 +4493,12 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
-  background: transparent;
+  background: #bacbf7;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -4454,7 +4509,7 @@ exports[`Funds input it renders disabled state correctly 1`] = `
 }
 
 .c6:hover {
-  background: transparent;
+  background: #bacbf7;
   cursor: initial;
 }
 
@@ -4482,10 +4537,12 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
-  background: transparent;
+  background: #bacbf7;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -4496,7 +4553,7 @@ exports[`Funds input it renders disabled state correctly 1`] = `
 }
 
 .c9:hover {
-  background: transparent;
+  background: #bacbf7;
   cursor: initial;
 }
 
@@ -4550,7 +4607,6 @@ exports[`Funds input it renders disabled state correctly 1`] = `
         display="flex"
         font-family="sansSerif"
         font-size="5"
-        size="6"
       >
         =
       </div>
@@ -4681,18 +4737,20 @@ exports[`Funds input it renders error states properly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
-  left: -24px;
-  bottom: -24px;
+  left: -20px;
+  bottom: -20px;
   z-index: 99;
   border-radius: 32px;
+  border: 1px solid;
+  border-color: #C4C4C4;
   padding-bottom: 4px;
   background-color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4798,10 +4856,12 @@ exports[`Funds input it renders error states properly 1`] = `
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -4840,10 +4900,12 @@ exports[`Funds input it renders error states properly 1`] = `
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -4908,7 +4970,6 @@ exports[`Funds input it renders error states properly 1`] = `
         display="flex"
         font-family="sansSerif"
         font-size="5"
-        size="6"
       >
         =
       </div>
@@ -5034,18 +5095,20 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
-  left: -24px;
-  bottom: -24px;
+  left: -20px;
+  bottom: -20px;
   z-index: 99;
   border-radius: 32px;
+  border: 1px solid;
+  border-color: #C4C4C4;
   padding-bottom: 4px;
   background-color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -5149,10 +5212,12 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -5191,10 +5256,12 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: #d1ddfa;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -5259,7 +5326,6 @@ exports[`Funds input it renders invalid state correctly 1`] = `
         display="flex"
         font-family="sansSerif"
         font-size="5"
-        size="6"
       >
         =
       </div>

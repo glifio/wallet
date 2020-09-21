@@ -196,14 +196,16 @@ const Funds = forwardRef(
           >
             <Box
               position='absolute'
-              left='-24px'
-              bottom='-24px'
+              left='-20px'
+              bottom='-20px'
               display='flex'
               alignItems='center'
               justifyContent='center'
               backgroundColor='core.white'
               borderRadius={5}
-              size={6}
+              border={1}
+              borderColor='core.lightgray'
+              size='40px'
               fontSize={5}
               fontFamily='sansSerif'
               paddingBottom='4px'
@@ -231,6 +233,7 @@ const Funds = forwardRef(
               disabled={disabled}
               valid={valid && !!formatFilValue(filAmount)}
               {...props}
+              my={0}
             />
             <DenomTag
               top='0px'
@@ -259,6 +262,7 @@ const Funds = forwardRef(
               height='100%'
               fontSize={5}
               borderBottomLeftRadius={2}
+              my={0}
               onChange={onFiatChange}
               value={formatFiatValue(fiatAmount)}
               placeholder={converterError ? 'Error fetching amount' : '0'}
