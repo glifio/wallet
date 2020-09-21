@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { useMsig } from '../../../MsigProvider'
 import Withdraw from '../Withdraw'
 import ChangeOwner from '../ChangeOwner'
-import { Box } from '../../Shared'
+import { Box, LoadingScreen } from '../../Shared'
 import State from './State'
 import useWallet from '../../../WalletProvider/useWallet'
 
@@ -19,7 +19,8 @@ export default () => {
   return (
     <>
       <Box display='flex' width='100%' minHeight='100vh' p={3}>
-        {childView === MSIG_STATE && (
+        {msig.loading && <LoadingScreen width='100%' />}
+        {!msig.loading && childView === MSIG_STATE && (
           <State
             msigAddress={msigActorAddress}
             walletAddress={address}
@@ -29,14 +30,14 @@ export default () => {
             setWithdrawing={() => setChildView(WITHDRAW)}
           />
         )}
-        {childView === CHANGE_OWNER && (
+        {!msig.loading && childView === CHANGE_OWNER && (
           <ChangeOwner
             close={() => setChildView(MSIG_STATE)}
             balance={msig.AvailableBalance}
             address={msigActorAddress}
           />
         )}
-        {childView === WITHDRAW && (
+        {!msig.loading && childView === WITHDRAW && (
           <Withdraw
             close={() => setChildView(MSIG_STATE)}
             balance={msig.AvailableBalance}
