@@ -233,6 +233,7 @@ const Funds = forwardRef(
               disabled={disabled}
               valid={valid && !!formatFilValue(filAmount)}
               {...props}
+              my={0}
             />
             <DenomTag
               top='0px'
@@ -261,6 +262,7 @@ const Funds = forwardRef(
               height='100%'
               fontSize={5}
               borderBottomLeftRadius={2}
+              my={0}
               onChange={onFiatChange}
               value={formatFiatValue(fiatAmount)}
               placeholder={converterError ? 'Error fetching amount' : '0'}
