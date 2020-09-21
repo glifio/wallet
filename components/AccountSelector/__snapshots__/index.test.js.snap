@@ -437,7 +437,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   font-size="4"
                   font-weight="400"
                 >
-                  t1z22 ... 6wgi
+                  t1z225 ... 6z6wgi
                 </h2>
               </div>
             </div>
@@ -511,7 +511,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   font-size="4"
                   font-weight="400"
                 >
-                  t1mbk ... b1uq
+                  t1mbk7 ... icb1uq
                 </h2>
               </div>
             </div>
@@ -585,7 +585,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   font-size="4"
                   font-weight="400"
                 >
-                  t1mbk ... b2uq
+                  t1mbk7 ... icb2uq
                 </h2>
               </div>
             </div>
@@ -659,7 +659,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   font-size="4"
                   font-weight="400"
                 >
-                  t1mbk ... b3uq
+                  t1mbk7 ... icb3uq
                 </h2>
               </div>
             </div>
@@ -733,7 +733,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   font-size="4"
                   font-weight="400"
                 >
-                  t1mbk ... b4uq
+                  t1mbk7 ... icb4uq
                 </h2>
               </div>
             </div>
@@ -1344,7 +1344,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                   font-size="4"
                   font-weight="400"
                 >
-                  t1z22 ... 6wgi
+                  t1z225 ... 6z6wgi
                 </h2>
               </div>
             </div>
@@ -1418,7 +1418,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                   font-size="4"
                   font-weight="400"
                 >
-                  t1mbk ... b1uq
+                  t1mbk7 ... icb1uq
                 </h2>
               </div>
             </div>
@@ -1492,7 +1492,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                   font-size="4"
                   font-weight="400"
                 >
-                  t1mbk ... b2uq
+                  t1mbk7 ... icb2uq
                 </h2>
               </div>
             </div>
@@ -1566,7 +1566,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                   font-size="4"
                   font-weight="400"
                 >
-                  t1mbk ... b3uq
+                  t1mbk7 ... icb3uq
                 </h2>
               </div>
             </div>
@@ -1640,7 +1640,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                   font-size="4"
                   font-weight="400"
                 >
-                  t1mbk ... b4uq
+                  t1mbk7 ... icb4uq
                 </h2>
               </div>
             </div>
@@ -2152,7 +2152,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   font-size="4"
                   font-weight="400"
                 >
-                  t1z22 ... 6wgi
+                  t1z225 ... 6z6wgi
                 </h2>
               </div>
             </div>
@@ -2226,7 +2226,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   font-size="4"
                   font-weight="400"
                 >
-                  t1mbk ... b1uq
+                  t1mbk7 ... icb1uq
                 </h2>
               </div>
             </div>
@@ -2300,7 +2300,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   font-size="4"
                   font-weight="400"
                 >
-                  t1mbk ... b2uq
+                  t1mbk7 ... icb2uq
                 </h2>
               </div>
             </div>
@@ -2374,7 +2374,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   font-size="4"
                   font-weight="400"
                 >
-                  t1mbk ... b3uq
+                  t1mbk7 ... icb3uq
                 </h2>
               </div>
             </div>
@@ -2448,7 +2448,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   font-size="4"
                   font-weight="400"
                 >
-                  t1mbk ... b4uq
+                  t1mbk7 ... icb4uq
                 </h2>
               </div>
             </div>

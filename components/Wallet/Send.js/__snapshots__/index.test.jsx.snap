@@ -671,7 +671,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
                     font-size="2"
                     font-weight="400"
                   >
-                    t1z22 ... 6wgi
+                    t1z225 ... 6z6wgi
                   </p>
                 </div>
               </div>
@@ -1462,7 +1462,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
                     font-size="2"
                     font-weight="400"
                   >
-                    t1z22 ... 6wgi
+                    t1z225 ... 6z6wgi
                   </p>
                 </div>
               </div>
@@ -2593,7 +2593,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
                     font-size="2"
                     font-weight="400"
                   >
-                    t1z22 ... 6wgi
+                    t1z225 ... 6z6wgi
                   </p>
                 </div>
               </div>
@@ -3780,7 +3780,7 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
                     font-size="2"
                     font-weight="400"
                   >
-                    t1z22 ... 6wgi
+                    t1z225 ... 6z6wgi
                   </p>
                 </div>
               </div>
@@ -4999,7 +4999,7 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
                     font-size="2"
                     font-weight="400"
                   >
-                    t1z22 ... 6wgi
+                    t1z225 ... 6z6wgi
                   </p>
                 </div>
               </div>
@@ -6360,7 +6360,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                     font-size="2"
                     font-weight="400"
                   >
-                    t1z22 ... 6wgi
+                    t1z225 ... 6z6wgi
                   </p>
                 </div>
               </div>
