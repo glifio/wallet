@@ -7,7 +7,6 @@ import {
   Text,
   Title,
   Button,
-  Header,
   Warning,
   Glyph,
   Highlight
@@ -112,7 +111,6 @@ export default () => {
           <Box
             display='flex'
             flexWrap='wrap'
-            flexGrow={1}
             alignItems='flex-start'
             justifyContent='space-around'
             flexGrow='1'
