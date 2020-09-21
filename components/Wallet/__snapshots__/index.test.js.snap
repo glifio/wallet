@@ -663,7 +663,7 @@ exports[`WalletView it renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 80px;
+  width: 160px;
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
@@ -691,6 +691,9 @@ exports[`WalletView it renders correctly 1`] = `
   padding-right: 24px;
   margin-top: 8px;
   margin-bottom: 8px;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -727,6 +730,9 @@ exports[`WalletView it renders correctly 1`] = `
   padding-right: 24px;
   margin-top: 8px;
   margin-bottom: 8px;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1288,7 +1294,7 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c53"
                 display="flex"
-                width="8"
+                width="9"
               >
                 <p
                   class="c54"
@@ -1297,7 +1303,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12
+                  Jan 12, 2020 - 2:30:30
                 </p>
               </li>
             </ul>
@@ -1457,7 +1463,7 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c53"
                 display="flex"
-                width="8"
+                width="9"
               >
                 <p
                   class="c54"
@@ -1466,7 +1472,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12
+                  Jan 12, 2020 - 2:30:30
                 </p>
               </li>
             </ul>
@@ -1626,7 +1632,7 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c53"
                 display="flex"
-                width="8"
+                width="9"
               >
                 <p
                   class="c54"
@@ -1635,7 +1641,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12
+                  Jan 12, 2020 - 2:30:30
                 </p>
               </li>
             </ul>
@@ -1795,7 +1801,7 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c53"
                 display="flex"
-                width="8"
+                width="9"
               >
                 <p
                   class="c54"
@@ -1804,7 +1810,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12
+                  Jan 12, 2020 - 2:30:30
                 </p>
               </li>
             </ul>
@@ -1964,7 +1970,7 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c53"
                 display="flex"
-                width="8"
+                width="9"
               >
                 <p
                   class="c54"
@@ -1973,7 +1979,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12
+                  Jan 12, 2020 - 2:30:30
                 </p>
               </li>
             </ul>
@@ -2133,7 +2139,7 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c53"
                 display="flex"
-                width="8"
+                width="9"
               >
                 <p
                   class="c54"
@@ -2142,7 +2148,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12
+                  Jan 12, 2020 - 2:30:30
                 </p>
               </li>
             </ul>
@@ -2302,7 +2308,7 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c53"
                 display="flex"
-                width="8"
+                width="9"
               >
                 <p
                   class="c54"
@@ -2311,7 +2317,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12
+                  Jan 12, 2020 - 2:30:30
                 </p>
               </li>
             </ul>
@@ -2471,7 +2477,7 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c53"
                 display="flex"
-                width="8"
+                width="9"
               >
                 <p
                   class="c54"
@@ -2480,7 +2486,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12
+                  Jan 12, 2020 - 2:30:30
                 </p>
               </li>
             </ul>
@@ -2640,7 +2646,7 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c53"
                 display="flex"
-                width="8"
+                width="9"
               >
                 <p
                   class="c54"
@@ -2649,7 +2655,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12
+                  Jan 12, 2020 - 2:30:30
                 </p>
               </li>
             </ul>
@@ -2809,7 +2815,7 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c53"
                 display="flex"
-                width="8"
+                width="9"
               >
                 <p
                   class="c54"
@@ -2818,7 +2824,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12
+                  Jan 12, 2020 - 2:30:30
                 </p>
               </li>
             </ul>
@@ -2978,7 +2984,7 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c53"
                 display="flex"
-                width="8"
+                width="9"
               >
                 <p
                   class="c54"
@@ -2987,7 +2993,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12
+                  Jan 12, 2020 - 2:30:30
                 </p>
               </li>
             </ul>
@@ -3147,7 +3153,7 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c53"
                 display="flex"
-                width="8"
+                width="9"
               >
                 <p
                   class="c54"
@@ -3156,7 +3162,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12
+                  Jan 12, 2020 - 2:30:30
                 </p>
               </li>
             </ul>
@@ -3316,7 +3322,7 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c53"
                 display="flex"
-                width="8"
+                width="9"
               >
                 <p
                   class="c54"
@@ -3325,7 +3331,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12
+                  Jan 12, 2020 - 2:30:30
                 </p>
               </li>
             </ul>
@@ -3485,7 +3491,7 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c53"
                 display="flex"
-                width="8"
+                width="9"
               >
                 <p
                   class="c54"
@@ -3494,7 +3500,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12
+                  Jan 12, 2020 - 2:30:30
                 </p>
               </li>
             </ul>
@@ -3654,7 +3660,7 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c53"
                 display="flex"
-                width="8"
+                width="9"
               >
                 <p
                   class="c54"
@@ -3663,7 +3669,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12
+                  Jan 12, 2020 - 2:30:30
                 </p>
               </li>
             </ul>

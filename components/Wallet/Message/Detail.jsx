@@ -139,9 +139,11 @@ const MessageDetail = ({ address, close, message }) => {
           </Box>
           <Box display='flex' flexDirection='row' mr={2}>
             <Text my='0' mr={3} color='core.darkgray'>
-              {dayjs.unix(message.timestamp).format('MMM DD')}
+              {dayjs.unix(message.timestamp).format('YYYY-MM-DD')}
             </Text>
-            <Text my='0'>{dayjs.unix(message.timestamp).format('hh:mmA')}</Text>
+            <Text my='0'>
+              {dayjs.unix(message.timestamp).format('HH:mm:ss')}
+            </Text>
           </Box>
         </Box>
       </Box>
