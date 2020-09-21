@@ -272,8 +272,8 @@ export default () => {
                   your Ledger device
                 </Title>
                 <Text fontSize={2}>
-                  <Highlight>NB</Highlight>Your private keys never leave your
-                  browser, and are erased upon page refresh
+                  <Highlight fontSize={2}>NB</Highlight>Your private keys never
+                  leave your browser, and are erased upon page refresh
                 </Text>
                 <ImportWallet
                   onClick={() => onChoose(LEDGER)}
