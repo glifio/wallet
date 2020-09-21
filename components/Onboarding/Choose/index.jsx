@@ -271,7 +271,7 @@ export default () => {
                   A lightweight web interface to send and receive Filecoin via
                   your Ledger device
                 </Title>
-                <Text fontSize={3}>
+                <Text fontSize={2}>
                   <Highlight>NB</Highlight>Your private keys never leave your
                   browser, and are erased upon page refresh
                 </Text>
