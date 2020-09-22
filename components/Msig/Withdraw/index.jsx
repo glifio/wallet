@@ -58,8 +58,10 @@ const Withdrawing = ({ address, balance, close }) => {
   const [estimatedTransactionFee, setEstimatedTransactionFee] = useState(
     new FilecoinNumber('122222', 'attofil')
   )
+  const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
 
   const sendMsg = async () => {
+    setFetchingTxDetails(true)
     const provider = await connectLedger()
 
     if (provider) {
@@ -84,6 +86,8 @@ const Withdrawing = ({ address, balance, close }) => {
       const msgWithGas = await provider.gasEstimateMessageGas(
         message.toLotusType()
       )
+
+      setFetchingTxDetails(false)
 
       const signedMessage = await provider.wallet.sign(
         msgWithGas.toSerializeableType(),
@@ -137,8 +141,10 @@ const Withdrawing = ({ address, balance, close }) => {
           reportError(20, false, err, err.message, err.stack)
           setUncaughtError(err.message || err)
         }
-        setAttemptingTx(false)
         setStep(2)
+      } finally {
+        setFetchingTxDetails(false)
+        setAttemptingTx(false)
       }
     }
   }
@@ -192,6 +198,7 @@ const Withdrawing = ({ address, balance, close }) => {
             )}
             {attemptingTx && (
               <ConfirmationCard
+                loading={fetchingTxDetails}
                 walletType={LEDGER}
                 currentStep={4}
                 totalSteps={4}

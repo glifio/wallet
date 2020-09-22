@@ -73,10 +73,13 @@ const Send = ({ close }) => {
     new FilecoinNumber('122222', 'attofil')
   )
 
+  const [fetchingTxDetails, setFetchingTxDetails] = useState(true)
+
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
 
   const send = async () => {
+    setFetchingTxDetails(true)
     let provider = walletProvider
     // attempt to establish a new connection with the ledger device if the user selected ledger
     if (wallet.type === LEDGER) {
@@ -101,6 +104,7 @@ const Send = ({ close }) => {
 
       console.log('msg with gas', msgWithGas)
 
+      setFetchingTxDetails(false)
       const signedMessage = await provider.wallet.sign(
         msgWithGas.toSerializeableType(),
         wallet.path
@@ -142,6 +146,7 @@ const Send = ({ close }) => {
       setStep(3)
     } finally {
       setAttemptingTx(false)
+      setFetchingTxDetails(false)
     }
   }
 
@@ -268,6 +273,7 @@ const Send = ({ close }) => {
                 walletType={wallet.type}
                 currentStep={4}
                 totalSteps={4}
+                loading={fetchingTxDetails}
               />
             )}
             {!hasError() && !attemptingTx && (
