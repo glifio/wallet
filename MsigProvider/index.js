@@ -9,8 +9,11 @@ import isAddressSigner from './isAddressSigner'
 import isActorMsig from './isActorMsig'
 
 const emptyActorState = {
+  Address: '',
   Balance: new FilecoinNumber('0', 'fil'),
-  AvailableBalance: new FilecoinNumber('0', 'fil')
+  AvailableBalance: new FilecoinNumber('0', 'fil'),
+  loading: true,
+  failed: false
 }
 
 // Taking a small shortcut here for now, this hook should only be called once per msig
@@ -18,6 +21,8 @@ export const useMsig = msigActorID => {
   const wallet = useWallet()
   const { walletProvider } = useWalletProvider()
   const [actorState, setActorState] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [failed, setFailed] = useState(false)
   const router = useRouter()
 
   useEffect(() => {
@@ -43,28 +48,27 @@ export const useMsig = msigActorID => {
           router.push(`/error/not-a-signer?${params.toString()}`)
         }
 
-        // confusing - MsigGetAval returns locked, not avail see https://github.com/filecoin-project/lotus/issues/3699
-        const lockedBal = await lotus.request(
+        const availableBalance = await lotus.request(
           'MsigGetAvailableBalance',
           msigActorID,
           null
         )
-
         const balance = new FilecoinNumber(Balance, 'attofil')
 
         const nextState = {
           Balance: balance,
-          AvailableBalance: balance.minus(
-            new FilecoinNumber(lockedBal, 'attofil')
-          ),
+          AvailableBalance: new FilecoinNumber(availableBalance, 'attofil'),
           ...State
         }
         setActorState(nextState)
       } catch (err) {
         reportError(22, true, err.message, err.stack)
+      } finally {
+        setLoading(false)
       }
     }
     if (!actorState && msigActorID) {
+      setLoading(true)
       fetchActorState()
     }
   }, [
@@ -76,5 +80,5 @@ export const useMsig = msigActorID => {
     wallet.address
   ])
   if (!actorState) return emptyActorState
-  return { Address: msigActorID, ...actorState }
+  return { Address: msigActorID, ...actorState, loading, failed }
 }

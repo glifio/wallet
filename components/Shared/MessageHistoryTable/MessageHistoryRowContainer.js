@@ -8,6 +8,7 @@ export default styled(Box).attrs(props => ({
   px: 4,
   my: 2,
   alignItems: 'center',
+  minWidth: 'max-content',
   ...props
 }))`
   border-color: ${props => {

@@ -142,6 +142,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
+  display: none;
   margin: 0;
   margin-bottom: 0;
 }
@@ -283,7 +284,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 80px;
+  width: 160px;
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
@@ -311,6 +312,9 @@ exports[`MessageHistory View it renders correctly 1`] = `
   padding-right: 24px;
   margin-top: 8px;
   margin-bottom: 8px;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -347,6 +351,9 @@ exports[`MessageHistory View it renders correctly 1`] = `
   padding-right: 24px;
   margin-top: 8px;
   margin-bottom: 8px;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -503,13 +510,13 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -518,7 +525,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -556,6 +563,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -587,6 +595,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -672,13 +681,13 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -687,7 +696,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -725,6 +734,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -756,6 +766,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -841,13 +852,13 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -856,7 +867,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -894,6 +905,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -925,6 +937,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1010,13 +1023,13 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -1025,7 +1038,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -1063,6 +1076,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1094,6 +1108,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1179,13 +1194,13 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -1194,7 +1209,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -1232,6 +1247,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1263,6 +1279,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1348,13 +1365,13 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -1363,7 +1380,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -1401,6 +1418,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1432,6 +1450,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1517,13 +1536,13 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -1532,7 +1551,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -1570,6 +1589,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1601,6 +1621,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1686,13 +1707,13 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -1701,7 +1722,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -1739,6 +1760,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1770,6 +1792,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1855,13 +1878,13 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t3wjx ... ooea
+              t3wjxu ... meooea
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -1870,7 +1893,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -1908,6 +1931,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1939,6 +1963,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2024,13 +2049,13 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -2039,7 +2064,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -2077,6 +2102,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2108,6 +2134,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2193,13 +2220,13 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -2208,7 +2235,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -2246,6 +2273,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2277,6 +2305,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2362,13 +2391,13 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -2377,7 +2406,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -2415,6 +2444,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2446,6 +2476,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2531,13 +2562,13 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -2546,7 +2577,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -2584,6 +2615,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2615,6 +2647,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2700,13 +2733,13 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -2715,7 +2748,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -2753,6 +2786,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2784,6 +2818,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2869,13 +2904,13 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -2884,7 +2919,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -2922,6 +2957,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2953,6 +2989,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2991,10 +3028,6 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   border-width: 1px;
   border-color: #999999;
   padding: 16px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  margin-left: 8px;
-  margin-right: 8px;
   display: inline-block;
   width: 300px;
   overflow: hidden;
@@ -3108,6 +3141,17 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   min-width: 0;
   box-sizing: border-box;
   margin-top: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 .c18 {
@@ -3137,10 +3181,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  min-width: 48px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3167,6 +3212,12 @@ exports[`MessageHistory View it renders the message detail view after clicking o
 .c25 {
   min-width: 0;
   box-sizing: border-box;
+  height: 16px;
+}
+
+.c26 {
+  min-width: 0;
+  box-sizing: border-box;
   position: relative;
   border-color: #999999;
   margin-top: 16px;
@@ -3175,10 +3226,14 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 160px;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c26 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -3207,14 +3262,14 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   text-align: center;
 }
 
-.c27 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c28 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -3229,47 +3284,16 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   width: 100%;
 }
 
-.c29 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: absolute;
-  left: -24px;
-  bottom: -24px;
-  z-index: 99;
-  border-radius: 32px;
-  padding-bottom: 4px;
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-}
-
 .c32 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   border-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   height: 80px;
 }
 
-.c36 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
@@ -3292,7 +3316,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   justify-content: space-between;
 }
 
-.c38 {
+.c39 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -3306,7 +3330,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   text-align: right;
 }
 
-.c42 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 48px;
@@ -3321,6 +3345,14 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 .c5 {
@@ -3339,7 +3371,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   height: 24px;
 }
 
-.c37 {
+.c38 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -3348,7 +3380,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin-top: 4px;
 }
 
-.c39 {
+.c40 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -3357,12 +3389,13 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 0;
 }
 
-.c41 {
+.c42 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
+  display: none;
   margin: 0;
 }
 
@@ -3413,7 +3446,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 0;
 }
 
-.c43 {
+.c44 {
   color: #999999;
   text-align: left;
   font-size: 1.125rem;
@@ -3423,7 +3456,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 4px;
 }
 
-.c44 {
+.c45 {
   color: #999999;
   text-align: left;
   font-size: 1.125rem;
@@ -3434,7 +3467,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 4px;
 }
 
-.c47 {
+.c48 {
   color: #5E26FF;
   text-align: left;
   font-size: 1.125rem;
@@ -3456,9 +3489,9 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
-  background: transparent;
+  background: #bacbf7;
   padding-left: 16px;
   padding-right: 16px;
   display: inline-block;
@@ -3470,7 +3503,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
 }
 
 .c24:hover {
-  background: transparent;
+  background: #bacbf7;
   cursor: initial;
 }
 
@@ -3492,9 +3525,10 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
-  background: transparent;
+  background: #bacbf7;
+  text-align: right;
   background-color: #EFF3FD;
   padding-left: 16px;
   padding-right: 16px;
@@ -3507,7 +3541,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
 }
 
 .c35:hover {
-  background: transparent;
+  background: #bacbf7;
   cursor: initial;
 }
 
@@ -3529,6 +3563,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   top: 0px;
   left: 0px;
   border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
@@ -3549,7 +3584,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: transparent;
+  background: #bacbf7;
 }
 
 .c34 {
@@ -3578,7 +3613,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: transparent;
+  background: #bacbf7;
 }
 
 .c30 {
@@ -3593,23 +3628,24 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
-  background: transparent;
+  background: #bacbf7;
   font-size: 2rem;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
   border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
   -moz-appearance: textfield;
 }
 
 .c30:hover {
-  background: transparent;
+  background: #bacbf7;
   cursor: initial;
 }
 
@@ -3637,10 +3673,12 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  text-align: right;
+  text-align: left;
   cursor: text;
-  background: transparent;
+  background: #bacbf7;
   font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -3651,7 +3689,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
 }
 
 .c33:hover {
-  background: transparent;
+  background: #bacbf7;
   cursor: initial;
 }
 
@@ -3667,7 +3705,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 0;
 }
 
-.c46 {
+.c47 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -3677,7 +3715,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   font-size: 1.25rem;
 }
 
-.c46:hover {
+.c47:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
@@ -3714,17 +3752,21 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   background-color: #EFF3FD;
 }
 
+.c36:hover {
+  background: transparent;
+}
+
 .c9 {
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
 }
 
-.c40 {
+.c41 {
   word-wrap: break-word;
 }
 
-.c45 {
+.c46 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: no-wrap;
@@ -3840,7 +3882,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           font-size="2"
           font-weight="400"
         >
-          Jan 12
+          2020-01-12
         </p>
         <p
           class="c16"
@@ -3848,13 +3890,14 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           font-size="2"
           font-weight="400"
         >
-          2:30PM
+          2:30:30
         </p>
       </div>
     </div>
   </div>
   <div
     class="c17"
+    display="flex"
   >
     <div
       class="c18"
@@ -3898,6 +3941,10 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         </div>
       </div>
       <div
+        class="c25"
+        height="3"
+      />
+      <div
         class="c19"
       >
         <div
@@ -3937,12 +3984,12 @@ exports[`MessageHistory View it renders the message detail view after clicking o
       </div>
     </div>
     <div
-      class="c25"
+      class="c26"
       display="flex"
       label="Amount"
     >
       <div
-        class="c26"
+        class="c27"
         color="input.border"
         display="flex"
         width="100%"
@@ -3958,25 +4005,16 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         </h4>
       </div>
       <div
-        class="c27"
+        class="c28"
         display="inline-block"
         width="100%"
       >
         <div
-          class="c28"
+          class="c29"
           display="flex"
           height="80px"
           width="100%"
         >
-          <div
-            class="c29"
-            display="flex"
-            font-family="sansSerif"
-            font-size="5"
-            size="6"
-          >
-            =
-          </div>
           <input
             class="c30"
             disabled=""
@@ -4003,7 +4041,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         </div>
         <div
           class="c32"
-          display="flex"
+          display="none"
           height="80px"
         >
           <input
@@ -4058,7 +4096,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           display="flex"
         >
           <input
-            class="c35"
+            class="c35 c36 Detail__TransactionFeeDisplay-vdkax4-1 c36"
             disabled=""
             display="inline-block"
             height="6"
@@ -4070,11 +4108,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
       </div>
     </div>
     <div
-      class="c36"
+      class="c37"
       display="flex"
     >
       <h2
-        class="c37"
+        class="c38"
         font-family="RT-Alias-Grotesk"
         font-size="4"
         font-weight="400"
@@ -4082,11 +4120,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         Total
       </h2>
       <div
-        class="c38"
+        class="c39"
         display="flex"
       >
         <h2
-          class="c39 c40"
+          class="c40 c41"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="5"
@@ -4097,8 +4135,9 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           FIL
         </h2>
         <h2
-          class="c41"
+          class="c42"
           color="core.darkgray"
+          display="none"
           font-family="RT-Alias-Grotesk"
           font-size="4"
           font-weight="400"
@@ -4108,11 +4147,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
       </div>
     </div>
     <div
-      class="c42"
+      class="c43"
       display="flex"
     >
       <h4
-        class="c43"
+        class="c44"
         color="core.silver"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -4121,7 +4160,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         Message Hash
       </h4>
       <h4
-        class="c44 c45"
+        class="c45 c46"
         color="core.silver"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -4130,7 +4169,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         bafy2bzacea5463eugsz6f7dbwixzqxmwe2ouqeq6zukackb3xxotskdidqmjm
       </h4>
       <a
-        class="c46"
+        class="c47"
         color="core.primary"
         font-size="3"
         href="https://filscout.io/en/pc/message/bafy2bzacea5463eugsz6f7dbwixzqxmwe2ouqeq6zukackb3xxotskdidqmjm"
@@ -4138,7 +4177,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         target="_blank"
       >
         <h4
-          class="c47"
+          class="c48"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="2"

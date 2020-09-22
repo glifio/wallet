@@ -3458,7 +3458,7 @@ exports[`Ledger configuration Step2 it renders msig step2 correctly, with the ri
   transition: 0.18s ease-in-out;
   border-bottom: 2px solid #5E26FF00;
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 .c16:hover {
@@ -3604,8 +3604,8 @@ exports[`Ledger configuration Step2 it renders msig step2 correctly, with the ri
       <a
         class="c16"
         color="core.primary"
-        font-size="3"
-        href="https://paper.dropbox.com/doc/Install-the-Filecoin-App-on-your-Ledger-Device--A7wuBpET2_FTgmjTLebkfmSAAg-FFy4WD4kcYPNjuw4V1PQF"
+        font-size="2"
+        href="https://reading.supply/@glif/install-the-filecoin-app-on-your-ledger-device-y33vhX"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -3819,7 +3819,7 @@ exports[`Ledger configuration Step2 it renders normal wallet step2 correctly, wi
   transition: 0.18s ease-in-out;
   border-bottom: 2px solid #5E26FF00;
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 .c15:hover {
@@ -3954,8 +3954,8 @@ exports[`Ledger configuration Step2 it renders normal wallet step2 correctly, wi
       <a
         class="c15"
         color="core.primary"
-        font-size="3"
-        href="https://paper.dropbox.com/doc/Install-the-Filecoin-App-on-your-Ledger-Device--A7wuBpET2_FTgmjTLebkfmSAAg-FFy4WD4kcYPNjuw4V1PQF"
+        font-size="2"
+        href="https://reading.supply/@glif/install-the-filecoin-app-on-your-ledger-device-y33vhX"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -4181,7 +4181,7 @@ exports[`Ledger configuration Step2 it renders premainnet saft step2 correctly, 
   transition: 0.18s ease-in-out;
   border-bottom: 2px solid #5E26FF00;
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 .c16:hover {
@@ -4349,8 +4349,8 @@ exports[`Ledger configuration Step2 it renders premainnet saft step2 correctly, 
       <a
         class="c16"
         color="core.primary"
-        font-size="3"
-        href="https://paper.dropbox.com/doc/Install-the-Filecoin-App-on-your-Ledger-Device--A7wuBpET2_FTgmjTLebkfmSAAg-FFy4WD4kcYPNjuw4V1PQF"
+        font-size="2"
+        href="https://reading.supply/@glif/install-the-filecoin-app-on-your-ledger-device-y33vhX"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -4665,7 +4665,7 @@ exports[`Ledger configuration Step2 it renders replug error in the UI correctly 
         font-size="2"
         font-weight="400"
       >
-        Please unplug and replug your Ledger device, and try again.
+        Please quit the Filecoin app, and unplug/replug your Ledger device, and try again.
       </p>
     </div>
   </div>

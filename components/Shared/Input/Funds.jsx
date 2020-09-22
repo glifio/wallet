@@ -157,7 +157,10 @@ const Funds = forwardRef(
       <Box
         position='relative'
         display='flex'
-        minHeight='160px'
+        // Update minHeight to {9} when USD bal calc is restored
+        minHeight='120px'
+        // Remove alignItems when USD bal calc is restored
+        alignItems='center'
         borderColor='input.border'
         ref={ref}
         {...props}
@@ -194,23 +197,25 @@ const Funds = forwardRef(
             borderColor='background.screen'
             borderTopLeftRadius={2}
           >
-            <Box
+            {/* <Box
               position='absolute'
-              left='-24px'
-              bottom='-24px'
+              left='-20px'
+              bottom='-20px'
               display='flex'
               alignItems='center'
               justifyContent='center'
               backgroundColor='core.white'
               borderRadius={5}
-              size={6}
+              border={1}
+              borderColor='core.lightgray'
+              size='40px'
               fontSize={5}
               fontFamily='sansSerif'
               paddingBottom='4px'
               zIndex='2'
             >
               {'\u003D'}
-            </Box>
+            </Box> */}
 
             <RawNumberInput
               onFocus={() => {
@@ -223,6 +228,8 @@ const Funds = forwardRef(
               height='100%'
               fontSize={5}
               borderTopLeftRadius={2}
+              // Remove borderBottomLeftRadius when restoring USD bal calc
+              borderBottomLeftRadius={2}
               onChange={onFilChange}
               value={formatFilValue(filAmount)}
               placeholder='0'
@@ -231,11 +238,14 @@ const Funds = forwardRef(
               disabled={disabled}
               valid={valid && !!formatFilValue(filAmount)}
               {...props}
+              my={0}
             />
             <DenomTag
               top='0px'
               left='0px'
               borderTopRightRadius={2}
+              // Remove borderBottomRightRadius when USD bal calc is restored
+              borderBottomRightRadius={2}
               valid={valid && !!formatFilValue(filAmount)}
               disabled={disabled}
             >
@@ -244,7 +254,7 @@ const Funds = forwardRef(
           </Box>
           <Box
             position='relative'
-            display='flex'
+            display='none'
             height='80px'
             borderRadius={2}
           >
@@ -259,6 +269,7 @@ const Funds = forwardRef(
               height='100%'
               fontSize={5}
               borderBottomLeftRadius={2}
+              my={0}
               onChange={onFiatChange}
               value={formatFiatValue(fiatAmount)}
               placeholder={converterError ? 'Error fetching amount' : '0'}

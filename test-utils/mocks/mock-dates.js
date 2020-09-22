@@ -1,8 +1,10 @@
 const unix = jest.fn().mockImplementation(() => {
   return {
     format: fmt => {
-      if (fmt === 'MMM DD') return 'Jan 12'
-      if (fmt === 'hh:mmA') return '2:30PM'
+      if (fmt === 'YYYY-MM-DD') return '2020-01-12'
+      if (fmt === 'MMM DD, YYYY') return 'Jan 12, 2020'
+      if (fmt === 'HH:mm:ss') return '2:30:30'
+      if (fmt === 'MMM DD, YYYY - HH:mm:ss') return 'Jan 12, 2020 - 2:30:30'
     }
   }
 })

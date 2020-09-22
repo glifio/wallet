@@ -201,7 +201,7 @@ describe('Funds input', () => {
   })
 
   describe('changing values', () => {
-    test('it calls the value change callback when the user focuses between inputs', async () => {
+    test.skip('it calls the value change callback when the user focuses between inputs', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
@@ -274,7 +274,7 @@ describe('Funds input', () => {
       })
     })
 
-    test('it sets the right FIL amount when the user sets fiat', async () => {
+    test.skip('it sets the right FIL amount when the user sets fiat', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
@@ -311,7 +311,7 @@ describe('Funds input', () => {
       })
     })
 
-    test('it sets the right fiat amount when the user sets FIL twice', async () => {
+    test.skip('it sets the right fiat amount when the user sets FIL twice', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
@@ -361,7 +361,7 @@ describe('Funds input', () => {
       })
     })
 
-    test('it sets the right FIL amount when the user sets fiat twice', async () => {
+    test.skip('it sets the right FIL amount when the user sets fiat twice', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
@@ -411,7 +411,7 @@ describe('Funds input', () => {
       })
     })
 
-    test('it sets the right FIL amount when the user sets FIL and then fiat', async () => {
+    test.skip('it sets the right FIL amount when the user sets FIL and then fiat', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
@@ -461,7 +461,7 @@ describe('Funds input', () => {
       })
     })
 
-    test('it sets the right fiat amount when the user sets fiat and then FIL', async () => {
+    test.skip('it sets the right fiat amount when the user sets fiat and then FIL', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
@@ -549,7 +549,7 @@ describe('Funds input', () => {
       })
     })
 
-    test('it sets error when more fiat is entered than what is in balance', async () => {
+    test.skip('it sets error when more fiat is entered than what is in balance', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')

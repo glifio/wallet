@@ -28,7 +28,7 @@ export default styled.input.attrs(props => ({
   border-radius: ${props => props.theme.radii[1]};
   transition: 0.2s ease-in-out;
   font-size: ${props => props.theme.fontSizes[2]};
-  text-align: right;
+  text-align: left;
   cursor: text;
   background: ${props => inputBackgroundColor(props)};
 

@@ -106,10 +106,10 @@ const MessageHistoryRow = ({
               alignItems='flex-end'
               justifyContent='center'
               ml={4}
-              width={8}
+              width={9}
             >
               <Text color='core.darkgray' m={0}>
-                {dayjs.unix(timestamp).format('MMM DD')}
+                {dayjs.unix(timestamp).format('MMM DD, YYYY - HH:mm:ss')}
               </Text>
             </MenuItem>
           </Menu>
@@ -135,7 +135,8 @@ const MessageHistoryRow = ({
               </Text>
             </MenuItem>
             <MenuItem display='flex'>
-              <Text color='core.darkgray' m={0} mb={0}>
+              {/* Remove display:none when USD calc is restored */}
+              <Text display='none' color='core.darkgray' m={0} mb={0}>
                 {!converterError &&
                   (!converter
                     ? 'Loading USD...'
@@ -160,7 +161,8 @@ const MessageHistoryRow = ({
                 FIL
               </Text>
               {!converterError && (
-                <Text color='core.darkgray' m={0} mb={0}>
+                // Remove display='none' when USD bal is restored
+                <Text display='none' color='core.darkgray' m={0} mb={0}>
                   USD
                 </Text>
               )}

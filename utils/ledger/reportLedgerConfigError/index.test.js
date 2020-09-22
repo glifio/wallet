@@ -24,7 +24,7 @@ describe('reportLedgerConfigError', () => {
   test('it gives replug message', () => {
     const error = reportLedgerConfigError({ replug: true })
     expect(error).toEqual(
-      'Please unplug and replug your Ledger device, and try again.'
+      'Please quit the Filecoin app, and unplug/replug your Ledger device, and try again.'
     )
   })
 

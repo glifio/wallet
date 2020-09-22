@@ -30,7 +30,7 @@ describe('createLedgerProvider', () => {
       const funcShouldThrow = async () =>
         await ledgerProvider.getAccounts(TESTNET, 0, 5)
       return expect(funcShouldThrow).rejects.toThrow(
-        'Ledger is busy, please check device or unplug and replug it in.'
+        'Ledger is busy, please check device, or quit Filecoin app and unplug/replug your device.'
       )
     })
 
