@@ -10,7 +10,11 @@ exports[`Funds input changing values it calls the value change callback when the
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 160px;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c1 {
@@ -64,45 +68,12 @@ exports[`Funds input changing values it calls the value change callback when the
   width: 100%;
 }
 
-.c5 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: absolute;
-  left: -20px;
-  bottom: -20px;
-  z-index: 99;
-  border-radius: 32px;
-  border: 1px solid;
-  border-color: #C4C4C4;
-  padding-bottom: 4px;
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 40px;
-  height: 40px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-}
-
-.c8 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   border-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   height: 80px;
 }
 
@@ -115,12 +86,13 @@ exports[`Funds input changing values it calls the value change callback when the
   margin: 0;
 }
 
-.c7 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
   left: 0px;
   border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
@@ -144,7 +116,7 @@ exports[`Funds input changing values it calls the value change callback when the
   background: #d1ddfa;
 }
 
-.c10 {
+.c9 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -173,7 +145,7 @@ exports[`Funds input changing values it calls the value change callback when the
   background: #d1ddfa;
 }
 
-.c6 {
+.c5 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -195,29 +167,30 @@ exports[`Funds input changing values it calls the value change callback when the
   display: inline-block;
   width: 100%;
   border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
   -moz-appearance: textfield;
 }
 
-.c6:hover {
+.c5:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c6:focus {
+.c5:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c9 {
+.c8 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -244,19 +217,19 @@ exports[`Funds input changing values it calls the value change callback when the
   -moz-appearance: textfield;
 }
 
-.c9:hover {
+.c8:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c9:focus {
+.c8:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c9::-webkit-outer-spin-button,
-.c9::-webkit-inner-spin-button {
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -294,16 +267,8 @@ exports[`Funds input changing values it calls the value change callback when the
       height="80px"
       width="100%"
     >
-      <div
-        class="c5"
-        display="flex"
-        font-family="sansSerif"
-        font-size="5"
-      >
-        =
-      </div>
       <input
-        class="BaseInput-u1913i-0 c6"
+        class="BaseInput-u1913i-0 c5"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -316,7 +281,7 @@ exports[`Funds input changing values it calls the value change callback when the
         width="100%"
       />
       <div
-        class="c7"
+        class="c6"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -326,12 +291,12 @@ exports[`Funds input changing values it calls the value change callback when the
       </div>
     </div>
     <div
-      class="c8"
-      display="flex"
+      class="c7"
+      display="none"
       height="80px"
     >
       <input
-        class="BaseInput-u1913i-0 c9"
+        class="BaseInput-u1913i-0 c8"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -343,7 +308,7 @@ exports[`Funds input changing values it calls the value change callback when the
         width="100%"
       />
       <div
-        class="c10"
+        class="c9"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -366,7 +331,11 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 160px;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c1 {
@@ -420,45 +389,12 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   width: 100%;
 }
 
-.c5 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: absolute;
-  left: -20px;
-  bottom: -20px;
-  z-index: 99;
-  border-radius: 32px;
-  border: 1px solid;
-  border-color: #C4C4C4;
-  padding-bottom: 4px;
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 40px;
-  height: 40px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-}
-
-.c8 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   border-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   height: 80px;
 }
 
@@ -471,12 +407,13 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   margin: 0;
 }
 
-.c7 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
   left: 0px;
   border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
@@ -500,7 +437,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   background: #d1ddfa;
 }
 
-.c10 {
+.c9 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -529,7 +466,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   background: #d1ddfa;
 }
 
-.c6 {
+.c5 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -551,29 +488,30 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   display: inline-block;
   width: 100%;
   border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
   -moz-appearance: textfield;
 }
 
-.c6:hover {
+.c5:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c6:focus {
+.c5:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c9 {
+.c8 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -600,19 +538,19 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   -moz-appearance: textfield;
 }
 
-.c9:hover {
+.c8:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c9:focus {
+.c8:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c9::-webkit-outer-spin-button,
-.c9::-webkit-inner-spin-button {
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -650,16 +588,8 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
       height="80px"
       width="100%"
     >
-      <div
-        class="c5"
-        display="flex"
-        font-family="sansSerif"
-        font-size="5"
-      >
-        =
-      </div>
       <input
-        class="BaseInput-u1913i-0 c6"
+        class="BaseInput-u1913i-0 c5"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -672,7 +602,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
         width="100%"
       />
       <div
-        class="c7"
+        class="c6"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -682,12 +612,12 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
       </div>
     </div>
     <div
-      class="c8"
-      display="flex"
+      class="c7"
+      display="none"
       height="80px"
     >
       <input
-        class="BaseInput-u1913i-0 c9"
+        class="BaseInput-u1913i-0 c8"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -699,7 +629,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
         width="100%"
       />
       <div
-        class="c10"
+        class="c9"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -714,7 +644,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
 
 exports[`Funds input changing values it sets the right FIL amount when the user sets FIL and then fiat 2`] = `
 <div
-  class="Box-tuskkk-0 kNDARb"
+  class="Box-tuskkk-0 bgtajb"
   display="flex"
   label="Amount"
   name="amount"
@@ -746,16 +676,8 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
       height="80px"
       width="100%"
     >
-      <div
-        class="Box-tuskkk-0 fDbiCK"
-        display="flex"
-        font-family="sansSerif"
-        font-size="5"
-      >
-        =
-      </div>
       <input
-        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 fFwszn"
+        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 iztnur"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -768,7 +690,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
         width="100%"
       />
       <div
-        class="Box-tuskkk-0 Number__DenomTag-a1xk82-0 dWdluT"
+        class="Box-tuskkk-0 Number__DenomTag-a1xk82-0 eQplmg"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -778,8 +700,8 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
       </div>
     </div>
     <div
-      class="Box-tuskkk-0 dRjsN"
-      display="flex"
+      class="Box-tuskkk-0 KmLuc"
+      display="none"
       height="80px"
     >
       <input
@@ -818,7 +740,11 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 160px;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c1 {
@@ -872,45 +798,12 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   width: 100%;
 }
 
-.c5 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: absolute;
-  left: -20px;
-  bottom: -20px;
-  z-index: 99;
-  border-radius: 32px;
-  border: 1px solid;
-  border-color: #C4C4C4;
-  padding-bottom: 4px;
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 40px;
-  height: 40px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-}
-
-.c8 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   border-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   height: 80px;
 }
 
@@ -923,12 +816,13 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   margin: 0;
 }
 
-.c7 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
   left: 0px;
   border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
@@ -952,7 +846,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   background: #d1ddfa;
 }
 
-.c10 {
+.c9 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -981,7 +875,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   background: #d1ddfa;
 }
 
-.c6 {
+.c5 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -1003,29 +897,30 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   display: inline-block;
   width: 100%;
   border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
   -moz-appearance: textfield;
 }
 
-.c6:hover {
+.c5:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c6:focus {
+.c5:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c9 {
+.c8 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -1052,19 +947,19 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   -moz-appearance: textfield;
 }
 
-.c9:hover {
+.c8:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c9:focus {
+.c8:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c9::-webkit-outer-spin-button,
-.c9::-webkit-inner-spin-button {
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -1102,16 +997,8 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
       height="80px"
       width="100%"
     >
-      <div
-        class="c5"
-        display="flex"
-        font-family="sansSerif"
-        font-size="5"
-      >
-        =
-      </div>
       <input
-        class="BaseInput-u1913i-0 c6"
+        class="BaseInput-u1913i-0 c5"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -1124,7 +1011,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
         width="100%"
       />
       <div
-        class="c7"
+        class="c6"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -1134,12 +1021,12 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
       </div>
     </div>
     <div
-      class="c8"
-      display="flex"
+      class="c7"
+      display="none"
       height="80px"
     >
       <input
-        class="BaseInput-u1913i-0 c9"
+        class="BaseInput-u1913i-0 c8"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -1151,7 +1038,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
         width="100%"
       />
       <div
-        class="c10"
+        class="c9"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -1174,7 +1061,11 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 160px;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c1 {
@@ -1228,45 +1119,12 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   width: 100%;
 }
 
-.c5 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: absolute;
-  left: -20px;
-  bottom: -20px;
-  z-index: 99;
-  border-radius: 32px;
-  border: 1px solid;
-  border-color: #C4C4C4;
-  padding-bottom: 4px;
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 40px;
-  height: 40px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-}
-
-.c8 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   border-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   height: 80px;
 }
 
@@ -1279,12 +1137,13 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   margin: 0;
 }
 
-.c7 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
   left: 0px;
   border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
@@ -1308,7 +1167,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   background: #d1ddfa;
 }
 
-.c10 {
+.c9 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -1337,7 +1196,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   background: #d1ddfa;
 }
 
-.c6 {
+.c5 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -1359,29 +1218,30 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   display: inline-block;
   width: 100%;
   border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
   -moz-appearance: textfield;
 }
 
-.c6:hover {
+.c5:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c6:focus {
+.c5:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c9 {
+.c8 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -1408,19 +1268,19 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
   -moz-appearance: textfield;
 }
 
-.c9:hover {
+.c8:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c9:focus {
+.c8:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c9::-webkit-outer-spin-button,
-.c9::-webkit-inner-spin-button {
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -1458,16 +1318,8 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
       height="80px"
       width="100%"
     >
-      <div
-        class="c5"
-        display="flex"
-        font-family="sansSerif"
-        font-size="5"
-      >
-        =
-      </div>
       <input
-        class="BaseInput-u1913i-0 c6"
+        class="BaseInput-u1913i-0 c5"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -1480,7 +1332,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
         width="100%"
       />
       <div
-        class="c7"
+        class="c6"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -1490,12 +1342,12 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
       </div>
     </div>
     <div
-      class="c8"
-      display="flex"
+      class="c7"
+      display="none"
       height="80px"
     >
       <input
-        class="BaseInput-u1913i-0 c9"
+        class="BaseInput-u1913i-0 c8"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -1507,7 +1359,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
         width="100%"
       />
       <div
-        class="c10"
+        class="c9"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -1522,7 +1374,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
 
 exports[`Funds input changing values it sets the right FIL amount when the user sets fiat twice 2`] = `
 <div
-  class="Box-tuskkk-0 kNDARb"
+  class="Box-tuskkk-0 bgtajb"
   display="flex"
   label="Amount"
   name="amount"
@@ -1554,16 +1406,8 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
       height="80px"
       width="100%"
     >
-      <div
-        class="Box-tuskkk-0 fDbiCK"
-        display="flex"
-        font-family="sansSerif"
-        font-size="5"
-      >
-        =
-      </div>
       <input
-        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 fFwszn"
+        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 iztnur"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -1576,7 +1420,7 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
         width="100%"
       />
       <div
-        class="Box-tuskkk-0 Number__DenomTag-a1xk82-0 dWdluT"
+        class="Box-tuskkk-0 Number__DenomTag-a1xk82-0 eQplmg"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -1586,8 +1430,8 @@ exports[`Funds input changing values it sets the right FIL amount when the user 
       </div>
     </div>
     <div
-      class="Box-tuskkk-0 dRjsN"
-      display="flex"
+      class="Box-tuskkk-0 KmLuc"
+      display="none"
       height="80px"
     >
       <input
@@ -1626,7 +1470,11 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 160px;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c1 {
@@ -1680,45 +1528,12 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   width: 100%;
 }
 
-.c5 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: absolute;
-  left: -20px;
-  bottom: -20px;
-  z-index: 99;
-  border-radius: 32px;
-  border: 1px solid;
-  border-color: #C4C4C4;
-  padding-bottom: 4px;
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 40px;
-  height: 40px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-}
-
-.c8 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   border-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   height: 80px;
 }
 
@@ -1731,12 +1546,13 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   margin: 0;
 }
 
-.c7 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
   left: 0px;
   border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
@@ -1760,7 +1576,7 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   background: #d1ddfa;
 }
 
-.c10 {
+.c9 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -1789,7 +1605,7 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   background: #d1ddfa;
 }
 
-.c6 {
+.c5 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -1811,29 +1627,30 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   display: inline-block;
   width: 100%;
   border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
   -moz-appearance: textfield;
 }
 
-.c6:hover {
+.c5:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c6:focus {
+.c5:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c9 {
+.c8 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -1860,19 +1677,19 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   -moz-appearance: textfield;
 }
 
-.c9:hover {
+.c8:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c9:focus {
+.c8:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c9::-webkit-outer-spin-button,
-.c9::-webkit-inner-spin-button {
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -1910,16 +1727,8 @@ exports[`Funds input changing values it sets the right fiat amount when the user
       height="80px"
       width="100%"
     >
-      <div
-        class="c5"
-        display="flex"
-        font-family="sansSerif"
-        font-size="5"
-      >
-        =
-      </div>
       <input
-        class="BaseInput-u1913i-0 c6"
+        class="BaseInput-u1913i-0 c5"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -1932,7 +1741,7 @@ exports[`Funds input changing values it sets the right fiat amount when the user
         width="100%"
       />
       <div
-        class="c7"
+        class="c6"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -1942,12 +1751,12 @@ exports[`Funds input changing values it sets the right fiat amount when the user
       </div>
     </div>
     <div
-      class="c8"
-      display="flex"
+      class="c7"
+      display="none"
       height="80px"
     >
       <input
-        class="BaseInput-u1913i-0 c9"
+        class="BaseInput-u1913i-0 c8"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -1959,7 +1768,7 @@ exports[`Funds input changing values it sets the right fiat amount when the user
         width="100%"
       />
       <div
-        class="c10"
+        class="c9"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -1982,7 +1791,11 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 160px;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c1 {
@@ -2036,45 +1849,12 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   width: 100%;
 }
 
-.c5 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: absolute;
-  left: -20px;
-  bottom: -20px;
-  z-index: 99;
-  border-radius: 32px;
-  border: 1px solid;
-  border-color: #C4C4C4;
-  padding-bottom: 4px;
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 40px;
-  height: 40px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-}
-
-.c8 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   border-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   height: 80px;
 }
 
@@ -2087,12 +1867,13 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   margin: 0;
 }
 
-.c7 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
   left: 0px;
   border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
@@ -2116,7 +1897,7 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   background: #d1ddfa;
 }
 
-.c10 {
+.c9 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -2145,7 +1926,7 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   background: #d1ddfa;
 }
 
-.c6 {
+.c5 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -2167,29 +1948,30 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   display: inline-block;
   width: 100%;
   border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
   -moz-appearance: textfield;
 }
 
-.c6:hover {
+.c5:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c6:focus {
+.c5:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c9 {
+.c8 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -2216,19 +1998,19 @@ exports[`Funds input changing values it sets the right fiat amount when the user
   -moz-appearance: textfield;
 }
 
-.c9:hover {
+.c8:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c9:focus {
+.c8:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c9::-webkit-outer-spin-button,
-.c9::-webkit-inner-spin-button {
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -2266,16 +2048,8 @@ exports[`Funds input changing values it sets the right fiat amount when the user
       height="80px"
       width="100%"
     >
-      <div
-        class="c5"
-        display="flex"
-        font-family="sansSerif"
-        font-size="5"
-      >
-        =
-      </div>
       <input
-        class="BaseInput-u1913i-0 c6"
+        class="BaseInput-u1913i-0 c5"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -2288,7 +2062,7 @@ exports[`Funds input changing values it sets the right fiat amount when the user
         width="100%"
       />
       <div
-        class="c7"
+        class="c6"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -2298,12 +2072,12 @@ exports[`Funds input changing values it sets the right fiat amount when the user
       </div>
     </div>
     <div
-      class="c8"
-      display="flex"
+      class="c7"
+      display="none"
       height="80px"
     >
       <input
-        class="BaseInput-u1913i-0 c9"
+        class="BaseInput-u1913i-0 c8"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -2315,7 +2089,7 @@ exports[`Funds input changing values it sets the right fiat amount when the user
         width="100%"
       />
       <div
-        class="c10"
+        class="c9"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -2330,7 +2104,7 @@ exports[`Funds input changing values it sets the right fiat amount when the user
 
 exports[`Funds input changing values it sets the right fiat amount when the user sets FIL twice 2`] = `
 <div
-  class="Box-tuskkk-0 kNDARb"
+  class="Box-tuskkk-0 bgtajb"
   display="flex"
   label="Amount"
   name="amount"
@@ -2362,16 +2136,8 @@ exports[`Funds input changing values it sets the right fiat amount when the user
       height="80px"
       width="100%"
     >
-      <div
-        class="Box-tuskkk-0 fDbiCK"
-        display="flex"
-        font-family="sansSerif"
-        font-size="5"
-      >
-        =
-      </div>
       <input
-        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 fFwszn"
+        class="BaseInput-u1913i-0 Number__RawNumberInput-a1xk82-1 iztnur"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -2384,7 +2150,7 @@ exports[`Funds input changing values it sets the right fiat amount when the user
         width="100%"
       />
       <div
-        class="Box-tuskkk-0 Number__DenomTag-a1xk82-0 dWdluT"
+        class="Box-tuskkk-0 Number__DenomTag-a1xk82-0 eQplmg"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -2394,8 +2160,8 @@ exports[`Funds input changing values it sets the right fiat amount when the user
       </div>
     </div>
     <div
-      class="Box-tuskkk-0 dRjsN"
-      display="flex"
+      class="Box-tuskkk-0 KmLuc"
+      display="none"
       height="80px"
     >
       <input
@@ -2886,7 +2652,11 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 160px;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c1 {
@@ -2940,45 +2710,12 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   width: 100%;
 }
 
-.c5 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: absolute;
-  left: -20px;
-  bottom: -20px;
-  z-index: 99;
-  border-radius: 32px;
-  border: 1px solid;
-  border-color: #C4C4C4;
-  padding-bottom: 4px;
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 40px;
-  height: 40px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-}
-
-.c8 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   border-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   height: 80px;
 }
 
@@ -2991,12 +2728,13 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   margin: 0;
 }
 
-.c7 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
   left: 0px;
   border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
@@ -3020,7 +2758,7 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   background: #d1ddfa;
 }
 
-.c10 {
+.c9 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -3049,7 +2787,7 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   background: #d1ddfa;
 }
 
-.c6 {
+.c5 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3071,29 +2809,30 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   display: inline-block;
   width: 100%;
   border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
   -moz-appearance: textfield;
 }
 
-.c6:hover {
+.c5:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c6:focus {
+.c5:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c9 {
+.c8 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3120,19 +2859,19 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   -moz-appearance: textfield;
 }
 
-.c9:hover {
+.c8:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c9:focus {
+.c8:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c9::-webkit-outer-spin-button,
-.c9::-webkit-inner-spin-button {
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -3170,16 +2909,8 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
       height="80px"
       width="100%"
     >
-      <div
-        class="c5"
-        display="flex"
-        font-family="sansSerif"
-        font-size="5"
-      >
-        =
-      </div>
       <input
-        class="BaseInput-u1913i-0 c6"
+        class="BaseInput-u1913i-0 c5"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -3192,7 +2923,7 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
         width="100%"
       />
       <div
-        class="c7"
+        class="c6"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -3202,12 +2933,12 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
       </div>
     </div>
     <div
-      class="c8"
-      display="flex"
+      class="c7"
+      display="none"
       height="80px"
     >
       <input
-        class="BaseInput-u1913i-0 c9"
+        class="BaseInput-u1913i-0 c8"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -3219,7 +2950,7 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
         width="100%"
       />
       <div
-        class="c10"
+        class="c9"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -3242,7 +2973,11 @@ exports[`Funds input it renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 160px;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c1 {
@@ -3296,45 +3031,12 @@ exports[`Funds input it renders correctly 1`] = `
   width: 100%;
 }
 
-.c5 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: absolute;
-  left: -20px;
-  bottom: -20px;
-  z-index: 99;
-  border-radius: 32px;
-  border: 1px solid;
-  border-color: #C4C4C4;
-  padding-bottom: 4px;
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 40px;
-  height: 40px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-}
-
-.c8 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   border-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   height: 80px;
 }
 
@@ -3347,12 +3049,13 @@ exports[`Funds input it renders correctly 1`] = `
   margin: 0;
 }
 
-.c7 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
   left: 0px;
   border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
@@ -3376,7 +3079,7 @@ exports[`Funds input it renders correctly 1`] = `
   background: #85e0cb;
 }
 
-.c10 {
+.c9 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -3405,7 +3108,7 @@ exports[`Funds input it renders correctly 1`] = `
   background: #85e0cb;
 }
 
-.c6 {
+.c5 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3427,29 +3130,30 @@ exports[`Funds input it renders correctly 1`] = `
   display: inline-block;
   width: 100%;
   border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
   -moz-appearance: textfield;
 }
 
-.c6:hover {
+.c5:hover {
   background: #85e0cb;
   cursor: text;
 }
 
-.c6:focus {
+.c5:focus {
   box-shadow: 0;
   outline: 0;
   background: #85e0cb;
 }
 
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c9 {
+.c8 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3476,19 +3180,19 @@ exports[`Funds input it renders correctly 1`] = `
   -moz-appearance: textfield;
 }
 
-.c9:hover {
+.c8:hover {
   background: #85e0cb;
   cursor: text;
 }
 
-.c9:focus {
+.c8:focus {
   box-shadow: 0;
   outline: 0;
   background: #85e0cb;
 }
 
-.c9::-webkit-outer-spin-button,
-.c9::-webkit-inner-spin-button {
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -3526,16 +3230,8 @@ exports[`Funds input it renders correctly 1`] = `
       height="80px"
       width="100%"
     >
-      <div
-        class="c5"
-        display="flex"
-        font-family="sansSerif"
-        font-size="5"
-      >
-        =
-      </div>
       <input
-        class="BaseInput-u1913i-0 c6"
+        class="BaseInput-u1913i-0 c5"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -3548,7 +3244,7 @@ exports[`Funds input it renders correctly 1`] = `
         width="100%"
       />
       <div
-        class="c7"
+        class="c6"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -3558,12 +3254,12 @@ exports[`Funds input it renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="c8"
-      display="flex"
+      class="c7"
+      display="none"
       height="80px"
     >
       <input
-        class="BaseInput-u1913i-0 c9"
+        class="BaseInput-u1913i-0 c8"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -3575,7 +3271,7 @@ exports[`Funds input it renders correctly 1`] = `
         width="100%"
       />
       <div
-        class="c10"
+        class="c9"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -3598,7 +3294,11 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 160px;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c1 {
@@ -3652,45 +3352,12 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   width: 100%;
 }
 
-.c5 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: absolute;
-  left: -20px;
-  bottom: -20px;
-  z-index: 99;
-  border-radius: 32px;
-  border: 1px solid;
-  border-color: #C4C4C4;
-  padding-bottom: 4px;
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 40px;
-  height: 40px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-}
-
-.c8 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   border-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   height: 80px;
 }
 
@@ -3703,12 +3370,13 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   margin: 0;
 }
 
-.c7 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
   left: 0px;
   border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
@@ -3732,7 +3400,7 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   background: #bacbf7;
 }
 
-.c10 {
+.c9 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -3761,7 +3429,7 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   background: #bacbf7;
 }
 
-.c6 {
+.c5 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3783,29 +3451,30 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   display: inline-block;
   width: 100%;
   border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
   -moz-appearance: textfield;
 }
 
-.c6:hover {
+.c5:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c6:focus {
+.c5:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c9 {
+.c8 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3832,19 +3501,19 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   -moz-appearance: textfield;
 }
 
-.c9:hover {
+.c8:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c9:focus {
+.c8:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c9::-webkit-outer-spin-button,
-.c9::-webkit-inner-spin-button {
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -3882,16 +3551,8 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
       height="80px"
       width="100%"
     >
-      <div
-        class="c5"
-        display="flex"
-        font-family="sansSerif"
-        font-size="5"
-      >
-        =
-      </div>
       <input
-        class="BaseInput-u1913i-0 c6"
+        class="BaseInput-u1913i-0 c5"
         disabled=""
         display="inline-block"
         font-size="5"
@@ -3905,7 +3566,7 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
         width="100%"
       />
       <div
-        class="c7"
+        class="c6"
         color="core.primary"
         disabled=""
         display="flex"
@@ -3916,12 +3577,12 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
       </div>
     </div>
     <div
-      class="c8"
-      display="flex"
+      class="c7"
+      display="none"
       height="80px"
     >
       <input
-        class="BaseInput-u1913i-0 c9"
+        class="BaseInput-u1913i-0 c8"
         disabled=""
         display="inline-block"
         font-size="5"
@@ -3934,7 +3595,7 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
         width="100%"
       />
       <div
-        class="c10"
+        class="c9"
         color="core.primary"
         disabled=""
         display="flex"
@@ -3958,7 +3619,11 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 160px;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c1 {
@@ -4012,45 +3677,12 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   width: 100%;
 }
 
-.c5 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: absolute;
-  left: -20px;
-  bottom: -20px;
-  z-index: 99;
-  border-radius: 32px;
-  border: 1px solid;
-  border-color: #C4C4C4;
-  padding-bottom: 4px;
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 40px;
-  height: 40px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-}
-
-.c8 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   border-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   height: 80px;
 }
 
@@ -4063,12 +3695,13 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   margin: 0;
 }
 
-.c7 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
   left: 0px;
   border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
@@ -4092,7 +3725,7 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   background: #bacbf7;
 }
 
-.c10 {
+.c9 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -4121,7 +3754,7 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   background: #bacbf7;
 }
 
-.c6 {
+.c5 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -4143,29 +3776,30 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   display: inline-block;
   width: 100%;
   border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
   -moz-appearance: textfield;
 }
 
-.c6:hover {
+.c5:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c6:focus {
+.c5:focus {
   box-shadow: 0;
   outline: 0;
   background: #85e0cb;
 }
 
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c9 {
+.c8 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -4192,19 +3826,19 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   -moz-appearance: textfield;
 }
 
-.c9:hover {
+.c8:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c9:focus {
+.c8:focus {
   box-shadow: 0;
   outline: 0;
   background: #85e0cb;
 }
 
-.c9::-webkit-outer-spin-button,
-.c9::-webkit-inner-spin-button {
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -4242,16 +3876,8 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
       height="80px"
       width="100%"
     >
-      <div
-        class="c5"
-        display="flex"
-        font-family="sansSerif"
-        font-size="5"
-      >
-        =
-      </div>
       <input
-        class="BaseInput-u1913i-0 c6"
+        class="BaseInput-u1913i-0 c5"
         disabled=""
         display="inline-block"
         font-size="5"
@@ -4265,7 +3891,7 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
         width="100%"
       />
       <div
-        class="c7"
+        class="c6"
         color="core.primary"
         disabled=""
         display="flex"
@@ -4276,12 +3902,12 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
       </div>
     </div>
     <div
-      class="c8"
-      display="flex"
+      class="c7"
+      display="none"
       height="80px"
     >
       <input
-        class="BaseInput-u1913i-0 c9"
+        class="BaseInput-u1913i-0 c8"
         disabled=""
         display="inline-block"
         font-size="5"
@@ -4294,7 +3920,7 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
         width="100%"
       />
       <div
-        class="c10"
+        class="c9"
         color="core.primary"
         disabled=""
         display="flex"
@@ -4318,7 +3944,11 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 160px;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c1 {
@@ -4372,45 +4002,12 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   width: 100%;
 }
 
-.c5 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: absolute;
-  left: -20px;
-  bottom: -20px;
-  z-index: 99;
-  border-radius: 32px;
-  border: 1px solid;
-  border-color: #C4C4C4;
-  padding-bottom: 4px;
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 40px;
-  height: 40px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-}
-
-.c8 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   border-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   height: 80px;
 }
 
@@ -4423,12 +4020,13 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   margin: 0;
 }
 
-.c7 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
   left: 0px;
   border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
@@ -4452,7 +4050,7 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   background: #bacbf7;
 }
 
-.c10 {
+.c9 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -4481,7 +4079,7 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   background: #bacbf7;
 }
 
-.c6 {
+.c5 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -4503,29 +4101,30 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   display: inline-block;
   width: 100%;
   border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
   -moz-appearance: textfield;
 }
 
-.c6:hover {
+.c5:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c6:focus {
+.c5:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c9 {
+.c8 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -4552,19 +4151,19 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   -moz-appearance: textfield;
 }
 
-.c9:hover {
+.c8:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c9:focus {
+.c8:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c9::-webkit-outer-spin-button,
-.c9::-webkit-inner-spin-button {
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -4602,16 +4201,8 @@ exports[`Funds input it renders disabled state correctly 1`] = `
       height="80px"
       width="100%"
     >
-      <div
-        class="c5"
-        display="flex"
-        font-family="sansSerif"
-        font-size="5"
-      >
-        =
-      </div>
       <input
-        class="BaseInput-u1913i-0 c6"
+        class="BaseInput-u1913i-0 c5"
         disabled=""
         display="inline-block"
         font-size="5"
@@ -4625,7 +4216,7 @@ exports[`Funds input it renders disabled state correctly 1`] = `
         width="100%"
       />
       <div
-        class="c7"
+        class="c6"
         color="core.primary"
         disabled=""
         display="flex"
@@ -4636,12 +4227,12 @@ exports[`Funds input it renders disabled state correctly 1`] = `
       </div>
     </div>
     <div
-      class="c8"
-      display="flex"
+      class="c7"
+      display="none"
       height="80px"
     >
       <input
-        class="BaseInput-u1913i-0 c9"
+        class="BaseInput-u1913i-0 c8"
         disabled=""
         display="inline-block"
         font-size="5"
@@ -4654,7 +4245,7 @@ exports[`Funds input it renders disabled state correctly 1`] = `
         width="100%"
       />
       <div
-        class="c10"
+        class="c9"
         color="core.primary"
         disabled=""
         display="flex"
@@ -4678,7 +4269,11 @@ exports[`Funds input it renders error states properly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 160px;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c1 {
@@ -4733,45 +4328,12 @@ exports[`Funds input it renders error states properly 1`] = `
   width: 100%;
 }
 
-.c5 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: absolute;
-  left: -20px;
-  bottom: -20px;
-  z-index: 99;
-  border-radius: 32px;
-  border: 1px solid;
-  border-color: #C4C4C4;
-  padding-bottom: 4px;
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 40px;
-  height: 40px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-}
-
-.c8 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   border-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   height: 80px;
 }
 
@@ -4786,12 +4348,13 @@ exports[`Funds input it renders error states properly 1`] = `
   padding-right: 8px;
 }
 
-.c7 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
   left: 0px;
   border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
@@ -4815,7 +4378,7 @@ exports[`Funds input it renders error states properly 1`] = `
   background: #d1ddfa;
 }
 
-.c10 {
+.c9 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -4844,7 +4407,7 @@ exports[`Funds input it renders error states properly 1`] = `
   background: #d1ddfa;
 }
 
-.c6 {
+.c5 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -4866,29 +4429,30 @@ exports[`Funds input it renders error states properly 1`] = `
   display: inline-block;
   width: 100%;
   border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
   -moz-appearance: textfield;
 }
 
-.c6:hover {
+.c5:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c6:focus {
+.c5:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c9 {
+.c8 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -4915,19 +4479,19 @@ exports[`Funds input it renders error states properly 1`] = `
   -moz-appearance: textfield;
 }
 
-.c9:hover {
+.c8:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c9:focus {
+.c8:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c9::-webkit-outer-spin-button,
-.c9::-webkit-inner-spin-button {
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -4965,16 +4529,8 @@ exports[`Funds input it renders error states properly 1`] = `
       height="80px"
       width="100%"
     >
-      <div
-        class="c5"
-        display="flex"
-        font-family="sansSerif"
-        font-size="5"
-      >
-        =
-      </div>
       <input
-        class="BaseInput-u1913i-0 c6"
+        class="BaseInput-u1913i-0 c5"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -4987,7 +4543,7 @@ exports[`Funds input it renders error states properly 1`] = `
         width="100%"
       />
       <div
-        class="c7"
+        class="c6"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -4997,12 +4553,12 @@ exports[`Funds input it renders error states properly 1`] = `
       </div>
     </div>
     <div
-      class="c8"
-      display="flex"
+      class="c7"
+      display="none"
       height="80px"
     >
       <input
-        class="BaseInput-u1913i-0 c9"
+        class="BaseInput-u1913i-0 c8"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -5014,7 +4570,7 @@ exports[`Funds input it renders error states properly 1`] = `
         width="100%"
       />
       <div
-        class="c10"
+        class="c9"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -5037,7 +4593,11 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 160px;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c1 {
@@ -5091,45 +4651,12 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   width: 100%;
 }
 
-.c5 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: absolute;
-  left: -20px;
-  bottom: -20px;
-  z-index: 99;
-  border-radius: 32px;
-  border: 1px solid;
-  border-color: #C4C4C4;
-  padding-bottom: 4px;
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 40px;
-  height: 40px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-}
-
-.c8 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   border-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   height: 80px;
 }
 
@@ -5142,12 +4669,13 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   margin: 0;
 }
 
-.c7 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
   left: 0px;
   border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
@@ -5171,7 +4699,7 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   background: #d1ddfa;
 }
 
-.c10 {
+.c9 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -5200,7 +4728,7 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   background: #d1ddfa;
 }
 
-.c6 {
+.c5 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -5222,29 +4750,30 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   display: inline-block;
   width: 100%;
   border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
   -moz-appearance: textfield;
 }
 
-.c6:hover {
+.c5:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c6:focus {
+.c5:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c9 {
+.c8 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -5271,19 +4800,19 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   -moz-appearance: textfield;
 }
 
-.c9:hover {
+.c8:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c9:focus {
+.c8:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c9::-webkit-outer-spin-button,
-.c9::-webkit-inner-spin-button {
+.c8::-webkit-outer-spin-button,
+.c8::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -5321,16 +4850,8 @@ exports[`Funds input it renders invalid state correctly 1`] = `
       height="80px"
       width="100%"
     >
-      <div
-        class="c5"
-        display="flex"
-        font-family="sansSerif"
-        font-size="5"
-      >
-        =
-      </div>
       <input
-        class="BaseInput-u1913i-0 c6"
+        class="BaseInput-u1913i-0 c5"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -5343,7 +4864,7 @@ exports[`Funds input it renders invalid state correctly 1`] = `
         width="100%"
       />
       <div
-        class="c7"
+        class="c6"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -5353,12 +4874,12 @@ exports[`Funds input it renders invalid state correctly 1`] = `
       </div>
     </div>
     <div
-      class="c8"
-      display="flex"
+      class="c7"
+      display="none"
       height="80px"
     >
       <input
-        class="BaseInput-u1913i-0 c9"
+        class="BaseInput-u1913i-0 c8"
         display="inline-block"
         font-size="5"
         height="100%"
@@ -5370,7 +4891,7 @@ exports[`Funds input it renders invalid state correctly 1`] = `
         width="100%"
       />
       <div
-        class="c10"
+        class="c9"
         color="core.primary"
         display="flex"
         font-size="3"

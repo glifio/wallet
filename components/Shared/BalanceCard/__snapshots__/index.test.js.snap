@@ -53,7 +53,7 @@ exports[`BalanceCard it renders correctly 1`] = `
   overflow: hidden;
 }
 
-.c11 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -66,7 +66,7 @@ exports[`BalanceCard it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c12 {
+.c11 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -89,7 +89,7 @@ exports[`BalanceCard it renders correctly 1`] = `
   border-radius: 4px;
 }
 
-.c12:hover {
+.c11:hover {
   opacity: 0.8;
 }
 
@@ -98,15 +98,6 @@ exports[`BalanceCard it renders correctly 1`] = `
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c10 {
-  color: #666666;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
   font-family: RT-Alias-Grotesk;
   margin: 0;
 }
@@ -206,22 +197,13 @@ exports[`BalanceCard it renders correctly 1`] = `
       100
        FIL
     </h2>
-    <h2
-      class="c10"
-      color="core.darkgray"
-      font-family="RT-Alias-Grotesk"
-      font-size="5"
-      font-weight="700"
-    >
-      Loading USD
-    </h2>
   </div>
   <div
-    class="c11"
+    class="c10"
     display="flex"
   >
     <button
-      class="c12"
+      class="c11"
       font-size="3"
       height="6"
       type="button"
@@ -285,7 +267,7 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
   overflow: hidden;
 }
 
-.c11 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -298,7 +280,7 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
   justify-content: space-between;
 }
 
-.c12 {
+.c11 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -321,7 +303,7 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
   border-radius: 4px;
 }
 
-.c12:hover {
+.c11:hover {
   opacity: 0.8;
 }
 
@@ -330,15 +312,6 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c10 {
-  color: #666666;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
   font-family: RT-Alias-Grotesk;
   margin: 0;
 }
@@ -438,22 +411,13 @@ exports[`BalanceCard it renders precise when the user clicks "precise" 1`] = `
       23488219.00001
        FIL
     </h2>
-    <h2
-      class="c10"
-      color="core.darkgray"
-      font-family="RT-Alias-Grotesk"
-      font-size="5"
-      font-weight="700"
-    >
-      Loading USD
-    </h2>
   </div>
   <div
-    class="c11"
+    class="c10"
     display="flex"
   >
     <button
-      class="c12"
+      class="c11"
       font-size="3"
       height="6"
       type="button"
@@ -517,7 +481,7 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
   overflow: hidden;
 }
 
-.c11 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -530,7 +494,7 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
   justify-content: space-between;
 }
 
-.c12 {
+.c11 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -553,7 +517,7 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
   border-radius: 4px;
 }
 
-.c12:hover {
+.c11:hover {
   opacity: 0.8;
 }
 
@@ -562,15 +526,6 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c10 {
-  color: #666666;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
   font-family: RT-Alias-Grotesk;
   margin: 0;
 }
@@ -670,22 +625,13 @@ exports[`BalanceCard it renders pretty billion dollar balances 1`] = `
       10.023B
        FIL
     </h2>
-    <h2
-      class="c10"
-      color="core.darkgray"
-      font-family="RT-Alias-Grotesk"
-      font-size="5"
-      font-weight="700"
-    >
-      Loading USD
-    </h2>
   </div>
   <div
-    class="c11"
+    class="c10"
     display="flex"
   >
     <button
-      class="c12"
+      class="c11"
       font-size="3"
       height="6"
       type="button"
@@ -749,7 +695,7 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
   overflow: hidden;
 }
 
-.c11 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -762,7 +708,7 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
   justify-content: space-between;
 }
 
-.c12 {
+.c11 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -785,7 +731,7 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
   border-radius: 4px;
 }
 
-.c12:hover {
+.c11:hover {
   opacity: 0.8;
 }
 
@@ -794,15 +740,6 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c10 {
-  color: #666666;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
   font-family: RT-Alias-Grotesk;
   margin: 0;
 }
@@ -902,22 +839,13 @@ exports[`BalanceCard it renders pretty million dollar balances 1`] = `
       10.022M
        FIL
     </h2>
-    <h2
-      class="c10"
-      color="core.darkgray"
-      font-family="RT-Alias-Grotesk"
-      font-size="5"
-      font-weight="700"
-    >
-      Loading USD
-    </h2>
   </div>
   <div
-    class="c11"
+    class="c10"
     display="flex"
   >
     <button
-      class="c12"
+      class="c11"
       font-size="3"
       height="6"
       type="button"
@@ -981,7 +909,7 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
   overflow: hidden;
 }
 
-.c11 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -994,7 +922,7 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
   justify-content: space-between;
 }
 
-.c12 {
+.c11 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -1017,7 +945,7 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
   border-radius: 4px;
 }
 
-.c12:hover {
+.c11:hover {
   opacity: 0.8;
 }
 
@@ -1026,15 +954,6 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c10 {
-  color: #666666;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
   font-family: RT-Alias-Grotesk;
   margin: 0;
 }
@@ -1134,22 +1053,13 @@ exports[`BalanceCard it renders pretty thousand dollar balances 1`] = `
       10.021K
        FIL
     </h2>
-    <h2
-      class="c10"
-      color="core.darkgray"
-      font-family="RT-Alias-Grotesk"
-      font-size="5"
-      font-weight="700"
-    >
-      Loading USD
-    </h2>
   </div>
   <div
-    class="c11"
+    class="c10"
     display="flex"
   >
     <button
-      class="c12"
+      class="c11"
       font-size="3"
       height="6"
       type="button"
@@ -1213,7 +1123,7 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
   overflow: hidden;
 }
 
-.c11 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1226,7 +1136,7 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
   justify-content: space-between;
 }
 
-.c12 {
+.c11 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -1249,7 +1159,7 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
   border-radius: 4px;
 }
 
-.c12:hover {
+.c11:hover {
   opacity: 0.8;
 }
 
@@ -1258,15 +1168,6 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c10 {
-  color: #666666;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
   font-family: RT-Alias-Grotesk;
   margin: 0;
 }
@@ -1366,22 +1267,13 @@ exports[`BalanceCard it renders pretty under 1 dollar balances 1`] = `
       &lt; 0.001
        FIL
     </h2>
-    <h2
-      class="c10"
-      color="core.darkgray"
-      font-family="RT-Alias-Grotesk"
-      font-size="5"
-      font-weight="700"
-    >
-      Loading USD
-    </h2>
   </div>
   <div
-    class="c11"
+    class="c10"
     display="flex"
   >
     <button
-      class="c12"
+      class="c11"
       font-size="3"
       height="6"
       type="button"
@@ -1445,7 +1337,7 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
   overflow: hidden;
 }
 
-.c11 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1458,7 +1350,7 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
   justify-content: space-between;
 }
 
-.c12 {
+.c11 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -1481,7 +1373,7 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
   border-radius: 4px;
 }
 
-.c12:hover {
+.c11:hover {
   opacity: 0.8;
 }
 
@@ -1490,15 +1382,6 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c10 {
-  color: #666666;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
   font-family: RT-Alias-Grotesk;
   margin: 0;
 }
@@ -1598,22 +1481,13 @@ exports[`BalanceCard it renders pretty under thousand dollar balances 1`] = `
       999.124
        FIL
     </h2>
-    <h2
-      class="c10"
-      color="core.darkgray"
-      font-family="RT-Alias-Grotesk"
-      font-size="5"
-      font-weight="700"
-    >
-      Loading USD
-    </h2>
   </div>
   <div
-    class="c11"
+    class="c10"
     display="flex"
   >
     <button
-      class="c12"
+      class="c11"
       font-size="3"
       height="6"
       type="button"
