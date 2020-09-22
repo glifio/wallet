@@ -9,8 +9,7 @@ import {
   Header,
   Button,
   Warning,
-  Glyph,
-  Highlight
+  Glyph
 } from '../../Shared'
 import HeaderGlyph from '../../Shared/Glyph/HeaderGlyph'
 import ImportWallet from './Import'
@@ -252,7 +251,7 @@ export default () => {
                 <Title fontSize={5} color='core.white'>
                   For Filecoin SAFT Investors
                 </Title>
-                <Title fontSize={5} color='core.lightgray' color='#cccccc'>
+                <Title fontSize={5} color='core.lightgray'>
                   Use your Ledger device to setup and manage your Filecoin SAFT.
                 </Title>
 
