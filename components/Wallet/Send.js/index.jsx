@@ -73,7 +73,7 @@ const Send = ({ close }) => {
     new FilecoinNumber('122222', 'attofil')
   )
 
-  const [fetchingTxDetails, setFetchingTxDetails] = useState(true)
+  const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
 
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
