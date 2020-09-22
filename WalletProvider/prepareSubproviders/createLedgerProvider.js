@@ -52,12 +52,16 @@ export default rustModule => {
         throwIfBusy(ledgerBusy)
         ledgerBusy = true
         return new Promise((resolve, reject) => {
+          let finished = false
           setTimeout(() => {
-            console.log(
-              'setting ledgerbusy false in getVersion, call timed out'
-            )
-            ledgerBusy = false
-            return reject(new Error('Ledger device locked or busy'))
+            if (!finished) {
+              console.log(
+                'setting ledgerbusy false in getVersion, call timed out'
+              )
+              finished = true
+              ledgerBusy = false
+              return reject(new Error('Ledger device locked or busy'))
+            }
           }, 3000)
 
           setTimeout(async () => {
@@ -67,10 +71,13 @@ export default rustModule => {
             } catch (err) {
               return reject(err)
             } finally {
-              console.log(
-                'setting ledgerbusy false in getVersion, call finished without timing out'
-              )
-              ledgerBusy = false
+              if (!finished) {
+                console.log(
+                  'setting ledgerbusy false in getVersion, call finished without timing out'
+                )
+                finished = true
+                ledgerBusy = false
+              }
             }
           })
         })
@@ -103,11 +110,11 @@ export default rustModule => {
         const serializedMessage = rustModule.transactionSerialize(
           filecoinMessage
         )
-        const { signature_compact } = handleErrors(
+        const res = handleErrors(
           await ledgerApp.sign(path, Buffer.from(serializedMessage, 'hex'))
         )
         ledgerBusy = false
-        return signature_compact.toString('base64')
+        return res.signature_compact.toString('base64')
       },
 
       showAddressAndPubKey: async path => {
