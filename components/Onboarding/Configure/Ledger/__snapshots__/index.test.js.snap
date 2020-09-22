@@ -4665,7 +4665,7 @@ exports[`Ledger configuration Step2 it renders replug error in the UI correctly 
         font-size="2"
         font-weight="400"
       >
-        Please unplug and replug your Ledger device, and try again.
+        Please quit the Filecoin app, and unplug/replug your Ledger device, and try again.
       </p>
     </div>
   </div>
