@@ -71,13 +71,10 @@ export default () => {
           {!phishingBanner && (
             <Box
               position='absolute'
-              display='flex'
-              alignItems='center'
-              justifyContent='space-around'
+              display='block'
               top='0'
               backgroundColor='status.warning.background'
               width='100%'
-              maxWidth='1440px'
               minHeight={6}
               px={3}
               py={[2, 2, 0]}
@@ -85,27 +82,34 @@ export default () => {
               borderBottomLeftRadius={1}
               borderBottomRightRadius={1}
             >
-              <Text
-                mt={3}
-                lineHeight='140%'
-                m={0}
-                color="'status.warning.foreground'"
+              <Box
+                display='flex'
+                alignItems='center'
+                justifyContent='space-around'
+                maxWidth='1440px'
               >
-                For your protection, please check your browser&apos;s URL bar
-                that you&apos;re visiting https://wallet.glif.io
-              </Text>
-              <Button
-                justifySelf='flex-end'
-                variant='tertiary'
-                title='Close'
-                color='core.black'
-                mx={2}
-                border={0}
-                p={0}
-                onClick={() => setPhishingBanner(true)}
-              >
-                CLOSE
-              </Button>
+                <Text
+                  mt={3}
+                  lineHeight='140%'
+                  m={0}
+                  color="'status.warning.foreground'"
+                >
+                  For your protection, please check your browser&apos;s URL bar
+                  that you&apos;re visiting https://wallet.glif.io
+                </Text>
+                <Button
+                  justifySelf='flex-end'
+                  variant='tertiary'
+                  title='Close'
+                  color='core.black'
+                  mx={2}
+                  border={0}
+                  p={0}
+                  onClick={() => setPhishingBanner(true)}
+                >
+                  CLOSE
+                </Button>
+              </Box>
             </Box>
           )}
           <Box
