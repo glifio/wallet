@@ -6,6 +6,7 @@ import {
   IconLedger,
   Text,
   Title,
+  Header,
   Button,
   Warning,
   Glyph,
@@ -119,135 +120,11 @@ export default () => {
             <Box
               display='flex'
               maxWidth={13}
-              width={['100%', '100%', '50%']}
-              flexDirection='column'
-              alignItems='flex-start'
-              alignContent='center'
-              mb={4}
-              p={4}
-            >
-              <HeaderGlyph
-                alt='Source: https://www.nontemporary.com/post/190437968500'
-                text='Vault'
-                imageUrl='/imgvault.png'
-                color='core.white'
-                fill='#fff'
-                imageOpacity='0.9'
-              />
-
-              <Box
-                display='flex'
-                flexDirection='column'
-                mt={[2, 4, 4]}
-                alignSelf='center'
-                textAlign='left'
-              >
-                <Title fontSize={5}>For Filecoin SAFT Investors</Title>
-                <Title fontSize={5} color='core.darkgray'>
-                  Use your Ledger device to setup and manage your Filecoin SAFT.
-                </Title>
-
-                <Box
-                  display='flex'
-                  flexDirection='column'
-                  p={3}
-                  my={3}
-                  minHeight={10}
-                  width='100%'
-                  maxWidth={13}
-                  alignItems='center'
-                  justifyContent='flex-start'
-                  borderRadius={2}
-                  bg='background.screen'
-                >
-                  <Box
-                    display='flex'
-                    flexDirection='column'
-                    alignItems='center'
-                    m={3}
-                  >
-                    <Text
-                      color='core.darkgray'
-                      textAlign='center'
-                      p={0}
-                      mt={0}
-                      maxWidth={10}
-                    >
-                      Securely generate an account to receive your SAFT Filecoin
-                    </Text>
-
-                    <ImportWallet
-                      onClick={() => router.push('/vault')}
-                      glyphAcronym='Ss'
-                      title='SAFT Setup'
-                      backgroundColor='core.tertiary'
-                      color='core.white'
-                      glyphColor='core.white'
-                      boxShadow={2}
-                      border={0}
-                    />
-                  </Box>
-                </Box>
-                <Box
-                  display='flex'
-                  flexDirection='column'
-                  p={3}
-                  my={3}
-                  minHeight={10}
-                  width='100%'
-                  maxWidth={13}
-                  alignItems='center'
-                  justifyContent='flex-start'
-                  borderRadius={2}
-                  bg='background.screen'
-                >
-                  <Box
-                    display='flex'
-                    flexDirection='column'
-                    alignItems='center'
-                    m={3}
-                  >
-                    <Text
-                      color='core.darkgray'
-                      textAlign='center'
-                      p={0}
-                      mt={0}
-                      maxWidth={10}
-                    >
-                      Access the vesting Filecoin in your SAFT Wallet
-                    </Text>
-
-                    <ImportWallet
-                      onClick='disabled'
-                      glyphAcronym='Sw'
-                      title='SAFT Wallet'
-                      backgroundColor='silver'
-                      color='core.tertiary'
-                      glyphColor='core.tertiary'
-                      border={0}
-                      mb={3}
-                      css={`
-                        &:hover {
-                          transform: scale(1);
-                        }
-                      `}
-                    />
-                    <Highlight fontSize={2} py={2}>
-                      Disabled until Mainnet launch
-                    </Highlight>
-                  </Box>
-                </Box>
-              </Box>
-            </Box>
-            <Box
-              display='flex'
-              maxWidth={13}
               width={['100%', '100%', '40%']}
               flexDirection='column'
               alignItems='flex-start'
               alignContent='center'
               mb={4}
-              p={4}
             >
               <HeaderGlyph
                 alt='Source: https://www.nontemporary.com/post/190437968500'
@@ -265,14 +142,14 @@ export default () => {
                 alignSelf='center'
                 textAlign='left'
               >
-                <Title fontSize={5} color='core.darkgray'>
+                <Header fontSize={5}>
                   A lightweight web interface to send and receive Filecoin via
                   your Ledger device
+                </Header>
+                <Title mt={3} color='core.darkgray'>
+                  Your private keys never leave your browser, and are erased
+                  upon page refresh
                 </Title>
-                <Text fontSize={2}>
-                  <Highlight fontSize={2}>NB</Highlight>Your private keys never
-                  leave your browser, and are erased upon page refresh
-                </Text>
                 <ImportWallet
                   onClick={() => onChoose(LEDGER)}
                   Icon={IconLedger}
@@ -340,6 +217,134 @@ export default () => {
                     title='Test Accounts'
                   />
                 )}
+              </Box>
+            </Box>
+            <Box
+              position='relative'
+              display='flex'
+              maxWidth={13}
+              width={['100%', '100%', '50%']}
+              flexDirection='column'
+              alignItems='flex-start'
+              alignContent='center'
+              backgroundColor='#0a0a0a'
+              borderRadius={3}
+              border={1}
+              boxShadow={2}
+            >
+              <HeaderGlyph
+                alt='Source: https://www.nontemporary.com/post/190437968500'
+                text='Vault'
+                imageUrl='/imgvault.png'
+                color='core.white'
+                fill='#fff'
+                width='100%'
+                imageOpacity='0.9'
+              />
+
+              <Box
+                display='flex'
+                flexDirection='column'
+                alignSelf='center'
+                textAlign='left'
+                p={4}
+              >
+                <Title fontSize={5} color='core.white'>
+                  For Filecoin SAFT Investors
+                </Title>
+                <Title fontSize={5} color='core.lightgray' color='#cccccc'>
+                  Use your Ledger device to setup and manage your Filecoin SAFT.
+                </Title>
+
+                <Box
+                  display='flex'
+                  flexDirection='column'
+                  p={3}
+                  my={3}
+                  minHeight={10}
+                  width='100%'
+                  maxWidth={13}
+                  alignItems='center'
+                  justifyContent='flex-start'
+                  borderRadius={2}
+                >
+                  <Box
+                    display='flex'
+                    flexDirection='column'
+                    alignItems='center'
+                    m={3}
+                  >
+                    <Text
+                      color='core.lightgray'
+                      textAlign='center'
+                      p={0}
+                      mt={0}
+                      maxWidth={10}
+                    >
+                      Securely generate an account to receive your SAFT Filecoin
+                    </Text>
+
+                    <ImportWallet
+                      onClick={() => router.push('/vault')}
+                      glyphAcronym='Ss'
+                      title='SAFT Setup'
+                      backgroundColor='background.screen'
+                      color='core.black'
+                      glyphColor='core.black'
+                      boxShadow={2}
+                      border={0}
+                    />
+                  </Box>
+                </Box>
+                {/* <Box
+                  display='flex'
+                  flexDirection='column'
+                  p={3}
+                  my={3}
+                  minHeight={10}
+                  width='100%'
+                  maxWidth={13}
+                  alignItems='center'
+                  justifyContent='flex-start'
+                  borderRadius={2}
+                  bg='background.screen'
+                >
+                  <Box
+                    display='flex'
+                    flexDirection='column'
+                    alignItems='center'
+                    m={3}
+                  >
+                    <Text
+                      color='core.darkgray'
+                      textAlign='center'
+                      p={0}
+                      mt={0}
+                      maxWidth={10}
+                    >
+                      Access the vesting Filecoin in your SAFT Wallet
+                    </Text>
+
+                    <ImportWallet
+                      onClick='disabled'
+                      glyphAcronym='Sw'
+                      title='SAFT Wallet'
+                      backgroundColor='silver'
+                      color='core.tertiary'
+                      glyphColor='core.tertiary'
+                      border={0}
+                      mb={3}
+                      css={`
+                        &:hover {
+                          transform: scale(1);
+                        }
+                      `}
+                    />
+                    <Highlight fontSize={2} py={2}>
+                      Disabled until Mainnet launch
+                    </Highlight>
+                  </Box>
+                </Box> */}
               </Box>
             </Box>
           </Box>
