@@ -98,12 +98,11 @@ export default () => {
                 Use your Ledger device to manage your Filecoin SAFT.
               </Header>
               <Title mt={3} color='core.darkgray'>
-                This website does not store any personal information.
+                This website does not store any personal or secret information.
               </Title>
               <Title mt={3} color='core.darkgray'>
-                Your private keys remain on your Ledger, are only accessed
-                locally by your browser, are never transmitted and are erased
-                upon page refresh
+                Your private keys remain on your Ledger and are never seen by
+                the browser.
               </Title>
             </Box>
           </Box>
