@@ -146,8 +146,8 @@ export default () => {
                   your Ledger device
                 </Header>
                 <Title mt={3} color='core.darkgray'>
-                  Your private keys never leave your browser, and are erased
-                  upon page refresh
+                  Your private and sensitive information never leave the
+                  browser, and are erased upon page refresh
                 </Title>
                 <ImportWallet
                   onClick={() => onChoose(LEDGER)}

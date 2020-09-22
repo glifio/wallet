@@ -852,7 +852,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
           font-size="4"
           font-weight="400"
         >
-          Your private keys never leave your browser, and are erased upon page refresh
+          Your private and sensitive information never leave the browser, and are erased upon page refresh
         </h2>
         <div
           class="c13 c14"
@@ -1935,7 +1935,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
           font-size="4"
           font-weight="400"
         >
-          Your private keys never leave your browser, and are erased upon page refresh
+          Your private and sensitive information never leave the browser, and are erased upon page refresh
         </h2>
         <div
           class="c13 c14"
