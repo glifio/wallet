@@ -67,12 +67,17 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
   // automatically generate the first 5 wallets for the user to select from to avoid confusion for non tech folks
   useEffect(() => {
     const loadFirstFiveWallets = async () => {
+      console.log('loading first five wallets')
       if (walletsInRdx.length < 5) {
         try {
           let provider = walletProvider
           if (wallet.type === LEDGER) {
+            console.log('about to connect to ledger')
             provider = await connectLedger()
+            console.log('fetched ledger provider: ', provider)
           }
+
+          console.log('got provider? ', !!provider)
 
           if (provider) {
             const addresses = await provider.wallet.getAccounts(
@@ -80,6 +85,8 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
               walletsInRdx.length,
               5
             )
+
+            console.log('addresses!', addresses)
 
             await Promise.all(
               addresses.map(async (address, i) => {
