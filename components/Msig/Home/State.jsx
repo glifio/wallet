@@ -15,6 +15,7 @@ const State = ({
   msigAddress,
   available,
   setChangingOwner,
+  setMessageHistory,
   setWithdrawing,
   total,
   walletAddress
@@ -71,6 +72,15 @@ const State = ({
           title='Change Owner'
           maxWidth={10}
           minWidth={9}
+          mb={3}
+        />
+        <Button
+          type='button'
+          variant='secondary'
+          onClick={setMessageHistory}
+          title='Msg History'
+          maxWidth={10}
+          minWidth={9}
         />
       </Box>
     </Box>
@@ -83,6 +93,7 @@ State.propTypes = {
   msigAddress: ADDRESS_PROPTYPE,
   walletAddress: ADDRESS_PROPTYPE,
   setChangingOwner: PropTypes.func.isRequired,
+  setMessageHistory: PropTypes.func.isRequired,
   setWithdrawing: PropTypes.func.isRequired
 }
 

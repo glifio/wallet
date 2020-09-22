@@ -10,11 +10,9 @@ import {
 } from '../../../store/actions'
 import { FILSCOUT } from '../../../constants'
 import { formatFilscoutMessages } from './formatMessages'
-import useWallet from '../../../WalletProvider/useWallet'
 import reportError from '../../../utils/reportError'
 
-export default () => {
-  const { address } = useWallet()
+export default address => {
   const dispatch = useDispatch()
   const [page, setPage] = useState(1)
   const {

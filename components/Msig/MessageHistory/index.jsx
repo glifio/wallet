@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import MessageDetail from './Detail'
+import PropTypes from 'prop-types'
+// import MessageDetail from './Detail'
 import { MessageHistoryTable } from '../../Shared'
 import useWallet from '../../../WalletProvider/useWallet'
-import useTransactionHistory from './useTransactionHistory'
+import useTransactionHistory from '../../Wallet/Message/useTransactionHistory'
+import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
-export default () => {
+const MessageHistory = ({ address, close }) => {
   const [selectedMessageCid, setSelectedMessageCid] = useState('')
   const wallet = useWallet()
   const {
@@ -15,18 +17,19 @@ export default () => {
     showMore,
     refresh,
     total
-  } = useTransactionHistory(wallet.address)
+  } = useTransactionHistory(address)
 
   const messages = [...pending, ...confirmed]
   return (
     <>
       {selectedMessageCid ? (
-        <MessageDetail
-          address={wallet.address}
-          close={() => setSelectedMessageCid('')}
-          message={messages.find(({ cid }) => cid === selectedMessageCid)}
-        />
+        <div>Hi!</div>
       ) : (
+        // <MessageDetail
+        //   address={wallet.address}
+        //   close={() => setSelectedMessageCid('')}
+        //   message={messages.find(({ cid }) => cid === selectedMessageCid)}
+        // />
         <MessageHistoryTable
           address={wallet.address}
           messages={[...pending, ...confirmed]}
@@ -41,3 +44,10 @@ export default () => {
     </>
   )
 }
+
+MessageHistory.propTypes = {
+  address: ADDRESS_PROPTYPE,
+  close: PropTypes.func.isRequired
+}
+
+export default MessageHistory
