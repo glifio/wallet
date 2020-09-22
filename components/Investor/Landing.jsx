@@ -7,6 +7,7 @@ import {
   StyledATag,
   Input,
   Label,
+  Title,
   Text,
   HeaderGlyph,
   Header,
@@ -93,9 +94,16 @@ export default () => {
               alignSelf='center'
               textAlign='left'
             >
-              <Header>
+              <Header fontSize={6}>
                 Use your Ledger device to manage your Filecoin SAFT.
               </Header>
+              <Title mt={3} color='core.darkgray'>
+                This website does not store any personal or secret information.
+              </Title>
+              <Title mt={3} color='core.darkgray'>
+                Your private keys remain on your Ledger and are never seen by
+                the browser.
+              </Title>
             </Box>
           </Box>
           <Box

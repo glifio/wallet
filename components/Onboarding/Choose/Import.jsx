@@ -5,6 +5,7 @@ import { Box, Card, Glyph, Text } from '../../Shared'
 const Import = ({
   onClick,
   glyphAcronym,
+  glyphColor,
   title,
   description,
   Icon,
@@ -31,7 +32,12 @@ const Import = ({
       {...props}
     >
       <Box display='flex' alignItems='center' textAlign='center'>
-        <Glyph Icon={Icon} acronym={glyphAcronym} border={0} />
+        <Glyph
+          Icon={Icon}
+          acronym={glyphAcronym}
+          border={0}
+          color={glyphColor}
+        />
         <Text ml={4} my={0}>
           {title}
         </Text>
@@ -43,12 +49,14 @@ const Import = ({
 Import.defaultProps = {
   description: '',
   Icon: {},
-  glyphAcronym: ''
+  glyphAcronym: '',
+  glyphColor: ''
 }
 
 Import.propTypes = {
   onClick: PropTypes.func.isRequired,
   glyphAcronym: PropTypes.string,
+  glyphColor: PropTypes.string,
   Icon: PropTypes.object,
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
