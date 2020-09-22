@@ -74,6 +74,7 @@ const Send = ({ close }) => {
   )
 
   const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
+  const [mPoolPushing, setMPoolPushing] = useState(false)
 
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
@@ -113,6 +114,7 @@ const Send = ({ close }) => {
       console.log(signedMessage, 'signedMessage')
 
       const messageObj = msgWithGas.toLotusType()
+      setMPoolPushing(true)
       const msgCid = await provider.sendMessage(
         msgWithGas.toLotusType(),
         signedMessage
@@ -147,6 +149,7 @@ const Send = ({ close }) => {
     } finally {
       setAttemptingTx(false)
       setFetchingTxDetails(false)
+      setMPoolPushing(false)
     }
   }
 
@@ -273,7 +276,7 @@ const Send = ({ close }) => {
                 walletType={wallet.type}
                 currentStep={4}
                 totalSteps={4}
-                loading={fetchingTxDetails}
+                loading={fetchingTxDetails || mPoolPushing}
               />
             )}
             {!hasError() && !attemptingTx && (
