@@ -56,7 +56,7 @@ const BalanceCard = forwardRef(
           >
             {makeFriendlyBalance(balance, 3, !preciseMode)} FIL
           </Num>
-          {!converter && !converterError ? (
+          {/* {!converter && !converterError ? (
             <Num size='l' color='core.darkgray'>
               Loading USD
             </Num>
@@ -68,7 +68,7 @@ const BalanceCard = forwardRef(
                   2
                 )} USD`}
             </Num>
-          )}
+          )} */}
         </Box>
         <Box display='flex' justifyContent='space-between'>
           <Button
