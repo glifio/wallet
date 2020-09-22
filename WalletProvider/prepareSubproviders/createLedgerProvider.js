@@ -23,7 +23,7 @@ const handleErrors = response => {
       .includes('transporterror: invalid channel')
   ) {
     throw new Error(
-      'Lost connection with Ledger. Please unplug and replug device.'
+      'Lost connection with Ledger. Please quit the Filecoin app, and unplug/replug device.'
     )
   }
   throw new Error(response.error_message)
@@ -32,7 +32,7 @@ const handleErrors = response => {
 const throwIfBusy = busy => {
   if (busy)
     throw new Error(
-      'Ledger is busy, please check device or unplug and replug it in.'
+      'Ledger is busy, please check device, or quit Filecoin app and unplug/replug your device.'
     )
 }
 
