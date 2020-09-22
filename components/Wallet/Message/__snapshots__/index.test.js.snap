@@ -142,6 +142,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
+  display: none;
   margin: 0;
   margin-bottom: 0;
 }
@@ -562,6 +563,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -593,6 +595,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -731,6 +734,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -762,6 +766,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -900,6 +905,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -931,6 +937,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1069,6 +1076,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1100,6 +1108,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1238,6 +1247,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1269,6 +1279,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1407,6 +1418,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1438,6 +1450,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1576,6 +1589,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1607,6 +1621,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1745,6 +1760,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1776,6 +1792,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1914,6 +1931,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1945,6 +1963,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2083,6 +2102,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2114,6 +2134,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2252,6 +2273,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2283,6 +2305,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2421,6 +2444,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2452,6 +2476,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2590,6 +2615,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2621,6 +2647,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2759,6 +2786,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2790,6 +2818,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2928,6 +2957,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2959,6 +2989,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2997,10 +3028,6 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   border-width: 1px;
   border-color: #999999;
   padding: 16px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  margin-left: 8px;
-  margin-right: 8px;
   display: inline-block;
   width: 300px;
   overflow: hidden;
@@ -3114,6 +3141,17 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   min-width: 0;
   box-sizing: border-box;
   margin-top: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 .c18 {
@@ -3188,7 +3226,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 160px;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c27 {
@@ -3242,49 +3284,16 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   width: 100%;
 }
 
-.c30 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: absolute;
-  left: -20px;
-  bottom: -20px;
-  z-index: 99;
-  border-radius: 32px;
-  border: 1px solid;
-  border-color: #C4C4C4;
-  padding-bottom: 4px;
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 40px;
-  height: 40px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-}
-
-.c33 {
+.c32 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
   border-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   height: 80px;
 }
 
-.c38 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
@@ -3307,7 +3316,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   justify-content: space-between;
 }
 
-.c40 {
+.c39 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -3321,7 +3330,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   text-align: right;
 }
 
-.c44 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 48px;
@@ -3336,6 +3345,14 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 .c5 {
@@ -3354,7 +3371,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   height: 24px;
 }
 
-.c39 {
+.c38 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -3363,7 +3380,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin-top: 4px;
 }
 
-.c41 {
+.c40 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -3372,12 +3389,13 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 0;
 }
 
-.c43 {
+.c42 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
+  display: none;
   margin: 0;
 }
 
@@ -3428,7 +3446,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 0;
 }
 
-.c45 {
+.c44 {
   color: #999999;
   text-align: left;
   font-size: 1.125rem;
@@ -3438,7 +3456,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 4px;
 }
 
-.c46 {
+.c45 {
   color: #999999;
   text-align: left;
   font-size: 1.125rem;
@@ -3449,7 +3467,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin: 4px;
 }
 
-.c49 {
+.c48 {
   color: #5E26FF;
   text-align: left;
   font-size: 1.125rem;
@@ -3495,7 +3513,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   background: #bacbf7;
 }
 
-.c36 {
+.c35 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3522,12 +3540,12 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   border-color: #999999;
 }
 
-.c36:hover {
+.c35:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c36:focus {
+.c35:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
@@ -3539,12 +3557,13 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   border-radius: 1px;
 }
 
-.c32 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
   left: 0px;
   border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
@@ -3568,7 +3587,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   background: #bacbf7;
 }
 
-.c35 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -3597,7 +3616,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   background: #bacbf7;
 }
 
-.c31 {
+.c30 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3619,29 +3638,30 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   display: inline-block;
   width: 100%;
   border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
   -moz-appearance: textfield;
 }
 
-.c31:hover {
+.c30:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c31:focus {
+.c30:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c31::-webkit-outer-spin-button,
-.c31::-webkit-inner-spin-button {
+.c30::-webkit-outer-spin-button,
+.c30::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c34 {
+.c33 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3668,24 +3688,24 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   -moz-appearance: textfield;
 }
 
-.c34:hover {
+.c33:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c34:focus {
+.c33:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c34::-webkit-outer-spin-button,
-.c34::-webkit-inner-spin-button {
+.c33::-webkit-outer-spin-button,
+.c33::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c48 {
+.c47 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -3695,7 +3715,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   font-size: 1.25rem;
 }
 
-.c48:hover {
+.c47:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
@@ -3732,7 +3752,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   background-color: #EFF3FD;
 }
 
-.c37:hover {
+.c36:hover {
   background: transparent;
 }
 
@@ -3742,11 +3762,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   align-self: flex-end;
 }
 
-.c42 {
+.c41 {
   word-wrap: break-word;
 }
 
-.c47 {
+.c46 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: no-wrap;
@@ -3877,6 +3897,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   </div>
   <div
     class="c17"
+    display="flex"
   >
     <div
       class="c18"
@@ -3994,16 +4015,8 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           height="80px"
           width="100%"
         >
-          <div
-            class="c30"
-            display="flex"
-            font-family="sansSerif"
-            font-size="5"
-          >
-            =
-          </div>
           <input
-            class="c31"
+            class="c30"
             disabled=""
             display="inline-block"
             font-size="5"
@@ -4016,7 +4029,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
             width="100%"
           />
           <div
-            class="c32"
+            class="c31"
             color="core.primary"
             disabled=""
             display="flex"
@@ -4027,12 +4040,12 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           </div>
         </div>
         <div
-          class="c33"
-          display="flex"
+          class="c32"
+          display="none"
           height="80px"
         >
           <input
-            class="c34"
+            class="c33"
             disabled=""
             display="inline-block"
             font-size="5"
@@ -4045,7 +4058,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
             width="100%"
           />
           <div
-            class="c35"
+            class="c34"
             color="core.primary"
             disabled=""
             display="flex"
@@ -4083,7 +4096,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           display="flex"
         >
           <input
-            class="c36 c37 Detail__TransactionFeeDisplay-vdkax4-1 c37"
+            class="c35 c36 Detail__TransactionFeeDisplay-vdkax4-1 c36"
             disabled=""
             display="inline-block"
             height="6"
@@ -4095,11 +4108,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
       </div>
     </div>
     <div
-      class="c38"
+      class="c37"
       display="flex"
     >
       <h2
-        class="c39"
+        class="c38"
         font-family="RT-Alias-Grotesk"
         font-size="4"
         font-weight="400"
@@ -4107,11 +4120,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         Total
       </h2>
       <div
-        class="c40"
+        class="c39"
         display="flex"
       >
         <h2
-          class="c41 c42"
+          class="c40 c41"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="5"
@@ -4122,8 +4135,9 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           FIL
         </h2>
         <h2
-          class="c43"
+          class="c42"
           color="core.darkgray"
+          display="none"
           font-family="RT-Alias-Grotesk"
           font-size="4"
           font-weight="400"
@@ -4133,11 +4147,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
       </div>
     </div>
     <div
-      class="c44"
+      class="c43"
       display="flex"
     >
       <h4
-        class="c45"
+        class="c44"
         color="core.silver"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -4146,7 +4160,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         Message Hash
       </h4>
       <h4
-        class="c46 c47"
+        class="c45 c46"
         color="core.silver"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -4155,7 +4169,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         bafy2bzacea5463eugsz6f7dbwixzqxmwe2ouqeq6zukackb3xxotskdidqmjm
       </h4>
       <a
-        class="c48"
+        class="c47"
         color="core.primary"
         font-size="3"
         href="https://filscout.io/en/pc/message/bafy2bzacea5463eugsz6f7dbwixzqxmwe2ouqeq6zukackb3xxotskdidqmjm"
@@ -4163,7 +4177,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         target="_blank"
       >
         <h4
-          class="c49"
+          class="c48"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="2"

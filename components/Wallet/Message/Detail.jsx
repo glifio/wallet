@@ -25,8 +25,6 @@ import noop from '../../../utils/noop'
 import { useWalletProvider } from '../../../WalletProvider'
 
 const MessageDetailCard = styled(Card).attrs(() => ({
-  my: 2,
-  mx: 2,
   maxWidth: 13,
   border: 1,
   borderColor: 'core.silver'
@@ -147,7 +145,7 @@ const MessageDetail = ({ address, close, message }) => {
           </Box>
         </Box>
       </Box>
-      <Box mt={1}>
+      <Box display='flex' flexDirection='column' flexGrow='1' mt={1}>
         <Box mt={3}>
           <Input.Address value={message.from} label='From' disabled />
           <Box height={3} />
@@ -192,7 +190,8 @@ const MessageDetail = ({ address, close, message }) => {
                 .toString()}{' '}
               FIL
             </Num>
-            <Num size='m' color='core.darkgray'>
+            {/* Remove display='none' when USD bal is restored */}
+            <Num display='none' size='m' color='core.darkgray'>
               {!converterError &&
                 (converter
                   ? `${makeFriendlyBalance(
@@ -211,6 +210,8 @@ const MessageDetail = ({ address, close, message }) => {
           display='flex'
           flexWrap='wrap'
           justifyContent='space-between'
+          alignItems='flex-end'
+          flexGrow='1'
           mt={6}
         >
           <Label color='core.silver' textAlign='left' m={1}>

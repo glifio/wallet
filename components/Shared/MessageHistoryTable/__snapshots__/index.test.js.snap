@@ -114,6 +114,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
+  display: none;
   margin: 0;
   margin-bottom: 0;
 }
@@ -512,6 +513,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -543,6 +545,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -681,6 +684,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -712,6 +716,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -850,6 +855,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -881,6 +887,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1019,6 +1026,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1050,6 +1058,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1188,6 +1197,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1219,6 +1229,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1357,6 +1368,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1388,6 +1400,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1526,6 +1539,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1557,6 +1571,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1695,6 +1710,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1726,6 +1742,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1864,6 +1881,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1895,6 +1913,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2033,6 +2052,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2064,6 +2084,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2202,6 +2223,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2233,6 +2255,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2371,6 +2394,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2402,6 +2426,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2540,6 +2565,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2571,6 +2597,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2709,6 +2736,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2740,6 +2768,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2878,6 +2907,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2909,6 +2939,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             <p
               class="c23"
               color="core.darkgray"
+              display="none"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"

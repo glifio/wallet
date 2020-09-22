@@ -353,7 +353,8 @@ const Send = ({ close }) => {
                     alignItems='flex-start'
                     justifyContent='space-between'
                     pt={6}
-                    pb={3}
+                    // Restore pb to {3} when USD Total bal is restored
+                    pb={5}
                     px={3}
                     bg='background.screen'
                     borderBottomLeftRadius={3}
@@ -377,7 +378,7 @@ const Send = ({ close }) => {
                       >
                         {value.toFil()} FIL
                       </Num>
-                      <Num size='m' color='core.darkgray'>
+                      <Num display='none' size='m' color='core.darkgray'>
                         {!converterError && value.isGreaterThan(0)
                           ? `${makeFriendlyBalance(
                               converter.fromFIL(value),

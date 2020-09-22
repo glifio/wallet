@@ -7,7 +7,6 @@ import { validateAddressString } from '@openworklabs/filecoin-address'
 
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
-import { useConverter } from '../../../lib/Converter'
 import {
   Box,
   Button,
@@ -46,7 +45,6 @@ const Withdrawing = ({ address, balance, close }) => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
   const wallet = useWallet()
   const { serializeParams } = useWasm()
-  const { converter, converterError } = useConverter()
 
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
@@ -306,15 +304,6 @@ const Withdrawing = ({ address, balance, close }) => {
                         color='core.primary'
                       >
                         {value.toFil()} FIL
-                      </Num>
-                      <Num size='m' color='core.darkgray'>
-                        {!converterError && value.isGreaterThan(0)
-                          ? `${makeFriendlyBalance(
-                              converter.fromFIL(value),
-                              2
-                            )}`
-                          : '0'}{' '}
-                        USD
                       </Num>
                     </Box>
                   </Box>
