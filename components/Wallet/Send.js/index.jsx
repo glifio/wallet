@@ -73,14 +73,19 @@ const Send = ({ close }) => {
     new FilecoinNumber('122222', 'attofil')
   )
 
+  const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
+  const [mPoolPushing, setMPoolPushing] = useState(false)
+
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
 
   const send = async () => {
+    setFetchingTxDetails(true)
     let provider = walletProvider
     // attempt to establish a new connection with the ledger device if the user selected ledger
     if (wallet.type === LEDGER) {
       provider = await connectLedger()
+      console.log('connected to ledger wallet provider?', provider)
     }
 
     if (provider) {
@@ -98,16 +103,24 @@ const Send = ({ close }) => {
         message.toLotusType()
       )
 
+      console.log('msg with gas', msgWithGas)
+
+      setFetchingTxDetails(false)
       const signedMessage = await provider.wallet.sign(
         msgWithGas.toSerializeableType(),
         wallet.path
       )
 
+      console.log(signedMessage, 'signedMessage')
+
       const messageObj = msgWithGas.toLotusType()
+      setMPoolPushing(true)
       const msgCid = await provider.sendMessage(
         msgWithGas.toLotusType(),
         signedMessage
       )
+
+      console.log(msgCid, 'msgCId')
       messageObj.cid = msgCid['/']
       messageObj.timestamp = dayjs().unix()
       const maxFee = await provider.gasEstimateMaxFee(msgWithGas.toLotusType())
@@ -122,17 +135,21 @@ const Send = ({ close }) => {
   const sendMsg = async () => {
     try {
       const message = await send()
+      console.log('finished sending message: ', message)
       if (message) {
         dispatch(confirmMessage(toLowerCaseMsgFields(message)))
         setValue(new FilecoinNumber('0', 'fil'))
         close()
       }
     } catch (err) {
+      console.log('error when sending message!', err)
       reportError(9, false, err.message, err.stack)
       setUncaughtError(err.message)
       setStep(3)
     } finally {
       setAttemptingTx(false)
+      setFetchingTxDetails(false)
+      setMPoolPushing(false)
     }
   }
 
@@ -259,6 +276,7 @@ const Send = ({ close }) => {
                 walletType={wallet.type}
                 currentStep={4}
                 totalSteps={4}
+                loading={fetchingTxDetails || mPoolPushing}
               />
             )}
             {!hasError() && !attemptingTx && (

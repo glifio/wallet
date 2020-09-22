@@ -79,9 +79,10 @@ const Step2Helper = ({
           <Text>Please unlock your Ledger device.</Text>
           <Text>And make sure the Filecoin App is open</Text>
           <StyledATag
+            fontSize={2}
             target='_blank'
             rel='noopener noreferrer'
-            href='https://paper.dropbox.com/doc/Install-the-Filecoin-App-on-your-Ledger-Device--A7wuBpET2_FTgmjTLebkfmSAAg-FFy4WD4kcYPNjuw4V1PQF'
+            href='https://reading.supply/@glif/install-the-filecoin-app-on-your-ledger-device-y33vhX'
           >
             Click here for installation instructions.
           </StyledATag>
@@ -129,8 +130,10 @@ const Step2 = ({ premainnetInvestor, msig }) => {
 
   const onClick = async () => {
     setLoading(true)
+    console.log('about to fetch the default wallet...')
     try {
       const wallet = await fetchDefaultWallet()
+      console.log('fetched default wallet: ', wallet)
       if (wallet) {
         dispatch(walletList([wallet]))
         routeToNextPage()
@@ -138,12 +141,14 @@ const Step2 = ({ premainnetInvestor, msig }) => {
     } catch (err) {
       // catch errors due to node connection and continue forward for saft
       if (premainnetInvestor) {
+        console.log('there was an error fetching the default wallet: ', err)
         try {
           const [address] = await walletProvider.wallet.getAccounts(
             MAINNET,
             0,
             1
           )
+          console.log('got default address', address)
           const wallet = {
             address,
             balance: new FilecoinNumber('0', 'fil'),
@@ -152,6 +157,7 @@ const Step2 = ({ premainnetInvestor, msig }) => {
           dispatch(walletList([wallet]))
           routeToNextPage()
         } catch (_) {
+          console.log('caught error when fetching raw adddress', _)
           // this is a noop since if this call failed, the outer catch statement would catch this gracefully
           reportError('/Onboarding/Configure/Ledger:1', false)
         }

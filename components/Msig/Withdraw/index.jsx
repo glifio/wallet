@@ -58,8 +58,11 @@ const Withdrawing = ({ address, balance, close }) => {
   const [estimatedTransactionFee, setEstimatedTransactionFee] = useState(
     new FilecoinNumber('122222', 'attofil')
   )
+  const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
+  const [mPoolPushing, setMPoolPushing] = useState(false)
 
   const sendMsg = async () => {
+    setFetchingTxDetails(true)
     const provider = await connectLedger()
 
     if (provider) {
@@ -85,14 +88,16 @@ const Withdrawing = ({ address, balance, close }) => {
         message.toLotusType()
       )
 
+      setFetchingTxDetails(false)
+
       const signedMessage = await provider.wallet.sign(
         msgWithGas.toSerializeableType(),
         wallet.path
       )
 
       const messageObj = msgWithGas.toLotusType()
+      setMPoolPushing(true)
       const msgCid = await provider.sendMessage(messageObj, signedMessage)
-
       messageObj.cid = msgCid['/']
       messageObj.timestamp = dayjs().unix()
       const maxFee = await provider.gasEstimateMaxFee(msgWithGas.toLotusType())
@@ -137,8 +142,11 @@ const Withdrawing = ({ address, balance, close }) => {
           reportError(20, false, err, err.message, err.stack)
           setUncaughtError(err.message || err)
         }
-        setAttemptingTx(false)
         setStep(2)
+      } finally {
+        setFetchingTxDetails(false)
+        setAttemptingTx(false)
+        setMPoolPushing(false)
       }
     }
   }
@@ -192,6 +200,7 @@ const Withdrawing = ({ address, balance, close }) => {
             )}
             {attemptingTx && (
               <ConfirmationCard
+                loading={fetchingTxDetails || mPoolPushing}
                 walletType={LEDGER}
                 currentStep={4}
                 totalSteps={4}

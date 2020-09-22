@@ -268,7 +268,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 80px;
+  width: 160px;
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
@@ -301,6 +301,9 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   padding-right: 24px;
   margin-top: 8px;
   margin-bottom: 8px;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -456,13 +459,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -471,7 +474,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -625,13 +628,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -640,7 +643,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -794,13 +797,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -809,7 +812,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -963,13 +966,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -978,7 +981,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -1132,13 +1135,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -1147,7 +1150,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -1301,13 +1304,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -1316,7 +1319,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -1470,13 +1473,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -1485,7 +1488,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -1639,13 +1642,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -1654,7 +1657,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -1808,13 +1811,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t3wjx ... ooea
+              t3wjxu ... meooea
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -1823,7 +1826,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -1977,13 +1980,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -1992,7 +1995,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -2146,13 +2149,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -2161,7 +2164,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -2315,13 +2318,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -2330,7 +2333,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -2484,13 +2487,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -2499,7 +2502,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -2653,13 +2656,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -2668,7 +2671,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>
@@ -2822,13 +2825,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137s ... izpy
+              t137sj ... 2vizpy
             </p>
           </li>
           <li
             class="c17"
             display="flex"
-            width="8"
+            width="9"
           >
             <p
               class="c18"
@@ -2837,7 +2840,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12
+              Jan 12, 2020 - 2:30:30
             </p>
           </li>
         </ul>

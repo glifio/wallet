@@ -21,18 +21,24 @@ const fetchDefaultWallet = async (
   walletProvider,
   walletSubProviders
 ) => {
+  console.log('inside fetchDefaultWallet')
   dispatch(clearError())
   let provider = walletProvider
   if (walletType === LEDGER) {
     dispatch(resetLedgerState())
+    console.log('ledger state is reset')
+
     provider = await setLedgerProvider(
       dispatch,
       // this arg gets passed in because we need the variables in its scope
       // see prepareSubproviders to look at the closed over variables
       walletSubProviders.LedgerProvider
     )
+    console.log('ledger provider gotten?', provider)
     if (!provider) return null
+    console.log('getting config')
     const configured = await checkLedgerConfiguration(dispatch, provider)
+    console.log('got config, configured?', configured)
     if (!configured) return null
   }
 

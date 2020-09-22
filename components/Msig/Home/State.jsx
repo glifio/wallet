@@ -64,14 +64,14 @@ const State = ({
           minWidth={9}
           mb={3}
         />
-        <Button
+        {/* <Button
           type='button'
           variant='secondary'
           onClick={setChangingOwner}
           title='Change Owner'
           maxWidth={10}
           minWidth={9}
-        />
+        /> */}
       </Box>
     </Box>
   )

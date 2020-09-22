@@ -275,7 +275,7 @@ describe('Ledger configuration', () => {
       )
       expect(
         screen.getByText(
-          'Please unplug and replug your Ledger device, and try again.'
+          'Please quit the Filecoin app, and unplug/replug your Ledger device, and try again.'
         )
       ).toBeInTheDocument()
 

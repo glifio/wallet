@@ -9,6 +9,7 @@ import {
   CREATE_MNEMONIC,
   IMPORT_SINGLE_KEY
 } from '../../../constants'
+import LoaderGlyph from '../../Shared/LoaderGlyph'
 
 const TextHighlight = styled.span.attrs(() => ({
   fontSize: 3,
@@ -48,50 +49,71 @@ const OtherWalletTypeConfirm = () => {
   )
 }
 
-const ConfirmationCard = ({ walletType, currentStep, totalSteps }) => {
+const ConfirmationCard = ({ walletType, currentStep, totalSteps, loading }) => {
   return (
-    <Card
-      display='flex'
-      flexDirection='column'
-      justifyContent='space-between'
-      border='none'
-      width='auto'
-      my={2}
-      bg='card.confirmation.background'
-    >
-      <Box
-        display='flex'
-        flexDirection='row'
-        border='none'
-        width='auto'
-        alignItems='center'
-        justifyContent='space-between'
-      >
-        <Box display='flex' flexDirection='row' alignItems='center'>
-          <Glyph
-            acronym='Cf'
-            textAlign='center'
-            color='card.confirmation.background'
-            borderColor='card.confirmation.foreground'
-            backgroundColor='card.confirmation.foreground'
-          />
-          <Text color='card.confirmation.foreground' ml={2}>
-            Confirmation
-          </Text>
-        </Box>
-        <Box display='flex' alignItems='center'>
-          <Stepper
-            textColor='card.confirmation.foreground'
-            completedDotColor='card.confirmation.foreground'
-            incompletedDotColor='core.silver'
-            step={currentStep}
-            totalSteps={totalSteps}
-          />
-          <Box width={5} mx={2} />
-        </Box>
-      </Box>
-      {walletType === LEDGER ? <LedgerConfirm /> : <OtherWalletTypeConfirm />}
-    </Card>
+    <>
+      {loading ? (
+        <Card
+          display='flex'
+          flexDirection='row'
+          justifyContent='center'
+          alignItems='center'
+          border='none'
+          width='auto'
+          my={2}
+        >
+          <LoaderGlyph />
+          <Text ml={3}>Loading...</Text>
+        </Card>
+      ) : (
+        <Card
+          display='flex'
+          flexDirection='column'
+          justifyContent='space-between'
+          border='none'
+          width='auto'
+          my={2}
+          bg='card.confirmation.background'
+        >
+          <Box
+            display='flex'
+            flexDirection='row'
+            border='none'
+            width='auto'
+            alignItems='center'
+            justifyContent='space-between'
+          >
+            <Box display='flex' flexDirection='row' alignItems='center'>
+              <Glyph
+                acronym='Cf'
+                textAlign='center'
+                color='card.confirmation.background'
+                borderColor='card.confirmation.foreground'
+                backgroundColor='card.confirmation.foreground'
+              />
+              <Text color='card.confirmation.foreground' ml={2}>
+                Confirmation
+              </Text>
+            </Box>
+            <Box display='flex' alignItems='center'>
+              <Stepper
+                textColor='card.confirmation.foreground'
+                completedDotColor='card.confirmation.foreground'
+                incompletedDotColor='core.silver'
+                step={currentStep}
+                totalSteps={totalSteps}
+              />
+              <Box width={5} mx={2} />
+            </Box>
+          </Box>
+          {walletType === LEDGER ? (
+            <LedgerConfirm />
+          ) : (
+            <OtherWalletTypeConfirm />
+          )}
+        </Card>
+      )}
+    </>
   )
 }
 
@@ -103,7 +125,8 @@ ConfirmationCard.propTypes = {
     IMPORT_MNEMONIC,
     CREATE_MNEMONIC,
     IMPORT_SINGLE_KEY
-  ]).isRequired
+  ]).isRequired,
+  loading: PropTypes.bool.isRequired
 }
 
 ConfirmationCard.defaultProps = {

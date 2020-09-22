@@ -22,11 +22,12 @@ const EnterActorAddress = () => {
   const [err, setErr] = useState('')
 
   const onClick = () => {
-    if (!validateAddressString(actorIDAdress)) return setErr('Invalid address.')
-    if (actorIDAdress[0] !== networkPrefix) return setErr('Network mismatch.')
-    if (Number(actorIDAdress[1]) !== 0)
+    const trimmedAddr = actorIDAdress.trim()
+    if (!validateAddressString(trimmedAddr)) return setErr('Invalid address.')
+    if (trimmedAddr[0] !== networkPrefix) return setErr('Network mismatch.')
+    if (Number(trimmedAddr[1]) !== 0)
       return setErr('Invalid Actor Address. Second character must be 0.')
-    dispatch(setMsigActor(actorIDAdress))
+    dispatch(setMsigActor(trimmedAddr))
     const searchParams = new URLSearchParams(router.query)
     router.push(`/msig/home?${searchParams.toString()}`)
   }

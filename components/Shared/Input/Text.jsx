@@ -21,8 +21,9 @@ const TextInput = ({
         {label && (
           <Box
             display='flex'
-            justifyContent='center'
+            justifyContent='flex-start'
             alignItems='center'
+            minWidth={6}
             mr={3}
           >
             <Label color='core.nearblack'>{label}</Label>

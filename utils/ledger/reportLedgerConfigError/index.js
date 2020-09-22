@@ -13,7 +13,7 @@ export const reportLedgerConfigError = ({
   if (filecoinAppNotOpen)
     return 'Is the Filecoin App open on your Ledger device?'
   if (replug)
-    return 'Please unplug and replug your Ledger device, and try again.'
+    return 'Please quit the Filecoin app, and unplug/replug your Ledger device, and try again.'
   if (inUseByAnotherApp)
     return 'Please quit any other App using your Ledger device.'
   if (otherError) return otherError
