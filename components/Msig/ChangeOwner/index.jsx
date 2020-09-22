@@ -44,8 +44,11 @@ const ChangeOwner = ({ address, balance, close }) => {
   const [toAddress, setToAddress] = useState('')
   const [toAddressError, setToAddressError] = useState('')
   const [uncaughtError, setUncaughtError] = useState('')
+  const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
+  const [mPoolPushing, setMPoolPushing] = useState(false)
 
   const sendMsg = async () => {
+    setFetchingTxDetails(true)
     const provider = await connectLedger()
 
     if (provider) {
@@ -84,13 +87,14 @@ const ChangeOwner = ({ address, balance, close }) => {
       const msgWithGas = await provider.gasEstimateMessageGas(
         messageForSigning.toLotusType()
       )
-
+      setFetchingTxDetails(false)
       const signedMessage = await provider.wallet.sign(
         msgWithGas.toSerializeableType(),
         wallet.path
       )
 
       const messageObj = msgWithGas.toLotusType()
+      setMPoolPushing(true)
       const msgCid = await provider.sendMessage(messageObj, signedMessage)
       messageObj.cid = msgCid['/']
       messageObj.timestamp = dayjs().unix()
@@ -135,8 +139,11 @@ const ChangeOwner = ({ address, balance, close }) => {
           reportError(20, false, err.message, err.stack)
           setUncaughtError(err.message || err)
         }
-        setAttemptingTx(false)
         setStep(2)
+      } finally {
+        setFetchingTxDetails(false)
+        setAttemptingTx(false)
+        setMPoolPushing(false)
       }
     }
   }
@@ -188,6 +195,7 @@ const ChangeOwner = ({ address, balance, close }) => {
             )}
             {attemptingTx && (
               <ConfirmationCard
+                loading={fetchingTxDetails || mPoolPushing}
                 walletType={LEDGER}
                 currentStep={4}
                 totalSteps={4}
