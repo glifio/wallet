@@ -79,9 +79,10 @@ const Step2Helper = ({
           <Text>Please unlock your Ledger device.</Text>
           <Text>And make sure the Filecoin App is open</Text>
           <StyledATag
+            fontSize={2}
             target='_blank'
             rel='noopener noreferrer'
-            href='https://paper.dropbox.com/doc/Install-the-Filecoin-App-on-your-Ledger-Device--A7wuBpET2_FTgmjTLebkfmSAAg-FFy4WD4kcYPNjuw4V1PQF'
+            href='https://reading.supply/@glif/install-the-filecoin-app-on-your-ledger-device-y33vhX'
           >
             Click here for installation instructions.
           </StyledATag>

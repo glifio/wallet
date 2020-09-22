@@ -146,7 +146,7 @@ export default () => {
                 fontSize={2}
                 my={3}
                 target='_blank'
-                href='https://paper.dropbox.com/doc/Self-Custodied-SAFT-Guide--A65usBCOBC6H0c2e_JUleP63Ag-dHxZu59oAeSw03RrRpCrd'
+                href='https://reading.supply/@glif/self-custodied-saft-guide-pXi808'
                 rel='noopener'
               >
                 Need help? Follow along with this guided tutorial.
