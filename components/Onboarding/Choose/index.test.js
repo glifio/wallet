@@ -29,7 +29,7 @@ describe('Choosing a wallet', () => {
     act(() => {
       fireEvent.click(screen.getByText('Test Accounts'))
     })
-    expect(screen.queryByText('Ledger Device')).toBeInTheDocument()
+    expect(screen.queryByText('Login via Ledger Device')).toBeInTheDocument()
     expect(screen.queryByText('SAFT Setup')).toBeInTheDocument()
     expect(screen.getByText('Generate Seed Phrase')).toBeInTheDocument()
     expect(screen.getByText('Import Seed Phrase')).toBeInTheDocument()
