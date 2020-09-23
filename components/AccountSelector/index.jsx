@@ -215,8 +215,8 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
                 {premainnetInvestor && (
                   <>
                     <Text>
-                      Please select the Ledger account you wish to own and sign
-                      for your multisig investor wallet.
+                      Please select the Ledger account you wish to use for your
+                      multisig investor wallet.
                     </Text>
                     <Text>
                       Any of these accounts can accept Filecoin. If in doubt,
