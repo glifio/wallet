@@ -91,7 +91,7 @@ const PreConfirm = ({ address, investor, path }) => {
         label='InvestorID'
         disabled
       />
-      <Box display='flex' flexDirection='column' alignItems='flex-start'>
+      <Box display='flex' flexDirection='column' alignItems='flex-start' mt={3}>
         <Input.Text
           value={address}
           onChange={noop}
