@@ -130,7 +130,6 @@ export default () => {
               alignContent='center'
               mb={4}
             >
-              <NetworkSwitcherGlyph />
               <HeaderGlyph
                 alt='Source: https://www.nontemporary.com/post/190437968500'
                 text='Wallet'
@@ -155,6 +154,7 @@ export default () => {
                   Your private and sensitive information never leave the
                   browser, and are erased upon page refresh
                 </Title>
+                <NetworkSwitcherGlyph />
                 <ImportWallet
                   onClick={() => onChoose(LEDGER)}
                   Icon={IconLedger}
