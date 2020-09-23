@@ -9,7 +9,8 @@ import {
   Header,
   Button,
   Warning,
-  Glyph
+  Glyph,
+  NetworkSwitcherGlyph
 } from '../../Shared'
 import HeaderGlyph from '../../Shared/Glyph/HeaderGlyph'
 import ImportWallet from './Import'
@@ -129,6 +130,7 @@ export default () => {
               alignContent='center'
               mb={4}
             >
+              <NetworkSwitcherGlyph />
               <HeaderGlyph
                 alt='Source: https://www.nontemporary.com/post/190437968500'
                 text='Wallet'
