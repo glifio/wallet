@@ -1271,7 +1271,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137sj ... 2vizpy
+                  t1kh7x ... nf45jq
                 </p>
               </li>
               <li
@@ -1314,7 +1314,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  23
+                  0
                 </p>
               </li>
               <li
@@ -1329,7 +1329,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  115
+                  0
                 </p>
               </li>
             </ul>
@@ -1442,7 +1442,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137sj ... 2vizpy
+                  t1kh7x ... nf45jq
                 </p>
               </li>
               <li
@@ -1485,7 +1485,178 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  0.0001
+                  0.2
+                </p>
+              </li>
+              <li
+                class="c56"
+                display="flex"
+              >
+                <p
+                  class="c58"
+                  color="core.darkgray"
+                  display="none"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  1
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li
+            class=""
+          >
+            <ul
+              class="c59"
+              display="flex"
+            >
+              <li
+                class=""
+              >
+                <p
+                  class="c57"
+                  color="core.nearblack"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  FIL
+                </p>
+                <p
+                  class="c58"
+                  color="core.darkgray"
+                  display="none"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  USD
+                </p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="c42"
+      >
+        <ul
+          class="c43"
+        >
+          <li
+            class="c44"
+            display="flex"
+          >
+            <ul
+              class="c45"
+              display="flex"
+            >
+              <li
+                class="c46"
+              >
+                <svg
+                  class="c47"
+                  fill="none"
+                  height="34"
+                  viewBox="0 0 34 34"
+                  width="34"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    fill="#5E26FF"
+                    height="32"
+                    rx="16"
+                    width="32"
+                    x="1"
+                    y="1"
+                  />
+                  <path
+                    d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
+                    fill="#E8ECF7"
+                  />
+                  <rect
+                    height="32"
+                    rx="16"
+                    stroke="#5E26FF"
+                    stroke-width="1.4"
+                    width="32"
+                    x="1"
+                    y="1"
+                  />
+                </svg>
+              </li>
+            </ul>
+            <ul
+              class="c48"
+              display="flex"
+            >
+              <li
+                class="c49"
+                overflow="hidden"
+                width="9"
+              >
+                <h4
+                  class="c50"
+                  color="core.nearblack"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  From
+                </h4>
+                <p
+                  class="c51"
+                  color="core.nearblack"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="3"
+                  font-weight="400"
+                >
+                  t1kh7x ... nf45jq
+                </p>
+              </li>
+              <li
+                class="c52"
+                display="flex"
+                width="9"
+              >
+                <p
+                  class="c53"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020 - 2:30:30
+                </p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul
+          class="c54"
+          display="flex"
+        >
+          <li
+            class=""
+          >
+            <ul
+              class="c55"
+              display="flex"
+            >
+              <li
+                class="c56"
+                display="flex"
+              >
+                <p
+                  class="c57"
+                  color="core.nearblack"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  0.000001
                 </p>
               </li>
               <li
@@ -1613,7 +1784,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137sj ... 2vizpy
+                  t1kh7x ... nf45jq
                 </p>
               </li>
               <li
@@ -1784,178 +1955,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137sj ... 2vizpy
-                </p>
-              </li>
-              <li
-                class="c52"
-                display="flex"
-                width="9"
-              >
-                <p
-                  class="c53"
-                  color="core.darkgray"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Jan 12, 2020 - 2:30:30
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul
-          class="c54"
-          display="flex"
-        >
-          <li
-            class=""
-          >
-            <ul
-              class="c55"
-              display="flex"
-            >
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  0.0001
-                </p>
-              </li>
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  &lt; 0.01
-                </p>
-              </li>
-            </ul>
-          </li>
-          <li
-            class=""
-          >
-            <ul
-              class="c59"
-              display="flex"
-            >
-              <li
-                class=""
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  FIL
-                </p>
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="c42"
-      >
-        <ul
-          class="c43"
-        >
-          <li
-            class="c44"
-            display="flex"
-          >
-            <ul
-              class="c45"
-              display="flex"
-            >
-              <li
-                class="c46"
-              >
-                <svg
-                  class="c47"
-                  fill="none"
-                  height="34"
-                  viewBox="0 0 34 34"
-                  width="34"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    fill="#5E26FF"
-                    height="32"
-                    rx="16"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                  <path
-                    d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
-                    fill="#E8ECF7"
-                  />
-                  <rect
-                    height="32"
-                    rx="16"
-                    stroke="#5E26FF"
-                    stroke-width="1.4"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                </svg>
-              </li>
-            </ul>
-            <ul
-              class="c48"
-              display="flex"
-            >
-              <li
-                class="c49"
-                overflow="hidden"
-                width="9"
-              >
-                <h4
-                  class="c50"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  From
-                </h4>
-                <p
-                  class="c51"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  t137sj ... 2vizpy
+                  t1kh7x ... nf45jq
                 </p>
               </li>
               <li
@@ -2126,178 +2126,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137sj ... 2vizpy
-                </p>
-              </li>
-              <li
-                class="c52"
-                display="flex"
-                width="9"
-              >
-                <p
-                  class="c53"
-                  color="core.darkgray"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Jan 12, 2020 - 2:30:30
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul
-          class="c54"
-          display="flex"
-        >
-          <li
-            class=""
-          >
-            <ul
-              class="c55"
-              display="flex"
-            >
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  0.001
-                </p>
-              </li>
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  &lt; 0.01
-                </p>
-              </li>
-            </ul>
-          </li>
-          <li
-            class=""
-          >
-            <ul
-              class="c59"
-              display="flex"
-            >
-              <li
-                class=""
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  FIL
-                </p>
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="c42"
-      >
-        <ul
-          class="c43"
-        >
-          <li
-            class="c44"
-            display="flex"
-          >
-            <ul
-              class="c45"
-              display="flex"
-            >
-              <li
-                class="c46"
-              >
-                <svg
-                  class="c47"
-                  fill="none"
-                  height="34"
-                  viewBox="0 0 34 34"
-                  width="34"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    fill="#5E26FF"
-                    height="32"
-                    rx="16"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                  <path
-                    d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
-                    fill="#E8ECF7"
-                  />
-                  <rect
-                    height="32"
-                    rx="16"
-                    stroke="#5E26FF"
-                    stroke-width="1.4"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                </svg>
-              </li>
-            </ul>
-            <ul
-              class="c48"
-              display="flex"
-            >
-              <li
-                class="c49"
-                overflow="hidden"
-                width="9"
-              >
-                <h4
-                  class="c50"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  From
-                </h4>
-                <p
-                  class="c51"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  t137sj ... 2vizpy
+                  t1kh7x ... nf45jq
                 </p>
               </li>
               <li
@@ -2468,7 +2297,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137sj ... 2vizpy
+                  t1kh7x ... nf45jq
                 </p>
               </li>
               <li
@@ -2511,7 +2340,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  &lt; 0.0000001
+                  0
                 </p>
               </li>
               <li
@@ -2526,7 +2355,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  &lt; 0.01
+                  0
                 </p>
               </li>
             </ul>
@@ -2639,7 +2468,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t3wjxu ... meooea
+                  t1kh7x ... nf45jq
                 </p>
               </li>
               <li
@@ -2682,7 +2511,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  0.005
+                  0.5
                 </p>
               </li>
               <li
@@ -2697,7 +2526,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  0.02
+                  2.5
                 </p>
               </li>
             </ul>
@@ -2810,178 +2639,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137sj ... 2vizpy
-                </p>
-              </li>
-              <li
-                class="c52"
-                display="flex"
-                width="9"
-              >
-                <p
-                  class="c53"
-                  color="core.darkgray"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Jan 12, 2020 - 2:30:30
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul
-          class="c54"
-          display="flex"
-        >
-          <li
-            class=""
-          >
-            <ul
-              class="c55"
-              display="flex"
-            >
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  0.0001
-                </p>
-              </li>
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  &lt; 0.01
-                </p>
-              </li>
-            </ul>
-          </li>
-          <li
-            class=""
-          >
-            <ul
-              class="c59"
-              display="flex"
-            >
-              <li
-                class=""
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  FIL
-                </p>
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="c42"
-      >
-        <ul
-          class="c43"
-        >
-          <li
-            class="c44"
-            display="flex"
-          >
-            <ul
-              class="c45"
-              display="flex"
-            >
-              <li
-                class="c46"
-              >
-                <svg
-                  class="c47"
-                  fill="none"
-                  height="34"
-                  viewBox="0 0 34 34"
-                  width="34"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    fill="#5E26FF"
-                    height="32"
-                    rx="16"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                  <path
-                    d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
-                    fill="#E8ECF7"
-                  />
-                  <rect
-                    height="32"
-                    rx="16"
-                    stroke="#5E26FF"
-                    stroke-width="1.4"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                </svg>
-              </li>
-            </ul>
-            <ul
-              class="c48"
-              display="flex"
-            >
-              <li
-                class="c49"
-                overflow="hidden"
-                width="9"
-              >
-                <h4
-                  class="c50"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  From
-                </h4>
-                <p
-                  class="c51"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  t137sj ... 2vizpy
+                  t1kh7x ... nf45jq
                 </p>
               </li>
               <li
@@ -3152,178 +2810,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137sj ... 2vizpy
-                </p>
-              </li>
-              <li
-                class="c52"
-                display="flex"
-                width="9"
-              >
-                <p
-                  class="c53"
-                  color="core.darkgray"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Jan 12, 2020 - 2:30:30
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul
-          class="c54"
-          display="flex"
-        >
-          <li
-            class=""
-          >
-            <ul
-              class="c55"
-              display="flex"
-            >
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  0.00001
-                </p>
-              </li>
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  &lt; 0.01
-                </p>
-              </li>
-            </ul>
-          </li>
-          <li
-            class=""
-          >
-            <ul
-              class="c59"
-              display="flex"
-            >
-              <li
-                class=""
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  FIL
-                </p>
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="c42"
-      >
-        <ul
-          class="c43"
-        >
-          <li
-            class="c44"
-            display="flex"
-          >
-            <ul
-              class="c45"
-              display="flex"
-            >
-              <li
-                class="c46"
-              >
-                <svg
-                  class="c47"
-                  fill="none"
-                  height="34"
-                  viewBox="0 0 34 34"
-                  width="34"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    fill="#5E26FF"
-                    height="32"
-                    rx="16"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                  <path
-                    d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
-                    fill="#E8ECF7"
-                  />
-                  <rect
-                    height="32"
-                    rx="16"
-                    stroke="#5E26FF"
-                    stroke-width="1.4"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                </svg>
-              </li>
-            </ul>
-            <ul
-              class="c48"
-              display="flex"
-            >
-              <li
-                class="c49"
-                overflow="hidden"
-                width="9"
-              >
-                <h4
-                  class="c50"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  From
-                </h4>
-                <p
-                  class="c51"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  t137sj ... 2vizpy
+                  t1kh7x ... nf45jq
                 </p>
               </li>
               <li
@@ -3367,348 +2854,6 @@ exports[`WalletView it renders correctly 1`] = `
                   font-weight="400"
                 >
                   0.0001
-                </p>
-              </li>
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  &lt; 0.01
-                </p>
-              </li>
-            </ul>
-          </li>
-          <li
-            class=""
-          >
-            <ul
-              class="c59"
-              display="flex"
-            >
-              <li
-                class=""
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  FIL
-                </p>
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="c42"
-      >
-        <ul
-          class="c43"
-        >
-          <li
-            class="c44"
-            display="flex"
-          >
-            <ul
-              class="c45"
-              display="flex"
-            >
-              <li
-                class="c46"
-              >
-                <svg
-                  class="c47"
-                  fill="none"
-                  height="34"
-                  viewBox="0 0 34 34"
-                  width="34"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    fill="#5E26FF"
-                    height="32"
-                    rx="16"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                  <path
-                    d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
-                    fill="#E8ECF7"
-                  />
-                  <rect
-                    height="32"
-                    rx="16"
-                    stroke="#5E26FF"
-                    stroke-width="1.4"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                </svg>
-              </li>
-            </ul>
-            <ul
-              class="c48"
-              display="flex"
-            >
-              <li
-                class="c49"
-                overflow="hidden"
-                width="9"
-              >
-                <h4
-                  class="c50"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  From
-                </h4>
-                <p
-                  class="c51"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  t137sj ... 2vizpy
-                </p>
-              </li>
-              <li
-                class="c52"
-                display="flex"
-                width="9"
-              >
-                <p
-                  class="c53"
-                  color="core.darkgray"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Jan 12, 2020 - 2:30:30
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul
-          class="c54"
-          display="flex"
-        >
-          <li
-            class=""
-          >
-            <ul
-              class="c55"
-              display="flex"
-            >
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  0.0001
-                </p>
-              </li>
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  &lt; 0.01
-                </p>
-              </li>
-            </ul>
-          </li>
-          <li
-            class=""
-          >
-            <ul
-              class="c59"
-              display="flex"
-            >
-              <li
-                class=""
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  FIL
-                </p>
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="c42"
-      >
-        <ul
-          class="c43"
-        >
-          <li
-            class="c44"
-            display="flex"
-          >
-            <ul
-              class="c45"
-              display="flex"
-            >
-              <li
-                class="c46"
-              >
-                <svg
-                  class="c47"
-                  fill="none"
-                  height="34"
-                  viewBox="0 0 34 34"
-                  width="34"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    fill="#5E26FF"
-                    height="32"
-                    rx="16"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                  <path
-                    d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
-                    fill="#E8ECF7"
-                  />
-                  <rect
-                    height="32"
-                    rx="16"
-                    stroke="#5E26FF"
-                    stroke-width="1.4"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                </svg>
-              </li>
-            </ul>
-            <ul
-              class="c48"
-              display="flex"
-            >
-              <li
-                class="c49"
-                overflow="hidden"
-                width="9"
-              >
-                <h4
-                  class="c50"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  From
-                </h4>
-                <p
-                  class="c51"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  t137sj ... 2vizpy
-                </p>
-              </li>
-              <li
-                class="c52"
-                display="flex"
-                width="9"
-              >
-                <p
-                  class="c53"
-                  color="core.darkgray"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Jan 12, 2020 - 2:30:30
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul
-          class="c54"
-          display="flex"
-        >
-          <li
-            class=""
-          >
-            <ul
-              class="c55"
-              display="flex"
-            >
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  0.00001
                 </p>
               </li>
               <li
