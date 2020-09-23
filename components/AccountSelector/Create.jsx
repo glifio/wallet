@@ -50,9 +50,9 @@ const Create = ({ onClick, loading, nextAccountIndex, errorMsg }) => {
       width={11}
       height={11}
       m={2}
-      bg='core.transparent'
+      bg='core.primary'
       borderColor='core.primary'
-      color='core.primary'
+      color='core.white'
       opacity='1'
       cursor='pointer'
     >
@@ -61,8 +61,8 @@ const Create = ({ onClick, loading, nextAccountIndex, errorMsg }) => {
           <Glyph
             acronym={nextAccountIndex.toString()}
             bg='core.transparent'
-            borderColor='core.primary'
-            color='core.primary'
+            borderColor='core.white'
+            color='core.white'
           />
           <Title ml={2}>Create</Title>
         </MenuItem>
