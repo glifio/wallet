@@ -9,9 +9,7 @@ export default async (id, shouldSendToErrorPage, ...args) => {
       JSON.stringify({ text: `WALLET:${id}` })
     )
   } else {
-    console.error('ERROR:', ...args)
+    console.error(id, ...args)
   }
   if (shouldSendToErrorPage) Router.push('/error/wallet-down')
-  /* eslint-disable no-console */
-  if (!shouldSendToErrorPage) console.error(id, ...args)
 }

@@ -1271,7 +1271,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137sj ... 2vizpy
+                  t1kh7x ... nf45jq
                 </p>
               </li>
               <li
@@ -1314,7 +1314,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  23
+                  0
                 </p>
               </li>
               <li
@@ -1329,7 +1329,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  115
+                  0
                 </p>
               </li>
             </ul>
@@ -1442,7 +1442,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137sj ... 2vizpy
+                  t1kh7x ... nf45jq
                 </p>
               </li>
               <li
@@ -1485,7 +1485,178 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  0.0001
+                  0.2
+                </p>
+              </li>
+              <li
+                class="c56"
+                display="flex"
+              >
+                <p
+                  class="c58"
+                  color="core.darkgray"
+                  display="none"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  1
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li
+            class=""
+          >
+            <ul
+              class="c59"
+              display="flex"
+            >
+              <li
+                class=""
+              >
+                <p
+                  class="c57"
+                  color="core.nearblack"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  FIL
+                </p>
+                <p
+                  class="c58"
+                  color="core.darkgray"
+                  display="none"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  USD
+                </p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="c42"
+      >
+        <ul
+          class="c43"
+        >
+          <li
+            class="c44"
+            display="flex"
+          >
+            <ul
+              class="c45"
+              display="flex"
+            >
+              <li
+                class="c46"
+              >
+                <svg
+                  class="c47"
+                  fill="none"
+                  height="34"
+                  viewBox="0 0 34 34"
+                  width="34"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    fill="#5E26FF"
+                    height="32"
+                    rx="16"
+                    width="32"
+                    x="1"
+                    y="1"
+                  />
+                  <path
+                    d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
+                    fill="#E8ECF7"
+                  />
+                  <rect
+                    height="32"
+                    rx="16"
+                    stroke="#5E26FF"
+                    stroke-width="1.4"
+                    width="32"
+                    x="1"
+                    y="1"
+                  />
+                </svg>
+              </li>
+            </ul>
+            <ul
+              class="c48"
+              display="flex"
+            >
+              <li
+                class="c49"
+                overflow="hidden"
+                width="9"
+              >
+                <h4
+                  class="c50"
+                  color="core.nearblack"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  From
+                </h4>
+                <p
+                  class="c51"
+                  color="core.nearblack"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="3"
+                  font-weight="400"
+                >
+                  t1kh7x ... nf45jq
+                </p>
+              </li>
+              <li
+                class="c52"
+                display="flex"
+                width="9"
+              >
+                <p
+                  class="c53"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020 - 2:30:30
+                </p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul
+          class="c54"
+          display="flex"
+        >
+          <li
+            class=""
+          >
+            <ul
+              class="c55"
+              display="flex"
+            >
+              <li
+                class="c56"
+                display="flex"
+              >
+                <p
+                  class="c57"
+                  color="core.nearblack"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  0.000001
                 </p>
               </li>
               <li
@@ -1613,7 +1784,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137sj ... 2vizpy
+                  t1kh7x ... nf45jq
                 </p>
               </li>
               <li
@@ -1784,178 +1955,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137sj ... 2vizpy
-                </p>
-              </li>
-              <li
-                class="c52"
-                display="flex"
-                width="9"
-              >
-                <p
-                  class="c53"
-                  color="core.darkgray"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Jan 12, 2020 - 2:30:30
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul
-          class="c54"
-          display="flex"
-        >
-          <li
-            class=""
-          >
-            <ul
-              class="c55"
-              display="flex"
-            >
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  0.0001
-                </p>
-              </li>
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  &lt; 0.01
-                </p>
-              </li>
-            </ul>
-          </li>
-          <li
-            class=""
-          >
-            <ul
-              class="c59"
-              display="flex"
-            >
-              <li
-                class=""
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  FIL
-                </p>
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="c42"
-      >
-        <ul
-          class="c43"
-        >
-          <li
-            class="c44"
-            display="flex"
-          >
-            <ul
-              class="c45"
-              display="flex"
-            >
-              <li
-                class="c46"
-              >
-                <svg
-                  class="c47"
-                  fill="none"
-                  height="34"
-                  viewBox="0 0 34 34"
-                  width="34"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    fill="#5E26FF"
-                    height="32"
-                    rx="16"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                  <path
-                    d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
-                    fill="#E8ECF7"
-                  />
-                  <rect
-                    height="32"
-                    rx="16"
-                    stroke="#5E26FF"
-                    stroke-width="1.4"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                </svg>
-              </li>
-            </ul>
-            <ul
-              class="c48"
-              display="flex"
-            >
-              <li
-                class="c49"
-                overflow="hidden"
-                width="9"
-              >
-                <h4
-                  class="c50"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  From
-                </h4>
-                <p
-                  class="c51"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  t137sj ... 2vizpy
+                  t1kh7x ... nf45jq
                 </p>
               </li>
               <li
@@ -2126,178 +2126,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137sj ... 2vizpy
-                </p>
-              </li>
-              <li
-                class="c52"
-                display="flex"
-                width="9"
-              >
-                <p
-                  class="c53"
-                  color="core.darkgray"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Jan 12, 2020 - 2:30:30
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul
-          class="c54"
-          display="flex"
-        >
-          <li
-            class=""
-          >
-            <ul
-              class="c55"
-              display="flex"
-            >
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  0.001
-                </p>
-              </li>
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  &lt; 0.01
-                </p>
-              </li>
-            </ul>
-          </li>
-          <li
-            class=""
-          >
-            <ul
-              class="c59"
-              display="flex"
-            >
-              <li
-                class=""
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  FIL
-                </p>
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="c42"
-      >
-        <ul
-          class="c43"
-        >
-          <li
-            class="c44"
-            display="flex"
-          >
-            <ul
-              class="c45"
-              display="flex"
-            >
-              <li
-                class="c46"
-              >
-                <svg
-                  class="c47"
-                  fill="none"
-                  height="34"
-                  viewBox="0 0 34 34"
-                  width="34"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    fill="#5E26FF"
-                    height="32"
-                    rx="16"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                  <path
-                    d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
-                    fill="#E8ECF7"
-                  />
-                  <rect
-                    height="32"
-                    rx="16"
-                    stroke="#5E26FF"
-                    stroke-width="1.4"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                </svg>
-              </li>
-            </ul>
-            <ul
-              class="c48"
-              display="flex"
-            >
-              <li
-                class="c49"
-                overflow="hidden"
-                width="9"
-              >
-                <h4
-                  class="c50"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  From
-                </h4>
-                <p
-                  class="c51"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  t137sj ... 2vizpy
+                  t1kh7x ... nf45jq
                 </p>
               </li>
               <li
@@ -2468,7 +2297,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137sj ... 2vizpy
+                  t1kh7x ... nf45jq
                 </p>
               </li>
               <li
@@ -2511,7 +2340,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  &lt; 0.0000001
+                  0
                 </p>
               </li>
               <li
@@ -2526,7 +2355,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  &lt; 0.01
+                  0
                 </p>
               </li>
             </ul>
@@ -2639,7 +2468,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t3wjxu ... meooea
+                  t1kh7x ... nf45jq
                 </p>
               </li>
               <li
@@ -2682,7 +2511,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  0.005
+                  0.5
                 </p>
               </li>
               <li
@@ -2697,7 +2526,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  0.02
+                  2.5
                 </p>
               </li>
             </ul>
@@ -2810,178 +2639,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137sj ... 2vizpy
-                </p>
-              </li>
-              <li
-                class="c52"
-                display="flex"
-                width="9"
-              >
-                <p
-                  class="c53"
-                  color="core.darkgray"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Jan 12, 2020 - 2:30:30
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul
-          class="c54"
-          display="flex"
-        >
-          <li
-            class=""
-          >
-            <ul
-              class="c55"
-              display="flex"
-            >
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  0.0001
-                </p>
-              </li>
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  &lt; 0.01
-                </p>
-              </li>
-            </ul>
-          </li>
-          <li
-            class=""
-          >
-            <ul
-              class="c59"
-              display="flex"
-            >
-              <li
-                class=""
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  FIL
-                </p>
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="c42"
-      >
-        <ul
-          class="c43"
-        >
-          <li
-            class="c44"
-            display="flex"
-          >
-            <ul
-              class="c45"
-              display="flex"
-            >
-              <li
-                class="c46"
-              >
-                <svg
-                  class="c47"
-                  fill="none"
-                  height="34"
-                  viewBox="0 0 34 34"
-                  width="34"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    fill="#5E26FF"
-                    height="32"
-                    rx="16"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                  <path
-                    d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
-                    fill="#E8ECF7"
-                  />
-                  <rect
-                    height="32"
-                    rx="16"
-                    stroke="#5E26FF"
-                    stroke-width="1.4"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                </svg>
-              </li>
-            </ul>
-            <ul
-              class="c48"
-              display="flex"
-            >
-              <li
-                class="c49"
-                overflow="hidden"
-                width="9"
-              >
-                <h4
-                  class="c50"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  From
-                </h4>
-                <p
-                  class="c51"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  t137sj ... 2vizpy
+                  t1kh7x ... nf45jq
                 </p>
               </li>
               <li
@@ -3152,178 +2810,7 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="3"
                   font-weight="400"
                 >
-                  t137sj ... 2vizpy
-                </p>
-              </li>
-              <li
-                class="c52"
-                display="flex"
-                width="9"
-              >
-                <p
-                  class="c53"
-                  color="core.darkgray"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Jan 12, 2020 - 2:30:30
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul
-          class="c54"
-          display="flex"
-        >
-          <li
-            class=""
-          >
-            <ul
-              class="c55"
-              display="flex"
-            >
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  0.00001
-                </p>
-              </li>
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  &lt; 0.01
-                </p>
-              </li>
-            </ul>
-          </li>
-          <li
-            class=""
-          >
-            <ul
-              class="c59"
-              display="flex"
-            >
-              <li
-                class=""
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  FIL
-                </p>
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="c42"
-      >
-        <ul
-          class="c43"
-        >
-          <li
-            class="c44"
-            display="flex"
-          >
-            <ul
-              class="c45"
-              display="flex"
-            >
-              <li
-                class="c46"
-              >
-                <svg
-                  class="c47"
-                  fill="none"
-                  height="34"
-                  viewBox="0 0 34 34"
-                  width="34"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    fill="#5E26FF"
-                    height="32"
-                    rx="16"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                  <path
-                    d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
-                    fill="#E8ECF7"
-                  />
-                  <rect
-                    height="32"
-                    rx="16"
-                    stroke="#5E26FF"
-                    stroke-width="1.4"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                </svg>
-              </li>
-            </ul>
-            <ul
-              class="c48"
-              display="flex"
-            >
-              <li
-                class="c49"
-                overflow="hidden"
-                width="9"
-              >
-                <h4
-                  class="c50"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  From
-                </h4>
-                <p
-                  class="c51"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  t137sj ... 2vizpy
+                  t1kh7x ... nf45jq
                 </p>
               </li>
               <li
@@ -3367,348 +2854,6 @@ exports[`WalletView it renders correctly 1`] = `
                   font-weight="400"
                 >
                   0.0001
-                </p>
-              </li>
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  &lt; 0.01
-                </p>
-              </li>
-            </ul>
-          </li>
-          <li
-            class=""
-          >
-            <ul
-              class="c59"
-              display="flex"
-            >
-              <li
-                class=""
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  FIL
-                </p>
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="c42"
-      >
-        <ul
-          class="c43"
-        >
-          <li
-            class="c44"
-            display="flex"
-          >
-            <ul
-              class="c45"
-              display="flex"
-            >
-              <li
-                class="c46"
-              >
-                <svg
-                  class="c47"
-                  fill="none"
-                  height="34"
-                  viewBox="0 0 34 34"
-                  width="34"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    fill="#5E26FF"
-                    height="32"
-                    rx="16"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                  <path
-                    d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
-                    fill="#E8ECF7"
-                  />
-                  <rect
-                    height="32"
-                    rx="16"
-                    stroke="#5E26FF"
-                    stroke-width="1.4"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                </svg>
-              </li>
-            </ul>
-            <ul
-              class="c48"
-              display="flex"
-            >
-              <li
-                class="c49"
-                overflow="hidden"
-                width="9"
-              >
-                <h4
-                  class="c50"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  From
-                </h4>
-                <p
-                  class="c51"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  t137sj ... 2vizpy
-                </p>
-              </li>
-              <li
-                class="c52"
-                display="flex"
-                width="9"
-              >
-                <p
-                  class="c53"
-                  color="core.darkgray"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Jan 12, 2020 - 2:30:30
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul
-          class="c54"
-          display="flex"
-        >
-          <li
-            class=""
-          >
-            <ul
-              class="c55"
-              display="flex"
-            >
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  0.0001
-                </p>
-              </li>
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  &lt; 0.01
-                </p>
-              </li>
-            </ul>
-          </li>
-          <li
-            class=""
-          >
-            <ul
-              class="c59"
-              display="flex"
-            >
-              <li
-                class=""
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  FIL
-                </p>
-                <p
-                  class="c58"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="c42"
-      >
-        <ul
-          class="c43"
-        >
-          <li
-            class="c44"
-            display="flex"
-          >
-            <ul
-              class="c45"
-              display="flex"
-            >
-              <li
-                class="c46"
-              >
-                <svg
-                  class="c47"
-                  fill="none"
-                  height="34"
-                  viewBox="0 0 34 34"
-                  width="34"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    fill="#5E26FF"
-                    height="32"
-                    rx="16"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                  <path
-                    d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
-                    fill="#E8ECF7"
-                  />
-                  <rect
-                    height="32"
-                    rx="16"
-                    stroke="#5E26FF"
-                    stroke-width="1.4"
-                    width="32"
-                    x="1"
-                    y="1"
-                  />
-                </svg>
-              </li>
-            </ul>
-            <ul
-              class="c48"
-              display="flex"
-            >
-              <li
-                class="c49"
-                overflow="hidden"
-                width="9"
-              >
-                <h4
-                  class="c50"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  From
-                </h4>
-                <p
-                  class="c51"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  t137sj ... 2vizpy
-                </p>
-              </li>
-              <li
-                class="c52"
-                display="flex"
-                width="9"
-              >
-                <p
-                  class="c53"
-                  color="core.darkgray"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Jan 12, 2020 - 2:30:30
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul
-          class="c54"
-          display="flex"
-        >
-          <li
-            class=""
-          >
-            <ul
-              class="c55"
-              display="flex"
-            >
-              <li
-                class="c56"
-                display="flex"
-              >
-                <p
-                  class="c57"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  0.00001
                 </p>
               </li>
               <li
@@ -3810,7 +2955,32 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   box-sizing: border-box;
 }
 
-.c8 {
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #d9e0f2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c9 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3826,7 +2996,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   align-items: center;
 }
 
-.c10 {
+.c11 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -3849,7 +3019,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   justify-content: center;
 }
 
-.c13 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   margin-left: 24px;
@@ -3861,7 +3031,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   display: flex;
 }
 
-.c15 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3874,7 +3044,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   align-items: center;
 }
 
-.c16 {
+.c17 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -3886,7 +3056,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   height: 8px;
 }
 
-.c17 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -3901,11 +3071,18 @@ exports[`WalletView it renders the send page when the user goes to the send scre
 .c19 {
   min-width: 0;
   box-sizing: border-box;
+  margin-top: 48px;
+  margin-bottom: 24px;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
   border-radius: 16px;
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c20 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -3917,7 +3094,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   width: 100%;
 }
 
-.c21 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3937,7 +3114,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   justify-content: space-between;
 }
 
-.c22 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -3961,7 +3138,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   justify-content: center;
 }
 
-.c23 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3977,7 +3154,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   align-items: flex-start;
 }
 
-.c25 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -3986,7 +3163,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   width: 100%;
 }
 
-.c27 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -4005,7 +3182,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   align-items: center;
 }
 
-.c29 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -4022,7 +3199,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   align-items: center;
 }
 
-.c31 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -4051,13 +3228,13 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   align-items: flex-end;
 }
 
-.c11 {
+.c12 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c32 {
+.c34 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -4076,11 +3253,11 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   border-radius: 4px;
 }
 
-.c32:hover {
+.c34:hover {
   opacity: 0.8;
 }
 
-.c33 {
+.c35 {
   cursor: not-allowed;
   border: 1px solid #C4C4C4;
   background-color: #C4C4C4;
@@ -4098,7 +3275,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   border-radius: 4px;
 }
 
-.c33:hover {
+.c35:hover {
   opacity: 1;
 }
 
@@ -4107,7 +3284,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   height: 24;
 }
 
-.c12 {
+.c13 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -4115,7 +3292,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   margin: 0;
 }
 
-.c14 {
+.c15 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -4126,15 +3303,16 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   margin-bottom: 0;
 }
 
-.c18 {
+.c20 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   text-align: center;
+  margin: 0;
 }
 
-.c24 {
+.c26 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -4142,7 +3320,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   margin: 0;
 }
 
-.c28 {
+.c30 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -4151,7 +3329,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   margin: 0;
 }
 
-.c30 {
+.c32 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -4176,18 +3354,18 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   border-color: #999999;
 }
 
-.c30:hover {
+.c32:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c30:focus {
+.c32:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c26 {
+.c28 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
@@ -4211,7 +3389,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   align-items: center;
 }
 
-.c7 {
+.c8 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -4231,7 +3409,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
   justify-content: space-between;
 }
 
-.c9 {
+.c10 {
   margin-right: 16px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4334,151 +3512,162 @@ exports[`WalletView it renders the send page when the user goes to the send scre
         <div
           class="c6"
         >
-          <ul
+          <div
             class="c7"
             display="flex"
-            width="100%"
+            overflow="hidden"
+            width="auto"
           >
-            <div
+            <ul
               class="c8"
               display="flex"
+              width="100%"
             >
-              <li
+              <div
                 class="c9"
                 display="flex"
               >
-                <div
+                <li
                   class="c10"
-                  color="#000"
                   display="flex"
-                  size="6"
                 >
-                  <h3
+                  <div
                     class="c11"
+                    color="#000"
+                    display="flex"
+                    size="6"
                   >
-                    Sf
-                  </h3>
-                </div>
-              </li>
+                    <h3
+                      class="c12"
+                    >
+                      Sf
+                    </h3>
+                  </div>
+                </li>
+                <li
+                  class=""
+                >
+                  <h2
+                    class="c13"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="4"
+                    font-weight="400"
+                  >
+                    Sending Filecoin
+                  </h2>
+                </li>
+              </div>
               <li
                 class=""
               >
-                <h2
-                  class="c12"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  Sending Filecoin
-                </h2>
-              </li>
-            </div>
-            <li
-              class=""
-            >
-              <div
-                class="c13"
-                display="flex"
-              >
-                <p
-                  class="c14"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Step 
-                  1
-                </p>
                 <div
-                  class="c15"
+                  class="c14"
                   display="flex"
                 >
+                  <p
+                    class="c15"
+                    color="core.nearblack"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    Step 
+                    1
+                  </p>
                   <div
                     class="c16"
-                    display="inline-block"
-                    height="2"
-                    width="2"
-                  />
-                </div>
-                <div
-                  class="c15"
-                  display="flex"
-                >
+                    display="flex"
+                  >
+                    <div
+                      class="c17"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
                   <div
-                    class="c17"
-                    display="inline-block"
-                    height="2"
-                    width="2"
-                  />
-                </div>
-                <div
-                  class="c15"
-                  display="flex"
-                >
+                    class="c16"
+                    display="flex"
+                  >
+                    <div
+                      class="c18"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
                   <div
-                    class="c17"
-                    display="inline-block"
-                    height="2"
-                    width="2"
-                  />
-                </div>
-                <div
-                  class="c15"
-                  display="flex"
-                >
+                    class="c16"
+                    display="flex"
+                  >
+                    <div
+                      class="c18"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
                   <div
-                    class="c17"
-                    display="inline-block"
-                    height="2"
-                    width="2"
-                  />
+                    class="c16"
+                    display="flex"
+                  >
+                    <div
+                      class="c18"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
                 </div>
-              </div>
-            </li>
-          </ul>
-          <p
-            class="c18"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
-          >
-            First, please confirm the account you're sending from, and the recipient you want to send to.
-          </p>
+              </li>
+            </ul>
+            <div
+              class="c19"
+            >
+              <p
+                class="c20"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                First, please confirm the account you're sending from, and the recipient you want to send to.
+              </p>
+            </div>
+          </div>
           <div
-            class="c19"
+            class="c21"
           >
             <div
-              class="c20"
+              class="c22"
               color="core.white"
               width="100%"
             >
               <div
-                class="c21"
+                class="c23"
                 display="flex"
               >
                 <div
-                  class="c8"
+                  class="c9"
                   display="flex"
                 >
                   <div
-                    class="c22"
+                    class="c24"
                     color="white"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c11"
+                      class="c12"
                     >
                       Ms
                     </h3>
                   </div>
                   <div
-                    class="c23"
+                    class="c25"
                     display="flex"
                   >
                     <p
-                      class="c24"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -4486,7 +3675,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
                       From
                     </p>
                     <p
-                      class="c24"
+                      class="c26"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -4496,11 +3685,11 @@ exports[`WalletView it renders the send page when the user goes to the send scre
                   </div>
                 </div>
                 <div
-                  class="c23"
+                  class="c25"
                   display="flex"
                 >
                   <p
-                    class="c24"
+                    class="c26"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -4508,7 +3697,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
                     Balance
                   </p>
                   <p
-                    class="c24"
+                    class="c26"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -4520,22 +3709,22 @@ exports[`WalletView it renders the send page when the user goes to the send scre
               </div>
             </div>
             <div
-              class="c25"
+              class="c27"
               width="100%"
             >
               <div
-                class="c26"
+                class="c28"
               >
                 <div
-                  class="c15"
+                  class="c16"
                   display="flex"
                 >
                   <div
-                    class="c27"
+                    class="c29"
                     display="flex"
                   >
                     <h4
-                      class="c28"
+                      class="c30"
                       color="core.nearblack"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -4545,11 +3734,11 @@ exports[`WalletView it renders the send page when the user goes to the send scre
                     </h4>
                   </div>
                   <div
-                    class="c29"
+                    class="c31"
                     display="flex"
                   >
                     <input
-                      class="c30"
+                      class="c32"
                       display="inline-block"
                       height="6"
                       placeholder="t1..."
@@ -4565,12 +3754,12 @@ exports[`WalletView it renders the send page when the user goes to the send scre
           </div>
         </div>
         <div
-          class="c31"
+          class="c33"
           display="flex"
           width="13"
         >
           <button
-            class="c32"
+            class="c34"
             font-size="3"
             height="6"
             type="button"
@@ -4578,7 +3767,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
             Back
           </button>
           <button
-            class="c33"
+            class="c35"
             disabled=""
             font-size="3"
             height="6"

@@ -26,7 +26,8 @@ export const formatFilfoxMessages = messages =>
     const formattedMsg = {
       ...message,
       maxFee: '0',
-      paidFee: '0'
+      paidFee: '0',
+      timestamp: message.timestamp.toString()
     }
     return formattedMsg
   })

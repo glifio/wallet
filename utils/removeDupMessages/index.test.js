@@ -1,47 +1,43 @@
 import removeDupMessages from '.'
 import {
-  filscoutMockData,
-  secondaryFilscoutMockData
+  filfoxMockData,
+  secondaryFilfoxMockData
 } from '../../test-utils/mockData'
-import { formatFilscoutMessages } from '../../components/Wallet/Message/formatMessages'
+import { formatFilfoxMessages } from '../../components/Wallet/Message/formatMessages'
 
-const formattedFilscoutMockData = formatFilscoutMessages(filscoutMockData)
-const formattedSecondaryFilscoutMockData = formatFilscoutMessages(
-  secondaryFilscoutMockData
+const formattedFilfoxData = formatFilfoxMessages(filfoxMockData)
+const formattedSecondaryFilfoxData = formatFilfoxMessages(
+  secondaryFilfoxMockData
 )
 
 describe('removeDupMessages', () => {
   test('it will not add two identical messages to the same array', () => {
-    const msgArr = removeDupMessages(
-      formattedFilscoutMockData,
-      formattedFilscoutMockData
-    )
-    expect(msgArr.length).toBe(formattedFilscoutMockData.length)
+    const msgArr = removeDupMessages(formattedFilfoxData, formattedFilfoxData)
+    expect(msgArr.length).toBe(formattedFilfoxData.length)
   })
 
   test('it will add unique messages', () => {
     const msgArr = removeDupMessages(
-      formattedFilscoutMockData,
-      formattedSecondaryFilscoutMockData
+      formattedFilfoxData,
+      formattedSecondaryFilfoxData
     )
     expect(msgArr.length).toBe(
-      formattedFilscoutMockData.length +
-        formattedSecondaryFilscoutMockData.length
+      formattedFilfoxData.length + formattedSecondaryFilfoxData.length
     )
   })
 
   test('it sorts messages by timestamp', () => {
     const msgArr = removeDupMessages(
-      formattedSecondaryFilscoutMockData,
+      formattedSecondaryFilfoxData,
       // make these messages with very new timestamps
-      formattedFilscoutMockData.map((msg, i) => ({
+      formattedFilfoxData.map((msg, i) => ({
         ...msg,
         timestamp: i.toString()
       }))
     )
 
     // this is just checking to make sure the messages come back in order
-    expect(msgArr[0].cid).toBe(formattedSecondaryFilscoutMockData[0].cid)
-    expect(msgArr[msgArr.length - 1].cid).toBe(formattedFilscoutMockData[0].cid)
+    expect(msgArr[0].cid).toBe(formattedSecondaryFilfoxData[0].cid)
+    expect(msgArr[msgArr.length - 1].cid).toBe(formattedFilfoxData[0].cid)
   })
 })
