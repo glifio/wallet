@@ -1069,9 +1069,9 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   border-width: 0.1875rem;
   border-radius: 8px;
   border-style: solid;
-  border-color: #5E26FF;
+  border-color: #ffffff;
   background-color: transparent;
-  color: #5E26FF;
+  color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1099,7 +1099,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   border: 1px solid core.primary;
   background-color: #1AD08F;
   border-color: core.primary;
-  color: core.primary;
+  color: core.white;
   font-size: 1.125rem;
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
@@ -1124,8 +1124,8 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   border-color: #5E26FF;
   border-width: 1px;
   border-radius: 4px;
-  background-color: transparent;
-  color: #5E26FF;
+  background-color: #5E26FF;
+  color: #ffffff;
   opacity: 1;
 }
 
@@ -1279,7 +1279,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
           font-size="2"
           font-weight="400"
         >
-          Please select the Ledger account you wish to own and sign for your multisig investor wallet.
+          Please select the Ledger account you wish to use for your multisig investor wallet.
         </p>
         <p
           class="c7"
@@ -1670,7 +1670,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
         </div>
         <button
           class="c18"
-          color="core.primary"
+          color="core.white"
           cursor="pointer"
           display="flex"
           font-size="3"
@@ -1688,7 +1688,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
             >
               <div
                 class="c20"
-                color="core.primary"
+                color="core.white"
                 display="flex"
                 size="6"
               >
@@ -1880,9 +1880,9 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   border-width: 0.1875rem;
   border-radius: 8px;
   border-style: solid;
-  border-color: #5E26FF;
+  border-color: #ffffff;
   background-color: transparent;
-  color: #5E26FF;
+  color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1910,7 +1910,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   border: 1px solid core.primary;
   background-color: #1AD08F;
   border-color: core.primary;
-  color: core.primary;
+  color: core.white;
   font-size: 1.125rem;
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
@@ -1935,8 +1935,8 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   border-color: #5E26FF;
   border-width: 1px;
   border-radius: 4px;
-  background-color: transparent;
-  color: #5E26FF;
+  background-color: #5E26FF;
+  color: #ffffff;
   opacity: 1;
 }
 
@@ -2478,7 +2478,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
         </div>
         <button
           class="c18"
-          color="core.primary"
+          color="core.white"
           cursor="pointer"
           display="flex"
           font-size="3"
@@ -2496,7 +2496,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
             >
               <div
                 class="c20"
-                color="core.primary"
+                color="core.white"
                 display="flex"
                 size="6"
               >
