@@ -49,6 +49,8 @@ const Create = ({ onClick, loading, nextAccountIndex, errorMsg }) => {
       alignContent='flex-start'
       width={11}
       height={11}
+      px={3}
+      py={3}
       m={2}
       bg='core.primary'
       borderColor='core.primary'
