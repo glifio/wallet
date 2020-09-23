@@ -3,12 +3,11 @@ import styled from 'styled-components'
 export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding-top: 8px;
 `
 
 export const Sidebar = styled.div`
   flex-grow: 1;
-  margin: 0 0.5rem 0.5rem 0.5rem;
+  margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 `
 export const Content = styled.div`
   display: flex;
