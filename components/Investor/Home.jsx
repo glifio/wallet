@@ -91,25 +91,19 @@ const PreConfirm = ({ address, investor, path }) => {
         label='InvestorID'
         disabled
       />
-      <Box display='flex' flexDirection='column' alignItems='flex-start' mt={3}>
-        <Input.Text
-          value={address}
-          onChange={noop}
-          placeholder='Filecoin address'
-          label='Filecoin address'
-          disabled
-        />
+      <Box display='flex' flexDirection='column' alignItems='flex-start' mt={4}>
         <Box
           display='flex'
           flexDirection='row'
           alignItems='center'
-          justifyContent='space-between'
+          justifyContent='flex-end'
+          height={4}
           width='100%'
+          mb={2}
         >
           <BaseButton
-            mt={3}
-            m='0'
-            p='0'
+            // m='0'
+            // p='0'
             // these are needed for manual overrides
             px='0'
             py='0'
@@ -128,8 +122,25 @@ const PreConfirm = ({ address, investor, path }) => {
           >
             {showLedgerText()}
           </BaseButton>
+        </Box>
+        <Input.Text
+          value={address}
+          onChange={noop}
+          placeholder='Filecoin address'
+          label='Filecoin address'
+          disabled
+        />
+        <Box
+          display='flex'
+          flexDirection='row'
+          alignItems='center'
+          justifyContent='flex-end'
+          height={4}
+          width='100%'
+          mt={2}
+        >
           {showLedgerError && (
-            <Text color='status.fail.background'>
+            <Text color='status.fail.background' m={0}>
               {reportLedgerConfigError({
                 ...ledger,
                 otherError: err
