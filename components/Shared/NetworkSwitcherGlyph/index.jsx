@@ -38,8 +38,9 @@ const NetworkSwitcherButton = styled.button.attrs(() => ({
   &:hover {
     ${props => !props.disabled && 'transform:translateY(-4px);'}
     ${props => !props.disabled && 'cursor: pointer;'}
-    background: ${props =>
-      props.active || props.theme.colors.input.background.valid};
+    ${props =>
+      !props.disabled &&
+      'background: props.theme.colors.input.background.valid'}
   }
   outline: none;
   ${border}
