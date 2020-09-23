@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import LotusRPCEngine from '@openworklabs/lotus-jsonrpc-engine'
 import { useRouter } from 'next/router'
@@ -24,11 +25,12 @@ export const useMsig = msigActorID => {
   const [loading, setLoading] = useState(false)
   const [failed, setFailed] = useState(false)
   const router = useRouter()
+  const network = useSelector(state => state.network)
 
   useEffect(() => {
     const fetchActorState = async () => {
       const lotus = new LotusRPCEngine({
-        apiAddress: process.env.LOTUS_NODE_JSONRPC
+        apiAddress: process.env.LOTUS_NODE_JSONRPC[network]
       })
       try {
         const { Balance, State } = await lotus.request(

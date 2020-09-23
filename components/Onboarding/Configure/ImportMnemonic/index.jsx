@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Filecoin from '@openworklabs/filecoin-wallet-provider'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import { validateMnemonic } from 'bip39'
 import {
@@ -30,6 +30,7 @@ export default () => {
   const [loadingNextScreen, setLoadingNextScreen] = useState(false)
   const dispatchRdx = useDispatch()
   const router = useRouter()
+  const network = useSelector(state => state.network)
 
   const instantiateProvider = async () => {
     setLoadingNextScreen(true)
@@ -39,7 +40,7 @@ export default () => {
       const isValid = validateMnemonic(trimmed)
       if (isValid) {
         const provider = new Filecoin(HDWalletProvider(mnemonic), {
-          apiAddress: process.env.LOTUS_NODE_JSONRPC
+          apiAddress: process.env.LOTUS_NODE_JSONRPC[network]
         })
         dispatch(createWalletProvider(provider))
         const wallet = await fetchDefaultWallet(provider)

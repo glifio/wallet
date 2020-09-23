@@ -17,7 +17,10 @@ module.exports = phase => {
   }
   return {
     env: {
-      LOTUS_NODE_JSONRPC: 'https://node.glif.io/space04/lotus/rpc/v0',
+      LOTUS_NODE_JSONRPC: {
+        f: 'https://node.glif.io/space04/lotus/rpc/v0',
+        t: 'https://node.glif.io/space04/lotus/rpc/v0'
+      },
       MAGIC_STRING_ENDPOINT: 'https://glif-verifier.vercel.app/api/verify',
       IS_PROD: false
     }
