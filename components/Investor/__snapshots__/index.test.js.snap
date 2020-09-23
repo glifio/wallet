@@ -168,7 +168,7 @@ exports[`investor Home it renders correctly 1`] = `
 .c19 {
   min-width: 0;
   box-sizing: border-box;
-  margin-top: 16px;
+  margin-top: 24px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -185,10 +185,12 @@ exports[`investor Home it renders correctly 1`] = `
 .c20 {
   min-width: 0;
   box-sizing: border-box;
+  margin-bottom: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 24px;
   width: 100%;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -197,13 +199,36 @@ exports[`investor Home it renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 .c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 24px;
+  width: 100%;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 48px;
@@ -222,7 +247,7 @@ exports[`investor Home it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c23 {
+.c24 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -242,11 +267,11 @@ exports[`investor Home it renders correctly 1`] = `
   border-radius: 4px;
 }
 
-.c23:hover {
+.c24:hover {
   opacity: 0.8;
 }
 
-.c24 {
+.c25 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -266,7 +291,7 @@ exports[`investor Home it renders correctly 1`] = `
   border-radius: 4px;
 }
 
-.c24:hover {
+.c25:hover {
   opacity: 0.8;
 }
 
@@ -395,9 +420,6 @@ exports[`investor Home it renders correctly 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  margin-top: 16px;
-  margin: 0;
-  padding: 0;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
@@ -616,6 +638,21 @@ exports[`investor Home it renders correctly 1`] = `
       display="flex"
     >
       <div
+        class="c20"
+        display="flex"
+        height="4"
+        width="100%"
+      >
+        <button
+          class="c21"
+          color="core.primary"
+          font-size="3"
+          height="auto"
+        >
+          Show address on device
+        </button>
+      </div>
+      <div
         class="c14"
       >
         <div
@@ -654,29 +691,20 @@ exports[`investor Home it renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="c20"
+        class="c22"
         display="flex"
+        height="4"
         width="100%"
-      >
-        <button
-          class="c21"
-          color="core.primary"
-          font-size="3"
-          height="auto"
-        >
-          Show address on device
-        </button>
-        
-      </div>
+      />
     </div>
   </div>
   <div
-    class="c22"
+    class="c23"
     display="flex"
     width="100%"
   >
     <button
-      class="c23"
+      class="c24"
       font-size="3"
       height="6"
       type="button"
@@ -684,7 +712,7 @@ exports[`investor Home it renders correctly 1`] = `
       Back
     </button>
     <button
-      class="c24"
+      class="c25"
       font-size="3"
       height="6"
       type="button"
