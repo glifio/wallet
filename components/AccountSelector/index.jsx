@@ -197,7 +197,12 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
             maxWidth={19}
             p={4}
           >
-            <Menu m={2}>
+            <Menu
+              display='flex'
+              flexDirection='column'
+              alignItems='center'
+              m={2}
+            >
               <MenuItem display='flex' alignItems='center' color='core.primary'>
                 <Glyph
                   acronym='Sw'
@@ -241,7 +246,7 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
               </MenuItem>
             </Menu>
             <Menu>
-              <MenuItem display='flex' flexWrap='wrap'>
+              <MenuItem display='flex' flexWrap='wrap' justifyContent='center'>
                 {walletsInRdx.map((w, i) => (
                   <AccountCardAlt
                     alignItems='center'
