@@ -28,7 +28,32 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   box-sizing: border-box;
 }
 
-.c6 {
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #d9e0f2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c7 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -44,7 +69,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   align-items: center;
 }
 
-.c8 {
+.c9 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -67,7 +92,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c11 {
+.c12 {
   min-width: 0;
   box-sizing: border-box;
   margin-left: 24px;
@@ -79,7 +104,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   display: flex;
 }
 
-.c13 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -92,7 +117,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   align-items: center;
 }
 
-.c14 {
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -104,7 +129,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   height: 8px;
 }
 
-.c15 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 100px;
@@ -119,11 +144,18 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
 .c17 {
   min-width: 0;
   box-sizing: border-box;
+  margin-top: 48px;
+  margin-bottom: 24px;
+}
+
+.c19 {
+  min-width: 0;
+  box-sizing: border-box;
   border-radius: 16px;
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c18 {
+.c20 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -135,7 +167,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   width: 100%;
 }
 
-.c19 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -155,7 +187,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c20 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -179,7 +211,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c21 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -195,7 +227,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   align-items: flex-start;
 }
 
-.c23 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -204,7 +236,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   width: 100%;
 }
 
-.c25 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -223,7 +255,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   align-items: center;
 }
 
-.c27 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -240,7 +272,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   align-items: center;
 }
 
-.c29 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -269,13 +301,13 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   align-items: flex-end;
 }
 
-.c9 {
+.c10 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c30 {
+.c32 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -294,11 +326,11 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   border-radius: 4px;
 }
 
-.c30:hover {
+.c32:hover {
   opacity: 0.8;
 }
 
-.c31 {
+.c33 {
   cursor: not-allowed;
   border: 1px solid #C4C4C4;
   background-color: #C4C4C4;
@@ -316,7 +348,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   border-radius: 4px;
 }
 
-.c31:hover {
+.c33:hover {
   opacity: 1;
 }
 
@@ -325,7 +357,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   height: 24;
 }
 
-.c10 {
+.c11 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -333,7 +365,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   margin: 0;
 }
 
-.c12 {
+.c13 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -344,15 +376,16 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c16 {
+.c18 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   text-align: center;
+  margin: 0;
 }
 
-.c22 {
+.c24 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -360,7 +393,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   margin: 0;
 }
 
-.c26 {
+.c28 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -369,7 +402,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   margin: 0;
 }
 
-.c28 {
+.c30 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -394,18 +427,18 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   border-color: #999999;
 }
 
-.c28:hover {
+.c30:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c28:focus {
+.c30:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c24 {
+.c26 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
@@ -429,7 +462,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   align-items: center;
 }
 
-.c5 {
+.c6 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -449,7 +482,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c7 {
+.c8 {
   margin-right: 16px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -514,151 +547,162 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
       <div
         class="c4"
       >
-        <ul
+        <div
           class="c5"
           display="flex"
-          width="100%"
+          overflow="hidden"
+          width="auto"
         >
-          <div
+          <ul
             class="c6"
             display="flex"
+            width="100%"
           >
-            <li
+            <div
               class="c7"
               display="flex"
             >
-              <div
+              <li
                 class="c8"
-                color="#000"
                 display="flex"
-                size="6"
               >
-                <h3
+                <div
                   class="c9"
+                  color="#000"
+                  display="flex"
+                  size="6"
                 >
-                  Sf
-                </h3>
-              </div>
-            </li>
+                  <h3
+                    class="c10"
+                  >
+                    Sf
+                  </h3>
+                </div>
+              </li>
+              <li
+                class=""
+              >
+                <h2
+                  class="c11"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="4"
+                  font-weight="400"
+                >
+                  Sending Filecoin
+                </h2>
+              </li>
+            </div>
             <li
               class=""
             >
-              <h2
-                class="c10"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                Sending Filecoin
-              </h2>
-            </li>
-          </div>
-          <li
-            class=""
-          >
-            <div
-              class="c11"
-              display="flex"
-            >
-              <p
-                class="c12"
-                color="core.nearblack"
-                font-family="RT-Alias-Grotesk"
-                font-size="2"
-                font-weight="400"
-              >
-                Step 
-                1
-              </p>
               <div
-                class="c13"
+                class="c12"
                 display="flex"
               >
+                <p
+                  class="c13"
+                  color="core.nearblack"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Step 
+                  1
+                </p>
                 <div
                   class="c14"
-                  display="inline-block"
-                  height="2"
-                  width="2"
-                />
-              </div>
-              <div
-                class="c13"
-                display="flex"
-              >
+                  display="flex"
+                >
+                  <div
+                    class="c15"
+                    display="inline-block"
+                    height="2"
+                    width="2"
+                  />
+                </div>
                 <div
-                  class="c15"
-                  display="inline-block"
-                  height="2"
-                  width="2"
-                />
-              </div>
-              <div
-                class="c13"
-                display="flex"
-              >
+                  class="c14"
+                  display="flex"
+                >
+                  <div
+                    class="c16"
+                    display="inline-block"
+                    height="2"
+                    width="2"
+                  />
+                </div>
                 <div
-                  class="c15"
-                  display="inline-block"
-                  height="2"
-                  width="2"
-                />
-              </div>
-              <div
-                class="c13"
-                display="flex"
-              >
+                  class="c14"
+                  display="flex"
+                >
+                  <div
+                    class="c16"
+                    display="inline-block"
+                    height="2"
+                    width="2"
+                  />
+                </div>
                 <div
-                  class="c15"
-                  display="inline-block"
-                  height="2"
-                  width="2"
-                />
+                  class="c14"
+                  display="flex"
+                >
+                  <div
+                    class="c16"
+                    display="inline-block"
+                    height="2"
+                    width="2"
+                  />
+                </div>
               </div>
-            </div>
-          </li>
-        </ul>
-        <p
-          class="c16"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          First, please confirm the account you're sending from, and the recipient you want to send to.
-        </p>
+            </li>
+          </ul>
+          <div
+            class="c17"
+          >
+            <p
+              class="c18"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              First, please confirm the account you're sending from, and the recipient you want to send to.
+            </p>
+          </div>
+        </div>
         <div
-          class="c17"
+          class="c19"
         >
           <div
-            class="c18"
+            class="c20"
             color="core.white"
             width="100%"
           >
             <div
-              class="c19"
+              class="c21"
               display="flex"
             >
               <div
-                class="c6"
+                class="c7"
                 display="flex"
               >
                 <div
-                  class="c20"
+                  class="c22"
                   color="white"
                   display="flex"
                   size="6"
                 >
                   <h3
-                    class="c9"
+                    class="c10"
                   >
                     Ms
                   </h3>
                 </div>
                 <div
-                  class="c21"
+                  class="c23"
                   display="flex"
                 >
                   <p
-                    class="c22"
+                    class="c24"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -666,7 +710,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
                     From
                   </p>
                   <p
-                    class="c22"
+                    class="c24"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -676,11 +720,11 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
                 </div>
               </div>
               <div
-                class="c21"
+                class="c23"
                 display="flex"
               >
                 <p
-                  class="c22"
+                  class="c24"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
@@ -688,7 +732,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
                   Balance
                 </p>
                 <p
-                  class="c22"
+                  class="c24"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
@@ -700,22 +744,22 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
             </div>
           </div>
           <div
-            class="c23"
+            class="c25"
             width="100%"
           >
             <div
-              class="c24"
+              class="c26"
             >
               <div
-                class="c13"
+                class="c14"
                 display="flex"
               >
                 <div
-                  class="c25"
+                  class="c27"
                   display="flex"
                 >
                   <h4
-                    class="c26"
+                    class="c28"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -725,11 +769,11 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
                   </h4>
                 </div>
                 <div
-                  class="c27"
+                  class="c29"
                   display="flex"
                 >
                   <input
-                    class="c28"
+                    class="c30"
                     display="inline-block"
                     height="6"
                     placeholder="t1..."
@@ -745,12 +789,12 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="c29"
+        class="c31"
         display="flex"
         width="13"
       >
         <button
-          class="c30"
+          class="c32"
           font-size="3"
           height="6"
           type="button"
@@ -758,7 +802,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
           Back
         </button>
         <button
-          class="c31"
+          class="c33"
           disabled=""
           font-size="3"
           height="6"
