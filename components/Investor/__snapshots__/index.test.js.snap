@@ -168,6 +168,7 @@ exports[`investor Home it renders correctly 1`] = `
 .c19 {
   min-width: 0;
   box-sizing: border-box;
+  margin-top: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
