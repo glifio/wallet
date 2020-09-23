@@ -19,7 +19,7 @@ const NetworkSwitcherButton = styled.button.attrs(() => ({
   paddingRight: 4,
   paddingTop: 1,
   paddingBottom: 1,
-  fontSize: 3,
+  fontSize: 2,
   fontWeight: 1,
   fontFamily: 'RT-Alias-Grotesk',
   border: 0
