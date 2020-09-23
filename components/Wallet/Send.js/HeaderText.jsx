@@ -29,7 +29,11 @@ const HeaderText = ({ step, customizingGas, walletType }) => {
   if (customizingGas)
     text = 'Please select the custom gas fee for this transaction.'
 
-  return <Text textAlign='center'>{text}</Text>
+  return (
+    <Text m={0} textAlign='center'>
+      {text}
+    </Text>
+  )
 }
 
 HeaderText.propTypes = {

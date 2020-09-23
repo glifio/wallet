@@ -16,7 +16,8 @@ import {
   ButtonClose,
   StepHeader,
   Title,
-  Form
+  Form,
+  Card
 } from '../../Shared'
 import { CardHeader } from '../../Msig/Shared'
 import ConfirmationCard from './ConfirmationCard'
@@ -281,17 +282,29 @@ const Send = ({ close }) => {
             )}
             {!hasError() && !attemptingTx && (
               <>
-                <StepHeader
-                  title='Sending Filecoin'
-                  currentStep={step}
-                  totalSteps={4}
-                  glyphAcronym='Sf'
-                />
-                <HeaderText
-                  step={step}
-                  customizingGas={false}
-                  walletType={wallet.type}
-                />
+                <Card
+                  display='flex'
+                  flexDirection='column'
+                  justifyContent='space-between'
+                  border='none'
+                  width='auto'
+                  my={2}
+                  backgroundColor='blue.muted700'
+                >
+                  <StepHeader
+                    title='Sending Filecoin'
+                    currentStep={step}
+                    totalSteps={4}
+                    glyphAcronym='Sf'
+                  />
+                  <Box mt={6} mb={4}>
+                    <HeaderText
+                      step={step}
+                      customizingGas={false}
+                      walletType={wallet.type}
+                    />
+                  </Box>
+                </Card>
               </>
             )}
             <Box boxShadow={2} borderRadius={4}>
