@@ -288,6 +288,17 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   margin: 0;
   padding: 0;
   margin: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c8 {
@@ -316,6 +327,10 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c12 {
@@ -339,6 +354,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   >
     <ul
       class="c2"
+      display="flex"
     >
       <li
         class="c3"
@@ -1104,11 +1120,11 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  margin: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
   padding-left: 16px;
   padding-right: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1181,6 +1197,17 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   margin: 0;
   padding: 0;
   margin: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c8 {
@@ -1209,6 +1236,10 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c19 {
@@ -1243,6 +1274,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   >
     <ul
       class="c2"
+      display="flex"
     >
       <li
         class="c3"
@@ -1915,11 +1947,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  margin: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
   padding-left: 16px;
   padding-right: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1992,6 +2024,17 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin: 0;
   padding: 0;
   margin: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c8 {
@@ -2020,6 +2063,10 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c19 {
@@ -2054,6 +2101,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   >
     <ul
       class="c2"
+      display="flex"
     >
       <li
         class="c3"
