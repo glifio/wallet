@@ -47,12 +47,18 @@ const WalletProviderWrapper = ({ network, children }) => {
         setWalletError: errorMessage => dispatch(setError(errorMessage)),
         setWalletType: walletType => dispatch(setWalletType(walletType)),
         setLedgerProvider: useCallback(
-          () => setLedgerProvider(dispatch, walletSubproviders.LedgerProvider),
-          [dispatch, walletSubproviders.LedgerProvider]
+          () =>
+            setLedgerProvider(
+              dispatch,
+              network,
+              walletSubproviders.LedgerProvider
+            ),
+          [dispatch, walletSubproviders.LedgerProvider, network]
         ),
         connectLedger: useCallback(
-          () => connectLedger(dispatch, walletSubproviders.LedgerProvider),
-          [dispatch, walletSubproviders.LedgerProvider]
+          () =>
+            connectLedger(dispatch, network, walletSubproviders.LedgerProvider),
+          [dispatch, walletSubproviders.LedgerProvider, network]
         ),
         resetLedgerState: () => dispatch(resetLedgerState()),
         resetState: useCallback(() => dispatch(resetState()), [dispatch]),

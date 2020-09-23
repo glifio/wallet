@@ -25,6 +25,7 @@ describe('Ledger utils', () => {
     test('it returns a ledger wallet provider upon successful connection', async () => {
       const provider = await setLedgerProvider(
         mockDispatch,
+        't',
         subProviders.LedgerProvider
       )
 

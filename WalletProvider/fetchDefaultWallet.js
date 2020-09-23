@@ -30,6 +30,7 @@ const fetchDefaultWallet = async (
 
     provider = await setLedgerProvider(
       dispatch,
+      network,
       // this arg gets passed in because we need the variables in its scope
       // see prepareSubproviders to look at the closed over variables
       walletSubProviders.LedgerProvider

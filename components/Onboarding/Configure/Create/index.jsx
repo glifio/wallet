@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { number } from 'prop-types'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import Filecoin from '@openworklabs/filecoin-wallet-provider'
 import {
@@ -34,6 +34,7 @@ const Create = ({ initialWalkthroughStep }) => {
     fetchDefaultWallet,
     walletSubproviders: { HDWalletProvider }
   } = useWalletProvider()
+  const network = useSelector(state => state.network)
 
   const dispatchRdx = useDispatch()
 
@@ -54,7 +55,7 @@ const Create = ({ initialWalkthroughStep }) => {
     const instantiateProvider = async () => {
       try {
         const provider = new Filecoin(HDWalletProvider(mnemonic), {
-          apiAddress: process.env.LOTUS_NODE_JSONRPC
+          apiAddress: process.env.LOTUS_NODE_JSONRPC[network]
         })
         dispatch(createWalletProvider(provider))
         const wallet = await fetchDefaultWallet(provider)
@@ -74,7 +75,8 @@ const Create = ({ initialWalkthroughStep }) => {
     mnemonic,
     router,
     walkthroughStep,
-    HDWalletProvider
+    HDWalletProvider,
+    network
   ])
 
   return (

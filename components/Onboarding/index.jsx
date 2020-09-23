@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import ChooseWallet from './Choose'
 import ConfigureWallet from './Configure'
@@ -8,6 +9,7 @@ import useWallet from '../../WalletProvider/useWallet'
 export default () => {
   const wallet = useWallet()
   const router = useRouter()
+  const network = useSelector(state => state.network)
   const [nodeConnecting, setNodeConnecting] = useState(true)
   return (
     <>
@@ -21,7 +23,7 @@ export default () => {
         {nodeConnecting && (
           <NodeConnectingGlyph
             mockStrength={process.env.IS_PROD ? -1 : 2}
-            apiAddress={process.env.LOTUS_NODE_JSONRPC}
+            apiAddress={process.env.LOTUS_NODE_JSONRPC[network]}
             onConnectionStrengthChange={newStrength => {
               // give a little extra time
               setTimeout(() => {

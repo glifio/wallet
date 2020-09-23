@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Filecoin from '@openworklabs/filecoin-wallet-provider'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import {
   Box,
@@ -29,13 +29,14 @@ export default () => {
   const dispatchRdx = useDispatch()
   const [loadingNextScreen, setLoadingNextScreen] = useState(false)
   const router = useRouter()
+  const network = useSelector(state => state.network)
 
   const instantiateProvider = async () => {
     try {
       setLoadingNextScreen(true)
       setPrivateKey('')
       const provider = new Filecoin(SingleKeyProvider(privateKey), {
-        apiAddress: process.env.LOTUS_NODE_JSONRPC
+        apiAddress: process.env.LOTUS_NODE_JSONRPC[network]
       })
       dispatch(createWalletProvider(provider))
       const wallet = await fetchDefaultWallet(provider)
