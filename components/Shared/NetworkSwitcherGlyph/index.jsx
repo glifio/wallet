@@ -81,7 +81,7 @@ const NetworkSwitcherGlyph = ({ ...props }) => {
       <NetworkSwitcherButton
         active={networkFromRedux === MAINNET}
         onClick={() => onNetworkSwitch(MAINNET)}
-        // disabled
+        disabled
         borderTopRightRadius={2}
         borderBottomRightRadius={2}
       >
