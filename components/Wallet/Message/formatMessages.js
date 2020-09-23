@@ -20,3 +20,13 @@ export const formatFilscoutMessages = messages =>
     }
     return formattedMsg
   })
+
+export const formatFilfoxMessages = messages =>
+  messages.map(message => {
+    const formattedMsg = {
+      ...message,
+      maxFee: '0',
+      paidFee: '0'
+    }
+    return formattedMsg
+  })
