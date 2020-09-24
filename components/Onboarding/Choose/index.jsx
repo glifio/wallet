@@ -290,7 +290,7 @@ export default () => {
                     </Text>
 
                     <ImportWallet
-                      onClick={() => router.push('/vault')}
+                      onClick={() => router.push('/vault?network=f')}
                       glyphAcronym='Ss'
                       title='SAFT Setup'
                       backgroundColor='background.screen'
