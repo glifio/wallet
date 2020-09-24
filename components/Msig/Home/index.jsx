@@ -15,6 +15,7 @@ export default () => {
   const msigActorAddress = useSelector(state => state.msigActorAddress)
   const msig = useMsig(msigActorAddress)
   const { address } = useWallet()
+  console.log(address)
   const [childView, setChildView] = useState(MSIG_STATE)
   return (
     <>

@@ -4,8 +4,8 @@ import RequireWallet from '../../lib/RequireWallet'
 
 export default () => {
   return (
-    <RequireWallet>
-      <MsigHome />
-    </RequireWallet>
+    // <RequireWallet>
+    <MsigHome />
+    // </RequireWallet>
   )
 }
