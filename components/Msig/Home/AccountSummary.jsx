@@ -27,18 +27,9 @@ const AccountSummary = ({
       flexDirection='column'
       justifyContent='center'
       alignItems='center'
-      mb={1}
     >
       <Box display='flex' color='card.account.color'>
-        <Glyph
-          mr={3}
-          color='core.nearblack'
-          acronym='Ms'
-          border={1}
-          css={`
-            transform: translateY(6px);
-          `}
-        />
+        <Glyph mr={3} color='core.nearblack' acronym='Ms' border={1} />
         <Box
           display='flex'
           alignItems='center'
@@ -83,7 +74,7 @@ const AccountSummary = ({
           </>
         ) : (
           <>
-            <Box display='flex' color='card.account.color' mt={1}>
+            <Box position='relative' display='flex' color='card.account.color'>
               <Glyph
                 mr={3}
                 Icon={IconLedger}
