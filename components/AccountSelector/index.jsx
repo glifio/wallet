@@ -12,8 +12,10 @@ import {
   Text,
   Menu,
   MenuItem,
+  StyledATag,
   ButtonClose,
-  LoadingScreen
+  LoadingScreen,
+  Highlight
 } from '../Shared'
 import Create from './Create'
 import AccountCardAlt from '../Shared/AccountCardAlt'
@@ -193,6 +195,7 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
           <Box
             display='flex'
             flexDirection='column'
+            alignItems='center'
             alignSelf='center'
             maxWidth={19}
             p={4}
@@ -201,7 +204,9 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
               display='flex'
               flexDirection='column'
               alignItems='center'
+              textAlign='center'
               m={2}
+              maxWidth={16}
             >
               <MenuItem display='flex' alignItems='center' color='core.primary'>
                 <Glyph
@@ -235,12 +240,48 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
                     investor wallet.
                   </Text>
                 )}
-                {!premainnetInvestor && !msig && (
+                {!premainnetInvestor && !msig && wallet.type === LEDGER ? (
                   <Text>
-                    Your single{' '}
-                    {wallet.type === LEDGER ? 'Ledger Device ' : 'seed phrase'}{' '}
-                    creates hundreds of individual &quot;accounts&quot;.
-                    <br />
+                    Your single Ledger device creates hundreds of individual
+                    accounts. We're showing you the first 5.
+                  </Text>
+                ) : (
+                  <Text>
+                    Your single seed phrase creates hundreds of individual
+                    accounts. We're showing you the first 5.
+                  </Text>
+                )}
+
+                {wallet.type === LEDGER ? (
+                  <Text>
+                    <Highlight fontSize={2}>
+                      Don't see an address you're looking for?
+                    </Highlight>
+                    Your Ledger Device generates different addresses depending
+                    on whether it's connected to the Filecoin testnet or
+                    mainnet.
+                    <StyledATag
+                      fontSize={2}
+                      ml={2}
+                      href='https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV'
+                    >
+                      Learn More
+                    </StyledATag>
+                  </Text>
+                ) : (
+                  <Text>
+                    <Highlight fontSize={2}>
+                      Don't see an address you're looking for?
+                    </Highlight>
+                    Your seed phrase generates different addresses depending on
+                    whether it's connected to the Filecoin testnet or mainnet.
+                    <StyledATag
+                      fontSize={2}
+                      ml={2}
+                      href='https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV'
+                    >
+                      Learn More
+                    </StyledATag>
                   </Text>
                 )}
               </MenuItem>
