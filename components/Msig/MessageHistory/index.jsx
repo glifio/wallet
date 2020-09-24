@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-// import MessageDetail from './Detail'
+import MessageDetail from '../../Wallet/Message/Detail'
 import { MessageHistoryTable } from '../../Shared'
 import useWallet from '../../../WalletProvider/useWallet'
-import useTransactionHistory from '../../Wallet/Message/useTransactionHistory'
+import useTransactionHistory from '../../../lib/useTransactionHistory'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
 const MessageHistory = ({ address, close }) => {
@@ -23,13 +23,12 @@ const MessageHistory = ({ address, close }) => {
   return (
     <>
       {selectedMessageCid ? (
-        <div>Hi!</div>
+        <MessageDetail
+          address={wallet.address}
+          close={() => setSelectedMessageCid('')}
+          message={messages.find(({ cid }) => cid === selectedMessageCid)}
+        />
       ) : (
-        // <MessageDetail
-        //   address={wallet.address}
-        //   close={() => setSelectedMessageCid('')}
-        //   message={messages.find(({ cid }) => cid === selectedMessageCid)}
-        // />
         <MessageHistoryTable
           address={wallet.address}
           messages={[...pending, ...confirmed]}

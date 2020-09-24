@@ -6,10 +6,7 @@ import SendRow from './SendRow'
 import MsigProposeRow from './MsigProposeRow'
 import ExecRow from './ExecRow'
 import UnknownRow from './UnknownRow'
-
-const SEND = 'SEND'
-const PROPOSE = 'PROPOSE'
-const EXEC = 'EXEC'
+import { SEND, PROPOSE, EXEC } from '../../../../constants'
 
 const MessageHistoryRow = ({
   address,

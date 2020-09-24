@@ -86,5 +86,7 @@ export const MESSAGE_PROPS = shape({
    * Either pending or confirmed
    */
   status: oneOf(['confirmed', 'pending']).isRequired,
-  timestamp: oneOfType([string, number]).isRequired
+  timestamp: oneOfType([string, number]).isRequired,
+  method: string.isRequired,
+  params: string.isRequired
 })
