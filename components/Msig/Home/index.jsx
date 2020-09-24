@@ -18,7 +18,13 @@ export default () => {
   const [childView, setChildView] = useState(MSIG_STATE)
   return (
     <>
-      <Box display='flex' width='100%' minHeight='100vh' p={3}>
+      <Box
+        display='flex'
+        justifyContent='center'
+        width='100%'
+        minHeight='100vh'
+        p={3}
+      >
         {msig.loading && <LoadingScreen width='100%' />}
         {!msig.loading && childView === MSIG_STATE && (
           <State
