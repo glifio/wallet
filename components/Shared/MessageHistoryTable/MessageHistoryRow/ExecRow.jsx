@@ -1,69 +1,13 @@
 import React from 'react'
 import dayjs from 'dayjs'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
-import { string, oneOf, oneOfType, number, object } from 'prop-types'
+import { string, oneOf, oneOfType, number } from 'prop-types'
 import { Menu, MenuItem } from '../../Menu'
 import { Text, Label } from '../../Typography'
 import { IconSend, IconPending } from '../../Icons'
-import truncate from '../../../../utils/truncateAddress'
 import makeFriendlyBalance from '../../../../utils/makeFriendlyBalance'
 
-const methods = ['withdraw', '', '', '', '', '', '', 'owner swap']
-
-const ProposalText = ({ params }) => {
-  return (
-    <>
-      {methods[params.method] ? (
-        <>
-          <Label color='core.nearblack' my={0}>
-            {`Multisig ${methods[params.method]} to`}
-          </Label>
-          <Text fontSize={3} color='core.nearblack' m={0}>
-            {truncate(params.to)}
-          </Text>
-        </>
-      ) : (
-        <>
-          <Label color='core.nearblack' my={0}>
-            Unknown msig method
-          </Label>
-        </>
-      )}
-    </>
-  )
-}
-
-ProposalText.propTypes = {
-  params: object.isRequired
-}
-
-const ProposalValue = ({ params }) => {
-  if (params.method === 0)
-    return (
-      <Text color='core.nearblack' m={0}>
-        {makeFriendlyBalance(new FilecoinNumber(params.value, 'attofil'), 7)}
-      </Text>
-    )
-
-  if (params.method === 7)
-    return (
-      <Text color='core.nearblack' m={0}>
-        {`New owner: ${params.params.to}`}
-      </Text>
-    )
-
-  return (
-    <Text color='core.nearblack' m={0}>
-      Unknown multisig method
-    </Text>
-  )
-}
-
-ProposalValue.propTypes = {
-  params: object.isRequired
-}
-
-const MsigProposeRow = ({ status, params, timestamp }) => {
+const ExecRow = ({ status, value, timestamp }) => {
   return (
     <>
       <Menu>
@@ -77,8 +21,17 @@ const MsigProposeRow = ({ status, params, timestamp }) => {
             </MenuItem>
           </Menu>
           <Menu display='flex' flex-wrap='wrap' ml={[2, 4, 5]}>
-            <MenuItem overflow='hidden' width={9}>
-              <ProposalText params={params} />
+            <MenuItem
+              overflow='hidden'
+              width={9}
+              display='flex'
+              flexDirection='column'
+              justifyContent='center'
+            >
+              <Label color='core.nearblack' my={0}>
+                Created new actor
+              </Label>
+              {/* should figure out way to get actor address here */}
             </MenuItem>
             <MenuItem
               display='flex'
@@ -109,7 +62,9 @@ const MsigProposeRow = ({ status, params, timestamp }) => {
             ml={3}
           >
             <MenuItem display='flex'>
-              <ProposalValue params={params} />
+              <Text color='core.nearblack' m={0}>
+                {makeFriendlyBalance(new FilecoinNumber(value, 'attofil'), 7)}
+              </Text>
             </MenuItem>
           </Menu>
         </MenuItem>
@@ -122,11 +77,7 @@ const MsigProposeRow = ({ status, params, timestamp }) => {
             ml={3}
           >
             <MenuItem>
-              <Text
-                display={params.method !== 0 ? 'none' : ''}
-                color='core.nearblack'
-                m={0}
-              >
+              <Text color='core.nearblack' m={0}>
                 FIL
               </Text>
             </MenuItem>
@@ -137,10 +88,10 @@ const MsigProposeRow = ({ status, params, timestamp }) => {
   )
 }
 
-MsigProposeRow.propTypes = {
-  params: object.isRequired,
+ExecRow.propTypes = {
   status: oneOf(['confirmed', 'pending']).isRequired,
-  timestamp: oneOfType([string, number]).isRequired
+  timestamp: oneOfType([string, number]).isRequired,
+  value: string.isRequired
 }
 
-export default MsigProposeRow
+export default ExecRow

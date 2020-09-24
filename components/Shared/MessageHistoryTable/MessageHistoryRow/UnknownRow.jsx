@@ -1,84 +1,74 @@
 import React from 'react'
 import dayjs from 'dayjs'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
-import { string, oneOf, oneOfType, number, object } from 'prop-types'
+import { bool, string, oneOf, oneOfType, number } from 'prop-types'
+import { ADDRESS_PROPTYPE } from '../../../../customPropTypes'
 import { Menu, MenuItem } from '../../Menu'
 import { Text, Label } from '../../Typography'
-import { IconSend, IconPending } from '../../Icons'
+import { IconSend, IconReceive, IconPending } from '../../Icons'
 import truncate from '../../../../utils/truncateAddress'
 import makeFriendlyBalance from '../../../../utils/makeFriendlyBalance'
 
-const methods = ['withdraw', '', '', '', '', '', '', 'owner swap']
+const AddressText = ({ sentMsg, to, from }) => {
+  if (sentMsg) {
+    return (
+      <>
+        <Label color='core.nearblack' my={0}>
+          To
+        </Label>
+        <Text fontSize={3} color='core.nearblack' m={0}>
+          {truncate(to)}
+        </Text>
+      </>
+    )
+  }
 
-const ProposalText = ({ params }) => {
   return (
     <>
-      {methods[params.method] ? (
-        <>
-          <Label color='core.nearblack' my={0}>
-            {`Multisig ${methods[params.method]} to`}
-          </Label>
-          <Text fontSize={3} color='core.nearblack' m={0}>
-            {truncate(params.to)}
-          </Text>
-        </>
-      ) : (
-        <>
-          <Label color='core.nearblack' my={0}>
-            Unknown msig method
-          </Label>
-        </>
-      )}
+      <Label color='core.nearblack' my={0}>
+        From
+      </Label>
+      <Text fontSize={3} color='core.nearblack' m={0}>
+        {truncate(from)}
+      </Text>
     </>
   )
 }
 
-ProposalText.propTypes = {
-  params: object.isRequired
+AddressText.propTypes = {
+  sentMsg: bool.isRequired,
+  to: ADDRESS_PROPTYPE,
+  from: ADDRESS_PROPTYPE
 }
 
-const ProposalValue = ({ params }) => {
-  if (params.method === 0)
-    return (
-      <Text color='core.nearblack' m={0}>
-        {makeFriendlyBalance(new FilecoinNumber(params.value, 'attofil'), 7)}
-      </Text>
-    )
-
-  if (params.method === 7)
-    return (
-      <Text color='core.nearblack' m={0}>
-        {`New owner: ${params.params.to}`}
-      </Text>
-    )
-
-  return (
-    <Text color='core.nearblack' m={0}>
-      Unknown multisig method
-    </Text>
-  )
-}
-
-ProposalValue.propTypes = {
-  params: object.isRequired
-}
-
-const MsigProposeRow = ({ status, params, timestamp }) => {
+const UnknownRow = ({ sentMsg, status, timestamp, value }) => {
   return (
     <>
       <Menu>
         <MenuItem display='flex' flexDirection='row'>
           <Menu display='flex' flexDirection='column' justifyContent='center'>
             <MenuItem position='relative'>
-              <IconSend status={status} />
+              {sentMsg ? (
+                <IconSend status={status} />
+              ) : (
+                <IconReceive status={status} />
+              )}
               {status === 'pending' && (
                 <IconPending position='absolute' top='6px' left={4} />
               )}
             </MenuItem>
           </Menu>
           <Menu display='flex' flex-wrap='wrap' ml={[2, 4, 5]}>
-            <MenuItem overflow='hidden' width={9}>
-              <ProposalText params={params} />
+            <MenuItem
+              overflow='hidden'
+              width={9}
+              display='flex'
+              flexDirection='column'
+              justifyContent='center'
+            >
+              <Label color='core.nearblack' my={0}>
+                Unrecognized method
+              </Label>
             </MenuItem>
             <MenuItem
               display='flex'
@@ -109,7 +99,9 @@ const MsigProposeRow = ({ status, params, timestamp }) => {
             ml={3}
           >
             <MenuItem display='flex'>
-              <ProposalValue params={params} />
+              <Text color='core.nearblack' m={0}>
+                {makeFriendlyBalance(new FilecoinNumber(value, 'attofil'), 7)}
+              </Text>
             </MenuItem>
           </Menu>
         </MenuItem>
@@ -122,11 +114,7 @@ const MsigProposeRow = ({ status, params, timestamp }) => {
             ml={3}
           >
             <MenuItem>
-              <Text
-                display={params.method !== 0 ? 'none' : ''}
-                color='core.nearblack'
-                m={0}
-              >
+              <Text color='core.nearblack' m={0}>
                 FIL
               </Text>
             </MenuItem>
@@ -137,10 +125,11 @@ const MsigProposeRow = ({ status, params, timestamp }) => {
   )
 }
 
-MsigProposeRow.propTypes = {
-  params: object.isRequired,
+UnknownRow.propTypes = {
+  sentMsg: bool.isRequired,
+  value: string.isRequired,
   status: oneOf(['confirmed', 'pending']).isRequired,
   timestamp: oneOfType([string, number]).isRequired
 }
 
-export default MsigProposeRow
+export default UnknownRow
