@@ -79,16 +79,12 @@ export const MESSAGE_PROPS = shape({
    */
   value: string.isRequired,
   /**
-   * Amount of gas used in the message
-   */
-  gas_used: string,
-  /**
    * The message's cid
    */
   cid: string.isRequired,
   /**
    * Either pending or confirmed
    */
-  status: string.isRequired,
+  status: oneOf(['confirmed', 'pending']).isRequired,
   timestamp: oneOfType([string, number]).isRequired
 })
