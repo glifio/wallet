@@ -8,7 +8,7 @@ const TxStatusText = ({ address, message }) => {
 
   if (message.pending) return 'PENDING'
 
-  switch (message.method.toUpperCase()) {
+  switch (message.method) {
     case SEND: {
       if (address === message.from) text = 'SENT'
       else text = 'RECEIVED'

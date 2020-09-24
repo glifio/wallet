@@ -15,7 +15,7 @@ const MessageHistoryRow = ({
 }) => {
   const sentMsg = address === from
   let InnerComponent = () => <></>
-  switch (method.toUpperCase()) {
+  switch (method) {
     case SEND: {
       InnerComponent = () => (
         <SendRow
