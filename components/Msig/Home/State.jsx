@@ -5,7 +5,15 @@ import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
 } from '../../../customPropTypes'
-import { Box, Button, Title, Text, Menu, MenuItem } from '../../Shared'
+import {
+  Box,
+  Button,
+  Title,
+  Text,
+  Menu,
+  MenuItem,
+  IconSAFT
+} from '../../Shared'
 import AccountSummary from './AccountSummary'
 import useWallet from '../../../WalletProvider/useWallet'
 import { useWalletProvider } from '../../../WalletProvider'
@@ -48,8 +56,9 @@ const State = ({
         alignItems='center'
         justifyContent='space-between'
       >
-        <MenuItem>
-          <Title>Self Custody</Title>
+        <MenuItem display='flex' alignItems='center'>
+          <IconSAFT />
+          <Title ml={2}>Self Custody</Title>
         </MenuItem>
         <MenuItem>
           <Button
