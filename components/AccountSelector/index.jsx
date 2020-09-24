@@ -9,14 +9,12 @@ import {
   Box as Wrapper,
   Glyph,
   Title,
-  Text,
   Menu,
   MenuItem,
-  StyledATag,
   ButtonClose,
-  LoadingScreen,
-  Highlight
+  LoadingScreen
 } from '../Shared'
+import HelperText from './HelperText'
 import Create from './Create'
 import AccountCardAlt from '../Shared/AccountCardAlt'
 import { useWalletProvider } from '../../WalletProvider'
@@ -222,69 +220,11 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
                 </Title>
               </MenuItem>
               <MenuItem>
-                {premainnetInvestor && (
-                  <>
-                    <Text>
-                      Please select the Ledger account you wish to use for your
-                      multisig investor wallet.
-                    </Text>
-                    <Text>
-                      Any of these accounts can accept Filecoin. If in doubt,
-                      select account 0.
-                    </Text>
-                  </>
-                )}
-                {msig && (
-                  <Text>
-                    Please select the Ledger account that owns your multisig
-                    investor wallet.
-                  </Text>
-                )}
-                {!premainnetInvestor && !msig && wallet.type === LEDGER ? (
-                  <Text>
-                    Your single Ledger device creates hundreds of individual
-                    accounts. We&apos;re showing you the first 5.
-                  </Text>
-                ) : (
-                  <Text>
-                    Your single seed phrase creates hundreds of individual
-                    accounts. We&apos;re showing you the first 5.
-                  </Text>
-                )}
-
-                {wallet.type === LEDGER ? (
-                  <Text>
-                    <Highlight fontSize={2}>
-                      Don&apos;t see an address you&apos;re looking for?
-                    </Highlight>
-                    Your Ledger Device generates different addresses depending
-                    on whether it&apos;s connected to the Filecoin testnet or
-                    mainnet.
-                    <StyledATag
-                      fontSize={2}
-                      ml={2}
-                      href='https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV'
-                    >
-                      Learn More
-                    </StyledATag>
-                  </Text>
-                ) : (
-                  <Text>
-                    <Highlight fontSize={2}>
-                      Don&apos;t see an address you&apos;re looking for?
-                    </Highlight>
-                    Your seed phrase generates different addresses depending on
-                    whether it&apos;s connected to the Filecoin testnet or
-                    mainnet.
-                    <StyledATag
-                      fontSize={2}
-                      ml={2}
-                      href='https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV'
-                    >
-                      Learn More
-                    </StyledATag>
-                  </Text>
-                )}
+                <HelperText
+                  premainnetInvestor={premainnetInvestor}
+                  msig={msig}
+                  isLedger={wallet.type === LEDGER}
+                />
               </MenuItem>
             </Menu>
             <Menu>

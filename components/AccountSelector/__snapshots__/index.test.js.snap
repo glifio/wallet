@@ -1396,21 +1396,13 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
           font-size="2"
           font-weight="400"
         >
-          Your single seed phrase creates hundreds of individual accounts. We're showing you the first 5.
-        </p>
-        <p
-          class="c7"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
           <span
             class="c8"
             font-size="2"
           >
             Don't see an address you're looking for?
           </span>
-          Your seed phrase generates different addresses depending on whether it's connected to the Filecoin testnet or mainnet.
+          Your Ledger Device generates different addresses depending on whether it's connected to the Filecoin testnet or mainnet.
           <a
             class="c9"
             color="core.primary"
@@ -2711,4 +2703,76 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
     </ul>
   </div>
 </div>
+`;
+
+exports[`HelperText it renders the msig helper text correctly 1`] = `
+.c0 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+<p
+  class="c0"
+  font-family="RT-Alias-Grotesk"
+  font-size="2"
+  font-weight="400"
+>
+  Please select the Ledger account that owns your multisig investor wallet.
+</p>
+`;
+
+exports[`HelperText it renders the non-msig, non-saft, ledger helper text correctly 1`] = `
+.c0 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+<p
+  class="c0"
+  font-family="RT-Alias-Grotesk"
+  font-size="2"
+  font-weight="400"
+>
+  Your single Ledger device creates hundreds of individual accounts. We're showing you the first 5.
+</p>
+`;
+
+exports[`HelperText it renders the non-msig, non-saft, non-ledger helper text correctly 1`] = `
+.c0 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+<p
+  class="c0"
+  font-family="RT-Alias-Grotesk"
+  font-size="2"
+  font-weight="400"
+>
+  Your single seed phrase creates hundreds of individual accounts. We're showing you the first 5.
+</p>
+`;
+
+exports[`HelperText it renders the saft helper text correctly 1`] = `
+.c0 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+<p
+  class="c0"
+  font-family="RT-Alias-Grotesk"
+  font-size="2"
+  font-weight="400"
+>
+  Please select the Ledger account you wish to use for your multisig investor wallet.
+</p>
 `;
