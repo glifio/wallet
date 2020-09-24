@@ -12,7 +12,7 @@ import {
   Text,
   Menu,
   MenuItem,
-  IconSAFT
+  IconGlif
 } from '../../Shared'
 import AccountSummary from './AccountSummary'
 import useWallet from '../../../WalletProvider/useWallet'
@@ -57,8 +57,13 @@ const State = ({
         justifyContent='space-between'
       >
         <MenuItem display='flex' alignItems='center'>
-          <IconSAFT />
-          <Title ml={2}>Self Custody</Title>
+          <IconGlif
+            size={6}
+            css={`
+              transform: rotate(-90deg);
+            `}
+          />
+          <Title ml={2}>Vault</Title>
         </MenuItem>
         <MenuItem>
           <Button
