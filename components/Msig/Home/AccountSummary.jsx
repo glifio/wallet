@@ -9,7 +9,7 @@ import {
   Text,
   Button,
   IconLedger,
-  Title as AccountAddress
+  ButtonViewAddress
 } from '../../Shared'
 import truncateAddress from '../../../utils/truncateAddress'
 
@@ -106,10 +106,9 @@ const AccountSummary = ({
                 height='40px'
               >
                 <Box flexGrow='1'>
-                  <AccountAddress m={0}>
-                    {truncateAddress(walletAddress)}
-                  </AccountAddress>
+                  <CopyAddress address={truncateAddress(walletAddress)} />
                 </Box>
+                <ButtonViewAddress />
               </Box>
             </Box>
 
