@@ -27,30 +27,30 @@ const AccountSummary = ({
       flexDirection='column'
       justifyContent='center'
       alignItems='center'
-      boxShadow={2}
-      borderRadius={3}
-      maxWidth={11}
+      mb={1}
     >
-      <Box
-        display='flex'
-        flexDirection='column'
-        width={11}
-        height={8}
-        borderTopLeftRadius={3}
-        borderTopRightRadius={3}
-        p={3}
-        color='card.account.color'
-        bg='card.account.background'
-      >
+      <Box display='flex' color='card.account.color'>
+        <Glyph
+          mr={3}
+          color='core.nearblack'
+          acronym='Ms'
+          border={1}
+          css={`
+            transform: translateY(6px);
+          `}
+        />
         <Box
           display='flex'
           alignItems='center'
           justifyContent='flex-start'
-          color='card.account.color'
+          color='core.darkgray'
+          bg='core.lightgray'
+          p={2}
+          borderRadius={2}
+          width={11}
+          height='40px'
         >
-          <Glyph mr={3} color='card.account.color' acronym='Ms' />
-          <Box flexGrow='1' color='card.account.color'>
-            <Text m={0}>Multisig Account</Text>
+          <Box flexGrow='1'>
             <CopyAddress address={msigAddress} />
           </Box>
         </Box>
@@ -59,11 +59,9 @@ const AccountSummary = ({
         display='flex'
         flexDirection='column'
         justifyContent='space-between'
-        width={11}
         height='auto'
         borderBottomLeftRadius={3}
         borderBottomRightRadius={3}
-        p={3}
       >
         {error ? (
           <>
@@ -85,7 +83,37 @@ const AccountSummary = ({
           </>
         ) : (
           <>
-            <Box display='flex' flexDirection='row'>
+            <Box display='flex' color='card.account.color' mt={1}>
+              <Glyph
+                mr={3}
+                Icon={IconLedger}
+                color='core.nearblack'
+                bg='core.white'
+                fill='#444'
+                borderRadius={6}
+                border={1}
+                css='transform:translateY(-6px)'
+              />
+              <Box
+                display='flex'
+                alignItems='center'
+                justifyContent='flex-start'
+                color='core.darkgray'
+                bg='core.lightgray'
+                p={2}
+                borderRadius={2}
+                width={11}
+                height='40px'
+              >
+                <Box flexGrow='1'>
+                  <AccountAddress m={0}>
+                    {truncateAddress(walletAddress)}
+                  </AccountAddress>
+                </Box>
+              </Box>
+            </Box>
+
+            {/* <Box display='flex' flexDirection='row'>
               <Box>
                 {' '}
                 <Glyph
@@ -95,8 +123,7 @@ const AccountSummary = ({
                   fill='#444'
                 />
               </Box>
-              <Box display='flex' flexDirection='column' height={6}>
-                <Text m={0}>Linked to Ledger Device</Text>
+              <Box display='flex' flexDirection='column' height={5}>
                 <Box
                   display='flex'
                   justifyContent='space-between'
@@ -120,7 +147,7 @@ const AccountSummary = ({
                   />
                 </Box>
               </Box>
-            </Box>
+            </Box> */}
           </>
         )}
       </Box>
