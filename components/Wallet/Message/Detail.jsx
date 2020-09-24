@@ -25,8 +25,6 @@ import noop from '../../../utils/noop'
 import { useWalletProvider } from '../../../WalletProvider'
 
 const MessageDetailCard = styled(Card).attrs(() => ({
-  my: 2,
-  mx: 2,
   maxWidth: 13,
   border: 1,
   borderColor: 'core.silver'
@@ -147,7 +145,7 @@ const MessageDetail = ({ address, close, message }) => {
           </Box>
         </Box>
       </Box>
-      <Box mt={1}>
+      <Box display='flex' flexDirection='column' flexGrow='1' mt={1}>
         <Box mt={3}>
           <Input.Address value={message.from} label='From' disabled />
           <Box height={3} />
@@ -158,7 +156,7 @@ const MessageDetail = ({ address, close, message }) => {
           balance={new FilecoinNumber('0.1', 'fil')}
           label='Amount'
           disabled
-          amount={new FilecoinNumber(message.value, 'fil').toAttoFil()}
+          amount={new FilecoinNumber(message.value, 'attofil').toAttoFil()}
         />
         <TransactionFeeDisplay
           textAlign='right'
@@ -187,17 +185,18 @@ const MessageDetail = ({ address, close, message }) => {
               `}
               color='core.primary'
             >
-              {new FilecoinNumber(message.value, 'fil')
+              {new FilecoinNumber(message.value, 'attofil')
                 .plus(shouldAddFeeToTotal ? fee : 0)
                 .toString()}{' '}
               FIL
             </Num>
-            <Num size='m' color='core.darkgray'>
+            {/* Remove display='none' when USD bal is restored */}
+            <Num display='none' size='m' color='core.darkgray'>
               {!converterError &&
                 (converter
                   ? `${makeFriendlyBalance(
                       converter.fromFIL(
-                        new FilecoinNumber(message.value, 'fil').plus(
+                        new FilecoinNumber(message.value, 'attofil').plus(
                           shouldAddFeeToTotal ? fee : 0
                         )
                       ),
@@ -211,6 +210,8 @@ const MessageDetail = ({ address, close, message }) => {
           display='flex'
           flexWrap='wrap'
           justifyContent='space-between'
+          alignItems='flex-end'
+          flexGrow='1'
           mt={6}
         >
           <Label color='core.silver' textAlign='left' m={1}>
@@ -232,10 +233,10 @@ const MessageDetail = ({ address, close, message }) => {
           <StyledATag
             rel='noopener noreferrer'
             target='_blank'
-            href={`https://filscout.io/en/pc/message/${message.cid}`}
+            href={`https://filfox.info/en/message/${message.cid}`}
           >
             <Label color='core.primary' textAlign='left' m={1}>
-              View on Filscout
+              View on Filfox
             </Label>
           </StyledATag>
         </Box>

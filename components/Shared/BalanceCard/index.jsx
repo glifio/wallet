@@ -5,12 +5,10 @@ import Button from '../Button'
 import { Num, Label } from '../Typography'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
-import { useConverter } from '../../../lib/Converter'
 import ApproximationToggleBtn from './ApproximationToggleBtn'
 
 const BalanceCard = forwardRef(
   ({ balance, onSend, disableButtons, ...props }, ref) => {
-    const { converter, converterError } = useConverter()
     const [preciseMode, setPreciseMode] = useState(false)
     return (
       <Box
@@ -56,7 +54,7 @@ const BalanceCard = forwardRef(
           >
             {makeFriendlyBalance(balance, 3, !preciseMode)} FIL
           </Num>
-          {!converter && !converterError ? (
+          {/* {!converter && !converterError ? (
             <Num size='l' color='core.darkgray'>
               Loading USD
             </Num>
@@ -68,7 +66,7 @@ const BalanceCard = forwardRef(
                   2
                 )} USD`}
             </Num>
-          )}
+          )} */}
         </Box>
         <Box display='flex' justifyContent='space-between'>
           <Button

@@ -1,6 +1,6 @@
 import React from 'react'
 import dayjs from 'dayjs'
-import { BigNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { bool, string, func } from 'prop-types'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import { Menu, MenuItem } from '../Menu'
@@ -131,16 +131,20 @@ const MessageHistoryRow = ({
           >
             <MenuItem display='flex'>
               <Text color='core.nearblack' m={0}>
-                {makeFriendlyBalance(new BigNumber(value), 7)}
+                {makeFriendlyBalance(new FilecoinNumber(value, 'attofil'), 7)}
               </Text>
             </MenuItem>
             <MenuItem display='flex'>
-              <Text color='core.darkgray' m={0} mb={0}>
+              {/* Remove display:none when USD calc is restored */}
+              <Text display='none' color='core.darkgray' m={0} mb={0}>
                 {!converterError &&
                   (!converter
                     ? 'Loading USD...'
                     : makeFriendlyBalance(
-                        converter.fromFIL(new BigNumber(value)),
+                        converter.fromFIL(
+                          new FilecoinNumber(value, 'attofil'),
+                          7
+                        ),
                         2
                       ))}
               </Text>
@@ -160,7 +164,8 @@ const MessageHistoryRow = ({
                 FIL
               </Text>
               {!converterError && (
-                <Text color='core.darkgray' m={0} mb={0}>
+                // Remove display='none' when USD bal is restored
+                <Text display='none' color='core.darkgray' m={0} mb={0}>
                   USD
                 </Text>
               )}

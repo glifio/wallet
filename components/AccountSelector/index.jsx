@@ -9,12 +9,12 @@ import {
   Box as Wrapper,
   Glyph,
   Title,
-  Text,
   Menu,
   MenuItem,
   ButtonClose,
   LoadingScreen
 } from '../Shared'
+import HelperText from './HelperText'
 import Create from './Create'
 import AccountCardAlt from '../Shared/AccountCardAlt'
 import { useWalletProvider } from '../../WalletProvider'
@@ -186,11 +186,19 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
           <Box
             display='flex'
             flexDirection='column'
+            alignItems='center'
             alignSelf='center'
             maxWidth={19}
             p={4}
           >
-            <Menu m={2}>
+            <Menu
+              display='flex'
+              flexDirection='column'
+              alignItems='center'
+              textAlign='center'
+              m={2}
+              maxWidth={16}
+            >
               <MenuItem display='flex' alignItems='center' color='core.primary'>
                 <Glyph
                   acronym='Sw'
@@ -205,36 +213,15 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
                 </Title>
               </MenuItem>
               <MenuItem>
-                {premainnetInvestor && (
-                  <>
-                    <Text>
-                      Please select the Ledger account you wish to own and sign
-                      for your multisig investor wallet.
-                    </Text>
-                    <Text>
-                      Any of these accounts can accept Filecoin. If in doubt,
-                      select account 0.
-                    </Text>
-                  </>
-                )}
-                {msig && (
-                  <Text>
-                    Please select the Ledger account that owns your multisig
-                    investor wallet.
-                  </Text>
-                )}
-                {!premainnetInvestor && !msig && (
-                  <Text>
-                    Your single{' '}
-                    {wallet.type === LEDGER ? 'Ledger Device ' : 'seed phrase'}{' '}
-                    creates hundreds of individual &quot;accounts&quot;.
-                    <br />
-                  </Text>
-                )}
+                <HelperText
+                  premainnetInvestor={premainnetInvestor}
+                  msig={msig}
+                  isLedger={wallet.type === LEDGER}
+                />
               </MenuItem>
             </Menu>
             <Menu>
-              <MenuItem display='flex' flexWrap='wrap'>
+              <MenuItem display='flex' flexWrap='wrap' justifyContent='center'>
                 {walletsInRdx.map((w, i) => (
                   <AccountCardAlt
                     alignItems='center'

@@ -6,11 +6,11 @@ import {
   IconLedger,
   Text,
   Title,
-  Button,
   Header,
+  Button,
   Warning,
   Glyph,
-  InlineBox
+  NetworkSwitcherGlyph
 } from '../../Shared'
 import HeaderGlyph from '../../Shared/Glyph/HeaderGlyph'
 import ImportWallet from './Import'
@@ -47,6 +47,7 @@ export default () => {
   }
 
   const [devMode, setDevMode] = useState(false)
+  const [phishingBanner, setPhishingBanner] = useState(false)
 
   return (
     <>
@@ -64,155 +65,293 @@ export default () => {
           display='flex'
           flexWrap='wrap'
           minHeight='90vh'
-          alignItems='center'
+          maxWidth='1440px'
           justifyContent='center'
           flexGrow='1'
         >
-          <Box
-            display='flex'
-            maxWidth={13}
-            width={['100%', '100%', '40%']}
-            flexDirection='column'
-            alignItems='flex-start'
-            alignContent='center'
-            mb={4}
-            p={4}
-          >
-            <HeaderGlyph
-              alt='Source: https://www.nontemporary.com/post/190437968500'
-              text='Wallet'
-              imageUrl='/imgwallet.png'
-              color='black'
-              fill='black'
-            />
-
+          {!phishingBanner && (
             <Box
-              display='flex'
-              flexDirection='column'
-              mt={[2, 4, 4]}
-              alignSelf='center'
-              textAlign='left'
+              position='absolute'
+              display='block'
+              top='0'
+              backgroundColor='status.warning.background'
+              width='100%'
+              minHeight={6}
+              px={3}
+              py={[2, 2, 0]}
+              zIndex={5}
+              borderBottomLeftRadius={1}
+              borderBottomRightRadius={1}
             >
-              <Header>
-                A lightweight interface to send and receive Filecoin
-              </Header>
-              <Title mt={3} lineHeight='140%'>
-                <InlineBox
-                  backgroundColor='status.warning.background'
-                  color='status.warning.foreground'
-                  py={1}
-                  px={3}
-                  mr={2}
-                  my={3}
-                  fontSize={4}
-                  borderRadius={6}
-                >
-                  Remember
-                </InlineBox>
-                For your protection, please check your browser&apos;s URL bar
-                that you&apos;re visiting https://wallet.glif.io
-              </Title>
-            </Box>
-          </Box>
-          <Box
-            display='flex'
-            flexDirection='column'
-            width='auto'
-            minWidth={11}
-            flexGrow='1'
-            flexWrap='wrap'
-            justifyContent='space-evenly'
-            margin='auto'
-          >
-            <Box
-              display='flex'
-              justifyContent='center'
-              flexDirection='column'
-              alignItems='center'
-              textAlign='center'
-              flexGrow='1'
-            >
-              <Text>Access via</Text>
-              <ImportWallet
-                onClick={() => onChoose(LEDGER)}
-                Icon={IconLedger}
-                title='Ledger Device'
-                tag='Most Secure'
+              <Box
                 display='flex'
-                justifyContent='space-between'
-                flexDirection='column'
-                mb={6}
-              />
-              <Text mt={0} maxWidth={11}>
-                Securely generate an account to receive your SAFT Filecoin
-              </Text>
-              <ImportWallet
-                mb={4}
-                alignSelf='center'
-                onClick={() => router.push('/vault')}
-                glyphAcronym='Ss'
-                title='SAFT Setup'
+                alignItems='center'
+                justifyContent='space-around'
+                maxWidth='1440px'
+              >
+                <Text
+                  mt={3}
+                  lineHeight='140%'
+                  m={0}
+                  color="'status.warning.foreground'"
+                >
+                  For your protection, please check your browser&apos;s URL bar
+                  that you&apos;re visiting https://wallet.glif.io
+                </Text>
+                <Button
+                  justifySelf='flex-end'
+                  variant='tertiary'
+                  title='Close'
+                  color='core.black'
+                  mx={2}
+                  border={0}
+                  p={0}
+                  onClick={() => setPhishingBanner(true)}
+                >
+                  CLOSE
+                </Button>
+              </Box>
+            </Box>
+          )}
+          <Box
+            display='flex'
+            flexWrap='wrap'
+            alignItems='flex-start'
+            justifyContent='space-around'
+            flexGrow='1'
+            marginTop={[8, 7]}
+          >
+            <Box
+              display='flex'
+              maxWidth={13}
+              width={['100%', '100%', '40%']}
+              flexDirection='column'
+              alignItems='flex-start'
+              alignContent='center'
+              mb={4}
+            >
+              <HeaderGlyph
+                alt='Source: https://www.nontemporary.com/post/190437968500'
+                text='Wallet'
+                imageUrl='/imgwallet.png'
+                color='black'
+                fill='#000'
+                imageOpacity='0.7'
               />
 
-              {devMode && (
+              <Box
+                display='flex'
+                flexDirection='column'
+                mt={[2, 4, 4]}
+                alignSelf='center'
+                textAlign='left'
+              >
+                <Header fontSize={5}>
+                  A lightweight web interface to send and receive Filecoin via
+                  your Ledger device
+                </Header>
+                <Title mt={3} color='core.darkgray'>
+                  Your private and sensitive information never leave the
+                  browser, and are erased upon page refresh
+                </Title>
+                <NetworkSwitcherGlyph />
+                <ImportWallet
+                  onClick={() => onChoose(LEDGER)}
+                  Icon={IconLedger}
+                  title='Login via Ledger Device'
+                  tag='Most Secure'
+                  display='flex'
+                  justifyContent='space-between'
+                  flexDirection='column'
+                  my={4}
+                />
+              </Box>
+              <Box>
+                {devMode && (
+                  <Box
+                    display='flex'
+                    flexDirection='column'
+                    alignSelf='center'
+                    bg='background.messageHistory'
+                    px={3}
+                    py={3}
+                    border={1}
+                    borderRadius={2}
+                  >
+                    <Box display='flex' alignItems='center' m={2} px={2}>
+                      <Glyph border={0} acronym='Ta' />
+                      <Text ml={4} my={0}>
+                        Test Accounts
+                      </Text>
+                    </Box>
+                    <CreateWallet
+                      onClick={() => onChoose(CREATE_MNEMONIC)}
+                      m={2}
+                    />
+
+                    <ImportWallet
+                      onClick={() => onChoose(IMPORT_MNEMONIC)}
+                      glyphAcronym='Sp'
+                      title='Import Seed Phrase'
+                      m={2}
+                    />
+                    <ImportWallet
+                      onClick={() => onChoose(IMPORT_SINGLE_KEY)}
+                      glyphAcronym='Pk'
+                      title='Import Private Key'
+                      m={2}
+                    />
+                    <Button
+                      variant='tertiary'
+                      title='Close'
+                      color='core.black'
+                      m={2}
+                      border={0}
+                      p={0}
+                      onClick={() => setDevMode(false)}
+                    />
+                  </Box>
+                )}
+
+                {!devMode && (
+                  <DevMode
+                    alignSelf='center'
+                    justifySelf='flex-end'
+                    onClick={() => setDevMode(true)}
+                    glyphAcronym='Ta'
+                    title='Test Accounts'
+                  />
+                )}
+              </Box>
+            </Box>
+            <Box
+              position='relative'
+              display='flex'
+              maxWidth={13}
+              width={['100%', '100%', '50%']}
+              flexDirection='column'
+              alignItems='flex-start'
+              alignContent='center'
+              backgroundColor='#0a0a0a'
+              borderRadius={3}
+              border={1}
+              boxShadow={2}
+            >
+              <HeaderGlyph
+                alt='Source: https://www.nontemporary.com/post/190437968500'
+                text='Vault'
+                imageUrl='/imgvault.png'
+                color='core.white'
+                fill='#fff'
+                width='100%'
+                imageOpacity='0.9'
+              />
+
+              <Box
+                display='flex'
+                flexDirection='column'
+                alignSelf='center'
+                textAlign='left'
+                p={4}
+              >
+                <Title fontSize={5} color='core.white'>
+                  For Filecoin SAFT Investors
+                </Title>
+                <Title fontSize={5} color='core.lightgray'>
+                  Use your Ledger device to setup and manage your Filecoin SAFT.
+                </Title>
+
                 <Box
                   display='flex'
                   flexDirection='column'
-                  alignSelf='center'
-                  bg='background.messageHistory'
-                  mt={3}
-                  px={3}
-                  py={3}
-                  border={1}
+                  p={3}
+                  my={3}
+                  minHeight={10}
+                  width='100%'
+                  maxWidth={13}
+                  alignItems='center'
+                  justifyContent='flex-start'
                   borderRadius={2}
                 >
-                  <Box display='flex' alignItems='center' m={2} px={2}>
-                    <Glyph border={0} acronym='Dm' />
-                    <Text ml={4} my={0}>
-                      Dev Mode
-                    </Text>
-                  </Box>
-                  <CreateWallet
-                    onClick={() => onChoose(CREATE_MNEMONIC)}
-                    m={2}
-                  />
-
-                  <ImportWallet
-                    onClick={() => onChoose(IMPORT_MNEMONIC)}
-                    glyphAcronym='Sp'
-                    title='Import Seed Phrase'
-                    m={2}
-                  />
-                  <ImportWallet
-                    onClick={() => onChoose(IMPORT_SINGLE_KEY)}
-                    glyphAcronym='Pk'
-                    title='Import Private Key'
-                    m={2}
-                  />
-                  <Button
-                    variant='tertiary'
-                    title='Close'
-                    color='core.black'
-                    m={2}
-                    border={0}
-                    p={0}
-                    onClick={() => setDevMode(false)}
+                  <Box
+                    display='flex'
+                    flexDirection='column'
+                    alignItems='center'
+                    m={3}
                   >
-                    CLOSE
-                  </Button>
+                    <Text
+                      color='core.lightgray'
+                      textAlign='center'
+                      p={0}
+                      mt={0}
+                      maxWidth={10}
+                    >
+                      Securely generate an account to receive your SAFT Filecoin
+                    </Text>
+
+                    <ImportWallet
+                      onClick={() => router.push('/vault?network=f')}
+                      glyphAcronym='Ss'
+                      title='SAFT Setup'
+                      backgroundColor='background.screen'
+                      color='core.black'
+                      glyphColor='core.black'
+                      boxShadow={2}
+                      border={0}
+                    />
+                  </Box>
                 </Box>
-              )}
+                {/* <Box
+                  display='flex'
+                  flexDirection='column'
+                  p={3}
+                  my={3}
+                  minHeight={10}
+                  width='100%'
+                  maxWidth={13}
+                  alignItems='center'
+                  justifyContent='flex-start'
+                  borderRadius={2}
+                  bg='background.screen'
+                >
+                  <Box
+                    display='flex'
+                    flexDirection='column'
+                    alignItems='center'
+                    m={3}
+                  >
+                    <Text
+                      color='core.darkgray'
+                      textAlign='center'
+                      p={0}
+                      mt={0}
+                      maxWidth={10}
+                    >
+                      Access the vesting Filecoin in your SAFT Wallet
+                    </Text>
+
+                    <ImportWallet
+                      onClick='disabled'
+                      glyphAcronym='Sw'
+                      title='SAFT Wallet'
+                      backgroundColor='silver'
+                      color='core.tertiary'
+                      glyphColor='core.tertiary'
+                      border={0}
+                      mb={3}
+                      css={`
+                        &:hover {
+                          transform: scale(1);
+                        }
+                      `}
+                    />
+                    <Highlight fontSize={2} py={2}>
+                      Disabled until Mainnet launch
+                    </Highlight>
+                  </Box>
+                </Box> */}
+              </Box>
             </Box>
-            {!devMode && (
-              <DevMode
-                mt={7}
-                alignSelf='center'
-                justifySelf='flex-end'
-                onClick={() => setDevMode(true)}
-                glyphAcronym='Dm'
-                title='Dev Mode'
-              />
-            )}
           </Box>
         </Box>
       )}

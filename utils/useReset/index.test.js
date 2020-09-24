@@ -6,7 +6,7 @@ import { WalletProviderContext } from '../../WalletProvider'
 import { initialState } from '../../store/states'
 
 describe('useReset', () => {
-  test('it resets both the redux and walletprovider state when called', () => {
+  test('it resets both the redux and walletprovider state when called, keeping the current states network', () => {
     const resetState = jest.fn()
     const screwedUpState = { wallets: [], selectedWalletIdx: -10000 }
     const store = initializeStore(screwedUpState)
@@ -27,7 +27,7 @@ describe('useReset', () => {
       current()
     })
     expect(JSON.stringify(store.getState())).toEqual(
-      JSON.stringify(initialState)
+      JSON.stringify({ ...initialState, network: store.getState().network })
     )
     expect(resetState).toHaveBeenCalled()
   })

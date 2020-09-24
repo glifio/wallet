@@ -14,7 +14,8 @@ export const baseColors = {
     light: '#E4EBFC',
     mid: '#d1ddfa',
     mid2: '#bacbf7',
-    muted: '#e8ecf7'
+    muted: '#e8ecf7',
+    muted700: '#d9e0f2'
   },
   green: {
     primary: '#1AD08F',
@@ -37,14 +38,16 @@ export const baseColors = {
   },
   purple: {
     light: '#E0D7FE',
-    deep: '#5E26FF'
+    mid: '#5E26FF',
+    deep: '#290a85'
   }
 }
 
 // The core color object is the only non-semantic object here. This is because these colors are used so widely that it would be highly redundant to replicate these color values repeatedly within this "colors" object to style the text/background of every single Component the app renders.
 const core = {
-  primary: baseColors.purple.deep,
+  primary: baseColors.purple.mid,
   secondary: baseColors.purple.light,
+  tertiary: baseColors.purple.deep,
   black: baseColors.mono.black,
   nearblack: baseColors.mono.nearblack,
   darkgray: baseColors.mono.darkgray,
@@ -130,6 +133,10 @@ const colors = {
       foreground: baseColors.red.dark
     },
     inactive: baseColors.mono.lightgray
+  },
+  // gonna start slowly migrating colors from their inheritance vars above
+  blue: {
+    muted700: '#d9e0f2'
   }
 }
 

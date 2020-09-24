@@ -8,8 +8,8 @@ import {
   fetchingConfirmedMessages,
   fetchingNextPage
 } from '../../../store/actions'
-import { FILSCOUT } from '../../../constants'
-import { formatFilscoutMessages } from './formatMessages'
+import { FILFOX } from '../../../constants'
+import { formatFilfoxMessages } from './formatMessages'
 import reportError from '../../../utils/reportError'
 
 export default address => {
@@ -38,37 +38,41 @@ export default address => {
   })
 
   const fetchData = useCallback(
-    async (address, page = 1, pageSize = 15) => {
+    async (address, page = 0, pageSize = 10) => {
       try {
-        const { data } = await axios.get(
-          `${FILSCOUT}/message/list?address=${address}&page=${page}&page_size=${pageSize}`
+        const res = await axios.get(
+          `${FILFOX}/address/${address}/messages?pageSize=${pageSize}&page=${page}`
         )
 
-        if (!data) {
-          dispatch(fetchedConfirmedMessagesSuccess([], 0))
-          return
-        }
-
-        if (data.code !== 200) {
+        if (res.status !== 200) {
           dispatch(
             fetchedConfirmedMessagesFailure(
-              new Error('Error fetching from Filscout: ', data.error)
+              new Error('Error fetching from Filscout: ', res.data.error)
             )
           )
-          reportError(12, false, 'Error fetching from Filscout: ', data.error)
+          reportError(
+            12,
+            false,
+            'Error fetching from Filscout: ',
+            res.data.error
+          )
         } else {
-          setPage(Number(data.data.pagination.page) + 1)
-          const formattedMessages = formatFilscoutMessages(data.data.data)
+          setPage(page + 1)
+          const formattedMessages = formatFilfoxMessages(res.data.messages)
           dispatch(
             fetchedConfirmedMessagesSuccess(
               formattedMessages,
-              Number(data.data.pagination.total)
+              Number(res.data.totalCount)
             )
           )
         }
       } catch (err) {
-        reportError(13, false, err.message, err.stack)
-        dispatch(fetchedConfirmedMessagesFailure(new Error(err.message)))
+        if (err.message.includes('404')) {
+          dispatch(fetchedConfirmedMessagesSuccess([], 0))
+        } else {
+          reportError(13, false, err.message, err.stack)
+          dispatch(fetchedConfirmedMessagesFailure(new Error(err.message)))
+        }
       }
     },
     [dispatch]

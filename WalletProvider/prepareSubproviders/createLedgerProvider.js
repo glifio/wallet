@@ -23,7 +23,7 @@ const handleErrors = response => {
       .includes('transporterror: invalid channel')
   ) {
     throw new Error(
-      'Lost connection with Ledger. Please unplug and replug device.'
+      'Lost connection with Ledger. Please quit the Filecoin app, and unplug/replug device.'
     )
   }
   throw new Error(response.error_message)
@@ -32,15 +32,12 @@ const handleErrors = response => {
 const throwIfBusy = busy => {
   if (busy)
     throw new Error(
-      'Ledger is busy, please check device or unplug and replug it in.'
+      'Ledger is busy, please check device, or quit Filecoin app and unplug/replug your device.'
     )
 }
 
 export default rustModule => {
   return transport => {
-    // one thing to note here - we normally use this variable to not make parallel calls to the Ledger device
-    // sometimes we reinstantiate the LedgerProvider class, which could cause problems with this strategy not working
-    // this can be mitigated by switching to the closure system > classes
     let ledgerBusy = false
     const ledgerApp = new FilecoinApp(transport)
     return {
@@ -52,9 +49,13 @@ export default rustModule => {
         throwIfBusy(ledgerBusy)
         ledgerBusy = true
         return new Promise((resolve, reject) => {
+          let finished = false
           setTimeout(() => {
-            ledgerBusy = false
-            return reject(new Error('Ledger device locked or busy'))
+            if (!finished) {
+              finished = true
+              ledgerBusy = false
+              return reject(new Error('Ledger device locked or busy'))
+            }
           }, 3000)
 
           setTimeout(async () => {
@@ -64,7 +65,10 @@ export default rustModule => {
             } catch (err) {
               return reject(err)
             } finally {
-              ledgerBusy = false
+              if (!finished) {
+                finished = true
+                ledgerBusy = false
+              }
             }
           })
         })
@@ -95,11 +99,11 @@ export default rustModule => {
         const serializedMessage = rustModule.transactionSerialize(
           filecoinMessage
         )
-        const { signature_compact } = handleErrors(
+        const res = handleErrors(
           await ledgerApp.sign(path, Buffer.from(serializedMessage, 'hex'))
         )
         ledgerBusy = false
-        return signature_compact.toString('base64')
+        return res.signature_compact.toString('base64')
       },
 
       showAddressAndPubKey: async path => {

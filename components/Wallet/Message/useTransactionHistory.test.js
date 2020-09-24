@@ -3,8 +3,8 @@ import axios from 'axios'
 import { cleanup } from '@testing-library/react'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import {
-  filscoutMockData,
-  secondaryFilscoutMockData
+  filfoxMockData,
+  secondaryFilfoxMockData
 } from '../../../test-utils/mockData'
 
 import useTransactionHistory from './useTransactionHistory'
@@ -12,13 +12,11 @@ import useTransactionHistory from './useTransactionHistory'
 jest.mock('axios')
 
 const sampleSuccessResponse = {
+  status: 200,
   data: {
-    code: 200,
-    data: {
-      data: filscoutMockData,
-      pagination: { total: 47, page: 1, page_size: 15 }
-    },
-    error: 'ok'
+    messages: filfoxMockData,
+    methods: ['Propose', 'Send'],
+    totalCount: 40
   }
 }
 
@@ -41,8 +39,8 @@ describe('useTransactionHistory', () => {
     await waitForNextUpdate()
 
     const { confirmed, total } = store.getState().messages
-    expect(total).toBe(47)
-    expect(confirmed.length).toBe(15)
+    expect(total).toBe(sampleSuccessResponse.data.totalCount)
+    expect(confirmed.length).toBe(sampleSuccessResponse.data.messages.length)
     expect(confirmed[0]).toHaveProperty('from', expect.any(String))
     expect(confirmed[0]).toHaveProperty('maxFee', expect.any(String))
     expect(confirmed[0]).toHaveProperty('paidFee', expect.any(String))
@@ -50,7 +48,6 @@ describe('useTransactionHistory', () => {
     expect(confirmed[0]).toHaveProperty('nonce', expect.any(Number))
     expect(confirmed[0]).toHaveProperty('value', expect.any(String))
     expect(confirmed[0]).toHaveProperty('cid', expect.any(String))
-    expect(confirmed[0]).toHaveProperty('gas_used', expect.any(Number))
     expect(confirmed[0]).toHaveProperty('timestamp', expect.any(String))
     expect(store.getState().messages.loadedFailure).toBeFalsy()
     expect(store.getState().messages.loadedSuccess).toBeTruthy()
@@ -58,13 +55,11 @@ describe('useTransactionHistory', () => {
 
   test('it fetches more data when showMore gets called', async () => {
     const secondarySampleSuccessResponse = {
+      status: 200,
       data: {
-        code: 200,
-        data: {
-          data: secondaryFilscoutMockData,
-          pagination: { total: 47, page: 1, page_size: 15 }
-        },
-        error: 'ok'
+        messages: secondaryFilfoxMockData,
+        methods: ['Propose', 'Send'],
+        totalCount: 40
       }
     }
     axios.get
@@ -86,8 +81,10 @@ describe('useTransactionHistory', () => {
     })
 
     const { confirmed, total } = store.getState().messages
-    expect(total).toBe(47)
-    expect(confirmed.length).toBeGreaterThan(15)
+    expect(total).toBe(sampleSuccessResponse.data.totalCount)
+    expect(confirmed.length).toBeGreaterThan(
+      sampleSuccessResponse.data.messages.length
+    )
     expect(confirmed[0]).toHaveProperty('from', expect.any(String))
     expect(confirmed[0]).toHaveProperty('maxFee', expect.any(String))
     expect(confirmed[0]).toHaveProperty('paidFee', expect.any(String))
@@ -95,7 +92,6 @@ describe('useTransactionHistory', () => {
     expect(confirmed[0]).toHaveProperty('nonce', expect.any(Number))
     expect(confirmed[0]).toHaveProperty('value', expect.any(String))
     expect(confirmed[0]).toHaveProperty('cid', expect.any(String))
-    expect(confirmed[0]).toHaveProperty('gas_used', expect.any(Number))
     expect(confirmed[0]).toHaveProperty('timestamp', expect.any(String))
     expect(store.getState().messages.loadedFailure).toBeFalsy()
     expect(store.getState().messages.loadedSuccess).toBeTruthy()
@@ -103,13 +99,11 @@ describe('useTransactionHistory', () => {
 
   test('it fetches new data when refresh gets called', async () => {
     const secondarySampleSuccessResponse = {
+      status: 200,
       data: {
-        code: 200,
-        data: {
-          data: secondaryFilscoutMockData,
-          pagination: { total: 47, page: 1, page_size: 15 }
-        },
-        error: 'ok'
+        messages: secondaryFilfoxMockData,
+        methods: ['Propose', 'Send'],
+        totalCount: 40
       }
     }
     axios.get
@@ -131,21 +125,21 @@ describe('useTransactionHistory', () => {
     })
 
     const { confirmed, total } = store.getState().messages
-    expect(total).toBe(47)
-    expect(confirmed.length).toBeGreaterThan(15)
+    expect(total).toBe(sampleSuccessResponse.data.totalCount)
+    expect(confirmed.length).toBeGreaterThan(
+      sampleSuccessResponse.data.messages.length
+    )
     expect(store.getState().messages.loadedFailure).toBeFalsy()
     expect(store.getState().messages.loadedSuccess).toBeTruthy()
   })
 
   test('it does not add duplicate data to redux', async () => {
     const secondarySampleSuccessResponse = {
+      status: 200,
       data: {
-        code: 200,
-        data: {
-          data: filscoutMockData,
-          pagination: { total: 47, page: 1, page_size: 15 }
-        },
-        error: 'ok'
+        messages: filfoxMockData,
+        methods: ['Propose', 'Send'],
+        totalCount: 40
       }
     }
     axios.get
@@ -167,21 +161,14 @@ describe('useTransactionHistory', () => {
     })
 
     const { confirmed, total } = store.getState().messages
-    expect(total).toBe(47)
-    expect(confirmed.length).toBe(15)
+    expect(total).toBe(sampleSuccessResponse.data.totalCount)
+    expect(confirmed.length).toBe(sampleSuccessResponse.data.messages.length)
     expect(store.getState().messages.loadedFailure).toBeFalsy()
     expect(store.getState().messages.loadedSuccess).toBeTruthy()
   })
 
-  test('it handles errors from filscout', async () => {
-    const sampleFailResponse = {
-      data: {
-        code: 500,
-        error: 'kobe!'
-      }
-    }
-
-    axios.get.mockResolvedValue(sampleFailResponse)
+  test('it handles errors from filfox', async () => {
+    axios.get.mockRejectedValue(new Error('error!'))
 
     const { Tree, store } = composeMockAppTree('postOnboard')
 
@@ -196,11 +183,7 @@ describe('useTransactionHistory', () => {
   })
 
   test('it handles unknown addresses', async () => {
-    const sampleUnknownResponse = {
-      data: ''
-    }
-
-    axios.get.mockResolvedValue(sampleUnknownResponse)
+    axios.get.mockRejectedValue(new Error('404'))
 
     const { Tree, store } = composeMockAppTree('postOnboard')
 

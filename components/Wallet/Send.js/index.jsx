@@ -16,7 +16,8 @@ import {
   ButtonClose,
   StepHeader,
   Title,
-  Form
+  Form,
+  Card
 } from '../../Shared'
 import { CardHeader } from '../../Msig/Shared'
 import ConfirmationCard from './ConfirmationCard'
@@ -73,10 +74,14 @@ const Send = ({ close }) => {
     new FilecoinNumber('122222', 'attofil')
   )
 
+  const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
+  const [mPoolPushing, setMPoolPushing] = useState(false)
+
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
 
   const send = async () => {
+    setFetchingTxDetails(true)
     let provider = walletProvider
     // attempt to establish a new connection with the ledger device if the user selected ledger
     if (wallet.type === LEDGER) {
@@ -98,23 +103,29 @@ const Send = ({ close }) => {
         message.toLotusType()
       )
 
+      setFetchingTxDetails(false)
       const signedMessage = await provider.wallet.sign(
         msgWithGas.toSerializeableType(),
         wallet.path
       )
 
       const messageObj = msgWithGas.toLotusType()
+      setMPoolPushing(true)
       const msgCid = await provider.sendMessage(
         msgWithGas.toLotusType(),
         signedMessage
       )
+
       messageObj.cid = msgCid['/']
       messageObj.timestamp = dayjs().unix()
       const maxFee = await provider.gasEstimateMaxFee(msgWithGas.toLotusType())
       messageObj.maxFee = maxFee.toAttoFil()
       // dont know how much was actually paid in this message yet, so we mark it as 0
       messageObj.paidFee = '0'
-      messageObj.value = new FilecoinNumber(messageObj.Value, 'attofil').toFil()
+      messageObj.value = new FilecoinNumber(
+        messageObj.Value,
+        'attofil'
+      ).toAttoFil()
       return messageObj
     }
   }
@@ -133,6 +144,8 @@ const Send = ({ close }) => {
       setStep(3)
     } finally {
       setAttemptingTx(false)
+      setFetchingTxDetails(false)
+      setMPoolPushing(false)
     }
   }
 
@@ -210,6 +223,13 @@ const Send = ({ close }) => {
     if (step > 4) return true
   }
 
+  const isBackBtnDisabled = () => {
+    if (wallet.type === LEDGER && attemptingTx) return true
+    if (fetchingTxDetails) return true
+    if (mPoolPushing) return true
+    return false
+  }
+
   const submitBtnText = () => {
     if (step === 4 && wallet.type !== LEDGER) return 'Send'
     if (step === 4 && wallet.type === LEDGER) return 'Confirm on device.'
@@ -259,21 +279,34 @@ const Send = ({ close }) => {
                 walletType={wallet.type}
                 currentStep={4}
                 totalSteps={4}
+                loading={fetchingTxDetails || mPoolPushing}
               />
             )}
             {!hasError() && !attemptingTx && (
               <>
-                <StepHeader
-                  title='Sending Filecoin'
-                  currentStep={step}
-                  totalSteps={4}
-                  glyphAcronym='Sf'
-                />
-                <HeaderText
-                  step={step}
-                  customizingGas={false}
-                  walletType={wallet.type}
-                />
+                <Card
+                  display='flex'
+                  flexDirection='column'
+                  justifyContent='space-between'
+                  border='none'
+                  width='auto'
+                  my={2}
+                  backgroundColor='blue.muted700'
+                >
+                  <StepHeader
+                    title='Sending Filecoin'
+                    currentStep={step}
+                    totalSteps={4}
+                    glyphAcronym='Sf'
+                  />
+                  <Box mt={6} mb={4}>
+                    <HeaderText
+                      step={step}
+                      customizingGas={false}
+                      walletType={wallet.type}
+                    />
+                  </Box>
+                </Card>
               </>
             )}
             <Box boxShadow={2} borderRadius={4}>
@@ -335,7 +368,8 @@ const Send = ({ close }) => {
                     alignItems='flex-start'
                     justifyContent='space-between'
                     pt={6}
-                    pb={3}
+                    // Restore pb to {3} when USD Total bal is restored
+                    pb={5}
                     px={3}
                     bg='background.screen'
                     borderBottomLeftRadius={3}
@@ -359,7 +393,7 @@ const Send = ({ close }) => {
                       >
                         {value.toFil()} FIL
                       </Num>
-                      <Num size='m' color='core.darkgray'>
+                      <Num display='none' size='m' color='core.darkgray'>
                         {!converterError && value.isGreaterThan(0)
                           ? `${makeFriendlyBalance(
                               converter.fromFIL(value),
@@ -399,7 +433,7 @@ const Send = ({ close }) => {
                   setStep(step - 1)
                 }
               }}
-              disabled={attemptingTx}
+              disabled={isBackBtnDisabled()}
             />
             <Button
               variant='primary'
