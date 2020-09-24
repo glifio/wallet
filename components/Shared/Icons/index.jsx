@@ -341,3 +341,27 @@ export const IconLedger = forwardRef((props, ref) => (
     />
   </IconBase>
 ))
+
+export const IconViewAddress = forwardRef((props, ref) => (
+  <IconBase
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+    ref={ref}
+    {...props}
+  >
+    <rect x='4' y='4' width='16' height='16' rx='8' fill='white' />
+    <rect
+      opacity='0.5'
+      x='7'
+      y='8'
+      width='8'
+      height='8'
+      rx='4'
+      fill='#0A0A0A'
+    />
+    <rect x='9' y='10' width='4' height='4' rx='2' fill='#0A0A0A' />
+  </IconBase>
+))
