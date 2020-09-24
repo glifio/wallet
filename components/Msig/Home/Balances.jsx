@@ -6,13 +6,7 @@ import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
 const AvailableBalance = ({ available }) => {
   return (
-    <Box
-      display='flex'
-      flexDirection='column'
-      alignItems='center'
-      width='100%'
-      p={4}
-    >
+    <Box display='flex' flexDirection='column' alignItems='center' width='100%'>
       <Num size='xxl' color='core.primary'>
         {makeFriendlyBalance(available, 6, true)}
       </Num>
@@ -25,13 +19,7 @@ AvailableBalance.propTypes = {
 }
 
 const TotalBalance = ({ total }) => (
-  <Box
-    display='flex'
-    flexDirection='column'
-    alignItems='center'
-    width='100%'
-    p={4}
-  >
+  <Box display='flex' flexDirection='column' alignItems='center' width='100%'>
     <Num size='xxl' color='core.primary'>
       {makeFriendlyBalance(total, 6, true)}
     </Num>
@@ -55,12 +43,13 @@ const Balances = ({ available, setWithdrawing, total }) => {
       border={1}
       borderRadius={2}
     >
-      <Box display='block' textAlign='center' p={5}>
+      <Box display='block' textAlign='center' p={6}>
         <Title fontSize={3}>Available Balance</Title>
         <AvailableBalance available={available} />
       </Box>
 
       <Button
+        position='absolute'
         type='button'
         variant='primary'
         onClick={setWithdrawing}
@@ -68,9 +57,15 @@ const Balances = ({ available, setWithdrawing, total }) => {
         maxWidth={10}
         minWidth={9}
         mb={3}
+        borderRadius={6}
+        css={`
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        `}
       />
 
-      <Box display='block' textAlign='center' borderTop={1} width='100%' p={5}>
+      <Box display='block' textAlign='center' borderTop={1} width='100%' p={6}>
         <Title fontSize={3}>Total Vesting</Title>
         <TotalBalance total={total} />
       </Box>

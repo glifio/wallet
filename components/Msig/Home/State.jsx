@@ -5,7 +5,15 @@ import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
 } from '../../../customPropTypes'
-import { Box, Button, Title, Text, Menu, MenuItem } from '../../Shared'
+import {
+  Box,
+  Button,
+  Title,
+  Text,
+  Menu,
+  MenuItem,
+  IconGlif
+} from '../../Shared'
 import AccountSummary from './AccountSummary'
 import useWallet from '../../../WalletProvider/useWallet'
 import { useWalletProvider } from '../../../WalletProvider'
@@ -48,8 +56,14 @@ const State = ({
         alignItems='center'
         justifyContent='space-between'
       >
-        <MenuItem>
-          <Title>Self Custody</Title>
+        <MenuItem display='flex' alignItems='center'>
+          <IconGlif
+            size={6}
+            css={`
+              transform: rotate(-90deg);
+            `}
+          />
+          <Title ml={2}>Vault</Title>
         </MenuItem>
         <MenuItem>
           <Button
@@ -59,6 +73,7 @@ const State = ({
             title='Change Owner'
             maxWidth={10}
             minWidth={9}
+            borderRadius={6}
           />
         </MenuItem>
       </Menu>
@@ -66,7 +81,7 @@ const State = ({
         display='flex'
         justifyContent='space-between'
         alignItems='center'
-        mt={3}
+        mt={4}
       >
         <MenuItem>
           <Menu>
@@ -96,9 +111,9 @@ const State = ({
       <Box
         display='flex'
         flexDirection='column'
-        flexGrow='1'
         alignItems='center'
         justifyContent='center'
+        mt={4}
       >
         <Balances
           available={available}
