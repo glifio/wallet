@@ -5440,14 +5440,14 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   align-items: center;
 }
 
-.c19 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 16px;
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c20 {
+.c19 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -5459,7 +5459,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   width: 100%;
 }
 
-.c21 {
+.c20 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -5479,7 +5479,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c22 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -5503,7 +5503,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   justify-content: center;
 }
 
-.c23 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -5519,7 +5519,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   align-items: flex-start;
 }
 
-.c25 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -5528,7 +5528,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   width: 100%;
 }
 
-.c27 {
+.c26 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -5547,7 +5547,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   align-items: center;
 }
 
-.c29 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -5564,7 +5564,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   align-items: center;
 }
 
-.c48 {
+.c47 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -5593,7 +5593,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   align-items: flex-end;
 }
 
-.c31 {
+.c30 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -5609,7 +5609,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   align-items: center;
 }
 
-.c32 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -5638,14 +5638,14 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   text-align: center;
 }
 
-.c33 {
+.c32 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c34 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -5660,7 +5660,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   width: 100%;
 }
 
-.c37 {
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -5669,7 +5669,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   height: 80px;
 }
 
-.c40 {
+.c39 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -5693,7 +5693,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c42 {
+.c41 {
   min-width: 0;
   box-sizing: border-box;
   border-bottom-left-radius: 8px;
@@ -5720,7 +5720,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c44 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -5828,21 +5828,13 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   height: 8px;
 }
 
-.c15 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-left: 8px;
-  margin-right: 8px;
-  width: 32px;
-}
-
 .c9 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c49 {
+.c48 {
   cursor: not-allowed;
   border: 1px solid #C4C4C4;
   background-color: #C4C4C4;
@@ -5860,11 +5852,11 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c49:hover {
+.c48:hover {
   opacity: 1;
 }
 
-.c50 {
+.c49 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -5883,7 +5875,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c50:hover {
+.c49:hover {
   opacity: 0.8;
 }
 
@@ -5892,7 +5884,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   height: 24;
 }
 
-.c43 {
+.c42 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -5900,7 +5892,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   margin: 0;
 }
 
-.c45 {
+.c44 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -5909,7 +5901,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   margin: 0;
 }
 
-.c47 {
+.c46 {
   color: #666666;
   font-size: 1.5rem;
   font-weight: 400;
@@ -5919,7 +5911,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   margin: 0;
 }
 
-.c24 {
+.c23 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -5927,7 +5919,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   margin: 0;
 }
 
-.c41 {
+.c40 {
   color: #5E26FF;
   font-size: 1.125rem;
   font-weight: 400;
@@ -5956,7 +5948,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c16 {
+.c15 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -5964,14 +5956,14 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   font-family: RT-Alias-Grotesk;
 }
 
-.c18 {
+.c17 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
 }
 
-.c28 {
+.c27 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -5980,7 +5972,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   margin: 0;
 }
 
-.c30 {
+.c29 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -6005,24 +5997,24 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   border-color: #999999;
 }
 
-.c30:hover {
+.c29:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c30:focus {
+.c29:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c26 {
+.c25 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
 }
 
-.c36 {
+.c35 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -6052,7 +6044,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   background: #bacbf7;
 }
 
-.c39 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -6081,7 +6073,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   background: #bacbf7;
 }
 
-.c35 {
+.c34 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -6109,24 +6101,24 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   -moz-appearance: textfield;
 }
 
-.c35:hover {
+.c34:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c35:focus {
+.c34:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c35::-webkit-outer-spin-button,
-.c35::-webkit-inner-spin-button {
+.c34::-webkit-outer-spin-button,
+.c34::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c38 {
+.c37 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -6153,19 +6145,19 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   -moz-appearance: textfield;
 }
 
-.c38:hover {
+.c37:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c38:focus {
+.c37:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c38::-webkit-outer-spin-button,
-.c38::-webkit-inner-spin-button {
+.c37::-webkit-outer-spin-button,
+.c37::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -6207,12 +6199,13 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   transform: scale(1.25);
 }
 
-.c17 {
-  font-size: 1.25rem;
-  font-weight: 600;
+.c16 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  font-size: inherit;
 }
 
-.c46 {
+.c45 {
   word-wrap: break-word;
 }
 
@@ -6350,14 +6343,10 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                   />
                 </div>
               </div>
-              <div
-                class="c15"
-                width="5"
-              />
             </div>
           </div>
           <p
-            class="c16"
+            class="c15"
             color="core.nearblack"
             font-family="RT-Alias-Grotesk"
             font-size="2"
@@ -6366,57 +6355,53 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
             To complete the transaction, please review the
              
             <span
-              class="c17"
-              font-size="3"
-              font-weight="2"
+              class="c16"
+              font-size="inherit"
             >
               recipient
             </span>
              and
              
             <span
-              class="c17"
-              font-size="3"
-              font-weight="2"
+              class="c16"
+              font-size="inherit"
             >
               amount
             </span>
              and click ”Send” at the bottom of the page.
           </p>
           <p
-            class="c18"
+            class="c17"
             font-family="RT-Alias-Grotesk"
             font-size="2"
             font-weight="400"
           >
             <span
-              class="c17"
-              font-size="3"
-              font-weight="2"
+              class="c16"
+              font-size="inherit"
             >
               Remember:
             </span>
              Transactions are
              
             <span
-              class="c17"
-              font-size="3"
-              font-weight="2"
+              class="c16"
+              font-size="inherit"
             >
               final once sent.
             </span>
           </p>
         </div>
         <div
-          class="c19"
+          class="c18"
         >
           <div
-            class="c20"
+            class="c19"
             color="core.white"
             width="100%"
           >
             <div
-              class="c21"
+              class="c20"
               display="flex"
             >
               <div
@@ -6424,7 +6409,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                 display="flex"
               >
                 <div
-                  class="c22"
+                  class="c21"
                   color="white"
                   display="flex"
                   size="6"
@@ -6436,11 +6421,11 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                   </h3>
                 </div>
                 <div
-                  class="c23"
+                  class="c22"
                   display="flex"
                 >
                   <p
-                    class="c24"
+                    class="c23"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -6448,7 +6433,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                     From
                   </p>
                   <p
-                    class="c24"
+                    class="c23"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -6458,11 +6443,11 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                 </div>
               </div>
               <div
-                class="c23"
+                class="c22"
                 display="flex"
               >
                 <p
-                  class="c24"
+                  class="c23"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
@@ -6470,7 +6455,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                   Balance
                 </p>
                 <p
-                  class="c24"
+                  class="c23"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
@@ -6482,22 +6467,22 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
             </div>
           </div>
           <div
-            class="c25"
+            class="c24"
             width="100%"
           >
             <div
-              class="c26"
+              class="c25"
             >
               <div
                 class="c11"
                 display="flex"
               >
                 <div
-                  class="c27"
+                  class="c26"
                   display="flex"
                 >
                   <h4
-                    class="c28"
+                    class="c27"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -6507,11 +6492,11 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                   </h4>
                 </div>
                 <div
-                  class="c29"
+                  class="c28"
                   display="flex"
                 >
                   <input
-                    class="c30"
+                    class="c29"
                     disabled=""
                     display="inline-block"
                     height="6"
@@ -6526,23 +6511,23 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
             
           </div>
           <div
-            class="c25"
+            class="c24"
             width="100%"
           >
             <div
-              class="c31"
+              class="c30"
               display="flex"
               label="Amount"
               name="amount"
             >
               <div
-                class="c32"
+                class="c31"
                 color="input.border"
                 display="flex"
                 width="100%"
               >
                 <h4
-                  class="c28"
+                  class="c27"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -6552,18 +6537,18 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                 </h4>
               </div>
               <div
-                class="c33"
+                class="c32"
                 display="inline-block"
                 width="100%"
               >
                 <div
-                  class="c34"
+                  class="c33"
                   display="flex"
                   height="80px"
                   width="100%"
                 >
                   <input
-                    class="c35"
+                    class="c34"
                     disabled=""
                     display="inline-block"
                     font-size="5"
@@ -6577,7 +6562,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                     width="100%"
                   />
                   <div
-                    class="c36"
+                    class="c35"
                     color="core.primary"
                     disabled=""
                     display="flex"
@@ -6588,12 +6573,12 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  class="c37"
+                  class="c36"
                   display="none"
                   height="80px"
                 >
                   <input
-                    class="c38"
+                    class="c37"
                     disabled=""
                     display="inline-block"
                     font-size="5"
@@ -6606,7 +6591,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                     width="100%"
                   />
                   <div
-                    class="c39"
+                    class="c38"
                     color="core.primary"
                     disabled=""
                     display="flex"
@@ -6620,12 +6605,12 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
             </div>
           </div>
           <div
-            class="c40"
+            class="c39"
             display="flex"
             width="100%"
           >
             <p
-              class="c24"
+              class="c23"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -6633,7 +6618,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
               Transaction Fee
             </p>
             <p
-              class="c41"
+              class="c40"
               color="core.primary"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -6643,11 +6628,11 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
             </p>
           </div>
           <div
-            class="c42"
+            class="c41"
             display="flex"
           >
             <h2
-              class="c43"
+              class="c42"
               font-family="RT-Alias-Grotesk"
               font-size="4"
               font-weight="400"
@@ -6655,11 +6640,11 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
               Total
             </h2>
             <div
-              class="c44"
+              class="c43"
               display="flex"
             >
               <h2
-                class="c45 c46"
+                class="c44 c45"
                 color="core.primary"
                 font-family="RT-Alias-Grotesk"
                 font-size="5"
@@ -6669,7 +6654,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                  FIL
               </h2>
               <h2
-                class="c47"
+                class="c46"
                 color="core.darkgray"
                 display="none"
                 font-family="RT-Alias-Grotesk"
@@ -6685,12 +6670,12 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
         </div>
       </div>
       <div
-        class="c48"
+        class="c47"
         display="flex"
         width="13"
       >
         <button
-          class="c49"
+          class="c48"
           disabled=""
           font-size="3"
           height="6"
@@ -6699,7 +6684,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
           Back
         </button>
         <button
-          class="c50"
+          class="c49"
           font-size="3"
           height="6"
           type="submit"

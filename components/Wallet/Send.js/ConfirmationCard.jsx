@@ -12,9 +12,9 @@ import {
 import LoaderGlyph from '../../Shared/LoaderGlyph'
 
 const TextHighlight = styled.span.attrs(() => ({
-  fontSize: 3,
-  fontWeight: 2
+  fontSize: 'inherit'
 }))`
+  text-decoration: underline;
   ${typography}
 `
 
@@ -103,7 +103,6 @@ const ConfirmationCard = ({ walletType, currentStep, totalSteps, loading }) => {
                 step={currentStep}
                 totalSteps={totalSteps}
               />
-              <Box width={5} mx={2} />
             </Box>
           </Box>
           {walletType === LEDGER ? (
