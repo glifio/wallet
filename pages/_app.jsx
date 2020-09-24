@@ -29,8 +29,8 @@ class MyApp extends App {
           <ThemeProvider theme={theme}>
             <WasmLoader>
               <ConverterWrapper>
+                <NetworkChecker pathname={pathname} query={query} />
                 <WalletProviderWrapper network={reduxStore.getState().network}>
-                  <NetworkChecker pathname={pathname} query={query} />
                   <BalancePoller />
                   <ErrorBoundary>
                     <Component {...pageProps} />

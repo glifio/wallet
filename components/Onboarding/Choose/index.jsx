@@ -9,7 +9,8 @@ import {
   Header,
   Button,
   Warning,
-  Glyph
+  Glyph,
+  NetworkSwitcherGlyph
 } from '../../Shared'
 import HeaderGlyph from '../../Shared/Glyph/HeaderGlyph'
 import ImportWallet from './Import'
@@ -153,6 +154,7 @@ export default () => {
                   Your private and sensitive information never leave the
                   browser, and are erased upon page refresh
                 </Title>
+                <NetworkSwitcherGlyph />
                 <ImportWallet
                   onClick={() => onChoose(LEDGER)}
                   Icon={IconLedger}

@@ -4,7 +4,6 @@ import {
   AccountCard,
   AccountError,
   BalanceCard,
-  NetworkSwitcherGlyph,
   Wrapper,
   Sidebar,
   Content,
@@ -81,7 +80,6 @@ export default () => {
           </Content>
         ) : (
           <>
-            <NetworkSwitcherGlyph />
             <Sidebar height='100vh'>
               {hasLedgerError({ ...ledger, otherError: uncaughtError }) &&
               showLedgerError ? (
