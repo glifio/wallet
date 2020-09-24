@@ -68,6 +68,7 @@ const State = ({
             title='Change Owner'
             maxWidth={10}
             minWidth={9}
+            borderRadius={6}
           />
         </MenuItem>
       </Menu>
@@ -75,7 +76,7 @@ const State = ({
         display='flex'
         justifyContent='space-between'
         alignItems='center'
-        mt={3}
+        mt={4}
       >
         <MenuItem>
           <Menu>
@@ -105,9 +106,9 @@ const State = ({
       <Box
         display='flex'
         flexDirection='column'
-        flexGrow='1'
         alignItems='center'
         justifyContent='center'
+        mt={4}
       >
         <Balances
           available={available}
