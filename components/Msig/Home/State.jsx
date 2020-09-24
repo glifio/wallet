@@ -100,15 +100,10 @@ const State = ({
         alignItems='center'
         justifyContent='center'
       >
-        <Balances available={available} total={total} />
-        <Button
-          type='button'
-          variant='primary'
-          onClick={setWithdrawing}
-          title='Withdraw'
-          maxWidth={10}
-          minWidth={9}
-          mb={3}
+        <Balances
+          available={available}
+          total={total}
+          setWithdrawing={setWithdrawing}
         />
       </Box>
     </Box>
