@@ -510,7 +510,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137sj ... 2vizpy
+              t1kh7x ... nf45jq
             </p>
           </li>
           <li
@@ -553,7 +553,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              23
+              0
             </p>
           </li>
           <li
@@ -568,7 +568,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              115
+              0
             </p>
           </li>
         </ul>
@@ -681,7 +681,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137sj ... 2vizpy
+              t1kh7x ... nf45jq
             </p>
           </li>
           <li
@@ -724,7 +724,178 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              0.0001
+              0.2
+            </p>
+          </li>
+          <li
+            class="c21"
+            display="flex"
+          >
+            <p
+              class="c23"
+              color="core.darkgray"
+              display="none"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              1
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li
+        class=""
+      >
+        <ul
+          class="c24"
+          display="flex"
+        >
+          <li
+            class=""
+          >
+            <p
+              class="c22"
+              color="core.nearblack"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              FIL
+            </p>
+            <p
+              class="c23"
+              color="core.darkgray"
+              display="none"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              USD
+            </p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div
+    class="c7"
+  >
+    <ul
+      class="c8"
+    >
+      <li
+        class="c9"
+        display="flex"
+      >
+        <ul
+          class="c10"
+          display="flex"
+        >
+          <li
+            class="c11"
+          >
+            <svg
+              class="c12"
+              fill="none"
+              height="34"
+              viewBox="0 0 34 34"
+              width="34"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                fill="#5E26FF"
+                height="32"
+                rx="16"
+                width="32"
+                x="1"
+                y="1"
+              />
+              <path
+                d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
+                fill="#E8ECF7"
+              />
+              <rect
+                height="32"
+                rx="16"
+                stroke="#5E26FF"
+                stroke-width="1.4"
+                width="32"
+                x="1"
+                y="1"
+              />
+            </svg>
+          </li>
+        </ul>
+        <ul
+          class="c13"
+          display="flex"
+        >
+          <li
+            class="c14"
+            overflow="hidden"
+            width="9"
+          >
+            <h4
+              class="c15"
+              color="core.nearblack"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              From
+            </h4>
+            <p
+              class="c16"
+              color="core.nearblack"
+              font-family="RT-Alias-Grotesk"
+              font-size="3"
+              font-weight="400"
+            >
+              t1kh7x ... nf45jq
+            </p>
+          </li>
+          <li
+            class="c17"
+            display="flex"
+            width="9"
+          >
+            <p
+              class="c18"
+              color="core.darkgray"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Jan 12, 2020 - 2:30:30
+            </p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul
+      class="c19"
+      display="flex"
+    >
+      <li
+        class=""
+      >
+        <ul
+          class="c20"
+          display="flex"
+        >
+          <li
+            class="c21"
+            display="flex"
+          >
+            <p
+              class="c22"
+              color="core.nearblack"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              0.000001
             </p>
           </li>
           <li
@@ -852,7 +1023,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137sj ... 2vizpy
+              t1kh7x ... nf45jq
             </p>
           </li>
           <li
@@ -1023,178 +1194,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137sj ... 2vizpy
-            </p>
-          </li>
-          <li
-            class="c17"
-            display="flex"
-            width="9"
-          >
-            <p
-              class="c18"
-              color="core.darkgray"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Jan 12, 2020 - 2:30:30
-            </p>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <ul
-      class="c19"
-      display="flex"
-    >
-      <li
-        class=""
-      >
-        <ul
-          class="c20"
-          display="flex"
-        >
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c22"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              0.0001
-            </p>
-          </li>
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              &lt; 0.01
-            </p>
-          </li>
-        </ul>
-      </li>
-      <li
-        class=""
-      >
-        <ul
-          class="c24"
-          display="flex"
-        >
-          <li
-            class=""
-          >
-            <p
-              class="c22"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              FIL
-            </p>
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              USD
-            </p>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  <div
-    class="c7"
-  >
-    <ul
-      class="c8"
-    >
-      <li
-        class="c9"
-        display="flex"
-      >
-        <ul
-          class="c10"
-          display="flex"
-        >
-          <li
-            class="c11"
-          >
-            <svg
-              class="c12"
-              fill="none"
-              height="34"
-              viewBox="0 0 34 34"
-              width="34"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                fill="#5E26FF"
-                height="32"
-                rx="16"
-                width="32"
-                x="1"
-                y="1"
-              />
-              <path
-                d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
-                fill="#E8ECF7"
-              />
-              <rect
-                height="32"
-                rx="16"
-                stroke="#5E26FF"
-                stroke-width="1.4"
-                width="32"
-                x="1"
-                y="1"
-              />
-            </svg>
-          </li>
-        </ul>
-        <ul
-          class="c13"
-          display="flex"
-        >
-          <li
-            class="c14"
-            overflow="hidden"
-            width="9"
-          >
-            <h4
-              class="c15"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              From
-            </h4>
-            <p
-              class="c16"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="3"
-              font-weight="400"
-            >
-              t137sj ... 2vizpy
+              t1kh7x ... nf45jq
             </p>
           </li>
           <li
@@ -1365,178 +1365,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137sj ... 2vizpy
-            </p>
-          </li>
-          <li
-            class="c17"
-            display="flex"
-            width="9"
-          >
-            <p
-              class="c18"
-              color="core.darkgray"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Jan 12, 2020 - 2:30:30
-            </p>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <ul
-      class="c19"
-      display="flex"
-    >
-      <li
-        class=""
-      >
-        <ul
-          class="c20"
-          display="flex"
-        >
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c22"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              0.001
-            </p>
-          </li>
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              &lt; 0.01
-            </p>
-          </li>
-        </ul>
-      </li>
-      <li
-        class=""
-      >
-        <ul
-          class="c24"
-          display="flex"
-        >
-          <li
-            class=""
-          >
-            <p
-              class="c22"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              FIL
-            </p>
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              USD
-            </p>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  <div
-    class="c7"
-  >
-    <ul
-      class="c8"
-    >
-      <li
-        class="c9"
-        display="flex"
-      >
-        <ul
-          class="c10"
-          display="flex"
-        >
-          <li
-            class="c11"
-          >
-            <svg
-              class="c12"
-              fill="none"
-              height="34"
-              viewBox="0 0 34 34"
-              width="34"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                fill="#5E26FF"
-                height="32"
-                rx="16"
-                width="32"
-                x="1"
-                y="1"
-              />
-              <path
-                d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
-                fill="#E8ECF7"
-              />
-              <rect
-                height="32"
-                rx="16"
-                stroke="#5E26FF"
-                stroke-width="1.4"
-                width="32"
-                x="1"
-                y="1"
-              />
-            </svg>
-          </li>
-        </ul>
-        <ul
-          class="c13"
-          display="flex"
-        >
-          <li
-            class="c14"
-            overflow="hidden"
-            width="9"
-          >
-            <h4
-              class="c15"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              From
-            </h4>
-            <p
-              class="c16"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="3"
-              font-weight="400"
-            >
-              t137sj ... 2vizpy
+              t1kh7x ... nf45jq
             </p>
           </li>
           <li
@@ -1707,7 +1536,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137sj ... 2vizpy
+              t1kh7x ... nf45jq
             </p>
           </li>
           <li
@@ -1750,7 +1579,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              &lt; 0.0000001
+              0
             </p>
           </li>
           <li
@@ -1765,7 +1594,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              &lt; 0.01
+              0
             </p>
           </li>
         </ul>
@@ -1878,7 +1707,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t3wjxu ... meooea
+              t1kh7x ... nf45jq
             </p>
           </li>
           <li
@@ -1921,7 +1750,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              0.005
+              0.5
             </p>
           </li>
           <li
@@ -1936,7 +1765,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              0.02
+              2.5
             </p>
           </li>
         </ul>
@@ -2049,178 +1878,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137sj ... 2vizpy
-            </p>
-          </li>
-          <li
-            class="c17"
-            display="flex"
-            width="9"
-          >
-            <p
-              class="c18"
-              color="core.darkgray"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Jan 12, 2020 - 2:30:30
-            </p>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <ul
-      class="c19"
-      display="flex"
-    >
-      <li
-        class=""
-      >
-        <ul
-          class="c20"
-          display="flex"
-        >
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c22"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              0.0001
-            </p>
-          </li>
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              &lt; 0.01
-            </p>
-          </li>
-        </ul>
-      </li>
-      <li
-        class=""
-      >
-        <ul
-          class="c24"
-          display="flex"
-        >
-          <li
-            class=""
-          >
-            <p
-              class="c22"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              FIL
-            </p>
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              USD
-            </p>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  <div
-    class="c7"
-  >
-    <ul
-      class="c8"
-    >
-      <li
-        class="c9"
-        display="flex"
-      >
-        <ul
-          class="c10"
-          display="flex"
-        >
-          <li
-            class="c11"
-          >
-            <svg
-              class="c12"
-              fill="none"
-              height="34"
-              viewBox="0 0 34 34"
-              width="34"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                fill="#5E26FF"
-                height="32"
-                rx="16"
-                width="32"
-                x="1"
-                y="1"
-              />
-              <path
-                d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
-                fill="#E8ECF7"
-              />
-              <rect
-                height="32"
-                rx="16"
-                stroke="#5E26FF"
-                stroke-width="1.4"
-                width="32"
-                x="1"
-                y="1"
-              />
-            </svg>
-          </li>
-        </ul>
-        <ul
-          class="c13"
-          display="flex"
-        >
-          <li
-            class="c14"
-            overflow="hidden"
-            width="9"
-          >
-            <h4
-              class="c15"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              From
-            </h4>
-            <p
-              class="c16"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="3"
-              font-weight="400"
-            >
-              t137sj ... 2vizpy
+              t1kh7x ... nf45jq
             </p>
           </li>
           <li
@@ -2391,178 +2049,7 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-size="3"
               font-weight="400"
             >
-              t137sj ... 2vizpy
-            </p>
-          </li>
-          <li
-            class="c17"
-            display="flex"
-            width="9"
-          >
-            <p
-              class="c18"
-              color="core.darkgray"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Jan 12, 2020 - 2:30:30
-            </p>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <ul
-      class="c19"
-      display="flex"
-    >
-      <li
-        class=""
-      >
-        <ul
-          class="c20"
-          display="flex"
-        >
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c22"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              0.00001
-            </p>
-          </li>
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              &lt; 0.01
-            </p>
-          </li>
-        </ul>
-      </li>
-      <li
-        class=""
-      >
-        <ul
-          class="c24"
-          display="flex"
-        >
-          <li
-            class=""
-          >
-            <p
-              class="c22"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              FIL
-            </p>
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              USD
-            </p>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  <div
-    class="c7"
-  >
-    <ul
-      class="c8"
-    >
-      <li
-        class="c9"
-        display="flex"
-      >
-        <ul
-          class="c10"
-          display="flex"
-        >
-          <li
-            class="c11"
-          >
-            <svg
-              class="c12"
-              fill="none"
-              height="34"
-              viewBox="0 0 34 34"
-              width="34"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                fill="#5E26FF"
-                height="32"
-                rx="16"
-                width="32"
-                x="1"
-                y="1"
-              />
-              <path
-                d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
-                fill="#E8ECF7"
-              />
-              <rect
-                height="32"
-                rx="16"
-                stroke="#5E26FF"
-                stroke-width="1.4"
-                width="32"
-                x="1"
-                y="1"
-              />
-            </svg>
-          </li>
-        </ul>
-        <ul
-          class="c13"
-          display="flex"
-        >
-          <li
-            class="c14"
-            overflow="hidden"
-            width="9"
-          >
-            <h4
-              class="c15"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              From
-            </h4>
-            <p
-              class="c16"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="3"
-              font-weight="400"
-            >
-              t137sj ... 2vizpy
+              t1kh7x ... nf45jq
             </p>
           </li>
           <li
@@ -2606,348 +2093,6 @@ exports[`MessageHistory View it renders correctly 1`] = `
               font-weight="400"
             >
               0.0001
-            </p>
-          </li>
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              &lt; 0.01
-            </p>
-          </li>
-        </ul>
-      </li>
-      <li
-        class=""
-      >
-        <ul
-          class="c24"
-          display="flex"
-        >
-          <li
-            class=""
-          >
-            <p
-              class="c22"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              FIL
-            </p>
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              USD
-            </p>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  <div
-    class="c7"
-  >
-    <ul
-      class="c8"
-    >
-      <li
-        class="c9"
-        display="flex"
-      >
-        <ul
-          class="c10"
-          display="flex"
-        >
-          <li
-            class="c11"
-          >
-            <svg
-              class="c12"
-              fill="none"
-              height="34"
-              viewBox="0 0 34 34"
-              width="34"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                fill="#5E26FF"
-                height="32"
-                rx="16"
-                width="32"
-                x="1"
-                y="1"
-              />
-              <path
-                d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
-                fill="#E8ECF7"
-              />
-              <rect
-                height="32"
-                rx="16"
-                stroke="#5E26FF"
-                stroke-width="1.4"
-                width="32"
-                x="1"
-                y="1"
-              />
-            </svg>
-          </li>
-        </ul>
-        <ul
-          class="c13"
-          display="flex"
-        >
-          <li
-            class="c14"
-            overflow="hidden"
-            width="9"
-          >
-            <h4
-              class="c15"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              From
-            </h4>
-            <p
-              class="c16"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="3"
-              font-weight="400"
-            >
-              t137sj ... 2vizpy
-            </p>
-          </li>
-          <li
-            class="c17"
-            display="flex"
-            width="9"
-          >
-            <p
-              class="c18"
-              color="core.darkgray"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Jan 12, 2020 - 2:30:30
-            </p>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <ul
-      class="c19"
-      display="flex"
-    >
-      <li
-        class=""
-      >
-        <ul
-          class="c20"
-          display="flex"
-        >
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c22"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              0.0001
-            </p>
-          </li>
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              &lt; 0.01
-            </p>
-          </li>
-        </ul>
-      </li>
-      <li
-        class=""
-      >
-        <ul
-          class="c24"
-          display="flex"
-        >
-          <li
-            class=""
-          >
-            <p
-              class="c22"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              FIL
-            </p>
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              USD
-            </p>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  <div
-    class="c7"
-  >
-    <ul
-      class="c8"
-    >
-      <li
-        class="c9"
-        display="flex"
-      >
-        <ul
-          class="c10"
-          display="flex"
-        >
-          <li
-            class="c11"
-          >
-            <svg
-              class="c12"
-              fill="none"
-              height="34"
-              viewBox="0 0 34 34"
-              width="34"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                fill="#5E26FF"
-                height="32"
-                rx="16"
-                width="32"
-                x="1"
-                y="1"
-              />
-              <path
-                d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
-                fill="#E8ECF7"
-              />
-              <rect
-                height="32"
-                rx="16"
-                stroke="#5E26FF"
-                stroke-width="1.4"
-                width="32"
-                x="1"
-                y="1"
-              />
-            </svg>
-          </li>
-        </ul>
-        <ul
-          class="c13"
-          display="flex"
-        >
-          <li
-            class="c14"
-            overflow="hidden"
-            width="9"
-          >
-            <h4
-              class="c15"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              From
-            </h4>
-            <p
-              class="c16"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="3"
-              font-weight="400"
-            >
-              t137sj ... 2vizpy
-            </p>
-          </li>
-          <li
-            class="c17"
-            display="flex"
-            width="9"
-          >
-            <p
-              class="c18"
-              color="core.darkgray"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Jan 12, 2020 - 2:30:30
-            </p>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <ul
-      class="c19"
-      display="flex"
-    >
-      <li
-        class=""
-      >
-        <ul
-          class="c20"
-          display="flex"
-        >
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c22"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              0.00001
             </p>
           </li>
           <li
@@ -3933,7 +3078,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
               display="inline-block"
               height="6"
               placeholder="f1..."
-              value="t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy"
+              value="t1kh7xygoxawth4wzx7mfo2jb6mirb7y7wrnf45jq"
               width="100%"
             />
             
@@ -3975,7 +3120,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
               display="inline-block"
               height="6"
               placeholder="f1..."
-              value="t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy"
+              value="t021359"
               width="100%"
             />
             
@@ -4025,7 +3170,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
             placeholder="0"
             step="0.000000000000000001"
             type="number"
-            value="23"
+            value=""
             width="100%"
           />
           <div
@@ -4054,7 +3199,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
             placeholder="0"
             step="0.000000000000000001"
             type="number"
-            value="115"
+            value=""
             width="100%"
           />
           <div
@@ -4130,7 +3275,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           font-size="5"
           font-weight="700"
         >
-          23
+          0
            
           FIL
         </h2>
@@ -4142,7 +3287,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           font-size="4"
           font-weight="400"
         >
-          115 USD
+          0 USD
         </h2>
       </div>
     </div>
@@ -4166,13 +3311,13 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         font-size="2"
         font-weight="400"
       >
-        bafy2bzacea5463eugsz6f7dbwixzqxmwe2ouqeq6zukackb3xxotskdidqmjm
+        bafy2bzaceb2cw5y6fkucqoh4k5zo3jdu4txurma3hszmsuzlm5wkfksestohe
       </h4>
       <a
         class="c47"
         color="core.primary"
         font-size="3"
-        href="https://filscout.io/en/pc/message/bafy2bzacea5463eugsz6f7dbwixzqxmwe2ouqeq6zukackb3xxotskdidqmjm"
+        href="https://filfox.info/en/message/bafy2bzaceb2cw5y6fkucqoh4k5zo3jdu4txurma3hszmsuzlm5wkfksestohe"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -4183,7 +3328,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           font-size="2"
           font-weight="400"
         >
-          View on Filscout
+          View on Filfox
         </h4>
       </a>
     </div>

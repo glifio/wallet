@@ -14,7 +14,8 @@ export const baseColors = {
     light: '#E4EBFC',
     mid: '#d1ddfa',
     mid2: '#bacbf7',
-    muted: '#e8ecf7'
+    muted: '#e8ecf7',
+    muted700: '#d9e0f2'
   },
   green: {
     primary: '#1AD08F',
@@ -132,6 +133,10 @@ const colors = {
       foreground: baseColors.red.dark
     },
     inactive: baseColors.mono.lightgray
+  },
+  // gonna start slowly migrating colors from their inheritance vars above
+  blue: {
+    muted700: '#d9e0f2'
   }
 }
 

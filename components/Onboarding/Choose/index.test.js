@@ -1,5 +1,6 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
+import { mockRouterPush } from '../../../test-utils/mocks/mock-routing'
 
 import Choose from '.'
 
@@ -90,5 +91,19 @@ describe('Choosing a wallet', () => {
     })
     expect(container.firstChild).toMatchSnapshot()
     expect(screen.getByText(/Warning/)).toBeInTheDocument()
+  })
+
+  test('it sends users to the vault with the network hardcoded to mainnet', () => {
+    const { Tree } = composeMockAppTree('postOnboard')
+
+    render(
+      <Tree>
+        <Choose />
+      </Tree>
+    )
+    act(() => {
+      fireEvent.click(screen.getByText('SAFT Setup'))
+    })
+    expect(mockRouterPush).toHaveBeenCalledWith('/vault?network=f')
   })
 })

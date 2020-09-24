@@ -156,7 +156,7 @@ const MessageDetail = ({ address, close, message }) => {
           balance={new FilecoinNumber('0.1', 'fil')}
           label='Amount'
           disabled
-          amount={new FilecoinNumber(message.value, 'fil').toAttoFil()}
+          amount={new FilecoinNumber(message.value, 'attofil').toAttoFil()}
         />
         <TransactionFeeDisplay
           textAlign='right'
@@ -185,7 +185,7 @@ const MessageDetail = ({ address, close, message }) => {
               `}
               color='core.primary'
             >
-              {new FilecoinNumber(message.value, 'fil')
+              {new FilecoinNumber(message.value, 'attofil')
                 .plus(shouldAddFeeToTotal ? fee : 0)
                 .toString()}{' '}
               FIL
@@ -196,7 +196,7 @@ const MessageDetail = ({ address, close, message }) => {
                 (converter
                   ? `${makeFriendlyBalance(
                       converter.fromFIL(
-                        new FilecoinNumber(message.value, 'fil').plus(
+                        new FilecoinNumber(message.value, 'attofil').plus(
                           shouldAddFeeToTotal ? fee : 0
                         )
                       ),
@@ -233,10 +233,10 @@ const MessageDetail = ({ address, close, message }) => {
           <StyledATag
             rel='noopener noreferrer'
             target='_blank'
-            href={`https://filscout.io/en/pc/message/${message.cid}`}
+            href={`https://filfox.info/en/message/${message.cid}`}
           >
             <Label color='core.primary' textAlign='left' m={1}>
-              View on Filscout
+              View on Filfox
             </Label>
           </StyledATag>
         </Box>

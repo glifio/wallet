@@ -16,7 +16,8 @@ import {
   ButtonClose,
   StepHeader,
   Title,
-  Form
+  Form,
+  Card
 } from '../../Shared'
 import { CardHeader } from '../../Msig/Shared'
 import ConfirmationCard from './ConfirmationCard'
@@ -85,7 +86,6 @@ const Send = ({ close }) => {
     // attempt to establish a new connection with the ledger device if the user selected ledger
     if (wallet.type === LEDGER) {
       provider = await connectLedger()
-      console.log('connected to ledger wallet provider?', provider)
     }
 
     if (provider) {
@@ -103,15 +103,11 @@ const Send = ({ close }) => {
         message.toLotusType()
       )
 
-      console.log('msg with gas', msgWithGas)
-
       setFetchingTxDetails(false)
       const signedMessage = await provider.wallet.sign(
         msgWithGas.toSerializeableType(),
         wallet.path
       )
-
-      console.log(signedMessage, 'signedMessage')
 
       const messageObj = msgWithGas.toLotusType()
       setMPoolPushing(true)
@@ -120,14 +116,16 @@ const Send = ({ close }) => {
         signedMessage
       )
 
-      console.log(msgCid, 'msgCId')
       messageObj.cid = msgCid['/']
       messageObj.timestamp = dayjs().unix()
       const maxFee = await provider.gasEstimateMaxFee(msgWithGas.toLotusType())
       messageObj.maxFee = maxFee.toAttoFil()
       // dont know how much was actually paid in this message yet, so we mark it as 0
       messageObj.paidFee = '0'
-      messageObj.value = new FilecoinNumber(messageObj.Value, 'attofil').toFil()
+      messageObj.value = new FilecoinNumber(
+        messageObj.Value,
+        'attofil'
+      ).toAttoFil()
       return messageObj
     }
   }
@@ -135,14 +133,12 @@ const Send = ({ close }) => {
   const sendMsg = async () => {
     try {
       const message = await send()
-      console.log('finished sending message: ', message)
       if (message) {
         dispatch(confirmMessage(toLowerCaseMsgFields(message)))
         setValue(new FilecoinNumber('0', 'fil'))
         close()
       }
     } catch (err) {
-      console.log('error when sending message!', err)
       reportError(9, false, err.message, err.stack)
       setUncaughtError(err.message)
       setStep(3)
@@ -227,6 +223,13 @@ const Send = ({ close }) => {
     if (step > 4) return true
   }
 
+  const isBackBtnDisabled = () => {
+    if (wallet.type === LEDGER && attemptingTx) return true
+    if (fetchingTxDetails) return true
+    if (mPoolPushing) return true
+    return false
+  }
+
   const submitBtnText = () => {
     if (step === 4 && wallet.type !== LEDGER) return 'Send'
     if (step === 4 && wallet.type === LEDGER) return 'Confirm on device.'
@@ -281,17 +284,29 @@ const Send = ({ close }) => {
             )}
             {!hasError() && !attemptingTx && (
               <>
-                <StepHeader
-                  title='Sending Filecoin'
-                  currentStep={step}
-                  totalSteps={4}
-                  glyphAcronym='Sf'
-                />
-                <HeaderText
-                  step={step}
-                  customizingGas={false}
-                  walletType={wallet.type}
-                />
+                <Card
+                  display='flex'
+                  flexDirection='column'
+                  justifyContent='space-between'
+                  border='none'
+                  width='auto'
+                  my={2}
+                  backgroundColor='blue.muted700'
+                >
+                  <StepHeader
+                    title='Sending Filecoin'
+                    currentStep={step}
+                    totalSteps={4}
+                    glyphAcronym='Sf'
+                  />
+                  <Box mt={6} mb={4}>
+                    <HeaderText
+                      step={step}
+                      customizingGas={false}
+                      walletType={wallet.type}
+                    />
+                  </Box>
+                </Card>
               </>
             )}
             <Box boxShadow={2} borderRadius={4}>
@@ -418,7 +433,7 @@ const Send = ({ close }) => {
                   setStep(step - 1)
                 }
               }}
-              disabled={attemptingTx}
+              disabled={isBackBtnDisabled()}
             />
             <Button
               variant='primary'

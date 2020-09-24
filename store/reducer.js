@@ -74,7 +74,7 @@ export default (state, action) => {
     case SWITCH_NETWORK:
       return switchNetwork(Object.freeze(state), action.payload)
     case RESET_STATE:
-      return initialState
+      return { ...initialState, network: state.network }
     case SET_INVESTOR_ID:
       return setInvestorId(Object.freeze(state), action.payload)
     case SET_MSIG_ACTOR_ADDRESS:

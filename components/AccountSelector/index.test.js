@@ -1,6 +1,8 @@
 import React from 'react'
 import { render, act, screen, cleanup } from '@testing-library/react'
 import AccountSelector from '.'
+import HelperText from './HelperText'
+import ThemeProvider from '../Shared/ThemeProvider'
 
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 
@@ -48,5 +50,44 @@ describe('AccountSelector', () => {
       expect(screen.getAllByText('Address')[i]).toBeInTheDocument()
     }
     expect(res.container.children[1]).toMatchSnapshot()
+  })
+})
+
+describe('HelperText', () => {
+  afterEach(cleanup)
+  test('it renders the non-msig, non-saft, non-ledger helper text correctly', () => {
+    const { container } = render(
+      <ThemeProvider>
+        <HelperText premainnetInvestor={false} isLedger={false} msig={false} />
+      </ThemeProvider>
+    )
+    expect(container.firstChild).toMatchSnapshot()
+  })
+
+  test('it renders the non-msig, non-saft, ledger helper text correctly', () => {
+    const { container } = render(
+      <ThemeProvider>
+        <HelperText premainnetInvestor={false} isLedger={true} msig={false} />
+      </ThemeProvider>
+    )
+    expect(container.firstChild).toMatchSnapshot()
+  })
+
+  test('it renders the msig helper text correctly', () => {
+    const { container } = render(
+      <ThemeProvider>
+        <HelperText premainnetInvestor={false} isLedger={true} msig={true} />
+      </ThemeProvider>
+    )
+    expect(container.firstChild).toMatchSnapshot()
+  })
+
+  test('it renders the saft helper text correctly', () => {
+    const { container } = render(
+      <ThemeProvider>
+        <HelperText premainnetInvestor={true} isLedger={true} msig={false} />
+      </ThemeProvider>
+    )
+    expect(container.firstChild).toMatchSnapshot()
   })
 })
