@@ -6,7 +6,7 @@ import {
   FILECOIN_NUMBER_PROP
 } from '../../../customPropTypes'
 import { Box, Button, Title, Text, Menu, MenuItem } from '../../Shared'
-import AccountInfo from './AccountInfo'
+import AccountSummary from './AccountSummary'
 import useWallet from '../../../WalletProvider/useWallet'
 import { useWalletProvider } from '../../../WalletProvider'
 import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfigError'
@@ -79,7 +79,7 @@ const State = ({
           </Menu>
         </MenuItem>
         <MenuItem>
-          <AccountInfo
+          <AccountSummary
             msigAddress={msigAddress}
             walletAddress={walletAddress}
             showOnDevice={onShowOnLedger}
