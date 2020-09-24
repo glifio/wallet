@@ -3,9 +3,9 @@ import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 import MessageView from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import { filfoxMockData } from '../../../test-utils/mockData'
-import { formatFilfoxMessages } from './formatMessages'
+import { formatFilfoxMessages } from '../../../lib/useTransactionHistory/formatMessages'
 
-const spy = jest.spyOn(require('./useTransactionHistory.js'), 'default')
+const spy = jest.spyOn(require('../../../lib/useTransactionHistory'), 'default')
 const mockTxHistory = {
   showMore: jest.fn(),
   pending: [],

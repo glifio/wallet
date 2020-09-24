@@ -4,11 +4,11 @@ import WalletView from '.'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 
 import { filfoxMockData } from '../../test-utils/mockData'
-import { formatFilfoxMessages } from './Message/formatMessages'
+import { formatFilfoxMessages } from '../../lib/useTransactionHistory/formatMessages'
 import { flushPromises } from '../../test-utils'
 
 jest.mock('@openworklabs/filecoin-wallet-provider')
-const spy = jest.spyOn(require('./Message/useTransactionHistory.js'), 'default')
+const spy = jest.spyOn(require('../../lib/useTransactionHistory'), 'default')
 
 const mockTxHistory = {
   showMore: jest.fn(),

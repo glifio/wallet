@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import MessageDetail from './Detail'
 import { MessageHistoryTable } from '../../Shared'
 import useWallet from '../../../WalletProvider/useWallet'
-import useTransactionHistory from './useTransactionHistory'
+import useTransactionHistory from '../../../lib/useTransactionHistory'
 
 export default () => {
   const [selectedMessageCid, setSelectedMessageCid] = useState('')
