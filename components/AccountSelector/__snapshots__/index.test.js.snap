@@ -1079,31 +1079,6 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   flex-direction: column;
 }
 
-.c20 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  border-color: #ffffff;
-  background-color: transparent;
-  color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
 .c5 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
@@ -1112,10 +1087,10 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
 
 .c18 {
   cursor: pointer;
-  border: 1px solid core.primary;
+  border: 1px solid core.nearblack;
   background-color: #1AD08F;
-  border-color: core.primary;
-  color: core.white;
+  border-color: core.nearblack;
+  color: core.nearblack;
   font-size: 1.125rem;
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
@@ -1131,17 +1106,18 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   display: flex;
   width: 300px;
   height: 300px;
+  position: relative;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -webkit-align-content: flex-start;
   -ms-flex-line-pack: start;
   align-content: flex-start;
-  border-color: #5E26FF;
+  border-color: #262626;
   border-width: 1px;
   border-radius: 4px;
-  background-color: #5E26FF;
-  color: #ffffff;
+  background-color: transparent;
+  color: #262626;
   opacity: 1;
 }
 
@@ -1168,6 +1144,14 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   margin-bottom: 0;
 }
 
+.c21 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
 .c7 {
   font-size: 1.125rem;
   font-weight: 400;
@@ -1184,7 +1168,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   margin-bottom: 0;
 }
 
-.c21 {
+.c22 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -1242,7 +1226,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   justify-content: center;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1251,6 +1235,18 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.c19 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 5rem;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
 }
 
 .c12 {
@@ -1702,7 +1698,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
         </div>
         <button
           class="c18"
-          color="core.white"
+          color="core.nearblack"
           cursor="pointer"
           display="flex"
           font-size="3"
@@ -1711,39 +1707,33 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
           type="button"
           width="11"
         >
+          <div
+            class="c19"
+            font-size="7"
+          >
+            ＋
+          </div>
           <ul
             class="c8"
           >
             <li
-              class="c19"
+              class="c20"
               display="flex"
             >
-              <div
-                class="c20"
-                color="core.white"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c5"
-                >
-                  5
-                </h3>
-              </div>
               <h2
-                class="c6"
+                class="c21"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
               >
-                Create
+                Create new account
               </h2>
             </li>
             <li
               class=""
             >
               <p
-                class="c21"
+                class="c22"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"
@@ -1906,31 +1896,6 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   flex-direction: column;
 }
 
-.c20 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  border-color: #ffffff;
-  background-color: transparent;
-  color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
 .c5 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
@@ -1939,10 +1904,10 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
 
 .c18 {
   cursor: pointer;
-  border: 1px solid core.primary;
+  border: 1px solid core.nearblack;
   background-color: #1AD08F;
-  border-color: core.primary;
-  color: core.white;
+  border-color: core.nearblack;
+  color: core.nearblack;
   font-size: 1.125rem;
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
@@ -1958,17 +1923,18 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   display: flex;
   width: 300px;
   height: 300px;
+  position: relative;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -webkit-align-content: flex-start;
   -ms-flex-line-pack: start;
   align-content: flex-start;
-  border-color: #5E26FF;
+  border-color: #262626;
   border-width: 1px;
   border-radius: 4px;
-  background-color: #5E26FF;
-  color: #ffffff;
+  background-color: transparent;
+  color: #262626;
   opacity: 1;
 }
 
@@ -1995,6 +1961,14 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-bottom: 0;
 }
 
+.c21 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
 .c7 {
   font-size: 1.125rem;
   font-weight: 400;
@@ -2011,7 +1985,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-bottom: 0;
 }
 
-.c21 {
+.c22 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -2069,7 +2043,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: center;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2078,6 +2052,18 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.c19 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 5rem;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
 }
 
 .c12 {
@@ -2526,7 +2512,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
         </div>
         <button
           class="c18"
-          color="core.white"
+          color="core.nearblack"
           cursor="pointer"
           display="flex"
           font-size="3"
@@ -2535,39 +2521,33 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
           type="button"
           width="11"
         >
+          <div
+            class="c19"
+            font-size="7"
+          >
+            ＋
+          </div>
           <ul
             class="c8"
           >
             <li
-              class="c19"
+              class="c20"
               display="flex"
             >
-              <div
-                class="c20"
-                color="core.white"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c5"
-                >
-                  5
-                </h3>
-              </div>
               <h2
-                class="c6"
+                class="c21"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
               >
-                Create
+                Create new account
               </h2>
             </li>
             <li
               class=""
             >
               <p
-                class="c21"
+                class="c22"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"
