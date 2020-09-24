@@ -102,8 +102,6 @@ const PreConfirm = ({ address, investor, path }) => {
           mb={2}
         >
           <BaseButton
-            // m='0'
-            // p='0'
             // these are needed for manual overrides
             px='0'
             py='0'
