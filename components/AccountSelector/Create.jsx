@@ -42,6 +42,7 @@ const Create = ({ onClick, loading, nextAccountIndex, errorMsg }) => {
 
   return (
     <ButtonCard
+      position='relative'
       type='button'
       onClick={onClick}
       display='flex'
@@ -49,22 +50,29 @@ const Create = ({ onClick, loading, nextAccountIndex, errorMsg }) => {
       alignContent='flex-start'
       width={11}
       height={11}
+      px={3}
+      py={3}
       m={2}
       bg='core.transparent'
-      borderColor='core.primary'
-      color='core.primary'
+      borderColor='core.nearblack'
+      color='core.nearblack'
       opacity='1'
       cursor='pointer'
     >
+      <Box
+        position='absolute'
+        top='50%'
+        left='50%'
+        fontSize={7}
+        css={`
+          transform: translate(-50%, -50%);
+        `}
+      >
+        ＋
+      </Box>
       <Menu>
         <MenuItem display='flex' alignItems='center'>
-          <Glyph
-            acronym={nextAccountIndex.toString()}
-            bg='core.transparent'
-            borderColor='core.primary'
-            color='core.primary'
-          />
-          <Title ml={2}>Create</Title>
+          <Title>Create new account</Title>
         </MenuItem>
         <MenuItem>
           <Text textAlign='left'>
