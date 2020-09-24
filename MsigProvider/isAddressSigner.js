@@ -1,5 +1,4 @@
 export default async (lotus, walletAddress, signers) => {
-  return true
   let idAddress = ''
 
   try {

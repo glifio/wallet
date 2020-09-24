@@ -15,7 +15,7 @@ import {
 } from '../utils/ledger/ledgerStateManagement'
 
 export const initialState = {
-  walletType: 'LEDGER',
+  walletType: null,
   walletProvider: null,
   error: '',
   ledger: initialLedgerState

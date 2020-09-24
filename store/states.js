@@ -16,18 +16,13 @@ export const initialMessagesState = {
 }
 
 export const initialState = {
-  wallets: [
-    {
-      address: 't1p7bko6lst4gaw73u5uatedlgdcsvfotwevsvd2a',
-      balance: new FilecoinNumber('1', 'fil')
-    }
-  ],
-  selectedWalletIdx: 0,
+  wallets: [],
+  selectedWalletIdx: -1,
   error: '',
   messages: initialMessagesState,
   network: TESTNET,
   investor: '',
-  msigActorAddress: 't021609'
+  msigActorAddress: ''
 }
 
 export const noWallet = {
