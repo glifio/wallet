@@ -86,7 +86,6 @@ const Send = ({ close }) => {
     // attempt to establish a new connection with the ledger device if the user selected ledger
     if (wallet.type === LEDGER) {
       provider = await connectLedger()
-      console.log('connected to ledger wallet provider?', provider)
     }
 
     if (provider) {
@@ -104,15 +103,11 @@ const Send = ({ close }) => {
         message.toLotusType()
       )
 
-      console.log('msg with gas', msgWithGas)
-
       setFetchingTxDetails(false)
       const signedMessage = await provider.wallet.sign(
         msgWithGas.toSerializeableType(),
         wallet.path
       )
-
-      console.log(signedMessage, 'signedMessage')
 
       const messageObj = msgWithGas.toLotusType()
       setMPoolPushing(true)
@@ -121,7 +116,6 @@ const Send = ({ close }) => {
         signedMessage
       )
 
-      console.log(msgCid, 'msgCId')
       messageObj.cid = msgCid['/']
       messageObj.timestamp = dayjs().unix()
       const maxFee = await provider.gasEstimateMaxFee(msgWithGas.toLotusType())
@@ -136,14 +130,12 @@ const Send = ({ close }) => {
   const sendMsg = async () => {
     try {
       const message = await send()
-      console.log('finished sending message: ', message)
       if (message) {
         dispatch(confirmMessage(toLowerCaseMsgFields(message)))
         setValue(new FilecoinNumber('0', 'fil'))
         close()
       }
     } catch (err) {
-      console.log('error when sending message!', err)
       reportError(9, false, err.message, err.stack)
       setUncaughtError(err.message)
       setStep(3)
@@ -226,6 +218,13 @@ const Send = ({ close }) => {
       return true
     if (step === 4 && wallet.type === LEDGER) return true
     if (step > 4) return true
+  }
+
+  const isBackBtnDisabled = () => {
+    if (wallet.type === LEDGER && attemptingTx) return true
+    if (fetchingTxDetails) return true
+    if (mPoolPushing) return true
+    return false
   }
 
   const submitBtnText = () => {
@@ -431,7 +430,7 @@ const Send = ({ close }) => {
                   setStep(step - 1)
                 }
               }}
-              disabled={attemptingTx}
+              disabled={isBackBtnDisabled()}
             />
             <Button
               variant='primary'

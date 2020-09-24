@@ -5835,10 +5835,11 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
 }
 
 .c48 {
-  cursor: not-allowed;
-  border: 1px solid #C4C4C4;
-  background-color: #C4C4C4;
-  border-color: #C4C4C4;
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
   font-size: 1.125rem;
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
@@ -5853,7 +5854,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
 }
 
 .c48:hover {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 .c49 {
@@ -6676,7 +6677,6 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
       >
         <button
           class="c48"
-          disabled=""
           font-size="3"
           height="6"
           type="button"
