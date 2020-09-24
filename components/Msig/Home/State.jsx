@@ -5,7 +5,7 @@ import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
 } from '../../../customPropTypes'
-import { Box, Button } from '../../Shared'
+import { Box, Button, Title, Text, Menu, MenuItem } from '../../Shared'
 import AccountInfo from './AccountInfo'
 import useWallet from '../../../WalletProvider/useWallet'
 import { useWalletProvider } from '../../../WalletProvider'
@@ -35,18 +35,64 @@ const State = ({
     resetState()
   }
   return (
-    <Box display='flex' flexDirection='row' minHeight='100vh' width='100%'>
-      <AccountInfo
-        msigAddress={msigAddress}
-        walletAddress={walletAddress}
-        showOnDevice={onShowOnLedger}
-        ledgerBusy={ledgerBusy}
-        error={reportLedgerConfigError({
-          ...ledger,
-          otherError: uncaughtError
-        })}
-        reset={reset}
-      />
+    <Box
+      display='flex'
+      flexDirection='column'
+      minHeight='100vh'
+      width='100%'
+      maxWidth={16}
+    >
+      <Menu
+        display='flex'
+        width='100%'
+        alignItems='center'
+        justifyContent='space-between'
+      >
+        <MenuItem>
+          <Title>Self Custody</Title>
+        </MenuItem>
+        <MenuItem>
+          <Button
+            type='button'
+            variant='secondary'
+            onClick={setChangingOwner}
+            title='Change Owner'
+            maxWidth={10}
+            minWidth={9}
+          />
+        </MenuItem>
+      </Menu>
+      <Menu
+        display='flex'
+        justifyContent='space-between'
+        alignItems='center'
+        mt={3}
+      >
+        <MenuItem>
+          <Menu>
+            <MenuItem mb={4}>
+              <Text>Your Multisig account</Text>
+            </MenuItem>
+            <MenuItem mt={4}>
+              <Text>Is linked to your Ledger Device</Text>
+            </MenuItem>
+          </Menu>
+        </MenuItem>
+        <MenuItem>
+          <AccountInfo
+            msigAddress={msigAddress}
+            walletAddress={walletAddress}
+            showOnDevice={onShowOnLedger}
+            ledgerBusy={ledgerBusy}
+            error={reportLedgerConfigError({
+              ...ledger,
+              otherError: uncaughtError
+            })}
+            reset={reset}
+          />
+        </MenuItem>
+      </Menu>
+
       <Box
         display='flex'
         flexDirection='column'
@@ -64,14 +110,6 @@ const State = ({
           minWidth={9}
           mb={3}
         />
-        {/* <Button
-          type='button'
-          variant='secondary'
-          onClick={setChangingOwner}
-          title='Change Owner'
-          maxWidth={10}
-          minWidth={9}
-        /> */}
       </Box>
     </Box>
   )
