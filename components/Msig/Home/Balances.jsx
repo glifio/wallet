@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
-import { Box, Num, BaseButton } from '../../Shared'
+import { Box, Num, BaseButton, Title } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
@@ -147,35 +147,24 @@ const Balances = ({ available, total }) => {
 
   return (
     <Box
+      position='relative'
       display='flex'
       flexDirection='column'
       alignItems='center'
       justifyContent='center'
+      maxWidth={16}
+      width='100%'
+      border={1}
+      borderRadius={2}
     >
-      <Box display='flex' flexGrow='1' justifyContent='space-between'>
-        <TabButton
-          onClick={() => setViewAvailable(true)}
-          selected={viewAvailable}
-        >
-          <TabButtonFill fillPercentage={percentageOfTotalAvailable} />
-          Available
-        </TabButton>
-        <Arrow />
-        <TabButton
-          onClick={() => setViewAvailable(false)}
-          selected={!viewAvailable}
-          fillPercentage={100 - percentageOfTotalAvailable}
-        >
-          <TabButtonFill fillPercentage={100 - percentageOfTotalAvailable} />
-          Total Vesting
-        </TabButton>
+      <Box display='block' textAlign='center' p={5}>
+        <Title fontSize={3}>Available Balance</Title>
+        <AvailableBalance available={available} />
       </Box>
-      <Box my={6}>
-        {viewAvailable ? (
-          <AvailableBalance available={available} />
-        ) : (
-          <TotalBalance total={total} />
-        )}
+
+      <Box display='block' textAlign='center' borderTop={1} width='100%' p={5}>
+        <Title fontSize={3}>Total Vesting</Title>
+        <TotalBalance total={total} />
       </Box>
     </Box>
   )
