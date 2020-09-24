@@ -1,58 +1,66 @@
 import React from 'react'
 import dayjs from 'dayjs'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
-import { bool, string, oneOf, oneOfType, number } from 'prop-types'
-import { ADDRESS_PROPTYPE } from '../../../../customPropTypes'
+import { string, oneOf, oneOfType, number, object } from 'prop-types'
 import { Menu, MenuItem } from '../../Menu'
 import { Text, Label } from '../../Typography'
-import { IconSend, IconReceive, IconPending } from '../../Icons'
+import { IconSend, IconPending } from '../../Icons'
 import truncate from '../../../../utils/truncateAddress'
 import makeFriendlyBalance from '../../../../utils/makeFriendlyBalance'
 
-const AddressText = ({ sentMsg, to, from }) => {
-  if (sentMsg) {
-    return (
-      <>
-        <Label color='core.nearblack' my={0}>
-          To
-        </Label>
-        <Text fontSize={3} color='core.nearblack' m={0}>
-          {truncate(to)}
-        </Text>
-      </>
-    )
-  }
+const methods = ['withdraw', '', '', '', '', '', '', 'owner swap']
 
+const ProposalText = ({ params }) => {
   return (
     <>
       <Label color='core.nearblack' my={0}>
-        From
+        {`Multisig ${methods[params.method]} to`}
       </Label>
       <Text fontSize={3} color='core.nearblack' m={0}>
-        {truncate(from)}
+        {truncate(params.to)}
       </Text>
     </>
   )
 }
 
-AddressText.propTypes = {
-  sentMsg: bool.isRequired,
-  to: ADDRESS_PROPTYPE,
-  from: ADDRESS_PROPTYPE
+ProposalText.propTypes = {
+  params: object.isRequired
 }
 
-const SendRow = ({ sentMsg, status, to, from, timestamp, value }) => {
+const ProposalValue = ({ params }) => {
+  if (params.method === 0)
+    return (
+      <Text color='core.nearblack' m={0}>
+        {makeFriendlyBalance(new FilecoinNumber(params.value, 'attofil'), 7)}
+      </Text>
+    )
+
+  if (params.method === 7)
+    return (
+      <Text color='core.nearblack' m={0}>
+        {`New owner: ${params.params.to}`}
+      </Text>
+    )
+
+  return (
+    <Text color='core.nearblack' m={0}>
+      Unknown multisig method
+    </Text>
+  )
+}
+
+ProposalValue.propTypes = {
+  params: object.isRequired
+}
+
+const MsigProposeRow = ({ status, params, timestamp }) => {
   return (
     <>
       <Menu>
         <MenuItem display='flex' flexDirection='row'>
           <Menu display='flex' flexDirection='column' justifyContent='center'>
             <MenuItem position='relative'>
-              {sentMsg ? (
-                <IconSend status={status} />
-              ) : (
-                <IconReceive status={status} />
-              )}
+              <IconSend status={status} />
               {status === 'pending' && (
                 <IconPending position='absolute' top='6px' left={4} />
               )}
@@ -60,7 +68,7 @@ const SendRow = ({ sentMsg, status, to, from, timestamp, value }) => {
           </Menu>
           <Menu display='flex' flex-wrap='wrap' ml={[2, 4, 5]}>
             <MenuItem overflow='hidden' width={9}>
-              <AddressText sentMsg={sentMsg} to={to} from={from} m={0} />
+              <ProposalText params={params} />
             </MenuItem>
             <MenuItem
               display='flex'
@@ -91,9 +99,7 @@ const SendRow = ({ sentMsg, status, to, from, timestamp, value }) => {
             ml={3}
           >
             <MenuItem display='flex'>
-              <Text color='core.nearblack' m={0}>
-                {makeFriendlyBalance(new FilecoinNumber(value, 'attofil'), 7)}
-              </Text>
+              <ProposalValue params={params} />
             </MenuItem>
           </Menu>
         </MenuItem>
@@ -106,7 +112,11 @@ const SendRow = ({ sentMsg, status, to, from, timestamp, value }) => {
             ml={3}
           >
             <MenuItem>
-              <Text color='core.nearblack' m={0}>
+              <Text
+                display={params.method !== 0 && 'none'}
+                color='core.nearblack'
+                m={0}
+              >
                 FIL
               </Text>
             </MenuItem>
@@ -117,13 +127,10 @@ const SendRow = ({ sentMsg, status, to, from, timestamp, value }) => {
   )
 }
 
-SendRow.propTypes = {
-  to: ADDRESS_PROPTYPE,
-  from: ADDRESS_PROPTYPE,
-  value: string.isRequired,
+MsigProposeRow.propTypes = {
+  params: object.isRequired,
   status: oneOf(['confirmed', 'pending']).isRequired,
-  timestamp: oneOfType([string, number]).isRequired,
-  sentMsg: bool.isRequired
+  timestamp: oneOfType([string, number]).isRequired
 }
 
-export default SendRow
+export default MsigProposeRow

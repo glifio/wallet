@@ -3,27 +3,40 @@ import { func } from 'prop-types'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../../customPropTypes'
 import MessageHistoryRowContainer from './MessageHistoryRowContainer'
 import SendRow from './SendRow'
+import MsigProposeRow from './MsigProposeRow'
+
+const SEND = 'SEND'
+const PROPOSE = 'PROPOSE'
 
 const MessageHistoryRow = ({
   address,
-  message: { to, from, value, status, cid, timestamp, method },
+  message: { to, from, value, status, cid, timestamp, method, params },
   selectMessage
 }) => {
-  console.log(method)
   const sentMsg = address === from
   return (
     <MessageHistoryRowContainer
       status={status}
       onClick={() => selectMessage(cid)}
     >
-      <SendRow
-        sentMsg={sentMsg}
-        to={to}
-        from={from}
-        value={value}
-        status={status}
-        timestamp={timestamp}
-      />
+      {method.toUpperCase() === SEND && (
+        <SendRow
+          sentMsg={sentMsg}
+          to={to}
+          from={from}
+          value={value}
+          status={status}
+          timestamp={timestamp}
+        />
+      )}
+      {method.toUpperCase() === PROPOSE && (
+        <MsigProposeRow
+          params={params}
+          msigActorAddr={to}
+          status={status}
+          timestamp={timestamp}
+        />
+      )}
     </MessageHistoryRowContainer>
   )
 }
