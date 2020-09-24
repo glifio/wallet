@@ -131,6 +131,7 @@ State.propTypes = {
   msigAddress: ADDRESS_PROPTYPE,
   walletAddress: ADDRESS_PROPTYPE,
   setChangingOwner: PropTypes.func.isRequired,
+  setMessageHistory: PropTypes.func.isRequired,
   setWithdrawing: PropTypes.func.isRequired
 }
 

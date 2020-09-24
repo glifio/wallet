@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { useMsig } from '../../../MsigProvider'
 import Withdraw from '../Withdraw'
 import ChangeOwner from '../ChangeOwner'
+import MessageHistory from '../MessageHistory'
 import { Box, LoadingScreen } from '../../Shared'
 import State from './State'
 import useWallet from '../../../WalletProvider/useWallet'
@@ -10,6 +11,7 @@ import useWallet from '../../../WalletProvider/useWallet'
 const MSIG_STATE = 'MSIG_STATE'
 const WITHDRAW = 'WITHDRAW'
 const CHANGE_OWNER = 'CHANGE_OWNER'
+const MESSAGE_HISTORY = 'MESSAGE_HISTORY'
 
 export default () => {
   const msigActorAddress = useSelector(state => state.msigActorAddress)
@@ -32,6 +34,7 @@ export default () => {
             walletAddress={address}
             available={msig.AvailableBalance}
             total={msig.Balance}
+            setMessageHistory={() => setChildView(MESSAGE_HISTORY)}
             setChangingOwner={() => setChildView(CHANGE_OWNER)}
             setWithdrawing={() => setChildView(WITHDRAW)}
           />
@@ -48,6 +51,12 @@ export default () => {
             close={() => setChildView(MSIG_STATE)}
             balance={msig.AvailableBalance}
             address={msigActorAddress}
+          />
+        )}
+        {!msig.loading && childView === MESSAGE_HISTORY && (
+          <MessageHistory
+            address={msigActorAddress}
+            close={() => setChildView(MSIG_STATE)}
           />
         )}
       </Box>

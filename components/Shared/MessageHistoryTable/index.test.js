@@ -3,7 +3,7 @@ import { BigNumber } from '@openworklabs/filecoin-number'
 import MessageHistoryTable from './index'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import { filfoxMockData } from '../../../test-utils/mockData'
-import { formatFilfoxMessages } from '../../Wallet/Message/formatMessages'
+import { formatFilfoxMessages } from '../../../lib/useTransactionHistory/formatMessages'
 import noop from '../../../utils/noop'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
