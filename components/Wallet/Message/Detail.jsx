@@ -233,10 +233,10 @@ const MessageDetail = ({ address, close, message }) => {
           <StyledATag
             rel='noopener noreferrer'
             target='_blank'
-            href={`https://filscout.io/en/pc/message/${message.cid}`}
+            href={`https://filfox.info/en/message/${message.cid}`}
           >
             <Label color='core.primary' textAlign='left' m={1}>
-              View on Filscout
+              View on Filfox
             </Label>
           </StyledATag>
         </Box>
