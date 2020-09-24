@@ -162,7 +162,7 @@ const MessageDetail = ({ address, close, message }) => {
           textAlign='right'
           onChange={noop}
           label='Transfer Fee'
-          value={loadingFee ? 'Loading...' : `${fee.toAttoFil()} aFIL`}
+          value={loadingFee ? 'Loading...' : `${fee.toPicoFil()} pFIL`}
           backgroundColor='background.screen'
           disabled
         />
