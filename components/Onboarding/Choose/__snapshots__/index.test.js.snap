@@ -718,7 +718,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   -ms-transform: translateY(-4px);
   transform: translateY(-4px);
   cursor: pointer;
-  background: true;
+  background: props.theme.colors.input.background.valid;
 }
 
 .c16 {
@@ -753,10 +753,6 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   padding-right: 24px;
   padding-top: 4px;
   padding-bottom: 4px;
-}
-
-.c16:hover {
-  background: #85e0cb;
 }
 
 .c18 {
@@ -1949,7 +1945,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   -ms-transform: translateY(-4px);
   transform: translateY(-4px);
   cursor: pointer;
-  background: true;
+  background: props.theme.colors.input.background.valid;
 }
 
 .c16 {
@@ -1984,10 +1980,6 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   padding-right: 24px;
   padding-top: 4px;
   padding-bottom: 4px;
-}
-
-.c16:hover {
-  background: #85e0cb;
 }
 
 .c18 {
