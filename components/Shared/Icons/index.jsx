@@ -352,16 +352,16 @@ export const IconViewAddress = forwardRef((props, ref) => (
     ref={ref}
     {...props}
   >
-    <rect x='4' y='4' width='16' height='16' rx='8' fill='white' />
+    <rect width='24' height='24' rx='12' fill='white' />
     <rect
       opacity='0.5'
-      x='7'
-      y='8'
-      width='8'
-      height='8'
-      rx='4'
+      x='4.5'
+      y='7.5'
+      width='12'
+      height='12'
+      rx='6'
       fill='#0A0A0A'
     />
-    <rect x='9' y='10' width='4' height='4' rx='2' fill='#0A0A0A' />
+    <rect x='7.5' y='10.5' width='6' height='6' rx='3' fill='#0A0A0A' />
   </IconBase>
 ))
