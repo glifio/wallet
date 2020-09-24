@@ -243,22 +243,22 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
                 {!premainnetInvestor && !msig && wallet.type === LEDGER ? (
                   <Text>
                     Your single Ledger device creates hundreds of individual
-                    accounts. We're showing you the first 5.
+                    accounts. We&apos;re showing you the first 5.
                   </Text>
                 ) : (
                   <Text>
                     Your single seed phrase creates hundreds of individual
-                    accounts. We're showing you the first 5.
+                    accounts. We&apos;re showing you the first 5.
                   </Text>
                 )}
 
                 {wallet.type === LEDGER ? (
                   <Text>
                     <Highlight fontSize={2}>
-                      Don't see an address you're looking for?
+                      Don&apos;t see an address you&apos;re looking for?
                     </Highlight>
                     Your Ledger Device generates different addresses depending
-                    on whether it's connected to the Filecoin testnet or
+                    on whether it&apos;s connected to the Filecoin testnet or
                     mainnet.
                     <StyledATag
                       fontSize={2}
@@ -271,10 +271,11 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
                 ) : (
                   <Text>
                     <Highlight fontSize={2}>
-                      Don't see an address you're looking for?
+                      Don&apos;t see an address you&apos;re looking for?
                     </Highlight>
                     Your seed phrase generates different addresses depending on
-                    whether it's connected to the Filecoin testnet or mainnet.
+                    whether it&apos;s connected to the Filecoin testnet or
+                    mainnet.
                     <StyledATag
                       fontSize={2}
                       ml={2}
