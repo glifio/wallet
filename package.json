@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@ledgerhq/hw-transport-webusb": "5.13.1",
-    "@openworklabs/filecoin-address": "0.0.10",
+    "@openworklabs/filecoin-address": "0.0.11",
     "@openworklabs/filecoin-message": "1.0.0-beta.2",
     "@openworklabs/filecoin-number": "0.0.10",
     "@openworklabs/filecoin-wallet-provider": "1.0.0-beta.3",
