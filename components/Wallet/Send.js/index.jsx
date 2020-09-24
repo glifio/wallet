@@ -128,7 +128,10 @@ const Send = ({ close }) => {
       messageObj.maxFee = maxFee.toAttoFil()
       // dont know how much was actually paid in this message yet, so we mark it as 0
       messageObj.paidFee = '0'
-      messageObj.value = new FilecoinNumber(messageObj.Value, 'attofil').toFil()
+      messageObj.value = new FilecoinNumber(
+        messageObj.Value,
+        'attofil'
+      ).toAttoFil()
       return messageObj
     }
   }
