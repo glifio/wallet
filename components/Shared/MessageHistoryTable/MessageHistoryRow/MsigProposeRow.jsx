@@ -126,25 +126,23 @@ const MsigProposeRow = ({ status, params, timestamp }) => {
             </MenuItem>
           </Menu>
         </MenuItem>
-        <MenuItem>
-          <Menu
-            display='flex'
-            flexDirection='column'
-            alignItems='flex-start'
-            flex-wrap='wrap'
-            ml={3}
-          >
-            <MenuItem>
-              <Text
-                display={params.method !== 0 ? 'none' : ''}
-                color='core.nearblack'
-                m={0}
-              >
-                FIL
-              </Text>
-            </MenuItem>
-          </Menu>
-        </MenuItem>
+        {params.method === 0 && (
+          <MenuItem>
+            <Menu
+              display='flex'
+              flexDirection='column'
+              alignItems='flex-start'
+              flex-wrap='wrap'
+              ml={3}
+            >
+              <MenuItem>
+                <Text color='core.nearblack' m={0}>
+                  FIL
+                </Text>
+              </MenuItem>
+            </Menu>
+          </MenuItem>
+        )}
       </Menu>
     </>
   )
