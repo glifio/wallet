@@ -3245,7 +3245,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
             disabled=""
             display="inline-block"
             height="6"
-            value="1000000 aFIL"
+            value="1 pFIL"
             width="100%"
           />
           
