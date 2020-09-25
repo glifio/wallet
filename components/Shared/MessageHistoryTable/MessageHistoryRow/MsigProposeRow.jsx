@@ -15,7 +15,7 @@ const ProposalText = ({ params }) => {
     <>
       {methods[params.method] ? (
         <>
-          <Label color='core.nearblack' my={0}>
+          <Label fontSize={1} color='core.darkgray' my={0}>
             {`Multisig ${methods[params.method]} to`}
           </Label>
           <Text fontSize={3} color='core.nearblack' m={0}>
@@ -47,9 +47,14 @@ const ProposalValue = ({ params }) => {
 
   if (params.method === 7)
     return (
-      <Text color='core.nearblack' m={0}>
-        {`New owner: ${params.params.to}`}
-      </Text>
+      <>
+        <Label fontSize={1} color='core.darkgray'>
+          New Owner
+        </Label>
+        <Text color='core.nearblack' m={0}>
+          {truncate(params.params.to)}
+        </Text>
+      </>
     )
 
   return (
@@ -76,19 +81,27 @@ const MsigProposeRow = ({ status, params, timestamp }) => {
               )}
             </MenuItem>
           </Menu>
-          <Menu display='flex' flex-wrap='wrap' ml={[2, 4, 5]}>
+          <Menu
+            display='flex'
+            flex-wrap='wrap'
+            alignItems='center'
+            ml={[2, 4, 5]}
+          >
             <MenuItem overflow='hidden' width={9}>
               <ProposalText params={params} />
             </MenuItem>
             <MenuItem
               display='flex'
-              alignItems='flex-end'
+              flexDirection='column'
               justifyContent='center'
               ml={4}
               width={9}
             >
               <Text color='core.darkgray' m={0}>
-                {dayjs.unix(timestamp).format('MMM DD, YYYY - HH:mm:ss')}
+                {dayjs.unix(timestamp).format('HH:mm:ss')}
+              </Text>
+              <Text color='core.darkgray' m={0}>
+                {dayjs.unix(timestamp).format('MMM DD, YYYY')}
               </Text>
             </MenuItem>
           </Menu>
@@ -108,30 +121,28 @@ const MsigProposeRow = ({ status, params, timestamp }) => {
             flex-wrap='wrap'
             ml={3}
           >
-            <MenuItem display='flex'>
+            <MenuItem display='flex' flexDirection='column'>
               <ProposalValue params={params} />
             </MenuItem>
           </Menu>
         </MenuItem>
-        <MenuItem>
-          <Menu
-            display='flex'
-            flexDirection='column'
-            alignItems='flex-start'
-            flex-wrap='wrap'
-            ml={3}
-          >
-            <MenuItem>
-              <Text
-                display={params.method !== 0 ? 'none' : ''}
-                color='core.nearblack'
-                m={0}
-              >
-                FIL
-              </Text>
-            </MenuItem>
-          </Menu>
-        </MenuItem>
+        {params.method === 0 && (
+          <MenuItem>
+            <Menu
+              display='flex'
+              flexDirection='column'
+              alignItems='flex-start'
+              flex-wrap='wrap'
+              ml={3}
+            >
+              <MenuItem>
+                <Text color='core.nearblack' m={0}>
+                  FIL
+                </Text>
+              </MenuItem>
+            </Menu>
+          </MenuItem>
+        )}
       </Menu>
     </>
   )

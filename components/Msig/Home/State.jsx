@@ -114,7 +114,7 @@ const State = ({
         flexDirection='column'
         alignItems='center'
         justifyContent='center'
-        mt={4}
+        my={4}
       >
         <Balances
           available={available}

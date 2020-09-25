@@ -72,13 +72,16 @@ const UnknownRow = ({ sentMsg, status, timestamp, value }) => {
             </MenuItem>
             <MenuItem
               display='flex'
-              alignItems='flex-end'
+              flexDirection='column'
               justifyContent='center'
               ml={4}
               width={9}
             >
               <Text color='core.darkgray' m={0}>
-                {dayjs.unix(timestamp).format('MMM DD, YYYY - HH:mm:ss')}
+                {dayjs.unix(timestamp).format('HH:mm:ss')}
+              </Text>
+              <Text color='core.darkgray' m={0}>
+                {dayjs.unix(timestamp).format('MMM DD, YYYY')}
               </Text>
             </MenuItem>
           </Menu>
