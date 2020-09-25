@@ -40,8 +40,9 @@ const Balances = ({ available, setWithdrawing, total }) => {
       justifyContent='center'
       maxWidth={16}
       width='100%'
-      border={1}
+      bg='background.messageHistory'
       borderRadius={2}
+      boxShadow={2}
     >
       <Box display='block' textAlign='center' p={6}>
         <Title fontSize={3}>Available Balance</Title>
@@ -65,7 +66,14 @@ const Balances = ({ available, setWithdrawing, total }) => {
         `}
       />
 
-      <Box display='block' textAlign='center' borderTop={1} width='100%' p={6}>
+      <Box
+        display='block'
+        textAlign='center'
+        borderTop={1}
+        borderColor='core.lightgray'
+        width='100%'
+        p={6}
+      >
         <Title fontSize={3}>Total Vesting</Title>
         <TotalBalance total={total} />
       </Box>
