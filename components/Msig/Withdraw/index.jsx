@@ -108,12 +108,7 @@ const Withdrawing = ({ address, balance, close }) => {
       messageObj.paidFee = '0'
       messageObj.value = new FilecoinNumber(messageObj.Value, 'attofil').toFil()
       // reformat the params and method for tx table
-      messageObj.params = {
-        to: toAddress,
-        value: value.toAttoFil(),
-        method: 0,
-        params: ''
-      }
+      messageObj.params = params
       messageObj.method = PROPOSE
       return messageObj
     }
@@ -241,7 +236,7 @@ const Withdrawing = ({ address, balance, close }) => {
                   value={toAddress}
                   onChange={e => setToAddress(e.target.value)}
                   error={toAddressError}
-                  disabled={step === 3}
+                  disabled={step === 2}
                   onFocus={() => {
                     if (toAddressError) setToAddressError('')
                   }}
