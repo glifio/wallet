@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { Message } from '@openworklabs/filecoin-message'
@@ -28,12 +29,14 @@ import { CardHeader, WithdrawHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send.js/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send.js/ConfirmationCard'
-import { LEDGER } from '../../../constants'
+import { LEDGER, PROPOSE } from '../../../constants'
 import {
   reportLedgerConfigError,
   hasLedgerError
 } from '../../../utils/ledger/reportLedgerConfigError'
 import reportError from '../../../utils/reportError'
+import { confirmMessage } from '../../../store/actions'
+import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 
 const isValidAmount = (value, balance, errorFromForms) => {
   const valueFieldFilledOut = value && value.isGreaterThan(0)
@@ -44,6 +47,7 @@ const isValidAmount = (value, balance, errorFromForms) => {
 const Withdrawing = ({ address, balance, close }) => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
   const wallet = useWallet()
+  const dispatch = useDispatch()
   const { serializeParams } = useWasm()
 
   const [step, setStep] = useState(1)
@@ -103,6 +107,14 @@ const Withdrawing = ({ address, balance, close }) => {
       // dont know how much was actually paid in this message yet, so we mark it as 0
       messageObj.paidFee = '0'
       messageObj.value = new FilecoinNumber(messageObj.Value, 'attofil').toFil()
+      // reformat the params and method for tx table
+      messageObj.params = {
+        to: toAddress,
+        value: value.toAttoFil(),
+        method: 0,
+        params: ''
+      }
+      messageObj.method = PROPOSE
       return messageObj
     }
     return null
@@ -122,6 +134,7 @@ const Withdrawing = ({ address, balance, close }) => {
         const msg = await sendMsg()
         setAttemptingTx(false)
         if (msg) {
+          dispatch(confirmMessage(toLowerCaseMsgFields(msg)))
           setValue(new FilecoinNumber('0', 'fil'))
           close()
         }
