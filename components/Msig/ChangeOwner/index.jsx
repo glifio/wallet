@@ -206,6 +206,7 @@ const ChangeOwner = ({ address, balance, close }) => {
                 walletType={LEDGER}
                 currentStep={4}
                 totalSteps={4}
+                msig
               />
             )}
             {!attemptingTx &&

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { typography } from 'styled-system'
 import PropTypes from 'prop-types'
-import { Box, Card, Glyph, Text, Stepper } from '../../Shared'
+import { Box, Card, Glyph, Text, Stepper, StyledATag } from '../../Shared'
 import {
   LEDGER,
   IMPORT_MNEMONIC,
@@ -18,18 +18,33 @@ const TextHighlight = styled.span.attrs(() => ({
   ${typography}
 `
 
-const LedgerConfirm = () => {
+const LedgerConfirm = ({ msig }) => {
   return (
     <>
       <Text color='core.nearblack'>
-        To send the transaction, please
+        To send the transaction, please{' '}
         <TextHighlight>
-          {' '}
           confirm the transfer on your Ledger device.
         </TextHighlight>
       </Text>
+      {msig && (
+        <StyledATag
+          width='fit-content'
+          fontSize={2}
+          display='inline-block'
+          target='_blank'
+          rel='noopener noreferrer'
+          href='https://reading.supply/@glif/what-to-look-for-on-your-ledger-device-when-submitting-a-multi-sig-transaction-gQXIX6'
+        >
+          What should I see on my Ledger device?
+        </StyledATag>
+      )}
     </>
   )
+}
+
+LedgerConfirm.propTypes = {
+  msig: PropTypes.bool.isRequired
 }
 
 const OtherWalletTypeConfirm = () => {
@@ -49,7 +64,13 @@ const OtherWalletTypeConfirm = () => {
   )
 }
 
-const ConfirmationCard = ({ walletType, currentStep, totalSteps, loading }) => {
+const ConfirmationCard = ({
+  walletType,
+  currentStep,
+  totalSteps,
+  loading,
+  msig
+}) => {
   return (
     <>
       {loading ? (
@@ -106,7 +127,7 @@ const ConfirmationCard = ({ walletType, currentStep, totalSteps, loading }) => {
             </Box>
           </Box>
           {walletType === LEDGER ? (
-            <LedgerConfirm />
+            <LedgerConfirm msig={msig} />
           ) : (
             <OtherWalletTypeConfirm />
           )}
@@ -125,13 +146,15 @@ ConfirmationCard.propTypes = {
     CREATE_MNEMONIC,
     IMPORT_SINGLE_KEY
   ]).isRequired,
-  loading: PropTypes.bool.isRequired
+  loading: PropTypes.bool.isRequired,
+  msig: PropTypes.bool
 }
 
 ConfirmationCard.defaultProps = {
   // defaults fit criteria for normal send flow
   currentStep: 2,
-  totalSteps: 2
+  totalSteps: 2,
+  msig: false
 }
 
 export default ConfirmationCard
