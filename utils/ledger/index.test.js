@@ -4,7 +4,12 @@ import {
 } from './setLedgerProvider'
 import subProviders from '../../test-utils/mocks/mock-wallet-subproviders'
 import MockWalletProvider from '../../test-utils/mocks/mock-wallet-provider'
-import { LEDGER } from '../../constants'
+import {
+  LEDGER,
+  LEDGER_VERSION_MAJOR,
+  LEDGER_VERSION_MINOR,
+  LEDGER_VERSION_PATCH
+} from '../../constants'
 import {
   LEDGER_FILECOIN_APP_OPEN,
   LEDGER_UNLOCKED,
@@ -13,6 +18,7 @@ import {
   LEDGER_FILECOIN_APP_NOT_OPEN,
   LEDGER_REPLUG
 } from './ledgerStateManagement'
+import badVersion from './badVersion'
 
 jest.mock('@ledgerhq/hw-transport-webusb')
 
@@ -46,7 +52,10 @@ describe('Ledger utils', () => {
       const mockProvider = {
         wallet: {
           getVersion: () => ({
-            device_locked: false
+            device_locked: false,
+            major: LEDGER_VERSION_MAJOR,
+            minor: LEDGER_VERSION_MINOR,
+            patch: LEDGER_VERSION_PATCH
           })
         }
       }
@@ -69,7 +78,10 @@ describe('Ledger utils', () => {
       const mockProvider = {
         wallet: {
           getVersion: () => ({
-            device_locked: true
+            device_locked: true,
+            major: LEDGER_VERSION_MAJOR,
+            minor: LEDGER_VERSION_MINOR,
+            patch: LEDGER_VERSION_PATCH
           })
         }
       }
@@ -169,5 +181,41 @@ describe('Ledger utils', () => {
         ).length === 1
       ).toBe(true)
     })
+  })
+})
+
+describe('badVersion', () => {
+  test('it returns true if the version is below the LEDGER_VERSION_MAJOR LEDGER_VERSION_MINOR or LEDGER_VERSION_PATCH', () => {
+    expect(
+      badVersion({
+        major: 0,
+        minor: 18,
+        patch: 1
+      })
+    ).toBe(true)
+    expect(
+      badVersion({
+        major: 0,
+        minor: 17,
+        patch: 1
+      })
+    ).toBe(true)
+  })
+
+  test('it returns false if the version is at or above the LEDGER_VERSION_MAJOR LEDGER_VERSION_MINOR or LEDGER_VERSION_PATCH', () => {
+    expect(
+      badVersion({
+        major: 0,
+        minor: 18,
+        patch: 2
+      })
+    ).toBe(false)
+    expect(
+      badVersion({
+        major: 1,
+        minor: 19,
+        patch: 5
+      })
+    ).toBe(false)
   })
 })
