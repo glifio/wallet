@@ -51,7 +51,7 @@ const AccountCard = forwardRef(
         </Box>
         <Box color='card.account.color'>
           <Text m={0}>Your Address</Text>
-          <CopyAddress color='core.secondary' address={address} />
+          <CopyAddress address={address} />
         </Box>
         <Box display='flex'>
           {walletType !== IMPORT_SINGLE_KEY && (
