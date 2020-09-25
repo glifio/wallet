@@ -15,7 +15,7 @@ const ProposalText = ({ params }) => {
     <>
       {methods[params.method] ? (
         <>
-          <Label color='core.nearblack' my={0}>
+          <Label fontSize={1} color='core.darkgray' my={0}>
             {`Multisig ${methods[params.method]} to`}
           </Label>
           <Text fontSize={3} color='core.nearblack' m={0}>
@@ -76,7 +76,12 @@ const MsigProposeRow = ({ status, params, timestamp }) => {
               )}
             </MenuItem>
           </Menu>
-          <Menu display='flex' flex-wrap='wrap' ml={[2, 4, 5]}>
+          <Menu
+            display='flex'
+            flex-wrap='wrap'
+            alignItems='center'
+            ml={[2, 4, 5]}
+          >
             <MenuItem overflow='hidden' width={9}>
               <ProposalText params={params} />
             </MenuItem>
