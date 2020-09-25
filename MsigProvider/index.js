@@ -1,66 +1,80 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState, useRef } from 'react'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
-import LotusRPCEngine from '@openworklabs/lotus-jsonrpc-engine'
 import { useRouter } from 'next/router'
 import { useWalletProvider } from '../WalletProvider'
 import useWallet from '../WalletProvider/useWallet'
 import reportError from '../utils/reportError'
-import isAddressSigner from './isAddressSigner'
-import isActorMsig from './isActorMsig'
+import { fetchMsigState, stateDiff } from '../utils/msig'
 
 const emptyActorState = {
   Address: '',
   Balance: new FilecoinNumber('0', 'fil'),
   AvailableBalance: new FilecoinNumber('0', 'fil'),
   loading: true,
-  failed: false
+  Signers: [],
+  PendingTxns: {}
 }
 
-// Taking a small shortcut here for now, this hook should only be called once per msig
+// This hook should only be called once per msig
 export const useMsig = msigActorID => {
   const wallet = useWallet()
   const { walletProvider } = useWalletProvider()
   const [actorState, setActorState] = useState(null)
   const [loading, setLoading] = useState(false)
-  const [failed, setFailed] = useState(false)
   const router = useRouter()
+  const actorNotMsigCb = useCallback(
+    () => router.push('/error/not-a-multisig'),
+    [router]
+  )
+  const walletAddressNotSignerCb = useCallback(() => {
+    const params = new URLSearchParams(router.query)
+    params.set('walletAddress', wallet.address)
+    params.set('msigAddress', msigActorID)
+    router.push(`/error/not-a-signer?${params.toString()}`)
+  }, [router, wallet.address, msigActorID])
+
+  const timeout = useRef()
+
+  const pollMsigState = useCallback(
+    (msigAddress, state) => {
+      clearTimeout(timeout.current)
+      timeout.current = setTimeout(async () => {
+        try {
+          const newState = await fetchMsigState(
+            msigAddress,
+            wallet.address,
+            actorNotMsigCb,
+            walletAddressNotSignerCb
+          )
+          if (stateDiff(state, newState)) {
+            setActorState(newState)
+          }
+          return pollMsigState(msigAddress, newState)
+        } catch (err) {
+          reportError(22, true, err.message, err.stack)
+        }
+      }, 10000)
+
+      return () => {
+        if (timeout.current) {
+          clearTimeout(timeout.current)
+        }
+      }
+    },
+    [wallet.address, actorNotMsigCb, walletAddressNotSignerCb]
+  )
 
   useEffect(() => {
-    const fetchActorState = async () => {
-      const lotus = new LotusRPCEngine({
-        apiAddress: process.env.LOTUS_NODE_JSONRPC
-      })
+    const loadMsigActorState = async () => {
       try {
-        const { Balance, State } = await lotus.request(
-          'StateReadState',
+        const state = await fetchMsigState(
           msigActorID,
-          null
+          wallet.address,
+          actorNotMsigCb,
+          walletAddressNotSignerCb
         )
-
-        if (!isActorMsig(State)) {
-          router.push('/error/not-a-multisig')
-        }
-
-        if (!(await isAddressSigner(lotus, wallet.address, State?.Signers))) {
-          const params = new URLSearchParams(router.query)
-          params.set('walletAddress', wallet.address)
-          params.set('msigAddress', msigActorID)
-          router.push(`/error/not-a-signer?${params.toString()}`)
-        }
-
-        const availableBalance = await lotus.request(
-          'MsigGetAvailableBalance',
-          msigActorID,
-          null
-        )
-        const balance = new FilecoinNumber(Balance, 'attofil')
-
-        const nextState = {
-          Balance: balance,
-          AvailableBalance: new FilecoinNumber(availableBalance, 'attofil'),
-          ...State
-        }
-        setActorState(nextState)
+        setActorState(state)
+        return pollMsigState(msigActorID, state)
       } catch (err) {
         reportError(22, true, err.message, err.stack)
       } finally {
@@ -69,7 +83,7 @@ export const useMsig = msigActorID => {
     }
     if (!actorState && msigActorID) {
       setLoading(true)
-      fetchActorState()
+      loadMsigActorState()
     }
   }, [
     actorState,
@@ -77,8 +91,12 @@ export const useMsig = msigActorID => {
     setActorState,
     walletProvider,
     router,
-    wallet.address
+    wallet.address,
+    actorNotMsigCb,
+    walletAddressNotSignerCb,
+    pollMsigState
   ])
+
   if (!actorState) return emptyActorState
-  return { Address: msigActorID, ...actorState, loading, failed }
+  return { Address: msigActorID, ...actorState, loading }
 }
