@@ -18,6 +18,7 @@ import AccountSummary from './AccountSummary'
 import useWallet from '../../../WalletProvider/useWallet'
 import { useWalletProvider } from '../../../WalletProvider'
 import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfigError'
+import MessageHistory from '../MessageHistory'
 
 const State = ({
   msigAddress,
@@ -121,6 +122,7 @@ const State = ({
           setWithdrawing={setWithdrawing}
         />
       </Box>
+      <MessageHistory address={msigAddress} />
     </Box>
   )
 }
@@ -131,7 +133,6 @@ State.propTypes = {
   msigAddress: ADDRESS_PROPTYPE,
   walletAddress: ADDRESS_PROPTYPE,
   setChangingOwner: PropTypes.func.isRequired,
-  setMessageHistory: PropTypes.func.isRequired,
   setWithdrawing: PropTypes.func.isRequired
 }
 
