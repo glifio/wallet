@@ -1,6 +1,15 @@
+import {
+  LEDGER_VERSION_MAJOR,
+  LEDGER_VERSION_MINOR,
+  LEDGER_VERSION_PATCH
+} from '../../constants'
+
 const errorFreeReturn = {
   error_message: 'no errors',
-  device_locked: false
+  device_locked: false,
+  major: LEDGER_VERSION_MAJOR,
+  minor: LEDGER_VERSION_MINOR,
+  patch: LEDGER_VERSION_PATCH
 }
 
 export const mockSign = jest.fn().mockImplementation(async (path, msg) => {

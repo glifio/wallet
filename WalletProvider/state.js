@@ -11,7 +11,8 @@ import {
   LEDGER_UNLOCKED,
   LEDGER_REPLUG,
   LEDGER_BUSY,
-  LEDGER_USED_BY_ANOTHER_APP
+  LEDGER_USED_BY_ANOTHER_APP,
+  LEDGER_BAD_VERSION
 } from '../utils/ledger/ledgerStateManagement'
 
 export const initialState = {
@@ -184,6 +185,14 @@ export default (state, action) => {
         ledger: {
           ...state.ledger,
           inUseByAnotherApp: true
+        }
+      }
+    case LEDGER_BAD_VERSION:
+      return {
+        ...Object.freeze(state),
+        ledger: {
+          ...state.ledger,
+          badVersion: true
         }
       }
     case LEDGER_RESET_STATE:

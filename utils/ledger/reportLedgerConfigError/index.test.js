@@ -1,4 +1,9 @@
 import { reportLedgerConfigError, hasLedgerError } from '.'
+import {
+  LEDGER_VERSION_PATCH,
+  LEDGER_VERSION_MAJOR,
+  LEDGER_VERSION_MINOR
+} from '../../../constants'
 
 describe('reportLedgerConfigError', () => {
   test('it gives connectedFailure message', () => {
@@ -38,6 +43,13 @@ describe('reportLedgerConfigError', () => {
     const error = reportLedgerConfigError({ otherError: errorStub })
     expect(error).toEqual('Error message')
   })
+
+  test('it gives badVersion message', () => {
+    const error = reportLedgerConfigError({ badVersion: true })
+    expect(error).toEqual(
+      `Please update your Filecoin Ledger app to v${LEDGER_VERSION_MAJOR}.${LEDGER_VERSION_MINOR}.${LEDGER_VERSION_PATCH}, and try again.`
+    )
+  })
 })
 
 describe('hasLedgerError', () => {
@@ -73,6 +85,11 @@ describe('hasLedgerError', () => {
 
   test('returns true for otherError error', () => {
     const error = hasLedgerError({ otherError: true })
+    expect(error).toEqual(true)
+  })
+
+  test('returns true for badVersion error', () => {
+    const error = hasLedgerError({ badVersion: true })
     expect(error).toEqual(true)
   })
 })
