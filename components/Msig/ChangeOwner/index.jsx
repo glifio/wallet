@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import { Message } from '@openworklabs/filecoin-message'
@@ -27,18 +28,20 @@ import Preface from './Preface'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send.js/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send.js/ConfirmationCard'
-import { LEDGER } from '../../../constants'
+import { LEDGER, PROPOSE } from '../../../constants'
 import {
   reportLedgerConfigError,
   hasLedgerError
 } from '../../../utils/ledger/reportLedgerConfigError'
 import reportError from '../../../utils/reportError'
+import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
+import { confirmMessage } from '../../../store/actions'
 
 const ChangeOwner = ({ address, balance, close }) => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
   const wallet = useWallet()
+  const dispatch = useDispatch()
   const { serializeParams } = useWasm()
-
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
   const [toAddress, setToAddress] = useState('')
@@ -103,6 +106,9 @@ const ChangeOwner = ({ address, balance, close }) => {
       // dont know how much was actually paid in this message yet, so we mark it as 0
       messageObj.paidFee = '0'
       messageObj.value = new FilecoinNumber(messageObj.Value, 'attofil').toFil()
+      // reformat the params and method for tx table
+      messageObj.params = { ...innerMessage, params: innerParams }
+      messageObj.method = PROPOSE
       return messageObj
     }
     return null
@@ -122,6 +128,7 @@ const ChangeOwner = ({ address, balance, close }) => {
         const msg = await sendMsg()
         setAttemptingTx(false)
         if (msg) {
+          dispatch(confirmMessage(toLowerCaseMsgFields(msg)))
           close()
         }
       } catch (err) {

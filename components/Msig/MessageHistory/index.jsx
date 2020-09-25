@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 import MessageDetail from '../../Wallet/Message/Detail'
 import { MessageHistoryTable } from '../../Shared'
 import useWallet from '../../../WalletProvider/useWallet'
 import useTransactionHistory from '../../../lib/useTransactionHistory'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
-const MessageHistory = ({ address, close }) => {
+const MessageHistory = ({ address }) => {
   const [selectedMessageCid, setSelectedMessageCid] = useState('')
   const wallet = useWallet()
   const {
@@ -45,8 +44,7 @@ const MessageHistory = ({ address, close }) => {
 }
 
 MessageHistory.propTypes = {
-  address: ADDRESS_PROPTYPE,
-  close: PropTypes.func.isRequired
+  address: ADDRESS_PROPTYPE
 }
 
 export default MessageHistory
