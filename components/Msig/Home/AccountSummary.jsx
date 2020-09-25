@@ -42,7 +42,7 @@ const AccountSummary = ({
           height='40px'
         >
           <Box flexGrow='1'>
-            <CopyAddress address={msigAddress} />
+            <CopyAddress color='core.darkgray' address={msigAddress} />
           </Box>
         </Box>
       </Box>
@@ -97,7 +97,10 @@ const AccountSummary = ({
                 height='40px'
               >
                 <Box flexGrow='1'>
-                  <CopyAddress address={truncateAddress(walletAddress)} />
+                  <CopyAddress
+                    color='core.darkgray'
+                    address={truncateAddress(walletAddress)}
+                  />
                 </Box>
                 <ButtonViewAddress />
               </Box>
