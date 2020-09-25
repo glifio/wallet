@@ -47,9 +47,14 @@ const ProposalValue = ({ params }) => {
 
   if (params.method === 7)
     return (
-      <Text color='core.nearblack' m={0}>
-        {`New owner: ${params.params.to}`}
-      </Text>
+      <>
+        <Label fontSize={1} color='core.darkgray'>
+          New Owner
+        </Label>
+        <Text color='core.nearblack' m={0}>
+          {truncate(params.params.to)}
+        </Text>
+      </>
     )
 
   return (
@@ -87,13 +92,16 @@ const MsigProposeRow = ({ status, params, timestamp }) => {
             </MenuItem>
             <MenuItem
               display='flex'
-              alignItems='flex-end'
+              flexDirection='column'
               justifyContent='center'
               ml={4}
               width={9}
             >
               <Text color='core.darkgray' m={0}>
-                {dayjs.unix(timestamp).format('MMM DD, YYYY - HH:mm:ss')}
+                {dayjs.unix(timestamp).format('HH:mm:ss')}
+              </Text>
+              <Text color='core.darkgray' m={0}>
+                {dayjs.unix(timestamp).format('MMM DD, YYYY')}
               </Text>
             </MenuItem>
           </Menu>
@@ -113,7 +121,7 @@ const MsigProposeRow = ({ status, params, timestamp }) => {
             flex-wrap='wrap'
             ml={3}
           >
-            <MenuItem display='flex'>
+            <MenuItem display='flex' flexDirection='column'>
               <ProposalValue params={params} />
             </MenuItem>
           </Menu>
