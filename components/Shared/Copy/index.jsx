@@ -69,3 +69,7 @@ CopyAddress.propTypes = {
   address: ADDRESS_PROPTYPE,
   color: string
 }
+
+CopyAddress.defaultProps = {
+  color: 'core.secondary'
+}
