@@ -10,6 +10,7 @@ import {
   Button,
   Title,
   Text,
+  Label,
   Menu,
   MenuItem,
   IconGlif
@@ -85,16 +86,7 @@ const State = ({
         mt={4}
       >
         <MenuItem>
-          <Menu>
-            <MenuItem mb={4}>
-              <Text>Your Multisig account</Text>
-            </MenuItem>
-            <MenuItem mt={4}>
-              <Text>Is linked to your Ledger Device</Text>
-            </MenuItem>
-          </Menu>
-        </MenuItem>
-        <MenuItem>
+          <Label my={3}>Your Address</Label>
           <AccountSummary
             msigAddress={msigAddress}
             walletAddress={walletAddress}
