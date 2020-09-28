@@ -26,7 +26,7 @@ const AccountSummary = ({
       display='flex'
       flexDirection='column'
       justifyContent='center'
-      alignItems='center'
+      alignItems='flex-start'
     >
       <Box display='flex' color='card.account.color'>
         <Glyph mr={3} color='core.nearblack' acronym='Ms' border={1} />
@@ -42,7 +42,11 @@ const AccountSummary = ({
           height='40px'
         >
           <Box flexGrow='1'>
-            <CopyAddress color='core.darkgray' address={msigAddress} />
+            <CopyAddress
+              justifyContent='space-between'
+              color='core.darkgray'
+              address={msigAddress}
+            />
           </Box>
         </Box>
       </Box>
@@ -98,15 +102,23 @@ const AccountSummary = ({
               >
                 <Box flexGrow='1'>
                   <CopyAddress
+                    justifyContent='space-between'
                     color='core.darkgray'
                     address={truncateAddress(walletAddress)}
                   />
                 </Box>
-                <ButtonViewAddress
-                  onClick={showOnDevice}
-                  disabled={ledgerBusy}
-                />
               </Box>
+              <Button
+                title='View Address on Ledger Device'
+                variant='Secondary'
+                borderColor='silver'
+                background='transparent'
+                color='core.darkgray'
+                height='40px'
+                ml={2}
+                onClick={showOnDevice}
+                disabled={ledgerBusy}
+              />
             </Box>
           </>
         )}
