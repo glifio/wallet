@@ -2505,7 +2505,14 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   justify-content: center;
 }
 
-.c9 {
+.c8 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -2518,7 +2525,7 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   justify-content: space-between;
 }
 
-.c10 {
+.c11 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -2538,11 +2545,11 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   border-radius: 4px;
 }
 
-.c10:hover {
+.c11:hover {
   opacity: 0.8;
 }
 
-.c11 {
+.c12 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -2562,7 +2569,7 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   border-radius: 4px;
 }
 
-.c11:hover {
+.c12:hover {
   opacity: 0.8;
 }
 
@@ -2589,7 +2596,7 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   font-size: 1.5rem;
 }
 
-.c8 {
+.c9 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -2599,7 +2606,7 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   font-size: 1.25rem;
 }
 
-.c8:hover {
+.c9:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
@@ -2705,10 +2712,10 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
         </p>
       </div>
       <div
-        class="c3"
+        class="c8"
       >
         <a
-          class="c8"
+          class="c9"
           color="core.white"
           font-size="3"
           href="https://coinsutra.com/security-risks-bitcoin-wallets/"
@@ -2720,11 +2727,11 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
       </div>
     </div>
     <div
-      class="c9"
+      class="c10"
       display="flex"
     >
       <button
-        class="c10"
+        class="c11"
         font-size="3"
         height="6"
         type="button"
@@ -2732,7 +2739,7 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
         Back
       </button>
       <button
-        class="c11"
+        class="c12"
         font-size="3"
         height="6"
         type="button"
@@ -2843,7 +2850,14 @@ exports[`Choosing a wallet it renders warning text for import private key option
   justify-content: center;
 }
 
-.c9 {
+.c8 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -2856,7 +2870,7 @@ exports[`Choosing a wallet it renders warning text for import private key option
   justify-content: space-between;
 }
 
-.c10 {
+.c11 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -2876,11 +2890,11 @@ exports[`Choosing a wallet it renders warning text for import private key option
   border-radius: 4px;
 }
 
-.c10:hover {
+.c11:hover {
   opacity: 0.8;
 }
 
-.c11 {
+.c12 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -2900,7 +2914,7 @@ exports[`Choosing a wallet it renders warning text for import private key option
   border-radius: 4px;
 }
 
-.c11:hover {
+.c12:hover {
   opacity: 0.8;
 }
 
@@ -2927,7 +2941,7 @@ exports[`Choosing a wallet it renders warning text for import private key option
   font-size: 1.5rem;
 }
 
-.c8 {
+.c9 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -2937,7 +2951,7 @@ exports[`Choosing a wallet it renders warning text for import private key option
   font-size: 1.25rem;
 }
 
-.c8:hover {
+.c9:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
@@ -3043,10 +3057,10 @@ exports[`Choosing a wallet it renders warning text for import private key option
         </p>
       </div>
       <div
-        class="c3"
+        class="c8"
       >
         <a
-          class="c8"
+          class="c9"
           color="core.white"
           font-size="3"
           href="https://coinsutra.com/security-risks-bitcoin-wallets/"
@@ -3058,11 +3072,11 @@ exports[`Choosing a wallet it renders warning text for import private key option
       </div>
     </div>
     <div
-      class="c9"
+      class="c10"
       display="flex"
     >
       <button
-        class="c10"
+        class="c11"
         font-size="3"
         height="6"
         type="button"
@@ -3070,7 +3084,7 @@ exports[`Choosing a wallet it renders warning text for import private key option
         Back
       </button>
       <button
-        class="c11"
+        class="c12"
         font-size="3"
         height="6"
         type="button"
@@ -3181,7 +3195,14 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   justify-content: center;
 }
 
-.c9 {
+.c8 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3194,7 +3215,7 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   justify-content: space-between;
 }
 
-.c10 {
+.c11 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -3214,11 +3235,11 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   border-radius: 4px;
 }
 
-.c10:hover {
+.c11:hover {
   opacity: 0.8;
 }
 
-.c11 {
+.c12 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -3238,7 +3259,7 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   border-radius: 4px;
 }
 
-.c11:hover {
+.c12:hover {
   opacity: 0.8;
 }
 
@@ -3265,7 +3286,7 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   font-size: 1.5rem;
 }
 
-.c8 {
+.c9 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -3275,7 +3296,7 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   font-size: 1.25rem;
 }
 
-.c8:hover {
+.c9:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
@@ -3381,10 +3402,10 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
         </p>
       </div>
       <div
-        class="c3"
+        class="c8"
       >
         <a
-          class="c8"
+          class="c9"
           color="core.white"
           font-size="3"
           href="https://coinsutra.com/security-risks-bitcoin-wallets/"
@@ -3396,11 +3417,11 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
       </div>
     </div>
     <div
-      class="c9"
+      class="c10"
       display="flex"
     >
       <button
-        class="c10"
+        class="c11"
         font-size="3"
         height="6"
         type="button"
@@ -3408,7 +3429,7 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
         Back
       </button>
       <button
-        class="c11"
+        class="c12"
         font-size="3"
         height="6"
         type="button"

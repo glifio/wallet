@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import MessageHistoryRowContainer from './MessageHistoryRowContainer'
+import MessageHistoryRowContainer from './MessageHistoryRow/MessageHistoryRowContainer'
 import { Text } from '../Typography'
 import { MESSAGE_PROPS } from '../../../customPropTypes'
 

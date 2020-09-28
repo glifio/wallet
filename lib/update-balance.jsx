@@ -39,7 +39,7 @@ export default () => {
 
   useEffect(() => {
     if (wallet.index >= 0 && walletProvider) {
-      pollBalance(wallet.address, wallet.balance, walletProvider)
+      return pollBalance(wallet.address, wallet.balance, walletProvider)
     }
   }, [
     wallet.address,

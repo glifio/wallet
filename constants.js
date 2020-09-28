@@ -20,6 +20,10 @@ export const TESTNET = 't'
 export const MAINNET_PATH_CODE = 461
 export const TESTNET_PATH_CODE = 1
 
+/* TX METHOD TYPES */
+export const SEND = 'SEND'
+export const PROPOSE = 'PROPOSE'
+export const EXEC = 'EXEC'
 /* FILECOIN APP VERSION MIN */
 export const LEDGER_VERSION_MAJOR = 0
 export const LEDGER_VERSION_MINOR = 18

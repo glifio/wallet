@@ -5,11 +5,20 @@ import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
 } from '../../../customPropTypes'
-import { Box, Button, Title, Text, Menu, MenuItem } from '../../Shared'
-import AccountInfo from './AccountInfo'
+import {
+  Box,
+  Button,
+  Title,
+  Label,
+  Menu,
+  MenuItem,
+  IconGlif
+} from '../../Shared'
+import AccountSummary from './AccountSummary'
 import useWallet from '../../../WalletProvider/useWallet'
 import { useWalletProvider } from '../../../WalletProvider'
 import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfigError'
+import MessageHistory from '../MessageHistory'
 
 const State = ({
   msigAddress,
@@ -48,8 +57,14 @@ const State = ({
         alignItems='center'
         justifyContent='space-between'
       >
-        <MenuItem>
-          <Title>Self Custody</Title>
+        <MenuItem display='flex' alignItems='center'>
+          <IconGlif
+            size={6}
+            css={`
+              transform: rotate(-90deg);
+            `}
+          />
+          <Title ml={2}>Vault</Title>
         </MenuItem>
         <MenuItem>
           <Button
@@ -59,6 +74,7 @@ const State = ({
             title='Change Owner'
             maxWidth={10}
             minWidth={9}
+            borderRadius={6}
           />
         </MenuItem>
       </Menu>
@@ -66,20 +82,11 @@ const State = ({
         display='flex'
         justifyContent='space-between'
         alignItems='center'
-        mt={3}
+        mt={4}
       >
         <MenuItem>
-          <Menu>
-            <MenuItem mb={4}>
-              <Text>Your Multisig account</Text>
-            </MenuItem>
-            <MenuItem mt={4}>
-              <Text>Is linked to your Ledger Device</Text>
-            </MenuItem>
-          </Menu>
-        </MenuItem>
-        <MenuItem>
-          <AccountInfo
+          <Label my={3}>Your Address</Label>
+          <AccountSummary
             msigAddress={msigAddress}
             walletAddress={walletAddress}
             showOnDevice={onShowOnLedger}
@@ -96,9 +103,9 @@ const State = ({
       <Box
         display='flex'
         flexDirection='column'
-        flexGrow='1'
         alignItems='center'
         justifyContent='center'
+        my={4}
       >
         <Balances
           available={available}
@@ -106,6 +113,7 @@ const State = ({
           setWithdrawing={setWithdrawing}
         />
       </Box>
+      <MessageHistory address={msigAddress} />
     </Box>
   )
 }

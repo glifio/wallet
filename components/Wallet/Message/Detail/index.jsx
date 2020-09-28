@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
-import { func, oneOf } from 'prop-types'
+import { func } from 'prop-types'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
 
@@ -13,16 +13,14 @@ import {
   Label,
   Title as Total,
   Num,
-  StyledATag,
-  IconMessageStatus,
-  IconPending
-} from '../../Shared'
-import { ButtonClose } from '../../Shared/IconButtons'
-import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../customPropTypes'
-import { useConverter } from '../../../lib/Converter'
-import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
-import noop from '../../../utils/noop'
-import { useWalletProvider } from '../../../WalletProvider'
+  StyledATag
+} from '../../../Shared'
+import { ButtonClose } from '../../../Shared/IconButtons'
+import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../../customPropTypes'
+import noop from '../../../../utils/noop'
+import { useWalletProvider } from '../../../../WalletProvider'
+import MsgTypeAndStatus from './MsgTypeAndStatus'
+import DetailSection from './DetailSection'
 
 const MessageDetailCard = styled(Card).attrs(() => ({
   maxWidth: 13,
@@ -41,21 +39,8 @@ const TransactionFeeDisplay = styled(Input.Text)`
   }
 `
 
-const TxStatusText = ({ address, from, status }) => {
-  if (status === 'pending') return 'PENDING'
-  if (address === from) return 'SENT'
-  return 'RECEIVED'
-}
-
-TxStatusText.propTypes = {
-  address: ADDRESS_PROPTYPE,
-  from: ADDRESS_PROPTYPE,
-  status: oneOf(['pending', 'confirmed'])
-}
-
 const MessageDetail = ({ address, close, message }) => {
   const { walletProvider } = useWalletProvider()
-  const { converter, converterError } = useConverter()
   const [fee, setFee] = useState(
     new FilecoinNumber(
       message.status === 'pending' ? message.maxFee : message.paidFee,
@@ -116,24 +101,7 @@ const MessageDetail = ({ address, close, message }) => {
             `}
           />
           <Box m='0' display='flex' flexDirection='row' alignItems='flex-end'>
-            {message.status === 'confirmed' ? (
-              <IconMessageStatus status='confirmed' />
-            ) : (
-              <IconPending height={4} />
-            )}
-            <Label
-              color={
-                message.status === 'confirmed'
-                  ? 'status.success.background'
-                  : 'status.pending.foreground'
-              }
-            >
-              <TxStatusText
-                address={address}
-                from={message.from}
-                status={message.status}
-              />
-            </Label>
+            <MsgTypeAndStatus address={address} message={message} />
           </Box>
           <Box display='flex' flexDirection='row' mr={2}>
             <Text my='0' mr={3} color='core.darkgray'>
@@ -146,18 +114,7 @@ const MessageDetail = ({ address, close, message }) => {
         </Box>
       </Box>
       <Box display='flex' flexDirection='column' flexGrow='1' mt={1}>
-        <Box mt={3}>
-          <Input.Address value={message.from} label='From' disabled />
-          <Box height={3} />
-          <Input.Address value={message.to} label='To' disabled />
-        </Box>
-        <Input.Funds
-          my={3}
-          balance={new FilecoinNumber('0.1', 'fil')}
-          label='Amount'
-          disabled
-          amount={new FilecoinNumber(message.value, 'attofil').toAttoFil()}
-        />
+        <DetailSection message={message} />
         <TransactionFeeDisplay
           textAlign='right'
           onChange={noop}
@@ -189,20 +146,6 @@ const MessageDetail = ({ address, close, message }) => {
                 .plus(shouldAddFeeToTotal ? fee : 0)
                 .toString()}{' '}
               FIL
-            </Num>
-            {/* Remove display='none' when USD bal is restored */}
-            <Num display='none' size='m' color='core.darkgray'>
-              {!converterError &&
-                (converter
-                  ? `${makeFriendlyBalance(
-                      converter.fromFIL(
-                        new FilecoinNumber(message.value, 'attofil').plus(
-                          shouldAddFeeToTotal ? fee : 0
-                        )
-                      ),
-                      2
-                    )} USD`
-                  : 'Loading USD...')}
             </Num>
           </Box>
         </Box>
