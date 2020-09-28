@@ -1,21 +1,21 @@
 import React from 'react'
 
-import { Box, Text } from '../../Shared'
+import Warning from '../../Shared/Warning'
+import { Box } from '../../Shared'
 
 export default () => {
   return (
     <Box>
-      <Text textAlign='center' color='core.primary'>
-        You&apos;re changing the ownership of your multisig account to a new
-        Filecoin address.
-      </Text>
-      <Text textAlign='center' color='core.primary'>
-        Make sure you own the private key to this new Filecoin address.
-      </Text>
-      <Text textAlign='center' color='core.primary'>
-        If you do not own the private key, you will lose access to your funds
-        permanently. There is no way to resolve this.
-      </Text>
+      <Warning
+        title='Warning'
+        description={[
+          "You're changing the ownership of your multisig account to a new Filecoin address.",
+          'Make sure you own the private key to this new Filecoin address.',
+          'If you do not own the private key, you will lose access to your funds permanently. There is no way to resolve this.'
+        ]}
+        linkDisplay="Why isn't it secure?"
+        linkhref='https://coinsutra.com/security-risks-bitcoin-wallets/'
+      />
     </Box>
   )
 }

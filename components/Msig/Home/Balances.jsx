@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { func } from 'prop-types'
 import { Box, Button, Num, Title } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
@@ -17,6 +18,17 @@ const AvailableBalance = ({ available }) => {
 AvailableBalance.propTypes = {
   available: FILECOIN_NUMBER_PROP
 }
+
+const WithdrawButton = styled(Button)`
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  &:hover {
+    opacity: 1;
+    transform: translate(-50%, -57%);
+  }
+`
 
 const TotalBalance = ({ total }) => (
   <Box display='flex' flexDirection='column' alignItems='center' width='100%'>
@@ -40,15 +52,16 @@ const Balances = ({ available, setWithdrawing, total }) => {
       justifyContent='center'
       maxWidth={16}
       width='100%'
-      border={1}
+      bg='background.messageHistory'
       borderRadius={2}
+      boxShadow={2}
     >
-      <Box display='block' textAlign='center' p={6}>
-        <Title fontSize={3}>Available Balance</Title>
+      <Box display='block' textAlign='center' width='100%' p={6}>
+        <Title fontSize={2}>Available Balance</Title>
         <AvailableBalance available={available} />
       </Box>
 
-      <Button
+      <WithdrawButton
         position='absolute'
         type='button'
         variant='primary'
@@ -58,15 +71,17 @@ const Balances = ({ available, setWithdrawing, total }) => {
         minWidth={9}
         mb={3}
         borderRadius={6}
-        css={`
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-        `}
       />
 
-      <Box display='block' textAlign='center' borderTop={1} width='100%' p={6}>
-        <Title fontSize={3}>Total Vesting</Title>
+      <Box
+        display='block'
+        textAlign='center'
+        borderTop={1}
+        borderColor='core.lightgray'
+        width='100%'
+        p={6}
+      >
+        <Title fontSize={2}>Total Vesting</Title>
         <TotalBalance total={total} />
       </Box>
     </Box>

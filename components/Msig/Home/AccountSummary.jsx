@@ -2,15 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
-import {
-  Box,
-  Glyph,
-  CopyAddress,
-  Text,
-  Button,
-  IconLedger,
-  ButtonViewAddress
-} from '../../Shared'
+import { Box, Glyph, CopyAddress, Text, Button, IconLedger } from '../../Shared'
 import truncateAddress from '../../../utils/truncateAddress'
 
 const AccountSummary = ({
@@ -26,7 +18,7 @@ const AccountSummary = ({
       display='flex'
       flexDirection='column'
       justifyContent='center'
-      alignItems='center'
+      alignItems='flex-start'
     >
       <Box display='flex' color='card.account.color'>
         <Glyph mr={3} color='core.nearblack' acronym='Ms' border={1} />
@@ -35,14 +27,18 @@ const AccountSummary = ({
           alignItems='center'
           justifyContent='flex-start'
           color='core.darkgray'
-          bg='core.lightgray'
+          bg='background.messageHistory'
           p={2}
           borderRadius={2}
           width={11}
           height='40px'
         >
           <Box flexGrow='1'>
-            <CopyAddress address={msigAddress} />
+            <CopyAddress
+              justifyContent='space-between'
+              color='core.darkgray'
+              address={msigAddress}
+            />
           </Box>
         </Box>
       </Box>
@@ -90,54 +86,32 @@ const AccountSummary = ({
                 alignItems='center'
                 justifyContent='flex-start'
                 color='core.darkgray'
-                bg='core.lightgray'
+                bg='background.messageHistory'
                 p={2}
                 borderRadius={2}
                 width={11}
                 height='40px'
               >
                 <Box flexGrow='1'>
-                  <CopyAddress address={truncateAddress(walletAddress)} />
-                </Box>
-                <ButtonViewAddress />
-              </Box>
-            </Box>
-
-            {/* <Box display='flex' flexDirection='row'>
-              <Box>
-                {' '}
-                <Glyph
-                  mr={3}
-                  Icon={IconLedger}
-                  color='core.nearblack'
-                  fill='#444'
-                />
-              </Box>
-              <Box display='flex' flexDirection='column' height={5}>
-                <Box
-                  display='flex'
-                  justifyContent='space-between'
-                  alignItems='center'
-                  flexGrow='1'
-                >
-                  <AccountAddress m={0}>
-                    {truncateAddress(walletAddress)}
-                  </AccountAddress>
-                  <Button
-                    height='auto'
-                    py={0}
-                    px={0}
-                    border={0}
-                    type='button'
-                    variant='secondary'
-                    title='View'
-                    color='core.primary'
-                    disabled={ledgerBusy}
-                    onClick={showOnDevice}
+                  <CopyAddress
+                    justifyContent='space-between'
+                    color='core.darkgray'
+                    address={truncateAddress(walletAddress)}
                   />
                 </Box>
               </Box>
-            </Box> */}
+              <Button
+                title='View Address on Ledger Device'
+                variant='Secondary'
+                borderColor='silver'
+                background='transparent'
+                color='core.darkgray'
+                height='40px'
+                ml={2}
+                onClick={showOnDevice}
+                disabled={ledgerBusy}
+              />
+            </Box>
           </>
         )}
       </Box>

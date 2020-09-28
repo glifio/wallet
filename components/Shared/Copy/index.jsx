@@ -1,5 +1,6 @@
 import React, { forwardRef, useState } from 'react'
 import styled from 'styled-components'
+import string from 'prop-types'
 import Box from '../Box'
 import BaseButton from '../Button/BaseButton'
 import { IconCopyAccountAddress } from '../Icons'
@@ -39,7 +40,7 @@ export const CopyAddress = forwardRef(({ address, ...props }, ref) => {
     <Box ref={ref} display='flex' alignItems='center' {...props}>
       <AccountAddress
         fontWeight={1}
-        fontSize={4}
+        fontSize={3}
         margin={0}
         overflow='hidden'
         whiteSpace='nowrap'
@@ -56,7 +57,7 @@ export const CopyAddress = forwardRef(({ address, ...props }, ref) => {
         }}
       >
         <StyledIconCopyAccountAddress />
-        <LabelCopy mt={0} ml={1} color='core.secondary'>
+        <LabelCopy mt={0} ml={1} color={props.color}>
           {copied ? 'Copied' : 'Copy'}
         </LabelCopy>
       </Copy>
@@ -65,5 +66,10 @@ export const CopyAddress = forwardRef(({ address, ...props }, ref) => {
 })
 
 CopyAddress.propTypes = {
-  address: ADDRESS_PROPTYPE
+  address: ADDRESS_PROPTYPE,
+  color: string
+}
+
+CopyAddress.defaultProps = {
+  color: 'core.secondary'
 }
