@@ -19,7 +19,6 @@ import { ButtonClose } from '../../../Shared/IconButtons'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../../customPropTypes'
 import noop from '../../../../utils/noop'
 import { useWalletProvider } from '../../../../WalletProvider'
-import { SEND, PROPOSE, EXEC } from '../../../../constants'
 import MsgTypeAndStatus from './MsgTypeAndStatus'
 import DetailSection from './DetailSection'
 
