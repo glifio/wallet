@@ -1229,11 +1229,11 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
 
 .c32 {
   color: #FC6D6F;
-  text-align: right;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
   font-family: RT-Alias-Grotesk;
+  text-align: right;
   margin: 0;
 }
 

@@ -3,7 +3,7 @@ import {
   filfoxMockData,
   secondaryFilfoxMockData
 } from '../../test-utils/mockData'
-import { formatFilfoxMessages } from '../../components/Wallet/Message/formatMessages'
+import { formatFilfoxMessages } from '../../lib/useTransactionHistory/formatMessages'
 
 const formattedFilfoxData = formatFilfoxMessages(filfoxMockData)
 const formattedSecondaryFilfoxData = formatFilfoxMessages(

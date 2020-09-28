@@ -1,4 +1,4 @@
-import { shape, string, oneOfType, number, oneOf } from 'prop-types'
+import { shape, string, oneOfType, number, oneOf, object } from 'prop-types'
 import { validateAddressString } from '@openworklabs/filecoin-address'
 import { validatePath } from '@openworklabs/filecoin-wallet-provider'
 import { validateMnemonic } from 'bip39'
@@ -31,7 +31,9 @@ export const FILECOIN_NUMBER_PROP = (props, propName, componentName) => {
   // instanceof prop checking is broken in nextjs on server side render cycles
   const representsANum = Number.isNaN(Number(props[propName].toString()))
   const hasFilecoinNumMethods = !!(
-    props[propName].toFil && props[propName].toAttoFil
+    props[propName].toFil &&
+    props[propName].toAttoFil &&
+    props[propName].toPicoFil
   )
   if (!(representsANum || hasFilecoinNumMethods))
     return new Error(
@@ -79,16 +81,14 @@ export const MESSAGE_PROPS = shape({
    */
   value: string.isRequired,
   /**
-   * Amount of gas used in the message
-   */
-  gas_used: string,
-  /**
    * The message's cid
    */
   cid: string.isRequired,
   /**
    * Either pending or confirmed
    */
-  status: string.isRequired,
-  timestamp: oneOfType([string, number]).isRequired
+  status: oneOf(['confirmed', 'pending']).isRequired,
+  timestamp: oneOfType([string, number]).isRequired,
+  method: string.isRequired,
+  params: object.isRequired
 })

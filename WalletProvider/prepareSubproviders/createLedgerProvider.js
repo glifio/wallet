@@ -37,9 +37,7 @@ const throwIfBusy = busy => {
 }
 
 export default rustModule => {
-  console.log('recreating entire provider')
   return transport => {
-    console.log('recreating instance')
     let ledgerBusy = false
     const ledgerApp = new FilecoinApp(transport)
     return {
@@ -48,16 +46,12 @@ export default rustModule => {
       // /* getVersion call rejects if it takes too long to respond,
       // meaning the Ledger device is locked */
       getVersion: () => {
-        console.log('getting version')
         throwIfBusy(ledgerBusy)
         ledgerBusy = true
         return new Promise((resolve, reject) => {
           let finished = false
           setTimeout(() => {
             if (!finished) {
-              console.log(
-                'setting ledgerbusy false in getVersion, call timed out'
-              )
               finished = true
               ledgerBusy = false
               return reject(new Error('Ledger device locked or busy'))
@@ -72,9 +66,6 @@ export default rustModule => {
               return reject(err)
             } finally {
               if (!finished) {
-                console.log(
-                  'setting ledgerbusy false in getVersion, call finished without timing out'
-                )
                 finished = true
                 ledgerBusy = false
               }
@@ -84,7 +75,6 @@ export default rustModule => {
       },
 
       getAccounts: async (network = TESTNET, nStart = 0, nEnd = 5) => {
-        console.log('getting accounts')
         throwIfBusy(ledgerBusy)
         ledgerBusy = true
         const networkCode =
@@ -99,7 +89,6 @@ export default rustModule => {
           )
           return addrString
         })
-        console.log('in getting accounts, setting ledger busy to false')
         ledgerBusy = false
         return addresses
       },

@@ -76,6 +76,7 @@ exports[`WalletView it renders correctly 1`] = `
 .c9 {
   min-width: 0;
   box-sizing: border-box;
+  color: #E0D7FE;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -319,7 +320,7 @@ exports[`WalletView it renders correctly 1`] = `
 }
 
 .c10 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
@@ -386,18 +387,7 @@ exports[`WalletView it renders correctly 1`] = `
   margin: 0;
 }
 
-.c55 {
-  color: #666666;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  display: none;
-  margin: 0;
-  margin-bottom: 0;
-}
-
-.c58 {
+.c57 {
   color: #5E26FF;
   font-size: 1.125rem;
   font-weight: 400;
@@ -524,6 +514,45 @@ exports[`WalletView it renders correctly 1`] = `
   word-wrap: break-word;
 }
 
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid;
+  padding: 8px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-color: #e8ecf7;
+  background-color: #e8ecf7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+}
+
+.c39:hover {
+  cursor: pointer;
+  background-color: #EFF3FD;
+}
+
 .c40 {
   list-style: none;
   margin: 0;
@@ -597,7 +626,7 @@ exports[`WalletView it renders correctly 1`] = `
   align-items: flex-end;
 }
 
-.c56 {
+.c55 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -641,10 +670,9 @@ exports[`WalletView it renders correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 160px;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -658,46 +686,7 @@ exports[`WalletView it renders correctly 1`] = `
   display: flex;
 }
 
-.c39 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 4px;
-  border: 1px solid;
-  padding: 8px;
-  padding-left: 24px;
-  padding-right: 24px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
-  min-width: max-content;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-color: #e8ecf7;
-  background-color: #e8ecf7;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-}
-
-.c39:hover {
-  cursor: pointer;
-  background-color: #EFF3FD;
-}
-
-.c57 {
+.c56 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -732,7 +721,7 @@ exports[`WalletView it renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c57:hover {
+.c56:hover {
   cursor: pointer;
   background-color: #EFF3FD;
 }
@@ -882,12 +871,13 @@ exports[`WalletView it renders correctly 1`] = `
         </p>
         <div
           class="c9"
+          color="core.secondary"
           display="flex"
         >
           <h2
             class="c10"
             font-family="RT-Alias-Grotesk"
-            font-size="4"
+            font-size="3"
             font-weight="1"
             overflow="hidden"
           >
@@ -1167,7 +1157,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -1198,28 +1197,13 @@ exports[`WalletView it renders correctly 1`] = `
                   0
                 </p>
               </li>
-              <li
-                class="c53"
-                display="flex"
-              >
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  0
-                </p>
-              </li>
             </ul>
           </li>
           <li
             class=""
           >
             <ul
-              class="c56"
+              class="c55"
               display="flex"
             >
               <li
@@ -1233,16 +1217,6 @@ exports[`WalletView it renders correctly 1`] = `
                   font-weight="400"
                 >
                   FIL
-                </p>
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
                 </p>
               </li>
             </ul>
@@ -1338,7 +1312,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -1369,28 +1352,13 @@ exports[`WalletView it renders correctly 1`] = `
                   0.2
                 </p>
               </li>
-              <li
-                class="c53"
-                display="flex"
-              >
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  1
-                </p>
-              </li>
             </ul>
           </li>
           <li
             class=""
           >
             <ul
-              class="c56"
+              class="c55"
               display="flex"
             >
               <li
@@ -1404,16 +1372,6 @@ exports[`WalletView it renders correctly 1`] = `
                   font-weight="400"
                 >
                   FIL
-                </p>
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
                 </p>
               </li>
             </ul>
@@ -1509,7 +1467,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -1540,28 +1507,13 @@ exports[`WalletView it renders correctly 1`] = `
                   0.000001
                 </p>
               </li>
-              <li
-                class="c53"
-                display="flex"
-              >
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  &lt; 0.01
-                </p>
-              </li>
             </ul>
           </li>
           <li
             class=""
           >
             <ul
-              class="c56"
+              class="c55"
               display="flex"
             >
               <li
@@ -1575,16 +1527,6 @@ exports[`WalletView it renders correctly 1`] = `
                   font-weight="400"
                 >
                   FIL
-                </p>
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
                 </p>
               </li>
             </ul>
@@ -1680,7 +1622,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -1711,28 +1662,13 @@ exports[`WalletView it renders correctly 1`] = `
                   0.0000001
                 </p>
               </li>
-              <li
-                class="c53"
-                display="flex"
-              >
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  &lt; 0.01
-                </p>
-              </li>
             </ul>
           </li>
           <li
             class=""
           >
             <ul
-              class="c56"
+              class="c55"
               display="flex"
             >
               <li
@@ -1746,16 +1682,6 @@ exports[`WalletView it renders correctly 1`] = `
                   font-weight="400"
                 >
                   FIL
-                </p>
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
                 </p>
               </li>
             </ul>
@@ -1851,7 +1777,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -1882,28 +1817,13 @@ exports[`WalletView it renders correctly 1`] = `
                   0.00001
                 </p>
               </li>
-              <li
-                class="c53"
-                display="flex"
-              >
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  &lt; 0.01
-                </p>
-              </li>
             </ul>
           </li>
           <li
             class=""
           >
             <ul
-              class="c56"
+              class="c55"
               display="flex"
             >
               <li
@@ -1917,16 +1837,6 @@ exports[`WalletView it renders correctly 1`] = `
                   font-weight="400"
                 >
                   FIL
-                </p>
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
                 </p>
               </li>
             </ul>
@@ -2022,7 +1932,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -2053,28 +1972,13 @@ exports[`WalletView it renders correctly 1`] = `
                   0.0001
                 </p>
               </li>
-              <li
-                class="c53"
-                display="flex"
-              >
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  &lt; 0.01
-                </p>
-              </li>
             </ul>
           </li>
           <li
             class=""
           >
             <ul
-              class="c56"
+              class="c55"
               display="flex"
             >
               <li
@@ -2088,16 +1992,6 @@ exports[`WalletView it renders correctly 1`] = `
                   font-weight="400"
                 >
                   FIL
-                </p>
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
                 </p>
               </li>
             </ul>
@@ -2193,7 +2087,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -2224,28 +2127,13 @@ exports[`WalletView it renders correctly 1`] = `
                   0
                 </p>
               </li>
-              <li
-                class="c53"
-                display="flex"
-              >
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  0
-                </p>
-              </li>
             </ul>
           </li>
           <li
             class=""
           >
             <ul
-              class="c56"
+              class="c55"
               display="flex"
             >
               <li
@@ -2259,16 +2147,6 @@ exports[`WalletView it renders correctly 1`] = `
                   font-weight="400"
                 >
                   FIL
-                </p>
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
                 </p>
               </li>
             </ul>
@@ -2364,7 +2242,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -2395,28 +2282,13 @@ exports[`WalletView it renders correctly 1`] = `
                   0.5
                 </p>
               </li>
-              <li
-                class="c53"
-                display="flex"
-              >
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  2.5
-                </p>
-              </li>
             </ul>
           </li>
           <li
             class=""
           >
             <ul
-              class="c56"
+              class="c55"
               display="flex"
             >
               <li
@@ -2430,16 +2302,6 @@ exports[`WalletView it renders correctly 1`] = `
                   font-weight="400"
                 >
                   FIL
-                </p>
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
                 </p>
               </li>
             </ul>
@@ -2535,7 +2397,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -2566,28 +2437,13 @@ exports[`WalletView it renders correctly 1`] = `
                   0.00001
                 </p>
               </li>
-              <li
-                class="c53"
-                display="flex"
-              >
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  &lt; 0.01
-                </p>
-              </li>
             </ul>
           </li>
           <li
             class=""
           >
             <ul
-              class="c56"
+              class="c55"
               display="flex"
             >
               <li
@@ -2601,16 +2457,6 @@ exports[`WalletView it renders correctly 1`] = `
                   font-weight="400"
                 >
                   FIL
-                </p>
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
                 </p>
               </li>
             </ul>
@@ -2706,7 +2552,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -2737,28 +2592,13 @@ exports[`WalletView it renders correctly 1`] = `
                   0.0001
                 </p>
               </li>
-              <li
-                class="c53"
-                display="flex"
-              >
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  &lt; 0.01
-                </p>
-              </li>
             </ul>
           </li>
           <li
             class=""
           >
             <ul
-              class="c56"
+              class="c55"
               display="flex"
             >
               <li
@@ -2773,26 +2613,16 @@ exports[`WalletView it renders correctly 1`] = `
                 >
                   FIL
                 </p>
-                <p
-                  class="c55"
-                  color="core.darkgray"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  USD
-                </p>
               </li>
             </ul>
           </li>
         </ul>
       </div>
       <div
-        class="c57"
+        class="c56"
       >
         <p
-          class="c58"
+          class="c57"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="2"

@@ -25,15 +25,7 @@ import createPath from '../../../../utils/createPath'
 import { MAINNET, MAINNET_PATH_CODE } from '../../../../constants'
 import reportError from '../../../../utils/reportError'
 
-const Step2Helper = ({
-  connectedFailure,
-  locked,
-  filecoinAppNotOpen,
-  replug,
-  busy,
-  inUseByAnotherApp,
-  otherError
-}) => (
+const Step2Helper = ({ ...errors }) => (
   <Box
     display='flex'
     flexDirection='column'
@@ -44,30 +36,14 @@ const Step2Helper = ({
     mt={4}
   >
     {hasLedgerError({
-      connectedFailure,
-      locked,
-      filecoinAppNotOpen,
-      replug,
-      busy,
-      inUseByAnotherApp,
-      otherError
+      ...errors
     }) ? (
       <>
         <Box display='flex' alignItems='center' color='status.fail.foreground'>
           <Title>Oops!</Title>
         </Box>
         <Box mt={3} color='status.fail.foreground'>
-          <Text>
-            {reportLedgerConfigError({
-              connectedFailure,
-              locked,
-              filecoinAppNotOpen,
-              replug,
-              busy,
-              inUseByAnotherApp,
-              otherError
-            })}
-          </Text>
+          <Text>{reportLedgerConfigError({ ...errors })}</Text>
         </Box>
       </>
     ) : (
@@ -130,10 +106,8 @@ const Step2 = ({ premainnetInvestor, msig }) => {
 
   const onClick = async () => {
     setLoading(true)
-    console.log('about to fetch the default wallet...')
     try {
       const wallet = await fetchDefaultWallet()
-      console.log('fetched default wallet: ', wallet)
       if (wallet) {
         dispatch(walletList([wallet]))
         routeToNextPage()
@@ -141,14 +115,12 @@ const Step2 = ({ premainnetInvestor, msig }) => {
     } catch (err) {
       // catch errors due to node connection and continue forward for saft
       if (premainnetInvestor) {
-        console.log('there was an error fetching the default wallet: ', err)
         try {
           const [address] = await walletProvider.wallet.getAccounts(
             MAINNET,
             0,
             1
           )
-          console.log('got default address', address)
           const wallet = {
             address,
             balance: new FilecoinNumber('0', 'fil'),
@@ -157,7 +129,6 @@ const Step2 = ({ premainnetInvestor, msig }) => {
           dispatch(walletList([wallet]))
           routeToNextPage()
         } catch (_) {
-          console.log('caught error when fetching raw adddress', _)
           // this is a noop since if this call failed, the outer catch statement would catch this gracefully
           reportError('/Onboarding/Configure/Ledger:1', false)
         }
@@ -204,15 +175,7 @@ const Step2 = ({ premainnetInvestor, msig }) => {
           Icon={IconLedger}
           error={!!error}
         />
-        <Step2Helper
-          connectedFailure={ledger.connectedFailure}
-          locked={ledger.locked}
-          filecoinAppNotOpen={ledger.filecoinAppNotOpen}
-          replug={ledger.replug}
-          busy={ledger.busy}
-          inUseByAnotherApp={ledger.inUseByAnotherApp}
-          otherError={generalError}
-        />
+        <Step2Helper otherError={generalError} {...ledger} />
       </OnboardCard>
       <Box
         mt={6}

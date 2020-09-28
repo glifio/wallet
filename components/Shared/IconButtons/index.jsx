@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { func, object } from 'prop-types'
 import { layout, space, border, flexbox, position } from 'styled-system'
-import { IconClose, IconCopyAccountAddress } from '../Icons'
+import { IconClose, IconCopyAccountAddress, IconViewAddress } from '../Icons'
 
 const IconButtonBase = styled.button`
   outline: 0;
@@ -38,4 +38,8 @@ export const ButtonClose = ({ ...props }) => (
 
 export const ButtonCopyAccountAddress = ({ ...props }) => (
   <IconButton Icon={IconCopyAccountAddress} {...props} />
+)
+
+export const ButtonViewAddress = ({ ...props }) => (
+  <IconButton Icon={IconViewAddress} {...props} />
 )

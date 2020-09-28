@@ -1,15 +1,13 @@
 import React from 'react'
 import dayjs from 'dayjs'
 import { FilecoinNumber } from '@openworklabs/filecoin-number'
-import { bool, string, func } from 'prop-types'
-import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../customPropTypes'
-import { Menu, MenuItem } from '../Menu'
-import { Text, Label } from '../Typography'
-import { IconSend, IconReceive, IconPending } from '../Icons'
-import truncate from '../../../utils/truncateAddress'
-import { useConverter } from '../../../lib/Converter'
-import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
-import MessageHistoryRowContainer from './MessageHistoryRowContainer'
+import { bool, string, oneOf, oneOfType, number } from 'prop-types'
+import { ADDRESS_PROPTYPE } from '../../../../customPropTypes'
+import { Menu, MenuItem } from '../../Menu'
+import { Text, Label } from '../../Typography'
+import { IconSend, IconReceive, IconPending } from '../../Icons'
+import truncate from '../../../../utils/truncateAddress'
+import makeFriendlyBalance from '../../../../utils/makeFriendlyBalance'
 
 const AddressText = ({ sentMsg, to, from }) => {
   if (sentMsg) {
@@ -43,46 +41,9 @@ AddressText.propTypes = {
   from: ADDRESS_PROPTYPE
 }
 
-const ActionText = ({ status, sentMsg }) => {
-  if (status === 'confirmed' && sentMsg)
-    return (
-      <Text color='core.nearblack' my={0}>
-        Sent
-      </Text>
-    )
-  if (status === 'confirmed')
-    return (
-      <Text color='core.nearblack' my={0}>
-        Received
-      </Text>
-    )
-  if (status === 'pending' && sentMsg) return <Text my={0}>Pending</Text>
-  if (status === 'pending')
-    return (
-      <Text color='core.nearblack' my={0}>
-        Confirming
-      </Text>
-    )
-  return <Text my={0}>Unknown?</Text>
-}
-
-ActionText.propTypes = {
-  sentMsg: bool.isRequired,
-  status: string.isRequired
-}
-
-const MessageHistoryRow = ({
-  address,
-  message: { to, from, value, status, cid, timestamp },
-  selectMessage
-}) => {
-  const { converter, converterError } = useConverter()
-  const sentMsg = address === from
+const SendRow = ({ sentMsg, status, to, from, timestamp, value }) => {
   return (
-    <MessageHistoryRowContainer
-      status={status}
-      onClick={() => selectMessage(cid)}
-    >
+    <>
       <Menu>
         <MenuItem display='flex' flexDirection='row'>
           <Menu display='flex' flexDirection='column' justifyContent='center'>
@@ -103,13 +64,16 @@ const MessageHistoryRow = ({
             </MenuItem>
             <MenuItem
               display='flex'
-              alignItems='flex-end'
+              flexDirection='column'
               justifyContent='center'
               ml={4}
               width={9}
             >
               <Text color='core.darkgray' m={0}>
-                {dayjs.unix(timestamp).format('MMM DD, YYYY - HH:mm:ss')}
+                {dayjs.unix(timestamp).format('HH:mm:ss')}
+              </Text>
+              <Text color='core.darkgray' m={0}>
+                {dayjs.unix(timestamp).format('MMM DD, YYYY')}
               </Text>
             </MenuItem>
           </Menu>
@@ -134,21 +98,6 @@ const MessageHistoryRow = ({
                 {makeFriendlyBalance(new FilecoinNumber(value, 'attofil'), 7)}
               </Text>
             </MenuItem>
-            <MenuItem display='flex'>
-              {/* Remove display:none when USD calc is restored */}
-              <Text display='none' color='core.darkgray' m={0} mb={0}>
-                {!converterError &&
-                  (!converter
-                    ? 'Loading USD...'
-                    : makeFriendlyBalance(
-                        converter.fromFIL(
-                          new FilecoinNumber(value, 'attofil'),
-                          7
-                        ),
-                        2
-                      ))}
-              </Text>
-            </MenuItem>
           </Menu>
         </MenuItem>
         <MenuItem>
@@ -163,24 +112,21 @@ const MessageHistoryRow = ({
               <Text color='core.nearblack' m={0}>
                 FIL
               </Text>
-              {!converterError && (
-                // Remove display='none' when USD bal is restored
-                <Text display='none' color='core.darkgray' m={0} mb={0}>
-                  USD
-                </Text>
-              )}
             </MenuItem>
           </Menu>
         </MenuItem>
       </Menu>
-    </MessageHistoryRowContainer>
+    </>
   )
 }
 
-MessageHistoryRow.propTypes = {
-  address: ADDRESS_PROPTYPE,
-  message: MESSAGE_PROPS.isRequired,
-  selectMessage: func.isRequired
+SendRow.propTypes = {
+  to: ADDRESS_PROPTYPE,
+  from: ADDRESS_PROPTYPE,
+  value: string.isRequired,
+  status: oneOf(['confirmed', 'pending']).isRequired,
+  timestamp: oneOfType([string, number]).isRequired,
+  sentMsg: bool.isRequired
 }
 
-export default MessageHistoryRow
+export default SendRow
