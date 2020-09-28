@@ -102,45 +102,12 @@ const AccountSummary = ({
                     address={truncateAddress(walletAddress)}
                   />
                 </Box>
-                <ButtonViewAddress />
-              </Box>
-            </Box>
-
-            {/* <Box display='flex' flexDirection='row'>
-              <Box>
-                {' '}
-                <Glyph
-                  mr={3}
-                  Icon={IconLedger}
-                  color='core.nearblack'
-                  fill='#444'
+                <ButtonViewAddress
+                  onClick={showOnDevice}
+                  disabled={ledgerBusy}
                 />
               </Box>
-              <Box display='flex' flexDirection='column' height={5}>
-                <Box
-                  display='flex'
-                  justifyContent='space-between'
-                  alignItems='center'
-                  flexGrow='1'
-                >
-                  <AccountAddress m={0}>
-                    {truncateAddress(walletAddress)}
-                  </AccountAddress>
-                  <Button
-                    height='auto'
-                    py={0}
-                    px={0}
-                    border={0}
-                    type='button'
-                    variant='secondary'
-                    title='View'
-                    color='core.primary'
-                    disabled={ledgerBusy}
-                    onClick={showOnDevice}
-                  />
-                </Box>
-              </Box>
-            </Box> */}
+            </Box>
           </>
         )}
       </Box>
