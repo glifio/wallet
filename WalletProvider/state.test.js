@@ -25,6 +25,7 @@ import {
   LEDGER_BUSY,
   LEDGER_REPLUG,
   LEDGER_USED_BY_ANOTHER_APP,
+  LEDGER_BAD_VERSION,
   initialLedgerState
 } from '../utils/ledger/ledgerStateManagement'
 import { IMPORT_MNEMONIC } from '../constants'
@@ -359,6 +360,13 @@ describe('WalletProvider', () => {
         expect(JSON.stringify(ledger)).toEqual(
           JSON.stringify(initialLedgerState)
         )
+      })
+
+      test('bad version', () => {
+        const { ledger } = reducer(establishingConnectionWithFilecoinAppState, {
+          type: LEDGER_BAD_VERSION
+        })
+        expect(ledger.badVersion).toBe(true)
       })
     })
   })

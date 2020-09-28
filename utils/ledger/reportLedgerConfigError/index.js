@@ -1,3 +1,9 @@
+import {
+  LEDGER_VERSION_MAJOR,
+  LEDGER_VERSION_MINOR,
+  LEDGER_VERSION_PATCH
+} from '../../../constants'
+
 export const reportLedgerConfigError = ({
   connectedFailure,
   locked,
@@ -5,11 +11,14 @@ export const reportLedgerConfigError = ({
   replug,
   busy,
   inUseByAnotherApp,
+  badVersion,
   otherError
 }) => {
   if (connectedFailure) return 'Is your Ledger device plugged in?'
   if (busy) return 'Is your Ledger device locked or busy?'
   if (locked) return 'Is your Ledger device unlocked?'
+  if (badVersion)
+    return `Please update your Filecoin Ledger app to v${LEDGER_VERSION_MAJOR}.${LEDGER_VERSION_MINOR}.${LEDGER_VERSION_PATCH}, and try again.`
   if (filecoinAppNotOpen)
     return 'Is the Filecoin App open on your Ledger device?'
   if (replug)
@@ -26,6 +35,7 @@ export const hasLedgerError = ({
   replug,
   busy,
   inUseByAnotherApp,
+  badVersion,
   otherError
 }) =>
   connectedFailure ||
@@ -34,4 +44,5 @@ export const hasLedgerError = ({
   replug ||
   busy ||
   inUseByAnotherApp ||
+  badVersion ||
   otherError

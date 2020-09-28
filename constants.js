@@ -24,3 +24,7 @@ export const TESTNET_PATH_CODE = 1
 export const SEND = 'SEND'
 export const PROPOSE = 'PROPOSE'
 export const EXEC = 'EXEC'
+/* FILECOIN APP VERSION MIN */
+export const LEDGER_VERSION_MAJOR = 0
+export const LEDGER_VERSION_MINOR = 18
+export const LEDGER_VERSION_PATCH = 2

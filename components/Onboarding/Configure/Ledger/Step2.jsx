@@ -25,15 +25,7 @@ import createPath from '../../../../utils/createPath'
 import { MAINNET, MAINNET_PATH_CODE } from '../../../../constants'
 import reportError from '../../../../utils/reportError'
 
-const Step2Helper = ({
-  connectedFailure,
-  locked,
-  filecoinAppNotOpen,
-  replug,
-  busy,
-  inUseByAnotherApp,
-  otherError
-}) => (
+const Step2Helper = ({ ...errors }) => (
   <Box
     display='flex'
     flexDirection='column'
@@ -44,30 +36,14 @@ const Step2Helper = ({
     mt={4}
   >
     {hasLedgerError({
-      connectedFailure,
-      locked,
-      filecoinAppNotOpen,
-      replug,
-      busy,
-      inUseByAnotherApp,
-      otherError
+      ...errors
     }) ? (
       <>
         <Box display='flex' alignItems='center' color='status.fail.foreground'>
           <Title>Oops!</Title>
         </Box>
         <Box mt={3} color='status.fail.foreground'>
-          <Text>
-            {reportLedgerConfigError({
-              connectedFailure,
-              locked,
-              filecoinAppNotOpen,
-              replug,
-              busy,
-              inUseByAnotherApp,
-              otherError
-            })}
-          </Text>
+          <Text>{reportLedgerConfigError({ ...errors })}</Text>
         </Box>
       </>
     ) : (
@@ -199,15 +175,7 @@ const Step2 = ({ premainnetInvestor, msig }) => {
           Icon={IconLedger}
           error={!!error}
         />
-        <Step2Helper
-          connectedFailure={ledger.connectedFailure}
-          locked={ledger.locked}
-          filecoinAppNotOpen={ledger.filecoinAppNotOpen}
-          replug={ledger.replug}
-          busy={ledger.busy}
-          inUseByAnotherApp={ledger.inUseByAnotherApp}
-          otherError={generalError}
-        />
+        <Step2Helper otherError={generalError} {...ledger} />
       </OnboardCard>
       <Box
         mt={6}

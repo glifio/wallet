@@ -14,6 +14,7 @@ export const LEDGER_UNLOCKED = 'LEDGER_UNLOCKED'
 export const LEDGER_REPLUG = 'LEDGER_REPLUG'
 export const LEDGER_BUSY = 'LEDGER_BUSY'
 export const LEDGER_USED_BY_ANOTHER_APP = 'LEDGER_USED_BY_ANOTHER_APP'
+export const LEDGER_BAD_VERSION = 'LEDGER_BAD_VERSION'
 
 export const initialLedgerState = {
   userImportFailure: false,
@@ -24,7 +25,8 @@ export const initialLedgerState = {
   busy: false,
   filecoinAppNotOpen: false,
   replug: false,
-  inUseByAnotherApp: false
+  inUseByAnotherApp: false,
+  badVersion: false
 }
 
 export const LEDGER_STATE_PROPTYPES = {
@@ -34,5 +36,6 @@ export const LEDGER_STATE_PROPTYPES = {
   locked: PropTypes.bool.isRequired,
   unlocked: PropTypes.bool.isRequired,
   busy: PropTypes.bool.isRequired,
-  filecoinAppNotOpen: PropTypes.bool.isRequired
+  filecoinAppNotOpen: PropTypes.bool.isRequired,
+  badVersion: PropTypes.bool.isRequired
 }

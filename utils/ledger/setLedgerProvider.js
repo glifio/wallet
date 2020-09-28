@@ -11,11 +11,13 @@ import {
   LEDGER_FILECOIN_APP_NOT_OPEN,
   LEDGER_FILECOIN_APP_OPEN,
   LEDGER_BUSY,
-  LEDGER_USED_BY_ANOTHER_APP
+  LEDGER_USED_BY_ANOTHER_APP,
+  LEDGER_BAD_VERSION
 } from './ledgerStateManagement'
 import { createWalletProvider } from '../../WalletProvider/state'
 import createTransport from './createTransport'
 import reportError from '../reportError'
+import badVersion from './badVersion'
 
 export const setLedgerProvider = async (dispatch, LedgerProvider) => {
   dispatch({ type: LEDGER_USER_INITIATED_IMPORT })
@@ -58,11 +60,16 @@ export const checkLedgerConfiguration = async (dispatch, walletProvider) => {
   dispatch({ type: LEDGER_ESTABLISHING_CONNECTION_W_FILECOIN_APP })
   try {
     const response = await walletProvider.wallet.getVersion()
-
     if (response.device_locked) {
       dispatch({ type: LEDGER_LOCKED })
       return false
     }
+
+    if (badVersion({ ...response })) {
+      dispatch({ type: LEDGER_BAD_VERSION })
+      return false
+    }
+
     dispatch({ type: LEDGER_UNLOCKED })
     dispatch({ type: LEDGER_FILECOIN_APP_OPEN })
     return true
