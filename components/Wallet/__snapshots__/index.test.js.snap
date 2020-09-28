@@ -76,6 +76,7 @@ exports[`WalletView it renders correctly 1`] = `
 .c9 {
   min-width: 0;
   box-sizing: border-box;
+  color: #E0D7FE;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -319,7 +320,7 @@ exports[`WalletView it renders correctly 1`] = `
 }
 
 .c10 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
@@ -379,16 +380,6 @@ exports[`WalletView it renders correctly 1`] = `
 
 .c55 {
   color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  display: none;
-  margin: 0;
-}
-
-.c56 {
-  color: #262626;
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
@@ -396,7 +387,7 @@ exports[`WalletView it renders correctly 1`] = `
   margin: 0;
 }
 
-.c58 {
+.c59 {
   color: #5E26FF;
   font-size: 1.125rem;
   font-weight: 400;
@@ -594,6 +585,10 @@ exports[`WalletView it renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c50 {
@@ -639,6 +634,17 @@ exports[`WalletView it renders correctly 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
+  margin-left: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c57 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   margin-left: 16px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -679,10 +685,9 @@ exports[`WalletView it renders correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 160px;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -694,9 +699,19 @@ exports[`WalletView it renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
-.c57 {
+.c56 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c58 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -731,7 +746,7 @@ exports[`WalletView it renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c57:hover {
+.c58:hover {
   cursor: pointer;
   background-color: #EFF3FD;
 }
@@ -827,6 +842,18 @@ exports[`WalletView it renders correctly 1`] = `
   }
 }
 
+@media screen and (min-width:40em) {
+  .c54 {
+    margin-left: 24px;
+  }
+}
+
+@media screen and (min-width:52em) {
+  .c54 {
+    margin-left: 32px;
+  }
+}
+
 <div
   class="SidebarLayout__Wrapper-gwfrwp-0 c0"
 >
@@ -881,12 +908,13 @@ exports[`WalletView it renders correctly 1`] = `
         </p>
         <div
           class="c9"
+          color="core.secondary"
           display="flex"
         >
           <h2
             class="c10"
             font-family="RT-Alias-Grotesk"
-            font-size="4"
+            font-size="3"
             font-weight="1"
             overflow="hidden"
           >
@@ -1159,7 +1187,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c49"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -1192,29 +1229,6 @@ exports[`WalletView it renders correctly 1`] = `
               </li>
             </ul>
           </li>
-          <li
-            class=""
-          >
-            <ul
-              class="c54"
-              display="flex"
-            >
-              <li
-                class=""
-              >
-                <p
-                  class="c55"
-                  color="core.nearblack"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  FIL
-                </p>
-              </li>
-            </ul>
-          </li>
         </ul>
       </div>
       <div
@@ -1267,7 +1281,7 @@ exports[`WalletView it renders correctly 1`] = `
               </li>
             </ul>
             <ul
-              class="c45"
+              class="c54"
               display="flex"
             >
               <li
@@ -1285,7 +1299,7 @@ exports[`WalletView it renders correctly 1`] = `
                   From
                 </h4>
                 <p
-                  class="c56"
+                  class="c55"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
@@ -1306,7 +1320,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c49"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -1324,7 +1347,7 @@ exports[`WalletView it renders correctly 1`] = `
               display="flex"
             >
               <li
-                class="c52"
+                class="c56"
                 display="flex"
               >
                 <p
@@ -1343,7 +1366,7 @@ exports[`WalletView it renders correctly 1`] = `
             class=""
           >
             <ul
-              class="c54"
+              class="c57"
               display="flex"
             >
               <li
@@ -1413,7 +1436,7 @@ exports[`WalletView it renders correctly 1`] = `
               </li>
             </ul>
             <ul
-              class="c45"
+              class="c54"
               display="flex"
             >
               <li
@@ -1431,7 +1454,7 @@ exports[`WalletView it renders correctly 1`] = `
                   From
                 </h4>
                 <p
-                  class="c56"
+                  class="c55"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
@@ -1452,7 +1475,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c49"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -1470,7 +1502,7 @@ exports[`WalletView it renders correctly 1`] = `
               display="flex"
             >
               <li
-                class="c52"
+                class="c56"
                 display="flex"
               >
                 <p
@@ -1489,7 +1521,7 @@ exports[`WalletView it renders correctly 1`] = `
             class=""
           >
             <ul
-              class="c54"
+              class="c57"
               display="flex"
             >
               <li
@@ -1559,7 +1591,7 @@ exports[`WalletView it renders correctly 1`] = `
               </li>
             </ul>
             <ul
-              class="c45"
+              class="c54"
               display="flex"
             >
               <li
@@ -1577,7 +1609,7 @@ exports[`WalletView it renders correctly 1`] = `
                   From
                 </h4>
                 <p
-                  class="c56"
+                  class="c55"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
@@ -1598,7 +1630,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c49"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -1616,7 +1657,7 @@ exports[`WalletView it renders correctly 1`] = `
               display="flex"
             >
               <li
-                class="c52"
+                class="c56"
                 display="flex"
               >
                 <p
@@ -1635,7 +1676,7 @@ exports[`WalletView it renders correctly 1`] = `
             class=""
           >
             <ul
-              class="c54"
+              class="c57"
               display="flex"
             >
               <li
@@ -1705,7 +1746,7 @@ exports[`WalletView it renders correctly 1`] = `
               </li>
             </ul>
             <ul
-              class="c45"
+              class="c54"
               display="flex"
             >
               <li
@@ -1723,7 +1764,7 @@ exports[`WalletView it renders correctly 1`] = `
                   From
                 </h4>
                 <p
-                  class="c56"
+                  class="c55"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
@@ -1744,7 +1785,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c49"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -1762,7 +1812,7 @@ exports[`WalletView it renders correctly 1`] = `
               display="flex"
             >
               <li
-                class="c52"
+                class="c56"
                 display="flex"
               >
                 <p
@@ -1781,7 +1831,7 @@ exports[`WalletView it renders correctly 1`] = `
             class=""
           >
             <ul
-              class="c54"
+              class="c57"
               display="flex"
             >
               <li
@@ -1851,7 +1901,7 @@ exports[`WalletView it renders correctly 1`] = `
               </li>
             </ul>
             <ul
-              class="c45"
+              class="c54"
               display="flex"
             >
               <li
@@ -1869,7 +1919,7 @@ exports[`WalletView it renders correctly 1`] = `
                   From
                 </h4>
                 <p
-                  class="c56"
+                  class="c55"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
@@ -1890,7 +1940,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c49"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -1908,7 +1967,7 @@ exports[`WalletView it renders correctly 1`] = `
               display="flex"
             >
               <li
-                class="c52"
+                class="c56"
                 display="flex"
               >
                 <p
@@ -1927,7 +1986,7 @@ exports[`WalletView it renders correctly 1`] = `
             class=""
           >
             <ul
-              class="c54"
+              class="c57"
               display="flex"
             >
               <li
@@ -2029,7 +2088,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c49"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -2062,29 +2130,6 @@ exports[`WalletView it renders correctly 1`] = `
               </li>
             </ul>
           </li>
-          <li
-            class=""
-          >
-            <ul
-              class="c54"
-              display="flex"
-            >
-              <li
-                class=""
-              >
-                <p
-                  class="c55"
-                  color="core.nearblack"
-                  display="none"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  FIL
-                </p>
-              </li>
-            </ul>
-          </li>
         </ul>
       </div>
       <div
@@ -2137,7 +2182,7 @@ exports[`WalletView it renders correctly 1`] = `
               </li>
             </ul>
             <ul
-              class="c45"
+              class="c54"
               display="flex"
             >
               <li
@@ -2155,7 +2200,7 @@ exports[`WalletView it renders correctly 1`] = `
                   From
                 </h4>
                 <p
-                  class="c56"
+                  class="c55"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
@@ -2176,7 +2221,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c49"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -2194,7 +2248,7 @@ exports[`WalletView it renders correctly 1`] = `
               display="flex"
             >
               <li
-                class="c52"
+                class="c56"
                 display="flex"
               >
                 <p
@@ -2213,7 +2267,7 @@ exports[`WalletView it renders correctly 1`] = `
             class=""
           >
             <ul
-              class="c54"
+              class="c57"
               display="flex"
             >
               <li
@@ -2283,7 +2337,7 @@ exports[`WalletView it renders correctly 1`] = `
               </li>
             </ul>
             <ul
-              class="c45"
+              class="c54"
               display="flex"
             >
               <li
@@ -2301,7 +2355,7 @@ exports[`WalletView it renders correctly 1`] = `
                   From
                 </h4>
                 <p
-                  class="c56"
+                  class="c55"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
@@ -2322,7 +2376,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c49"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -2340,7 +2403,7 @@ exports[`WalletView it renders correctly 1`] = `
               display="flex"
             >
               <li
-                class="c52"
+                class="c56"
                 display="flex"
               >
                 <p
@@ -2359,7 +2422,7 @@ exports[`WalletView it renders correctly 1`] = `
             class=""
           >
             <ul
-              class="c54"
+              class="c57"
               display="flex"
             >
               <li
@@ -2429,7 +2492,7 @@ exports[`WalletView it renders correctly 1`] = `
               </li>
             </ul>
             <ul
-              class="c45"
+              class="c54"
               display="flex"
             >
               <li
@@ -2447,7 +2510,7 @@ exports[`WalletView it renders correctly 1`] = `
                   From
                 </h4>
                 <p
-                  class="c56"
+                  class="c55"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
@@ -2468,7 +2531,16 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c49"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
@@ -2486,7 +2558,7 @@ exports[`WalletView it renders correctly 1`] = `
               display="flex"
             >
               <li
-                class="c52"
+                class="c56"
                 display="flex"
               >
                 <p
@@ -2505,7 +2577,7 @@ exports[`WalletView it renders correctly 1`] = `
             class=""
           >
             <ul
-              class="c54"
+              class="c57"
               display="flex"
             >
               <li
@@ -2526,10 +2598,10 @@ exports[`WalletView it renders correctly 1`] = `
         </ul>
       </div>
       <div
-        class="c57"
+        class="c58"
       >
         <p
-          class="c58"
+          class="c59"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="2"
