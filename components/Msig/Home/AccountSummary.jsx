@@ -2,15 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
-import {
-  Box,
-  Glyph,
-  CopyAddress,
-  Text,
-  Button,
-  IconLedger,
-  ButtonViewAddress
-} from '../../Shared'
+import { Box, Glyph, CopyAddress, Text, Button, IconLedger } from '../../Shared'
 import truncateAddress from '../../../utils/truncateAddress'
 
 const AccountSummary = ({
