@@ -56,7 +56,7 @@ describe('MessageHistory View', () => {
         </Tree>
       )
       container = res.container
-      fireEvent.click(screen.getAllByText('From')[0])
+      fireEvent.click(screen.getAllByText('From')[1])
     })
 
     expect(container.firstChild).toMatchSnapshot()

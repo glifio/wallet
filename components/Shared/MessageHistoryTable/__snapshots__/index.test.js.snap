@@ -108,17 +108,6 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   margin: 0;
 }
 
-.c23 {
-  color: #666666;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  display: none;
-  margin: 0;
-  margin-bottom: 0;
-}
-
 .c15 {
   color: #262626;
   font-size: 1.125rem;
@@ -151,6 +140,45 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
 
 .c6:hover {
   opacity: 0.8;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid;
+  padding: 8px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-color: #e8ecf7;
+  background-color: #e8ecf7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+}
+
+.c7:hover {
+  cursor: pointer;
+  background-color: #EFF3FD;
 }
 
 .c8 {
@@ -226,7 +254,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   align-items: flex-end;
 }
 
-.c24 {
+.c23 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -270,10 +298,9 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   display: -ms-flexbox;
   display: flex;
   width: 160px;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -290,45 +317,6 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
 .c12 {
   width: 34;
   height: 34;
-}
-
-.c7 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 4px;
-  border: 1px solid;
-  padding: 8px;
-  padding-left: 24px;
-  padding-right: 24px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
-  min-width: max-content;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-color: #e8ecf7;
-  background-color: #e8ecf7;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-}
-
-.c7:hover {
-  cursor: pointer;
-  background-color: #EFF3FD;
 }
 
 @media screen and (min-width:40em) {
@@ -475,7 +463,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12, 2020 - 2:30:30
+              2:30:30
+            </p>
+            <p
+              class="c18"
+              color="core.darkgray"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Jan 12, 2020
             </p>
           </li>
         </ul>
@@ -506,28 +503,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               0
             </p>
           </li>
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              0
-            </p>
-          </li>
         </ul>
       </li>
       <li
         class=""
       >
         <ul
-          class="c24"
+          class="c23"
           display="flex"
         >
           <li
@@ -541,16 +523,6 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-weight="400"
             >
               FIL
-            </p>
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              USD
             </p>
           </li>
         </ul>
@@ -646,7 +618,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12, 2020 - 2:30:30
+              2:30:30
+            </p>
+            <p
+              class="c18"
+              color="core.darkgray"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Jan 12, 2020
             </p>
           </li>
         </ul>
@@ -677,28 +658,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               0.2
             </p>
           </li>
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              1
-            </p>
-          </li>
         </ul>
       </li>
       <li
         class=""
       >
         <ul
-          class="c24"
+          class="c23"
           display="flex"
         >
           <li
@@ -712,16 +678,6 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-weight="400"
             >
               FIL
-            </p>
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              USD
             </p>
           </li>
         </ul>
@@ -817,7 +773,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12, 2020 - 2:30:30
+              2:30:30
+            </p>
+            <p
+              class="c18"
+              color="core.darkgray"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Jan 12, 2020
             </p>
           </li>
         </ul>
@@ -848,28 +813,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               0.000001
             </p>
           </li>
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              &lt; 0.01
-            </p>
-          </li>
         </ul>
       </li>
       <li
         class=""
       >
         <ul
-          class="c24"
+          class="c23"
           display="flex"
         >
           <li
@@ -883,16 +833,6 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-weight="400"
             >
               FIL
-            </p>
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              USD
             </p>
           </li>
         </ul>
@@ -988,7 +928,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12, 2020 - 2:30:30
+              2:30:30
+            </p>
+            <p
+              class="c18"
+              color="core.darkgray"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Jan 12, 2020
             </p>
           </li>
         </ul>
@@ -1019,28 +968,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               0.0000001
             </p>
           </li>
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              &lt; 0.01
-            </p>
-          </li>
         </ul>
       </li>
       <li
         class=""
       >
         <ul
-          class="c24"
+          class="c23"
           display="flex"
         >
           <li
@@ -1054,16 +988,6 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-weight="400"
             >
               FIL
-            </p>
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              USD
             </p>
           </li>
         </ul>
@@ -1159,7 +1083,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12, 2020 - 2:30:30
+              2:30:30
+            </p>
+            <p
+              class="c18"
+              color="core.darkgray"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Jan 12, 2020
             </p>
           </li>
         </ul>
@@ -1190,28 +1123,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               0.00001
             </p>
           </li>
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              &lt; 0.01
-            </p>
-          </li>
         </ul>
       </li>
       <li
         class=""
       >
         <ul
-          class="c24"
+          class="c23"
           display="flex"
         >
           <li
@@ -1225,16 +1143,6 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-weight="400"
             >
               FIL
-            </p>
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              USD
             </p>
           </li>
         </ul>
@@ -1330,7 +1238,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12, 2020 - 2:30:30
+              2:30:30
+            </p>
+            <p
+              class="c18"
+              color="core.darkgray"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Jan 12, 2020
             </p>
           </li>
         </ul>
@@ -1361,28 +1278,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               0.0001
             </p>
           </li>
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              &lt; 0.01
-            </p>
-          </li>
         </ul>
       </li>
       <li
         class=""
       >
         <ul
-          class="c24"
+          class="c23"
           display="flex"
         >
           <li
@@ -1396,16 +1298,6 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-weight="400"
             >
               FIL
-            </p>
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              USD
             </p>
           </li>
         </ul>
@@ -1501,7 +1393,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12, 2020 - 2:30:30
+              2:30:30
+            </p>
+            <p
+              class="c18"
+              color="core.darkgray"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Jan 12, 2020
             </p>
           </li>
         </ul>
@@ -1532,28 +1433,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               0
             </p>
           </li>
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              0
-            </p>
-          </li>
         </ul>
       </li>
       <li
         class=""
       >
         <ul
-          class="c24"
+          class="c23"
           display="flex"
         >
           <li
@@ -1567,16 +1453,6 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-weight="400"
             >
               FIL
-            </p>
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              USD
             </p>
           </li>
         </ul>
@@ -1672,7 +1548,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12, 2020 - 2:30:30
+              2:30:30
+            </p>
+            <p
+              class="c18"
+              color="core.darkgray"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Jan 12, 2020
             </p>
           </li>
         </ul>
@@ -1703,28 +1588,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               0.5
             </p>
           </li>
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              2.5
-            </p>
-          </li>
         </ul>
       </li>
       <li
         class=""
       >
         <ul
-          class="c24"
+          class="c23"
           display="flex"
         >
           <li
@@ -1738,16 +1608,6 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-weight="400"
             >
               FIL
-            </p>
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              USD
             </p>
           </li>
         </ul>
@@ -1843,7 +1703,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12, 2020 - 2:30:30
+              2:30:30
+            </p>
+            <p
+              class="c18"
+              color="core.darkgray"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Jan 12, 2020
             </p>
           </li>
         </ul>
@@ -1874,28 +1743,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               0.00001
             </p>
           </li>
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              &lt; 0.01
-            </p>
-          </li>
         </ul>
       </li>
       <li
         class=""
       >
         <ul
-          class="c24"
+          class="c23"
           display="flex"
         >
           <li
@@ -1909,16 +1763,6 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-weight="400"
             >
               FIL
-            </p>
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              USD
             </p>
           </li>
         </ul>
@@ -2014,7 +1858,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Jan 12, 2020 - 2:30:30
+              2:30:30
+            </p>
+            <p
+              class="c18"
+              color="core.darkgray"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Jan 12, 2020
             </p>
           </li>
         </ul>
@@ -2045,28 +1898,13 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               0.0001
             </p>
           </li>
-          <li
-            class="c21"
-            display="flex"
-          >
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              &lt; 0.01
-            </p>
-          </li>
         </ul>
       </li>
       <li
         class=""
       >
         <ul
-          class="c24"
+          class="c23"
           display="flex"
         >
           <li
@@ -2080,16 +1918,6 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               font-weight="400"
             >
               FIL
-            </p>
-            <p
-              class="c23"
-              color="core.darkgray"
-              display="none"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              USD
             </p>
           </li>
         </ul>

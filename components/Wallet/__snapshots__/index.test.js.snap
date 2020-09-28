@@ -76,6 +76,7 @@ exports[`WalletView it renders correctly 1`] = `
 .c9 {
   min-width: 0;
   box-sizing: border-box;
+  color: #E0D7FE;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -319,7 +320,7 @@ exports[`WalletView it renders correctly 1`] = `
 }
 
 .c10 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
@@ -359,35 +360,7 @@ exports[`WalletView it renders correctly 1`] = `
   font-family: RT-Alias-Grotesk;
 }
 
-.c49 {
-  color: #666666;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c53 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c55 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  display: none;
-  margin: 0;
-}
-
-.c56 {
+.c48 {
   color: #262626;
   font-size: 1.25rem;
   font-weight: 400;
@@ -396,7 +369,25 @@ exports[`WalletView it renders correctly 1`] = `
   margin: 0;
 }
 
-.c58 {
+.c50 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c54 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c57 {
   color: #5E26FF;
   font-size: 1.125rem;
   font-weight: 400;
@@ -596,7 +587,7 @@ exports[`WalletView it renders correctly 1`] = `
   display: flex;
 }
 
-.c50 {
+.c51 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -617,7 +608,7 @@ exports[`WalletView it renders correctly 1`] = `
   flex-grow: 999;
 }
 
-.c51 {
+.c52 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -635,7 +626,7 @@ exports[`WalletView it renders correctly 1`] = `
   align-items: flex-end;
 }
 
-.c54 {
+.c55 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -672,31 +663,30 @@ exports[`WalletView it renders correctly 1`] = `
   width: 160px;
 }
 
-.c48 {
+.c49 {
   margin-left: 24px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: 160px;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
 }
 
-.c52 {
+.c53 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c57 {
+.c56 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -731,7 +721,7 @@ exports[`WalletView it renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c57:hover {
+.c56:hover {
   cursor: pointer;
   background-color: #EFF3FD;
 }
@@ -881,12 +871,13 @@ exports[`WalletView it renders correctly 1`] = `
         </p>
         <div
           class="c9"
+          color="core.secondary"
           display="flex"
         >
           <h2
             class="c10"
             font-family="RT-Alias-Grotesk"
-            font-size="4"
+            font-size="3"
             font-weight="1"
             overflow="hidden"
           >
@@ -1103,27 +1094,25 @@ exports[`WalletView it renders correctly 1`] = `
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <rect
-                    fill="transparent"
+                    fill="#5E26FF"
                     height="32"
                     rx="16"
-                    transform="rotate(-180 33 33)"
                     width="32"
-                    x="33"
-                    y="33"
+                    x="1"
+                    y="1"
                   />
                   <path
-                    d="M17.5657 10.4343C17.2533 10.1219 16.7467 10.1219 16.4343 10.4343L11.3431 15.5255C11.0307 15.8379 11.0307 16.3444 11.3431 16.6569C11.6556 16.9693 12.1621 16.9693 12.4745 16.6569L17 12.1314L21.5255 16.6569C21.8379 16.9693 22.3444 16.9693 22.6569 16.6569C22.9693 16.3444 22.9693 15.8379 22.6569 15.5255L17.5657 10.4343ZM17.8 23L17.8 11L16.2 11L16.2 23L17.8 23Z"
-                    fill="#262626"
+                    d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
+                    fill="#E8ECF7"
                   />
                   <rect
                     height="32"
                     rx="16"
-                    stroke="#262626"
+                    stroke="#5E26FF"
                     stroke-width="1.4"
-                    transform="rotate(-180 33 33)"
                     width="32"
-                    x="33"
-                    y="33"
+                    x="1"
+                    y="1"
                   />
                 </svg>
               </li>
@@ -1144,50 +1133,68 @@ exports[`WalletView it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Unknown msig method
+                  From
                 </h4>
+                <p
+                  class="c48"
+                  color="core.nearblack"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="3"
+                  font-weight="400"
+                >
+                  t1kh7x ... nf45jq
+                </p>
               </li>
               <li
-                class="c48"
+                class="c49"
                 display="flex"
                 width="9"
               >
                 <p
-                  class="c49"
+                  class="c50"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
           </li>
         </ul>
         <ul
-          class="c50"
+          class="c51"
           display="flex"
         >
           <li
             class=""
           >
             <ul
-              class="c51"
+              class="c52"
               display="flex"
             >
               <li
-                class="c52"
+                class="c53"
                 display="flex"
               >
                 <p
-                  class="c53"
+                  class="c54"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
                 >
-                  Unknown multisig method
+                  0
                 </p>
               </li>
             </ul>
@@ -1196,16 +1203,15 @@ exports[`WalletView it renders correctly 1`] = `
             class=""
           >
             <ul
-              class="c54"
+              class="c55"
               display="flex"
             >
               <li
                 class=""
               >
                 <p
-                  class="c55"
+                  class="c54"
                   color="core.nearblack"
-                  display="none"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
@@ -1285,7 +1291,7 @@ exports[`WalletView it renders correctly 1`] = `
                   From
                 </h4>
                 <p
-                  class="c56"
+                  class="c48"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
@@ -1295,40 +1301,49 @@ exports[`WalletView it renders correctly 1`] = `
                 </p>
               </li>
               <li
-                class="c48"
+                class="c49"
                 display="flex"
                 width="9"
               >
                 <p
-                  class="c49"
+                  class="c50"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
           </li>
         </ul>
         <ul
-          class="c50"
+          class="c51"
           display="flex"
         >
           <li
             class=""
           >
             <ul
-              class="c51"
+              class="c52"
               display="flex"
             >
               <li
-                class="c52"
+                class="c53"
                 display="flex"
               >
                 <p
-                  class="c53"
+                  class="c54"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -1343,14 +1358,14 @@ exports[`WalletView it renders correctly 1`] = `
             class=""
           >
             <ul
-              class="c54"
+              class="c55"
               display="flex"
             >
               <li
                 class=""
               >
                 <p
-                  class="c53"
+                  class="c54"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -1431,7 +1446,7 @@ exports[`WalletView it renders correctly 1`] = `
                   From
                 </h4>
                 <p
-                  class="c56"
+                  class="c48"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
@@ -1441,40 +1456,49 @@ exports[`WalletView it renders correctly 1`] = `
                 </p>
               </li>
               <li
-                class="c48"
+                class="c49"
                 display="flex"
                 width="9"
               >
                 <p
-                  class="c49"
+                  class="c50"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
           </li>
         </ul>
         <ul
-          class="c50"
+          class="c51"
           display="flex"
         >
           <li
             class=""
           >
             <ul
-              class="c51"
+              class="c52"
               display="flex"
             >
               <li
-                class="c52"
+                class="c53"
                 display="flex"
               >
                 <p
-                  class="c53"
+                  class="c54"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -1489,14 +1513,14 @@ exports[`WalletView it renders correctly 1`] = `
             class=""
           >
             <ul
-              class="c54"
+              class="c55"
               display="flex"
             >
               <li
                 class=""
               >
                 <p
-                  class="c53"
+                  class="c54"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -1577,7 +1601,7 @@ exports[`WalletView it renders correctly 1`] = `
                   From
                 </h4>
                 <p
-                  class="c56"
+                  class="c48"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
@@ -1587,40 +1611,49 @@ exports[`WalletView it renders correctly 1`] = `
                 </p>
               </li>
               <li
-                class="c48"
+                class="c49"
                 display="flex"
                 width="9"
               >
                 <p
-                  class="c49"
+                  class="c50"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
           </li>
         </ul>
         <ul
-          class="c50"
+          class="c51"
           display="flex"
         >
           <li
             class=""
           >
             <ul
-              class="c51"
+              class="c52"
               display="flex"
             >
               <li
-                class="c52"
+                class="c53"
                 display="flex"
               >
                 <p
-                  class="c53"
+                  class="c54"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -1635,14 +1668,14 @@ exports[`WalletView it renders correctly 1`] = `
             class=""
           >
             <ul
-              class="c54"
+              class="c55"
               display="flex"
             >
               <li
                 class=""
               >
                 <p
-                  class="c53"
+                  class="c54"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -1723,7 +1756,7 @@ exports[`WalletView it renders correctly 1`] = `
                   From
                 </h4>
                 <p
-                  class="c56"
+                  class="c48"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
@@ -1733,40 +1766,49 @@ exports[`WalletView it renders correctly 1`] = `
                 </p>
               </li>
               <li
-                class="c48"
+                class="c49"
                 display="flex"
                 width="9"
               >
                 <p
-                  class="c49"
+                  class="c50"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
           </li>
         </ul>
         <ul
-          class="c50"
+          class="c51"
           display="flex"
         >
           <li
             class=""
           >
             <ul
-              class="c51"
+              class="c52"
               display="flex"
             >
               <li
-                class="c52"
+                class="c53"
                 display="flex"
               >
                 <p
-                  class="c53"
+                  class="c54"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -1781,14 +1823,14 @@ exports[`WalletView it renders correctly 1`] = `
             class=""
           >
             <ul
-              class="c54"
+              class="c55"
               display="flex"
             >
               <li
                 class=""
               >
                 <p
-                  class="c53"
+                  class="c54"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -1869,7 +1911,7 @@ exports[`WalletView it renders correctly 1`] = `
                   From
                 </h4>
                 <p
-                  class="c56"
+                  class="c48"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
@@ -1879,40 +1921,49 @@ exports[`WalletView it renders correctly 1`] = `
                 </p>
               </li>
               <li
-                class="c48"
+                class="c49"
                 display="flex"
                 width="9"
               >
                 <p
-                  class="c49"
+                  class="c50"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
           </li>
         </ul>
         <ul
-          class="c50"
+          class="c51"
           display="flex"
         >
           <li
             class=""
           >
             <ul
-              class="c51"
+              class="c52"
               display="flex"
             >
               <li
-                class="c52"
+                class="c53"
                 display="flex"
               >
                 <p
-                  class="c53"
+                  class="c54"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -1927,155 +1978,15 @@ exports[`WalletView it renders correctly 1`] = `
             class=""
           >
             <ul
-              class="c54"
+              class="c55"
               display="flex"
             >
               <li
                 class=""
               >
                 <p
-                  class="c53"
+                  class="c54"
                   color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  FIL
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="c39"
-      >
-        <ul
-          class="c40"
-        >
-          <li
-            class="c41"
-            display="flex"
-          >
-            <ul
-              class="c42"
-              display="flex"
-            >
-              <li
-                class="c43"
-              >
-                <svg
-                  class="c44"
-                  fill="none"
-                  height="34"
-                  viewBox="0 0 34 34"
-                  width="34"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    fill="transparent"
-                    height="32"
-                    rx="16"
-                    transform="rotate(-180 33 33)"
-                    width="32"
-                    x="33"
-                    y="33"
-                  />
-                  <path
-                    d="M17.5657 10.4343C17.2533 10.1219 16.7467 10.1219 16.4343 10.4343L11.3431 15.5255C11.0307 15.8379 11.0307 16.3444 11.3431 16.6569C11.6556 16.9693 12.1621 16.9693 12.4745 16.6569L17 12.1314L21.5255 16.6569C21.8379 16.9693 22.3444 16.9693 22.6569 16.6569C22.9693 16.3444 22.9693 15.8379 22.6569 15.5255L17.5657 10.4343ZM17.8 23L17.8 11L16.2 11L16.2 23L17.8 23Z"
-                    fill="#262626"
-                  />
-                  <rect
-                    height="32"
-                    rx="16"
-                    stroke="#262626"
-                    stroke-width="1.4"
-                    transform="rotate(-180 33 33)"
-                    width="32"
-                    x="33"
-                    y="33"
-                  />
-                </svg>
-              </li>
-            </ul>
-            <ul
-              class="c45"
-              display="flex"
-            >
-              <li
-                class="c46"
-                overflow="hidden"
-                width="9"
-              >
-                <h4
-                  class="c47"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Unknown msig method
-                </h4>
-              </li>
-              <li
-                class="c48"
-                display="flex"
-                width="9"
-              >
-                <p
-                  class="c49"
-                  color="core.darkgray"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Jan 12, 2020 - 2:30:30
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul
-          class="c50"
-          display="flex"
-        >
-          <li
-            class=""
-          >
-            <ul
-              class="c51"
-              display="flex"
-            >
-              <li
-                class="c52"
-                display="flex"
-              >
-                <p
-                  class="c53"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Unknown multisig method
-                </p>
-              </li>
-            </ul>
-          </li>
-          <li
-            class=""
-          >
-            <ul
-              class="c54"
-              display="flex"
-            >
-              <li
-                class=""
-              >
-                <p
-                  class="c55"
-                  color="core.nearblack"
-                  display="none"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
@@ -2155,7 +2066,7 @@ exports[`WalletView it renders correctly 1`] = `
                   From
                 </h4>
                 <p
-                  class="c56"
+                  class="c48"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
@@ -2165,40 +2076,204 @@ exports[`WalletView it renders correctly 1`] = `
                 </p>
               </li>
               <li
-                class="c48"
+                class="c49"
                 display="flex"
                 width="9"
               >
                 <p
-                  class="c49"
+                  class="c50"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
           </li>
         </ul>
         <ul
-          class="c50"
+          class="c51"
           display="flex"
         >
           <li
             class=""
           >
             <ul
-              class="c51"
+              class="c52"
               display="flex"
             >
               <li
-                class="c52"
+                class="c53"
                 display="flex"
               >
                 <p
-                  class="c53"
+                  class="c54"
+                  color="core.nearblack"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  0
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li
+            class=""
+          >
+            <ul
+              class="c55"
+              display="flex"
+            >
+              <li
+                class=""
+              >
+                <p
+                  class="c54"
+                  color="core.nearblack"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  FIL
+                </p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="c39"
+      >
+        <ul
+          class="c40"
+        >
+          <li
+            class="c41"
+            display="flex"
+          >
+            <ul
+              class="c42"
+              display="flex"
+            >
+              <li
+                class="c43"
+              >
+                <svg
+                  class="c44"
+                  fill="none"
+                  height="34"
+                  viewBox="0 0 34 34"
+                  width="34"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    fill="#5E26FF"
+                    height="32"
+                    rx="16"
+                    width="32"
+                    x="1"
+                    y="1"
+                  />
+                  <path
+                    d="M16.4343 23.5657C16.7467 23.8781 17.2533 23.8781 17.5657 23.5657L22.6569 18.4745C22.9693 18.1621 22.9693 17.6556 22.6569 17.3431C22.3444 17.0307 21.8379 17.0307 21.5255 17.3431L17 21.8686L12.4745 17.3431C12.1621 17.0307 11.6556 17.0307 11.3431 17.3431C11.0307 17.6556 11.0307 18.1621 11.3431 18.4745L16.4343 23.5657ZM16.2 11L16.2 23L17.8 23L17.8 11L16.2 11Z"
+                    fill="#E8ECF7"
+                  />
+                  <rect
+                    height="32"
+                    rx="16"
+                    stroke="#5E26FF"
+                    stroke-width="1.4"
+                    width="32"
+                    x="1"
+                    y="1"
+                  />
+                </svg>
+              </li>
+            </ul>
+            <ul
+              class="c45"
+              display="flex"
+            >
+              <li
+                class="c46"
+                overflow="hidden"
+                width="9"
+              >
+                <h4
+                  class="c47"
+                  color="core.nearblack"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  From
+                </h4>
+                <p
+                  class="c48"
+                  color="core.nearblack"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="3"
+                  font-weight="400"
+                >
+                  t1kh7x ... nf45jq
+                </p>
+              </li>
+              <li
+                class="c49"
+                display="flex"
+                width="9"
+              >
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
+                </p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul
+          class="c51"
+          display="flex"
+        >
+          <li
+            class=""
+          >
+            <ul
+              class="c52"
+              display="flex"
+            >
+              <li
+                class="c53"
+                display="flex"
+              >
+                <p
+                  class="c54"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -2213,14 +2288,14 @@ exports[`WalletView it renders correctly 1`] = `
             class=""
           >
             <ul
-              class="c54"
+              class="c55"
               display="flex"
             >
               <li
                 class=""
               >
                 <p
-                  class="c53"
+                  class="c54"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -2301,7 +2376,7 @@ exports[`WalletView it renders correctly 1`] = `
                   From
                 </h4>
                 <p
-                  class="c56"
+                  class="c48"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
@@ -2311,40 +2386,49 @@ exports[`WalletView it renders correctly 1`] = `
                 </p>
               </li>
               <li
-                class="c48"
+                class="c49"
                 display="flex"
                 width="9"
               >
                 <p
-                  class="c49"
+                  class="c50"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
           </li>
         </ul>
         <ul
-          class="c50"
+          class="c51"
           display="flex"
         >
           <li
             class=""
           >
             <ul
-              class="c51"
+              class="c52"
               display="flex"
             >
               <li
-                class="c52"
+                class="c53"
                 display="flex"
               >
                 <p
-                  class="c53"
+                  class="c54"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -2359,14 +2443,14 @@ exports[`WalletView it renders correctly 1`] = `
             class=""
           >
             <ul
-              class="c54"
+              class="c55"
               display="flex"
             >
               <li
                 class=""
               >
                 <p
-                  class="c53"
+                  class="c54"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -2447,7 +2531,7 @@ exports[`WalletView it renders correctly 1`] = `
                   From
                 </h4>
                 <p
-                  class="c56"
+                  class="c48"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
@@ -2457,40 +2541,49 @@ exports[`WalletView it renders correctly 1`] = `
                 </p>
               </li>
               <li
-                class="c48"
+                class="c49"
                 display="flex"
                 width="9"
               >
                 <p
-                  class="c49"
+                  class="c50"
                   color="core.darkgray"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
                 >
-                  Jan 12, 2020 - 2:30:30
+                  2:30:30
+                </p>
+                <p
+                  class="c50"
+                  color="core.darkgray"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Jan 12, 2020
                 </p>
               </li>
             </ul>
           </li>
         </ul>
         <ul
-          class="c50"
+          class="c51"
           display="flex"
         >
           <li
             class=""
           >
             <ul
-              class="c51"
+              class="c52"
               display="flex"
             >
               <li
-                class="c52"
+                class="c53"
                 display="flex"
               >
                 <p
-                  class="c53"
+                  class="c54"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -2505,14 +2598,14 @@ exports[`WalletView it renders correctly 1`] = `
             class=""
           >
             <ul
-              class="c54"
+              class="c55"
               display="flex"
             >
               <li
                 class=""
               >
                 <p
-                  class="c53"
+                  class="c54"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -2526,10 +2619,10 @@ exports[`WalletView it renders correctly 1`] = `
         </ul>
       </div>
       <div
-        class="c57"
+        class="c56"
       >
         <p
-          class="c58"
+          class="c57"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="2"

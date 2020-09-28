@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import {
   Box,
   Card,
-  Glyph,
   BaseButton as ButtonCard,
   Title,
   Text,

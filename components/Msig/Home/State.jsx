@@ -9,7 +9,6 @@ import {
   Box,
   Button,
   Title,
-  Text,
   Label,
   Menu,
   MenuItem,
