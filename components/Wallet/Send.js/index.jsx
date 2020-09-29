@@ -410,7 +410,7 @@ const Send = ({ close }) => {
           </Box>
           <Box
             display='flex'
-            flex='1'
+            flexGrow='1'
             flexDirection='row'
             justifyContent='space-between'
             alignItems='flex-end'
