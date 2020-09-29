@@ -254,7 +254,7 @@ const Withdrawing = ({ address, balance, close }) => {
                   value={toAddress}
                   onChange={e => setToAddress(e.target.value)}
                   error={toAddressError}
-                  disabled={step === 2}
+                  disabled={step >= 2}
                   onFocus={() => {
                     if (toAddressError) setToAddressError('')
                   }}
