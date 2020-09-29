@@ -255,7 +255,7 @@ export default () => {
                 p={4}
               >
                 <Title fontSize={5} color='core.white'>
-                  For Filecoin SAFT Investors
+                  For Filecoin SAFT holders
                 </Title>
                 <Title fontSize={5} color='core.lightgray'>
                   Use your Ledger device to setup and manage your Filecoin SAFT.

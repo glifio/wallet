@@ -31,6 +31,7 @@ const MessageDetailCard = styled(Card).attrs(() => ({
   flex-direction: column;
   justify-content: flex-start;
   width: auto;
+  height: max-content;
   background-color: ${props => props.theme.colors.background.screen};
 `
 const TransactionFeeDisplay = styled(Input.Text)`
@@ -155,7 +156,7 @@ const MessageDetail = ({ address, close, message }) => {
           justifyContent='space-between'
           alignItems='flex-end'
           flexGrow='1'
-          mt={6}
+          mt={7}
         >
           <Label color='core.silver' textAlign='left' m={1}>
             Message Hash

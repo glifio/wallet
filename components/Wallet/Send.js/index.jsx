@@ -25,7 +25,7 @@ import HeaderText from './HeaderText'
 import ErrorCard from './ErrorCard'
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
-import { LEDGER } from '../../../constants'
+import { LEDGER, SEND } from '../../../constants'
 import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfigError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
@@ -126,6 +126,7 @@ const Send = ({ close }) => {
         messageObj.Value,
         'attofil'
       ).toAttoFil()
+      messageObj.method = SEND
       return messageObj
     }
   }
@@ -410,7 +411,7 @@ const Send = ({ close }) => {
           </Box>
           <Box
             display='flex'
-            flex='1'
+            flexGrow='1'
             flexDirection='row'
             justifyContent='space-between'
             alignItems='flex-end'

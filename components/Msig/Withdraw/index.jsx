@@ -18,7 +18,8 @@ import {
   IconLedger,
   Num,
   Title,
-  Form
+  Form,
+  Card
 } from '../../Shared'
 import {
   ADDRESS_PROPTYPE,
@@ -144,6 +145,14 @@ const Withdrawing = ({ address, balance, close }) => {
           setUncaughtError(
             `${wallet.address} is not a signer of the multisig wallet ${address}.`
           )
+        } else if (
+          err.message
+            .toLowerCase()
+            .includes('data is invalid : unexpected method')
+        ) {
+          setUncaughtError(
+            'Please make sure expert mode is enabled on your Ledger Filecoin app.'
+          )
         } else {
           reportError(20, false, err, err.message, err.stack)
           setUncaughtError(err.message || err)
@@ -158,7 +167,7 @@ const Withdrawing = ({ address, balance, close }) => {
   }
 
   const isSubmitBtnDisabled = () => {
-    if (uncaughtError) return false
+    if (uncaughtError) return true
     if (attemptingTx) return true
     if (step === 1 && !toAddress) return true
     if (step === 2 && !isValidAmount(value, balance, valueError)) return true
@@ -216,13 +225,29 @@ const Withdrawing = ({ address, balance, close }) => {
             {!attemptingTx &&
               !hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
                 <>
-                  <StepHeader
-                    title='Withdrawing Filecoin'
-                    currentStep={step}
-                    totalSteps={4}
-                    glyphAcronym='Wd'
-                  />
-                  <WithdrawHeaderText step={step} customizingGas={false} />
+                  <Card
+                    display='flex'
+                    flexDirection='column'
+                    justifyContent='space-between'
+                    border='none'
+                    width='auto'
+                    my={2}
+                    backgroundColor='blue.muted700'
+                  >
+                    <StepHeader
+                      title='Withdrawing Filecoin'
+                      currentStep={step}
+                      totalSteps={4}
+                      glyphAcronym='Wd'
+                    />
+                    <Box mt={6} mb={4}>
+                      <WithdrawHeaderText
+                        my={0}
+                        step={step}
+                        customizingGas={false}
+                      />
+                    </Box>
+                  </Card>
                 </>
               )}
             <Box boxShadow={2} borderRadius={4}>
@@ -237,7 +262,7 @@ const Withdrawing = ({ address, balance, close }) => {
                   value={toAddress}
                   onChange={e => setToAddress(e.target.value)}
                   error={toAddressError}
-                  disabled={step === 2}
+                  disabled={step >= 2}
                   onFocus={() => {
                     if (toAddressError) setToAddressError('')
                   }}
@@ -265,20 +290,23 @@ const Withdrawing = ({ address, balance, close }) => {
                     display='flex'
                     flexDirection='row'
                     justifyContent='space-between'
+                    alignItems='center'
                     width='100%'
                     p={3}
                     border={0}
                     bg='background.screen'
                   >
-                    <Text margin={0}>Transaction Fee</Text>
-                    <Box display='flex' alignItems='center'>
-                      <Text margin={0} color='core.darkgray'>
-                        Paid via
-                      </Text>
-                      <IconLedger height='32px' />{' '}
-                      <Text margin={0} color='core.darkgray'>
-                        {makeFriendlyBalance(wallet.balance, 2, true)} FIL
-                      </Text>
+                    <Box display='flex' flexDirection='column'>
+                      <Text margin={0}>Transaction Fee</Text>
+                      <Box display='flex' alignItems='center'>
+                        <Text margin={0} color='core.darkgray'>
+                          Paid via
+                        </Text>
+                        <IconLedger height='32px' />{' '}
+                        <Text margin={0} color='core.darkgray'>
+                          {makeFriendlyBalance(wallet.balance, 2, true)} FIL
+                        </Text>
+                      </Box>
                     </Box>
                     <Text ml={2} color='core.primary'>
                       {'< 0.0001 FIL'}
@@ -331,6 +359,7 @@ const Withdrawing = ({ address, balance, close }) => {
             maxWidth={14}
             width={13}
             minWidth={12}
+            mt={4}
           >
             <Button
               title='Back'

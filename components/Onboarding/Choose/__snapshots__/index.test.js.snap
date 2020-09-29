@@ -1230,7 +1230,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
           font-size="5"
           font-weight="400"
         >
-          For Filecoin SAFT Investors
+          For Filecoin SAFT holders
         </h2>
         <h2
           class="c37"
@@ -2334,7 +2334,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
           font-size="5"
           font-weight="400"
         >
-          For Filecoin SAFT Investors
+          For Filecoin SAFT holders
         </h2>
         <h2
           class="c31"
