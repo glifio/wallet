@@ -145,6 +145,14 @@ const Withdrawing = ({ address, balance, close }) => {
           setUncaughtError(
             `${wallet.address} is not a signer of the multisig wallet ${address}.`
           )
+        } else if (
+          err.message
+            .toLowerCase()
+            .includes('data is invalid : unexpected method')
+        ) {
+          setUncaughtError(
+            'Please make sure expert mode is enabled on your Ledger Filecoin app.'
+          )
         } else {
           reportError(20, false, err, err.message, err.stack)
           setUncaughtError(err.message || err)
@@ -159,7 +167,7 @@ const Withdrawing = ({ address, balance, close }) => {
   }
 
   const isSubmitBtnDisabled = () => {
-    if (uncaughtError) return false
+    if (uncaughtError) return true
     if (attemptingTx) return true
     if (step === 1 && !toAddress) return true
     if (step === 2 && !isValidAmount(value, balance, valueError)) return true
