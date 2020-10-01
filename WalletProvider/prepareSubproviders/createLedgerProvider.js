@@ -74,7 +74,7 @@ export default rustModule => {
         })
       },
 
-      getAccounts: async (network = TESTNET, nStart = 0, nEnd = 5) => {
+      getAccounts: async (network = MAINNET, nStart = 0, nEnd = 5) => {
         throwIfBusy(ledgerBusy)
         ledgerBusy = true
         const networkCode =

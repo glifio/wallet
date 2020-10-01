@@ -777,7 +777,7 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
                     class="c30"
                     display="inline-block"
                     height="6"
-                    placeholder="t1..."
+                    placeholder="f1..."
                     value=""
                     width="100%"
                   />
@@ -1613,7 +1613,7 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
                     class="c30"
                     display="inline-block"
                     height="6"
-                    placeholder="t1..."
+                    placeholder="f1..."
                     value="t1z225tguggx4onbauimqvxz"
                     width="100%"
                   />
@@ -2764,7 +2764,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
                     disabled=""
                     display="inline-block"
                     height="6"
-                    placeholder="t1..."
+                    placeholder="f1..."
                     value="t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                     width="100%"
                   />
@@ -3962,7 +3962,7 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
                     disabled=""
                     display="inline-block"
                     height="6"
-                    placeholder="t1..."
+                    placeholder="f1..."
                     value="t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                     width="100%"
                   />
@@ -5192,7 +5192,7 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
                     disabled=""
                     display="inline-block"
                     height="6"
-                    placeholder="t1..."
+                    placeholder="f1..."
                     value="t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                     width="100%"
                   />
@@ -6507,7 +6507,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                     disabled=""
                     display="inline-block"
                     height="6"
-                    placeholder="t1..."
+                    placeholder="f1..."
                     value="t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                     width="100%"
                   />

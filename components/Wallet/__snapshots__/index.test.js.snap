@@ -3455,7 +3455,7 @@ exports[`WalletView it renders the send page when the user goes to the send scre
                       class="c32"
                       display="inline-block"
                       height="6"
-                      placeholder="t1..."
+                      placeholder="f1..."
                       value=""
                       width="100%"
                     />

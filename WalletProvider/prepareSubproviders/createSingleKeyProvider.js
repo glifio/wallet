@@ -1,11 +1,11 @@
-import { SINGLE_KEY, TESTNET } from '../../constants'
+import { MAINNET, SINGLE_KEY, TESTNET } from '../../constants'
 
 export default rustModule => {
   return privateKey => {
     // here we close over the private variables, so they aren't accessible to the outside world
     const PRIVATE_KEY = privateKey
     return {
-      getAccounts: async (network = TESTNET) => {
+      getAccounts: async (network = MAINNET) => {
         return [rustModule.keyRecover(PRIVATE_KEY, network === TESTNET).address]
       },
 
