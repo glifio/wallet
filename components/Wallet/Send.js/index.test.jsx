@@ -31,7 +31,7 @@ describe('Send Flow', () => {
             <Send close={close} />
           </Tree>
         )
-        fireEvent.change(screen.getByPlaceholderText(/t1.../), {
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
           target: { value: address },
           preventDefault: () => {}
         })
@@ -76,7 +76,7 @@ describe('Send Flow', () => {
             <Send close={close} />
           </Tree>
         )
-        fireEvent.change(screen.getByPlaceholderText(/t1.../), {
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
           target: { value: badAddress },
           preventDefault: () => {}
         })
@@ -98,7 +98,7 @@ describe('Send Flow', () => {
             <Send close={close} />
           </Tree>
         )
-        fireEvent.change(screen.getByPlaceholderText(/t1.../), {
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
           target: { value: '' },
           preventDefault: () => {}
         })
@@ -127,7 +127,7 @@ describe('Send Flow', () => {
           </Tree>
         )
 
-        fireEvent.change(screen.getByPlaceholderText(/t1.../), {
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
           target: { value: address },
           preventDefault: () => {}
         })
@@ -164,7 +164,7 @@ describe('Send Flow', () => {
             <Send close={close} />
           </Tree>
         )
-        fireEvent.change(screen.getByPlaceholderText(/t1.../), {
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
           target: { value: address },
           preventDefault: () => {}
         })
@@ -199,7 +199,7 @@ describe('Send Flow', () => {
           </Tree>
         )
 
-        fireEvent.change(screen.getByPlaceholderText(/t1.../), {
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
           target: {
             value: address
           }
@@ -247,7 +247,7 @@ describe('Send Flow', () => {
           </Tree>
         )
 
-        fireEvent.change(screen.getByPlaceholderText(/t1.../), {
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
           target: {
             value: address
           }
@@ -316,7 +316,7 @@ describe('Send Flow', () => {
             <Send close={close} />
           </Tree>
         )
-        fireEvent.change(screen.getByPlaceholderText(/t1.../), {
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
           target: { value: address },
           preventDefault: () => {}
         })
@@ -366,7 +366,7 @@ describe('Send Flow', () => {
             <Send close={close} />
           </Tree>
         )
-        fireEvent.change(screen.getByPlaceholderText(/t1.../), {
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
           target: { value: address },
           preventDefault: () => {}
         })
@@ -389,7 +389,7 @@ describe('Send Flow', () => {
             <Send close={close} />
           </Tree>
         )
-        fireEvent.change(screen.getByPlaceholderText(/t1.../), {
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
           target: { value: address },
           preventDefault: () => {}
         })
@@ -421,7 +421,7 @@ describe('Send Flow', () => {
             <Send close={close} />
           </Tree>
         )
-        fireEvent.change(screen.getByPlaceholderText(/t1.../), {
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
           target: { value: address },
           preventDefault: () => {}
         })
@@ -453,7 +453,7 @@ describe('Send Flow', () => {
             <Send close={close} />
           </Tree>
         )
-        fireEvent.change(screen.getByPlaceholderText(/t1.../), {
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
           target: { value: badAddress },
           preventDefault: () => {}
         })
@@ -475,7 +475,7 @@ describe('Send Flow', () => {
             <Send close={close} />
           </Tree>
         )
-        fireEvent.change(screen.getByPlaceholderText(/t1.../), {
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
           target: { value: address },
           preventDefault: () => {}
         })

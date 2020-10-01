@@ -1,6 +1,6 @@
 {
   "name": "filecoin-web-wallet",
-  "version": "1.4.1",
+  "version": "2.0.0",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -12,9 +12,9 @@
   "dependencies": {
     "@ledgerhq/hw-transport-webusb": "5.13.1",
     "@openworklabs/filecoin-address": "0.0.11",
-    "@openworklabs/filecoin-message": "1.0.0-beta.3",
+    "@openworklabs/filecoin-message": "1.0.0-beta.4",
     "@openworklabs/filecoin-number": "0.1.5",
-    "@openworklabs/filecoin-wallet-provider": "1.0.0-beta.6",
+    "@openworklabs/filecoin-wallet-provider": "1.0.0-beta.7",
     "@openworklabs/lotus-jsonrpc-engine": "0.1.3",
     "@zondax/filecoin-signing-tools": "^0.9.0",
     "@zondax/ledger-filecoin": "0.11.0",

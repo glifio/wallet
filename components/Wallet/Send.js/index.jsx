@@ -127,6 +127,7 @@ const Send = ({ close }) => {
         'attofil'
       ).toAttoFil()
       messageObj.method = SEND
+      messageObj.params = {}
       return messageObj
     }
   }
@@ -324,7 +325,7 @@ const Send = ({ close }) => {
                   onChange={e => setToAddress(e.target.value)}
                   error={toAddressError}
                   disabled={step > 1}
-                  placeholder='t1...'
+                  placeholder='f1...'
                   onFocus={() => {
                     if (toAddressError) setToAddressError('')
                   }}

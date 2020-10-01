@@ -3,8 +3,7 @@ import {
   LEDGER,
   MAINNET,
   MAINNET_PATH_CODE,
-  TESTNET_PATH_CODE,
-  TESTNET
+  TESTNET_PATH_CODE
 } from '../constants'
 import {
   checkLedgerConfiguration,
@@ -16,7 +15,7 @@ import createPath from '../utils/createPath'
 // a helper function for getting the default wallet associated with the wallet provider
 const fetchDefaultWallet = async (
   dispatch,
-  network = TESTNET,
+  network = MAINNET,
   walletType,
   walletProvider,
   walletSubProviders
