@@ -3,7 +3,7 @@ import { FilecoinNumber } from '@openworklabs/filecoin-number'
 import updateArrayItem from '../utils/updateArrayItem'
 import sortAndRemoveWalletDups from '../utils/sortAndRemoveWalletDups'
 import removeDupMessages from '../utils/removeDupMessages'
-import { TESTNET } from '../constants'
+import { MAINNET } from '../constants'
 
 export const initialMessagesState = {
   loading: false,
@@ -20,7 +20,7 @@ export const initialState = {
   selectedWalletIdx: -1,
   error: '',
   messages: initialMessagesState,
-  network: TESTNET,
+  network: MAINNET,
   investor: '',
   msigActorAddress: ''
 }

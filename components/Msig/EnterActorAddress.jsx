@@ -49,7 +49,7 @@ const EnterActorAddress = () => {
           value={actorIDAdress}
           onChange={e => setActorIDAdress(e.target.value)}
           label='ID'
-          placeholder='t01'
+          placeholder='f01'
           error={err}
         />
       </OnboardCard>

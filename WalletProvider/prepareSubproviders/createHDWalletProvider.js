@@ -3,7 +3,8 @@ import {
   HD_WALLET,
   TESTNET,
   TESTNET_PATH_CODE,
-  MAINNET_PATH_CODE
+  MAINNET_PATH_CODE,
+  MAINNET
 } from '../../constants'
 
 export default rustModule => {
@@ -11,7 +12,7 @@ export default rustModule => {
     // here we close over the private variables, so they aren't accessible to the outside world
     const MNEMONIC = mnemonic
     return {
-      getAccounts: async (network = TESTNET, nStart = 0, nEnd = 5) => {
+      getAccounts: async (network = MAINNET, nStart = 0, nEnd = 5) => {
         const accounts = []
         for (let i = nStart; i < nEnd; i += 1) {
           const networkCode =
