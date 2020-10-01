@@ -1,6 +1,6 @@
 import React, { forwardRef, useState } from 'react'
 import styled from 'styled-components'
-import string from 'prop-types'
+import { string } from 'prop-types'
 import Box from '../Box'
 import BaseButton from '../Button/BaseButton'
 import { IconCopyAccountAddress } from '../Icons'
