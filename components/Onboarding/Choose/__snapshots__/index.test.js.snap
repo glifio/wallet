@@ -932,143 +932,65 @@ exports[`Choosing a wallet it renders all testnet wallet options when in expert 
             </p>
           </div>
         </div>
-      </div>
-      <div
-        class="c20"
-      >
         <div
-          class="c21 c15 "
-          display="flex"
-          height="7"
-          overflow="hidden"
-          role="button"
-          width="300"
+          class="c20"
         >
           <div
-            class="c16"
+            class="c21 c15 "
             display="flex"
+            height="7"
+            overflow="hidden"
+            role="button"
+            width="300"
           >
             <div
-              class="c17"
-              color=""
+              class="c16"
               display="flex"
-              size="6"
             >
-              <h3
-                class="c22"
+              <div
+                class="c17"
+                color=""
+                display="flex"
+                size="6"
               >
-                Ta
-              </h3>
+                <h3
+                  class="c22"
+                >
+                  Ta
+                </h3>
+              </div>
+              <p
+                class="c19"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Test Accounts
+              </p>
             </div>
-            <p
-              class="c19"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Test Accounts
-            </p>
           </div>
         </div>
-      </div>
-      <div
-        class="c23"
-      >
         <div
-          class="c24"
-          display="flex"
+          class="c23"
         >
           <div
-            class="c25"
+            class="c24"
             display="flex"
           >
             <div
-              class="c26"
-              color="#000"
-              display="flex"
-              size="6"
-            >
-              <h3
-                class="c22"
-              >
-                Em
-              </h3>
-            </div>
-            <p
-              class="c19"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Expert Mode
-            </p>
-          </div>
-          <div
-            class="c27 c15"
-            display="flex"
-            height="7"
-            overflow="hidden"
-            role="button"
-            width="300"
-          >
-            <div
-              class="c16"
+              class="c25"
               display="flex"
             >
               <div
-                class="c17"
-                color=""
-                display="flex"
-                size="6"
-              >
-                <svg
-                  class="c18"
-                  fill="none"
-                  height="40px"
-                  viewBox="0 0 24 24"
-                  width="40px"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M10.0934 4H17.4067H17.4148C18.8148 4 19.9676 5.15197 19.9676 6.55279V13.866H10.0934V4ZM6.55349 4.00065H7.81386V7.81378H4.00065V6.55344C4.00065 5.15342 5.15345 4.00065 6.55349 4.00065ZM4 10.0934H7.81321V13.9066H4V10.0934ZM17.4479 19.9679H16.1875V16.1869H20.0007V17.4071V17.4151C20.0007 18.8151 18.8487 19.9679 17.4479 19.9679ZM10.0938 16.1869H13.907V20H10.0938V16.1869ZM4 17.4472V16.1869H7.81321V20H6.55284C5.15279 20 4 18.8472 4 17.4472Z"
-                    fill="#333333"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </div>
-              <p
-                class="c19"
-                font-family="RT-Alias-Grotesk"
-                font-size="2"
-                font-weight="400"
-              >
-                Use Ledger Device with testnet accounts
-              </p>
-            </div>
-          </div>
-          <div
-            class="c27 c15"
-            display="flex"
-            height="7"
-            overflow="hidden"
-            role="button"
-            width="300"
-          >
-            <div
-              class="c16"
-              display="flex"
-            >
-              <div
-                class="c17"
-                color=""
+                class="c26"
+                color="#000"
                 display="flex"
                 size="6"
               >
                 <h3
                   class="c22"
                 >
-                  Sp
+                  Em
                 </h3>
               </div>
               <p
@@ -1077,53 +999,131 @@ exports[`Choosing a wallet it renders all testnet wallet options when in expert 
                 font-size="2"
                 font-weight="400"
               >
-                Import Seed Phrase with testnet accounts
+                Expert Mode
               </p>
             </div>
-          </div>
-          <div
-            class="c27 c15"
-            display="flex"
-            height="7"
-            overflow="hidden"
-            role="button"
-            width="300"
-          >
             <div
-              class="c16"
+              class="c27 c15"
               display="flex"
+              height="7"
+              overflow="hidden"
+              role="button"
+              width="300"
             >
               <div
-                class="c17"
-                color=""
+                class="c16"
                 display="flex"
-                size="6"
               >
-                <h3
-                  class="c22"
+                <div
+                  class="c17"
+                  color=""
+                  display="flex"
+                  size="6"
                 >
-                  Pk
-                </h3>
+                  <svg
+                    class="c18"
+                    fill="none"
+                    height="40px"
+                    viewBox="0 0 24 24"
+                    width="40px"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M10.0934 4H17.4067H17.4148C18.8148 4 19.9676 5.15197 19.9676 6.55279V13.866H10.0934V4ZM6.55349 4.00065H7.81386V7.81378H4.00065V6.55344C4.00065 5.15342 5.15345 4.00065 6.55349 4.00065ZM4 10.0934H7.81321V13.9066H4V10.0934ZM17.4479 19.9679H16.1875V16.1869H20.0007V17.4071V17.4151C20.0007 18.8151 18.8487 19.9679 17.4479 19.9679ZM10.0938 16.1869H13.907V20H10.0938V16.1869ZM4 17.4472V16.1869H7.81321V20H6.55284C5.15279 20 4 18.8472 4 17.4472Z"
+                      fill="#333333"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <p
+                  class="c19"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Use Ledger Device with testnet accounts
+                </p>
               </div>
-              <p
-                class="c19"
-                font-family="RT-Alias-Grotesk"
-                font-size="2"
-                font-weight="400"
-              >
-                Import Private Key with testnet account
-              </p>
             </div>
+            <div
+              class="c27 c15"
+              display="flex"
+              height="7"
+              overflow="hidden"
+              role="button"
+              width="300"
+            >
+              <div
+                class="c16"
+                display="flex"
+              >
+                <div
+                  class="c17"
+                  color=""
+                  display="flex"
+                  size="6"
+                >
+                  <h3
+                    class="c22"
+                  >
+                    Sp
+                  </h3>
+                </div>
+                <p
+                  class="c19"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Import Seed Phrase with testnet accounts
+                </p>
+              </div>
+            </div>
+            <div
+              class="c27 c15"
+              display="flex"
+              height="7"
+              overflow="hidden"
+              role="button"
+              width="300"
+            >
+              <div
+                class="c16"
+                display="flex"
+              >
+                <div
+                  class="c17"
+                  color=""
+                  display="flex"
+                  size="6"
+                >
+                  <h3
+                    class="c22"
+                  >
+                    Pk
+                  </h3>
+                </div>
+                <p
+                  class="c19"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Import Private Key with testnet account
+                </p>
+              </div>
+            </div>
+            <button
+              class="c28"
+              color="core.black"
+              font-size="3"
+              height="6"
+              type="button"
+            >
+              Close
+            </button>
           </div>
-          <button
-            class="c28"
-            color="core.black"
-            font-size="3"
-            height="6"
-            type="button"
-          >
-            Close
-          </button>
         </div>
       </div>
     </div>
@@ -2205,57 +2205,91 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
             </p>
           </div>
         </div>
-      </div>
-      <div
-        class="c20"
-      >
         <div
-          class="c21"
-          display="flex"
+          class="c20"
         >
           <div
-            class="c22"
+            class="c21"
             display="flex"
           >
             <div
-              class="c23"
-              color="#000"
+              class="c22"
               display="flex"
-              size="6"
-            >
-              <h3
-                class="c24"
-              >
-                Ta
-              </h3>
-            </div>
-            <p
-              class="c19"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Test Accounts
-            </p>
-          </div>
-          <div
-            class="c25 c26"
-            display="flex"
-            height="7"
-            overflow="hidden"
-            role="button"
-            width="300"
-          >
-            <div
-              class="c20"
             >
               <div
-                class="c27"
+                class="c23"
+                color="#000"
+                display="flex"
+                size="6"
+              >
+                <h3
+                  class="c24"
+                >
+                  Ta
+                </h3>
+              </div>
+              <p
+                class="c19"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Test Accounts
+              </p>
+            </div>
+            <div
+              class="c25 c26"
+              display="flex"
+              height="7"
+              overflow="hidden"
+              role="button"
+              width="300"
+            >
+              <div
+                class="c20"
+              >
+                <div
+                  class="c27"
+                  display="flex"
+                >
+                  <div
+                    class="c23"
+                    color="#000"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c24"
+                    >
+                      Sp
+                    </h3>
+                  </div>
+                  <p
+                    class="c19"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    Generate Seed Phrase
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="c25 c15"
+              display="flex"
+              height="7"
+              overflow="hidden"
+              role="button"
+              width="300"
+            >
+              <div
+                class="c16"
                 display="flex"
               >
                 <div
-                  class="c23"
-                  color="#000"
+                  class="c17"
+                  color=""
                   display="flex"
                   size="6"
                 >
@@ -2271,125 +2305,91 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
                   font-size="2"
                   font-weight="400"
                 >
-                  Generate Seed Phrase
+                  Import Seed Phrase
                 </p>
               </div>
             </div>
-          </div>
-          <div
-            class="c25 c15"
-            display="flex"
-            height="7"
-            overflow="hidden"
-            role="button"
-            width="300"
-          >
             <div
-              class="c16"
+              class="c25 c15"
               display="flex"
+              height="7"
+              overflow="hidden"
+              role="button"
+              width="300"
             >
               <div
-                class="c17"
-                color=""
+                class="c16"
                 display="flex"
-                size="6"
               >
-                <h3
-                  class="c24"
+                <div
+                  class="c17"
+                  color=""
+                  display="flex"
+                  size="6"
                 >
-                  Sp
-                </h3>
+                  <h3
+                    class="c24"
+                  >
+                    Pk
+                  </h3>
+                </div>
+                <p
+                  class="c19"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Import Private Key
+                </p>
               </div>
-              <p
-                class="c19"
-                font-family="RT-Alias-Grotesk"
-                font-size="2"
-                font-weight="400"
-              >
-                Import Seed Phrase
-              </p>
             </div>
-          </div>
-          <div
-            class="c25 c15"
-            display="flex"
-            height="7"
-            overflow="hidden"
-            role="button"
-            width="300"
-          >
-            <div
-              class="c16"
-              display="flex"
+            <button
+              class="c28"
+              color="core.black"
+              font-size="3"
+              height="6"
+              type="button"
             >
-              <div
-                class="c17"
-                color=""
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c24"
-                >
-                  Pk
-                </h3>
-              </div>
-              <p
-                class="c19"
-                font-family="RT-Alias-Grotesk"
-                font-size="2"
-                font-weight="400"
-              >
-                Import Private Key
-              </p>
-            </div>
+              Close
+            </button>
           </div>
-          <button
-            class="c28"
-            color="core.black"
-            font-size="3"
-            height="6"
-            type="button"
-          >
-            Close
-          </button>
         </div>
-      </div>
-      <div
-        class="c29"
-      >
         <div
-          class="c30 c15 "
-          display="flex"
-          height="7"
-          overflow="hidden"
-          role="button"
-          width="300"
+          class="c29"
         >
           <div
-            class="c16"
+            class="c30 c15 "
             display="flex"
+            height="7"
+            overflow="hidden"
+            role="button"
+            width="300"
           >
             <div
-              class="c17"
-              color=""
+              class="c16"
               display="flex"
-              size="6"
             >
-              <h3
-                class="c24"
+              <div
+                class="c17"
+                color=""
+                display="flex"
+                size="6"
               >
-                Em
-              </h3>
+                <h3
+                  class="c24"
+                >
+                  Em
+                </h3>
+              </div>
+              <p
+                class="c19"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Expert Mode
+              </p>
             </div>
-            <p
-              class="c19"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Expert Mode
-            </p>
           </div>
         </div>
       </div>
@@ -3355,80 +3355,80 @@ exports[`Choosing a wallet it renders correctly 1`] = `
             </p>
           </div>
         </div>
-      </div>
-      <div
-        class="c20"
-      >
         <div
-          class="c21 c15 "
-          display="flex"
-          height="7"
-          overflow="hidden"
-          role="button"
-          width="300"
+          class="c20"
         >
           <div
-            class="c16"
+            class="c21 c15 "
             display="flex"
+            height="7"
+            overflow="hidden"
+            role="button"
+            width="300"
           >
             <div
-              class="c17"
-              color=""
+              class="c16"
               display="flex"
-              size="6"
             >
-              <h3
-                class="c22"
+              <div
+                class="c17"
+                color=""
+                display="flex"
+                size="6"
               >
-                Ta
-              </h3>
+                <h3
+                  class="c22"
+                >
+                  Ta
+                </h3>
+              </div>
+              <p
+                class="c19"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Test Accounts
+              </p>
             </div>
-            <p
-              class="c19"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Test Accounts
-            </p>
           </div>
         </div>
-      </div>
-      <div
-        class="c23"
-      >
         <div
-          class="c21 c15 "
-          display="flex"
-          height="7"
-          overflow="hidden"
-          role="button"
-          width="300"
+          class="c23"
         >
           <div
-            class="c16"
+            class="c21 c15 "
             display="flex"
+            height="7"
+            overflow="hidden"
+            role="button"
+            width="300"
           >
             <div
-              class="c17"
-              color=""
+              class="c16"
               display="flex"
-              size="6"
             >
-              <h3
-                class="c22"
+              <div
+                class="c17"
+                color=""
+                display="flex"
+                size="6"
               >
-                Em
-              </h3>
+                <h3
+                  class="c22"
+                >
+                  Em
+                </h3>
+              </div>
+              <p
+                class="c19"
+                font-family="RT-Alias-Grotesk"
+                font-size="2"
+                font-weight="400"
+              >
+                Expert Mode
+              </p>
             </div>
-            <p
-              class="c19"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Expert Mode
-            </p>
           </div>
         </div>
       </div>

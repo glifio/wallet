@@ -4,7 +4,7 @@ import { node, string } from 'prop-types'
 import { Box, Text, Button, Glyph } from '../../Shared'
 import ImportWallet from './Import'
 
-const DevMode = styled(ImportWallet)``
+const Condensed = styled(ImportWallet)``
 
 const ExpandableBox = ({ acronym, title, children, ...props }) => {
   const [expanded, setExpanded] = useState(false)
@@ -39,7 +39,7 @@ const ExpandableBox = ({ acronym, title, children, ...props }) => {
           />
         </Box>
       ) : (
-        <DevMode
+        <Condensed
           alignSelf='center'
           justifySelf='flex-end'
           onClick={() => setExpanded(true)}
