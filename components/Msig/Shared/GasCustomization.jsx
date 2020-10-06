@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { func, string } from 'prop-types'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber } from '@glif/filecoin-number'
 import { Box, Button, Text, IconLedger, Input, StyledATag } from '../../Shared'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 import useWallet from '../../../WalletProvider/useWallet'

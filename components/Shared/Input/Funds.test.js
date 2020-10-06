@@ -1,5 +1,5 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber } from '@glif/filecoin-number'
 
 import Funds from './Funds'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'

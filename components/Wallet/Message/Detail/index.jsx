@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber } from '@glif/filecoin-number'
 import { func } from 'prop-types'
 import styled from 'styled-components'
 import dayjs from 'dayjs'

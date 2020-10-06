@@ -4,7 +4,7 @@ import UseDesktopBrowser from '../../pages/error/use-desktop-browser.jsx'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import { flushPromises } from '../../test-utils/index.js'
 
-jest.mock('@openworklabs/filecoin-wallet-provider')
+jest.mock('@glif/filecoin-wallet-provider')
 
 describe('UseDesktopBrowser', () => {
   afterEach(cleanup)

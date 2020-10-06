@@ -1,4 +1,4 @@
-import { BigNumber } from '@openworklabs/filecoin-number'
+import { BigNumber } from '@glif/filecoin-number'
 
 const makeFriendly = (bigNumber, denom) => {
   const stringifiedNumber = bigNumber.toFixed(0)

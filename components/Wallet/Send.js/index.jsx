@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import dayjs from 'dayjs'
 import { useDispatch } from 'react-redux'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
-import { validateAddressString } from '@openworklabs/filecoin-address'
-import { Message } from '@openworklabs/filecoin-message'
+import { FilecoinNumber } from '@glif/filecoin-number'
+import { validateAddressString } from '@glif/filecoin-address'
+import { Message } from '@glif/filecoin-message'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
 import {

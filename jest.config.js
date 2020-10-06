@@ -14,9 +14,9 @@ module.exports = {
       '<rootDir>/test-utils/mocks/mock-filecoin-signer-wasm.js',
     dayjs: '<rootDir>/test-utils/mocks/mock-dates.js',
     'next/router': '<rootDir>/test-utils/mocks/mock-routing.js',
-    '@openworklabs/filecoin-number':
+    '@glif/filecoin-number':
       '<rootDir>/test-utils/mocks/mock-filecoin-number.js',
-    '@openworklabs/filecoin-wallet-provider':
+    '@glif/filecoin-wallet-provider':
       '<rootDir>/test-utils/mocks/mock-wallet-provider.js',
     '@zondax/ledger-filecoin':
       '<rootDir>/test-utils/mocks/mock-ledger-filecoin.js'

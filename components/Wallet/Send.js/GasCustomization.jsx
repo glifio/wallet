@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber } from '@glif/filecoin-number'
 import { func, bool, string } from 'prop-types'
 import { Box, Label, Input, StyledATag } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'

@@ -1,6 +1,6 @@
 import React from 'react'
 import dayjs from 'dayjs'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber } from '@glif/filecoin-number'
 import { bool, string, oneOf, oneOfType, number } from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../../customPropTypes'
 import { Menu, MenuItem } from '../../Menu'

@@ -1,5 +1,5 @@
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
-import { Message } from '@openworklabs/filecoin-message'
+import { FilecoinNumber } from '@glif/filecoin-number'
+import { Message } from '@glif/filecoin-message'
 import clonedeep from 'lodash.clonedeep'
 import * as states from './states'
 import { SINGLE_KEY, MAINNET } from '../constants'

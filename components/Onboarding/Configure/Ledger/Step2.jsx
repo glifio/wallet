@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber } from '@glif/filecoin-number'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'

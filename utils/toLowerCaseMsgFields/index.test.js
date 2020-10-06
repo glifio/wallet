@@ -1,6 +1,6 @@
 import toLowerCaseMsgFields from '.'
-import { Message } from '@openworklabs/filecoin-message'
-import { BigNumber } from '@openworklabs/filecoin-number'
+import { Message } from '@glif/filecoin-message'
+import { BigNumber } from '@glif/filecoin-number'
 
 const keysAreLowercase = obj => {
   let lowercase = true

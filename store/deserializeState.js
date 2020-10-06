@@ -1,5 +1,5 @@
 import cloneDeep from 'lodash.clonedeep'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber } from '@glif/filecoin-number'
 
 export default state => {
   const newState = cloneDeep(state)

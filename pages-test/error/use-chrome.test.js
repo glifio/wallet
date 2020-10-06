@@ -3,7 +3,7 @@ import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 import UseChrome from '../../pages/error/use-chrome.jsx'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 
-jest.mock('@openworklabs/filecoin-wallet-provider')
+jest.mock('@glif/filecoin-wallet-provider')
 
 describe('UseChrome', () => {
   afterEach(cleanup)

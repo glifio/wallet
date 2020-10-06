@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber } from '@glif/filecoin-number'
 
 import { Box, Input, Text } from '../../../Shared'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../../customPropTypes'
