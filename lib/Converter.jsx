@@ -1,6 +1,6 @@
 import React, { useContext, createContext, useEffect, useState } from 'react'
 import { string, node } from 'prop-types'
-import { Converter } from '@openworklabs/filecoin-number'
+import { Converter } from '@glif/filecoin-number'
 import reportError from '../utils/reportError'
 
 export const ConverterContext = createContext({})

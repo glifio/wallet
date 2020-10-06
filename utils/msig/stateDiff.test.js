@@ -1,4 +1,4 @@
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber } from '@glif/filecoin-number'
 import stateDiff from './stateDiff'
 
 describe('stateDiff', () => {

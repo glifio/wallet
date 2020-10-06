@@ -3,7 +3,7 @@ import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 import WalletDown from '../../pages/error/wallet-down.jsx'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 
-jest.mock('@openworklabs/filecoin-wallet-provider')
+jest.mock('@glif/filecoin-wallet-provider')
 
 describe('WalletDown', () => {
   afterEach(cleanup)

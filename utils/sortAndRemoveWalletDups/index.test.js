@@ -1,4 +1,4 @@
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber } from '@glif/filecoin-number'
 import sortAndRemoveWalletDups from '.'
 import createPath from '../createPath'
 import { SINGLE_KEY } from '../../constants'

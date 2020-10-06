@@ -7,7 +7,7 @@
  */
 
 import axios from 'axios'
-import LotusRPCEngine from '@openworklabs/lotus-jsonrpc-engine'
+import LotusRPCEngine from '@glif/filecoin-rpc-client'
 
 import { FILSCOUT, FILSCAN_JSONRPC } from '../../../constants'
 import reportError from '../../../utils/reportError'

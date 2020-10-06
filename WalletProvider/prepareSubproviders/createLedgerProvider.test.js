@@ -1,4 +1,4 @@
-import { Message } from '@openworklabs/filecoin-message'
+import { Message } from '@glif/filecoin-message'
 import mockRustModule from '@zondax/filecoin-signing-tools'
 
 import {

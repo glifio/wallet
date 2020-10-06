@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { number } from 'prop-types'
 import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
-import Filecoin from '@openworklabs/filecoin-wallet-provider'
+import Filecoin from '@glif/filecoin-wallet-provider'
 import {
   Box,
   Button,

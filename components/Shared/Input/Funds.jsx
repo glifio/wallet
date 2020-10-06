@@ -1,6 +1,6 @@
 import React, { forwardRef, useRef, useState } from 'react'
 import { func, string, bool, oneOfType } from 'prop-types'
-import { FilecoinNumber, BigNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 
 import Box from '../Box'
 import { RawNumberInput, DenomTag } from './Number'

@@ -1,6 +1,6 @@
 import { shape, string, oneOfType, number, oneOf, object } from 'prop-types'
-import { validateAddressString } from '@openworklabs/filecoin-address'
-import { validatePath } from '@openworklabs/filecoin-wallet-provider'
+import { validateAddressString } from '@glif/filecoin-address'
+import { validatePath } from '@glif/filecoin-wallet-provider'
 import { validateMnemonic } from 'bip39'
 import {
   SINGLE_KEY,

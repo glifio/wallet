@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useReducer } from 'react'
 import { Provider } from 'react-redux'
-import { Converter } from '@openworklabs/filecoin-number'
+import { Converter } from '@glif/filecoin-number'
 
 import { NetworkCheck } from '../../lib/check-network'
 import BalancePoller from '../../lib/update-balance'

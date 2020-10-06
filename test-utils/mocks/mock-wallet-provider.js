@@ -1,5 +1,5 @@
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
-import { Message } from '@openworklabs/filecoin-message'
+import { FilecoinNumber } from '@glif/filecoin-number'
+import { Message } from '@glif/filecoin-message'
 import { TESTNET } from '../../constants'
 
 const mockGetAccounts = jest

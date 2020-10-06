@@ -1,11 +1,11 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber } from '@glif/filecoin-number'
 
 import Send from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import { flushPromises } from '../../../test-utils'
 
-jest.mock('@openworklabs/filecoin-wallet-provider')
+jest.mock('@glif/filecoin-wallet-provider')
 
 describe('Send Flow', () => {
   let close = () => {}

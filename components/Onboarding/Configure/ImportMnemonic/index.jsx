@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Filecoin from '@openworklabs/filecoin-wallet-provider'
+import Filecoin from '@glif/filecoin-wallet-provider'
 import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
 import { validateMnemonic } from 'bip39'
