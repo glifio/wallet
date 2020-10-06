@@ -8,7 +8,8 @@ import {
   Title,
   Header,
   Button,
-  Warning
+  Warning,
+  NetworkSwitcherGlyph
 } from '../../Shared'
 import HeaderGlyph from '../../Shared/Glyph/HeaderGlyph'
 import ImportWallet from './Import'
@@ -144,7 +145,6 @@ export default () => {
                 fill='#000'
                 imageOpacity='0.7'
               />
-
               <Box
                 display='flex'
                 flexDirection='column'
@@ -160,6 +160,7 @@ export default () => {
                   Your private and sensitive information never leave the
                   browser, and are erased upon page refresh
                 </Title>
+                <NetworkSwitcherGlyph />
                 <ImportWallet
                   onClick={() => onChoose(LEDGER)}
                   Icon={IconLedger}
@@ -170,6 +171,8 @@ export default () => {
                   flexDirection='column'
                   my={4}
                 />
+              </Box>
+              <Box>
                 <ExpandableBox acronym='Ta' title='Test Accounts'>
                   <CreateWallet
                     onClick={() => onChoose(CREATE_MNEMONIC)}
@@ -188,108 +191,84 @@ export default () => {
                     m={2}
                   />
                 </ExpandableBox>
-                <ExpandableBox acronym='Em' title='Expert Mode' mt={[2, 4, 4]}>
-                  <ImportWallet
-                    onClick={() => onChoose(LEDGER)}
-                    Icon={IconLedger}
-                    title='Use Ledger Device with testnet accounts'
-                    tag='Most Secure'
-                    display='flex'
-                    justifyContent='space-between'
-                    flexDirection='column'
-                    m={2}
-                  />
-                  <ImportWallet
-                    onClick={() => onChooseTAccountOption(IMPORT_MNEMONIC)}
-                    glyphAcronym='Sp'
-                    title='Import Seed Phrase with testnet accounts'
-                    m={2}
-                  />
-                  <ImportWallet
-                    onClick={() => onChooseTAccountOption(IMPORT_SINGLE_KEY)}
-                    glyphAcronym='Pk'
-                    title='Import Private Key with testnet account'
-                    m={2}
-                  />
-                </ExpandableBox>
               </Box>
             </Box>
-          </Box>
-          <Box
-            position='relative'
-            display='flex'
-            maxWidth={13}
-            width={['100%', '100%', '50%']}
-            flexDirection='column'
-            alignItems='flex-start'
-            alignContent='center'
-            backgroundColor='#0a0a0a'
-            borderRadius={3}
-            border={1}
-            boxShadow={2}
-          >
-            <HeaderGlyph
-              alt='Source: https://www.nontemporary.com/post/190437968500'
-              text='Vault'
-              imageUrl='/imgvault.png'
-              color='core.white'
-              fill='#fff'
-              width='100%'
-              imageOpacity='0.9'
-            />
-
             <Box
+              position='relative'
               display='flex'
+              maxWidth={13}
+              width={['100%', '100%', '50%']}
               flexDirection='column'
-              alignSelf='center'
-              textAlign='left'
-              p={4}
+              alignItems='flex-start'
+              alignContent='center'
+              backgroundColor='#0a0a0a'
+              borderRadius={3}
+              border={1}
+              boxShadow={2}
             >
-              <Title fontSize={5} color='core.white'>
-                For Filecoin SAFT holders
-              </Title>
-              <Title fontSize={5} color='core.lightgray'>
-                Use your Ledger device to setup and manage your Filecoin SAFT.
-              </Title>
+              <HeaderGlyph
+                alt='Source: https://www.nontemporary.com/post/190437968500'
+                text='Vault'
+                imageUrl='/imgvault.png'
+                color='core.white'
+                fill='#fff'
+                width='100%'
+                imageOpacity='0.9'
+              />
 
               <Box
                 display='flex'
                 flexDirection='column'
-                p={3}
-                my={3}
-                minHeight={10}
-                width='100%'
-                maxWidth={13}
-                alignItems='center'
-                justifyContent='flex-start'
-                borderRadius={2}
+                alignSelf='center'
+                textAlign='left'
+                p={4}
               >
+                <Title fontSize={5} color='core.white'>
+                  For Filecoin SAFT holders
+                </Title>
+                <Title fontSize={5} color='core.lightgray'>
+                  Use your Ledger device to setup and manage your Filecoin SAFT.
+                </Title>
+
                 <Box
                   display='flex'
                   flexDirection='column'
+                  p={3}
+                  my={3}
+                  minHeight={10}
+                  width='100%'
+                  maxWidth={13}
                   alignItems='center'
-                  m={3}
+                  justifyContent='flex-start'
+                  borderRadius={2}
                 >
-                  <Text
-                    color='core.lightgray'
-                    textAlign='center'
-                    p={0}
-                    mt={0}
-                    maxWidth={10}
+                  <Box
+                    display='flex'
+                    flexDirection='column'
+                    alignItems='center'
+                    m={3}
                   >
-                    Securely generate an account to receive your SAFT Filecoin
-                  </Text>
+                    <Text
+                      color='core.lightgray'
+                      textAlign='center'
+                      p={0}
+                      mt={0}
+                      maxWidth={10}
+                    >
+                      Securely generate an account to receive your SAFT Filecoin
+                    </Text>
 
-                  <ImportWallet
-                    onClick={() => router.push('/vault?network=f')}
-                    glyphAcronym='Ss'
-                    title='SAFT Setup'
-                    backgroundColor='background.screen'
-                    color='core.black'
-                    glyphColor='core.black'
-                    boxShadow={2}
-                    border={0}
-                  />
+                    <ImportWallet
+                      onClick={() => router.push('/vault?network=f')}
+                      glyphAcronym='Ss'
+                      title='SAFT Setup'
+                      backgroundColor='background.screen'
+                      color='core.black'
+                      glyphColor='core.black'
+                      boxShadow={2}
+                      border={0}
+                    />
+                  </Box>
                 </Box>
               </Box>
             </Box>
