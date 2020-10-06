@@ -1,6 +1,6 @@
 export default {
   '@context': 'http://schema.org/',
-  '@type': 'Organization',
+  '@type': 'WebApplication',
   name: 'Glif Wallet',
   description:
     'A lightweight web interface to send and receive Filecoin via your Ledger device.',
