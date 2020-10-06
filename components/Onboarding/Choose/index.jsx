@@ -170,46 +170,49 @@ export default () => {
                   flexDirection='column'
                   my={4}
                 />
+                <ExpandableBox acronym='Ta' title='Test Accounts'>
+                  <CreateWallet
+                    onClick={() => onChoose(CREATE_MNEMONIC)}
+                    m={2}
+                  />
+                  <ImportWallet
+                    onClick={() => onChoose(IMPORT_MNEMONIC)}
+                    glyphAcronym='Sp'
+                    title='Import Seed Phrase'
+                    m={2}
+                  />
+                  <ImportWallet
+                    onClick={() => onChoose(IMPORT_SINGLE_KEY)}
+                    glyphAcronym='Pk'
+                    title='Import Private Key'
+                    m={2}
+                  />
+                </ExpandableBox>
+                <ExpandableBox acronym='Em' title='Expert Mode' mt={[2, 4, 4]}>
+                  <ImportWallet
+                    onClick={() => onChoose(LEDGER)}
+                    Icon={IconLedger}
+                    title='Use Ledger Device with testnet accounts'
+                    tag='Most Secure'
+                    display='flex'
+                    justifyContent='space-between'
+                    flexDirection='column'
+                    m={2}
+                  />
+                  <ImportWallet
+                    onClick={() => onChooseTAccountOption(IMPORT_MNEMONIC)}
+                    glyphAcronym='Sp'
+                    title='Import Seed Phrase with testnet accounts'
+                    m={2}
+                  />
+                  <ImportWallet
+                    onClick={() => onChooseTAccountOption(IMPORT_SINGLE_KEY)}
+                    glyphAcronym='Pk'
+                    title='Import Private Key with testnet account'
+                    m={2}
+                  />
+                </ExpandableBox>
               </Box>
-              <ExpandableBox acronym='Ta' title='Test Accounts'>
-                <CreateWallet onClick={() => onChoose(CREATE_MNEMONIC)} m={2} />
-                <ImportWallet
-                  onClick={() => onChoose(IMPORT_MNEMONIC)}
-                  glyphAcronym='Sp'
-                  title='Import Seed Phrase'
-                  m={2}
-                />
-                <ImportWallet
-                  onClick={() => onChoose(IMPORT_SINGLE_KEY)}
-                  glyphAcronym='Pk'
-                  title='Import Private Key'
-                  m={2}
-                />
-              </ExpandableBox>
-              <ExpandableBox acronym='Em' title='Expert Mode' mt={[2, 4, 4]}>
-                <ImportWallet
-                  onClick={() => onChoose(LEDGER)}
-                  Icon={IconLedger}
-                  title='Use Ledger Device with testnet accounts'
-                  tag='Most Secure'
-                  display='flex'
-                  justifyContent='space-between'
-                  flexDirection='column'
-                  m={2}
-                />
-                <ImportWallet
-                  onClick={() => onChooseTAccountOption(IMPORT_MNEMONIC)}
-                  glyphAcronym='Sp'
-                  title='Import Seed Phrase with testnet accounts'
-                  m={2}
-                />
-                <ImportWallet
-                  onClick={() => onChooseTAccountOption(IMPORT_SINGLE_KEY)}
-                  glyphAcronym='Pk'
-                  title='Import Private Key with testnet account'
-                  m={2}
-                />
-              </ExpandableBox>
             </Box>
           </Box>
           <Box
