@@ -26,8 +26,8 @@ export default {
     url: 'https://infinitescroll.org',
     sameAs: [
       'https://github.com/infinitescroll',
-      'https://twitter.com/infinitescroll',
-      'https://www.are.na/infinitescroll'
+      'https://twitter.com/infinitescroll_',
+      'https://www.are.na/infinite-scroll'
     ]
   }
 }
