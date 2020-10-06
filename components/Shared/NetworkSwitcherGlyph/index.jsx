@@ -6,7 +6,7 @@ import { bool, func } from 'prop-types'
 import { border, typography, layout, flexbox, space } from 'styled-system'
 import Box from '../Box'
 import { TESTNET, MAINNET } from '../../../constants'
-import { error } from '../../../store/actions'
+import { error, switchNetwork } from '../../../store/actions'
 
 const NetworkSwitcherButton = styled.button.attrs(() => ({
   display: 'flex',
@@ -59,6 +59,7 @@ const NetworkSwitcherGlyph = ({ ...props }) => {
       const searchParams = new URLSearchParams(router.query)
       searchParams.set('network', network)
       router.replace(`${router.pathname}?${searchParams.toString()}`)
+      dispatch(switchNetwork(network))
       dispatch(error(''))
     }
   }
@@ -77,16 +78,15 @@ const NetworkSwitcherGlyph = ({ ...props }) => {
         borderTopLeftRadius={2}
         borderBottomLeftRadius={2}
       >
-        Testnet
+        Use t addresses
       </NetworkSwitcherButton>
       <NetworkSwitcherButton
         active={networkFromRedux === MAINNET}
         onClick={() => onNetworkSwitch(MAINNET)}
-        disabled
         borderTopRightRadius={2}
         borderBottomRightRadius={2}
       >
-        Mainnet
+        Use f addresses
       </NetworkSwitcherButton>
     </Box>
   )
