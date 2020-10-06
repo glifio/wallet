@@ -106,27 +106,4 @@ describe('Choosing a wallet', () => {
     })
     expect(mockRouterPush).toHaveBeenCalledWith('/vault?network=f')
   })
-
-  test('it renders all testnet wallet options when in expert mode', () => {
-    const { Tree } = composeMockAppTree('postOnboard')
-
-    const { container } = render(
-      <Tree>
-        <Choose />
-      </Tree>
-    )
-    act(() => {
-      fireEvent.click(screen.getByText('Expert Mode'))
-    })
-    expect(
-      screen.queryByText('Use Ledger Device with testnet accounts')
-    ).toBeInTheDocument()
-    expect(
-      screen.getByText('Import Seed Phrase with testnet accounts')
-    ).toBeInTheDocument()
-    expect(
-      screen.getByText('Import Private Key with testnet account')
-    ).toBeInTheDocument()
-    expect(container.firstChild).toMatchSnapshot()
-  })
 })
