@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Text } from '../../Shared'
 import { LEDGER } from '../../../constants'
 
-const HeaderText = ({ step, customizingGas, walletType }) => {
+const HeaderText = ({ step, walletType }) => {
   let text = ''
 
   switch (step) {
@@ -29,9 +29,6 @@ const HeaderText = ({ step, customizingGas, walletType }) => {
       text = ''
   }
 
-  if (customizingGas)
-    text = 'Please select the custom gas fee for this transaction.'
-
   return (
     <Text m={0} textAlign='center'>
       {text}
@@ -41,7 +38,6 @@ const HeaderText = ({ step, customizingGas, walletType }) => {
 
 HeaderText.propTypes = {
   step: PropTypes.number.isRequired,
-  customizingGas: PropTypes.bool.isRequired,
   walletType: PropTypes.string.isRequired
 }
 

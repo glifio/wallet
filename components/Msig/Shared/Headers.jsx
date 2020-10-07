@@ -8,7 +8,7 @@ import {
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 import truncateAddress from '../../../utils/truncateAddress'
 
-export const CardHeader = ({ address, balance, customizingGas }) => {
+export const CardHeader = ({ address, balance }) => {
   return (
     <Box
       width='100%'
@@ -26,24 +26,11 @@ export const CardHeader = ({ address, balance, customizingGas }) => {
         justifyContent='space-between'
       >
         <Box display='flex' flexDirection='row' alignItems='center'>
-          {customizingGas ? (
-            <>
-              <Glyph acronym='Tf' color='white' mr={3} />
-              <Text m={0}>Custom transaction fee</Text>
-            </>
-          ) : (
-            <>
-              <Glyph acronym='Ms' color='white' mr={3} />
-              <Box
-                display='flex'
-                flexDirection='column'
-                alignItems='flex-start'
-              >
-                <Text m={0}>From</Text>
-                <Text m={0}>{truncateAddress(address)}</Text>
-              </Box>
-            </>
-          )}
+          <Glyph acronym='Ms' color='white' mr={3} />
+          <Box display='flex' flexDirection='column' alignItems='flex-start'>
+            <Text m={0}>From</Text>
+            <Text m={0}>{truncateAddress(address)}</Text>
+          </Box>
         </Box>
         <Box display='flex' flexDirection='column' alignItems='flex-start'>
           <Text m={0}>Balance</Text>
@@ -56,8 +43,7 @@ export const CardHeader = ({ address, balance, customizingGas }) => {
 
 CardHeader.propTypes = {
   address: ADDRESS_PROPTYPE,
-  balance: FILECOIN_NUMBER_PROP,
-  customizingGas: PropTypes.bool.isRequired
+  balance: FILECOIN_NUMBER_PROP
 }
 
 export const WithdrawHeaderText = ({ step, customizingGas }) => {
