@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
-import { useDispatch } from 'react-redux'
 import {
   Box,
   IconLedger,
@@ -18,18 +17,15 @@ import {
   LEDGER,
   IMPORT_MNEMONIC,
   CREATE_MNEMONIC,
-  IMPORT_SINGLE_KEY,
-  TESTNET
+  IMPORT_SINGLE_KEY
 } from '../../../constants'
 import { useWalletProvider } from '../../../WalletProvider'
 import ExpandableBox from './ExpandableBox'
-import { switchNetwork } from '../../../store/actions'
 
 export default () => {
   const { setWalletType } = useWalletProvider()
   // this could be cleaner, but we use this to more easily navigate to/from the warning card
   const [localWalletType, setLocalWalletType] = useState(null)
-  const dispatch = useDispatch()
   const router = useRouter()
 
   const onChoose = type => {
@@ -48,13 +44,6 @@ export default () => {
   }
 
   const [phishingBanner, setPhishingBanner] = useState(false)
-
-  const onChooseTAccountOption = walletStrategy => {
-    const params = new URLSearchParams({ network: TESTNET })
-    router.replace(`/?${params.toString()}`, undefined, { shallow: true })
-    dispatch(switchNetwork(TESTNET))
-    onChoose(walletStrategy)
-  }
 
   return (
     <>
