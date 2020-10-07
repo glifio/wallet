@@ -224,6 +224,13 @@ const theme = {
         lineHeight: 'solid',
         fontFamily: 'RT-Alias-Grotesk'
       }
+    },
+    finePrint: {
+      fontSize: 1,
+      fontWeight: 200,
+      fontColor: core.nearblack,
+      lineHeight: 'copy',
+      fontFamily: 'RT-Alias-Grotesk'
     }
   },
   fonts: {

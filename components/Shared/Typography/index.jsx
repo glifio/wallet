@@ -101,3 +101,14 @@ export const Highlight = styled.span`
 Highlight.propTypes = {
   fontSize: number.isRequired
 }
+
+export const FinePrint = forwardRef((props, ref) => {
+  return (
+    <TextBase ref={ref} {...theme.textStyles.finePrint} {...props}>
+      {props.children}
+    </TextBase>
+  )
+})
+
+FinePrint.propTypes = { children: node }
+FinePrint.defaultProps = { children: <></> }
