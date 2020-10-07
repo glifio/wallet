@@ -16,9 +16,12 @@ const HeaderText = ({ step, customizingGas, walletType }) => {
       text = "Next, please choose an amount of FIL you'd like to withdraw."
       break
     case 3:
-      text = 'Please review the transaction details.'
+      text = 'Next, please review the transaction fee.'
       break
     case 4:
+      text = 'Please review the transaction details.'
+      break
+    case 5:
       if (walletType === LEDGER)
         text = 'Please confirm the transaction on your Ledger device.'
       break

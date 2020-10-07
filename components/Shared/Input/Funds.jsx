@@ -33,6 +33,7 @@ const Funds = forwardRef(
       disabled,
       valid,
       amount,
+      label,
       ...props
     },
     ref
@@ -184,7 +185,7 @@ const Funds = forwardRef(
               {error}
             </Text>
           ) : (
-            <Label color='core.nearblack'>Amount</Label>
+            <Label color='core.nearblack'>{label}</Label>
           )}
         </Box>
         <Box display='inline-block' width='100%'>
@@ -197,26 +198,6 @@ const Funds = forwardRef(
             borderColor='background.screen'
             borderTopLeftRadius={2}
           >
-            {/* <Box
-              position='absolute'
-              left='-20px'
-              bottom='-20px'
-              display='flex'
-              alignItems='center'
-              justifyContent='center'
-              backgroundColor='core.white'
-              borderRadius={5}
-              border={1}
-              borderColor='core.lightgray'
-              size='40px'
-              fontSize={5}
-              fontFamily='sansSerif'
-              paddingBottom='4px'
-              zIndex='2'
-            >
-              {'\u003D'}
-            </Box> */}
-
             <RawNumberInput
               onFocus={() => {
                 setError('')
@@ -320,7 +301,8 @@ Funds.propTypes = {
   estimatedTransactionFee: FILECOIN_NUMBER_PROP,
   disabled: bool,
   valid: bool,
-  amount: oneOfType([string, FILECOIN_NUMBER_PROP])
+  amount: oneOfType([string, FILECOIN_NUMBER_PROP]),
+  label: string
 }
 
 Funds.defaultProps = {
@@ -329,6 +311,7 @@ Funds.defaultProps = {
   setError: noop,
   onAmountChange: noop,
   amount: '',
+  label: 'Amount',
   estimatedTransactionFee: new FilecoinNumber('1000', 'attofil')
 }
 
