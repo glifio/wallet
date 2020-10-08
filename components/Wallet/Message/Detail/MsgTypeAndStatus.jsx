@@ -6,7 +6,7 @@ import { Label, IconMessageStatus, IconPending } from '../../../Shared'
 const TxStatusText = ({ address, message }) => {
   let text = ''
 
-  if (message.pending) return 'PENDING'
+  if (message.status === 'pending') return 'PENDING'
 
   switch (message.method) {
     case SEND: {
