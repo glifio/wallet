@@ -7,18 +7,10 @@ import { RawNumberInput, DenomTag } from './Number'
 import { Text, Label } from '../Typography'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import noop from '../../../utils/noop'
-import { useConverter } from '../../../lib/Converter'
 
 const formatFilValue = number => {
   if (!number) return ''
   if (FilecoinNumber.isBigNumber(number)) return number.toFil()
-  return number
-}
-
-const formatFiatValue = number => {
-  if (!number) return ''
-  if (BigNumber.isBigNumber(number))
-    return new BigNumber(number.toFixed(2, 1)).toString()
   return number
 }
 
@@ -29,24 +21,18 @@ const Funds = forwardRef(
       balance,
       error,
       setError,
-      estimatedTransactionFee,
       disabled,
       valid,
       amount,
+      label,
       ...props
     },
     ref
   ) => {
-    const { converter, converterError } = useConverter()
     const initialFilAmount =
       amount && amount > 0 ? new FilecoinNumber(amount, 'attofil') : ''
-    const initialFiatAmount =
-      amount && amount > 0 && converter && !converterError
-        ? converter.fromFIL(new FilecoinNumber(amount, 'attofil').toFil())
-        : ''
 
     const [filAmount, setFilAmount] = useState(initialFilAmount)
-    const [fiatAmount, setFiatAmount] = useState(initialFiatAmount)
     const timeout = useRef()
 
     const checkBalance = val => {
@@ -56,13 +42,7 @@ const Funds = forwardRef(
       }
 
       if (new BigNumber(val).toString() === 'NaN') return false
-
-      if (
-        val
-          .plus(estimatedTransactionFee.toFil())
-          .isGreaterThanOrEqualTo(balance)
-      ) {
-        // user enters a value that's greater than their balance - gas limit
+      if (val.isGreaterThanOrEqualTo(balance)) {
         setError("The amount must be smaller than this account's balance")
         return false
       }
@@ -72,57 +52,16 @@ const Funds = forwardRef(
 
     const onTimerFil = async val => {
       const fil = new FilecoinNumber(val, 'fil')
-      const fiatAmnt = !converterError && converter.fromFIL(fil)
       const validBalance = checkBalance(fil)
       if (validBalance) {
-        setFiatAmount(fiatAmnt)
         onAmountChange(fil)
       } else {
         onAmountChange(new FilecoinNumber('0', 'fil'))
       }
     }
 
-    const onTimerFiat = async val => {
-      const fiat = new BigNumber(val)
-      const fil =
-        !converterError && new FilecoinNumber(converter.toFIL(fiat), 'fil')
-      checkBalance(fil)
-      setFilAmount(fil)
-      onAmountChange(fil)
-    }
-
-    const onFiatChange = e => {
-      setError('')
-      setFilAmount('')
-      clearTimeout(timeout.current)
-
-      // handle case where user deletes all values from text input
-      if (!e.target.value) setFiatAmount('')
-      // user entered non-numeric characters
-      else if (e.target.value && new BigNumber(e.target.value).isNaN()) {
-        setError('Must pass numbers only')
-      }
-      // when user is setting decimals
-      else if (new BigNumber(e.target.value).isLessThan(1)) {
-        const { value } = e.target
-        // use strings > big numbers
-        setFiatAmount(value)
-        timeout.current = setTimeout(() => onTimerFiat(value), 500)
-      }
-      // handle number change
-      else {
-        const { value } = e.target
-        setFiatAmount(new BigNumber(value))
-        timeout.current = setTimeout(
-          () => onTimerFiat(new BigNumber(value)),
-          500
-        )
-      }
-    }
-
     const onFilChange = e => {
       setError('')
-      setFiatAmount('')
       clearTimeout(timeout.current)
 
       // handle case where user deletes all values from text input
@@ -184,7 +123,7 @@ const Funds = forwardRef(
               {error}
             </Text>
           ) : (
-            <Label color='core.nearblack'>Amount</Label>
+            <Label color='core.nearblack'>{label}</Label>
           )}
         </Box>
         <Box display='inline-block' width='100%'>
@@ -197,26 +136,6 @@ const Funds = forwardRef(
             borderColor='background.screen'
             borderTopLeftRadius={2}
           >
-            {/* <Box
-              position='absolute'
-              left='-20px'
-              bottom='-20px'
-              display='flex'
-              alignItems='center'
-              justifyContent='center'
-              backgroundColor='core.white'
-              borderRadius={5}
-              border={1}
-              borderColor='core.lightgray'
-              size='40px'
-              fontSize={5}
-              fontFamily='sansSerif'
-              paddingBottom='4px'
-              zIndex='2'
-            >
-              {'\u003D'}
-            </Box> */}
-
             <RawNumberInput
               onFocus={() => {
                 setError('')
@@ -252,43 +171,6 @@ const Funds = forwardRef(
               FIL
             </DenomTag>
           </Box>
-          <Box
-            position='relative'
-            display='none'
-            height='80px'
-            borderRadius={2}
-          >
-            <RawNumberInput
-              onFocus={() => {
-                setError('')
-              }}
-              onBlur={async () => {
-                clearTimeout(timeout.current)
-                onTimerFiat(fiatAmount)
-              }}
-              height='100%'
-              fontSize={5}
-              borderBottomLeftRadius={2}
-              my={0}
-              onChange={onFiatChange}
-              value={formatFiatValue(fiatAmount)}
-              placeholder={converterError ? 'Error fetching amount' : '0'}
-              type='number'
-              step={new FilecoinNumber('1', 'attofil').toFil()}
-              min='0'
-              valid={valid && !!formatFiatValue(fiatAmount)}
-              disabled={!!(disabled || converterError)}
-            />
-            <DenomTag
-              top='0px'
-              left='0px'
-              valid={valid && !!formatFiatValue(fiatAmount)}
-              disabled={!!(disabled || converterError)}
-              borderBottomRightRadius={2}
-            >
-              USD
-            </DenomTag>
-          </Box>
         </Box>
       </Box>
     )
@@ -314,13 +196,10 @@ Funds.propTypes = {
    * A setter to set the error when errors occur
    */
   setError: func,
-  /**
-   * Gas limit selected by user (to make sure we dont go over the user's balance)
-   */
-  estimatedTransactionFee: FILECOIN_NUMBER_PROP,
   disabled: bool,
   valid: bool,
-  amount: oneOfType([string, FILECOIN_NUMBER_PROP])
+  amount: oneOfType([string, FILECOIN_NUMBER_PROP]),
+  label: string
 }
 
 Funds.defaultProps = {
@@ -329,7 +208,7 @@ Funds.defaultProps = {
   setError: noop,
   onAmountChange: noop,
   amount: '',
-  estimatedTransactionFee: new FilecoinNumber('1000', 'attofil')
+  label: 'Amount'
 }
 
 export default Funds

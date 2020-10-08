@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Text } from '../../Shared'
 import { LEDGER } from '../../../constants'
 
-const HeaderText = ({ step, customizingGas, walletType }) => {
+const HeaderText = ({ step, walletType }) => {
   let text = ''
 
   switch (step) {
@@ -16,18 +16,18 @@ const HeaderText = ({ step, customizingGas, walletType }) => {
       text = "Next, please choose an amount of FIL you'd like to withdraw."
       break
     case 3:
-      text = 'Please review the transaction details.'
+      text = 'Next, please review the transaction fee.'
       break
     case 4:
+      text = 'Please review the transaction details.'
+      break
+    case 5:
       if (walletType === LEDGER)
         text = 'Please confirm the transaction on your Ledger device.'
       break
     default:
       text = ''
   }
-
-  if (customizingGas)
-    text = 'Please select the custom gas fee for this transaction.'
 
   return (
     <Text m={0} textAlign='center'>
@@ -38,7 +38,6 @@ const HeaderText = ({ step, customizingGas, walletType }) => {
 
 HeaderText.propTypes = {
   step: PropTypes.number.isRequired,
-  customizingGas: PropTypes.bool.isRequired,
   walletType: PropTypes.string.isRequired
 }
 

@@ -14,7 +14,7 @@
     "@glif/filecoin-message": "^1.0.0-lerna.4",
     "@glif/filecoin-number": "^1.0.0-lerna.4",
     "@glif/filecoin-rpc-client": "^1.0.0-lerna.4",
-    "@glif/filecoin-wallet-provider": "^1.0.0-lerna.5",
+    "@glif/filecoin-wallet-provider": "^1.0.0-lerna.7",
     "@ledgerhq/hw-transport-webusb": "5.13.1",
     "@zondax/filecoin-signing-tools": "^0.9.0",
     "@zondax/ledger-filecoin": "0.11.0",

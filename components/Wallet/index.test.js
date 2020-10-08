@@ -86,20 +86,4 @@ describe('WalletView', () => {
     })
     expect(mockRouterPush).toHaveBeenCalledWith('/send?network=t')
   })
-
-  test('it renders the send page when the user goes to the send screen', async () => {
-    const mockRouterPush = jest.fn()
-    useRouter.mockImplementation(() => ({
-      push: mockRouterPush,
-      query: 'network=t',
-      pathname: 'send'
-    }))
-    const { Tree } = composeMockAppTree('postOnboard')
-    const { container } = render(
-      <Tree>
-        <WalletView />
-      </Tree>
-    )
-    expect(container.firstChild).toMatchSnapshot()
-  })
 })
