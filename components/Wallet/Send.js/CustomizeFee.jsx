@@ -75,6 +75,7 @@ const CustomizeFee = ({ message, gasInfo, setGasInfo, setFrozen }) => {
     const estimate = async () => {
       try {
         setLoadingFee(true)
+        setFrozen(true)
         const res = await walletProvider.gasEstimateMaxFee(message)
         setLocalTxFee(res.maxFee)
         setGasInfo({
@@ -87,6 +88,7 @@ const CustomizeFee = ({ message, gasInfo, setGasInfo, setFrozen }) => {
         setError(err.message || err)
       } finally {
         setLoadingFee(false)
+        setFrozen(false)
       }
     }
 
