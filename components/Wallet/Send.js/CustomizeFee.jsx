@@ -16,11 +16,11 @@ const Helper = ({
   estimatedTransactionFee
 }) => {
   if (error) {
-    return <Text>{error}</Text>
+    return <Text width='100%'>{error}</Text>
   }
 
   if (saving) {
-    return <Text>Saving new transaction fee.</Text>
+    return <Text width='100%'>Saving new transaction fee...</Text>
   }
 
   if (dirty) {
@@ -30,12 +30,14 @@ const Helper = ({
           variant='secondary'
           title='Save'
           mr={2}
+          my={2}
           onClick={setGasInfoWMaxFee}
           disabled={saving}
         />
         <Button
           variant='secondary'
           title='Cancel'
+          my={2}
           onClick={reset}
           disabled={saving}
         />
@@ -44,10 +46,10 @@ const Helper = ({
   }
 
   return (
-    <FinePrint width='50%'>
+    <Text color='core.darkgray'>
       *You will not pay more than {estimatedTransactionFee.toFil()} FIL for this
       transaction.
-    </FinePrint>
+    </Text>
   )
 }
 
@@ -145,7 +147,13 @@ const CustomizeFee = ({ message, gasInfo, setGasInfo, setFrozen }) => {
           Calculating an estimated transaction fee...
         </Text>
       ) : (
-        <Box display='flex' flexDirection='column'>
+        <Box
+          display='flex'
+          flexDirection='column'
+          alignItems='flex-end'
+          flexGrow={1}
+          maxWidth={13}
+        >
           <Input.Number
             name='tx-fee'
             label='Transaction fee'
@@ -160,7 +168,13 @@ const CustomizeFee = ({ message, gasInfo, setGasInfo, setFrozen }) => {
             }}
             balance={wallet.balance}
           />
-          <Box display='flex' flexDirection='row' justifyContent='flex-end'>
+          <Box
+            display='flex'
+            justifyContent='flex-start'
+            textAlign='left'
+            maxWidth='280px'
+            width='100%'
+          >
             <Helper
               error={error}
               dirty={dirty}
