@@ -286,6 +286,78 @@ describe('Send Flow', () => {
       expect(screen.getByText(/0.000000000002/)).toBeInTheDocument()
     })
 
+    test('it restricts a user from continuing if the tx fee + value > balance', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
+      const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
+      const filAmount = new FilecoinNumber('.99999999999999999999', 'fil')
+      await act(async () => {
+        render(
+          <Tree>
+            <Send close={close} />
+          </Tree>
+        )
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
+          target: { value: address },
+          preventDefault: () => {}
+        })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+          target: { value: filAmount }
+        })
+        await flushPromises()
+        fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+      })
+      expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
+      expect(
+        screen.getByText(
+          /You don't have enough FIL to pay this transaction fee amount./
+        )
+      ).toBeInTheDocument()
+      expect(screen.getByText('Next')).toBeDisabled()
+    })
+
+    test('it restricts a user from continuing if the tx fee entered is invalid', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
+      const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
+      const filAmount = new FilecoinNumber('.99999999999999999999', 'fil')
+      await act(async () => {
+        render(
+          <Tree>
+            <Send close={close} />
+          </Tree>
+        )
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
+          target: { value: address },
+          preventDefault: () => {}
+        })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+          target: { value: filAmount }
+        })
+        await flushPromises()
+        fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getByDisplayValue('1000000'), {
+          target: { value: '' }
+        })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Save'))
+        await flushPromises()
+      })
+      expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
+      expect(screen.getByText(/Invalid/)).toBeInTheDocument()
+      expect(screen.getByText('Next')).toBeDisabled()
+    })
+
     test('it sends the user to the message history after message successfully sent', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
@@ -323,7 +395,7 @@ describe('Send Flow', () => {
     })
   })
 
-  describe.skip('snapshots', () => {
+  describe('snapshots', () => {
     afterEach(cleanup)
     test('it renders correctly', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
@@ -443,6 +515,42 @@ describe('Send Flow', () => {
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
       })
+      expect(res.container).toMatchSnapshot()
+    })
+
+    test('it renders step 5 correctly', async () => {
+      const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
+      const filAmount = new FilecoinNumber('.01', 'fil')
+
+      const { Tree } = composeMockAppTree('postOnboard')
+      let res
+      await act(async () => {
+        res = render(
+          <Tree>
+            <Send close={close} />
+          </Tree>
+        )
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
+          target: { value: address },
+          preventDefault: () => {}
+        })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+          target: { value: filAmount }
+        })
+        await flushPromises()
+        fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+      })
+      expect(screen.getByText(/Step 5/)).toBeInTheDocument()
       expect(res.container).toMatchSnapshot()
     })
 

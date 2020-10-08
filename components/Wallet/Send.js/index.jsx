@@ -75,6 +75,7 @@ const Send = ({ close }) => {
   const [value, setValue] = useState(new FilecoinNumber('0', 'fil'))
   const [valueError, setValueError] = useState('')
   const [uncaughtError, setUncaughtError] = useState('')
+  const [gasError, setGasError] = useState('')
   const [gasInfo, setGasInfo] = useState(emptyGasInfo)
 
   const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
@@ -209,6 +210,12 @@ const Send = ({ close }) => {
     }
   }
 
+  // here we need to wrap attofil in raw BN because we get super small decimal
+  const calcMaxAffordableFee = () => {
+    const affordableFee = wallet.balance.minus(value)
+    return new FilecoinNumber(affordableFee, 'fil')
+  }
+
   const hasError = () =>
     !!(
       uncaughtError ||
@@ -224,6 +231,7 @@ const Send = ({ close }) => {
     if (step === 1 && !toAddress) return true
     if (step === 2 && !isValidAmount(value, wallet.balance, valueError))
       return true
+    if (step === 3 && gasError) return true
     if (step === 5 && wallet.type === LEDGER) return true
     if (step > 5) return true
   }
@@ -373,6 +381,9 @@ const Send = ({ close }) => {
                       gasInfo={gasInfo}
                       setGasInfo={setGasInfo}
                       setFrozen={setFrozen}
+                      setError={setGasError}
+                      error={gasError}
+                      feeMustBeLessThanThisAmount={calcMaxAffordableFee()}
                     />
                   </Box>
                 )}

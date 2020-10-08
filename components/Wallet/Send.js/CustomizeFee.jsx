@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { FilecoinNumber } from '@glif/filecoin-number'
 
-import { Box, Text, Input, FinePrint, Button } from '../../Shared'
+import { Box, Text, Input, Button } from '../../Shared'
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
@@ -16,7 +16,11 @@ const Helper = ({
   estimatedTransactionFee
 }) => {
   if (error) {
-    return <Text width='100%'>{error}</Text>
+    return (
+      <Text color='status.fail.background' width='100%'>
+        {error}
+      </Text>
+    )
   }
 
   if (saving) {
@@ -62,12 +66,19 @@ Helper.propTypes = {
   estimatedTransactionFee: FILECOIN_NUMBER_PROP
 }
 
-const CustomizeFee = ({ message, gasInfo, setGasInfo, setFrozen }) => {
+const CustomizeFee = ({
+  message,
+  gasInfo,
+  setGasInfo,
+  setFrozen,
+  error,
+  setError,
+  feeMustBeLessThanThisAmount
+}) => {
   const [mounted, setMounted] = useState(false)
   const [dirty, setDirty] = useState(false)
   const [loadingFee, setLoadingFee] = useState(false)
   const [savingNewFee, setSavingNewFee] = useState(false)
-  const [error, setError] = useState('')
   const [localTxFee, setLocalTxFee] = useState(
     new FilecoinNumber('0', 'attofil')
   )
@@ -86,6 +97,11 @@ const CustomizeFee = ({ message, gasInfo, setGasInfo, setFrozen }) => {
           gasLimit: new FilecoinNumber(res.message.GasLimit, 'attofil'),
           estimatedTransactionFee: res.maxFee
         })
+        if (res.maxFee.isGreaterThanOrEqualTo(feeMustBeLessThanThisAmount)) {
+          setError(
+            "You don't have enough FIL to pay this transaction fee amount."
+          )
+        }
       } catch (err) {
         setError(err.message || err)
       } finally {
@@ -106,10 +122,15 @@ const CustomizeFee = ({ message, gasInfo, setGasInfo, setFrozen }) => {
     mounted,
     setMounted,
     setError,
-    setFrozen
+    setFrozen,
+    feeMustBeLessThanThisAmount
   ])
 
   const setGasInfoWMaxFee = async () => {
+    if (localTxFee.isLessThanOrEqualTo(0) || localTxFee.isNaN()) {
+      setError('Invalid number entered. Please try again.')
+      return
+    }
     try {
       setFrozen(true)
       setSavingNewFee(true)
@@ -166,6 +187,7 @@ const CustomizeFee = ({ message, gasInfo, setGasInfo, setFrozen }) => {
             value={localTxFee.toAttoFil()}
             denom='aFil'
             onChange={e => {
+              if (error) setError('')
               if (!dirty) {
                 setDirty(true)
                 setFrozen(true)
@@ -188,6 +210,7 @@ const CustomizeFee = ({ message, gasInfo, setGasInfo, setFrozen }) => {
               setGasInfoWMaxFee={setGasInfoWMaxFee}
               reset={reset}
               estimatedTransactionFee={gasInfo.estimatedTransactionFee}
+              feeMustBeLessThanThisAmount={feeMustBeLessThanThisAmount}
             />
           </Box>
         </Box>
@@ -205,7 +228,10 @@ CustomizeFee.propTypes = {
     gasFeeCap: FILECOIN_NUMBER_PROP,
     gasLimit: FILECOIN_NUMBER_PROP
   }),
-  setFrozen: PropTypes.func.isRequired
+  setFrozen: PropTypes.func.isRequired,
+  feeMustBeLessThanThisAmount: FILECOIN_NUMBER_PROP,
+  error: PropTypes.string.isRequired,
+  setError: PropTypes.func.isRequired
 }
 
 export default CustomizeFee

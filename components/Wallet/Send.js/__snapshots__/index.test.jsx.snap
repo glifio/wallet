@@ -654,6 +654,17 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
                     width="2"
                   />
                 </div>
+                <div
+                  class="c14"
+                  display="flex"
+                >
+                  <div
+                    class="c16"
+                    display="inline-block"
+                    height="2"
+                    width="2"
+                  />
+                </div>
               </div>
             </li>
           </ul>
@@ -787,6 +798,9 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
             </div>
             
           </div>
+          <div
+            class="c4"
+          />
         </div>
       </div>
       <div
@@ -1490,6 +1504,17 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
                     width="2"
                   />
                 </div>
+                <div
+                  class="c14"
+                  display="flex"
+                >
+                  <div
+                    class="c16"
+                    display="inline-block"
+                    height="2"
+                    width="2"
+                  />
+                </div>
               </div>
             </li>
           </ul>
@@ -1635,6 +1660,9 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
               </h4>
             </div>
           </div>
+          <div
+            class="c4"
+          />
         </div>
       </div>
       <div
@@ -1936,7 +1964,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   align-items: center;
 }
 
-.c47 {
+.c49 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -1966,7 +1994,18 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   align-items: flex-end;
 }
 
-.c31 {
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  background-color: #EFF3FD;
+  width: 100%;
+}
+
+.c32 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1982,7 +2021,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   align-items: center;
 }
 
-.c32 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -2011,14 +2050,14 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   text-align: center;
 }
 
-.c33 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c34 {
+.c35 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -2033,26 +2072,24 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   width: 100%;
 }
 
-.c37 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-radius: 4px;
-  display: none;
-  height: 80px;
-}
-
-.c40 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
-  padding: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #EFF3FD;
+  width: 100%;
+}
+
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
   background-color: #EFF3FD;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -2066,45 +2103,84 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   justify-content: space-between;
 }
 
-.c42 {
+.c40 {
   min-width: 0;
   box-sizing: border-box;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  padding-top: 48px;
-  padding-bottom: 32px;
-  padding-left: 16px;
-  padding-right: 16px;
-  background-color: #EFF3FD;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c43 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 24px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  max-width: 560px;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  text-align: right;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c41 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c42 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  display: inline-block;
+  min-width: 160px;
+  text-align: left;
+}
+
+.c44 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c47 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 280px;
+  width: 100%;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  text-align: left;
 }
 
 .c10 {
@@ -2113,7 +2189,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c48 {
+.c50 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -2132,11 +2208,11 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   border-radius: 4px;
 }
 
-.c48:hover {
+.c50:hover {
   opacity: 0.8;
 }
 
-.c49 {
+.c51 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -2155,7 +2231,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   border-radius: 4px;
 }
 
-.c49:hover {
+.c51:hover {
   opacity: 0.8;
 }
 
@@ -2169,25 +2245,6 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c44 {
-  color: #5E26FF;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c46 {
-  color: #666666;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  display: none;
   margin: 0;
 }
 
@@ -2219,17 +2276,24 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   margin: 0;
 }
 
-.c41 {
-  color: #5E26FF;
+.c48 {
+  color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
-  margin-left: 8px;
 }
 
 .c28 {
   color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c43 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -2279,7 +2343,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   border-radius: 1px;
 }
 
-.c36 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -2309,20 +2373,21 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   background: #bacbf7;
 }
 
-.c39 {
+.c46 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
   left: 0px;
+  border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
+  height: 48px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 100%;
   min-width: 64px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2335,10 +2400,10 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: #bacbf7;
+  background: #d1ddfa;
 }
 
-.c35 {
+.c36 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -2366,24 +2431,24 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   -moz-appearance: textfield;
 }
 
-.c35:hover {
+.c36:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c35:focus {
+.c36:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c35::-webkit-outer-spin-button,
-.c35::-webkit-inner-spin-button {
+.c36::-webkit-outer-spin-button,
+.c36::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c38 {
+.c45 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -2397,32 +2462,32 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   font-size: 1.125rem;
   text-align: left;
   cursor: text;
-  background: #bacbf7;
-  font-size: 2rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  height: 100%;
+  background: #d1ddfa;
+  padding-left: 16px;
+  padding-right: 16px;
   display: inline-block;
+  height: 48px;
   width: 100%;
   border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
   border: 0;
   border-color: #999999;
   -moz-appearance: textfield;
 }
 
-.c38:hover {
+.c45:hover {
   background: #bacbf7;
-  cursor: initial;
+  cursor: text;
 }
 
-.c38:focus {
+.c45:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c38::-webkit-outer-spin-button,
-.c38::-webkit-inner-spin-button {
+.c45::-webkit-outer-spin-button,
+.c45::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -2496,8 +2561,16 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   transform: scale(1.25);
 }
 
-.c45 {
-  word-wrap: break-word;
+@media screen and (min-width:40em) {
+  .c42 {
+    min-width: 160px;
+  }
+}
+
+@media screen and (min-width:52em) {
+  .c42 {
+    min-width: 240px;
+  }
 }
 
 <div>
@@ -2640,6 +2713,17 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
                     width="2"
                   />
                 </div>
+                <div
+                  class="c14"
+                  display="flex"
+                >
+                  <div
+                    class="c16"
+                    display="inline-block"
+                    height="2"
+                    width="2"
+                  />
+                </div>
               </div>
             </li>
           </ul>
@@ -2652,7 +2736,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Please review the transaction details.
+              Next, please review the transaction fee.
             </p>
           </div>
         </div>
@@ -2775,171 +2859,160 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
             
           </div>
           <div
-            class="c25"
-            width="100%"
+            class="c4"
           >
             <div
               class="c31"
-              display="flex"
-              label="Amount"
-              name="amount"
+              width="100%"
             >
               <div
                 class="c32"
-                color="input.border"
                 display="flex"
-                width="100%"
-              >
-                <h4
-                  class="c28"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Amount
-                </h4>
-              </div>
-              <div
-                class="c33"
-                display="inline-block"
-                width="100%"
+                name="amount"
               >
                 <div
-                  class="c34"
+                  class="c33"
+                  color="input.border"
                   display="flex"
-                  height="80px"
                   width="100%"
                 >
-                  <input
-                    class="c35"
-                    disabled=""
-                    display="inline-block"
-                    font-size="5"
-                    height="100%"
-                    label="Amount"
-                    name="amount"
-                    placeholder="0"
-                    step="0.000000000000000001"
-                    type="number"
-                    value="0.01"
-                    width="100%"
-                  />
-                  <div
-                    class="c36"
-                    color="core.primary"
-                    disabled=""
-                    display="flex"
-                    font-size="3"
-                    height="100%"
+                  <h4
+                    class="c28"
+                    color="core.nearblack"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
                   >
-                    FIL
-                  </div>
+                    Amount
+                  </h4>
                 </div>
                 <div
-                  class="c37"
-                  display="none"
-                  height="80px"
+                  class="c34"
+                  display="inline-block"
+                  width="100%"
                 >
-                  <input
-                    class="c38"
-                    disabled=""
-                    display="inline-block"
-                    font-size="5"
-                    height="100%"
-                    min="0"
-                    placeholder="0"
-                    step="0.000000000000000001"
-                    type="number"
-                    value="0.05"
-                    width="100%"
-                  />
                   <div
-                    class="c39"
-                    color="core.primary"
-                    disabled=""
+                    class="c35"
                     display="flex"
-                    font-size="3"
-                    height="100%"
+                    height="80px"
+                    width="100%"
                   >
-                    USD
+                    <input
+                      class="c36"
+                      disabled=""
+                      display="inline-block"
+                      font-size="5"
+                      height="100%"
+                      name="amount"
+                      placeholder="0"
+                      step="0.000000000000000001"
+                      type="number"
+                      value="0.01"
+                      width="100%"
+                    />
+                    <div
+                      class="c37"
+                      color="core.primary"
+                      disabled=""
+                      display="flex"
+                      font-size="3"
+                      height="100%"
+                    >
+                      FIL
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="c40"
-            display="flex"
-            width="100%"
-          >
-            <p
-              class="c24"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Transaction Fee
-            </p>
-            <p
-              class="c41"
-              color="core.primary"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              &lt; 0.0001 FIL
-            </p>
-          </div>
-          <div
-            class="c42"
-            display="flex"
-          >
-            <h2
-              class="c11"
-              font-family="RT-Alias-Grotesk"
-              font-size="4"
-              font-weight="400"
-            >
-              Total
-            </h2>
             <div
-              class="c43"
-              display="flex"
+              class="c38"
+              width="100%"
             >
-              <h2
-                class="c44 c45"
-                color="core.primary"
-                font-family="RT-Alias-Grotesk"
-                font-size="5"
-                font-weight="700"
+              <div
+                class="c39"
+                display="flex"
               >
-                0.01
-                 FIL
-              </h2>
-              <h2
-                class="c46"
-                color="core.darkgray"
-                display="none"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                0.05
-                 
-                USD
-              </h2>
+                <div
+                  class="c40"
+                  display="flex"
+                >
+                  <div
+                    class="c26"
+                    name="tx-fee"
+                  >
+                    <div
+                      class="c41"
+                      display="flex"
+                    >
+                      <div
+                        class="c42"
+                        display="inline-block"
+                      >
+                        <h4
+                          class="c43"
+                          font-family="RT-Alias-Grotesk"
+                          font-size="2"
+                          font-weight="400"
+                        >
+                          Transaction fee
+                        </h4>
+                      </div>
+                      <div
+                        class="c44"
+                        color="background.screen"
+                        display="flex"
+                        width="100%"
+                      >
+                        <input
+                          class="c45"
+                          display="inline-block"
+                          height="6"
+                          type="number"
+                          value="1000000"
+                          width="100%"
+                        />
+                        <div
+                          class="c46"
+                          color="core.primary"
+                          display="flex"
+                          font-size="3"
+                          height="6"
+                        >
+                          aFil
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="c47"
+                    display="flex"
+                    width="100%"
+                  >
+                    <p
+                      class="c48"
+                      color="core.darkgray"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      *You will not pay more than 
+                      0.000000000001
+                       FIL for this transaction.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div
-        class="c47"
+        class="c49"
         display="flex"
         width="13"
       >
         <button
-          class="c48"
+          class="c50"
           font-size="3"
           height="6"
           type="button"
@@ -2947,7 +3020,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
           Back
         </button>
         <button
-          class="c49"
+          class="c51"
           font-size="3"
           height="6"
           type="submit"
@@ -3232,7 +3305,7 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
   align-items: center;
 }
 
-.c40 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -3265,6 +3338,17 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
 .c31 {
   min-width: 0;
   box-sizing: border-box;
+  border: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  background-color: #EFF3FD;
+  width: 100%;
+}
+
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
   position: relative;
   border-color: #999999;
   display: -webkit-box;
@@ -3278,7 +3362,7 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
   align-items: center;
 }
 
-.c32 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -3307,14 +3391,14 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
   text-align: center;
 }
 
-.c33 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c34 {
+.c35 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -3329,22 +3413,13 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
   width: 100%;
 }
 
-.c37 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-radius: 4px;
-  display: none;
-  height: 80px;
-}
-
 .c10 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c41 {
+.c39 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -3363,11 +3438,11 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c41:hover {
+.c39:hover {
   opacity: 0.8;
 }
 
-.c42 {
+.c40 {
   cursor: not-allowed;
   border: 1px solid #C4C4C4;
   background-color: #C4C4C4;
@@ -3385,7 +3460,7 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c42:hover {
+.c40:hover {
   opacity: 1;
 }
 
@@ -3481,7 +3556,7 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
   border-radius: 1px;
 }
 
-.c36 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -3511,36 +3586,7 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
   background: #d1ddfa;
 }
 
-.c39 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: #d1ddfa;
-}
-
-.c35 {
+.c36 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3568,63 +3614,19 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
   -moz-appearance: textfield;
 }
 
-.c35:hover {
+.c36:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c35:focus {
+.c36:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c35::-webkit-outer-spin-button,
-.c35::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c38 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #d1ddfa;
-  font-size: 2rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  height: 100%;
-  display: inline-block;
-  width: 100%;
-  border-bottom-left-radius: 4px;
-  border: 0;
-  border-color: #999999;
-  -moz-appearance: textfield;
-}
-
-.c38:hover {
-  background: #bacbf7;
-  cursor: text;
-}
-
-.c38:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c38::-webkit-outer-spin-button,
-.c38::-webkit-inner-spin-button {
+.c36::-webkit-outer-spin-button,
+.c36::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -3838,6 +3840,17 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
                     width="2"
                   />
                 </div>
+                <div
+                  class="c14"
+                  display="flex"
+                >
+                  <div
+                    class="c16"
+                    display="inline-block"
+                    height="2"
+                    width="2"
+                  />
+                </div>
               </div>
             </li>
           </ul>
@@ -3973,90 +3986,65 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
             
           </div>
           <div
-            class="c25"
-            width="100%"
+            class="c4"
           >
             <div
               class="c31"
-              display="flex"
-              label="Amount"
-              name="amount"
+              width="100%"
             >
               <div
                 class="c32"
-                color="input.border"
                 display="flex"
-                width="100%"
-              >
-                <h4
-                  class="c28"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Amount
-                </h4>
-              </div>
-              <div
-                class="c33"
-                display="inline-block"
-                width="100%"
+                name="amount"
               >
                 <div
-                  class="c34"
+                  class="c33"
+                  color="input.border"
                   display="flex"
-                  height="80px"
                   width="100%"
                 >
-                  <input
-                    class="c35"
-                    display="inline-block"
-                    font-size="5"
-                    height="100%"
-                    label="Amount"
-                    name="amount"
-                    placeholder="0"
-                    step="0.000000000000000001"
-                    type="number"
-                    value=""
-                    width="100%"
-                  />
-                  <div
-                    class="c36"
-                    color="core.primary"
-                    display="flex"
-                    font-size="3"
-                    height="100%"
+                  <h4
+                    class="c28"
+                    color="core.nearblack"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
                   >
-                    FIL
-                  </div>
+                    Amount
+                  </h4>
                 </div>
                 <div
-                  class="c37"
-                  display="none"
-                  height="80px"
+                  class="c34"
+                  display="inline-block"
+                  width="100%"
                 >
-                  <input
-                    class="c38"
-                    display="inline-block"
-                    font-size="5"
-                    height="100%"
-                    min="0"
-                    placeholder="0"
-                    step="0.000000000000000001"
-                    type="number"
-                    value=""
-                    width="100%"
-                  />
                   <div
-                    class="c39"
-                    color="core.primary"
+                    class="c35"
                     display="flex"
-                    font-size="3"
-                    height="100%"
+                    height="80px"
+                    width="100%"
                   >
-                    USD
+                    <input
+                      class="c36"
+                      display="inline-block"
+                      font-size="5"
+                      height="100%"
+                      name="amount"
+                      placeholder="0"
+                      step="0.000000000000000001"
+                      type="number"
+                      value=""
+                      width="100%"
+                    />
+                    <div
+                      class="c37"
+                      color="core.primary"
+                      display="flex"
+                      font-size="3"
+                      height="100%"
+                    >
+                      FIL
+                    </div>
                   </div>
                 </div>
               </div>
@@ -4065,12 +4053,12 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
         </div>
       </div>
       <div
-        class="c40"
+        class="c38"
         display="flex"
         width="13"
       >
         <button
-          class="c41"
+          class="c39"
           font-size="3"
           height="6"
           type="button"
@@ -4078,7 +4066,7 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
           Back
         </button>
         <button
-          class="c42"
+          class="c40"
           disabled=""
           font-size="3"
           height="6"
@@ -4364,7 +4352,7 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c47 {
+.c49 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -4394,7 +4382,18 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   align-items: flex-end;
 }
 
-.c31 {
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  background-color: #EFF3FD;
+  width: 100%;
+}
+
+.c32 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -4410,7 +4409,7 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c32 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -4439,14 +4438,14 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   text-align: center;
 }
 
-.c33 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c34 {
+.c35 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -4461,26 +4460,24 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   width: 100%;
 }
 
-.c37 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-radius: 4px;
-  display: none;
-  height: 80px;
-}
-
-.c40 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
-  padding: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #EFF3FD;
+  width: 100%;
+}
+
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
   background-color: #EFF3FD;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -4494,45 +4491,84 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c42 {
+.c40 {
   min-width: 0;
   box-sizing: border-box;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  padding-top: 48px;
-  padding-bottom: 32px;
-  padding-left: 16px;
-  padding-right: 16px;
-  background-color: #EFF3FD;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c43 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 24px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  max-width: 560px;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  text-align: right;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c41 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c42 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  display: inline-block;
+  min-width: 160px;
+  text-align: left;
+}
+
+.c44 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c47 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 280px;
+  width: 100%;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  text-align: left;
 }
 
 .c10 {
@@ -4541,7 +4577,7 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c48 {
+.c50 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -4560,11 +4596,11 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c48:hover {
+.c50:hover {
   opacity: 0.8;
 }
 
-.c49 {
+.c51 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -4583,7 +4619,7 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c49:hover {
+.c51:hover {
   opacity: 0.8;
 }
 
@@ -4597,25 +4633,6 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c44 {
-  color: #5E26FF;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c46 {
-  color: #666666;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  display: none;
   margin: 0;
 }
 
@@ -4647,17 +4664,24 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   margin: 0;
 }
 
-.c41 {
-  color: #5E26FF;
+.c48 {
+  color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
-  margin-left: 8px;
 }
 
 .c28 {
   color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c43 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -4707,7 +4731,7 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   border-radius: 1px;
 }
 
-.c36 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -4737,20 +4761,21 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   background: #bacbf7;
 }
 
-.c39 {
+.c46 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
   left: 0px;
+  border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
+  height: 48px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 100%;
   min-width: 64px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -4763,10 +4788,10 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: #bacbf7;
+  background: #d1ddfa;
 }
 
-.c35 {
+.c36 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -4794,24 +4819,24 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   -moz-appearance: textfield;
 }
 
-.c35:hover {
+.c36:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c35:focus {
+.c36:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c35::-webkit-outer-spin-button,
-.c35::-webkit-inner-spin-button {
+.c36::-webkit-outer-spin-button,
+.c36::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c38 {
+.c45 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -4825,32 +4850,32 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   font-size: 1.125rem;
   text-align: left;
   cursor: text;
-  background: #bacbf7;
-  font-size: 2rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  height: 100%;
+  background: #d1ddfa;
+  padding-left: 16px;
+  padding-right: 16px;
   display: inline-block;
+  height: 48px;
   width: 100%;
   border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
   border: 0;
   border-color: #999999;
   -moz-appearance: textfield;
 }
 
-.c38:hover {
+.c45:hover {
   background: #bacbf7;
-  cursor: initial;
+  cursor: text;
 }
 
-.c38:focus {
+.c45:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c38::-webkit-outer-spin-button,
-.c38::-webkit-inner-spin-button {
+.c45::-webkit-outer-spin-button,
+.c45::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -4924,8 +4949,16 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   transform: scale(1.25);
 }
 
-.c45 {
-  word-wrap: break-word;
+@media screen and (min-width:40em) {
+  .c42 {
+    min-width: 160px;
+  }
+}
+
+@media screen and (min-width:52em) {
+  .c42 {
+    min-width: 240px;
+  }
 }
 
 <div>
@@ -5024,6 +5057,1401 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
                   Step 
                   3
                 </p>
+                <div
+                  class="c14"
+                  display="flex"
+                >
+                  <div
+                    class="c15"
+                    display="inline-block"
+                    height="2"
+                    width="2"
+                  />
+                </div>
+                <div
+                  class="c14"
+                  display="flex"
+                >
+                  <div
+                    class="c15"
+                    display="inline-block"
+                    height="2"
+                    width="2"
+                  />
+                </div>
+                <div
+                  class="c14"
+                  display="flex"
+                >
+                  <div
+                    class="c15"
+                    display="inline-block"
+                    height="2"
+                    width="2"
+                  />
+                </div>
+                <div
+                  class="c14"
+                  display="flex"
+                >
+                  <div
+                    class="c16"
+                    display="inline-block"
+                    height="2"
+                    width="2"
+                  />
+                </div>
+                <div
+                  class="c14"
+                  display="flex"
+                >
+                  <div
+                    class="c16"
+                    display="inline-block"
+                    height="2"
+                    width="2"
+                  />
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div
+            class="c17"
+          >
+            <p
+              class="c18"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Next, please review the transaction fee.
+            </p>
+          </div>
+        </div>
+        <div
+          class="c19"
+        >
+          <div
+            class="c20"
+            color="core.white"
+            width="100%"
+          >
+            <div
+              class="c21"
+              display="flex"
+            >
+              <div
+                class="c7"
+                display="flex"
+              >
+                <div
+                  class="c22"
+                  color="white"
+                  display="flex"
+                  size="6"
+                >
+                  <h3
+                    class="c10"
+                  >
+                    Ms
+                  </h3>
+                </div>
+                <div
+                  class="c23"
+                  display="flex"
+                >
+                  <p
+                    class="c24"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    From
+                  </p>
+                  <p
+                    class="c24"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    t1z225 ... 6z6wgi
+                  </p>
+                </div>
+              </div>
+              <div
+                class="c23"
+                display="flex"
+              >
+                <p
+                  class="c24"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Balance
+                </p>
+                <p
+                  class="c24"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  1
+                   FIL
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="c25"
+            width="100%"
+          >
+            <div
+              class="c26"
+            >
+              <div
+                class="c14"
+                display="flex"
+              >
+                <div
+                  class="c27"
+                  display="flex"
+                >
+                  <h4
+                    class="c28"
+                    color="core.nearblack"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    Recipient
+                  </h4>
+                </div>
+                <div
+                  class="c29"
+                  display="flex"
+                >
+                  <input
+                    class="c30"
+                    disabled=""
+                    display="inline-block"
+                    height="6"
+                    placeholder="f1..."
+                    value="t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                    width="100%"
+                  />
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <div
+            class="c4"
+          >
+            <div
+              class="c31"
+              width="100%"
+            >
+              <div
+                class="c32"
+                display="flex"
+                name="amount"
+              >
+                <div
+                  class="c33"
+                  color="input.border"
+                  display="flex"
+                  width="100%"
+                >
+                  <h4
+                    class="c28"
+                    color="core.nearblack"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    Amount
+                  </h4>
+                </div>
+                <div
+                  class="c34"
+                  display="inline-block"
+                  width="100%"
+                >
+                  <div
+                    class="c35"
+                    display="flex"
+                    height="80px"
+                    width="100%"
+                  >
+                    <input
+                      class="c36"
+                      disabled=""
+                      display="inline-block"
+                      font-size="5"
+                      height="100%"
+                      name="amount"
+                      placeholder="0"
+                      step="0.000000000000000001"
+                      type="number"
+                      value="0.01"
+                      width="100%"
+                    />
+                    <div
+                      class="c37"
+                      color="core.primary"
+                      disabled=""
+                      display="flex"
+                      font-size="3"
+                      height="100%"
+                    >
+                      FIL
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="c38"
+              width="100%"
+            >
+              <div
+                class="c39"
+                display="flex"
+              >
+                <div
+                  class="c40"
+                  display="flex"
+                >
+                  <div
+                    class="c26"
+                    name="tx-fee"
+                  >
+                    <div
+                      class="c41"
+                      display="flex"
+                    >
+                      <div
+                        class="c42"
+                        display="inline-block"
+                      >
+                        <h4
+                          class="c43"
+                          font-family="RT-Alias-Grotesk"
+                          font-size="2"
+                          font-weight="400"
+                        >
+                          Transaction fee
+                        </h4>
+                      </div>
+                      <div
+                        class="c44"
+                        color="background.screen"
+                        display="flex"
+                        width="100%"
+                      >
+                        <input
+                          class="c45"
+                          display="inline-block"
+                          height="6"
+                          type="number"
+                          value="1000000"
+                          width="100%"
+                        />
+                        <div
+                          class="c46"
+                          color="core.primary"
+                          display="flex"
+                          font-size="3"
+                          height="6"
+                        >
+                          aFil
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="c47"
+                    display="flex"
+                    width="100%"
+                  >
+                    <p
+                      class="c48"
+                      color="core.darkgray"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      *You will not pay more than 
+                      0.000000000001
+                       FIL for this transaction.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c49"
+        display="flex"
+        width="13"
+      >
+        <button
+          class="c50"
+          font-size="3"
+          height="6"
+          type="button"
+        >
+          Back
+        </button>
+        <button
+          class="c51"
+          font-size="3"
+          height="6"
+          type="submit"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  max-width: 640px;
+  width: 560px;
+  min-width: 480px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #d9e0f2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c12 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-left: 24px;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c14 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #1AD08F;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c16 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #C4C4C4;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 48px;
+  margin-bottom: 24px;
+}
+
+.c19 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 16px;
+  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 16px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 100%;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  margin-right: 16px;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c25 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  padding: 16px;
+  background-color: #EFF3FD;
+  width: 100%;
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 48px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c29 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c52 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 640px;
+  width: 560px;
+  min-width: 480px;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-color: #999999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  color: #999999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 240px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c34 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c35 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-color: #EFF3FD;
+  border-top-left-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  width: 100%;
+}
+
+.c31 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #EFF3FD;
+  width: 100%;
+}
+
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  background-color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 560px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c41 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  display: inline-block;
+  min-width: 160px;
+  text-align: left;
+}
+
+.c43 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c46 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 280px;
+  width: 100%;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.c48 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding-top: 48px;
+  padding-bottom: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c49 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: right;
+}
+
+.c10 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c53 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c53:hover {
+  opacity: 0.8;
+}
+
+.c54 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c54:hover {
+  opacity: 0.8;
+}
+
+.c1 {
+  width: 24;
+  height: 24;
+}
+
+.c11 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c50 {
+  color: #5E26FF;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c13 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c18 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+  margin: 0;
+}
+
+.c24 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c47 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c28 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c42 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c30 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c30:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c30:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c26 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c37 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  background: #bacbf7;
+}
+
+.c45 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  height: 48px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  background: #d1ddfa;
+}
+
+.c36 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+  -moz-appearance: textfield;
+}
+
+.c36:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c36:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c36::-webkit-outer-spin-button,
+.c36::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c44 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #d1ddfa;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+  -moz-appearance: textfield;
+}
+
+.c44:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c44:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c44::-webkit-outer-spin-button,
+.c44::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c2 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c6 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border-color: silver;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c8 {
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c0 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c51 {
+  word-wrap: break-word;
+}
+
+@media screen and (min-width:40em) {
+  .c41 {
+    min-width: 160px;
+  }
+}
+
+@media screen and (min-width:52em) {
+  .c41 {
+    min-width: 240px;
+  }
+}
+
+<div>
+  <button
+    class="c0"
+    display="inline-block"
+    role="button"
+    type="button"
+  >
+    <svg
+      class="c1"
+      fill="none"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clip-rule="evenodd"
+        d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+        fill="#5E26FF"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </button>
+  <form
+    class="c2"
+  >
+    <div
+      class="c3"
+      display="flex"
+      width="13"
+    >
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+          display="flex"
+          overflow="hidden"
+          width="auto"
+        >
+          <ul
+            class="c6"
+            display="flex"
+            width="100%"
+          >
+            <div
+              class="c7"
+              display="flex"
+            >
+              <li
+                class="c8"
+                display="flex"
+              >
+                <div
+                  class="c9"
+                  color="#000"
+                  display="flex"
+                  size="6"
+                >
+                  <h3
+                    class="c10"
+                  >
+                    Sf
+                  </h3>
+                </div>
+              </li>
+              <li
+                class=""
+              >
+                <h2
+                  class="c11"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="4"
+                  font-weight="400"
+                >
+                  Sending Filecoin
+                </h2>
+              </li>
+            </div>
+            <li
+              class=""
+            >
+              <div
+                class="c12"
+                display="flex"
+              >
+                <p
+                  class="c13"
+                  color="core.nearblack"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Step 
+                  4
+                </p>
+                <div
+                  class="c14"
+                  display="flex"
+                >
+                  <div
+                    class="c15"
+                    display="inline-block"
+                    height="2"
+                    width="2"
+                  />
+                </div>
                 <div
                   class="c14"
                   display="flex"
@@ -5203,124 +6631,153 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
             
           </div>
           <div
-            class="c25"
-            width="100%"
+            class="c4"
           >
             <div
               class="c31"
-              display="flex"
-              label="Amount"
-              name="amount"
+              width="100%"
             >
               <div
                 class="c32"
-                color="input.border"
                 display="flex"
-                width="100%"
-              >
-                <h4
-                  class="c28"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Amount
-                </h4>
-              </div>
-              <div
-                class="c33"
-                display="inline-block"
-                width="100%"
+                name="amount"
               >
                 <div
-                  class="c34"
+                  class="c33"
+                  color="input.border"
                   display="flex"
-                  height="80px"
                   width="100%"
                 >
-                  <input
-                    class="c35"
-                    disabled=""
-                    display="inline-block"
-                    font-size="5"
-                    height="100%"
-                    label="Amount"
-                    name="amount"
-                    placeholder="0"
-                    step="0.000000000000000001"
-                    type="number"
-                    value="0.01"
-                    width="100%"
-                  />
-                  <div
-                    class="c36"
-                    color="core.primary"
-                    disabled=""
-                    display="flex"
-                    font-size="3"
-                    height="100%"
+                  <h4
+                    class="c28"
+                    color="core.nearblack"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
                   >
-                    FIL
-                  </div>
+                    Amount
+                  </h4>
                 </div>
                 <div
-                  class="c37"
-                  display="none"
-                  height="80px"
+                  class="c34"
+                  display="inline-block"
+                  width="100%"
                 >
-                  <input
-                    class="c38"
-                    disabled=""
-                    display="inline-block"
-                    font-size="5"
-                    height="100%"
-                    min="0"
-                    placeholder="0"
-                    step="0.000000000000000001"
-                    type="number"
-                    value="0.05"
-                    width="100%"
-                  />
                   <div
-                    class="c39"
-                    color="core.primary"
-                    disabled=""
+                    class="c35"
                     display="flex"
-                    font-size="3"
-                    height="100%"
+                    height="80px"
+                    width="100%"
                   >
-                    USD
+                    <input
+                      class="c36"
+                      disabled=""
+                      display="inline-block"
+                      font-size="5"
+                      height="100%"
+                      name="amount"
+                      placeholder="0"
+                      step="0.000000000000000001"
+                      type="number"
+                      value="0.01"
+                      width="100%"
+                    />
+                    <div
+                      class="c37"
+                      color="core.primary"
+                      disabled=""
+                      display="flex"
+                      font-size="3"
+                      height="100%"
+                    >
+                      FIL
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="c31"
+              width="100%"
+            >
+              <div
+                class="c38"
+                display="flex"
+              >
+                <div
+                  class="c39"
+                  display="flex"
+                >
+                  <div
+                    class="c26"
+                    name="tx-fee"
+                  >
+                    <div
+                      class="c40"
+                      display="flex"
+                    >
+                      <div
+                        class="c41"
+                        display="inline-block"
+                      >
+                        <h4
+                          class="c42"
+                          font-family="RT-Alias-Grotesk"
+                          font-size="2"
+                          font-weight="400"
+                        >
+                          Transaction fee
+                        </h4>
+                      </div>
+                      <div
+                        class="c43"
+                        color="background.screen"
+                        display="flex"
+                        width="100%"
+                      >
+                        <input
+                          class="c44"
+                          display="inline-block"
+                          height="6"
+                          type="number"
+                          value="1000000"
+                          width="100%"
+                        />
+                        <div
+                          class="c45"
+                          color="core.primary"
+                          display="flex"
+                          font-size="3"
+                          height="6"
+                        >
+                          aFil
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="c46"
+                    display="flex"
+                    width="100%"
+                  >
+                    <p
+                      class="c47"
+                      color="core.darkgray"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      *You will not pay more than 
+                      0.000000000001
+                       FIL for this transaction.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="c40"
-            display="flex"
-            width="100%"
-          >
-            <p
-              class="c24"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Transaction Fee
-            </p>
-            <p
-              class="c41"
-              color="core.primary"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              &lt; 0.0001 FIL
-            </p>
-          </div>
-          <div
-            class="c42"
+            class="c48"
             display="flex"
           >
             <h2
@@ -5332,11 +6789,11 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
               Total
             </h2>
             <div
-              class="c43"
+              class="c49"
               display="flex"
             >
               <h2
-                class="c44 c45"
+                class="c50 c51"
                 color="core.primary"
                 font-family="RT-Alias-Grotesk"
                 font-size="5"
@@ -5345,29 +6802,17 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
                 0.01
                  FIL
               </h2>
-              <h2
-                class="c46"
-                color="core.darkgray"
-                display="none"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                0.05
-                 
-                USD
-              </h2>
             </div>
           </div>
         </div>
       </div>
       <div
-        class="c47"
+        class="c52"
         display="flex"
         width="13"
       >
         <button
-          class="c48"
+          class="c53"
           font-size="3"
           height="6"
           type="button"
@@ -5375,7 +6820,7 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
           Back
         </button>
         <button
-          class="c49"
+          class="c54"
           font-size="3"
           height="6"
           type="submit"
@@ -5388,7 +6833,7 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
 </div>
 `;
 
-exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
+exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
 .c3 {
   min-width: 0;
   box-sizing: border-box;
@@ -5569,7 +7014,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   align-items: center;
 }
 
-.c47 {
+.c52 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -5599,7 +7044,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   align-items: flex-end;
 }
 
-.c30 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -5615,7 +7060,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   align-items: center;
 }
 
-.c31 {
+.c32 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -5644,14 +7089,14 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   text-align: center;
 }
 
-.c32 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c33 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -5666,26 +7111,24 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   width: 100%;
 }
 
-.c36 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-radius: 4px;
-  display: none;
-  height: 80px;
-}
-
-.c39 {
+.c30 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
-  padding: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #EFF3FD;
+  width: 100%;
+}
+
+.c37 {
+  min-width: 0;
+  box-sizing: border-box;
   background-color: #EFF3FD;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -5699,7 +7142,87 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c41 {
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 560px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  display: inline-block;
+  min-width: 160px;
+  text-align: left;
+}
+
+.c42 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c45 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 280px;
+  width: 100%;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.c47 {
   min-width: 0;
   box-sizing: border-box;
   border-bottom-left-radius: 8px;
@@ -5726,7 +7249,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c43 {
+.c49 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -5840,7 +7363,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c48 {
+.c53 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -5859,11 +7382,11 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c48:hover {
+.c53:hover {
   opacity: 0.8;
 }
 
-.c49 {
+.c54 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -5882,7 +7405,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c49:hover {
+.c54:hover {
   opacity: 0.8;
 }
 
@@ -5891,7 +7414,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   height: 24;
 }
 
-.c42 {
+.c48 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -5899,22 +7422,12 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   margin: 0;
 }
 
-.c44 {
+.c50 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c46 {
-  color: #666666;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  display: none;
   margin: 0;
 }
 
@@ -5926,13 +7439,12 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   margin: 0;
 }
 
-.c40 {
-  color: #5E26FF;
+.c46 {
+  color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
-  margin-left: 8px;
 }
 
 .c10 {
@@ -5972,6 +7484,14 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
 
 .c27 {
   color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c41 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -6021,7 +7541,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   border-radius: 1px;
 }
 
-.c35 {
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -6051,20 +7571,21 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   background: #bacbf7;
 }
 
-.c38 {
+.c44 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
   left: 0px;
+  border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   padding-left: 16px;
   padding-right: 16px;
   color: #5E26FF;
+  height: 48px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 100%;
   min-width: 64px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -6077,10 +7598,10 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   font-size: 1.25rem;
   text-align: center;
   position: relative;
-  background: #bacbf7;
+  background: #d1ddfa;
 }
 
-.c34 {
+.c35 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -6108,24 +7629,24 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   -moz-appearance: textfield;
 }
 
-.c34:hover {
+.c35:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c34:focus {
+.c35:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c34::-webkit-outer-spin-button,
-.c34::-webkit-inner-spin-button {
+.c35::-webkit-outer-spin-button,
+.c35::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c37 {
+.c43 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -6139,32 +7660,32 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   font-size: 1.125rem;
   text-align: left;
   cursor: text;
-  background: #bacbf7;
-  font-size: 2rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  height: 100%;
+  background: #d1ddfa;
+  padding-left: 16px;
+  padding-right: 16px;
   display: inline-block;
+  height: 48px;
   width: 100%;
   border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
   border: 0;
   border-color: #999999;
   -moz-appearance: textfield;
 }
 
-.c37:hover {
+.c43:hover {
   background: #bacbf7;
-  cursor: initial;
+  cursor: text;
 }
 
-.c37:focus {
+.c43:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c37::-webkit-outer-spin-button,
-.c37::-webkit-inner-spin-button {
+.c43::-webkit-outer-spin-button,
+.c43::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -6212,8 +7733,20 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   font-size: inherit;
 }
 
-.c45 {
+.c51 {
   word-wrap: break-word;
+}
+
+@media screen and (min-width:40em) {
+  .c40 {
+    min-width: 160px;
+  }
+}
+
+@media screen and (min-width:52em) {
+  .c40 {
+    min-width: 240px;
+  }
 }
 
 <div>
@@ -6303,8 +7836,19 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                   font-weight="400"
                 >
                   Step 
-                  4
+                  5
                 </p>
+                <div
+                  class="c11"
+                  display="flex"
+                >
+                  <div
+                    class="c14"
+                    display="inline-block"
+                    height="2"
+                    width="2"
+                  />
+                </div>
                 <div
                   class="c11"
                   display="flex"
@@ -6518,128 +8062,157 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
             
           </div>
           <div
-            class="c24"
-            width="100%"
+            class="c4"
           >
             <div
               class="c30"
-              display="flex"
-              label="Amount"
-              name="amount"
+              width="100%"
             >
               <div
                 class="c31"
-                color="input.border"
                 display="flex"
-                width="100%"
-              >
-                <h4
-                  class="c27"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Amount
-                </h4>
-              </div>
-              <div
-                class="c32"
-                display="inline-block"
-                width="100%"
+                name="amount"
               >
                 <div
-                  class="c33"
+                  class="c32"
+                  color="input.border"
                   display="flex"
-                  height="80px"
                   width="100%"
                 >
-                  <input
-                    class="c34"
-                    disabled=""
-                    display="inline-block"
-                    font-size="5"
-                    height="100%"
-                    label="Amount"
-                    name="amount"
-                    placeholder="0"
-                    step="0.000000000000000001"
-                    type="number"
-                    value="0.01"
-                    width="100%"
-                  />
-                  <div
-                    class="c35"
-                    color="core.primary"
-                    disabled=""
-                    display="flex"
-                    font-size="3"
-                    height="100%"
+                  <h4
+                    class="c27"
+                    color="core.nearblack"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
                   >
-                    FIL
-                  </div>
+                    Amount
+                  </h4>
                 </div>
                 <div
-                  class="c36"
-                  display="none"
-                  height="80px"
+                  class="c33"
+                  display="inline-block"
+                  width="100%"
                 >
-                  <input
-                    class="c37"
-                    disabled=""
-                    display="inline-block"
-                    font-size="5"
-                    height="100%"
-                    min="0"
-                    placeholder="0"
-                    step="0.000000000000000001"
-                    type="number"
-                    value="0.05"
-                    width="100%"
-                  />
                   <div
-                    class="c38"
-                    color="core.primary"
-                    disabled=""
+                    class="c34"
                     display="flex"
-                    font-size="3"
-                    height="100%"
+                    height="80px"
+                    width="100%"
                   >
-                    USD
+                    <input
+                      class="c35"
+                      disabled=""
+                      display="inline-block"
+                      font-size="5"
+                      height="100%"
+                      name="amount"
+                      placeholder="0"
+                      step="0.000000000000000001"
+                      type="number"
+                      value="0.01"
+                      width="100%"
+                    />
+                    <div
+                      class="c36"
+                      color="core.primary"
+                      disabled=""
+                      display="flex"
+                      font-size="3"
+                      height="100%"
+                    >
+                      FIL
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="c30"
+              width="100%"
+            >
+              <div
+                class="c37"
+                display="flex"
+              >
+                <div
+                  class="c38"
+                  display="flex"
+                >
+                  <div
+                    class="c25"
+                    name="tx-fee"
+                  >
+                    <div
+                      class="c39"
+                      display="flex"
+                    >
+                      <div
+                        class="c40"
+                        display="inline-block"
+                      >
+                        <h4
+                          class="c41"
+                          font-family="RT-Alias-Grotesk"
+                          font-size="2"
+                          font-weight="400"
+                        >
+                          Transaction fee
+                        </h4>
+                      </div>
+                      <div
+                        class="c42"
+                        color="background.screen"
+                        display="flex"
+                        width="100%"
+                      >
+                        <input
+                          class="c43"
+                          display="inline-block"
+                          height="6"
+                          type="number"
+                          value="1000000"
+                          width="100%"
+                        />
+                        <div
+                          class="c44"
+                          color="core.primary"
+                          display="flex"
+                          font-size="3"
+                          height="6"
+                        >
+                          aFil
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="c45"
+                    display="flex"
+                    width="100%"
+                  >
+                    <p
+                      class="c46"
+                      color="core.darkgray"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      *You will not pay more than 
+                      0.000000000001
+                       FIL for this transaction.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="c39"
-            display="flex"
-            width="100%"
-          >
-            <p
-              class="c23"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Transaction Fee
-            </p>
-            <p
-              class="c40"
-              color="core.primary"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              &lt; 0.0001 FIL
-            </p>
-          </div>
-          <div
-            class="c41"
+            class="c47"
             display="flex"
           >
             <h2
-              class="c42"
+              class="c48"
               font-family="RT-Alias-Grotesk"
               font-size="4"
               font-weight="400"
@@ -6647,11 +8220,11 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
               Total
             </h2>
             <div
-              class="c43"
+              class="c49"
               display="flex"
             >
               <h2
-                class="c44 c45"
+                class="c50 c51"
                 color="core.primary"
                 font-family="RT-Alias-Grotesk"
                 font-size="5"
@@ -6660,29 +8233,17 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                 0.01
                  FIL
               </h2>
-              <h2
-                class="c46"
-                color="core.darkgray"
-                display="none"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                0.05
-                 
-                USD
-              </h2>
             </div>
           </div>
         </div>
       </div>
       <div
-        class="c47"
+        class="c52"
         display="flex"
         width="13"
       >
         <button
-          class="c48"
+          class="c53"
           font-size="3"
           height="6"
           type="button"
@@ -6690,7 +8251,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
           Back
         </button>
         <button
-          class="c49"
+          class="c54"
           font-size="3"
           height="6"
           type="submit"
