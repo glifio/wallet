@@ -960,6 +960,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
         </div>
       </div>
     </div>
+    
     <div
       class="c34"
       display="flex"
@@ -1994,6 +1995,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
         </div>
       </div>
     </div>
+    
     <div
       class="c34"
       display="flex"
@@ -3050,6 +3052,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
         </div>
       </div>
     </div>
+    
     <div
       class="c34"
       display="flex"

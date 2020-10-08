@@ -54,7 +54,7 @@ class MockWalletProvider {
         params: Params
       })
   )
-  gasLookupTxFee = jest
+  gasCalcTxFee = jest
     .fn()
     .mockImplementation(async () => new FilecoinNumber('1000000', 'attofil'))
   gasEstimateMaxFee = jest.fn().mockImplementation(async message => ({
