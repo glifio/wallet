@@ -103,7 +103,8 @@ const CustomizeFee = ({ message, gasInfo, setGasInfo, setFrozen }) => {
     walletProvider,
     mounted,
     setMounted,
-    setError
+    setError,
+    setFrozen
   ])
 
   const setGasInfoWMaxFee = async () => {

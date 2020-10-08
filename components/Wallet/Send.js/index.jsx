@@ -344,7 +344,6 @@ const Send = ({ close }) => {
                       balance={wallet.balance}
                       error={valueError}
                       setError={setValueError}
-                      estimatedTransactionFee={gasInfo.estimatedTransactionFee}
                       disabled={step > 2 && !hasError()}
                     />
                   </Box>
