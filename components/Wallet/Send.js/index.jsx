@@ -186,7 +186,7 @@ const Send = ({ close }) => {
     ) {
       populateErrors()
     } else if (step === 4) {
-      setStep(4)
+      setStep(5)
       setAttemptingTx(true)
       // confirmation step happens on ledger device, so we send message one step earlier
       if (wallet.type === LEDGER) {
@@ -225,8 +225,8 @@ const Send = ({ close }) => {
     if (step === 1 && !toAddress) return true
     if (step === 2 && !isValidAmount(value, wallet.balance, valueError))
       return true
-    if (step === 4 && wallet.type === LEDGER) return true
-    if (step > 4) return true
+    if (step === 5 && wallet.type === LEDGER) return true
+    if (step > 5) return true
   }
 
   const isBackBtnDisabled = () => {
