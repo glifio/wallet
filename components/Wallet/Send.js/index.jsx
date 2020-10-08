@@ -225,8 +225,8 @@ const Send = ({ close }) => {
     if (step === 1 && !toAddress) return true
     if (step === 2 && !isValidAmount(value, wallet.balance, valueError))
       return true
-    if (step === 5 && wallet.type === LEDGER) return true
-    if (step > 5) return true
+    if (step === 4 && wallet.type === LEDGER) return true
+    if (step > 4) return true
   }
 
   const isBackBtnDisabled = () => {
