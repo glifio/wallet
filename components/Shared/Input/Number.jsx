@@ -60,6 +60,7 @@ export const NumberInput = forwardRef(
             <Box
               display='inline-block'
               px={2}
+              mr={2}
               minWidth={[9, 9, 10]}
               textAlign='left'
             >
@@ -86,6 +87,7 @@ export const NumberInput = forwardRef(
               placeholder={placeholder}
               borderBottomLeftRadius={bottom && !middle && 2}
               borderTopLeftRadius={top && !middle && 2}
+              px={3}
             />
             {denom && (
               <DenomTag
