@@ -117,6 +117,7 @@ const CustomizeFee = ({ message, gasInfo, setGasInfo, setFrozen }) => {
         gasFeeCap: new FilecoinNumber(msgWithGas.GasFeeCap, 'attofil'),
         gasLimit: new FilecoinNumber(msgWithGas.GasLimit, 'attofil')
       })
+      setDirty(false)
     } catch (err) {
       setError(err.message || err)
     } finally {
