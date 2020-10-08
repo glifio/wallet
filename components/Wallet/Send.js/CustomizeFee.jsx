@@ -75,11 +75,14 @@ const CustomizeFee = ({ message, gasInfo, setGasInfo, setFrozen }) => {
     const estimate = async () => {
       try {
         setLoadingFee(true)
-        const estimatedTransactionFee = await walletProvider.gasEstimateMaxFee(
-          message
-        )
-        setLocalTxFee(estimatedTransactionFee)
-        setGasInfo({ ...gasInfo, estimatedTransactionFee })
+        const res = await walletProvider.gasEstimateMaxFee(message)
+        setLocalTxFee(res.maxFee)
+        setGasInfo({
+          gasPremium: new FilecoinNumber(res.message.GasPremium, 'attofil'),
+          gasFeeCap: new FilecoinNumber(res.message.GasFeeCap, 'attofil'),
+          gasLimit: new FilecoinNumber(res.message.GasLimit, 'attofil'),
+          estimatedTransactionFee: res.maxFee
+        })
       } catch (err) {
         setError(err.message || err)
       } finally {

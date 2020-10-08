@@ -121,8 +121,7 @@ const Send = ({ close }) => {
 
       messageObj.cid = msgCid['/']
       messageObj.timestamp = dayjs().unix()
-      const maxFee = await provider.gasEstimateMaxFee(message.toLotusType())
-      messageObj.maxFee = maxFee.toAttoFil()
+      messageObj.maxFee = gasInfo.estimatedTransactionFee.toAttoFil()
       // dont know how much was actually paid in this message yet, so we mark it as 0
       messageObj.paidFee = '0'
       messageObj.value = new FilecoinNumber(
