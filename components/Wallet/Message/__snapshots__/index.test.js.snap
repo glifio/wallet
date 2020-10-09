@@ -2960,6 +2960,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         </div>
       </div>
     </div>
+    
     <div
       class="c34"
       display="flex"
