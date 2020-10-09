@@ -3045,7 +3045,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
             disabled=""
             display="inline-block"
             height="6"
-            value="NaN pFIL"
+            value="Waiting for message to confirm."
             width="100%"
           />
           
