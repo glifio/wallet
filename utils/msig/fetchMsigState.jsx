@@ -1,5 +1,5 @@
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
-import LotusRPCEngine from '@openworklabs/lotus-jsonrpc-engine'
+import { FilecoinNumber } from '@glif/filecoin-number'
+import LotusRPCEngine from '@glif/filecoin-rpc-client'
 
 import isAddressSigner from './isAddressSigner'
 import isActorMsig from './isActorMsig'

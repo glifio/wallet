@@ -1,10 +1,12 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
-
+import axios from 'axios'
 import MessageView from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import { filfoxMockData } from '../../../test-utils/mockData'
 import { formatFilfoxMessages } from '../../../lib/useTransactionHistory/formatMessages'
+import { flushPromises } from '../../../test-utils'
 
+jest.mock('axios')
 const spy = jest.spyOn(require('../../../lib/useTransactionHistory'), 'default')
 const mockTxHistory = {
   showMore: jest.fn(),
@@ -45,7 +47,17 @@ describe('MessageHistory View', () => {
     })
   })
 
-  test('it renders the message detail view after clicking on a message', async () => {
+  test.only('it renders the message detail view after clicking on a message', async () => {
+    axios.get.mockResolvedValueOnce({
+      data: {
+        baseFee: '957893300',
+        gasLimit: 541585,
+        gasFeeCap: '10076485367',
+        gasPremium: '136364',
+        receipt: { gasUsed: 435268 }
+      },
+      status: 200
+    })
     const { Tree } = composeMockAppTree('postOnboard')
 
     let container = {}
@@ -57,6 +69,7 @@ describe('MessageHistory View', () => {
       )
       container = res.container
       fireEvent.click(screen.getAllByText('From')[1])
+      await flushPromises()
     })
 
     expect(container.firstChild).toMatchSnapshot()

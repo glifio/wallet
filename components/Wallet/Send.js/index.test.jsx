@@ -1,11 +1,11 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber } from '@glif/filecoin-number'
 
 import Send from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import { flushPromises } from '../../../test-utils'
 
-jest.mock('@openworklabs/filecoin-wallet-provider')
+jest.mock('@glif/filecoin-wallet-provider')
 
 describe('Send Flow', () => {
   let close = () => {}
@@ -43,6 +43,8 @@ describe('Send Flow', () => {
         })
         await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
@@ -114,10 +116,7 @@ describe('Send Flow', () => {
 
     test('it does not allow a user to send a message if balance is less than total amount intended to send', async () => {
       const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
-      const filAmount = new FilecoinNumber(
-        '.999999999999999999999999999999',
-        'fil'
-      )
+      const filAmount = new FilecoinNumber('1.1', 'fil')
       const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
 
       await act(async () => {
@@ -188,122 +187,175 @@ describe('Send Flow', () => {
       expect(store.getState().messages.pending.length).toBe(0)
     })
 
-    test.skip('it allows the user to adjust the gas price', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+    test('it allows the user to see the max transaction fee', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
       const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
-      const filAmount = new FilecoinNumber('.5', 'fil')
+      const filAmount = new FilecoinNumber('.01', 'fil')
       await act(async () => {
         render(
           <Tree>
             <Send close={close} />
           </Tree>
         )
-
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
-          target: {
-            value: address
-          }
+          target: { value: address },
+          preventDefault: () => {}
         })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
-          target: {
-            value: filAmount
-          }
+          target: { value: filAmount }
         })
         await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         await flushPromises()
-
-        fireEvent.click(screen.getByText('Customize'))
-
-        fireEvent.change(screen.getByDisplayValue('1'), {
-          target: {
-            value: 2
-          }
-        })
-        await flushPromises()
-
-        fireEvent.click(screen.getByText('Send'))
-        await flushPromises()
-
-        fireEvent.click(screen.getByText('Confirm'))
-        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
       })
-      await flushPromises()
-
-      expect(walletProvider.getNonce).toHaveBeenCalled()
-      const message = walletProvider.wallet.sign.mock.calls[0][0].toLotusType()
-      expect(message.GasPrice.toString()).toBe('2')
-      expect(store.getState().messages.pending.length).toBe(1)
+      expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
     })
 
-    test.skip('it allows the user to adjust the gas limit', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+    test('it allows the user to set the max transaction fee', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
       const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
-      const filAmount = new FilecoinNumber('.5', 'fil')
+      const filAmount = new FilecoinNumber('.01', 'fil')
       await act(async () => {
         render(
           <Tree>
             <Send close={close} />
           </Tree>
         )
-
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
-          target: {
-            value: address
-          }
+          target: { value: address },
+          preventDefault: () => {}
         })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
-          target: {
-            value: filAmount
-          }
+          target: { value: filAmount }
         })
         await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         await flushPromises()
-
-        fireEvent.click(screen.getByText('Customize'))
-
-        fireEvent.change(screen.getByDisplayValue('1000'), {
-          target: {
-            value: 2000
-          }
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getByDisplayValue('1000000'), {
+          target: { value: '2000000' }
         })
         await flushPromises()
-
-        fireEvent.click(screen.getByText('Send'))
-        await flushPromises()
-
-        fireEvent.click(screen.getByText('Confirm'))
-        await flushPromises()
       })
-      expect(walletProvider.getNonce).toHaveBeenCalled()
-      const message = walletProvider.wallet.sign.mock.calls[0][0].toLotusType()
-      expect(message.GasLimit).toBe(2000)
-      expect(store.getState().messages.pending.length).toBe(1)
+      expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
+      expect(screen.getByText(/Save/)).toBeInTheDocument()
+      expect(screen.getByText(/Cancel/)).toBeInTheDocument()
     })
 
-    test.skip('it re-estimates the gas used after adjusting the gas price', async () => {
-      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
+    test('it allows the user to save the max transaction fee', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
+      const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
+      const filAmount = new FilecoinNumber('.01', 'fil')
       await act(async () => {
         render(
           <Tree>
             <Send close={close} />
           </Tree>
         )
-        await flushPromises()
-        expect(walletProvider.estimateGas).toHaveBeenCalledTimes(1)
-
-        fireEvent.click(screen.getByText('Customize'))
-
-        fireEvent.change(screen.getByDisplayValue('1'), {
-          target: {
-            value: 2
-          }
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
+          target: { value: address },
+          preventDefault: () => {}
         })
-        jest.runOnlyPendingTimers()
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+          target: { value: filAmount }
+        })
+        await flushPromises()
+        fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getByDisplayValue('1000000'), {
+          target: { value: '2000000' }
+        })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Save'))
+        await flushPromises()
       })
-      await flushPromises()
-      expect(walletProvider.estimateGas).toHaveBeenCalledTimes(2)
+      expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
+      expect(screen.getByText(/0.000000000002/)).toBeInTheDocument()
+    })
+
+    test('it restricts a user from continuing if the tx fee + value > balance', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
+      const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
+      const filAmount = new FilecoinNumber('.99999999999999999999', 'fil')
+      await act(async () => {
+        render(
+          <Tree>
+            <Send close={close} />
+          </Tree>
+        )
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
+          target: { value: address },
+          preventDefault: () => {}
+        })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+          target: { value: filAmount }
+        })
+        await flushPromises()
+        fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+      })
+      expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
+      expect(
+        screen.getByText(
+          /You don't have enough FIL to pay this transaction fee amount./
+        )
+      ).toBeInTheDocument()
+      expect(screen.getByText('Next')).toBeDisabled()
+    })
+
+    test('it restricts a user from continuing if the tx fee entered is invalid', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
+      const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
+      const filAmount = new FilecoinNumber('.99999999999999999999', 'fil')
+      await act(async () => {
+        render(
+          <Tree>
+            <Send close={close} />
+          </Tree>
+        )
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
+          target: { value: address },
+          preventDefault: () => {}
+        })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+          target: { value: filAmount }
+        })
+        await flushPromises()
+        fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getByDisplayValue('1000000'), {
+          target: { value: '' }
+        })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Save'))
+        await flushPromises()
+      })
+      expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
+      expect(screen.getByText(/Invalid/)).toBeInTheDocument()
+      expect(screen.getByText('Next')).toBeDisabled()
     })
 
     test('it sends the user to the message history after message successfully sent', async () => {
@@ -328,6 +380,8 @@ describe('Send Flow', () => {
         })
         await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
@@ -461,6 +515,42 @@ describe('Send Flow', () => {
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
       })
+      expect(res.container).toMatchSnapshot()
+    })
+
+    test('it renders step 5 correctly', async () => {
+      const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
+      const filAmount = new FilecoinNumber('.01', 'fil')
+
+      const { Tree } = composeMockAppTree('postOnboard')
+      let res
+      await act(async () => {
+        res = render(
+          <Tree>
+            <Send close={close} />
+          </Tree>
+        )
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
+          target: { value: address },
+          preventDefault: () => {}
+        })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+          target: { value: filAmount }
+        })
+        await flushPromises()
+        fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+      })
+      expect(screen.getByText(/Step 5/)).toBeInTheDocument()
       expect(res.container).toMatchSnapshot()
     })
 

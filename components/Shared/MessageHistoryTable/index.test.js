@@ -1,5 +1,5 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
-import { BigNumber } from '@openworklabs/filecoin-number'
+import { BigNumber } from '@glif/filecoin-number'
 import MessageHistoryTable from './index'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import { filfoxMockData } from '../../../test-utils/mockData'

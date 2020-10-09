@@ -1,0 +1,3128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessageHistory View it renders a final, received, SEND transaction correctly 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: #999999;
+  padding: 16px;
+  display: inline-block;
+  width: 300px;
+  overflow: hidden;
+  max-width: 560px;
+}
+
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: #5E26FF;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c11 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c14 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c18 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 48px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c25 {
+  min-width: 0;
+  box-sizing: border-box;
+  height: 16px;
+}
+
+.c26 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-color: #999999;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  color: #999999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 240px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c28 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c29 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-color: #EFF3FD;
+  border-top-left-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  width: 100%;
+}
+
+.c34 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 32px;
+  margin-left: 4px;
+  margin-right: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c36 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: right;
+}
+
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c10 {
+  width: 24;
+  height: 24;
+}
+
+.c12 {
+  width: 24px;
+  height: 24px;
+}
+
+.c35 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 4px;
+}
+
+.c37 {
+  color: #5E26FF;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c6 {
+  color: #5E26FF;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 8px;
+}
+
+.c15 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 16px;
+}
+
+.c16 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c13 {
+  color: #1AD08F;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c22 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c40 {
+  color: #999999;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+  margin: 4px;
+}
+
+.c41 {
+  color: #999999;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+  max-width: 160px;
+  margin: 4px;
+}
+
+.c44 {
+  color: #5E26FF;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+  margin: 4px;
+}
+
+.c24 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c24:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c24:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c32 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  text-align: right;
+  background-color: #EFF3FD;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c32:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c32:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c19 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c31 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  background: #bacbf7;
+}
+
+.c30 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+  -moz-appearance: textfield;
+}
+
+.c30:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c30:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c30::-webkit-outer-spin-button,
+.c30::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c43 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.25rem;
+}
+
+.c43:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c8 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.c8:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  width: auto;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: #EFF3FD;
+}
+
+.c33:hover {
+  background: transparent;
+}
+
+.c9 {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c38 {
+  word-wrap: break-word;
+}
+
+.c42 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: no-wrap;
+}
+
+<div
+  class="c0 c1"
+  display="inline-block"
+  overflow="hidden"
+  width="300"
+>
+  <div
+    class="c2"
+    display="flex"
+  >
+    <div
+      class="c3"
+      display="flex"
+    >
+      <div
+        class="c4"
+        color="background.screen"
+        display="flex"
+        size="6"
+      >
+        <h3
+          class="c5"
+        >
+          Td
+        </h3>
+      </div>
+      <p
+        class="c6"
+        color="core.primary"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Transaction Details
+      </p>
+    </div>
+    <div
+      class="c7"
+      display="flex"
+    >
+      <button
+        class="c8 c9"
+        display="inline-block"
+        type="button"
+      >
+        <svg
+          class="c10"
+          fill="none"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+            fill="#5E26FF"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </button>
+      <div
+        class="c11"
+        display="flex"
+      >
+        <svg
+          class="c12"
+          fill="none"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="#1AD08F"
+            height="12"
+            width="12"
+            x="4"
+            y="8"
+          />
+        </svg>
+        <h4
+          class="c13"
+          color="status.success.background"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          RECEIVED
+        </h4>
+      </div>
+      <div
+        class="c14"
+        display="flex"
+      >
+        <p
+          class="c15"
+          color="core.darkgray"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          2020-01-12
+        </p>
+        <p
+          class="c16"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          2:30:30
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="c17"
+    display="flex"
+  >
+    <div
+      class="c18"
+    >
+      <div
+        class="c19"
+      >
+        <div
+          class="c20"
+          display="flex"
+        >
+          <div
+            class="c21"
+            display="flex"
+          >
+            <h4
+              class="c22"
+              color="core.nearblack"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              From
+            </h4>
+          </div>
+          <div
+            class="c23"
+            display="flex"
+          >
+            <input
+              class="c24"
+              disabled=""
+              display="inline-block"
+              height="6"
+              placeholder="f1..."
+              value="t1wiomfs6nimyfztx6kyaxrry5yiewrjraqyou7oq"
+              width="100%"
+            />
+            
+          </div>
+        </div>
+      </div>
+      <div
+        class="c25"
+        height="3"
+      />
+      <div
+        class="c19"
+      >
+        <div
+          class="c20"
+          display="flex"
+        >
+          <div
+            class="c21"
+            display="flex"
+          >
+            <h4
+              class="c22"
+              color="core.nearblack"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              To
+            </h4>
+          </div>
+          <div
+            class="c23"
+            display="flex"
+          >
+            <input
+              class="c24"
+              disabled=""
+              display="inline-block"
+              height="6"
+              placeholder="f1..."
+              value="t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy"
+              width="100%"
+            />
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c26"
+      display="flex"
+    >
+      <div
+        class="c27"
+        color="input.border"
+        display="flex"
+        width="100%"
+      >
+        <h4
+          class="c22"
+          color="core.nearblack"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          Amount
+        </h4>
+      </div>
+      <div
+        class="c28"
+        display="inline-block"
+        width="100%"
+      >
+        <div
+          class="c29"
+          display="flex"
+          height="80px"
+          width="100%"
+        >
+          <input
+            class="c30"
+            disabled=""
+            display="inline-block"
+            font-size="5"
+            height="100%"
+            placeholder="0"
+            step="0.000000000000000001"
+            type="number"
+            value="0.0000000000000001"
+            width="100%"
+          />
+          <div
+            class="c31"
+            color="core.primary"
+            disabled=""
+            display="flex"
+            font-size="3"
+            height="100%"
+          >
+            FIL
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c19"
+    >
+      <div
+        class="c20"
+        display="flex"
+      >
+        <div
+          class="c21"
+          display="flex"
+        >
+          <h4
+            class="c22"
+            color="core.nearblack"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Transfer Fee
+          </h4>
+        </div>
+        <div
+          class="c23"
+          display="flex"
+        >
+          <input
+            class="c32 c33 Detail__TransactionFeeDisplay-h9colq-1 c33"
+            disabled=""
+            display="inline-block"
+            height="6"
+            value="NaN pFIL"
+            width="100%"
+          />
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="c34"
+      display="flex"
+    >
+      <h2
+        class="c35"
+        font-family="RT-Alias-Grotesk"
+        font-size="4"
+        font-weight="400"
+      >
+        Total
+      </h2>
+      <div
+        class="c36"
+        display="flex"
+      >
+        <h2
+          class="c37 c38"
+          color="core.primary"
+          font-family="RT-Alias-Grotesk"
+          font-size="5"
+          font-weight="700"
+        >
+          0.0000000000000001
+           
+          FIL
+        </h2>
+      </div>
+    </div>
+    <div
+      class="c39"
+      display="flex"
+    >
+      <h4
+        class="c40"
+        color="core.silver"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Message Hash
+      </h4>
+      <h4
+        class="c41 c42"
+        color="core.silver"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        rdafdsagdfsa
+      </h4>
+      <a
+        class="c43"
+        color="core.primary"
+        font-size="3"
+        href="https://filfox.info/en/message/rdafdsagdfsa"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <h4
+          class="c44"
+          color="core.primary"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          View on Filfox
+        </h4>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MessageHistory View it renders a final, sent, SEND transaction correctly 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: #999999;
+  padding: 16px;
+  display: inline-block;
+  width: 300px;
+  overflow: hidden;
+  max-width: 560px;
+}
+
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: #5E26FF;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c11 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c14 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c18 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 48px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c25 {
+  min-width: 0;
+  box-sizing: border-box;
+  height: 16px;
+}
+
+.c26 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-color: #999999;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  color: #999999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 240px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c28 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c29 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-color: #EFF3FD;
+  border-top-left-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  width: 100%;
+}
+
+.c34 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 32px;
+  margin-left: 4px;
+  margin-right: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c36 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: right;
+}
+
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c10 {
+  width: 24;
+  height: 24;
+}
+
+.c12 {
+  width: 24px;
+  height: 24px;
+}
+
+.c35 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 4px;
+}
+
+.c37 {
+  color: #5E26FF;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c6 {
+  color: #5E26FF;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 8px;
+}
+
+.c15 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 16px;
+}
+
+.c16 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c13 {
+  color: #1AD08F;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c22 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c40 {
+  color: #999999;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+  margin: 4px;
+}
+
+.c41 {
+  color: #999999;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+  max-width: 160px;
+  margin: 4px;
+}
+
+.c44 {
+  color: #5E26FF;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+  margin: 4px;
+}
+
+.c24 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c24:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c24:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c32 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  text-align: right;
+  background-color: #EFF3FD;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c32:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c32:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c19 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c31 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  background: #bacbf7;
+}
+
+.c30 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+  -moz-appearance: textfield;
+}
+
+.c30:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c30:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c30::-webkit-outer-spin-button,
+.c30::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c43 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.25rem;
+}
+
+.c43:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c8 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.c8:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  width: auto;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: #EFF3FD;
+}
+
+.c33:hover {
+  background: transparent;
+}
+
+.c9 {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c38 {
+  word-wrap: break-word;
+}
+
+.c42 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: no-wrap;
+}
+
+<div
+  class="c0 c1"
+  display="inline-block"
+  overflow="hidden"
+  width="300"
+>
+  <div
+    class="c2"
+    display="flex"
+  >
+    <div
+      class="c3"
+      display="flex"
+    >
+      <div
+        class="c4"
+        color="background.screen"
+        display="flex"
+        size="6"
+      >
+        <h3
+          class="c5"
+        >
+          Td
+        </h3>
+      </div>
+      <p
+        class="c6"
+        color="core.primary"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Transaction Details
+      </p>
+    </div>
+    <div
+      class="c7"
+      display="flex"
+    >
+      <button
+        class="c8 c9"
+        display="inline-block"
+        type="button"
+      >
+        <svg
+          class="c10"
+          fill="none"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+            fill="#5E26FF"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </button>
+      <div
+        class="c11"
+        display="flex"
+      >
+        <svg
+          class="c12"
+          fill="none"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="#1AD08F"
+            height="12"
+            width="12"
+            x="4"
+            y="8"
+          />
+        </svg>
+        <h4
+          class="c13"
+          color="status.success.background"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          SENT
+        </h4>
+      </div>
+      <div
+        class="c14"
+        display="flex"
+      >
+        <p
+          class="c15"
+          color="core.darkgray"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          2020-01-12
+        </p>
+        <p
+          class="c16"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          2:30:30
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="c17"
+    display="flex"
+  >
+    <div
+      class="c18"
+    >
+      <div
+        class="c19"
+      >
+        <div
+          class="c20"
+          display="flex"
+        >
+          <div
+            class="c21"
+            display="flex"
+          >
+            <h4
+              class="c22"
+              color="core.nearblack"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              From
+            </h4>
+          </div>
+          <div
+            class="c23"
+            display="flex"
+          >
+            <input
+              class="c24"
+              disabled=""
+              display="inline-block"
+              height="6"
+              placeholder="f1..."
+              value="t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy"
+              width="100%"
+            />
+            
+          </div>
+        </div>
+      </div>
+      <div
+        class="c25"
+        height="3"
+      />
+      <div
+        class="c19"
+      >
+        <div
+          class="c20"
+          display="flex"
+        >
+          <div
+            class="c21"
+            display="flex"
+          >
+            <h4
+              class="c22"
+              color="core.nearblack"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              To
+            </h4>
+          </div>
+          <div
+            class="c23"
+            display="flex"
+          >
+            <input
+              class="c24"
+              disabled=""
+              display="inline-block"
+              height="6"
+              placeholder="f1..."
+              value="t1wiomfs6nimyfztx6kyaxrry5yiewrjraqyou7oq"
+              width="100%"
+            />
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c26"
+      display="flex"
+    >
+      <div
+        class="c27"
+        color="input.border"
+        display="flex"
+        width="100%"
+      >
+        <h4
+          class="c22"
+          color="core.nearblack"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          Amount
+        </h4>
+      </div>
+      <div
+        class="c28"
+        display="inline-block"
+        width="100%"
+      >
+        <div
+          class="c29"
+          display="flex"
+          height="80px"
+          width="100%"
+        >
+          <input
+            class="c30"
+            disabled=""
+            display="inline-block"
+            font-size="5"
+            height="100%"
+            placeholder="0"
+            step="0.000000000000000001"
+            type="number"
+            value="0.0000000000000001"
+            width="100%"
+          />
+          <div
+            class="c31"
+            color="core.primary"
+            disabled=""
+            display="flex"
+            font-size="3"
+            height="100%"
+          >
+            FIL
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c19"
+    >
+      <div
+        class="c20"
+        display="flex"
+      >
+        <div
+          class="c21"
+          display="flex"
+        >
+          <h4
+            class="c22"
+            color="core.nearblack"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Transfer Fee
+          </h4>
+        </div>
+        <div
+          class="c23"
+          display="flex"
+        >
+          <input
+            class="c32 c33 Detail__TransactionFeeDisplay-h9colq-1 c33"
+            disabled=""
+            display="inline-block"
+            height="6"
+            value="NaN pFIL"
+            width="100%"
+          />
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="c34"
+      display="flex"
+    >
+      <h2
+        class="c35"
+        font-family="RT-Alias-Grotesk"
+        font-size="4"
+        font-weight="400"
+      >
+        Total
+      </h2>
+      <div
+        class="c36"
+        display="flex"
+      >
+        <h2
+          class="c37 c38"
+          color="core.primary"
+          font-family="RT-Alias-Grotesk"
+          font-size="5"
+          font-weight="700"
+        >
+          NaN
+           
+          FIL
+        </h2>
+      </div>
+    </div>
+    <div
+      class="c39"
+      display="flex"
+    >
+      <h4
+        class="c40"
+        color="core.silver"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Message Hash
+      </h4>
+      <h4
+        class="c41 c42"
+        color="core.silver"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        rdafdsagdfsa
+      </h4>
+      <a
+        class="c43"
+        color="core.primary"
+        font-size="3"
+        href="https://filfox.info/en/message/rdafdsagdfsa"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <h4
+          class="c44"
+          color="core.primary"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          View on Filfox
+        </h4>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MessageHistory View it renders a pending, send transaction correctly 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: #999999;
+  padding: 16px;
+  display: inline-block;
+  width: 300px;
+  overflow: hidden;
+  max-width: 560px;
+}
+
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: #5E26FF;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c11 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c14 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c18 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 48px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c25 {
+  min-width: 0;
+  box-sizing: border-box;
+  height: 16px;
+}
+
+.c26 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-color: #999999;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  color: #999999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 240px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c28 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c29 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-color: #EFF3FD;
+  border-top-left-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  width: 100%;
+}
+
+.c34 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 32px;
+  margin-left: 4px;
+  margin-right: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c36 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: right;
+}
+
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c10 {
+  width: 24;
+  height: 24;
+}
+
+.c12 {
+  width: 24px;
+  height: 24px;
+  -webkit-animation: WNDHq 4s infinite;
+  animation: WNDHq 4s infinite;
+}
+
+.c35 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 4px;
+}
+
+.c37 {
+  color: #5E26FF;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c6 {
+  color: #5E26FF;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 8px;
+}
+
+.c15 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 16px;
+}
+
+.c16 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c13 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c22 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c40 {
+  color: #999999;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+  margin: 4px;
+}
+
+.c41 {
+  color: #999999;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+  max-width: 160px;
+  margin: 4px;
+}
+
+.c44 {
+  color: #5E26FF;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+  margin: 4px;
+}
+
+.c24 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c24:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c24:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c32 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  text-align: right;
+  background-color: #EFF3FD;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c32:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c32:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c19 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c31 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  background: #bacbf7;
+}
+
+.c30 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+  -moz-appearance: textfield;
+}
+
+.c30:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c30:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c30::-webkit-outer-spin-button,
+.c30::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c43 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.25rem;
+}
+
+.c43:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c8 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.c8:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  width: auto;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: #EFF3FD;
+}
+
+.c33:hover {
+  background: transparent;
+}
+
+.c9 {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c38 {
+  word-wrap: break-word;
+}
+
+.c42 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: no-wrap;
+}
+
+<div
+  class="c0 c1"
+  display="inline-block"
+  overflow="hidden"
+  width="300"
+>
+  <div
+    class="c2"
+    display="flex"
+  >
+    <div
+      class="c3"
+      display="flex"
+    >
+      <div
+        class="c4"
+        color="background.screen"
+        display="flex"
+        size="6"
+      >
+        <h3
+          class="c5"
+        >
+          Td
+        </h3>
+      </div>
+      <p
+        class="c6"
+        color="core.primary"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Transaction Details
+      </p>
+    </div>
+    <div
+      class="c7"
+      display="flex"
+    >
+      <button
+        class="c8 c9"
+        display="inline-block"
+        type="button"
+      >
+        <svg
+          class="c10"
+          fill="none"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+            fill="#5E26FF"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </button>
+      <div
+        class="c11"
+        display="flex"
+      >
+        <svg
+          class="c12"
+          fill="none"
+          height="4"
+          viewBox="0 0 24 24"
+          width="24px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="#FDB221"
+            height="24"
+            rx="12"
+            width="24"
+          />
+          <mask
+            fill="white"
+            id="path-2-inside-1"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M11.4006 11.9985L7.08534 6.60939C6.88876 6.36388 7.06355 6 7.37806 6H16.6265C16.9411 6 17.1159 6.36388 16.9193 6.60939L12.6017 12.0015L16.9169 17.3906C17.1135 17.6361 16.9387 18 16.6242 18H7.3757C7.06119 18 6.8864 17.6361 7.08298 17.3906L11.4006 11.9985Z"
+              fill-rule="evenodd"
+            />
+          </mask>
+          <path
+            clip-rule="evenodd"
+            d="M11.4006 11.9985L7.08534 6.60939C6.88876 6.36388 7.06355 6 7.37806 6H16.6265C16.9411 6 17.1159 6.36388 16.9193 6.60939L12.6017 12.0015L16.9169 17.3906C17.1135 17.6361 16.9387 18 16.6242 18H7.3757C7.06119 18 6.8864 17.6361 7.08298 17.3906L11.4006 11.9985Z"
+            fill="#FDB221"
+            fill-rule="evenodd"
+          />
+          <path
+            d="M11.4006 11.9985L12.5715 12.9361L13.3222 11.9985L12.5715 11.061L11.4006 11.9985ZM7.08534 6.60939L5.91446 7.54695L5.91446 7.54695L7.08534 6.60939ZM16.9193 6.60939L15.7484 5.67183L15.7484 5.67183L16.9193 6.60939ZM12.6017 12.0015L11.4308 11.0639L10.6801 12.0015L11.4308 12.939L12.6017 12.0015ZM16.9169 17.3906L15.746 18.3282L15.746 18.3282L16.9169 17.3906ZM7.08298 17.3906L8.25387 18.3282L8.25387 18.3282L7.08298 17.3906ZM12.5715 11.061L8.25623 5.67183L5.91446 7.54695L10.2297 12.9361L12.5715 11.061ZM8.25623 5.67183C8.84599 6.40835 8.32162 7.5 7.37806 7.5V4.5C5.80547 4.5 4.93153 6.31941 5.91446 7.54695L8.25623 5.67183ZM7.37806 7.5H16.6265V4.5H7.37806V7.5ZM16.6265 7.5C15.683 7.5 15.1586 6.40836 15.7484 5.67183L18.0902 7.54695C19.0731 6.3194 18.1991 4.5 16.6265 4.5V7.5ZM15.7484 5.67183L11.4308 11.0639L13.7726 12.939L18.0902 7.54695L15.7484 5.67183ZM11.4308 12.939L15.746 18.3282L18.0878 16.453L13.7726 11.0639L11.4308 12.939ZM15.746 18.3282C15.1563 17.5916 15.6806 16.5 16.6242 16.5V19.5C18.1968 19.5 19.0707 17.6806 18.0878 16.453L15.746 18.3282ZM16.6242 16.5H7.3757V19.5H16.6242V16.5ZM7.3757 16.5C8.31925 16.5 8.84363 17.5916 8.25387 18.3282L5.9121 16.453C4.92916 17.6806 5.80312 19.5 7.3757 19.5V16.5ZM8.25387 18.3282L12.5715 12.9361L10.2297 11.061L5.9121 16.453L8.25387 18.3282Z"
+            fill="#444444"
+            mask="url(#path-2-inside-1)"
+          />
+        </svg>
+        <h4
+          class="c13"
+          color="status.pending.foreground"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          PENDING
+        </h4>
+      </div>
+      <div
+        class="c14"
+        display="flex"
+      >
+        <p
+          class="c15"
+          color="core.darkgray"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          2020-01-12
+        </p>
+        <p
+          class="c16"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          2:30:30
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="c17"
+    display="flex"
+  >
+    <div
+      class="c18"
+    >
+      <div
+        class="c19"
+      >
+        <div
+          class="c20"
+          display="flex"
+        >
+          <div
+            class="c21"
+            display="flex"
+          >
+            <h4
+              class="c22"
+              color="core.nearblack"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              From
+            </h4>
+          </div>
+          <div
+            class="c23"
+            display="flex"
+          >
+            <input
+              class="c24"
+              disabled=""
+              display="inline-block"
+              height="6"
+              placeholder="f1..."
+              value="t1wiomfs6nimyfztx6kyaxrry5yiewrjraqyou7oq"
+              width="100%"
+            />
+            
+          </div>
+        </div>
+      </div>
+      <div
+        class="c25"
+        height="3"
+      />
+      <div
+        class="c19"
+      >
+        <div
+          class="c20"
+          display="flex"
+        >
+          <div
+            class="c21"
+            display="flex"
+          >
+            <h4
+              class="c22"
+              color="core.nearblack"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              To
+            </h4>
+          </div>
+          <div
+            class="c23"
+            display="flex"
+          >
+            <input
+              class="c24"
+              disabled=""
+              display="inline-block"
+              height="6"
+              placeholder="f1..."
+              value="t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy"
+              width="100%"
+            />
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c26"
+      display="flex"
+    >
+      <div
+        class="c27"
+        color="input.border"
+        display="flex"
+        width="100%"
+      >
+        <h4
+          class="c22"
+          color="core.nearblack"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          Amount
+        </h4>
+      </div>
+      <div
+        class="c28"
+        display="inline-block"
+        width="100%"
+      >
+        <div
+          class="c29"
+          display="flex"
+          height="80px"
+          width="100%"
+        >
+          <input
+            class="c30"
+            disabled=""
+            display="inline-block"
+            font-size="5"
+            height="100%"
+            placeholder="0"
+            step="0.000000000000000001"
+            type="number"
+            value="0.0000000000000001"
+            width="100%"
+          />
+          <div
+            class="c31"
+            color="core.primary"
+            disabled=""
+            display="flex"
+            font-size="3"
+            height="100%"
+          >
+            FIL
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c19"
+    >
+      <div
+        class="c20"
+        display="flex"
+      >
+        <div
+          class="c21"
+          display="flex"
+        >
+          <h4
+            class="c22"
+            color="core.nearblack"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Transfer Fee
+          </h4>
+        </div>
+        <div
+          class="c23"
+          display="flex"
+        >
+          <input
+            class="c32 c33 Detail__TransactionFeeDisplay-h9colq-1 c33"
+            disabled=""
+            display="inline-block"
+            height="6"
+            value="Waiting for message to confirm."
+            width="100%"
+          />
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="c34"
+      display="flex"
+    >
+      <h2
+        class="c35"
+        font-family="RT-Alias-Grotesk"
+        font-size="4"
+        font-weight="400"
+      >
+        Total
+      </h2>
+      <div
+        class="c36"
+        display="flex"
+      >
+        <h2
+          class="c37 c38"
+          color="core.primary"
+          font-family="RT-Alias-Grotesk"
+          font-size="5"
+          font-weight="700"
+        >
+          0.0000000000000001
+           
+          FIL
+        </h2>
+      </div>
+    </div>
+    <div
+      class="c39"
+      display="flex"
+    >
+      <h4
+        class="c40"
+        color="core.silver"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Message Hash
+      </h4>
+      <h4
+        class="c41 c42"
+        color="core.silver"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        rdafdsagdfsa
+      </h4>
+      <a
+        class="c43"
+        color="core.primary"
+        font-size="3"
+        href="https://filfox.info/en/message/rdafdsagdfsa"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <h4
+          class="c44"
+          color="core.primary"
+          font-family="RT-Alias-Grotesk"
+          font-size="2"
+          font-weight="400"
+        >
+          View on Filfox
+        </h4>
+      </a>
+    </div>
+  </div>
+</div>
+`;

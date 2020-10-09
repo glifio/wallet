@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import axios from 'axios'
+import { FilecoinNumber } from '@glif/filecoin-number'
 import { func } from 'prop-types'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
@@ -21,6 +22,7 @@ import noop from '../../../../utils/noop'
 import { useWalletProvider } from '../../../../WalletProvider'
 import MsgTypeAndStatus from './MsgTypeAndStatus'
 import DetailSection from './DetailSection'
+import { FILFOX } from '../../../../constants'
 
 const MessageDetailCard = styled(Card).attrs(() => ({
   maxWidth: 13,
@@ -49,28 +51,54 @@ const MessageDetail = ({ address, close, message }) => {
     )
   )
   const [fetchedTransactionFee, setFetchedTransactionFee] = useState(false)
+  const [errFetchingTxFee, setErrFetchingTxFee] = useState('')
 
   const loadingFee = fee.toAttoFil() === '0' && !fetchedTransactionFee
   // if this is a SENT transaction, add the fee to the total
   const shouldAddFeeToTotal = address === message.from
 
   useEffect(() => {
-    const fetchGasUsed = async msgCid => {
-      const transactionFee = await walletProvider.gasLookupTxFee(msgCid)
-      setFee(transactionFee)
-      setFetchedTransactionFee(true)
+    const fetchGasUsed = async message => {
+      try {
+        const res = await axios.get(`${FILFOX}/message/${message.cid}`)
+        if (res.status === 200) {
+          const { baseFee, gasLimit, gasFeeCap, gasPremium, receipt } = res.data
+          const transactionFee = await walletProvider.gasCalcTxFee(
+            baseFee,
+            gasLimit,
+            gasFeeCap,
+            gasPremium,
+            receipt.gasUsed
+          )
+          setFee(transactionFee)
+          setFetchedTransactionFee(true)
+        } else {
+          setErrFetchingTxFee(
+            'There was an error fetching transaction fee information from Filfox.'
+          )
+        }
+      } catch (err) {
+        setErrFetchingTxFee(err.message)
+      }
     }
 
-    if (!fetchedTransactionFee) {
-      fetchGasUsed(message.cid)
+    if (!fetchedTransactionFee && message.status !== 'pending') {
+      fetchGasUsed(message)
     }
   }, [
-    message.cid,
+    message,
     fetchedTransactionFee,
     setFetchedTransactionFee,
     setFee,
     walletProvider
   ])
+
+  const txFeeValue = () => {
+    if (loadingFee) return 'Loading...'
+    if (message.status === 'pending') return 'Waiting for message to confirm.'
+    if (errFetchingTxFee) return '0'
+    return `${fee.toPicoFil()} pFIL`
+  }
 
   return (
     <MessageDetailCard>
@@ -120,7 +148,8 @@ const MessageDetail = ({ address, close, message }) => {
           textAlign='right'
           onChange={noop}
           label='Transfer Fee'
-          value={loadingFee ? 'Loading...' : `${fee.toPicoFil()} pFIL`}
+          error={errFetchingTxFee}
+          value={txFeeValue()}
           backgroundColor='background.screen'
           disabled
         />

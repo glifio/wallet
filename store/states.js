@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber } from '@glif/filecoin-number'
 import updateArrayItem from '../utils/updateArrayItem'
 import sortAndRemoveWalletDups from '../utils/sortAndRemoveWalletDups'
 import removeDupMessages from '../utils/removeDupMessages'
@@ -56,7 +56,6 @@ export const updateBalance = (state, { balance, walletIdx }) => ({
 })
 
 export const confirmMessage = (state, { message }) => {
-  // setMsgInCache(message)
   return {
     ...state,
     messages: {
@@ -67,8 +66,6 @@ export const confirmMessage = (state, { message }) => {
 }
 
 export const confirmedMessage = (state, { msgCid }) => {
-  // const { address } = state.wallets[state.selectedWalletIdx]
-  // removeMsgFromCache(address, msgCid)
   const newPendingMsgs = [...state.messages.pending]
   let confirmedMsg = []
 

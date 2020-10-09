@@ -1,4 +1,4 @@
-import { Message } from '@openworklabs/filecoin-message'
+import { Message } from '@glif/filecoin-message'
 import createSingleKeyProvider from './createSingleKeyProvider'
 import mockRustModule from '@zondax/filecoin-signing-tools'
 import { TESTNET, SINGLE_KEY } from '../../constants'

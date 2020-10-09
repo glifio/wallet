@@ -3,7 +3,7 @@ import { bool } from 'prop-types'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber } from '@glif/filecoin-number'
 import {
   Box,
   Box as Wrapper,

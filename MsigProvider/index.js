@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState, useRef } from 'react'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { FilecoinNumber } from '@glif/filecoin-number'
 import { useRouter } from 'next/router'
 import { useWalletProvider } from '../WalletProvider'
 import useWallet from '../WalletProvider/useWallet'

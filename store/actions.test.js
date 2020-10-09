@@ -1,5 +1,5 @@
-import { Message } from '@openworklabs/filecoin-message'
-import { FilecoinNumber } from '@openworklabs/filecoin-number'
+import { Message } from '@glif/filecoin-message'
+import { FilecoinNumber } from '@glif/filecoin-number'
 
 import * as actions from './actions'
 import * as types from './actionTypes'
