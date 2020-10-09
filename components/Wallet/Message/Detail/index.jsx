@@ -82,7 +82,7 @@ const MessageDetail = ({ address, close, message }) => {
       }
     }
 
-    if (!fetchedTransactionFee) {
+    if (!fetchedTransactionFee && message.status !== 'pending') {
       fetchGasUsed(message)
     }
   }, [
@@ -95,6 +95,7 @@ const MessageDetail = ({ address, close, message }) => {
 
   const txFeeValue = () => {
     if (loadingFee) return 'Loading...'
+    if (message.status === 'pending') return 'Waiting for message to confirm.'
     if (errFetchingTxFee) return '0'
     return `${fee.toPicoFil()} pFIL`
   }
