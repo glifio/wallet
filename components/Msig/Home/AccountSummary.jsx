@@ -102,7 +102,7 @@ const AccountSummary = ({
               </Box>
               <Button
                 title='View Address on Ledger Device'
-                variant='Secondary'
+                variant='secondary'
                 borderColor='silver'
                 background='transparent'
                 color='core.darkgray'
