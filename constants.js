@@ -1,3 +1,5 @@
+import { FilecoinNumber } from '@glif/filecoin-number'
+
 /* WALLET TYPES */
 export const LEDGER = 'LEDGER'
 export const HD_WALLET = 'HD_WALLET'
@@ -28,3 +30,11 @@ export const EXEC = 'EXEC'
 export const LEDGER_VERSION_MAJOR = 0
 export const LEDGER_VERSION_MINOR = 18
 export const LEDGER_VERSION_PATCH = 2
+
+/* GAS CONSTANTS */
+export const emptyGasInfo = {
+  estimatedTransactionFee: new FilecoinNumber('0', 'attofil'),
+  gasPremium: new FilecoinNumber('0', 'attofil'),
+  gasFeeCap: new FilecoinNumber('0', 'attofil'),
+  gasLimit: new FilecoinNumber('0', 'attofil')
+}
