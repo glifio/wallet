@@ -96,7 +96,7 @@ const AccountSummary = ({
                   <CopyAddress
                     justifyContent='space-between'
                     color='core.darkgray'
-                    address={truncateAddress(walletAddress)}
+                    address={walletAddress}
                   />
                 </Box>
               </Box>
