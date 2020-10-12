@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
 import { validateAddressString } from '@glif/filecoin-address'
 import {
@@ -17,14 +17,12 @@ import { setMsigActor } from '../../store/actions'
 const EnterActorAddress = () => {
   const router = useRouter()
   const dispatch = useDispatch()
-  const networkPrefix = useSelector(state => state.network)
   const [actorIDAdress, setActorIDAdress] = useState('')
   const [err, setErr] = useState('')
 
   const onClick = () => {
     const trimmedAddr = actorIDAdress.trim()
     if (!validateAddressString(trimmedAddr)) return setErr('Invalid address.')
-    if (trimmedAddr[0] !== networkPrefix) return setErr('Network mismatch.')
     if (Number(trimmedAddr[1]) !== 0 && Number(trimmedAddr[1]) !== 2)
       return setErr('Invalid Actor Address. Second character must be 0 or 2.')
     dispatch(setMsigActor(trimmedAddr))
