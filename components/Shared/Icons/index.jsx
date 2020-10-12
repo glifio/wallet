@@ -214,7 +214,7 @@ export const IconReceive = forwardRef((_, ref) => (
 //   status: oneOf(['confirmed', 'pending']).isRequired
 // }
 
-export const IconClose = forwardRef((props, fill, ref) => (
+export const IconClose = forwardRef((props, ref) => (
   <IconBase
     width='24'
     height='24'
@@ -228,7 +228,7 @@ export const IconClose = forwardRef((props, fill, ref) => (
       fillRule='evenodd'
       clipRule='evenodd'
       d='M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z'
-      fill={fill}
+      fill={props.fill}
     />
   </IconBase>
 ))
