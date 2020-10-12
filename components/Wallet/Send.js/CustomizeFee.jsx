@@ -29,7 +29,7 @@ const Helper = ({
 
   if (dirty) {
     return (
-      <Box display='flex' justifyContent='flex-end' width='100%'>
+      <>
         <Button
           variant='secondary'
           title='Save'
@@ -45,7 +45,7 @@ const Helper = ({
           onClick={reset}
           disabled={saving}
         />
-      </Box>
+      </>
     )
   }
 
@@ -198,7 +198,7 @@ const CustomizeFee = ({
           />
           <Box
             display='flex'
-            justifyContent='flex-start'
+            justifyContent='flex-end'
             textAlign='left'
             width='100%'
           >
