@@ -262,7 +262,7 @@ const Send = ({ close }) => {
       <Form onSubmit={onSubmit}>
         <Box
           maxWidth={14}
-          width={13}
+          width='100%'
           minWidth={12}
           display='flex'
           flex='1'
@@ -425,7 +425,7 @@ const Send = ({ close }) => {
             alignItems='flex-end'
             margin='auto'
             maxWidth={14}
-            width={13}
+            width='100%'
             minWidth={12}
             my={3}
           >
