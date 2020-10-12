@@ -129,9 +129,11 @@ const UnknownDetails = ({ message }) => {
     <>
       <Box mt={3}>
         <Text>
-          We don&apos;t support this type of transaction yet. In case
-          you&apos;re wondering, it&apos;s a method {message.params.method}{' '}
-          multisig transaction!
+          {message.params.method
+            ? `We don't support this type of transaction yet. In case
+          you're wondering, it's a method ${message.params.method}
+          multisig transaction!`
+            : 'Something went wrong when trying to get more information about this transaction. This might happen if your message was sent in the last 24 hours.'}
         </Text>
       </Box>
     </>
