@@ -9,17 +9,11 @@ import {
   CopyAddress,
   Text,
   BaseButton,
-  IconLedger,
-  InlineBox
+  Button,
+  IconLedger
 } from '../../Shared'
 
-const ButtonViewOnLedgerDevice = styled(BaseButton)`
-  &:hover {
-    ${InlineBox} {
-      opacity: 1;
-    }
-  }
-`
+const ButtonViewOnLedgerDevice = styled(BaseButton)``
 
 const AccountSummary = ({
   msigAddress,
