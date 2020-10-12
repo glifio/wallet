@@ -1,20 +1,19 @@
-import React, { forwardRef, useState } from 'react'
+import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { string } from 'prop-types'
 import { Text } from '../Typography'
 import Box from '../Box'
-import { IconClose } from '../Icons'
 
 const TooltipContent = styled(Box)`
   position: absolute;
   display: block;
-  bottom: -50%;
-  top: 50%;
   height: fit-content;
   width: max-content;
   max-width: 200px;
-  transform: translate(60%, -50%);
-  opacity: 1;
+  top: 50%;
+  left: 20%;
+  transform: translate(-20%, -50%);
+  opacity: 0;
   padding: ${props => props.theme.sizes[2]}px;
 
   background-color: ${props => props.theme.colors.core.white};
@@ -37,13 +36,9 @@ const TooltipContainer = styled.a`
   cursor: pointer;
   transition: 0.24s ease-in-out;
 
-
-/* If we want to revert this to a hover state implementation, restore this & remove the onClick state handler */
-  /* &:hover {
-    ${TooltipContent} {
+ &:hover ~ ${TooltipContent} {
       opacity: 1;
-    }
-  } */
+  }
 
   /* Paired with the ontouchstart declaration inside the TooltipContent markup, this is intended to enable touch devices to trigger the tooltip, too. While we don't support touch devices at launch, we may do so in the future. Ref: https://stackoverflow.com/a/37150472/2839730 */
 
@@ -61,29 +56,20 @@ const TooltipContainer = styled.a`
 `
 
 const Tooltip = forwardRef(({ content, ...props }, ref) => {
-  const [active, setActive] = useState(false)
   return (
-    <TooltipContainer
-      onClick={() => setActive(!active)}
-      aria-label='Tooltip'
-      ref={ref}
-      {...props}
-    >
-      {active ? (
-        <IconClose fill='core.black' width={3} />
-      ) : (
+    <Box position='relative'>
+      <TooltipContainer aria-label='Tooltip' ref={ref} {...props}>
         <Text m={0} color='core.black'>
           ?
         </Text>
-      )}
-      {active && (
-        <TooltipContent ontouchstart display='flex' p={2} borderRadius={4}>
-          <Text display='block' m={0}>
-            {content}
-          </Text>
-        </TooltipContent>
-      )}
-    </TooltipContainer>
+      </TooltipContainer>
+
+      <TooltipContent ontouchstart p={2} borderRadius={4}>
+        <Text display='block' m={0}>
+          {content}
+        </Text>
+      </TooltipContent>
+    </Box>
   )
 })
 
