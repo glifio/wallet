@@ -70,9 +70,9 @@ const Tooltip = forwardRef(({ content, ...props }, ref) => {
       {...props}
     >
       {active ? (
-        <IconClose fill='#000' width={3} />
+        <IconClose fill='core.black' width={3} />
       ) : (
-        <Text m={0} color='black'>
+        <Text m={0} color='core.black'>
           ?
         </Text>
       )}
