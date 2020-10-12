@@ -20,14 +20,13 @@ export default () => {
       >
         {nodeConnecting && (
           <NodeConnectingGlyph
-            mockStrength={process.env.IS_PROD ? -1 : 2}
             apiAddress={process.env.LOTUS_NODE_JSONRPC}
             onConnectionStrengthChange={newStrength => {
               // give a little extra time
               setTimeout(() => {
                 if (newStrength === 2) setNodeConnecting(false)
                 if (newStrength === 0 || newStrength === 1)
-                  router.replace('/error/wallet-down')
+                  router.replace('/error/node-disconnected')
               }, 750)
             }}
           />
