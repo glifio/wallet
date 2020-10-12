@@ -61,7 +61,7 @@ export const NumberInput = forwardRef(
               display='inline-block'
               px={2}
               mr={2}
-              minWidth={[9, 9, 10]}
+              minWidth={10}
               textAlign='left'
             >
               <Label>{label}</Label>
