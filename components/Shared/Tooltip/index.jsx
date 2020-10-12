@@ -9,12 +9,11 @@ const TooltipContent = styled(Box)`
   display: block;
   bottom: -50%;
   top: 50%;
-  /* left: 50%; */
   height: fit-content;
   width: max-content;
   max-width: 200px;
   transform: translate(60%, -50%);
-  opacity: 1;
+  opacity: 0;
   padding: ${props => props.theme.sizes[2]}px;
 
   background-color: ${props => props.theme.colors.core.white};
@@ -49,8 +48,9 @@ const TooltipContainer = styled.a`
     ${TooltipContent} {
       opacity: 1;
     }
+  }
 
-    &:focus {
+  &:focus {
     ${TooltipContent} {
       opacity: 1;
     }
