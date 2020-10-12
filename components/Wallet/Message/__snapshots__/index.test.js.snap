@@ -2559,6 +2559,8 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   font-size: 2rem;
   margin-top: 0;
   margin-bottom: 0;
+  padding-left: 16px;
+  padding-right: 16px;
   height: 100%;
   display: inline-block;
   width: 100%;
