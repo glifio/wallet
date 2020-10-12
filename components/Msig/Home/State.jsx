@@ -66,7 +66,7 @@ const State = ({
           />
           <Title ml={2}>Vault</Title>
         </MenuItem>
-        <MenuItem>
+        {/* <MenuItem>
           <Button
             type='button'
             variant='secondary'
@@ -76,7 +76,7 @@ const State = ({
             minWidth={9}
             borderRadius={6}
           />
-        </MenuItem>
+        </MenuItem> */}
       </Menu>
       <Menu
         display='flex'
