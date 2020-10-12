@@ -21,6 +21,8 @@ describe('MessageHistory View', () => {
       status: 'confirmed',
       timestamp: '1234565678',
       method: SEND,
+      maxFee: '10000',
+      paidFee: '1000',
       params: {}
     }
 
@@ -48,6 +50,8 @@ describe('MessageHistory View', () => {
       status: 'confirmed',
       timestamp: '1234565678',
       method: SEND,
+      maxFee: '10000',
+      paidFee: '1000',
       params: {}
     }
 
@@ -75,6 +79,8 @@ describe('MessageHistory View', () => {
       status: 'pending',
       timestamp: '1234565678',
       method: SEND,
+      maxFee: '10000',
+      paidFee: '1000',
       params: {}
     }
 

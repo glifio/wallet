@@ -2617,6 +2617,10 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   transform: scale(1.25);
 }
 
+.c38 {
+  word-wrap: break-word;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2644,10 +2648,6 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
-}
-
-.c38 {
-  word-wrap: break-word;
 }
 
 .c42 {
@@ -2984,9 +2984,8 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           font-size="5"
           font-weight="700"
         >
-          0.2
-           
-          FIL
+          0.200000000001
+           FIL
         </h2>
       </div>
     </div>
