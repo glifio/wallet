@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Box, Text, Glyph } from '../../Shared'
+import { Box, Text, Glyph, StyledATag } from '../../Shared'
 import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
@@ -46,7 +46,7 @@ CardHeader.propTypes = {
   balance: FILECOIN_NUMBER_PROP
 }
 
-export const WithdrawHeaderText = ({ step, customizingGas }) => {
+export const WithdrawHeaderText = ({ step }) => {
   let text = ''
 
   switch (step) {
@@ -58,21 +58,31 @@ export const WithdrawHeaderText = ({ step, customizingGas }) => {
       text = "Next, please choose an amount of FIL you'd like to withdraw."
       break
     case 3:
+      text =
+        'Please review transaction fee details. Please note, the transaction fee is paid from the Filecoin wallet on your Ledger device, not your multisig wallet.'
+      break
+    case 4:
       text = 'Please review the transaction details.'
       break
     default:
       text = ''
   }
 
-  if (customizingGas)
-    text = 'Please select the custom gas fee for this transaction.'
-
-  return <Text textAlign='center'>{text}</Text>
+  return (
+    <Box display='flex' flexDirection='column' alignItems='center'>
+      <Text textAlign='center'>{text}</Text>
+      <StyledATag
+        width='auto'
+        href='https://reading.supply/@glif/how-to-use-the-glif-vault-after-mainnet-launches-Td1ErO'
+      >
+        Click here for our guided Filecoin Vault tutorial.
+      </StyledATag>
+    </Box>
+  )
 }
 
 WithdrawHeaderText.propTypes = {
-  step: PropTypes.number.isRequired,
-  customizingGas: PropTypes.bool.isRequired
+  step: PropTypes.number.isRequired
 }
 
 export const ChangeOwnerHeaderText = ({ step }) => {

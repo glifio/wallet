@@ -625,6 +625,10 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   transform: scale(1.25);
 }
 
+.c38 {
+  word-wrap: break-word;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -652,10 +656,6 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
-}
-
-.c38 {
-  word-wrap: break-word;
 }
 
 .c42 {
@@ -953,7 +953,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
             disabled=""
             display="inline-block"
             height="6"
-            value="NaN pFIL"
+            value="0.001 pFIL"
             width="100%"
           />
           
@@ -984,9 +984,8 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
           font-size="5"
           font-weight="700"
         >
-          0.0000000000000001
-           
-          FIL
+          0.0000000000000011
+           FIL
         </h2>
       </div>
     </div>
@@ -1660,6 +1659,10 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   transform: scale(1.25);
 }
 
+.c38 {
+  word-wrap: break-word;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1687,10 +1690,6 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
-}
-
-.c38 {
-  word-wrap: break-word;
 }
 
 .c42 {
@@ -1988,7 +1987,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
             disabled=""
             display="inline-block"
             height="6"
-            value="NaN pFIL"
+            value="0.001 pFIL"
             width="100%"
           />
           
@@ -2019,9 +2018,8 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
           font-size="5"
           font-weight="700"
         >
-          NaN
-           
-          FIL
+          0.0000000000000011
+           FIL
         </h2>
       </div>
     </div>
@@ -2697,6 +2695,10 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   transform: scale(1.25);
 }
 
+.c38 {
+  word-wrap: break-word;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2724,10 +2726,6 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
-}
-
-.c38 {
-  word-wrap: break-word;
 }
 
 .c42 {
@@ -3076,9 +3074,8 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
           font-size="5"
           font-weight="700"
         >
-          0.0000000000000001
-           
-          FIL
+          0.0000000000000101
+           FIL
         </h2>
       </div>
     </div>

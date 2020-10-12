@@ -42,7 +42,7 @@ const Funds = forwardRef(
       }
 
       if (new BigNumber(val).toString() === 'NaN') return false
-      if (val.isGreaterThanOrEqualTo(balance)) {
+      if (val.isGreaterThan(balance)) {
         setError("The amount must be smaller than this account's balance")
         return false
       }
@@ -96,9 +96,7 @@ const Funds = forwardRef(
       <Box
         position='relative'
         display='flex'
-        // Update minHeight to {9} when USD bal calc is restored
         minHeight='120px'
-        // Remove alignItems when USD bal calc is restored
         alignItems='center'
         borderColor='input.border'
         ref={ref}
@@ -147,7 +145,6 @@ const Funds = forwardRef(
               height='100%'
               fontSize={5}
               borderTopLeftRadius={2}
-              // Remove borderBottomLeftRadius when restoring USD bal calc
               borderBottomLeftRadius={2}
               onChange={onFilChange}
               value={formatFilValue(filAmount)}
@@ -163,7 +160,6 @@ const Funds = forwardRef(
               top='0px'
               left='0px'
               borderTopRightRadius={2}
-              // Remove borderBottomRightRadius when USD bal calc is restored
               borderBottomRightRadius={2}
               valid={valid && !!formatFilValue(filAmount)}
               disabled={disabled}
