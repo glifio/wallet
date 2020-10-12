@@ -10,9 +10,8 @@ const TooltipContent = styled(Box)`
   height: fit-content;
   width: max-content;
   max-width: 200px;
-  top: 50%;
-  left: 20%;
-  transform: translate(-20%, -50%);
+  left: 32px;
+  top: -24px;
   opacity: 0;
   padding: ${props => props.theme.sizes[2]}px;
 
