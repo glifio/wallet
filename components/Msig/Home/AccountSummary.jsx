@@ -1,9 +1,25 @@
 import React from 'react'
+import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
-import { Box, Glyph, CopyAddress, Text, Button, IconLedger } from '../../Shared'
-import truncateAddress from '../../../utils/truncateAddress'
+import {
+  Box,
+  Glyph,
+  CopyAddress,
+  Text,
+  BaseButton,
+  IconLedger,
+  InlineBox
+} from '../../Shared'
+
+const ButtonViewOnLedgerDevice = styled(BaseButton)`
+  &:hover {
+    ${InlineBox} {
+      opacity: 1;
+    }
+  }
+`
 
 const AccountSummary = ({
   msigAddress,
@@ -100,17 +116,25 @@ const AccountSummary = ({
                   />
                 </Box>
               </Box>
-              <Button
-                title='View Address on Ledger Device'
-                variant='secondary'
-                borderColor='silver'
-                background='transparent'
-                color='core.darkgray'
+              <ButtonViewOnLedgerDevice
+                display='flex'
+                alignItems='center'
                 height='40px'
                 ml={2}
                 onClick={showOnDevice}
                 disabled={ledgerBusy}
-              />
+                bg='background.messageHistory'
+                border={0}
+                px={2}
+                pr={3}
+              >
+                <IconLedger size={4} mr={2} />
+                {ledgerBusy ? (
+                  <Text>Look at your Ledger device</Text>
+                ) : (
+                  <Text>View Address</Text>
+                )}
+              </ButtonViewOnLedgerDevice>
             </Box>
           </>
         )}
