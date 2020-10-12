@@ -24,7 +24,7 @@ import ErrorCard from './ErrorCard'
 import CustomizeFee from './CustomizeFee'
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
-import { LEDGER, SEND } from '../../../constants'
+import { LEDGER, SEND, emptyGasInfo } from '../../../constants'
 import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfigError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
@@ -52,13 +52,6 @@ const isValidForm = (
   const validToAddress = isValidAddress(toAddress, toAddressError)
   const validAmount = isValidAmount(value, balance, valueError)
   return validToAddress && validAmount && !otherError
-}
-
-const emptyGasInfo = {
-  estimatedTransactionFee: new FilecoinNumber('0', 'attofil'),
-  gasPremium: new FilecoinNumber('0', 'attofil'),
-  gasFeeCap: new FilecoinNumber('0', 'attofil'),
-  gasLimit: new FilecoinNumber('0', 'attofil')
 }
 
 const Send = ({ close }) => {

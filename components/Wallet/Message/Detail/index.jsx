@@ -12,8 +12,6 @@ import {
   Glyph,
   Text,
   Label,
-  Title as Total,
-  Num,
   StyledATag
 } from '../../../Shared'
 import { ButtonClose } from '../../../Shared/IconButtons'
@@ -23,6 +21,7 @@ import { useWalletProvider } from '../../../../WalletProvider'
 import MsgTypeAndStatus from './MsgTypeAndStatus'
 import DetailSection from './DetailSection'
 import { FILFOX } from '../../../../constants'
+import TotalSection from './TotalSection'
 
 const MessageDetailCard = styled(Card).attrs(() => ({
   maxWidth: 13,
@@ -54,8 +53,6 @@ const MessageDetail = ({ address, close, message }) => {
   const [errFetchingTxFee, setErrFetchingTxFee] = useState('')
 
   const loadingFee = fee.toAttoFil() === '0' && !fetchedTransactionFee
-  // if this is a SENT transaction, add the fee to the total
-  const shouldAddFeeToTotal = address === message.from
 
   useEffect(() => {
     const fetchGasUsed = async message => {
@@ -153,32 +150,7 @@ const MessageDetail = ({ address, close, message }) => {
           backgroundColor='background.screen'
           disabled
         />
-        <Box
-          display='flex'
-          flexDirection='row'
-          alignItems='flex-start'
-          justifyContent='space-between'
-          mt={5}
-          mx={1}
-        >
-          <Total mt={1} fontSize={4} alignSelf='flex-start'>
-            Total
-          </Total>
-          <Box display='flex' flexDirection='column' textAlign='right' pl={4}>
-            <Num
-              size='l'
-              css={`
-                word-wrap: break-word;
-              `}
-              color='core.primary'
-            >
-              {new FilecoinNumber(message.value, 'attofil')
-                .plus(shouldAddFeeToTotal ? fee : 0)
-                .toString()}{' '}
-              FIL
-            </Num>
-          </Box>
-        </Box>
+        <TotalSection message={message} fee={fee} />
         <Box
           display='flex'
           flexWrap='wrap'

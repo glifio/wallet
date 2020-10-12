@@ -96,13 +96,13 @@ const AccountSummary = ({
                   <CopyAddress
                     justifyContent='space-between'
                     color='core.darkgray'
-                    address={truncateAddress(walletAddress)}
+                    address={walletAddress}
                   />
                 </Box>
               </Box>
               <Button
                 title='View Address on Ledger Device'
-                variant='Secondary'
+                variant='secondary'
                 borderColor='silver'
                 background='transparent'
                 color='core.darkgray'
