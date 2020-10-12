@@ -72,6 +72,8 @@ const ProposeDetails = ({ message }) => {
       />
     )
   }
+
+  return <UnknownDetails message={message} />
 }
 
 ProposeDetails.propTypes = {
@@ -122,6 +124,24 @@ ExecDetails.propTypes = {
   message: MESSAGE_PROPS.isRequired
 }
 
+const UnknownDetails = ({ message }) => {
+  return (
+    <>
+      <Box mt={3}>
+        <Text>
+          We don&apos;t support this type of transaction yet. In case
+          you&apos;re wondering, it&apos;s a method {message.params.method}{' '}
+          multisig transaction!
+        </Text>
+      </Box>
+    </>
+  )
+}
+
+UnknownDetails.propTypes = {
+  message: MESSAGE_PROPS.isRequired
+}
+
 const DetailSection = ({ message }) => {
   switch (message.method) {
     case SEND:
@@ -137,7 +157,7 @@ const DetailSection = ({ message }) => {
     case EXEC:
       return <ExecDetails message={message} />
     default:
-      return <div>Unknown</div>
+      return <UnknownDetails message={message} />
   }
 }
 
