@@ -71,7 +71,10 @@ export const WithdrawHeaderText = ({ step }) => {
   return (
     <Box display='flex' flexDirection='column' alignItems='center'>
       <Text textAlign='center'>{text}</Text>
-      <StyledATag width='auto' href='http://google.com'>
+      <StyledATag
+        width='auto'
+        href='https://reading.supply/@glif/how-to-use-the-glif-vault-after-mainnet-launches-Td1ErO'
+      >
         Click here for our guided Filecoin Vault tutorial.
       </StyledATag>
     </Box>
