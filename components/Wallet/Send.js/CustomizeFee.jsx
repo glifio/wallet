@@ -29,7 +29,7 @@ const Helper = ({
 
   if (dirty) {
     return (
-      <>
+      <Box display='flex' justifyContent='flex-end' width='100%'>
         <Button
           variant='secondary'
           title='Save'
@@ -45,13 +45,13 @@ const Helper = ({
           onClick={reset}
           disabled={saving}
         />
-      </>
+      </Box>
     )
   }
 
   return (
-    <Text color='core.darkgray'>
-      *You will not pay more than {estimatedTransactionFee.toFil()} FIL for this
+    <Text width='100%' color='core.darkgray'>
+      You will not pay more than {estimatedTransactionFee.toFil()} FIL for this
       transaction.
     </Text>
   )
@@ -200,7 +200,6 @@ const CustomizeFee = ({
             display='flex'
             justifyContent='flex-start'
             textAlign='left'
-            maxWidth='280px'
             width='100%'
           >
             <Helper
