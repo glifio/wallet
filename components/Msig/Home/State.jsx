@@ -49,7 +49,7 @@ const State = ({
       flexDirection='column'
       minHeight='100vh'
       width='100%'
-      maxWidth={16}
+      maxWidth={18}
     >
       <Menu
         display='flex'
@@ -113,7 +113,7 @@ const State = ({
           setWithdrawing={setWithdrawing}
         />
       </Box>
-      <MessageHistory address={msigAddress} />
+      <MessageHistory maxWidth={18} address={msigAddress} />
     </Box>
   )
 }
