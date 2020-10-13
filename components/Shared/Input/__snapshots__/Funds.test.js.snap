@@ -125,6 +125,8 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   font-size: 2rem;
   margin-top: 0;
   margin-bottom: 0;
+  padding-left: 16px;
+  padding-right: 16px;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -335,6 +337,8 @@ exports[`Funds input it renders correctly 1`] = `
   font-size: 2rem;
   margin-top: 0;
   margin-bottom: 0;
+  padding-left: 16px;
+  padding-right: 16px;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -545,6 +549,8 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   font-size: 2rem;
   margin-top: 0;
   margin-bottom: 0;
+  padding-left: 16px;
+  padding-right: 16px;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -757,6 +763,8 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   font-size: 2rem;
   margin-top: 0;
   margin-bottom: 0;
+  padding-left: 16px;
+  padding-right: 16px;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -969,6 +977,8 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   font-size: 2rem;
   margin-top: 0;
   margin-bottom: 0;
+  padding-left: 16px;
+  padding-right: 16px;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -1184,6 +1194,8 @@ exports[`Funds input it renders error states properly 1`] = `
   font-size: 2rem;
   margin-top: 0;
   margin-bottom: 0;
+  padding-left: 16px;
+  padding-right: 16px;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -1394,6 +1406,8 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   font-size: 2rem;
   margin-top: 0;
   margin-bottom: 0;
+  padding-left: 16px;
+  padding-right: 16px;
   height: 100%;
   display: inline-block;
   width: 100%;

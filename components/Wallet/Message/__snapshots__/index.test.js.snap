@@ -2559,6 +2559,8 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   font-size: 2rem;
   margin-top: 0;
   margin-bottom: 0;
+  padding-left: 16px;
+  padding-right: 16px;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -2593,7 +2595,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   transition: 0.18s ease-in-out;
   border-bottom: 2px solid #5E26FF00;
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 .c43:hover {
@@ -3014,7 +3016,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
       <a
         class="c43"
         color="core.primary"
-        font-size="3"
+        font-size="2"
         href="https://filfox.info/en/message/bafy2bzacedchco2ff4almriyyfsnxae2fv6xosyffy5s77y2ebqjslt4dovd2"
         rel="noopener noreferrer"
         target="_blank"

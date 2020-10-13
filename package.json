@@ -1,6 +1,6 @@
 {
   "name": "filecoin-web-wallet",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -10,13 +10,14 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@glif/filecoin-address": "^1.0.0-lerna.4",
-    "@glif/filecoin-message": "^1.0.0-lerna.4",
-    "@glif/filecoin-number": "^1.0.0-lerna.4",
-    "@glif/filecoin-rpc-client": "^1.0.0-lerna.4",
-    "@glif/filecoin-wallet-provider": "^1.0.0-lerna.8",
-    "@ledgerhq/hw-transport-webusb": "5.13.1",
-    "@zondax/filecoin-signing-tools": "^0.9.0",
+    "@glif/filecoin-address": "1.0.0-beta.1",
+    "@glif/filecoin-message": "1.0.0-beta.4",
+    "@glif/filecoin-message-confirmer": "1.0.0-beta.4",
+    "@glif/filecoin-number": "1.0.0-beta.1",
+    "@glif/filecoin-rpc-client": "1.0.0-beta.1",
+    "@glif/filecoin-wallet-provider": "1.0.0-beta.4",
+    "@ledgerhq/hw-transport-webusb": "5.26.0",
+    "@zondax/filecoin-signing-tools": "0.9.0",
     "@zondax/ledger-filecoin": "0.11.0",
     "axios": "0.19.2",
     "bip39": "3.0.2",

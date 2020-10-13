@@ -50,8 +50,8 @@ const Helper = ({
   }
 
   return (
-    <Text color='core.darkgray'>
-      *You will not pay more than {estimatedTransactionFee.toFil()} FIL for this
+    <Text width='100%' color='core.darkgray'>
+      You will not pay more than {estimatedTransactionFee.toFil()} FIL for this
       transaction.
     </Text>
   )
@@ -64,6 +64,20 @@ Helper.propTypes = {
   setGasInfoWMaxFee: PropTypes.func.isRequired,
   reset: PropTypes.func.isRequired,
   estimatedTransactionFee: FILECOIN_NUMBER_PROP
+}
+
+const insufficientMsigFundsErr =
+  'The Signing account on your Ledger device does not have sufficient funds to pay this transaction fee.'
+const insufficientSendFundsErr =
+  'This account does not have enough FIL to pay for this transaction + the transaction fee.'
+
+const friendlifyError = err => {
+  if (!err.message) return err
+  if (err.message.toLowerCase().includes('retcode=2'))
+    return insufficientMsigFundsErr
+  if (err.message.toLowerCase().includes('retcode=6'))
+    return insufficientSendFundsErr
+  return err.message
 }
 
 const CustomizeFee = ({
@@ -84,6 +98,7 @@ const CustomizeFee = ({
   )
   const { walletProvider } = useWalletProvider()
   const wallet = useWallet()
+
   useEffect(() => {
     const estimate = async () => {
       try {
@@ -98,12 +113,14 @@ const CustomizeFee = ({
           estimatedTransactionFee: res.maxFee
         })
         if (res.maxFee.isGreaterThanOrEqualTo(feeMustBeLessThanThisAmount)) {
-          setError(
-            "You don't have enough FIL to pay this transaction fee amount."
-          )
+          const err =
+            message.Method === 0
+              ? insufficientSendFundsErr
+              : insufficientMsigFundsErr
+          setError(err)
         }
       } catch (err) {
-        setError(err.message || err)
+        setError(friendlifyError(err))
       } finally {
         setLoadingFee(false)
         setFrozen(false)
@@ -148,7 +165,7 @@ const CustomizeFee = ({
       })
       setDirty(false)
     } catch (err) {
-      setError(err.message || err)
+      setError(friendlifyError(err))
     } finally {
       setFrozen(false)
       setSavingNewFee(false)
@@ -198,9 +215,8 @@ const CustomizeFee = ({
           />
           <Box
             display='flex'
-            justifyContent='flex-start'
+            justifyContent='flex-end'
             textAlign='left'
-            maxWidth='280px'
             width='100%'
           >
             <Helper

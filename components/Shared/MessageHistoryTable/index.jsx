@@ -23,7 +23,7 @@ const MessageHistoryTable = ({
   total
 }) => {
   return (
-    <Box maxWidth={16} width='100%' border='none'>
+    <Box width='100%' border='none'>
       <Box display='flex' alignItems='center' justifyContent='space-between'>
         <Box display='flex' alignItems='center' justifyContent='flex-start' iv>
           <Glyph mr={3} color='core.primary' acronym='Tx' />
