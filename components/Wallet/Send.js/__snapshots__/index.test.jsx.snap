@@ -519,7 +519,6 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   display: inline-block;
   margin-left: auto;
   justify-self: flex-end;
-  position: relative;
 }
 
 .c1:hover {
@@ -1389,7 +1388,6 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   display: inline-block;
   margin-left: auto;
   justify-self: flex-end;
-  position: relative;
 }
 
 .c1:hover {
@@ -2608,7 +2606,6 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   display: inline-block;
   margin-left: auto;
   justify-self: flex-end;
-  position: relative;
 }
 
 .c1:hover {
@@ -3758,7 +3755,6 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
   display: inline-block;
   margin-left: auto;
   justify-self: flex-end;
-  position: relative;
 }
 
 .c1:hover {
@@ -5029,7 +5025,6 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   display: inline-block;
   margin-left: auto;
   justify-self: flex-end;
-  position: relative;
 }
 
 .c1:hover {
@@ -6420,7 +6415,6 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   display: inline-block;
   margin-left: auto;
   justify-self: flex-end;
-  position: relative;
 }
 
 .c1:hover {
@@ -7829,7 +7823,6 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   display: inline-block;
   margin-left: auto;
   justify-self: flex-end;
-  position: relative;
 }
 
 .c1:hover {
