@@ -6887,8 +6887,9 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                   font-size="5"
                   font-weight="700"
                 >
-                  0.01
-                   FIL
+                  0.010000000001
+                   
+                  FIL
                 </h2>
               </div>
             </div>
@@ -8328,8 +8329,9 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
                   font-size="5"
                   font-weight="700"
                 >
-                  0.01
-                   FIL
+                  0.010000000001
+                   
+                  FIL
                 </h2>
               </div>
             </div>

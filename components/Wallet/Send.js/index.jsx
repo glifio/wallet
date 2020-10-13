@@ -410,7 +410,11 @@ const Send = ({ close }) => {
                         `}
                         color='core.primary'
                       >
-                        {value.toFil()} FIL
+                        {new FilecoinNumber(
+                          value.plus(gasInfo.estimatedTransactionFee),
+                          'fil'
+                        ).toFil()}{' '}
+                        FIL
                       </Num>
                     </Box>
                   </Box>
