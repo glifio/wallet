@@ -2429,11 +2429,6 @@ exports[`Choosing a wallet it renders correctly 1`] = `
 `;
 
 exports[`Choosing a wallet it renders warning text for create wallet option 1`] = `
-.c3 {
-  min-width: 0;
-  box-sizing: border-box;
-}
-
 .c0 {
   min-width: 0;
   box-sizing: border-box;
@@ -2443,7 +2438,6 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 90vh;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2451,10 +2445,10 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 .c1 {
@@ -2482,11 +2476,8 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   border: 1px solid;
   border-radius: 4px;
   border-width: 1px;
-  border-color: #FF9E80;
-  padding: 16px;
+  padding: 0;
   margin-left: 8px;
-  background-color: #FF9E80;
-  color: #661800;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2498,6 +2489,25 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FF9E80;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -2510,6 +2520,7 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   border-width: 0.1875rem;
   border-radius: 8px;
   border-style: solid;
+  background-color: #FF9E80;
   color: #661800;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2527,11 +2538,13 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   justify-content: center;
 }
 
-.c8 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .c10 {
@@ -2596,16 +2609,15 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
 }
 
 .c6 {
+  color: #661800;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-  margin-top: 24px;
-  margin-bottom: 8px;
 }
 
-.c7 {
+.c8 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -2624,7 +2636,7 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-bottom: 2px solid #5E26FF00;
-  color: #ffffff;
+  color: #5E26FF;
   font-size: 1.25rem;
 }
 
@@ -2687,7 +2699,6 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
 <div
   class="c0"
   display="flex"
-  height="90vh"
   width="100%"
 >
   <div
@@ -2696,13 +2707,13 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   >
     <div
       class="c2"
-      color="status.warning.foreground"
       display="flex"
       overflow="hidden"
       width="100%"
     >
       <div
         class="c3"
+        display="flex"
       >
         <div
           class="c4"
@@ -2718,27 +2729,28 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
         </div>
         <h2
           class="c6"
+          color="status.warning.foreground"
           font-family="RT-Alias-Grotesk"
           font-size="4"
           font-weight="400"
         >
           Warning
         </h2>
+      </div>
+      <div
+        class="c7"
+      >
         <p
-          class="c7"
+          class="c8"
           font-family="RT-Alias-Grotesk"
           font-size="2"
           font-weight="400"
         >
           We do not recommend you use this account to hold or transact significant sums of Filecoin. This account is for testing purposes only. For significant sums, Glif should only be used with a Ledger hardware wallet.
         </p>
-      </div>
-      <div
-        class="c8"
-      >
         <a
           class="c9"
-          color="core.white"
+          color="core.primary"
           font-size="3"
           href="https://coinsutra.com/security-risks-bitcoin-wallets/"
           rel="noopener"
@@ -2774,11 +2786,6 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
 `;
 
 exports[`Choosing a wallet it renders warning text for import private key option 1`] = `
-.c3 {
-  min-width: 0;
-  box-sizing: border-box;
-}
-
 .c0 {
   min-width: 0;
   box-sizing: border-box;
@@ -2788,7 +2795,6 @@ exports[`Choosing a wallet it renders warning text for import private key option
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 90vh;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2796,10 +2802,10 @@ exports[`Choosing a wallet it renders warning text for import private key option
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 .c1 {
@@ -2827,11 +2833,8 @@ exports[`Choosing a wallet it renders warning text for import private key option
   border: 1px solid;
   border-radius: 4px;
   border-width: 1px;
-  border-color: #FF9E80;
-  padding: 16px;
+  padding: 0;
   margin-left: 8px;
-  background-color: #FF9E80;
-  color: #661800;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2843,6 +2846,25 @@ exports[`Choosing a wallet it renders warning text for import private key option
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FF9E80;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -2855,6 +2877,7 @@ exports[`Choosing a wallet it renders warning text for import private key option
   border-width: 0.1875rem;
   border-radius: 8px;
   border-style: solid;
+  background-color: #FF9E80;
   color: #661800;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2872,11 +2895,13 @@ exports[`Choosing a wallet it renders warning text for import private key option
   justify-content: center;
 }
 
-.c8 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .c10 {
@@ -2941,16 +2966,15 @@ exports[`Choosing a wallet it renders warning text for import private key option
 }
 
 .c6 {
+  color: #661800;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-  margin-top: 24px;
-  margin-bottom: 8px;
 }
 
-.c7 {
+.c8 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -2969,7 +2993,7 @@ exports[`Choosing a wallet it renders warning text for import private key option
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-bottom: 2px solid #5E26FF00;
-  color: #ffffff;
+  color: #5E26FF;
   font-size: 1.25rem;
 }
 
@@ -3032,7 +3056,6 @@ exports[`Choosing a wallet it renders warning text for import private key option
 <div
   class="c0"
   display="flex"
-  height="90vh"
   width="100%"
 >
   <div
@@ -3041,13 +3064,13 @@ exports[`Choosing a wallet it renders warning text for import private key option
   >
     <div
       class="c2"
-      color="status.warning.foreground"
       display="flex"
       overflow="hidden"
       width="100%"
     >
       <div
         class="c3"
+        display="flex"
       >
         <div
           class="c4"
@@ -3063,27 +3086,28 @@ exports[`Choosing a wallet it renders warning text for import private key option
         </div>
         <h2
           class="c6"
+          color="status.warning.foreground"
           font-family="RT-Alias-Grotesk"
           font-size="4"
           font-weight="400"
         >
           Warning
         </h2>
+      </div>
+      <div
+        class="c7"
+      >
         <p
-          class="c7"
+          class="c8"
           font-family="RT-Alias-Grotesk"
           font-size="2"
           font-weight="400"
         >
           We do not recommend you use this account to hold or transact significant sums of Filecoin. This account is for testing purposes only. For significant sums, Glif should only be used with a Ledger hardware wallet.
         </p>
-      </div>
-      <div
-        class="c8"
-      >
         <a
           class="c9"
-          color="core.white"
+          color="core.primary"
           font-size="3"
           href="https://coinsutra.com/security-risks-bitcoin-wallets/"
           rel="noopener"
@@ -3119,11 +3143,6 @@ exports[`Choosing a wallet it renders warning text for import private key option
 `;
 
 exports[`Choosing a wallet it renders warning text for import seed option 1`] = `
-.c3 {
-  min-width: 0;
-  box-sizing: border-box;
-}
-
 .c0 {
   min-width: 0;
   box-sizing: border-box;
@@ -3133,7 +3152,6 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 90vh;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -3141,10 +3159,10 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 .c1 {
@@ -3172,11 +3190,8 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   border: 1px solid;
   border-radius: 4px;
   border-width: 1px;
-  border-color: #FF9E80;
-  padding: 16px;
+  padding: 0;
   margin-left: 8px;
-  background-color: #FF9E80;
-  color: #661800;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3188,6 +3203,25 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FF9E80;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -3200,6 +3234,7 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   border-width: 0.1875rem;
   border-radius: 8px;
   border-style: solid;
+  background-color: #FF9E80;
   color: #661800;
   display: -webkit-box;
   display: -webkit-flex;
@@ -3217,11 +3252,13 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   justify-content: center;
 }
 
-.c8 {
+.c7 {
   min-width: 0;
   box-sizing: border-box;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .c10 {
@@ -3286,16 +3323,15 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
 }
 
 .c6 {
+  color: #661800;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-  margin-top: 24px;
-  margin-bottom: 8px;
 }
 
-.c7 {
+.c8 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -3314,7 +3350,7 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-bottom: 2px solid #5E26FF00;
-  color: #ffffff;
+  color: #5E26FF;
   font-size: 1.25rem;
 }
 
@@ -3377,7 +3413,6 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
 <div
   class="c0"
   display="flex"
-  height="90vh"
   width="100%"
 >
   <div
@@ -3386,13 +3421,13 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   >
     <div
       class="c2"
-      color="status.warning.foreground"
       display="flex"
       overflow="hidden"
       width="100%"
     >
       <div
         class="c3"
+        display="flex"
       >
         <div
           class="c4"
@@ -3408,27 +3443,28 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
         </div>
         <h2
           class="c6"
+          color="status.warning.foreground"
           font-family="RT-Alias-Grotesk"
           font-size="4"
           font-weight="400"
         >
           Warning
         </h2>
+      </div>
+      <div
+        class="c7"
+      >
         <p
-          class="c7"
+          class="c8"
           font-family="RT-Alias-Grotesk"
           font-size="2"
           font-weight="400"
         >
           We do not recommend you use this account to hold or transact significant sums of Filecoin. This account is for testing purposes only. For significant sums, Glif should only be used with a Ledger hardware wallet.
         </p>
-      </div>
-      <div
-        class="c8"
-      >
         <a
           class="c9"
-          color="core.white"
+          color="core.primary"
           font-size="3"
           href="https://coinsutra.com/security-risks-bitcoin-wallets/"
           rel="noopener"
