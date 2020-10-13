@@ -64,7 +64,7 @@ const Tooltip = forwardRef(({ content, ...props }, ref) => {
       </TooltipContainer>
 
       <TooltipContent ontouchstart p={2} borderRadius={4}>
-        <Text display='block' m={0}>
+        <Text textAlign='left' display='block' m={0}>
           {content}
         </Text>
       </TooltipContent>
