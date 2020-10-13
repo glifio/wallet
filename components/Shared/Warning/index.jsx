@@ -51,7 +51,7 @@ const WarningCard = ({
         <OnboardCard
           display='flex'
           flexDirection='column'
-          justifyContent='space-between'
+          justifyContent='flex-start'
           ml={2}
           minHeight={11}
           p={0}
