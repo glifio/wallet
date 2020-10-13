@@ -5,13 +5,22 @@ import { Box, Button, Num, Title } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
+const BalanceContainer = styled(Box)`
+  word-break: break-word;
+`
+
 const AvailableBalance = ({ available }) => {
   return (
-    <Box display='flex' flexDirection='column' alignItems='center' width='100%'>
+    <BalanceContainer
+      display='flex'
+      flexDirection='column'
+      alignItems='center'
+      width='100%'
+    >
       <Num size='xxl' color='core.primary'>
         {makeFriendlyBalance(available, 6, true)}
       </Num>
-    </Box>
+    </BalanceContainer>
   )
 }
 
@@ -31,11 +40,16 @@ const WithdrawButton = styled(Button)`
 `
 
 const TotalBalance = ({ total }) => (
-  <Box display='flex' flexDirection='column' alignItems='center' width='100%'>
+  <BalanceContainer
+    display='flex'
+    flexDirection='column'
+    alignItems='center'
+    width='100%'
+  >
     <Num size='xxl' color='core.primary'>
       {makeFriendlyBalance(total, 6, true)}
     </Num>
-  </Box>
+  </BalanceContainer>
 )
 
 TotalBalance.propTypes = {
