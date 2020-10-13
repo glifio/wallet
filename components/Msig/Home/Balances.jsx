@@ -21,7 +21,7 @@ AvailableBalance.propTypes = {
 
 const WithdrawButton = styled(Button)`
   left: 50%;
-  top: 50%;
+  top: 0%;
   transform: translate(-50%, -50%);
   opacity: 1;
   &:hover {
@@ -50,7 +50,7 @@ const Balances = ({ available, setWithdrawing, total }) => {
       flexDirection='column'
       alignItems='center'
       justifyContent='center'
-      maxWidth={16}
+      maxWidth={18}
       width='100%'
       bg='background.messageHistory'
       borderRadius={2}
@@ -61,19 +61,8 @@ const Balances = ({ available, setWithdrawing, total }) => {
         <AvailableBalance available={available} />
       </Box>
 
-      <WithdrawButton
-        position='absolute'
-        type='button'
-        variant='primary'
-        onClick={setWithdrawing}
-        title='Withdraw'
-        maxWidth={10}
-        minWidth={9}
-        mb={3}
-        borderRadius={6}
-      />
-
       <Box
+        position='relative'
         display='block'
         textAlign='center'
         borderTop={1}
@@ -83,6 +72,18 @@ const Balances = ({ available, setWithdrawing, total }) => {
       >
         <Title fontSize={2}>Total Vesting</Title>
         <TotalBalance total={total} />
+
+        <WithdrawButton
+          position='absolute'
+          type='button'
+          variant='primary'
+          onClick={setWithdrawing}
+          title='Withdraw'
+          maxWidth={10}
+          minWidth={9}
+          mb={3}
+          borderRadius={6}
+        />
       </Box>
     </Box>
   )
