@@ -50,8 +50,8 @@ const Helper = ({
   }
 
   return (
-    <Text color='core.darkgray'>
-      *You will not pay more than {estimatedTransactionFee.toFil()} FIL for this
+    <Text width='100%' color='core.darkgray'>
+      You will not pay more than {estimatedTransactionFee.toFil()} FIL for this
       transaction.
     </Text>
   )
@@ -198,9 +198,8 @@ const CustomizeFee = ({
           />
           <Box
             display='flex'
-            justifyContent='flex-start'
+            justifyContent='flex-end'
             textAlign='left'
-            maxWidth='280px'
             width='100%'
           >
             <Helper

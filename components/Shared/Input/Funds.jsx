@@ -155,6 +155,7 @@ const Funds = forwardRef(
               valid={valid && !!formatFilValue(filAmount)}
               {...props}
               my={0}
+              px={3}
             />
             <DenomTag
               top='0px'

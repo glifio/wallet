@@ -567,6 +567,8 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   font-size: 2rem;
   margin-top: 0;
   margin-bottom: 0;
+  padding-left: 16px;
+  padding-right: 16px;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -1601,6 +1603,8 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   font-size: 2rem;
   margin-top: 0;
   margin-bottom: 0;
+  padding-left: 16px;
+  padding-right: 16px;
   height: 100%;
   display: inline-block;
   width: 100%;
@@ -2637,6 +2641,8 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   font-size: 2rem;
   margin-top: 0;
   margin-bottom: 0;
+  padding-left: 16px;
+  padding-right: 16px;
   height: 100%;
   display: inline-block;
   width: 100%;
