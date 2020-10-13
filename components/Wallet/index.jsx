@@ -7,7 +7,8 @@ import {
   Wrapper,
   Sidebar,
   Content,
-  BaseButton as ButtonLogout
+  BaseButton as ButtonLogout,
+  Tooltip
 } from '../Shared'
 import Send from './Send.js'
 import MessageView from './Message'
@@ -114,6 +115,7 @@ export default () => {
                 mt={4}
                 display='flex'
                 alignItems='center'
+                justifyContent='space-between'
                 css={`
                   background-color: ${({ theme }) =>
                     theme.colors.core.secondary}00;
@@ -125,6 +127,7 @@ export default () => {
                 onClick={() => window.location.reload()}
               >
                 Logout
+                <Tooltip content='Logging out clears all your sensitive information from the browser and sends you back to the home page' />
               </ButtonLogout>
             </Sidebar>
             <Content>
