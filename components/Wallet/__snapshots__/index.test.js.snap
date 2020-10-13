@@ -170,12 +170,26 @@ exports[`WalletView it renders correctly 1`] = `
 .c39 {
   min-width: 0;
   box-sizing: border-box;
-  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   max-width: 800px;
   width: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: none;
+  width: 100%;
+}
+
+.c35 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1158,13 +1172,28 @@ exports[`WalletView it renders correctly 1`] = `
             class="c42"
             color="core.primary"
             display="flex"
-            size="6"
           >
-            <h3
-              class="c5"
+            <div
+              class="c37"
+              color="core.primary"
+              display="flex"
+              size="6"
             >
-              Tx
-            </h3>
+              <h3
+                class="c5"
+              >
+                Tx
+              </h3>
+            </div>
+            <p
+              class="c38"
+              color="core.primary"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Transaction History
+            </p>
           </div>
           <p
             class="c43"
@@ -1173,8 +1202,8 @@ exports[`WalletView it renders correctly 1`] = `
             font-size="2"
             font-weight="400"
           >
-            Transaction History
-          </p>
+            Refresh
+          </button>
         </div>
         <button
           class="c44"
@@ -1265,7 +1294,6 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c55"
                 display="flex"
-                width="9"
               >
                 <p
                   class="c56"
@@ -1323,8 +1351,9 @@ exports[`WalletView it renders correctly 1`] = `
               class="c61"
               display="flex"
             >
-              <li
-                class=""
+              <ul
+                class="c56"
+                display="flex"
               >
                 <p
                   class="c60"
@@ -1420,7 +1449,6 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c55"
                 display="flex"
-                width="9"
               >
                 <p
                   class="c56"
@@ -1478,8 +1506,9 @@ exports[`WalletView it renders correctly 1`] = `
               class="c61"
               display="flex"
             >
-              <li
-                class=""
+              <ul
+                class="c56"
+                display="flex"
               >
                 <p
                   class="c60"
@@ -1575,7 +1604,6 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c55"
                 display="flex"
-                width="9"
               >
                 <p
                   class="c56"
@@ -1633,8 +1661,9 @@ exports[`WalletView it renders correctly 1`] = `
               class="c61"
               display="flex"
             >
-              <li
-                class=""
+              <ul
+                class="c56"
+                display="flex"
               >
                 <p
                   class="c60"
@@ -1730,7 +1759,6 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c55"
                 display="flex"
-                width="9"
               >
                 <p
                   class="c56"
@@ -1788,8 +1816,9 @@ exports[`WalletView it renders correctly 1`] = `
               class="c61"
               display="flex"
             >
-              <li
-                class=""
+              <ul
+                class="c56"
+                display="flex"
               >
                 <p
                   class="c60"
@@ -1885,7 +1914,6 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c55"
                 display="flex"
-                width="9"
               >
                 <p
                   class="c56"
@@ -1943,8 +1971,9 @@ exports[`WalletView it renders correctly 1`] = `
               class="c61"
               display="flex"
             >
-              <li
-                class=""
+              <ul
+                class="c56"
+                display="flex"
               >
                 <p
                   class="c60"
@@ -2040,7 +2069,6 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c55"
                 display="flex"
-                width="9"
               >
                 <p
                   class="c56"
@@ -2098,8 +2126,9 @@ exports[`WalletView it renders correctly 1`] = `
               class="c61"
               display="flex"
             >
-              <li
-                class=""
+              <ul
+                class="c56"
+                display="flex"
               >
                 <p
                   class="c60"
@@ -2195,7 +2224,6 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c55"
                 display="flex"
-                width="9"
               >
                 <p
                   class="c56"
@@ -2253,8 +2281,9 @@ exports[`WalletView it renders correctly 1`] = `
               class="c61"
               display="flex"
             >
-              <li
-                class=""
+              <ul
+                class="c56"
+                display="flex"
               >
                 <p
                   class="c60"
@@ -2350,7 +2379,6 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c55"
                 display="flex"
-                width="9"
               >
                 <p
                   class="c56"
@@ -2408,8 +2436,9 @@ exports[`WalletView it renders correctly 1`] = `
               class="c61"
               display="flex"
             >
-              <li
-                class=""
+              <ul
+                class="c56"
+                display="flex"
               >
                 <p
                   class="c60"
@@ -2505,7 +2534,6 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c55"
                 display="flex"
-                width="9"
               >
                 <p
                   class="c56"
@@ -2563,8 +2591,9 @@ exports[`WalletView it renders correctly 1`] = `
               class="c61"
               display="flex"
             >
-              <li
-                class=""
+              <ul
+                class="c56"
+                display="flex"
               >
                 <p
                   class="c60"
@@ -2660,7 +2689,6 @@ exports[`WalletView it renders correctly 1`] = `
               <li
                 class="c55"
                 display="flex"
-                width="9"
               >
                 <p
                   class="c56"
@@ -2718,8 +2746,9 @@ exports[`WalletView it renders correctly 1`] = `
               class="c61"
               display="flex"
             >
-              <li
-                class=""
+              <ul
+                class="c56"
+                display="flex"
               >
                 <p
                   class="c60"
@@ -2747,8 +2776,18 @@ exports[`WalletView it renders correctly 1`] = `
           role="button"
           width="100%"
         >
-          View More
-        </p>
+          <p
+            class="c58"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+            role="button"
+            width="100%"
+          >
+            View More
+          </p>
+        </div>
       </div>
     </div>
   </div>

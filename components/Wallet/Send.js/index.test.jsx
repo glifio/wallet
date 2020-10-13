@@ -313,11 +313,7 @@ describe('Send Flow', () => {
         await flushPromises()
       })
       expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
-      expect(
-        screen.getByText(
-          /You don't have enough FIL to pay this transaction fee amount./
-        )
-      ).toBeInTheDocument()
+      expect(screen.getByText(/not have enough FIL/)).toBeInTheDocument()
       expect(screen.getByText('Next')).toBeDisabled()
     })
 
