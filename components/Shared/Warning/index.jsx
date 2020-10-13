@@ -15,7 +15,7 @@ const DescriptionText = ({ description }) => {
   return (
     <>
       {description.map(d => (
-        <Text>{d}</Text>
+        <Text mt={0}>{d}</Text>
       ))}
     </>
   )
@@ -38,9 +38,8 @@ const WarningCard = ({
       display='flex'
       flexDirection='column'
       width='100%'
-      height='90vh'
       alignItems='center'
-      justifyContent='center'
+      justifyContent='flex-start'
       p={4}
     >
       <Box
@@ -53,27 +52,32 @@ const WarningCard = ({
           display='flex'
           flexDirection='column'
           justifyContent='space-between'
-          borderColor='status.warning.background'
-          bg='status.warning.background'
-          color='status.warning.foreground'
           ml={2}
           minHeight={11}
+          p={0}
         >
-          <Box>
-            <Glyph color='status.warning.foreground' acronym='Wn' />
-            <Title mt={4} mb={2}>
-              {title}
-            </Title>
-            <DescriptionText description={description} />
+          <Box
+            display='flex'
+            alignItems='center'
+            justifyContent='space-between'
+            bg='status.warning.background'
+            p={3}
+          >
+            <Glyph
+              color='status.warning.foreground'
+              bg='status.warning.background'
+              acronym='Wn'
+            />
+            <Title color='status.warning.foreground'>{title}</Title>
           </Box>
+          <Box px={3} py={4}>
+            <DescriptionText color='core.nearblack' description={description} />
 
-          <Box my={3}>
             <StyledATag
               rel='noopener'
               target='_blank'
               href={linkhref}
               fontSize={3}
-              color='core.white'
             >
               {linkDisplay}
             </StyledATag>
