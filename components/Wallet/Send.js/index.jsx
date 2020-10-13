@@ -250,7 +250,6 @@ const Send = ({ close }) => {
         <ButtonClose
           role='button'
           type='button'
-          position='relative'
           justifySelf='flex-end'
           marginLeft='auto'
           onClick={() => {
