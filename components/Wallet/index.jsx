@@ -7,6 +7,7 @@ import {
   Wrapper,
   Sidebar,
   Content,
+  Box,
   BaseButton as ButtonLogout
 } from '../Shared'
 import Send from './Send.js'
@@ -128,7 +129,14 @@ export default () => {
               </ButtonLogout>
             </Sidebar>
             <Content>
-              {childView === MESSAGE_HISTORY && <MessageView />}
+              <Box
+                display='flex'
+                justifyContent='center'
+                maxWidth={16}
+                width='100%'
+              >
+                {childView === MESSAGE_HISTORY && <MessageView />}
+              </Box>
             </Content>
           </>
         )}
