@@ -601,7 +601,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   transition: 0.18s ease-in-out;
   border-bottom: 2px solid #5E26FF00;
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 .c43:hover {
@@ -1014,7 +1014,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
       <a
         class="c43"
         color="core.primary"
-        font-size="3"
+        font-size="2"
         href="https://filfox.info/en/message/rdafdsagdfsa"
         rel="noopener noreferrer"
         target="_blank"
@@ -1635,7 +1635,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   transition: 0.18s ease-in-out;
   border-bottom: 2px solid #5E26FF00;
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 .c43:hover {
@@ -2048,7 +2048,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
       <a
         class="c43"
         color="core.primary"
-        font-size="3"
+        font-size="2"
         href="https://filfox.info/en/message/rdafdsagdfsa"
         rel="noopener noreferrer"
         target="_blank"
@@ -2671,7 +2671,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   transition: 0.18s ease-in-out;
   border-bottom: 2px solid #5E26FF00;
   color: #5E26FF;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 .c43:hover {
@@ -3104,7 +3104,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
       <a
         class="c43"
         color="core.primary"
-        font-size="3"
+        font-size="2"
         href="https://filfox.info/en/message/rdafdsagdfsa"
         rel="noopener noreferrer"
         target="_blank"
