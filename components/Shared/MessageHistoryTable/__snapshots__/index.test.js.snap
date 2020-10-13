@@ -5,7 +5,6 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border: none;
-  max-width: 800px;
   width: 100%;
 }
 

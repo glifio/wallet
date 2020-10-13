@@ -56,7 +56,7 @@ const TooltipContainer = styled.a`
 
 const Tooltip = forwardRef(({ content, ...props }, ref) => {
   return (
-    <Box position='relative'>
+    <Box position='relative' mx={2}>
       <TooltipContainer aria-label='Tooltip' ref={ref} {...props}>
         <Text m={0} color='core.black'>
           ?
@@ -64,7 +64,7 @@ const Tooltip = forwardRef(({ content, ...props }, ref) => {
       </TooltipContainer>
 
       <TooltipContent ontouchstart p={2} borderRadius={4}>
-        <Text display='block' m={0}>
+        <Text display='block' m={0} color='core.nearblack'>
           {content}
         </Text>
       </TooltipContent>

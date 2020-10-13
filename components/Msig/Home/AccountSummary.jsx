@@ -10,7 +10,8 @@ import {
   Text,
   BaseButton,
   Button,
-  IconLedger
+  IconLedger,
+  Tooltip
 } from '../../Shared'
 
 const ButtonViewOnLedgerDevice = styled(BaseButton)``
@@ -128,6 +129,7 @@ const AccountSummary = ({
                 ) : (
                   <Text>View Address</Text>
                 )}
+                <Tooltip content='Displays your address on your Ledger device' />
               </ButtonViewOnLedgerDevice>
             </Box>
           </>

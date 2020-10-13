@@ -5,13 +5,22 @@ import { Box, Button, Num, Title } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
+const BalanceContainer = styled(Box)`
+  word-break: break-word;
+`
+
 const AvailableBalance = ({ available }) => {
   return (
-    <Box display='flex' flexDirection='column' alignItems='center' width='100%'>
+    <BalanceContainer
+      display='flex'
+      flexDirection='column'
+      alignItems='center'
+      width='100%'
+    >
       <Num size='xxl' color='core.primary'>
         {makeFriendlyBalance(available, 6, true)}
       </Num>
-    </Box>
+    </BalanceContainer>
   )
 }
 
@@ -21,7 +30,7 @@ AvailableBalance.propTypes = {
 
 const WithdrawButton = styled(Button)`
   left: 50%;
-  top: 50%;
+  top: 0%;
   transform: translate(-50%, -50%);
   opacity: 1;
   &:hover {
@@ -31,11 +40,16 @@ const WithdrawButton = styled(Button)`
 `
 
 const TotalBalance = ({ total }) => (
-  <Box display='flex' flexDirection='column' alignItems='center' width='100%'>
+  <BalanceContainer
+    display='flex'
+    flexDirection='column'
+    alignItems='center'
+    width='100%'
+  >
     <Num size='xxl' color='core.primary'>
       {makeFriendlyBalance(total, 6, true)}
     </Num>
-  </Box>
+  </BalanceContainer>
 )
 
 TotalBalance.propTypes = {
@@ -50,7 +64,7 @@ const Balances = ({ available, setWithdrawing, total }) => {
       flexDirection='column'
       alignItems='center'
       justifyContent='center'
-      maxWidth={16}
+      maxWidth={18}
       width='100%'
       bg='background.messageHistory'
       borderRadius={2}
@@ -61,19 +75,8 @@ const Balances = ({ available, setWithdrawing, total }) => {
         <AvailableBalance available={available} />
       </Box>
 
-      <WithdrawButton
-        position='absolute'
-        type='button'
-        variant='primary'
-        onClick={setWithdrawing}
-        title='Withdraw'
-        maxWidth={10}
-        minWidth={9}
-        mb={3}
-        borderRadius={6}
-      />
-
       <Box
+        position='relative'
         display='block'
         textAlign='center'
         borderTop={1}
@@ -83,6 +86,18 @@ const Balances = ({ available, setWithdrawing, total }) => {
       >
         <Title fontSize={2}>Total Vesting</Title>
         <TotalBalance total={total} />
+
+        <WithdrawButton
+          position='absolute'
+          type='button'
+          variant='primary'
+          onClick={setWithdrawing}
+          title='Withdraw'
+          maxWidth={10}
+          minWidth={9}
+          mb={3}
+          borderRadius={6}
+        />
       </Box>
     </Box>
   )
