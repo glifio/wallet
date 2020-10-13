@@ -66,13 +66,17 @@ Helper.propTypes = {
   estimatedTransactionFee: FILECOIN_NUMBER_PROP
 }
 
-const insufficientFundsErr =
+const insufficientMsigFundsErr =
   'The Signing account on your Ledger device does not have sufficient funds to pay this transaction fee.'
+const insufficientSendFundsErr =
+  'This account does not have enough FIL to pay for this transaction + the transaction fee.'
 
 const friendlifyError = err => {
   if (!err.message) return err
   if (err.message.toLowerCase().includes('retcode=2'))
-    return insufficientFundsErr
+    return insufficientMsigFundsErr
+  if (err.message.toLowerCase().includes('retcode=6'))
+    return insufficientSendFundsErr
   return err.message
 }
 
@@ -109,7 +113,11 @@ const CustomizeFee = ({
           estimatedTransactionFee: res.maxFee
         })
         if (res.maxFee.isGreaterThanOrEqualTo(feeMustBeLessThanThisAmount)) {
-          setError(insufficientFundsErr)
+          const err =
+            message.Method === 0
+              ? insufficientSendFundsErr
+              : insufficientMsigFundsErr
+          setError(err)
         }
       } catch (err) {
         setError(friendlifyError(err))
