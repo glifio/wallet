@@ -105,15 +105,15 @@ const State = ({
         flexDirection='column'
         alignItems='center'
         justifyContent='center'
-        my={4}
       >
         <Balances
           available={available}
           total={total}
           setWithdrawing={setWithdrawing}
         />
+
+        <MessageHistory maxWidth={18} address={msigAddress} />
       </Box>
-      <MessageHistory maxWidth={18} address={msigAddress} />
     </Box>
   )
 }

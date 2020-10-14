@@ -66,6 +66,7 @@ const Balances = ({ available, setWithdrawing, total }) => {
       justifyContent='center'
       maxWidth={18}
       width='100%'
+      my={4}
       bg='background.messageHistory'
       borderRadius={2}
       boxShadow={2}
