@@ -106,7 +106,8 @@ SendDetails.propTypes = {
 const ExecDetails = ({ message }) => {
   return (
     <>
-      <Box mt={3}>
+      <Box display='flex' justifyContent='space-between' mt={3}>
+        <Text>Action</Text>
         <Text>Created new actor</Text>
       </Box>
       <Input.Funds
