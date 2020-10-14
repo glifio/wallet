@@ -74,8 +74,8 @@ const Balances = ({ available, setWithdrawing, total }) => {
         css={`
           background: linear-gradient(
             169deg,
-            #eaebf1 5.19%,
-            rgba(111, 123, 159, 0) 116.24%
+            hsl(224deg 48% 94%) 5.19%,
+            hsl(224deg 48% 93% / 5%) 116.24%
           );
         `}
       >
