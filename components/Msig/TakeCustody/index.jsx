@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
-import { FilecoinNumber } from '@glif/filecoin-number'
+import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
 import { validateAddressString } from '@glif/filecoin-address'
 
@@ -29,7 +29,8 @@ import Preface from './Preface'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send.js/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send.js/ConfirmationCard'
-import { LEDGER, PROPOSE } from '../../../constants'
+import CustomizeFee from '../../Wallet/Send.js/CustomizeFee'
+import { LEDGER, PROPOSE, emptyGasInfo } from '../../../constants'
 import {
   reportLedgerConfigError,
   hasLedgerError
@@ -37,6 +38,7 @@ import {
 import reportError from '../../../utils/reportError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
+import { pickPLSigner, getMethod6SerializedParams } from '../../../utils/msig'
 
 const ChangeOwner = ({ address, msigBalance, signers, close }) => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
@@ -45,11 +47,68 @@ const ChangeOwner = ({ address, msigBalance, signers, close }) => {
   const { serializeParams } = useWasm()
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
-  const [toAddress, setToAddress] = useState('')
-  const [toAddressError, setToAddressError] = useState('')
   const [uncaughtError, setUncaughtError] = useState('')
   const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
   const [mPoolPushing, setMPoolPushing] = useState(false)
+  const [gasError, setGasError] = useState('')
+  const [gasInfo, setGasInfo] = useState(emptyGasInfo)
+  const [frozen, setFrozen] = useState(false)
+
+  const [messageInfo, setMessageInfo] = useState({
+    message: { ...emptyGasInfo },
+    params: {}
+  })
+
+  const constructMsg = async (nonce = 0) => {
+    const signer = pickPLSigner(signers)
+    const innerParams = {
+      Signer: signer,
+      Decrease: false
+    }
+    console.log('SENDING!')
+    try {
+      const serializedInnerParams = await getMethod6SerializedParams(
+        address,
+        innerParams
+      )
+    } catch (err) {
+      console.log('ERR!', err)
+    }
+
+    const serializedInnerParams = 'gkQAhKAB9A=='
+
+    const outerParams = {
+      to: address,
+      value: '0',
+      method: 6,
+      params: serializedInnerParams
+    }
+
+    const serializedOuterParams = Buffer.from(
+      serializeParams(outerParams),
+      'hex'
+    )
+
+    const message = new Message({
+      to: address,
+      from: wallet.address,
+      value: '0',
+      method: 2,
+      nonce,
+      params: serializedOuterParams.toString('base64'),
+      gasPremium: gasInfo.gasPremium.toAttoFil(),
+      gasFeeCap: gasInfo.gasFeeCap.toAttoFil(),
+      gasLimit: new BigNumber(gasInfo.gasLimit.toAttoFil()).toNumber()
+    })
+
+    return {
+      message,
+      params: {
+        ...outerParams,
+        params: innerParams
+      }
+    }
+  }
 
   const sendMsg = async () => {
     setFetchingTxDetails(true)
@@ -57,60 +116,27 @@ const ChangeOwner = ({ address, msigBalance, signers, close }) => {
 
     if (provider) {
       const nonce = await provider.getNonce(wallet.address)
-      const innerParams = {
-        to: toAddress,
-        from: wallet.address
-      }
-
-      const serializedInnerParams = Buffer.from(
-        serializeParams(innerParams),
-        'hex'
-      ).toString('base64')
-
-      const innerMessage = {
-        to: address,
-        value: '0',
-        method: 7,
-        params: serializedInnerParams
-      }
-
-      const serializedInnerMessage = Buffer.from(
-        serializeParams(innerMessage),
-        'hex'
-      )
-
-      const messageForSigning = new Message({
-        to: address,
-        from: wallet.address,
-        value: '0',
-        method: 2,
-        nonce,
-        params: serializedInnerMessage.toString('base64')
-      })
-
-      const msgWithGas = await provider.gasEstimateMessageGas(
-        messageForSigning.toLotusType()
-      )
+      const { message, params } = await constructMsg(nonce)
       setFetchingTxDetails(false)
-      const signedMessage = await provider.wallet.sign(
-        msgWithGas.toSerializeableType(),
-        wallet.path
-      )
+      // const signedMessage = await provider.wallet.sign(
+      //   msgWithGas.toSerializeableType(),
+      //   wallet.path
+      // )
 
-      const messageObj = msgWithGas.toLotusType()
-      setMPoolPushing(true)
-      const msgCid = await provider.sendMessage(messageObj, signedMessage)
-      messageObj.cid = msgCid['/']
-      messageObj.timestamp = dayjs().unix()
-      const maxFee = await provider.gasEstimateMaxFee(msgWithGas.toLotusType())
-      messageObj.maxFee = maxFee.toAttoFil()
-      // dont know how much was actually paid in this message yet, so we mark it as 0
-      messageObj.paidFee = '0'
-      messageObj.value = new FilecoinNumber(messageObj.Value, 'attofil').toFil()
-      // reformat the params and method for tx table
-      messageObj.params = { ...innerMessage, params: innerParams }
-      messageObj.method = PROPOSE
-      return messageObj
+      // const messageObj = msgWithGas.toLotusType()
+      // setMPoolPushing(true)
+      // const msgCid = await provider.sendMessage(messageObj, signedMessage)
+      // messageObj.cid = msgCid['/']
+      // messageObj.timestamp = dayjs().unix()
+      // const maxFee = await provider.gasEstimateMaxFee(msgWithGas.toLotusType())
+      // messageObj.maxFee = maxFee.toAttoFil()
+      // // dont know how much was actually paid in this message yet, so we mark it as 0
+      // messageObj.paidFee = '0'
+      // messageObj.value = new FilecoinNumber(messageObj.Value, 'attofil').toFil()
+      // // reformat the params and method for tx table
+      // messageObj.params = { ...innerMessage, params: innerParams }
+      // messageObj.method = PROPOSE
+      // return messageObj
     }
     return null
   }
@@ -118,10 +144,11 @@ const ChangeOwner = ({ address, msigBalance, signers, close }) => {
   const onSubmit = async e => {
     e.preventDefault()
     if (step === 1) {
+      const messageInfo = await constructMsg()
+      console.log(messageInfo, 'MESSAGE INFO')
+      setMessageInfo(messageInfo)
       setStep(2)
-    } else if (step === 2 && !validateAddressString(toAddress)) {
-      setToAddressError('Invalid to address')
-    } else if (step === 2 && validateAddressString(toAddress)) {
+    } else if (step === 2) {
       setStep(3)
     } else if (step === 3) {
       setAttemptingTx(true)
@@ -157,9 +184,12 @@ const ChangeOwner = ({ address, msigBalance, signers, close }) => {
   }
 
   const isSubmitBtnDisabled = () => {
+    if (frozen) return true
     if (step === 1) return false
+    if (step === 2 && gasError) return true
     if (uncaughtError) return false
     if (attemptingTx) return true
+    if (step > 3) return true
   }
 
   return (
@@ -226,53 +256,25 @@ const ChangeOwner = ({ address, msigBalance, signers, close }) => {
               {step === 1 && <Preface />}
               <Box boxShadow={2} borderRadius={4}>
                 {step > 1 && (
-                  <CardHeader address={address} balance={msigBalance} />
-                )}
-                {step > 1 && (
                   <>
-                    <Box width='100%' p={3} border={0} bg='background.screen'>
-                      <Input.Address
-                        label='New owner'
-                        value={toAddress}
-                        onChange={e => setToAddress(e.target.value)}
-                        error={toAddressError}
-                        disabled={step === 3}
-                        onFocus={() => {
-                          if (toAddressError) setToAddressError('')
-                        }}
+                    <CardHeader address={address} balance={msigBalance} />
+                    <Box
+                      width='100%'
+                      px={3}
+                      pb={step === 3 && 3}
+                      border={0}
+                      bg='background.screen'
+                    >
+                      <CustomizeFee
+                        message={messageInfo.message.toLotusType()}
+                        gasInfo={gasInfo}
+                        setGasInfo={setGasInfo}
+                        setFrozen={setFrozen}
+                        setError={setGasError}
+                        error={gasError}
+                        feeMustBeLessThanThisAmount={wallet.balance}
                       />
                     </Box>
-                    {step > 2 && (
-                      <Box
-                        display='flex'
-                        flexDirection='row'
-                        justifyContent='space-between'
-                        width='100%'
-                        p={3}
-                        border={0}
-                        bg='background.screen'
-                      >
-                        <Box>
-                          <Text margin={0}>Transaction Fee</Text>
-                          <Box display='flex' alignItems='flex-start'>
-                            <Text margin={0} color='core.darkgray'>
-                              Paid via{' '}
-                            </Text>
-                            <InlineBox ml={1} mr={2}>
-                              <IconLedger size={4} />
-                            </InlineBox>
-                            <Text margin={0} color='core.darkgray'>
-                              {makeFriendlyBalance(wallet.balance, 6, true)} FIL
-                            </Text>
-                          </Box>
-                        </Box>
-                        <Box display='flex' flexDirection='row'>
-                          <Text ml={2} color='core.primary'>
-                            {'< 0.0001 FIL'}
-                          </Text>
-                        </Box>
-                      </Box>
-                    )}
                   </>
                 )}
               </Box>
