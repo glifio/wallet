@@ -29,13 +29,9 @@ AvailableBalance.propTypes = {
 }
 
 const WithdrawButton = styled(Button)`
-  left: 50%;
-  top: 0%;
-  transform: translate(-50%, -50%);
-  opacity: 1;
   &:hover {
     opacity: 1;
-    transform: translate(-50%, -57%);
+    transform: translateY(-5%);
   }
 `
 
@@ -46,7 +42,7 @@ const TotalBalance = ({ total }) => (
     alignItems='center'
     width='100%'
   >
-    <Num size='xxl' color='core.primary'>
+    <Num size='xxl' color='core.darkgray'>
       {makeFriendlyBalance(total, 6, true)}
     </Num>
   </BalanceContainer>
@@ -66,38 +62,47 @@ const Balances = ({ available, setWithdrawing, total }) => {
       justifyContent='center'
       maxWidth={18}
       width='100%'
-      bg='background.messageHistory'
-      borderRadius={2}
-      boxShadow={2}
     >
-      <Box display='block' textAlign='center' width='100%' p={6}>
-        <Title fontSize={2}>Available Balance</Title>
-        <AvailableBalance available={available} />
-      </Box>
-
       <Box
-        position='relative'
         display='block'
         textAlign='center'
-        borderTop={1}
-        borderColor='core.lightgray'
         width='100%'
-        p={6}
+        p={4}
+        pt={6}
+        pb={5}
+        borderRadius={3}
+        css={`
+          background: linear-gradient(
+            169deg,
+            #eaebf1 5.19%,
+            rgba(111, 123, 159, 0) 116.24%
+          );
+        `}
       >
-        <Title fontSize={2}>Total Vesting</Title>
-        <TotalBalance total={total} />
-
+        <Title fontSize={2} mb={5}>
+          Available Balance
+        </Title>
+        <AvailableBalance available={available} />
         <WithdrawButton
-          position='absolute'
           type='button'
           variant='primary'
           onClick={setWithdrawing}
           title='Withdraw'
           maxWidth={10}
           minWidth={9}
-          mb={3}
+          mt={5}
           borderRadius={6}
         />
+      </Box>
+      <Box
+        position='relative'
+        display='block'
+        textAlign='center'
+        width='100%'
+        p={6}
+      >
+        <Title fontSize={2}>Total Vesting</Title>
+        <TotalBalance total={total} />
       </Box>
     </Box>
   )
