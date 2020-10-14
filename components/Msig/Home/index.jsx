@@ -7,7 +7,7 @@ import TakeCustody from '../TakeCustody'
 import { Box, LoadingScreen } from '../../Shared'
 import State from './State'
 import useWallet from '../../../WalletProvider/useWallet'
-import { msigPartlyOwnedByPL } from '../../../utils/msig/isSupportedMsig'
+import { msigPartlyOwnedByPL } from '../../../utils/msig'
 
 const MSIG_STATE = 'MSIG_STATE'
 const WITHDRAW = 'WITHDRAW'
@@ -51,7 +51,7 @@ export default () => {
         {!msig.loading && childView === TAKE_CUSTODY && (
           <TakeCustody
             close={() => setChildView(MSIG_STATE)}
-            balance={msig.AvailableBalance}
+            msigBalance={msig.AvailableBalance}
             address={msigActorAddress}
             signers={msig.Signers}
           />
