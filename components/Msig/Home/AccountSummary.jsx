@@ -90,7 +90,12 @@ const AccountSummary = ({
           </>
         ) : (
           <>
-            <Box position='relative' display='flex' color='card.account.color'>
+            <Box
+              position='relative'
+              display='flex'
+              flexWrap='wrap'
+              color='card.account.color'
+            >
               <Box
                 display='flex'
                 alignItems='center'
@@ -127,23 +132,28 @@ const AccountSummary = ({
               <ButtonViewOnLedgerDevice
                 display='flex'
                 alignItems='center'
-                ml={2}
+                maxWidth={9}
                 onClick={showOnDevice}
                 disabled={ledgerBusy}
-                bg='background.messageHistory'
-                border={0}
+                border={1}
+                bg='transparent'
+                borderColor='core.lightgray'
                 my={1}
                 height={6}
                 flexGrow='1'
+                borderRadius={6}
               >
                 <IconLedger size={4} mr={2} />
                 {ledgerBusy ? (
-                  <Text>Look at your Ledger device</Text>
+                  <Text>Check Ledger device</Text>
                 ) : (
                   <Text>View</Text>
                 )}
-                <Tooltip content='Displays your address on your Ledger device' />
               </ButtonViewOnLedgerDevice>
+              <Tooltip
+                borderColor='core.lightgray'
+                content='Displays your address on your Ledger device'
+              />
             </Box>
           </>
         )}
