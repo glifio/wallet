@@ -25,8 +25,7 @@ import TotalSection from './TotalSection'
 
 const MessageDetailCard = styled(Card).attrs(() => ({
   maxWidth: 13,
-  border: 1,
-  borderColor: 'core.silver'
+  border: 0
 }))`
   display: flex;
   flex-direction: column;
@@ -98,7 +97,7 @@ const MessageDetail = ({ address, close, message }) => {
   }
 
   return (
-    <MessageDetailCard>
+    <MessageDetailCard boxShadow={1}>
       <Box
         display='flex'
         flexDirection='row'
