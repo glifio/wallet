@@ -46,81 +46,80 @@ const State = ({
     resetState()
   }
   return (
-    <Box
-      display='flex'
-      flexDirection='column'
-      minHeight='100vh'
-      width='100%'
-      maxWidth={18}
-    >
+    <Box display='flex' flexDirection='column' minHeight='100vh' width='100%'>
       <Menu
         display='flex'
+        flexWrap='wrap'
         width='100%'
-        alignItems='center'
+        alignItems='flex-start'
         justifyContent='space-between'
       >
-        <MenuItem display='flex' alignItems='center'>
-          <IconGlif
-            size={6}
-            css={`
-              transform: rotate(-90deg);
-            `}
-          />
-          <Title ml={2}>Vault</Title>
-        </MenuItem>
-        {/* <MenuItem>
-          <Button
-            type='button'
-            variant='secondary'
-            onClick={setChangingOwner}
-            title='Change Owner'
-            maxWidth={10}
-            minWidth={9}
-            borderRadius={6}
-          />
-        </MenuItem> */}
-        {showTakeCustodyOption && (
+        <Menu display='flex' width='100%' justifyContent='space-between'>
+          <MenuItem display='flex' alignItems='center'>
+            <IconGlif
+              size={6}
+              css={`
+                transform: rotate(-90deg);
+              `}
+            />
+            <Title ml={2}>Vault</Title>
+          </MenuItem>
           <MenuItem>
             <Button
               type='button'
               variant='secondary'
-              onClick={setTakingCustody}
-              title='TAKE CONTROL'
+              onClick={setChangingOwner}
+              title='Change Owner'
               maxWidth={10}
               minWidth={9}
               borderRadius={6}
             />
           </MenuItem>
-        )}
+          {/* 
+        {showTakeCustodyOption && (
+        <MenuItem>
+          <Button
+            type='button'
+            variant='secondary'
+            onClick={setTakingCustody}
+            title='TAKE CONTROL'
+            maxWidth={10}
+            minWidth={9}
+            borderRadius={6}
+          />
+        </MenuItem>
+        )} */}
+        </Menu>
+        <Menu display='flex' width='100%' maxWidth='1024px' margin='0 auto'>
+          <MenuItem>
+            <AccountSummary
+              msigAddress={msigAddress}
+              walletAddress={walletAddress}
+              showOnDevice={onShowOnLedger}
+              ledgerBusy={ledgerBusy}
+              error={reportLedgerConfigError({
+                ...ledger,
+                otherError: uncaughtError
+              })}
+              reset={reset}
+            />
+          </MenuItem>
+        </Menu>
       </Menu>
-      <Menu
+      {/* <Menu
         display='flex'
         justifyContent='space-between'
         alignItems='center'
         mt={4}
-      >
-        <MenuItem>
-          <Label my={3}>Your Address</Label>
-          <AccountSummary
-            msigAddress={msigAddress}
-            walletAddress={walletAddress}
-            showOnDevice={onShowOnLedger}
-            ledgerBusy={ledgerBusy}
-            error={reportLedgerConfigError({
-              ...ledger,
-              otherError: uncaughtError
-            })}
-            reset={reset}
-          />
-        </MenuItem>
-      </Menu>
+      ></Menu> */}
 
       <Box
         display='flex'
         flexDirection='column'
         alignItems='center'
         justifyContent='center'
-        my={4}
+        mt={2}
+        mb={4}
       >
         <Balances
           available={available}
