@@ -105,3 +105,24 @@ export const ChangeOwnerHeaderText = ({ step }) => {
 ChangeOwnerHeaderText.propTypes = {
   step: PropTypes.number.isRequired
 }
+
+export const TakeCustodyHeaderText = ({ step }) => {
+  let text = ''
+
+  switch (step) {
+    case 2:
+      text =
+        'Please input the new Filecoin address you want to be the owner of your multisig wallet.'
+      break
+    case 3:
+      text = 'Please review the transaction details.'
+      break
+    default:
+      text = ''
+  }
+  return <Text textAlign='center'>{text}</Text>
+}
+
+TakeCustodyHeaderText.propTypes = {
+  step: PropTypes.number.isRequired
+}
