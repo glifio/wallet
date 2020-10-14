@@ -21,8 +21,6 @@ exports[`Funds input it renders !disabled and invalid state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
   margin-right: 8px;
   color: #999999;
   display: -webkit-box;
@@ -233,8 +231,6 @@ exports[`Funds input it renders correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
   margin-right: 8px;
   color: #999999;
   display: -webkit-box;
@@ -445,8 +441,6 @@ exports[`Funds input it renders disabled and invalid state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
   margin-right: 8px;
   color: #999999;
   display: -webkit-box;
@@ -659,8 +653,6 @@ exports[`Funds input it renders disabled and valid state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
   margin-right: 8px;
   color: #999999;
   display: -webkit-box;
@@ -873,8 +865,6 @@ exports[`Funds input it renders disabled state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
   margin-right: 8px;
   color: #999999;
   display: -webkit-box;
@@ -1087,8 +1077,6 @@ exports[`Funds input it renders error states properly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
   margin-right: 8px;
   color: #999999;
   background-color: #FC6D6F;
@@ -1302,8 +1290,6 @@ exports[`Funds input it renders invalid state correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
   margin-right: 8px;
   color: #999999;
   display: -webkit-box;

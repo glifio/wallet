@@ -2077,8 +2077,6 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
   margin-right: 8px;
   color: #999999;
   display: -webkit-box;
@@ -3428,8 +3426,6 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
   margin-right: 8px;
   color: #999999;
   display: -webkit-box;
@@ -4496,8 +4492,6 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
   margin-right: 8px;
   color: #999999;
   display: -webkit-box;
@@ -5836,8 +5830,6 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
   margin-right: 8px;
   color: #999999;
   display: -webkit-box;
@@ -7168,8 +7160,6 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
   margin-right: 8px;
   color: #999999;
   display: -webkit-box;
