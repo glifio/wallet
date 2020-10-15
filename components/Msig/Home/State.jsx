@@ -100,7 +100,7 @@ const State = ({
               })}
               reset={reset}
             />
-            <Button
+            {/* <Button
               type='button'
               variant='secondary'
               onClick={setChangingOwner}
@@ -109,7 +109,7 @@ const State = ({
               maxWidth={10}
               minWidth={9}
               borderRadius={6}
-            />
+            /> */}
           </MenuItem>
         </Menu>
       </Menu>
@@ -128,7 +128,15 @@ const State = ({
           setWithdrawing={setWithdrawing}
         />
       </Box>
-      <MessageHistory maxWidth={18} address={msigAddress} />
+      <Box
+        display='flex'
+        justifyContent='center'
+        alignSelf='center'
+        maxWidth={18}
+        width='100%'
+      >
+        <MessageHistory address={msigAddress} />
+      </Box>
     </Box>
   )
 }
