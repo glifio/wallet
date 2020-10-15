@@ -257,7 +257,8 @@ const theme = {
     800,
     960,
     1024,
-    1200
+    1200,
+    1440
   ],
   radii: ['0', '1px', '4px', '8px', '16px', '32px', '100px'],
   borders: [0, `1px solid`, `4px solid`],
