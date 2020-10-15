@@ -168,7 +168,7 @@ const AccountSummary = ({
               <ButtonViewOnLedgerDevice
                 display='flex'
                 alignItems='center'
-                maxWidth={9}
+                maxWidth={10}
                 onClick={showOnDevice}
                 disabled={ledgerBusy}
                 border={1}
