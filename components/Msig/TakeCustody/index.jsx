@@ -53,16 +53,11 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
       Signer: signer,
       Decrease: false
     }
-    try {
-      const serializedInnerParams = await getMethod6SerializedParams(
-        address,
-        innerParams
-      )
-    } catch (err) {
-      console.log('ERR!', err)
-    }
 
-    const serializedInnerParams = 'gkQAhKAB9A=='
+    const serializedInnerParams = await getMethod6SerializedParams(
+      address,
+      innerParams
+    )
 
     const outerParams = {
       to: address,

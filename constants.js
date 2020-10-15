@@ -51,6 +51,7 @@ export const PL_SIGNERS = new Set([
   'f1yr7w7y5nia2zmzkw6yvxygj2pctwv3le2l3zccq',
   'f1figgwd5npr2jyw67u75qhjoyv3xf3jq5vwmmq5i',
   'f1ovvm6oilbdsvbw27jhil3pcywrjuwiv5uzagq6i',
+  'f010361',
   't020484',
   't022215',
   't023047',

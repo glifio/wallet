@@ -12,7 +12,7 @@ export const pickPLSigner = signers => {
 
 export const getMethod6SerializedParams = async (toAddr, params) => {
   const rclient = new RpcClient({
-    apiAddress: 'http://44.242.154.242:28000/rpc/v0'
+    apiAddress: 'https://proxy.openworklabs.com/rpc/v0'
   })
   const res = await rclient.request('MpoolEncodeParams', toAddr, 6, params)
   return res
