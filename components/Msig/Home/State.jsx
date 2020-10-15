@@ -5,15 +5,7 @@ import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
 } from '../../../customPropTypes'
-import {
-  Box,
-  Button,
-  Title,
-  Label,
-  Menu,
-  MenuItem,
-  IconGlif
-} from '../../Shared'
+import { Box, Button, Title, Menu, MenuItem, IconGlif } from '../../Shared'
 import AccountSummary from './AccountSummary'
 import useWallet from '../../../WalletProvider/useWallet'
 import { useWalletProvider } from '../../../WalletProvider'
@@ -71,17 +63,17 @@ const State = ({
             <Title ml={2}>Vault</Title>
           </Box>
 
-          {/* {showTakeCustodyOption && ( */}
-          <Button
-            type='button'
-            variant='secondary'
-            onClick={setTakingCustody}
-            title='Take Control'
-            maxWidth={10}
-            minWidth={9}
-            borderRadius={6}
-          />
-          {/* )} */}
+          {showTakeCustodyOption && (
+            <Button
+              type='button'
+              variant='secondary'
+              onClick={setTakingCustody}
+              title='Take Control'
+              maxWidth={10}
+              minWidth={9}
+              borderRadius={6}
+            />
+          )}
         </MenuItem>
         <Menu
           display='flex'
@@ -93,7 +85,7 @@ const State = ({
           <MenuItem
             display='flex'
             flexWrap='wrap'
-            alignItems='flex-end'
+            alignItems='center'
             justifyContent='space-between'
             width='100%'
           >
