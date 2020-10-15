@@ -13,14 +13,14 @@ const TooltipContent = styled(Box)`
   max-width: 200px;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -40px;
+  bottom: -48px;
   opacity: 0;
   padding: ${props => props.theme.sizes[2]}px;
   color: ${props => props.theme.colors.core.nearblack};
   background-color: ${props => props.theme.colors.core.white};
   border-radius: ${props => props.theme.radii[2]};
   box-shadow: ${props => props.theme.shadows[2]};
-  z-index: ${props => props.theme.zIndices[4]};
+  z-index: ${props => props.theme.zIndices[1]};
   transition: 0.24s ease-in-out;
   ${color}
 `
