@@ -1,3 +1,5 @@
+import convertAddrToFPrefix from '../convertAddrToFPrefix'
+
 export default async (lotus, walletAddress, signers) => {
   let idAddress = ''
 
@@ -8,7 +10,8 @@ export default async (lotus, walletAddress, signers) => {
   }
 
   return signers.some(signer => {
-    if (signer[1] === '0') return signer === idAddress
-    return signer === walletAddress
+    if (signer[1] === '0')
+      return convertAddrToFPrefix(signer) === convertAddrToFPrefix(idAddress)
+    return convertAddrToFPrefix(signer) === convertAddrToFPrefix(walletAddress)
   })
 }

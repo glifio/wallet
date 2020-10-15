@@ -112,7 +112,6 @@ const Funds = forwardRef(
           textAlign='center'
           color='input.border'
           bg={error && 'input.background.invalid'}
-          px={2}
           mr={2}
           borderRadius={2}
         >

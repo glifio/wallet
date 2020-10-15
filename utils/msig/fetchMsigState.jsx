@@ -3,8 +3,15 @@ import LotusRPCEngine from '@glif/filecoin-rpc-client'
 
 import isAddressSigner from './isAddressSigner'
 import isActorMsig from './isActorMsig'
+import isSupportedMsig from './isSupportedMsig'
 
-export default async (actorID, signerAddress, onNotMsigCb, onNotSignerCb) => {
+export default async (
+  actorID,
+  signerAddress,
+  onNotMsigCb,
+  onNotSignerCb,
+  onNotSupportedMsigCb
+) => {
   const lotus = new LotusRPCEngine({
     apiAddress: process.env.LOTUS_NODE_JSONRPC
   })
@@ -16,6 +23,10 @@ export default async (actorID, signerAddress, onNotMsigCb, onNotSignerCb) => {
 
   if (!isActorMsig(State)) {
     return onNotMsigCb()
+  }
+
+  if (!isSupportedMsig(State)) {
+    return onNotSupportedMsigCb()
   }
 
   if (!(await isAddressSigner(lotus, signerAddress, State?.Signers))) {
