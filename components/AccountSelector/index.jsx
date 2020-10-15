@@ -200,7 +200,11 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
               m={2}
               maxWidth={16}
             >
-              <MenuItem display='flex' alignItems='center' color='core.primary'>
+              <MenuItem
+                display='flex'
+                alignItems='center'
+                color='core.nearblack'
+              >
                 <Card
                   display='flex'
                   flexDirection='column'
@@ -217,7 +221,7 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
                       borderColor='core.primary'
                       color='core.white'
                     />
-                    <Title ml={2}>
+                    <Title ml={2} color='core.primary'>
                       {premainnetInvestor || msig
                         ? 'Select Account'
                         : 'Switch Accounts'}
@@ -225,6 +229,7 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
                   </Box>
                   <Box mt={3}>
                     <HelperText
+                      color='core.nearblack'
                       premainnetInvestor={premainnetInvestor}
                       msig={msig}
                       isLedger={wallet.type === LEDGER}

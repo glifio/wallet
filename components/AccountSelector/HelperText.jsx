@@ -4,10 +4,10 @@ import { Text, StyledATag } from '../Shared'
 
 const LedgerHelp = () => (
   <>
-    <Text mt={5} mb={0} fontSize={2}>
+    <Text color='core.primary' mt={5} mb={0} fontSize={2}>
       Don&apos;t see an address you&apos;re looking for?
     </Text>
-    <Text mt={2} color='core.nearblack'>
+    <Text mt={2}>
       Your Ledger Device generates different addresses depending on whether
       it&apos;s connected to the Filecoin testnet or mainnet.
       <StyledATag
@@ -23,8 +23,10 @@ const LedgerHelp = () => (
 
 const SeedHelp = () => (
   <>
-    <Text fontSize={2}>Don&apos;t see an address you&apos;re looking for?</Text>
-    <Text color='core.nearblack'>
+    <Text color='core.primary' fontSize={2}>
+      Don&apos;t see an address you&apos;re looking for?
+    </Text>
+    <Text>
       Your seed phrase generates different addresses depending on whether
       it&apos;s connected to the Filecoin testnet or mainnet.
       <StyledATag
@@ -42,7 +44,7 @@ const HelperText = ({ premainnetInvestor, msig, isLedger }) => {
   if (premainnetInvestor)
     return (
       <>
-        <Text color='core.nearblack'>
+        <Text>
           Please select the Ledger account you wish to use for your multisig
           investor wallet.
         </Text>
@@ -56,7 +58,7 @@ const HelperText = ({ premainnetInvestor, msig, isLedger }) => {
   if (msig) {
     return (
       <>
-        <Text color='core.nearblack'>
+        <Text>
           Please select the Ledger account that owns your multisig investor
           wallet.
         </Text>
