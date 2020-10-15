@@ -271,6 +271,7 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
                 onClick={() => {
                   setAttemptingTx(false)
                   setUncaughtError('')
+                  setGasError('')
                   resetLedgerState()
                   if (step === 1) {
                     close()
