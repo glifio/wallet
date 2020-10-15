@@ -53,9 +53,9 @@ export default () => {
         {!msig.loading && childView === TAKE_CUSTODY && (
           <TakeCustody
             close={() => setChildView(MSIG_STATE)}
-            msigBalance={msig.AvailableBalance}
-            address={msigActorAddress}
             signers={msig.Signers}
+            msigBalance={msig.AvailableBalance}
+            address={address}
           />
         )}
         {!msig.loading && childView === WITHDRAW && (
