@@ -17,7 +17,8 @@ import {
   Text,
   IconLedger,
   InlineBox,
-  Form
+  Form,
+  Card
 } from '../../Shared'
 import {
   ADDRESS_PROPTYPE,
@@ -213,7 +214,15 @@ const ChangeOwner = ({ address, balance, close }) => {
               )}
               {!attemptingTx &&
                 !hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
-                  <>
+                  <Card
+                    display='flex'
+                    flexDirection='column'
+                    justifyContent='space-between'
+                    border='none'
+                    width='auto'
+                    my={2}
+                    backgroundColor='blue.muted700'
+                  >
                     <StepHeader
                       title='Change Ownership'
                       currentStep={step}
@@ -221,15 +230,16 @@ const ChangeOwner = ({ address, balance, close }) => {
                       glyphAcronym='Ch'
                     />
                     <ChangeOwnerHeaderText step={step} />
-                  </>
+                  </Card>
                 )}
               {step === 1 && <Preface />}
               <Box boxShadow={2} borderRadius={4}>
                 {step > 1 && (
                   <CardHeader
+                    msig
                     address={address}
-                    balance={balance}
-                    customizingGas={false}
+                    msigBalance={balance}
+                    signerBalance={wallet.balance}
                   />
                 )}
                 {step > 1 && (

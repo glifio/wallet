@@ -41,7 +41,7 @@ describe('Error', () => {
     expect(getByText('Install Google Chrome.')).toBeTruthy()
   })
 
-  test('clicking "Back" takes you back to onboarding', () => {
+  test.skip('clicking "Back" takes you back to onboarding', () => {
     const useRouter = jest.spyOn(require('next/router'), 'useRouter')
     const mockRouterReplace = jest.fn(() => {})
     useRouter.mockImplementationOnce(() => ({

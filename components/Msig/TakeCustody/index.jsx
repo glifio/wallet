@@ -7,7 +7,7 @@ import { Message } from '@glif/filecoin-message'
 
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
-import { Box, Button, ButtonClose, StepHeader, Form } from '../../Shared'
+import { Box, Button, ButtonClose, StepHeader, Form, Card } from '../../Shared'
 import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
@@ -148,6 +148,14 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
           setUncaughtError(
             `${wallet.address} is not a signer of the multisig wallet ${address}.`
           )
+        } else if (
+          err.message
+            .toLowerCase()
+            .includes('data is invalid : unexpected method')
+        ) {
+          setUncaughtError(
+            'Please make sure expert mode is enabled on your Ledger Filecoin app.'
+          )
         } else {
           reportError(20, false, err.message, err.stack)
           setUncaughtError(err.message || err)
@@ -220,8 +228,17 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
                 />
               )}
               {!attemptingTx &&
+                step > 1 &&
                 !hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
-                  <>
+                  <Card
+                    display='flex'
+                    flexDirection='column'
+                    justifyContent='space-between'
+                    border='none'
+                    width='auto'
+                    my={2}
+                    backgroundColor='blue.muted700'
+                  >
                     <StepHeader
                       title='Take full custody'
                       currentStep={step}
@@ -229,13 +246,18 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
                       glyphAcronym='Tc'
                     />
                     <TakeCustodyHeaderText step={step} />
-                  </>
+                  </Card>
                 )}
               {step === 1 && <Preface />}
               <Box boxShadow={2} borderRadius={4}>
                 {step > 1 && (
                   <>
-                    <CardHeader address={address} balance={msigBalance} />
+                    <CardHeader
+                      msig
+                      address={address}
+                      msigBalance={msigBalance}
+                      signerBalance={wallet.balance}
+                    />
                     <Box width='100%' p={3} border={0} bg='background.screen'>
                       <CustomizeFee
                         message={messageInfo.message.toLotusType()}
@@ -271,6 +293,7 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
                 onClick={() => {
                   setAttemptingTx(false)
                   setUncaughtError('')
+                  setGasError('')
                   resetLedgerState()
                   if (step === 1) {
                     close()

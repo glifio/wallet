@@ -255,7 +255,12 @@ const Withdrawing = ({ address, balance, close }) => {
                   </>
                 )}
               <Box boxShadow={2} borderRadius={4}>
-                <CardHeader address={address} balance={balance} />
+                <CardHeader
+                  msig
+                  address={address}
+                  msigBalance={balance}
+                  signerBalance={wallet.balance}
+                />
                 <Box width='100%' p={3} border={0} bg='background.screen'>
                   <Input.Address
                     label='Recipient'
@@ -359,6 +364,7 @@ const Withdrawing = ({ address, balance, close }) => {
                 onClick={() => {
                   setAttemptingTx(false)
                   setUncaughtError('')
+                  setGasError('')
                   resetLedgerState()
                   if (step === 1) {
                     close()

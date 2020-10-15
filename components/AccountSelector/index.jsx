@@ -7,6 +7,7 @@ import { FilecoinNumber } from '@glif/filecoin-number'
 import {
   Box,
   Box as Wrapper,
+  Card,
   Glyph,
   Title,
   Menu,
@@ -199,25 +200,42 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
               m={2}
               maxWidth={16}
             >
-              <MenuItem display='flex' alignItems='center' color='core.primary'>
-                <Glyph
-                  acronym='Sw'
-                  bg='core.primary'
-                  borderColor='core.primary'
-                  color='core.white'
-                />
-                <Title ml={2}>
-                  {premainnetInvestor || msig
-                    ? 'Select Account'
-                    : 'Switch Accounts'}
-                </Title>
-              </MenuItem>
-              <MenuItem>
-                <HelperText
-                  premainnetInvestor={premainnetInvestor}
-                  msig={msig}
-                  isLedger={wallet.type === LEDGER}
-                />
+              <MenuItem
+                display='flex'
+                alignItems='center'
+                color='core.nearblack'
+              >
+                <Card
+                  display='flex'
+                  flexDirection='column'
+                  justifyContent='space-between'
+                  border='none'
+                  width='100%'
+                  my={2}
+                  backgroundColor='blue.muted700'
+                >
+                  <Box display='flex' alignItems='center'>
+                    <Glyph
+                      acronym='Ac'
+                      bg='core.primary'
+                      borderColor='core.primary'
+                      color='core.white'
+                    />
+                    <Title ml={2} color='core.primary'>
+                      {premainnetInvestor || msig
+                        ? 'Select Account'
+                        : 'Switch Accounts'}
+                    </Title>
+                  </Box>
+                  <Box mt={3}>
+                    <HelperText
+                      color='core.nearblack'
+                      premainnetInvestor={premainnetInvestor}
+                      msig={msig}
+                      isLedger={wallet.type === LEDGER}
+                    />
+                  </Box>
+                </Card>
               </MenuItem>
             </Menu>
             <Menu>

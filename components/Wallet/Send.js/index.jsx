@@ -313,7 +313,10 @@ const Send = ({ close }) => {
                 </>
               )}
               <Box boxShadow={2} borderRadius={4}>
-                <CardHeader address={wallet.address} balance={wallet.balance} />
+                <CardHeader
+                  address={wallet.address}
+                  signerBalance={wallet.balance}
+                />
 
                 <Box width='100%' p={3} border={0} bg='background.screen'>
                   <Input.Address
@@ -440,6 +443,7 @@ const Send = ({ close }) => {
                 onClick={() => {
                   setAttemptingTx(false)
                   setUncaughtError('')
+                  setGasError('')
                   resetLedgerState()
                   if (step === 1) {
                     close()

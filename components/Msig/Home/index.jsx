@@ -8,6 +8,7 @@ import { Box, LoadingScreen } from '../../Shared'
 import State from './State'
 import useWallet from '../../../WalletProvider/useWallet'
 import { msigPartlyOwnedByPL } from '../../../utils/msig'
+import MsgConfirmer from '../../../lib/confirm-message'
 
 const MSIG_STATE = 'MSIG_STATE'
 const WITHDRAW = 'WITHDRAW'
@@ -21,6 +22,7 @@ export default () => {
   const [childView, setChildView] = useState(MSIG_STATE)
   return (
     <>
+      <MsgConfirmer />
       <Box
         display='flex'
         justifyContent='center'
@@ -51,9 +53,9 @@ export default () => {
         {!msig.loading && childView === TAKE_CUSTODY && (
           <TakeCustody
             close={() => setChildView(MSIG_STATE)}
+            signers={msig.Signers}
             msigBalance={msig.AvailableBalance}
             address={msigActorAddress}
-            signers={msig.Signers}
           />
         )}
         {!msig.loading && childView === WITHDRAW && (

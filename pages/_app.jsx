@@ -7,7 +7,6 @@ import withReduxStore from '../lib/with-redux-store'
 import WalletProviderWrapper from '../WalletProvider'
 import NetworkChecker from '../lib/check-network'
 import BalancePoller from '../lib/update-balance'
-import { ConverterWrapper } from '../lib/Converter'
 import { WasmLoader } from '../lib/WasmLoader'
 import ErrorBoundary from '../lib/ErrorBoundary'
 import '../stylesheets/normalize.css'
@@ -28,15 +27,13 @@ class MyApp extends App {
         <Provider store={reduxStore}>
           <ThemeProvider theme={theme}>
             <WasmLoader>
-              <ConverterWrapper>
-                <NetworkChecker pathname={pathname} query={query} />
-                <WalletProviderWrapper network={reduxStore.getState().network}>
-                  <BalancePoller />
-                  <ErrorBoundary>
-                    <Component {...pageProps} />
-                  </ErrorBoundary>
-                </WalletProviderWrapper>
-              </ConverterWrapper>
+              <NetworkChecker pathname={pathname} query={query} />
+              <WalletProviderWrapper network={reduxStore.getState().network}>
+                <BalancePoller />
+                <ErrorBoundary>
+                  <Component {...pageProps} />
+                </ErrorBoundary>
+              </WalletProviderWrapper>
             </WasmLoader>
           </ThemeProvider>
         </Provider>

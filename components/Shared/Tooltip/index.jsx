@@ -1,25 +1,27 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
+import { color, border } from 'styled-system'
 import { string } from 'prop-types'
 import { Text } from '../Typography'
 import Box from '../Box'
 
 const TooltipContent = styled(Box)`
   position: absolute;
-  display: block;
+  display: none;
   height: fit-content;
   width: max-content;
   max-width: 200px;
-  left: 32px;
-  top: -24px;
-  opacity: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -48px;
   padding: ${props => props.theme.sizes[2]}px;
-
+  color: ${props => props.theme.colors.core.nearblack};
   background-color: ${props => props.theme.colors.core.white};
   border-radius: ${props => props.theme.radii[2]};
   box-shadow: ${props => props.theme.shadows[2]};
-  z-index: ${props => props.theme.zIndices[4]};
+  z-index: ${props => props.theme.zIndices[1]};
   transition: 0.24s ease-in-out;
+  ${color}
 `
 
 const TooltipContainer = styled.a`
@@ -34,9 +36,11 @@ const TooltipContainer = styled.a`
   justify-content: center;
   cursor: pointer;
   transition: 0.24s ease-in-out;
+  ${color}
+  ${border}
 
  &:hover ~ ${TooltipContent} {
-      opacity: 1;
+      display: block;
   }
 
   /* Paired with the ontouchstart declaration inside the TooltipContent markup, this is intended to enable touch devices to trigger the tooltip, too. While we don't support touch devices at launch, we may do so in the future. Ref: https://stackoverflow.com/a/37150472/2839730 */
@@ -54,11 +58,11 @@ const TooltipContainer = styled.a`
   } */
 `
 
-const Tooltip = forwardRef(({ content, ...props }, ref) => {
+const Tooltip = forwardRef(({ content, color, ...props }, ref) => {
   return (
     <Box position='relative' mx={2}>
-      <TooltipContainer aria-label='Tooltip' ref={ref} {...props}>
-        <Text m={0} color='core.black'>
+      <TooltipContainer color={color} aria-label='Tooltip' ref={ref} {...props}>
+        <Text m={0} color={color}>
           ?
         </Text>
       </TooltipContainer>
@@ -73,7 +77,12 @@ const Tooltip = forwardRef(({ content, ...props }, ref) => {
 })
 
 Tooltip.propTypes = {
-  content: string.isRequired
+  content: string.isRequired,
+  color: string
+}
+
+Tooltip.defaultProps = {
+  color: 'core.black'
 }
 
 export default Tooltip
