@@ -1,46 +1,48 @@
 import React from 'react'
 import { bool } from 'prop-types'
-import { Text, StyledATag, Highlight } from '../Shared'
+import { Text, StyledATag } from '../Shared'
 
 const LedgerHelp = () => (
-  <Text>
-    <Highlight fontSize={2}>
+  <>
+    <Text mt={5} mb={0} fontSize={2}>
       Don&apos;t see an address you&apos;re looking for?
-    </Highlight>
-    Your Ledger Device generates different addresses depending on whether
-    it&apos;s connected to the Filecoin testnet or mainnet.
-    <StyledATag
-      fontSize={2}
-      ml={2}
-      href='https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV'
-    >
-      Learn More
-    </StyledATag>
-  </Text>
+    </Text>
+    <Text mt={2} color='core.nearblack'>
+      Your Ledger Device generates different addresses depending on whether
+      it&apos;s connected to the Filecoin testnet or mainnet.
+      <StyledATag
+        fontSize={2}
+        ml={2}
+        href='https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV'
+      >
+        Learn More
+      </StyledATag>
+    </Text>
+  </>
 )
 
 const SeedHelp = () => (
-  <Text>
-    <Highlight fontSize={2}>
-      Don&apos;t see an address you&apos;re looking for?
-    </Highlight>
-    Your seed phrase generates different addresses depending on whether
-    it&apos;s connected to the Filecoin testnet or mainnet.
-    <StyledATag
-      fontSize={2}
-      ml={2}
-      href='https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV'
-    >
-      Learn More
-    </StyledATag>
-  </Text>
+  <>
+    <Text fontSize={2}>Don&apos;t see an address you&apos;re looking for?</Text>
+    <Text color='core.nearblack'>
+      Your seed phrase generates different addresses depending on whether
+      it&apos;s connected to the Filecoin testnet or mainnet.
+      <StyledATag
+        fontSize={2}
+        ml={2}
+        href='https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV'
+      >
+        Learn More
+      </StyledATag>
+    </Text>
+  </>
 )
 
 const HelperText = ({ premainnetInvestor, msig, isLedger }) => {
   if (premainnetInvestor)
     return (
       <>
-        <Text>
+        <Text color='core.nearblack'>
           Please select the Ledger account you wish to use for your multisig
           investor wallet.
         </Text>
@@ -54,7 +56,7 @@ const HelperText = ({ premainnetInvestor, msig, isLedger }) => {
   if (msig) {
     return (
       <>
-        <Text>
+        <Text color='core.nearblack'>
           Please select the Ledger account that owns your multisig investor
           wallet.
         </Text>
