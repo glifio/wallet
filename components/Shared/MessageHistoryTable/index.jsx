@@ -26,7 +26,6 @@ const MessageHistoryTable = ({
     <Box width='100%' border='none'>
       <Box display='flex' alignItems='center' justifyContent='space-between'>
         <Box display='flex' alignItems='center' justifyContent='flex-start' iv>
-          <Glyph mr={3} color='core.primary' acronym='Tx' />
           <Text color='core.primary'>Transaction History</Text>
         </Box>
         <Button variant='secondary' onClick={refresh} title='Refresh' />
