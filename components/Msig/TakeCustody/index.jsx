@@ -2,28 +2,16 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
-import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
+import { BigNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
-import { validateAddressString } from '@glif/filecoin-address'
 
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
-import {
-  Box,
-  Button,
-  ButtonClose,
-  StepHeader,
-  Input,
-  Text,
-  IconLedger,
-  InlineBox,
-  Form
-} from '../../Shared'
+import { Box, Button, ButtonClose, StepHeader, Form } from '../../Shared'
 import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
 } from '../../../customPropTypes'
-import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 import { CardHeader, TakeCustodyHeaderText } from '../Shared'
 import Preface from './Preface'
 import { useWasm } from '../../../lib/WasmLoader'
@@ -40,7 +28,7 @@ import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
 import { pickPLSigner, getMethod6SerializedParams } from '../../../utils/msig'
 
-const ChangeOwner = ({ address, msigBalance, signers, close }) => {
+const TakeCustody = ({ address, msigBalance, signers, close }) => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
   const wallet = useWallet()
   const dispatch = useDispatch()
@@ -65,7 +53,6 @@ const ChangeOwner = ({ address, msigBalance, signers, close }) => {
       Signer: signer,
       Decrease: false
     }
-    console.log('SENDING!')
     try {
       const serializedInnerParams = await getMethod6SerializedParams(
         address,
@@ -118,25 +105,24 @@ const ChangeOwner = ({ address, msigBalance, signers, close }) => {
       const nonce = await provider.getNonce(wallet.address)
       const { message, params } = await constructMsg(nonce)
       setFetchingTxDetails(false)
-      // const signedMessage = await provider.wallet.sign(
-      //   msgWithGas.toSerializeableType(),
-      //   wallet.path
-      // )
+      const signedMessage = await provider.wallet.sign(
+        message.toSerializeableType(),
+        wallet.path
+      )
 
-      // const messageObj = msgWithGas.toLotusType()
-      // setMPoolPushing(true)
-      // const msgCid = await provider.sendMessage(messageObj, signedMessage)
-      // messageObj.cid = msgCid['/']
-      // messageObj.timestamp = dayjs().unix()
-      // const maxFee = await provider.gasEstimateMaxFee(msgWithGas.toLotusType())
-      // messageObj.maxFee = maxFee.toAttoFil()
-      // // dont know how much was actually paid in this message yet, so we mark it as 0
-      // messageObj.paidFee = '0'
-      // messageObj.value = new FilecoinNumber(messageObj.Value, 'attofil').toFil()
-      // // reformat the params and method for tx table
-      // messageObj.params = { ...innerMessage, params: innerParams }
-      // messageObj.method = PROPOSE
-      // return messageObj
+      const messageObj = message.toLotusType()
+      setMPoolPushing(true)
+      const msgCid = await provider.sendMessage(messageObj, signedMessage)
+      messageObj.cid = msgCid['/']
+      messageObj.timestamp = dayjs().unix()
+      messageObj.maxFee = gasInfo.estimatedTransactionFee.toAttoFil()
+      // dont know how much was actually paid in this message yet, so we mark it as 0
+      messageObj.paidFee = '0'
+      messageObj.value = '0'
+      // reformat the params and method for tx table
+      messageObj.params = params
+      messageObj.method = PROPOSE
+      return messageObj
     }
     return null
   }
@@ -145,7 +131,6 @@ const ChangeOwner = ({ address, msigBalance, signers, close }) => {
     e.preventDefault()
     if (step === 1) {
       const messageInfo = await constructMsg()
-      console.log(messageInfo, 'MESSAGE INFO')
       setMessageInfo(messageInfo)
       setStep(2)
     } else if (step === 2) {
@@ -273,6 +258,7 @@ const ChangeOwner = ({ address, msigBalance, signers, close }) => {
                         setError={setGasError}
                         error={gasError}
                         feeMustBeLessThanThisAmount={wallet.balance}
+                        disabled
                       />
                     </Box>
                   </>
@@ -321,11 +307,11 @@ const ChangeOwner = ({ address, msigBalance, signers, close }) => {
   )
 }
 
-ChangeOwner.propTypes = {
+TakeCustody.propTypes = {
   address: ADDRESS_PROPTYPE,
   signers: PropTypes.array.isRequired,
   close: PropTypes.func.isRequired,
   msigBalance: FILECOIN_NUMBER_PROP
 }
 
-export default ChangeOwner
+export default TakeCustody
