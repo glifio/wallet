@@ -43,43 +43,15 @@ const State = ({
       flexDirection='column'
       minHeight='100vh'
       width='100%'
-      maxWidth='1440px'
+      maxWidth={20}
     >
       <Menu
         display='flex'
         flexWrap='wrap'
         width='100%'
-        alignItems='center'
+        alignItems='flex-start'
         justifyContent='space-between'
       >
-        <MenuItem
-          display='flex'
-          alignItems='center'
-          justifyContent='space-between'
-        >
-          <Box display='flex' alignItems='center'>
-            <IconGlif
-              size={6}
-              css={`
-                transform: rotate(-90deg);
-              `}
-            />
-            <Title ml={2}>Vault</Title>
-          </Box>
-          {showTakeCustodyOption && (
-            <Button
-              type='button'
-              variant='secondary'
-              onClick={setTakingCustody}
-              title='TAKE CONTROL'
-              maxWidth={10}
-              minWidth={9}
-              borderRadius={6}
-            />
-          )}
-        </MenuItem>
-      </Menu>
-      <Menu display='flex' justifyContent='space-between'>
         <MenuItem display='flex' width='100%' justifyContent='space-between'>
           <Box display='flex' alignItems='center'>
             <IconGlif
