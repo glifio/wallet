@@ -7,14 +7,13 @@ import Box from '../Box'
 
 const TooltipContent = styled(Box)`
   position: absolute;
-  display: block;
+  display: none;
   height: fit-content;
   width: max-content;
   max-width: 200px;
   left: 50%;
   transform: translateX(-50%);
   bottom: -48px;
-  opacity: 0;
   padding: ${props => props.theme.sizes[2]}px;
   color: ${props => props.theme.colors.core.nearblack};
   background-color: ${props => props.theme.colors.core.white};
@@ -41,7 +40,7 @@ const TooltipContainer = styled.a`
   ${border}
 
  &:hover ~ ${TooltipContent} {
-      opacity: 1;
+      display: block;
   }
 
   /* Paired with the ontouchstart declaration inside the TooltipContent markup, this is intended to enable touch devices to trigger the tooltip, too. While we don't support touch devices at launch, we may do so in the future. Ref: https://stackoverflow.com/a/37150472/2839730 */
