@@ -52,6 +52,20 @@ ChangeOwnerDetails.propTypes = {
   to: ADDRESS_PROPTYPE
 }
 
+const RemoveSignerDetails = ({ multisigAddr }) => {
+  return (
+    <Box mt={3}>
+      <Input.Address value={multisigAddr} label='Multisig actor' disabled />
+      <Box height={3} />
+      <Text>Removed signer from this Multisig actor.</Text>
+    </Box>
+  )
+}
+
+RemoveSignerDetails.propTypes = {
+  multisigAddr: ADDRESS_PROPTYPE
+}
+
 const ProposeDetails = ({ message }) => {
   if (message.params.method === 0) {
     return (
@@ -63,6 +77,11 @@ const ProposeDetails = ({ message }) => {
       />
     )
   }
+
+  if (message.params.method === 6) {
+    return <RemoveSignerDetails multisigAddr={message.to} />
+  }
+
   if (message.params.method === 7) {
     return (
       <ChangeOwnerDetails

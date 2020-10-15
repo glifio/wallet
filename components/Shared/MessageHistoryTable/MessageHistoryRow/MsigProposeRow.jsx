@@ -8,7 +8,16 @@ import { IconSend, IconPending } from '../../Icons'
 import truncate from '../../../../utils/truncateAddress'
 import makeFriendlyBalance from '../../../../utils/makeFriendlyBalance'
 
-const methods = ['withdraw', '', '', '', '', '', 'remove signer', 'owner swap']
+const methods = [
+  'withdraw from',
+  '',
+  '',
+  '',
+  '',
+  '',
+  'remove signer from',
+  'owner swap'
+]
 
 const ProposalText = ({ params }) => {
   return (
@@ -16,7 +25,7 @@ const ProposalText = ({ params }) => {
       {methods[params.method] ? (
         <>
           <Label fontSize={1} color='core.darkgray' my={0}>
-            {`Multisig ${methods[params.method]} to`}
+            {`Multisig ${methods[params.method]}`}
           </Label>
           <Text fontSize={3} color='core.nearblack' m={0}>
             {truncate(params.to)}
@@ -44,6 +53,14 @@ const ProposalValue = ({ params }) => {
         {makeFriendlyBalance(new FilecoinNumber(params.value, 'attofil'), 7)}
       </Text>
     )
+
+  if (params.method === 6) {
+    return (
+      <Text fontSize={1} color='core.nearblack'>
+        Remove signer
+      </Text>
+    )
+  }
 
   if (params.method === 7)
     return (
