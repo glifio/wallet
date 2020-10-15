@@ -58,11 +58,11 @@ const TooltipContainer = styled.a`
   } */
 `
 
-const Tooltip = forwardRef(({ content, ...props }, ref) => {
+const Tooltip = forwardRef(({ content, color, ...props }, ref) => {
   return (
     <Box position='relative' mx={2}>
-      <TooltipContainer aria-label='Tooltip' ref={ref} {...props}>
-        <Text m={0} color='core.black'>
+      <TooltipContainer color={color} aria-label='Tooltip' ref={ref} {...props}>
+        <Text m={0} color={color}>
           ?
         </Text>
       </TooltipContainer>
@@ -77,7 +77,12 @@ const Tooltip = forwardRef(({ content, ...props }, ref) => {
 })
 
 Tooltip.propTypes = {
-  content: string.isRequired
+  content: string.isRequired,
+  color: string
+}
+
+Tooltip.defaultProps = {
+  color: 'core.black'
 }
 
 export default Tooltip

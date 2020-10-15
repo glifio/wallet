@@ -8,6 +8,7 @@ import { Box, LoadingScreen } from '../../Shared'
 import State from './State'
 import useWallet from '../../../WalletProvider/useWallet'
 import { msigPartlyOwnedByPL } from '../../../utils/msig'
+import MsgConfirmer from '../../../lib/confirm-message'
 
 const MSIG_STATE = 'MSIG_STATE'
 const WITHDRAW = 'WITHDRAW'
@@ -20,48 +21,51 @@ export default () => {
   const { address } = useWallet()
   const [childView, setChildView] = useState(MSIG_STATE)
   return (
-    <Box
-      display='flex'
-      justifyContent='center'
-      width='100%'
-      minHeight='100vh'
-      p={3}
-    >
-      {msig.loading && <LoadingScreen width='100%' />}
-      {!msig.loading && childView === MSIG_STATE && (
-        <State
-          msigAddress={msigActorAddress}
-          walletAddress={address}
-          available={msig.AvailableBalance}
-          total={msig.Balance}
-          setChangingOwner={() => setChildView(CHANGE_OWNER)}
-          setWithdrawing={() => setChildView(WITHDRAW)}
-          setTakingCustody={() => setChildView(TAKE_CUSTODY)}
-          showTakeCustodyOption={msigPartlyOwnedByPL(msig.Signers)}
-        />
-      )}
-      {!msig.loading && childView === CHANGE_OWNER && (
-        <ChangeOwner
-          close={() => setChildView(MSIG_STATE)}
-          balance={msig.AvailableBalance}
-          address={msigActorAddress}
-        />
-      )}
-      {!msig.loading && childView === TAKE_CUSTODY && (
-        <TakeCustody
-          close={() => setChildView(MSIG_STATE)}
-          signers={msig.Signers}
-          msigBalance={msig.AvailableBalance}
-          address={address}
-        />
-      )}
-      {!msig.loading && childView === WITHDRAW && (
-        <Withdraw
-          close={() => setChildView(MSIG_STATE)}
-          balance={msig.AvailableBalance}
-          address={msigActorAddress}
-        />
-      )}
-    </Box>
+    <>
+      <MsgConfirmer />
+      <Box
+        display='flex'
+        justifyContent='center'
+        width='100%'
+        minHeight='100vh'
+        p={3}
+      >
+        {msig.loading && <LoadingScreen width='100%' />}
+        {!msig.loading && childView === MSIG_STATE && (
+          <State
+            msigAddress={msigActorAddress}
+            walletAddress={address}
+            available={msig.AvailableBalance}
+            total={msig.Balance}
+            setChangingOwner={() => setChildView(CHANGE_OWNER)}
+            setWithdrawing={() => setChildView(WITHDRAW)}
+            setTakingCustody={() => setChildView(TAKE_CUSTODY)}
+            showTakeCustodyOption={msigPartlyOwnedByPL(msig.Signers)}
+          />
+        )}
+        {!msig.loading && childView === CHANGE_OWNER && (
+          <ChangeOwner
+            close={() => setChildView(MSIG_STATE)}
+            balance={msig.AvailableBalance}
+            address={msigActorAddress}
+          />
+        )}
+        {!msig.loading && childView === TAKE_CUSTODY && (
+          <TakeCustody
+            close={() => setChildView(MSIG_STATE)}
+            signers={msig.Signers}
+            msigBalance={msig.AvailableBalance}
+            address={msigActorAddress}
+          />
+        )}
+        {!msig.loading && childView === WITHDRAW && (
+          <Withdraw
+            close={() => setChildView(MSIG_STATE)}
+            balance={msig.AvailableBalance}
+            address={msigActorAddress}
+          />
+        )}
+      </Box>
+    </>
   )
 }

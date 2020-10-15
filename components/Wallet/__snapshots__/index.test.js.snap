@@ -751,7 +751,7 @@ exports[`WalletView it renders correctly 1`] = `
   border-radius: 16px;
   padding: 8px;
   position: absolute;
-  display: block;
+  display: none;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -764,7 +764,6 @@ exports[`WalletView it renders correctly 1`] = `
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   bottom: -48px;
-  opacity: 0;
   padding: 8px;
   color: #262626;
   background-color: #ffffff;
@@ -797,10 +796,11 @@ exports[`WalletView it renders correctly 1`] = `
   cursor: pointer;
   -webkit-transition: 0.24s ease-in-out;
   transition: 0.24s ease-in-out;
+  color: #000;
 }
 
 .c33:hover ~ .c35 {
-  opacity: 1;
+  display: block;
 }
 
 .c1 {
@@ -1108,6 +1108,7 @@ exports[`WalletView it renders correctly 1`] = `
         <a
           aria-label="Tooltip"
           class="c33"
+          color="core.black"
         >
           <p
             class="c34"
