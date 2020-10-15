@@ -71,23 +71,58 @@ const AccountSummary = ({
         borderBottomRightRadius={3}
       >
         {error ? (
-          <>
-            <Box display='flex' flexDirection='row'>
-              <IconLedger />
-              <Text m={0} ml={2} lineHeight='2'>
-                Error
-              </Text>
-            </Box>
-            <Box display='flex' flexDirection='column'>
-              <Text color='core.primary'>{error}</Text>
-              <Button
-                type='button'
-                variant='secondary'
-                title='Retry'
-                onClick={reset}
+          <Box display='flex'>
+            <Box
+              display='flex'
+              alignItems='center'
+              color='core.darkgray'
+              bg='status.fail.background'
+              height={6}
+              px={2}
+              mr={2}
+              my={1}
+              borderRadius={2}
+            >
+              <Glyph
+                justifyContent='flex-end'
+                alignSelf='flex-end'
+                mb='1px'
+                mr={3}
+                size={5}
+                Icon={IconLedger}
+                color='core.nearblack'
+                bg='transparent'
+                fill='#444'
+                border={0}
+                css='transform:translateY(-6px)'
               />
+              <Box
+                display='flex'
+                flexDirection='column'
+                flexGrow='1'
+                color='core.nearblack'
+              >
+                <Label fontSize={1}>ERROR</Label>
+                {error}
+              </Box>
             </Box>
-          </>
+            <Button
+              type='button'
+              variant='secondary'
+              title='Retry'
+              onClick={reset}
+              display='flex'
+              alignItems='center'
+              minWidth={8}
+              border={1}
+              bg='transparent'
+              borderColor='core.lightgray'
+              my={1}
+              height={6}
+              flexGrow='1'
+              borderRadius={6}
+            />
+          </Box>
         ) : (
           <>
             <Box
@@ -129,6 +164,7 @@ const AccountSummary = ({
                   />
                 </Box>
               </Box>
+
               <ButtonViewOnLedgerDevice
                 display='flex'
                 alignItems='center'
