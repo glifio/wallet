@@ -88,7 +88,7 @@ const CustomizeFee = ({
   error,
   setError,
   feeMustBeLessThanThisAmount,
-  disableChange
+  disabled
 }) => {
   const [mounted, setMounted] = useState(false)
   const [dirty, setDirty] = useState(false)
@@ -200,7 +200,7 @@ const CustomizeFee = ({
           maxWidth={13}
         >
           <Input.Number
-            disabled={disableChange}
+            disabled={disabled}
             name='tx-fee'
             label='Transaction fee'
             value={localTxFee.toAttoFil()}
@@ -250,11 +250,11 @@ CustomizeFee.propTypes = {
   feeMustBeLessThanThisAmount: FILECOIN_NUMBER_PROP,
   error: PropTypes.string.isRequired,
   setError: PropTypes.func.isRequired,
-  disableChange: PropTypes.bool
+  disabled: PropTypes.bool
 }
 
 CustomizeFee.defaultProps = {
-  disableChange: false
+  disabled: false
 }
 
 export default CustomizeFee

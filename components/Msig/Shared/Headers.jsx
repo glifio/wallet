@@ -112,7 +112,7 @@ export const TakeCustodyHeaderText = ({ step }) => {
   switch (step) {
     case 2:
       text =
-        'Please input the new Filecoin address you want to be the owner of your multisig wallet.'
+        'Please review the transaction fee details. If the fee is too high, please come back and try again later.'
       break
     case 3:
       text = 'Please review the transaction details.'

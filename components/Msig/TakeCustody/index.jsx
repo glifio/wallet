@@ -238,13 +238,7 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
                 {step > 1 && (
                   <>
                     <CardHeader address={address} balance={msigBalance} />
-                    <Box
-                      width='100%'
-                      px={3}
-                      pb={step === 3 && 3}
-                      border={0}
-                      bg='background.screen'
-                    >
+                    <Box width='100%' p={3} border={0} bg='background.screen'>
                       <CustomizeFee
                         message={messageInfo.message.toLotusType()}
                         gasInfo={gasInfo}
