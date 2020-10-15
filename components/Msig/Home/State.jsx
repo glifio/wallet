@@ -46,7 +46,13 @@ const State = ({
     resetState()
   }
   return (
-    <Box display='flex' flexDirection='column' minHeight='100vh' width='100%'>
+    <Box
+      display='flex'
+      flexDirection='column'
+      minHeight='100vh'
+      width='100%'
+      maxWidth='1440px'
+    >
       <Menu
         display='flex'
         flexWrap='wrap'
@@ -54,8 +60,8 @@ const State = ({
         alignItems='flex-start'
         justifyContent='space-between'
       >
-        <Menu display='flex' width='100%' justifyContent='space-between'>
-          <MenuItem display='flex' alignItems='center'>
+        <MenuItem display='flex' width='100%' justifyContent='space-between'>
+          <Box display='flex' alignItems='center'>
             <IconGlif
               size={6}
               css={`
@@ -63,35 +69,34 @@ const State = ({
               `}
             />
             <Title ml={2}>Vault</Title>
-          </MenuItem>
-          <MenuItem>
-            <Button
-              type='button'
-              variant='secondary'
-              onClick={setChangingOwner}
-              title='Change Owner'
-              maxWidth={10}
-              minWidth={9}
-              borderRadius={6}
-            />
-          </MenuItem>
-          {/* 
-        {showTakeCustodyOption && (
-        <MenuItem>
+          </Box>
+
+          {/* {showTakeCustodyOption && ( */}
           <Button
             type='button'
             variant='secondary'
             onClick={setTakingCustody}
-            title='TAKE CONTROL'
+            title='Take Control'
             maxWidth={10}
             minWidth={9}
             borderRadius={6}
           />
+          {/* )} */}
         </MenuItem>
-        )} */}
-        </Menu>
-        <Menu display='flex' width='100%' maxWidth='1024px' margin='0 auto'>
-          <MenuItem>
+        <Menu
+          display='flex'
+          width='100%'
+          maxWidth='1024px'
+          margin='0 auto'
+          mt={[2, 4]}
+        >
+          <MenuItem
+            display='flex'
+            flexWrap='wrap'
+            alignItems='flex-end'
+            justifyContent='space-between'
+            width='100%'
+          >
             <AccountSummary
               msigAddress={msigAddress}
               walletAddress={walletAddress}
@@ -103,15 +108,20 @@ const State = ({
               })}
               reset={reset}
             />
+            <Button
+              type='button'
+              variant='secondary'
+              onClick={setChangingOwner}
+              title='Change Owner'
+              borderColor='core.lightgray'
+              height={6}
+              maxWidth={10}
+              minWidth={9}
+              borderRadius={6}
+            />
           </MenuItem>
         </Menu>
       </Menu>
-      {/* <Menu
-        display='flex'
-        justifyContent='space-between'
-        alignItems='center'
-        mt={4}
-      ></Menu> */}
 
       <Box
         display='flex'
