@@ -38,6 +38,44 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
 .c4 {
   min-width: 0;
   box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #d9e0f2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
   border-width: 0.1875rem;
   border-radius: 8px;
   border-style: solid;
@@ -60,7 +98,13 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   justify-content: center;
 }
 
-.c12 {
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   margin: 8px;
@@ -71,7 +115,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   align-items: center;
 }
 
-.c13 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -96,7 +140,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   justify-content: space-between;
 }
 
-.c15 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -113,7 +157,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   justify-content: flex-start;
 }
 
-.c16 {
+.c19 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -137,7 +181,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   justify-content: center;
 }
 
-.c17 {
+.c20 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -149,7 +193,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   flex-direction: column;
 }
 
-.c20 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -173,7 +217,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   box-shadow: 0 0.7px 2.2px -8px rgba(0,0,0,0.18),0 1.7px 5.4px rgba(0,0,0,0.129),0 3.1px 10.1px rgba(0,0,0,0.107),0 5.6px 18.1px rgba(0,0,0,0.09),0 10.4px 33.8px rgba(0,0,0,0.073),0 25px 81px rgba(0,0,0,0.051);
 }
 
-.c21 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -197,12 +241,12 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   justify-content: center;
 }
 
-.c22 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c24 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -211,13 +255,13 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   display: flex;
 }
 
-.c5 {
+.c7 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c25 {
+.c28 {
   cursor: pointer;
   border: 1px solid status.fail.foreground;
   background-color: #1AD08F;
@@ -240,11 +284,12 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   color: #660000;
 }
 
-.c25:hover {
+.c28:hover {
   opacity: 0.8;
 }
 
-.c6 {
+.c8 {
+  color: #5E26FF;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -253,7 +298,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   margin-left: 8px;
 }
 
-.c19 {
+.c22 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -263,14 +308,22 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   margin-bottom: 0;
 }
 
-.c7 {
+.c10 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
 }
 
-.c18 {
+.c11 {
+  color: #5E26FF;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c21 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
@@ -279,20 +332,12 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   margin-bottom: 0;
 }
 
-.c23 {
+.c26 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c8 {
-  border-radius: 100px;
-  padding: 0rem 1rem;
-  margin-right: 0.5rem;
-  background-color: #ffc0cb;
-  font-size: 1.125rem;
 }
 
 .c2 {
@@ -314,14 +359,14 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   align-items: center;
 }
 
-.c10 {
+.c13 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .c3 {
-  color: #5E26FF;
+  color: #262626;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -332,7 +377,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   align-items: center;
 }
 
-.c11 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -346,7 +391,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   justify-content: center;
 }
 
-.c9 {
+.c12 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -357,17 +402,17 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   margin-left: 8px;
 }
 
-.c9:hover {
+.c12:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c14 {
+.c17 {
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   cursor: pointer;
 }
 
-.c14:hover {
+.c17:hover {
   background: hsla(0,0%,90%,1);
   opacity: 1;
 }
@@ -386,78 +431,94 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
     >
       <li
         class="c3"
-        color="core.primary"
+        color="core.nearblack"
         display="flex"
       >
         <div
           class="c4"
-          color="core.white"
           display="flex"
-          size="6"
+          overflow="hidden"
+          width="100%"
         >
-          <h3
+          <div
             class="c5"
+            display="flex"
           >
-            Sw
-          </h3>
-        </div>
-        <h2
-          class="c6"
-          font-family="RT-Alias-Grotesk"
-          font-size="4"
-          font-weight="400"
-        >
-          Switch Accounts
-        </h2>
-      </li>
-      <li
-        class=""
-      >
-        <p
-          class="c7"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          Your single seed phrase creates hundreds of individual accounts. We're showing you the first 5.
-        </p>
-        <p
-          class="c7"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          <span
-            class="c8"
-            font-size="2"
-          >
-            Don't see an address you're looking for?
-          </span>
-          Your seed phrase generates different addresses depending on whether it's connected to the Filecoin testnet or mainnet.
-          <a
+            <div
+              class="c6"
+              color="core.white"
+              display="flex"
+              size="6"
+            >
+              <h3
+                class="c7"
+              >
+                Ac
+              </h3>
+            </div>
+            <h2
+              class="c8"
+              color="core.primary"
+              font-family="RT-Alias-Grotesk"
+              font-size="4"
+              font-weight="400"
+            >
+              Switch Accounts
+            </h2>
+          </div>
+          <div
             class="c9"
-            color="core.primary"
-            font-size="2"
-            href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
           >
-            Learn More
-          </a>
-        </p>
+            <p
+              class="c10"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Your single seed phrase creates hundreds of individual accounts. We're showing you the first 5.
+            </p>
+            <p
+              class="c11"
+              color="core.primary"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Don't see an address you're looking for?
+            </p>
+            <p
+              class="c10"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Your seed phrase generates different addresses depending on whether it's connected to the Filecoin testnet or mainnet.
+              <a
+                class="c12"
+                color="core.primary"
+                font-size="2"
+                href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
+              >
+                Learn More
+              </a>
+            </p>
+          </div>
+        </div>
       </li>
     </ul>
     <ul
-      class="c10"
+      class="c13"
     >
       <li
-        class="c11"
+        class="c14"
         display="flex"
       >
         <div
-          class="c12"
+          class="c15"
           display="inline-block"
         >
           <div
-            class="c13 c14"
+            class="c16 c17"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -465,27 +526,27 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             width="11"
           >
             <div
-              class="c15"
+              class="c18"
               display="flex"
             >
               <div
-                class="c16"
+                class="c19"
                 color="colors.core.black"
                 display="flex"
                 size="6"
               >
                 <h3
-                  class="c5"
+                  class="c7"
                 >
                   0
                 </h3>
               </div>
               <div
-                class="c17"
+                class="c20"
                 display="flex"
               >
                 <p
-                  class="c18"
+                  class="c21"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -493,7 +554,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   Address
                 </p>
                 <h2
-                  class="c19"
+                  class="c22"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -503,11 +564,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
               </div>
             </div>
             <div
-              class="c17"
+              class="c20"
               display="flex"
             >
               <p
-                class="c18"
+                class="c21"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -515,7 +576,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 Balance
               </p>
               <h2
-                class="c19"
+                class="c22"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -527,11 +588,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
           </div>
         </div>
         <div
-          class="c12"
+          class="c15"
           display="inline-block"
         >
           <div
-            class="c13 c14"
+            class="c16 c17"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -539,27 +600,27 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             width="11"
           >
             <div
-              class="c15"
+              class="c18"
               display="flex"
             >
               <div
-                class="c16"
+                class="c19"
                 color="colors.core.black"
                 display="flex"
                 size="6"
               >
                 <h3
-                  class="c5"
+                  class="c7"
                 >
                   1
                 </h3>
               </div>
               <div
-                class="c17"
+                class="c20"
                 display="flex"
               >
                 <p
-                  class="c18"
+                  class="c21"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -567,7 +628,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   Address
                 </p>
                 <h2
-                  class="c19"
+                  class="c22"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -577,11 +638,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
               </div>
             </div>
             <div
-              class="c17"
+              class="c20"
               display="flex"
             >
               <p
-                class="c18"
+                class="c21"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -589,7 +650,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 Balance
               </p>
               <h2
-                class="c19"
+                class="c22"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -601,11 +662,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
           </div>
         </div>
         <div
-          class="c12"
+          class="c15"
           display="inline-block"
         >
           <div
-            class="c13 c14"
+            class="c16 c17"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -613,27 +674,27 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             width="11"
           >
             <div
-              class="c15"
+              class="c18"
               display="flex"
             >
               <div
-                class="c16"
+                class="c19"
                 color="colors.core.black"
                 display="flex"
                 size="6"
               >
                 <h3
-                  class="c5"
+                  class="c7"
                 >
                   2
                 </h3>
               </div>
               <div
-                class="c17"
+                class="c20"
                 display="flex"
               >
                 <p
-                  class="c18"
+                  class="c21"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -641,7 +702,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   Address
                 </p>
                 <h2
-                  class="c19"
+                  class="c22"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -651,11 +712,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
               </div>
             </div>
             <div
-              class="c17"
+              class="c20"
               display="flex"
             >
               <p
-                class="c18"
+                class="c21"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -663,7 +724,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 Balance
               </p>
               <h2
-                class="c19"
+                class="c22"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -675,11 +736,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
           </div>
         </div>
         <div
-          class="c12"
+          class="c15"
           display="inline-block"
         >
           <div
-            class="c13 c14"
+            class="c16 c17"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -687,27 +748,27 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             width="11"
           >
             <div
-              class="c15"
+              class="c18"
               display="flex"
             >
               <div
-                class="c16"
+                class="c19"
                 color="colors.core.black"
                 display="flex"
                 size="6"
               >
                 <h3
-                  class="c5"
+                  class="c7"
                 >
                   3
                 </h3>
               </div>
               <div
-                class="c17"
+                class="c20"
                 display="flex"
               >
                 <p
-                  class="c18"
+                  class="c21"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -715,7 +776,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   Address
                 </p>
                 <h2
-                  class="c19"
+                  class="c22"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -725,11 +786,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
               </div>
             </div>
             <div
-              class="c17"
+              class="c20"
               display="flex"
             >
               <p
-                class="c18"
+                class="c21"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -737,7 +798,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 Balance
               </p>
               <h2
-                class="c19"
+                class="c22"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -749,11 +810,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
           </div>
         </div>
         <div
-          class="c12"
+          class="c15"
           display="inline-block"
         >
           <div
-            class="c13 c14"
+            class="c16 c17"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -761,27 +822,27 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             width="11"
           >
             <div
-              class="c15"
+              class="c18"
               display="flex"
             >
               <div
-                class="c16"
+                class="c19"
                 color="colors.core.black"
                 display="flex"
                 size="6"
               >
                 <h3
-                  class="c5"
+                  class="c7"
                 >
                   4
                 </h3>
               </div>
               <div
-                class="c17"
+                class="c20"
                 display="flex"
               >
                 <p
-                  class="c18"
+                  class="c21"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -789,7 +850,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                   Address
                 </p>
                 <h2
-                  class="c19"
+                  class="c22"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -799,11 +860,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
               </div>
             </div>
             <div
-              class="c17"
+              class="c20"
               display="flex"
             >
               <p
-                class="c18"
+                class="c21"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -811,7 +872,7 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 Balance
               </p>
               <h2
-                class="c19"
+                class="c22"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -823,30 +884,30 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
           </div>
         </div>
         <div
-          class="c20"
+          class="c23"
           color="card.error.foreground"
           display="flex"
           height="11"
           width="11"
         >
           <div
-            class="c15"
+            class="c18"
             display="flex"
           >
             <div
-              class="c21"
+              class="c24"
               color="status.fail.foreground"
               display="flex"
               size="6"
             >
               <h3
-                class="c5"
+                class="c7"
               >
                 Er
               </h3>
             </div>
             <p
-              class="c7"
+              class="c10"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -855,10 +916,10 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             </p>
           </div>
           <div
-            class="c22"
+            class="c25"
           >
             <p
-              class="c23"
+              class="c26"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -867,11 +928,11 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
             </p>
           </div>
           <div
-            class="c24"
+            class="c27"
             display="flex"
           >
             <button
-              class="c25"
+              class="c28"
               color="status.fail.foreground"
               font-size="3"
               height="100%"
@@ -1017,6 +1078,44 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
 .c4 {
   min-width: 0;
   box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #d9e0f2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
   border-width: 0.1875rem;
   border-radius: 8px;
   border-style: solid;
@@ -1039,7 +1138,13 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   justify-content: center;
 }
 
-.c12 {
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   margin: 8px;
@@ -1050,7 +1155,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   align-items: center;
 }
 
-.c13 {
+.c17 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -1075,7 +1180,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   justify-content: space-between;
 }
 
-.c15 {
+.c19 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1092,7 +1197,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   justify-content: flex-start;
 }
 
-.c16 {
+.c20 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -1116,7 +1221,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   justify-content: center;
 }
 
-.c17 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1128,13 +1233,13 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   flex-direction: column;
 }
 
-.c5 {
+.c7 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c20 {
+.c24 {
   cursor: pointer;
   border: 1px solid core.nearblack;
   background-color: #1AD08F;
@@ -1170,11 +1275,12 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   opacity: 1;
 }
 
-.c20:hover {
+.c24:hover {
   opacity: 0.8;
 }
 
-.c6 {
+.c8 {
+  color: #5E26FF;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -1183,7 +1289,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   margin-left: 8px;
 }
 
-.c19 {
+.c23 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -1193,7 +1299,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   margin-bottom: 0;
 }
 
-.c23 {
+.c27 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -1201,14 +1307,32 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   margin: 0;
 }
 
-.c7 {
+.c10 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
 }
 
-.c18 {
+.c11 {
+  color: #5E26FF;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 32px;
+  margin-bottom: 0;
+}
+
+.c12 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 8px;
+}
+
+.c22 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
@@ -1217,20 +1341,12 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   margin-bottom: 0;
 }
 
-.c24 {
+.c28 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   text-align: left;
-}
-
-.c8 {
-  border-radius: 100px;
-  padding: 0rem 1rem;
-  margin-right: 0.5rem;
-  background-color: #ffc0cb;
-  font-size: 1.125rem;
 }
 
 .c2 {
@@ -1252,14 +1368,14 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   align-items: center;
 }
 
-.c10 {
+.c14 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .c3 {
-  color: #5E26FF;
+  color: #262626;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1270,7 +1386,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   align-items: center;
 }
 
-.c11 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1284,7 +1400,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   justify-content: center;
 }
 
-.c22 {
+.c26 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1295,7 +1411,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   align-items: center;
 }
 
-.c9 {
+.c13 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -1306,11 +1422,11 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   margin-left: 8px;
 }
 
-.c9:hover {
+.c13:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c21 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
@@ -1322,13 +1438,13 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   transform: translate(-50%,-50%);
 }
 
-.c14 {
+.c18 {
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   cursor: pointer;
 }
 
-.c14:hover {
+.c18:hover {
   background: hsla(0,0%,90%,1);
   opacity: 1;
 }
@@ -1347,86 +1463,102 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
     >
       <li
         class="c3"
-        color="core.primary"
+        color="core.nearblack"
         display="flex"
       >
         <div
           class="c4"
-          color="core.white"
           display="flex"
-          size="6"
+          overflow="hidden"
+          width="100%"
         >
-          <h3
+          <div
             class="c5"
+            display="flex"
           >
-            Sw
-          </h3>
-        </div>
-        <h2
-          class="c6"
-          font-family="RT-Alias-Grotesk"
-          font-size="4"
-          font-weight="400"
-        >
-          Select Account
-        </h2>
-      </li>
-      <li
-        class=""
-      >
-        <p
-          class="c7"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          Please select the Ledger account you wish to use for your multisig investor wallet.
-        </p>
-        <p
-          class="c7"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          Any of these accounts can accept Filecoin. If in doubt, select account 0.
-        </p>
-        <p
-          class="c7"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          <span
-            class="c8"
-            font-size="2"
-          >
-            Don't see an address you're looking for?
-          </span>
-          Your Ledger Device generates different addresses depending on whether it's connected to the Filecoin testnet or mainnet.
-          <a
+            <div
+              class="c6"
+              color="core.white"
+              display="flex"
+              size="6"
+            >
+              <h3
+                class="c7"
+              >
+                Ac
+              </h3>
+            </div>
+            <h2
+              class="c8"
+              color="core.primary"
+              font-family="RT-Alias-Grotesk"
+              font-size="4"
+              font-weight="400"
+            >
+              Select Account
+            </h2>
+          </div>
+          <div
             class="c9"
-            color="core.primary"
-            font-size="2"
-            href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
           >
-            Learn More
-          </a>
-        </p>
+            <p
+              class="c10"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Please select the Ledger account you wish to use for your multisig investor wallet.
+            </p>
+            <p
+              class="c10"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Any of these accounts can accept Filecoin. If in doubt, select account 0.
+            </p>
+            <p
+              class="c11"
+              color="core.primary"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Don't see an address you're looking for?
+            </p>
+            <p
+              class="c12"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Your Ledger Device generates different addresses depending on whether it's connected to the Filecoin testnet or mainnet.
+              <a
+                class="c13"
+                color="core.primary"
+                font-size="2"
+                href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
+              >
+                Learn More
+              </a>
+            </p>
+          </div>
+        </div>
       </li>
     </ul>
     <ul
-      class="c10"
+      class="c14"
     >
       <li
-        class="c11"
+        class="c15"
         display="flex"
       >
         <div
-          class="c12"
+          class="c16"
           display="inline-block"
         >
           <div
-            class="c13 c14"
+            class="c17 c18"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -1434,27 +1566,27 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
             width="11"
           >
             <div
-              class="c15"
+              class="c19"
               display="flex"
             >
               <div
-                class="c16"
+                class="c20"
                 color="colors.core.black"
                 display="flex"
                 size="6"
               >
                 <h3
-                  class="c5"
+                  class="c7"
                 >
                   0
                 </h3>
               </div>
               <div
-                class="c17"
+                class="c21"
                 display="flex"
               >
                 <p
-                  class="c18"
+                  class="c22"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -1462,7 +1594,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                   Address
                 </p>
                 <h2
-                  class="c19"
+                  class="c23"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -1472,11 +1604,11 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
               </div>
             </div>
             <div
-              class="c17"
+              class="c21"
               display="flex"
             >
               <p
-                class="c18"
+                class="c22"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -1484,7 +1616,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                 Balance
               </p>
               <h2
-                class="c19"
+                class="c23"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -1496,11 +1628,11 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
           </div>
         </div>
         <div
-          class="c12"
+          class="c16"
           display="inline-block"
         >
           <div
-            class="c13 c14"
+            class="c17 c18"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -1508,27 +1640,27 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
             width="11"
           >
             <div
-              class="c15"
+              class="c19"
               display="flex"
             >
               <div
-                class="c16"
+                class="c20"
                 color="colors.core.black"
                 display="flex"
                 size="6"
               >
                 <h3
-                  class="c5"
+                  class="c7"
                 >
                   1
                 </h3>
               </div>
               <div
-                class="c17"
+                class="c21"
                 display="flex"
               >
                 <p
-                  class="c18"
+                  class="c22"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -1536,7 +1668,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                   Address
                 </p>
                 <h2
-                  class="c19"
+                  class="c23"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -1546,11 +1678,11 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
               </div>
             </div>
             <div
-              class="c17"
+              class="c21"
               display="flex"
             >
               <p
-                class="c18"
+                class="c22"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -1558,7 +1690,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                 Balance
               </p>
               <h2
-                class="c19"
+                class="c23"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -1570,11 +1702,11 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
           </div>
         </div>
         <div
-          class="c12"
+          class="c16"
           display="inline-block"
         >
           <div
-            class="c13 c14"
+            class="c17 c18"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -1582,27 +1714,27 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
             width="11"
           >
             <div
-              class="c15"
+              class="c19"
               display="flex"
             >
               <div
-                class="c16"
+                class="c20"
                 color="colors.core.black"
                 display="flex"
                 size="6"
               >
                 <h3
-                  class="c5"
+                  class="c7"
                 >
                   2
                 </h3>
               </div>
               <div
-                class="c17"
+                class="c21"
                 display="flex"
               >
                 <p
-                  class="c18"
+                  class="c22"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -1610,7 +1742,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                   Address
                 </p>
                 <h2
-                  class="c19"
+                  class="c23"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -1620,11 +1752,11 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
               </div>
             </div>
             <div
-              class="c17"
+              class="c21"
               display="flex"
             >
               <p
-                class="c18"
+                class="c22"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -1632,7 +1764,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                 Balance
               </p>
               <h2
-                class="c19"
+                class="c23"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -1644,11 +1776,11 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
           </div>
         </div>
         <div
-          class="c12"
+          class="c16"
           display="inline-block"
         >
           <div
-            class="c13 c14"
+            class="c17 c18"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -1656,27 +1788,27 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
             width="11"
           >
             <div
-              class="c15"
+              class="c19"
               display="flex"
             >
               <div
-                class="c16"
+                class="c20"
                 color="colors.core.black"
                 display="flex"
                 size="6"
               >
                 <h3
-                  class="c5"
+                  class="c7"
                 >
                   3
                 </h3>
               </div>
               <div
-                class="c17"
+                class="c21"
                 display="flex"
               >
                 <p
-                  class="c18"
+                  class="c22"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -1684,7 +1816,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                   Address
                 </p>
                 <h2
-                  class="c19"
+                  class="c23"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -1694,11 +1826,11 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
               </div>
             </div>
             <div
-              class="c17"
+              class="c21"
               display="flex"
             >
               <p
-                class="c18"
+                class="c22"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -1706,7 +1838,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                 Balance
               </p>
               <h2
-                class="c19"
+                class="c23"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -1718,11 +1850,11 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
           </div>
         </div>
         <div
-          class="c12"
+          class="c16"
           display="inline-block"
         >
           <div
-            class="c13 c14"
+            class="c17 c18"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -1730,27 +1862,27 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
             width="11"
           >
             <div
-              class="c15"
+              class="c19"
               display="flex"
             >
               <div
-                class="c16"
+                class="c20"
                 color="colors.core.black"
                 display="flex"
                 size="6"
               >
                 <h3
-                  class="c5"
+                  class="c7"
                 >
                   4
                 </h3>
               </div>
               <div
-                class="c17"
+                class="c21"
                 display="flex"
               >
                 <p
-                  class="c18"
+                  class="c22"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -1758,7 +1890,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                   Address
                 </p>
                 <h2
-                  class="c19"
+                  class="c23"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -1768,11 +1900,11 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
               </div>
             </div>
             <div
-              class="c17"
+              class="c21"
               display="flex"
             >
               <p
-                class="c18"
+                class="c22"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -1780,7 +1912,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                 Balance
               </p>
               <h2
-                class="c19"
+                class="c23"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -1792,7 +1924,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
           </div>
         </div>
         <button
-          class="c20"
+          class="c24"
           color="core.nearblack"
           cursor="pointer"
           display="flex"
@@ -1803,20 +1935,20 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
           width="11"
         >
           <div
-            class="c21"
+            class="c25"
             font-size="7"
           >
             ＋
           </div>
           <ul
-            class="c10"
+            class="c14"
           >
             <li
-              class="c22"
+              class="c26"
               display="flex"
             >
               <h2
-                class="c23"
+                class="c27"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -1828,7 +1960,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
               class=""
             >
               <p
-                class="c24"
+                class="c28"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"
@@ -1884,6 +2016,44 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
 .c4 {
   min-width: 0;
   box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #d9e0f2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
   border-width: 0.1875rem;
   border-radius: 8px;
   border-style: solid;
@@ -1906,7 +2076,13 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: center;
 }
 
-.c12 {
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   margin: 8px;
@@ -1917,7 +2093,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   align-items: center;
 }
 
-.c13 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -1942,7 +2118,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: space-between;
 }
 
-.c15 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1959,7 +2135,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: flex-start;
 }
 
-.c16 {
+.c19 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -1983,7 +2159,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: center;
 }
 
-.c17 {
+.c20 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1995,13 +2171,13 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   flex-direction: column;
 }
 
-.c5 {
+.c7 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c20 {
+.c23 {
   cursor: pointer;
   border: 1px solid core.nearblack;
   background-color: #1AD08F;
@@ -2037,11 +2213,12 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   opacity: 1;
 }
 
-.c20:hover {
+.c23:hover {
   opacity: 0.8;
 }
 
-.c6 {
+.c8 {
+  color: #5E26FF;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -2050,7 +2227,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-left: 8px;
 }
 
-.c19 {
+.c22 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -2060,7 +2237,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-bottom: 0;
 }
 
-.c23 {
+.c26 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -2068,14 +2245,22 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin: 0;
 }
 
-.c7 {
+.c10 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
 }
 
-.c18 {
+.c11 {
+  color: #5E26FF;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c21 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
@@ -2084,20 +2269,12 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-bottom: 0;
 }
 
-.c24 {
+.c27 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   text-align: left;
-}
-
-.c8 {
-  border-radius: 100px;
-  padding: 0rem 1rem;
-  margin-right: 0.5rem;
-  background-color: #ffc0cb;
-  font-size: 1.125rem;
 }
 
 .c2 {
@@ -2119,14 +2296,14 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   align-items: center;
 }
 
-.c10 {
+.c13 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .c3 {
-  color: #5E26FF;
+  color: #262626;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2137,7 +2314,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   align-items: center;
 }
 
-.c11 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2151,7 +2328,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: center;
 }
 
-.c22 {
+.c25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2162,7 +2339,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   align-items: center;
 }
 
-.c9 {
+.c12 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -2173,11 +2350,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-left: 8px;
 }
 
-.c9:hover {
+.c12:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c21 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   position: absolute;
@@ -2189,13 +2366,13 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   transform: translate(-50%,-50%);
 }
 
-.c14 {
+.c17 {
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   cursor: pointer;
 }
 
-.c14:hover {
+.c17:hover {
   background: hsla(0,0%,90%,1);
   opacity: 1;
 }
@@ -2214,78 +2391,94 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
     >
       <li
         class="c3"
-        color="core.primary"
+        color="core.nearblack"
         display="flex"
       >
         <div
           class="c4"
-          color="core.white"
           display="flex"
-          size="6"
+          overflow="hidden"
+          width="100%"
         >
-          <h3
+          <div
             class="c5"
+            display="flex"
           >
-            Sw
-          </h3>
-        </div>
-        <h2
-          class="c6"
-          font-family="RT-Alias-Grotesk"
-          font-size="4"
-          font-weight="400"
-        >
-          Switch Accounts
-        </h2>
-      </li>
-      <li
-        class=""
-      >
-        <p
-          class="c7"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          Your single seed phrase creates hundreds of individual accounts. We're showing you the first 5.
-        </p>
-        <p
-          class="c7"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          <span
-            class="c8"
-            font-size="2"
-          >
-            Don't see an address you're looking for?
-          </span>
-          Your seed phrase generates different addresses depending on whether it's connected to the Filecoin testnet or mainnet.
-          <a
+            <div
+              class="c6"
+              color="core.white"
+              display="flex"
+              size="6"
+            >
+              <h3
+                class="c7"
+              >
+                Ac
+              </h3>
+            </div>
+            <h2
+              class="c8"
+              color="core.primary"
+              font-family="RT-Alias-Grotesk"
+              font-size="4"
+              font-weight="400"
+            >
+              Switch Accounts
+            </h2>
+          </div>
+          <div
             class="c9"
-            color="core.primary"
-            font-size="2"
-            href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
           >
-            Learn More
-          </a>
-        </p>
+            <p
+              class="c10"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Your single seed phrase creates hundreds of individual accounts. We're showing you the first 5.
+            </p>
+            <p
+              class="c11"
+              color="core.primary"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Don't see an address you're looking for?
+            </p>
+            <p
+              class="c10"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Your seed phrase generates different addresses depending on whether it's connected to the Filecoin testnet or mainnet.
+              <a
+                class="c12"
+                color="core.primary"
+                font-size="2"
+                href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
+              >
+                Learn More
+              </a>
+            </p>
+          </div>
+        </div>
       </li>
     </ul>
     <ul
-      class="c10"
+      class="c13"
     >
       <li
-        class="c11"
+        class="c14"
         display="flex"
       >
         <div
-          class="c12"
+          class="c15"
           display="inline-block"
         >
           <div
-            class="c13 c14"
+            class="c16 c17"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -2293,27 +2486,27 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
             width="11"
           >
             <div
-              class="c15"
+              class="c18"
               display="flex"
             >
               <div
-                class="c16"
+                class="c19"
                 color="colors.core.black"
                 display="flex"
                 size="6"
               >
                 <h3
-                  class="c5"
+                  class="c7"
                 >
                   0
                 </h3>
               </div>
               <div
-                class="c17"
+                class="c20"
                 display="flex"
               >
                 <p
-                  class="c18"
+                  class="c21"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -2321,7 +2514,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   Address
                 </p>
                 <h2
-                  class="c19"
+                  class="c22"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -2331,11 +2524,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               </div>
             </div>
             <div
-              class="c17"
+              class="c20"
               display="flex"
             >
               <p
-                class="c18"
+                class="c21"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -2343,7 +2536,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 Balance
               </p>
               <h2
-                class="c19"
+                class="c22"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -2355,11 +2548,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
           </div>
         </div>
         <div
-          class="c12"
+          class="c15"
           display="inline-block"
         >
           <div
-            class="c13 c14"
+            class="c16 c17"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -2367,27 +2560,27 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
             width="11"
           >
             <div
-              class="c15"
+              class="c18"
               display="flex"
             >
               <div
-                class="c16"
+                class="c19"
                 color="colors.core.black"
                 display="flex"
                 size="6"
               >
                 <h3
-                  class="c5"
+                  class="c7"
                 >
                   1
                 </h3>
               </div>
               <div
-                class="c17"
+                class="c20"
                 display="flex"
               >
                 <p
-                  class="c18"
+                  class="c21"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -2395,7 +2588,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   Address
                 </p>
                 <h2
-                  class="c19"
+                  class="c22"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -2405,11 +2598,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               </div>
             </div>
             <div
-              class="c17"
+              class="c20"
               display="flex"
             >
               <p
-                class="c18"
+                class="c21"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -2417,7 +2610,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 Balance
               </p>
               <h2
-                class="c19"
+                class="c22"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -2429,11 +2622,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
           </div>
         </div>
         <div
-          class="c12"
+          class="c15"
           display="inline-block"
         >
           <div
-            class="c13 c14"
+            class="c16 c17"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -2441,27 +2634,27 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
             width="11"
           >
             <div
-              class="c15"
+              class="c18"
               display="flex"
             >
               <div
-                class="c16"
+                class="c19"
                 color="colors.core.black"
                 display="flex"
                 size="6"
               >
                 <h3
-                  class="c5"
+                  class="c7"
                 >
                   2
                 </h3>
               </div>
               <div
-                class="c17"
+                class="c20"
                 display="flex"
               >
                 <p
-                  class="c18"
+                  class="c21"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -2469,7 +2662,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   Address
                 </p>
                 <h2
-                  class="c19"
+                  class="c22"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -2479,11 +2672,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               </div>
             </div>
             <div
-              class="c17"
+              class="c20"
               display="flex"
             >
               <p
-                class="c18"
+                class="c21"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -2491,7 +2684,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 Balance
               </p>
               <h2
-                class="c19"
+                class="c22"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -2503,11 +2696,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
           </div>
         </div>
         <div
-          class="c12"
+          class="c15"
           display="inline-block"
         >
           <div
-            class="c13 c14"
+            class="c16 c17"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -2515,27 +2708,27 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
             width="11"
           >
             <div
-              class="c15"
+              class="c18"
               display="flex"
             >
               <div
-                class="c16"
+                class="c19"
                 color="colors.core.black"
                 display="flex"
                 size="6"
               >
                 <h3
-                  class="c5"
+                  class="c7"
                 >
                   3
                 </h3>
               </div>
               <div
-                class="c17"
+                class="c20"
                 display="flex"
               >
                 <p
-                  class="c18"
+                  class="c21"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -2543,7 +2736,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   Address
                 </p>
                 <h2
-                  class="c19"
+                  class="c22"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -2553,11 +2746,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               </div>
             </div>
             <div
-              class="c17"
+              class="c20"
               display="flex"
             >
               <p
-                class="c18"
+                class="c21"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -2565,7 +2758,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 Balance
               </p>
               <h2
-                class="c19"
+                class="c22"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -2577,11 +2770,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
           </div>
         </div>
         <div
-          class="c12"
+          class="c15"
           display="inline-block"
         >
           <div
-            class="c13 c14"
+            class="c16 c17"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -2589,27 +2782,27 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
             width="11"
           >
             <div
-              class="c15"
+              class="c18"
               display="flex"
             >
               <div
-                class="c16"
+                class="c19"
                 color="colors.core.black"
                 display="flex"
                 size="6"
               >
                 <h3
-                  class="c5"
+                  class="c7"
                 >
                   4
                 </h3>
               </div>
               <div
-                class="c17"
+                class="c20"
                 display="flex"
               >
                 <p
-                  class="c18"
+                  class="c21"
                   font-family="RT-Alias-Grotesk"
                   font-size="3"
                   font-weight="400"
@@ -2617,7 +2810,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   Address
                 </p>
                 <h2
-                  class="c19"
+                  class="c22"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -2627,11 +2820,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               </div>
             </div>
             <div
-              class="c17"
+              class="c20"
               display="flex"
             >
               <p
-                class="c18"
+                class="c21"
                 font-family="RT-Alias-Grotesk"
                 font-size="3"
                 font-weight="400"
@@ -2639,7 +2832,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 Balance
               </p>
               <h2
-                class="c19"
+                class="c22"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -2651,7 +2844,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
           </div>
         </div>
         <button
-          class="c20"
+          class="c23"
           color="core.nearblack"
           cursor="pointer"
           display="flex"
@@ -2662,20 +2855,20 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
           width="11"
         >
           <div
-            class="c21"
+            class="c24"
             font-size="7"
           >
             ＋
           </div>
           <ul
-            class="c10"
+            class="c13"
           >
             <li
-              class="c22"
+              class="c25"
               display="flex"
             >
               <h2
-                class="c23"
+                class="c26"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -2687,7 +2880,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               class=""
             >
               <p
-                class="c24"
+                class="c27"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"

@@ -1,39 +1,43 @@
 import React from 'react'
 import { bool } from 'prop-types'
-import { Text, StyledATag, Highlight } from '../Shared'
+import { Text, StyledATag } from '../Shared'
 
 const LedgerHelp = () => (
-  <Text>
-    <Highlight fontSize={2}>
+  <>
+    <Text color='core.primary' mt={5} mb={0} fontSize={2}>
       Don&apos;t see an address you&apos;re looking for?
-    </Highlight>
-    Your Ledger Device generates different addresses depending on whether
-    it&apos;s connected to the Filecoin testnet or mainnet.
-    <StyledATag
-      fontSize={2}
-      ml={2}
-      href='https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV'
-    >
-      Learn More
-    </StyledATag>
-  </Text>
+    </Text>
+    <Text mt={2}>
+      Your Ledger Device generates different addresses depending on whether
+      it&apos;s connected to the Filecoin testnet or mainnet.
+      <StyledATag
+        fontSize={2}
+        ml={2}
+        href='https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV'
+      >
+        Learn More
+      </StyledATag>
+    </Text>
+  </>
 )
 
 const SeedHelp = () => (
-  <Text>
-    <Highlight fontSize={2}>
+  <>
+    <Text color='core.primary' fontSize={2}>
       Don&apos;t see an address you&apos;re looking for?
-    </Highlight>
-    Your seed phrase generates different addresses depending on whether
-    it&apos;s connected to the Filecoin testnet or mainnet.
-    <StyledATag
-      fontSize={2}
-      ml={2}
-      href='https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV'
-    >
-      Learn More
-    </StyledATag>
-  </Text>
+    </Text>
+    <Text>
+      Your seed phrase generates different addresses depending on whether
+      it&apos;s connected to the Filecoin testnet or mainnet.
+      <StyledATag
+        fontSize={2}
+        ml={2}
+        href='https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV'
+      >
+        Learn More
+      </StyledATag>
+    </Text>
+  </>
 )
 
 const HelperText = ({ premainnetInvestor, msig, isLedger }) => {
