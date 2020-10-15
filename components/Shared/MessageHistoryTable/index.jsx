@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Box from '../Box'
-import Glyph from '../Glyph'
 import { Text } from '../Typography'
 import Button from '../Button'
 

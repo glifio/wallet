@@ -52,28 +52,21 @@ const State = ({
         alignItems='center'
         justifyContent='space-between'
       >
-        <MenuItem display='flex' alignItems='center'>
-          <IconGlif
-            size={6}
-            css={`
-              transform: rotate(-90deg);
-            `}
-          />
-          <Title ml={2}>Vault</Title>
-        </MenuItem>
-        {/* <MenuItem>
-          <Button
-            type='button'
-            variant='secondary'
-            onClick={setChangingOwner}
-            title='Change Owner'
-            maxWidth={10}
-            minWidth={9}
-            borderRadius={6}
-          />
-        </MenuItem> */}
-        {showTakeCustodyOption && (
-          <MenuItem>
+        <MenuItem
+          display='flex'
+          alignItems='center'
+          justifyContent='space-between'
+        >
+          <Box display='flex' alignItems='center'>
+            <IconGlif
+              size={6}
+              css={`
+                transform: rotate(-90deg);
+              `}
+            />
+            <Title ml={2}>Vault</Title>
+          </Box>
+          {showTakeCustodyOption && (
             <Button
               type='button'
               variant='secondary'
@@ -83,8 +76,8 @@ const State = ({
               minWidth={9}
               borderRadius={6}
             />
-          </MenuItem>
-        )}
+          )}
+        </MenuItem>
       </Menu>
       <Menu display='flex' justifyContent='space-between'>
         <MenuItem display='flex' width='100%' justifyContent='space-between'>
@@ -154,15 +147,16 @@ const State = ({
         flexDirection='column'
         alignItems='center'
         justifyContent='center'
+        mt={2}
+        mb={4}
       >
         <Balances
           available={available}
           total={total}
           setWithdrawing={setWithdrawing}
         />
-
-        <MessageHistory maxWidth={18} address={msigAddress} />
       </Box>
+      <MessageHistory maxWidth={18} address={msigAddress} />
     </Box>
   )
 }
