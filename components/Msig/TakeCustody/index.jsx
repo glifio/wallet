@@ -148,6 +148,14 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
           setUncaughtError(
             `${wallet.address} is not a signer of the multisig wallet ${address}.`
           )
+        } else if (
+          err.message
+            .toLowerCase()
+            .includes('data is invalid : unexpected method')
+        ) {
+          setUncaughtError(
+            'Please make sure expert mode is enabled on your Ledger Filecoin app.'
+          )
         } else {
           reportError(20, false, err.message, err.stack)
           setUncaughtError(err.message || err)
