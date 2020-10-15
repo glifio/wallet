@@ -129,8 +129,6 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
       setMessageInfo(messageInfo)
       setStep(2)
     } else if (step === 2) {
-      setStep(3)
-    } else if (step === 3) {
       setAttemptingTx(true)
       try {
         const msg = await sendMsg()
@@ -169,7 +167,7 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
     if (step === 2 && gasError) return true
     if (uncaughtError) return false
     if (attemptingTx) return true
-    if (step > 3) return true
+    if (step > 2) return true
   }
 
   return (
@@ -216,8 +214,8 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
                 <ConfirmationCard
                   loading={fetchingTxDetails || mPoolPushing}
                   walletType={LEDGER}
-                  currentStep={4}
-                  totalSteps={4}
+                  currentStep={3}
+                  totalSteps={3}
                   msig
                 />
               )}
@@ -227,7 +225,7 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
                     <StepHeader
                       title='Take full custody'
                       currentStep={step}
-                      totalSteps={4}
+                      totalSteps={3}
                       glyphAcronym='Tc'
                     />
                     <TakeCustodyHeaderText step={step} />

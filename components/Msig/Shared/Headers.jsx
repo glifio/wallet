@@ -114,9 +114,6 @@ export const TakeCustodyHeaderText = ({ step }) => {
       text =
         'Please review the transaction fee details. If the fee is too high, please come back and try again later.'
       break
-    case 3:
-      text = 'Please review the transaction details.'
-      break
     default:
       text = ''
   }
