@@ -8,7 +8,7 @@ import { IconSend, IconPending } from '../../Icons'
 import truncate from '../../../../utils/truncateAddress'
 import makeFriendlyBalance from '../../../../utils/makeFriendlyBalance'
 
-const methods = ['withdraw', '', '', '', '', '', '', 'owner swap']
+const methods = ['withdraw', '', '', '', '', '', 'remove signer', 'owner swap']
 
 const ProposalText = ({ params }) => {
   return (

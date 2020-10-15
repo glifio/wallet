@@ -33,6 +33,11 @@ export const useMsig = msigActorID => {
     router.push(`/error/not-a-signer?${params.toString()}`)
   }, [router, wallet.address, msigActorID])
 
+  const notSupportedMultisigCb = useCallback(
+    () => router.push('/error/not-supported-msig'),
+    [router]
+  )
+
   const timeout = useRef()
 
   const pollMsigState = useCallback(
@@ -44,7 +49,8 @@ export const useMsig = msigActorID => {
             msigAddress,
             wallet.address,
             actorNotMsigCb,
-            walletAddressNotSignerCb
+            walletAddressNotSignerCb,
+            notSupportedMultisigCb
           )
           if (stateDiff(state, newState)) {
             setActorState(newState)
@@ -61,7 +67,12 @@ export const useMsig = msigActorID => {
         }
       }
     },
-    [wallet.address, actorNotMsigCb, walletAddressNotSignerCb]
+    [
+      wallet.address,
+      actorNotMsigCb,
+      walletAddressNotSignerCb,
+      notSupportedMultisigCb
+    ]
   )
 
   useEffect(() => {
@@ -71,7 +82,8 @@ export const useMsig = msigActorID => {
           msigActorID,
           wallet.address,
           actorNotMsigCb,
-          walletAddressNotSignerCb
+          walletAddressNotSignerCb,
+          notSupportedMultisigCb
         )
         setActorState(state)
         return pollMsigState(msigActorID, state)
@@ -94,7 +106,8 @@ export const useMsig = msigActorID => {
     wallet.address,
     actorNotMsigCb,
     walletAddressNotSignerCb,
-    pollMsigState
+    pollMsigState,
+    notSupportedMultisigCb
   ])
 
   if (!actorState) return emptyActorState

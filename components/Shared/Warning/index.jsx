@@ -6,6 +6,7 @@ import Glyph from '../Glyph'
 import OnboardCard from '../Card/OnboardCard'
 import { StyledATag } from '../Link'
 import { Text, Title } from '../Typography'
+import { createHash } from '../../../utils/investor'
 
 const DescriptionText = ({ description }) => {
   if (typeof description === 'string') {
@@ -15,7 +16,9 @@ const DescriptionText = ({ description }) => {
   return (
     <>
       {description.map(d => (
-        <Text mt={0}>{d}</Text>
+        <Text key={createHash(d)} mt={0}>
+          {d}
+        </Text>
       ))}
     </>
   )
@@ -102,8 +105,8 @@ const WarningCard = ({
 WarningCard.propTypes = {
   description: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   title: PropTypes.string.isRequired,
-  linkhref: PropTypes.string.isRequired,
-  linkDisplay: PropTypes.string.isRequired,
+  linkhref: PropTypes.string,
+  linkDisplay: PropTypes.string,
   onBack: PropTypes.oneOfType([
     PropTypes.func.isRequired,
     PropTypes.oneOf([null])

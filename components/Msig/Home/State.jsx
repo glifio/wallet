@@ -25,6 +25,8 @@ const State = ({
   available,
   setChangingOwner,
   setWithdrawing,
+  setTakingCustody,
+  showTakeCustodyOption,
   total,
   walletAddress
 }) => {
@@ -77,6 +79,19 @@ const State = ({
             borderRadius={6}
           />
         </MenuItem> */}
+        {showTakeCustodyOption && (
+          <MenuItem>
+            <Button
+              type='button'
+              variant='secondary'
+              onClick={setTakingCustody}
+              title='TAKE CONTROL'
+              maxWidth={10}
+              minWidth={9}
+              borderRadius={6}
+            />
+          </MenuItem>
+        )}
       </Menu>
       <Menu
         display='flex'
@@ -124,7 +139,9 @@ State.propTypes = {
   msigAddress: ADDRESS_PROPTYPE,
   walletAddress: ADDRESS_PROPTYPE,
   setChangingOwner: PropTypes.func.isRequired,
-  setWithdrawing: PropTypes.func.isRequired
+  setWithdrawing: PropTypes.func.isRequired,
+  setTakingCustody: PropTypes.func.isRequired,
+  showTakeCustodyOption: PropTypes.bool.isRequired
 }
 
 export default State

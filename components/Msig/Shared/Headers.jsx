@@ -105,3 +105,21 @@ export const ChangeOwnerHeaderText = ({ step }) => {
 ChangeOwnerHeaderText.propTypes = {
   step: PropTypes.number.isRequired
 }
+
+export const TakeCustodyHeaderText = ({ step }) => {
+  let text = ''
+
+  switch (step) {
+    case 2:
+      text =
+        'Please review the transaction fee details. If the fee is too high, please come back and try again later.'
+      break
+    default:
+      text = ''
+  }
+  return <Text textAlign='center'>{text}</Text>
+}
+
+TakeCustodyHeaderText.propTypes = {
+  step: PropTypes.number.isRequired
+}

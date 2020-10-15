@@ -38,3 +38,28 @@ export const emptyGasInfo = {
   gasFeeCap: new FilecoinNumber('0', 'attofil'),
   gasLimit: new FilecoinNumber('0', 'attofil')
 }
+
+/* MSIG PL SIGNERS */
+export const PL_SIGNERS = new Set([
+  'f020484',
+  'f022215',
+  'f023047',
+  'f022408',
+  'f0105',
+  'f125nlfn4lwl7ldt4gwfas5furnwafwqgd2our6oa',
+  'f16j5fivw6dq2h3uujq47joz36on24wfalofxmtvi',
+  'f1yr7w7y5nia2zmzkw6yvxygj2pctwv3le2l3zccq',
+  'f1figgwd5npr2jyw67u75qhjoyv3xf3jq5vwmmq5i',
+  'f1ovvm6oilbdsvbw27jhil3pcywrjuwiv5uzagq6i',
+  'f010361',
+  't020484',
+  't022215',
+  't023047',
+  't022408',
+  't0105',
+  't125nlfn4lwl7ldt4gwfas5furnwafwqgd2our6oa',
+  't16j5fivw6dq2h3uujq47joz36on24wfalofxmtvi',
+  't1yr7w7y5nia2zmzkw6yvxygj2pctwv3le2l3zccq',
+  't1figgwd5npr2jyw67u75qhjoyv3xf3jq5vwmmq5i',
+  't1ovvm6oilbdsvbw27jhil3pcywrjuwiv5uzagq6i'
+])
