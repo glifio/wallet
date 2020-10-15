@@ -5,13 +5,21 @@ import { Box, Button, Num, Title } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
-const BalanceContainer = styled(Box)`
+const AvailableBalanceContainer = styled(Box)`
+  background: linear-gradient(
+    169deg,
+    hsl(224deg 48% 94%) 5.19%,
+    hsl(224deg 48% 93% / 5%) 116.24%
+  );
+`
+
+const NumberContainer = styled(Box)`
   word-break: break-word;
 `
 
 const AvailableBalance = ({ available }) => {
   return (
-    <BalanceContainer
+    <NumberContainer
       display='flex'
       flexDirection='column'
       alignItems='center'
@@ -20,7 +28,7 @@ const AvailableBalance = ({ available }) => {
       <Num size='xxl' color='core.primary'>
         {makeFriendlyBalance(available, 6, true)}
       </Num>
-    </BalanceContainer>
+    </NumberContainer>
   )
 }
 
@@ -36,7 +44,7 @@ const WithdrawButton = styled(Button)`
 `
 
 const TotalBalance = ({ total }) => (
-  <BalanceContainer
+  <NumberContainer
     display='flex'
     flexDirection='column'
     alignItems='center'
@@ -45,7 +53,7 @@ const TotalBalance = ({ total }) => (
     <Num size='xxl' color='core.darkgray'>
       {makeFriendlyBalance(total, 6, true)}
     </Num>
-  </BalanceContainer>
+  </NumberContainer>
 )
 
 TotalBalance.propTypes = {
@@ -63,7 +71,7 @@ const Balances = ({ available, setWithdrawing, total }) => {
       maxWidth={18}
       width='100%'
     >
-      <Box
+      <AvailableBalanceContainer
         display='block'
         textAlign='center'
         width='100%'
@@ -71,13 +79,6 @@ const Balances = ({ available, setWithdrawing, total }) => {
         pt={6}
         pb={5}
         borderRadius={2}
-        css={`
-          background: linear-gradient(
-            169deg,
-            hsl(224deg 48% 94%) 5.19%,
-            hsl(224deg 48% 93% / 5%) 116.24%
-          );
-        `}
       >
         <Title fontSize={2} mb={5}>
           Available Balance
@@ -93,7 +94,7 @@ const Balances = ({ available, setWithdrawing, total }) => {
           mt={5}
           borderRadius={6}
         />
-      </Box>
+      </AvailableBalanceContainer>
       <Box
         position='relative'
         display='block'
