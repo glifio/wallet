@@ -7,7 +7,7 @@ import { Message } from '@glif/filecoin-message'
 
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
-import { Box, Button, ButtonClose, StepHeader, Form } from '../../Shared'
+import { Box, Button, ButtonClose, StepHeader, Form, Card } from '../../Shared'
 import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
@@ -228,8 +228,17 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
                 />
               )}
               {!attemptingTx &&
+                step > 1 &&
                 !hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
-                  <>
+                  <Card
+                    display='flex'
+                    flexDirection='column'
+                    justifyContent='space-between'
+                    border='none'
+                    width='auto'
+                    my={2}
+                    backgroundColor='blue.muted700'
+                  >
                     <StepHeader
                       title='Take full custody'
                       currentStep={step}
@@ -237,7 +246,7 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
                       glyphAcronym='Tc'
                     />
                     <TakeCustodyHeaderText step={step} />
-                  </>
+                  </Card>
                 )}
               {step === 1 && <Preface />}
               <Box boxShadow={2} borderRadius={4}>

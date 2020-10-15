@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Box, Text, Glyph, StyledATag, Tooltip } from '../../Shared'
+import { Box, Text, Glyph, StyledATag } from '../../Shared'
 import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
@@ -49,7 +49,6 @@ export const CardHeader = ({ address, msigBalance, signerBalance, msig }) => {
               <Text m={0}>Msig Balance</Text>
               <Text m={0}>{makeFriendlyBalance(msigBalance, 6, true)} FIL</Text>
             </Box>
-            <Tooltip content='The transaction fee must be paid by from your Signer balance.' />
           </Box>
         ) : (
           <Box display='flex' flexDirection='column' alignItems='flex-start'>
@@ -140,7 +139,14 @@ export const TakeCustodyHeaderText = ({ step }) => {
     default:
       text = ''
   }
-  return <Text textAlign='center'>{text}</Text>
+  return (
+    <>
+      <Text textAlign='center'>
+        Your Ledger Address pays the transaction fee.
+      </Text>
+      <Text textAlign='center'>{text}</Text>
+    </>
+  )
 }
 
 TakeCustodyHeaderText.propTypes = {
