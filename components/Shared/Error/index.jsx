@@ -1,5 +1,4 @@
 import React from 'react'
-import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import Box from '../Box'
 import Button from '../Button'
@@ -7,14 +6,10 @@ import Glyph from '../Glyph'
 import OnboardCard from '../Card/OnboardCard'
 import { StyledATag } from '../Link'
 import { Text, Title } from '../Typography'
-import useReset from '../../../utils/useReset'
 
 const ErrorView = ({ description, linkhref, linkDisplay, title }) => {
-  const router = useRouter()
-  const resetState = useReset()
   const sendHome = () => {
-    resetState()
-    router.replace(`/`)
+    window.location.href = `${window.location.origin}?network=f`
   }
   return (
     <Box
