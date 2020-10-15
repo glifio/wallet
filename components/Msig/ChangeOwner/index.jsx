@@ -227,9 +227,10 @@ const ChangeOwner = ({ address, balance, close }) => {
               <Box boxShadow={2} borderRadius={4}>
                 {step > 1 && (
                   <CardHeader
+                    msig
                     address={address}
-                    balance={balance}
-                    customizingGas={false}
+                    msigBalance={balance}
+                    signerBalance={wallet.balance}
                   />
                 )}
                 {step > 1 && (

@@ -243,7 +243,12 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
               <Box boxShadow={2} borderRadius={4}>
                 {step > 1 && (
                   <>
-                    <CardHeader address={address} balance={msigBalance} />
+                    <CardHeader
+                      msig
+                      address={address}
+                      msigBalance={msigBalance}
+                      signerBalance={wallet.balance}
+                    />
                     <Box width='100%' p={3} border={0} bg='background.screen'>
                       <CustomizeFee
                         message={messageInfo.message.toLotusType()}

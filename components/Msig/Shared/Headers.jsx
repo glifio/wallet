@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Box, Text, Glyph, StyledATag } from '../../Shared'
+import { Box, Text, Glyph, StyledATag, Tooltip } from '../../Shared'
 import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
@@ -8,7 +8,7 @@ import {
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 import truncateAddress from '../../../utils/truncateAddress'
 
-export const CardHeader = ({ address, balance }) => {
+export const CardHeader = ({ address, msigBalance, signerBalance, msig }) => {
   return (
     <Box
       width='100%'
@@ -32,10 +32,31 @@ export const CardHeader = ({ address, balance }) => {
             <Text m={0}>{truncateAddress(address)}</Text>
           </Box>
         </Box>
-        <Box display='flex' flexDirection='column' alignItems='flex-start'>
-          <Text m={0}>Balance</Text>
-          <Text m={0}>{makeFriendlyBalance(balance, 6, true)} FIL</Text>
-        </Box>
+        {msig ? (
+          <Box display='flex' flexDirection='row'>
+            <Box
+              display='flex'
+              flexDirection='column'
+              alignItems='flex-start'
+              mr={3}
+            >
+              <Text m={0}>Signer Balance</Text>
+              <Text m={0}>
+                {makeFriendlyBalance(signerBalance, 6, true)} FIL
+              </Text>
+            </Box>
+            <Box display='flex' flexDirection='column' alignItems='flex-start'>
+              <Text m={0}>Msig Balance</Text>
+              <Text m={0}>{makeFriendlyBalance(msigBalance, 6, true)} FIL</Text>
+            </Box>
+            <Tooltip content='The transaction fee must be paid by from your Signer balance.' />
+          </Box>
+        ) : (
+          <Box display='flex' flexDirection='column' alignItems='flex-start'>
+            <Text m={0}>Balance</Text>
+            <Text m={0}>{makeFriendlyBalance(signerBalance, 6, true)} FIL</Text>
+          </Box>
+        )}
       </Box>
     </Box>
   )
@@ -43,7 +64,9 @@ export const CardHeader = ({ address, balance }) => {
 
 CardHeader.propTypes = {
   address: ADDRESS_PROPTYPE,
-  balance: FILECOIN_NUMBER_PROP
+  signerBalance: FILECOIN_NUMBER_PROP,
+  msigBalance: FILECOIN_NUMBER_PROP,
+  msig: PropTypes.bool
 }
 
 export const WithdrawHeaderText = ({ step }) => {
