@@ -55,7 +55,7 @@ export default () => {
             close={() => setChildView(MSIG_STATE)}
             signers={msig.Signers}
             msigBalance={msig.AvailableBalance}
-            address={address}
+            address={msigActorAddress}
           />
         )}
         {!msig.loading && childView === WITHDRAW && (

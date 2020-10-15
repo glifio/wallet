@@ -40,7 +40,7 @@ export const CardHeader = ({ address, msigBalance, signerBalance, msig }) => {
               alignItems='flex-start'
               mr={3}
             >
-              <Text m={0}>Signer Balance</Text>
+              <Text m={0}>Ledger Balance</Text>
               <Text m={0}>
                 {makeFriendlyBalance(signerBalance, 6, true)} FIL
               </Text>
