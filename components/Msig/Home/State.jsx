@@ -113,7 +113,6 @@ const State = ({
               variant='secondary'
               onClick={setChangingOwner}
               title='Change Owner'
-              borderColor='core.lightgray'
               height={6}
               maxWidth={10}
               minWidth={9}
