@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
+import { color, border } from 'styled-system'
 import { string } from 'prop-types'
 import { Text } from '../Typography'
 import Box from '../Box'
@@ -10,16 +11,18 @@ const TooltipContent = styled(Box)`
   height: fit-content;
   width: max-content;
   max-width: 200px;
-  left: 32px;
-  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -40px;
   opacity: 0;
   padding: ${props => props.theme.sizes[2]}px;
-
+  color: ${props => props.theme.colors.core.nearblack};
   background-color: ${props => props.theme.colors.core.white};
   border-radius: ${props => props.theme.radii[2]};
   box-shadow: ${props => props.theme.shadows[2]};
   z-index: ${props => props.theme.zIndices[4]};
   transition: 0.24s ease-in-out;
+  ${color}
 `
 
 const TooltipContainer = styled.a`
@@ -34,6 +37,8 @@ const TooltipContainer = styled.a`
   justify-content: center;
   cursor: pointer;
   transition: 0.24s ease-in-out;
+  ${color}
+  ${border}
 
  &:hover ~ ${TooltipContent} {
       opacity: 1;
