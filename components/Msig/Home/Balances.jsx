@@ -70,7 +70,7 @@ const Balances = ({ available, setWithdrawing, total }) => {
         p={4}
         pt={6}
         pb={5}
-        borderRadius={3}
+        borderRadius={2}
         css={`
           background: linear-gradient(
             169deg,
