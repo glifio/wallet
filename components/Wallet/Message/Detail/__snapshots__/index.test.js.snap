@@ -4,15 +4,15 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
 .c0 {
   min-width: 0;
   box-sizing: border-box;
-  border: 1px solid;
+  border: 0;
   border-radius: 4px;
   border-width: 1px;
-  border-color: #999999;
   padding: 16px;
   display: inline-block;
   width: 300px;
   overflow: hidden;
   max-width: 560px;
+  box-shadow: 0 0.7px 2.2px -8px rgba(0,0,0,0.18),0 1.7px 5.4px rgba(0,0,0,0.129),0 3.1px 10.1px rgba(0,0,0,0.107),0 5.6px 18.1px rgba(0,0,0,0.09),0 10.4px 33.8px rgba(0,0,0,0.073),0 25px 81px rgba(0,0,0,0.051);
 }
 
 .c2 {
@@ -218,8 +218,6 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
   margin-right: 8px;
   color: #999999;
   display: -webkit-box;
@@ -1040,15 +1038,15 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
 .c0 {
   min-width: 0;
   box-sizing: border-box;
-  border: 1px solid;
+  border: 0;
   border-radius: 4px;
   border-width: 1px;
-  border-color: #999999;
   padding: 16px;
   display: inline-block;
   width: 300px;
   overflow: hidden;
   max-width: 560px;
+  box-shadow: 0 0.7px 2.2px -8px rgba(0,0,0,0.18),0 1.7px 5.4px rgba(0,0,0,0.129),0 3.1px 10.1px rgba(0,0,0,0.107),0 5.6px 18.1px rgba(0,0,0,0.09),0 10.4px 33.8px rgba(0,0,0,0.073),0 25px 81px rgba(0,0,0,0.051);
 }
 
 .c2 {
@@ -1254,8 +1252,6 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
   margin-right: 8px;
   color: #999999;
   display: -webkit-box;
@@ -2076,15 +2072,15 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
 .c0 {
   min-width: 0;
   box-sizing: border-box;
-  border: 1px solid;
+  border: 0;
   border-radius: 4px;
   border-width: 1px;
-  border-color: #999999;
   padding: 16px;
   display: inline-block;
   width: 300px;
   overflow: hidden;
   max-width: 560px;
+  box-shadow: 0 0.7px 2.2px -8px rgba(0,0,0,0.18),0 1.7px 5.4px rgba(0,0,0,0.129),0 3.1px 10.1px rgba(0,0,0,0.107),0 5.6px 18.1px rgba(0,0,0,0.09),0 10.4px 33.8px rgba(0,0,0,0.073),0 25px 81px rgba(0,0,0,0.051);
 }
 
 .c2 {
@@ -2290,8 +2286,6 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
   margin-right: 8px;
   color: #999999;
   display: -webkit-box;
