@@ -101,7 +101,7 @@ const State = ({
               })}
               reset={reset}
             />
-            {showChangeOwnerOption && (
+            {/* {showChangeOwnerOption && (
               <Button
                 type='button'
                 variant='secondary'
@@ -112,7 +112,7 @@ const State = ({
                 minWidth={9}
                 borderRadius={6}
               />
-            )}
+            )} */}
           </MenuItem>
         </Menu>
       </Menu>
