@@ -1,9 +1,7 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { bool } from 'prop-types'
 import { useSelector, useDispatch } from 'react-redux'
-import styled from 'styled-components'
 import { useRouter } from 'next/router'
-import { FilecoinNumber } from '@glif/filecoin-number'
 import {
   Box,
   Box as Wrapper,
@@ -12,7 +10,6 @@ import {
   Title,
   Menu,
   MenuItem,
-  ButtonClose,
   LoadingScreen
 } from '../Shared'
 import HelperText from './HelperText'
@@ -35,13 +32,7 @@ import useWallet from '../../WalletProvider/useWallet'
 import createPath from '../../utils/createPath'
 import reportError from '../../utils/reportError'
 
-const Close = styled(ButtonClose)`
-  position: absolute;
-  top: ${props => props.theme.sizes[3]}px;
-  right: ${props => props.theme.sizes[3]}px;
-`
-
-const AccountSelector = ({ premainnetInvestor, msig }) => {
+const AccountSelector = ({ msig }) => {
   const wallet = useWallet()
   const [loadingAccounts, setLoadingAccounts] = useState(false)
   const [loadingPage, setLoadingPage] = useState(true)
@@ -56,14 +47,6 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
   const router = useRouter()
 
   const [loadedFirstFiveWallets, setLoadedFirstFiveWallets] = useState(false)
-
-  const fetchBalance = useCallback(
-    (address, provider) => {
-      if (premainnetInvestor) return new FilecoinNumber(0, 'fil')
-      return provider.getBalance(address)
-    },
-    [premainnetInvestor]
-  )
 
   // automatically generate the first 5 wallets for the user to select from to avoid confusion for non tech folks
   useEffect(() => {
@@ -84,7 +67,7 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
 
             await Promise.all(
               addresses.map(async (address, i) => {
-                const balance = await fetchBalance(address, provider)
+                const balance = await provider.getBalance(address)
                 const networkCode =
                   network === MAINNET ? MAINNET_PATH_CODE : TESTNET_PATH_CODE
                 const wallet = {
@@ -123,15 +106,13 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
     wallet.type,
     walletProvider,
     walletsInRdx.length,
-    loadedFirstFiveWallets,
-    fetchBalance
+    loadedFirstFiveWallets
   ])
 
   const onClose = () => {
     const searchParams = new URLSearchParams(router.query)
     let route = ''
-    if (premainnetInvestor) route = `/vault/home?${searchParams.toString()}`
-    else if (msig) route = `/msig/choose?${searchParams.toString()}`
+    if (msig) route = `/vault/choose?${searchParams.toString()}`
     else route = `/home?${searchParams.toString()}`
     router.push(route)
   }
@@ -159,7 +140,7 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
           walletsInRdx.length + 1
         )
 
-        const balance = await fetchBalance(address, provider)
+        const balance = await provider.getBalance(address)
         const networkCode =
           network === MAINNET ? MAINNET_PATH_CODE : TESTNET_PATH_CODE
         const wallet = {
@@ -178,102 +159,90 @@ const AccountSelector = ({ premainnetInvestor, msig }) => {
   }
 
   return (
-    <>
-      {!premainnetInvestor && <Close onClick={onClose} />}
-      <Wrapper display='flex' flexDirection='column' justifyItems='center'>
-        {loadingPage ? (
-          <LoadingScreen height='100vh' />
-        ) : (
-          <Box
+    <Wrapper display='flex' flexDirection='column' justifyItems='center'>
+      {loadingPage ? (
+        <LoadingScreen height='100vh' />
+      ) : (
+        <Box
+          display='flex'
+          flexDirection='column'
+          alignItems='center'
+          alignSelf='center'
+          maxWidth={19}
+          p={4}
+        >
+          <Menu
             display='flex'
             flexDirection='column'
             alignItems='center'
-            alignSelf='center'
-            maxWidth={19}
-            p={4}
+            textAlign='center'
+            m={2}
+            maxWidth={16}
           >
-            <Menu
-              display='flex'
-              flexDirection='column'
-              alignItems='center'
-              textAlign='center'
-              m={2}
-              maxWidth={16}
-            >
-              <MenuItem
+            <MenuItem display='flex' alignItems='center' color='core.nearblack'>
+              <Card
                 display='flex'
-                alignItems='center'
-                color='core.nearblack'
+                flexDirection='column'
+                justifyContent='space-between'
+                border='none'
+                width='100%'
+                my={2}
+                backgroundColor='blue.muted700'
               >
-                <Card
-                  display='flex'
-                  flexDirection='column'
-                  justifyContent='space-between'
-                  border='none'
-                  width='100%'
-                  my={2}
-                  backgroundColor='blue.muted700'
-                >
-                  <Box display='flex' alignItems='center'>
-                    <Glyph
-                      acronym='Ac'
-                      bg='core.primary'
-                      borderColor='core.primary'
-                      color='core.white'
-                    />
-                    <Title ml={2} color='core.primary'>
-                      {premainnetInvestor || msig
-                        ? 'Select Account'
-                        : 'Switch Accounts'}
-                    </Title>
-                  </Box>
-                  <Box mt={3}>
-                    <HelperText
-                      color='core.nearblack'
-                      premainnetInvestor={premainnetInvestor}
-                      msig={msig}
-                      isLedger={wallet.type === LEDGER}
-                    />
-                  </Box>
-                </Card>
-              </MenuItem>
-            </Menu>
-            <Menu>
-              <MenuItem display='flex' flexWrap='wrap' justifyContent='center'>
-                {walletsInRdx.map((w, i) => (
-                  <AccountCardAlt
-                    alignItems='center'
-                    onClick={() => dispatch(switchWallet(i), onClose())}
-                    key={w.address}
-                    address={w.address}
-                    index={i}
-                    selected={false}
-                    balance={makeFriendlyBalance(w.balance, 6)}
+                <Box display='flex' alignItems='center'>
+                  <Glyph
+                    acronym='Ac'
+                    bg='core.primary'
+                    borderColor='core.primary'
+                    color='core.white'
                   />
-                ))}
-                <Create
-                  errorMsg={errorMsg}
-                  nextAccountIndex={walletsInRdx.length}
-                  onClick={fetchNextAccount}
-                  loading={loadingAccounts}
-                  mb={2}
+                  <Title ml={2} color='core.primary'>
+                    {msig ? 'Select Account' : 'Switch Accounts'}
+                  </Title>
+                </Box>
+                <Box mt={3}>
+                  <HelperText
+                    color='core.nearblack'
+                    msig={msig}
+                    isLedger={wallet.type === LEDGER}
+                  />
+                </Box>
+              </Card>
+            </MenuItem>
+          </Menu>
+          <Menu>
+            <MenuItem display='flex' flexWrap='wrap' justifyContent='center'>
+              {walletsInRdx.map((w, i) => (
+                <AccountCardAlt
+                  alignItems='center'
+                  onClick={() => dispatch(switchWallet(i), onClose())}
+                  key={w.address}
+                  address={w.address}
+                  index={i}
+                  selected={false}
+                  balance={makeFriendlyBalance(w.balance, 6)}
                 />
-              </MenuItem>
-            </Menu>
-          </Box>
-        )}
-      </Wrapper>
-    </>
+              ))}
+              <Create
+                errorMsg={errorMsg}
+                nextAccountIndex={walletsInRdx.length}
+                onClick={fetchNextAccount}
+                loading={loadingAccounts}
+                mb={2}
+              />
+            </MenuItem>
+          </Menu>
+        </Box>
+      )}
+    </Wrapper>
   )
 }
 
 AccountSelector.propTypes = {
-  premainnetInvestor: bool,
   msig: bool
 }
 
 AccountSelector.defaultProps = {
-  premainnetInvestor: false,
   msig: false
 }
 

@@ -12,7 +12,7 @@ describe('AccountSelector', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     await act(async () => {
       let res = render(<AccountSelector />, { wrapper: Tree })
-      expect(res.container.children[1]).toMatchSnapshot()
+      expect(res.container.firstChild).toMatchSnapshot()
     })
   })
 
@@ -20,9 +20,9 @@ describe('AccountSelector', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     let res
     await act(async () => {
-      res = render(<AccountSelector premainnetInvestor />, { wrapper: Tree })
+      res = render(<AccountSelector msig />, { wrapper: Tree })
     })
-    // IMPORTANT; the investor prop causes the X button to not get rendered, which is normally the firstChild of the container here
+    // IMPORTANT; the the X button alone is the 0th child, so we assert against the first child
     expect(res.container.firstChild).toMatchSnapshot()
   })
 
@@ -36,7 +36,7 @@ describe('AccountSelector', () => {
     store.getState().wallets.forEach((w, i) => {
       expect(Number(w.path.split('/')[5])).toBe(Number(i))
     })
-    expect(res.container.children[1]).toMatchSnapshot()
+    expect(res.container.firstChild).toMatchSnapshot()
   })
 
   test('it renders an error when an error exists', async () => {
@@ -49,7 +49,7 @@ describe('AccountSelector', () => {
     for (let i = 0; i < 5; i++) {
       expect(screen.getAllByText('Address')[i]).toBeInTheDocument()
     }
-    expect(res.container.children[1]).toMatchSnapshot()
+    expect(res.container.firstChild).toMatchSnapshot()
   })
 })
 
@@ -58,7 +58,7 @@ describe('HelperText', () => {
   test('it renders the non-msig, non-saft, non-ledger helper text correctly', () => {
     const { container } = render(
       <ThemeProvider>
-        <HelperText premainnetInvestor={false} isLedger={false} msig={false} />
+        <HelperText isLedger={false} msig={false} />
       </ThemeProvider>
     )
     expect(container.firstChild).toMatchSnapshot()
@@ -67,7 +67,7 @@ describe('HelperText', () => {
   test('it renders the non-msig, non-saft, ledger helper text correctly', () => {
     const { container } = render(
       <ThemeProvider>
-        <HelperText premainnetInvestor={false} isLedger={true} msig={false} />
+        <HelperText isLedger={true} msig={false} />
       </ThemeProvider>
     )
     expect(container.firstChild).toMatchSnapshot()
@@ -76,16 +76,7 @@ describe('HelperText', () => {
   test('it renders the msig helper text correctly', () => {
     const { container } = render(
       <ThemeProvider>
-        <HelperText premainnetInvestor={false} isLedger={true} msig={true} />
-      </ThemeProvider>
-    )
-    expect(container.firstChild).toMatchSnapshot()
-  })
-
-  test('it renders the saft helper text correctly', () => {
-    const { container } = render(
-      <ThemeProvider>
-        <HelperText premainnetInvestor={true} isLedger={true} msig={false} />
+        <HelperText isLedger={true} msig={true} />
       </ThemeProvider>
     )
     expect(container.firstChild).toMatchSnapshot()

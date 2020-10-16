@@ -1,5 +1,7 @@
-import Landing from '../../components/Investor/Landing'
+import useDesktopBrowser from '../../lib/useDesktopBrowser'
+import { MsigOnboard } from '../../components/Msig'
 
 export default () => {
-  return <Landing />
+  useDesktopBrowser()
+  return <MsigOnboard />
 }

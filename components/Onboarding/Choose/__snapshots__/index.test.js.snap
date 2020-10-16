@@ -252,7 +252,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   text-align: left;
 }
 
-.c38 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -279,7 +279,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   justify-content: flex-start;
 }
 
-.c39 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   margin: 16px;
@@ -296,7 +296,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   align-items: center;
 }
 
-.c41 {
+.c40 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -530,15 +530,6 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   margin: 0;
 }
 
-.c37 {
-  color: #C4C4C4;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
 .c3 {
   color: 'status.warning.foreground';
   font-size: 1.125rem;
@@ -559,14 +550,14 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   margin-bottom: 0;
 }
 
-.c40 {
+.c39 {
   color: #C4C4C4;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   text-align: center;
-  max-width: 240px;
+  max-width: 300px;
   padding: 0;
   margin-top: 0;
 }
@@ -1241,37 +1232,28 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
           font-size="5"
           font-weight="400"
         >
-          For Filecoin SAFT holders
-        </h2>
-        <h2
-          class="c37"
-          color="core.lightgray"
-          font-family="RT-Alias-Grotesk"
-          font-size="5"
-          font-weight="400"
-        >
-          Use your Ledger device to setup and manage your Filecoin SAFT.
+          For Filecoin multisig holders
         </h2>
         <div
-          class="c38"
+          class="c37"
           display="flex"
           width="100%"
         >
           <div
-            class="c39"
+            class="c38"
             display="flex"
           >
             <p
-              class="c40"
+              class="c39"
               color="core.lightgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
             >
-              Securely generate an account to receive your SAFT Filecoin
+              Use your Ledger device to manage a Filecoin multisig wallet.
             </p>
             <div
-              class="c41 c18"
+              class="c40 c18"
               color="core.black"
               display="flex"
               height="7"
@@ -1292,7 +1274,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
                   <h3
                     class="c27"
                   >
-                    Ss
+                    Ev
                   </h3>
                 </div>
                 <p
@@ -1301,7 +1283,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
                   font-size="2"
                   font-weight="400"
                 >
-                  SAFT Setup
+                  Enter the Vault
                 </p>
               </div>
             </div>
@@ -1595,7 +1577,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   text-align: left;
 }
 
-.c32 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -1622,7 +1604,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   justify-content: flex-start;
 }
 
-.c33 {
+.c32 {
   min-width: 0;
   box-sizing: border-box;
   margin: 16px;
@@ -1639,7 +1621,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   align-items: center;
 }
 
-.c35 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -1668,7 +1650,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c36 {
+.c35 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -1768,15 +1750,6 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   margin: 0;
 }
 
-.c31 {
-  color: #C4C4C4;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
 .c3 {
   color: 'status.warning.foreground';
   font-size: 1.125rem;
@@ -1797,14 +1770,14 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c34 {
+.c33 {
   color: #C4C4C4;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
   text-align: center;
-  max-width: 240px;
+  max-width: 300px;
   padding: 0;
   margin-top: 0;
 }
@@ -2356,37 +2329,28 @@ exports[`Choosing a wallet it renders correctly 1`] = `
           font-size="5"
           font-weight="400"
         >
-          For Filecoin SAFT holders
-        </h2>
-        <h2
-          class="c31"
-          color="core.lightgray"
-          font-family="RT-Alias-Grotesk"
-          font-size="5"
-          font-weight="400"
-        >
-          Use your Ledger device to setup and manage your Filecoin SAFT.
+          For Filecoin multisig holders
         </h2>
         <div
-          class="c32"
+          class="c31"
           display="flex"
           width="100%"
         >
           <div
-            class="c33"
+            class="c32"
             display="flex"
           >
             <p
-              class="c34"
+              class="c33"
               color="core.lightgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
             >
-              Securely generate an account to receive your SAFT Filecoin
+              Use your Ledger device to manage a Filecoin multisig wallet.
             </p>
             <div
-              class="c35 c18"
+              class="c34 c18"
               color="core.black"
               display="flex"
               height="7"
@@ -2399,7 +2363,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
                 display="flex"
               >
                 <div
-                  class="c36"
+                  class="c35"
                   color="core.black"
                   display="flex"
                   size="6"
@@ -2407,7 +2371,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
                   <h3
                     class="c25"
                   >
-                    Ss
+                    Ev
                   </h3>
                 </div>
                 <p
@@ -2416,7 +2380,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  SAFT Setup
+                  Enter the Vault
                 </p>
               </div>
             </div>

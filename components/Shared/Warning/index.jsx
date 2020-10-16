@@ -6,7 +6,7 @@ import Glyph from '../Glyph'
 import OnboardCard from '../Card/OnboardCard'
 import { StyledATag } from '../Link'
 import { Text, Title } from '../Typography'
-import { createHash } from '../../../utils/investor'
+import createHash from '../../../utils/createHash'
 
 const DescriptionText = ({ description }) => {
   if (typeof description === 'string') {
