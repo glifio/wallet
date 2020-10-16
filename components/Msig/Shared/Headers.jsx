@@ -116,12 +116,20 @@ export const ChangeOwnerHeaderText = ({ step }) => {
         'Please input the new Filecoin address you want to be the owner of your multisig wallet.'
       break
     case 3:
-      text = 'Please review the transaction details.'
+      text =
+        'Please review the transaction fee details. If the fee is too high, please come back and try again later.'
       break
     default:
       text = ''
   }
-  return <Text textAlign='center'>{text}</Text>
+  return (
+    <>
+      <Text textAlign='center'>
+        Your Ledger Address pays the transaction fee.
+      </Text>
+      <Text textAlign='center'>{text}</Text>
+    </>
+  )
 }
 
 ChangeOwnerHeaderText.propTypes = {

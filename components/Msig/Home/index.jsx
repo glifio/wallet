@@ -41,6 +41,7 @@ export default () => {
             setWithdrawing={() => setChildView(WITHDRAW)}
             setTakingCustody={() => setChildView(TAKE_CUSTODY)}
             showTakeCustodyOption={msigPartlyOwnedByPL(msig.Signers)}
+            showChangeOwnerOption={!msigPartlyOwnedByPL(msig.Signers)}
           />
         )}
         {!msig.loading && childView === CHANGE_OWNER && (
