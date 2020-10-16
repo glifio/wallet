@@ -188,6 +188,7 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
           onClick={() => {
             setAttemptingTx(false)
             setUncaughtError('')
+            setGasError('')
             resetLedgerState()
             close()
           }}
@@ -212,6 +213,7 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
                   reset={() => {
                     setAttemptingTx(false)
                     setUncaughtError('')
+                    setGasError('')
                     resetLedgerState()
                     setStep(2)
                   }}
