@@ -124,8 +124,6 @@ const ChangeOwner = ({ address, balance, close }) => {
     } else if (step === 2 && validateAddressString(toAddress)) {
       setStep(3)
     } else if (step === 3) {
-      setStep(4)
-    } else if (step === 4) {
       setAttemptingTx(true)
       try {
         const msg = await sendMsg()
@@ -209,6 +207,7 @@ const ChangeOwner = ({ address, balance, close }) => {
                 reset={() => {
                   setAttemptingTx(false)
                   setUncaughtError('')
+                  setGasError('')
                   resetLedgerState()
                   setStep(2)
                 }}
