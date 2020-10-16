@@ -26,7 +26,7 @@ import {
 import reportError from '../../../utils/reportError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
-import { pickPLSigner, getMethod6SerializedParams } from '../../../utils/msig'
+import { pickPLSigner } from '../../../utils/msig'
 
 const TakeCustody = ({ address, msigBalance, signers, close }) => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
@@ -47,17 +47,17 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
     params: {}
   })
 
-  const constructMsg = async (nonce = 0) => {
+  const constructMsg = (nonce = 0) => {
     const signer = pickPLSigner(signers)
     const innerParams = {
       Signer: signer,
       Decrease: false
     }
 
-    const serializedInnerParams = await getMethod6SerializedParams(
-      address,
-      innerParams
-    )
+    const serializedInnerParams = Buffer.from(
+      serializeParams(innerParams),
+      'hex'
+    ).toString('base64')
 
     const outerParams = {
       to: address,
@@ -98,7 +98,7 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
 
     if (provider) {
       const nonce = await provider.getNonce(wallet.address)
-      const { message, params } = await constructMsg(nonce)
+      const { message, params } = constructMsg(nonce)
       setFetchingTxDetails(false)
       const signedMessage = await provider.wallet.sign(
         message.toSerializeableType(),
@@ -125,7 +125,6 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
   const onSubmit = async e => {
     e.preventDefault()
     if (step === 1) {
-      const messageInfo = await constructMsg()
       setMessageInfo(messageInfo)
       setStep(2)
     } else if (step === 2) {
@@ -189,6 +188,7 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
           onClick={() => {
             setAttemptingTx(false)
             setUncaughtError('')
+            setGasError('')
             resetLedgerState()
             close()
           }}
@@ -213,6 +213,7 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
                   reset={() => {
                     setAttemptingTx(false)
                     setUncaughtError('')
+                    setGasError('')
                     resetLedgerState()
                     setStep(2)
                   }}
@@ -260,7 +261,7 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
                     />
                     <Box width='100%' p={3} border={0} bg='background.screen'>
                       <CustomizeFee
-                        message={messageInfo.message.toLotusType()}
+                        message={constructMsg().message.toLotusType()}
                         gasInfo={gasInfo}
                         setGasInfo={setGasInfo}
                         setFrozen={setFrozen}

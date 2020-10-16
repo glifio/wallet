@@ -192,6 +192,7 @@ const Withdrawing = ({ address, balance, close }) => {
           onClick={() => {
             setAttemptingTx(false)
             setUncaughtError('')
+            setGasError('')
             resetLedgerState()
             close()
           }}
@@ -216,6 +217,7 @@ const Withdrawing = ({ address, balance, close }) => {
                   reset={() => {
                     setAttemptingTx(false)
                     setUncaughtError('')
+                    setGasError('')
                     resetLedgerState()
                     setStep(2)
                   }}

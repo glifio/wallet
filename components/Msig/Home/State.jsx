@@ -19,6 +19,7 @@ const State = ({
   setWithdrawing,
   setTakingCustody,
   showTakeCustodyOption,
+  showChangeOwnerOption,
   total,
   walletAddress
 }) => {
@@ -100,16 +101,18 @@ const State = ({
               })}
               reset={reset}
             />
-            {/* <Button
-              type='button'
-              variant='secondary'
-              onClick={setChangingOwner}
-              title='Change Owner'
-              height={6}
-              maxWidth={10}
-              minWidth={9}
-              borderRadius={6}
-            /> */}
+            {/* {showChangeOwnerOption && (
+              <Button
+                type='button'
+                variant='secondary'
+                onClick={setChangingOwner}
+                title='Change Owner'
+                height={6}
+                maxWidth={10}
+                minWidth={9}
+                borderRadius={6}
+              />
+            )} */}
           </MenuItem>
         </Menu>
       </Menu>
@@ -149,7 +152,8 @@ State.propTypes = {
   setChangingOwner: PropTypes.func.isRequired,
   setWithdrawing: PropTypes.func.isRequired,
   setTakingCustody: PropTypes.func.isRequired,
-  showTakeCustodyOption: PropTypes.bool.isRequired
+  showTakeCustodyOption: PropTypes.bool.isRequired,
+  showChangeOwnerOption: PropTypes.bool.isRequired
 }
 
 export default State

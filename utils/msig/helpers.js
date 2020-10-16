@@ -1,4 +1,3 @@
-import RpcClient from '@glif/filecoin-rpc-client'
 import { PL_SIGNERS } from '../../constants'
 
 export const msigPartlyOwnedByPL = signers => {
@@ -8,12 +7,4 @@ export const msigPartlyOwnedByPL = signers => {
 
 export const pickPLSigner = signers => {
   return signers.filter(s => PL_SIGNERS.has(s))[0]
-}
-
-export const getMethod6SerializedParams = async (toAddr, params) => {
-  const rclient = new RpcClient({
-    apiAddress: 'https://proxy.openworklabs.com/rpc/v0'
-  })
-  const res = await rclient.request('MpoolEncodeParams', toAddr, 6, params)
-  return res
 }

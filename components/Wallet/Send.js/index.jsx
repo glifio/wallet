@@ -255,6 +255,7 @@ const Send = ({ close }) => {
           onClick={() => {
             setAttemptingTx(false)
             setUncaughtError('')
+            setGasError('')
             resetLedgerState()
             close()
           }}
@@ -276,6 +277,7 @@ const Send = ({ close }) => {
                   reset={() => {
                     setAttemptingTx(false)
                     setUncaughtError('')
+                    setGasError('')
                     resetLedgerState()
                     setStep(step - 1)
                   }}

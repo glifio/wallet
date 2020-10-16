@@ -1507,15 +1507,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
               font-size="2"
               font-weight="400"
             >
-              Please select the Ledger account you wish to use for your multisig investor wallet.
-            </p>
-            <p
-              class="c10"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Any of these accounts can accept Filecoin. If in doubt, select account 0.
+              Please select the Ledger account that owns your multisig wallet.
             </p>
             <p
               class="c11"
@@ -1695,7 +1687,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                 font-size="4"
                 font-weight="400"
               >
-                0
+                1
                 FIL
               </h2>
             </div>
@@ -1769,7 +1761,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                 font-size="4"
                 font-weight="400"
               >
-                0
+                1
                 FIL
               </h2>
             </div>
@@ -1843,7 +1835,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                 font-size="4"
                 font-weight="400"
               >
-                0
+                1
                 FIL
               </h2>
             </div>
@@ -1917,7 +1909,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                 font-size="4"
                 font-weight="400"
               >
-                0
+                1
                 FIL
               </h2>
             </div>
@@ -2912,7 +2904,7 @@ exports[`HelperText it renders the msig helper text correctly 1`] = `
   font-size="2"
   font-weight="400"
 >
-  Please select the Ledger account that owns your multisig investor wallet.
+  Please select the Ledger account that owns your multisig wallet.
 </p>
 `;
 
@@ -2949,23 +2941,5 @@ exports[`HelperText it renders the non-msig, non-saft, non-ledger helper text co
   font-weight="400"
 >
   Your single seed phrase creates hundreds of individual accounts. We're showing you the first 5.
-</p>
-`;
-
-exports[`HelperText it renders the saft helper text correctly 1`] = `
-.c0 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-}
-
-<p
-  class="c0"
-  font-family="RT-Alias-Grotesk"
-  font-size="2"
-  font-weight="400"
->
-  Please select the Ledger account you wish to use for your multisig investor wallet.
 </p>
 `;

@@ -213,10 +213,7 @@ export default () => {
                 p={4}
               >
                 <Title fontSize={5} color='core.white'>
-                  For Filecoin SAFT holders
-                </Title>
-                <Title fontSize={5} color='core.lightgray'>
-                  Use your Ledger device to setup and manage your Filecoin SAFT.
+                  For Filecoin multisig holders
                 </Title>
 
                 <Box
@@ -242,15 +239,16 @@ export default () => {
                       textAlign='center'
                       p={0}
                       mt={0}
-                      maxWidth={10}
+                      maxWidth={11}
                     >
-                      Securely generate an account to receive your SAFT Filecoin
+                      Use your Ledger device to manage a Filecoin multisig
+                      wallet.
                     </Text>
 
                     <ImportWallet
                       onClick={() => router.push('/vault?network=f')}
-                      glyphAcronym='Ss'
-                      title='SAFT Setup'
+                      glyphAcronym='Ev'
+                      title='Enter the Vault'
                       backgroundColor='background.screen'
                       color='core.black'
                       glyphColor='core.black'

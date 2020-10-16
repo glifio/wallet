@@ -7,13 +7,14 @@ import MsigProposeRow from './MsigProposeRow'
 import ExecRow from './ExecRow'
 import UnknownRow from './UnknownRow'
 import { SEND, PROPOSE, EXEC } from '../../../../constants'
+import convertAddrToFPrefix from '../../../../utils/convertAddrToFPrefix'
 
 const MessageHistoryRow = ({
   address,
   message: { to, from, value, status, cid, timestamp, method, params },
   selectMessage
 }) => {
-  const sentMsg = address === from
+  const sentMsg = convertAddrToFPrefix(address) === convertAddrToFPrefix(from)
   let InnerComponent = () => <></>
   switch (method) {
     case SEND: {

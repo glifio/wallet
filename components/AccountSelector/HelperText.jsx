@@ -40,27 +40,12 @@ const SeedHelp = () => (
   </>
 )
 
-const HelperText = ({ premainnetInvestor, msig, isLedger }) => {
-  if (premainnetInvestor)
-    return (
-      <>
-        <Text>
-          Please select the Ledger account you wish to use for your multisig
-          investor wallet.
-        </Text>
-        <Text>
-          Any of these accounts can accept Filecoin. If in doubt, select account
-          0.
-        </Text>
-        <LedgerHelp />
-      </>
-    )
+const HelperText = ({ msig, isLedger }) => {
   if (msig) {
     return (
       <>
         <Text>
-          Please select the Ledger account that owns your multisig investor
-          wallet.
+          Please select the Ledger account that owns your multisig wallet.
         </Text>
         <LedgerHelp />
       </>
@@ -91,7 +76,6 @@ const HelperText = ({ premainnetInvestor, msig, isLedger }) => {
 }
 
 HelperText.propTypes = {
-  premainnetInvestor: bool.isRequired,
   msig: bool.isRequired,
   isLedger: bool.isRequired
 }
