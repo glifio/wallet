@@ -17,7 +17,7 @@ describe('Ledger configuration', () => {
       const { Tree } = composeMockAppTree('preOnboard')
       const { container } = render(
         <Tree>
-          <Step1 premainnetInvestor={false} msig={false} setStep={() => {}} />
+          <Step1 msig={false} setStep={() => {}} />
         </Tree>
       )
       expect(screen.getByText('Step 1')).toBeInTheDocument()
@@ -25,22 +25,11 @@ describe('Ledger configuration', () => {
       expect(container.firstChild).toMatchSnapshot()
     })
 
-    test('it renders premainnet saft step1 correctly, with the right number of steps', () => {
-      const { Tree } = composeMockAppTree('preOnboard')
-      const { container } = render(
-        <Tree>
-          <Step1 premainnetInvestor={true} msig={false} setStep={() => {}} />
-        </Tree>
-      )
-      expect(screen.getByText('Step 2')).toBeInTheDocument()
-      expect(container.firstChild).toMatchSnapshot()
-    })
-
     test('it renders msig step1 correctly, with the right number of steps', () => {
       const { Tree } = composeMockAppTree('preOnboard')
       const { container } = render(
         <Tree>
-          <Step1 premainnetInvestor={false} msig={true} setStep={() => {}} />
+          <Step1 msig={true} setStep={() => {}} />
         </Tree>
       )
       expect(screen.getByText('Step 1')).toBeInTheDocument()
@@ -63,7 +52,7 @@ describe('Ledger configuration', () => {
       })
       const { container } = render(
         <Tree>
-          <Step1 premainnetInvestor={false} msig={false} setStep={() => {}} />
+          <Step1 msig={false} setStep={() => {}} />
         </Tree>
       )
       expect(
@@ -92,7 +81,7 @@ describe('Ledger configuration', () => {
       })
       const { container } = render(
         <Tree>
-          <Step1 premainnetInvestor={false} msig={false} setStep={() => {}} />
+          <Step1 msig={false} setStep={() => {}} />
         </Tree>
       )
       expect(
@@ -120,7 +109,7 @@ describe('Ledger configuration', () => {
       const { Tree } = composeMockAppTree('preOnboard')
       const { container } = render(
         <Tree>
-          <Step2 premainnetInvestor={false} msig={false} setStep={() => {}} />
+          <Step2 msig={false} setStep={() => {}} />
         </Tree>
       )
       expect(screen.getByText('Step 2')).toBeInTheDocument()
@@ -128,22 +117,11 @@ describe('Ledger configuration', () => {
       expect(container.firstChild).toMatchSnapshot()
     })
 
-    test('it renders premainnet saft step2 correctly, with the right number of steps', () => {
-      const { Tree } = composeMockAppTree('preOnboard')
-      const { container } = render(
-        <Tree>
-          <Step2 premainnetInvestor={true} msig={false} setStep={() => {}} />
-        </Tree>
-      )
-      expect(screen.getByText('Step 3')).toBeInTheDocument()
-      expect(container.firstChild).toMatchSnapshot()
-    })
-
     test('it renders msig step2 correctly, with the right number of steps', () => {
       const { Tree } = composeMockAppTree('preOnboard')
       const { container } = render(
         <Tree>
-          <Step2 premainnetInvestor={false} msig={true} setStep={() => {}} />
+          <Step2 msig={true} setStep={() => {}} />
         </Tree>
       )
       expect(screen.getByText('Step 2')).toBeInTheDocument()
@@ -166,7 +144,7 @@ describe('Ledger configuration', () => {
       })
       const { container } = render(
         <Tree>
-          <Step2 premainnetInvestor={false} msig={false} setStep={() => {}} />
+          <Step2 msig={false} setStep={() => {}} />
         </Tree>
       )
       expect(
@@ -192,7 +170,7 @@ describe('Ledger configuration', () => {
       })
       const { container } = render(
         <Tree>
-          <Step2 premainnetInvestor={false} msig={false} setStep={() => {}} />
+          <Step2 msig={false} setStep={() => {}} />
         </Tree>
       )
       expect(
@@ -218,7 +196,7 @@ describe('Ledger configuration', () => {
       })
       const { container } = render(
         <Tree>
-          <Step2 premainnetInvestor={false} msig={false} setStep={() => {}} />
+          <Step2 msig={false} setStep={() => {}} />
         </Tree>
       )
       expect(
@@ -244,7 +222,7 @@ describe('Ledger configuration', () => {
       })
       const { container } = render(
         <Tree>
-          <Step2 premainnetInvestor={false} msig={false} setStep={() => {}} />
+          <Step2 msig={false} setStep={() => {}} />
         </Tree>
       )
       expect(
@@ -270,7 +248,7 @@ describe('Ledger configuration', () => {
       })
       const { container } = render(
         <Tree>
-          <Step2 premainnetInvestor={false} msig={false} setStep={() => {}} />
+          <Step2 msig={false} setStep={() => {}} />
         </Tree>
       )
       expect(
@@ -298,7 +276,7 @@ describe('Ledger configuration', () => {
       })
       const { container } = render(
         <Tree>
-          <Step2 premainnetInvestor={false} msig={false} setStep={() => {}} />
+          <Step2 msig={false} setStep={() => {}} />
         </Tree>
       )
       expect(
@@ -312,7 +290,7 @@ describe('Ledger configuration', () => {
       const { Tree } = composeMockAppTree('preOnboard')
       const { container } = render(
         <Tree>
-          <Step2 premainnetInvestor={false} msig={false} setStep={() => {}} />
+          <Step2 msig={false} setStep={() => {}} />
         </Tree>
       )
 
@@ -325,11 +303,11 @@ describe('Ledger configuration', () => {
       expect(mockRouterPush).toHaveBeenCalledWith('/home?network=t')
     })
 
-    test('it pushes to the right url for premainnetInvestor', async () => {
+    test('it pushes to the right url for msig', async () => {
       const { Tree } = composeMockAppTree('preOnboard')
       const { container } = render(
         <Tree>
-          <Step2 premainnetInvestor={true} msig={false} setStep={() => {}} />
+          <Step2 msig={true} setStep={() => {}} />
         </Tree>
       )
 
@@ -340,23 +318,6 @@ describe('Ledger configuration', () => {
         await flushPromises()
       })
       expect(mockRouterPush).toHaveBeenCalledWith('/vault/accounts?network=t')
-    })
-
-    test('it pushes to the right url for msig', async () => {
-      const { Tree } = composeMockAppTree('preOnboard')
-      const { container } = render(
-        <Tree>
-          <Step2 premainnetInvestor={false} msig={true} setStep={() => {}} />
-        </Tree>
-      )
-
-      await act(async () => {
-        fireEvent.click(
-          screen.getByText('My Ledger device is unlocked & Filecoin app open')
-        )
-        await flushPromises()
-      })
-      expect(mockRouterPush).toHaveBeenCalledWith('/msig/accounts?network=t')
     })
   })
 })

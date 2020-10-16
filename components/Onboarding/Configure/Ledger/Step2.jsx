@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { FilecoinNumber } from '@glif/filecoin-number'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'
@@ -21,9 +20,6 @@ import {
   reportLedgerConfigError
 } from '../../../../utils/ledger/reportLedgerConfigError'
 import useReset from '../../../../utils/useReset'
-import createPath from '../../../../utils/createPath'
-import { MAINNET, MAINNET_PATH_CODE } from '../../../../constants'
-import reportError from '../../../../utils/reportError'
 
 const Step2Helper = ({ ...errors }) => (
   <Box
@@ -82,8 +78,8 @@ Step2Helper.defaultProps = {
   otherError: ''
 }
 
-const Step2 = ({ premainnetInvestor, msig }) => {
-  const { ledger, fetchDefaultWallet, walletProvider } = useWalletProvider()
+const Step2 = ({ msig }) => {
+  const { ledger, fetchDefaultWallet } = useWalletProvider()
   const dispatch = useDispatch()
   const resetState = useReset()
   // TODO: fix hack to ignore proptype errors => || null
@@ -98,8 +94,7 @@ const Step2 = ({ premainnetInvestor, msig }) => {
   const routeToNextPage = () => {
     const params = new URLSearchParams(router.query)
     let query = ''
-    if (premainnetInvestor) query = `/vault/accounts?${params.toString()}`
-    else if (msig) query = `/msig/accounts?${params.toString()}`
+    if (msig) query = `/vault/accounts?${params.toString()}`
     else query = `/home?${params.toString()}`
     router.push(query)
   }
@@ -113,46 +108,18 @@ const Step2 = ({ premainnetInvestor, msig }) => {
         routeToNextPage()
       }
     } catch (err) {
-      // catch errors due to node connection and continue forward for saft
-      if (premainnetInvestor) {
-        try {
-          const [address] = await walletProvider.wallet.getAccounts(
-            MAINNET,
-            0,
-            1
-          )
-          const wallet = {
-            address,
-            balance: new FilecoinNumber('0', 'fil'),
-            path: createPath(MAINNET_PATH_CODE, 0)
-          }
-          dispatch(walletList([wallet]))
-          routeToNextPage()
-        } catch (_) {
-          // this is a noop since if this call failed, the outer catch statement would catch this gracefully
-          reportError('/Onboarding/Configure/Ledger:1', false)
-        }
-      } else {
-        dispatch(rdxError(err.message))
-      }
+      dispatch(rdxError(err.message))
     } finally {
       setLoading(false)
     }
   }
 
   const back = () => {
-    if (premainnetInvestor || msig) router.replace('/')
+    if (msig) router.replace('/')
     resetState()
   }
 
-  const calculateCurrentSteps = () => {
-    if (premainnetInvestor) return 3
-    if (msig) return 2
-    return 2
-  }
-
   const calculateTotalSteps = () => {
-    if (premainnetInvestor) return 5
     if (msig) return 3
     return 2
   }
@@ -167,7 +134,7 @@ const Step2 = ({ premainnetInvestor, msig }) => {
         bg={error ? 'status.fail.background' : 'core.transparent'}
       >
         <StepHeader
-          currentStep={calculateCurrentSteps()}
+          currentStep={2}
           description='Please complete the following steps so Filament can interface with
           your Ledger device.'
           loading={!ledger.userImportFailure && loading}
@@ -198,7 +165,6 @@ const Step2 = ({ premainnetInvestor, msig }) => {
 }
 
 Step2.propTypes = {
-  premainnetInvestor: PropTypes.bool.isRequired,
   msig: PropTypes.bool.isRequired
 }
 

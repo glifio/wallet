@@ -31,7 +31,6 @@ describe('Choosing a wallet', () => {
       fireEvent.click(screen.getByText('Test Accounts'))
     })
     expect(screen.queryByText('Login via Ledger Device')).toBeInTheDocument()
-    expect(screen.queryByText('SAFT Setup')).toBeInTheDocument()
     expect(screen.getByText('Generate Seed Phrase')).toBeInTheDocument()
     expect(screen.getByText('Import Seed Phrase')).toBeInTheDocument()
     expect(screen.getByText('Import Private Key')).toBeInTheDocument()
@@ -93,7 +92,7 @@ describe('Choosing a wallet', () => {
     expect(screen.getByText(/Warning/)).toBeInTheDocument()
   })
 
-  test('it sends users to the vault with the network hardcoded to mainnet', () => {
+  test('it sends users to the vault', () => {
     const { Tree } = composeMockAppTree('postOnboard')
 
     render(
@@ -102,7 +101,7 @@ describe('Choosing a wallet', () => {
       </Tree>
     )
     act(() => {
-      fireEvent.click(screen.getByText('SAFT Setup'))
+      fireEvent.click(screen.getByText('Enter the Vault'))
     })
     expect(mockRouterPush).toHaveBeenCalledWith('/vault?network=f')
   })
