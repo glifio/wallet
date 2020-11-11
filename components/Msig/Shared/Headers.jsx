@@ -198,3 +198,37 @@ AddRmSignerHeaderText.propTypes = {
   method: PropTypes.number.isRequired,
   step: PropTypes.number.isRequired
 }
+
+export const CreateMultisigHeaderText = ({ step }) => {
+  let text = ''
+
+  switch (step) {
+    case 1:
+      text = 'First, please select one or more owner(s) of the multisig wallet.'
+      break
+    case 2:
+      text = 'Next, please choose how much FIL to send to the multisig.'
+      break
+    case 3:
+      text = 'How long should these funds vest over?'
+      break
+    case 4:
+      text = 'Please review the transaction details.'
+      break
+    default:
+      text = ''
+  }
+
+  return (
+    <>
+      <Text textAlign='center'>
+        Your Ledger Address pays the transaction fee.
+      </Text>
+      <Text textAlign='center'>{text}</Text>
+    </>
+  )
+}
+
+CreateMultisigHeaderText.propTypes = {
+  step: PropTypes.number.isRequired
+}

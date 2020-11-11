@@ -4,7 +4,7 @@ import { Box } from '../Shared'
 import { useWalletProvider } from '../../WalletProvider'
 import { LEDGER } from '../../constants'
 
-export default () => {
+const MsigOnboard = () => {
   const [mounted, setMounted] = useState(false)
   const { setWalletType } = useWalletProvider()
 
@@ -27,3 +27,5 @@ export default () => {
     </Box>
   )
 }
+
+export default MsigOnboard

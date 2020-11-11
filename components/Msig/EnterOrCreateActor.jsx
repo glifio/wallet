@@ -8,6 +8,7 @@ import {
   Input,
   OnboardCard,
   StepHeader,
+  StyledLink,
   Text,
   Title
 } from '../Shared'
@@ -50,6 +51,11 @@ const EnterActorAddress = () => {
           placeholder='f01'
           error={err}
         />
+        <br />
+        <Box display='flex' flexDirection='row' alignItems='center'>
+          <Text mr={3}>Don&apos;t have a multisig actor ID?</Text>
+          <StyledLink href='/vault/create?network=f' name='Create one' />
+        </Box>
       </OnboardCard>
       <Box
         mt={6}
