@@ -36,7 +36,7 @@ import {
   initialState
 } from './states'
 
-export default (state, action) => {
+const reducer = (state, action) => {
   switch (action.type) {
     case WALLET_LIST: {
       return walletList(Object.freeze(state), action.payload)
@@ -83,3 +83,5 @@ export default (state, action) => {
       return state
   }
 }
+
+export default reducer

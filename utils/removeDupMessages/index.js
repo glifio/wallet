@@ -1,5 +1,4 @@
-/** NOTE - */
-export default (oldMessages, newMessages) => {
+const removeDups = (oldMessages, newMessages) => {
   const cids = new Set(newMessages.map(msg => msg.cid))
   return oldMessages
     .reduce(
@@ -14,3 +13,5 @@ export default (oldMessages, newMessages) => {
     )
     .sort((a, b) => Number(b.timestamp) - Number(a.timestamp))
 }
+
+export default removeDups

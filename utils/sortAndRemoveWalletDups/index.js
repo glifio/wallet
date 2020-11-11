@@ -1,4 +1,4 @@
-export default (walletsInRdx, wallets) => {
+const sortAndRemoveDups = (walletsInRdx, wallets) => {
   const seenWallets = new Set()
   return [...walletsInRdx, ...wallets]
     .filter(wallet => {
@@ -10,3 +10,5 @@ export default (walletsInRdx, wallets) => {
     })
     .sort((a, b) => a.path.split('/')[5] - b.path.split('/')[5])
 }
+
+export default sortAndRemoveDups

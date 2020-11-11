@@ -7,7 +7,7 @@ import {
   MAINNET
 } from '../../constants'
 
-export default rustModule => {
+const createHDWalletProvider = rustModule => {
   return mnemonic => {
     // here we close over the private variables, so they aren't accessible to the outside world
     const MNEMONIC = mnemonic
@@ -38,3 +38,5 @@ export default rustModule => {
     }
   }
 }
+
+export default createHDWalletProvider

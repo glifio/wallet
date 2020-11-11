@@ -1,3 +1,5 @@
 import TransportWebUSB from '@ledgerhq/hw-transport-webusb'
 
-export default () => TransportWebUSB.create()
+const createTransport = () => TransportWebUSB.create()
+
+export default createTransport

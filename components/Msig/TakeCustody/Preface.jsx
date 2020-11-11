@@ -3,7 +3,7 @@ import React from 'react'
 import Warning from '../../Shared/Warning'
 import { Box } from '../../Shared'
 
-export default () => {
+const Preface = () => {
   return (
     <Box>
       <Warning
@@ -17,3 +17,5 @@ export default () => {
     </Box>
   )
 }
+
+export default Preface
