@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { validateAddressString } from '@glif/filecoin-address'
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { randomBytes } from 'crypto'
 
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
@@ -30,7 +31,6 @@ import {
 import reportError from '../../../utils/reportError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
-import createHash from '../../../utils/createHash'
 
 const isValidAmount = (value, balance, errorFromForms) => {
   const valueFieldFilledOut = value && value.isGreaterThan(0)
@@ -273,15 +273,18 @@ const Create = () => {
                   {signerAddresses.map((a, i) => {
                     return (
                       <Box
-                        key={createHash(i)}
+                        // not great, but can't use address val or array index here
+                        key={randomBytes(8)}
                         display='flex'
                         flexDirection='row'
+                        mb={2}
                       >
                         {i > 0 && (
                           <Button
                             title='-'
                             onClick={() => onSignerAddressRm(i)}
                             bg='red'
+                            mr={2}
                           />
                         )}
                         <Input.Address
@@ -291,11 +294,12 @@ const Create = () => {
                             onSignerAddressChange(e.target.value, i)
                           }
                           error={
-                            signerAddresses.length - 1 === i &&
-                            signerAddressError
+                            signerAddresses.length - 1 === i
+                              ? signerAddressError
+                              : ''
                           }
                           disabled={
-                            // disable this input
+                            // disable this input when its already been added
                             step > 1 || !(i === signerAddresses.length - 1)
                           }
                           onFocus={() => {
