@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
+import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { validateAddressString } from '@glif/filecoin-address'
 import { FilecoinNumber } from '@glif/filecoin-number'
@@ -41,11 +42,11 @@ const Create = () => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
   const wallet = useWallet()
   const dispatch = useDispatch()
-  const { serializeParams } = useWasm()
+  const wasm = useWasm()
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
   const [signerAddresses, setSignerAddresses] = useState([wallet.address])
-  const [toAddressError, setToAddressError] = useState('')
+  const [signerAddressError, setSignerAddressError] = useState('')
   const [value, setValue] = useState(new FilecoinNumber('0', 'fil'))
   const [valueError, setValueError] = useState('')
   const [vest, setVest] = useState(0)
@@ -55,18 +56,30 @@ const Create = () => {
   const [gasError, setGasError] = useState('')
   const [gasInfo, setGasInfo] = useState(emptyGasInfo)
   const [frozen, setFrozen] = useState(false)
+  const router = useRouter()
+
+  const close = () => router.back()
 
   const constructMsg = (nonce = 0) => {
+    const tx = wasm.createMultisig(
+      wallet.address,
+      [...signerAddresses],
+      value.toAttoFil(),
+      1,
+      nonce,
+      vest
+    )
+
     const message = new Message({
-      to: wallet.address,
+      to: 't01',
       from: wallet.address,
-      value: '0',
+      value: value.toAttoFil(),
       method: 2,
       nonce,
-      params: ''
+      params: tx.params
     })
 
-    return { message, params: {} }
+    return { message, params: tx.params }
   }
 
   const sendMsg = async () => {
@@ -101,7 +114,7 @@ const Create = () => {
   const onSubmit = async e => {
     e.preventDefault()
     if (step === 1 && !signerAddresses.every(validateAddressString)) {
-      setToAddressError('Invalid to address')
+      setSignerAddressError('Invalid to address')
     } else if (step === 1 && signerAddresses.every(validateAddressString)) {
       setStep(2)
     } else if (step === 2 && !valueError) {
@@ -150,17 +163,33 @@ const Create = () => {
 
   const isSubmitBtnDisabled = () => {
     if (frozen) return true
-    if (step === 1) return false
-    if (step === 3 && gasError) return true
-    if (uncaughtError) return false
+    if (uncaughtError) return true
     if (attemptingTx) return true
-    if (step > 3) return true
+    if (step === 1 && !signerAddresses[0]) return true
+    if (step === 1 && !signerAddresses.every(validateAddressString)) return true
+    if (step === 2 && !isValidAmount(value, wallet.balance, valueError))
+      return true
+    if (step === 3 && gasError) return true
+    if (step > 4) return true
   }
 
-  const onToAddrChange = (val, idx) => {
+  const onSignerAddressChange = (val, idx) => {
     return setSignerAddresses(addresses => {
       const addressesCopy = [...addresses]
-      addressesCopy.splice(idx, 1, val)
+      if (idx > addresses.length) {
+        addressesCopy.push('')
+      } else {
+        addressesCopy.splice(idx, 1, val)
+      }
+      return addressesCopy
+    })
+  }
+
+  const onSignerAddressRm = idx => {
+    setSignerAddressError('')
+    return setSignerAddresses(addresses => {
+      const addressesCopy = [...addresses]
+      addressesCopy.splice(idx, 1)
       return addressesCopy
     })
   }
@@ -176,7 +205,7 @@ const Create = () => {
           setAttemptingTx(false)
           setUncaughtError('')
           resetLedgerState()
-          // close()
+          close()
         }}
       />
       <Form onSubmit={onSubmit}>
@@ -243,19 +272,51 @@ const Create = () => {
                 <Box width='100%' p={3} border={0} bg='background.screen'>
                   {signerAddresses.map((a, i) => {
                     return (
-                      <Input.Address
+                      <Box
                         key={createHash(i)}
-                        label={`Signer${i + 1}`}
-                        value={a}
-                        onChange={e => onToAddrChange(e.target.value, i)}
-                        error={toAddressError}
-                        disabled={step > 1}
-                        onFocus={() => {
-                          if (toAddressError) setToAddressError('')
-                        }}
-                      />
+                        display='flex'
+                        flexDirection='row'
+                      >
+                        {i > 0 && (
+                          <Button
+                            title='-'
+                            onClick={() => onSignerAddressRm(i)}
+                            bg='red'
+                          />
+                        )}
+                        <Input.Address
+                          label={`Signer ${i + 1}`}
+                          value={a}
+                          onChange={e =>
+                            onSignerAddressChange(e.target.value, i)
+                          }
+                          error={
+                            signerAddresses.length - 1 === i &&
+                            signerAddressError
+                          }
+                          disabled={
+                            // disable this input
+                            step > 1 || !(i === signerAddresses.length - 1)
+                          }
+                          onFocus={() => {
+                            if (signerAddressError) setSignerAddressError('')
+                          }}
+                        />
+                      </Box>
                     )
                   })}
+                  <Button
+                    title='+'
+                    onClick={() => {
+                      const lastSigner =
+                        signerAddresses[signerAddresses.length - 1]
+                      if (validateAddressString(lastSigner)) {
+                        onSignerAddressChange('', signerAddresses.length)
+                      } else {
+                        setSignerAddressError('Invalid signer address')
+                      }
+                    }}
+                  />
                 </Box>
                 {step > 1 && (
                   <Box width='100%' p={3} border={0} bg='background.screen'>
@@ -276,7 +337,7 @@ const Create = () => {
                     <Input.Number
                       name='vest'
                       label='Vest'
-                      value={vest}
+                      value={vest.toString()}
                       onChange={e => setVest(e.target.value)}
                       disabled={step > 3}
                     />
@@ -328,7 +389,7 @@ const Create = () => {
                 setGasError('')
                 resetLedgerState()
                 if (step === 1) {
-                  // close()
+                  close()
                 } else {
                   setStep(step - 1)
                 }

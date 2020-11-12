@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { FilecoinNumber } from '@glif/filecoin-number'
 import { Box, Text, Glyph, StyledATag } from '../../Shared'
 import {
   ADDRESS_PROPTYPE,
@@ -66,6 +67,11 @@ CardHeader.propTypes = {
   signerBalance: FILECOIN_NUMBER_PROP,
   msigBalance: FILECOIN_NUMBER_PROP,
   msig: PropTypes.bool
+}
+
+CardHeader.defaultProps = {
+  msig: false,
+  msigBalance: new FilecoinNumber('', 'attofil')
 }
 
 export const WithdrawHeaderText = ({ step }) => {
