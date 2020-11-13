@@ -4,23 +4,16 @@ import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
 import { Message } from '@glif/filecoin-message'
 import { validateAddressString } from '@glif/filecoin-address'
+import { BigNumber } from '@glif/filecoin-number'
 
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
-import {
-  Box,
-  Button,
-  ButtonClose,
-  StepHeader,
-  Input,
-  Form,
-  Card
-} from '../../Shared'
+import { Box, Button, ButtonClose, StepHeader, Form, Card } from '../../Shared'
 import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
 } from '../../../customPropTypes'
-import { CardHeader, ChangeOwnerHeaderText } from '../Shared'
+import { CardHeader, AddRmSignerHeaderText } from '../Shared'
 import Preface from './Prefaces'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send.js/ErrorCard'
@@ -34,6 +27,7 @@ import {
 import reportError from '../../../utils/reportError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
+import { AddSignerInput } from './SignerInput'
 
 const ManipulateSignersHOC = method => {
   if (!method) throw new Error('must pass method to ManipulateSignersHOC')
@@ -44,8 +38,8 @@ const ManipulateSignersHOC = method => {
     const { serializeParams } = useWasm()
     const [step, setStep] = useState(1)
     const [attemptingTx, setAttemptingTx] = useState(false)
-    const [toAddress, setToAddress] = useState('')
-    const [toAddressError, setToAddressError] = useState('')
+    const [signerAddress, setSignerAddress] = useState('')
+    const [signerAddressError, setSignerAddressError] = useState('')
     const [uncaughtError, setUncaughtError] = useState('')
     const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
     const [mPoolPushing, setMPoolPushing] = useState(false)
@@ -58,22 +52,15 @@ const ManipulateSignersHOC = method => {
         // add signer
         case 5: {
           return {
-            Signer: toAddress,
-            Inrease: false
-          }
-        }
-        // remove signer
-        case 6: {
-          return {
-            Signer: toAddress,
-            Decrease: false
+            signer: signerAddress,
+            increase: false
           }
         }
         // swap signer
         case 7: {
           return {
-            To: toAddress,
-            From: wallet.address
+            to: signerAddress,
+            from: wallet.address
           }
         }
         default: {
@@ -108,7 +95,10 @@ const ManipulateSignersHOC = method => {
         value: '0',
         method: 2,
         nonce,
-        params: serializedOuterParams
+        params: serializedOuterParams,
+        gasFeeCap: gasInfo.gasFeeCap.toAttoFil(),
+        gasLimit: new BigNumber(gasInfo.gasLimit.toAttoFil()).toNumber(),
+        gasPremium: gasInfo.gasPremium.toAttoFil()
       })
 
       return { message, params: { ...innerParams, params: outerParams } }
@@ -147,9 +137,9 @@ const ManipulateSignersHOC = method => {
       e.preventDefault()
       if (step === 1) {
         setStep(2)
-      } else if (step === 2 && !validateAddressString(toAddress)) {
-        setToAddressError('Invalid address')
-      } else if (step === 2 && validateAddressString(toAddress)) {
+      } else if (step === 2 && !validateAddressString(signerAddress)) {
+        setSignerAddressError('Invalid address')
+      } else if (step === 2 && validateAddressString(signerAddress)) {
         setStep(3)
       } else if (step === 3) {
         setAttemptingTx(true)
@@ -251,6 +241,7 @@ const ManipulateSignersHOC = method => {
                 />
               )}
               {!attemptingTx &&
+                step > 1 &&
                 !hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
                   <Card
                     display='flex'
@@ -267,7 +258,7 @@ const ManipulateSignersHOC = method => {
                       totalSteps={4}
                       glyphAcronym='Ch'
                     />
-                    <ChangeOwnerHeaderText step={step} />
+                    <AddRmSignerHeaderText step={step} method={method} />
                   </Card>
                 )}
               {step === 1 && <Preface method={method} />}
@@ -281,39 +272,38 @@ const ManipulateSignersHOC = method => {
                       signerBalance={wallet.balance}
                     />
                     <Box width='100%' p={3} border={0} bg='background.screen'>
-                      <Input.Address
-                        label='New owner'
-                        value={toAddress}
-                        onChange={e => setToAddress(e.target.value)}
-                        error={toAddressError}
-                        disabled={step === 3}
-                        onFocus={() => {
-                          if (toAddressError) setToAddressError('')
-                        }}
-                      />
-                    </Box>
-                    {step > 2 && (
-                      <Box
-                        display='flex'
-                        flexDirection='row'
-                        justifyContent='space-between'
-                        width='100%'
-                        p={3}
-                        border={0}
-                        bg='background.screen'
-                      >
-                        <CustomizeFee
-                          message={constructMsg().message.toLotusType()}
-                          gasInfo={gasInfo}
-                          setGasInfo={setGasInfo}
-                          setFrozen={setFrozen}
-                          setError={setGasError}
-                          error={gasError}
-                          feeMustBeLessThanThisAmount={wallet.balance}
+                      {method === 5 && (
+                        <AddSignerInput
+                          signerAddress={signerAddress}
+                          setSignerAddress={setSignerAddress}
+                          signerAddressError={signerAddressError}
+                          setSignerAddressError={setSignerAddressError}
+                          step={step}
                         />
-                      </Box>
-                    )}
+                      )}
+                    </Box>
                   </>
+                )}
+                {step > 2 && (
+                  <Box
+                    display='flex'
+                    flexDirection='row'
+                    justifyContent='space-between'
+                    width='100%'
+                    p={3}
+                    border={0}
+                    bg='background.screen'
+                  >
+                    <CustomizeFee
+                      message={constructMsg().message.toLotusType()}
+                      gasInfo={gasInfo}
+                      setGasInfo={setGasInfo}
+                      setFrozen={setFrozen}
+                      setError={setGasError}
+                      error={gasError}
+                      feeMustBeLessThanThisAmount={wallet.balance}
+                    />
+                  </Box>
                 )}
               </Box>
             </Box>

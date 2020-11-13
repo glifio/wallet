@@ -12,7 +12,7 @@ import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
 } from '../../../customPropTypes'
-import { CardHeader, TakeCustodyHeaderText } from '../Shared'
+import { CardHeader, RemoveSignerHeaderText } from '../Shared'
 import Preface from './Preface'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send.js/ErrorCard'
@@ -246,7 +246,7 @@ const TakeCustody = ({ address, msigBalance, signers, close }) => {
                       totalSteps={3}
                       glyphAcronym='Tc'
                     />
-                    <TakeCustodyHeaderText step={step} />
+                    <RemoveSignerHeaderText step={step} />
                   </Card>
                 )}
               {step === 1 && <Preface />}

@@ -17,8 +17,9 @@ const State = ({
   available,
   setChangingOwner,
   setWithdrawing,
-  setTakingCustody,
-  showTakeCustodyOption,
+  setRmSigner,
+  setAddSigner,
+  showRmSignerOption,
   showChangeOwnerOption,
   total,
   walletAddress
@@ -64,17 +65,26 @@ const State = ({
             <Title ml={2}>Vault</Title>
           </Box>
 
-          {showTakeCustodyOption && (
+          {showRmSignerOption && (
             <Button
               type='button'
               variant='secondary'
-              onClick={setTakingCustody}
-              title='Take Control'
+              onClick={setRmSigner}
+              title='Remove Signer'
               maxWidth={10}
               minWidth={9}
               borderRadius={6}
             />
           )}
+          <Button
+            type='button'
+            variant='secondary'
+            onClick={setAddSigner}
+            title='Add Signer'
+            maxWidth={10}
+            minWidth={9}
+            borderRadius={6}
+          />
         </MenuItem>
         <Menu
           display='flex'
@@ -101,7 +111,7 @@ const State = ({
               })}
               reset={reset}
             />
-            {/* {showChangeOwnerOption && (
+            {showChangeOwnerOption && (
               <Button
                 type='button'
                 variant='secondary'
@@ -112,7 +122,7 @@ const State = ({
                 minWidth={9}
                 borderRadius={6}
               />
-            )} */}
+            )}
           </MenuItem>
         </Menu>
       </Menu>
@@ -151,8 +161,9 @@ State.propTypes = {
   walletAddress: ADDRESS_PROPTYPE,
   setChangingOwner: PropTypes.func.isRequired,
   setWithdrawing: PropTypes.func.isRequired,
-  setTakingCustody: PropTypes.func.isRequired,
-  showTakeCustodyOption: PropTypes.bool.isRequired,
+  setRmSigner: PropTypes.func.isRequired,
+  setAddSigner: PropTypes.func.isRequired,
+  showRmSignerOption: PropTypes.bool.isRequired,
   showChangeOwnerOption: PropTypes.bool.isRequired
 }
 

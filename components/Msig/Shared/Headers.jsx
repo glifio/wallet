@@ -136,7 +136,7 @@ ChangeOwnerHeaderText.propTypes = {
   step: PropTypes.number.isRequired
 }
 
-export const TakeCustodyHeaderText = ({ step }) => {
+export const RemoveSignerHeaderText = ({ step }) => {
   let text = ''
 
   switch (step) {
@@ -157,6 +157,44 @@ export const TakeCustodyHeaderText = ({ step }) => {
   )
 }
 
-TakeCustodyHeaderText.propTypes = {
+RemoveSignerHeaderText.propTypes = {
+  step: PropTypes.number.isRequired
+}
+
+export const AddSignerHeaderText = ({ step }) => {
+  let text = ''
+
+  switch (step) {
+    case 2:
+      text = 'Please enter the Filecoin address of the new signer.'
+      break
+    case 3:
+      text =
+        'Please review the transaction fee details. If the fee is too high, please come back and try again later.'
+      break
+    default:
+      text = ''
+  }
+  return (
+    <>
+      <Text textAlign='center'>
+        Your Ledger Address pays the transaction fee.
+      </Text>
+      <Text textAlign='center'>{text}</Text>
+    </>
+  )
+}
+
+AddSignerHeaderText.propTypes = {
+  step: PropTypes.number.isRequired
+}
+
+export const AddRmSignerHeaderText = ({ method, step }) => {
+  if (method === 5) return <AddSignerHeaderText step={step} />
+  if (method === 7) return <RemoveSignerHeaderText step={step} />
+}
+
+AddRmSignerHeaderText.propTypes = {
+  method: PropTypes.number.isRequired,
   step: PropTypes.number.isRequired
 }
