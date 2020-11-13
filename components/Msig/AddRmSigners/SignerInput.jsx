@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { Box, Input, Text } from '../../Shared'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import { PL_SIGNERS } from '../../../constants'
+import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
+import truncateAddress from '../../../utils/truncateAddress'
 
 export const AddSignerInput = ({
   signerAddress,
@@ -46,31 +48,44 @@ export const RemoveSignerInput = ({
   return (
     <Box>
       {signers
-        .filter(s => s !== selfAddress)
+        .filter(
+          s =>
+            converAddrToFPrefix(s.account) !== converAddrToFPrefix(selfAddress)
+        )
         .map(s => (
-          <Box key={s} display='flex' flexDirection='row' alignItems='center'>
+          <Box
+            key={s.account}
+            display='flex'
+            flexDirection='row'
+            alignItems='center'
+            onClick={() => {
+              if (disabled) return
+              setSignerAddressError('')
+              setSignerAddress(s.account)
+            }}
+            css={`
+               {
+                &:hover {
+                  cursor: ${step > 2 ? 'not-allowed' : 'pointer'};
+                }
+              }
+            `}
+          >
             <Box
               borderRadius='50%'
               width='10px'
               height='10px'
               display='inline-block'
-              bg={s === signerAddress ? 'core.primary' : 'core.darkgray'}
+              bg={
+                converAddrToFPrefix(s.account) ===
+                converAddrToFPrefix(signerAddress)
+                  ? 'core.primary'
+                  : 'core.darkgray'
+              }
               mr={2}
               role='button'
-              onClick={() => {
-                if (disabled) return
-                setSignerAddressError('')
-                setSignerAddress(s)
-              }}
-              css={`
-                 {
-                  &:hover {
-                    cursor: ${step > 2 ? 'not-allowed' : 'pointer'};
-                  }
-                }
-              `}
             />
-            <Text>{s}</Text>
+            <Text>{`${truncateAddress(s.account)} (${s.id})`}</Text>
             {PL_SIGNERS.has(s) && <Text ml={2}>(Protocol Labs)</Text>}
           </Box>
         ))}
@@ -84,7 +99,12 @@ RemoveSignerInput.propTypes = {
   signerAddress: PropTypes.string.isRequired,
   setSignerAddress: PropTypes.func.isRequired,
   signerAddressError: PropTypes.string,
-  signers: PropTypes.array.isRequired,
+  signers: PropTypes.arrayOf(
+    PropTypes.shape({
+      account: ADDRESS_PROPTYPE,
+      id: ADDRESS_PROPTYPE
+    })
+  ),
   step: PropTypes.number.isRequired,
   setSignerAddressError: PropTypes.func.isRequired
 }

@@ -16,7 +16,9 @@ const TxStatusText = ({ address, message }) => {
     }
     case PROPOSE: {
       if (message.params.method === 0) text = 'MSIG WITHDRAW'
-      else if (message.params.method === 7) text = 'MSIG OWNER SWAP'
+      if (message.params.method === 5) text = 'MSIG ADD SIGNER'
+      if (message.params.method === 6) text = 'MSIG REMOVE SIGNER'
+      else if (message.params.method === 7) text = 'MSIG SIGNER SWAP'
       else text = 'MSIG PROPOSE'
       break
     }

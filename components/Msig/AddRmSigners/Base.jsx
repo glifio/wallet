@@ -82,7 +82,7 @@ const ManipulateSignersHOC = method => {
         gasPremium: gasInfo.gasPremium.toAttoFil()
       })
 
-      return { message, params: { ...innerParams, params: outerParams } }
+      return { message, params: { ...outerParams, params: { ...innerParams } } }
     }
 
     const sendMsg = async () => {
@@ -345,7 +345,12 @@ const ManipulateSignersHOC = method => {
     address: ADDRESS_PROPTYPE,
     balance: FILECOIN_NUMBER_PROP,
     close: PropTypes.func.isRequired,
-    signers: PropTypes.arrayOf(PropTypes.string)
+    signers: PropTypes.arrayOf(
+      PropTypes.shape({
+        account: ADDRESS_PROPTYPE,
+        id: ADDRESS_PROPTYPE
+      })
+    )
   }
   return Base
 }
