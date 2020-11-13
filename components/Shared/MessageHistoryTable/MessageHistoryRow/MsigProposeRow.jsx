@@ -9,13 +9,13 @@ import truncate from '../../../../utils/truncateAddress'
 import makeFriendlyBalance from '../../../../utils/makeFriendlyBalance'
 
 const methods = [
-  'withdraw from',
+  'withdraw',
   '',
   '',
   '',
   '',
-  '',
-  'remove signer from',
+  'add signer',
+  'remove signer',
   'owner swap'
 ]
 
@@ -53,6 +53,14 @@ const ProposalValue = ({ params }) => {
         {makeFriendlyBalance(new FilecoinNumber(params.value, 'attofil'), 7)}
       </Text>
     )
+
+  if (params.method === 5) {
+    return (
+      <Text fontSize={1} color='core.nearblack'>
+        Add signer
+      </Text>
+    )
+  }
 
   if (params.method === 6) {
     return (

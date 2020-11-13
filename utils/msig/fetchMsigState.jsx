@@ -29,6 +29,15 @@ export default async (
     return onNotSupportedMsigCb()
   }
 
+  const accounts = await Promise.all(
+    State?.Signers.map(s => lotus.request('StateAccountKey', s, null))
+  )
+
+  const signers = State?.Signers.map((id, idx) => ({
+    id,
+    account: accounts[idx]
+  }))
+
   if (!(await isAddressSigner(lotus, signerAddress, State?.Signers))) {
     return onNotSignerCb()
   }
@@ -41,8 +50,9 @@ export default async (
   const balance = new FilecoinNumber(Balance, 'attofil')
 
   return {
+    ...State,
     Balance: balance,
     AvailableBalance: new FilecoinNumber(availableBalance, 'attofil'),
-    ...State
+    Signers: signers
   }
 }
