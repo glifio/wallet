@@ -191,7 +191,7 @@ AddSignerHeaderText.propTypes = {
 
 export const AddRmSignerHeaderText = ({ method, step }) => {
   if (method === 5) return <AddSignerHeaderText step={step} />
-  if (method === 7) return <RemoveSignerHeaderText step={step} />
+  if (method === 6) return <RemoveSignerHeaderText step={step} />
 }
 
 AddRmSignerHeaderText.propTypes = {

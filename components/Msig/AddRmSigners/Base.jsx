@@ -27,11 +27,11 @@ import {
 import reportError from '../../../utils/reportError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
-import { AddSignerInput } from './SignerInput'
+import { AddSignerInput, RemoveSignerInput } from './SignerInput'
 
 const ManipulateSignersHOC = method => {
   if (!method) throw new Error('must pass method to ManipulateSignersHOC')
-  const Base = ({ address, balance, close }) => {
+  const Base = ({ address, balance, close, signers }) => {
     const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
     const wallet = useWallet()
     const dispatch = useDispatch()
@@ -47,30 +47,11 @@ const ManipulateSignersHOC = method => {
     const [gasInfo, setGasInfo] = useState(emptyGasInfo)
     const [frozen, setFrozen] = useState(false)
 
-    const constructInnerParams = () => {
-      switch (method) {
-        // add signer
-        case 5: {
-          return {
-            signer: signerAddress,
-            increase: false
-          }
-        }
-        // swap signer
-        case 7: {
-          return {
-            to: signerAddress,
-            from: wallet.address
-          }
-        }
-        default: {
-          return {}
-        }
-      }
-    }
-
     const constructMsg = (nonce = 0) => {
-      const innerParams = constructInnerParams()
+      const innerParams = {
+        signer: signerAddress,
+        decrease: false
+      }
 
       const serializedInnerParams = Buffer.from(
         serializeParams(innerParams),
@@ -281,6 +262,17 @@ const ManipulateSignersHOC = method => {
                           step={step}
                         />
                       )}
+                      {method === 6 && (
+                        <RemoveSignerInput
+                          selfAddress={wallet.address}
+                          signerAddress={signerAddress}
+                          setSignerAddress={setSignerAddress}
+                          signerAddressError={signerAddressError}
+                          signers={signers}
+                          setSignerAddressError={setSignerAddressError}
+                          step={step}
+                        />
+                      )}
                     </Box>
                   </>
                 )}
@@ -352,7 +344,8 @@ const ManipulateSignersHOC = method => {
   Base.propTypes = {
     address: ADDRESS_PROPTYPE,
     balance: FILECOIN_NUMBER_PROP,
-    close: PropTypes.func.isRequired
+    close: PropTypes.func.isRequired,
+    signers: PropTypes.arrayOf(PropTypes.string)
   }
   return Base
 }

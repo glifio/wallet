@@ -64,18 +64,6 @@ const State = ({
             />
             <Title ml={2}>Vault</Title>
           </Box>
-
-          {showRmSignerOption && (
-            <Button
-              type='button'
-              variant='secondary'
-              onClick={setRmSigner}
-              title='Remove Signer'
-              maxWidth={10}
-              minWidth={9}
-              borderRadius={6}
-            />
-          )}
           <Button
             type='button'
             variant='secondary'
@@ -118,6 +106,17 @@ const State = ({
                 onClick={setChangingOwner}
                 title='Change Owner'
                 height={6}
+                maxWidth={10}
+                minWidth={9}
+                borderRadius={6}
+              />
+            )}
+            {showRmSignerOption && (
+              <Button
+                type='button'
+                variant='secondary'
+                onClick={setRmSigner}
+                title='Remove Signer'
                 maxWidth={10}
                 minWidth={9}
                 borderRadius={6}

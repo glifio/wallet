@@ -1,4 +1,4 @@
 import BaseHOC from './Base'
 
 export const AddSigner = BaseHOC(5)
-export const SwapOwner = BaseHOC(7)
+export const RemoveSigner = BaseHOC(6)

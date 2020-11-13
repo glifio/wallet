@@ -3,8 +3,7 @@ import { useSelector } from 'react-redux'
 import { useMsig } from '../../../MsigProvider'
 import Withdraw from '../Withdraw'
 import ChangeOwner from '../ChangeOwner'
-import RmSigner from '../TakeCustody'
-import { AddSigner } from '../AddRmSigners'
+import { AddSigner, RemoveSigner } from '../AddRmSigners'
 import { Box, LoadingScreen } from '../../Shared'
 import State from './State'
 import useWallet from '../../../WalletProvider/useWallet'
@@ -54,10 +53,10 @@ const MsigHome = () => {
           />
         )}
         {!msig.loading && childView === REMOVE_SIGNER && (
-          <RmSigner
+          <RemoveSigner
             close={() => setChildView(MSIG_STATE)}
             signers={msig.Signers}
-            msigBalance={msig.AvailableBalance}
+            balance={msig.AvailableBalance}
             address={msigActorAddress}
           />
         )}
