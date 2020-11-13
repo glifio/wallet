@@ -3,19 +3,19 @@ import { useSelector } from 'react-redux'
 import { useMsig } from '../../../MsigProvider'
 import Withdraw from '../Withdraw'
 import ChangeOwner from '../ChangeOwner'
-import TakeCustody from '../TakeCustody'
+import { AddSigner, RemoveSigner } from '../AddRmSigners'
 import { Box, LoadingScreen } from '../../Shared'
 import State from './State'
 import useWallet from '../../../WalletProvider/useWallet'
-import { msigPartlyOwnedByPL } from '../../../utils/msig'
 import MsgConfirmer from '../../../lib/confirm-message'
 
 const MSIG_STATE = 'MSIG_STATE'
 const WITHDRAW = 'WITHDRAW'
 const CHANGE_OWNER = 'CHANGE_OWNER'
-const TAKE_CUSTODY = 'TAKE_CUSTODY'
+const REMOVE_SIGNER = 'REMOVE_SIGNER'
+const ADD_SIGNER = 'ADD_SIGNER'
 
-export default () => {
+const MsigHome = () => {
   const msigActorAddress = useSelector(state => state.msigActorAddress)
   const msig = useMsig(msigActorAddress)
   const { address } = useWallet()
@@ -39,9 +39,10 @@ export default () => {
             total={msig.Balance}
             setChangingOwner={() => setChildView(CHANGE_OWNER)}
             setWithdrawing={() => setChildView(WITHDRAW)}
-            setTakingCustody={() => setChildView(TAKE_CUSTODY)}
-            showTakeCustodyOption={msigPartlyOwnedByPL(msig.Signers)}
-            showChangeOwnerOption={!msigPartlyOwnedByPL(msig.Signers)}
+            setRmSigner={() => setChildView(REMOVE_SIGNER)}
+            setAddSigner={() => setChildView(ADD_SIGNER)}
+            showRmSignerOption={msig.Signers.length > 1}
+            showChangeOwnerOption={msig.Signers.length === 1}
           />
         )}
         {!msig.loading && childView === CHANGE_OWNER && (
@@ -51,11 +52,11 @@ export default () => {
             address={msigActorAddress}
           />
         )}
-        {!msig.loading && childView === TAKE_CUSTODY && (
-          <TakeCustody
+        {!msig.loading && childView === REMOVE_SIGNER && (
+          <RemoveSigner
             close={() => setChildView(MSIG_STATE)}
             signers={msig.Signers}
-            msigBalance={msig.AvailableBalance}
+            balance={msig.AvailableBalance}
             address={msigActorAddress}
           />
         )}
@@ -66,7 +67,16 @@ export default () => {
             address={msigActorAddress}
           />
         )}
+        {!msig.loading && childView === ADD_SIGNER && (
+          <AddSigner
+            close={() => setChildView(MSIG_STATE)}
+            balance={msig.AvailableBalance}
+            address={msigActorAddress}
+          />
+        )}
       </Box>
     </>
   )
 }
+
+export default MsigHome

@@ -223,6 +223,7 @@ const ChangeOwner = ({ address, balance, close }) => {
               />
             )}
             {!attemptingTx &&
+              step > 1 &&
               !hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
                 <Card
                   display='flex'
