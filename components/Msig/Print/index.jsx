@@ -77,14 +77,19 @@ const Print = () => {
       32
     )
     doc.text(`Creation block height: ${EXEC.height}`, 20, 44)
-    doc.text(`CURRENT multisig actor balance: ${Balance}`, 20, 56)
-    doc.text(`CURRENT multisig signers: ${State.Signers.join(',')}`, 20, 68)
-    doc.text(`Unlock duration: ${State.UnlockDuration}`, 20, 80)
-    doc.text(`Start epoch of vesting: ${State.StartEpoch}`, 20, 92)
+    doc.text(
+      `Initial vesting multisig actor balance: ${State.InitialBalance}`,
+      20,
+      56
+    )
+    doc.text(`CURRENT multisig actor balance: ${Balance}`, 20, 68)
+    doc.text(`CURRENT multisig signers: ${State.Signers.join(',')}`, 20, 80)
+    doc.text(`Unlock duration: ${State.UnlockDuration}`, 20, 92)
+    doc.text(`Start epoch of vesting: ${State.StartEpoch}`, 20, 104)
     doc.text(
       '---------------------- Transaction highlights ----------------------------',
       50,
-      104
+      116
     )
     const relevantMessages = await getMsgsUntilCustodyTaken(messagesWithParams)
     relevantMessages.forEach((msg, i) => {
@@ -123,7 +128,7 @@ const Print = () => {
           }
         }
 
-        doc.text(text, 20, 116 + i * 12)
+        doc.text(text, 20, 128 + i * 12)
       }
     })
     doc.save()
