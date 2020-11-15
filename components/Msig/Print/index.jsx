@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import dayjs from 'dayjs'
 import { jsPDF as PDF } from 'jspdf'
+import LotusRPCClient from '@glif/filecoin-rpc-client'
 import { validateAddressString } from '@glif/filecoin-address'
 import { Box, Button, Input, OnboardCard, Text, Title } from '../../Shared'
-import { FILFOX } from '../../../constants'
+import { FILFOX, PL_SIGNERS } from '../../../constants'
 import { useWasm } from '../../../lib/WasmLoader'
 import { formatFilfoxMessages } from '../../../lib/useTransactionHistory/formatMessages'
 import getMsgParams from '../../../lib/useTransactionHistory/getMsgParams'
+import getAddrFromReceipt from '../../../utils/getAddrFromReceipt'
+import getMsgsUntilCustodyTaken from './getMsgsUntilCustodyTaken'
 
 const PAGE_SIZE = 20
 
@@ -46,14 +50,82 @@ const Print = () => {
       messages = res.data.messages
     }
 
-    const messagesWithParams = await getMsgParams(
-      formatFilfoxMessages(messages),
-      deserializeParams
-    )
-    console.log(messagesWithParams)
+    const messagesWithParams = (
+      await getMsgParams(formatFilfoxMessages(messages), deserializeParams)
+    ).sort((a, b) => Number(a.timestamp) - Number(b.timestamp))
 
     const doc = new PDF()
-    doc.text('Hihihihi', 1, 1)
+    const EXEC = messagesWithParams[0]
+    const actorID = getAddrFromReceipt(EXEC.receipt.return)
+    const lCli = new LotusRPCClient({
+      apiAddress: process.env.LOTUS_NODE_JSONRPC
+    })
+
+    const { Balance, State } = await lCli.request(
+      'StateReadState',
+      actorID,
+      null
+    )
+
+    doc.setFontSize(12)
+    doc.text(`Multisig: ${actorID}`, 20, 20)
+    doc.text(
+      `Creation date: ${dayjs
+        .unix(EXEC.timestamp)
+        .format('YYYY-MM-DD HH:mm:ss')}`,
+      20,
+      32
+    )
+    doc.text(`Creation block height: ${EXEC.height}`, 20, 44)
+    doc.text(`CURRENT multisig actor balance: ${Balance}`, 20, 56)
+    doc.text(`CURRENT multisig signers: ${State.Signers.join(',')}`, 20, 68)
+    doc.text(`Unlock duration: ${State.UnlockDuration}`, 20, 80)
+    doc.text(`Start epoch of vesting: ${State.StartEpoch}`, 20, 92)
+    doc.text(
+      '---------------------- Transaction highlights ----------------------------',
+      50,
+      104
+    )
+    const relevantMessages = await getMsgsUntilCustodyTaken(messagesWithParams)
+    relevantMessages.forEach((msg, i) => {
+      // skip EXEC, which is the first (0th) message
+      if (i > 0) {
+        let text = ''
+        switch (msg.params?.method) {
+          case 0: {
+            text = `Withdrew funds to: ${msg.params.to}`
+            break
+          }
+          case 5: {
+            text = `Added signer: ${msg.params.params.signer} on ${dayjs
+              .unix(msg.timestamp)
+              .format('YYYY-MM-DD HH:mm:ss')} at block height: ${msg.height}`
+            break
+          }
+          case 6: {
+            text = `Removed signer: ${msg.params.params.signer} ${
+              PL_SIGNERS.has(msg.params.params.signer) ? '(Protocol Labs)' : ''
+            } on ${dayjs
+              .unix(msg.timestamp)
+              .format('YYYY-MM-DD HH:mm:ss')} at block height: ${msg.height}`
+            break
+          }
+          case 7: {
+            text = 'Change owner'
+            break
+          }
+          default: {
+            if (msg.method === 1) {
+              text = ''
+            } else {
+              text = `Unrecognized transaction number: ${msg.params.method}`
+            }
+          }
+        }
+
+        doc.text(text, 20, 116 + i * 12)
+      }
+    })
     doc.save()
   }
   return (
