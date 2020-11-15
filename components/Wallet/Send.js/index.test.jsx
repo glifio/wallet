@@ -53,7 +53,6 @@ describe('Send Flow', () => {
         fireEvent.click(screen.getByText('Send'))
         await flushPromises()
       })
-      expect(true).toBe(true)
       expect(walletProvider.getNonce).toHaveBeenCalledWith(address)
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
       const message = walletProvider.wallet.sign.mock.calls[0][0]
