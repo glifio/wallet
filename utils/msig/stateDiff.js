@@ -7,8 +7,8 @@ const stateDiff = (prevState, nextState) => {
     prevState.AvailableBalance.toString() !==
     nextState.AvailableBalance.toString()
 
-  const signersChanged = prevState.Signers.some((signer, i) =>
-    isequal(signer, nextState.Signers[i])
+  const signersChanged = prevState.Signers.some(
+    (signer, i) => !isequal(signer, nextState.Signers[i])
   )
 
   return balanceChanged || availBalanceChanged || signersChanged
