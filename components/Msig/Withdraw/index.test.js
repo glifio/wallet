@@ -7,7 +7,7 @@ import { flushPromises } from '../../../test-utils'
 
 jest.mock('@glif/filecoin-wallet-provider')
 
-describe('Send Flow', () => {
+describe('Multisig withdraw flow', () => {
   let close = () => {}
   beforeEach(() => {
     jest.useFakeTimers()
@@ -15,7 +15,7 @@ describe('Send Flow', () => {
     close = jest.fn()
   })
 
-  describe('Multisig witdraw', () => {
+  describe('Withdrawing FIL', () => {
     afterEach(() => {
       jest.clearAllTimers()
       cleanup()
