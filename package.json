@@ -10,10 +10,10 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@glif/filecoin-address": "^1.1.0-beta.1",
-    "@glif/filecoin-message": "^1.1.0-beta.1",
+    "@glif/filecoin-address": "^1.1.0-beta.2",
+    "@glif/filecoin-message": "^1.1.0-beta.2",
     "@glif/filecoin-message-confirmer": "^1.1.0-beta.1",
-    "@glif/filecoin-number": "^1.1.0-beta.1",
+    "@glif/filecoin-number": "^1.1.0-beta.2",
     "@glif/filecoin-rpc-client": "^1.1.0-beta.1",
     "@glif/filecoin-wallet-provider": "^1.1.0-beta.1",
     "@ledgerhq/hw-transport-webusb": "5.26.0",
