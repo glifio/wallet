@@ -4,7 +4,7 @@ import dayjs from 'dayjs'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { validateAddressString } from '@glif/filecoin-address'
-import { FilecoinNumber } from '@glif/filecoin-number'
+import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import { randomBytes } from 'crypto'
 
 import { useWalletProvider } from '../../../WalletProvider'
@@ -67,7 +67,8 @@ const Create = () => {
       value.toAttoFil(),
       1,
       nonce,
-      vest
+      vest.toString(),
+      '0'
     )
 
     const message = new Message({
@@ -76,7 +77,10 @@ const Create = () => {
       value: value.toAttoFil(),
       method: 2,
       nonce,
-      params: tx.params
+      params: tx.params,
+      gasFeeCap: gasInfo.gasFeeCap.toAttoFil(),
+      gasLimit: new BigNumber(gasInfo.gasLimit.toAttoFil()).toNumber(),
+      gasPremium: gasInfo.gasPremium.toAttoFil()
     })
 
     return { message, params: tx.params }
