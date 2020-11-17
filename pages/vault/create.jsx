@@ -1,13 +1,13 @@
 import React from 'react'
-import { MsigHome } from '../../components/Msig'
 import RequireWallet from '../../lib/RequireWallet'
+import CreateMsig from '../../components/Msig/Create'
 
-const Home = () => {
+const Create = () => {
   return (
     <RequireWallet>
-      <MsigHome />
+      <CreateMsig />
     </RequireWallet>
   )
 }
 
-export default Home
+export default Create

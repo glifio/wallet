@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { FilecoinNumber } from '@glif/filecoin-number'
 import { Box, Text, Glyph, StyledATag } from '../../Shared'
 import {
   ADDRESS_PROPTYPE,
@@ -66,6 +67,11 @@ CardHeader.propTypes = {
   signerBalance: FILECOIN_NUMBER_PROP,
   msigBalance: FILECOIN_NUMBER_PROP,
   msig: PropTypes.bool
+}
+
+CardHeader.defaultProps = {
+  msig: false,
+  msigBalance: new FilecoinNumber('', 'attofil')
 }
 
 export const WithdrawHeaderText = ({ step }) => {
@@ -196,5 +202,39 @@ export const AddRmSignerHeaderText = ({ method, step }) => {
 
 AddRmSignerHeaderText.propTypes = {
   method: PropTypes.number.isRequired,
+  step: PropTypes.number.isRequired
+}
+
+export const CreateMultisigHeaderText = ({ step }) => {
+  let text = ''
+
+  switch (step) {
+    case 1:
+      text = 'First, please select one or more owner(s) of the multisig wallet.'
+      break
+    case 2:
+      text = 'Next, please choose how much FIL to send to the multisig.'
+      break
+    case 3:
+      text = 'How long should these funds vest over?'
+      break
+    case 4:
+      text = 'Please review the transaction details.'
+      break
+    default:
+      text = ''
+  }
+
+  return (
+    <>
+      <Text textAlign='center'>
+        Your Ledger Address pays the transaction fee.
+      </Text>
+      <Text textAlign='center'>{text}</Text>
+    </>
+  )
+}
+
+CreateMultisigHeaderText.propTypes = {
   step: PropTypes.number.isRequired
 }
