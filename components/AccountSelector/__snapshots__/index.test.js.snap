@@ -1507,7 +1507,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
               font-size="2"
               font-weight="400"
             >
-              Please select the Ledger account that owns your multisig wallet.
+              Please select a Ledger account.
             </p>
             <p
               class="c11"
@@ -2904,7 +2904,7 @@ exports[`HelperText it renders the msig helper text correctly 1`] = `
   font-size="2"
   font-weight="400"
 >
-  Please select the Ledger account that owns your multisig wallet.
+  Please select a Ledger account.
 </p>
 `;
 
