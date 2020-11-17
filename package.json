@@ -17,7 +17,7 @@
     "@glif/filecoin-rpc-client": "1.0.0-beta.1",
     "@glif/filecoin-wallet-provider": "1.0.0-beta.5",
     "@ledgerhq/hw-transport-webusb": "5.26.0",
-    "@zondax/filecoin-signing-tools": "0.9.0",
+    "@zondax/filecoin-signing-tools": "0.13.0",
     "@zondax/ledger-filecoin": "0.11.0",
     "axios": "0.19.2",
     "bip39": "3.0.2",
