@@ -44,9 +44,7 @@ const HelperText = ({ msig, isLedger }) => {
   if (msig) {
     return (
       <>
-        <Text>
-          Please select the Ledger account that owns your multisig wallet.
-        </Text>
+        <Text>Please select a Ledger account.</Text>
         <LedgerHelp />
       </>
     )
