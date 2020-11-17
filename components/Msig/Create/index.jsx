@@ -132,6 +132,8 @@ const Create = () => {
         setAttemptingTx(false)
         if (msg) {
           dispatch(confirmMessage(toLowerCaseMsgFields(msg)))
+          const params = new URLSearchParams(router.query)
+          router.push(`/vault/create/confirm?${params.toString()}`)
         }
       } catch (err) {
         if (err.message.includes('19')) {

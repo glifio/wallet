@@ -11,12 +11,14 @@ import { formatFilfoxMessages } from '../../../lib/useTransactionHistory/formatM
 import getMsgParams from '../../../lib/useTransactionHistory/getMsgParams'
 import getAddrFromReceipt from '../../../utils/getAddrFromReceipt'
 import getMsgsUntilCustodyTaken from './getMsgsUntilCustodyTaken'
+import { useRouter } from 'next/router'
 
 const PAGE_SIZE = 20
 
 const Print = () => {
+  const router = useRouter()
   const { deserializeParams } = useWasm()
-  const [address, setAddress] = useState('')
+  const [address, setAddress] = useState(router.query.address)
   const [err, setErr] = useState('')
 
   const onSubmit = async e => {
