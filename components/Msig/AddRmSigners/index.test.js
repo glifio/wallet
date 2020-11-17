@@ -68,13 +68,13 @@ describe('Multisig add & remove  flow', () => {
     })
   })
 
-  describe('Adding a signer', () => {
+  describe('Removing a signer', () => {
     afterEach(() => {
       jest.clearAllTimers()
       cleanup()
     })
 
-    test.only('it allows a user to add a signer', async () => {
+    test('it allows a user to remove a signer', async () => {
       const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
       const msigAddress = 't034066'
       const msigBalance = new FilecoinNumber('1', 'fil')
