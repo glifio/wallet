@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { validateAddressString } from '@glif/filecoin-address'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
-import { randomBytes } from 'crypto'
 
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
@@ -60,9 +59,9 @@ const Create = () => {
 
   const close = () => router.back()
 
-  const constructMsg = (nonce = 0, startEpoch) => {
+  const constructMsg = (nonce = 0, startEpoch = 148888) => {
     let startEpochForMsg = 0
-    if (vest > 0) startEpochForMsg = 148888
+    if (vest > 0) startEpochForMsg = startEpoch
     const tx = wasm.createMultisig(
       wallet.address,
       [...signerAddresses],
@@ -280,11 +279,13 @@ const Create = () => {
                   signerBalance={wallet.balance}
                 />
                 <Box width='100%' p={3} border={0} bg='background.screen'>
+                  {/* eslint-disable react/no-array-index-key */}
                   {signerAddresses.map((a, i) => {
+                    // using index as key here is OK since the signers position IS unique in this case
                     return (
                       <Box
                         // not great, but can't use address val or array index here
-                        key={randomBytes(8)}
+                        key={i}
                         display='flex'
                         flexDirection='row'
                         mb={2}

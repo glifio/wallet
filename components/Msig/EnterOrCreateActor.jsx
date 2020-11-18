@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
 import { validateAddressString } from '@glif/filecoin-address'
+import styled from 'styled-components'
 import {
   Box,
   Button,
@@ -14,7 +15,6 @@ import {
 } from '../Shared'
 import { IconLedger } from '../Shared/Icons'
 import { setMsigActor } from '../../store/actions'
-import styled from 'styled-components'
 
 const Form = styled.form`
   width: 100%;
