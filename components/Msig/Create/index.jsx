@@ -60,7 +60,9 @@ const Create = () => {
 
   const close = () => router.back()
 
-  const constructMsg = (nonce = 0, startEpoch = 148888) => {
+  const constructMsg = (nonce = 0, startEpoch) => {
+    let startEpochForMsg = 0
+    if (vest > 0) startEpochForMsg = 148888
     const tx = wasm.createMultisig(
       wallet.address,
       [...signerAddresses],
@@ -68,7 +70,7 @@ const Create = () => {
       1,
       nonce,
       vest.toString(),
-      startEpoch.toString()
+      startEpochForMsg.toString()
     )
 
     const message = new Message({
@@ -83,7 +85,8 @@ const Create = () => {
       gasPremium: gasInfo.gasPremium.toAttoFil()
     })
 
-    return { message, params: tx.params }
+    // TODO deserialize these params
+    return { message, params: {} }
   }
 
   const sendMsg = async () => {
