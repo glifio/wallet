@@ -17,6 +17,9 @@ const ADD_SIGNER = 'ADD_SIGNER'
 
 const MsigHome = () => {
   const msigActorAddress = useSelector(state => state.msigActorAddress)
+  const messagesPending = useSelector(
+    state => state.messages.pending.length > 0
+  )
   const msig = useMsig(msigActorAddress)
   const { address } = useWallet()
   const [childView, setChildView] = useState(MSIG_STATE)
@@ -45,7 +48,7 @@ const MsigHome = () => {
             showChangeOwnerOption={msig.Signers.length === 1}
           />
         )}
-        {!msig.loading && childView === CHANGE_OWNER && (
+        {!msig.loading && !messagesPending && childView === CHANGE_OWNER && (
           <ChangeOwner
             close={() => setChildView(MSIG_STATE)}
             balance={msig.AvailableBalance}
