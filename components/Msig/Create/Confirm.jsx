@@ -110,8 +110,8 @@ const Confirm = () => {
                 <br />
               </Box>
               <Text>
-                This screen will automatically redirect you to the Multisig home
-                once your transaction is finalized.
+                This screen will automatically show you your new Multisig wallet
+                address once the transaction confirms.
               </Text>
             </Box>
           )}
