@@ -1,5 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { func, string } from 'prop-types'
+import { useRouter } from 'next/router'
 import ConfirmMessage from '../../../lib/confirm-message'
 import {
   Card,
@@ -11,8 +13,6 @@ import {
   BigTitle
 } from '../../Shared'
 import { fetchAndSetMsigActor } from '../../../store/actions'
-import { func, string } from 'prop-types'
-import { useRouter } from 'next/router'
 
 const NextOption = ({ text, onClick }) => {
   return (
@@ -55,7 +55,7 @@ const Confirm = () => {
     if (confirmed.some(m => m.cid === msgCid.current)) {
       dispatch(fetchAndSetMsigActor(msgCid.current))
     }
-  }, [confirmed, msgCid.current, pending.length])
+  }, [confirmed, dispatch])
 
   return (
     <Box
@@ -97,7 +97,7 @@ const Confirm = () => {
               <Box display='flex' justifyContent='center' alignItems='center'>
                 <IconPending />
                 <Text ml={2}>
-                  We're waiting for your transaction to confirm.
+                  We&apos;re waiting for your transaction to confirm.
                 </Text>
               </Box>
               <Box display='flex' justifyContent='center' alignItems='center'>
