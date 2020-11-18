@@ -60,7 +60,7 @@ const Create = () => {
 
   const close = () => router.back()
 
-  const constructMsg = (nonce = 0) => {
+  const constructMsg = (nonce = 0, startEpoch = 148888) => {
     const tx = wasm.createMultisig(
       wallet.address,
       [...signerAddresses],
@@ -68,7 +68,7 @@ const Create = () => {
       1,
       nonce,
       vest.toString(),
-      '0'
+      startEpoch.toString()
     )
 
     const message = new Message({
@@ -92,7 +92,8 @@ const Create = () => {
 
     if (provider) {
       const nonce = await provider.getNonce(wallet.address)
-      const { message, params } = constructMsg(nonce)
+      const { Height } = await provider.jsonRpcEngine.request('ChainHead')
+      const { message, params } = constructMsg(nonce, Height)
       setFetchingTxDetails(false)
       const signedMessage = await provider.wallet.sign(
         message.toSerializeableType(),
@@ -347,7 +348,8 @@ const Create = () => {
                     <Input.Number
                       name='vest'
                       label='Vest'
-                      value={vest.toString()}
+                      value={vest > 0 ? vest.toString() : ''}
+                      placeholder='0'
                       onChange={e => setVest(e.target.value)}
                       disabled={step > 3}
                     />
