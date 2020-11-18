@@ -6,6 +6,7 @@ import {
   resetLedgerState,
   resetState
 } from '../../WalletProvider/state'
+import { mockWalletProviderInstance } from '../mocks/mock-wallet-provider'
 
 export default walletProviderDispatch => ({
   fetchDefaultWallet: jest.fn().mockImplementation(() => ({
@@ -24,7 +25,7 @@ export default walletProviderDispatch => ({
       walletProviderDispatch(setWalletType(walletType))
     ),
   setLedgerProvider: jest.fn(),
-  connectLedger: jest.fn(),
+  connectLedger: jest.fn().mockImplementation(() => mockWalletProviderInstance),
   resetLedgerState: jest.fn().mockImplementation(() => {
     walletProviderDispatch(resetLedgerState())
   }),

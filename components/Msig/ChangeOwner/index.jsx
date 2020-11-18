@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import { BigNumber } from '@glif/filecoin-number'
 import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
 import { Message } from '@glif/filecoin-message'
@@ -80,7 +81,10 @@ const ChangeOwner = ({ address, balance, close }) => {
       value: '0',
       method: 2,
       nonce,
-      params: serializedOuterParams
+      params: serializedOuterParams,
+      gasFeeCap: gasInfo.gasFeeCap.toAttoFil(),
+      gasLimit: new BigNumber(gasInfo.gasLimit.toAttoFil()).toNumber(),
+      gasPremium: gasInfo.gasPremium.toAttoFil()
     })
 
     return { message, params: { ...innerParams, params: outerParams } }

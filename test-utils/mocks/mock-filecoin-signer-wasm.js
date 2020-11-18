@@ -1,4 +1,6 @@
-const mnemonicGenerate = jest
+import createHash from '../../utils/createHash'
+
+const generateMnemonic = jest
   .fn()
   .mockImplementation(
     () =>
@@ -23,10 +25,18 @@ const transactionSerialize = jest.fn().mockImplementation(() => {
   return Buffer.from('MOCK SIGNATURE DATA')
 })
 
+const serializeParams = jest
+  .fn()
+  .mockImplementation((params, version, method) => {
+    // just create a random string
+    return createHash([JSON.stringify(params), version, method].join(''))
+  })
+
 module.exports = {
   keyRecover,
   keyDerive,
-  mnemonicGenerate,
+  generateMnemonic,
   transactionSign,
-  transactionSerialize
+  transactionSerialize,
+  serializeParams
 }

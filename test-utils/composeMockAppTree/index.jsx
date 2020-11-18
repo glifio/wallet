@@ -14,6 +14,7 @@ import walletProviderReducer, {
 import { WasmContext } from '../../lib/WasmLoader'
 import { WalletProviderContext } from '../../WalletProvider'
 import { mockWalletProviderInstance } from '../mocks/mock-wallet-provider'
+import * as wasmMethods from '../mocks/mock-filecoin-signer-wasm'
 import createMockWalletProviderContextFuncs from './createWalletProviderContextFuncs.js'
 import mockWalletSubproviders from '../mocks/mock-wallet-subproviders'
 import { presets, composeWalletProviderState } from './composeState'
@@ -55,16 +56,7 @@ export default (statePreset = 'preOnboard', options = {}) => {
 
     return (
       <Provider store={store}>
-        <WasmContext.Provider
-          value={{
-            generateMnemonic: jest
-              .fn()
-              .mockImplementation(
-                () =>
-                  'slender spread awkward chicken noise useful thank dentist tip bronze ritual explain version spot collect whisper glow peanut bus local country album punch frown'
-              )
-          }}
-        >
+        <WasmContext.Provider value={wasmMethods}>
           <ConverterContext.Provider
             value={{
               converter: new Converter(),
