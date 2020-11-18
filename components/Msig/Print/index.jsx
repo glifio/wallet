@@ -18,7 +18,7 @@ const PAGE_SIZE = 20
 const Print = () => {
   const router = useRouter()
   const { deserializeParams } = useWasm()
-  const [address, setAddress] = useState(router.query.address)
+  const [address, setAddress] = useState(router.query.address || '')
   const [err, setErr] = useState('')
 
   const onSubmit = async e => {
