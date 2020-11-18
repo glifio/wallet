@@ -281,20 +281,23 @@ const Create = () => {
                 <Box width='100%' p={3} border={0} bg='background.screen'>
                   {/* eslint-disable react/no-array-index-key */}
                   {signerAddresses.map((a, i) => {
-                    // using index as key here is OK since the signers position IS unique in this case
+                    const disabled =
+                      step > 1 || !(i === signerAddresses.length - 1)
                     return (
                       <Box
-                        // not great, but can't use address val or array index here
+                        // using index as key here is OK since the signers position IS unique in this case
                         key={i}
                         display='flex'
                         flexDirection='row'
                         mb={2}
                       >
-                        {i > 0 && (
+                        {i > 0 && !disabled && (
                           <Button
                             title='-'
                             onClick={() => onSignerAddressRm(i)}
-                            bg='red'
+                            disabled={disabled}
+                            bg='card.error.background'
+                            borderColor='card.error.background'
                             mr={2}
                           />
                         )}
@@ -320,18 +323,20 @@ const Create = () => {
                       </Box>
                     )
                   })}
-                  <Button
-                    title='+'
-                    onClick={() => {
-                      const lastSigner =
-                        signerAddresses[signerAddresses.length - 1]
-                      if (validateAddressString(lastSigner)) {
-                        onSignerAddressChange('', signerAddresses.length)
-                      } else {
-                        setSignerAddressError('Invalid signer address')
-                      }
-                    }}
-                  />
+                  {step === 1 && (
+                    <Button
+                      title='+'
+                      onClick={() => {
+                        const lastSigner =
+                          signerAddresses[signerAddresses.length - 1]
+                        if (validateAddressString(lastSigner)) {
+                          onSignerAddressChange('', signerAddresses.length)
+                        } else {
+                          setSignerAddressError('Invalid signer address')
+                        }
+                      }}
+                    />
+                  )}
                 </Box>
                 {step > 1 && (
                   <Box width='100%' p={3} border={0} bg='background.screen'>
