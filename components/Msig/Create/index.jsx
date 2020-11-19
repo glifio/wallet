@@ -14,8 +14,10 @@ import {
   ButtonClose,
   StepHeader,
   Input,
+  Text,
   Form,
-  Card
+  Card,
+  IconClose
 } from '../../Shared'
 import { CardHeader, CreateMultisigHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
@@ -278,6 +280,10 @@ const Create = () => {
                   address={wallet.address}
                   signerBalance={wallet.balance}
                 />
+                <Box display='flex' width='100%' alignItems='center' pt={3} bg='background.screen'>
+                <Text py={0} pl={3} my={0} mx={0}>No.</Text>
+                <Text pl={5} mx={1} my={0}>Signer Address</Text>
+                </Box>
                 <Box width='100%' p={3} border={0} bg='background.screen'>
                   {/* eslint-disable react/no-array-index-key */}
                   {signerAddresses.map((a, i) => {
@@ -291,18 +297,9 @@ const Create = () => {
                         flexDirection='row'
                         mb={2}
                       >
-                        {i > 0 && !disabled && (
-                          <Button
-                            title='-'
-                            onClick={() => onSignerAddressRm(i)}
-                            disabled={disabled}
-                            bg='card.error.background'
-                            borderColor='card.error.background'
-                            mr={2}
-                          />
-                        )}
+                        
                         <Input.Address
-                          label={`Signer ${i + 1}`}
+                          label={`${i + 1}`}
                           value={a}
                           onChange={e =>
                             onSignerAddressChange(e.target.value, i)
@@ -320,12 +317,24 @@ const Create = () => {
                             if (signerAddressError) setSignerAddressError('')
                           }}
                         />
+                          {i > 0 && !disabled && (
+                          <Button
+                            title='X'
+                            onClick={() => onSignerAddressRm(i)}
+                            disabled={disabled}
+                            bg='card.error.background'
+                            borderColor='card.error.background'
+                            ml={2}
+                          />
+                        )}
                       </Box>
                     )
                   })}
                   {step === 1 && (
                     <Button
-                      title='+'
+                      title='Add Signer'
+                      width='100%'
+                      mt={3}
                       onClick={() => {
                         const lastSigner =
                           signerAddresses[signerAddresses.length - 1]
