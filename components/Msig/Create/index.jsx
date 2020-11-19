@@ -317,9 +317,8 @@ const Create = () => {
                             if (signerAddressError) setSignerAddressError('')
                           }}
                         />
-                          {i > 0 && !disabled && (
-                          <Button
-                            title='X'
+                          {i > 0 && (
+                          <ButtonClose
                             onClick={() => onSignerAddressRm(i)}
                             disabled={disabled}
                             bg='card.error.background'
