@@ -6,6 +6,7 @@ import { PL_SIGNERS } from '../../../constants'
 import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
 import truncateAddress from '../../../utils/truncateAddress'
 
+
 export const AddSignerInput = ({
   signerAddress,
   setSignerAddress,
@@ -73,14 +74,16 @@ export const RemoveSignerInput = ({
           >
             <Box
               borderRadius='50%'
-              width='10px'
-              height='10px'
+              width={3}
+              height={3}
               display='inline-block'
+              border={1}
+              borderColor='core.primary'
               bg={
                 converAddrToFPrefix(s.account) ===
                 converAddrToFPrefix(signerAddress)
                   ? 'core.primary'
-                  : 'core.darkgray'
+                  : 'core.transparent'
               }
               mr={2}
               role='button'
