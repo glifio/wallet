@@ -186,6 +186,10 @@ const Create = () => {
   const onSignerAddressChange = (val, idx) => {
     return setSignerAddresses(addresses => {
       const addressesCopy = [...addresses]
+      if (addressesCopy.includes(val)) {
+        setSignerAddressError('Signers must be unique.')
+        return addressesCopy
+      }
       if (idx > addresses.length) {
         addressesCopy.push('')
       } else {
@@ -326,7 +330,7 @@ const Create = () => {
                           }}
                         />
                         <Box display='flex' alignItems='center' width={6}>
-                          {i > 0 && (
+                          {i > 0 && step === 1 && (
                             <ButtonClose
                               onClick={() => onSignerAddressRm(i)}
                               disabled={disabled}
