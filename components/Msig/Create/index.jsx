@@ -317,6 +317,7 @@ const Create = () => {
                             if (signerAddressError) setSignerAddressError('')
                           }}
                         />
+                        <Box display='flex' alignItems='center' width={6}>
                           {i > 0 && (
                           <ButtonClose
                             onClick={() => onSignerAddressRm(i)}
@@ -326,6 +327,7 @@ const Create = () => {
                             ml={2}
                           />
                         )}
+                        </Box>
                       </Box>
                     )
                   })}
