@@ -176,7 +176,7 @@ const Create = () => {
     if (uncaughtError) return true
     if (attemptingTx) return true
     if (step === 1 && !signerAddresses[0]) return true
-    if (step === 1 && !signerAddresses.every(validateAddressString)) return true
+    if (step === 1 && signerAddresses.length < 1) return true
     if (step === 2 && !isValidAmount(value, wallet.balance, valueError))
       return true
     if (step === 3 && gasError) return true
