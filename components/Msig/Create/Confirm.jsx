@@ -11,14 +11,14 @@ import {
   Button,
   Text,
   Glyph,
-  Title,
+  Title
 } from '../../Shared'
 import { fetchAndSetMsigActor } from '../../../store/actions'
 
 const NextOption = ({ text, onClick }) => {
   return (
     <Button
-    title={text}
+      title={text}
       display='flex'
       flexWrap='wrap'
       alignItems='center'
@@ -67,11 +67,20 @@ const Confirm = () => {
       {msigAddr ? (
         <Box p={5}>
           <Title>Your multisig has been created.</Title>
-            <Card maxWidth={13} width='100%' my={3} bg='background.screen' boxShadow={2} border={0}>
+          <Card
+            maxWidth={13}
+            width='100%'
+            my={3}
+            bg='background.screen'
+            boxShadow={2}
+            border={0}
+          >
             <Glyph acronym='Ms' />
-            <Text my={0} mt={3} color='core.darkgray'>Your Address </Text>
+            <Text my={0} mt={3} color='core.darkgray'>
+              Your Address{' '}
+            </Text>
             <Text mt={2}>{msigAddr}</Text>
-            </Card>
+          </Card>
           <Text>What would you like to do?</Text>
           <Box display='flex' justifyContent='space-between'>
             <NextOption

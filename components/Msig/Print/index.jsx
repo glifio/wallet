@@ -19,11 +19,13 @@ const Print = () => {
   const router = useRouter()
   const { deserializeParams } = useWasm()
   const [address, setAddress] = useState(router.query.address || '')
+  const [printing, setPrinting] = useState(false)
   const [err, setErr] = useState('')
 
   const onSubmit = async e => {
     e.preventDefault()
     try {
+      setPrinting(true)
       const trimmedAddr = address.trim()
       if (!validateAddressString(trimmedAddr)) return setErr('Invalid address.')
       if (Number(trimmedAddr[1]) !== 0 && Number(trimmedAddr[1]) !== 2)
@@ -141,8 +143,11 @@ const Print = () => {
       doc.save()
     } catch (err) {
       setErr(
-        'Hmmm. We ran into an error when fetching your multisig actor from Filscout.'
+        'Hmmm. We ran into an error when fetching your multisig actor from Filscout: ',
+        err.message || err
       )
+    } finally {
+      setPrinting(false)
     }
   }
   return (
@@ -195,7 +200,13 @@ const Print = () => {
                 error={err}
                 onFocus={() => setErr('')}
               />
-              <Button title='Print' variant='primary' ml={2} type='submit' />
+              <Button
+                title={printing ? 'Printing' : 'Print'}
+                variant='primary'
+                ml={2}
+                type='submit'
+                disabled={printing}
+              />
             </form>
           </>
         )}

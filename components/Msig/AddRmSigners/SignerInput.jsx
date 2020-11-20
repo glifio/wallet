@@ -6,7 +6,6 @@ import { PL_SIGNERS } from '../../../constants'
 import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
 import truncateAddress from '../../../utils/truncateAddress'
 
-
 export const AddSignerInput = ({
   signerAddress,
   setSignerAddress,
