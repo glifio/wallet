@@ -12,7 +12,6 @@ import {
   Text,
   Glyph,
   Title,
-  BigTitle
 } from '../../Shared'
 import { fetchAndSetMsigActor } from '../../../store/actions'
 

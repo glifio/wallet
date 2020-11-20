@@ -17,7 +17,6 @@ import {
   Text,
   Form,
   Card,
-  IconClose
 } from '../../Shared'
 import { CardHeader, CreateMultisigHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
