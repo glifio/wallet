@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { validateAddressString } from '@glif/filecoin-address'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
+import LotusRPCEngine from '@glif/filecoin-rpc-client'
 
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
@@ -50,6 +51,7 @@ const Create = () => {
   const [value, setValue] = useState(new FilecoinNumber('0', 'fil'))
   const [valueError, setValueError] = useState('')
   const [vest, setVest] = useState(0)
+  const [startEpoch, setStartEpoch] = useState(0)
   const [uncaughtError, setUncaughtError] = useState('')
   const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
   const [mPoolPushing, setMPoolPushing] = useState(false)
@@ -60,9 +62,7 @@ const Create = () => {
 
   const close = () => router.back()
 
-  const constructMsg = (nonce = 0, startEpoch = 148888) => {
-    let startEpochForMsg = 0
-    if (vest > 0) startEpochForMsg = startEpoch
+  const constructMsg = (nonce = 0, epoch = startEpoch) => {
     const tx = wasm.createMultisig(
       wallet.address,
       [...signerAddresses],
@@ -70,7 +70,7 @@ const Create = () => {
       1,
       nonce,
       vest.toString(),
-      startEpochForMsg.toString()
+      epoch.toString()
     )
 
     const message = new Message({
@@ -128,8 +128,19 @@ const Create = () => {
     } else if (step === 2 && !valueError) {
       setStep(3)
     } else if (step === 3) {
-      setStep(4)
-    } else if (step === 4) {
+      if (vest > 0) {
+        const lCli = new LotusRPCEngine({
+          apiAddress: process.env.LOTUS_NODE_JSONRPC
+        })
+        const { Height } = await lCli.request('ChainHead')
+        setStartEpoch(Height)
+        setStep(4)
+      } else {
+        setStep(5)
+      }
+    } else if (step === 4 && vest > 0) {
+      setStep(5)
+    } else if (step === 5) {
       setAttemptingTx(true)
       try {
         const msg = await sendMsg()
@@ -180,7 +191,7 @@ const Create = () => {
     if (step === 2 && !isValidAmount(value, wallet.balance, valueError))
       return true
     if (step === 3 && gasError) return true
-    if (step > 4) return true
+    if (step > 5) return true
   }
 
   const onSignerAddressChange = (val, idx) => {
@@ -387,7 +398,19 @@ const Create = () => {
                     />
                   </Box>
                 )}
-                {step > 3 && (
+                {step > 3 && vest > 0 && (
+                  <Box width='100%' p={3} border={0} bg='background.screen'>
+                    <Input.Number
+                      name='epochs'
+                      label='Start epoch'
+                      value={startEpoch > 0 ? startEpoch.toString() : ''}
+                      placeholder={startEpoch.toString()}
+                      onChange={e => setStartEpoch(e.target.value)}
+                      disabled={step > 4}
+                    />
+                  </Box>
+                )}
+                {step > 4 && (
                   <Box
                     display='flex'
                     flexDirection='row'
@@ -434,6 +457,9 @@ const Create = () => {
                 resetLedgerState()
                 if (step === 1) {
                   close()
+                }
+                if (step === 5 && vest === 0) {
+                  setStep(3)
                 } else {
                   setStep(step - 1)
                 }

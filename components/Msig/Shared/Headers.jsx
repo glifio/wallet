@@ -216,9 +216,12 @@ export const CreateMultisigHeaderText = ({ step }) => {
       text = 'Next, please choose how much FIL to send to the multisig.'
       break
     case 3:
-      text = 'How long should these funds vest over?'
+      text = 'Next, please choose a vesting duration (in # of blocks).'
       break
     case 4:
+      text = 'Next, please choose when the vesting should start (block #).'
+      break
+    case 5:
       text = 'Please review the transaction details.'
       break
     default:
