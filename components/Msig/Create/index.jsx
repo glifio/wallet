@@ -356,7 +356,7 @@ const Create = () => {
                   })}
                   {step === 1 && (
                     <Button
-                      title='Add Signer'
+                      title='Add Another Signer'
                       variant='secondary'
                       width='100%'
                       mt={3}
