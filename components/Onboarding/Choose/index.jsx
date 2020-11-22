@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
+import { useSelector, useDispatch } from 'react-redux'
 import {
   Box,
   IconLedger,
@@ -9,7 +10,7 @@ import {
   Button,
   Warning,
   NetworkSwitcherGlyph
-} from '../../Shared'
+} from '@glif/react-components'
 import HeaderGlyph from '../../Shared/Glyph/HeaderGlyph'
 import ImportWallet from './Import'
 import CreateWallet from './Create'
@@ -21,6 +22,7 @@ import {
 } from '../../../constants'
 import { useWalletProvider } from '../../../WalletProvider'
 import ExpandableBox from './ExpandableBox'
+import { error, switchNetwork } from '../../../store/actions'
 
 export default () => {
   const { setWalletType } = useWalletProvider()
@@ -44,6 +46,18 @@ export default () => {
   }
 
   const [phishingBanner, setPhishingBanner] = useState(false)
+
+  const networkFromRedux = useSelector(state => state.network)
+  const dispatch = useDispatch()
+  const handleNetworkSwitch = network => {
+    if (network !== networkFromRedux) {
+      const searchParams = new URLSearchParams(router.query)
+      searchParams.set('network', network)
+      router.replace(`${router.pathname}?${searchParams.toString()}`)
+      dispatch(switchNetwork(network))
+      dispatch(error(''))
+    }
+  }
 
   return (
     <>
@@ -149,7 +163,7 @@ export default () => {
                   Your private and sensitive information never leave the
                   browser, and are erased upon page refresh
                 </Title>
-                <NetworkSwitcherGlyph />
+                <NetworkSwitcherGlyph network={networkFromRedux} onNetworkSwitch={handleNetworkSwitch} />
                 <ImportWallet
                   onClick={() => onChoose(LEDGER)}
                   Icon={IconLedger}
