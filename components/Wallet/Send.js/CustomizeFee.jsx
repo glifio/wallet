@@ -156,6 +156,11 @@ const CustomizeFee = ({
       setError('Invalid number entered. Please try again.')
       return
     }
+
+    if (localTxFee.isGreaterThan(feeMustBeLessThanThisAmount)) {
+      setError(insufficientMsigFundsErr)
+      return
+    }
     try {
       setFrozen(true)
       setSavingNewFee(true)
