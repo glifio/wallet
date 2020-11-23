@@ -1,0 +1,4998 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Multisig add & remove  flow Adding a signer snapshots it renders preface correctly 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  max-width: 560px;
+  width: 100%;
+  min-width: 300px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.c8 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 0;
+  margin-left: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 560px;
+  min-height: 300px;
+  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FF9E80;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  background-color: #FF9E80;
+  color: #661800;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c13 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.c16 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 16px;
+  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
+}
+
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 560px;
+  width: 100%;
+  min-width: 300px;
+  max-height: 480px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c18 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c18:hover {
+  opacity: 0.8;
+}
+
+.c19 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c19:hover {
+  opacity: 0.8;
+}
+
+.c12 {
+  color: #661800;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c14 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 0;
+}
+
+.c2 {
+  width: 24;
+  height: 24;
+}
+
+.c11 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c3 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c15 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.25rem;
+}
+
+.c15:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c1 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: auto;
+  justify-self: flex-end;
+}
+
+.c1:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+<div>
+  <div
+    class="c0"
+    display="flex"
+    width="100%"
+  >
+    <button
+      class="c1"
+      display="inline-block"
+      role="button"
+      type="button"
+    >
+      <svg
+        class="c2"
+        fill="none"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+          fill="#5E26FF"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </button>
+    <form
+      class="c3"
+    >
+      <div
+        class="c4"
+        display="flex"
+        width="100%"
+      >
+        <div
+          class="c5"
+        >
+          
+          <div
+            class="c6"
+            display="flex"
+            width="100%"
+          >
+            <div
+              class="c7"
+              display="flex"
+            >
+              <div
+                class="c8"
+                display="flex"
+                overflow="hidden"
+                width="100%"
+              >
+                <div
+                  class="c9"
+                  display="flex"
+                >
+                  <div
+                    class="c10"
+                    color="status.warning.foreground"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c11"
+                    >
+                      Wn
+                    </h3>
+                  </div>
+                  <h2
+                    class="c12"
+                    color="status.warning.foreground"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="4"
+                    font-weight="400"
+                  >
+                    Warning
+                  </h2>
+                </div>
+                <div
+                  class="c13"
+                >
+                  <p
+                    class="c14"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    You're about to add another signer to your Multisig wallet.
+                  </p>
+                  <p
+                    class="c14"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    Please make sure you know and trust the new owner as they will be able to withdraw funds from your Multisig wallet.
+                  </p>
+                  <a
+                    class="c15"
+                    color="core.primary"
+                    font-size="3"
+                    rel="noopener"
+                    target="_blank"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="c16"
+          />
+        </div>
+        <div
+          class="c17"
+          display="flex"
+          width="100%"
+        >
+          <button
+            class="c18"
+            font-size="3"
+            height="6"
+            type="button"
+          >
+            Back
+          </button>
+          <button
+            class="c19"
+            font-size="3"
+            height="6"
+            type="submit"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 2 correctly 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  max-width: 560px;
+  width: 100%;
+  min-width: 300px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.c19 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 16px;
+  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
+}
+
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 560px;
+  width: 100%;
+  min-width: 300px;
+  max-height: 480px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #d9e0f2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c8 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c13 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-left: 24px;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c16 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #1AD08F;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #C4C4C4;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 16px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 100%;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  margin-right: 16px;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c25 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c26 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  padding: 16px;
+  background-color: #EFF3FD;
+  width: 100%;
+}
+
+.c29 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 48px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c31 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c34 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c34:hover {
+  opacity: 0.8;
+}
+
+.c35 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c35:hover {
+  opacity: 0.8;
+}
+
+.c12 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c14 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c18 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+}
+
+.c24 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c30 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c2 {
+  width: 24;
+  height: 24;
+}
+
+.c11 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c32 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #d1ddfa;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c32:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c32:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c28 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c3 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c7 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border-color: silver;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c9 {
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: auto;
+  justify-self: flex-end;
+}
+
+.c1:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+<div>
+  <div
+    class="c0"
+    display="flex"
+    width="100%"
+  >
+    <button
+      class="c1"
+      display="inline-block"
+      role="button"
+      type="button"
+    >
+      <svg
+        class="c2"
+        fill="none"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+          fill="#5E26FF"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </button>
+    <form
+      class="c3"
+    >
+      <div
+        class="c4"
+        display="flex"
+        width="100%"
+      >
+        <div
+          class="c5"
+        >
+          
+          <div
+            class="c6"
+            display="flex"
+            overflow="hidden"
+            width="auto"
+          >
+            <ul
+              class="c7"
+              display="flex"
+              width="100%"
+            >
+              <div
+                class="c8"
+                display="flex"
+              >
+                <li
+                  class="c9"
+                  display="flex"
+                >
+                  <div
+                    class="c10"
+                    color="#000"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c11"
+                    >
+                      Ch
+                    </h3>
+                  </div>
+                </li>
+                <li
+                  class=""
+                >
+                  <h2
+                    class="c12"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="4"
+                    font-weight="400"
+                  >
+                    Change Ownership
+                  </h2>
+                </li>
+              </div>
+              <li
+                class=""
+              >
+                <div
+                  class="c13"
+                  display="flex"
+                >
+                  <p
+                    class="c14"
+                    color="core.nearblack"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    Step 
+                    2
+                  </p>
+                  <div
+                    class="c15"
+                    display="flex"
+                  >
+                    <div
+                      class="c16"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                  <div
+                    class="c15"
+                    display="flex"
+                  >
+                    <div
+                      class="c16"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                  <div
+                    class="c15"
+                    display="flex"
+                  >
+                    <div
+                      class="c17"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                  <div
+                    class="c15"
+                    display="flex"
+                  >
+                    <div
+                      class="c17"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <p
+              class="c18"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Your Ledger Address pays the transaction fee.
+            </p>
+            <p
+              class="c18"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Please enter the Filecoin address of the new signer.
+            </p>
+          </div>
+          <div
+            class="c19"
+          >
+            <div
+              class="c20"
+              color="core.white"
+              width="100%"
+            >
+              <div
+                class="c21"
+                display="flex"
+              >
+                <div
+                  class="c8"
+                  display="flex"
+                >
+                  <div
+                    class="c22"
+                    color="white"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c11"
+                    >
+                      Ms
+                    </h3>
+                  </div>
+                  <div
+                    class="c23"
+                    display="flex"
+                  >
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      From
+                    </p>
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      t034066
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="c25"
+                  display="flex"
+                >
+                  <div
+                    class="c26"
+                    display="flex"
+                  >
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      Ledger Balance
+                    </p>
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </p>
+                  </div>
+                  <div
+                    class="c23"
+                    display="flex"
+                  >
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      Msig Balance
+                    </p>
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="c27"
+              width="100%"
+            >
+              <div
+                class="c28"
+              >
+                <div
+                  class="c15"
+                  display="flex"
+                >
+                  <div
+                    class="c29"
+                    display="flex"
+                  >
+                    <h4
+                      class="c30"
+                      color="core.nearblack"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      New Signer
+                    </h4>
+                  </div>
+                  <div
+                    class="c31"
+                    display="flex"
+                  >
+                    <input
+                      class="c32"
+                      display="inline-block"
+                      height="6"
+                      placeholder="f1..."
+                      value=""
+                      width="100%"
+                    />
+                    
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div
+          class="c33"
+          display="flex"
+          width="100%"
+        >
+          <button
+            class="c34"
+            font-size="3"
+            height="6"
+            type="button"
+          >
+            Back
+          </button>
+          <button
+            class="c35"
+            font-size="3"
+            height="6"
+            type="submit"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3 correctly 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  max-width: 560px;
+  width: 100%;
+  min-width: 300px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.c19 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 16px;
+  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
+}
+
+.c45 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 560px;
+  width: 100%;
+  min-width: 300px;
+  max-height: 480px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #d9e0f2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c8 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c13 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-left: 24px;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c16 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #1AD08F;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #C4C4C4;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 16px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 100%;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  margin-right: 16px;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c25 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c26 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  padding: 16px;
+  background-color: #EFF3FD;
+  width: 100%;
+}
+
+.c29 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 48px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c31 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  padding: 16px;
+  background-color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c34 {
+  min-width: 0;
+  box-sizing: border-box;
+  background-color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c35 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 560px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c36 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c37 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  display: inline-block;
+  min-width: 240px;
+  text-align: left;
+}
+
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c42 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  text-align: left;
+}
+
+.c46 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c46:hover {
+  opacity: 0.8;
+}
+
+.c47 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c47:hover {
+  opacity: 0.8;
+}
+
+.c12 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c14 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c18 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+}
+
+.c24 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c43 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  width: 100%;
+}
+
+.c30 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c38 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c2 {
+  width: 24;
+  height: 24;
+}
+
+.c11 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c32 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c32:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c32:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c28 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c41 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  height: 48px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  background: #d1ddfa;
+}
+
+.c40 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #d1ddfa;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+  -moz-appearance: textfield;
+}
+
+.c40:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c40:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c40::-webkit-outer-spin-button,
+.c40::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c3 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c7 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border-color: silver;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c9 {
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c44 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+}
+
+.c44:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c1 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: auto;
+  justify-self: flex-end;
+}
+
+.c1:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+<div>
+  <div
+    class="c0"
+    display="flex"
+    width="100%"
+  >
+    <button
+      class="c1"
+      display="inline-block"
+      role="button"
+      type="button"
+    >
+      <svg
+        class="c2"
+        fill="none"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+          fill="#5E26FF"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </button>
+    <form
+      class="c3"
+    >
+      <div
+        class="c4"
+        display="flex"
+        width="100%"
+      >
+        <div
+          class="c5"
+        >
+          
+          <div
+            class="c6"
+            display="flex"
+            overflow="hidden"
+            width="auto"
+          >
+            <ul
+              class="c7"
+              display="flex"
+              width="100%"
+            >
+              <div
+                class="c8"
+                display="flex"
+              >
+                <li
+                  class="c9"
+                  display="flex"
+                >
+                  <div
+                    class="c10"
+                    color="#000"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c11"
+                    >
+                      Ch
+                    </h3>
+                  </div>
+                </li>
+                <li
+                  class=""
+                >
+                  <h2
+                    class="c12"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="4"
+                    font-weight="400"
+                  >
+                    Change Ownership
+                  </h2>
+                </li>
+              </div>
+              <li
+                class=""
+              >
+                <div
+                  class="c13"
+                  display="flex"
+                >
+                  <p
+                    class="c14"
+                    color="core.nearblack"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    Step 
+                    3
+                  </p>
+                  <div
+                    class="c15"
+                    display="flex"
+                  >
+                    <div
+                      class="c16"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                  <div
+                    class="c15"
+                    display="flex"
+                  >
+                    <div
+                      class="c16"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                  <div
+                    class="c15"
+                    display="flex"
+                  >
+                    <div
+                      class="c16"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                  <div
+                    class="c15"
+                    display="flex"
+                  >
+                    <div
+                      class="c17"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <p
+              class="c18"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Your Ledger Address pays the transaction fee.
+            </p>
+            <p
+              class="c18"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Please review the transaction fee details. If the fee is too high, please come back and try again later.
+            </p>
+          </div>
+          <div
+            class="c19"
+          >
+            <div
+              class="c20"
+              color="core.white"
+              width="100%"
+            >
+              <div
+                class="c21"
+                display="flex"
+              >
+                <div
+                  class="c8"
+                  display="flex"
+                >
+                  <div
+                    class="c22"
+                    color="white"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c11"
+                    >
+                      Ms
+                    </h3>
+                  </div>
+                  <div
+                    class="c23"
+                    display="flex"
+                  >
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      From
+                    </p>
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      t034066
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="c25"
+                  display="flex"
+                >
+                  <div
+                    class="c26"
+                    display="flex"
+                  >
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      Ledger Balance
+                    </p>
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </p>
+                  </div>
+                  <div
+                    class="c23"
+                    display="flex"
+                  >
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      Msig Balance
+                    </p>
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="c27"
+              width="100%"
+            >
+              <div
+                class="c28"
+              >
+                <div
+                  class="c15"
+                  display="flex"
+                >
+                  <div
+                    class="c29"
+                    display="flex"
+                  >
+                    <h4
+                      class="c30"
+                      color="core.nearblack"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      New Signer
+                    </h4>
+                  </div>
+                  <div
+                    class="c31"
+                    display="flex"
+                  >
+                    <input
+                      class="c32"
+                      disabled=""
+                      display="inline-block"
+                      height="6"
+                      placeholder="f1..."
+                      value="t0100"
+                      width="100%"
+                    />
+                    
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div
+              class="c33"
+              display="flex"
+              width="100%"
+            >
+              <div
+                class="c34"
+                display="flex"
+              >
+                <div
+                  class="c35"
+                  display="flex"
+                >
+                  <div
+                    class="c28"
+                    name="tx-fee"
+                  >
+                    <div
+                      class="c36"
+                      display="flex"
+                    >
+                      <div
+                        class="c37"
+                        display="inline-block"
+                      >
+                        <h4
+                          class="c38"
+                          font-family="RT-Alias-Grotesk"
+                          font-size="2"
+                          font-weight="400"
+                        >
+                          Transaction fee
+                        </h4>
+                      </div>
+                      <div
+                        class="c39"
+                        color="background.screen"
+                        display="flex"
+                        width="100%"
+                      >
+                        <input
+                          class="c40"
+                          display="inline-block"
+                          height="6"
+                          type="number"
+                          value="1000000"
+                          width="100%"
+                        />
+                        <div
+                          class="c41"
+                          color="core.primary"
+                          display="flex"
+                          font-size="3"
+                          height="6"
+                        >
+                          aFil
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="c42"
+                    display="flex"
+                    width="100%"
+                  >
+                    <p
+                      class="c43"
+                      color="core.darkgray"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                      width="100%"
+                    >
+                      You will not pay more than 
+                      0.000000000001
+                       FIL for this transaction.
+                       
+                      <a
+                        class="c44"
+                        color="core.primary"
+                        font-size="2"
+                        href="https://filfox.info/en/stats/gas"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        More information on average gas fee statistics.
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="c45"
+          display="flex"
+          width="100%"
+        >
+          <button
+            class="c46"
+            font-size="3"
+            height="6"
+            type="button"
+          >
+            Back
+          </button>
+          <button
+            class="c47"
+            font-size="3"
+            height="6"
+            type="submit"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Multisig add & remove  flow Removing a signer snapshots it renders preface correctly 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  max-width: 560px;
+  width: 100%;
+  min-width: 300px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.c8 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 0;
+  margin-left: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 560px;
+  min-height: 300px;
+  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FF9E80;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  background-color: #FF9E80;
+  color: #661800;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c13 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.c16 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 16px;
+  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
+}
+
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 560px;
+  width: 100%;
+  min-width: 300px;
+  max-height: 480px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c18 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c18:hover {
+  opacity: 0.8;
+}
+
+.c19 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c19:hover {
+  opacity: 0.8;
+}
+
+.c12 {
+  color: #661800;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c14 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 0;
+}
+
+.c2 {
+  width: 24;
+  height: 24;
+}
+
+.c11 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c3 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c15 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.25rem;
+}
+
+.c15:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c1 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: auto;
+  justify-self: flex-end;
+}
+
+.c1:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+<div>
+  <div
+    class="c0"
+    display="flex"
+    width="100%"
+  >
+    <button
+      class="c1"
+      display="inline-block"
+      role="button"
+      type="button"
+    >
+      <svg
+        class="c2"
+        fill="none"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+          fill="#5E26FF"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </button>
+    <form
+      class="c3"
+    >
+      <div
+        class="c4"
+        display="flex"
+        width="100%"
+      >
+        <div
+          class="c5"
+        >
+          
+          <div
+            class="c6"
+            display="flex"
+            width="100%"
+          >
+            <div
+              class="c7"
+              display="flex"
+            >
+              <div
+                class="c8"
+                display="flex"
+                overflow="hidden"
+                width="100%"
+              >
+                <div
+                  class="c9"
+                  display="flex"
+                >
+                  <div
+                    class="c10"
+                    color="status.warning.foreground"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c11"
+                    >
+                      Wn
+                    </h3>
+                  </div>
+                  <h2
+                    class="c12"
+                    color="status.warning.foreground"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="4"
+                    font-weight="400"
+                  >
+                    Warning
+                  </h2>
+                </div>
+                <div
+                  class="c13"
+                >
+                  <p
+                    class="c14"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    You're about to remove an owner from your Multisig wallet.
+                  </p>
+                  <a
+                    class="c15"
+                    color="core.primary"
+                    font-size="3"
+                    rel="noopener"
+                    target="_blank"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="c16"
+          />
+        </div>
+        <div
+          class="c17"
+          display="flex"
+          width="100%"
+        >
+          <button
+            class="c18"
+            font-size="3"
+            height="6"
+            type="button"
+          >
+            Back
+          </button>
+          <button
+            class="c19"
+            font-size="3"
+            height="6"
+            type="submit"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Multisig add & remove  flow Removing a signer snapshots it renders step 2 correctly 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  max-width: 560px;
+  width: 100%;
+  min-width: 300px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.c19 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 16px;
+  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
+}
+
+.c31 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 560px;
+  width: 100%;
+  min-width: 300px;
+  max-height: 480px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #d9e0f2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c8 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c13 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-left: 24px;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c16 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #1AD08F;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #C4C4C4;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 16px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 100%;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  margin-right: 16px;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c25 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c26 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  padding: 16px;
+  background-color: #EFF3FD;
+  width: 100%;
+}
+
+.c29 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 1px solid;
+  border-color: #5E26FF;
+  margin-right: 8px;
+  background-color: transparent;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+.c32 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c32:hover {
+  opacity: 0.8;
+}
+
+.c33 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c33:hover {
+  opacity: 0.8;
+}
+
+.c12 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c14 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c18 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+}
+
+.c24 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c30 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c2 {
+  width: 24;
+  height: 24;
+}
+
+.c11 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c3 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c7 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border-color: silver;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c9 {
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: auto;
+  justify-self: flex-end;
+}
+
+.c1:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c28 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c28:hover {
+  cursor: pointer;
+}
+
+<div>
+  <div
+    class="c0"
+    display="flex"
+    width="100%"
+  >
+    <button
+      class="c1"
+      display="inline-block"
+      role="button"
+      type="button"
+    >
+      <svg
+        class="c2"
+        fill="none"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+          fill="#5E26FF"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </button>
+    <form
+      class="c3"
+    >
+      <div
+        class="c4"
+        display="flex"
+        width="100%"
+      >
+        <div
+          class="c5"
+        >
+          
+          <div
+            class="c6"
+            display="flex"
+            overflow="hidden"
+            width="auto"
+          >
+            <ul
+              class="c7"
+              display="flex"
+              width="100%"
+            >
+              <div
+                class="c8"
+                display="flex"
+              >
+                <li
+                  class="c9"
+                  display="flex"
+                >
+                  <div
+                    class="c10"
+                    color="#000"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c11"
+                    >
+                      Ch
+                    </h3>
+                  </div>
+                </li>
+                <li
+                  class=""
+                >
+                  <h2
+                    class="c12"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="4"
+                    font-weight="400"
+                  >
+                    Change Ownership
+                  </h2>
+                </li>
+              </div>
+              <li
+                class=""
+              >
+                <div
+                  class="c13"
+                  display="flex"
+                >
+                  <p
+                    class="c14"
+                    color="core.nearblack"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    Step 
+                    2
+                  </p>
+                  <div
+                    class="c15"
+                    display="flex"
+                  >
+                    <div
+                      class="c16"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                  <div
+                    class="c15"
+                    display="flex"
+                  >
+                    <div
+                      class="c16"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                  <div
+                    class="c15"
+                    display="flex"
+                  >
+                    <div
+                      class="c17"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                  <div
+                    class="c15"
+                    display="flex"
+                  >
+                    <div
+                      class="c17"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <p
+              class="c18"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Your Ledger Address pays the transaction fee.
+            </p>
+            <p
+              class="c18"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Please select the Filecoin address you want to remove from your multisig wallet.
+            </p>
+          </div>
+          <div
+            class="c19"
+          >
+            <div
+              class="c20"
+              color="core.white"
+              width="100%"
+            >
+              <div
+                class="c21"
+                display="flex"
+              >
+                <div
+                  class="c8"
+                  display="flex"
+                >
+                  <div
+                    class="c22"
+                    color="white"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c11"
+                    >
+                      Ms
+                    </h3>
+                  </div>
+                  <div
+                    class="c23"
+                    display="flex"
+                  >
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      From
+                    </p>
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      t034066
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="c25"
+                  display="flex"
+                >
+                  <div
+                    class="c26"
+                    display="flex"
+                  >
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      Ledger Balance
+                    </p>
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </p>
+                  </div>
+                  <div
+                    class="c23"
+                    display="flex"
+                  >
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      Msig Balance
+                    </p>
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="c27"
+              width="100%"
+            >
+              <div
+                class="c5"
+              >
+                <div
+                  class="c28"
+                  display="flex"
+                >
+                  <div
+                    class="c29"
+                    display="inline-block"
+                    height="3"
+                    role="button"
+                    width="3"
+                  />
+                  <p
+                    class="c30"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    f1gdiu ... zuh4hi (t0100)
+                  </p>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="c31"
+          display="flex"
+          width="100%"
+        >
+          <button
+            class="c32"
+            font-size="3"
+            height="6"
+            type="button"
+          >
+            Back
+          </button>
+          <button
+            class="c33"
+            font-size="3"
+            height="6"
+            type="submit"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Multisig add & remove  flow Removing a signer snapshots it renders step 3 correctly 1`] = `
+.c0 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  max-width: 560px;
+  width: 100%;
+  min-width: 300px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.c19 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 16px;
+  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
+}
+
+.c44 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 560px;
+  width: 100%;
+  min-width: 300px;
+  max-height: 480px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #d9e0f2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  overflow: hidden;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c8 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c13 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-left: 24px;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c16 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #1AD08F;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #C4C4C4;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 16px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 100%;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  margin-right: 16px;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c25 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c26 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  padding: 16px;
+  background-color: #EFF3FD;
+  width: 100%;
+}
+
+.c29 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 1px solid;
+  border-color: #5E26FF;
+  margin-right: 8px;
+  background-color: #5E26FF;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+.c31 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  padding: 16px;
+  background-color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  background-color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 560px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c35 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c36 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  display: inline-block;
+  min-width: 240px;
+  text-align: left;
+}
+
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c41 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  text-align: left;
+}
+
+.c45 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c45:hover {
+  opacity: 0.8;
+}
+
+.c46 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c46:hover {
+  opacity: 0.8;
+}
+
+.c12 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c14 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c18 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+}
+
+.c24 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c30 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c42 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  width: 100%;
+}
+
+.c37 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c2 {
+  width: 24;
+  height: 24;
+}
+
+.c11 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c34 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  height: 48px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  background: #d1ddfa;
+}
+
+.c39 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #d1ddfa;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+  -moz-appearance: textfield;
+}
+
+.c39:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c39:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c39::-webkit-outer-spin-button,
+.c39::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c3 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c7 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border-color: silver;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c9 {
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c43 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+}
+
+.c43:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c1 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: auto;
+  justify-self: flex-end;
+}
+
+.c1:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c28 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c28:hover {
+  cursor: not-allowed;
+}
+
+<div>
+  <div
+    class="c0"
+    display="flex"
+    width="100%"
+  >
+    <button
+      class="c1"
+      display="inline-block"
+      role="button"
+      type="button"
+    >
+      <svg
+        class="c2"
+        fill="none"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+          fill="#5E26FF"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </button>
+    <form
+      class="c3"
+    >
+      <div
+        class="c4"
+        display="flex"
+        width="100%"
+      >
+        <div
+          class="c5"
+        >
+          
+          <div
+            class="c6"
+            display="flex"
+            overflow="hidden"
+            width="auto"
+          >
+            <ul
+              class="c7"
+              display="flex"
+              width="100%"
+            >
+              <div
+                class="c8"
+                display="flex"
+              >
+                <li
+                  class="c9"
+                  display="flex"
+                >
+                  <div
+                    class="c10"
+                    color="#000"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c11"
+                    >
+                      Ch
+                    </h3>
+                  </div>
+                </li>
+                <li
+                  class=""
+                >
+                  <h2
+                    class="c12"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="4"
+                    font-weight="400"
+                  >
+                    Change Ownership
+                  </h2>
+                </li>
+              </div>
+              <li
+                class=""
+              >
+                <div
+                  class="c13"
+                  display="flex"
+                >
+                  <p
+                    class="c14"
+                    color="core.nearblack"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    Step 
+                    3
+                  </p>
+                  <div
+                    class="c15"
+                    display="flex"
+                  >
+                    <div
+                      class="c16"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                  <div
+                    class="c15"
+                    display="flex"
+                  >
+                    <div
+                      class="c16"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                  <div
+                    class="c15"
+                    display="flex"
+                  >
+                    <div
+                      class="c16"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                  <div
+                    class="c15"
+                    display="flex"
+                  >
+                    <div
+                      class="c17"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <p
+              class="c18"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Your Ledger Address pays the transaction fee.
+            </p>
+            <p
+              class="c18"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Please review the transaction fee details. If the fee is too high, please come back and try again later.
+            </p>
+          </div>
+          <div
+            class="c19"
+          >
+            <div
+              class="c20"
+              color="core.white"
+              width="100%"
+            >
+              <div
+                class="c21"
+                display="flex"
+              >
+                <div
+                  class="c8"
+                  display="flex"
+                >
+                  <div
+                    class="c22"
+                    color="white"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c11"
+                    >
+                      Ms
+                    </h3>
+                  </div>
+                  <div
+                    class="c23"
+                    display="flex"
+                  >
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      From
+                    </p>
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      t034066
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="c25"
+                  display="flex"
+                >
+                  <div
+                    class="c26"
+                    display="flex"
+                  >
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      Ledger Balance
+                    </p>
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </p>
+                  </div>
+                  <div
+                    class="c23"
+                    display="flex"
+                  >
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      Msig Balance
+                    </p>
+                    <p
+                      class="c24"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="c27"
+              width="100%"
+            >
+              <div
+                class="c5"
+              >
+                <div
+                  class="c28"
+                  display="flex"
+                >
+                  <div
+                    class="c29"
+                    display="inline-block"
+                    height="3"
+                    role="button"
+                    width="3"
+                  />
+                  <p
+                    class="c30"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    f1gdiu ... zuh4hi (t0100)
+                  </p>
+                </div>
+                
+              </div>
+            </div>
+            <div
+              class="c31"
+              display="flex"
+              width="100%"
+            >
+              <div
+                class="c32"
+                display="flex"
+              >
+                <div
+                  class="c33"
+                  display="flex"
+                >
+                  <div
+                    class="c34"
+                    name="tx-fee"
+                  >
+                    <div
+                      class="c35"
+                      display="flex"
+                    >
+                      <div
+                        class="c36"
+                        display="inline-block"
+                      >
+                        <h4
+                          class="c37"
+                          font-family="RT-Alias-Grotesk"
+                          font-size="2"
+                          font-weight="400"
+                        >
+                          Transaction fee
+                        </h4>
+                      </div>
+                      <div
+                        class="c38"
+                        color="background.screen"
+                        display="flex"
+                        width="100%"
+                      >
+                        <input
+                          class="BaseInput-u1913i-0 c39"
+                          display="inline-block"
+                          height="6"
+                          type="number"
+                          value="1000000"
+                          width="100%"
+                        />
+                        <div
+                          class="c40"
+                          color="core.primary"
+                          display="flex"
+                          font-size="3"
+                          height="6"
+                        >
+                          aFil
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="c41"
+                    display="flex"
+                    width="100%"
+                  >
+                    <p
+                      class="c42"
+                      color="core.darkgray"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="2"
+                      font-weight="400"
+                      width="100%"
+                    >
+                      You will not pay more than 
+                      0.000000000001
+                       FIL for this transaction.
+                       
+                      <a
+                        class="c43"
+                        color="core.primary"
+                        font-size="2"
+                        href="https://filfox.info/en/stats/gas"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        More information on average gas fee statistics.
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="c44"
+          display="flex"
+          width="100%"
+        >
+          <button
+            class="c45"
+            font-size="3"
+            height="6"
+            type="button"
+          >
+            Back
+          </button>
+          <button
+            class="c46"
+            font-size="3"
+            height="6"
+            type="submit"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;

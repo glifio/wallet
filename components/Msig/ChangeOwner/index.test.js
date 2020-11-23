@@ -21,7 +21,7 @@ describe('Change owner flow', () => {
       cleanup()
     })
 
-    test('it allows a user to withdraw filecoin', async () => {
+    test('it allows a user to change owner', async () => {
       const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
       const msigAddress = 't034066'
       const msigBalance = new FilecoinNumber('1', 'fil')
