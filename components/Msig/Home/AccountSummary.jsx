@@ -14,6 +14,7 @@ import {
   IconLedger,
   Tooltip
 } from '../../Shared'
+import Signers from './Signers'
 
 const ButtonViewOnLedgerDevice = styled(BaseButton)``
 
@@ -21,6 +22,7 @@ const AccountSummary = ({
   msigAddress,
   showOnDevice,
   walletAddress,
+  signers,
   reset,
   ledgerBusy,
   error
@@ -194,6 +196,7 @@ const AccountSummary = ({
           </>
         )}
       </Box>
+      <Signers signers={signers} walletAddress={walletAddress} />
     </Box>
   )
 }
@@ -204,7 +207,13 @@ AccountSummary.propTypes = {
   showOnDevice: PropTypes.func.isRequired,
   ledgerBusy: PropTypes.bool.isRequired,
   error: PropTypes.string,
-  reset: PropTypes.func.isRequired
+  reset: PropTypes.func.isRequired,
+  signers: PropTypes.arrayOf(
+    PropTypes.shape({
+      account: ADDRESS_PROPTYPE,
+      id: ADDRESS_PROPTYPE
+    })
+  ).isRequired
 }
 
 AccountSummary.defaultProps = {

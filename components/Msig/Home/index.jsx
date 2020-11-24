@@ -44,6 +44,7 @@ const MsigHome = () => {
             setWithdrawing={() => setChildView(WITHDRAW)}
             setRmSigner={() => setChildView(REMOVE_SIGNER)}
             setAddSigner={() => setChildView(ADD_SIGNER)}
+            signers={msig.Signers}
             showRmSignerOption={msig.Signers.length > 1}
             showChangeOwnerOption={msig.Signers.length === 1}
           />

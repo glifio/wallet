@@ -13,6 +13,7 @@ import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfi
 import MessageHistory from '../MessageHistory'
 
 const State = ({
+  signers,
   msigAddress,
   available,
   setChangingOwner,
@@ -91,6 +92,7 @@ const State = ({
             <AccountSummary
               msigAddress={msigAddress}
               walletAddress={walletAddress}
+              signers={signers}
               showOnDevice={onShowOnLedger}
               ledgerBusy={ledgerBusy}
               error={reportLedgerConfigError({
@@ -162,6 +164,12 @@ State.propTypes = {
   setWithdrawing: PropTypes.func.isRequired,
   setRmSigner: PropTypes.func.isRequired,
   setAddSigner: PropTypes.func.isRequired,
+  signers: PropTypes.arrayOf(
+    PropTypes.shape({
+      account: ADDRESS_PROPTYPE,
+      id: ADDRESS_PROPTYPE
+    })
+  ).isRequired,
   showRmSignerOption: PropTypes.bool.isRequired,
   showChangeOwnerOption: PropTypes.bool.isRequired
 }
