@@ -1,3 +1,4 @@
+import LotusRpcEngine from '@glif/filecoin-rpc-client'
 import {
   CONFIRM_MESSAGE,
   CONFIRMED_MESSAGE,
@@ -16,6 +17,7 @@ import {
   SET_INVESTOR_ID,
   SET_MSIG_ACTOR_ADDRESS
 } from './actionTypes'
+import getAddressFromReceipt from '../utils/getAddrFromReceipt'
 
 export const walletList = wallets => ({
   type: WALLET_LIST,
@@ -120,6 +122,24 @@ export const setMsigActor = msigActorAddress => {
     type: SET_MSIG_ACTOR_ADDRESS,
     payload: {
       msigActorAddress
+    }
+  }
+}
+
+export const fetchAndSetMsigActor = msgCid => {
+  return async dispatch => {
+    const lCli = new LotusRpcEngine({
+      apiAddress: process.env.LOTUS_NODE_JSONRPC
+    })
+    const receipt = await lCli.request('StateGetReceipt', { '/': msgCid }, null)
+    if (receipt.ExitCode === 0) {
+      dispatch(setMsigActor(getAddressFromReceipt(receipt.Return)))
+    } else {
+      dispatch(
+        error(
+          'There was an error when creating, confirming, or fetching your multisig actor.'
+        )
+      )
     }
   }
 }
