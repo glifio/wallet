@@ -55,6 +55,7 @@ const Create = () => {
   const [uncaughtError, setUncaughtError] = useState('')
   const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
   const [mPoolPushing, setMPoolPushing] = useState(false)
+  const [pageChanging, setPageChanging] = useState(false)
   const [gasError, setGasError] = useState('')
   const [gasInfo, setGasInfo] = useState(emptyGasInfo)
   const [frozen, setFrozen] = useState(false)
@@ -146,6 +147,7 @@ const Create = () => {
         const msg = await sendMsg()
         setAttemptingTx(false)
         if (msg) {
+          setPageChanging(true)
           dispatch(confirmMessage(toLowerCaseMsgFields(msg)))
           const params = new URLSearchParams(router.query)
           router.push(`/vault/create/confirm?${params.toString()}`)
@@ -186,6 +188,8 @@ const Create = () => {
     if (frozen) return true
     if (uncaughtError) return true
     if (attemptingTx) return true
+    if (mPoolPushing) return true
+    if (pageChanging) return true
     if (step === 1 && !signerAddresses[0]) return true
     if (step === 1 && signerAddresses.length < 1) return true
     if (step === 2 && !isValidAmount(value, wallet.balance, valueError))
@@ -263,8 +267,8 @@ const Create = () => {
               <ConfirmationCard
                 loading={fetchingTxDetails || mPoolPushing}
                 walletType={LEDGER}
-                currentStep={4}
-                totalSteps={4}
+                currentStep={5}
+                totalSteps={5}
                 msig
               />
             )}
@@ -282,7 +286,7 @@ const Create = () => {
                   <StepHeader
                     title='Create Multisig Wallet'
                     currentStep={step}
-                    totalSteps={4}
+                    totalSteps={5}
                     glyphAcronym='Cr'
                   />
                   <CreateMultisigHeaderText step={step} />
