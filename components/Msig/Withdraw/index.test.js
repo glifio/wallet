@@ -76,7 +76,7 @@ describe('Multisig withdraw flow', () => {
       expect(store.getState().messages.pending.length).toBe(1)
     })
 
-    test('it does not allow a user to send a message if address is poorly formed', async () => {
+    test('it does not allow a user to withdraw FIL if address is poorly formed', async () => {
       const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
       const msigAddress = 't034066'
       const msigBalance = new FilecoinNumber('1', 'fil')
@@ -341,16 +341,16 @@ describe('Multisig withdraw flow', () => {
       expect(screen.getByText(/0.000000000002/)).toBeInTheDocument()
     })
 
-    // todo
-    test.skip('it restricts a user from continuing if the tx fee > balance', async () => {
+    test('it restricts a user from continuing if the tx fee > balance', async () => {
       const { Tree } = composeMockAppTree('postOnboardLowBal')
       const msigAddress = 't034066'
       const msigBalance = new FilecoinNumber('1', 'fil')
 
       const toAddr = 't0100'
       const filAmount = new FilecoinNumber('.99999999999999999999999', 'fil')
+      let res
       await act(async () => {
-        render(
+        res = render(
           <Tree>
             <Withdraw
               address={msigAddress}
@@ -373,10 +373,20 @@ describe('Multisig withdraw flow', () => {
         jest.runOnlyPendingTimers()
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getByDisplayValue('1000000'), {
+          target: { value: '20000000000000000000000' }
+        })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Save'))
+        await flushPromises()
       })
       expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
-      expect(screen.getByText(/not have enough FIL/)).toBeInTheDocument()
+      expect(
+        screen.getByText(/does not have sufficient funds/)
+      ).toBeInTheDocument()
       expect(screen.getByText('Next')).toBeDisabled()
+      expect(res.container).toMatchSnapshot()
     })
 
     test('it restricts a user from continuing if the tx fee entered is invalid', async () => {
@@ -386,8 +396,9 @@ describe('Multisig withdraw flow', () => {
 
       const toAddr = 't0100'
       const filAmount = new FilecoinNumber('.5', 'fil')
+      let res
       await act(async () => {
-        render(
+        res = render(
           <Tree>
             <Withdraw
               address={msigAddress}
@@ -421,6 +432,7 @@ describe('Multisig withdraw flow', () => {
       expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
       expect(screen.getByText(/Invalid/)).toBeInTheDocument()
       expect(screen.getByText('Next')).toBeDisabled()
+      expect(res.container).toMatchSnapshot()
     })
 
     test('it sends the user to the message history after message successfully sent', async () => {
@@ -462,6 +474,144 @@ describe('Multisig withdraw flow', () => {
       })
       await flushPromises()
       expect(close).toHaveBeenCalled()
+    })
+  })
+
+  describe('snapshots', () => {
+    afterEach(cleanup)
+    test('it renders correctly', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
+      const msigAddress = 't034066'
+      const msigBalance = new FilecoinNumber('1', 'fil')
+
+      let res
+      await act(async () => {
+        res = render(
+          <Tree>
+            <Withdraw
+              address={msigAddress}
+              balance={msigBalance}
+              close={close}
+            />
+          </Tree>
+        )
+      })
+      expect(res.container).toMatchSnapshot()
+      expect(screen.getByText(/Withdrawing Filecoin/)).toBeInTheDocument()
+      expect(screen.getByText(/Recipient/)).toBeInTheDocument()
+      expect(screen.getByText(/Step 1/)).toBeInTheDocument()
+    })
+
+    test('it renders step 2 correctly', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
+      const msigAddress = 't034066'
+      const msigBalance = new FilecoinNumber('1', 'fil')
+      const toAddr = 't0100'
+
+      let res
+      await act(async () => {
+        res = render(
+          <Tree>
+            <Withdraw
+              address={msigAddress}
+              balance={msigBalance}
+              close={close}
+            />
+          </Tree>
+        )
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
+          target: { value: toAddr },
+          preventDefault: () => {}
+        })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+      })
+      expect(res.container).toMatchSnapshot()
+      expect(screen.getByText(/Withdrawing Filecoin/)).toBeInTheDocument()
+      expect(screen.getByText(/Amount/)).toBeInTheDocument()
+      expect(screen.getByText(/Step 2/)).toBeInTheDocument()
+    })
+
+    test('it renders step 3 correctly', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
+      const msigAddress = 't034066'
+      const msigBalance = new FilecoinNumber('1', 'fil')
+      const toAddr = 't0100'
+      const filAmount = new FilecoinNumber('.5', 'fil')
+
+      let res
+      await act(async () => {
+        res = render(
+          <Tree>
+            <Withdraw
+              address={msigAddress}
+              balance={msigBalance}
+              close={close}
+            />
+          </Tree>
+        )
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
+          target: { value: toAddr },
+          preventDefault: () => {}
+        })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+          target: { value: filAmount }
+        })
+        fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+      })
+      expect(res.container).toMatchSnapshot()
+      expect(screen.getByText(/Withdrawing Filecoin/)).toBeInTheDocument()
+      expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
+      expect(screen.getByText(/Step 3/)).toBeInTheDocument()
+    })
+
+    test('it renders step 4 correctly', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
+      const msigAddress = 't034066'
+      const msigBalance = new FilecoinNumber('1', 'fil')
+      const toAddr = 't0100'
+      const filAmount = new FilecoinNumber('.5', 'fil')
+
+      let res
+      await act(async () => {
+        res = render(
+          <Tree>
+            <Withdraw
+              address={msigAddress}
+              balance={msigBalance}
+              close={close}
+            />
+          </Tree>
+        )
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
+          target: { value: toAddr },
+          preventDefault: () => {}
+        })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+          target: { value: filAmount }
+        })
+        fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+      })
+      expect(res.container).toMatchSnapshot()
+      expect(screen.getByText(/Withdrawing Filecoin/)).toBeInTheDocument()
+      expect(screen.getByText(/Total/)).toBeInTheDocument()
+      expect(screen.getByText(/Step 4/)).toBeInTheDocument()
     })
   })
 })

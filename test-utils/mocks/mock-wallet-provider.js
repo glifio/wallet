@@ -23,9 +23,23 @@ const mockSuprovider = {
   sign: jest.fn().mockImplementation(() => 'xxxyyyyzzzz')
 }
 
+const mockRequest = jest.fn().mockImplementation(method => {
+  switch (method) {
+    case 'ChainHead': {
+      return { Height: '1000' }
+    }
+    default: {
+      return
+    }
+  }
+})
+
 class MockWalletProvider {
   constructor(subprovider = mockSuprovider) {
     this.wallet = subprovider
+    this.jsonRpcEngine = {
+      request: mockRequest
+    }
   }
 
   getBalance = mockGetBalance

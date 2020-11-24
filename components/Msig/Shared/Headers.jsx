@@ -148,6 +148,10 @@ export const RemoveSignerHeaderText = ({ step }) => {
   switch (step) {
     case 2:
       text =
+        'Please select the Filecoin address you want to remove from your multisig wallet.'
+      break
+    case 3:
+      text =
         'Please review the transaction fee details. If the fee is too high, please come back and try again later.'
       break
     default:
