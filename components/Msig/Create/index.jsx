@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { validateAddressString } from '@glif/filecoin-address'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
+import LotusRPCEngine from '@glif/filecoin-rpc-client'
 
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
@@ -50,9 +51,11 @@ const Create = () => {
   const [value, setValue] = useState(new FilecoinNumber('0', 'fil'))
   const [valueError, setValueError] = useState('')
   const [vest, setVest] = useState(0)
+  const [startEpoch, setStartEpoch] = useState(0)
   const [uncaughtError, setUncaughtError] = useState('')
   const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
   const [mPoolPushing, setMPoolPushing] = useState(false)
+  const [pageChanging, setPageChanging] = useState(false)
   const [gasError, setGasError] = useState('')
   const [gasInfo, setGasInfo] = useState(emptyGasInfo)
   const [frozen, setFrozen] = useState(false)
@@ -60,9 +63,7 @@ const Create = () => {
 
   const close = () => router.back()
 
-  const constructMsg = (nonce = 0, startEpoch = 148888) => {
-    let startEpochForMsg = 0
-    if (vest > 0) startEpochForMsg = startEpoch
+  const constructMsg = (nonce = 0, epoch = startEpoch) => {
     const tx = wasm.createMultisig(
       wallet.address,
       [...signerAddresses],
@@ -70,7 +71,7 @@ const Create = () => {
       1,
       nonce,
       vest.toString(),
-      startEpochForMsg.toString()
+      epoch.toString()
     )
 
     const message = new Message({
@@ -128,13 +129,25 @@ const Create = () => {
     } else if (step === 2 && !valueError) {
       setStep(3)
     } else if (step === 3) {
-      setStep(4)
-    } else if (step === 4) {
+      if (vest > 0) {
+        const lCli = new LotusRPCEngine({
+          apiAddress: process.env.LOTUS_NODE_JSONRPC
+        })
+        const { Height } = await lCli.request('ChainHead')
+        setStartEpoch(Height)
+        setStep(4)
+      } else {
+        setStep(5)
+      }
+    } else if (step === 4 && vest > 0) {
+      setStep(5)
+    } else if (step === 5) {
       setAttemptingTx(true)
       try {
         const msg = await sendMsg()
         setAttemptingTx(false)
         if (msg) {
+          setPageChanging(true)
           dispatch(confirmMessage(toLowerCaseMsgFields(msg)))
           const params = new URLSearchParams(router.query)
           router.push(`/vault/create/confirm?${params.toString()}`)
@@ -175,12 +188,14 @@ const Create = () => {
     if (frozen) return true
     if (uncaughtError) return true
     if (attemptingTx) return true
+    if (mPoolPushing) return true
+    if (pageChanging) return true
     if (step === 1 && !signerAddresses[0]) return true
     if (step === 1 && signerAddresses.length < 1) return true
     if (step === 2 && !isValidAmount(value, wallet.balance, valueError))
       return true
     if (step === 3 && gasError) return true
-    if (step > 4) return true
+    if (step > 5) return true
   }
 
   const onSignerAddressChange = (val, idx) => {
@@ -252,8 +267,8 @@ const Create = () => {
               <ConfirmationCard
                 loading={fetchingTxDetails || mPoolPushing}
                 walletType={LEDGER}
-                currentStep={4}
-                totalSteps={4}
+                currentStep={5}
+                totalSteps={5}
                 msig
               />
             )}
@@ -271,7 +286,7 @@ const Create = () => {
                   <StepHeader
                     title='Create Multisig Wallet'
                     currentStep={step}
-                    totalSteps={4}
+                    totalSteps={5}
                     glyphAcronym='Cr'
                   />
                   <CreateMultisigHeaderText step={step} />
@@ -345,7 +360,7 @@ const Create = () => {
                   })}
                   {step === 1 && (
                     <Button
-                      title='Add Signer'
+                      title='Add Another Signer'
                       variant='secondary'
                       width='100%'
                       mt={3}
@@ -387,7 +402,19 @@ const Create = () => {
                     />
                   </Box>
                 )}
-                {step > 3 && (
+                {step > 3 && vest > 0 && (
+                  <Box width='100%' p={3} border={0} bg='background.screen'>
+                    <Input.Number
+                      name='epochs'
+                      label='Start epoch'
+                      value={startEpoch > 0 ? startEpoch.toString() : ''}
+                      placeholder={startEpoch.toString()}
+                      onChange={e => setStartEpoch(e.target.value)}
+                      disabled={step > 4}
+                    />
+                  </Box>
+                )}
+                {step > 4 && (
                   <Box
                     display='flex'
                     flexDirection='row'
@@ -434,6 +461,9 @@ const Create = () => {
                 resetLedgerState()
                 if (step === 1) {
                   close()
+                }
+                if (step === 5 && vest === 0) {
+                  setStep(3)
                 } else {
                   setStep(step - 1)
                 }

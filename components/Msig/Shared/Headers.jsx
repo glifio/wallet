@@ -148,6 +148,10 @@ export const RemoveSignerHeaderText = ({ step }) => {
   switch (step) {
     case 2:
       text =
+        'Please select the Filecoin address you want to remove from your multisig wallet.'
+      break
+    case 3:
+      text =
         'Please review the transaction fee details. If the fee is too high, please come back and try again later.'
       break
     default:
@@ -216,9 +220,12 @@ export const CreateMultisigHeaderText = ({ step }) => {
       text = 'Next, please choose how much FIL to send to the multisig.'
       break
     case 3:
-      text = 'How long should these funds vest over?'
+      text = 'Next, please choose a vesting duration (in # of blocks).'
       break
     case 4:
+      text = 'Next, please choose when the vesting should start (block #).'
+      break
+    case 5:
       text = 'Please review the transaction details.'
       break
     default:
