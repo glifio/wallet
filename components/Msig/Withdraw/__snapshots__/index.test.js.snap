@@ -537,29 +537,6 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
 }
 
 .c54 {
-  cursor: pointer;
-  border: 1px solid #262626;
-  background-color: transparent;
-  border-color: #262626;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c54:hover {
-  opacity: 0.8;
-}
-
-.c55 {
   cursor: not-allowed;
   border: 1px solid #C4C4C4;
   background-color: #C4C4C4;
@@ -577,7 +554,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   border-radius: 4px;
 }
 
-.c55:hover {
+.c54:hover {
   opacity: 1;
 }
 
@@ -1411,6 +1388,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
         >
           <button
             class="c54"
+            disabled=""
             font-size="3"
             height="6"
             type="button"
@@ -1418,7 +1396,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
             Back
           </button>
           <button
-            class="c55"
+            class="c54"
             disabled=""
             font-size="3"
             height="6"
@@ -1970,29 +1948,6 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
 }
 
 .c54 {
-  cursor: pointer;
-  border: 1px solid #262626;
-  background-color: transparent;
-  border-color: #262626;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c54:hover {
-  opacity: 0.8;
-}
-
-.c55 {
   cursor: not-allowed;
   border: 1px solid #C4C4C4;
   background-color: #C4C4C4;
@@ -2010,7 +1965,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   border-radius: 4px;
 }
 
-.c55:hover {
+.c54:hover {
   opacity: 1;
 }
 
@@ -2844,6 +2799,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
         >
           <button
             class="c54"
+            disabled=""
             font-size="3"
             height="6"
             type="button"
@@ -2851,7 +2807,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
             Back
           </button>
           <button
-            class="c55"
+            class="c54"
             disabled=""
             font-size="3"
             height="6"

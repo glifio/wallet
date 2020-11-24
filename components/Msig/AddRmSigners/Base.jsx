@@ -172,6 +172,14 @@ const ManipulateSignersHOC = method => {
       if (step > 3) return true
     }
 
+    const isBackBtnDisabled = () => {
+      if (frozen) return true
+      if (attemptingTx) return true
+      if (fetchingTxDetails) return true
+      if (mPoolPushing) return true
+      return false
+    }
+
     return (
       <Box display='flex' flexDirection='column' width='100%'>
         <ButtonClose
@@ -326,7 +334,7 @@ const ManipulateSignersHOC = method => {
                     setStep(step - 1)
                   }
                 }}
-                disabled={attemptingTx}
+                disabled={isBackBtnDisabled()}
               />
               <Button
                 variant='primary'
