@@ -87,7 +87,7 @@ exports[`WalletView it renders correctly 1`] = `
   align-items: center;
 }
 
-.c17 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -96,7 +96,7 @@ exports[`WalletView it renders correctly 1`] = `
   display: flex;
 }
 
-.c19 {
+.c20 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -118,7 +118,7 @@ exports[`WalletView it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c20 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -134,13 +134,13 @@ exports[`WalletView it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c24 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   width: 8px;
 }
 
-.c26 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
   padding-top: 24px;
@@ -148,7 +148,7 @@ exports[`WalletView it renders correctly 1`] = `
   overflow: hidden;
 }
 
-.c29 {
+.c30 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -161,7 +161,7 @@ exports[`WalletView it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c32 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -169,7 +169,7 @@ exports[`WalletView it renders correctly 1`] = `
   margin-right: 8px;
 }
 
-.c39 {
+.c40 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -184,14 +184,14 @@ exports[`WalletView it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c40 {
+.c41 {
   min-width: 0;
   box-sizing: border-box;
   border: none;
   width: 100%;
 }
 
-.c41 {
+.c42 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -208,7 +208,7 @@ exports[`WalletView it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c42 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -231,7 +231,7 @@ exports[`WalletView it renders correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c18 {
+.c19 {
   cursor: pointer;
   border: 1px solid #E0D7FE;
   background-color: transparent;
@@ -253,11 +253,11 @@ exports[`WalletView it renders correctly 1`] = `
   border-radius: 4px;
 }
 
-.c18:hover {
+.c19:hover {
   opacity: 0.8;
 }
 
-.c30 {
+.c31 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -280,11 +280,11 @@ exports[`WalletView it renders correctly 1`] = `
   border-radius: 4px;
 }
 
-.c30:hover {
+.c31:hover {
   opacity: 0.8;
 }
 
-.c44 {
+.c45 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -303,16 +303,16 @@ exports[`WalletView it renders correctly 1`] = `
   border-radius: 4px;
 }
 
-.c44:hover {
+.c45:hover {
   opacity: 0.8;
 }
 
-.c13 {
+.c14 {
   width: 24;
   height: 24;
 }
 
-.c50 {
+.c51 {
   width: 34;
   height: 34;
 }
@@ -322,11 +322,10 @@ exports[`WalletView it renders correctly 1`] = `
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
-  overflow: hidden;
   margin: 0;
 }
 
-.c27 {
+.c28 {
   color: #262626;
   font-size: 3rem;
   font-weight: 700;
@@ -350,7 +349,7 @@ exports[`WalletView it renders correctly 1`] = `
   margin: 0;
 }
 
-.c34 {
+.c35 {
   color: #000;
   font-size: 1.125rem;
   font-weight: 400;
@@ -359,7 +358,7 @@ exports[`WalletView it renders correctly 1`] = `
   margin: 0;
 }
 
-.c37 {
+.c38 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -369,7 +368,7 @@ exports[`WalletView it renders correctly 1`] = `
   margin: 0;
 }
 
-.c43 {
+.c44 {
   color: #5E26FF;
   font-size: 1.125rem;
   font-weight: 400;
@@ -377,7 +376,7 @@ exports[`WalletView it renders correctly 1`] = `
   font-family: RT-Alias-Grotesk;
 }
 
-.c54 {
+.c55 {
   color: #262626;
   font-size: 1.25rem;
   font-weight: 400;
@@ -386,7 +385,7 @@ exports[`WalletView it renders correctly 1`] = `
   margin: 0;
 }
 
-.c56 {
+.c57 {
   color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
@@ -395,7 +394,7 @@ exports[`WalletView it renders correctly 1`] = `
   margin: 0;
 }
 
-.c60 {
+.c61 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -404,7 +403,7 @@ exports[`WalletView it renders correctly 1`] = `
   margin: 0;
 }
 
-.c63 {
+.c64 {
   color: #5E26FF;
   font-size: 1.125rem;
   font-weight: 400;
@@ -414,7 +413,7 @@ exports[`WalletView it renders correctly 1`] = `
   width: 100%;
 }
 
-.c15 {
+.c16 {
   color: #E0D7FE;
   font-size: 1.125rem;
   font-weight: 400;
@@ -427,7 +426,7 @@ exports[`WalletView it renders correctly 1`] = `
   margin-left: 4px;
 }
 
-.c21 {
+.c22 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -435,7 +434,7 @@ exports[`WalletView it renders correctly 1`] = `
   margin: 0;
 }
 
-.c22 {
+.c23 {
   color: #000;
   font-size: 1.125rem;
   font-weight: 400;
@@ -444,7 +443,7 @@ exports[`WalletView it renders correctly 1`] = `
   margin: 0;
 }
 
-.c25 {
+.c26 {
   color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
@@ -453,7 +452,7 @@ exports[`WalletView it renders correctly 1`] = `
   margin: 0;
 }
 
-.c53 {
+.c54 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -464,7 +463,11 @@ exports[`WalletView it renders correctly 1`] = `
   margin-bottom: 0;
 }
 
-.c12 {
+.c11 {
+  white-space: nowrap;
+}
+
+.c13 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -498,42 +501,42 @@ exports[`WalletView it renders correctly 1`] = `
   outline: none;
 }
 
-.c12:hover {
+.c13:hover {
   opacity: 0.8;
 }
 
-.c14 {
+.c15 {
   -webkit-transition: 0.24s ease-in-out;
   transition: 0.24s ease-in-out;
 }
 
-.c11:hover .c14 {
+.c12:hover .c15 {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
 
-.c16 {
+.c17 {
   -webkit-transition: 0.18s ease-in;
   transition: 0.18s ease-in;
   opacity: 0;
 }
 
-.c11:hover .c16 {
+.c12:hover .c17 {
   opacity: 1;
 }
 
-.c23:hover {
+.c24:hover {
   cursor: pointer;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c28 {
+.c29 {
   word-wrap: break-word;
 }
 
-.c45 {
+.c46 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -567,18 +570,18 @@ exports[`WalletView it renders correctly 1`] = `
   transition: 0.18s ease-in-out;
 }
 
-.c45:hover {
+.c46:hover {
   cursor: pointer;
   background-color: #EFF3FD;
 }
 
-.c46 {
+.c47 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c48 {
+.c49 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -595,7 +598,7 @@ exports[`WalletView it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c51 {
+.c52 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -606,7 +609,7 @@ exports[`WalletView it renders correctly 1`] = `
   display: flex;
 }
 
-.c57 {
+.c58 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -627,7 +630,7 @@ exports[`WalletView it renders correctly 1`] = `
   flex-grow: 999;
 }
 
-.c58 {
+.c59 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -645,7 +648,7 @@ exports[`WalletView it renders correctly 1`] = `
   align-items: flex-end;
 }
 
-.c61 {
+.c62 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -663,7 +666,7 @@ exports[`WalletView it renders correctly 1`] = `
   align-items: flex-start;
 }
 
-.c47 {
+.c48 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -673,16 +676,16 @@ exports[`WalletView it renders correctly 1`] = `
   flex-direction: row;
 }
 
-.c49 {
+.c50 {
   position: relative;
 }
 
-.c52 {
+.c53 {
   overflow: hidden;
   width: 160px;
 }
 
-.c55 {
+.c56 {
   margin-left: 24px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -698,14 +701,14 @@ exports[`WalletView it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c59 {
+.c60 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c62 {
+.c63 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -740,12 +743,12 @@ exports[`WalletView it renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c62:hover {
+.c63:hover {
   cursor: pointer;
   background-color: #EFF3FD;
 }
 
-.c36 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 16px;
@@ -774,7 +777,7 @@ exports[`WalletView it renders correctly 1`] = `
   transition: 0.24s ease-in-out;
 }
 
-.c33 {
+.c34 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -799,7 +802,7 @@ exports[`WalletView it renders correctly 1`] = `
   color: #000;
 }
 
-.c33:hover ~ .c35 {
+.c34:hover ~ .c36 {
   display: block;
 }
 
@@ -811,7 +814,7 @@ exports[`WalletView it renders correctly 1`] = `
   margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
-.c38 {
+.c39 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -845,7 +848,7 @@ exports[`WalletView it renders correctly 1`] = `
   min-height: 100vh;
 }
 
-.c31 {
+.c32 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -879,22 +882,22 @@ exports[`WalletView it renders correctly 1`] = `
   background-color: #E0D7FE00;
 }
 
-.c31:hover {
+.c32:hover {
   opacity: 0.8;
 }
 
-.c31:hover {
+.c32:hover {
   background-color: #E0D7FE;
 }
 
 @media screen and (min-width:40em) {
-  .c51 {
+  .c52 {
     margin-left: 24px;
   }
 }
 
 @media screen and (min-width:52em) {
-  .c51 {
+  .c52 {
     margin-left: 32px;
   }
 }
@@ -957,22 +960,21 @@ exports[`WalletView it renders correctly 1`] = `
           display="flex"
         >
           <h2
-            class="c10"
+            class="c10 c11"
             font-family="RT-Alias-Grotesk"
             font-size="3"
             font-weight="1"
-            overflow="hidden"
           >
             t1z225 ... 6z6wgi
           </h2>
           <button
-            class="c11 c12"
+            class="c12 c13"
             display="flex"
             font-size="3"
             height="6"
           >
             <svg
-              class="c13 c14"
+              class="c14 c15"
               fill="none"
               height="24"
               viewBox="0 0 24 24"
@@ -995,7 +997,7 @@ exports[`WalletView it renders correctly 1`] = `
               />
             </svg>
             <h4
-              class="c15 c16"
+              class="c16 c17"
               color="core.secondary"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1007,11 +1009,11 @@ exports[`WalletView it renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="c17"
+        class="c18"
         display="flex"
       >
         <button
-          class="c18"
+          class="c19"
           font-size="3"
           height="max-content"
           type="button"
@@ -1021,16 +1023,16 @@ exports[`WalletView it renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="c19"
+      class="c20"
       display="flex"
       width="300px"
     >
       <div
-        class="c20"
+        class="c21"
         display="flex"
       >
         <h4
-          class="c21"
+          class="c22"
           font-family="RT-Alias-Grotesk"
           font-size="2"
           font-weight="400"
@@ -1038,11 +1040,11 @@ exports[`WalletView it renders correctly 1`] = `
           Balance
         </h4>
         <div
-          class="c20"
+          class="c21"
           display="flex"
         >
           <h4
-            class="c22 c23"
+            class="c23 c24"
             color="core.black"
             font-family="RT-Alias-Grotesk"
             font-size="2"
@@ -1051,11 +1053,11 @@ exports[`WalletView it renders correctly 1`] = `
             Approx.
           </h4>
           <div
-            class="c24"
+            class="c25"
             width="2"
           />
           <h4
-            class="c25 c23"
+            class="c26 c24"
             color="core.darkgray"
             font-family="RT-Alias-Grotesk"
             font-size="2"
@@ -1066,11 +1068,11 @@ exports[`WalletView it renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="c26"
+        class="c27"
         overflow="hidden"
       >
         <h2
-          class="c27 c28"
+          class="c28 c29"
           color="card.balance.color"
           font-family="RT-Alias-Grotesk"
           font-size="6"
@@ -1081,11 +1083,11 @@ exports[`WalletView it renders correctly 1`] = `
         </h2>
       </div>
       <div
-        class="c29"
+        class="c30"
         display="flex"
       >
         <button
-          class="c30"
+          class="c31"
           font-size="3"
           height="6"
           type="button"
@@ -1095,7 +1097,7 @@ exports[`WalletView it renders correctly 1`] = `
       </div>
     </div>
     <button
-      class="c31"
+      class="c32"
       display="flex"
       font-size="3"
       height="6"
@@ -1103,15 +1105,15 @@ exports[`WalletView it renders correctly 1`] = `
     >
       Logout
       <div
-        class="c32"
+        class="c33"
       >
         <a
           aria-label="Tooltip"
-          class="c33"
+          class="c34"
           color="core.black"
         >
           <p
-            class="c34"
+            class="c35"
             color="core.black"
             font-family="RT-Alias-Grotesk"
             font-size="2"
@@ -1121,10 +1123,10 @@ exports[`WalletView it renders correctly 1`] = `
           </p>
         </a>
         <div
-          class="c35 c36"
+          class="c36 c37"
         >
           <p
-            class="c37"
+            class="c38"
             display="block"
             font-family="RT-Alias-Grotesk"
             font-size="2"
@@ -1137,27 +1139,27 @@ exports[`WalletView it renders correctly 1`] = `
     </button>
   </div>
   <div
-    class="c38"
+    class="c39"
   >
     <div
-      class="c39"
+      class="c40"
       display="flex"
       width="100%"
     >
       <div
-        class="c40"
+        class="c41"
         width="100%"
       >
         <div
-          class="c41"
+          class="c42"
           display="flex"
         >
           <div
-            class="c42"
+            class="c43"
             display="flex"
           >
             <p
-              class="c43"
+              class="c44"
               color="core.primary"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1167,7 +1169,7 @@ exports[`WalletView it renders correctly 1`] = `
             </p>
           </div>
           <button
-            class="c44"
+            class="c45"
             font-size="3"
             height="6"
             type="button"
@@ -1176,24 +1178,24 @@ exports[`WalletView it renders correctly 1`] = `
           </button>
         </div>
         <div
-          class="c45"
+          class="c46"
         >
           <ul
-            class="c46"
+            class="c47"
           >
             <li
-              class="c47"
+              class="c48"
               display="flex"
             >
               <ul
-                class="c48"
+                class="c49"
                 display="flex"
               >
                 <li
-                  class="c49"
+                  class="c50"
                 >
                   <svg
-                    class="c50"
+                    class="c51"
                     fill="none"
                     height="34"
                     viewBox="0 0 34 34"
@@ -1225,16 +1227,16 @@ exports[`WalletView it renders correctly 1`] = `
                 </li>
               </ul>
               <ul
-                class="c51"
+                class="c52"
                 display="flex"
               >
                 <li
-                  class="c52"
+                  class="c53"
                   overflow="hidden"
                   width="9"
                 >
                   <h4
-                    class="c53"
+                    class="c54"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1243,7 +1245,7 @@ exports[`WalletView it renders correctly 1`] = `
                     From
                   </h4>
                   <p
-                    class="c54"
+                    class="c55"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="3"
@@ -1253,12 +1255,12 @@ exports[`WalletView it renders correctly 1`] = `
                   </p>
                 </li>
                 <li
-                  class="c55"
+                  class="c56"
                   display="flex"
                   width="9"
                 >
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1267,7 +1269,7 @@ exports[`WalletView it renders correctly 1`] = `
                     2:30:30
                   </p>
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1280,22 +1282,22 @@ exports[`WalletView it renders correctly 1`] = `
             </li>
           </ul>
           <ul
-            class="c57"
+            class="c58"
             display="flex"
           >
             <li
               class=""
             >
               <ul
-                class="c58"
+                class="c59"
                 display="flex"
               >
                 <li
-                  class="c59"
+                  class="c60"
                   display="flex"
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1310,14 +1312,14 @@ exports[`WalletView it renders correctly 1`] = `
               class=""
             >
               <ul
-                class="c61"
+                class="c62"
                 display="flex"
               >
                 <li
                   class=""
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1331,24 +1333,24 @@ exports[`WalletView it renders correctly 1`] = `
           </ul>
         </div>
         <div
-          class="c45"
+          class="c46"
         >
           <ul
-            class="c46"
+            class="c47"
           >
             <li
-              class="c47"
+              class="c48"
               display="flex"
             >
               <ul
-                class="c48"
+                class="c49"
                 display="flex"
               >
                 <li
-                  class="c49"
+                  class="c50"
                 >
                   <svg
-                    class="c50"
+                    class="c51"
                     fill="none"
                     height="34"
                     viewBox="0 0 34 34"
@@ -1380,16 +1382,16 @@ exports[`WalletView it renders correctly 1`] = `
                 </li>
               </ul>
               <ul
-                class="c51"
+                class="c52"
                 display="flex"
               >
                 <li
-                  class="c52"
+                  class="c53"
                   overflow="hidden"
                   width="9"
                 >
                   <h4
-                    class="c53"
+                    class="c54"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1398,7 +1400,7 @@ exports[`WalletView it renders correctly 1`] = `
                     From
                   </h4>
                   <p
-                    class="c54"
+                    class="c55"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="3"
@@ -1408,12 +1410,12 @@ exports[`WalletView it renders correctly 1`] = `
                   </p>
                 </li>
                 <li
-                  class="c55"
+                  class="c56"
                   display="flex"
                   width="9"
                 >
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1422,7 +1424,7 @@ exports[`WalletView it renders correctly 1`] = `
                     2:30:30
                   </p>
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1435,22 +1437,22 @@ exports[`WalletView it renders correctly 1`] = `
             </li>
           </ul>
           <ul
-            class="c57"
+            class="c58"
             display="flex"
           >
             <li
               class=""
             >
               <ul
-                class="c58"
+                class="c59"
                 display="flex"
               >
                 <li
-                  class="c59"
+                  class="c60"
                   display="flex"
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1465,14 +1467,14 @@ exports[`WalletView it renders correctly 1`] = `
               class=""
             >
               <ul
-                class="c61"
+                class="c62"
                 display="flex"
               >
                 <li
                   class=""
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1486,24 +1488,24 @@ exports[`WalletView it renders correctly 1`] = `
           </ul>
         </div>
         <div
-          class="c45"
+          class="c46"
         >
           <ul
-            class="c46"
+            class="c47"
           >
             <li
-              class="c47"
+              class="c48"
               display="flex"
             >
               <ul
-                class="c48"
+                class="c49"
                 display="flex"
               >
                 <li
-                  class="c49"
+                  class="c50"
                 >
                   <svg
-                    class="c50"
+                    class="c51"
                     fill="none"
                     height="34"
                     viewBox="0 0 34 34"
@@ -1535,16 +1537,16 @@ exports[`WalletView it renders correctly 1`] = `
                 </li>
               </ul>
               <ul
-                class="c51"
+                class="c52"
                 display="flex"
               >
                 <li
-                  class="c52"
+                  class="c53"
                   overflow="hidden"
                   width="9"
                 >
                   <h4
-                    class="c53"
+                    class="c54"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1553,7 +1555,7 @@ exports[`WalletView it renders correctly 1`] = `
                     From
                   </h4>
                   <p
-                    class="c54"
+                    class="c55"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="3"
@@ -1563,12 +1565,12 @@ exports[`WalletView it renders correctly 1`] = `
                   </p>
                 </li>
                 <li
-                  class="c55"
+                  class="c56"
                   display="flex"
                   width="9"
                 >
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1577,7 +1579,7 @@ exports[`WalletView it renders correctly 1`] = `
                     2:30:30
                   </p>
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1590,22 +1592,22 @@ exports[`WalletView it renders correctly 1`] = `
             </li>
           </ul>
           <ul
-            class="c57"
+            class="c58"
             display="flex"
           >
             <li
               class=""
             >
               <ul
-                class="c58"
+                class="c59"
                 display="flex"
               >
                 <li
-                  class="c59"
+                  class="c60"
                   display="flex"
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1620,14 +1622,14 @@ exports[`WalletView it renders correctly 1`] = `
               class=""
             >
               <ul
-                class="c61"
+                class="c62"
                 display="flex"
               >
                 <li
                   class=""
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1641,24 +1643,24 @@ exports[`WalletView it renders correctly 1`] = `
           </ul>
         </div>
         <div
-          class="c45"
+          class="c46"
         >
           <ul
-            class="c46"
+            class="c47"
           >
             <li
-              class="c47"
+              class="c48"
               display="flex"
             >
               <ul
-                class="c48"
+                class="c49"
                 display="flex"
               >
                 <li
-                  class="c49"
+                  class="c50"
                 >
                   <svg
-                    class="c50"
+                    class="c51"
                     fill="none"
                     height="34"
                     viewBox="0 0 34 34"
@@ -1690,16 +1692,16 @@ exports[`WalletView it renders correctly 1`] = `
                 </li>
               </ul>
               <ul
-                class="c51"
+                class="c52"
                 display="flex"
               >
                 <li
-                  class="c52"
+                  class="c53"
                   overflow="hidden"
                   width="9"
                 >
                   <h4
-                    class="c53"
+                    class="c54"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1708,7 +1710,7 @@ exports[`WalletView it renders correctly 1`] = `
                     From
                   </h4>
                   <p
-                    class="c54"
+                    class="c55"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="3"
@@ -1718,12 +1720,12 @@ exports[`WalletView it renders correctly 1`] = `
                   </p>
                 </li>
                 <li
-                  class="c55"
+                  class="c56"
                   display="flex"
                   width="9"
                 >
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1732,7 +1734,7 @@ exports[`WalletView it renders correctly 1`] = `
                     2:30:30
                   </p>
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1745,22 +1747,22 @@ exports[`WalletView it renders correctly 1`] = `
             </li>
           </ul>
           <ul
-            class="c57"
+            class="c58"
             display="flex"
           >
             <li
               class=""
             >
               <ul
-                class="c58"
+                class="c59"
                 display="flex"
               >
                 <li
-                  class="c59"
+                  class="c60"
                   display="flex"
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1775,14 +1777,14 @@ exports[`WalletView it renders correctly 1`] = `
               class=""
             >
               <ul
-                class="c61"
+                class="c62"
                 display="flex"
               >
                 <li
                   class=""
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1796,24 +1798,24 @@ exports[`WalletView it renders correctly 1`] = `
           </ul>
         </div>
         <div
-          class="c45"
+          class="c46"
         >
           <ul
-            class="c46"
+            class="c47"
           >
             <li
-              class="c47"
+              class="c48"
               display="flex"
             >
               <ul
-                class="c48"
+                class="c49"
                 display="flex"
               >
                 <li
-                  class="c49"
+                  class="c50"
                 >
                   <svg
-                    class="c50"
+                    class="c51"
                     fill="none"
                     height="34"
                     viewBox="0 0 34 34"
@@ -1845,16 +1847,16 @@ exports[`WalletView it renders correctly 1`] = `
                 </li>
               </ul>
               <ul
-                class="c51"
+                class="c52"
                 display="flex"
               >
                 <li
-                  class="c52"
+                  class="c53"
                   overflow="hidden"
                   width="9"
                 >
                   <h4
-                    class="c53"
+                    class="c54"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1863,7 +1865,7 @@ exports[`WalletView it renders correctly 1`] = `
                     From
                   </h4>
                   <p
-                    class="c54"
+                    class="c55"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="3"
@@ -1873,12 +1875,12 @@ exports[`WalletView it renders correctly 1`] = `
                   </p>
                 </li>
                 <li
-                  class="c55"
+                  class="c56"
                   display="flex"
                   width="9"
                 >
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1887,7 +1889,7 @@ exports[`WalletView it renders correctly 1`] = `
                     2:30:30
                   </p>
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1900,22 +1902,22 @@ exports[`WalletView it renders correctly 1`] = `
             </li>
           </ul>
           <ul
-            class="c57"
+            class="c58"
             display="flex"
           >
             <li
               class=""
             >
               <ul
-                class="c58"
+                class="c59"
                 display="flex"
               >
                 <li
-                  class="c59"
+                  class="c60"
                   display="flex"
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1930,14 +1932,14 @@ exports[`WalletView it renders correctly 1`] = `
               class=""
             >
               <ul
-                class="c61"
+                class="c62"
                 display="flex"
               >
                 <li
                   class=""
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1951,24 +1953,24 @@ exports[`WalletView it renders correctly 1`] = `
           </ul>
         </div>
         <div
-          class="c45"
+          class="c46"
         >
           <ul
-            class="c46"
+            class="c47"
           >
             <li
-              class="c47"
+              class="c48"
               display="flex"
             >
               <ul
-                class="c48"
+                class="c49"
                 display="flex"
               >
                 <li
-                  class="c49"
+                  class="c50"
                 >
                   <svg
-                    class="c50"
+                    class="c51"
                     fill="none"
                     height="34"
                     viewBox="0 0 34 34"
@@ -2000,16 +2002,16 @@ exports[`WalletView it renders correctly 1`] = `
                 </li>
               </ul>
               <ul
-                class="c51"
+                class="c52"
                 display="flex"
               >
                 <li
-                  class="c52"
+                  class="c53"
                   overflow="hidden"
                   width="9"
                 >
                   <h4
-                    class="c53"
+                    class="c54"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2018,7 +2020,7 @@ exports[`WalletView it renders correctly 1`] = `
                     From
                   </h4>
                   <p
-                    class="c54"
+                    class="c55"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="3"
@@ -2028,12 +2030,12 @@ exports[`WalletView it renders correctly 1`] = `
                   </p>
                 </li>
                 <li
-                  class="c55"
+                  class="c56"
                   display="flex"
                   width="9"
                 >
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2042,7 +2044,7 @@ exports[`WalletView it renders correctly 1`] = `
                     2:30:30
                   </p>
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2055,22 +2057,22 @@ exports[`WalletView it renders correctly 1`] = `
             </li>
           </ul>
           <ul
-            class="c57"
+            class="c58"
             display="flex"
           >
             <li
               class=""
             >
               <ul
-                class="c58"
+                class="c59"
                 display="flex"
               >
                 <li
-                  class="c59"
+                  class="c60"
                   display="flex"
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2085,14 +2087,14 @@ exports[`WalletView it renders correctly 1`] = `
               class=""
             >
               <ul
-                class="c61"
+                class="c62"
                 display="flex"
               >
                 <li
                   class=""
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2106,24 +2108,24 @@ exports[`WalletView it renders correctly 1`] = `
           </ul>
         </div>
         <div
-          class="c45"
+          class="c46"
         >
           <ul
-            class="c46"
+            class="c47"
           >
             <li
-              class="c47"
+              class="c48"
               display="flex"
             >
               <ul
-                class="c48"
+                class="c49"
                 display="flex"
               >
                 <li
-                  class="c49"
+                  class="c50"
                 >
                   <svg
-                    class="c50"
+                    class="c51"
                     fill="none"
                     height="34"
                     viewBox="0 0 34 34"
@@ -2155,16 +2157,16 @@ exports[`WalletView it renders correctly 1`] = `
                 </li>
               </ul>
               <ul
-                class="c51"
+                class="c52"
                 display="flex"
               >
                 <li
-                  class="c52"
+                  class="c53"
                   overflow="hidden"
                   width="9"
                 >
                   <h4
-                    class="c53"
+                    class="c54"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2173,7 +2175,7 @@ exports[`WalletView it renders correctly 1`] = `
                     From
                   </h4>
                   <p
-                    class="c54"
+                    class="c55"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="3"
@@ -2183,12 +2185,12 @@ exports[`WalletView it renders correctly 1`] = `
                   </p>
                 </li>
                 <li
-                  class="c55"
+                  class="c56"
                   display="flex"
                   width="9"
                 >
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2197,7 +2199,7 @@ exports[`WalletView it renders correctly 1`] = `
                     2:30:30
                   </p>
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2210,22 +2212,22 @@ exports[`WalletView it renders correctly 1`] = `
             </li>
           </ul>
           <ul
-            class="c57"
+            class="c58"
             display="flex"
           >
             <li
               class=""
             >
               <ul
-                class="c58"
+                class="c59"
                 display="flex"
               >
                 <li
-                  class="c59"
+                  class="c60"
                   display="flex"
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2240,14 +2242,14 @@ exports[`WalletView it renders correctly 1`] = `
               class=""
             >
               <ul
-                class="c61"
+                class="c62"
                 display="flex"
               >
                 <li
                   class=""
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2261,24 +2263,24 @@ exports[`WalletView it renders correctly 1`] = `
           </ul>
         </div>
         <div
-          class="c45"
+          class="c46"
         >
           <ul
-            class="c46"
+            class="c47"
           >
             <li
-              class="c47"
+              class="c48"
               display="flex"
             >
               <ul
-                class="c48"
+                class="c49"
                 display="flex"
               >
                 <li
-                  class="c49"
+                  class="c50"
                 >
                   <svg
-                    class="c50"
+                    class="c51"
                     fill="none"
                     height="34"
                     viewBox="0 0 34 34"
@@ -2310,16 +2312,16 @@ exports[`WalletView it renders correctly 1`] = `
                 </li>
               </ul>
               <ul
-                class="c51"
+                class="c52"
                 display="flex"
               >
                 <li
-                  class="c52"
+                  class="c53"
                   overflow="hidden"
                   width="9"
                 >
                   <h4
-                    class="c53"
+                    class="c54"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2328,7 +2330,7 @@ exports[`WalletView it renders correctly 1`] = `
                     From
                   </h4>
                   <p
-                    class="c54"
+                    class="c55"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="3"
@@ -2338,12 +2340,12 @@ exports[`WalletView it renders correctly 1`] = `
                   </p>
                 </li>
                 <li
-                  class="c55"
+                  class="c56"
                   display="flex"
                   width="9"
                 >
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2352,7 +2354,7 @@ exports[`WalletView it renders correctly 1`] = `
                     2:30:30
                   </p>
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2365,22 +2367,22 @@ exports[`WalletView it renders correctly 1`] = `
             </li>
           </ul>
           <ul
-            class="c57"
+            class="c58"
             display="flex"
           >
             <li
               class=""
             >
               <ul
-                class="c58"
+                class="c59"
                 display="flex"
               >
                 <li
-                  class="c59"
+                  class="c60"
                   display="flex"
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2395,14 +2397,14 @@ exports[`WalletView it renders correctly 1`] = `
               class=""
             >
               <ul
-                class="c61"
+                class="c62"
                 display="flex"
               >
                 <li
                   class=""
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2416,24 +2418,24 @@ exports[`WalletView it renders correctly 1`] = `
           </ul>
         </div>
         <div
-          class="c45"
+          class="c46"
         >
           <ul
-            class="c46"
+            class="c47"
           >
             <li
-              class="c47"
+              class="c48"
               display="flex"
             >
               <ul
-                class="c48"
+                class="c49"
                 display="flex"
               >
                 <li
-                  class="c49"
+                  class="c50"
                 >
                   <svg
-                    class="c50"
+                    class="c51"
                     fill="none"
                     height="34"
                     viewBox="0 0 34 34"
@@ -2465,16 +2467,16 @@ exports[`WalletView it renders correctly 1`] = `
                 </li>
               </ul>
               <ul
-                class="c51"
+                class="c52"
                 display="flex"
               >
                 <li
-                  class="c52"
+                  class="c53"
                   overflow="hidden"
                   width="9"
                 >
                   <h4
-                    class="c53"
+                    class="c54"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2483,7 +2485,7 @@ exports[`WalletView it renders correctly 1`] = `
                     From
                   </h4>
                   <p
-                    class="c54"
+                    class="c55"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="3"
@@ -2493,12 +2495,12 @@ exports[`WalletView it renders correctly 1`] = `
                   </p>
                 </li>
                 <li
-                  class="c55"
+                  class="c56"
                   display="flex"
                   width="9"
                 >
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2507,7 +2509,7 @@ exports[`WalletView it renders correctly 1`] = `
                     2:30:30
                   </p>
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2520,22 +2522,22 @@ exports[`WalletView it renders correctly 1`] = `
             </li>
           </ul>
           <ul
-            class="c57"
+            class="c58"
             display="flex"
           >
             <li
               class=""
             >
               <ul
-                class="c58"
+                class="c59"
                 display="flex"
               >
                 <li
-                  class="c59"
+                  class="c60"
                   display="flex"
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2550,14 +2552,14 @@ exports[`WalletView it renders correctly 1`] = `
               class=""
             >
               <ul
-                class="c61"
+                class="c62"
                 display="flex"
               >
                 <li
                   class=""
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2571,24 +2573,24 @@ exports[`WalletView it renders correctly 1`] = `
           </ul>
         </div>
         <div
-          class="c45"
+          class="c46"
         >
           <ul
-            class="c46"
+            class="c47"
           >
             <li
-              class="c47"
+              class="c48"
               display="flex"
             >
               <ul
-                class="c48"
+                class="c49"
                 display="flex"
               >
                 <li
-                  class="c49"
+                  class="c50"
                 >
                   <svg
-                    class="c50"
+                    class="c51"
                     fill="none"
                     height="34"
                     viewBox="0 0 34 34"
@@ -2620,16 +2622,16 @@ exports[`WalletView it renders correctly 1`] = `
                 </li>
               </ul>
               <ul
-                class="c51"
+                class="c52"
                 display="flex"
               >
                 <li
-                  class="c52"
+                  class="c53"
                   overflow="hidden"
                   width="9"
                 >
                   <h4
-                    class="c53"
+                    class="c54"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2638,7 +2640,7 @@ exports[`WalletView it renders correctly 1`] = `
                     From
                   </h4>
                   <p
-                    class="c54"
+                    class="c55"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="3"
@@ -2648,12 +2650,12 @@ exports[`WalletView it renders correctly 1`] = `
                   </p>
                 </li>
                 <li
-                  class="c55"
+                  class="c56"
                   display="flex"
                   width="9"
                 >
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2662,7 +2664,7 @@ exports[`WalletView it renders correctly 1`] = `
                     2:30:30
                   </p>
                   <p
-                    class="c56"
+                    class="c57"
                     color="core.darkgray"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2675,22 +2677,22 @@ exports[`WalletView it renders correctly 1`] = `
             </li>
           </ul>
           <ul
-            class="c57"
+            class="c58"
             display="flex"
           >
             <li
               class=""
             >
               <ul
-                class="c58"
+                class="c59"
                 display="flex"
               >
                 <li
-                  class="c59"
+                  class="c60"
                   display="flex"
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2705,14 +2707,14 @@ exports[`WalletView it renders correctly 1`] = `
               class=""
             >
               <ul
-                class="c61"
+                class="c62"
                 display="flex"
               >
                 <li
                   class=""
                 >
                   <p
-                    class="c60"
+                    class="c61"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2726,10 +2728,10 @@ exports[`WalletView it renders correctly 1`] = `
           </ul>
         </div>
         <div
-          class="c62"
+          class="c63"
         >
           <p
-            class="c63"
+            class="c64"
             color="core.primary"
             font-family="RT-Alias-Grotesk"
             font-size="2"

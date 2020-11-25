@@ -87,7 +87,7 @@ exports[`AccountCard renders the card 1`] = `
   align-items: center;
 }
 
-.c15 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -102,7 +102,7 @@ exports[`AccountCard renders the card 1`] = `
   font-size: 1.5rem;
 }
 
-.c16 {
+.c17 {
   cursor: pointer;
   border: 1px solid #E0D7FE;
   background-color: transparent;
@@ -124,11 +124,11 @@ exports[`AccountCard renders the card 1`] = `
   border-radius: 4px;
 }
 
-.c16:hover {
+.c17:hover {
   opacity: 0.8;
 }
 
-.c17 {
+.c18 {
   cursor: pointer;
   border: 1px solid #E0D7FE;
   background-color: transparent;
@@ -151,11 +151,11 @@ exports[`AccountCard renders the card 1`] = `
   border-radius: 4px;
 }
 
-.c17:hover {
+.c18:hover {
   opacity: 0.8;
 }
 
-.c11 {
+.c12 {
   width: 24;
   height: 24;
 }
@@ -165,7 +165,6 @@ exports[`AccountCard renders the card 1`] = `
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
-  overflow: hidden;
   margin: 0;
 }
 
@@ -184,7 +183,7 @@ exports[`AccountCard renders the card 1`] = `
   margin: 0;
 }
 
-.c13 {
+.c14 {
   color: #E0D7FE;
   font-size: 1.125rem;
   font-weight: 400;
@@ -197,7 +196,11 @@ exports[`AccountCard renders the card 1`] = `
   margin-left: 4px;
 }
 
-.c10 {
+.c9 {
+  white-space: nowrap;
+}
+
+.c11 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -231,28 +234,28 @@ exports[`AccountCard renders the card 1`] = `
   outline: none;
 }
 
-.c10:hover {
+.c11:hover {
   opacity: 0.8;
 }
 
-.c12 {
+.c13 {
   -webkit-transition: 0.24s ease-in-out;
   transition: 0.24s ease-in-out;
 }
 
-.c9:hover .c12 {
+.c10:hover .c13 {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
 
-.c14 {
+.c15 {
   -webkit-transition: 0.18s ease-in;
   transition: 0.18s ease-in;
   opacity: 0;
 }
 
-.c9:hover .c14 {
+.c10:hover .c15 {
   opacity: 1;
 }
 
@@ -307,22 +310,21 @@ exports[`AccountCard renders the card 1`] = `
       display="flex"
     >
       <h2
-        class="c8"
+        class="c8 c9"
         font-family="RT-Alias-Grotesk"
         font-size="3"
         font-weight="1"
-        overflow="hidden"
       >
         t01234 ... 456789
       </h2>
       <button
-        class="c9 c10"
+        class="c10 c11"
         display="flex"
         font-size="3"
         height="6"
       >
         <svg
-          class="c11 c12"
+          class="c12 c13"
           fill="none"
           height="24"
           viewBox="0 0 24 24"
@@ -345,7 +347,7 @@ exports[`AccountCard renders the card 1`] = `
           />
         </svg>
         <h4
-          class="c13 c14"
+          class="c14 c15"
           color="core.secondary"
           font-family="RT-Alias-Grotesk"
           font-size="2"
@@ -357,11 +359,11 @@ exports[`AccountCard renders the card 1`] = `
     </div>
   </div>
   <div
-    class="c15"
+    class="c16"
     display="flex"
   >
     <button
-      class="c16"
+      class="c17"
       font-size="3"
       height="max-content"
       type="button"
@@ -369,7 +371,7 @@ exports[`AccountCard renders the card 1`] = `
       Switch
     </button>
     <button
-      class="c17"
+      class="c18"
       font-size="3"
       height="max-content"
       type="button"
@@ -467,7 +469,7 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
   align-items: center;
 }
 
-.c15 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -482,7 +484,7 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
   font-size: 1.5rem;
 }
 
-.c16 {
+.c17 {
   cursor: pointer;
   border: 1px solid #E0D7FE;
   background-color: transparent;
@@ -504,11 +506,11 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
   border-radius: 4px;
 }
 
-.c16:hover {
+.c17:hover {
   opacity: 0.8;
 }
 
-.c11 {
+.c12 {
   width: 24;
   height: 24;
 }
@@ -518,7 +520,6 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
-  overflow: hidden;
   margin: 0;
 }
 
@@ -537,7 +538,7 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
   margin: 0;
 }
 
-.c13 {
+.c14 {
   color: #E0D7FE;
   font-size: 1.125rem;
   font-weight: 400;
@@ -550,7 +551,11 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
   margin-left: 4px;
 }
 
-.c10 {
+.c9 {
+  white-space: nowrap;
+}
+
+.c11 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -584,28 +589,28 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
   outline: none;
 }
 
-.c10:hover {
+.c11:hover {
   opacity: 0.8;
 }
 
-.c12 {
+.c13 {
   -webkit-transition: 0.24s ease-in-out;
   transition: 0.24s ease-in-out;
 }
 
-.c9:hover .c12 {
+.c10:hover .c13 {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
 
-.c14 {
+.c15 {
   -webkit-transition: 0.18s ease-in;
   transition: 0.18s ease-in;
   opacity: 0;
 }
 
-.c9:hover .c14 {
+.c10:hover .c15 {
   opacity: 1;
 }
 
@@ -660,22 +665,21 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
       display="flex"
     >
       <h2
-        class="c8"
+        class="c8 c9"
         font-family="RT-Alias-Grotesk"
         font-size="3"
         font-weight="1"
-        overflow="hidden"
       >
         t01234 ... 456789
       </h2>
       <button
-        class="c9 c10"
+        class="c10 c11"
         display="flex"
         font-size="3"
         height="6"
       >
         <svg
-          class="c11 c12"
+          class="c12 c13"
           fill="none"
           height="24"
           viewBox="0 0 24 24"
@@ -698,7 +702,7 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
           />
         </svg>
         <h4
-          class="c13 c14"
+          class="c14 c15"
           color="core.secondary"
           font-family="RT-Alias-Grotesk"
           font-size="2"
@@ -710,11 +714,11 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
     </div>
   </div>
   <div
-    class="c15"
+    class="c16"
     display="flex"
   >
     <button
-      class="c16"
+      class="c17"
       font-size="3"
       height="max-content"
       type="button"
