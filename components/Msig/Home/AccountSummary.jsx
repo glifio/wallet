@@ -104,7 +104,7 @@ const AccountSummary = ({
         ) : (
           <>
             <Box position='relative' display='flex' flexWrap='wrap'>
-              <Address address={walletAddress} label='Ledger Address' />
+              <Address address={walletAddress} label='Your Ledger Address' />
 
               <ButtonViewOnLedgerDevice
                 display='flex'
