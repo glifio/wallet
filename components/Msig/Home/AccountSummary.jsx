@@ -6,7 +6,6 @@ import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import {
   Box,
   Glyph,
-  CopyAddress,
   Text,
   Label,
   BaseButton,
@@ -14,6 +13,7 @@ import {
   IconLedger,
   Tooltip
 } from '../../Shared'
+import Address from './Address'
 import Signers from './Signers'
 
 const ButtonViewOnLedgerDevice = styled(BaseButton)``
@@ -35,36 +35,7 @@ const AccountSummary = ({
       alignItems='center'
       flexWrap='wrap'
     >
-      <Box display='flex' color='card.account.color'>
-        <Box
-          display='flex'
-          alignItems='center'
-          justifyContent='flex-start'
-          color='core.darkgray'
-          bg='background.messageHistory'
-          height={6}
-          px={2}
-          mr={2}
-          my={1}
-          borderRadius={2}
-        >
-          <Glyph
-            mr={3}
-            color='core.nearblack'
-            acronym='Ms'
-            size={5}
-            border={0}
-          />
-          <Box flexGrow='1'>
-            <Label fontSize={1}>Multisig Address</Label>
-            <CopyAddress
-              justifyContent='space-between'
-              color='core.nearblack'
-              address={msigAddress}
-            />
-          </Box>
-        </Box>
-      </Box>
+      <Address label='Multisig Address' address={msigAddress} />
       <Box
         display='flex'
         flexDirection='column'
@@ -127,45 +98,8 @@ const AccountSummary = ({
           </Box>
         ) : (
           <>
-            <Box
-              position='relative'
-              display='flex'
-              flexWrap='wrap'
-              color='card.account.color'
-            >
-              <Box
-                display='flex'
-                alignItems='center'
-                color='core.darkgray'
-                bg='background.messageHistory'
-                height={6}
-                px={2}
-                mr={2}
-                my={1}
-                borderRadius={2}
-              >
-                <Glyph
-                  justifyContent='flex-end'
-                  alignSelf='flex-end'
-                  mb='1px'
-                  mr={3}
-                  size={5}
-                  Icon={IconLedger}
-                  color='core.nearblack'
-                  bg='transparent'
-                  fill='#444'
-                  border={0}
-                  css='transform:translateY(-6px)'
-                />
-                <Box flexGrow='1'>
-                  <Label fontSize={1}>Ledger Address</Label>
-                  <CopyAddress
-                    justifyContent='space-between'
-                    color='core.nearblack'
-                    address={walletAddress}
-                  />
-                </Box>
-              </Box>
+            <Box position='relative' display='flex' flexWrap='wrap'>
+              <Address address={walletAddress} label='Ledger Address' />
 
               <ButtonViewOnLedgerDevice
                 display='flex'

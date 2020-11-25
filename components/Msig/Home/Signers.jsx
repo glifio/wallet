@@ -5,24 +5,21 @@ import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import { Box, Text } from '../../Shared'
 import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
 import truncateAddress from '../../../utils/truncateAddress'
+import Address from './Address'
 
 const Signers = ({ signers, walletAddress }) => {
   return (
     <Box>
       <Text>Signers</Text>
       {signers.map(signer => {
-        if (converAddrToFPrefix(signer.account) === walletAddress) {
-          return (
-            <Box display='flex' key={signer.account}>
-              <Text mr={2} color='core.primary'>
-                Your ledger address:{' '}
-              </Text>
-              <Text>{truncateAddress(signer.account)}</Text>
-            </Box>
-          )
-        }
+        const isOwner = converAddrToFPrefix(signer.account) === walletAddress
         return (
-          <Text key={signer.account}>{truncateAddress(signer.account)}</Text>
+          <Address
+            key={signer.account}
+            label={isOwner ? 'Your Ledger Address' : 'Signer'}
+            address={truncateAddress(signer.account)}
+            isOwnerAddress={isOwner}
+          />
         )
       })}
     </Box>
