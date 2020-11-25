@@ -6,7 +6,6 @@ import { Box, Glyph, CopyAddress, Label, IconLedger } from '../../Shared'
 
 const Address = ({ address, label, glyphAcronym }) => {
   return (
-    <Box display='flex'>
       <Box
         display='flex'
         alignItems='center'
@@ -52,7 +51,6 @@ const Address = ({ address, label, glyphAcronym }) => {
           />
         </Box>
       </Box>
-    </Box>
   )
 }
 
