@@ -6,7 +6,7 @@ import { Box, Glyph, CopyAddress, Label, IconLedger } from '../../Shared'
 
 const Address = ({ address, label, isOwnerAddress, glyphAcronym }) => {
   return (
-    <Box display='flex' color={isOwnerAddress ? 'card.account.color' : 'red'}>
+    <Box display='flex'>
       <Box
         display='flex'
         alignItems='center'
@@ -18,6 +18,7 @@ const Address = ({ address, label, isOwnerAddress, glyphAcronym }) => {
         mr={2}
         my={1}
         borderRadius={2}
+        maxWidth={11}
       >
         {glyphAcronym ? (
           <Glyph
