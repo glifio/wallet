@@ -5,7 +5,7 @@ import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
 } from '../../../customPropTypes'
-import { Box, Button, Title, Menu, MenuItem, IconGlif } from '../../Shared'
+import { Box, Button, Title, Text, Menu, MenuItem, IconGlif } from '../../Shared'
 import AccountSummary from './AccountSummary'
 import useWallet from '../../../WalletProvider/useWallet'
 import { useWalletProvider } from '../../../WalletProvider'
@@ -65,15 +65,33 @@ const State = ({
             />
             <Title ml={2}>Vault</Title>
           </Box>
+          <Box display='flex' alignItems='center'>
+            <Text color='core.darkgray' mx={4} my={0}>SIGNER</Text>
           <Button
             type='button'
             variant='secondary'
             onClick={setAddSigner}
-            title='Add Signer'
-            maxWidth={10}
-            minWidth={9}
+            title='Add'
+
+            minWidth={8}
+            height='40px'
             borderRadius={6}
+            m={1}
           />
+           {showRmSignerOption && (
+              <Button
+                type='button'
+                variant='secondary'
+                onClick={setRmSigner}
+                title='Remove'
+
+                minWidth={8}
+                height='40px'
+                borderRadius={6}
+                m={1}
+              />
+            )}
+            </Box>
         </MenuItem>
         <Menu
           display='flex'
@@ -108,17 +126,6 @@ const State = ({
                 onClick={setChangingOwner}
                 title='Change Signer'
                 height={6}
-                maxWidth={10}
-                minWidth={9}
-                borderRadius={6}
-              />
-            )}
-            {showRmSignerOption && (
-              <Button
-                type='button'
-                variant='secondary'
-                onClick={setRmSigner}
-                title='Remove Signer'
                 maxWidth={10}
                 minWidth={9}
                 borderRadius={6}
