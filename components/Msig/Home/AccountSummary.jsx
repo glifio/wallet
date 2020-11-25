@@ -35,7 +35,11 @@ const AccountSummary = ({
       alignItems='center'
       flexWrap='wrap'
     >
-      <Address label='Multisig Address' address={msigAddress} />
+      <Address
+        label='Multisig Address'
+        address={msigAddress}
+        glyphAcronym='Ms'
+      />
       <Box
         display='flex'
         flexDirection='column'

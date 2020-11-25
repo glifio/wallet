@@ -11,7 +11,7 @@ const Signers = ({ signers, walletAddress }) => {
   return (
     <Box>
       <Text>Signers</Text>
-      {signers.map(signer => {
+      {signers.map((signer, i) => {
         const isOwner = converAddrToFPrefix(signer.account) === walletAddress
         return (
           <Address
@@ -19,6 +19,7 @@ const Signers = ({ signers, walletAddress }) => {
             label={isOwner ? 'Your Ledger Address' : 'Signer'}
             address={truncateAddress(signer.account)}
             isOwnerAddress={isOwner}
+            glyphAcronym={i + 1}
           />
         )
       })}
