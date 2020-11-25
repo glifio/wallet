@@ -102,7 +102,7 @@ const Balances = ({ available, setWithdrawing, total }) => {
         width='100%'
         p={6}
       >
-        <Title fontSize={2}>Total Vesting</Title>
+        <Title fontSize={2} mb={5}>Total Vesting</Title>
         <TotalBalance total={total} />
       </Box>
     </Box>
