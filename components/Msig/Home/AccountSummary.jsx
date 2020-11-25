@@ -28,6 +28,7 @@ const AccountSummary = ({
   error
 }) => {
   return (
+    <>
     <Box
       display='flex'
       flexDirection='row'
@@ -39,6 +40,7 @@ const AccountSummary = ({
         label='Multisig Address'
         address={msigAddress}
         glyphAcronym='Ms'
+        maxWidth={11}
       />
       <Box
         display='flex'
@@ -134,8 +136,9 @@ const AccountSummary = ({
           </>
         )}
       </Box>
-      <Signers signers={signers} walletAddress={walletAddress} />
     </Box>
+    <Signers signers={signers} walletAddress={walletAddress} />
+    </>
   )
 }
 
