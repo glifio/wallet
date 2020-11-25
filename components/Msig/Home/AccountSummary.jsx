@@ -40,7 +40,6 @@ const AccountSummary = ({
         label='Multisig Address'
         address={msigAddress}
         glyphAcronym='Ms'
-        maxWidth={11}
       />
       <Box
         display='flex'
