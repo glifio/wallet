@@ -9,16 +9,14 @@ import Address from './Address'
 
 const Signers = ({ signers, walletAddress }) => {
   return (
-    <Box>
-      <Text>Signers</Text>
+    <Box display='flex' flexWrap='wrap'>
       {signers.map((signer, i) => {
-        const isOwner = converAddrToFPrefix(signer.account) === walletAddress
+        const isOwner = converAddrToFPrefix(signer.account) === converAddrToFPrefix(walletAddress)
         return (
           <Address
             key={signer.account}
             label={isOwner ? 'Your Ledger Address' : 'Signer'}
             address={truncateAddress(signer.account)}
-            isOwnerAddress={isOwner}
             glyphAcronym={i + 1}
           />
         )
