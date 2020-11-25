@@ -4,7 +4,7 @@ import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
 import { Box, Glyph, CopyAddress, Label, IconLedger } from '../../Shared'
 
-const Address = ({ address, label, isOwnerAddress, glyphAcronym }) => {
+const Address = ({ address, label, glyphAcronym }) => {
   return (
     <Box display='flex'>
       <Box
@@ -59,12 +59,7 @@ const Address = ({ address, label, isOwnerAddress, glyphAcronym }) => {
 Address.propTypes = {
   address: ADDRESS_PROPTYPE,
   label: PropTypes.string.isRequired,
-  isOwnerAddress: PropTypes.bool,
   glyphAcronym: PropTypes.string
-}
-
-Address.propTypes = {
-  isOwnerAddress: false
 }
 
 export default Address

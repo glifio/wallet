@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
-import { Box, Text } from '../../Shared'
+import { Box } from '../../Shared'
 import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
 import truncateAddress from '../../../utils/truncateAddress'
 import Address from './Address'
@@ -10,17 +10,22 @@ import Address from './Address'
 const Signers = ({ signers, walletAddress }) => {
   return (
     <Box display='flex' flexWrap='wrap'>
-      {signers.map((signer, i) => {
-        const isOwner = converAddrToFPrefix(signer.account) === converAddrToFPrefix(walletAddress)
-        return (
-          <Address
-            key={signer.account}
-            label={isOwner ? 'Your Ledger Address' : 'Signer'}
-            address={truncateAddress(signer.account)}
-            glyphAcronym={i + 1}
-          />
+      {signers
+        .filter(
+          signer =>
+            converAddrToFPrefix(signer.account) !==
+            converAddrToFPrefix(walletAddress)
         )
-      })}
+        .map((signer, i) => {
+          return (
+            <Address
+              key={signer.account}
+              label='Signer'
+              address={truncateAddress(signer.account)}
+              glyphAcronym={i + 1}
+            />
+          )
+        })}
     </Box>
   )
 }
