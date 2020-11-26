@@ -5,7 +5,15 @@ import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
 } from '../../../customPropTypes'
-import { Box, Button, Title, Menu, MenuItem, IconGlif } from '../../Shared'
+import {
+  Box,
+  Button,
+  Title,
+  Text,
+  Menu,
+  MenuItem,
+  IconGlif
+} from '../../Shared'
 import AccountSummary from './AccountSummary'
 import useWallet from '../../../WalletProvider/useWallet'
 import { useWalletProvider } from '../../../WalletProvider'
@@ -13,12 +21,14 @@ import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfi
 import MessageHistory from '../MessageHistory'
 
 const State = ({
+  signers,
   msigAddress,
   available,
   setChangingOwner,
   setWithdrawing,
-  setTakingCustody,
-  showTakeCustodyOption,
+  setRmSigner,
+  setAddSigner,
+  showRmSignerOption,
   showChangeOwnerOption,
   total,
   walletAddress
@@ -63,18 +73,33 @@ const State = ({
             />
             <Title ml={2}>Vault</Title>
           </Box>
-
-          {showTakeCustodyOption && (
+          <Box display='flex' alignItems='center'>
+            <Text color='core.darkgray' mx={4} my={0}>
+              SIGNER
+            </Text>
             <Button
               type='button'
               variant='secondary'
-              onClick={setTakingCustody}
-              title='Take Control'
-              maxWidth={10}
-              minWidth={9}
+              onClick={setAddSigner}
+              title='Add'
+              minWidth={8}
+              height='40px'
               borderRadius={6}
+              m={1}
             />
-          )}
+            {showRmSignerOption && (
+              <Button
+                type='button'
+                variant='secondary'
+                onClick={setRmSigner}
+                title='Remove'
+                minWidth={8}
+                height='40px'
+                borderRadius={6}
+                m={1}
+              />
+            )}
+          </Box>
         </MenuItem>
         <Menu
           display='flex'
@@ -93,6 +118,7 @@ const State = ({
             <AccountSummary
               msigAddress={msigAddress}
               walletAddress={walletAddress}
+              signers={signers}
               showOnDevice={onShowOnLedger}
               ledgerBusy={ledgerBusy}
               error={reportLedgerConfigError({
@@ -101,18 +127,18 @@ const State = ({
               })}
               reset={reset}
             />
-            {/* {showChangeOwnerOption && (
+            {showChangeOwnerOption && (
               <Button
                 type='button'
                 variant='secondary'
                 onClick={setChangingOwner}
-                title='Change Owner'
+                title='Change Signer'
                 height={6}
                 maxWidth={10}
                 minWidth={9}
                 borderRadius={6}
               />
-            )} */}
+            )}
           </MenuItem>
         </Menu>
       </Menu>
@@ -151,8 +177,15 @@ State.propTypes = {
   walletAddress: ADDRESS_PROPTYPE,
   setChangingOwner: PropTypes.func.isRequired,
   setWithdrawing: PropTypes.func.isRequired,
-  setTakingCustody: PropTypes.func.isRequired,
-  showTakeCustodyOption: PropTypes.bool.isRequired,
+  setRmSigner: PropTypes.func.isRequired,
+  setAddSigner: PropTypes.func.isRequired,
+  signers: PropTypes.arrayOf(
+    PropTypes.shape({
+      account: ADDRESS_PROPTYPE,
+      id: ADDRESS_PROPTYPE
+    })
+  ).isRequired,
+  showRmSignerOption: PropTypes.bool.isRequired,
   showChangeOwnerOption: PropTypes.bool.isRequired
 }
 

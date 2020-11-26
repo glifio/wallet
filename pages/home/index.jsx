@@ -3,7 +3,7 @@ import { WalletView } from '../../components'
 import RenderChildrenIfWalletConnected from '../../lib/RequireWallet'
 import useDesktopBrowser from '../../lib/useDesktopBrowser'
 
-export default () => {
+const Home = () => {
   useDesktopBrowser()
   return (
     <RenderChildrenIfWalletConnected>
@@ -11,3 +11,5 @@ export default () => {
     </RenderChildrenIfWalletConnected>
   )
 }
+
+export default Home

@@ -1,6 +1,6 @@
 import { MAINNET, SINGLE_KEY, TESTNET } from '../../constants'
 
-export default rustModule => {
+const createSingleKeyProvider = rustModule => {
   return privateKey => {
     // here we close over the private variables, so they aren't accessible to the outside world
     const PRIVATE_KEY = privateKey
@@ -22,3 +22,5 @@ export default rustModule => {
     }
   }
 }
+
+export default createSingleKeyProvider

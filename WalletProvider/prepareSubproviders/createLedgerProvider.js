@@ -2,7 +2,6 @@ import FilecoinApp from '@zondax/ledger-filecoin'
 import { mapSeries } from 'bluebird'
 import {
   LEDGER,
-  TESTNET,
   MAINNET,
   MAINNET_PATH_CODE,
   TESTNET_PATH_CODE
@@ -36,7 +35,7 @@ const throwIfBusy = busy => {
     )
 }
 
-export default rustModule => {
+const createLedgerProvider = rustModule => {
   return transport => {
     let ledgerBusy = false
     const ledgerApp = new FilecoinApp(transport)
@@ -116,3 +115,5 @@ export default rustModule => {
     }
   }
 }
+
+export default createLedgerProvider

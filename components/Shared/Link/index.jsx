@@ -6,6 +6,8 @@ import PropTypes from 'prop-types'
 export const StyledATag = styled.a.attrs(props => ({
   color: 'core.primary',
   fontSize: 2,
+  rel: props.rel || 'noopener noreferrer',
+  target: props.target || 'blank',
   ...props
 }))`
   text-decoration: none;

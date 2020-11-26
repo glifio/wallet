@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { FilecoinNumber } from '@glif/filecoin-number'
 
-import { Box, Text, Input, Button } from '../../Shared'
+import { Box, Text, Input, Button, StyledATag } from '../../Shared'
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
@@ -52,7 +52,14 @@ const Helper = ({
   return (
     <Text width='100%' color='core.darkgray'>
       You will not pay more than {estimatedTransactionFee.toFil()} FIL for this
-      transaction.
+      transaction.{' '}
+      <StyledATag
+        rel='noopener noreferrer'
+        target='_blank'
+        href='https://filfox.info/en/stats/gas'
+      >
+        More information on average gas fee statistics.
+      </StyledATag>
     </Text>
   )
 }
@@ -147,6 +154,11 @@ const CustomizeFee = ({
   const setGasInfoWMaxFee = async () => {
     if (localTxFee.isLessThanOrEqualTo(0) || localTxFee.isNaN()) {
       setError('Invalid number entered. Please try again.')
+      return
+    }
+
+    if (localTxFee.isGreaterThan(feeMustBeLessThanThisAmount)) {
+      setError(insufficientMsigFundsErr)
       return
     }
     try {

@@ -202,6 +202,7 @@ describe('Funds input', () => {
 
   describe('changing values', () => {
     test('it sets error when more FIL is entered than what is in balance', async () => {
+      jest.useFakeTimers()
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
@@ -228,8 +229,9 @@ describe('Funds input', () => {
             value: new FilecoinNumber('5', 'fil')
           }
         })
-        await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
+        await flushPromises()
         expect(setError).toHaveBeenCalled()
         expect(setError).toHaveBeenCalledWith(
           "The amount must be smaller than this account's balance"
@@ -238,6 +240,7 @@ describe('Funds input', () => {
     })
 
     test('it empties error with valid input value after insufficent balance error', async () => {
+      jest.useFakeTimers()
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
@@ -264,8 +267,9 @@ describe('Funds input', () => {
             value: '50'
           }
         })
-        await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
+        await flushPromises()
         expect(setError).toHaveBeenCalled()
         expect(setError).toHaveBeenCalledWith(
           "The amount must be smaller than this account's balance"

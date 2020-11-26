@@ -1,1 +1,3 @@
-export default address => `f${address.slice(1)}`
+const converAddrToFPrefix = address => `f${address.slice(1)}`
+
+export default converAddrToFPrefix

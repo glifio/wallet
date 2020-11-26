@@ -1,7 +1,7 @@
 import cloneDeep from 'lodash.clonedeep'
 import { FilecoinNumber } from '@glif/filecoin-number'
 
-export default state => {
+const deserializeState = state => {
   const newState = cloneDeep(state)
   newState.wallets = state.wallets.map(wallet => ({
     ...wallet,
@@ -9,3 +9,5 @@ export default state => {
   }))
   return newState
 }
+
+export default deserializeState

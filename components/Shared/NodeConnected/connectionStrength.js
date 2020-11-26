@@ -10,7 +10,7 @@ import LotusRPCEngine from '@glif/filecoin-rpc-client'
 
 import reportError from '../../../utils/reportError'
 
-export default async (apiAddress, token = '') => {
+const connectionStrength = async (apiAddress, token = '') => {
   const client = new LotusRPCEngine({
     apiAddress,
     token
@@ -30,3 +30,5 @@ export default async (apiAddress, token = '') => {
     return 0
   }
 }
+
+export default connectionStrength

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import { BigNumber } from '@glif/filecoin-number'
 import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
 import { Message } from '@glif/filecoin-message'
@@ -80,7 +81,10 @@ const ChangeOwner = ({ address, balance, close }) => {
       value: '0',
       method: 2,
       nonce,
-      params: serializedOuterParams
+      params: serializedOuterParams,
+      gasFeeCap: gasInfo.gasFeeCap.toAttoFil(),
+      gasLimit: new BigNumber(gasInfo.gasLimit.toAttoFil()).toNumber(),
+      gasPremium: gasInfo.gasPremium.toAttoFil()
     })
 
     return { message, params: { ...innerParams, params: outerParams } }
@@ -173,6 +177,14 @@ const ChangeOwner = ({ address, balance, close }) => {
     if (step > 3) return true
   }
 
+  const isBackBtnDisabled = () => {
+    if (frozen) return true
+    if (attemptingTx) return true
+    if (fetchingTxDetails) return true
+    if (mPoolPushing) return true
+    return false
+  }
+
   return (
     <Box display='flex' flexDirection='column' width='100%'>
       <ButtonClose
@@ -223,6 +235,7 @@ const ChangeOwner = ({ address, balance, close }) => {
               />
             )}
             {!attemptingTx &&
+              step > 1 &&
               !hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
                 <Card
                   display='flex'
@@ -316,7 +329,7 @@ const ChangeOwner = ({ address, balance, close }) => {
                   setStep(step - 1)
                 }
               }}
-              disabled={attemptingTx}
+              disabled={isBackBtnDisabled()}
             />
             <Button
               variant='primary'

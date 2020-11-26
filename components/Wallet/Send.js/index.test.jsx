@@ -41,8 +41,8 @@ describe('Send Flow', () => {
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
-        await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
@@ -136,8 +136,8 @@ describe('Send Flow', () => {
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
-        await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
@@ -173,8 +173,8 @@ describe('Send Flow', () => {
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
-        await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
@@ -207,8 +207,8 @@ describe('Send Flow', () => {
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
-        await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
       })
@@ -235,8 +235,8 @@ describe('Send Flow', () => {
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
-        await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
@@ -270,8 +270,8 @@ describe('Send Flow', () => {
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
-        await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
@@ -306,8 +306,8 @@ describe('Send Flow', () => {
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
-        await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
@@ -337,8 +337,8 @@ describe('Send Flow', () => {
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
-        await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
@@ -374,8 +374,8 @@ describe('Send Flow', () => {
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
-        await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
@@ -449,8 +449,8 @@ describe('Send Flow', () => {
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
-        await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
@@ -481,8 +481,8 @@ describe('Send Flow', () => {
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
-        await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
@@ -536,8 +536,8 @@ describe('Send Flow', () => {
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
-        await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
@@ -571,35 +571,13 @@ describe('Send Flow', () => {
         fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
-        await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
       })
       expect(res.container).toMatchSnapshot()
-    })
-
-    test.skip('it renders the gas customization view', async () => {
-      const { Tree } = composeMockAppTree('postOnboard')
-      let res
-      await act(async () => {
-        res = render(
-          <Tree>
-            <Send close={close} />
-          </Tree>
-        )
-        fireEvent.click(screen.getByText('Customize'))
-        await flushPromises()
-
-        fireEvent.change(screen.getByDisplayValue('1000'), {
-          target: {
-            value: 2000
-          }
-        })
-        await flushPromises()
-      })
-      expect(res.container.firstChild).toMatchSnapshot()
     })
   })
 })
