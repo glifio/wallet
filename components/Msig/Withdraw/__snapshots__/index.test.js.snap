@@ -1086,6 +1086,8 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                   color="core.primary"
                   font-size="2"
                   href="https://reading.supply/@glif/how-to-use-the-glif-vault-after-mainnet-launches-Td1ErO"
+                  rel="noopener noreferrer"
+                  target="blank"
                   width="auto"
                 >
                   Click here for our guided Filecoin Vault tutorial.
@@ -2497,6 +2499,8 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                   color="core.primary"
                   font-size="2"
                   href="https://reading.supply/@glif/how-to-use-the-glif-vault-after-mainnet-launches-Td1ErO"
+                  rel="noopener noreferrer"
+                  target="blank"
                   width="auto"
                 >
                   Click here for our guided Filecoin Vault tutorial.
@@ -3587,6 +3591,8 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
                   color="core.primary"
                   font-size="2"
                   href="https://reading.supply/@glif/how-to-use-the-glif-vault-after-mainnet-launches-Td1ErO"
+                  rel="noopener noreferrer"
+                  target="blank"
                   width="auto"
                 >
                   Click here for our guided Filecoin Vault tutorial.
@@ -4676,6 +4682,8 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
                   color="core.primary"
                   font-size="2"
                   href="https://reading.supply/@glif/how-to-use-the-glif-vault-after-mainnet-launches-Td1ErO"
+                  rel="noopener noreferrer"
+                  target="blank"
                   width="auto"
                 >
                   Click here for our guided Filecoin Vault tutorial.
@@ -6044,6 +6052,8 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
                   color="core.primary"
                   font-size="2"
                   href="https://reading.supply/@glif/how-to-use-the-glif-vault-after-mainnet-launches-Td1ErO"
+                  rel="noopener noreferrer"
+                  target="blank"
                   width="auto"
                 >
                   Click here for our guided Filecoin Vault tutorial.
@@ -7557,6 +7567,8 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
                   color="core.primary"
                   font-size="2"
                   href="https://reading.supply/@glif/how-to-use-the-glif-vault-after-mainnet-launches-Td1ErO"
+                  rel="noopener noreferrer"
+                  target="blank"
                   width="auto"
                 >
                   Click here for our guided Filecoin Vault tutorial.

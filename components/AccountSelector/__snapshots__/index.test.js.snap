@@ -498,6 +498,8 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
                 color="core.primary"
                 font-size="2"
                 href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
+                rel="noopener noreferrer"
+                target="blank"
               >
                 Learn More
               </a>
@@ -1530,6 +1532,8 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
                 color="core.primary"
                 font-size="2"
                 href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
+                rel="noopener noreferrer"
+                target="blank"
               >
                 Learn More
               </a>
@@ -2450,6 +2454,8 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 color="core.primary"
                 font-size="2"
                 href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
+                rel="noopener noreferrer"
+                target="blank"
               >
                 Learn More
               </a>
