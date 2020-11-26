@@ -10,7 +10,7 @@ import {
   MenuItem,
   AccountError,
   Loading
-} from '../Shared'
+} from '@glif/react-components'
 
 const LoadingCard = () => (
   <Card
