@@ -1,11 +1,13 @@
 import React from 'react'
 import RequireWallet from '../../lib/RequireWallet'
-import EnterActorAddress from '../../components/Msig/EnterActorAddress'
+import EnterOrCreateActor from '../../components/Msig/EnterOrCreateActor'
 
-export default () => {
+const Choose = () => {
   return (
     <RequireWallet>
-      <EnterActorAddress />
+      <EnterOrCreateActor />
     </RequireWallet>
   )
 }
+
+export default Choose

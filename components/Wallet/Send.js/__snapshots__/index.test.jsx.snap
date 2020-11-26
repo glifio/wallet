@@ -2015,7 +2015,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   align-items: center;
 }
 
-.c50 {
+.c51 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -2238,7 +2238,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c51 {
+.c52 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -2257,11 +2257,11 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   border-radius: 4px;
 }
 
-.c51:hover {
+.c52:hover {
   opacity: 0.8;
 }
 
-.c52 {
+.c53 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -2280,7 +2280,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   border-radius: 4px;
 }
 
-.c52:hover {
+.c53:hover {
   opacity: 0.8;
 }
 
@@ -2592,6 +2592,20 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c50 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+}
+
+.c50:hover {
+  border-bottom: 2px solid #5E26FF;
 }
 
 .c1 {
@@ -3043,6 +3057,17 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
                         You will not pay more than 
                         0.000000000001
                          FIL for this transaction.
+                         
+                        <a
+                          class="c50"
+                          color="core.primary"
+                          font-size="2"
+                          href="https://filfox.info/en/stats/gas"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          More information on average gas fee statistics.
+                        </a>
                       </p>
                     </div>
                   </div>
@@ -3052,12 +3077,12 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
           </div>
         </div>
         <div
-          class="c50"
+          class="c51"
           display="flex"
           width="100%"
         >
           <button
-            class="c51"
+            class="c52"
             font-size="3"
             height="6"
             type="button"
@@ -3065,7 +3090,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
             Back
           </button>
           <button
-            class="c52"
+            class="c53"
             font-size="3"
             height="6"
             type="submit"
@@ -4430,7 +4455,7 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c50 {
+.c51 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -4653,7 +4678,7 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c51 {
+.c52 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -4672,11 +4697,11 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c51:hover {
+.c52:hover {
   opacity: 0.8;
 }
 
-.c52 {
+.c53 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -4695,7 +4720,7 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c52:hover {
+.c53:hover {
   opacity: 0.8;
 }
 
@@ -5007,6 +5032,20 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c50 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+}
+
+.c50:hover {
+  border-bottom: 2px solid #5E26FF;
 }
 
 .c1 {
@@ -5458,6 +5497,17 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
                         You will not pay more than 
                         0.000000000001
                          FIL for this transaction.
+                         
+                        <a
+                          class="c50"
+                          color="core.primary"
+                          font-size="2"
+                          href="https://filfox.info/en/stats/gas"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          More information on average gas fee statistics.
+                        </a>
                       </p>
                     </div>
                   </div>
@@ -5467,12 +5517,12 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
           </div>
         </div>
         <div
-          class="c50"
+          class="c51"
           display="flex"
           width="100%"
         >
           <button
-            class="c51"
+            class="c52"
             font-size="3"
             height="6"
             type="button"
@@ -5480,7 +5530,7 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
             Back
           </button>
           <button
-            class="c52"
+            class="c53"
             font-size="3"
             height="6"
             type="submit"
@@ -5779,7 +5829,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   align-items: center;
 }
 
-.c53 {
+.c54 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -5985,7 +6035,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   text-align: left;
 }
 
-.c49 {
+.c50 {
   min-width: 0;
   box-sizing: border-box;
   border-bottom-left-radius: 8px;
@@ -6012,7 +6062,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c50 {
+.c51 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -6032,7 +6082,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c54 {
+.c55 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -6051,11 +6101,11 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c54:hover {
+.c55:hover {
   opacity: 0.8;
 }
 
-.c55 {
+.c56 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -6074,7 +6124,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c55:hover {
+.c56:hover {
   opacity: 0.8;
 }
 
@@ -6091,7 +6141,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   margin: 0;
 }
 
-.c51 {
+.c52 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -6397,6 +6447,20 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   justify-content: space-between;
 }
 
+.c49 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+}
+
+.c49:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
 .c1 {
   outline: 0;
   border: 0;
@@ -6415,7 +6479,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   transform: scale(1.25);
 }
 
-.c52 {
+.c53 {
   word-wrap: break-word;
 }
 
@@ -6850,6 +6914,17 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                         You will not pay more than 
                         0.000000000001
                          FIL for this transaction.
+                         
+                        <a
+                          class="c49"
+                          color="core.primary"
+                          font-size="2"
+                          href="https://filfox.info/en/stats/gas"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          More information on average gas fee statistics.
+                        </a>
                       </p>
                     </div>
                   </div>
@@ -6857,7 +6932,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
               </div>
             </div>
             <div
-              class="c49"
+              class="c50"
               display="flex"
             >
               <h2
@@ -6869,11 +6944,11 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                 Total
               </h2>
               <div
-                class="c50"
+                class="c51"
                 display="flex"
               >
                 <h2
-                  class="c51 c52"
+                  class="c52 c53"
                   color="core.primary"
                   font-family="RT-Alias-Grotesk"
                   font-size="5"
@@ -6888,12 +6963,12 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
           </div>
         </div>
         <div
-          class="c53"
+          class="c54"
           display="flex"
           width="100%"
         >
           <button
-            class="c54"
+            class="c55"
             font-size="3"
             height="6"
             type="button"
@@ -6901,7 +6976,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
             Back
           </button>
           <button
-            class="c55"
+            class="c56"
             font-size="3"
             height="6"
             type="submit"
@@ -7109,7 +7184,7 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   align-items: center;
 }
 
-.c53 {
+.c54 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -7315,7 +7390,7 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   text-align: left;
 }
 
-.c48 {
+.c49 {
   min-width: 0;
   box-sizing: border-box;
   border-bottom-left-radius: 8px;
@@ -7342,7 +7417,7 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c50 {
+.c51 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -7456,7 +7531,7 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c54 {
+.c55 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -7475,11 +7550,11 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c54:hover {
+.c55:hover {
   opacity: 0.8;
 }
 
-.c55 {
+.c56 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -7498,7 +7573,7 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c55:hover {
+.c56:hover {
   opacity: 0.8;
 }
 
@@ -7507,7 +7582,7 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   height: 24;
 }
 
-.c49 {
+.c50 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -7515,7 +7590,7 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   margin: 0;
 }
 
-.c51 {
+.c52 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -7804,6 +7879,20 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   align-items: center;
 }
 
+.c48 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+}
+
+.c48:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
 .c1 {
   outline: 0;
   border: 0;
@@ -7828,7 +7917,7 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   font-size: inherit;
 }
 
-.c52 {
+.c53 {
   word-wrap: break-word;
 }
 
@@ -8290,6 +8379,17 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
                         You will not pay more than 
                         0.000000000001
                          FIL for this transaction.
+                         
+                        <a
+                          class="c48"
+                          color="core.primary"
+                          font-size="2"
+                          href="https://filfox.info/en/stats/gas"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          More information on average gas fee statistics.
+                        </a>
                       </p>
                     </div>
                   </div>
@@ -8297,11 +8397,11 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
               </div>
             </div>
             <div
-              class="c48"
+              class="c49"
               display="flex"
             >
               <h2
-                class="c49"
+                class="c50"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -8309,11 +8409,11 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
                 Total
               </h2>
               <div
-                class="c50"
+                class="c51"
                 display="flex"
               >
                 <h2
-                  class="c51 c52"
+                  class="c52 c53"
                   color="core.primary"
                   font-family="RT-Alias-Grotesk"
                   font-size="5"
@@ -8328,12 +8428,12 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
           </div>
         </div>
         <div
-          class="c53"
+          class="c54"
           display="flex"
           width="100%"
         >
           <button
-            class="c54"
+            class="c55"
             font-size="3"
             height="6"
             type="button"
@@ -8341,7 +8441,7 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
             Back
           </button>
           <button
-            class="c55"
+            class="c56"
             font-size="3"
             height="6"
             type="submit"
@@ -8352,1663 +8452,5 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
       </div>
     </form>
   </div>
-</div>
-`;
-
-exports[`Send Flow snapshots it renders the gas customization view 1`] = `
-.c2 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c3 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c4 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  border-color: #5E26FF;
-  background-color: #5E26FF;
-  color: #EFF3FD;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c7 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-right: 8px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c9 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 100px;
-  margin-left: 4px;
-  margin-right: 4px;
-  background-color: #5E26FF;
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-}
-
-.c10 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 100px;
-  margin-left: 4px;
-  margin-right: 4px;
-  background-color: #999999;
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-}
-
-.c13 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-top: 32px;
-}
-
-.c14 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.c16 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c18 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c20 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-color: #999999;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-height: 160px;
-}
-
-.c21 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
-  margin-right: 8px;
-  color: #999999;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  max-width: 240px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  text-align: center;
-}
-
-.c22 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: inline-block;
-  width: 100%;
-}
-
-.c23 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-bottom: 1px solid;
-  border-color: #EFF3FD;
-  border-top-left-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 80px;
-  width: 100%;
-}
-
-.c24 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: absolute;
-  left: -24px;
-  bottom: -24px;
-  z-index: 99;
-  border-radius: 32px;
-  padding-bottom: 4px;
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-family: "system-ui","Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-}
-
-.c27 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 80px;
-}
-
-.c30 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-}
-
-.c51 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-top: 8px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c56 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-top: 32px;
-  margin-left: 4px;
-  margin-right: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c58 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 24px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  text-align: right;
-}
-
-.c33 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-top: 1px solid;
-  border-bottom: 1px solid;
-  border-color: silver;
-  margin-top: 8px;
-  padding: 16px;
-}
-
-.c34 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c37 {
-  min-width: 0;
-  box-sizing: border-box;
-}
-
-.c38 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-top: 16px;
-}
-
-.c40 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c41 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 8px;
-  padding-right: 8px;
-  display: inline-block;
-  min-width: 160px;
-  text-align: left;
-}
-
-.c43 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-bottom: 1px solid;
-  border-top: 1px solid;
-  color: #EFF3FD;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.c46 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-color: #EFF3FD;
-}
-
-.c5 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c63 {
-  cursor: pointer;
-  border: 1px solid core.lightgray;
-  background-color: transparent;
-  border-color: core.lightgray;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 0;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border: 0;
-  border-right: 1px solid;
-  border-radius: 0;
-  border-color: #C4C4C4;
-  border-width: 1px;
-}
-
-.c63:hover {
-  opacity: 0.8;
-}
-
-.c65 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: #08442F;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 0;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border: 0;
-  border-radius: 0;
-  border-width: 1px;
-}
-
-.c65:hover {
-  opacity: 0.8;
-}
-
-.c12 {
-  width: 24;
-  height: 24;
-}
-
-.c57 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c59 {
-  color: #5E26FF;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c61 {
-  color: #666666;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c6 {
-  color: #5E26FF;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-left: 8px;
-}
-
-.c8 {
-  color: #5E26FF;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-right: 8px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c54 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  display: inline-block;
-  margin-top: 8px;
-  margin-bottom: 0;
-}
-
-.c52 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-right: 4px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c17 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c35 {
-  color: #666666;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  padding-left: 8px;
-}
-
-.c42 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c19 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: right;
-  cursor: text;
-  background: #d1ddfa;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c19:hover {
-  background: #bacbf7;
-  cursor: text;
-}
-
-.c19:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c31 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: right;
-  cursor: text;
-  background: transparent;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c31:hover {
-  background: transparent;
-  cursor: initial;
-}
-
-.c31:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c15 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
-}
-
-.c39 {
-  display: inline-block;
-  width: 100%;
-  margin-top: 8px;
-  margin: 0;
-  border-radius: 1px;
-}
-
-.c47 {
-  display: inline-block;
-  width: 100%;
-  margin: 0;
-  border-radius: 1px;
-}
-
-.c26 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: #d1ddfa;
-}
-
-.c29 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: #d1ddfa;
-}
-
-.c32 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 16px;
-  padding-right: 16px;
-  background-color: transparent;
-  color: #5E26FF;
-  height: 64px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: core.transparent;
-}
-
-.c45 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  height: 48px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: #d1ddfa;
-}
-
-.c49 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  height: 48px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: #d1ddfa;
-}
-
-.c25 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: right;
-  cursor: text;
-  background: #d1ddfa;
-  font-size: 2rem;
-  height: 100%;
-  display: inline-block;
-  width: 100%;
-  border-top-left-radius: 4px;
-  border: 0;
-  border-color: #999999;
-  -moz-appearance: textfield;
-}
-
-.c25:hover {
-  background: #bacbf7;
-  cursor: text;
-}
-
-.c25:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c25::-webkit-outer-spin-button,
-.c25::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c28 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: right;
-  cursor: text;
-  background: #d1ddfa;
-  font-size: 2rem;
-  height: 100%;
-  display: inline-block;
-  width: 100%;
-  border-bottom-left-radius: 4px;
-  border: 0;
-  border-color: #999999;
-  -moz-appearance: textfield;
-}
-
-.c28:hover {
-  background: #bacbf7;
-  cursor: text;
-}
-
-.c28:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c28::-webkit-outer-spin-button,
-.c28::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c44 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: right;
-  cursor: text;
-  background: #d1ddfa;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-top-left-radius: 4px;
-  border: 0;
-  border-color: #999999;
-  -moz-appearance: textfield;
-}
-
-.c44:hover {
-  background: #bacbf7;
-  cursor: text;
-}
-
-.c44:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c44::-webkit-outer-spin-button,
-.c44::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c48 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: right;
-  cursor: text;
-  background: #d1ddfa;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-bottom-left-radius: 4px;
-  border: 0;
-  border-color: #999999;
-  -moz-appearance: textfield;
-}
-
-.c48:hover {
-  background: #bacbf7;
-  cursor: text;
-}
-
-.c48:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c48::-webkit-outer-spin-button,
-.c48::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c62 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 1px solid;
-  border-color: #C4C4C4;
-  background-color: #F6F8FE;
-  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
-  position: fixed;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  bottom: 16px;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  border-radius: 4px;
-  max-width: 560px;
-  width: 40%;
-}
-
-.c36 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.25rem;
-  margin-top: 0;
-}
-
-.c36:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
-.c11 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-}
-
-.c11:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-flex: 2;
-  -webkit-flex-grow: 2;
-  -ms-flex-positive: 2;
-  flex-grow: 2;
-  max-width: 560px;
-  min-width: 300px;
-}
-
-.c1 {
-  background-color: #EFF3FD;
-  border: 1px solid;
-  border-radius: 4px;
-  border-color: silver;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c50 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: core.primary;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  border: 0;
-  border-width: 1px;
-  border-radius: 4px;
-  color: #5E26FF;
-  background-color: transparent;
-  padding: 0;
-  outline: none;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-}
-
-.c50:hover {
-  opacity: 0.8;
-}
-
-.c50:hover {
-  cursor: pointer;
-  opacity: 1;
-}
-
-.c53 {
-  font-size: 0.75rem;
-}
-
-.c55 {
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-}
-
-.c55:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
-.c60 {
-  word-wrap: break-word;
-}
-
-.c64 {
-  border-radius: 0px;
-}
-
-.c66 {
-  border-radius: 0px;
-}
-
-@media screen and (min-width:40em) {
-  .c41 {
-    min-width: 160px;
-  }
-}
-
-@media screen and (min-width:52em) {
-  .c41 {
-    min-width: 240px;
-  }
-}
-
-<div
-  class="c0"
->
-  <form
-    autocomplete="off"
-    class="c1"
-    display="flex"
-  >
-    <div
-      class="c2"
-      display="flex"
-    >
-      <div
-        class="c3"
-        display="flex"
-      >
-        <div
-          class="c4"
-          color="background.screen"
-          display="flex"
-          size="6"
-        >
-          <h3
-            class="c5"
-          >
-            To
-          </h3>
-        </div>
-        <p
-          class="c6"
-          color="core.primary"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          Sending Filecoin
-        </p>
-      </div>
-      <div
-        class="c3"
-        display="flex"
-      >
-        <div
-          class="c7"
-          display="flex"
-        >
-          <p
-            class="c8"
-            color="core.primary"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
-          >
-            Step 
-            1
-          </p>
-          <div
-            class="c3"
-            display="flex"
-          >
-            <div
-              class="c9"
-              display="inline-block"
-              height="2"
-              width="2"
-            />
-          </div>
-          <div
-            class="c3"
-            display="flex"
-          >
-            <div
-              class="c10"
-              display="inline-block"
-              height="2"
-              width="2"
-            />
-          </div>
-        </div>
-        <button
-          class="c11"
-          display="inline-block"
-          role="button"
-          type="button"
-        >
-          <svg
-            class="c12"
-            fill="none"
-            height="24"
-            viewBox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
-              fill="#5E26FF"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div
-      class="c13"
-    >
-      <div
-        class="c14"
-      >
-        <div
-          class="c15"
-        >
-          <div
-            class="c3"
-            display="flex"
-          >
-            <div
-              class="c16"
-              display="flex"
-            >
-              <h4
-                class="c17"
-                color="core.nearblack"
-                font-family="RT-Alias-Grotesk"
-                font-size="2"
-                font-weight="400"
-              >
-                Recipient
-              </h4>
-            </div>
-            <div
-              class="c18"
-              display="flex"
-            >
-              <input
-                class="c19"
-                display="inline-block"
-                height="6"
-                placeholder="t1..."
-                value=""
-                width="100%"
-              />
-              
-            </div>
-          </div>
-        </div>
-        
-        <div
-          class="c20"
-          display="flex"
-          label="Amount"
-          name="amount"
-        >
-          <div
-            class="c21"
-            color="input.border"
-            display="flex"
-            width="100%"
-          >
-            <h4
-              class="c17"
-              color="core.nearblack"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Amount
-            </h4>
-          </div>
-          <div
-            class="c22"
-            display="inline-block"
-            width="100%"
-          >
-            <div
-              class="c23"
-              display="flex"
-              height="80px"
-              width="100%"
-            >
-              <div
-                class="c24"
-                display="flex"
-                font-family="sansSerif"
-                font-size="5"
-                size="6"
-              >
-                =
-              </div>
-              <input
-                class="c25"
-                display="inline-block"
-                font-size="5"
-                height="100%"
-                label="Amount"
-                name="amount"
-                placeholder="0"
-                step="0.000000000000000001"
-                type="number"
-                value=""
-                width="100%"
-              />
-              <div
-                class="c26"
-                color="core.primary"
-                display="flex"
-                font-size="3"
-                height="100%"
-              >
-                FIL
-              </div>
-            </div>
-            <div
-              class="c27"
-              display="flex"
-              height="80px"
-            >
-              <input
-                class="c28"
-                display="inline-block"
-                font-size="5"
-                height="100%"
-                min="0"
-                placeholder="0"
-                step="0.000000000000000001"
-                type="number"
-                value=""
-                width="100%"
-              />
-              <div
-                class="c29"
-                color="core.primary"
-                display="flex"
-                font-size="3"
-                height="100%"
-              >
-                USD
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="c30"
-          width="100%"
-        >
-          <div
-            class="c15"
-          >
-            <div
-              class="c3"
-              display="flex"
-            >
-              <div
-                class="c16"
-                display="flex"
-              >
-                <h4
-                  class="c17"
-                  color="core.nearblack"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                >
-                  Transaction Fee
-                </h4>
-              </div>
-              <div
-                class="c18"
-                display="flex"
-              >
-                <input
-                  class="c31"
-                  disabled=""
-                  display="inline-block"
-                  height="6"
-                  value="122"
-                  width="100%"
-                />
-                <div
-                  class="c32"
-                  color="core.primary"
-                  display="flex"
-                  font-size="3"
-                  height="7"
-                >
-                  AttoFil
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="c33"
-      >
-        <div
-          class="c34"
-          display="flex"
-        >
-          <h4
-            class="c35"
-            color="core.darkgray"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
-          >
-            Transfers complete faster with a higher gas price.
-          </h4>
-          <a
-            class="c36"
-            color="core.primary"
-            font-size="3"
-            href="https://kb.myetherwallet.com/en/transactions/what-is-gas/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            What’s this?
-          </a>
-        </div>
-        <div
-          class="c37"
-        >
-          <div
-            class="c38"
-          >
-            <div
-              class="c39"
-            >
-              <div
-                class="c40"
-                display="flex"
-              >
-                <div
-                  class="c41"
-                  display="inline-block"
-                >
-                  <h4
-                    class="c42"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="2"
-                    font-weight="400"
-                  >
-                    Gas Price
-                  </h4>
-                </div>
-                <div
-                  class="c43"
-                  color="background.screen"
-                  display="flex"
-                  width="100%"
-                >
-                  <input
-                    class="c44"
-                    display="inline-block"
-                    height="6"
-                    type="number"
-                    value="1"
-                    width="100%"
-                  />
-                  <div
-                    class="c45"
-                    color="core.primary"
-                    display="flex"
-                    font-size="3"
-                    height="6"
-                  >
-                    AttoFil
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c46"
-            >
-              <div
-                class="c47"
-              >
-                <div
-                  class="c40"
-                  display="flex"
-                >
-                  <div
-                    class="c41"
-                    display="inline-block"
-                  >
-                    <h4
-                      class="c42"
-                      font-family="RT-Alias-Grotesk"
-                      font-size="2"
-                      font-weight="400"
-                    >
-                      Gas Limit
-                    </h4>
-                  </div>
-                  <div
-                    class="c43"
-                    color="background.screen"
-                    display="flex"
-                    width="100%"
-                  >
-                    <input
-                      class="c48"
-                      display="inline-block"
-                      height="6"
-                      type="number"
-                      value="2000"
-                      width="100%"
-                    />
-                    <div
-                      class="c49"
-                      color="core.primary"
-                      display="flex"
-                      font-size="3"
-                      height="6"
-                    >
-                      AttoFil
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button
-        class="c50"
-        color="core.primary"
-        display="flex"
-        font-size="3"
-        height="6"
-        role="button"
-        type="button"
-      >
-        <div
-          class="c51"
-          display="flex"
-        >
-          <p
-            class="c52 c53"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
-          >
-            ▲
-          </p>
-          <p
-            class="c54 c55"
-            display="inline-block"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
-          >
-            Close
-          </p>
-        </div>
-      </button>
-      <div
-        class="c56"
-        display="flex"
-      >
-        <h2
-          class="c57"
-          font-family="RT-Alias-Grotesk"
-          font-size="4"
-          font-weight="400"
-        >
-          Total
-        </h2>
-        <div
-          class="c58"
-          display="flex"
-        >
-          <h2
-            class="c59 c60"
-            color="core.primary"
-            font-family="RT-Alias-Grotesk"
-            font-size="5"
-            font-weight="700"
-          >
-            0
-             
-            FIL
-          </h2>
-          <h2
-            class="c61"
-            color="core.darkgray"
-            font-family="RT-Alias-Grotesk"
-            font-size="4"
-            font-weight="400"
-          >
-            0
-             
-            USD
-          </h2>
-        </div>
-      </div>
-    </div>
-    <div
-      class="c62"
-    >
-      <button
-        class="c63 c64 Sendjs___StyledButton-sc-1crplc1-6 c64"
-        font-size="3"
-        height="6"
-        type="button"
-      >
-        Back
-      </button>
-      <button
-        class="c65 c66 Sendjs___StyledButton2-sc-1crplc1-7 c66"
-        font-size="3"
-        height="6"
-        type="submit"
-      >
-        Send
-      </button>
-    </div>
-  </form>
 </div>
 `;

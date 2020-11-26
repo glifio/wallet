@@ -56,7 +56,7 @@ const MessageDetail = ({ address, close, message }) => {
   useEffect(() => {
     const fetchGasUsed = async message => {
       try {
-        const res = await axios.get(`${FILFOX}/v0/message/${message.cid}`)
+        const res = await axios.get(`${FILFOX}/v1/message/${message.cid}`)
         if (res.status === 200) {
           const { baseFee, gasLimit, gasFeeCap, gasPremium, receipt } = res.data
           const transactionFee = await walletProvider.gasCalcTxFee(

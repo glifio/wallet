@@ -53,7 +53,6 @@ describe('Send Flow', () => {
         fireEvent.click(screen.getByText('Send'))
         await flushPromises()
       })
-      expect(true).toBe(true)
       expect(walletProvider.getNonce).toHaveBeenCalledWith(address)
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
       const message = walletProvider.wallet.sign.mock.calls[0][0]
@@ -579,28 +578,6 @@ describe('Send Flow', () => {
         await flushPromises()
       })
       expect(res.container).toMatchSnapshot()
-    })
-
-    test.skip('it renders the gas customization view', async () => {
-      const { Tree } = composeMockAppTree('postOnboard')
-      let res
-      await act(async () => {
-        res = render(
-          <Tree>
-            <Send close={close} />
-          </Tree>
-        )
-        fireEvent.click(screen.getByText('Customize'))
-        await flushPromises()
-
-        fireEvent.change(screen.getByDisplayValue('1000'), {
-          target: {
-            value: 2000
-          }
-        })
-        await flushPromises()
-      })
-      expect(res.container.firstChild).toMatchSnapshot()
     })
   })
 })

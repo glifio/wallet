@@ -52,18 +52,34 @@ ChangeOwnerDetails.propTypes = {
   to: ADDRESS_PROPTYPE
 }
 
-const RemoveSignerDetails = ({ multisigAddr }) => {
+const RemoveSignerDetails = ({ multisigAddr, signer }) => {
   return (
     <Box mt={3}>
       <Input.Address value={multisigAddr} label='Multisig actor' disabled />
       <Box height={3} />
-      <Text>Removed signer from this Multisig actor.</Text>
+      <Text>{`Removed ${signer} from this Multisig actor.`}</Text>
     </Box>
   )
 }
 
 RemoveSignerDetails.propTypes = {
-  multisigAddr: ADDRESS_PROPTYPE
+  multisigAddr: ADDRESS_PROPTYPE,
+  signer: ADDRESS_PROPTYPE
+}
+
+const AddSignerDetails = ({ multisigAddr, signer }) => {
+  return (
+    <Box mt={3}>
+      <Input.Address value={multisigAddr} label='Multisig actor' disabled />
+      <Box height={3} />
+      <Text>{`Added ${signer} to this Multisig actor.`}</Text>
+    </Box>
+  )
+}
+
+AddSignerDetails.propTypes = {
+  multisigAddr: ADDRESS_PROPTYPE,
+  signer: ADDRESS_PROPTYPE
 }
 
 const ProposeDetails = ({ message }) => {
@@ -78,8 +94,22 @@ const ProposeDetails = ({ message }) => {
     )
   }
 
+  if (message.params.method === 5) {
+    return (
+      <AddSignerDetails
+        multisigAddr={message.to}
+        signer={message.params.params.signer}
+      />
+    )
+  }
+
   if (message.params.method === 6) {
-    return <RemoveSignerDetails multisigAddr={message.to} />
+    return (
+      <RemoveSignerDetails
+        multisigAddr={message.to}
+        signer={message.params.params.signer}
+      />
+    )
   }
 
   if (message.params.method === 7) {

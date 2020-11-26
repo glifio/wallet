@@ -19,6 +19,17 @@ export const presets = {
     ],
     selectedWalletIdx: 0
   }),
+  postOnboardLowBal: cloneDeep({
+    ...initialState,
+    wallets: [
+      {
+        address: 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi',
+        balance: new FilecoinNumber('.000001', 'fil'),
+        path: createPath(1, 0)
+      }
+    ],
+    selectedWalletIdx: 0
+  }),
   postOnboardWithError: cloneDeep({
     ...initialState,
     error: 'error for testing',
@@ -51,6 +62,13 @@ export const composeWalletProviderState = (
 ) => {
   switch (preset) {
     case 'postOnboard': {
+      return Object.freeze({
+        ...initialWalletProviderState,
+        walletType: IMPORT_MNEMONIC,
+        walletProvider: mockWalletProviderInstance
+      })
+    }
+    case 'postOnboardLowBal': {
       return Object.freeze({
         ...initialWalletProviderState,
         walletType: IMPORT_MNEMONIC,
