@@ -4,10 +4,14 @@ import { string } from 'prop-types'
 import Box from '../Box'
 import BaseButton from '../Button/BaseButton'
 import { IconCopyAccountAddress } from '../Icons'
-import { Label, Title as AccountAddress } from '../Typography'
+import { Label, Title } from '../Typography'
 import truncate from '../../../utils/truncateAddress'
 import copyToClipboard from '../../../utils/copyToClipboard'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
+
+const AccountAddress = styled(Title)`
+  white-space: nowrap;
+`
 
 const Copy = styled(BaseButton)`
   /* !important is declared here to override BaseButton's opacity:0.8 on hover. The only instance of us using this declaration. */
@@ -38,13 +42,7 @@ export const CopyAddress = forwardRef(({ address, ...props }, ref) => {
   const [copied, setCopied] = useState(false)
   return (
     <Box ref={ref} display='flex' alignItems='center' {...props}>
-      <AccountAddress
-        fontWeight={1}
-        fontSize={3}
-        margin={0}
-        overflow='hidden'
-        whiteSpace='nowrap'
-      >
+      <AccountAddress fontWeight={1} fontSize={3} margin={0}>
         {truncate(address)}
       </AccountAddress>
       <Copy
