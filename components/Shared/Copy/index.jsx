@@ -4,13 +4,13 @@ import { string } from 'prop-types'
 import Box from '../Box'
 import BaseButton from '../Button/BaseButton'
 import { IconCopyAccountAddress } from '../Icons'
-import { Label, Title} from '../Typography'
+import { Label, Title } from '../Typography'
 import truncate from '../../../utils/truncateAddress'
 import copyToClipboard from '../../../utils/copyToClipboard'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
 const AccountAddress = styled(Title)`
-white-space: nowrap;
+  white-space: nowrap;
 `
 
 const Copy = styled(BaseButton)`
@@ -42,11 +42,7 @@ export const CopyAddress = forwardRef(({ address, ...props }, ref) => {
   const [copied, setCopied] = useState(false)
   return (
     <Box ref={ref} display='flex' alignItems='center' {...props}>
-      <AccountAddress
-        fontWeight={1}
-        fontSize={3}
-        margin={0}
-      >
+      <AccountAddress fontWeight={1} fontSize={3} margin={0}>
         {truncate(address)}
       </AccountAddress>
       <Copy
