@@ -64,7 +64,9 @@ const Send = ({ close }) => {
     resetLedgerState
   } = useWalletProvider()
   const [toAddress, setToAddress] = useState('')
+  const [params, setParams] = useState('')
   const [toAddressError, setToAddressError] = useState('')
+  const [paramsError, setParamsError] = useState('')
   const [value, setValue] = useState(new FilecoinNumber('0', 'fil'))
   const [valueError, setValueError] = useState('')
   const [uncaughtError, setUncaughtError] = useState('')
@@ -97,7 +99,7 @@ const Send = ({ close }) => {
         gasLimit: new BigNumber(gasInfo.gasLimit.toAttoFil()).toNumber(),
         gasPremium: gasInfo.gasPremium.toAttoFil(),
         nonce,
-        params: ''
+        params
       })
 
       setFetchingTxDetails(false)
@@ -333,6 +335,19 @@ const Send = ({ close }) => {
                     }}
                   />
                 </Box>
+                <Box width='100%' p={3} border={0} bg='background.screen'>
+                  <Input.Text
+                    label='Params'
+                    value={params}
+                    onChange={e => setParams(e.target.value)}
+                    error={paramsError}
+                    disabled={step > 1}
+                    placeholder='...'
+                    onFocus={() => {
+                      if (paramsError) setParamsError('')
+                    }}
+                  />
+                </Box>
                 <Box>
                   {step > 1 && (
                     <Box
@@ -369,7 +384,7 @@ const Send = ({ close }) => {
                           value: value.toAttoFil(),
                           nonce: 0,
                           method: 0,
-                          params: '',
+                          params,
                           gasFeeCap: gasInfo.gasFeeCap.toAttoFil(),
                           gasLimit: new BigNumber(
                             gasInfo.gasLimit.toAttoFil()
