@@ -121,7 +121,7 @@ const Withdrawing = ({ address, balance, close }) => {
         messageObj.method = PROPOSE
         return messageObj
       }
-      throw new Error('Filecoin message invalid. No gas or fees were paid.')
+      throw new Error('Filecoin message invalid. No gas or fees were spent.')
     }
     throw new Error('There was an issue when sending your message.')
   }

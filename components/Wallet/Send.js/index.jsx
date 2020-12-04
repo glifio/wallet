@@ -132,7 +132,7 @@ const Send = ({ close }) => {
         messageObj.params = params || {}
         return messageObj
       }
-      throw new Error('Filecoin message invalid. No gas or fees were paid.')
+      throw new Error('Filecoin message invalid. No gas or fees were spent.')
     }
   }
 
