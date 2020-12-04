@@ -50,6 +50,8 @@ describe('Send Flow', () => {
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
         fireEvent.click(screen.getByText('Send'))
         await flushPromises()
       })
@@ -187,6 +189,67 @@ describe('Send Flow', () => {
       expect(store.getState().messages.pending.length).toBe(0)
     })
 
+    test('it allows the user to set params', async () => {
+      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
+      const filAmount = new FilecoinNumber('.01', 'fil')
+      const params =
+        'TU9hY0pFdXhTbkRncTQ0eXpaRmMzdlFKdkN1Tm9sZ3hPYldHWWxQSGdBSQ=='
+      await act(async () => {
+        render(
+          <Tree>
+            <Send close={close} />
+          </Tree>
+        )
+        fireEvent.change(screen.getByPlaceholderText(/f1.../), {
+          target: { value: address },
+          preventDefault: () => {}
+        })
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+          target: { value: filAmount }
+        })
+        fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        fireEvent.change(screen.getAllByPlaceholderText(/base64 params/)[0], {
+          target: { value: params }
+        })
+        fireEvent.blur(screen.getAllByPlaceholderText(/base64 params/)[0])
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.click(screen.getByText('Send'))
+        await flushPromises()
+      })
+      expect(walletProvider.getNonce).toHaveBeenCalledWith(address)
+      expect(walletProvider.wallet.sign).toHaveBeenCalled()
+      const message = walletProvider.wallet.sign.mock.calls[0][0]
+      expect(!!message.gaspremium).toBe(true)
+      expect(typeof message.gaspremium).toBe('string')
+      expect(!!message.gasfeecap).toBe(true)
+      expect(typeof message.gasfeecap).toBe('string')
+      expect(!!message.gaslimit).toBe(true)
+      expect(typeof message.gaslimit).toBe('number')
+      expect(!!message.value).toBe(true)
+      expect(Number(message.value)).not.toBe('NaN')
+      expect(message.to).toBe(address)
+      expect(message.params).toBe(params)
+
+      expect(store.getState().messages.pending.length).toBe(1)
+    })
+
+    test.todo(
+      'it does not allow the user to continue if params are not valid base64'
+    )
+
     test('it allows the user to see the max transaction fee', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
@@ -209,6 +272,8 @@ describe('Send Flow', () => {
         })
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
       })
@@ -237,6 +302,8 @@ describe('Send Flow', () => {
         })
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
@@ -272,6 +339,8 @@ describe('Send Flow', () => {
         })
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
@@ -311,6 +380,8 @@ describe('Send Flow', () => {
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
       })
       expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
       expect(screen.getByText(/not have enough FIL/)).toBeInTheDocument()
@@ -339,6 +410,8 @@ describe('Send Flow', () => {
         })
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
@@ -376,6 +449,8 @@ describe('Send Flow', () => {
         })
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
@@ -456,6 +531,7 @@ describe('Send Flow', () => {
         await flushPromises()
       })
       expect(screen.getByText(/Step 3/)).toBeInTheDocument()
+      expect(screen.getByPlaceholderText(/base64 params/)).toBeInTheDocument()
       expect(res.container).toMatchSnapshot()
     })
 
@@ -490,6 +566,7 @@ describe('Send Flow', () => {
         await flushPromises()
       })
       expect(screen.getByText(/Step 4/)).toBeInTheDocument()
+      expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
       expect(res.container).toMatchSnapshot()
     })
 
@@ -547,13 +624,14 @@ describe('Send Flow', () => {
         await flushPromises()
       })
       expect(screen.getByText(/Step 5/)).toBeInTheDocument()
+      expect(screen.getByText(/Total/)).toBeInTheDocument()
       expect(res.container).toMatchSnapshot()
     })
 
     test('it renders invalid value errors correctly', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
-      const filAmount = new FilecoinNumber('.01', 'fil')
+      const filAmount = new FilecoinNumber('100', 'fil')
       let res
       await act(async () => {
         res = render(
@@ -578,6 +656,9 @@ describe('Send Flow', () => {
         await flushPromises()
       })
       expect(res.container).toMatchSnapshot()
+      expect(
+        screen.getByText(/The amount must be smaller than this account/)
+      ).toBeInTheDocument()
     })
   })
 })
