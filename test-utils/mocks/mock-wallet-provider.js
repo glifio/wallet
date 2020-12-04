@@ -17,6 +17,10 @@ const mockGetBalance = jest
   .fn()
   .mockImplementation(() => Promise.resolve(new FilecoinNumber('1', 'fil')))
 
+const mockSimulateMessage = jest
+  .fn()
+  .mockImplementation(() => Promise.resolve(true))
+
 const mockSuprovider = {
   type: 'MOCK',
   getAccounts: mockGetAccounts,
@@ -76,6 +80,7 @@ class MockWalletProvider {
     message: { ...message, GasLimit: 1, GasFeeCap: '1', GasPremium: '1' }
   }))
   sendMessage = jest.fn().mockImplementation(() => 'QmZCid!')
+  simulateMessage = mockSimulateMessage
 }
 
 export const mockWalletProviderInstance = new MockWalletProvider()
