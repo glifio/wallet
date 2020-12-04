@@ -45,7 +45,12 @@ const MessageHistoryRow = ({
 
     case EXEC: {
       InnerComponent = () => (
-        <ExecRow status={status} value={value} timestamp={timestamp} />
+        <ExecRow
+          status={status}
+          value={value}
+          timestamp={timestamp}
+          params={params}
+        />
       )
       break
     }

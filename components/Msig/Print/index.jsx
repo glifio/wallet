@@ -17,7 +17,7 @@ const PAGE_SIZE = 20
 
 const Print = () => {
   const router = useRouter()
-  const { deserializeParams } = useWasm()
+  const wasm = useWasm()
   const [address, setAddress] = useState(router.query.address || '')
   const [printing, setPrinting] = useState(false)
   const [err, setErr] = useState('')
@@ -56,7 +56,7 @@ const Print = () => {
       }
 
       const messagesWithParams = (
-        await getMsgParams(formatFilfoxMessages(messages), deserializeParams)
+        await getMsgParams(formatFilfoxMessages(messages), wasm)
       ).sort((a, b) => Number(a.timestamp) - Number(b.timestamp))
 
       const doc = new PDF()
