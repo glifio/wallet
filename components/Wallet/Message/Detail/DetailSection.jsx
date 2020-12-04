@@ -1,10 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import { FilecoinNumber } from '@glif/filecoin-number'
 
 import { Box, Input, Text } from '../../../Shared'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../../customPropTypes'
 import { EXEC, PROPOSE, SEND } from '../../../../constants'
+import truncateAddress from '../../../../utils/truncateAddress'
+import getAddrFromReceipt from '../../../../utils/getAddrFromReceipt'
+import noop from '../../../../utils/noop'
 
 const WithdrawDetails = ({ from, multisigAddr, recipient, value }) => {
   return (
@@ -152,12 +156,28 @@ SendDetails.propTypes = {
   value: PropTypes.string.isRequired
 }
 
+const NumSignerDisplay = styled(Input.Text)`
+  &:hover {
+    background: transparent;
+  }
+`
+
 const ExecDetails = ({ message }) => {
+  const isMultisig =
+    Array.isArray(message.params.signers) && message.params.signers.length > 1
   return (
     <>
       <Box display='flex' justifyContent='space-between' mt={3}>
         <Text>Action</Text>
-        <Text>Created new actor</Text>
+        {isMultisig ? (
+          <Text>
+            {`Created new multisig: ${truncateAddress(
+              getAddrFromReceipt(message.receipt.return)
+            )}`}{' '}
+          </Text>
+        ) : (
+          <Text>Created new actor</Text>
+        )}
       </Box>
       <Input.Funds
         my={3}
@@ -166,6 +186,16 @@ const ExecDetails = ({ message }) => {
         disabled
         amount={new FilecoinNumber(message.value, 'attofil').toAttoFil()}
       />
+      <Box display='flex'>
+        <NumSignerDisplay
+          textAlign='right'
+          onChange={noop}
+          label='Signatures required'
+          value={message.params.num_approvals_threshold.toString()}
+          backgroundColor='background.screen'
+          disabled
+        />
+      </Box>
     </>
   )
 }
