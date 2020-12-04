@@ -112,23 +112,27 @@ const Send = ({ close }) => {
 
       const messageObj = message.toLotusType()
       setMPoolPushing(true)
-      const msgCid = await provider.sendMessage(
-        message.toLotusType(),
-        signedMessage
-      )
+      const validMsg = await provider.simulateMessage(message.toLotusType())
+      if (validMsg) {
+        const msgCid = await provider.sendMessage(
+          message.toLotusType(),
+          signedMessage
+        )
 
-      messageObj.cid = msgCid['/']
-      messageObj.timestamp = dayjs().unix()
-      messageObj.maxFee = gasInfo.estimatedTransactionFee.toAttoFil()
-      // dont know how much was actually paid in this message yet, so we mark it as 0
-      messageObj.paidFee = '0'
-      messageObj.value = new FilecoinNumber(
-        messageObj.Value,
-        'attofil'
-      ).toAttoFil()
-      messageObj.method = SEND
-      messageObj.params = params || {}
-      return messageObj
+        messageObj.cid = msgCid['/']
+        messageObj.timestamp = dayjs().unix()
+        messageObj.maxFee = gasInfo.estimatedTransactionFee.toAttoFil()
+        // dont know how much was actually paid in this message yet, so we mark it as 0
+        messageObj.paidFee = '0'
+        messageObj.value = new FilecoinNumber(
+          messageObj.Value,
+          'attofil'
+        ).toAttoFil()
+        messageObj.method = SEND
+        messageObj.params = params || {}
+        return messageObj
+      }
+      throw new Error('Filecoin message invalid. No gas or fees were paid.')
     }
   }
 
