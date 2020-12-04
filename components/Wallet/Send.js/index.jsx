@@ -27,8 +27,9 @@ import useWallet from '../../../WalletProvider/useWallet'
 import { LEDGER, SEND, emptyGasInfo } from '../../../constants'
 import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfigError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
-import { confirmMessage } from '../../../store/actions'
 import reportError from '../../../utils/reportError'
+import isBase64 from '../../../utils/isBase64'
+import { confirmMessage } from '../../../store/actions'
 
 // this is a bit confusing, sometimes the form can report errors, so we check those here too
 const isValidAmount = (value, balance, errorFromForms) => {
@@ -47,11 +48,12 @@ const isValidForm = (
   balance,
   toAddressError,
   valueError,
-  otherError
+  otherError,
+  paramsError
 ) => {
   const validToAddress = isValidAddress(toAddress, toAddressError)
   const validAmount = isValidAmount(value, balance, valueError)
-  return validToAddress && validAmount && !otherError
+  return validToAddress && validAmount && !otherError && !paramsError
 }
 
 const Send = ({ close }) => {
@@ -125,7 +127,7 @@ const Send = ({ close }) => {
         'attofil'
       ).toAttoFil()
       messageObj.method = SEND
-      messageObj.params = {}
+      messageObj.params = params || {}
       return messageObj
     }
   }
@@ -139,9 +141,15 @@ const Send = ({ close }) => {
         close()
       }
     } catch (err) {
-      reportError(9, false, err.message, err.stack)
-      setUncaughtError(err.message)
-      setStep(3)
+      if (err.message.includes('Unexpected number of items')) {
+        setUncaughtError(
+          'Ledger devices cannot sign arbitrary base64 params yet. Coming soon.'
+        )
+      } else {
+        reportError(9, false, err.message, err.stack)
+        setUncaughtError(err.message)
+      }
+      setStep(4)
     } finally {
       setAttemptingTx(false)
       setFetchingTxDetails(false)
@@ -166,27 +174,19 @@ const Send = ({ close }) => {
       setToAddressError('Invalid to address')
     } else if (step === 2 && !valueError) {
       setStep(3)
+    } else if (step === 3 && (!params || isBase64(params))) {
+      // TODO - get rid of this once ledger supports params
+      if (wallet.type === LEDGER && params) {
+        setParamsError(
+          'Ledger devices cannot sign base64 params yet. Coming soon.'
+        )
+      } else {
+        setStep(4)
+      }
     } else if (step === 3) {
-      setStep(4)
-    } else if (
-      step === 4 &&
-      !isValidForm(
-        toAddress,
-        value,
-        wallet.balance,
-        toAddressError,
-        valueError,
-        uncaughtError
-      )
-    ) {
-      populateErrors()
+      setParamsError('Invalid base64 params')
     } else if (step === 4) {
       setStep(5)
-      setAttemptingTx(true)
-      // confirmation step happens on ledger device, so we send message one step earlier
-      if (wallet.type === LEDGER) {
-        await sendMsg()
-      }
     } else if (
       step === 5 &&
       !isValidForm(
@@ -195,12 +195,33 @@ const Send = ({ close }) => {
         wallet.balance,
         toAddressError,
         valueError,
-        uncaughtError
+        uncaughtError,
+        paramsError
       )
     ) {
       populateErrors()
     } else if (step === 5) {
       setStep(6)
+      setAttemptingTx(true)
+      // confirmation step happens on ledger device, so we send message one step earlier
+      if (wallet.type === LEDGER) {
+        await sendMsg()
+      }
+    } else if (
+      step === 6 &&
+      !isValidForm(
+        toAddress,
+        value,
+        wallet.balance,
+        toAddressError,
+        valueError,
+        uncaughtError,
+        paramsError
+      )
+    ) {
+      populateErrors()
+    } else if (step === 6) {
+      setStep(7)
       await sendMsg()
     }
   }
@@ -226,9 +247,9 @@ const Send = ({ close }) => {
     if (step === 1 && !toAddress) return true
     if (step === 2 && !isValidAmount(value, wallet.balance, valueError))
       return true
-    if (step === 3 && gasError) return true
-    if (step === 5 && wallet.type === LEDGER) return true
-    if (step > 5) return true
+    if (step === 4 && gasError) return true
+    if (step === 6 && wallet.type === LEDGER) return true
+    if (step > 6) return true
   }
 
   const isBackBtnDisabled = () => {
@@ -240,10 +261,10 @@ const Send = ({ close }) => {
   }
 
   const submitBtnText = () => {
-    if (step === 5 && wallet.type !== LEDGER) return 'Send'
-    if (step === 5 && wallet.type === LEDGER) return 'Confirm on device.'
-    if (step < 5) return 'Next'
-    if (step > 5) return 'Send'
+    if (step === 6 && wallet.type !== LEDGER) return 'Send'
+    if (step === 6 && wallet.type === LEDGER) return 'Confirm on device.'
+    if (step < 6) return 'Next'
+    if (step > 6) return 'Send'
   }
 
   return (
@@ -258,6 +279,7 @@ const Send = ({ close }) => {
             setAttemptingTx(false)
             setUncaughtError('')
             setGasError('')
+            setParamsError('')
             resetLedgerState()
             close()
           }}
@@ -280,6 +302,7 @@ const Send = ({ close }) => {
                     setAttemptingTx(false)
                     setUncaughtError('')
                     setGasError('')
+                    setParamsError('')
                     resetLedgerState()
                     setStep(step - 1)
                   }}
@@ -288,8 +311,8 @@ const Send = ({ close }) => {
               {!hasError() && attemptingTx && (
                 <ConfirmationCard
                   walletType={wallet.type}
-                  currentStep={5}
-                  totalSteps={5}
+                  currentStep={6}
+                  totalSteps={6}
                   loading={fetchingTxDetails || mPoolPushing}
                 />
               )}
@@ -335,19 +358,6 @@ const Send = ({ close }) => {
                     }}
                   />
                 </Box>
-                <Box width='100%' p={3} border={0} bg='background.screen'>
-                  <Input.Text
-                    label='Params'
-                    value={params}
-                    onChange={e => setParams(e.target.value)}
-                    error={paramsError}
-                    disabled={step > 1}
-                    placeholder='...'
-                    onFocus={() => {
-                      if (paramsError) setParamsError('')
-                    }}
-                  />
-                </Box>
                 <Box>
                   {step > 1 && (
                     <Box
@@ -370,10 +380,25 @@ const Send = ({ close }) => {
                     </Box>
                   )}
                   {step > 2 && (
+                    <Box width='100%' p={3} border={0} bg='background.screen'>
+                      <Input.Text
+                        label='Params'
+                        value={params}
+                        onChange={e => setParams(e.target.value)}
+                        error={paramsError}
+                        disabled={step > 3}
+                        placeholder='Optional base64 params'
+                        onFocus={() => {
+                          if (paramsError) setParamsError('')
+                        }}
+                      />
+                    </Box>
+                  )}
+                  {step > 3 && (
                     <Box
                       width='100%'
                       px={3}
-                      pb={step === 3 && 3}
+                      pb={step === 4 && 3}
                       border={0}
                       bg='background.screen'
                     >
@@ -401,7 +426,7 @@ const Send = ({ close }) => {
                     </Box>
                   )}
                 </Box>
-                {step > 3 && (
+                {step > 4 && (
                   <Box
                     display='flex'
                     flexDirection='row'
@@ -461,6 +486,7 @@ const Send = ({ close }) => {
                   setAttemptingTx(false)
                   setUncaughtError('')
                   setGasError('')
+                  setParamsError('')
                   resetLedgerState()
                   if (step === 1) {
                     close()
