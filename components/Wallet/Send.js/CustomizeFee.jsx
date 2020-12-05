@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { Message } from '@glif/filecoin-message'
 
 import { Box, Text, Input, Button, StyledATag } from '../../Shared'
 import { useWalletProvider } from '../../../WalletProvider'
@@ -162,11 +163,19 @@ const CustomizeFee = ({
       return
     }
     try {
+      const msgWithoutGas = new Message({
+        to: message.To,
+        from: message.From,
+        value: message.Value,
+        method: message.Method,
+        nonce: message.Nonce,
+        params: message.Params
+      })
       setFrozen(true)
       setSavingNewFee(true)
       const msgWithGas = (
         await walletProvider.gasEstimateMessageGas(
-          message,
+          msgWithoutGas.toLotusType(),
           localTxFee.toAttoFil()
         )
       ).toLotusType()

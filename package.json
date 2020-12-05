@@ -15,7 +15,7 @@
     "@glif/filecoin-message-confirmer": "^1.1.0-beta.7",
     "@glif/filecoin-number": "^1.1.0-beta.7",
     "@glif/filecoin-rpc-client": "^1.1.0-beta.7",
-    "@glif/filecoin-wallet-provider": "^1.1.0-beta.7",
+    "@glif/filecoin-wallet-provider": "^1.1.0-beta.8",
     "@ledgerhq/hw-transport-webusb": "5.26.0",
     "@zondax/filecoin-signing-tools": "0.13.0",
     "@zondax/ledger-filecoin": "0.11.0",
