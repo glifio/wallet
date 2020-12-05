@@ -53,6 +53,7 @@ describe('Change owner flow', () => {
 
       expect(walletProvider.getNonce).toHaveBeenCalled()
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
+      expect(walletProvider.simulateMessage).toHaveBeenCalled()
       const message = walletProvider.wallet.sign.mock.calls[0][0]
       expect(!!message.gaspremium).toBe(true)
       expect(typeof message.gaspremium).toBe('string')

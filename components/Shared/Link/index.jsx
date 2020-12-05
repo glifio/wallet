@@ -34,5 +34,12 @@ export const StyledLink = ({ href, name, ...props }) => {
 
 StyledLink.propTypes = {
   href: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
+  rel: PropTypes.string,
+  target: PropTypes.string
+}
+
+StyledLink.defaultProps = {
+  rel: '',
+  target: ''
 }

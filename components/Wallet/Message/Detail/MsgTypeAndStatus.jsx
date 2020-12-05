@@ -23,7 +23,14 @@ const TxStatusText = ({ address, message }) => {
       break
     }
     case EXEC: {
-      text = 'ACTOR CREATE'
+      if (
+        Array.isArray(message.params.signers) &&
+        message.params.signers?.length > 1
+      ) {
+        text = `MSIG CREATE`
+      } else {
+        text = 'ACTOR CREATE'
+      }
       break
     }
     default:

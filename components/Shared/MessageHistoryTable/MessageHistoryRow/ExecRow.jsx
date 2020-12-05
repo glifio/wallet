@@ -1,13 +1,16 @@
 import React from 'react'
 import dayjs from 'dayjs'
 import { FilecoinNumber } from '@glif/filecoin-number'
-import { string, oneOf, oneOfType, number } from 'prop-types'
+import { string, oneOf, oneOfType, number, object, shape } from 'prop-types'
 import { Menu, MenuItem } from '../../Menu'
 import { Text, Label } from '../../Typography'
 import { IconSend, IconPending } from '../../Icons'
 import makeFriendlyBalance from '../../../../utils/makeFriendlyBalance'
+import truncate from '../../../../utils/truncateAddress'
+import getAddrFromReceipt from '../../../../utils/getAddrFromReceipt'
 
-const ExecRow = ({ status, value, timestamp }) => {
+const ExecRow = ({ status, value, timestamp, params, receipt }) => {
+  const isMultisig = params.signers.length > 0
   return (
     <>
       <Menu>
@@ -28,10 +31,20 @@ const ExecRow = ({ status, value, timestamp }) => {
               flexDirection='column'
               justifyContent='center'
             >
-              <Label color='core.nearblack' my={0}>
-                Created new actor
-              </Label>
-              {/* should figure out way to get actor address here */}
+              {isMultisig ? (
+                <>
+                  <Label fontSize={1} color='core.darkgray' my={0}>
+                    Created new msig
+                  </Label>
+                  <Text fontSize={3} color='core.nearblack' m={0}>
+                    {truncate(getAddrFromReceipt(receipt.return))}
+                  </Text>
+                </>
+              ) : (
+                <Label fontSize={1} color='core.darkgray' my={0}>
+                  Created new actor
+                </Label>
+              )}
             </MenuItem>
             <MenuItem
               display='flex'
@@ -92,6 +105,11 @@ const ExecRow = ({ status, value, timestamp }) => {
 }
 
 ExecRow.propTypes = {
+  receipt: shape({
+    exitCode: number.isRequired,
+    return: oneOfType([string])
+  }),
+  params: object.isRequired,
   status: oneOf(['confirmed', 'pending']).isRequired,
   timestamp: oneOfType([string, number]).isRequired,
   value: string.isRequired
