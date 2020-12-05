@@ -11,7 +11,7 @@ import convertAddrToFPrefix from '../../../../utils/convertAddrToFPrefix'
 
 const MessageHistoryRow = ({
   address,
-  message: { to, from, value, status, cid, timestamp, method, params },
+  message: { to, from, value, status, cid, timestamp, method, params, receipt },
   selectMessage
 }) => {
   const sentMsg = convertAddrToFPrefix(address) === convertAddrToFPrefix(from)
@@ -45,7 +45,13 @@ const MessageHistoryRow = ({
 
     case EXEC: {
       InnerComponent = () => (
-        <ExecRow status={status} value={value} timestamp={timestamp} />
+        <ExecRow
+          receipt={receipt}
+          status={status}
+          value={value}
+          timestamp={timestamp}
+          params={params}
+        />
       )
       break
     }
