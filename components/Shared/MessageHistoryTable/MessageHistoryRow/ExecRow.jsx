@@ -10,7 +10,7 @@ import truncate from '../../../../utils/truncateAddress'
 import getAddrFromReceipt from '../../../../utils/getAddrFromReceipt'
 
 const ExecRow = ({ status, value, timestamp, params, receipt }) => {
-  const isMultisig = params.signers.length > 1
+  const isMultisig = params.signers.length > 0
   return (
     <>
       <Menu>

@@ -164,7 +164,7 @@ const NumSignerDisplay = styled(Input.Text)`
 
 const ExecDetails = ({ message }) => {
   const isMultisig =
-    Array.isArray(message.params.signers) && message.params.signers.length > 1
+    Array.isArray(message.params.signers) && message.params.signers.length > 0
   return (
     <>
       <Box display='flex' justifyContent='space-between' mt={3}>
