@@ -21,7 +21,7 @@ const Signers = ({ signers, walletAddress }) => {
             <Address
               key={signer.account}
               label='Additional Signer'
-              address={truncateAddress(signer.account)}
+              address={signer.account}
               glyphAcronym={i + 1}
             />
           )
