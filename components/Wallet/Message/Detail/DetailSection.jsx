@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { FilecoinNumber } from '@glif/filecoin-number'
 
-import { Box, Input, Text } from '../../../Shared'
+import { Box, Input, Text, CopyAddress } from '../../../Shared'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../../customPropTypes'
 import { EXEC, PROPOSE, SEND } from '../../../../constants'
 import truncateAddress from '../../../../utils/truncateAddress'
@@ -170,11 +170,10 @@ const ExecDetails = ({ message }) => {
       <Box display='flex' justifyContent='space-between' mt={3}>
         <Text>Action</Text>
         {isMultisig ? (
-          <Text>
-            {`Created new multisig: ${truncateAddress(
-              getAddrFromReceipt(message.receipt.return)
-            )}`}{' '}
-          </Text>
+          <CopyAddress
+            address={getAddrFromReceipt(message.receipt.return)}
+            color='core.primary'
+          />
         ) : (
           <Text>Created new actor</Text>
         )}
