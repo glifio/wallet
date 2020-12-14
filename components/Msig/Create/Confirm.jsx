@@ -13,7 +13,7 @@ import {
   Glyph,
   Title
 } from '../../Shared'
-import { fetchAndSetMsigActor } from '../../../store/actions'
+import { fetchAndSetMsigActor, clearMessages } from '../../../store/actions'
 
 const NextOption = ({ text, onClick }) => {
   return (
@@ -86,6 +86,7 @@ const Confirm = () => {
             <NextOption
               text='Go to Multisig home'
               onClick={() => {
+                dispatch(clearMessages())
                 const searchParams = new URLSearchParams(router.query)
                 router.push(`/vault/home?${searchParams.toString()}`)
               }}

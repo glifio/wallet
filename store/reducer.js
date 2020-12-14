@@ -6,6 +6,7 @@ import {
   CONFIRM_MESSAGE,
   CONFIRMED_MESSAGE,
   CLEAR_ERROR,
+  CLEAR_MESSAGES,
   FETCHING_CONFIRMED_MESSAGES,
   FETCHED_CONFIRMED_MESSAGES_SUCCESS,
   FETCHED_CONFIRMED_MESSAGES_FAILURE,
@@ -33,7 +34,8 @@ import {
   switchNetwork,
   setMsigActorAddress,
   setInvestorId,
-  initialState
+  initialState,
+  clearMessages
 } from './states'
 
 const reducer = (state, action) => {
@@ -69,6 +71,8 @@ const reducer = (state, action) => {
       return error(Object.freeze(state), action.error)
     case CLEAR_ERROR:
       return clearError(Object.freeze(state))
+    case CLEAR_MESSAGES:
+      return clearMessages(Object.freeze(state))
     case POPULATE_REDUX:
       return populateRedux(Object.freeze(state), action.payload)
     case SWITCH_NETWORK:

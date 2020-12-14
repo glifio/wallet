@@ -51,6 +51,13 @@ describe('actions', () => {
     expect(actions.updateBalance(balance, walletIdx)).toEqual(expectedAction)
   })
 
+  test('clearMessage', () => {
+    const expectedAction = {
+      type: types.CLEAR_MESSAGES
+    }
+    expect(actions.clearMessages()).toEqual(expectedAction)
+  })
+
   test('confirmMessage', () => {
     const message = new Message({
       from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',

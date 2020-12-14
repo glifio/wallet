@@ -334,6 +334,43 @@ describe('state manipulators', () => {
     })
   })
 
+  describe('clearMessages', () => {
+    test('it clears messages from state', () => {
+      const message = new Message({
+        from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
+        to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
+        value: '1000',
+        method: 0,
+        nonce: 0
+      })
+      const msgCid = '123'
+      message.cid = msgCid
+
+      const secondMsg = new Message({
+        from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
+        to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
+        value: '1000',
+        method: 0,
+        nonce: 1
+      })
+      secondMsg.cid = '456'
+
+      const state = {
+        ...initialState,
+        messages: {
+          ...initialState.messages,
+          confirmed: [message],
+          pending: [secondMsg],
+          total: 1
+        }
+      }
+
+      expect(JSON.stringify(states.clearMessages(state))).toEqual(
+        JSON.stringify(initialState)
+      )
+    })
+  })
+
   describe('confirmedMessage', () => {
     test('it removes the pending message and adds it to the confirmed message arr', () => {
       const message = new Message({

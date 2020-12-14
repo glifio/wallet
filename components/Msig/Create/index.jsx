@@ -23,7 +23,7 @@ import { CardHeader, CreateMultisigHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send.js/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send.js/ConfirmationCard'
-import { LEDGER, PROPOSE, emptyGasInfo } from '../../../constants'
+import { LEDGER, emptyGasInfo, EXEC } from '../../../constants'
 import CustomizeFee from '../../Wallet/Send.js/CustomizeFee'
 import {
   reportLedgerConfigError,
@@ -86,8 +86,15 @@ const Create = () => {
       gasPremium: gasInfo.gasPremium.toAttoFil()
     })
 
-    // TODO deserialize these params
-    return { message, params: {} }
+    return {
+      message,
+      params: {
+        num_approvals_threshold: 1,
+        signers: [...signerAddresses],
+        start_epoch: startEpoch.toString(),
+        unlock_duration: vest.toString()
+      }
+    }
   }
 
   const sendMsg = async () => {
@@ -112,10 +119,9 @@ const Create = () => {
         messageObj.timestamp = dayjs().unix()
         messageObj.maxFee = gasInfo.estimatedTransactionFee.toAttoFil() // dont know how much was actually paid in this message yet, so we mark it as 0
         messageObj.paidFee = '0'
-        messageObj.value = '0'
         // reformat the params and method for tx table
         messageObj.params = params
-        messageObj.method = PROPOSE
+        messageObj.method = EXEC
         return messageObj
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')
