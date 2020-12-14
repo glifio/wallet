@@ -4469,7 +4469,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
                       font-size="2"
                       font-weight="400"
                     >
-                      Vest
+                      Vest (# blocks)
                     </h4>
                   </div>
                   <div
@@ -5803,7 +5803,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
                       font-size="2"
                       font-weight="400"
                     >
-                      Vest
+                      Vest (# blocks)
                     </h4>
                   </div>
                   <div
@@ -5848,7 +5848,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
                       font-size="2"
                       font-weight="400"
                     >
-                      Start epoch
+                      Start epoch (block #)
                     </h4>
                   </div>
                   <div
@@ -7300,7 +7300,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                       font-size="2"
                       font-weight="400"
                     >
-                      Vest
+                      Vest (# blocks)
                     </h4>
                   </div>
                   <div
@@ -7345,7 +7345,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                       font-size="2"
                       font-weight="400"
                     >
-                      Start epoch
+                      Start epoch (block #)
                     </h4>
                   </div>
                   <div

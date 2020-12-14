@@ -7,6 +7,7 @@ import {
   SWITCH_NETWORK,
   UPDATE_BALANCE,
   CLEAR_ERROR,
+  CLEAR_MESSAGES,
   FETCHING_CONFIRMED_MESSAGES,
   FETCHED_CONFIRMED_MESSAGES_SUCCESS,
   FETCHED_CONFIRMED_MESSAGES_FAILURE,
@@ -53,6 +54,10 @@ export const confirmedMessage = msgCid => ({
   payload: {
     msgCid
   }
+})
+
+export const clearMessages = () => ({
+  type: CLEAR_MESSAGES
 })
 
 export const fetchingConfirmedMessages = () => ({

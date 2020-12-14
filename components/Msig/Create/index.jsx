@@ -23,7 +23,7 @@ import { CardHeader, CreateMultisigHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send.js/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send.js/ConfirmationCard'
-import { LEDGER, PROPOSE, emptyGasInfo } from '../../../constants'
+import { LEDGER, emptyGasInfo, EXEC } from '../../../constants'
 import CustomizeFee from '../../Wallet/Send.js/CustomizeFee'
 import {
   reportLedgerConfigError,
@@ -86,8 +86,15 @@ const Create = () => {
       gasPremium: gasInfo.gasPremium.toAttoFil()
     })
 
-    // TODO deserialize these params
-    return { message, params: {} }
+    return {
+      message,
+      params: {
+        num_approvals_threshold: 1,
+        signers: [...signerAddresses],
+        start_epoch: startEpoch.toString(),
+        unlock_duration: vest.toString()
+      }
+    }
   }
 
   const sendMsg = async () => {
@@ -96,8 +103,7 @@ const Create = () => {
 
     if (provider) {
       const nonce = await provider.getNonce(wallet.address)
-      const { Height } = await provider.jsonRpcEngine.request('ChainHead')
-      const { message, params } = constructMsg(nonce, Height)
+      const { message, params } = constructMsg(nonce, startEpoch)
       setFetchingTxDetails(false)
       const signedMessage = await provider.wallet.sign(
         message.toSerializeableType(),
@@ -113,10 +119,9 @@ const Create = () => {
         messageObj.timestamp = dayjs().unix()
         messageObj.maxFee = gasInfo.estimatedTransactionFee.toAttoFil() // dont know how much was actually paid in this message yet, so we mark it as 0
         messageObj.paidFee = '0'
-        messageObj.value = '0'
         // reformat the params and method for tx table
         messageObj.params = params
-        messageObj.method = PROPOSE
+        messageObj.method = EXEC
         return messageObj
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')
@@ -407,7 +412,7 @@ const Create = () => {
                   <Box width='100%' p={3} border={0} bg='background.screen'>
                     <Input.Number
                       name='vest'
-                      label='Vest'
+                      label='Vest (# blocks)'
                       value={vest > 0 ? vest.toString() : ''}
                       placeholder='0'
                       onChange={e => setVest(e.target.value)}
@@ -419,7 +424,7 @@ const Create = () => {
                   <Box width='100%' p={3} border={0} bg='background.screen'>
                     <Input.Number
                       name='epochs'
-                      label='Start epoch'
+                      label='Start epoch (block #)'
                       value={startEpoch > 0 ? startEpoch.toString() : ''}
                       placeholder={startEpoch.toString()}
                       onChange={e => setStartEpoch(e.target.value)}
@@ -438,7 +443,10 @@ const Create = () => {
                     bg='background.screen'
                   >
                     <CustomizeFee
-                      message={constructMsg().message.toLotusType()}
+                      message={constructMsg(
+                        0,
+                        startEpoch
+                      ).message.toLotusType()}
                       gasInfo={gasInfo}
                       setGasInfo={setGasInfo}
                       setFrozen={setFrozen}
