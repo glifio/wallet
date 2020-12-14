@@ -95,6 +95,13 @@ export const fetchingConfirmedMessages = state => ({
   }
 })
 
+export const clearMessages = state => ({
+  ...state,
+  messages: {
+    ...initialMessagesState
+  }
+})
+
 export const fetchedConfirmedMessagesSuccess = (
   state,
   { messages, total }
