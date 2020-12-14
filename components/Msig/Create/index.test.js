@@ -313,6 +313,75 @@ describe('Create msig flow', () => {
       expect(store.getState().messages.pending.length).toBe(1)
     })
 
+    test('it populates the start epoch with chain head', async () => {
+      const START_EPOCH = '100000'
+      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const filAmount = new FilecoinNumber(1, 'fil')
+      await act(async () => {
+        render(
+          <Tree>
+            <Create />
+          </Tree>
+        )
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+          target: { value: filAmount }
+        })
+        fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
+        jest.runOnlyPendingTimers()
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
+          target: { value: VEST }
+        })
+        fireEvent.blur(screen.getAllByPlaceholderText('0')[1])
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.change(screen.getAllByPlaceholderText(CHAIN_HEAD)[0], {
+          target: { value: START_EPOCH }
+        })
+        fireEvent.blur(screen.getByDisplayValue(START_EPOCH))
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
+        fireEvent.click(screen.getByText('Next'))
+      })
+
+      expect(walletProvider.getNonce).toHaveBeenCalled()
+      expect(walletProvider.wallet.sign).toHaveBeenCalled()
+      const message = walletProvider.wallet.sign.mock.calls[0][0]
+      expect(!!message.gaspremium).toBe(true)
+      expect(typeof message.gaspremium).toBe('string')
+      expect(!!message.gasfeecap).toBe(true)
+      expect(typeof message.gasfeecap).toBe('string')
+      expect(!!message.gaslimit).toBe(true)
+      expect(typeof message.gaslimit).toBe('number')
+      expect(!!message.value).toBe(true)
+      expect(Number(message.value)).not.toBe('NaN')
+      expect(message.to).toBe('t01')
+
+      const multisigCreateCalls = createMultisig.mock.calls
+      expect(
+        multisigCreateCalls[multisigCreateCalls.length - 1][1].length
+      ).toBe(1)
+      expect(multisigCreateCalls[multisigCreateCalls.length - 1][2]).toBe(
+        filAmount.toAttoFil()
+      )
+      expect(multisigCreateCalls[multisigCreateCalls.length - 1][3]).toBe(1)
+      expect(multisigCreateCalls[multisigCreateCalls.length - 1][5]).toBe(
+        VEST.toString()
+      )
+      expect(multisigCreateCalls[multisigCreateCalls.length - 1][6]).toBe(
+        START_EPOCH
+      )
+
+      expect(store.getState().messages.pending.length).toBe(1)
+    })
+
     describe('snapshots', () => {
       test('it renders step 1 correctly', async () => {
         const { Tree } = composeMockAppTree('postOnboard')

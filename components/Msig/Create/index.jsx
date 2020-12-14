@@ -96,8 +96,7 @@ const Create = () => {
 
     if (provider) {
       const nonce = await provider.getNonce(wallet.address)
-      const { Height } = await provider.jsonRpcEngine.request('ChainHead')
-      const { message, params } = constructMsg(nonce, Height)
+      const { message, params } = constructMsg(nonce, startEpoch)
       setFetchingTxDetails(false)
       const signedMessage = await provider.wallet.sign(
         message.toSerializeableType(),
@@ -407,7 +406,7 @@ const Create = () => {
                   <Box width='100%' p={3} border={0} bg='background.screen'>
                     <Input.Number
                       name='vest'
-                      label='Vest'
+                      label='Vest (# blocks)'
                       value={vest > 0 ? vest.toString() : ''}
                       placeholder='0'
                       onChange={e => setVest(e.target.value)}
@@ -419,7 +418,7 @@ const Create = () => {
                   <Box width='100%' p={3} border={0} bg='background.screen'>
                     <Input.Number
                       name='epochs'
-                      label='Start epoch'
+                      label='Start epoch (block #)'
                       value={startEpoch > 0 ? startEpoch.toString() : ''}
                       placeholder={startEpoch.toString()}
                       onChange={e => setStartEpoch(e.target.value)}
@@ -438,7 +437,10 @@ const Create = () => {
                     bg='background.screen'
                   >
                     <CustomizeFee
-                      message={constructMsg().message.toLotusType()}
+                      message={constructMsg(
+                        0,
+                        startEpoch
+                      ).message.toLotusType()}
                       gasInfo={gasInfo}
                       setGasInfo={setGasInfo}
                       setFrozen={setFrozen}
