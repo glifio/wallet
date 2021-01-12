@@ -19,7 +19,7 @@
     "@ledgerhq/hw-transport-webusb": "5.26.0",
     "@zondax/filecoin-signing-tools": "0.13.0",
     "@zondax/ledger-filecoin": "0.11.0",
-    "axios": "0.19.2",
+    "axios": "0.21.1",
     "bip39": "3.0.2",
     "bluebird": "3.7.2",
     "cbor": "^5.1.0",
