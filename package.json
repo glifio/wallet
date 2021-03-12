@@ -25,7 +25,7 @@
     "cbor": "^5.1.0",
     "crypto": "1.0.1",
     "dayjs": "1.8.22",
-    "jspdf": "2.1.1",
+    "jspdf": "2.3.1",
     "lodash.clonedeep": "4.5.0",
     "lodash.isequal": "4.5.0",
     "next": "^10.0.1",
