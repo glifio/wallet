@@ -57,7 +57,7 @@
     "eslint-plugin-react-hooks": "1.7.0",
     "jest": "25.1.0",
     "jest-styled-components": "7.0.3",
-    "prettier": "1.19.1",
+    "prettier": "2.2.1",
     "react-test-renderer": "16.13.1"
   },
   "license": "(Apache-2.0 OR MIT)"
