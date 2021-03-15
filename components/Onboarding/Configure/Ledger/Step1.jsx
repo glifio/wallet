@@ -70,6 +70,28 @@ const Step1Helper = ({ inUseByAnotherApp, connectedFailure }) => {
           <Box color='core.nearblack' mt={3}>
             <Text>Please connect your Ledger to your computer.</Text>
           </Box>
+          {navigator.platform.indexOf('Win') > -1 && (
+            <Box color='core.nearblack' mt={3}>
+              <Text
+                display='inline-block'
+                bg='status.warning.background'
+                borderRadius={2}
+                px={2}
+                py={1}
+                mr={2}
+                mb={0}
+              >
+                Having trouble connecting to your Ledger device?{' '}
+              </Text>
+              <Text mt={0}>
+                Try navigating to{' '}
+                <Text display='inline' color='core.primary'>
+                  chrome://flags#new-usb-backend
+                </Text>{' '}
+                and disabling the new USB backend.
+              </Text>
+            </Box>
+          )}
         </>
       )}
     </Box>
