@@ -15,7 +15,7 @@
     "@glif/filecoin-message-confirmer": "^1.1.0-beta.11",
     "@glif/filecoin-number": "^1.1.0-beta.11",
     "@glif/filecoin-rpc-client": "^1.1.0-beta.11",
-    "@glif/filecoin-wallet-provider": "^1.1.0-beta.11",
+    "@glif/filecoin-wallet-provider": "^1.1.0-beta.18",
     "@ledgerhq/hw-transport-webusb": "5.39.0",
     "@zondax/filecoin-signing-tools": "0.13.0",
     "@zondax/ledger-filecoin": "0.11.0",
@@ -56,7 +56,7 @@
     "eslint-plugin-react": "7.18.3",
     "eslint-plugin-react-hooks": "1.7.0",
     "jest": "25.1.0",
-    "jest-styled-components": "7.0.2",
+    "jest-styled-components": "7.0.3",
     "prettier": "1.19.1",
     "react-test-renderer": "16.13.1"
   },
