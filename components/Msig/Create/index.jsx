@@ -75,7 +75,7 @@ const Create = () => {
     )
 
     const message = new Message({
-      to: 't01',
+      to: 'f01',
       from: wallet.address,
       value: value.toAttoFil(),
       method: 2,
