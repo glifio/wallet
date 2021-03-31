@@ -76,7 +76,7 @@ describe('Create msig flow', () => {
       expect(typeof message.gaslimit).toBe('number')
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')
-      expect(message.to).toBe('t01')
+      expect(message.to).toBe('f01')
 
       const multisigCreateCalls = createMultisig.mock.calls
       expect(multisigCreateCalls[multisigCreateCalls.length - 1][2]).toBe(
@@ -174,7 +174,7 @@ describe('Create msig flow', () => {
       expect(typeof message.gaslimit).toBe('number')
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')
-      expect(message.to).toBe('t01')
+      expect(message.to).toBe('f01')
 
       const multisigCreateCalls = createMultisig.mock.calls
       // check signers length is 2
@@ -235,7 +235,7 @@ describe('Create msig flow', () => {
       expect(typeof message.gaslimit).toBe('number')
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')
-      expect(message.to).toBe('t01')
+      expect(message.to).toBe('f01')
 
       const multisigCreateCalls = createMultisig.mock.calls
       expect(
@@ -293,7 +293,7 @@ describe('Create msig flow', () => {
       expect(typeof message.gaslimit).toBe('number')
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')
-      expect(message.to).toBe('t01')
+      expect(message.to).toBe('f01')
 
       const multisigCreateCalls = createMultisig.mock.calls
       expect(
@@ -362,7 +362,7 @@ describe('Create msig flow', () => {
       expect(typeof message.gaslimit).toBe('number')
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')
-      expect(message.to).toBe('t01')
+      expect(message.to).toBe('f01')
 
       const multisigCreateCalls = createMultisig.mock.calls
       expect(
