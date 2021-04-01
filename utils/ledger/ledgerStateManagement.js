@@ -15,6 +15,7 @@ export const LEDGER_REPLUG = 'LEDGER_REPLUG'
 export const LEDGER_BUSY = 'LEDGER_BUSY'
 export const LEDGER_USED_BY_ANOTHER_APP = 'LEDGER_USED_BY_ANOTHER_APP'
 export const LEDGER_BAD_VERSION = 'LEDGER_BAD_VERSION'
+export const WEBUSB_UNSUPPORTED = 'WEBUSB_UNSUPPORTED'
 
 export const initialLedgerState = {
   userImportFailure: false,
@@ -26,7 +27,9 @@ export const initialLedgerState = {
   filecoinAppNotOpen: false,
   replug: false,
   inUseByAnotherApp: false,
-  badVersion: false
+  badVersion: false,
+  // true until proven otherwise
+  webUSBSupported: true
 }
 
 export const LEDGER_STATE_PROPTYPES = {
@@ -37,5 +40,6 @@ export const LEDGER_STATE_PROPTYPES = {
   unlocked: PropTypes.bool.isRequired,
   busy: PropTypes.bool.isRequired,
   filecoinAppNotOpen: PropTypes.bool.isRequired,
-  badVersion: PropTypes.bool.isRequired
+  badVersion: PropTypes.bool.isRequired,
+  webUSBSupported: PropTypes.bool.isRequired
 }

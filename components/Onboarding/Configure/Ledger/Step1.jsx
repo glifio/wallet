@@ -17,7 +17,11 @@ import isDesktopChromeBrowser from '../../../../utils/isDesktopChromeBrowser'
 import { hasLedgerError } from '../../../../utils/ledger/reportLedgerConfigError'
 import useReset from '../../../../utils/useReset'
 
-const Step1Helper = ({ inUseByAnotherApp, connectedFailure }) => {
+const Step1Helper = ({
+  inUseByAnotherApp,
+  connectedFailure,
+  webUSBSupported
+}) => {
   return (
     <Box
       display='block'
@@ -62,7 +66,29 @@ const Step1Helper = ({ inUseByAnotherApp, connectedFailure }) => {
           </Box>
         </>
       )}
-      {!inUseByAnotherApp && !connectedFailure && (
+      {!webUSBSupported && (
+        <>
+          <Box
+            display='flex'
+            alignItems='center'
+            color='status.fail.foreground'
+          >
+            <Title>Oops!</Title>
+          </Box>
+          <Box color='status.fail.foreground'>
+            <Text mb={2}>
+              We&apos;re having trouble connecting to your Ledger device.
+            </Text>
+            <Text>
+              This is a problem we&apos;ve been made aware of, mostly with
+              Windows computers. We are diligently working on fixing this
+              problem. In the meantime, this problem should not appear if you
+              have access to a Mac computer.
+            </Text>
+          </Box>
+        </>
+      )}
+      {!inUseByAnotherApp && !connectedFailure && webUSBSupported && (
         <>
           <Box display='flex' alignItems='center' mt={4} color='core.nearblack'>
             <Title>Connect</Title>
@@ -100,7 +126,8 @@ const Step1Helper = ({ inUseByAnotherApp, connectedFailure }) => {
 
 Step1Helper.propTypes = {
   connectedFailure: PropTypes.bool.isRequired,
-  inUseByAnotherApp: PropTypes.bool.isRequired
+  inUseByAnotherApp: PropTypes.bool.isRequired,
+  webUSBSupported: PropTypes.bool.isRequired
 }
 
 const Step1 = ({ msig, setStep }) => {
@@ -141,6 +168,7 @@ const Step1 = ({ msig, setStep }) => {
         <Step1Helper
           connectedFailure={ledger.connectedFailure}
           inUseByAnotherApp={ledger.inUseByAnotherApp}
+          webUSBSupported={ledger.webUSBSupported}
         />
       </OnboardCard>
       <Box

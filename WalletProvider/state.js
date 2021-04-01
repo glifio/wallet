@@ -12,7 +12,8 @@ import {
   LEDGER_REPLUG,
   LEDGER_BUSY,
   LEDGER_USED_BY_ANOTHER_APP,
-  LEDGER_BAD_VERSION
+  LEDGER_BAD_VERSION,
+  WEBUSB_UNSUPPORTED
 } from '../utils/ledger/ledgerStateManagement'
 
 export const initialState = {
@@ -193,6 +194,14 @@ export default (state, action) => {
         ledger: {
           ...state.ledger,
           badVersion: true
+        }
+      }
+    case WEBUSB_UNSUPPORTED:
+      return {
+        ...Object.freeze(state),
+        ledger: {
+          ...state.ledger,
+          webUSBSupported: false
         }
       }
     case LEDGER_RESET_STATE:
