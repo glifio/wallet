@@ -1,5 +1,13 @@
 import styled from 'styled-components'
-import { color, typography, layout, space, grid, position } from 'styled-system'
+import {
+  color,
+  typography,
+  layout,
+  space,
+  grid,
+  position,
+  border
+} from 'styled-system'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 
@@ -22,6 +30,7 @@ export const StyledATag = styled.a.attrs(props => ({
   ${position}
   ${grid}
   ${space}
+  ${border}
 `
 
 export const StyledLink = ({ href, name, ...props }) => {
