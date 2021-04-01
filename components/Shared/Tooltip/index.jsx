@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState } from 'react'
 import styled from 'styled-components'
 import { color, border } from 'styled-system'
 import { string } from 'prop-types'
@@ -7,7 +7,6 @@ import Box from '../Box'
 
 const TooltipContent = styled(Box)`
   position: absolute;
-  display: none;
   height: fit-content;
   width: max-content;
   max-width: 200px;
@@ -59,19 +58,31 @@ const TooltipContainer = styled.a`
 `
 
 const Tooltip = forwardRef(({ content, color, ...props }, ref) => {
+  const [showContent, setShowContent] = useState(false)
   return (
     <Box position='relative' mx={2}>
-      <TooltipContainer color={color} aria-label='Tooltip' ref={ref} {...props}>
+      <TooltipContainer
+        onMouseEnter={() => setShowContent(true)}
+        color={color}
+        aria-label='Tooltip'
+        ref={ref}
+        {...props}
+      >
         <Text m={0} color={color}>
           ?
         </Text>
       </TooltipContainer>
-
-      <TooltipContent ontouchstart p={2} borderRadius={4}>
-        <Text textAlign='left' display='block' m={0}>
-          {content}
-        </Text>
-      </TooltipContent>
+      {showContent && (
+        <TooltipContent
+          onMouseLeave={() => setShowContent(false)}
+          p={2}
+          borderRadius={4}
+        >
+          <Text textAlign='left' display='block' m={0}>
+            {content}
+          </Text>
+        </TooltipContent>
+      )}
     </Box>
   )
 })
