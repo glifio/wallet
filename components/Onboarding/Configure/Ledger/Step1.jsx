@@ -80,10 +80,10 @@ const Step1Helper = ({
               We&apos;re having trouble connecting to your Ledger device.
             </Text>
             <Text>
-              This is a problem we&apos;ve been made aware of, mostly with
-              Windows computers. We are diligently working on fixing this
-              problem. In the meantime, this problem should not appear if you
-              have access to a Mac computer.
+              If you&apos;re using a Windows machine, that may be why
+              you&apos;re getting this error. We&apos;re working on fixing this,
+              but in the meantime, this problem should not appear if you have
+              access to a Mac computer.
             </Text>
           </Box>
         </>
