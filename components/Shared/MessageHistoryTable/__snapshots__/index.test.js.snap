@@ -11,6 +11,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
 .c1 {
   min-width: 0;
   box-sizing: border-box;
+  margin-bottom: 32px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
