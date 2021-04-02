@@ -1,7 +1,3 @@
-import intersectionWith from 'lodash.intersectionwith'
-import isEqual from 'lodash.isequal'
-import difference from 'lodash.difference'
-
 function checkClientSide() {
   if (typeof window === 'undefined') throw new Error('No storage')
 }
@@ -27,9 +23,8 @@ export function setMessageInCache(address, message) {
   )
 }
 
-export function pluckConfirmedMessagesFromCache(
-  cachedMessages,
-  confirmedMessages
-) {
-  console.log(cachedMessages, confirmedMessages)
+export function removeMessageFromCache(address, messageCid) {
+  const cachedMessages = getMessagesFromCache(address)
+  const newMessages = cachedMessages.filter(msg => msg.cid !== messageCid)
+  setMessageInCache(address, newMessages)
 }

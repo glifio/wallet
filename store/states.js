@@ -3,6 +3,10 @@ import { FilecoinNumber } from '@glif/filecoin-number'
 import updateArrayItem from '../utils/updateArrayItem'
 import sortAndRemoveWalletDups from '../utils/sortAndRemoveWalletDups'
 import removeDupMessages from '../utils/removeDupMessages'
+import {
+  getMessagesFromCache,
+  removeMessageFromCache
+} from '../utils/cacheMessage'
 import { MAINNET, TESTNET } from '../constants'
 
 export const initialMessagesState = {
@@ -102,21 +106,33 @@ export const clearMessages = state => ({
   }
 })
 
-export const fetchedConfirmedMessagesSuccess = (
-  state,
-  { messages, total }
-) => ({
-  ...state,
-  messages: {
-    ...state.messages,
-    loading: false,
-    loadedSuccess: true,
-    loadedFailure: false,
-    confirmed: removeDupMessages(state.messages.confirmed, messages),
-    total: total || state.messages.total,
-    paginating: false
+export const fetchedConfirmedMessagesSuccess = (state, { messages, total }) => {
+  // here we pluck out any messages from localstorage since filfox now has them
+  const cachedMessages = getMessagesFromCache(
+    state.wallets[state.selectedWalletIdx].address
+  )
+  const cids = new Set(messages.map(msg => msg.cid))
+  cachedMessages.forEach(message => {
+    // we now have the CID
+    if (cids.has(message.cid))
+      removeMessageFromCache(
+        state.wallets[state.selectedWalletIdx].address,
+        message.cid
+      )
+  })
+  return {
+    ...state,
+    messages: {
+      ...state.messages,
+      loading: false,
+      loadedSuccess: true,
+      loadedFailure: false,
+      confirmed: removeDupMessages(state.messages.confirmed, messages),
+      total: total || state.messages.total,
+      paginating: false
+    }
   }
-})
+}
 
 export const fetchedConfirmedMessagesFailure = (state, error) => ({
   ...state,
@@ -153,7 +169,7 @@ export const populateRedux = (state, { pendingMsgs }) => ({
   messages: {
     ...state.messages,
     // just in case there's some crazy race condition where msgs were loaded from server before localstorage
-    pending: pendingMsgs
+    pending: removeDupMessages(pendingMsgs, state.messages.pending)
   }
 })
 
