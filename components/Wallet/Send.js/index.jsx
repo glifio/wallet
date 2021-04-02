@@ -34,7 +34,7 @@ import { confirmMessage } from '../../../store/actions'
 // this is a bit confusing, sometimes the form can report errors, so we check those here too
 const isValidAmount = (value, balance, errorFromForms) => {
   const valueFieldFilledOut = value && value.isGreaterThan(0)
-  const enoughInTheBank = balance.isGreaterThan(value)
+  const enoughInTheBank = balance.isGreaterThanOrEqualTo(value)
   return valueFieldFilledOut && enoughInTheBank && !errorFromForms
 }
 const isValidAddress = (address, errorFromForms) => {
