@@ -24,7 +24,12 @@ const MessageHistoryTable = ({
 }) => {
   return (
     <Box width='100%' border='none'>
-      <Box display='flex' alignItems='center' justifyContent='space-between'>
+      <Box
+        display='flex'
+        alignItems='center'
+        justifyContent='space-between'
+        mb={5}
+      >
         <Box display='flex' flexDirection='column' justifyContent='flex-start'>
           <Text m={0} p={0} color='core.primary'>
             Transaction History
