@@ -16,7 +16,8 @@ export const initialMessagesState = {
   pending: [],
   confirmed: [],
   paginating: false,
-  total: -1
+  total: -1,
+  populatedFromCache: false
 }
 
 export const initialState = {
@@ -169,7 +170,8 @@ export const populateRedux = (state, { pendingMsgs }) => ({
   messages: {
     ...state.messages,
     // just in case there's some crazy race condition where msgs were loaded from server before localstorage
-    pending: removeDupMessages(pendingMsgs, state.messages.pending)
+    pending: removeDupMessages(pendingMsgs, state.messages.pending),
+    populatedFromCache: true
   }
 })
 
