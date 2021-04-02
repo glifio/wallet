@@ -32,14 +32,26 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c3 {
@@ -48,9 +60,21 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
+  margin: 0;
+  padding: 0;
 }
 
-.c14 {
+.c5 {
+  color: #666666;
+  font-size: 12;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  padding: 0;
+}
+
+.c17 {
   color: #262626;
   font-size: 1.25rem;
   font-weight: 400;
@@ -59,7 +83,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   margin: 0;
 }
 
-.c16 {
+.c19 {
   color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
@@ -68,7 +92,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   margin: 0;
 }
 
-.c20 {
+.c23 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -77,7 +101,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   margin: 0;
 }
 
-.c13 {
+.c16 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -88,7 +112,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   margin-bottom: 0;
 }
 
-.c4 {
+.c7 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -107,11 +131,11 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   border-radius: 4px;
 }
 
-.c4:hover {
+.c7:hover {
   opacity: 0.8;
 }
 
-.c5 {
+.c8 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -145,18 +169,18 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   transition: 0.18s ease-in-out;
 }
 
-.c5:hover {
+.c8:hover {
   cursor: pointer;
   background-color: #EFF3FD;
 }
 
-.c6 {
+.c9 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c8 {
+.c11 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -173,7 +197,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   justify-content: center;
 }
 
-.c11 {
+.c14 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -184,7 +208,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   display: flex;
 }
 
-.c17 {
+.c20 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -205,7 +229,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   flex-grow: 999;
 }
 
-.c18 {
+.c21 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -223,7 +247,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   align-items: flex-end;
 }
 
-.c21 {
+.c24 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -241,7 +265,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   align-items: flex-start;
 }
 
-.c7 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -251,16 +275,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   flex-direction: row;
 }
 
-.c9 {
+.c12 {
   position: relative;
 }
 
-.c12 {
+.c15 {
   overflow: hidden;
   width: 160px;
 }
 
-.c15 {
+.c18 {
   margin-left: 24px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -276,26 +300,42 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
   justify-content: center;
 }
 
-.c19 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c10 {
+.c13 {
   width: 34;
   height: 34;
 }
 
+.c6 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 12;
+  margin-left: 16px;
+  border-bottom: none;
+}
+
+.c6:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
 @media screen and (min-width:40em) {
-  .c11 {
+  .c14 {
     margin-left: 24px;
   }
 }
 
 @media screen and (min-width:52em) {
-  .c11 {
+  .c14 {
     margin-left: 32px;
   }
 }
@@ -321,9 +361,33 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
       >
         Transaction History
       </p>
+      <div
+        class="c4"
+        display="flex"
+      >
+        <p
+          class="c5"
+          color="core.darkgray"
+          font-family="RT-Alias-Grotesk"
+          font-size="12"
+          font-weight="400"
+        >
+          We're experiencing delays getting pending transaction history.
+        </p>
+        <a
+          class="c6"
+          color="core.primary"
+          font-size="12"
+          href="https://filfox.info/en/address/t01"
+          rel="noopener noreferrer"
+          target="blank"
+        >
+          See your account on Filfox.
+        </a>
+      </div>
     </div>
     <button
-      class="c4"
+      class="c7"
       font-size="3"
       height="6"
       type="button"
@@ -332,24 +396,24 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
     </button>
   </div>
   <div
-    class="c5"
+    class="c8"
   >
     <ul
-      class="c6"
+      class="c9"
     >
       <li
-        class="c7"
+        class="c10"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c11"
           display="flex"
         >
           <li
-            class="c9"
+            class="c12"
           >
             <svg
-              class="c10"
+              class="c13"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -381,16 +445,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c14"
           display="flex"
         >
           <li
-            class="c12"
+            class="c15"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -399,7 +463,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c17"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -409,12 +473,12 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c18"
             display="flex"
             width="9"
           >
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -423,7 +487,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               2:30:30
             </p>
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -436,22 +500,22 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c20"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c21"
           display="flex"
         >
           <li
-            class="c19"
+            class="c22"
             display="flex"
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -466,14 +530,14 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
         class=""
       >
         <ul
-          class="c21"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -487,24 +551,24 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c8"
   >
     <ul
-      class="c6"
+      class="c9"
     >
       <li
-        class="c7"
+        class="c10"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c11"
           display="flex"
         >
           <li
-            class="c9"
+            class="c12"
           >
             <svg
-              class="c10"
+              class="c13"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -536,16 +600,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c14"
           display="flex"
         >
           <li
-            class="c12"
+            class="c15"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -554,7 +618,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c17"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -564,12 +628,12 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c18"
             display="flex"
             width="9"
           >
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -578,7 +642,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               2:30:30
             </p>
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -591,22 +655,22 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c20"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c21"
           display="flex"
         >
           <li
-            class="c19"
+            class="c22"
             display="flex"
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -621,14 +685,14 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
         class=""
       >
         <ul
-          class="c21"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -642,24 +706,24 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c8"
   >
     <ul
-      class="c6"
+      class="c9"
     >
       <li
-        class="c7"
+        class="c10"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c11"
           display="flex"
         >
           <li
-            class="c9"
+            class="c12"
           >
             <svg
-              class="c10"
+              class="c13"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -691,16 +755,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c14"
           display="flex"
         >
           <li
-            class="c12"
+            class="c15"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -709,7 +773,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c17"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -719,12 +783,12 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c18"
             display="flex"
             width="9"
           >
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -733,7 +797,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               2:30:30
             </p>
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -746,22 +810,22 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c20"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c21"
           display="flex"
         >
           <li
-            class="c19"
+            class="c22"
             display="flex"
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -776,14 +840,14 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
         class=""
       >
         <ul
-          class="c21"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -797,24 +861,24 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c8"
   >
     <ul
-      class="c6"
+      class="c9"
     >
       <li
-        class="c7"
+        class="c10"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c11"
           display="flex"
         >
           <li
-            class="c9"
+            class="c12"
           >
             <svg
-              class="c10"
+              class="c13"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -846,16 +910,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c14"
           display="flex"
         >
           <li
-            class="c12"
+            class="c15"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -864,7 +928,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c17"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -874,12 +938,12 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c18"
             display="flex"
             width="9"
           >
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -888,7 +952,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               2:30:30
             </p>
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -901,22 +965,22 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c20"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c21"
           display="flex"
         >
           <li
-            class="c19"
+            class="c22"
             display="flex"
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -931,14 +995,14 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
         class=""
       >
         <ul
-          class="c21"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -952,24 +1016,24 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c8"
   >
     <ul
-      class="c6"
+      class="c9"
     >
       <li
-        class="c7"
+        class="c10"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c11"
           display="flex"
         >
           <li
-            class="c9"
+            class="c12"
           >
             <svg
-              class="c10"
+              class="c13"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -1001,16 +1065,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c14"
           display="flex"
         >
           <li
-            class="c12"
+            class="c15"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1019,7 +1083,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c17"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1029,12 +1093,12 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c18"
             display="flex"
             width="9"
           >
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1043,7 +1107,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               2:30:30
             </p>
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1056,22 +1120,22 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c20"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c21"
           display="flex"
         >
           <li
-            class="c19"
+            class="c22"
             display="flex"
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1086,14 +1150,14 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
         class=""
       >
         <ul
-          class="c21"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1107,24 +1171,24 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c8"
   >
     <ul
-      class="c6"
+      class="c9"
     >
       <li
-        class="c7"
+        class="c10"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c11"
           display="flex"
         >
           <li
-            class="c9"
+            class="c12"
           >
             <svg
-              class="c10"
+              class="c13"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -1156,16 +1220,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c14"
           display="flex"
         >
           <li
-            class="c12"
+            class="c15"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1174,7 +1238,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c17"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1184,12 +1248,12 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c18"
             display="flex"
             width="9"
           >
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1198,7 +1262,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               2:30:30
             </p>
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1211,22 +1275,22 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c20"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c21"
           display="flex"
         >
           <li
-            class="c19"
+            class="c22"
             display="flex"
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1241,14 +1305,14 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
         class=""
       >
         <ul
-          class="c21"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1262,24 +1326,24 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c8"
   >
     <ul
-      class="c6"
+      class="c9"
     >
       <li
-        class="c7"
+        class="c10"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c11"
           display="flex"
         >
           <li
-            class="c9"
+            class="c12"
           >
             <svg
-              class="c10"
+              class="c13"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -1311,16 +1375,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c14"
           display="flex"
         >
           <li
-            class="c12"
+            class="c15"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1329,7 +1393,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c17"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1339,12 +1403,12 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c18"
             display="flex"
             width="9"
           >
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1353,7 +1417,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               2:30:30
             </p>
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1366,22 +1430,22 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c20"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c21"
           display="flex"
         >
           <li
-            class="c19"
+            class="c22"
             display="flex"
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1396,14 +1460,14 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
         class=""
       >
         <ul
-          class="c21"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1417,24 +1481,24 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c8"
   >
     <ul
-      class="c6"
+      class="c9"
     >
       <li
-        class="c7"
+        class="c10"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c11"
           display="flex"
         >
           <li
-            class="c9"
+            class="c12"
           >
             <svg
-              class="c10"
+              class="c13"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -1466,16 +1530,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c14"
           display="flex"
         >
           <li
-            class="c12"
+            class="c15"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1484,7 +1548,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c17"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1494,12 +1558,12 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c18"
             display="flex"
             width="9"
           >
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1508,7 +1572,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               2:30:30
             </p>
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1521,22 +1585,22 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c20"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c21"
           display="flex"
         >
           <li
-            class="c19"
+            class="c22"
             display="flex"
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1551,14 +1615,14 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
         class=""
       >
         <ul
-          class="c21"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1572,24 +1636,24 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c8"
   >
     <ul
-      class="c6"
+      class="c9"
     >
       <li
-        class="c7"
+        class="c10"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c11"
           display="flex"
         >
           <li
-            class="c9"
+            class="c12"
           >
             <svg
-              class="c10"
+              class="c13"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -1621,16 +1685,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c14"
           display="flex"
         >
           <li
-            class="c12"
+            class="c15"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1639,7 +1703,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c17"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1649,12 +1713,12 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c18"
             display="flex"
             width="9"
           >
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1663,7 +1727,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               2:30:30
             </p>
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1676,22 +1740,22 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c20"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c21"
           display="flex"
         >
           <li
-            class="c19"
+            class="c22"
             display="flex"
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1706,14 +1770,14 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
         class=""
       >
         <ul
-          class="c21"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1727,24 +1791,24 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
     </ul>
   </div>
   <div
-    class="c5"
+    class="c8"
   >
     <ul
-      class="c6"
+      class="c9"
     >
       <li
-        class="c7"
+        class="c10"
         display="flex"
       >
         <ul
-          class="c8"
+          class="c11"
           display="flex"
         >
           <li
-            class="c9"
+            class="c12"
           >
             <svg
-              class="c10"
+              class="c13"
               fill="none"
               height="34"
               viewBox="0 0 34 34"
@@ -1776,16 +1840,16 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
           </li>
         </ul>
         <ul
-          class="c11"
+          class="c14"
           display="flex"
         >
           <li
-            class="c12"
+            class="c15"
             overflow="hidden"
             width="9"
           >
             <h4
-              class="c13"
+              class="c16"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1794,7 +1858,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               From
             </h4>
             <p
-              class="c14"
+              class="c17"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="3"
@@ -1804,12 +1868,12 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
             </p>
           </li>
           <li
-            class="c15"
+            class="c18"
             display="flex"
             width="9"
           >
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1818,7 +1882,7 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
               2:30:30
             </p>
             <p
-              class="c16"
+              class="c19"
               color="core.darkgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1831,22 +1895,22 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
       </li>
     </ul>
     <ul
-      class="c17"
+      class="c20"
       display="flex"
     >
       <li
         class=""
       >
         <ul
-          class="c18"
+          class="c21"
           display="flex"
         >
           <li
-            class="c19"
+            class="c22"
             display="flex"
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1861,14 +1925,14 @@ exports[`MessageHistoryTable renders the MessageHistoryTable 1`] = `
         class=""
       >
         <ul
-          class="c21"
+          class="c24"
           display="flex"
         >
           <li
             class=""
           >
             <p
-              class="c20"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"

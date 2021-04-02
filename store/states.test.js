@@ -566,7 +566,15 @@ describe('state manipulators', () => {
 
       const state = {
         ...initialState,
-        messages: { ...initialState.messages, pending }
+        messages: { ...initialState.messages, pending },
+        wallets: [
+          {
+            balance: '0',
+            address: 'f1',
+            path: ''
+          }
+        ],
+        selectedWalletIdx: 0
       }
 
       const nextState = states.fetchedConfirmedMessagesSuccess(state, {
@@ -589,6 +597,14 @@ describe('state manipulators', () => {
 
       const state = {
         ...initialState,
+        wallets: [
+          {
+            balance: '0',
+            address: 'f1',
+            path: ''
+          }
+        ],
+        selectedWalletIdx: 0,
         messages: { ...initialState.messages, confirmed: previouslyConfirmed }
       }
 
@@ -605,7 +621,17 @@ describe('state manipulators', () => {
 
     test('it sets the loading states properly', () => {
       const { messages } = states.fetchedConfirmedMessagesSuccess(
-        initialState,
+        {
+          ...initialState,
+          wallets: [
+            {
+              balance: '0',
+              address: 'f1',
+              path: ''
+            }
+          ],
+          selectedWalletIdx: 0
+        },
         {
           messages: messagesFromAPI,
           total: 99
@@ -700,7 +726,8 @@ describe('state manipulators', () => {
           value: '1000',
           method: 0,
           nonce: i
-        })
+        }).toSerializeableType()
+        message.cid = `QmZ${i}`
         pendingMsgs.push(message)
       }
 

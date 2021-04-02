@@ -169,7 +169,7 @@ exports[`WalletView it renders correctly 1`] = `
   margin-right: 8px;
 }
 
-.c40 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -184,14 +184,14 @@ exports[`WalletView it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c41 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   border: none;
   width: 100%;
 }
 
-.c42 {
+.c39 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -208,7 +208,23 @@ exports[`WalletView it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c43 {
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c42 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -219,10 +235,6 @@ exports[`WalletView it renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
 }
 
 .c5 {
@@ -358,22 +370,24 @@ exports[`WalletView it renders correctly 1`] = `
   margin: 0;
 }
 
-.c38 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  text-align: left;
-  display: block;
-  margin: 0;
-}
-
-.c44 {
+.c41 {
   color: #5E26FF;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
+  margin: 0;
+  padding: 0;
+}
+
+.c43 {
+  color: #666666;
+  font-size: 12;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  padding: 0;
 }
 
 .c55 {
@@ -748,33 +762,20 @@ exports[`WalletView it renders correctly 1`] = `
   background-color: #EFF3FD;
 }
 
-.c37 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 16px;
-  padding: 8px;
-  position: absolute;
-  display: none;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  max-width: 200px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  bottom: -48px;
-  padding: 8px;
-  color: #262626;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
-  z-index: 9;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
+.c44 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 12;
+  margin-left: 16px;
+  border-bottom: none;
+}
+
+.c44:hover {
+  border-bottom: 2px solid #5E26FF;
 }
 
 .c34 {
@@ -802,7 +803,7 @@ exports[`WalletView it renders correctly 1`] = `
   color: #000;
 }
 
-.c34:hover ~ .c36 {
+.c34:hover ~ .Tooltip__TooltipContent-sc-17gal6e-0 {
   display: block;
 }
 
@@ -814,7 +815,7 @@ exports[`WalletView it renders correctly 1`] = `
   margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
-.c39 {
+.c36 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1122,44 +1123,31 @@ exports[`WalletView it renders correctly 1`] = `
             ?
           </p>
         </a>
-        <div
-          class="c36 c37"
-        >
-          <p
-            class="c38"
-            display="block"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="400"
-          >
-            Logging out clears all your sensitive information from the browser and sends you back to the home page
-          </p>
-        </div>
       </div>
     </button>
   </div>
   <div
-    class="c39"
+    class="c36"
   >
     <div
-      class="c40"
+      class="c37"
       display="flex"
       width="100%"
     >
       <div
-        class="c41"
+        class="c38"
         width="100%"
       >
         <div
-          class="c42"
+          class="c39"
           display="flex"
         >
           <div
-            class="c43"
+            class="c40"
             display="flex"
           >
             <p
-              class="c44"
+              class="c41"
               color="core.primary"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1167,6 +1155,30 @@ exports[`WalletView it renders correctly 1`] = `
             >
               Transaction History
             </p>
+            <div
+              class="c42"
+              display="flex"
+            >
+              <p
+                class="c43"
+                color="core.darkgray"
+                font-family="RT-Alias-Grotesk"
+                font-size="12"
+                font-weight="400"
+              >
+                We're experiencing delays getting pending transaction history.
+              </p>
+              <a
+                class="c44"
+                color="core.primary"
+                font-size="12"
+                href="https://filfox.info/en/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                rel="noopener noreferrer"
+                target="blank"
+              >
+                See your account on Filfox.
+              </a>
+            </div>
           </div>
           <button
             class="c45"

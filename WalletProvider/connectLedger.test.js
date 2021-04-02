@@ -4,8 +4,6 @@ import MockWalletProvider from '../test-utils/mocks/mock-wallet-provider'
 import { LEDGER } from '../constants'
 import reducer, { initialState } from '../WalletProvider/state'
 
-jest.mock('@ledgerhq/hw-transport-webusb')
-
 describe('connectLedger', () => {
   beforeEach(jest.clearAllMocks)
 
@@ -38,6 +36,20 @@ describe('connectLedger', () => {
 
       await connectLedger(mockDispatch, mockLedgerProvider)
       expect(nextState.ledger.inUseByAnotherApp).toBe(true)
+    })
+
+    test('it captures unsupported webusb error', async () => {
+      let nextState = { ...initialState }
+      const mockDispatch = jest.fn().mockImplementation(action => {
+        nextState = reducer(nextState, action)
+      })
+
+      const mockLedgerProvider = () => {
+        throw new Error('TRANSPORT NOT SUPPORTED BY DEVICE')
+      }
+
+      await connectLedger(mockDispatch, mockLedgerProvider)
+      expect(nextState.ledger.webUSBSupported).toBe(false)
     })
 
     test('it captures transport errors', async () => {
