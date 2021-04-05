@@ -27,8 +27,6 @@
     "dayjs": "1.8.22",
     "jspdf": "2.1.1",
     "lodash.clonedeep": "4.5.0",
-    "lodash.difference": "^4.5.0",
-    "lodash.intersectionwith": "^4.4.0",
     "lodash.isequal": "4.5.0",
     "next": "^10.0.1",
     "object-path": ">=0.11.5",
