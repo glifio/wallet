@@ -19,6 +19,7 @@ import {
   SET_MSIG_ACTOR_ADDRESS
 } from './actionTypes'
 import getAddressFromReceipt from '../utils/getAddrFromReceipt'
+import { setMessageInCache } from '../utils/cacheMessage'
 
 export const walletList = wallets => ({
   type: WALLET_LIST,
@@ -42,12 +43,15 @@ export const updateBalance = (balance, walletIdx = 0) => ({
   }
 })
 
-export const confirmMessage = message => ({
-  type: CONFIRM_MESSAGE,
-  payload: {
-    message
+export const confirmMessage = message => {
+  setMessageInCache(message.from, message)
+  return {
+    type: CONFIRM_MESSAGE,
+    payload: {
+      message
+    }
   }
-})
+}
 
 export const confirmedMessage = msgCid => ({
   type: CONFIRMED_MESSAGE,

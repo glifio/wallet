@@ -20,8 +20,6 @@ import {
 } from './ledgerStateManagement'
 import badVersion from './badVersion'
 
-jest.mock('@ledgerhq/hw-transport-webusb')
-
 const mockDispatch = jest.fn()
 
 describe('Ledger utils', () => {

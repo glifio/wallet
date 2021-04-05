@@ -12,8 +12,11 @@ export const reportLedgerConfigError = ({
   busy,
   inUseByAnotherApp,
   badVersion,
+  webUSBSupported,
   otherError
 }) => {
+  if (!webUSBSupported)
+    return "We're sorry, but we can't connect to your device because your machine does not support WebUSB."
   if (connectedFailure) return 'Is your Ledger device plugged in?'
   if (busy) return 'Is your Ledger device locked or busy?'
   if (locked) return 'Is your Ledger device unlocked?'
@@ -36,8 +39,10 @@ export const hasLedgerError = ({
   busy,
   inUseByAnotherApp,
   badVersion,
+  webUSBSupported,
   otherError
 }) =>
+  !webUSBSupported ||
   connectedFailure ||
   locked ||
   filecoinAppNotOpen ||

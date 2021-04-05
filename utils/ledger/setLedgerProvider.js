@@ -12,6 +12,7 @@ import {
   LEDGER_FILECOIN_APP_OPEN,
   LEDGER_BUSY,
   LEDGER_USED_BY_ANOTHER_APP,
+  WEBUSB_UNSUPPORTED,
   LEDGER_BAD_VERSION
 } from './ledgerStateManagement'
 import { createWalletProvider } from '../../WalletProvider/state'
@@ -31,6 +32,11 @@ export const setLedgerProvider = async (dispatch, LedgerProvider) => {
     return provider
   } catch (err) {
     if (
+      err.message &&
+      err.message.includes('TRANSPORT NOT SUPPORTED BY DEVICE')
+    ) {
+      dispatch({ type: WEBUSB_UNSUPPORTED })
+    } else if (
       err.message &&
       err.message.toLowerCase().includes('unable to claim interface.')
     ) {

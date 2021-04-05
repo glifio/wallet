@@ -10,6 +10,7 @@ import MessageHistoryRow from './MessageHistoryRow'
 import EmptyHistory from './EmptyHistory'
 import LoadingScreen from '../LoadingScreen'
 import ShowMore from './ShowMore'
+import { StyledATag } from '../Link'
 
 const MessageHistoryTable = ({
   address,
@@ -23,9 +24,32 @@ const MessageHistoryTable = ({
 }) => {
   return (
     <Box width='100%' border='none'>
-      <Box display='flex' alignItems='center' justifyContent='space-between'>
-        <Box display='flex' alignItems='center' justifyContent='flex-start' iv>
-          <Text color='core.primary'>Transaction History</Text>
+      <Box
+        display='flex'
+        alignItems='center'
+        justifyContent='space-between'
+        mb={5}
+      >
+        <Box display='flex' flexDirection='column' justifyContent='flex-start'>
+          <Text m={0} p={0} color='core.primary'>
+            Transaction History
+          </Text>
+          {messages.length > 0 && (
+            <Box display='flex' alignItems='center'>
+              <Text fontSize='12' m={0} p={0} color='core.darkgray'>
+                We&apos;re experiencing delays getting pending transaction
+                history.
+              </Text>
+              <StyledATag
+                href={`https://filfox.info/en/address/${address}`}
+                ml={3}
+                borderBottom='none'
+                fontSize='12'
+              >
+                See your account on Filfox.
+              </StyledATag>
+            </Box>
+          )}
         </Box>
         <Button variant='secondary' onClick={refresh} title='Refresh' />
       </Box>

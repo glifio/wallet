@@ -19,7 +19,8 @@ module.exports = {
     '@glif/filecoin-wallet-provider':
       '<rootDir>/test-utils/mocks/mock-wallet-provider.js',
     '@zondax/ledger-filecoin':
-      '<rootDir>/test-utils/mocks/mock-ledger-filecoin.js'
+      '<rootDir>/test-utils/mocks/mock-ledger-filecoin.js',
+    '@ledgerhq/hw-transport-webusb': '<rootDir>/test-utils/mocks/mock-webusb.js'
   },
   setupFilesAfterEnv: ['./jest.setup.js']
 }
