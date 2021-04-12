@@ -7,7 +7,9 @@
     "lint": "eslint '**/*.js' '**/*.jsx'",
     "start": "next start",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "export": "next build && next export",
+    "serve": "npx serve ./out"
   },
   "dependencies": {
     "@glif/filecoin-address": "^1.1.0",
