@@ -31,6 +31,7 @@ export const setLedgerProvider = async (dispatch, LedgerProvider) => {
     dispatch(createWalletProvider(provider))
     return provider
   } catch (err) {
+    console.log('ERR', err)
     if (
       err.message &&
       err.message.includes('TRANSPORT NOT SUPPORTED BY DEVICE')

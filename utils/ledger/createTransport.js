@@ -1,9 +1,14 @@
-import TransportWebUSB from '@ledgerhq/hw-transport-webusb'
+import TransportWebHID from '@ledgerhq/hw-transport-webhid'
+
+let transport = null
 
 const createTransport = async () => {
-  const isSupported = await TransportWebUSB.isSupported()
+  const isSupported = await TransportWebHID.isSupported()
   if (!isSupported) throw new Error('TRANSPORT NOT SUPPORTED BY DEVICE')
-  return TransportWebUSB.create()
+  if (!transport) {
+    transport = await TransportWebHID.create()
+  }
+  return transport
 }
 
 export default createTransport
