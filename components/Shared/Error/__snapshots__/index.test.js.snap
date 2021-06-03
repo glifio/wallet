@@ -194,7 +194,7 @@ exports[`Error renders the error 1`] = `
           font-size="4"
           font-weight="400"
         >
-          Ledger only supports Chrome
+          Only Chrome has Ledger support
         </h2>
         <p
           class="c7"
