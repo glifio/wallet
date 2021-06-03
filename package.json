@@ -1,6 +1,6 @@
 {
   "name": "filecoin-web-wallet",
-  "version": "2.7.0",
+  "version": "2.8.0",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -18,7 +18,7 @@
     "@glif/filecoin-number": "^1.1.0",
     "@glif/filecoin-rpc-client": "^1.1.0",
     "@glif/filecoin-wallet-provider": "^1.1.0",
-    "@ledgerhq/hw-transport-webusb": "5.50.0",
+    "@ledgerhq/hw-transport-webhid": "^5.51.1",
     "@zondax/filecoin-signing-tools": "^0.15.0",
     "@zondax/ledger-filecoin": "0.11.2",
     "axios": "0.21.1",

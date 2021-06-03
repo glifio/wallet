@@ -2,7 +2,7 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
 import updateArrayItem from '../utils/updateArrayItem'
 import sortAndRemoveWalletDups from '../utils/sortAndRemoveWalletDups'
-import removeDupMessages from '../utils/removeDupMessages'
+import { pluckConfirmed, uniqueifyMsgs } from '../utils/removeDupMessages'
 import {
   getMessagesFromCache,
   removeMessageFromCache
@@ -128,7 +128,8 @@ export const fetchedConfirmedMessagesSuccess = (state, { messages, total }) => {
       loading: false,
       loadedSuccess: true,
       loadedFailure: false,
-      confirmed: removeDupMessages(state.messages.confirmed, messages),
+      confirmed: uniqueifyMsgs(state.messages.confirmed, messages),
+      pending: pluckConfirmed(state.messages.pending, messages),
       total: total || state.messages.total,
       paginating: false
     }
@@ -170,7 +171,7 @@ export const populateRedux = (state, { pendingMsgs }) => ({
   messages: {
     ...state.messages,
     // just in case there's some crazy race condition where msgs were loaded from server before localstorage
-    pending: removeDupMessages(pendingMsgs, state.messages.pending),
+    pending: uniqueifyMsgs(pendingMsgs, state.messages.pending),
     populatedFromCache: true
   }
 })

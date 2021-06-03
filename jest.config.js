@@ -20,7 +20,7 @@ module.exports = {
       '<rootDir>/test-utils/mocks/mock-wallet-provider.js',
     '@zondax/ledger-filecoin':
       '<rootDir>/test-utils/mocks/mock-ledger-filecoin.js',
-    '@ledgerhq/hw-transport-webusb': '<rootDir>/test-utils/mocks/mock-webusb.js'
+    '@ledgerhq/hw-transport-webhid': '<rootDir>/test-utils/mocks/mock-webhid.js'
   },
   setupFilesAfterEnv: ['./jest.setup.js']
 }
