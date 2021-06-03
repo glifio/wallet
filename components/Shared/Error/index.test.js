@@ -9,7 +9,7 @@ describe('Error', () => {
     const { container } = render(
       <Tree>
         <ErrorView
-          title='Ledger only supports Chrome'
+          title='Only Chrome has Ledger support'
           description='Please install Google Chrome to continue using your Ledger device, or choose an alternative setup option'
           linkDisplay='Install Google Chrome.'
           linkhref='https://www.google.com/chrome'
@@ -24,7 +24,7 @@ describe('Error', () => {
     const { getByText } = render(
       <Tree>
         <ErrorView
-          title='Ledger only supports Chrome'
+          title='Only Chrome has Ledger support'
           description='Please install Google Chrome to continue using your Ledger device, or choose an alternative setup option'
           linkDisplay='Install Google Chrome.'
           linkhref='https://www.google.com/chrome'
@@ -32,7 +32,7 @@ describe('Error', () => {
       </Tree>
     )
 
-    expect(getByText('Ledger only supports Chrome')).toBeTruthy()
+    expect(getByText('Only Chrome has Ledger support')).toBeTruthy()
     expect(
       getByText(
         'Please install Google Chrome to continue using your Ledger device, or choose an alternative setup option'
@@ -43,7 +43,7 @@ describe('Error', () => {
 
   test.skip('clicking "Back" takes you back to onboarding', () => {
     const useRouter = jest.spyOn(require('next/router'), 'useRouter')
-    const mockRouterReplace = jest.fn(() => {})
+    const mockRouterReplace = jest.fn(() => { })
     useRouter.mockImplementationOnce(() => ({
       replace: mockRouterReplace,
       query: 'network=t'
@@ -53,7 +53,7 @@ describe('Error', () => {
     const { getByText } = render(
       <Tree>
         <ErrorView
-          title='Ledger only supports Chrome'
+          title='Only Chrome has Ledger support'
           description='Please install Google Chrome to continue using your Ledger device, or choose an alternative setup option'
           linkDisplay='Install Google Chrome.'
           linkhref='https://www.google.com/chrome'
