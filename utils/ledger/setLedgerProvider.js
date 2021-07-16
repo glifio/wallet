@@ -95,6 +95,8 @@ export const checkLedgerConfiguration = async (dispatch, walletProvider) => {
       err.message.toLowerCase().includes('app does not seem to be open')
     ) {
       dispatch({ type: LEDGER_FILECOIN_APP_NOT_OPEN })
+    } else if (err.message && err.message.toLowerCase().includes('28161')) {
+      dispatch({ type: LEDGER_FILECOIN_APP_NOT_OPEN })
     } else {
       dispatch({ type: LEDGER_REPLUG })
       reportError(6, false, err.message, err.stack)
