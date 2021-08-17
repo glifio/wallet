@@ -44,7 +44,8 @@ export const updateBalance = (balance, walletIdx = 0) => ({
 })
 
 export const confirmMessage = message => {
-  setMessageInCache(message.from, message)
+  // disabling for now
+  // setMessageInCache(message.from, message)
   return {
     type: CONFIRM_MESSAGE,
     payload: {
