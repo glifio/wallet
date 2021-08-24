@@ -9,6 +9,11 @@ import { IconSend, IconReceive, IconPending } from '../../Icons'
 import truncate from '../../../../utils/truncateAddress'
 import makeFriendlyBalance from '../../../../utils/makeFriendlyBalance'
 
+import {
+  BaseButton,
+  Box
+} from '../../../Shared'
+
 const AddressText = ({ sentMsg, to, from }) => {
   if (sentMsg) {
     return (
@@ -77,6 +82,19 @@ const SendRow = ({ sentMsg, status, to, from, timestamp, value }) => {
               </Text>
             </MenuItem>
           </Menu>
+          {status === 'pending' && (
+                <Box
+                  textAlign='right'
+                >
+                  <BaseButton
+                    onClick={() => {
+                      alert(1);
+                    }}
+                  >
+                    Speed Up Transaction
+                  </BaseButton>
+                </Box>
+              )}
         </MenuItem>
       </Menu>
       <Menu

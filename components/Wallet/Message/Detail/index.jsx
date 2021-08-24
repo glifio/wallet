@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import dayjs from 'dayjs'
 
 import {
+  BaseButton,
   Box,
   Card,
   Input,
@@ -149,6 +150,18 @@ const MessageDetail = ({ address, close, message }) => {
           backgroundColor='background.screen'
           disabled
         />
+        {message.status === 'pending' && <Box
+            textAlign='right'
+          >
+            <BaseButton
+              onClick={() => {
+                alert(1);
+              }}
+            >
+              Speed Up Transaction
+            </BaseButton>
+          </Box>
+        }
         <TotalSection message={message} fee={fee} />
         <Box
           display='flex'
