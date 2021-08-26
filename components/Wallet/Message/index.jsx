@@ -4,7 +4,7 @@ import { MessageHistoryTable } from '../../Shared'
 import useWallet from '../../../WalletProvider/useWallet'
 import useTransactionHistory from '../../../lib/useTransactionHistory'
 
-export default () => {
+export default ({ onSpeedUp }) => {
   const [selectedMessageCid, setSelectedMessageCid] = useState('')
   const wallet = useWallet()
   const {
@@ -22,12 +22,14 @@ export default () => {
     <>
       {selectedMessageCid ? (
         <MessageDetail
+          onSpeedUp={onSpeedUp}
           address={wallet.address}
           close={() => setSelectedMessageCid('')}
           message={messages.find(({ cid }) => cid === selectedMessageCid)}
         />
       ) : (
         <MessageHistoryTable
+          onSpeedUp={onSpeedUp}
           address={wallet.address}
           messages={[...pending, ...confirmed]}
           loading={loading}

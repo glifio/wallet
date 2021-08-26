@@ -41,7 +41,7 @@ const TransactionFeeDisplay = styled(Input.Text)`
   }
 `
 
-const MessageDetail = ({ address, close, message }) => {
+const MessageDetail = ({ address, close, message, onSpeedUp }) => {
   const { walletProvider } = useWalletProvider()
   const [fee, setFee] = useState(
     new FilecoinNumber(
@@ -153,11 +153,7 @@ const MessageDetail = ({ address, close, message }) => {
         {message.status === 'pending' && <Box
             textAlign='right'
           >
-            <BaseButton
-              onClick={() => {
-                alert(1);
-              }}
-            >
+            <BaseButton onClick={onSpeedUp} >
               Speed Up Transaction
             </BaseButton>
           </Box>

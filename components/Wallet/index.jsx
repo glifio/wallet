@@ -12,6 +12,7 @@ import {
   Box,
   Tooltip
 } from '../Shared'
+
 import MessageView from './Message'
 import { useWalletProvider } from '../../WalletProvider'
 import {
@@ -25,6 +26,7 @@ import reportError from '../../utils/reportError'
 export default () => {
   const wallet = useWallet()
   const router = useRouter()
+
   const { ledger, connectLedger } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState('')
   const [showLedgerError, setShowLedgerError] = useState(false)
@@ -33,6 +35,11 @@ export default () => {
   const resetWallet = () => {
     // a full page reload will reset the wallet
     window.location.reload()
+  }
+
+  const onAccountSwitch = () => {
+    const params = new URLSearchParams(router.query)
+    router.push(`/home/accounts?${params.toString()}`)
   }
 
   const onShowOnLedger = async () => {

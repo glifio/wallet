@@ -13,6 +13,7 @@ import ShowMore from './ShowMore'
 import { StyledATag } from '../Link'
 
 const MessageHistoryTable = ({
+  onSpeedUp,
   address,
   messages,
   selectMessage,
@@ -61,6 +62,7 @@ const MessageHistoryTable = ({
             <>
               {messages.map(msg => (
                 <MessageHistoryRow
+                  onSpeedUp={onSpeedUp}
                   address={address}
                   key={msg.cid}
                   message={msg}
