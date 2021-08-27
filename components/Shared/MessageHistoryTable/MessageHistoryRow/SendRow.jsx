@@ -46,7 +46,7 @@ AddressText.propTypes = {
   from: ADDRESS_PROPTYPE
 }
 
-const SendRow = ({ sentMsg, status, to, from, timestamp, value }) => {
+const SendRow = ({ sentMsg, status, to, from, timestamp, value, onSpeedUp }) => {
   return (
     <>
       <Menu>
@@ -86,11 +86,7 @@ const SendRow = ({ sentMsg, status, to, from, timestamp, value }) => {
                 <Box
                   textAlign='right'
                 >
-                  <BaseButton
-                    onClick={() => {
-                      alert(1);
-                    }}
-                  >
+                  <BaseButton onClick={onSpeedUp} >
                     Speed Up Transaction
                   </BaseButton>
                 </Box>

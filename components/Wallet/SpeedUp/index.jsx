@@ -6,6 +6,9 @@ import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { validateAddressString } from '@glif/filecoin-address'
 import { Message } from '@glif/filecoin-message'
 
+// todo: temp remove
+import { useRouter } from 'next/router'
+
 import {
   Box,
   Input,
@@ -29,6 +32,8 @@ import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import reportError from '../../../utils/reportError'
 import isBase64 from '../../../utils/isBase64'
 import { confirmMessage } from '../../../store/actions'
+import ApproximationToggleBtn from '../../Shared/BalanceCard/ApproximationToggleBtn'
+
 
 const TOTAL_STEPS = 2
 
@@ -40,6 +45,9 @@ const isValidForm = (
 }
 
 const SpeedUp = ({ close }) => {
+  // todo: temp remove
+  const router = useRouter()
+
   const dispatch = useDispatch()
   const wallet = useWallet()
   const {
@@ -48,6 +56,15 @@ const SpeedUp = ({ close }) => {
     connectLedger,
     resetLedgerState
   } = useWalletProvider()
+
+  // todo
+  const [transactionId, setTransactionId] = useState('123faketransactionId456')
+  const [nonceInt, setNonceInt] = useState('4')
+  const [gasPremium, setGasPremium] = useState('1234')
+  const [gasLimit, setGasLimit] = useState('5678')
+  const [gasFeeCap, setGasFeeCap] = useState('91023')
+  const [isExpertMode, setIsExpertMode] = useState(false)
+
   const [toAddress, setToAddress] = useState('')
   const [params, setParams] = useState('')
   const [toAddressError, setToAddressError] = useState('')
@@ -123,6 +140,14 @@ const SpeedUp = ({ close }) => {
 
   // todo: update
   const sendMsg = async () => {
+    // todo
+    alert('mock message send')
+
+    // temp
+    router.push(`/home?`)
+
+    return
+
     try {
       const message = await send()
       if (message) {
@@ -160,12 +185,12 @@ const SpeedUp = ({ close }) => {
 
   const onSubmit = async e => {
     e.preventDefault()
-    if (step === 1 && validateAddressString(toAddress)) {
+    if (step === 1) {
       setStep(2)
-    } else if (step === 2 && !valueError) {
+    } else if (step === 2) {
       setStep(3)
+      await sendMsg()
     }
-    //  else set error
   }
 
   const hasError = () =>
@@ -214,6 +239,7 @@ const SpeedUp = ({ close }) => {
             justifyContent='flex-start'
           >
             <Box>
+              {/* todo update */}
               {hasError() && (
                 <ErrorCard
                   error={ledgerError() || uncaughtError}
@@ -236,7 +262,7 @@ const SpeedUp = ({ close }) => {
                   loading={fetchingTxDetails || mPoolPushing}
                 />
               )}
-            {/* todo update */}
+              {/* todo update */}
               {!hasError() && !attemptingTx && (
                 <>
                   <Card
@@ -260,64 +286,83 @@ const SpeedUp = ({ close }) => {
                   </Card>
                 </>
               )}
-              <Box boxShadow={2} borderRadius={4}>
+              <Box boxShadow={2} borderRadius={4} bg='background.screen'>
                 {/* TODO do we need to pass a prop to change Ms to Su here? */}
                 <CardHeader
                   address={wallet.address}
                   signerBalance={wallet.balance}
                 />
-
-                <Box width='100%' p={3} border={0} bg='background.screen'>
-                  <Input.Address
-                    label='Recipient'
-                    value={toAddress}
-                    onChange={e => setToAddress(e.target.value)}
-                    error={toAddressError}
-                    disabled={step > 1}
-                    placeholder='f1...'
-                    onFocus={() => {
-                      if (toAddressError) setToAddressError('')
-                    }}
-                  />
-                </Box>
-                <Box>
-                  {step > 1 && (
-                    <Box
-                      width='100%'
-                      px={3}
-                      pb={step === 2 && 3}
-                      border={0}
-                      bg='background.screen'
-                    >
-                      <Input.Funds
-                        name='amount'
-                        label='Amount'
-                        amount={value.toAttoFil()}
-                        onAmountChange={setValue}
-                        balance={wallet.balance}
-                        error={valueError}
-                        setError={setValueError}
-                        disabled={step > 2 && !hasError()}
-                      />
-                    </Box>
-                  )}
-                    {/* UPDATE */}
-                  {step > 2 && (
-                    <Box width='100%' p={3} border={0} bg='background.screen'>
+                {step === 1 && (
+                  <>
+                    <Box width='100%' p={3} border={0}>
                       <Input.Text
-                        label='Params'
-                        value={params}
-                        onChange={e => setParams(e.target.value)}
-                        error={paramsError}
-                        disabled={step > 3}
-                        placeholder='Optional base64 params'
-                        onFocus={() => {
-                          if (paramsError) setParamsError('')
-                        }}
+                        my={3}
+                        textAlign={'right'}
+                        label='Transaction Id'
+                        value={transactionId}
+                        disabled={true}
+                      />
+                      <Input.Text
+                        my={3}
+                        textAlign={'right'}
+                        label='Nonce'
+                        value={nonceInt}
+                        disabled={true}
+                      />
+                      <Input.Text
+                        my={3}
+                        textAlign={'right'}
+                        label='Gas Premium'
+                        value={gasPremium}
+                        disabled={true}
+                      />
+                      <Input.Text
+                        my={3}
+                        textAlign={'right'}
+                        label='Gas Limit'
+                        value={gasLimit}
+                        disabled={true}
+                      />
+                      <Input.Text
+                        my={3}
+                        textAlign={'right'}
+                        label='Fee Cap'
+                        value={gasFeeCap}
+                        disabled={true}
                       />
                     </Box>
-                  )}
+                    <Box width='100%' p={3} border={0}
+                      display={'flex'}
+                      justifyContent={'space-between'}
+                      alignItems={'center'}
+                    >
+                      {/* todo: does this component exist already? Fix styles */}
+                      <label>
+                        Expert Mode
+                      </label>
+                      <Button
+                        justifySelf={'end'}
+                        title={isExpertMode ? 'on' : 'off'}
+                        variant='secondary'
+                        onClick={() => setIsExpertMode(!isExpertMode)}
+                      />
+                    </Box>
+                  </>
+                )}
+
+                {step === 2 && (
+                  <Box
+                    width='100%'
+                    px={3}
+                    pb={step === 2 && 3}
+                    border={0}
+                    bg='background.screen'
+                  >
+                    <Box my={5}>
+                      Confirmation screen goes here.
+                    </Box>
                   </Box>
+                )}
               </Box>
             </Box>
             <Box
@@ -356,10 +401,6 @@ const SpeedUp = ({ close }) => {
               <Button
                 variant='primary'
                 title={submitBtnText()}
-                disabled={
-                  // todo: refer to send.js for example
-                  false
-                }
                 type='submit'
               />
             </Box>
