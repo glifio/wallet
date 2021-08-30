@@ -9,6 +9,7 @@ import ApproximationToggleBtn from './ApproximationToggleBtn'
 
 const BalanceCard = forwardRef(
   ({ balance, onSend, disableButtons, ...props }, ref) => {
+    // todo: #ecRouterFuncs Consider changing the onSend function to just be a router.push locally here
     const [preciseMode, setPreciseMode] = useState(false)
     return (
       <Box

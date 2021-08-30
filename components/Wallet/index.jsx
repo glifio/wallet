@@ -45,13 +45,13 @@ export default () => {
     setLedgerBusy(false)
   }
 
-  // todo: refactor to move this logic to urls set from the other views
+  // todo: #ecRouterFuncs refactor to move this logic to urls set from the other views
   const gotoSendTempFunc = () => {
     const params = new URLSearchParams(router.query)
     router.push(`/send?${params.toString()}`)
   }
 
-  // todo: refactor to move this logic to urls set from the other views
+  // todo: #ecRouterFuncs refactor to move this logic to urls set from the other views
   const gotoHomeTempFunc = () => {
     const params = new URLSearchParams(router.query)
     router.push(`/home/accounts?${params.toString()}`)

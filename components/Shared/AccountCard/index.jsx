@@ -25,6 +25,8 @@ const AccountCard = forwardRef(
     },
     ref
   ) => {
+    // todo: #ecRouterFuncs refactor to just make onAccountSwitch a link instead.
+
     return (
       <Box
         display='flex'
