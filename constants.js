@@ -63,3 +63,7 @@ export const PL_SIGNERS = new Set([
   't1figgwd5npr2jyw67u75qhjoyv3xf3jq5vwmmq5i',
   't1ovvm6oilbdsvbw27jhil3pcywrjuwiv5uzagq6i'
 ])
+
+/* STYLE CONSTANTS */
+export const SCREEN_MAX_WIDTH = 1440
+

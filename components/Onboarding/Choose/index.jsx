@@ -17,7 +17,8 @@ import {
   LEDGER,
   IMPORT_MNEMONIC,
   CREATE_MNEMONIC,
-  IMPORT_SINGLE_KEY
+  IMPORT_SINGLE_KEY,
+  SCREEN_MAX_WIDTH
 } from '../../../constants'
 import { useWalletProvider } from '../../../WalletProvider'
 import ExpandableBox from './ExpandableBox'
@@ -61,7 +62,7 @@ export default () => {
           display='flex'
           flexWrap='wrap'
           minHeight='90vh'
-          maxWidth='1440px'
+          maxWidth={`${SCREEN_MAX_WIDTH}px`}
           justifyContent='center'
           flexGrow='1'
         >
@@ -83,7 +84,7 @@ export default () => {
                 display='flex'
                 alignItems='center'
                 justifyContent='space-around'
-                maxWidth='1440px'
+                maxWidth={`${SCREEN_MAX_WIDTH}px`}
               >
                 <Text
                   mt={3}

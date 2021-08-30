@@ -16,7 +16,7 @@ import {
   Title,
   Form,
   Card,
-  Wrapper
+  PageWrapper
 } from '../../Shared'
 import { CardHeader } from '../../Msig/Shared'
 import ConfirmationCard from './ConfirmationCard'
@@ -273,14 +273,7 @@ const Send = ({ close }) => {
   }
 
   return (
-    <Wrapper
-      css={`
-        /* Temp implementation to simplistically handle large scale displays. This should be removed and a more dynamic solution introduced e.g https://css-tricks.com/optimizing-large-scale-displays/  */
-        max-width: 1440px;
-        margin: 0 auto;
-        min-height: 100vh;
-      `}
-    >
+    <PageWrapper>
       <Box display='flex' flexDirection='column' width='100%'>
         <ButtonClose
           role='button'
@@ -518,7 +511,7 @@ const Send = ({ close }) => {
           </Box>
         </Form>
       </Box>
-    </Wrapper>
+    </PageWrapper>
   )
 }
 

@@ -4,7 +4,7 @@ import {
   AccountCard,
   AccountError,
   BalanceCard,
-  Wrapper,
+  PageWrapper,
   Sidebar,
   Content,
   BaseButton as ButtonLogout,
@@ -60,14 +60,7 @@ export default () => {
   return (
     <>
       <MsgConfirmer />
-      <Wrapper
-        css={`
-          /* Temp implementation to simplistically handle large scale displays. This should be removed and a more dynamic solution introduced e.g https://css-tricks.com/optimizing-large-scale-displays/  */
-          max-width: 1440px;
-          margin: 0 auto;
-          min-height: 100vh;
-        `}
-      >
+      <PageWrapper>
         <Sidebar height='100vh'>
           {hasLedgerError({ ...ledger, otherError: uncaughtError }) &&
           showLedgerError ? (
@@ -125,7 +118,7 @@ export default () => {
             <MessageView />
           </Box>
         </Content>
-      </Wrapper>
+      </PageWrapper>
     </>
   )
 }
