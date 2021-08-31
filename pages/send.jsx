@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-import SendView from '../components/Wallet/Send.js'
+import SendView from '../components/Wallet/Send'
 import RenderChildrenIfWalletConnected from '../lib/RequireWallet'
 import useDesktopBrowser from '../lib/useDesktopBrowser'
 

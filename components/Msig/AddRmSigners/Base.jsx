@@ -16,10 +16,10 @@ import {
 import { CardHeader, AddRmSignerHeaderText } from '../Shared'
 import Preface from './Prefaces'
 import { useWasm } from '../../../lib/WasmLoader'
-import ErrorCard from '../../Wallet/Send.js/ErrorCard'
-import ConfirmationCard from '../../Wallet/Send.js/ConfirmationCard'
+import ErrorCard from '../../Wallet/Send/ErrorCard'
+import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
 import { LEDGER, PROPOSE, emptyGasInfo } from '../../../constants'
-import CustomizeFee from '../../Wallet/Send.js/CustomizeFee'
+import CustomizeFee from '../../Wallet/Send/CustomizeFee'
 import {
   reportLedgerConfigError,
   hasLedgerError
