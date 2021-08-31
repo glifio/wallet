@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from 'react'
-import { useRouter } from 'next/router'
 import {
   AccountCard,
   AccountError,
@@ -24,7 +23,6 @@ import reportError from '../../utils/reportError'
 
 export default () => {
   const wallet = useWallet()
-  const router = useRouter()
   const { ledger, connectLedger } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState('')
   const [showLedgerError, setShowLedgerError] = useState(false)
@@ -45,16 +43,9 @@ export default () => {
     setLedgerBusy(false)
   }
 
-  // todo: #ecRouterFuncs refactor to move this logic to urls set from the other views
-  const gotoSendTempFunc = () => {
-    const params = new URLSearchParams(router.query)
-    router.push(`/send?${params.toString()}`)
-  }
-
-  // todo: #ecRouterFuncs refactor to move this logic to urls set from the other views
-  const gotoHomeTempFunc = () => {
-    const params = new URLSearchParams(router.query)
-    router.push(`/home/accounts?${params.toString()}`)
+  const resetWallet = () => {
+    // a full page reload will reset the wallet
+    window.location.reload()
   }
 
   return (
@@ -74,7 +65,6 @@ export default () => {
             />
           ) : (
             <AccountCard
-              onAccountSwitch={gotoHomeTempFunc}
               color='purple'
               address={wallet.address}
               walletType={wallet.type}
@@ -83,10 +73,7 @@ export default () => {
               mb={2}
             />
           )}
-          <BalanceCard
-            balance={wallet.balance}
-            onSend={() => gotoSendTempFunc()}
-          />
+          <BalanceCard balance={wallet.balance} />
           <ButtonLogout
             variant='secondary'
             width='100%'
@@ -102,7 +89,7 @@ export default () => {
                   theme.colors.core.secondary};
               }
             `}
-            onClick={() => window.location.reload()}
+            onClick={resetWallet}
           >
             Logout
             <Tooltip content='Logging out clears all your sensitive information from the browser and sends you back to the home page' />

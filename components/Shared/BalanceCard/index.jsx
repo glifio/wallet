@@ -6,10 +6,18 @@ import { Num, Label } from '../Typography'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 import ApproximationToggleBtn from './ApproximationToggleBtn'
+import { useRouter } from 'next/router'
 
 const BalanceCard = forwardRef(
-  ({ balance, onSend, disableButtons, ...props }, ref) => {
-    // todo: #ecRouterFuncs Consider changing the onSend function to just be a router.push locally here
+  ({ balance, disableButtons, ...props }, ref) => {
+
+    const router = useRouter()
+
+    const onSend = () => {
+      const params = new URLSearchParams(router.query)
+      router.push(`/send?${params.toString()}`)
+    }
+
     const [preciseMode, setPreciseMode] = useState(false)
     return (
       <Box
@@ -88,10 +96,6 @@ BalanceCard.propTypes = {
    * users balance in Filecoin denom
    */
   balance: FILECOIN_NUMBER_PROP,
-  /**
-   * action fired when send button is clicked
-   */
-  onSend: func.isRequired,
   /**
    * determines if the buttons should be disabled or not
    */

@@ -6,6 +6,8 @@ import Glyph from '../Glyph'
 import Button from '../Button'
 import { CopyAddress } from '../Copy'
 import { Text } from '../Typography'
+import { useRouter } from 'next/router'
+
 import {
   LEDGER,
   CREATE_MNEMONIC,
@@ -17,7 +19,6 @@ const AccountCard = forwardRef(
   (
     {
       address,
-      onAccountSwitch,
       onShowOnLedger,
       ledgerBusy,
       walletType,
@@ -25,7 +26,12 @@ const AccountCard = forwardRef(
     },
     ref
   ) => {
-    // todo: #ecRouterFuncs refactor to just make onAccountSwitch a link instead.
+    const router = useRouter()
+
+    const onAccountSwitch = () => {
+      const params = new URLSearchParams(router.query)
+      router.push(`/home/accounts?${params.toString()}`)
+    }
 
     return (
       <Box
@@ -93,10 +99,6 @@ AccountCard.propTypes = {
    * Sets background-color of the card
    */
   color: string,
-  /**
-   * Fired when the "switch" button is clicked
-   */
-  onAccountSwitch: func.isRequired,
   /**
    * If this wallet represents a ledger
    */
