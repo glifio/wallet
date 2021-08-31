@@ -1235,6 +1235,15 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   flex-direction: column;
 }
 
+.c25 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 5rem;
+}
+
 .c7 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
@@ -1301,7 +1310,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   margin-bottom: 0;
 }
 
-.c27 {
+.c28 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -1343,7 +1352,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   margin-bottom: 0;
 }
 
-.c28 {
+.c29 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -1402,7 +1411,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   justify-content: center;
 }
 
-.c26 {
+.c27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1428,13 +1437,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   border-bottom: 2px solid #5E26FF;
 }
 
-.c25 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 5rem;
+.c26 {
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
@@ -1931,7 +1934,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
           width="11"
         >
           <div
-            class="c25"
+            class="c25 c26"
             font-size="7"
           >
             ＋
@@ -1940,11 +1943,11 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
             class="c14"
           >
             <li
-              class="c26"
+              class="c27"
               display="flex"
             >
               <h2
-                class="c27"
+                class="c28"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -1956,7 +1959,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
               class=""
             >
               <p
-                class="c28"
+                class="c29"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"
@@ -2167,6 +2170,15 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   flex-direction: column;
 }
 
+.c24 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 5rem;
+}
+
 .c7 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
@@ -2233,7 +2245,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-bottom: 0;
 }
 
-.c26 {
+.c27 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -2265,7 +2277,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-bottom: 0;
 }
 
-.c27 {
+.c28 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -2324,7 +2336,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: center;
 }
 
-.c25 {
+.c26 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2350,13 +2362,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   border-bottom: 2px solid #5E26FF;
 }
 
-.c24 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 5rem;
+.c25 {
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
@@ -2853,7 +2859,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
           width="11"
         >
           <div
-            class="c24"
+            class="c24 c25"
             font-size="7"
           >
             ＋
@@ -2862,11 +2868,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
             class="c13"
           >
             <li
-              class="c25"
+              class="c26"
               display="flex"
             >
               <h2
-                class="c26"
+                class="c27"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -2878,7 +2884,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               class=""
             >
               <p
-                class="c27"
+                class="c28"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"

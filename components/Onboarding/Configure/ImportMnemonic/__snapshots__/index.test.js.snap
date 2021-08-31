@@ -94,7 +94,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   text-align: right;
 }
 
-.c13 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -107,7 +107,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   align-items: center;
 }
 
-.c14 {
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -126,7 +126,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   align-items: center;
 }
 
-.c16 {
+.c17 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -143,7 +143,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   align-items: center;
 }
 
-.c18 {
+.c19 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 48px;
@@ -159,126 +159,6 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c19 {
-  cursor: pointer;
-  border: 1px solid #262626;
-  background-color: transparent;
-  border-color: #262626;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  margin-right: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c19:hover {
-  opacity: 0.8;
-}
-
-.c20 {
-  cursor: not-allowed;
-  border: 1px solid #C4C4C4;
-  background-color: #C4C4C4;
-  border-color: #C4C4C4;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  margin-left: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c20:hover {
-  opacity: 1;
-}
-
-.c7 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-top: 16px;
-}
-
-.c8 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-}
-
-.c15 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c6 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c17 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #d1ddfa;
-  padding-left: 16px;
-  padding-right: 16px;
-  width: 480px;
-  display: inline-block;
-  height: 48px;
-  border-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c17:hover {
-  background: #bacbf7;
-  cursor: text;
-}
-
-.c17:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c12 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
 }
 
 .c11 {
@@ -303,12 +183,135 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   border-radius: 4px;
   background-color: transparent;
   color: #5E26FF;
-  cursor: pointer;
-  outline: none;
 }
 
 .c11:hover {
   opacity: 0.8;
+}
+
+.c20 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c20:hover {
+  opacity: 0.8;
+}
+
+.c21 {
+  cursor: not-allowed;
+  border: 1px solid #C4C4C4;
+  background-color: #C4C4C4;
+  border-color: #C4C4C4;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c21:hover {
+  opacity: 1;
+}
+
+.c7 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 16px;
+}
+
+.c8 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c16 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c6 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c18 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #d1ddfa;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 480px;
+  display: inline-block;
+  height: 48px;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c18:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c18:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c13 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c12 {
+  cursor: pointer;
+  outline: none;
 }
 
 .c2 {
@@ -411,7 +414,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
           display="block"
         >
           <button
-            class="c11"
+            class="c11 c12"
             color="core.primary"
             font-size="3"
             height="6"
@@ -420,18 +423,18 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
           </button>
         </div>
         <div
-          class="c12"
+          class="c13"
         >
           <div
-            class="c13"
+            class="c14"
             display="flex"
           >
             <div
-              class="c14"
+              class="c15"
               display="flex"
             >
               <h4
-                class="c15"
+                class="c16"
                 color="core.nearblack"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
@@ -441,11 +444,11 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
               </h4>
             </div>
             <div
-              class="c16"
+              class="c17"
               display="flex"
             >
               <input
-                class="c17"
+                class="c18"
                 display="inline-block"
                 height="6"
                 placeholder="Your seed phrase"
@@ -462,12 +465,12 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
     </div>
   </div>
   <div
-    class="c18"
+    class="c19"
     display="flex"
     width="100%"
   >
     <button
-      class="c19"
+      class="c20"
       font-size="3"
       height="6"
       type="button"
@@ -475,7 +478,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
       Back
     </button>
     <button
-      class="c20"
+      class="c21"
       disabled=""
       font-size="3"
       height="6"
