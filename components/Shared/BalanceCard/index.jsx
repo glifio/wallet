@@ -1,6 +1,5 @@
 import React, { forwardRef, useState } from 'react'
 import { bool } from 'prop-types'
-import { useRouter } from 'next/router'
 import Box from '../Box'
 import Button from '../Button'
 import { Num, Label } from '../Typography'
@@ -8,13 +7,8 @@ import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 import ApproximationToggleBtn from './ApproximationToggleBtn'
 
-const BalanceCard = forwardRef(({ balance, disableButtons, ...props }, ref) => {
-  const router = useRouter()
-
-  const onSend = () => {
-    const params = new URLSearchParams(router.query)
-    router.push(`/send?${params.toString()}`)
-  }
+const BalanceCard = forwardRef(
+  ({ balance, onSend, disableButtons, ...props }, ref) => {
 
   const [preciseMode, setPreciseMode] = useState(false)
   return (
@@ -85,6 +79,10 @@ BalanceCard.propTypes = {
    * users balance in Filecoin denom
    */
   balance: FILECOIN_NUMBER_PROP,
+  /**
+   * action fired when send button is clicked
+   */
+  onSend: func.isRequired,
   /**
    * determines if the buttons should be disabled or not
    */
