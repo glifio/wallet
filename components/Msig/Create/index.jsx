@@ -21,10 +21,10 @@ import {
 } from '../../Shared'
 import { CardHeader, CreateMultisigHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
-import ErrorCard from '../../Wallet/Send.js/ErrorCard'
-import ConfirmationCard from '../../Wallet/Send.js/ConfirmationCard'
+import ErrorCard from '../../Wallet/Send/ErrorCard'
+import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
 import { LEDGER, emptyGasInfo, EXEC } from '../../../constants'
-import CustomizeFee from '../../Wallet/Send.js/CustomizeFee'
+import CustomizeFee from '../../Wallet/Send/CustomizeFee'
 import {
   reportLedgerConfigError,
   hasLedgerError
