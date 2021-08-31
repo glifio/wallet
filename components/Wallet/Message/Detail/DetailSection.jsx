@@ -6,7 +6,6 @@ import { FilecoinNumber } from '@glif/filecoin-number'
 import { Box, Input, Text, CopyAddress } from '../../../Shared'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../../customPropTypes'
 import { EXEC, PROPOSE, SEND } from '../../../../constants'
-import truncateAddress from '../../../../utils/truncateAddress'
 import getAddrFromReceipt from '../../../../utils/getAddrFromReceipt'
 import noop from '../../../../utils/noop'
 

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import { Box } from '../../Shared'
 import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
-import truncateAddress from '../../../utils/truncateAddress'
 import Address from './Address'
 
 const Signers = ({ signers, walletAddress }) => {

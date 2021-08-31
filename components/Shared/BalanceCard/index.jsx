@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from 'react'
-import { func, bool } from 'prop-types'
+import { bool } from 'prop-types'
 import { useRouter } from 'next/router'
 import Box from '../Box'
 import Button from '../Button'

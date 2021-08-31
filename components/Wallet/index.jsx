@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useState } from 'react'
 import {
   AccountCard,
   AccountError,
@@ -10,7 +10,6 @@ import {
   Box,
   Tooltip
 } from '../Shared'
-import Send from './Send.js'
 import MessageView from './Message'
 import { useWalletProvider } from '../../WalletProvider'
 import {
