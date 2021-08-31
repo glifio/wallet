@@ -263,7 +263,34 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   width: 100%;
 }
 
-.c34 {
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
@@ -286,7 +313,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   justify-content: space-between;
 }
 
-.c36 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -300,7 +327,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   text-align: right;
 }
 
-.c39 {
+.c41 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 64px;
@@ -341,7 +368,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   height: 24px;
 }
 
-.c35 {
+.c37 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -350,7 +377,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   margin-top: 4px;
 }
 
-.c37 {
+.c39 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -406,7 +433,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   margin: 0;
 }
 
-.c40 {
+.c42 {
   color: #999999;
   font-size: 1.125rem;
   font-weight: 400;
@@ -416,7 +443,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   margin: 4px;
 }
 
-.c41 {
+.c43 {
   color: #999999;
   font-size: 1.125rem;
   font-weight: 400;
@@ -427,7 +454,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   margin: 4px;
 }
 
-.c44 {
+.c46 {
   color: #5E26FF;
   font-size: 1.125rem;
   font-weight: 400;
@@ -473,80 +500,6 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   background: #bacbf7;
 }
 
-.c32 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #bacbf7;
-  text-align: right;
-  background-color: #EFF3FD;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c32:hover {
-  background: #bacbf7;
-  cursor: initial;
-}
-
-.c32:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c19 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
-}
-
-.c31 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: #bacbf7;
-}
-
 .c30 {
   min-width: 0;
   -webkit-box-flex: 1;
@@ -574,7 +527,6 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  -moz-appearance: textfield;
 }
 
 .c30:hover {
@@ -588,13 +540,67 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   background: #bacbf7;
 }
 
-.c30::-webkit-outer-spin-button,
-.c30::-webkit-inner-spin-button {
+.c34 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  text-align: right;
+  background-color: #EFF3FD;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c34:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c34:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c19 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c33 {
+  text-align: center;
+  position: relative;
+  background: #bacbf7;
+}
+
+.c31 {
+  -moz-appearance: textfield;
+}
+
+.c31::-webkit-outer-spin-button,
+.c31::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c43 {
+.c45 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -604,7 +610,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   font-size: 1.125rem;
 }
 
-.c43:hover {
+.c45:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
@@ -625,7 +631,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   transform: scale(1.25);
 }
 
-.c38 {
+.c40 {
   word-wrap: break-word;
 }
 
@@ -648,7 +654,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   background-color: #EFF3FD;
 }
 
-.c33:hover {
+.c35:hover {
   background: transparent;
 }
 
@@ -658,7 +664,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
   align-self: flex-end;
 }
 
-.c42 {
+.c44 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: no-wrap;
@@ -899,7 +905,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
           width="100%"
         >
           <input
-            class="c30"
+            class="c30 c31"
             disabled=""
             display="inline-block"
             font-size="5"
@@ -911,7 +917,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
             width="100%"
           />
           <div
-            class="c31"
+            class="c32 c33"
             color="core.primary"
             disabled=""
             display="flex"
@@ -949,7 +955,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
           display="flex"
         >
           <input
-            class="c32 c33 Detail__TransactionFeeDisplay-h9colq-1 c33"
+            class="c34 c35 Detail__TransactionFeeDisplay-h9colq-1 c35"
             disabled=""
             display="inline-block"
             height="6"
@@ -962,11 +968,11 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
     </div>
     
     <div
-      class="c34"
+      class="c36"
       display="flex"
     >
       <h2
-        class="c35"
+        class="c37"
         font-family="RT-Alias-Grotesk"
         font-size="4"
         font-weight="400"
@@ -974,11 +980,11 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
         Total
       </h2>
       <div
-        class="c36"
+        class="c38"
         display="flex"
       >
         <h2
-          class="c37 c38"
+          class="c39 c40"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="5"
@@ -990,11 +996,11 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
       </div>
     </div>
     <div
-      class="c39"
+      class="c41"
       display="flex"
     >
       <h4
-        class="c40"
+        class="c42"
         color="core.silver"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -1003,7 +1009,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
         Message Hash
       </h4>
       <h4
-        class="c41 c42"
+        class="c43 c44"
         color="core.silver"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -1012,7 +1018,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
         rdafdsagdfsa
       </h4>
       <a
-        class="c43"
+        class="c45"
         color="core.primary"
         font-size="2"
         href="https://filfox.info/en/message/rdafdsagdfsa"
@@ -1020,7 +1026,7 @@ exports[`MessageHistory View it renders a final, received, SEND transaction corr
         target="_blank"
       >
         <h4
-          class="c44"
+          class="c46"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="2"
@@ -1297,7 +1303,34 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   width: 100%;
 }
 
-.c34 {
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
@@ -1320,7 +1353,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   justify-content: space-between;
 }
 
-.c36 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -1334,7 +1367,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   text-align: right;
 }
 
-.c39 {
+.c41 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 64px;
@@ -1375,7 +1408,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   height: 24px;
 }
 
-.c35 {
+.c37 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -1384,7 +1417,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   margin-top: 4px;
 }
 
-.c37 {
+.c39 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -1440,7 +1473,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   margin: 0;
 }
 
-.c40 {
+.c42 {
   color: #999999;
   font-size: 1.125rem;
   font-weight: 400;
@@ -1450,7 +1483,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   margin: 4px;
 }
 
-.c41 {
+.c43 {
   color: #999999;
   font-size: 1.125rem;
   font-weight: 400;
@@ -1461,7 +1494,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   margin: 4px;
 }
 
-.c44 {
+.c46 {
   color: #5E26FF;
   font-size: 1.125rem;
   font-weight: 400;
@@ -1507,80 +1540,6 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   background: #bacbf7;
 }
 
-.c32 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #bacbf7;
-  text-align: right;
-  background-color: #EFF3FD;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c32:hover {
-  background: #bacbf7;
-  cursor: initial;
-}
-
-.c32:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c19 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
-}
-
-.c31 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: #bacbf7;
-}
-
 .c30 {
   min-width: 0;
   -webkit-box-flex: 1;
@@ -1608,7 +1567,6 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  -moz-appearance: textfield;
 }
 
 .c30:hover {
@@ -1622,13 +1580,67 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   background: #bacbf7;
 }
 
-.c30::-webkit-outer-spin-button,
-.c30::-webkit-inner-spin-button {
+.c34 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  text-align: right;
+  background-color: #EFF3FD;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c34:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c34:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c19 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c33 {
+  text-align: center;
+  position: relative;
+  background: #bacbf7;
+}
+
+.c31 {
+  -moz-appearance: textfield;
+}
+
+.c31::-webkit-outer-spin-button,
+.c31::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c43 {
+.c45 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -1638,7 +1650,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   font-size: 1.125rem;
 }
 
-.c43:hover {
+.c45:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
@@ -1659,7 +1671,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   transform: scale(1.25);
 }
 
-.c38 {
+.c40 {
   word-wrap: break-word;
 }
 
@@ -1682,7 +1694,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   background-color: #EFF3FD;
 }
 
-.c33:hover {
+.c35:hover {
   background: transparent;
 }
 
@@ -1692,7 +1704,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
   align-self: flex-end;
 }
 
-.c42 {
+.c44 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: no-wrap;
@@ -1933,7 +1945,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
           width="100%"
         >
           <input
-            class="c30"
+            class="c30 c31"
             disabled=""
             display="inline-block"
             font-size="5"
@@ -1945,7 +1957,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
             width="100%"
           />
           <div
-            class="c31"
+            class="c32 c33"
             color="core.primary"
             disabled=""
             display="flex"
@@ -1983,7 +1995,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
           display="flex"
         >
           <input
-            class="c32 c33 Detail__TransactionFeeDisplay-h9colq-1 c33"
+            class="c34 c35 Detail__TransactionFeeDisplay-h9colq-1 c35"
             disabled=""
             display="inline-block"
             height="6"
@@ -1996,11 +2008,11 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
     </div>
     
     <div
-      class="c34"
+      class="c36"
       display="flex"
     >
       <h2
-        class="c35"
+        class="c37"
         font-family="RT-Alias-Grotesk"
         font-size="4"
         font-weight="400"
@@ -2008,11 +2020,11 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
         Total
       </h2>
       <div
-        class="c36"
+        class="c38"
         display="flex"
       >
         <h2
-          class="c37 c38"
+          class="c39 c40"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="5"
@@ -2024,11 +2036,11 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
       </div>
     </div>
     <div
-      class="c39"
+      class="c41"
       display="flex"
     >
       <h4
-        class="c40"
+        class="c42"
         color="core.silver"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -2037,7 +2049,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
         Message Hash
       </h4>
       <h4
-        class="c41 c42"
+        class="c43 c44"
         color="core.silver"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -2046,7 +2058,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
         rdafdsagdfsa
       </h4>
       <a
-        class="c43"
+        class="c45"
         color="core.primary"
         font-size="2"
         href="https://filfox.info/en/message/rdafdsagdfsa"
@@ -2054,7 +2066,7 @@ exports[`MessageHistory View it renders a final, sent, SEND transaction correctl
         target="_blank"
       >
         <h4
-          class="c44"
+          class="c46"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="2"
@@ -2173,7 +2185,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   align-items: flex-end;
 }
 
-.c14 {
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 8px;
@@ -2186,7 +2198,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   flex-direction: row;
 }
 
-.c17 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 4px;
@@ -2203,13 +2215,13 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   flex-grow: 1;
 }
 
-.c18 {
+.c19 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 16px;
 }
 
-.c20 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -2222,7 +2234,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   align-items: center;
 }
 
-.c21 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -2241,7 +2253,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   align-items: center;
 }
 
-.c23 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -2258,13 +2270,13 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   align-items: center;
 }
 
-.c25 {
+.c26 {
   min-width: 0;
   box-sizing: border-box;
   height: 16px;
 }
 
-.c26 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -2282,7 +2294,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   align-items: center;
 }
 
-.c27 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -2309,14 +2321,14 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   text-align: center;
 }
 
-.c28 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
 }
 
-.c29 {
+.c30 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -2331,7 +2343,34 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   width: 100%;
 }
 
-.c34 {
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
@@ -2354,7 +2393,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   justify-content: space-between;
 }
 
-.c36 {
+.c39 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -2368,7 +2407,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   text-align: right;
 }
 
-.c39 {
+.c42 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 64px;
@@ -2407,11 +2446,14 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
 .c12 {
   width: 24px;
   height: 24px;
+}
+
+.c13 {
   -webkit-animation: WNDHq 4s infinite;
   animation: WNDHq 4s infinite;
 }
 
-.c35 {
+.c38 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -2420,7 +2462,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   margin-top: 4px;
 }
 
-.c37 {
+.c40 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -2438,7 +2480,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   margin-left: 8px;
 }
 
-.c15 {
+.c16 {
   color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
@@ -2449,7 +2491,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   margin-right: 16px;
 }
 
-.c16 {
+.c17 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -2458,7 +2500,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   margin-bottom: 0;
 }
 
-.c13 {
+.c14 {
   color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
@@ -2467,7 +2509,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   margin: 0;
 }
 
-.c22 {
+.c23 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -2476,7 +2518,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   margin: 0;
 }
 
-.c40 {
+.c43 {
   color: #999999;
   font-size: 1.125rem;
   font-weight: 400;
@@ -2486,7 +2528,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   margin: 4px;
 }
 
-.c41 {
+.c44 {
   color: #999999;
   font-size: 1.125rem;
   font-weight: 400;
@@ -2497,7 +2539,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   margin: 4px;
 }
 
-.c44 {
+.c47 {
   color: #5E26FF;
   font-size: 1.125rem;
   font-weight: 400;
@@ -2507,7 +2549,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   margin: 4px;
 }
 
-.c24 {
+.c25 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -2532,92 +2574,18 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   border-color: #999999;
 }
 
-.c24:hover {
+.c25:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c24:focus {
+.c25:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
-}
-
-.c32 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #bacbf7;
-  text-align: right;
-  background-color: #EFF3FD;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c32:hover {
-  background: #bacbf7;
-  cursor: initial;
-}
-
-.c32:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c19 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
 }
 
 .c31 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: #bacbf7;
-}
-
-.c30 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -2644,27 +2612,80 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  -moz-appearance: textfield;
 }
 
-.c30:hover {
+.c31:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c30:focus {
+.c31:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c30::-webkit-outer-spin-button,
-.c30::-webkit-inner-spin-button {
+.c35 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  text-align: right;
+  background-color: #EFF3FD;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c35:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c35:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c20 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c34 {
+  text-align: center;
+  position: relative;
+  background: #bacbf7;
+}
+
+.c32 {
+  -moz-appearance: textfield;
+}
+
+.c32::-webkit-outer-spin-button,
+.c32::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c43 {
+.c46 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -2674,7 +2695,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   font-size: 1.125rem;
 }
 
-.c43:hover {
+.c46:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
@@ -2695,7 +2716,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   transform: scale(1.25);
 }
 
-.c38 {
+.c41 {
   word-wrap: break-word;
 }
 
@@ -2718,7 +2739,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   background-color: #EFF3FD;
 }
 
-.c33:hover {
+.c36:hover {
   background: transparent;
 }
 
@@ -2728,7 +2749,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
   align-self: flex-end;
 }
 
-.c42 {
+.c45 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: no-wrap;
@@ -2800,7 +2821,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
         display="flex"
       >
         <svg
-          class="c12"
+          class="c12 c13"
           fill="none"
           height="4"
           viewBox="0 0 24 24"
@@ -2836,7 +2857,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
           />
         </svg>
         <h4
-          class="c13"
+          class="c14"
           color="status.pending.foreground"
           font-family="RT-Alias-Grotesk"
           font-size="2"
@@ -2846,11 +2867,11 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
         </h4>
       </div>
       <div
-        class="c14"
+        class="c15"
         display="flex"
       >
         <p
-          class="c15"
+          class="c16"
           color="core.darkgray"
           font-family="RT-Alias-Grotesk"
           font-size="2"
@@ -2859,7 +2880,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
           2020-01-12
         </p>
         <p
-          class="c16"
+          class="c17"
           font-family="RT-Alias-Grotesk"
           font-size="2"
           font-weight="400"
@@ -2870,25 +2891,25 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
     </div>
   </div>
   <div
-    class="c17"
+    class="c18"
     display="flex"
   >
     <div
-      class="c18"
+      class="c19"
     >
       <div
-        class="c19"
+        class="c20"
       >
         <div
-          class="c20"
+          class="c21"
           display="flex"
         >
           <div
-            class="c21"
+            class="c22"
             display="flex"
           >
             <h4
-              class="c22"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -2898,11 +2919,11 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
             </h4>
           </div>
           <div
-            class="c23"
+            class="c24"
             display="flex"
           >
             <input
-              class="c24"
+              class="c25"
               disabled=""
               display="inline-block"
               height="6"
@@ -2915,22 +2936,22 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
         </div>
       </div>
       <div
-        class="c25"
+        class="c26"
         height="3"
       />
       <div
-        class="c19"
+        class="c20"
       >
         <div
-          class="c20"
+          class="c21"
           display="flex"
         >
           <div
-            class="c21"
+            class="c22"
             display="flex"
           >
             <h4
-              class="c22"
+              class="c23"
               color="core.nearblack"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -2940,11 +2961,11 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
             </h4>
           </div>
           <div
-            class="c23"
+            class="c24"
             display="flex"
           >
             <input
-              class="c24"
+              class="c25"
               disabled=""
               display="inline-block"
               height="6"
@@ -2958,17 +2979,17 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
       </div>
     </div>
     <div
-      class="c26"
+      class="c27"
       display="flex"
     >
       <div
-        class="c27"
+        class="c28"
         color="input.border"
         display="flex"
         width="100%"
       >
         <h4
-          class="c22"
+          class="c23"
           color="core.nearblack"
           font-family="RT-Alias-Grotesk"
           font-size="2"
@@ -2978,18 +2999,18 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
         </h4>
       </div>
       <div
-        class="c28"
+        class="c29"
         display="inline-block"
         width="100%"
       >
         <div
-          class="c29"
+          class="c30"
           display="flex"
           height="80px"
           width="100%"
         >
           <input
-            class="c30"
+            class="c31 c32"
             disabled=""
             display="inline-block"
             font-size="5"
@@ -3001,7 +3022,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
             width="100%"
           />
           <div
-            class="c31"
+            class="c33 c34"
             color="core.primary"
             disabled=""
             display="flex"
@@ -3014,18 +3035,18 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
       </div>
     </div>
     <div
-      class="c19"
+      class="c20"
     >
       <div
-        class="c20"
+        class="c21"
         display="flex"
       >
         <div
-          class="c21"
+          class="c22"
           display="flex"
         >
           <h4
-            class="c22"
+            class="c23"
             color="core.nearblack"
             font-family="RT-Alias-Grotesk"
             font-size="2"
@@ -3035,11 +3056,11 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
           </h4>
         </div>
         <div
-          class="c23"
+          class="c24"
           display="flex"
         >
           <input
-            class="c32 c33 Detail__TransactionFeeDisplay-h9colq-1 c33"
+            class="c35 c36 Detail__TransactionFeeDisplay-h9colq-1 c36"
             disabled=""
             display="inline-block"
             height="6"
@@ -3052,11 +3073,11 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
     </div>
     
     <div
-      class="c34"
+      class="c37"
       display="flex"
     >
       <h2
-        class="c35"
+        class="c38"
         font-family="RT-Alias-Grotesk"
         font-size="4"
         font-weight="400"
@@ -3064,11 +3085,11 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
         Total
       </h2>
       <div
-        class="c36"
+        class="c39"
         display="flex"
       >
         <h2
-          class="c37 c38"
+          class="c40 c41"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="5"
@@ -3080,11 +3101,11 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
       </div>
     </div>
     <div
-      class="c39"
+      class="c42"
       display="flex"
     >
       <h4
-        class="c40"
+        class="c43"
         color="core.silver"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -3093,7 +3114,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
         Message Hash
       </h4>
       <h4
-        class="c41 c42"
+        class="c44 c45"
         color="core.silver"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -3102,7 +3123,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
         rdafdsagdfsa
       </h4>
       <a
-        class="c43"
+        class="c46"
         color="core.primary"
         font-size="2"
         href="https://filfox.info/en/message/rdafdsagdfsa"
@@ -3110,7 +3131,7 @@ exports[`MessageHistory View it renders a pending, send transaction correctly 1`
         target="_blank"
       >
         <h4
-          class="c44"
+          class="c47"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="2"

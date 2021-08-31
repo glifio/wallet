@@ -2404,7 +2404,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   align-items: center;
 }
 
-.c42 {
+.c44 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -2499,7 +2499,34 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   width: 100%;
 }
 
-.c43 {
+.c42 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.c45 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -2518,11 +2545,11 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   border-radius: 4px;
 }
 
-.c43:hover {
+.c45:hover {
   opacity: 0.8;
 }
 
-.c44 {
+.c46 {
   cursor: not-allowed;
   border: 1px solid #C4C4C4;
   background-color: #C4C4C4;
@@ -2540,7 +2567,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   border-radius: 4px;
 }
 
-.c44:hover {
+.c46:hover {
   opacity: 1;
 }
 
@@ -2661,42 +2688,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   background: #bacbf7;
 }
 
-.c30 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
-}
-
-.c41 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: #d1ddfa;
-}
-
 .c40 {
   min-width: 0;
   -webkit-box-flex: 1;
@@ -2724,7 +2715,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  -moz-appearance: textfield;
 }
 
 .c40:hover {
@@ -2738,8 +2728,24 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   background: #bacbf7;
 }
 
-.c40::-webkit-outer-spin-button,
-.c40::-webkit-inner-spin-button {
+.c30 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c43 {
+  text-align: center;
+  position: relative;
+  background: #d1ddfa;
+}
+
+.c41 {
+  -moz-appearance: textfield;
+}
+
+.c41::-webkit-outer-spin-button,
+.c41::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -3176,7 +3182,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
                     width="100%"
                   >
                     <input
-                      class="c40"
+                      class="c40 c41"
                       display="inline-block"
                       font-size="5"
                       height="100%"
@@ -3188,7 +3194,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
                       width="100%"
                     />
                     <div
-                      class="c41"
+                      class="c42 c43"
                       color="core.primary"
                       display="flex"
                       font-size="3"
@@ -3203,12 +3209,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
           </div>
         </div>
         <div
-          class="c42"
+          class="c44"
           display="flex"
           width="100%"
         >
           <button
-            class="c43"
+            class="c45"
             font-size="3"
             height="6"
             type="button"
@@ -3216,7 +3222,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
             Back
           </button>
           <button
-            class="c44"
+            class="c46"
             disabled=""
             font-size="3"
             height="6"
@@ -3553,7 +3559,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   align-items: center;
 }
 
-.c47 {
+.c49 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -3651,6 +3657,33 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
 .c42 {
   min-width: 0;
   box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.c44 {
+  min-width: 0;
+  box-sizing: border-box;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -3662,7 +3695,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   align-items: center;
 }
 
-.c43 {
+.c45 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 8px;
@@ -3673,7 +3706,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   text-align: left;
 }
 
-.c45 {
+.c47 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -3691,7 +3724,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   justify-content: flex-end;
 }
 
-.c48 {
+.c50 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -3710,11 +3743,11 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   border-radius: 4px;
 }
 
-.c48:hover {
+.c50:hover {
   opacity: 0.8;
 }
 
-.c49 {
+.c51 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -3733,7 +3766,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   border-radius: 4px;
 }
 
-.c49:hover {
+.c51:hover {
   opacity: 0.8;
 }
 
@@ -3807,7 +3840,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   margin: 0;
 }
 
-.c44 {
+.c46 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -3862,42 +3895,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   background: #bacbf7;
 }
 
-.c30 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
-}
-
-.c41 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: #bacbf7;
-}
-
 .c40 {
   min-width: 0;
   -webkit-box-flex: 1;
@@ -3925,7 +3922,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  -moz-appearance: textfield;
 }
 
 .c40:hover {
@@ -3939,13 +3935,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   background: #bacbf7;
 }
 
-.c40::-webkit-outer-spin-button,
-.c40::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c46 {
+.c48 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3969,22 +3959,37 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   border-top-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  -moz-appearance: textfield;
 }
 
-.c46:hover {
+.c48:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c46:focus {
+.c48:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c46::-webkit-outer-spin-button,
-.c46::-webkit-inner-spin-button {
+.c30 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c43 {
+  text-align: center;
+  position: relative;
+  background: #bacbf7;
+}
+
+.c41 {
+  -moz-appearance: textfield;
+}
+
+.c41::-webkit-outer-spin-button,
+.c41::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -4421,7 +4426,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
                     width="100%"
                   >
                     <input
-                      class="c40"
+                      class="c40 c41"
                       disabled=""
                       display="inline-block"
                       font-size="5"
@@ -4434,7 +4439,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
                       width="100%"
                     />
                     <div
-                      class="c41"
+                      class="c42 c43"
                       color="core.primary"
                       disabled=""
                       display="flex"
@@ -4456,15 +4461,15 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
                 name="vest"
               >
                 <div
-                  class="c42"
+                  class="c44"
                   display="flex"
                 >
                   <div
-                    class="c43"
+                    class="c45"
                     display="inline-block"
                   >
                     <h4
-                      class="c44"
+                      class="c46"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -4473,13 +4478,13 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
                     </h4>
                   </div>
                   <div
-                    class="c45"
+                    class="c47"
                     color="background.screen"
                     display="flex"
                     width="100%"
                   >
                     <input
-                      class="c46"
+                      class="c48 c41"
                       display="inline-block"
                       height="6"
                       placeholder="0"
@@ -4494,12 +4499,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
           </div>
         </div>
         <div
-          class="c47"
+          class="c49"
           display="flex"
           width="100%"
         >
           <button
-            class="c48"
+            class="c50"
             font-size="3"
             height="6"
             type="button"
@@ -4507,7 +4512,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
             Back
           </button>
           <button
-            class="c49"
+            class="c51"
             font-size="3"
             height="6"
             type="submit"
@@ -4843,7 +4848,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   align-items: center;
 }
 
-.c48 {
+.c50 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -4941,6 +4946,33 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
 .c42 {
   min-width: 0;
   box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.c44 {
+  min-width: 0;
+  box-sizing: border-box;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4952,7 +4984,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   align-items: center;
 }
 
-.c43 {
+.c45 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 8px;
@@ -4963,7 +4995,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   text-align: left;
 }
 
-.c45 {
+.c47 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -4981,7 +5013,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   justify-content: flex-end;
 }
 
-.c49 {
+.c51 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -5000,11 +5032,11 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   border-radius: 4px;
 }
 
-.c49:hover {
+.c51:hover {
   opacity: 0.8;
 }
 
-.c50 {
+.c52 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -5023,7 +5055,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   border-radius: 4px;
 }
 
-.c50:hover {
+.c52:hover {
   opacity: 0.8;
 }
 
@@ -5097,7 +5129,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   margin: 0;
 }
 
-.c44 {
+.c46 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -5152,42 +5184,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   background: #bacbf7;
 }
 
-.c30 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
-}
-
-.c41 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: #bacbf7;
-}
-
 .c40 {
   min-width: 0;
   -webkit-box-flex: 1;
@@ -5215,7 +5211,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  -moz-appearance: textfield;
 }
 
 .c40:hover {
@@ -5229,13 +5224,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   background: #bacbf7;
 }
 
-.c40::-webkit-outer-spin-button,
-.c40::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c47 {
+.c49 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -5259,27 +5248,20 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   border-top-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  -moz-appearance: textfield;
 }
 
-.c47:hover {
+.c49:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c47:focus {
+.c49:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c47::-webkit-outer-spin-button,
-.c47::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c46 {
+.c48 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -5303,22 +5285,37 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   border-top-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  -moz-appearance: textfield;
 }
 
-.c46:hover {
+.c48:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c46:focus {
+.c48:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c46::-webkit-outer-spin-button,
-.c46::-webkit-inner-spin-button {
+.c30 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c43 {
+  text-align: center;
+  position: relative;
+  background: #bacbf7;
+}
+
+.c41 {
+  -moz-appearance: textfield;
+}
+
+.c41::-webkit-outer-spin-button,
+.c41::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -5755,7 +5752,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
                     width="100%"
                   >
                     <input
-                      class="c40"
+                      class="c40 c41"
                       disabled=""
                       display="inline-block"
                       font-size="5"
@@ -5768,7 +5765,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
                       width="100%"
                     />
                     <div
-                      class="c41"
+                      class="c42 c43"
                       color="core.primary"
                       disabled=""
                       display="flex"
@@ -5790,15 +5787,15 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
                 name="vest"
               >
                 <div
-                  class="c42"
+                  class="c44"
                   display="flex"
                 >
                   <div
-                    class="c43"
+                    class="c45"
                     display="inline-block"
                   >
                     <h4
-                      class="c44"
+                      class="c46"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -5807,13 +5804,13 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
                     </h4>
                   </div>
                   <div
-                    class="c45"
+                    class="c47"
                     color="background.screen"
                     display="flex"
                     width="100%"
                   >
                     <input
-                      class="c46"
+                      class="c48 c41"
                       disabled=""
                       display="inline-block"
                       height="6"
@@ -5835,15 +5832,15 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
                 name="epochs"
               >
                 <div
-                  class="c42"
+                  class="c44"
                   display="flex"
                 >
                   <div
-                    class="c43"
+                    class="c45"
                     display="inline-block"
                   >
                     <h4
-                      class="c44"
+                      class="c46"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -5852,13 +5849,13 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
                     </h4>
                   </div>
                   <div
-                    class="c45"
+                    class="c47"
                     color="background.screen"
                     display="flex"
                     width="100%"
                   >
                     <input
-                      class="c47"
+                      class="c49 c41"
                       display="inline-block"
                       height="6"
                       placeholder="1000"
@@ -5873,12 +5870,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
           </div>
         </div>
         <div
-          class="c48"
+          class="c50"
           display="flex"
           width="100%"
         >
           <button
-            class="c49"
+            class="c51"
             font-size="3"
             height="6"
             type="button"
@@ -5886,7 +5883,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
             Back
           </button>
           <button
-            class="c50"
+            class="c52"
             font-size="3"
             height="6"
             type="submit"
@@ -6210,7 +6207,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   align-items: center;
 }
 
-.c54 {
+.c57 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -6308,6 +6305,33 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
 .c41 {
   min-width: 0;
   box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.c43 {
+  min-width: 0;
+  box-sizing: border-box;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -6319,7 +6343,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   align-items: center;
 }
 
-.c42 {
+.c44 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 8px;
@@ -6330,7 +6354,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   text-align: left;
 }
 
-.c44 {
+.c46 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -6348,7 +6372,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   justify-content: flex-end;
 }
 
-.c46 {
+.c48 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -6368,7 +6392,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   justify-content: space-between;
 }
 
-.c47 {
+.c49 {
   min-width: 0;
   box-sizing: border-box;
   background-color: #EFF3FD;
@@ -6389,7 +6413,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   justify-content: space-between;
 }
 
-.c48 {
+.c50 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -6410,7 +6434,34 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   flex-grow: 1;
 }
 
-.c51 {
+.c52 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  height: 48px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.c54 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -6425,7 +6476,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   text-align: left;
 }
 
-.c55 {
+.c58 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -6444,11 +6495,11 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   border-radius: 4px;
 }
 
-.c55:hover {
+.c58:hover {
   opacity: 0.8;
 }
 
-.c56 {
+.c59 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -6467,7 +6518,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   border-radius: 4px;
 }
 
-.c56:hover {
+.c59:hover {
   opacity: 0.8;
 }
 
@@ -6532,7 +6583,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   margin-bottom: 0;
 }
 
-.c52 {
+.c55 {
   color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
@@ -6550,7 +6601,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   margin: 0;
 }
 
-.c43 {
+.c45 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -6605,72 +6656,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   background: #bacbf7;
 }
 
-.c29 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
-}
-
-.c40 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: #bacbf7;
-}
-
-.c50 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  height: 48px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: #d1ddfa;
-}
-
 .c39 {
   min-width: 0;
   -webkit-box-flex: 1;
@@ -6698,7 +6683,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   border-bottom-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  -moz-appearance: textfield;
 }
 
 .c39:hover {
@@ -6712,13 +6696,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   background: #bacbf7;
 }
 
-.c39::-webkit-outer-spin-button,
-.c39::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c49 {
+.c51 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -6742,27 +6720,20 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   border-top-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  -moz-appearance: textfield;
 }
 
-.c49:hover {
+.c51:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c49:focus {
+.c51:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c49::-webkit-outer-spin-button,
-.c49::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c45 {
+.c47 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -6786,22 +6757,43 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   border-top-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  -moz-appearance: textfield;
 }
 
-.c45:hover {
+.c47:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c45:focus {
+.c47:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c45::-webkit-outer-spin-button,
-.c45::-webkit-inner-spin-button {
+.c29 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c53 {
+  text-align: center;
+  position: relative;
+  background: #d1ddfa;
+}
+
+.c42 {
+  text-align: center;
+  position: relative;
+  background: #bacbf7;
+}
+
+.c40 {
+  -moz-appearance: textfield;
+}
+
+.c40::-webkit-outer-spin-button,
+.c40::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -6856,7 +6848,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   justify-content: space-between;
 }
 
-.c53 {
+.c56 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -6866,7 +6858,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   font-size: 1.125rem;
 }
 
-.c53:hover {
+.c56:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
@@ -7252,7 +7244,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                     width="100%"
                   >
                     <input
-                      class="c39"
+                      class="c39 c40"
                       disabled=""
                       display="inline-block"
                       font-size="5"
@@ -7265,7 +7257,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                       width="100%"
                     />
                     <div
-                      class="c40"
+                      class="c41 c42"
                       color="core.primary"
                       disabled=""
                       display="flex"
@@ -7287,15 +7279,15 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                 name="vest"
               >
                 <div
-                  class="c41"
+                  class="c43"
                   display="flex"
                 >
                   <div
-                    class="c42"
+                    class="c44"
                     display="inline-block"
                   >
                     <h4
-                      class="c43"
+                      class="c45"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -7304,13 +7296,13 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                     </h4>
                   </div>
                   <div
-                    class="c44"
+                    class="c46"
                     color="background.screen"
                     display="flex"
                     width="100%"
                   >
                     <input
-                      class="c45"
+                      class="c47 c40"
                       disabled=""
                       display="inline-block"
                       height="6"
@@ -7332,15 +7324,15 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                 name="epochs"
               >
                 <div
-                  class="c41"
+                  class="c43"
                   display="flex"
                 >
                   <div
-                    class="c42"
+                    class="c44"
                     display="inline-block"
                   >
                     <h4
-                      class="c43"
+                      class="c45"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -7349,13 +7341,13 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                     </h4>
                   </div>
                   <div
-                    class="c44"
+                    class="c46"
                     color="background.screen"
                     display="flex"
                     width="100%"
                   >
                     <input
-                      class="c45"
+                      class="c47 c40"
                       disabled=""
                       display="inline-block"
                       height="6"
@@ -7369,16 +7361,16 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
               </div>
             </div>
             <div
-              class="c46"
+              class="c48"
               display="flex"
               width="100%"
             >
               <div
-                class="c47"
+                class="c49"
                 display="flex"
               >
                 <div
-                  class="c48"
+                  class="c50"
                   display="flex"
                 >
                   <div
@@ -7386,15 +7378,15 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                     name="tx-fee"
                   >
                     <div
-                      class="c41"
+                      class="c43"
                       display="flex"
                     >
                       <div
-                        class="c42"
+                        class="c44"
                         display="inline-block"
                       >
                         <h4
-                          class="c43"
+                          class="c45"
                           font-family="RT-Alias-Grotesk"
                           font-size="2"
                           font-weight="400"
@@ -7403,13 +7395,13 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                         </h4>
                       </div>
                       <div
-                        class="c44"
+                        class="c46"
                         color="background.screen"
                         display="flex"
                         width="100%"
                       >
                         <input
-                          class="c49"
+                          class="c51 c40"
                           display="inline-block"
                           height="6"
                           type="number"
@@ -7417,7 +7409,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                           width="100%"
                         />
                         <div
-                          class="c50"
+                          class="c52 c53"
                           color="core.primary"
                           display="flex"
                           font-size="3"
@@ -7429,12 +7421,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                     </div>
                   </div>
                   <div
-                    class="c51"
+                    class="c54"
                     display="flex"
                     width="100%"
                   >
                     <p
-                      class="c52"
+                      class="c55"
                       color="core.darkgray"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -7446,7 +7438,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                        FIL for this transaction.
                        
                       <a
-                        class="c53"
+                        class="c56"
                         color="core.primary"
                         font-size="2"
                         href="https://filfox.info/en/stats/gas"
@@ -7463,12 +7455,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
           </div>
         </div>
         <div
-          class="c54"
+          class="c57"
           display="flex"
           width="100%"
         >
           <button
-            class="c55"
+            class="c58"
             font-size="3"
             height="6"
             type="button"
@@ -7476,7 +7468,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
             Back
           </button>
           <button
-            class="c56"
+            class="c59"
             font-size="3"
             height="6"
             type="submit"

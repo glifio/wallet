@@ -1,21 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HeaderGlyph renders the HeaderGlyph 1`] = `
-.c3 {
-  color: black;
-  font-size: calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360));
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-left: 16px;
-}
-
-.c1 {
-  width: 64px;
-  height: 64px;
-}
-
 .c0 {
   min-width: 0;
   box-sizing: border-box;
@@ -44,7 +29,22 @@ exports[`HeaderGlyph renders the HeaderGlyph 1`] = `
   justify-content: space-between;
 }
 
-.c0:before {
+.c4 {
+  color: black;
+  font-size: calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360));
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-left: 16px;
+}
+
+.c2 {
+  width: 64px;
+  height: 64px;
+}
+
+.c1:before {
   content: '';
   position: absolute;
   top: 0px;
@@ -59,7 +59,7 @@ exports[`HeaderGlyph renders the HeaderGlyph 1`] = `
   z-index: -9;
 }
 
-.c2 {
+.c3 {
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
@@ -79,14 +79,14 @@ exports[`HeaderGlyph renders the HeaderGlyph 1`] = `
 }
 
 <div
-  class="Box-tuskkk-0 c0"
+  class="c0 c1"
   display="flex"
   height="120px"
   opacity="1"
   width="100%,auto"
 >
   <svg
-    class="c1 c2"
+    class="c2 c3"
     fill="#000"
     height="24"
     size="7"
@@ -102,7 +102,7 @@ exports[`HeaderGlyph renders the HeaderGlyph 1`] = `
     />
   </svg>
   <h1
-    class="c3"
+    class="c4"
     color="black"
     font-family="RT-Alias-Grotesk"
     font-size="calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360))"

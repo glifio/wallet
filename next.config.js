@@ -3,9 +3,18 @@ const {
   PHASE_PRODUCTION_SERVER
 } = require('next/constants')
 
+const webpack = config => {
+  const adjustedConf = { ...config }
+  const experiments = config.experiments || {}
+  adjustedConf.experiments = { ...experiments, syncWebAssembly: true }
+
+  return adjustedConf
+}
+
 module.exports = phase => {
   if (phase === PHASE_PRODUCTION_SERVER || phase === PHASE_PRODUCTION_BUILD) {
     return {
+      webpack,
       env: {
         // this api is configured to be load balanced across multiple nodes,
         // if a single node gets sick, it will get dropped and not accept requests
@@ -16,6 +25,7 @@ module.exports = phase => {
     }
   }
   return {
+    webpack,
     env: {
       LOTUS_NODE_JSONRPC: 'https://calibration.node.glif.io/rpc/v0',
       MAGIC_STRING_ENDPOINT: 'https://glif-verifier.vercel.app/api/verify',

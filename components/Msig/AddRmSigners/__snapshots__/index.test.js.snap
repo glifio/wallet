@@ -1402,7 +1402,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c45 {
+.c47 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -1799,6 +1799,33 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
 .c42 {
   min-width: 0;
   box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  height: 48px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.c44 {
+  min-width: 0;
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1811,7 +1838,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   text-align: left;
 }
 
-.c46 {
+.c48 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -1830,11 +1857,11 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   border-radius: 4px;
 }
 
-.c46:hover {
+.c48:hover {
   opacity: 0.8;
 }
 
-.c47 {
+.c49 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -1853,7 +1880,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   border-radius: 4px;
 }
 
-.c47:hover {
+.c49:hover {
   opacity: 0.8;
 }
 
@@ -1892,7 +1919,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   margin: 0;
 }
 
-.c43 {
+.c45 {
   color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
@@ -1965,42 +1992,6 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   background: #bacbf7;
 }
 
-.c28 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
-}
-
-.c41 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  height: 48px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: #d1ddfa;
-}
-
 .c40 {
   min-width: 0;
   -webkit-box-flex: 1;
@@ -2025,7 +2016,6 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   border-top-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  -moz-appearance: textfield;
 }
 
 .c40:hover {
@@ -2039,8 +2029,24 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   background: #bacbf7;
 }
 
-.c40::-webkit-outer-spin-button,
-.c40::-webkit-inner-spin-button {
+.c28 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c43 {
+  text-align: center;
+  position: relative;
+  background: #d1ddfa;
+}
+
+.c41 {
+  -moz-appearance: textfield;
+}
+
+.c41::-webkit-outer-spin-button,
+.c41::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -2095,7 +2101,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   justify-content: space-between;
 }
 
-.c44 {
+.c46 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -2105,7 +2111,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   font-size: 1.125rem;
 }
 
-.c44:hover {
+.c46:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
@@ -2479,7 +2485,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
                         width="100%"
                       >
                         <input
-                          class="c40"
+                          class="c40 c41"
                           display="inline-block"
                           height="6"
                           type="number"
@@ -2487,7 +2493,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
                           width="100%"
                         />
                         <div
-                          class="c41"
+                          class="c42 c43"
                           color="core.primary"
                           display="flex"
                           font-size="3"
@@ -2499,12 +2505,12 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
                     </div>
                   </div>
                   <div
-                    class="c42"
+                    class="c44"
                     display="flex"
                     width="100%"
                   >
                     <p
-                      class="c43"
+                      class="c45"
                       color="core.darkgray"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -2516,7 +2522,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
                        FIL for this transaction.
                        
                       <a
-                        class="c44"
+                        class="c46"
                         color="core.primary"
                         font-size="2"
                         href="https://filfox.info/en/stats/gas"
@@ -2533,12 +2539,12 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
           </div>
         </div>
         <div
-          class="c45"
+          class="c47"
           display="flex"
           width="100%"
         >
           <button
-            class="c46"
+            class="c48"
             font-size="3"
             height="6"
             type="button"
@@ -2546,7 +2552,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
             Back
           </button>
           <button
-            class="c47"
+            class="c49"
             font-size="3"
             height="6"
             type="submit"
@@ -3498,22 +3504,6 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   transform: scale(1.25);
 }
 
-.c28 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .c28:hover {
   cursor: pointer;
 }
@@ -3793,7 +3783,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
                 class="c5"
               >
                 <div
-                  class="c28"
+                  class="c8 c28"
                   display="flex"
                 >
                   <div
@@ -3894,7 +3884,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c44 {
+.c46 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -4268,6 +4258,33 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
 .c41 {
   min-width: 0;
   box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  height: 48px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.c43 {
+  min-width: 0;
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4280,7 +4297,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   text-align: left;
 }
 
-.c45 {
+.c47 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -4299,11 +4316,11 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   border-radius: 4px;
 }
 
-.c45:hover {
+.c47:hover {
   opacity: 0.8;
 }
 
-.c46 {
+.c48 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -4322,7 +4339,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   border-radius: 4px;
 }
 
-.c46:hover {
+.c48:hover {
   opacity: 0.8;
 }
 
@@ -4368,7 +4385,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   font-family: RT-Alias-Grotesk;
 }
 
-.c42 {
+.c44 {
   color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
@@ -4396,42 +4413,6 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   font-size: 1.5rem;
 }
 
-.c34 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
-}
-
-.c40 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  height: 48px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  background: #d1ddfa;
-}
-
 .c39 {
   min-width: 0;
   -webkit-box-flex: 1;
@@ -4456,7 +4437,6 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   border-top-left-radius: 4px;
   border: 0;
   border-color: #999999;
-  -moz-appearance: textfield;
 }
 
 .c39:hover {
@@ -4470,8 +4450,24 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   background: #bacbf7;
 }
 
-.c39::-webkit-outer-spin-button,
-.c39::-webkit-inner-spin-button {
+.c34 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c42 {
+  text-align: center;
+  position: relative;
+  background: #d1ddfa;
+}
+
+.c40 {
+  -moz-appearance: textfield;
+}
+
+.c40::-webkit-outer-spin-button,
+.c40::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -4526,7 +4522,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   justify-content: space-between;
 }
 
-.c43 {
+.c45 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -4536,7 +4532,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   font-size: 1.125rem;
 }
 
-.c43:hover {
+.c45:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
@@ -4556,22 +4552,6 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
-}
-
-.c28 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .c28:hover {
@@ -4853,7 +4833,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
                 class="c5"
               >
                 <div
-                  class="c28"
+                  class="c8 c28"
                   display="flex"
                 >
                   <div
@@ -4916,7 +4896,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
                         width="100%"
                       >
                         <input
-                          class="BaseInput-u1913i-0 c39"
+                          class="c39 c40"
                           display="inline-block"
                           height="6"
                           type="number"
@@ -4924,7 +4904,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
                           width="100%"
                         />
                         <div
-                          class="c40"
+                          class="c41 c42"
                           color="core.primary"
                           display="flex"
                           font-size="3"
@@ -4936,12 +4916,12 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
                     </div>
                   </div>
                   <div
-                    class="c41"
+                    class="c43"
                     display="flex"
                     width="100%"
                   >
                     <p
-                      class="c42"
+                      class="c44"
                       color="core.darkgray"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -4953,7 +4933,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
                        FIL for this transaction.
                        
                       <a
-                        class="c43"
+                        class="c45"
                         color="core.primary"
                         font-size="2"
                         href="https://filfox.info/en/stats/gas"
@@ -4970,12 +4950,12 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
           </div>
         </div>
         <div
-          class="c44"
+          class="c46"
           display="flex"
           width="100%"
         >
           <button
-            class="c45"
+            class="c47"
             font-size="3"
             height="6"
             type="button"
@@ -4983,7 +4963,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
             Back
           </button>
           <button
-            class="c46"
+            class="c48"
             font-size="3"
             height="6"
             type="submit"
