@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Box, Glyph, Card, Text, Button } from '../../Shared'
 
-
 // Todo: consolidate with Todo: update this similar to /components/Wallet/Send.js/ErrorCard.jsx ?
 const ErrorCard = ({ error, reset }) => {
   return (

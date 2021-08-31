@@ -33,9 +33,9 @@ LedgerConfirm.propTypes = {
 const OtherWalletTypeConfirm = () => {
   return (
     <>
-      {/*/Todo: update this similar to /components/Wallet/Send.js/ConfirmationCard.jsx*/}
+      {/* /Todo: update this similar to /components/Wallet/Send.js/ConfirmationCard.jsx */}
       <Text color='core.nearblack'>
-        To complete the transaction, please review the{' '}...
+        To complete the transaction, please review the ...
       </Text>
     </>
   )
@@ -106,7 +106,9 @@ const ConfirmationCard = ({
           {walletType === LEDGER ? (
             <LedgerConfirm msig={msig} />
           ) : (
-            {/* Todo: update this similar to /components/Wallet/Send.js/ConfirmationCard.jsx */}
+            {
+              /* Todo: update this similar to /components/Wallet/Send.js/ConfirmationCard.jsx */
+            }
           )}
         </Card>
       )}

@@ -34,13 +34,9 @@ import isBase64 from '../../../utils/isBase64'
 import { confirmMessage } from '../../../store/actions'
 import ApproximationToggleBtn from '../../Shared/BalanceCard/ApproximationToggleBtn'
 
-
 const TOTAL_STEPS = 2
 
-const isValidForm = (
-  otherError,
-  paramsError
-) => {
+const isValidForm = (otherError, paramsError) => {
   return !otherError && !paramsError
 }
 
@@ -92,7 +88,6 @@ const SpeedUp = ({ close }) => {
     }
 
     if (provider) {
-
       const nonce = await provider.getNonce(wallet.address)
       const message = new Message({
         to: toAddress,
@@ -297,51 +292,52 @@ const SpeedUp = ({ close }) => {
                     <Box width='100%' p={3} border={0}>
                       <Input.Text
                         my={3}
-                        textAlign={'right'}
+                        textAlign='right'
                         label='Transaction Id'
                         value={transactionId}
-                        disabled={true}
+                        disabled
                       />
                       <Input.Text
                         my={3}
-                        textAlign={'right'}
+                        textAlign='right'
                         label='Nonce'
                         value={nonceInt}
-                        disabled={true}
+                        disabled
                       />
                       <Input.Text
                         my={3}
-                        textAlign={'right'}
+                        textAlign='right'
                         label='Gas Premium'
                         value={gasPremium}
-                        disabled={true}
+                        disabled
                       />
                       <Input.Text
                         my={3}
-                        textAlign={'right'}
+                        textAlign='right'
                         label='Gas Limit'
                         value={gasLimit}
-                        disabled={true}
+                        disabled
                       />
                       <Input.Text
                         my={3}
-                        textAlign={'right'}
+                        textAlign='right'
                         label='Fee Cap'
                         value={gasFeeCap}
-                        disabled={true}
+                        disabled
                       />
                     </Box>
-                    <Box width='100%' p={3} border={0}
-                      display={'flex'}
-                      justifyContent={'space-between'}
-                      alignItems={'center'}
+                    <Box
+                      width='100%'
+                      p={3}
+                      border={0}
+                      display='flex'
+                      justifyContent='space-between'
+                      alignItems='center'
                     >
                       {/* todo: does this component exist already? Fix styles */}
-                      <label>
-                        Expert Mode
-                      </label>
+                      <label>Expert Mode</label>
                       <Button
-                        justifySelf={'end'}
+                        justifySelf='end'
                         title={isExpertMode ? 'on' : 'off'}
                         variant='secondary'
                         onClick={() => setIsExpertMode(!isExpertMode)}
@@ -358,9 +354,7 @@ const SpeedUp = ({ close }) => {
                     border={0}
                     bg='background.screen'
                   >
-                    <Box my={5}>
-                      Confirmation screen goes here.
-                    </Box>
+                    <Box my={5}>Confirmation screen goes here.</Box>
                   </Box>
                 )}
               </Box>
@@ -398,11 +392,7 @@ const SpeedUp = ({ close }) => {
                   false
                 }
               />
-              <Button
-                variant='primary'
-                title={submitBtnText()}
-                type='submit'
-              />
+              <Button variant='primary' title={submitBtnText()} type='submit' />
             </Box>
           </Box>
         </Form>

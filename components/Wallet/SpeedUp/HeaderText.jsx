@@ -18,7 +18,7 @@ const HeaderText = ({ step, walletType }) => {
       text = 'Please review the transaction details.'
       break
     case 2:
-      text = "..."
+      text = '...'
       break
     default:
       text = ''

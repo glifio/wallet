@@ -150,14 +150,11 @@ const MessageDetail = ({ address, close, message, onSpeedUp }) => {
           backgroundColor='background.screen'
           disabled
         />
-        {message.status === 'pending' && <Box
-            textAlign='right'
-          >
-            <BaseButton onClick={onSpeedUp} >
-              Speed Up Transaction
-            </BaseButton>
+        {message.status === 'pending' && (
+          <Box textAlign='right'>
+            <BaseButton onClick={onSpeedUp}>Speed Up Transaction</BaseButton>
           </Box>
-        }
+        )}
         <TotalSection message={message} fee={fee} />
         <Box
           display='flex'
