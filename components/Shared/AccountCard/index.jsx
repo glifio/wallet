@@ -1,12 +1,12 @@
 import React, { forwardRef } from 'react'
 import { string, func, bool, oneOf } from 'prop-types'
+import { useRouter } from 'next/router'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import Box from '../Box'
 import Glyph from '../Glyph'
 import Button from '../Button'
 import { CopyAddress } from '../Copy'
 import { Text } from '../Typography'
-import { useRouter } from 'next/router'
 
 import {
   LEDGER,
@@ -16,16 +16,7 @@ import {
 } from '../../../constants'
 
 const AccountCard = forwardRef(
-  (
-    {
-      address,
-      onShowOnLedger,
-      ledgerBusy,
-      walletType,
-      ...props
-    },
-    ref
-  ) => {
+  ({ address, onShowOnLedger, ledgerBusy, walletType, ...props }, ref) => {
     const router = useRouter()
 
     const onAccountSwitch = () => {

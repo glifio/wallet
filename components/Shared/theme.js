@@ -1,6 +1,4 @@
-import {
-  SCREEN_MAX_WIDTH
-} from '../../constants'
+import { SCREEN_MAX_WIDTH } from '../../constants'
 
 export const baseColors = {
   mono: {

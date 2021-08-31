@@ -82,11 +82,9 @@ export default () => {
             alignItems='center'
             justifyContent='space-between'
             css={`
-              background-color: ${({ theme }) =>
-                theme.colors.core.secondary}00;
+              background-color: ${({ theme }) => theme.colors.core.secondary}00;
               &:hover {
-                background-color: ${({ theme }) =>
-                  theme.colors.core.secondary};
+                background-color: ${({ theme }) => theme.colors.core.secondary};
               }
             `}
             onClick={resetWallet}

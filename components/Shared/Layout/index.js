@@ -1,10 +1,9 @@
 import styled from 'styled-components'
+
+import { SCREEN_MAX_WIDTH } from '../../../constants'
+
 export * from './SidebarLayout'
 export { default as ContentContainer } from './Container'
-
-import {
- SCREEN_MAX_WIDTH
-} from '../../../constants'
 
 export const PageWrapper = styled.div`
   display: flex;

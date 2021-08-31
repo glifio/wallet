@@ -66,4 +66,3 @@ export const PL_SIGNERS = new Set([
 
 /* STYLE CONSTANTS */
 export const SCREEN_MAX_WIDTH = 1440
-

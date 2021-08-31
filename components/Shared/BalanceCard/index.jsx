@@ -1,69 +1,59 @@
 import React, { forwardRef, useState } from 'react'
 import { func, bool } from 'prop-types'
+import { useRouter } from 'next/router'
 import Box from '../Box'
 import Button from '../Button'
 import { Num, Label } from '../Typography'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 import ApproximationToggleBtn from './ApproximationToggleBtn'
-import { useRouter } from 'next/router'
 
-const BalanceCard = forwardRef(
-  ({ balance, disableButtons, ...props }, ref) => {
+const BalanceCard = forwardRef(({ balance, disableButtons, ...props }, ref) => {
+  const router = useRouter()
 
-    const router = useRouter()
+  const onSend = () => {
+    const params = new URLSearchParams(router.query)
+    router.push(`/send?${params.toString()}`)
+  }
 
-    const onSend = () => {
-      const params = new URLSearchParams(router.query)
-      router.push(`/send?${params.toString()}`)
-    }
-
-    const [preciseMode, setPreciseMode] = useState(false)
-    return (
-      <Box
-        display='flex'
-        flexDirection='column'
-        justifyContent='space-between'
-        width='300px'
-        minHeight='300px'
-        border={1}
-        borderRadius={3}
-        p={3}
-        bg='card.balance.background'
-        ref={ref}
-        {...props}
-      >
+  const [preciseMode, setPreciseMode] = useState(false)
+  return (
+    <Box
+      display='flex'
+      flexDirection='column'
+      justifyContent='space-between'
+      width='300px'
+      minHeight='300px'
+      border={1}
+      borderRadius={3}
+      p={3}
+      bg='card.balance.background'
+      ref={ref}
+      {...props}
+    >
+      <Box display='flex' flexDirection='row' justifyContent='space-between'>
+        <Label>Balance</Label>
         <Box display='flex' flexDirection='row' justifyContent='space-between'>
-          <Label>Balance</Label>
-          <Box
-            display='flex'
-            flexDirection='row'
-            justifyContent='space-between'
+          <ApproximationToggleBtn
+            clicked={!preciseMode}
+            onClick={() => setPreciseMode(false)}
           >
-            <ApproximationToggleBtn
-              clicked={!preciseMode}
-              onClick={() => setPreciseMode(false)}
-            >
-              Approx.
-            </ApproximationToggleBtn>
-            <Box width={2} />
-            <ApproximationToggleBtn
-              clicked={preciseMode}
-              onClick={() => setPreciseMode(true)}
-            >
-              Exact
-            </ApproximationToggleBtn>
-          </Box>
+            Approx.
+          </ApproximationToggleBtn>
+          <Box width={2} />
+          <ApproximationToggleBtn
+            clicked={preciseMode}
+            onClick={() => setPreciseMode(true)}
+          >
+            Exact
+          </ApproximationToggleBtn>
         </Box>
-        <Box overflow='hidden' py={4}>
-          <Num
-            css='word-wrap: break-word;'
-            size='xl'
-            color='card.balance.color'
-          >
-            {makeFriendlyBalance(balance, 3, !preciseMode)} FIL
-          </Num>
-          {/* {!converter && !converterError ? (
+      </Box>
+      <Box overflow='hidden' py={4}>
+        <Num css='word-wrap: break-word;' size='xl' color='card.balance.color'>
+          {makeFriendlyBalance(balance, 3, !preciseMode)} FIL
+        </Num>
+        {/* {!converter && !converterError ? (
             <Num size='l' color='core.darkgray'>
               Loading USD
             </Num>
@@ -76,20 +66,19 @@ const BalanceCard = forwardRef(
                 )} USD`}
             </Num>
           )} */}
-        </Box>
-        <Box display='flex' justifyContent='space-between'>
-          <Button
-            variant='primary'
-            title='Send'
-            disabled={disableButtons}
-            onClick={onSend}
-            flexGrow='1'
-          />
-        </Box>
       </Box>
-    )
-  }
-)
+      <Box display='flex' justifyContent='space-between'>
+        <Button
+          variant='primary'
+          title='Send'
+          disabled={disableButtons}
+          onClick={onSend}
+          flexGrow='1'
+        />
+      </Box>
+    </Box>
+  )
+})
 
 BalanceCard.propTypes = {
   /**

@@ -1,9 +1,8 @@
 import { useRouter } from 'next/router'
 
-import SendView from '../components/Wallet/Send.js/'
+import SendView from '../components/Wallet/Send.js'
 import RenderChildrenIfWalletConnected from '../lib/RequireWallet'
 import useDesktopBrowser from '../lib/useDesktopBrowser'
-
 
 export default () => {
   useDesktopBrowser()
@@ -14,7 +13,7 @@ export default () => {
   }
   return (
     <RenderChildrenIfWalletConnected>
-      <SendView close={() => close() } />
+      <SendView close={() => close()} />
     </RenderChildrenIfWalletConnected>
   )
 }
