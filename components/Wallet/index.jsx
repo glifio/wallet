@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useRouter } from 'next/router'
+
 import {
   AccountCard,
   AccountError,
@@ -22,10 +24,16 @@ import reportError from '../../utils/reportError'
 
 export default () => {
   const wallet = useWallet()
+  const router = useRouter()
   const { ledger, connectLedger } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState('')
   const [showLedgerError, setShowLedgerError] = useState(false)
   const [ledgerBusy, setLedgerBusy] = useState(false)
+
+  const resetWallet = () => {
+    // a full page reload will reset the wallet
+    window.location.reload()
+  }
 
   const onShowOnLedger = async () => {
     setLedgerBusy(true)
@@ -42,9 +50,14 @@ export default () => {
     setLedgerBusy(false)
   }
 
-  const resetWallet = () => {
-    // a full page reload will reset the wallet
-    window.location.reload()
+  const onSend = () => {
+    const params = new URLSearchParams(router.query)
+    router.push(`/send?${params.toString()}`)
+  }
+
+  const onAccountSwitch = () => {
+    const params = new URLSearchParams(router.query)
+    router.push(`/home/accounts?${params.toString()}`)
   }
 
   return (
@@ -64,6 +77,7 @@ export default () => {
             />
           ) : (
             <AccountCard
+              onAccountSwitch={onAccountSwitch}
               color='purple'
               address={wallet.address}
               walletType={wallet.type}
@@ -72,7 +86,10 @@ export default () => {
               mb={2}
             />
           )}
-          <BalanceCard balance={wallet.balance} />
+          <BalanceCard
+            balance={wallet.balance}
+            onSend={onSend}
+          />
           <ButtonLogout
             variant='secondary'
             width='100%'

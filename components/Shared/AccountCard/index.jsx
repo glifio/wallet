@@ -16,14 +16,17 @@ import {
 } from '../../../constants'
 
 const AccountCard = forwardRef(
-  ({ address, onShowOnLedger, ledgerBusy, walletType, ...props }, ref) => {
-    const router = useRouter()
-
-    const onAccountSwitch = () => {
-      const params = new URLSearchParams(router.query)
-      router.push(`/home/accounts?${params.toString()}`)
-    }
-
+  (
+    {
+      address,
+      onAccountSwitch,
+      onShowOnLedger,
+      ledgerBusy,
+      walletType,
+      ...props
+    },
+    ref
+  ) => {
     return (
       <Box
         display='flex'
@@ -90,6 +93,10 @@ AccountCard.propTypes = {
    * Sets background-color of the card
    */
   color: string,
+  /**
+   * Fired when the "switch" button is clicked
+   */
+  onAccountSwitch: func.isRequired,
   /**
    * If this wallet represents a ledger
    */
