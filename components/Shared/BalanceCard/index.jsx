@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from 'react'
-import { bool } from 'prop-types'
+import { func, bool } from 'prop-types'
 import Box from '../Box'
 import Button from '../Button'
 import { Num, Label } from '../Typography'
@@ -9,45 +9,52 @@ import ApproximationToggleBtn from './ApproximationToggleBtn'
 
 const BalanceCard = forwardRef(
   ({ balance, onSend, disableButtons, ...props }, ref) => {
-
-  const [preciseMode, setPreciseMode] = useState(false)
-  return (
-    <Box
-      display='flex'
-      flexDirection='column'
-      justifyContent='space-between'
-      width='300px'
-      minHeight='300px'
-      border={1}
-      borderRadius={3}
-      p={3}
-      bg='card.balance.background'
-      ref={ref}
-      {...props}
-    >
-      <Box display='flex' flexDirection='row' justifyContent='space-between'>
-        <Label>Balance</Label>
+    const [preciseMode, setPreciseMode] = useState(false)
+    return (
+      <Box
+        display='flex'
+        flexDirection='column'
+        justifyContent='space-between'
+        width='300px'
+        minHeight='300px'
+        border={1}
+        borderRadius={3}
+        p={3}
+        bg='card.balance.background'
+        ref={ref}
+        {...props}
+      >
         <Box display='flex' flexDirection='row' justifyContent='space-between'>
-          <ApproximationToggleBtn
-            clicked={!preciseMode}
-            onClick={() => setPreciseMode(false)}
+          <Label>Balance</Label>
+          <Box
+            display='flex'
+            flexDirection='row'
+            justifyContent='space-between'
           >
-            Approx.
-          </ApproximationToggleBtn>
-          <Box width={2} />
-          <ApproximationToggleBtn
-            clicked={preciseMode}
-            onClick={() => setPreciseMode(true)}
-          >
-            Exact
-          </ApproximationToggleBtn>
+            <ApproximationToggleBtn
+              clicked={!preciseMode}
+              onClick={() => setPreciseMode(false)}
+            >
+              Approx.
+            </ApproximationToggleBtn>
+            <Box width={2} />
+            <ApproximationToggleBtn
+              clicked={preciseMode}
+              onClick={() => setPreciseMode(true)}
+            >
+              Exact
+            </ApproximationToggleBtn>
+          </Box>
         </Box>
-      </Box>
-      <Box overflow='hidden' py={4}>
-        <Num css='word-wrap: break-word;' size='xl' color='card.balance.color'>
-          {makeFriendlyBalance(balance, 3, !preciseMode)} FIL
-        </Num>
-        {/* {!converter && !converterError ? (
+        <Box overflow='hidden' py={4}>
+          <Num
+            css='word-wrap: break-word;'
+            size='xl'
+            color='card.balance.color'
+          >
+            {makeFriendlyBalance(balance, 3, !preciseMode)} FIL
+          </Num>
+          {/* {!converter && !converterError ? (
             <Num size='l' color='core.darkgray'>
               Loading USD
             </Num>
@@ -60,19 +67,20 @@ const BalanceCard = forwardRef(
                 )} USD`}
             </Num>
           )} */}
+        </Box>
+        <Box display='flex' justifyContent='space-between'>
+          <Button
+            variant='primary'
+            title='Send'
+            disabled={disableButtons}
+            onClick={onSend}
+            flexGrow='1'
+          />
+        </Box>
       </Box>
-      <Box display='flex' justifyContent='space-between'>
-        <Button
-          variant='primary'
-          title='Send'
-          disabled={disableButtons}
-          onClick={onSend}
-          flexGrow='1'
-        />
-      </Box>
-    </Box>
-  )
-})
+    )
+  }
+)
 
 BalanceCard.propTypes = {
   /**

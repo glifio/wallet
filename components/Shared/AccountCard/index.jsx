@@ -1,13 +1,11 @@
 import React, { forwardRef } from 'react'
 import { string, func, bool, oneOf } from 'prop-types'
-import { useRouter } from 'next/router'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import Box from '../Box'
 import Glyph from '../Glyph'
 import Button from '../Button'
 import { CopyAddress } from '../Copy'
 import { Text } from '../Typography'
-
 import {
   LEDGER,
   CREATE_MNEMONIC,
