@@ -22,7 +22,7 @@
     "@glif/filecoin-number": "^1.1.0",
     "@glif/filecoin-rpc-client": "^1.1.0",
     "@glif/filecoin-wallet-provider": "^1.1.0",
-    "@ledgerhq/hw-transport-webhid": "^6.1.0",
+    "@ledgerhq/hw-transport-webhid": "^6.4.1",
     "@zondax/filecoin-signing-tools": "^0.17.1",
     "@zondax/ledger-filecoin": "0.11.2",
     "axios": "0.21.1",
