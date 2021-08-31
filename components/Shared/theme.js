@@ -163,7 +163,7 @@ const theme = {
   },
   textStyles: {
     header: {
-      fontSize: `calc(48px + (48 - 32) * (100vw - 360px) / (${SCREEN_MAX_WIDTH} - 360))}`,
+      fontSize: `calc(48px + (48 - 32) * (100vw - 360px) / (${SCREEN_MAX_WIDTH} - 360))`,
       fontWeight: 400,
       margin: 0,
       lineHeight: 'title',
