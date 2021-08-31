@@ -1,6 +1,9 @@
 {
   "name": "filecoin-web-wallet",
   "version": "2.8.3",
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -30,7 +33,7 @@
     "jspdf": "^2.3.1",
     "lodash.clonedeep": "4.5.0",
     "lodash.isequal": "4.5.0",
-    "next": "^10.0.1",
+    "next": "^11.1.2",
     "object-path": ">=0.11.5",
     "prop-types": "15.7.2",
     "react": "^17.0.2",
