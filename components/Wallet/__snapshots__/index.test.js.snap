@@ -905,7 +905,7 @@ exports[`WalletView it renders correctly 1`] = `
 }
 
 <div
-  class="SidebarLayout__Wrapper-gwfrwp-0 c0"
+  class="c0"
 >
   <div
     class="c1"

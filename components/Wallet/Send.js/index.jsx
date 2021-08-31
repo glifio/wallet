@@ -15,7 +15,8 @@ import {
   StepHeader,
   Title,
   Form,
-  Card
+  Card,
+  PageWrapper
 } from '../../Shared'
 import { CardHeader } from '../../Msig/Shared'
 import ConfirmationCard from './ConfirmationCard'
@@ -272,7 +273,7 @@ const Send = ({ close }) => {
   }
 
   return (
-    <>
+    <PageWrapper>
       <Box display='flex' flexDirection='column' width='100%'>
         <ButtonClose
           role='button'
@@ -510,7 +511,7 @@ const Send = ({ close }) => {
           </Box>
         </Form>
       </Box>
-    </>
+    </PageWrapper>
   )
 }
 

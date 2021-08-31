@@ -19,7 +19,7 @@ import {
   SET_MSIG_ACTOR_ADDRESS
 } from './actionTypes'
 import getAddressFromReceipt from '../utils/getAddrFromReceipt'
-import { setMessageInCache } from '../utils/cacheMessage'
+// import { setMessageInCache } from '../utils/cacheMessage'
 
 export const walletList = wallets => ({
   type: WALLET_LIST,
