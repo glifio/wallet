@@ -62,11 +62,6 @@ export default () => {
     router.push(`/send?${params.toString()}`)
   }
 
-  const onAccountSwitch = () => {
-    const params = new URLSearchParams(router.query)
-    router.push(`/home/accounts?${params.toString()}`)
-  }
-
   return (
     <>
       <MsgConfirmer />
