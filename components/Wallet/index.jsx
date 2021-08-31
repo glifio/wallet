@@ -86,10 +86,7 @@ export default () => {
               mb={2}
             />
           )}
-          <BalanceCard
-            balance={wallet.balance}
-            onSend={onSend}
-          />
+          <BalanceCard balance={wallet.balance} onSend={onSend} />
           <ButtonLogout
             variant='secondary'
             width='100%'
