@@ -25,9 +25,9 @@ import {
 } from '../../../customPropTypes'
 import { CardHeader, WithdrawHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
-import ErrorCard from '../../Wallet/Send.js/ErrorCard'
-import ConfirmationCard from '../../Wallet/Send.js/ConfirmationCard'
-import CustomizeFee from '../../Wallet/Send.js/CustomizeFee'
+import ErrorCard from '../../Wallet/Send/ErrorCard'
+import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
+import CustomizeFee from '../../Wallet/Send/CustomizeFee'
 import { LEDGER, PROPOSE, emptyGasInfo } from '../../../constants'
 import {
   reportLedgerConfigError,
