@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { validateAddressString } from '@glif/filecoin-address'
 import { Message } from '@glif/filecoin-message'
+import useTransactionHistory from '../../../lib/useTransactionHistory'
 
 // todo: temp remove
 import { useRouter } from 'next/router'
@@ -40,67 +41,88 @@ const isValidForm = (otherError, paramsError) => {
   return !otherError && !paramsError
 }
 
-const SpeedUp = ({ close }) => {
+const speedUpGas = currentGas => {
+  const speedUpAmount = 1.25
+  // todo consider other logic here.
+  // E.G. if the gas was way too low, maybe raise it to a recommended floor
+  return Math.ceil(currentGas * speedUpAmount)
+}
+
+const SpeedUp = ({ close, transactionId }) => {
+
   // todo: temp remove
   const router = useRouter()
 
   const dispatch = useDispatch()
   const wallet = useWallet()
+
   const {
     ledger,
     walletProvider,
     connectLedger,
-    resetLedgerState
+    resetLedgerState,
   } = useWalletProvider()
 
-  // todo
-  const [transactionId, setTransactionId] = useState('123faketransactionId456')
-  const [nonceInt, setNonceInt] = useState('4')
-  const [gasPremium, setGasPremium] = useState('1234')
-  const [gasLimit, setGasLimit] = useState('5678')
-  const [gasFeeCap, setGasFeeCap] = useState('91023')
+  const {
+    pending
+  } = useTransactionHistory(wallet.address)
+
+
+  const currentMsg = pending.find(({ cid }) => cid === transactionId)
+
+  const [toAddress, setToAddress] = useState(currentMsg.to)
+  const [params, setParams] = useState(currentMsg.params)
+  const [value, setValue] = useState(currentMsg.value)
+
+  // todo #todoEC new ones
+  // set this with the new gas premium instead of the old
+  const [gasPremium, setGasPremium] = useState(speedUpGas(currentMsg.gasPremium))
+  const [nonce, setNonce] = useState(currentMsg.nonce)
+  const [gasLimit, setGasLimit] = useState(currentMsg.gasLimit)
+  const [gasFeeCap, setGasFeeCap] = useState(currentMsg.gasFeeCap)
   const [isExpertMode, setIsExpertMode] = useState(false)
 
-  const [toAddress, setToAddress] = useState('')
-  const [params, setParams] = useState('')
-  const [toAddressError, setToAddressError] = useState('')
-  const [paramsError, setParamsError] = useState('')
-  const [value, setValue] = useState(new FilecoinNumber('0', 'fil'))
-  const [valueError, setValueError] = useState('')
-  const [uncaughtError, setUncaughtError] = useState('')
-  const [gasError, setGasError] = useState('')
   const [gasInfo, setGasInfo] = useState(emptyGasInfo)
-
   const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
   const [frozen, setFrozen] = useState(false)
   const [mPoolPushing, setMPoolPushing] = useState(false)
-
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
 
-  // todo: update
+  const [toAddressError, setToAddressError] = useState('')
+  const [paramsError, setParamsError] = useState('')
+  const [valueError, setValueError] = useState('')
+  const [uncaughtError, setUncaughtError] = useState('')
+  const [gasError, setGasError] = useState('')
+
   const send = async () => {
     setFetchingTxDetails(true)
     let provider = walletProvider
     // attempt to establish a new connection with the ledger device if the user selected ledger
-    if (wallet.type === LEDGER) {
+    if (wallet && wallet.type === LEDGER) {
       provider = await connectLedger()
     }
 
     if (provider) {
-      const nonce = await provider.getNonce(wallet.address)
       const message = new Message({
         to: toAddress,
         from: wallet.address,
-        value: value.toAttoFil(),
         method: 0,
-        gasFeeCap: gasInfo.gasFeeCap.toAttoFil(),
-        gasLimit: new BigNumber(gasInfo.gasLimit.toAttoFil()).toNumber(),
-        gasPremium: gasInfo.gasPremium.toAttoFil(),
+
+        // todo: #todoEC: hmm, are these formatted wrong? Parsing as an int didn't help...
+        value,
+        gasFeeCap,
+        gasLimit,
+        gasPremium,
+        // value: parseInt(value, 10),
+        // gasFeeCap: parseInt(gasFeeCap, 10),
+        // gasLimit: parseInt(gasLimit, 10),
+        // gasPremium: parseInt(gasPremium, 10),
         nonce,
         params
       })
 
+      // todo: #todoEC: it seems to be failing after here.
       setFetchingTxDetails(false)
       const signedMessage = await provider.wallet.sign(
         message.toSerializeableType(),
@@ -135,19 +157,11 @@ const SpeedUp = ({ close }) => {
 
   // todo: update
   const sendMsg = async () => {
-    // todo
-    alert('mock message send')
-
-    // temp
-    router.push(`/home?`)
-
-    return
-
     try {
       const message = await send()
+      debugger;
       if (message) {
         dispatch(confirmMessage(toLowerCaseMsgFields(message)))
-        setValue(new FilecoinNumber('0', 'fil'))
         close()
       }
     } catch (err) {
@@ -301,7 +315,7 @@ const SpeedUp = ({ close }) => {
                         my={3}
                         textAlign='right'
                         label='Nonce'
-                        value={nonceInt}
+                        value={nonce}
                         disabled
                       />
                       <Input.Text
