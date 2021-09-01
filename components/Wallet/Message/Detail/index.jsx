@@ -4,6 +4,7 @@ import { FilecoinNumber } from '@glif/filecoin-number'
 import { func } from 'prop-types'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
+import { useRouter } from 'next/router'
 
 import {
   BaseButton,
@@ -41,7 +42,7 @@ const TransactionFeeDisplay = styled(Input.Text)`
   }
 `
 
-const MessageDetail = ({ address, close, message, onSpeedUp }) => {
+const MessageDetail = ({ address, close, message }) => {
   const { walletProvider } = useWalletProvider()
   const [fee, setFee] = useState(
     new FilecoinNumber(
@@ -53,6 +54,13 @@ const MessageDetail = ({ address, close, message, onSpeedUp }) => {
   const [errFetchingTxFee, setErrFetchingTxFee] = useState('')
 
   const loadingFee = fee.toAttoFil() === '0' && !fetchedTransactionFee
+
+  const router = useRouter()
+
+  const onSpeedUp = () => {
+    const params = new URLSearchParams(router.query)
+    router.push(`/speed-up?${params.toString()}`)
+  }
 
   useEffect(() => {
     const fetchGasUsed = async message => {

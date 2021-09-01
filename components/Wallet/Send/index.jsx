@@ -57,7 +57,7 @@ const isValidForm = (
   return validToAddress && validAmount && !otherError && !paramsError
 }
 
-const Send = ({ close, onSpeedUp }) => {
+const Send = ({ close }) => {
   const dispatch = useDispatch()
   const wallet = useWallet()
   const {

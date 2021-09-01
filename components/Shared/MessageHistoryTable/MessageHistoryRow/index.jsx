@@ -10,7 +10,6 @@ import { SEND, PROPOSE, EXEC } from '../../../../constants'
 import convertAddrToFPrefix from '../../../../utils/convertAddrToFPrefix'
 
 const MessageHistoryRow = ({
-  onSpeedUp,
   address,
   message: { to, from, value, status, cid, timestamp, method, params, receipt },
   selectMessage
@@ -21,7 +20,6 @@ const MessageHistoryRow = ({
     case SEND: {
       InnerComponent = () => (
         <SendRow
-          onSpeedUp={onSpeedUp}
           sentMsg={sentMsg}
           to={to}
           from={from}

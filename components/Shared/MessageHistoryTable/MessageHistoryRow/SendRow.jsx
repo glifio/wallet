@@ -8,7 +8,7 @@ import { Text, Label } from '../../Typography'
 import { IconSend, IconReceive, IconPending } from '../../Icons'
 import truncate from '../../../../utils/truncateAddress'
 import makeFriendlyBalance from '../../../../utils/makeFriendlyBalance'
-
+import { useRouter } from 'next/router'
 import { BaseButton, Box } from '../..'
 
 const AddressText = ({ sentMsg, to, from }) => {
@@ -49,9 +49,16 @@ const SendRow = ({
   to,
   from,
   timestamp,
-  value,
-  onSpeedUp
+  value
 }) => {
+
+  const router = useRouter()
+
+  const onSpeedUp = () => {
+    const params = new URLSearchParams(router.query)
+    router.push(`/speed-up?${params.toString()}`)
+  }
+
   return (
     <>
       <Menu>
