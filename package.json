@@ -30,7 +30,7 @@
     "bluebird": "3.7.2",
     "cbor": "^5.1.0",
     "crypto": "1.0.1",
-    "dayjs": "1.8.22",
+    "dayjs": "1.10.6",
     "jspdf": "^2.3.1",
     "lodash.clonedeep": "4.5.0",
     "lodash.isequal": "4.5.0",
