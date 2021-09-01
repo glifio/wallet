@@ -146,7 +146,7 @@ const Send = ({ close }) => {
         close()
       }
     } catch (err) {
-      if (err.message.includes('Unexpected number of items')) {
+      if (err.message && err.message.includes('Unexpected number of items')) {
         setUncaughtError(
           'Ledger devices cannot sign arbitrary base64 params yet. Coming soon.'
         )
