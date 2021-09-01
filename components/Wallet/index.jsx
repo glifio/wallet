@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
+import { gotoPageHomeWithKeyParams, gotoRouteWithKeyUrlParams } from '../../utils/urlParams'
+import { PAGE_SEND } from '../../constants'
 
 import {
   AccountCard,
@@ -38,8 +40,7 @@ export default () => {
   }
 
   const onAccountSwitch = () => {
-    const params = new URLSearchParams(router.query)
-    router.push(`/home/accounts?${params.toString()}`)
+    gotoPageHomeWithKeyParams(router)
   }
 
   const onShowOnLedger = async () => {
@@ -58,8 +59,7 @@ export default () => {
   }
 
   const onSend = () => {
-    const params = new URLSearchParams(router.query)
-    router.push(`/send?${params.toString()}`)
+    gotoRouteWithKeyUrlParams(router, PAGE_SEND)
   }
 
   return (

@@ -66,3 +66,8 @@ export const PL_SIGNERS = new Set([
 
 /* STYLE CONSTANTS */
 export const SCREEN_MAX_WIDTH = 1440
+
+/* PAGES */
+export const PAGE_HOME = '/home'
+export const PAGE_SEND = '/send'
+export const PAGE_SPEED_UP = '/speed-up'

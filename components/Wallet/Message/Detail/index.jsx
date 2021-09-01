@@ -4,8 +4,8 @@ import { FilecoinNumber } from '@glif/filecoin-number'
 import { func } from 'prop-types'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
+import { speedUpTransaction } from '../../../../utils/modifyTransaction'
 import { useRouter } from 'next/router'
-
 import {
   BaseButton,
   Box,
@@ -56,11 +56,6 @@ const MessageDetail = ({ address, close, message }) => {
   const loadingFee = fee.toAttoFil() === '0' && !fetchedTransactionFee
 
   const router = useRouter()
-
-  const onSpeedUp = () => {
-    const params = new URLSearchParams(router.query)
-    router.push(`/speed-up?${params.toString()}`)
-  }
 
   useEffect(() => {
     const fetchGasUsed = async message => {
@@ -160,7 +155,9 @@ const MessageDetail = ({ address, close, message }) => {
         />
         {message.status === 'pending' && (
           <Box textAlign='right'>
-            <BaseButton onClick={onSpeedUp}>Speed Up Transaction</BaseButton>
+            <BaseButton onClick={() => {
+                speedUpTransaction(message.cid, router)
+              }}>Speed Up Transaction</BaseButton>
           </Box>
         )}
         <TotalSection message={message} fee={fee} />

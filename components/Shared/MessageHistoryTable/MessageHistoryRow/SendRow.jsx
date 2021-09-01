@@ -8,8 +8,9 @@ import { Text, Label } from '../../Typography'
 import { IconSend, IconReceive, IconPending } from '../../Icons'
 import truncate from '../../../../utils/truncateAddress'
 import makeFriendlyBalance from '../../../../utils/makeFriendlyBalance'
-import { useRouter } from 'next/router'
 import { BaseButton, Box } from '../..'
+import { speedUpTransaction } from '../../../../utils/modifyTransaction'
+import { useRouter } from 'next/router'
 
 const AddressText = ({ sentMsg, to, from }) => {
   if (sentMsg) {
@@ -49,15 +50,10 @@ const SendRow = ({
   to,
   from,
   timestamp,
-  value
+  value,
+  transactionId
 }) => {
-
   const router = useRouter()
-
-  const onSpeedUp = () => {
-    const params = new URLSearchParams(router.query)
-    router.push(`/speed-up?${params.toString()}`)
-  }
 
   return (
     <>
@@ -96,7 +92,9 @@ const SendRow = ({
           </Menu>
           {status === 'pending' && (
             <Box textAlign='right'>
-              <BaseButton onClick={onSpeedUp}>Speed Up Transaction</BaseButton>
+              <BaseButton onClick={() => {
+                speedUpTransaction(transactionId, router)
+              }}>Speed Up Transaction</BaseButton>
             </Box>
           )}
         </MenuItem>

@@ -26,6 +26,7 @@ const MessageHistoryRow = ({
           value={value}
           status={status}
           timestamp={timestamp}
+          transactionId={cid}
         />
       )
       break
