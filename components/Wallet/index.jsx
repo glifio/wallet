@@ -64,7 +64,9 @@ export default () => {
 
   return (
     <>
-      <MsgConfirmer />
+
+      {/* TODO UN COMMENT */}
+      {/* <MsgConfirmer />*/}
       <PageWrapper>
         <Sidebar height='100vh'>
           {hasLedgerError({ ...ledger, otherError: uncaughtError }) &&

@@ -42,10 +42,13 @@ const isValidForm = (otherError, paramsError) => {
 }
 
 const speedUpGas = currentGas => {
-  const speedUpAmount = 1.25
+  // todo
+
+  const foo = FilecoinNumber;
   // todo consider other logic here.
   // E.G. if the gas was way too low, maybe raise it to a recommended floor
-  return Math.ceil(currentGas * speedUpAmount)
+  debugger
+  return (new FilecoinNumber(currentGas, 'attofil')).multipliedBy(125).dividedBy(100).toString()
 }
 
 const SpeedUp = ({ close, transactionId }) => {
@@ -70,16 +73,36 @@ const SpeedUp = ({ close, transactionId }) => {
 
   const currentMsg = pending.find(({ cid }) => cid === transactionId)
 
+  // todo
+  // check for !currentMsg
+
+  //  todo rename
+  const fixParams  = params => {
+    if (!params || Object.keys(params).length === 0) {
+      return '';
+    }
+
+    return params;
+  }
+
+  const fixGasFeeCap  = (gasFeeCap, gasPremium) => {
+    const bnPremium = new FilecoinNumber(gasPremium, 'attofil')
+    const bnFeeCap = new FilecoinNumber(gasFeeCap, 'attofil')
+    return bnPremium.isGreaterThan(bnFeeCap) ? gasPremium : gasFeeCap
+  }
+
+  const newGasPremium = speedUpGas(currentMsg.gasPremium)
+
   const [toAddress, setToAddress] = useState(currentMsg.to)
-  const [params, setParams] = useState(currentMsg.params)
+  const [params, setParams] = useState(fixParams(currentMsg.params))
   const [value, setValue] = useState(currentMsg.value)
 
   // todo #todoEC new ones
   // set this with the new gas premium instead of the old
-  const [gasPremium, setGasPremium] = useState(speedUpGas(currentMsg.gasPremium))
+  const [gasPremium, setGasPremium] = useState(newGasPremium)
   const [nonce, setNonce] = useState(currentMsg.nonce)
   const [gasLimit, setGasLimit] = useState(currentMsg.gasLimit)
-  const [gasFeeCap, setGasFeeCap] = useState(currentMsg.gasFeeCap)
+  const [gasFeeCap, setGasFeeCap] = useState(fixGasFeeCap(currentMsg.gasFeeCap, newGasPremium))
   const [isExpertMode, setIsExpertMode] = useState(false)
 
   const [gasInfo, setGasInfo] = useState(emptyGasInfo)
