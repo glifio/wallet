@@ -66,8 +66,12 @@ const SpeedUp = ({ close, transactionCid }) => {
     walletProvider
   )
 
-  // TODO here
   const message = transaction?.toSerializeableType() || {}
+
+  // TODO use loading state instead of just returning null
+  if (!message) return null
+  // This will fix our issue for now, because the useState calls don't get initialized until there is a message.
+  // But this is not a good pattern. Fix it.
 
   // THIS IS BROKEN BECAUSE OF ASYNC LOADING TIME - these should only be used in "expert mode", otherwise, just show the message directly
   // this way, we'll be able to "reset" back to the default

@@ -4,8 +4,8 @@ import { FilecoinNumber } from '@glif/filecoin-number'
 import { func } from 'prop-types'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
-import { speedUpTransaction } from '../../../../utils/modifyTransaction'
 import { useRouter } from 'next/router'
+import { speedUpTransaction } from '../../../../utils/modifyTransaction'
 import {
   BaseButton,
   Box,
