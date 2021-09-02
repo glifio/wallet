@@ -21,7 +21,7 @@
     "@glif/filecoin-message-confirmer": "^1.1.0",
     "@glif/filecoin-number": "^1.1.0",
     "@glif/filecoin-rpc-client": "^1.1.0",
-    "@glif/filecoin-wallet-provider": "^1.1.0",
+    "@glif/filecoin-wallet-provider": "^1.1.1-alpha.0",
     "@ledgerhq/hw-transport-webhid": "^6.1.0",
     "@zondax/filecoin-signing-tools": "^0.17.1",
     "@zondax/ledger-filecoin": "0.11.2",
@@ -44,7 +44,8 @@
     "redux-logger": "3.0.6",
     "redux-thunk": "2.3.0",
     "styled-components": "5.3.1",
-    "styled-system": "5.1.5"
+    "styled-system": "5.1.5",
+    "swr": "^1.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "5.5.0",
