@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import dayjs from 'dayjs'
 import { useDispatch } from 'react-redux'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { validateAddressString } from '@glif/filecoin-address'
+import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
-import useTransactionHistory from '../../../lib/useTransactionHistory'
+import usePendingTransactionWithSpeed from '../../../lib/usePendingTransactionWithSpeed'
 
 // todo: temp remove
-import { useRouter } from 'next/router'
 
 import {
   Box,
@@ -35,27 +35,21 @@ import isBase64 from '../../../utils/isBase64'
 import { confirmMessage } from '../../../store/actions'
 import ApproximationToggleBtn from '../../Shared/BalanceCard/ApproximationToggleBtn'
 
+const preserveParams = params => {
+  if (!params || Object.keys(params).length === 0) {
+    return ''
+  }
+
+  return params
+}
+
 const TOTAL_STEPS = 2
 
 const isValidForm = (otherError, paramsError) => {
   return !otherError && !paramsError
 }
 
-const speedUpGas = currentGas => {
-  // todo
-
-  const foo = FilecoinNumber;
-  // todo consider other logic here.
-  // E.G. if the gas was way too low, maybe raise it to a recommended floor
-  debugger
-  return (new FilecoinNumber(currentGas, 'attofil')).multipliedBy(125).dividedBy(100).toString()
-}
-
-const SpeedUp = ({ close, transactionId }) => {
-
-  // todo: temp remove
-  const router = useRouter()
-
+const SpeedUp = ({ close, transactionCid }) => {
   const dispatch = useDispatch()
   const wallet = useWallet()
 
@@ -63,46 +57,31 @@ const SpeedUp = ({ close, transactionId }) => {
     ledger,
     walletProvider,
     connectLedger,
-    resetLedgerState,
+    resetLedgerState
   } = useWalletProvider()
 
-  const {
-    pending
-  } = useTransactionHistory(wallet.address)
+  const { transaction, loading, error } = usePendingTransactionWithSpeed(
+    transactionCid,
+    wallet.address,
+    walletProvider
+  )
 
+  // TODO here
+  const message = transaction?.toSerializeableType() || {}
 
-  const currentMsg = pending.find(({ cid }) => cid === transactionId)
-
-  // todo
-  // check for !currentMsg
-
-  //  todo rename
-  const fixParams  = params => {
-    if (!params || Object.keys(params).length === 0) {
-      return '';
-    }
-
-    return params;
-  }
-
-  const fixGasFeeCap  = (gasFeeCap, gasPremium) => {
-    const bnPremium = new FilecoinNumber(gasPremium, 'attofil')
-    const bnFeeCap = new FilecoinNumber(gasFeeCap, 'attofil')
-    return bnPremium.isGreaterThan(bnFeeCap) ? gasPremium : gasFeeCap
-  }
-
-  const newGasPremium = speedUpGas(currentMsg.gasPremium)
-
-  const [toAddress, setToAddress] = useState(currentMsg.to)
-  const [params, setParams] = useState(fixParams(currentMsg.params))
-  const [value, setValue] = useState(currentMsg.value)
+  // THIS IS BROKEN BECAUSE OF ASYNC LOADING TIME - these should only be used in "expert mode", otherwise, just show the message directly
+  // this way, we'll be able to "reset" back to the default
+  const [toAddress, setToAddress] = useState(message.to)
+  const [params, setParams] = useState(preserveParams(message.params))
+  const [value, setValue] = useState(message.value)
 
   // todo #todoEC new ones
   // set this with the new gas premium instead of the old
-  const [gasPremium, setGasPremium] = useState(newGasPremium)
-  const [nonce, setNonce] = useState(currentMsg.nonce)
-  const [gasLimit, setGasLimit] = useState(currentMsg.gasLimit)
-  const [gasFeeCap, setGasFeeCap] = useState(fixGasFeeCap(currentMsg.gasFeeCap, newGasPremium))
+  // these are all broken now because of async load time
+  const [gasPremium, setGasPremium] = useState(message.gaspremium)
+  const [nonce, setNonce] = useState(message.nonce)
+  const [gasLimit, setGasLimit] = useState(message.gaslimit)
+  const [gasFeeCap, setGasFeeCap] = useState(message.gasfeecap)
   const [isExpertMode, setIsExpertMode] = useState(false)
 
   const [gasInfo, setGasInfo] = useState(emptyGasInfo)
@@ -204,15 +183,6 @@ const SpeedUp = ({ close, transactionId }) => {
       setFetchingTxDetails(false)
       setMPoolPushing(false)
     }
-  }
-
-  const populateErrors = () => {
-    if (!isValidAddress(toAddress, toAddressError))
-      setToAddressError('Invalid address.')
-    if (!isValidAmount(value, wallet.balance, valueError))
-      setValueError(
-        'Please enter a valid amount that is less than your Filecoin balance.'
-      )
   }
 
   const onSubmit = async e => {
@@ -331,7 +301,7 @@ const SpeedUp = ({ close, transactionId }) => {
                         my={3}
                         textAlign='right'
                         label='Transaction Id'
-                        value={transactionId}
+                        value={transactionCid}
                         disabled
                       />
                       <Input.Text
@@ -439,7 +409,8 @@ const SpeedUp = ({ close, transactionId }) => {
 }
 
 SpeedUp.propTypes = {
-  close: PropTypes.func.isRequired
+  close: PropTypes.func.isRequired,
+  transactionCid: PropTypes.string.isRequired
 }
 
 export default SpeedUp
