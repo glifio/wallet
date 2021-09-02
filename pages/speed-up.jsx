@@ -14,13 +14,13 @@ export default () => {
     gotoPageHomeWithKeyParams(router)
   }
 
-  const getTransactionIdFromUrl = router => {
+  const getTransactionCidFromUrl = router => {
     const params = new URLSearchParams(router.query)
-    const transactionId = params.get('transactionId')
+    const transactionCid = params.get('transactionCid')
 
     try {
-      if (!transactionId) {
-        throw new Error('This page requires a valid transactionId')
+      if (!transactionCid) {
+        throw new Error('This page requires a valid transactionCid')
       }
     } catch (err) {
       reportError(null, false, err.message, err.stack)
@@ -28,14 +28,15 @@ export default () => {
       gotoPageHomeWithKeyParams(router)
     }
 
-    return transactionId
+    return transactionCid
   }
-
-  const transactionId = getTransactionIdFromUrl(router)
 
   return (
     <RenderChildrenIfWalletConnected>
-      <SpeedUp close={() => close()} transactionId={transactionId} />
+      <SpeedUp
+        close={close}
+        transactionCid={getTransactionCidFromUrl(router)}
+      />
     </RenderChildrenIfWalletConnected>
   )
 }

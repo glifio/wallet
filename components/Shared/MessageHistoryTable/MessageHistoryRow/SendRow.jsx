@@ -1,5 +1,6 @@
 import React from 'react'
 import dayjs from 'dayjs'
+import { useRouter } from 'next/router'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import { bool, string, oneOf, oneOfType, number } from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../../customPropTypes'
@@ -10,7 +11,6 @@ import truncate from '../../../../utils/truncateAddress'
 import makeFriendlyBalance from '../../../../utils/makeFriendlyBalance'
 import { BaseButton, Box } from '../..'
 import { speedUpTransaction } from '../../../../utils/modifyTransaction'
-import { useRouter } from 'next/router'
 
 const AddressText = ({ sentMsg, to, from }) => {
   if (sentMsg) {
@@ -51,7 +51,7 @@ const SendRow = ({
   from,
   timestamp,
   value,
-  transactionId
+  transactionCid
 }) => {
   const router = useRouter()
 
@@ -92,9 +92,13 @@ const SendRow = ({
           </Menu>
           {status === 'pending' && (
             <Box textAlign='right'>
-              <BaseButton onClick={() => {
-                speedUpTransaction(transactionId, router)
-              }}>Speed Up Transaction</BaseButton>
+              <BaseButton
+                onClick={() => {
+                  speedUpTransaction(transactionCid, router)
+                }}
+              >
+                Speed Up Transaction
+              </BaseButton>
             </Box>
           )}
         </MenuItem>
@@ -146,7 +150,8 @@ SendRow.propTypes = {
   value: string.isRequired,
   status: oneOf(['confirmed', 'pending']).isRequired,
   timestamp: oneOfType([string, number]).isRequired,
-  sentMsg: bool.isRequired
+  sentMsg: bool.isRequired,
+  transactionCid: string.isRequired
 }
 
 export default SendRow
