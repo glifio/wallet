@@ -26,8 +26,6 @@ const createHDWalletProvider = rustModule => {
       },
 
       sign: async (filecoinMessage, path) => {
-        debugger;
-
         const { private_hexstring } = rustModule.keyDerive(MNEMONIC, path, '')
         const { signature } = rustModule.transactionSign(
           filecoinMessage,
