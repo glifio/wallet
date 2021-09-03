@@ -10,18 +10,18 @@ const lCli = new LotusRPCEngine({
   apiAddress: process.env.LOTUS_NODE_JSONRPC
 })
 
-export default function usePendingTransaction(
-  transactionCid,
+export default function useReplacedMessageWithSpeed(
+  messageCid,
   address,
   provider
 ) {
   const { pending } = useTransactionHistory(address)
-  const { current } = useRef(pending.find(({ cid }) => cid === transactionCid))
+  const { current } = useRef(pending.find(({ cid }) => cid === messageCid))
   const { data, error, isValidating } = useSWR(
-    [transactionCid, address],
+    [messageCid, address],
     async () => {
       const res = await lCli.request('ChainGetMessage', {
-        '/': transactionCid
+        '/': messageCid
       })
       if (converAddrToFPrefix(res.To) !== converAddrToFPrefix(current.to))
         return null
@@ -33,7 +33,7 @@ export default function usePendingTransaction(
         from: converAddrToFPrefix(res.From),
         nonce: res.Nonce,
         value: res.Value,
-        params: res.Params,
+        params: res.Params || '',
         gasFeeCap: res.GasFeeCap,
         gasLimit: res.GasLimit,
         gasPremium: res.GasPremium,
@@ -54,7 +54,13 @@ export default function usePendingTransaction(
       })
     }
   )
-  if (!data) return { transaction: null, error, loading: isValidating }
+  if (!data)
+    return {
+      messageWithSpeed: null,
+      error,
+      loading: isValidating,
+      originalMessage: current
+    }
 
-  return { transaction: data, error, loading: isValidating }
+  return { messageWithSpeed: data, error, loading: isValidating }
 }

@@ -93,7 +93,8 @@ const SendRow = ({
           {status === 'pending' && (
             <Box textAlign='right'>
               <BaseButton
-                onClick={() => {
+                onClick={e => {
+                  e.stopPropagation()
                   speedUpTransaction(transactionCid, router)
                 }}
               >

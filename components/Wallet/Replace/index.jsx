@@ -1,47 +1,34 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import dayjs from 'dayjs'
 import { useDispatch } from 'react-redux'
-import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
-import { validateAddressString } from '@glif/filecoin-address'
+import { FilecoinNumber } from '@glif/filecoin-number'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
-import usePendingTransactionWithSpeed from '../../../lib/usePendingTransactionWithSpeed'
+import useReplacedMessageWithSpeed from '../../../lib/useReplacedMessageWithSpeed'
 
 // todo: temp remove
-
+import ErrorCard from '../Send/ErrorCard'
+import ConfirmationCard from '../Send/ConfirmationCard'
 import {
   Box,
   Input,
-  Num,
   Button,
   ButtonClose,
   StepHeader,
-  Title,
   Form,
-  Card
+  Card,
+  PageWrapper
 } from '../../Shared'
 import { CardHeader } from '../../Msig/Shared'
-import ConfirmationCard from './ConfirmationCard'
 import HeaderText from './HeaderText'
-import ErrorCard from './ErrorCard'
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
-import { LEDGER, SEND, emptyGasInfo } from '../../../constants'
+import { LEDGER, emptyGasInfo } from '../../../constants'
 import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfigError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import reportError from '../../../utils/reportError'
-import isBase64 from '../../../utils/isBase64'
 import { confirmMessage } from '../../../store/actions'
-import ApproximationToggleBtn from '../../Shared/BalanceCard/ApproximationToggleBtn'
-
-const preserveParams = params => {
-  if (!params || Object.keys(params).length === 0) {
-    return ''
-  }
-
-  return params
-}
 
 const TOTAL_STEPS = 2
 
@@ -49,7 +36,7 @@ const isValidForm = (otherError, paramsError) => {
   return !otherError && !paramsError
 }
 
-const SpeedUp = ({ close, transactionCid }) => {
+const Replace = ({ close, messageCid }) => {
   const dispatch = useDispatch()
   const wallet = useWallet()
 
@@ -60,30 +47,14 @@ const SpeedUp = ({ close, transactionCid }) => {
     resetLedgerState
   } = useWalletProvider()
 
-  const { transaction, loading, error } = usePendingTransactionWithSpeed(
-    transactionCid,
-    wallet.address,
-    walletProvider
-  )
+  const {
+    messageWithSpeed,
+    loading,
+    error,
+    originalMessage
+  } = useReplacedMessageWithSpeed(messageCid, wallet.address, walletProvider)
 
-  // TODO here
-  const message = transaction?.toSerializeableType() || {}
-
-  // THIS IS BROKEN BECAUSE OF ASYNC LOADING TIME - these should only be used in "expert mode", otherwise, just show the message directly
-  // this way, we'll be able to "reset" back to the default
-  const [toAddress, setToAddress] = useState(message.to)
-  const [params, setParams] = useState(preserveParams(message.params))
-  const [value, setValue] = useState(message.value)
-
-  // todo #todoEC new ones
-  // set this with the new gas premium instead of the old
-  // these are all broken now because of async load time
-  const [gasPremium, setGasPremium] = useState(message.gaspremium)
-  const [nonce, setNonce] = useState(message.nonce)
-  const [gasLimit, setGasLimit] = useState(message.gaslimit)
-  const [gasFeeCap, setGasFeeCap] = useState(message.gasfeecap)
-  const [isExpertMode, setIsExpertMode] = useState(false)
-
+  const message = messageWithSpeed?.toSerializeableType() || {}
   const [gasInfo, setGasInfo] = useState(emptyGasInfo)
   const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
   const [frozen, setFrozen] = useState(false)
@@ -91,9 +62,6 @@ const SpeedUp = ({ close, transactionCid }) => {
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
 
-  const [toAddressError, setToAddressError] = useState('')
-  const [paramsError, setParamsError] = useState('')
-  const [valueError, setValueError] = useState('')
   const [uncaughtError, setUncaughtError] = useState('')
   const [gasError, setGasError] = useState('')
 
@@ -106,37 +74,30 @@ const SpeedUp = ({ close, transactionCid }) => {
     }
 
     if (provider) {
-      const message = new Message({
-        to: toAddress,
-        from: wallet.address,
-        method: 0,
-
-        // todo: #todoEC: hmm, are these formatted wrong? Parsing as an int didn't help...
-        value,
-        gasFeeCap,
-        gasLimit,
-        gasPremium,
-        // value: parseInt(value, 10),
-        // gasFeeCap: parseInt(gasFeeCap, 10),
-        // gasLimit: parseInt(gasLimit, 10),
-        // gasPremium: parseInt(gasPremium, 10),
-        nonce,
-        params
+      const msgToSend = new Message({
+        to: message.to,
+        from: message.from,
+        method: message.method,
+        value: message.value,
+        gasFeeCap: message.gasfeecap,
+        gasLimit: message.gaslimit,
+        gasPremium: message.gaspremium,
+        nonce: message.nonce,
+        params: message.params
       })
 
-      // todo: #todoEC: it seems to be failing after here.
       setFetchingTxDetails(false)
       const signedMessage = await provider.wallet.sign(
-        message.toSerializeableType(),
+        msgToSend.toSerializeableType(),
         wallet.path
       )
 
-      const messageObj = message.toLotusType()
+      const messageObj = msgToSend.toLotusType()
       setMPoolPushing(true)
-      const validMsg = await provider.simulateMessage(message.toLotusType())
+      const validMsg = await provider.simulateMessage(msgToSend.toLotusType())
       if (validMsg) {
         const msgCid = await provider.sendMessage(
-          message.toLotusType(),
+          msgToSend.toLotusType(),
           signedMessage
         )
 
@@ -149,15 +110,14 @@ const SpeedUp = ({ close, transactionCid }) => {
           messageObj.Value,
           'attofil'
         ).toAttoFil()
-        messageObj.method = SEND
-        messageObj.params = params || {}
+        messageObj.method = originalMessage.method
+        messageObj.params = originalMessage.params || {}
         return messageObj
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')
     }
   }
 
-  // todo: update
   const sendMsg = async () => {
     try {
       const message = await send()
@@ -176,7 +136,6 @@ const SpeedUp = ({ close, transactionCid }) => {
         setUncaughtError(err.message)
       }
 
-      // TODO: Fix step for error
       setStep(4)
     } finally {
       setAttemptingTx(false)
@@ -205,15 +164,13 @@ const SpeedUp = ({ close, transactionCid }) => {
     wallet.type === LEDGER && reportLedgerConfigError(ledger)
 
   const submitBtnText = () => {
-    // if (step === 6 && wallet.type !== LEDGER) return 'Send'
-    // if (step === 6 && wallet.type === LEDGER) return 'Confirm on device.'
     if (step < 2) return 'Next'
 
     return 'Send'
   }
 
   return (
-    <>
+    <PageWrapper>
       <Box display='flex' flexDirection='column' width='100%'>
         <ButtonClose
           role='button'
@@ -225,7 +182,6 @@ const SpeedUp = ({ close, transactionCid }) => {
             setAttemptingTx(false)
             setUncaughtError('')
             setGasError('')
-            setParamsError('')
             resetLedgerState()
             close()
           }}
@@ -250,7 +206,6 @@ const SpeedUp = ({ close, transactionCid }) => {
                     setAttemptingTx(false)
                     setUncaughtError('')
                     setGasError('')
-                    setParamsError('')
                     resetLedgerState()
                     setStep(step - 1)
                   }}
@@ -300,54 +255,37 @@ const SpeedUp = ({ close, transactionCid }) => {
                       <Input.Text
                         my={3}
                         textAlign='right'
-                        label='Transaction Id'
-                        value={transactionCid}
+                        label='Transaction Cid'
+                        value={messageCid}
                         disabled
                       />
                       <Input.Text
                         my={3}
                         textAlign='right'
                         label='Nonce'
-                        value={nonce}
+                        value={message.nonce}
                         disabled
                       />
                       <Input.Text
                         my={3}
                         textAlign='right'
                         label='Gas Premium'
-                        value={gasPremium}
+                        value={message.gaspremium}
                         disabled
                       />
                       <Input.Text
                         my={3}
                         textAlign='right'
                         label='Gas Limit'
-                        value={gasLimit}
+                        value={message.gaslimit}
                         disabled
                       />
                       <Input.Text
                         my={3}
                         textAlign='right'
                         label='Fee Cap'
-                        value={gasFeeCap}
+                        value={message.gasfeecap}
                         disabled
-                      />
-                    </Box>
-                    <Box
-                      width='100%'
-                      p={3}
-                      border={0}
-                      display='flex'
-                      justifyContent='space-between'
-                      alignItems='center'
-                    >
-                      {/* todo: does this component exist already? Fix styles */}
-                      <label>Expert Mode</label>
-                      <Button
-                        justifySelf='end'
-                        title={isExpertMode ? 'on' : 'off'}
-                        variant='secondary'
-                        onClick={() => setIsExpertMode(!isExpertMode)}
                       />
                     </Box>
                   </>
@@ -386,7 +324,6 @@ const SpeedUp = ({ close, transactionCid }) => {
                   setAttemptingTx(false)
                   setUncaughtError('')
                   setGasError('')
-                  setParamsError('')
                   resetLedgerState()
                   if (step === 1) {
                     close()
@@ -404,13 +341,13 @@ const SpeedUp = ({ close, transactionCid }) => {
           </Box>
         </Form>
       </Box>
-    </>
+    </PageWrapper>
   )
 }
 
-SpeedUp.propTypes = {
+Replace.propTypes = {
   close: PropTypes.func.isRequired,
-  transactionCid: PropTypes.string.isRequired
+  messageCid: PropTypes.string.isRequired
 }
 
-export default SpeedUp
+export default Replace

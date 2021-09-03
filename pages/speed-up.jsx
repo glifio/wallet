@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-import SpeedUp from '../components/Wallet/SpeedUp'
+import Replace from '../components/Wallet/Replace'
 import RenderChildrenIfWalletConnected from '../lib/RequireWallet'
 import useDesktopBrowser from '../lib/useDesktopBrowser'
 import { gotoPageHomeWithKeyParams } from '../utils/urlParams'
@@ -33,10 +33,7 @@ export default () => {
 
   return (
     <RenderChildrenIfWalletConnected>
-      <SpeedUp
-        close={close}
-        transactionCid={getTransactionCidFromUrl(router)}
-      />
+      <Replace close={close} messageCid={getTransactionCidFromUrl(router)} />
     </RenderChildrenIfWalletConnected>
   )
 }
