@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { NavButton } from '@glif/react-components'
 import { useRouter } from 'next/router'
+import { PAGE_MSIG_HOME, PAGE_MSIG_HISTORY } from '../../../constants'
 
 import Balances from './Balances'
 import {
@@ -34,7 +35,9 @@ const State = ({
   showRmSignerOption,
   showChangeOwnerOption,
   total,
-  walletAddress
+  walletAddress,
+  childView,
+  setChildView
 }) => {
   const wallet = useWallet()
   const router = useRouter()
@@ -57,6 +60,14 @@ const State = ({
     // todo: use helper later and dedup
     e.preventDefault()
 
+
+    // Todo: do either this...
+    setChildView(PAGE_MSIG_HOME)
+
+    // Todo: or do this
+
+    // todo: this route currently isn't doing any logic, it's just superficial.
+    // decide if we want it to control logic and refactor
     const searchParams = new URLSearchParams({
       ...router.query,
     })
@@ -67,6 +78,10 @@ const State = ({
     // todo: use helper later and dedup
     e.preventDefault()
 
+    // Todo: do either this...
+    setChildView(PAGE_MSIG_HISTORY)
+
+    // Todo: or do this
     const searchParams = new URLSearchParams({
       ...router.query,
     })
@@ -180,11 +195,13 @@ const State = ({
         mt={2}
         mb={4}
       >
-        <Balances
-          available={available}
-          total={total}
-          setWithdrawing={setWithdrawing}
-        />
+        {
+          childView === PAGE_MSIG_HOME && <Balances
+            available={available}
+            total={total}
+            setWithdrawing={setWithdrawing}
+          />
+        }
       </Box>
       <Box
         display='flex'
@@ -193,7 +210,9 @@ const State = ({
         maxWidth={18}
         width='100%'
       >
-        <MessageHistory address={msigAddress} />
+        {
+          childView === PAGE_MSIG_HISTORY && <MessageHistory address={msigAddress} />
+        }
       </Box>
     </Box>
   )
