@@ -60,14 +60,11 @@ const State = ({
     // todo: use helper later and dedup
     e.preventDefault()
 
-
-    // Todo: do either this...
+    // Todo #choseUrlOrChildViewPattern.
+    // do either this...
     setChildView(PAGE_MSIG_HOME)
 
     // Todo: or do this
-
-    // todo: this route currently isn't doing any logic, it's just superficial.
-    // decide if we want it to control logic and refactor
     const searchParams = new URLSearchParams({
       ...router.query,
     })
@@ -78,7 +75,8 @@ const State = ({
     // todo: use helper later and dedup
     e.preventDefault()
 
-    // Todo: do either this...
+    // Todo #choseUrlOrChildViewPattern.
+    // do either this...
     setChildView(PAGE_MSIG_HISTORY)
 
     // Todo: or do this
@@ -156,8 +154,8 @@ const State = ({
             width='100%'
           >
             <div>
-              <NavButton title='Assets' onClick={onClickHome}/>
-              <NavButton title='History' onClick={onClickHistory}/>
+              <NavButton title='Assets' onClick={onClickHome} isActive={childView === PAGE_MSIG_HOME} />
+              <NavButton title='History' onClick={onClickHistory} isActive={childView === PAGE_MSIG_HISTORY} />
             </div>
             <AccountSummary
               msigAddress={msigAddress}
