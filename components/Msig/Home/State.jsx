@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import { NavButton } from '@glif/react-components'
+import { useRouter } from 'next/router'
+
 import Balances from './Balances'
 import {
   ADDRESS_PROPTYPE,
@@ -34,6 +37,7 @@ const State = ({
   walletAddress
 }) => {
   const wallet = useWallet()
+  const router = useRouter()
   const { ledger, connectLedger, resetState } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState('')
   const [ledgerBusy, setLedgerBusy] = useState(false)
@@ -48,6 +52,27 @@ const State = ({
     setUncaughtError('')
     resetState()
   }
+
+  const onClickHome = e => {
+    // todo: use helper later and dedup
+    e.preventDefault()
+
+    const searchParams = new URLSearchParams({
+      ...router.query,
+    })
+    router.push(`/vault/home?${searchParams.toString()}`)
+  }
+
+  const onClickHistory = e => {
+    // todo: use helper later and dedup
+    e.preventDefault()
+
+    const searchParams = new URLSearchParams({
+      ...router.query,
+    })
+    router.push(`/vault/history?${searchParams.toString()}`)
+  }
+
   return (
     <Box
       display='flex'
@@ -115,6 +140,10 @@ const State = ({
             justifyContent='space-between'
             width='100%'
           >
+            <div>
+              <NavButton title='Assets' onClick={onClickHome}/>
+              <NavButton title='History' onClick={onClickHistory}/>
+            </div>
             <AccountSummary
               msigAddress={msigAddress}
               walletAddress={walletAddress}
