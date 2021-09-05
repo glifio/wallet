@@ -1,7 +1,7 @@
 import React from 'react'
 import { IconGlif, Box, BigTitle, Title, Button } from '../../components/Shared'
 
-export default () => {
+const UseDesktopBrowser = () => {
   return (
     <Box
       display='flex'
@@ -42,4 +42,6 @@ export default () => {
       </Box>
     </Box>
   )
-}
+};
+
+export default UseDesktopBrowser;
