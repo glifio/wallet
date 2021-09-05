@@ -1,7 +1,7 @@
 import React from 'react'
 import { ErrorView } from '../../components/Shared'
 
-export default () => {
+const NotAMultisig = () => {
   return (
     <ErrorView
       title='Bad actor!'
@@ -10,4 +10,6 @@ export default () => {
       linkDisplay=''
     />
   )
-}
+};
+
+export default NotAMultisig;

@@ -2,7 +2,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import { ErrorView } from '../../components/Shared'
 
-export default () => {
+const NotASigner = () => {
   const router = useRouter()
   const params = new URLSearchParams(router.query)
   const walletAddress = params.get('walletAddress')
@@ -20,4 +20,6 @@ export default () => {
       linkDisplay=''
     />
   )
-}
+};
+
+export default NotASigner;

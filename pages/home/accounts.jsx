@@ -2,11 +2,13 @@ import { AccountSelector } from '../../components'
 import RenderChildrenIfWalletConnected from '../../lib/RequireWallet'
 import useDesktopBrowser from '../../lib/useDesktopBrowser'
 
-export default () => {
+const Accounts = () => {
   useDesktopBrowser()
   return (
     <RenderChildrenIfWalletConnected>
       <AccountSelector />
     </RenderChildrenIfWalletConnected>
   )
-}
+};
+
+export default Accounts;
