@@ -1,7 +1,9 @@
 import useDesktopBrowser from '../lib/useDesktopBrowser'
 import { MsigOnboard } from '../components/Msig'
 
-export default () => {
+const Msig = () => {
   useDesktopBrowser()
   return <MsigOnboard />
-}
+};
+
+export default Msig;

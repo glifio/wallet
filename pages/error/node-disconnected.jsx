@@ -1,7 +1,7 @@
 import React from 'react'
 import { ErrorView } from '../../components/Shared'
 
-export default () => {
+const NodeDisconnected = () => {
   return (
     <ErrorView
       title='Disconnected!'
@@ -10,4 +10,6 @@ export default () => {
       linkDisplay=''
     />
   )
-}
+};
+
+export default NodeDisconnected;

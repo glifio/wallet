@@ -1,7 +1,7 @@
 import React from 'react'
 import { ErrorView } from '../../components/Shared'
 
-export default () => {
+const UseChrome = () => {
   return (
     <ErrorView
       title='Only Chrome has Ledger support'
@@ -10,4 +10,6 @@ export default () => {
       linkhref='https://www.google.com/chrome'
     />
   )
-}
+};
+
+export default UseChrome;
