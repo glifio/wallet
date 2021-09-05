@@ -40,7 +40,7 @@ Version **x.y.z**:
 
 ### Filecoin modules
 
-Here are a few modules that we've broken out.
+A number of modules have been broken out into packages in this [modules repo](https://github.com/glifio/modules).
 
 - [Filecoin wallet provider](https://github.com/glifio/modules/tree/primary/packages/filecoin-wallet-provider)
 - [Filecoin jsonrpc client](https://github.com/glifio/modules/tree/primary/packages/filecoin-rpc-client)
@@ -48,3 +48,21 @@ Here are a few modules that we've broken out.
 - [Filecoin message type](https://github.com/glifio/modules/tree/primary/packages/filecoin-message)
 - [Filecoin address type](https://github.com/glifio/modules/tree/primary/packages/filecoin-address)
 - [Filecoin message confirmer](https://github.com/glifio/modules/tree/primary/packages/filecoin-message-confirmer)
+- [Filecoin react-components](https://github.com/glifio/modules/tree/primary/packages/react-components)
+
+#### Filecoin module package local development
+
+In order to develop packages locally and see the changes live in this local wallet repository, the [npm link](https://docs.npmjs.com/cli/v7/commands/npm-link) tool can be used to symlink to the packages in your local modules repo.
+
+Package linking is a two-step process.
+
+First, from your local package folder, run:
+```
+npm link
+```
+
+Next, from this main wallet repository, run:
+```
+npm link @glif/<package-name>
+```
+for example, use `npm link @glif/react-components` to symlink the `react-components` package to your local version. See the npm link docs for details.
