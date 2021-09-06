@@ -5,11 +5,13 @@ import { useDispatch } from 'react-redux'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
-import useReplacedMessageWithSpeed from '../../../lib/useReplacedMessageWithSpeed'
+import { LoadingScreen, StyledATag, Text } from '@glif/react-components'
+
+import useReplacedMessageWithSpeed from '../../../lib/useReplacedMessageWithSpeed.tsx'
 
 // todo: temp remove
 import ErrorCard from '../Send/ErrorCard'
-import ConfirmationCard from '../Send/ConfirmationCard'
+import ConfirmationCard from './ConfirmationCard'
 import {
   Box,
   Input,
@@ -51,7 +53,8 @@ const Replace = ({ close, messageCid }) => {
     messageWithSpeed,
     loading,
     error,
-    originalMessage
+    originalMessage,
+    maxFee
   } = useReplacedMessageWithSpeed(messageCid, wallet.address, walletProvider)
 
   const message = messageWithSpeed?.toSerializeableType() || {}
@@ -61,6 +64,7 @@ const Replace = ({ close, messageCid }) => {
   const [mPoolPushing, setMPoolPushing] = useState(false)
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
+  const [expertMode, setExpertMode] = useState(false)
 
   const [uncaughtError, setUncaughtError] = useState('')
   const [gasError, setGasError] = useState('')
@@ -121,7 +125,6 @@ const Replace = ({ close, messageCid }) => {
   const sendMsg = async () => {
     try {
       const message = await send()
-
       if (message) {
         dispatch(confirmMessage(toLowerCaseMsgFields(message)))
         close()
@@ -136,7 +139,7 @@ const Replace = ({ close, messageCid }) => {
         setUncaughtError(err.message)
       }
 
-      setStep(4)
+      setStep(2)
     } finally {
       setAttemptingTx(false)
       setFetchingTxDetails(false)
@@ -147,9 +150,9 @@ const Replace = ({ close, messageCid }) => {
   const onSubmit = async e => {
     e.preventDefault()
     if (step === 1) {
+      setAttemptingTx(true)
       setStep(2)
     } else if (step === 2) {
-      setStep(3)
       await sendMsg()
     }
   }
@@ -164,7 +167,8 @@ const Replace = ({ close, messageCid }) => {
     wallet.type === LEDGER && reportLedgerConfigError(ledger)
 
   const submitBtnText = () => {
-    if (step < 2) return 'Next'
+    if (step === 1) return 'Next'
+    else if (step === 2) return 'Send'
 
     return 'Send'
   }
@@ -186,160 +190,164 @@ const Replace = ({ close, messageCid }) => {
             close()
           }}
         />
-        <Form onSubmit={onSubmit}>
-          <Box
-            maxWidth={13}
-            width='100%'
-            minWidth={11}
-            display='flex'
-            flex='1'
-            flexDirection='column'
-            justifyContent='flex-start'
-          >
-            <Box>
-              {/* todo update */}
-              {hasError() && (
-                <ErrorCard
-                  error={ledgerError() || uncaughtError}
-                  reset={() => {
-                    // TODO confirm that these resets are still all correct.
+        {loading && <LoadingScreen height='100vh' />}
+        {!loading && (
+          <Form onSubmit={onSubmit}>
+            <Box
+              maxWidth={13}
+              width='100%'
+              minWidth={11}
+              display='flex'
+              flex='1'
+              flexDirection='column'
+              justifyContent='flex-start'
+            >
+              <Box>
+                {/* todo update */}
+                {hasError() && (
+                  <ErrorCard
+                    error={ledgerError() || uncaughtError}
+                    reset={() => {
+                      setAttemptingTx(false)
+                      setUncaughtError('')
+                      setGasError('')
+                      resetLedgerState()
+                      setStep(step - 1)
+                    }}
+                  />
+                )}
+                {!hasError() && attemptingTx && (
+                  <ConfirmationCard
+                    walletType={wallet.type}
+                    currentStep={step}
+                    totalSteps={TOTAL_STEPS}
+                    loading={fetchingTxDetails || mPoolPushing}
+                    replaceStrategy='SPEED_UP'
+                  />
+                )}
+                {!hasError() && !attemptingTx && (
+                  <>
+                    <Card
+                      display='flex'
+                      flexDirection='column'
+                      justifyContent='space-between'
+                      border='none'
+                      width='auto'
+                      my={2}
+                      backgroundColor='blue.muted700'
+                    >
+                      <StepHeader
+                        title='Speed Up Message'
+                        currentStep={step}
+                        totalSteps={TOTAL_STEPS}
+                        glyphAcronym='Su'
+                      />
+                      <Box mt={6} mb={4}>
+                        <HeaderText
+                          step={step}
+                          walletType={wallet.type}
+                          expertMode={expertMode}
+                        />
+                      </Box>
+                    </Card>
+                  </>
+                )}
+                <Box boxShadow={2} borderRadius={4} bg='background.screen'>
+                  <CardHeader
+                    address={wallet.address}
+                    signerBalance={wallet.balance}
+                  />
+                  {step >= 1 && (
+                    <>
+                      <Box width='100%' p={3} border={0}>
+                        <Input.Text
+                          my={3}
+                          textAlign='right'
+                          label='Message Cid'
+                          value={messageCid}
+                          disabled
+                        />
+                        <Input.Text
+                          my={3}
+                          textAlign='right'
+                          label='Nonce'
+                          value={message.nonce}
+                          disabled
+                        />
+                        <Input.Text
+                          my={3}
+                          textAlign='right'
+                          label='Gas Premium'
+                          value={message.gaspremium}
+                          disabled
+                        />
+                        <Input.Text
+                          my={3}
+                          textAlign='right'
+                          label='Gas Limit'
+                          value={message.gaslimit}
+                          disabled
+                        />
+                        <Input.Text
+                          my={3}
+                          textAlign='right'
+                          label='Fee Cap'
+                          value={message.gasfeecap}
+                          disabled
+                        />
+                        <Text width='100%' color='core.darkgray'>
+                          You will not pay more than {maxFee.toFil()} FIL in
+                          fees for this transaction.{' '}
+                          <StyledATag
+                            rel='noopener noreferrer'
+                            target='_blank'
+                            href='https://filfox.info/en/stats/gas'
+                          >
+                            More information on average gas fee statistics.
+                          </StyledATag>
+                        </Text>
+                      </Box>
+                    </>
+                  )}
+                </Box>
+              </Box>
+              <Box
+                display='flex'
+                flexGrow='1'
+                flexDirection='row'
+                justifyContent='space-between'
+                alignItems='flex-end'
+                margin='auto'
+                maxWidth={13}
+                width='100%'
+                minWidth={11}
+                maxHeight={12}
+                my={3}
+              >
+                <Button
+                  title='Back'
+                  variant='secondary'
+                  onClick={() => {
                     setAttemptingTx(false)
                     setUncaughtError('')
                     setGasError('')
                     resetLedgerState()
-                    setStep(step - 1)
+                    if (step === 1) {
+                      close()
+                    } else {
+                      setStep(step - 1)
+                    }
                   }}
                 />
-              )}
-              {!hasError() && attemptingTx && (
-                <ConfirmationCard
-                  walletType={wallet.type}
-                  currentStep={TOTAL_STEPS}
-                  totalSteps={TOTAL_STEPS}
-                  loading={fetchingTxDetails || mPoolPushing}
+                <Button
+                  variant='primary'
+                  title={submitBtnText()}
+                  type='submit'
                 />
-              )}
-              {/* todo update */}
-              {!hasError() && !attemptingTx && (
-                <>
-                  <Card
-                    display='flex'
-                    flexDirection='column'
-                    justifyContent='space-between'
-                    border='none'
-                    width='auto'
-                    my={2}
-                    backgroundColor='blue.muted700'
-                  >
-                    <StepHeader
-                      title='Speed Up Transaction'
-                      currentStep={step}
-                      totalSteps={TOTAL_STEPS}
-                      glyphAcronym='Su'
-                    />
-                    <Box mt={6} mb={4}>
-                      <HeaderText step={step} walletType={wallet.type} />
-                    </Box>
-                  </Card>
-                </>
-              )}
-              <Box boxShadow={2} borderRadius={4} bg='background.screen'>
-                {/* TODO do we need to pass a prop to change Ms to Su here? */}
-                <CardHeader
-                  address={wallet.address}
-                  signerBalance={wallet.balance}
-                />
-                {step === 1 && (
-                  <>
-                    <Box width='100%' p={3} border={0}>
-                      <Input.Text
-                        my={3}
-                        textAlign='right'
-                        label='Transaction Cid'
-                        value={messageCid}
-                        disabled
-                      />
-                      <Input.Text
-                        my={3}
-                        textAlign='right'
-                        label='Nonce'
-                        value={message.nonce}
-                        disabled
-                      />
-                      <Input.Text
-                        my={3}
-                        textAlign='right'
-                        label='Gas Premium'
-                        value={message.gaspremium}
-                        disabled
-                      />
-                      <Input.Text
-                        my={3}
-                        textAlign='right'
-                        label='Gas Limit'
-                        value={message.gaslimit}
-                        disabled
-                      />
-                      <Input.Text
-                        my={3}
-                        textAlign='right'
-                        label='Fee Cap'
-                        value={message.gasfeecap}
-                        disabled
-                      />
-                    </Box>
-                  </>
-                )}
-
-                {step === 2 && (
-                  <Box
-                    width='100%'
-                    px={3}
-                    pb={step === 2 && 3}
-                    border={0}
-                    bg='background.screen'
-                  >
-                    <Box my={5}>Confirmation screen goes here.</Box>
-                  </Box>
-                )}
               </Box>
             </Box>
-            <Box
-              display='flex'
-              flexGrow='1'
-              flexDirection='row'
-              justifyContent='space-between'
-              alignItems='flex-end'
-              margin='auto'
-              maxWidth={13}
-              width='100%'
-              minWidth={11}
-              maxHeight={12}
-              my={3}
-            >
-              <Button
-                title='Back'
-                variant='secondary'
-                onClick={() => {
-                  setAttemptingTx(false)
-                  setUncaughtError('')
-                  setGasError('')
-                  resetLedgerState()
-                  if (step === 1) {
-                    close()
-                  } else {
-                    setStep(step - 1)
-                  }
-                }}
-                disabled={
-                  // todo: refer to send.js for example
-                  false
-                }
-              />
-              <Button variant='primary' title={submitBtnText()} type='submit' />
-            </Box>
-          </Box>
-        </Form>
+          </Form>
+        )}
       </Box>
     </PageWrapper>
   )
