@@ -6,7 +6,7 @@ import useDesktopBrowser from '../lib/useDesktopBrowser'
 import { gotoPageHomeWithKeyParams } from '../utils/urlParams'
 import reportError from '../utils/reportError'
 
-export default () => {
+export default function SpeedUp() {
   useDesktopBrowser()
   const router = useRouter()
 
