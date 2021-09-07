@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { useRouter } from 'next/router'
 import { useMsig } from '../../../MsigProvider'
 import Withdraw from '../Withdraw'
 import ChangeOwner from '../ChangeOwner'
@@ -24,9 +25,10 @@ const MsigHome = () => {
   const { address } = useWallet()
 
   // todo temp hack to demonstrate urls.. fix later
-  const defaultView = window.location.pathname.search('history') > 0 ? PAGE_MSIG_HISTORY : PAGE_MSIG_HOME
-
+  const router = useRouter()
+  const defaultView = router.pathname.search('history') > 0 ? PAGE_MSIG_HISTORY : PAGE_MSIG_HOME
   const [childView, setChildView] = useState(defaultView)
+
   return (
     <>
       <MsgConfirmer />

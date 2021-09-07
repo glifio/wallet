@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { NavButton } from '@glif/react-components'
+import { NavLink } from '@glif/react-components'
 import { useRouter } from 'next/router'
 import { PAGE_MSIG_HOME, PAGE_MSIG_HISTORY } from '../../../constants'
 
@@ -154,8 +154,8 @@ const State = ({
             width='100%'
           >
             <div>
-              <NavButton title='Assets' onClick={onClickHome} isActive={childView === PAGE_MSIG_HOME} />
-              <NavButton title='History' onClick={onClickHistory} isActive={childView === PAGE_MSIG_HISTORY} />
+              <NavLink name='Assets' href={'/vault/home?'} onClick={onClickHome} isActive={childView === PAGE_MSIG_HOME} />
+              <NavLink name='History' href={'/vault/history?'} onClick={onClickHistory} isActive={childView === PAGE_MSIG_HISTORY} />
             </div>
             <AccountSummary
               msigAddress={msigAddress}
