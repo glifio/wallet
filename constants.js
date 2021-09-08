@@ -68,5 +68,9 @@ export const PL_SIGNERS = new Set([
 export const SCREEN_MAX_WIDTH = 1440
 
 /* PAGES */
-export const PAGE_MSIG_HOME = 'PAGE_MSIG_HOME'
-export const PAGE_MSIG_HISTORY = 'PAGE_MSIG_HISTORY'
+export const PAGE_HOME = '/home'
+export const PAGE_SEND = '/send'
+export const PAGE_SPEED_UP = '/speed-up'
+export const PAGE_MSIG_HOME = '/vault/home'
+export const PAGE_MSIG_HISTORY = '/vault/history'
+export const PAGE_MSIG_OWNERS = '/vault/owners'
