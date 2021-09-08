@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { NavLink } from '@glif/react-components'
 import { useRouter } from 'next/router'
-import { PAGE_MSIG_HOME, PAGE_MSIG_HISTORY } from '../../../constants'
+import { PAGE_MSIG_HOME, PAGE_MSIG_HISTORY, PAGE_MSIG_OWNERS } from '../../../constants'
+import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
 
 import Balances from './Balances'
 import {
@@ -56,34 +57,11 @@ const State = ({
     resetState()
   }
 
-  const onClickHome = e => {
-    // todo: use helper later and dedup
+  const repairLink = e => {
     e.preventDefault()
 
-    // Todo #choseUrlOrChildViewPattern.
-    // do either this...
-    setChildView(PAGE_MSIG_HOME)
-
-    // Todo: or do this
-    const searchParams = new URLSearchParams({
-      ...router.query,
-    })
-    router.push(`/vault/home?${searchParams.toString()}`)
-  }
-
-  const onClickHistory = e => {
-    // todo: use helper later and dedup
-    e.preventDefault()
-
-    // Todo #choseUrlOrChildViewPattern.
-    // do either this...
-    setChildView(PAGE_MSIG_HISTORY)
-
-    // Todo: or do this
-    const searchParams = new URLSearchParams({
-      ...router.query,
-    })
-    router.push(`/vault/history?${searchParams.toString()}`)
+    console.log(e.currentTarget.pathname)
+    gotoRouteWithKeyUrlParams(router, e.currentTarget.pathname)
   }
 
   return (
@@ -154,8 +132,9 @@ const State = ({
             width='100%'
           >
             <div>
-              <NavLink name='Assets' href={'/vault/home?'} onClick={onClickHome} isActive={childView === PAGE_MSIG_HOME} />
-              <NavLink name='History' href={'/vault/history?'} onClick={onClickHistory} isActive={childView === PAGE_MSIG_HISTORY} />
+              <NavLink name='Assets' href={PAGE_MSIG_HOME} onClick={repairLink} isActive={childView === PAGE_MSIG_HOME} />
+              <NavLink name='History' href={PAGE_MSIG_HISTORY} onClick={repairLink} isActive={childView === PAGE_MSIG_HISTORY} />
+              <NavLink name='Owners' href={PAGE_MSIG_OWNERS} onClick={repairLink} isActive={childView === PAGE_MSIG_OWNERS} />
             </div>
             <AccountSummary
               msigAddress={msigAddress}

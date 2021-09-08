@@ -6,7 +6,7 @@ import Withdraw from '../Withdraw'
 import ChangeOwner from '../ChangeOwner'
 import { AddSigner, RemoveSigner } from '../AddRmSigners'
 import { Box, LoadingScreen } from '../../Shared'
-import { PAGE_MSIG_HOME, PAGE_MSIG_HISTORY } from '../../../constants'
+import { PAGE_MSIG_HOME, PAGE_MSIG_HISTORY, PAGE_MSIG_OWNERS } from '../../../constants'
 import State from './State'
 import useWallet from '../../../WalletProvider/useWallet'
 import MsgConfirmer from '../../../lib/confirm-message'
@@ -26,7 +26,8 @@ const MsigHome = () => {
 
   // todo temp hack to demonstrate urls.. fix later
   const router = useRouter()
-  const defaultView = router.pathname.search('history') > 0 ? PAGE_MSIG_HISTORY : PAGE_MSIG_HOME
+  const defaultView = router.pathname;
+
   const [childView, setChildView] = useState(defaultView)
 
   return (
@@ -43,7 +44,8 @@ const MsigHome = () => {
         {!msig.loading && (
             // todo: refactor this
             childView === PAGE_MSIG_HOME ||
-            childView === PAGE_MSIG_HISTORY
+            childView === PAGE_MSIG_HISTORY ||
+            childView === PAGE_MSIG_OWNERS
           ) && (
           <State
             msigAddress={msigActorAddress}
