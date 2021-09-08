@@ -6,7 +6,11 @@ import Withdraw from '../Withdraw'
 import ChangeOwner from '../ChangeOwner'
 import { AddSigner, RemoveSigner } from '../AddRmSigners'
 import { Box, LoadingScreen } from '../../Shared'
-import { PAGE_MSIG_HOME, PAGE_MSIG_HISTORY, PAGE_MSIG_OWNERS } from '../../../constants'
+import {
+  PAGE_MSIG_HOME,
+  PAGE_MSIG_HISTORY,
+  PAGE_MSIG_OWNERS
+} from '../../../constants'
 import State from './State'
 import useWallet from '../../../WalletProvider/useWallet'
 import MsgConfirmer from '../../../lib/confirm-message'
@@ -26,7 +30,7 @@ const MsigHome = () => {
 
   // todo temp hack to demonstrate urls.. fix later
   const router = useRouter()
-  const defaultView = router.pathname;
+  const defaultView = router.pathname
 
   const [childView, setChildView] = useState(defaultView)
 
@@ -41,28 +45,25 @@ const MsigHome = () => {
         p={3}
       >
         {msig.loading && <LoadingScreen width='100%' />}
-        {!msig.loading && (
-            // todo: refactor this
-            childView === PAGE_MSIG_HOME ||
+        {!msig.loading &&
+          (childView === PAGE_MSIG_HOME ||
             childView === PAGE_MSIG_HISTORY ||
-            childView === PAGE_MSIG_OWNERS
-          ) && (
-          <State
-            msigAddress={msigActorAddress}
-            walletAddress={address}
-            available={msig.AvailableBalance}
-            total={msig.Balance}
-            setChangingOwner={() => setChildView(CHANGE_OWNER)}
-            setWithdrawing={() => setChildView(WITHDRAW)}
-            setRmSigner={() => setChildView(REMOVE_SIGNER)}
-            setAddSigner={() => setChildView(ADD_SIGNER)}
-            signers={msig.Signers}
-            showRmSignerOption={msig.Signers.length > 1}
-            showChangeOwnerOption={msig.Signers.length === 1}
-            childView={childView}
-            setChildView={setChildView}
-          />
-        )}
+            childView === PAGE_MSIG_OWNERS) && (
+            <State
+              msigAddress={msigActorAddress}
+              walletAddress={address}
+              available={msig.AvailableBalance}
+              total={msig.Balance}
+              setChangingOwner={() => setChildView(CHANGE_OWNER)}
+              setWithdrawing={() => setChildView(WITHDRAW)}
+              setRmSigner={() => setChildView(REMOVE_SIGNER)}
+              setAddSigner={() => setChildView(ADD_SIGNER)}
+              signers={msig.Signers}
+              showRmSignerOption={msig.Signers.length > 1}
+              showChangeOwnerOption={msig.Signers.length === 1}
+              childView={childView}
+            />
+          )}
         {!msig.loading && !messagesPending && childView === CHANGE_OWNER && (
           <ChangeOwner
             close={() => setChildView(PAGE_MSIG_HOME)}

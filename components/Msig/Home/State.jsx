@@ -2,7 +2,11 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { NavLink } from '@glif/react-components'
 import { useRouter } from 'next/router'
-import { PAGE_MSIG_HOME, PAGE_MSIG_HISTORY, PAGE_MSIG_OWNERS } from '../../../constants'
+import {
+  PAGE_MSIG_HOME,
+  PAGE_MSIG_HISTORY,
+  PAGE_MSIG_OWNERS
+} from '../../../constants'
 import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
 
 import Balances from './Balances'
@@ -37,8 +41,7 @@ const State = ({
   showChangeOwnerOption,
   total,
   walletAddress,
-  childView,
-  setChildView
+  childView
 }) => {
   const wallet = useWallet()
   const router = useRouter()
@@ -133,12 +136,27 @@ const State = ({
             my={3}
           >
             <Box display='flex' my={3}>
-              <NavLink name='Assets' href={PAGE_MSIG_HOME} onClick={repairLink} isActive={childView === PAGE_MSIG_HOME} />
-              <NavLink name='History' href={PAGE_MSIG_HISTORY} onClick={repairLink} isActive={childView === PAGE_MSIG_HISTORY} />
-              <NavLink name='Owners' href={PAGE_MSIG_OWNERS} onClick={repairLink} isActive={childView === PAGE_MSIG_OWNERS} />
+              <NavLink
+                name='Assets'
+                href={PAGE_MSIG_HOME}
+                onClick={repairLink}
+                isActive={childView === PAGE_MSIG_HOME}
+              />
+              <NavLink
+                name='History'
+                href={PAGE_MSIG_HISTORY}
+                onClick={repairLink}
+                isActive={childView === PAGE_MSIG_HISTORY}
+              />
+              <NavLink
+                name='Owners'
+                href={PAGE_MSIG_OWNERS}
+                onClick={repairLink}
+                isActive={childView === PAGE_MSIG_OWNERS}
+              />
             </Box>
-            {
-              childView === PAGE_MSIG_OWNERS && <div>
+            {childView === PAGE_MSIG_OWNERS && (
+              <div>
                 <AccountSummary
                   msigAddress={msigAddress}
                   walletAddress={walletAddress}
@@ -152,7 +170,7 @@ const State = ({
                   reset={reset}
                 />
               </div>
-            }
+            )}
             {showChangeOwnerOption && (
               <Button
                 type='button'
@@ -177,13 +195,13 @@ const State = ({
         mt={2}
         mb={4}
       >
-        {
-          childView === PAGE_MSIG_HOME && <Balances
+        {childView === PAGE_MSIG_HOME && (
+          <Balances
             available={available}
             total={total}
             setWithdrawing={setWithdrawing}
           />
-        }
+        )}
       </Box>
       <Box
         display='flex'
@@ -192,9 +210,9 @@ const State = ({
         maxWidth={18}
         width='100%'
       >
-        {
-          childView === PAGE_MSIG_HISTORY && <MessageHistory address={msigAddress} />
-        }
+        {childView === PAGE_MSIG_HISTORY && (
+          <MessageHistory address={msigAddress} />
+        )}
       </Box>
     </Box>
   )
@@ -217,6 +235,7 @@ State.propTypes = {
   ).isRequired,
   showRmSignerOption: PropTypes.bool.isRequired,
   showChangeOwnerOption: PropTypes.bool.isRequired
+  childView: null
 }
 
 export default State
