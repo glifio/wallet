@@ -40,8 +40,7 @@ const AccountSummary = ({
   ledgerBusy,
   error
 }) => {
-
-return error ? (
+  return error ? (
     <Box display='flex'>
       <Box
         display='flex'
@@ -97,18 +96,10 @@ return error ? (
   ) : (
     <Box width='100%'>
       <Box position='relative' display='flex' flexWrap='wrap'>
-        <Title>
-          Owners
-        </Title>
-        <Tooltip
-          content='These are the owners'
-        />
+        <Title>Owners</Title>
+        <Tooltip content='These are the owners' />
       </Box>
-      <Box position='relative'
-        display='flex'
-        flexWrap='wrap'
-        my={3}
-      >
+      <Box position='relative' display='flex' flexWrap='wrap' my={3}>
         <Address
           address={walletAddress}
           glyphAcronym={1}
@@ -136,9 +127,7 @@ return error ? (
             <Text>View on Device</Text>
           )}
         </ButtonViewOnLedgerDevice>
-        <Tooltip
-          content='Displays your address on your Ledger device'
-        />
+        <Tooltip content='Displays your address on your Ledger device' />
       </Box>
       <Signers signers={signers} walletAddress={walletAddress} />
       <Box display='flex' alignItems='center'>

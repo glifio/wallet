@@ -57,13 +57,15 @@ const MsigHome = () => {
               childView={childView}
             />
           )}
-        {!msig.loading && !messagesPending && childView === PAGE_MSIG_CHANGE_OWNER && (
-          <ChangeOwner
-            close={() => setChildView(PAGE_MSIG_HOME)}
-            balance={msig.AvailableBalance}
-            address={msigActorAddress}
-          />
-        )}
+        {!msig.loading &&
+          !messagesPending &&
+          childView === PAGE_MSIG_CHANGE_OWNER && (
+            <ChangeOwner
+              close={() => setChildView(PAGE_MSIG_HOME)}
+              balance={msig.AvailableBalance}
+              address={msigActorAddress}
+            />
+          )}
         {!msig.loading && childView === PAGE_MSIG_REMOVE_SIGNER && (
           <RemoveSigner
             close={() => setChildView(PAGE_MSIG_HOME)}

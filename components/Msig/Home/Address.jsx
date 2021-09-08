@@ -45,10 +45,7 @@ const Address = ({ setWidth, address, label, glyphAcronym }) => {
       )}
       <Box flexGrow='1'>
         <Label fontSize={1}>{label}</Label>
-        <CopyAddress
-          color='core.nearblack'
-          address={address}
-        />
+        <CopyAddress color='core.nearblack' address={address} />
       </Box>
     </Box>
   )

@@ -75,7 +75,8 @@ const State = ({
       maxWidth={20}
       margin='0 auto'
     >
-      <Box display='flex'
+      <Box
+        display='flex'
         alignItems='center'
         position='absolute'
         my={5}
@@ -104,7 +105,8 @@ const State = ({
         alignItems='center'
         my={5}
       >
-        <MenuItem display='flex'
+        <MenuItem
+          display='flex'
           justifyContent='space-between'
           alignItems='center'
           pr={3}
@@ -123,29 +125,27 @@ const State = ({
           />
           <Title ml={2}>Vault</Title>
         </MenuItem>
-        <MenuItem display='flex'
-          justifyContent='space-between'
-        >
-            <NavLink
-              name='Assets'
-              href={PAGE_MSIG_HOME}
-              onClick={repairLink}
-              isActive={childView === PAGE_MSIG_HOME}
-            />
-            <NavLink
-              name='History'
-              href={PAGE_MSIG_HISTORY}
-              onClick={repairLink}
-              isActive={childView === PAGE_MSIG_HISTORY}
-            />
-            <NavLink
-              name='Owners'
-              href={PAGE_MSIG_OWNERS}
-              onClick={repairLink}
-              isActive={childView === PAGE_MSIG_OWNERS}
-            />
+        <MenuItem display='flex' justifyContent='space-between'>
+          <NavLink
+            name='Assets'
+            href={PAGE_MSIG_HOME}
+            onClick={repairLink}
+            isActive={childView === PAGE_MSIG_HOME}
+          />
+          <NavLink
+            name='History'
+            href={PAGE_MSIG_HISTORY}
+            onClick={repairLink}
+            isActive={childView === PAGE_MSIG_HISTORY}
+          />
+          <NavLink
+            name='Owners'
+            href={PAGE_MSIG_OWNERS}
+            onClick={repairLink}
+            isActive={childView === PAGE_MSIG_OWNERS}
+          />
         </MenuItem>
-        <MenuItem ml={'auto'}>
+        <MenuItem ml='auto'>
           <Box>
             <Address
               label='Multisig Address'
@@ -154,7 +154,6 @@ const State = ({
             />
           </Box>
         </MenuItem>
-
       </Menu>
       <Box
         display='flex'
@@ -165,10 +164,7 @@ const State = ({
         margin='0 auto'
       >
         {childView === PAGE_MSIG_HOME && (
-          <Balances
-            available={available}
-            total={total}
-          />
+          <Balances available={available} total={total} />
         )}
         {childView === PAGE_MSIG_HISTORY && (
           <MessageHistory address={msigAddress} />

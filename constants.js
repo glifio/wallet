@@ -78,4 +78,3 @@ export const PAGE_MSIG_WITHDRAW = '/vault/withdraw'
 export const PAGE_MSIG_CHANGE_OWNER = '/vault/change-owner'
 export const PAGE_MSIG_REMOVE_SIGNER = '/vault/remove-signer'
 export const PAGE_MSIG_ADD_SIGNER = '/vault/add-signer'
-
