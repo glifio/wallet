@@ -6,10 +6,7 @@ import { Box, Button, Num, Title } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
-import {
-  PAGE_MSIG_HOME,
-  PAGE_MSIG_WITHDRAW
-} from '../../../constants'
+import { PAGE_MSIG_HOME, PAGE_MSIG_WITHDRAW } from '../../../constants'
 
 import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
 
@@ -97,7 +94,9 @@ const Balances = ({ available, total }) => {
         <WithdrawButton
           type='button'
           variant='primary'
-          onClick={() => {gotoRouteWithKeyUrlParams(router, PAGE_MSIG_WITHDRAW)}}
+          onClick={() => {
+            gotoRouteWithKeyUrlParams(router, PAGE_MSIG_WITHDRAW)
+          }}
           title='Withdraw'
           maxWidth={10}
           minWidth={9}

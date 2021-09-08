@@ -60,21 +60,27 @@ const MsigHome = () => {
           )}
         {!msig.loading && childView === PAGE_MSIG_WITHDRAW && (
           <Withdraw
-            close={ () => {gotoRouteWithKeyUrlParams(router, PAGE_MSIG_HOME)} }
+            close={() => {
+              gotoRouteWithKeyUrlParams(router, PAGE_MSIG_HOME)
+            }}
             balance={msig.AvailableBalance}
             address={msigActorAddress}
           />
         )}
         {!msig.loading && childView === PAGE_MSIG_ADD_SIGNER && (
           <AddSigner
-            close={ () => {gotoRouteWithKeyUrlParams(router, PAGE_MSIG_OWNERS)} }
+            close={() => {
+              gotoRouteWithKeyUrlParams(router, PAGE_MSIG_OWNERS)
+            }}
             balance={msig.AvailableBalance}
             address={msigActorAddress}
           />
         )}
         {!msig.loading && childView === PAGE_MSIG_REMOVE_SIGNER && (
           <RemoveSigner
-            close={ () => {gotoRouteWithKeyUrlParams(router, PAGE_MSIG_OWNERS)} }
+            close={() => {
+              gotoRouteWithKeyUrlParams(router, PAGE_MSIG_OWNERS)
+            }}
             signers={msig.Signers}
             balance={msig.AvailableBalance}
             address={msigActorAddress}
@@ -84,11 +90,13 @@ const MsigHome = () => {
           !messagesPending &&
           childView === PAGE_MSIG_CHANGE_OWNER && (
             <ChangeOwner
-              close={ () => {gotoRouteWithKeyUrlParams(router, PAGE_MSIG_CHANGE_OWNER)} }
+              close={() => {
+                gotoRouteWithKeyUrlParams(router, PAGE_MSIG_CHANGE_OWNER)
+              }}
               balance={msig.AvailableBalance}
               address={msigActorAddress}
             />
-        )}
+          )}
       </Box>
     </>
   )

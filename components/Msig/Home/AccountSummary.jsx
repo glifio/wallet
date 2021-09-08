@@ -132,7 +132,9 @@ const AccountSummary = ({
         <Button
           type='button'
           variant='secondary'
-          onClick={() => {gotoRouteWithKeyUrlParams(router, PAGE_MSIG_ADD_SIGNER)}}
+          onClick={() => {
+            gotoRouteWithKeyUrlParams(router, PAGE_MSIG_ADD_SIGNER)
+          }}
           title='Add Signer'
           minWidth={8}
           height='40px'
@@ -143,7 +145,9 @@ const AccountSummary = ({
           <Button
             type='button'
             variant='secondary'
-            onClick={() => {gotoRouteWithKeyUrlParams(router, PAGE_MSIG_CHANGE_OWNER)}}
+            onClick={() => {
+              gotoRouteWithKeyUrlParams(router, PAGE_MSIG_CHANGE_OWNER)
+            }}
             title='Change Signer'
             height={6}
             maxWidth={10}
@@ -156,7 +160,9 @@ const AccountSummary = ({
           <Button
             type='button'
             variant='secondary'
-            onClick={() => {gotoRouteWithKeyUrlParams(router, PAGE_MSIG_REMOVE_SIGNER)}}
+            onClick={() => {
+              gotoRouteWithKeyUrlParams(router, PAGE_MSIG_REMOVE_SIGNER)
+            }}
             title='Remove Signer'
             minWidth={8}
             height='40px'
