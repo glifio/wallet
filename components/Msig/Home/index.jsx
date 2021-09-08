@@ -9,16 +9,15 @@ import { Box, LoadingScreen } from '../../Shared'
 import {
   PAGE_MSIG_HOME,
   PAGE_MSIG_HISTORY,
-  PAGE_MSIG_OWNERS
+  PAGE_MSIG_OWNERS,
+  PAGE_MSIG_WITHDRAW,
+  PAGE_MSIG_CHANGE_OWNER,
+  PAGE_MSIG_REMOVE_SIGNER,
+  PAGE_MSIG_ADD_SIGNER
 } from '../../../constants'
 import State from './State'
 import useWallet from '../../../WalletProvider/useWallet'
 import MsgConfirmer from '../../../lib/confirm-message'
-
-const WITHDRAW = 'WITHDRAW'
-const CHANGE_OWNER = 'CHANGE_OWNER'
-const REMOVE_SIGNER = 'REMOVE_SIGNER'
-const ADD_SIGNER = 'ADD_SIGNER'
 
 const MsigHome = () => {
   const msigActorAddress = useSelector(state => state.msigActorAddress)
@@ -54,24 +53,18 @@ const MsigHome = () => {
               walletAddress={address}
               available={msig.AvailableBalance}
               total={msig.Balance}
-              setChangingOwner={() => setChildView(CHANGE_OWNER)}
-              setWithdrawing={() => setChildView(WITHDRAW)}
-              setRmSigner={() => setChildView(REMOVE_SIGNER)}
-              setAddSigner={() => setChildView(ADD_SIGNER)}
               signers={msig.Signers}
-              showRmSignerOption={msig.Signers.length > 1}
-              showChangeOwnerOption={msig.Signers.length === 1}
               childView={childView}
             />
           )}
-        {!msig.loading && !messagesPending && childView === CHANGE_OWNER && (
+        {!msig.loading && !messagesPending && childView === PAGE_MSIG_CHANGE_OWNER && (
           <ChangeOwner
             close={() => setChildView(PAGE_MSIG_HOME)}
             balance={msig.AvailableBalance}
             address={msigActorAddress}
           />
         )}
-        {!msig.loading && childView === REMOVE_SIGNER && (
+        {!msig.loading && childView === PAGE_MSIG_REMOVE_SIGNER && (
           <RemoveSigner
             close={() => setChildView(PAGE_MSIG_HOME)}
             signers={msig.Signers}
@@ -79,14 +72,14 @@ const MsigHome = () => {
             address={msigActorAddress}
           />
         )}
-        {!msig.loading && childView === WITHDRAW && (
+        {!msig.loading && childView === PAGE_MSIG_WITHDRAW && (
           <Withdraw
             close={() => setChildView(PAGE_MSIG_HOME)}
             balance={msig.AvailableBalance}
             address={msigActorAddress}
           />
         )}
-        {!msig.loading && childView === ADD_SIGNER && (
+        {!msig.loading && childView === PAGE_MSIG_ADD_SIGNER && (
           <AddSigner
             close={() => setChildView(PAGE_MSIG_HOME)}
             balance={msig.AvailableBalance}

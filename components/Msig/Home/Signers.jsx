@@ -21,7 +21,8 @@ const Signers = ({ signers, walletAddress }) => {
               key={signer.account}
               label='Additional Signer'
               address={signer.account}
-              glyphAcronym={i + 1}
+              glyphAcronym={i + 2}
+              setWidth='100%'
             />
           )
         })}

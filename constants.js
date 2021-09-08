@@ -74,3 +74,8 @@ export const PAGE_SPEED_UP = '/speed-up'
 export const PAGE_MSIG_HOME = '/vault/home'
 export const PAGE_MSIG_HISTORY = '/vault/history'
 export const PAGE_MSIG_OWNERS = '/vault/owners'
+export const PAGE_MSIG_WITHDRAW = '/vault/withdraw'
+export const PAGE_MSIG_CHANGE_OWNER = '/vault/change-owner'
+export const PAGE_MSIG_REMOVE_SIGNER = '/vault/remove-signer'
+export const PAGE_MSIG_ADD_SIGNER = '/vault/add-signer'
+

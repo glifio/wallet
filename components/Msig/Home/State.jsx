@@ -10,6 +10,7 @@ import {
 import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
 
 import Balances from './Balances'
+import Address from './Address'
 import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
@@ -33,12 +34,6 @@ const State = ({
   signers,
   msigAddress,
   available,
-  setChangingOwner,
-  setWithdrawing,
-  setRmSigner,
-  setAddSigner,
-  showRmSignerOption,
-  showChangeOwnerOption,
   total,
   walletAddress,
   childView
@@ -67,6 +62,10 @@ const State = ({
     gotoRouteWithKeyUrlParams(router, e.currentTarget.pathname)
   }
 
+  // todo: decide how to do responsive design
+  // add enough room for vault icon
+  const responsiveMenuBuffer = 1024 + 300
+
   return (
     <Box
       display='flex'
@@ -74,144 +73,119 @@ const State = ({
       minHeight='100vh'
       width='100%'
       maxWidth={20}
+      margin='0 auto'
     >
+      <Box display='flex'
+        alignItems='center'
+        position='absolute'
+        my={5}
+        css={`
+          /* todo: decide how to do responsive design */
+          @media only screen and (max-width: ${responsiveMenuBuffer}px) {
+            display: none;
+          }
+        `}
+      >
+        <IconGlif
+          size={6}
+          css={`
+            transform: rotate(-90deg);
+          `}
+        />
+        <Title ml={2}>Vault</Title>
+      </Box>
       <Menu
         display='flex'
         flexWrap='wrap'
         width='100%'
-        alignItems='flex-start'
-        justifyContent='space-between'
+        maxWidth={18}
+        margin='0 auto'
+        justifyContent='flex-start'
+        alignItems='center'
+        my={5}
       >
-        <MenuItem display='flex' width='100%' justifyContent='space-between'>
-          <Box display='flex' alignItems='center'>
-            <IconGlif
-              size={6}
-              css={`
-                transform: rotate(-90deg);
-              `}
+        <MenuItem display='flex'
+          justifyContent='space-between'
+          alignItems='center'
+          pr={3}
+          css={`
+            /* todo: decide how to do responsive design */
+            @media only screen and (min-width: ${responsiveMenuBuffer + 1}px) {
+              display: none;
+            }
+          `}
+        >
+          <IconGlif
+            size={6}
+            css={`
+              transform: rotate(-90deg);
+            `}
+          />
+          <Title ml={2}>Vault</Title>
+        </MenuItem>
+        <MenuItem display='flex'
+          justifyContent='space-between'
+        >
+            <NavLink
+              name='Assets'
+              href={PAGE_MSIG_HOME}
+              onClick={repairLink}
+              isActive={childView === PAGE_MSIG_HOME}
             />
-            <Title ml={2}>Vault</Title>
-          </Box>
-          <Box display='flex' alignItems='center'>
-            <Text color='core.darkgray' mx={4} my={0}>
-              SIGNER
-            </Text>
-            <Button
-              type='button'
-              variant='secondary'
-              onClick={setAddSigner}
-              title='Add'
-              minWidth={8}
-              height='40px'
-              borderRadius={6}
-              m={1}
+            <NavLink
+              name='History'
+              href={PAGE_MSIG_HISTORY}
+              onClick={repairLink}
+              isActive={childView === PAGE_MSIG_HISTORY}
             />
-            {showRmSignerOption && (
-              <Button
-                type='button'
-                variant='secondary'
-                onClick={setRmSigner}
-                title='Remove'
-                minWidth={8}
-                height='40px'
-                borderRadius={6}
-                m={1}
-              />
-            )}
+            <NavLink
+              name='Owners'
+              href={PAGE_MSIG_OWNERS}
+              onClick={repairLink}
+              isActive={childView === PAGE_MSIG_OWNERS}
+            />
+        </MenuItem>
+        <MenuItem ml={'auto'}>
+          <Box>
+            <Address
+              label='Multisig Address'
+              address={msigAddress}
+              glyphAcronym='Ms'
+            />
           </Box>
         </MenuItem>
-        <Menu
-          display='flex'
-          width='100%'
-          maxWidth='1024px'
-          margin='0 auto'
-          mt={[2, 4]}
-        >
-          <MenuItem
-            display='flex'
-            flexWrap='wrap'
-            alignItems='center'
-            justifyContent='space-between'
-            width='100%'
-            my={3}
-          >
-            <Box display='flex' my={3}>
-              <NavLink
-                name='Assets'
-                href={PAGE_MSIG_HOME}
-                onClick={repairLink}
-                isActive={childView === PAGE_MSIG_HOME}
-              />
-              <NavLink
-                name='History'
-                href={PAGE_MSIG_HISTORY}
-                onClick={repairLink}
-                isActive={childView === PAGE_MSIG_HISTORY}
-              />
-              <NavLink
-                name='Owners'
-                href={PAGE_MSIG_OWNERS}
-                onClick={repairLink}
-                isActive={childView === PAGE_MSIG_OWNERS}
-              />
-            </Box>
-            {childView === PAGE_MSIG_OWNERS && (
-              <div>
-                <AccountSummary
-                  msigAddress={msigAddress}
-                  walletAddress={walletAddress}
-                  signers={signers}
-                  showOnDevice={onShowOnLedger}
-                  ledgerBusy={ledgerBusy}
-                  error={reportLedgerConfigError({
-                    ...ledger,
-                    otherError: uncaughtError
-                  })}
-                  reset={reset}
-                />
-              </div>
-            )}
-            {showChangeOwnerOption && (
-              <Button
-                type='button'
-                variant='secondary'
-                onClick={setChangingOwner}
-                title='Change Signer'
-                height={6}
-                maxWidth={10}
-                minWidth={9}
-                borderRadius={6}
-              />
-            )}
-          </MenuItem>
-        </Menu>
-      </Menu>
 
+      </Menu>
       <Box
         display='flex'
-        flexDirection='column'
-        alignItems='center'
+        flexWrap='wrap'
         justifyContent='center'
-        mt={2}
-        mb={4}
+        width='100%'
+        maxWidth={18}
+        margin='0 auto'
       >
         {childView === PAGE_MSIG_HOME && (
           <Balances
             available={available}
             total={total}
-            setWithdrawing={setWithdrawing}
           />
         )}
-      </Box>
-      <Box
-        display='flex'
-        justifyContent='center'
-        alignSelf='center'
-        maxWidth={18}
-        width='100%'
-      >
         {childView === PAGE_MSIG_HISTORY && (
           <MessageHistory address={msigAddress} />
+        )}
+        {childView === PAGE_MSIG_OWNERS && (
+          <AccountSummary
+            msigAddress={msigAddress}
+            walletAddress={walletAddress}
+            signers={signers}
+            showOnDevice={onShowOnLedger}
+            ledgerBusy={ledgerBusy}
+            error={reportLedgerConfigError({
+              ...ledger,
+              otherError: uncaughtError
+            })}
+            reset={reset}
+          />
         )}
       </Box>
     </Box>
@@ -223,18 +197,12 @@ State.propTypes = {
   total: FILECOIN_NUMBER_PROP,
   msigAddress: ADDRESS_PROPTYPE,
   walletAddress: ADDRESS_PROPTYPE,
-  setChangingOwner: PropTypes.func.isRequired,
-  setWithdrawing: PropTypes.func.isRequired,
-  setRmSigner: PropTypes.func.isRequired,
-  setAddSigner: PropTypes.func.isRequired,
   signers: PropTypes.arrayOf(
     PropTypes.shape({
       account: ADDRESS_PROPTYPE,
       id: ADDRESS_PROPTYPE
     })
   ).isRequired,
-  showRmSignerOption: PropTypes.bool.isRequired,
-  showChangeOwnerOption: PropTypes.bool.isRequired,
   childView: null
 }
 

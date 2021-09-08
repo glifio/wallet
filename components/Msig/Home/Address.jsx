@@ -4,7 +4,7 @@ import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
 import { Box, Glyph, CopyAddress, Label, IconLedger } from '../../Shared'
 
-const Address = ({ address, label, glyphAcronym }) => {
+const Address = ({ setWidth, address, label, glyphAcronym }) => {
   return (
     <Box
       display='flex'
@@ -17,7 +17,8 @@ const Address = ({ address, label, glyphAcronym }) => {
       mr={2}
       my={1}
       borderRadius={2}
-      maxWidth={11}
+      maxWidth={setWidth ? 'none' : 11}
+      width={setWidth || 'auto'}
     >
       {glyphAcronym ? (
         <Glyph
@@ -45,7 +46,6 @@ const Address = ({ address, label, glyphAcronym }) => {
       <Box flexGrow='1'>
         <Label fontSize={1}>{label}</Label>
         <CopyAddress
-          justifyContent='space-between'
           color='core.nearblack'
           address={address}
         />
