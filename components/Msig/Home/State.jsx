@@ -234,7 +234,7 @@ State.propTypes = {
     })
   ).isRequired,
   showRmSignerOption: PropTypes.bool.isRequired,
-  showChangeOwnerOption: PropTypes.bool.isRequired
+  showChangeOwnerOption: PropTypes.bool.isRequired,
   childView: null
 }
 
