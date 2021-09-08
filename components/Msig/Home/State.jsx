@@ -130,24 +130,29 @@ const State = ({
             alignItems='center'
             justifyContent='space-between'
             width='100%'
+            my={3}
           >
-            <div>
+            <Box display='flex' my={3}>
               <NavLink name='Assets' href={PAGE_MSIG_HOME} onClick={repairLink} isActive={childView === PAGE_MSIG_HOME} />
               <NavLink name='History' href={PAGE_MSIG_HISTORY} onClick={repairLink} isActive={childView === PAGE_MSIG_HISTORY} />
               <NavLink name='Owners' href={PAGE_MSIG_OWNERS} onClick={repairLink} isActive={childView === PAGE_MSIG_OWNERS} />
-            </div>
-            <AccountSummary
-              msigAddress={msigAddress}
-              walletAddress={walletAddress}
-              signers={signers}
-              showOnDevice={onShowOnLedger}
-              ledgerBusy={ledgerBusy}
-              error={reportLedgerConfigError({
-                ...ledger,
-                otherError: uncaughtError
-              })}
-              reset={reset}
-            />
+            </Box>
+            {
+              childView === PAGE_MSIG_OWNERS && <div>
+                <AccountSummary
+                  msigAddress={msigAddress}
+                  walletAddress={walletAddress}
+                  signers={signers}
+                  showOnDevice={onShowOnLedger}
+                  ledgerBusy={ledgerBusy}
+                  error={reportLedgerConfigError({
+                    ...ledger,
+                    otherError: uncaughtError
+                  })}
+                  reset={reset}
+                />
+              </div>
+            }
             {showChangeOwnerOption && (
               <Button
                 type='button'
