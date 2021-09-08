@@ -18,6 +18,7 @@ import {
 import State from './State'
 import useWallet from '../../../WalletProvider/useWallet'
 import MsgConfirmer from '../../../lib/confirm-message'
+import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
 
 const MsigHome = () => {
   const msigActorAddress = useSelector(state => state.msigActorAddress)
@@ -57,36 +58,36 @@ const MsigHome = () => {
               childView={childView}
             />
           )}
-        {!msig.loading &&
-          !messagesPending &&
-          childView === PAGE_MSIG_CHANGE_OWNER && (
-            <ChangeOwner
-              close={() => setChildView(PAGE_MSIG_HOME)}
-              balance={msig.AvailableBalance}
-              address={msigActorAddress}
-            />
-          )}
-        {!msig.loading && childView === PAGE_MSIG_REMOVE_SIGNER && (
-          <RemoveSigner
-            close={() => setChildView(PAGE_MSIG_HOME)}
-            signers={msig.Signers}
-            balance={msig.AvailableBalance}
-            address={msigActorAddress}
-          />
-        )}
         {!msig.loading && childView === PAGE_MSIG_WITHDRAW && (
           <Withdraw
-            close={() => setChildView(PAGE_MSIG_HOME)}
+            close={ () => {gotoRouteWithKeyUrlParams(router, PAGE_MSIG_HOME)} }
             balance={msig.AvailableBalance}
             address={msigActorAddress}
           />
         )}
         {!msig.loading && childView === PAGE_MSIG_ADD_SIGNER && (
           <AddSigner
-            close={() => setChildView(PAGE_MSIG_HOME)}
+            close={ () => {gotoRouteWithKeyUrlParams(router, PAGE_MSIG_OWNERS)} }
             balance={msig.AvailableBalance}
             address={msigActorAddress}
           />
+        )}
+        {!msig.loading && childView === PAGE_MSIG_REMOVE_SIGNER && (
+          <RemoveSigner
+            close={ () => {gotoRouteWithKeyUrlParams(router, PAGE_MSIG_OWNERS)} }
+            signers={msig.Signers}
+            balance={msig.AvailableBalance}
+            address={msigActorAddress}
+          />
+        )}
+        {!msig.loading &&
+          !messagesPending &&
+          childView === PAGE_MSIG_CHANGE_OWNER && (
+            <ChangeOwner
+              close={ () => {gotoRouteWithKeyUrlParams(router, PAGE_MSIG_CHANGE_OWNER)} }
+              balance={msig.AvailableBalance}
+              address={msigActorAddress}
+            />
         )}
       </Box>
     </>

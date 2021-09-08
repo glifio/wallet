@@ -1,7 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import { useRouter } from 'next/router'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
+
+import {
+  PAGE_MSIG_CHANGE_OWNER,
+  PAGE_MSIG_REMOVE_SIGNER,
+  PAGE_MSIG_ADD_SIGNER
+} from '../../../constants'
 
 import {
   Box,
@@ -16,20 +23,9 @@ import {
 } from '../../Shared'
 import Address from './Address'
 import Signers from './Signers'
+import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
 
 const ButtonViewOnLedgerDevice = styled(BaseButton)``
-
-const addSigner = () => {
-  console.log('addSigner')
-}
-
-const removeSigner = () => {
-  alert('Does nothing for now. Needs to be moved inline to each signer.')
-}
-
-const changeOwner = () => {
-  console.log('changeOwner')
-}
 
 const AccountSummary = ({
   msigAddress,
@@ -40,6 +36,8 @@ const AccountSummary = ({
   ledgerBusy,
   error
 }) => {
+  const router = useRouter()
+
   return error ? (
     <Box display='flex'>
       <Box
@@ -134,7 +132,7 @@ const AccountSummary = ({
         <Button
           type='button'
           variant='secondary'
-          onClick={addSigner}
+          onClick={() => {gotoRouteWithKeyUrlParams(router, PAGE_MSIG_ADD_SIGNER)}}
           title='Add Signer'
           minWidth={8}
           height='40px'
@@ -145,7 +143,7 @@ const AccountSummary = ({
           <Button
             type='button'
             variant='secondary'
-            onClick={changeOwner}
+            onClick={() => {gotoRouteWithKeyUrlParams(router, PAGE_MSIG_CHANGE_OWNER)}}
             title='Change Signer'
             height={6}
             maxWidth={10}
@@ -158,7 +156,7 @@ const AccountSummary = ({
           <Button
             type='button'
             variant='secondary'
-            onClick={removeSigner}
+            onClick={() => {gotoRouteWithKeyUrlParams(router, PAGE_MSIG_REMOVE_SIGNER)}}
             title='Remove Signer'
             minWidth={8}
             height='40px'
