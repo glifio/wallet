@@ -1,12 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { func } from 'prop-types'
 import { useRouter } from 'next/router'
 import { Box, Button, Num, Title } from '../../Shared'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
 
-import { PAGE_MSIG_HOME, PAGE_MSIG_WITHDRAW } from '../../../constants'
+import { PAGE_MSIG_WITHDRAW } from '../../../constants'
 
 import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
 

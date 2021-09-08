@@ -15,15 +15,7 @@ import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
 } from '../../../customPropTypes'
-import {
-  Box,
-  Button,
-  Title,
-  Text,
-  Menu,
-  MenuItem,
-  IconGlif
-} from '../../Shared'
+import { Box, Title, Menu, MenuItem, IconGlif } from '../../Shared'
 import AccountSummary from './AccountSummary'
 import useWallet from '../../../WalletProvider/useWallet'
 import { useWalletProvider } from '../../../WalletProvider'
@@ -58,7 +50,6 @@ const State = ({
   const repairLink = e => {
     e.preventDefault()
 
-    console.log(e.currentTarget.pathname)
     gotoRouteWithKeyUrlParams(router, e.currentTarget.pathname)
   }
 

@@ -1,4 +1,4 @@
-import { PAGE_HOME, PAGE_SPEED_UP } from '../../constants'
+import { PAGE_HOME } from '../../constants'
 
 export const persistKeyUrlParams = router => {
   const keyParams = new Set(['network'])

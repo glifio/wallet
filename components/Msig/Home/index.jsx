@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import { useMsig } from '../../../MsigProvider'
@@ -28,11 +28,9 @@ const MsigHome = () => {
   const msig = useMsig(msigActorAddress)
   const { address } = useWallet()
 
-  // todo temp hack to demonstrate urls.. fix later
+  // todo: in progress replacing childView with urls...
   const router = useRouter()
-  const defaultView = router.pathname
-
-  const [childView, setChildView] = useState(defaultView)
+  const childView = router.pathname
 
   return (
     <>

@@ -22,7 +22,7 @@ const Signers = ({ signers, walletAddress }) => {
               label='Additional Signer'
               address={signer.account}
               glyphAcronym={i + 2}
-              setWidth='100%'
+              widthOverride='100%'
             />
           )
         })}

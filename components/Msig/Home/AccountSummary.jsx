@@ -28,7 +28,6 @@ import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
 const ButtonViewOnLedgerDevice = styled(BaseButton)``
 
 const AccountSummary = ({
-  msigAddress,
   showOnDevice,
   walletAddress,
   signers,
@@ -176,7 +175,6 @@ const AccountSummary = ({
 }
 
 AccountSummary.propTypes = {
-  msigAddress: ADDRESS_PROPTYPE,
   walletAddress: ADDRESS_PROPTYPE,
   showOnDevice: PropTypes.func.isRequired,
   ledgerBusy: PropTypes.bool.isRequired,

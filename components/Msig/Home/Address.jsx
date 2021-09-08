@@ -4,7 +4,7 @@ import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
 import { Box, Glyph, CopyAddress, Label, IconLedger } from '../../Shared'
 
-const Address = ({ setWidth, address, label, glyphAcronym }) => {
+const Address = ({ widthOverride, address, label, glyphAcronym }) => {
   return (
     <Box
       display='flex'
@@ -17,8 +17,8 @@ const Address = ({ setWidth, address, label, glyphAcronym }) => {
       mr={2}
       my={1}
       borderRadius={2}
-      maxWidth={setWidth ? 'none' : 11}
-      width={setWidth || 'auto'}
+      maxWidth={widthOverride ? 'none' : 11}
+      width={widthOverride || 'auto'}
     >
       {glyphAcronym ? (
         <Glyph
@@ -54,7 +54,8 @@ const Address = ({ setWidth, address, label, glyphAcronym }) => {
 Address.propTypes = {
   address: ADDRESS_PROPTYPE,
   label: PropTypes.string.isRequired,
-  glyphAcronym: PropTypes.string
+  glyphAcronym: PropTypes.string,
+  widthOverride: PropTypes.bool
 }
 
 export default Address
