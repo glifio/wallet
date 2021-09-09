@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 import { validateAddressString } from '@glif/filecoin-address'
 import styled from 'styled-components'
-import { useMsigProvider } from '../../MsigProvider'
+import { useMsig } from '../../MsigProvider'
 import {
   Box,
   Button,
@@ -27,7 +27,7 @@ const Form = styled.form`
 const ACTOR_NOT_FOUND_ERR = 'Actor not found'
 
 const EnterActorAddress = () => {
-  const { setMsigActor, errors: msigActorErrors } = useMsigProvider()
+  const { setMsigActor, errors: msigActorErrors } = useMsig()
   const router = useRouter()
   const [err, setErr] = useState('')
   const input = useRef('')

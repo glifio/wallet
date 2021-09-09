@@ -12,20 +12,26 @@ export interface MsigActorState {
   ActorCode: string
   Balance: FilecoinNumber
   AvailableBalance: FilecoinNumber
-  loading: boolean
-  Signers: string[]
-  PendingTxns: any
+  InitialBalance: FilecoinNumber
+  NextTxnID: number
+  NumApprovalsThreshold: number
+  StartEpoch: number
+  UnlockDuration: number
+  Signers: { id: string; account: string }[]
   errors: MsigActorErrors
 }
 
 export const emptyMsigState: MsigActorState = {
-  Address: '',
+  Address: null,
   ActorCode: '',
   Balance: new FilecoinNumber('0', 'fil'),
   AvailableBalance: new FilecoinNumber('0', 'fil'),
-  loading: true,
   Signers: [],
-  PendingTxns: {},
+  InitialBalance: new FilecoinNumber('0', 'fil'),
+  NextTxnID: 0,
+  NumApprovalsThreshold: 0,
+  StartEpoch: 0,
+  UnlockDuration: 0,
   errors: {
     notMsigActor: false,
     connectedWalletNotMsigSigner: false,

@@ -20,16 +20,26 @@ export default async function fetchMsigState(
         InitialBalance: string
         NextTxnID: number
         NumApprovalsThreshold: number
-        PendingTxns: any
         Signers: string[]
         StartEpoch: number
         UnlockDuration: number
       }
     }>('StateReadState', actorID, null)
-    const { Code } = await lCli.request('StateGetActor', actorID, null)
-    const { data: ActorCode } = await axios.get<string>(
-      `https://ipfs.io/ipfs/${Code['/']}`
-    )
+
+    const [{ Code }, availableBalance] = await Promise.all([
+      lCli.request<{ Code: object }>('StateGetActor', actorID, null),
+      lCli.request<string>('MsigGetAvailableBalance', actorID, null)
+    ])
+
+    const [{ data: ActorCode }, accountKeys] = await Promise.all([
+      // get the actorCode so we can properly deserialize params in the future
+      // and check to make sure this is a supported actor type
+      axios.get<string>(`https://ipfs.io/ipfs/${Code['/']}`),
+      // for each signer, compute their account key so we have both in state for later use
+      Promise.all(
+        State?.Signers.map(s => lCli.request('StateAccountKey', s, null))
+      )
+    ])
 
     if (!ActorCode?.includes('multisig')) {
       return {
@@ -43,14 +53,34 @@ export default async function fetchMsigState(
       }
     }
 
+    if (!(await isAddressSigner(lCli, signerAddress, State?.Signers))) {
+      return {
+        ...emptyMsigState,
+        errors: {
+          notMsigActor: false,
+          connectedWalletNotMsigSigner: true,
+          actorNotFound: false,
+          unhandledError: ''
+        }
+      }
+    }
+
     return {
-      Address: '',
-      Balance: new FilecoinNumber('0', 'fil'),
-      AvailableBalance: new FilecoinNumber('0', 'fil'),
-      loading: false,
-      Signers: State.Signers,
-      PendingTxns: State.PendingTxns,
+      Address: actorID,
+      Balance: new FilecoinNumber(Balance, 'attofil'),
+      AvailableBalance: new FilecoinNumber(availableBalance, 'fil'),
+      Signers: State.Signers.map((id, idx) => ({
+        // f0 address
+        id,
+        // non f0 address
+        account: accountKeys[idx]
+      })),
       ActorCode,
+      InitialBalance: new FilecoinNumber(State.InitialBalance, 'attofil'),
+      NextTxnID: State.NextTxnID,
+      NumApprovalsThreshold: State.NumApprovalsThreshold,
+      StartEpoch: State.StartEpoch,
+      UnlockDuration: State.UnlockDuration,
       errors: {
         notMsigActor: false,
         connectedWalletNotMsigSigner: false,
