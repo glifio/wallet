@@ -1,8 +1,8 @@
-import React, { useRef, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 import { validateAddressString } from '@glif/filecoin-address'
 import styled from 'styled-components'
+import { useMsigProvider } from '../../MsigProvider'
 import {
   Box,
   Button,
@@ -14,7 +14,6 @@ import {
   Title
 } from '../Shared'
 import { IconLedger } from '../Shared/Icons'
-import { setMsigActor } from '../../store/actions'
 
 const Form = styled.form`
   width: 100%;
@@ -25,21 +24,32 @@ const Form = styled.form`
   align-items: center;
 `
 
+const ACTOR_NOT_FOUND_ERR = 'Actor not found'
+
 const EnterActorAddress = () => {
+  const { setMsigActor, errors: msigActorErrors } = useMsigProvider()
   const router = useRouter()
-  const dispatch = useDispatch()
   const [err, setErr] = useState('')
   const input = useRef('')
 
+  useEffect(() => {
+    if (!err && msigActorErrors.actorNotFound) {
+      setErr(ACTOR_NOT_FOUND_ERR)
+    }
+  }, [err, setErr, msigActorErrors.actorNotFound])
+
   const onSubmit = e => {
     e.preventDefault()
+    setErr('')
     const trimmedAddr = input.current.value.trim()
     if (!validateAddressString(trimmedAddr)) return setErr('Invalid address.')
     if (Number(trimmedAddr[1]) !== 0 && Number(trimmedAddr[1]) !== 2)
       return setErr('Invalid Actor Address. Second character must be 0 or 2.')
-    dispatch(setMsigActor(trimmedAddr))
-    const searchParams = new URLSearchParams(router.query)
-    router.push(`/vault/home?${searchParams.toString()}`)
+    setMsigActor(trimmedAddr)
+
+    // commented out for testing for now - TODO - comment back in when ready
+    // const searchParams = new URLSearchParams(router.query)
+    // router.push(`/vault/home?${searchParams.toString()}`)
   }
 
   return (
