@@ -4,6 +4,7 @@ import axios from 'axios'
 
 import isAddressSigner from './isAddressSigner'
 import { MsigActorState, emptyMsigState } from '../../MsigProvider/types'
+import { CID } from '@glif/filecoin-wallet-provider'
 
 const lCli = new LotusRPCEngine({
   apiAddress: process.env.LOTUS_NODE_JSONRPC
@@ -27,7 +28,7 @@ export default async function fetchMsigState(
     }>('StateReadState', actorID, null)
 
     const [{ Code }, availableBalance] = await Promise.all([
-      lCli.request<{ Code: { '/': string } }>('StateGetActor', actorID, null),
+      lCli.request<{ Code: CID }>('StateGetActor', actorID, null),
       lCli.request<string>('MsigGetAvailableBalance', actorID, null)
     ])
 

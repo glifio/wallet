@@ -1,7 +1,6 @@
 import { useState, createContext, ReactNode, useContext, Dispatch } from 'react'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import useSWR, { SWRConfig } from 'swr'
-import { useRouter } from 'next/router'
 import useWallet from '../WalletProvider/useWallet'
 import { fetchMsigState } from '../utils/msig'
 import { MsigActorState, emptyMsigState } from './types'

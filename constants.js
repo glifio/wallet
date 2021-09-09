@@ -22,6 +22,8 @@ export const TESTNET = 't'
 export const MAINNET_PATH_CODE = 461
 export const TESTNET_PATH_CODE = 1
 
+export const EXEC_ACTOR = 'f01'
+
 /* TX METHOD TYPES */
 export const SEND = 'SEND'
 export const PROPOSE = 'PROPOSE'
