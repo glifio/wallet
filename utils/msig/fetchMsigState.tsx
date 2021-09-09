@@ -27,7 +27,7 @@ export default async function fetchMsigState(
     }>('StateReadState', actorID, null)
 
     const [{ Code }, availableBalance] = await Promise.all([
-      lCli.request<{ Code: object }>('StateGetActor', actorID, null),
+      lCli.request<{ Code: { '/': string } }>('StateGetActor', actorID, null),
       lCli.request<string>('MsigGetAvailableBalance', actorID, null)
     ])
 
@@ -68,7 +68,7 @@ export default async function fetchMsigState(
     return {
       Address: actorID,
       Balance: new FilecoinNumber(Balance, 'attofil'),
-      AvailableBalance: new FilecoinNumber(availableBalance, 'fil'),
+      AvailableBalance: new FilecoinNumber(availableBalance, 'attofil'),
       Signers: State.Signers.map((id, idx) => ({
         // f0 address
         id,

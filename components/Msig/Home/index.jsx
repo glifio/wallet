@@ -16,11 +16,10 @@ const REMOVE_SIGNER = 'REMOVE_SIGNER'
 const ADD_SIGNER = 'ADD_SIGNER'
 
 const MsigHome = () => {
-  const msigActorAddress = useSelector(state => state.msigActorAddress)
   const messagesPending = useSelector(
     state => state.messages.pending.length > 0
   )
-  const msig = useMsig(msigActorAddress)
+  const msig = useMsig()
   const { address } = useWallet()
   const [childView, setChildView] = useState(MSIG_STATE)
   return (
@@ -36,7 +35,7 @@ const MsigHome = () => {
         {msig.loading && <LoadingScreen width='100%' />}
         {!msig.loading && childView === MSIG_STATE && (
           <State
-            msigAddress={msigActorAddress}
+            msigAddress={msig.Address}
             walletAddress={address}
             available={msig.AvailableBalance}
             total={msig.Balance}
@@ -53,7 +52,7 @@ const MsigHome = () => {
           <ChangeOwner
             close={() => setChildView(MSIG_STATE)}
             balance={msig.AvailableBalance}
-            address={msigActorAddress}
+            address={msig.Address}
           />
         )}
         {!msig.loading && childView === REMOVE_SIGNER && (
@@ -61,21 +60,21 @@ const MsigHome = () => {
             close={() => setChildView(MSIG_STATE)}
             signers={msig.Signers}
             balance={msig.AvailableBalance}
-            address={msigActorAddress}
+            address={msig.Address}
           />
         )}
         {!msig.loading && childView === WITHDRAW && (
           <Withdraw
             close={() => setChildView(MSIG_STATE)}
             balance={msig.AvailableBalance}
-            address={msigActorAddress}
+            address={msig.Address}
           />
         )}
         {!msig.loading && childView === ADD_SIGNER && (
           <AddSigner
             close={() => setChildView(MSIG_STATE)}
             balance={msig.AvailableBalance}
-            address={msigActorAddress}
+            address={msig.Address}
           />
         )}
       </Box>

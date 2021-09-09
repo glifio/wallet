@@ -47,9 +47,8 @@ const EnterActorAddress = () => {
       return setErr('Invalid Actor Address. Second character must be 0 or 2.')
     setMsigActor(trimmedAddr)
 
-    // commented out for testing for now - TODO - comment back in when ready
-    // const searchParams = new URLSearchParams(router.query)
-    // router.push(`/vault/home?${searchParams.toString()}`)
+    const searchParams = new URLSearchParams(router.query)
+    router.push(`/vault/home?${searchParams.toString()}`)
   }
 
   return (
