@@ -15,32 +15,15 @@ export default async function fetchMsigState(
   signerAddress: string
 ): Promise<MsigActorState> {
   try {
-    const { Balance, State } = await lCli.request<{
-      Balance: FilecoinNumber
-      State: {
-        InitialBalance: string
-        NextTxnID: number
-        NumApprovalsThreshold: number
-        Signers: string[]
-        StartEpoch: number
-        UnlockDuration: number
-      }
-    }>('StateReadState', actorID, null)
+    const { Code } = await lCli.request<{ Code: CID }>(
+      'StateGetActor',
+      actorID,
+      null
+    )
 
-    const [{ Code }, availableBalance] = await Promise.all([
-      lCli.request<{ Code: CID }>('StateGetActor', actorID, null),
-      lCli.request<string>('MsigGetAvailableBalance', actorID, null)
-    ])
-
-    const [{ data: ActorCode }, accountKeys] = await Promise.all([
-      // get the actorCode so we can properly deserialize params in the future
-      // and check to make sure this is a supported actor type
-      axios.get<string>(`https://ipfs.io/ipfs/${Code['/']}`),
-      // for each signer, compute their account key so we have both in state for later use
-      Promise.all(
-        State?.Signers.map(s => lCli.request('StateAccountKey', s, null))
-      )
-    ])
+    const { data: ActorCode } = await axios.get<string>(
+      `https://ipfs.io/ipfs/${Code['/']}`
+    )
 
     if (!ActorCode?.includes('multisig')) {
       return {
@@ -53,6 +36,27 @@ export default async function fetchMsigState(
         }
       }
     }
+
+    const { Balance, State } = await lCli.request<{
+      Balance: FilecoinNumber
+      State: {
+        InitialBalance: string
+        NextTxnID: number
+        NumApprovalsThreshold: number
+        Signers: string[]
+        StartEpoch: number
+        UnlockDuration: number
+      }
+    }>('StateReadState', actorID, null)
+
+    const [availableBalance, accountKeys] = await Promise.all([
+      lCli.request<string>('MsigGetAvailableBalance', actorID, null),
+      Promise.all(
+        State?.Signers.map(s =>
+          lCli.request<string>('StateAccountKey', s, null)
+        )
+      )
+    ])
 
     if (!(await isAddressSigner(lCli, signerAddress, State?.Signers))) {
       return {
@@ -97,6 +101,18 @@ export default async function fetchMsigState(
           notMsigActor: false,
           connectedWalletNotMsigSigner: false,
           actorNotFound: true,
+          unhandledError: ''
+        }
+      }
+    }
+
+    if (err?.message?.includes('unknown actor code')) {
+      return {
+        ...emptyMsigState,
+        errors: {
+          notMsigActor: true,
+          connectedWalletNotMsigSigner: false,
+          actorNotFound: false,
           unhandledError: ''
         }
       }
