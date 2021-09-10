@@ -229,6 +229,7 @@ describe('Funds input', () => {
             value: new FilecoinNumber('5', 'fil')
           }
         })
+        await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
@@ -267,6 +268,7 @@ describe('Funds input', () => {
             value: '50'
           }
         })
+        await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
