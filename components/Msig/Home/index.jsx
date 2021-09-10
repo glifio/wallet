@@ -22,11 +22,11 @@ import MsgConfirmer from '../../../lib/confirm-message'
 import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
 
 const MsigHome = () => {
-  const msigActorAddress = useSelector(state => state.msigActorAddress)
   const messagesPending = useSelector(
     state => state.messages.pending.length > 0
   )
-  const msig = useMsig(msigActorAddress)
+
+  const msig = useMsig()
   const { address } = useWallet()
 
   // todo: in progress replacing childView with urls...
@@ -49,7 +49,7 @@ const MsigHome = () => {
             childView === PAGE_MSIG_HISTORY ||
             childView === PAGE_MSIG_OWNERS) && (
             <State
-              msigAddress={msigActorAddress}
+              msigAddress={msig.Address}
               walletAddress={address}
               available={msig.AvailableBalance}
               total={msig.Balance}
@@ -63,7 +63,7 @@ const MsigHome = () => {
               gotoRouteWithKeyUrlParams(router, PAGE_MSIG_HOME)
             }}
             balance={msig.AvailableBalance}
-            address={msigActorAddress}
+            address={msig.Address}
           />
         )}
         {!msig.loading && childView === PAGE_MSIG_ADD_SIGNER && (
@@ -75,7 +75,7 @@ const MsigHome = () => {
               gotoRouteWithKeyUrlParams(router, PAGE_MSIG_HISTORY)
             }}
             balance={msig.AvailableBalance}
-            address={msigActorAddress}
+            address={msig.Address}
           />
         )}
         {!msig.loading &&
@@ -90,7 +90,7 @@ const MsigHome = () => {
               }}
               signers={msig.Signers}
               balance={msig.AvailableBalance}
-              address={msigActorAddress}
+              address={msig.Address}
               cid={router.query.cid || null}
             />
           )}
@@ -102,7 +102,7 @@ const MsigHome = () => {
                 gotoRouteWithKeyUrlParams(router, PAGE_MSIG_CHANGE_OWNER)
               }}
               balance={msig.AvailableBalance}
-              address={msigActorAddress}
+              address={msig.Address}
             />
           )}
       </Box>
