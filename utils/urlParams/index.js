@@ -28,3 +28,11 @@ export const gotoRouteWithKeyUrlParams = (router, routeUrl, extraParams) => {
 export const gotoPageHomeWithKeyParams = (router, extraParams) => {
   gotoRouteWithKeyUrlParams(router, PAGE_HOME, extraParams)
 }
+
+export const detectPage = router => {
+  // We're using the pathname as a routing page id
+  // These are matched against the pathnames declared in /constants.js
+  // Note that for next.js dynamic urls, the pathname will returned in the form like this /[cid]
+  // so it will still match a dynamic url's string declared in constants.
+  return router.pathname
+}

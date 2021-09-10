@@ -19,7 +19,7 @@ import {
 import State from './State'
 import useWallet from '../../../WalletProvider/useWallet'
 import MsgConfirmer from '../../../lib/confirm-message'
-import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
+import { gotoRouteWithKeyUrlParams, detectPage } from '../../../utils/urlParams'
 
 const MsigHome = () => {
   const messagesPending = useSelector(
@@ -29,9 +29,8 @@ const MsigHome = () => {
   const msig = useMsig()
   const { address } = useWallet()
 
-  // todo: in progress replacing childView with urls...
   const router = useRouter()
-  const childView = router.pathname
+  const pageId = detectPage(router)
 
   return (
     <>
@@ -45,28 +44,30 @@ const MsigHome = () => {
       >
         {msig.loading && <LoadingScreen width='100%' />}
         {!msig.loading &&
-          (childView === PAGE_MSIG_HOME ||
-            childView === PAGE_MSIG_HISTORY ||
-            childView === PAGE_MSIG_OWNERS) && (
+          (pageId === PAGE_MSIG_HOME ||
+            pageId === PAGE_MSIG_HISTORY ||
+            pageId === PAGE_MSIG_OWNERS) && (
             <State
               msigAddress={msig.Address}
               walletAddress={address}
               available={msig.AvailableBalance}
               total={msig.Balance}
               signers={msig.Signers}
-              childView={childView}
             />
           )}
-        {!msig.loading && childView === PAGE_MSIG_WITHDRAW && (
+        {!msig.loading && pageId === PAGE_MSIG_WITHDRAW && (
           <Withdraw
-            close={() => {
+            onClose={() => {
               gotoRouteWithKeyUrlParams(router, PAGE_MSIG_HOME)
+            }}
+            onComplete={() => {
+              gotoRouteWithKeyUrlParams(router, PAGE_MSIG_HISTORY)
             }}
             balance={msig.AvailableBalance}
             address={msig.Address}
           />
         )}
-        {!msig.loading && childView === PAGE_MSIG_ADD_SIGNER && (
+        {!msig.loading && pageId === PAGE_MSIG_ADD_SIGNER && (
           <AddSigner
             onClose={() => {
               gotoRouteWithKeyUrlParams(router, PAGE_MSIG_OWNERS)
@@ -79,8 +80,8 @@ const MsigHome = () => {
           />
         )}
         {!msig.loading &&
-          (childView === PAGE_MSIG_REMOVE_SIGNER ||
-            childView === PAGE_MSIG_REMOVE_SIGNER_WITH_CID) && (
+          (pageId === PAGE_MSIG_REMOVE_SIGNER ||
+            pageId === PAGE_MSIG_REMOVE_SIGNER_WITH_CID) && (
             <RemoveSigner
               onClose={() => {
                 gotoRouteWithKeyUrlParams(router, PAGE_MSIG_OWNERS)
@@ -96,10 +97,13 @@ const MsigHome = () => {
           )}
         {!msig.loading &&
           !messagesPending &&
-          childView === PAGE_MSIG_CHANGE_OWNER && (
+          pageId === PAGE_MSIG_CHANGE_OWNER && (
             <ChangeOwner
-              close={() => {
-                gotoRouteWithKeyUrlParams(router, PAGE_MSIG_CHANGE_OWNER)
+              onClose={() => {
+                gotoRouteWithKeyUrlParams(router, PAGE_MSIG_OWNERS)
+              }}
+              onComplete={() => {
+                gotoRouteWithKeyUrlParams(router, PAGE_MSIG_HISTORY)
               }}
               balance={msig.AvailableBalance}
               address={msig.Address}

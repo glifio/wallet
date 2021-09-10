@@ -7,7 +7,7 @@ import {
   PAGE_MSIG_HISTORY,
   PAGE_MSIG_OWNERS
 } from '../../../constants'
-import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
+import { gotoRouteWithKeyUrlParams, detectPage } from '../../../utils/urlParams'
 
 import Balances from './Balances'
 import Address from './Address'
@@ -22,14 +22,7 @@ import { useWalletProvider } from '../../../WalletProvider'
 import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfigError'
 import MessageHistory from '../MessageHistory'
 
-const State = ({
-  signers,
-  msigAddress,
-  available,
-  total,
-  walletAddress,
-  childView
-}) => {
+const State = ({ signers, msigAddress, available, total, walletAddress }) => {
   const wallet = useWallet()
   const router = useRouter()
   const { ledger, connectLedger, resetState } = useWalletProvider()
@@ -56,6 +49,7 @@ const State = ({
   // todo: decide how to do responsive design
   // add enough room for vault icon
   const responsiveMenuBuffer = 1024 + 300
+  const pageId = detectPage(router)
 
   return (
     <Box
@@ -121,19 +115,19 @@ const State = ({
             name='Assets'
             href={PAGE_MSIG_HOME}
             onClick={repairLink}
-            isActive={childView === PAGE_MSIG_HOME}
+            isActive={pageId === PAGE_MSIG_HOME}
           />
           <NavLink
             name='History'
             href={PAGE_MSIG_HISTORY}
             onClick={repairLink}
-            isActive={childView === PAGE_MSIG_HISTORY}
+            isActive={pageId === PAGE_MSIG_HISTORY}
           />
           <NavLink
             name='Owners'
             href={PAGE_MSIG_OWNERS}
             onClick={repairLink}
-            isActive={childView === PAGE_MSIG_OWNERS}
+            isActive={pageId === PAGE_MSIG_OWNERS}
           />
         </MenuItem>
         <MenuItem ml='auto'>
@@ -154,13 +148,13 @@ const State = ({
         maxWidth={18}
         margin='0 auto'
       >
-        {childView === PAGE_MSIG_HOME && (
+        {pageId === PAGE_MSIG_HOME && (
           <Balances available={available} total={total} />
         )}
-        {childView === PAGE_MSIG_HISTORY && (
+        {pageId === PAGE_MSIG_HISTORY && (
           <MessageHistory address={msigAddress} />
         )}
-        {childView === PAGE_MSIG_OWNERS && (
+        {pageId === PAGE_MSIG_OWNERS && (
           <AccountSummary
             msigAddress={msigAddress}
             walletAddress={walletAddress}
@@ -189,8 +183,7 @@ State.propTypes = {
       account: ADDRESS_PROPTYPE,
       id: ADDRESS_PROPTYPE
     })
-  ).isRequired,
-  childView: PropTypes.string.isRequired
+  ).isRequired
 }
 
 export default State

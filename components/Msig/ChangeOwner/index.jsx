@@ -36,7 +36,7 @@ import reportError from '../../../utils/reportError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
 
-const ChangeOwner = ({ address, balance, close }) => {
+const ChangeOwner = ({ address, balance, onClose, onComplete }) => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
   const wallet = useWallet()
   const dispatch = useDispatch()
@@ -138,7 +138,7 @@ const ChangeOwner = ({ address, balance, close }) => {
         setAttemptingTx(false)
         if (msg) {
           dispatch(confirmMessage(toLowerCaseMsgFields(msg)))
-          close()
+          onComplete()
         }
       } catch (err) {
         if (err.message.includes('19')) {
@@ -200,7 +200,7 @@ const ChangeOwner = ({ address, balance, close }) => {
           setAttemptingTx(false)
           setUncaughtError('')
           resetLedgerState()
-          close()
+          onClose()
         }}
       />
       <Form onSubmit={onSubmit}>
@@ -328,7 +328,7 @@ const ChangeOwner = ({ address, balance, close }) => {
                 setGasError('')
                 resetLedgerState()
                 if (step === 1) {
-                  close()
+                  onClose()
                 } else {
                   setStep(step - 1)
                 }
@@ -351,7 +351,8 @@ const ChangeOwner = ({ address, balance, close }) => {
 ChangeOwner.propTypes = {
   address: ADDRESS_PROPTYPE,
   balance: FILECOIN_NUMBER_PROP,
-  close: PropTypes.func.isRequired
+  onClose: PropTypes.func.isRequired,
+  onComplete: PropTypes.func.isRequired
 }
 
 export default ChangeOwner

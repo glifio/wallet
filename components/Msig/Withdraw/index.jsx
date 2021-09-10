@@ -43,7 +43,7 @@ const isValidAmount = (value, balance, errorFromForms) => {
   return valueFieldFilledOut && enoughInTheBank && !errorFromForms
 }
 
-const Withdrawing = ({ address, balance, close }) => {
+const Withdrawing = ({ address, balance, onClose, onComplete }) => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
   const wallet = useWallet()
   const dispatch = useDispatch()
@@ -144,7 +144,7 @@ const Withdrawing = ({ address, balance, close }) => {
         if (msg) {
           dispatch(confirmMessage(toLowerCaseMsgFields(msg)))
           setValue(new FilecoinNumber('0', 'fil'))
-          close()
+          onComplete()
         }
       } catch (err) {
         if (err.message.includes('19')) {
@@ -209,7 +209,7 @@ const Withdrawing = ({ address, balance, close }) => {
             setUncaughtError('')
             setGasError('')
             resetLedgerState()
-            close()
+            onClose()
           }}
         />
         <Form onSubmit={onSubmit}>
@@ -384,7 +384,7 @@ const Withdrawing = ({ address, balance, close }) => {
                   setGasError('')
                   resetLedgerState()
                   if (step === 1) {
-                    close()
+                    onClose()
                   } else {
                     setStep(step - 1)
                   }
@@ -408,7 +408,8 @@ const Withdrawing = ({ address, balance, close }) => {
 Withdrawing.propTypes = {
   address: ADDRESS_PROPTYPE,
   balance: FILECOIN_NUMBER_PROP,
-  close: PropTypes.func.isRequired
+  onClose: PropTypes.func.isRequired,
+  onComplete: PropTypes.func.isRequired
 }
 
 export default Withdrawing
