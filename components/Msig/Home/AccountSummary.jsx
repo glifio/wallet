@@ -99,7 +99,7 @@ const AccountSummary = ({
       <Box position='relative' display='flex' flexWrap='wrap' my={3}>
         <Address
           address={walletAddress}
-          glyphAcronym={1}
+          glyphAcronym={'1'}
           label='Signer 1 - Your Ledger'
         />
 
@@ -155,7 +155,7 @@ const AccountSummary = ({
           />
         )}
         {/* Not used for now. This will be moved inline to a singer item */}
-        {signers.length > 1 && (
+       {/* {signers.length > 1 && (
           <Button
             type='button'
             variant='secondary'
@@ -168,7 +168,7 @@ const AccountSummary = ({
             borderRadius={6}
             m={1}
           />
-        )}
+        )}*/}
       </Box>
     </Box>
   )

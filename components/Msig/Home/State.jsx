@@ -190,7 +190,7 @@ State.propTypes = {
       id: ADDRESS_PROPTYPE
     })
   ).isRequired,
-  childView: null
+  childView: PropTypes.string.isRequired
 }
 
 export default State

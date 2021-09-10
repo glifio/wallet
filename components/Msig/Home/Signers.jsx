@@ -5,8 +5,16 @@ import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import { Box } from '../../Shared'
 import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
 import Address from './Address'
+import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
+import { useRouter } from 'next/router'
+
+import {
+  PAGE_MSIG_REMOVE_SIGNER
+} from '../../../constants'
 
 const Signers = ({ signers, walletAddress }) => {
+  const router = useRouter()
+
   return (
     <Box display='flex' flexWrap='wrap'>
       {signers
@@ -21,8 +29,9 @@ const Signers = ({ signers, walletAddress }) => {
               key={signer.account}
               label='Additional Signer'
               address={signer.account}
-              glyphAcronym={i + 2}
+              glyphAcronym={(i + 2).toString()}
               widthOverride='100%'
+              onClose={ () => {gotoRouteWithKeyUrlParams(router, `${PAGE_MSIG_REMOVE_SIGNER}/${signer.account}`)} }
             />
           )
         })}

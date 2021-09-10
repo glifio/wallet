@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
-import { Box, Glyph, CopyAddress, Label, IconLedger } from '../../Shared'
+import { Box, Glyph, CopyAddress, Label, IconLedger, ButtonClose} from '../../Shared'
 
-const Address = ({ widthOverride, address, label, glyphAcronym }) => {
+const Address = ({ widthOverride, address, label, glyphAcronym, onClose }) => {
   return (
     <Box
       display='flex'
@@ -47,6 +47,14 @@ const Address = ({ widthOverride, address, label, glyphAcronym }) => {
         <Label fontSize={1}>{label}</Label>
         <CopyAddress color='core.nearblack' address={address} />
       </Box>
+      {
+        onClose &&
+        <ButtonClose
+          role='button'
+          type='button'
+          onClick={onClose}
+        />
+      }
     </Box>
   )
 }
@@ -55,7 +63,8 @@ Address.propTypes = {
   address: ADDRESS_PROPTYPE,
   label: PropTypes.string.isRequired,
   glyphAcronym: PropTypes.string,
-  widthOverride: PropTypes.bool
+  widthOverride: PropTypes.string,
+  onClose: PropTypes.func
 }
 
 export default Address

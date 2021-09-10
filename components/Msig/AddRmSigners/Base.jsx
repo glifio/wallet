@@ -31,7 +31,7 @@ import { AddSignerInput, RemoveSignerInput } from './SignerInput'
 
 const ManipulateSignersHOC = method => {
   if (!method) throw new Error('must pass method to ManipulateSignersHOC')
-  const Base = ({ address, balance, close, signers }) => {
+  const Base = ({ address, balance, close, signers, cid }) => {
     const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
     const wallet = useWallet()
     const dispatch = useDispatch()
@@ -46,6 +46,9 @@ const ManipulateSignersHOC = method => {
     const [gasError, setGasError] = useState('')
     const [gasInfo, setGasInfo] = useState(emptyGasInfo)
     const [frozen, setFrozen] = useState(false)
+
+    // todo
+    console.log(`TODO: change UI auto select the id to remove. Selected: ${cid}`)
 
     const constructMsg = (nonce = 0) => {
       const innerParams = {
@@ -362,7 +365,8 @@ const ManipulateSignersHOC = method => {
         account: ADDRESS_PROPTYPE,
         id: ADDRESS_PROPTYPE
       })
-    )
+    ),
+    cid: ADDRESS_PROPTYPE
   }
   return Base
 }

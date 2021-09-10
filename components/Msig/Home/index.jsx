@@ -12,6 +12,7 @@ import {
   PAGE_MSIG_OWNERS,
   PAGE_MSIG_WITHDRAW,
   PAGE_MSIG_CHANGE_OWNER,
+  PAGE_MSIG_REMOVE_SIGNER_WITH_CID,
   PAGE_MSIG_REMOVE_SIGNER,
   PAGE_MSIG_ADD_SIGNER
 } from '../../../constants'
@@ -74,7 +75,11 @@ const MsigHome = () => {
             address={msigActorAddress}
           />
         )}
-        {!msig.loading && childView === PAGE_MSIG_REMOVE_SIGNER && (
+        {!msig.loading && (
+            childView === PAGE_MSIG_REMOVE_SIGNER ||
+            childView === PAGE_MSIG_REMOVE_SIGNER_WITH_CID
+          )
+          && (
           <RemoveSigner
             close={() => {
               gotoRouteWithKeyUrlParams(router, PAGE_MSIG_OWNERS)
@@ -82,6 +87,7 @@ const MsigHome = () => {
             signers={msig.Signers}
             balance={msig.AvailableBalance}
             address={msigActorAddress}
+            cid={router.query.cid || null}
           />
         )}
         {!msig.loading &&
