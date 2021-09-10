@@ -3,7 +3,7 @@ import React, { useReducer } from 'react'
 import { Provider } from 'react-redux'
 import { Converter } from '@glif/filecoin-number'
 
-import { NetworkCheck } from '../../lib/check-network'
+import { NetworkChecker } from '../../lib/check-network'
 import BalancePoller from '../../lib/update-balance'
 import { ConverterContext } from '../../lib/Converter'
 import { theme, ThemeProvider } from '../../components/Shared'
@@ -20,19 +20,7 @@ import mockWalletSubproviders from '../mocks/mock-wallet-subproviders'
 import { presets, composeWalletProviderState } from './composeState'
 import { TESTNET } from '../../constants'
 
-/**
- * This function is a wrapper that mocks everything the filecoin app needs for testing
- *
- * VALID OPTIONS:
- * mockConverterInstance (an object that stubs the converter functionality)
- * walletProviderReducer (a reducer to stub the state handling of the wallet provider)
- * walletProviderInitialState(a reducer to stub the state of the walletProvider context)
- * walletProviderDispatch(a dispatcher to mock/read calls to the walletProvider's state)
- * pathname
- * query (usually { network: 'f' } or { network: TESTNET })
- */
-
-export default (statePreset = 'preOnboard', options = {}) => {
+const Index = (statePreset = 'preOnboard', options = {}) => {
   const state = options.state || presets[statePreset]
   const store = initializeStore(state)
 
@@ -74,7 +62,7 @@ export default (statePreset = 'preOnboard', options = {}) => {
                 ...mockWalletProviderContextFuncs
               }}
             >
-              <NetworkCheck
+              <NetworkChecker
                 networkFromRdx={store.getState().network}
                 pathname={pathname}
                 query={query}
@@ -95,3 +83,17 @@ export default (statePreset = 'preOnboard', options = {}) => {
     walletProvider: mockWalletProviderInstance
   }
 }
+
+/**
+ * This function is a wrapper that mocks everything the filecoin app needs for testing
+ *
+ * VALID OPTIONS:
+ * mockConverterInstance (an object that stubs the converter functionality)
+ * walletProviderReducer (a reducer to stub the state handling of the wallet provider)
+ * walletProviderInitialState(a reducer to stub the state of the walletProvider context)
+ * walletProviderDispatch(a dispatcher to mock/read calls to the walletProvider's state)
+ * pathname
+ * query (usually { network: 'f' } or { network: TESTNET })
+ */
+
+export default Index

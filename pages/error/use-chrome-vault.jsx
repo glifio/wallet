@@ -1,7 +1,7 @@
 import React from 'react'
 import { ErrorView } from '../../components/Shared'
 
-export default () => {
+const UseChromeVault = () => {
   return (
     <ErrorView
       title='You must use Google Chrome to use this feature.'
@@ -10,4 +10,6 @@ export default () => {
       linkhref='https://www.google.com/chrome'
     />
   )
-}
+};
+
+export default UseChromeVault;

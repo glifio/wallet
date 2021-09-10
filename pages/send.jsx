@@ -4,7 +4,7 @@ import SendView from '../components/Wallet/Send'
 import RenderChildrenIfWalletConnected from '../lib/RequireWallet'
 import useDesktopBrowser from '../lib/useDesktopBrowser'
 
-export default () => {
+const Send = () => {
   useDesktopBrowser()
   const router = useRouter()
   const close = () => {
@@ -16,4 +16,6 @@ export default () => {
       <SendView close={() => close()} />
     </RenderChildrenIfWalletConnected>
   )
-}
+};
+
+export default Send;

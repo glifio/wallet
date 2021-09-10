@@ -811,10 +811,6 @@ exports[`WalletView it renders correctly 1`] = `
   color: #000;
 }
 
-.c38:hover ~ .Tooltip__TooltipContent-sc-17gal6e-0 {
-  display: block;
-}
-
 .c1 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;

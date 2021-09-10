@@ -1,7 +1,7 @@
 import React from 'react'
 import { ErrorView } from '../../components/Shared'
 
-export default () => {
+const WalletDown = () => {
   return (
     <ErrorView
       title='Oops! Something went wrong.'
@@ -10,4 +10,6 @@ export default () => {
       linkhref='https://twitter.com/openworklabs'
     />
   )
-}
+};
+
+export default WalletDown;
