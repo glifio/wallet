@@ -11,18 +11,23 @@ export default async function fetchAndSetMsigActor(
   const lCli = new LotusRpcEngine({
     apiAddress: process.env.LOTUS_NODE_JSONRPC
   })
-  const receipt = await lCli.request<MessageReceipt>('StateGetReceipt', { '/': msgCid }, null)
-  if (!receipt.Return) {
+  try {
+    const receipt = await lCli.request<MessageReceipt>('StateGetReceipt', { '/': msgCid }, null)
+    if (!receipt.Return) {
+      // this error message is currently not being used anywhere in the UI - its being used moreso as a boolean that an error occured...
+      setMsigError(
+        'There was an error when creating, confirming, or fetching your multisig actor.'
+      )
+    } else if (receipt.ExitCode === 0) {
+      setMsigActor(getAddressFromReceipt(receipt.Return))
+    } else {
+      // this error message is currently not being used anywhere in the UI - its being used moreso as a boolean that an error occured...
+      setMsigError(
+        'There was an error when creating, confirming, or fetching your multisig actor.'
+      )
+    }
+  } catch (err) {
     // this error message is currently not being used anywhere in the UI - its being used moreso as a boolean that an error occured...
-    setMsigError(
-      'There was an error when creating, confirming, or fetching your multisig actor.'
-    )
-  } else if (receipt.ExitCode === 0) {
-    setMsigActor(getAddressFromReceipt(receipt.Return))
-  } else {
-    // this error message is currently not being used anywhere in the UI - its being used moreso as a boolean that an error occured...
-    setMsigError(
-      'There was an error when creating, confirming, or fetching your multisig actor.'
-    )
+    setMsigError(err?.message || err)
   }
 }
