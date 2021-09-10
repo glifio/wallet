@@ -234,7 +234,6 @@ describe('Funds input', () => {
         jest.runOnlyPendingTimers()
         await flushPromises()
         expect(setError).toHaveBeenCalled()
-        // console.log(setError.mock.calls)
         expect(setError).toHaveBeenCalledWith(
           "The amount must be smaller than this account's balance"
         )
