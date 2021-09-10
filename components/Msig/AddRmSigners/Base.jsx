@@ -38,7 +38,7 @@ const ManipulateSignersHOC = method => {
     const { serializeParams } = useWasm()
     const [step, setStep] = useState(1)
     const [attemptingTx, setAttemptingTx] = useState(false)
-    const [signerAddress, setSignerAddress] = useState('')
+    const [signerAddress, setSignerAddress] = useState(cid || '')
     const [signerAddressError, setSignerAddressError] = useState('')
     const [uncaughtError, setUncaughtError] = useState('')
     const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
@@ -46,11 +46,6 @@ const ManipulateSignersHOC = method => {
     const [gasError, setGasError] = useState('')
     const [gasInfo, setGasInfo] = useState(emptyGasInfo)
     const [frozen, setFrozen] = useState(false)
-
-    // todo
-    // console.log(
-    //   `TODO: change UI auto select the id to remove. Selected: ${cid}`
-    // )
 
     const constructMsg = (nonce = 0) => {
       const innerParams = {
