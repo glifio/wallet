@@ -23,7 +23,7 @@ import { CardHeader, CreateMultisigHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
-import { LEDGER, emptyGasInfo, EXEC } from '../../../constants'
+import { LEDGER, emptyGasInfo, EXEC, EXEC_ACTOR } from '../../../constants'
 import CustomizeFee from '../../Wallet/Send/CustomizeFee'
 import {
   reportLedgerConfigError,
@@ -75,7 +75,7 @@ const Create = () => {
     )
 
     const message = new Message({
-      to: 'f01',
+      to: EXEC_ACTOR,
       from: wallet.address,
       value: value.toAttoFil(),
       method: 2,

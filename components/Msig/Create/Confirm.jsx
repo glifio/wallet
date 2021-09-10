@@ -1,8 +1,7 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { func, string } from 'prop-types'
 import { useRouter } from 'next/router'
-import ConfirmMessage from '../../../lib/confirm-message'
 import {
   Card,
   Box,
@@ -12,8 +11,13 @@ import {
   Text,
   Glyph,
   Title
-} from '../../Shared'
-import { fetchAndSetMsigActor, clearMessages } from '../../../store/actions'
+} from '@glif/react-components'
+import ConfirmMessage from '../../../lib/confirm-message'
+import { useMsig } from '../../../MsigProvider'
+import { clearMessages } from '../../../store/actions'
+import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
+import { fetchAndSetMsigActor } from '../../../utils/msig'
+import { EXEC_ACTOR } from '../../../constants'
 
 const NextOption = ({ text, onClick }) => {
   return (
@@ -45,16 +49,49 @@ NextOption.propTypes = {
 
 const Confirm = () => {
   const dispatch = useDispatch()
+  const [msigError, setMsigError] = useState('')
+  const { setMsigActor, Address } = useMsig()
   const { pending, confirmed } = useSelector(s => s.messages)
-  const msgCid = useRef(pending[0]?.cid)
-  const msigAddr = useSelector(s => s.msigActorAddress)
+  // the create message is the one sent to the f01 actor
+  const createMsigMessage = pending.find(
+    m => EXEC_ACTOR === converAddrToFPrefix(m.to)
+  )
+
+  const { current: msgCid } = useRef(createMsigMessage?.cid)
   const router = useRouter()
 
   useEffect(() => {
-    if (confirmed.some(m => m.cid === msgCid.current)) {
-      dispatch(fetchAndSetMsigActor(msgCid.current))
+    if (confirmed.some(m => m.cid === msgCid)) {
+      fetchAndSetMsigActor(msgCid, setMsigActor, setMsigError)
     }
-  }, [confirmed, dispatch])
+  }, [confirmed, msgCid, setMsigActor, setMsigError])
+
+  if (msigError) {
+    return (
+      <Box
+        display='flex'
+        justifyContent='center'
+        width='100%'
+        minHeight='100vh'
+        p={3}
+      >
+        <Box display='flex' justifyContent='center' flexDirection='column'>
+          <Box display='flex' justifyContent='center' alignItems='center'>
+            <Title ml={2}>
+              There was an error when creating your multisig.
+            </Title>
+          </Box>
+          <Box display='flex' justifyContent='center' alignItems='center'>
+            <Text mr={2}>With CID: </Text>
+            <StyledATag href={`https://filfox.info/en/message/${msgCid}`}>
+              {msgCid}
+            </StyledATag>
+            <br />
+          </Box>
+        </Box>
+      </Box>
+    )
+  }
 
   return (
     <Box
@@ -64,7 +101,7 @@ const Confirm = () => {
       minHeight='100vh'
       p={3}
     >
-      {msigAddr ? (
+      {Address ? (
         <Box p={5}>
           <Title>Your multisig has been created.</Title>
           <Card
@@ -79,7 +116,7 @@ const Confirm = () => {
             <Text my={0} mt={3} color='core.darkgray'>
               Your Address{' '}
             </Text>
-            <Text mt={2}>{msigAddr}</Text>
+            <Text mt={2}>{Address}</Text>
           </Card>
           <Text>What would you like to do?</Text>
           <Box display='flex' justifyContent='space-between'>
@@ -96,7 +133,7 @@ const Confirm = () => {
               onClick={() => {
                 const searchParams = new URLSearchParams({
                   ...router.query,
-                  address: msigAddr
+                  address: Address
                 })
                 router.push(`/vault/print?${searchParams.toString()}`)
               }}
@@ -116,10 +153,8 @@ const Confirm = () => {
               </Box>
               <Box display='flex' justifyContent='center' alignItems='center'>
                 <Text mr={2}>With CID: </Text>
-                <StyledATag
-                  href={`https://filfox.info/en/message/${msgCid.current}`}
-                >
-                  {msgCid.current}
+                <StyledATag href={`https://filfox.info/en/message/${msgCid}`}>
+                  {msgCid}
                 </StyledATag>
                 <br />
               </Box>

@@ -1,5 +1,4 @@
-import React, { useRef, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 import { validateAddressString } from '@glif/filecoin-address'
 import styled from 'styled-components'
@@ -12,9 +11,9 @@ import {
   StyledLink,
   Text,
   Title
-} from '../Shared'
+} from '@glif/react-components'
+import { useMsig } from '../../MsigProvider'
 import { IconLedger } from '../Shared/Icons'
-import { setMsigActor } from '../../store/actions'
 
 const Form = styled.form`
   width: 100%;
@@ -25,21 +24,61 @@ const Form = styled.form`
   align-items: center;
 `
 
+const ACTOR_NOT_FOUND_ERR = 'Actor not found'
+const NOT_A_SIGNER_ERR =
+  'Your wallet is not an owner of this multisig. Please go back and choose a wallet address that is a signer of this multisig.'
+const NOT_MSIG_ACTOR_ERR =
+  'The actor you entered is not a multisig wallet. Glif only supports multisig actors.'
+
 const EnterActorAddress = () => {
+  const { setMsigActor, errors: msigActorErrors, ActorCode } = useMsig()
   const router = useRouter()
-  const dispatch = useDispatch()
   const [err, setErr] = useState('')
   const input = useRef('')
 
+  useEffect(() => {
+    if (!err && msigActorErrors.actorNotFound) {
+      setErr(ACTOR_NOT_FOUND_ERR)
+    }
+
+    if (!err && msigActorErrors.connectedWalletNotMsigSigner) {
+      setErr(NOT_A_SIGNER_ERR)
+    }
+
+    if (!err && msigActorErrors.notMsigActor) {
+      setErr(NOT_MSIG_ACTOR_ERR)
+    }
+
+    if (!err && msigActorErrors.unhandledError) {
+      setErr(msigActorErrors.unhandledError)
+    }
+  }, [
+    err,
+    setErr,
+    msigActorErrors.actorNotFound,
+    msigActorErrors.connectedWalletNotMsigSigner,
+    msigActorErrors.notMsigActor,
+    msigActorErrors.unhandledError
+  ])
+
+  // once the actor address gets populated in context
+  // we push the user to the msig home
+  useEffect(() => {
+    // as long as there is an ActorCode, we know we successfully retrieved the multisig
+    if (!err && !!ActorCode) {
+      const searchParams = new URLSearchParams(router.query)
+      router.push(`/vault/home?${searchParams.toString()}`)
+    }
+  }, [err, router, ActorCode])
+
   const onSubmit = e => {
     e.preventDefault()
+    setErr('')
     const trimmedAddr = input.current.value.trim()
     if (!validateAddressString(trimmedAddr)) return setErr('Invalid address.')
     if (Number(trimmedAddr[1]) !== 0 && Number(trimmedAddr[1]) !== 2)
       return setErr('Invalid Actor Address. Second character must be 0 or 2.')
-    dispatch(setMsigActor(trimmedAddr))
-    const searchParams = new URLSearchParams(router.query)
-    router.push(`/vault/home?${searchParams.toString()}`)
+    setMsigActor(trimmedAddr)
   }
 
   return (
