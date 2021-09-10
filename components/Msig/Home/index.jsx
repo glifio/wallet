@@ -68,8 +68,11 @@ const MsigHome = () => {
         )}
         {!msig.loading && childView === PAGE_MSIG_ADD_SIGNER && (
           <AddSigner
-            close={() => {
+            onClose={() => {
               gotoRouteWithKeyUrlParams(router, PAGE_MSIG_OWNERS)
+            }}
+            onComplete={() => {
+              gotoRouteWithKeyUrlParams(router, PAGE_MSIG_HISTORY)
             }}
             balance={msig.AvailableBalance}
             address={msigActorAddress}
@@ -79,8 +82,11 @@ const MsigHome = () => {
           (childView === PAGE_MSIG_REMOVE_SIGNER ||
             childView === PAGE_MSIG_REMOVE_SIGNER_WITH_CID) && (
             <RemoveSigner
-              close={() => {
+              onClose={() => {
                 gotoRouteWithKeyUrlParams(router, PAGE_MSIG_OWNERS)
+              }}
+              onComplete={() => {
+                gotoRouteWithKeyUrlParams(router, PAGE_MSIG_HISTORY)
               }}
               signers={msig.Signers}
               balance={msig.AvailableBalance}

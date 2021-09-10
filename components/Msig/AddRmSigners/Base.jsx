@@ -31,7 +31,7 @@ import { AddSignerInput, RemoveSignerInput } from './SignerInput'
 
 const ManipulateSignersHOC = method => {
   if (!method) throw new Error('must pass method to ManipulateSignersHOC')
-  const Base = ({ address, balance, close, signers, cid }) => {
+  const Base = ({ address, balance, onClose, onComplete, signers, cid }) => {
     const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
     const wallet = useWallet()
     const dispatch = useDispatch()
@@ -138,7 +138,7 @@ const ManipulateSignersHOC = method => {
           setAttemptingTx(false)
           if (msg) {
             dispatch(confirmMessage(toLowerCaseMsgFields(msg)))
-            close()
+            onComplete()
           }
         } catch (err) {
           if (err.message.includes('19')) {
@@ -200,7 +200,7 @@ const ManipulateSignersHOC = method => {
             setAttemptingTx(false)
             setUncaughtError('')
             resetLedgerState()
-            close()
+            onClose()
           }}
         />
         <Form onSubmit={onSubmit}>
@@ -338,7 +338,7 @@ const ManipulateSignersHOC = method => {
                   setGasError('')
                   resetLedgerState()
                   if (step === 1) {
-                    close()
+                    onClose()
                   } else {
                     setStep(step - 1)
                   }
@@ -361,7 +361,8 @@ const ManipulateSignersHOC = method => {
   Base.propTypes = {
     address: ADDRESS_PROPTYPE,
     balance: FILECOIN_NUMBER_PROP,
-    close: PropTypes.func.isRequired,
+    onClose: PropTypes.func.isRequired,
+    onComplete: PropTypes.func.isRequired,
     signers: PropTypes.arrayOf(
       PropTypes.shape({
         account: ADDRESS_PROPTYPE,
