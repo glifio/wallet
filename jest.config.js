@@ -1,8 +1,9 @@
+/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
-  collectCoverageFrom: ['**/*.{js,jsx}', '!**/node_modules/**'],
+  collectCoverageFrom: ['**/*.{js,jsx,ts,tsx}', '!**/node_modules/**'],
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
   transform: {
-    '^.+\\.(js|jsx)$': '<rootDir>/node_modules/babel-jest'
+    '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest'
   },
   transformIgnorePatterns: [
     '/node_modules/',

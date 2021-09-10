@@ -1,6 +1,11 @@
+import LotusRpcEngine from '@glif/filecoin-rpc-client'
 import convertAddrToFPrefix from '../convertAddrToFPrefix'
 
-export default async (lotus, walletAddress, signers) => {
+export default async function(
+  lotus: LotusRpcEngine,
+  walletAddress: string,
+  signers: string[]
+): Promise<boolean> {
   let idAddress = ''
 
   try {
