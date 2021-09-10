@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { func, string } from 'prop-types'
 import { useRouter } from 'next/router'
-import ConfirmMessage from '../../../lib/confirm-message'
-import { useMsig } from '../../../MsigProvider'
 import {
   Card,
   Box,
@@ -13,7 +11,9 @@ import {
   Text,
   Glyph,
   Title
-} from '../../Shared'
+} from '@glif/react-components'
+import ConfirmMessage from '../../../lib/confirm-message'
+import { useMsig } from '../../../MsigProvider'
 import { clearMessages } from '../../../store/actions'
 import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
 import { fetchAndSetMsigActor } from '../../../utils/msig'

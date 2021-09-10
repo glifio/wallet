@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 import { validateAddressString } from '@glif/filecoin-address'
 import styled from 'styled-components'
-import { useMsig } from '../../MsigProvider'
 import {
   Box,
   Button,
@@ -12,7 +11,8 @@ import {
   StyledLink,
   Text,
   Title
-} from '../Shared'
+} from '@glif/react-components'
+import { useMsig } from '../../MsigProvider'
 import { IconLedger } from '../Shared/Icons'
 
 const Form = styled.form`
