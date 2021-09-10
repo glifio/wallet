@@ -75,21 +75,19 @@ const MsigHome = () => {
             address={msigActorAddress}
           />
         )}
-        {!msig.loading && (
-            childView === PAGE_MSIG_REMOVE_SIGNER ||
-            childView === PAGE_MSIG_REMOVE_SIGNER_WITH_CID
-          )
-          && (
-          <RemoveSigner
-            close={() => {
-              gotoRouteWithKeyUrlParams(router, PAGE_MSIG_OWNERS)
-            }}
-            signers={msig.Signers}
-            balance={msig.AvailableBalance}
-            address={msigActorAddress}
-            cid={router.query.cid || null}
-          />
-        )}
+        {!msig.loading &&
+          (childView === PAGE_MSIG_REMOVE_SIGNER ||
+            childView === PAGE_MSIG_REMOVE_SIGNER_WITH_CID) && (
+            <RemoveSigner
+              close={() => {
+                gotoRouteWithKeyUrlParams(router, PAGE_MSIG_OWNERS)
+              }}
+              signers={msig.Signers}
+              balance={msig.AvailableBalance}
+              address={msigActorAddress}
+              cid={router.query.cid || null}
+            />
+          )}
         {!msig.loading &&
           !messagesPending &&
           childView === PAGE_MSIG_CHANGE_OWNER && (

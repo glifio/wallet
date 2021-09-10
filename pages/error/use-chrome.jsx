@@ -10,6 +10,6 @@ const UseChrome = () => {
       linkhref='https://www.google.com/chrome'
     />
   )
-};
+}
 
-export default UseChrome;
+export default UseChrome

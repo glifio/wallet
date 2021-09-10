@@ -1,16 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { useRouter } from 'next/router'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import { Box } from '../../Shared'
 import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
 import Address from './Address'
 import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
-import { useRouter } from 'next/router'
 
-import {
-  PAGE_MSIG_REMOVE_SIGNER
-} from '../../../constants'
+import { PAGE_MSIG_REMOVE_SIGNER } from '../../../constants'
 
 const Signers = ({ signers, walletAddress }) => {
   const router = useRouter()
@@ -31,7 +29,12 @@ const Signers = ({ signers, walletAddress }) => {
               address={signer.account}
               glyphAcronym={(i + 2).toString()}
               widthOverride='100%'
-              onClose={ () => {gotoRouteWithKeyUrlParams(router, `${PAGE_MSIG_REMOVE_SIGNER}/${signer.account}`)} }
+              onClose={() => {
+                gotoRouteWithKeyUrlParams(
+                  router,
+                  `${PAGE_MSIG_REMOVE_SIGNER}/${signer.account}`
+                )
+              }}
             />
           )
         })}

@@ -42,6 +42,6 @@ const UseDesktopBrowser = () => {
       </Box>
     </Box>
   )
-};
+}
 
-export default UseDesktopBrowser;
+export default UseDesktopBrowser

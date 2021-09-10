@@ -48,7 +48,9 @@ const ManipulateSignersHOC = method => {
     const [frozen, setFrozen] = useState(false)
 
     // todo
-    console.log(`TODO: change UI auto select the id to remove. Selected: ${cid}`)
+    // console.log(
+    //   `TODO: change UI auto select the id to remove. Selected: ${cid}`
+    // )
 
     const constructMsg = (nonce = 0) => {
       const innerParams = {

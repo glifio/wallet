@@ -10,6 +10,6 @@ const UseChromeVault = () => {
       linkhref='https://www.google.com/chrome'
     />
   )
-};
+}
 
-export default UseChromeVault;
+export default UseChromeVault

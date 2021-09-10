@@ -6,7 +6,6 @@ import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
 import {
   PAGE_MSIG_CHANGE_OWNER,
-  PAGE_MSIG_REMOVE_SIGNER,
   PAGE_MSIG_ADD_SIGNER
 } from '../../../constants'
 
@@ -99,7 +98,7 @@ const AccountSummary = ({
       <Box position='relative' display='flex' flexWrap='wrap' my={3}>
         <Address
           address={walletAddress}
-          glyphAcronym={'1'}
+          glyphAcronym='1'
           label='Signer 1 - Your Ledger'
         />
 
@@ -154,21 +153,6 @@ const AccountSummary = ({
             borderRadius={6}
           />
         )}
-        {/* Not used for now. This will be moved inline to a singer item */}
-       {/* {signers.length > 1 && (
-          <Button
-            type='button'
-            variant='secondary'
-            onClick={() => {
-              gotoRouteWithKeyUrlParams(router, PAGE_MSIG_REMOVE_SIGNER)
-            }}
-            title='Remove Signer'
-            minWidth={8}
-            height='40px'
-            borderRadius={6}
-            m={1}
-          />
-        )}*/}
       </Box>
     </Box>
   )
