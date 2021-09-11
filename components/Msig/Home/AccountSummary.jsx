@@ -3,12 +3,10 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
-
 import {
   PAGE_MSIG_CHANGE_OWNER,
   PAGE_MSIG_ADD_SIGNER
 } from '../../../constants'
-
 import {
   Box,
   Glyph,
@@ -139,20 +137,6 @@ const AccountSummary = ({
           borderRadius={6}
           m={1}
         />
-        {signers.length === 1 && (
-          <Button
-            type='button'
-            variant='secondary'
-            onClick={() => {
-              gotoRouteWithKeyUrlParams(router, PAGE_MSIG_CHANGE_OWNER)
-            }}
-            title='Change Signer'
-            height={6}
-            maxWidth={10}
-            minWidth={9}
-            borderRadius={6}
-          />
-        )}
       </Box>
     </Box>
   )

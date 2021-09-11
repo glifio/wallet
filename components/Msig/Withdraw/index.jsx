@@ -5,20 +5,19 @@ import dayjs from 'dayjs'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
 import { validateAddressString } from '@glif/filecoin-address'
-
-import { useWalletProvider } from '../../../WalletProvider'
-import useWallet from '../../../WalletProvider/useWallet'
 import {
   Box,
   Button,
   ButtonClose,
   StepHeader,
-  Input,
   Num,
   Title,
   Form,
   Card
-} from '../../Shared'
+} from '@glif/react-components'
+import { useWalletProvider } from '../../../WalletProvider'
+import useWallet from '../../../WalletProvider/useWallet'
+import { Input } from '../../Shared'
 import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP

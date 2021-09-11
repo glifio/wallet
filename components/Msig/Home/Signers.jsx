@@ -1,13 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import { useRouter } from 'next/router'
+import { Box } from '@glif/react-components'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
-import { Box } from '../../Shared'
 import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
 import Address from './Address'
 import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
-
 import { PAGE_MSIG_REMOVE_SIGNER } from '../../../constants'
 
 const Signers = ({ signers, walletAddress }) => {

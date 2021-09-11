@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
-
 import {
   Box,
   Glyph,
