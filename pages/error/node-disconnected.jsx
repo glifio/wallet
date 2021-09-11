@@ -10,6 +10,6 @@ const NodeDisconnected = () => {
       linkDisplay=''
     />
   )
-};
+}
 
-export default NodeDisconnected;
+export default NodeDisconnected

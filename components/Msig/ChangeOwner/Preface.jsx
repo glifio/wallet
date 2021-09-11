@@ -18,6 +18,6 @@ const Preface = () => {
       />
     </Box>
   )
-};
+}
 
-export default Preface;
+export default Preface

@@ -20,6 +20,6 @@ const NotASigner = () => {
       linkDisplay=''
     />
   )
-};
+}
 
-export default NotASigner;
+export default NotASigner

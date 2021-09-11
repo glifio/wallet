@@ -9,6 +9,6 @@ const Accounts = () => {
       <AccountSelector />
     </RenderChildrenIfWalletConnected>
   )
-};
+}
 
-export default Accounts;
+export default Accounts

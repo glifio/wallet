@@ -6,6 +6,6 @@ import { Onboard } from '../components'
 const Index = () => {
   useDesktopBrowser()
   return <Onboard />
-};
+}
 
-export default Index;
+export default Index

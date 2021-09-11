@@ -55,6 +55,6 @@ const WithReduxStore = App => {
       return <App {...this.props} reduxStore={this.reduxStore} />
     }
   }
-};
+}
 
-export default WithReduxStore;
+export default WithReduxStore

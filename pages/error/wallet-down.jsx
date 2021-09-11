@@ -10,6 +10,6 @@ const WalletDown = () => {
       linkhref='https://twitter.com/openworklabs'
     />
   )
-};
+}
 
-export default WalletDown;
+export default WalletDown
