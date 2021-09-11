@@ -5,7 +5,7 @@ import { useMsig } from '../../../MsigProvider'
 import Withdraw from '../Withdraw'
 import ChangeOwner from '../ChangeOwner'
 import { AddSigner, RemoveSigner } from '../AddRmSigners'
-import { Box, LoadingScreen } from '../../Shared'
+import { Box, LoadingScreen } from '@glif/react-components'
 import {
   PAGE_MSIG_HOME,
   PAGE_MSIG_HISTORY,
@@ -17,6 +17,7 @@ import {
   PAGE_MSIG_ADD_SIGNER
 } from '../../../constants'
 import State from './State'
+import NavMenu from './NavMenu'
 import useWallet from '../../../WalletProvider/useWallet'
 import MsgConfirmer from '../../../lib/confirm-message'
 import { gotoRouteWithKeyUrlParams, detectPage } from '../../../utils/urlParams'
@@ -33,7 +34,13 @@ const MsigHome = () => {
   const pageId = detectPage(router)
 
   return (
-    <>
+    <Box
+      display='flex'
+      justifyContent='center'
+      width='100%'
+      minHeight='100vh'
+      p={3}
+    >
       <MsgConfirmer />
       <Box
         display='flex'
@@ -47,13 +54,24 @@ const MsigHome = () => {
           (pageId === PAGE_MSIG_HOME ||
             pageId === PAGE_MSIG_HISTORY ||
             pageId === PAGE_MSIG_OWNERS) && (
-            <State
-              msigAddress={msig.Address}
-              walletAddress={address}
-              available={msig.AvailableBalance}
-              total={msig.Balance}
-              signers={msig.Signers}
-            />
+            <Box
+              display='flex'
+              flexDirection='column'
+              width='100%'
+            >
+              <NavMenu
+                pageId={pageId}
+                msigAddress={msig.Address}
+              />
+              <State
+                msigAddress={msig.Address}
+                walletAddress={address}
+                available={msig.AvailableBalance}
+                total={msig.Balance}
+                signers={msig.Signers}
+                pageId={pageId}
+              />
+            </Box>
           )}
         {!msig.loading && pageId === PAGE_MSIG_WITHDRAW && (
           <Withdraw
@@ -110,7 +128,7 @@ const MsigHome = () => {
             />
           )}
       </Box>
-    </>
+    </Box>
   )
 }
 
