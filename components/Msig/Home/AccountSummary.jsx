@@ -2,11 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
-import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
-import {
-  PAGE_MSIG_CHANGE_OWNER,
-  PAGE_MSIG_ADD_SIGNER
-} from '../../../constants'
 import {
   Box,
   Glyph,
@@ -17,7 +12,12 @@ import {
   Button,
   IconLedger,
   Tooltip
-} from '../../Shared'
+} from '@glif/react-components'
+import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
+import {
+  PAGE_MSIG_CHANGE_OWNER,
+  PAGE_MSIG_ADD_SIGNER
+} from '../../../constants'
 import Address from './Address'
 import Signers from './Signers'
 import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'

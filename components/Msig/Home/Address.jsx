@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import {
   Box,
   Glyph,
@@ -8,7 +7,8 @@ import {
   Label,
   IconLedger,
   ButtonClose
-} from '../../Shared'
+} from '@glif/react-components'
+import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
 const Address = ({ widthOverride, address, label, glyphAcronym, onClose }) => {
   return (

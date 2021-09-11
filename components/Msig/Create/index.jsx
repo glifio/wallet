@@ -6,19 +6,18 @@ import { Message } from '@glif/filecoin-message'
 import { validateAddressString } from '@glif/filecoin-address'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
-
-import { useWalletProvider } from '../../../WalletProvider'
-import useWallet from '../../../WalletProvider/useWallet'
 import {
   Box,
   Button,
   ButtonClose,
   StepHeader,
-  Input,
   Text,
   Form,
   Card
-} from '../../Shared'
+} from '@glif/react-components'
+import { useWalletProvider } from '../../../WalletProvider'
+import useWallet from '../../../WalletProvider/useWallet'
+import { Input } from '../../Shared'
 import { CardHeader, CreateMultisigHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'

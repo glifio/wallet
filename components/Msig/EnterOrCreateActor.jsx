@@ -100,7 +100,11 @@ const EnterActorAddress = () => {
           <br />
           <Box display='flex' flexDirection='row' alignItems='center'>
             <Text mr={3}>Don&apos;t have a multisig actor ID?</Text>
-            <StyledLink href='/vault/create?network=f' name='Create one' target='' />
+            <StyledLink
+              href='/vault/create?network=f'
+              name='Create one'
+              target=''
+            />
           </Box>
         </OnboardCard>
         <Box

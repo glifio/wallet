@@ -1,14 +1,20 @@
 import PropTypes from 'prop-types'
-import { NavLink } from '@glif/react-components'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
+import {
+  NavLink,
+  Box,
+  Title,
+  Menu,
+  MenuItem,
+  IconGlif
+} from '@glif/react-components'
 import Address from './Address'
 import {
   PAGE_MSIG_HOME,
   PAGE_MSIG_HISTORY,
   PAGE_MSIG_OWNERS
 } from '../../../constants'
-import { Box, Title, Menu, MenuItem, IconGlif } from '../../Shared'
 import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
 
 // todo: decide how to do responsive design
