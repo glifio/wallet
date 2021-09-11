@@ -1,17 +1,12 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { useRouter } from 'next/router'
 import { Box } from '@glif/react-components'
 import {
   PAGE_MSIG_HOME,
   PAGE_MSIG_HISTORY,
   PAGE_MSIG_OWNERS
 } from '../../../constants'
-import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
-
 import Balances from './Balances'
-import NavMenu from './NavMenu'
-
 import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
@@ -31,7 +26,6 @@ const State = ({
   pageId
 }) => {
   const wallet = useWallet()
-  const router = useRouter()
   const { ledger, connectLedger, resetState } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState('')
   const [ledgerBusy, setLedgerBusy] = useState(false)

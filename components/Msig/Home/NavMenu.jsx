@@ -21,7 +21,7 @@ import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
 // add enough room for vault icon
 const responsiveMenuBuffer = 1024 + 300
 
-const StyledNavLink = styled(NavLink).attrs(props => ({
+const StyledNavLink = styled(NavLink).attrs(() => ({
   mr: 3
 }))``
 
@@ -124,7 +124,8 @@ const NavMenu = ({ pageId, msigAddress }) => {
 }
 
 NavMenu.propTypes = {
-  pageId: PropTypes.string
+  pageId: PropTypes.string,
+  msigAddress: PropTypes.string
 }
 
 export default NavMenu

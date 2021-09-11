@@ -14,10 +14,7 @@ import {
   Tooltip
 } from '@glif/react-components'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
-import {
-  PAGE_MSIG_CHANGE_OWNER,
-  PAGE_MSIG_ADD_SIGNER
-} from '../../../constants'
+import { PAGE_MSIG_ADD_SIGNER } from '../../../constants'
 import Address from './Address'
 import Signers from './Signers'
 import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
@@ -102,7 +99,7 @@ const AccountSummary = ({
             />
             Required Approvals
           </Title>
-          <Tooltip content='These are the owners' />
+          <Tooltip content='The number of approvals required for a transaction' />
         </Box>
       )}
       <Box position='relative' display='flex' flexWrap='wrap'>
