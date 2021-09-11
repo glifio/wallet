@@ -21,6 +21,7 @@ import {
 import Address from './Address'
 import Signers from './Signers'
 import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
+import { useMsig } from '../../../MsigProvider'
 
 const ButtonViewOnLedgerDevice = styled(BaseButton)``
 
@@ -33,6 +34,7 @@ const AccountSummary = ({
   error
 }) => {
   const router = useRouter()
+  const msig = useMsig()
 
   return error ? (
     <Box display='flex'>
@@ -89,6 +91,20 @@ const AccountSummary = ({
     </Box>
   ) : (
     <Box width='100%'>
+      {msig.NumApprovalsThreshold && (
+        <Box display='flex' flexWrap='wrap' my={6}>
+          <Title display='inline-flex'>
+            <Glyph
+              acronym={msig.NumApprovalsThreshold}
+              size={5}
+              justifyContent='start'
+              border={0}
+            />
+            Required Approvals
+          </Title>
+          <Tooltip content='These are the owners' />
+        </Box>
+      )}
       <Box position='relative' display='flex' flexWrap='wrap'>
         <Title>Owners</Title>
         <Tooltip content='These are the owners' />
