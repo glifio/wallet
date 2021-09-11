@@ -43,7 +43,7 @@ describe('Error', () => {
 
   test.skip('clicking "Back" takes you back to onboarding', () => {
     const useRouter = jest.spyOn(require('next/router'), 'useRouter')
-    const mockRouterReplace = jest.fn(() => { })
+    const mockRouterReplace = jest.fn(() => {})
     useRouter.mockImplementationOnce(() => ({
       replace: mockRouterReplace,
       query: 'network=t'

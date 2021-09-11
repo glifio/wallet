@@ -12,6 +12,7 @@ const errorFreeReturn = {
   patch: LEDGER_VERSION_PATCH
 }
 
+//eslint-disable-next-line no-unused-vars
 export const mockSign = jest.fn().mockImplementation(async (path, msg) => {
   return Promise.resolve({
     ...errorFreeReturn,

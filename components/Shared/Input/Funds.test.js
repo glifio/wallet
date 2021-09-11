@@ -206,9 +206,8 @@ describe('Funds input', () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
-      let res
       await act(async () => {
-        res = render(
+        render(
           <Tree>
             <Funds
               name='amount'
@@ -245,9 +244,8 @@ describe('Funds input', () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
-      let res
       await act(async () => {
-        res = render(
+        render(
           <Tree>
             <Funds
               name='amount'

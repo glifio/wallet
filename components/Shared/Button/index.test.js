@@ -1,4 +1,4 @@
-import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
+import { cleanup, render, act, fireEvent } from '@testing-library/react'
 import Button from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import theme from '../theme'

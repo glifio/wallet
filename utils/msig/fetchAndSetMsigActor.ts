@@ -1,6 +1,6 @@
 import { Dispatch } from 'react'
 import LotusRpcEngine from '@glif/filecoin-rpc-client'
-import type { MessageReceipt } from '@glif/filecoin-wallet-provider'
+import type { MessageReceipt } from '@glif/filecoin-wallet-provider' // eslint-disable-line prettier/prettier
 import getAddressFromReceipt from '../getAddrFromReceipt'
 
 export default async function fetchAndSetMsigActor(

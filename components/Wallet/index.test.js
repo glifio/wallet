@@ -73,10 +73,9 @@ describe('WalletView', () => {
     }))
     const { Tree } = composeMockAppTree('postOnboard')
 
-    let res
     // this isn't necessary, per se, but it silences the warnings
     await act(async () => {
-      res = render(
+      render(
         <Tree>
           <WalletView />
         </Tree>

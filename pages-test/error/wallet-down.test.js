@@ -41,9 +41,8 @@ describe('WalletDown', () => {
       replace: mockRouterReplace
     }))
 
-    let res
     await act(async () => {
-      res = render(
+      render(
         <Tree>
           <WalletDown />
         </Tree>
