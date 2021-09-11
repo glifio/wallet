@@ -1,11 +1,11 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
+import { Box, LoadingScreen } from '@glif/react-components'
 import { useMsig } from '../../../MsigProvider'
 import Withdraw from '../Withdraw'
 import ChangeOwner from '../ChangeOwner'
 import { AddSigner, RemoveSigner } from '../AddRmSigners'
-import { Box, LoadingScreen } from '@glif/react-components'
 import {
   PAGE_MSIG_HOME,
   PAGE_MSIG_HISTORY,
@@ -54,15 +54,8 @@ const MsigHome = () => {
           (pageId === PAGE_MSIG_HOME ||
             pageId === PAGE_MSIG_HISTORY ||
             pageId === PAGE_MSIG_OWNERS) && (
-            <Box
-              display='flex'
-              flexDirection='column'
-              width='100%'
-            >
-              <NavMenu
-                pageId={pageId}
-                msigAddress={msig.Address}
-              />
+            <Box display='flex' flexDirection='column' width='100%'>
+              <NavMenu pageId={pageId} msigAddress={msig.Address} />
               <State
                 msigAddress={msig.Address}
                 walletAddress={address}

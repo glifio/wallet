@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
+import { Box } from '@glif/react-components'
 import {
   PAGE_MSIG_HOME,
   PAGE_MSIG_HISTORY,
@@ -15,15 +16,20 @@ import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
 } from '../../../customPropTypes'
-import { Box } from '@glif/react-components'
 import AccountSummary from './AccountSummary'
 import useWallet from '../../../WalletProvider/useWallet'
 import { useWalletProvider } from '../../../WalletProvider'
 import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfigError'
 import MessageHistory from '../MessageHistory'
 
-
-const State = ({ signers, msigAddress, available, total, walletAddress, pageId }) => {
+const State = ({
+  signers,
+  msigAddress,
+  available,
+  total,
+  walletAddress,
+  pageId
+}) => {
   const wallet = useWallet()
   const router = useRouter()
   const { ledger, connectLedger, resetState } = useWalletProvider()
@@ -53,9 +59,7 @@ const State = ({ signers, msigAddress, available, total, walletAddress, pageId }
       {pageId === PAGE_MSIG_HOME && (
         <Balances available={available} total={total} />
       )}
-      {pageId === PAGE_MSIG_HISTORY && (
-        <MessageHistory address={msigAddress} />
-      )}
+      {pageId === PAGE_MSIG_HISTORY && <MessageHistory address={msigAddress} />}
       {pageId === PAGE_MSIG_OWNERS && (
         <AccountSummary
           msigAddress={msigAddress}
