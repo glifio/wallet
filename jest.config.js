@@ -23,5 +23,6 @@ module.exports = {
       '<rootDir>/test-utils/mocks/mock-ledger-filecoin.js',
     '@ledgerhq/hw-transport-webhid': '<rootDir>/test-utils/mocks/mock-webhid.js'
   },
-  setupFilesAfterEnv: ['./jest.setup.js']
+  setupFilesAfterEnv: ['./jest.setup.js'],
+  testEnvironment: 'jsdom'
 }
