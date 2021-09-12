@@ -41,9 +41,8 @@ describe('UseDesktopBrowser', () => {
       href: ''
     }
 
-    let res
     await act(async () => {
-      res = render(
+      render(
         <Tree>
           <UseDesktopBrowser />
         </Tree>

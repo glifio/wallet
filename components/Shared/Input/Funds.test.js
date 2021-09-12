@@ -206,9 +206,8 @@ describe('Funds input', () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
-      let res
       await act(async () => {
-        res = render(
+        render(
           <Tree>
             <Funds
               name='amount'
@@ -229,6 +228,7 @@ describe('Funds input', () => {
             value: new FilecoinNumber('5', 'fil')
           }
         })
+        await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
@@ -244,9 +244,8 @@ describe('Funds input', () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const value = new FilecoinNumber('0', 'fil')
       const balance = new FilecoinNumber('2', 'fil')
-      let res
       await act(async () => {
-        res = render(
+        render(
           <Tree>
             <Funds
               name='amount'
@@ -267,6 +266,7 @@ describe('Funds input', () => {
             value: '50'
           }
         })
+        await flushPromises()
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()

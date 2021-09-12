@@ -375,7 +375,7 @@ describe('Multisig add & remove  flow', () => {
     })
 
     test('it allows the user to set the max transaction fee', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, store } = composeMockAppTree('postOnboard')
       const msigAddress = 't034066'
       const msigBalance = new FilecoinNumber('1', 'fil')
 
@@ -416,7 +416,7 @@ describe('Multisig add & remove  flow', () => {
     })
 
     test('it allows the user to save the max transaction fee', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, store } = composeMockAppTree('postOnboard')
       const msigAddress = 't034066'
       const msigBalance = new FilecoinNumber('1', 'fil')
 

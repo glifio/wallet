@@ -7,9 +7,7 @@ const Import = ({
   glyphAcronym,
   glyphColor,
   title,
-  description,
   Icon,
-  tag,
   ...props
 }) => (
   <>
@@ -58,9 +56,7 @@ Import.propTypes = {
   glyphAcronym: PropTypes.string,
   glyphColor: PropTypes.string,
   Icon: PropTypes.object,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string,
-  tag: PropTypes.string
+  title: PropTypes.string.isRequired
 }
 
 export default Import

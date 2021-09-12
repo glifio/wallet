@@ -4,6 +4,7 @@ import { TESTNET } from '../../constants'
 
 const mockGetAccounts = jest
   .fn()
+  // eslint-disable-next-line no-unused-vars
   .mockImplementation((network = TESTNET, start = 0, end = 1) => {
     const accounts = []
     for (let i = start; i < end; i++) {
@@ -53,9 +54,9 @@ class MockWalletProvider {
       To,
       From,
       Value,
-      GasPremium,
-      GasFeeCap,
-      GasLimit,
+      GasPremium, //eslint-disable-line no-unused-vars
+      GasFeeCap, //eslint-disable-line no-unused-vars
+      GasLimit, //eslint-disable-line no-unused-vars
       Method,
       Nonce,
       Params
