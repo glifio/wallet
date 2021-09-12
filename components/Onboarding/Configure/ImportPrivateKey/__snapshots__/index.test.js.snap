@@ -418,6 +418,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
                 class="c16"
                 display="inline-block"
                 height="6"
+                name=""
                 placeholder="Your private key"
                 type="password"
                 value=""

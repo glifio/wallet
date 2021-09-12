@@ -1,9 +1,5 @@
 import { SINGLE_KEY, HD_WALLET, LEDGER } from '../../constants'
-import {
-  mockSign,
-  mockGetAddressAndPubKey,
-  mockGetVersion
-} from './mock-ledger-filecoin'
+import { mockSign, mockGetVersion } from './mock-ledger-filecoin'
 
 const MockSingleKeyProvider = () => ({
   type: SINGLE_KEY,

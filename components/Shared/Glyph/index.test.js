@@ -1,4 +1,4 @@
-import { cleanup, render, act, fireEvent } from '@testing-library/react'
+import { cleanup, render } from '@testing-library/react'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import Glyph from '.'
 import theme from '../theme'
