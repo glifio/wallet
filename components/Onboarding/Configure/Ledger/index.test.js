@@ -288,7 +288,9 @@ describe('Ledger configuration', () => {
 
     test('it pushes to the right url', async () => {
       const { Tree } = composeMockAppTree('preOnboard')
-      const { container } = render(
+      const {
+        /* container */
+      } = render(
         <Tree>
           <Step2 msig={false} setStep={() => {}} />
         </Tree>
@@ -305,7 +307,9 @@ describe('Ledger configuration', () => {
 
     test('it pushes to the right url for msig', async () => {
       const { Tree } = composeMockAppTree('preOnboard')
-      const { container } = render(
+      const {
+        /*container*/
+      } = render(
         <Tree>
           <Step2 msig={true} setStep={() => {}} />
         </Tree>

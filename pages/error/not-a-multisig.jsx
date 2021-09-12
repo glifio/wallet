@@ -10,6 +10,6 @@ const NotAMultisig = () => {
       linkDisplay=''
     />
   )
-};
+}
 
-export default NotAMultisig;
+export default NotAMultisig

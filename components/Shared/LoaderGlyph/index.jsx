@@ -25,8 +25,10 @@ const LoaderGlyphChild = styled.span`
   animation-iteration-count: infinite;
 `
 
-const Index = () => <LoaderGlyphParent>
-  <LoaderGlyphChild />
-</LoaderGlyphParent>;
+const Index = () => (
+  <LoaderGlyphParent>
+    <LoaderGlyphChild />
+  </LoaderGlyphParent>
+)
 
-export default Index;
+export default Index

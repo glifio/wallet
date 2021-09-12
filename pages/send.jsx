@@ -16,6 +16,6 @@ const Send = () => {
       <SendView close={() => close()} />
     </RenderChildrenIfWalletConnected>
   )
-};
+}
 
-export default Send;
+export default Send

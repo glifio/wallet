@@ -2822,6 +2822,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
               disabled=""
               display="inline-block"
               height="6"
+              name=""
               placeholder="f1..."
               value="t1kh7xygoxawth4wzx7mfo2jb6mirb7y7wrnf45jq"
               width="100%"
@@ -2864,6 +2865,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
               disabled=""
               display="inline-block"
               height="6"
+              name=""
               placeholder="f1..."
               value="t1nmprl3xvvzcwy5wzkwjfo4b33tc32o7mlwqxf6i"
               width="100%"
@@ -2959,6 +2961,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
             disabled=""
             display="inline-block"
             height="6"
+            name=""
             value="1 pFIL"
             width="100%"
           />

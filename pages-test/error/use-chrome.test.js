@@ -43,9 +43,8 @@ describe('UseChrome', () => {
       replace: mockRouterReplace
     }))
 
-    let res
     await act(async () => {
-      res = render(
+      render(
         <Tree>
           <UseChrome />
         </Tree>

@@ -10,6 +10,6 @@ const NotSupportedMsig = () => {
       linkDisplay=''
     />
   )
-};
+}
 
-export default NotSupportedMsig;
+export default NotSupportedMsig
