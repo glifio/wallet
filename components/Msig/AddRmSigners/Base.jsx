@@ -364,7 +364,7 @@ const ManipulateSignersHOC = method => {
         id: ADDRESS_PROPTYPE
       })
     ),
-    cid: ADDRESS_PROPTYPE
+    cid: PropTypes.string
   }
   return Base
 }
