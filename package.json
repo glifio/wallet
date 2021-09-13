@@ -10,7 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint-fix": "npm run lint -- --fix",
     "start": "next start",
-    "test": "jest",
+    "test": "jest --detectOpenHandles --forceExit",
     "test:watch": "jest --watch",
     "export": "next build && next export",
     "serve": "npx serve ./out"
