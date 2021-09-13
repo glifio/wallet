@@ -8,11 +8,13 @@ import { flushPromises } from '../../../test-utils'
 jest.mock('@glif/filecoin-wallet-provider')
 
 describe('Change owner flow', () => {
-  let close = () => {}
+  let onClose = () => {}
+  let onComplete = () => {}
   beforeEach(() => {
     jest.useFakeTimers()
     jest.clearAllMocks()
-    close = jest.fn()
+    onClose = jest.fn()
+    onComplete = jest.fn()
   })
 
   describe('Changing owners', () => {
@@ -34,7 +36,8 @@ describe('Change owner flow', () => {
             <ChangeOwner
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -79,7 +82,8 @@ describe('Change owner flow', () => {
             <ChangeOwner
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -110,7 +114,8 @@ describe('Change owner flow', () => {
             <ChangeOwner
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -142,7 +147,8 @@ describe('Change owner flow', () => {
             <ChangeOwner
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -170,7 +176,8 @@ describe('Change owner flow', () => {
             <ChangeOwner
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -205,7 +212,8 @@ describe('Change owner flow', () => {
             <ChangeOwner
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -245,7 +253,8 @@ describe('Change owner flow', () => {
             <ChangeOwner
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -266,7 +275,8 @@ describe('Change owner flow', () => {
             <ChangeOwner
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -292,7 +302,8 @@ describe('Change owner flow', () => {
             <ChangeOwner
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )

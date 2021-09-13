@@ -60,7 +60,7 @@ const Create = () => {
   const [frozen, setFrozen] = useState(false)
   const router = useRouter()
 
-  const close = () => router.back()
+  const onClose = () => router.back()
 
   const constructMsg = (nonce = 0, epoch = startEpoch) => {
     const tx = wasm.createMultisig(
@@ -251,7 +251,7 @@ const Create = () => {
           setAttemptingTx(false)
           setUncaughtError('')
           resetLedgerState()
-          close()
+          onClose()
         }}
       />
       <Form onSubmit={onSubmit}>
@@ -480,7 +480,7 @@ const Create = () => {
                 setGasError('')
                 resetLedgerState()
                 if (step === 1) {
-                  close()
+                  onClose()
                 }
                 if (step === 5 && vest === 0) {
                   setStep(3)

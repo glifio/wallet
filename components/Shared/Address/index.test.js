@@ -12,7 +12,8 @@ describe('Receive', () => {
       <ThemeProvider>
         <Address
           address='t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy'
-          close={noop}
+          onClose={noop}
+          onComplete={noop}
         />
       </ThemeProvider>
     )
@@ -25,7 +26,8 @@ describe('Receive', () => {
       <ThemeProvider>
         <Address
           address='t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy'
-          close={noop}
+          onClose={noop}
+          onComplete={noop}
         />
       </ThemeProvider>
     )

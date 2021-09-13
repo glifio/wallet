@@ -3,8 +3,9 @@ import MessageDetail from './Detail'
 import { MessageHistoryTable } from '../../Shared'
 import useWallet from '../../../WalletProvider/useWallet'
 import useTransactionHistory from '../../../lib/useTransactionHistory'
+import noop from '../../../utils/noop'
 
-export default () => {
+const MessageView = () => {
   const [selectedMessageCid, setSelectedMessageCid] = useState('')
   const wallet = useWallet()
   const {
@@ -23,7 +24,7 @@ export default () => {
       {selectedMessageCid ? (
         <MessageDetail
           address={wallet.address}
-          close={() => setSelectedMessageCid('')}
+          onClose={() => setSelectedMessageCid('')}
           message={messages.find(({ cid }) => cid === selectedMessageCid)}
         />
       ) : (
@@ -34,10 +35,12 @@ export default () => {
           selectMessage={setSelectedMessageCid}
           paginating={paginating}
           showMore={showMore}
-          refresh={refresh}
+          refresh={refresh || noop}
           total={total}
         />
       )}
     </>
   )
 }
+
+export default MessageView

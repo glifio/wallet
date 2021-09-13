@@ -30,7 +30,11 @@ describe('MessageHistory View', () => {
     await act(async () => {
       const { container } = render(
         <Tree>
-          <MessageDetail message={message} close={() => {}} address={address} />
+          <MessageDetail
+            message={message}
+            onClose={() => {}}
+            address={address}
+          />
         </Tree>
       )
 
@@ -59,7 +63,11 @@ describe('MessageHistory View', () => {
     await act(async () => {
       const { container } = render(
         <Tree>
-          <MessageDetail message={message} close={() => {}} address={address} />
+          <MessageDetail
+            message={message}
+            onClose={() => {}}
+            address={address}
+          />
         </Tree>
       )
 
@@ -88,7 +96,11 @@ describe('MessageHistory View', () => {
     await act(async () => {
       const { container } = render(
         <Tree>
-          <MessageDetail message={message} close={() => {}} address={address} />
+          <MessageDetail
+            message={message}
+            onClose={() => {}}
+            address={address}
+          />
         </Tree>
       )
 

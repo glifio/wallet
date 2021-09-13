@@ -8,11 +8,13 @@ import { flushPromises } from '../../../test-utils'
 jest.mock('@glif/filecoin-wallet-provider')
 
 describe('Multisig withdraw flow', () => {
-  let close = () => {}
+  let onClose = () => {}
+  let onComplete = () => {}
   beforeEach(() => {
     jest.useFakeTimers()
     jest.clearAllMocks()
-    close = jest.fn()
+    onClose = jest.fn()
+    onComplete = jest.fn()
   })
 
   describe('Withdrawing FIL', () => {
@@ -35,7 +37,8 @@ describe('Multisig withdraw flow', () => {
             <Withdraw
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -90,7 +93,8 @@ describe('Multisig withdraw flow', () => {
             <Withdraw
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -119,7 +123,8 @@ describe('Multisig withdraw flow', () => {
             <Withdraw
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -150,7 +155,8 @@ describe('Multisig withdraw flow', () => {
             <Withdraw
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -194,7 +200,8 @@ describe('Multisig withdraw flow', () => {
             <Withdraw
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -235,7 +242,8 @@ describe('Multisig withdraw flow', () => {
             <Withdraw
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -270,7 +278,8 @@ describe('Multisig withdraw flow', () => {
             <Withdraw
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -312,7 +321,8 @@ describe('Multisig withdraw flow', () => {
             <Withdraw
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -356,7 +366,8 @@ describe('Multisig withdraw flow', () => {
             <Withdraw
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -404,7 +415,8 @@ describe('Multisig withdraw flow', () => {
             <Withdraw
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -449,7 +461,8 @@ describe('Multisig withdraw flow', () => {
             <Withdraw
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -474,7 +487,7 @@ describe('Multisig withdraw flow', () => {
         await flushPromises()
       })
       await flushPromises()
-      expect(close).toHaveBeenCalled()
+      expect(onComplete).toHaveBeenCalled()
     })
   })
 
@@ -492,7 +505,8 @@ describe('Multisig withdraw flow', () => {
             <Withdraw
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -516,7 +530,8 @@ describe('Multisig withdraw flow', () => {
             <Withdraw
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -547,7 +562,8 @@ describe('Multisig withdraw flow', () => {
             <Withdraw
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -587,7 +603,8 @@ describe('Multisig withdraw flow', () => {
             <Withdraw
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )

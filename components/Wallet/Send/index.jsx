@@ -57,7 +57,7 @@ const isValidForm = (
   return validToAddress && validAmount && !otherError && !paramsError
 }
 
-const Send = ({ close }) => {
+const Send = ({ onClose, onComplete }) => {
   const dispatch = useDispatch()
   const wallet = useWallet()
   const {
@@ -143,7 +143,7 @@ const Send = ({ close }) => {
       if (message) {
         dispatch(confirmMessage(toLowerCaseMsgFields(message)))
         setValue(new FilecoinNumber('0', 'fil'))
-        close()
+        onComplete()
       }
     } catch (err) {
       if (err.message.includes('Unexpected number of items')) {
@@ -286,7 +286,7 @@ const Send = ({ close }) => {
             setGasError('')
             setParamsError('')
             resetLedgerState()
-            close()
+            onClose()
           }}
         />
         <Form onSubmit={onSubmit}>
@@ -494,7 +494,7 @@ const Send = ({ close }) => {
                   setParamsError('')
                   resetLedgerState()
                   if (step === 1) {
-                    close()
+                    onClose()
                   } else {
                     setStep(step - 1)
                   }
@@ -516,7 +516,8 @@ const Send = ({ close }) => {
 }
 
 Send.propTypes = {
-  close: PropTypes.func.isRequired
+  onClose: PropTypes.func.isRequired,
+  onComplete: PropTypes.func.isRequired
 }
 
 export default Send

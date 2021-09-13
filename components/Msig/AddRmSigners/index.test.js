@@ -8,11 +8,13 @@ import { flushPromises } from '../../../test-utils'
 jest.mock('@glif/filecoin-wallet-provider')
 
 describe('Multisig add & remove  flow', () => {
-  let close = () => {}
+  let onClose = () => {}
+  let onComplete = () => {}
   beforeEach(() => {
     jest.useFakeTimers()
     jest.clearAllMocks()
-    close = jest.fn()
+    onClose = jest.fn()
+    onComplete = jest.fn()
   })
 
   describe('Adding a signer', () => {
@@ -34,7 +36,8 @@ describe('Multisig add & remove  flow', () => {
             <AddSigner
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -79,7 +82,8 @@ describe('Multisig add & remove  flow', () => {
             <AddSigner
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -111,7 +115,8 @@ describe('Multisig add & remove  flow', () => {
             <AddSigner
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -139,7 +144,8 @@ describe('Multisig add & remove  flow', () => {
             <AddSigner
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -174,7 +180,8 @@ describe('Multisig add & remove  flow', () => {
             <AddSigner
               address={msigAddress}
               balance={msigBalance}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -213,7 +220,8 @@ describe('Multisig add & remove  flow', () => {
               <AddSigner
                 address={msigAddress}
                 balance={msigBalance}
-                close={close}
+                onClose={onClose}
+                onComplete={onComplete}
               />
             </Tree>
           )
@@ -234,7 +242,8 @@ describe('Multisig add & remove  flow', () => {
               <AddSigner
                 address={msigAddress}
                 balance={msigBalance}
-                close={close}
+                onClose={onClose}
+                onComplete={onComplete}
               />
             </Tree>
           )
@@ -262,7 +271,8 @@ describe('Multisig add & remove  flow', () => {
               <AddSigner
                 address={msigAddress}
                 balance={msigBalance}
-                close={close}
+                onClose={onClose}
+                onComplete={onComplete}
               />
             </Tree>
           )
@@ -310,7 +320,8 @@ describe('Multisig add & remove  flow', () => {
               address={msigAddress}
               balance={msigBalance}
               signers={signers}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -361,7 +372,8 @@ describe('Multisig add & remove  flow', () => {
               address={msigAddress}
               balance={msigBalance}
               signers={signers}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -395,7 +407,8 @@ describe('Multisig add & remove  flow', () => {
               address={msigAddress}
               balance={msigBalance}
               signers={signers}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -436,7 +449,8 @@ describe('Multisig add & remove  flow', () => {
               address={msigAddress}
               balance={msigBalance}
               signers={signers}
-              close={close}
+              onClose={onClose}
+              onComplete={onComplete}
             />
           </Tree>
         )
@@ -482,7 +496,8 @@ describe('Multisig add & remove  flow', () => {
                 address={msigAddress}
                 balance={msigBalance}
                 signers={signers}
-                close={close}
+                onClose={onClose}
+                onComplete={onComplete}
               />
             </Tree>
           )
@@ -513,7 +528,8 @@ describe('Multisig add & remove  flow', () => {
                 address={msigAddress}
                 balance={msigBalance}
                 signers={signers}
-                close={close}
+                onClose={onClose}
+                onComplete={onComplete}
               />
             </Tree>
           )
@@ -550,7 +566,8 @@ describe('Multisig add & remove  flow', () => {
                 address={msigAddress}
                 balance={msigBalance}
                 signers={signers}
-                close={close}
+                onClose={onClose}
+                onComplete={onComplete}
               />
             </Tree>
           )

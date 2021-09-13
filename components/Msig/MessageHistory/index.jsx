@@ -24,7 +24,7 @@ const MessageHistory = ({ address }) => {
       {selectedMessageCid ? (
         <MessageDetail
           address={wallet.address}
-          close={() => setSelectedMessageCid('')}
+          onClose={() => setSelectedMessageCid('')}
           message={messages.find(({ cid }) => cid === selectedMessageCid)}
         />
       ) : (
