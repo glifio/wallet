@@ -7,7 +7,7 @@ import InputWrapper from './InputWrapper'
 import { DenomTag } from './Number'
 
 const TextInput = React.forwardRef(
-  ({ denom, label, error, disabled, name, ...props }, ref) => (
+  ({ denom, label, error, disabled, ...props }, ref) => (
     <>
       <InputWrapper>
         <Box display='flex' alignItems='center'>

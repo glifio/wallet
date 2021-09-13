@@ -3,7 +3,7 @@ import fetchAndSetMsigActor from './fetchAndSetMsigActor'
 // this is a premade multisig vesting actor
 // if calibration net resets, these tests will fail
 const MULTISIG_ACTOR_ADDRESS = 'f2m4f2dv7m35skytoqzsyrh5wqz3kxxfflxsha5za'
-const MULTISIG_SIGNER_ADDRESS = 'f1nq5k2mps5umtebdovlyo7y6a3ywc7u4tobtuo3a'
+// const MULTISIG_SIGNER_ADDRESS = 'f1nq5k2mps5umtebdovlyo7y6a3ywc7u4tobtuo3a'
 
 describe('fetchMsigState', () => {
   test('it calls the success callback with the new multisig address (passing an exec message CID)', async () => {
