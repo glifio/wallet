@@ -27,7 +27,11 @@ import State from './State'
 import NavMenu from './NavMenu'
 import useWallet from '../../../WalletProvider/useWallet'
 import MsgConfirmer from '../../../lib/confirm-message'
-import { gotoRouteWithKeyUrlParams, detectPage, resetWallet } from '../../../utils/urlParams'
+import {
+  gotoRouteWithKeyUrlParams,
+  detectPage,
+  resetWallet
+} from '../../../utils/urlParams'
 
 const MsigHome = () => {
   const messagesPending = useSelector(
