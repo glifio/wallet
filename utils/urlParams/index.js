@@ -36,3 +36,8 @@ export const detectPage = router => {
   // so it will still match a dynamic url's string declared in constants.
   return router.pathname
 }
+
+export const resetWallet = () => {
+  // a full page reload will reset the wallet
+  window.location.reload()
+}

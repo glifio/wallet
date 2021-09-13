@@ -1,11 +1,17 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
-import { Box, LoadingScreen } from '@glif/react-components'
+import {
+  Box,
+  LoadingScreen,
+  Tooltip,
+  BaseButton as ButtonLogout
+} from '@glif/react-components'
 import { useMsig } from '../../../MsigProvider'
 import Withdraw from '../Withdraw'
 import ChangeOwner from '../ChangeOwner'
 import { AddSigner, RemoveSigner } from '../AddRmSigners'
+
 import {
   PAGE_MSIG_HOME,
   PAGE_MSIG_HISTORY,
@@ -14,13 +20,14 @@ import {
   PAGE_MSIG_CHANGE_OWNER,
   PAGE_MSIG_REMOVE_SIGNER_WITH_CID,
   PAGE_MSIG_REMOVE_SIGNER,
-  PAGE_MSIG_ADD_SIGNER
+  PAGE_MSIG_ADD_SIGNER,
+  RESPONSIVE_BREAKPOINT
 } from '../../../constants'
 import State from './State'
 import NavMenu from './NavMenu'
 import useWallet from '../../../WalletProvider/useWallet'
 import MsgConfirmer from '../../../lib/confirm-message'
-import { gotoRouteWithKeyUrlParams, detectPage } from '../../../utils/urlParams'
+import { gotoRouteWithKeyUrlParams, detectPage, resetWallet } from '../../../utils/urlParams'
 
 const MsigHome = () => {
   const messagesPending = useSelector(
@@ -43,11 +50,13 @@ const MsigHome = () => {
     >
       <MsgConfirmer />
       <Box
+        position='relative'
         display='flex'
         justifyContent='center'
         width='100%'
-        minHeight='100vh'
         p={3}
+        // padding for logout button to ensure it never sits on top of the content
+        paddingBottom={8}
       >
         {msig.loading && <LoadingScreen width='100%' />}
         {!msig.loading &&
@@ -120,6 +129,30 @@ const MsigHome = () => {
               address={msig.Address}
             />
           )}
+        <ButtonLogout
+          position='absolute'
+          variant='secondary'
+          bottom='0'
+          left='0'
+          m={5}
+          display='flex'
+          alignItems='center'
+          justifyContent='space-between'
+          css={`
+            background-color: ${({ theme }) => theme.colors.core.secondary}00;
+            &:hover {
+              background-color: ${({ theme }) => theme.colors.core.secondary};
+            }
+            /* todo #responsiveDesign: decide how to do responsive design */
+            @media only screen and (max-width: ${RESPONSIVE_BREAKPOINT}px) {
+              margin: 0;
+            }
+          `}
+          onClick={resetWallet}
+        >
+          Logout
+          <Tooltip content='Logging out clears all your sensitive information from the browser and sends you back to the home page' />
+        </ButtonLogout>
       </Box>
     </Box>
   )

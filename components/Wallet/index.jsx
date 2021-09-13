@@ -21,6 +21,7 @@ import {
 import MsgConfirmer from '../../lib/confirm-message'
 import useWallet from '../../WalletProvider/useWallet'
 import reportError from '../../utils/reportError'
+import { resetWallet } from '../../utils/urlParams'
 
 export default () => {
   const wallet = useWallet()
@@ -30,10 +31,6 @@ export default () => {
   const [showLedgerError, setShowLedgerError] = useState(false)
   const [ledgerBusy, setLedgerBusy] = useState(false)
 
-  const resetWallet = () => {
-    // a full page reload will reset the wallet
-    window.location.reload()
-  }
 
   const onShowOnLedger = async () => {
     setLedgerBusy(true)

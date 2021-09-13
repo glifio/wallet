@@ -81,3 +81,6 @@ export const PAGE_MSIG_CHANGE_OWNER = '/vault/owner-change'
 export const PAGE_MSIG_REMOVE_SIGNER = '/vault/signer-remove'
 export const PAGE_MSIG_REMOVE_SIGNER_WITH_CID = '/vault/signer-remove/[cid]'
 export const PAGE_MSIG_ADD_SIGNER = '/vault/signer-add'
+
+// todo #responsiveDesign: decide how to do responsive design
+export const RESPONSIVE_BREAKPOINT = 1024

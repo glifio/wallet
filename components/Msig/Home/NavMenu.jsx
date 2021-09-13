@@ -13,13 +13,12 @@ import Address from './Address'
 import {
   PAGE_MSIG_HOME,
   PAGE_MSIG_HISTORY,
-  PAGE_MSIG_OWNERS
+  PAGE_MSIG_OWNERS,
+  RESPONSIVE_BREAKPOINT
 } from '../../../constants'
 import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
 
-// todo: decide how to do responsive design
-// add enough room for vault icon
-const responsiveMenuBuffer = 1024 + 300
+const responsiveMenuBuffer = RESPONSIVE_BREAKPOINT + 300
 
 const StyledNavLink = styled(NavLink).attrs(() => ({
   mr: 3
@@ -42,7 +41,7 @@ const NavMenu = ({ pageId, msigAddress }) => {
         position='absolute'
         my={5}
         css={`
-          /* todo: decide how to do responsive design */
+          /* todo #responsiveDesign: decide how to do responsive design */
           @media only screen and (max-width: ${responsiveMenuBuffer}px) {
             display: none;
           }
