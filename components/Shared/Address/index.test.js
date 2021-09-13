@@ -1,7 +1,6 @@
 import React from 'react'
 import { cleanup, render, act, fireEvent } from '@testing-library/react'
 import Address from '.'
-import noop from '../../../utils/noop'
 import ThemeProvider from '../ThemeProvider'
 
 describe('Receive', () => {
@@ -10,11 +9,7 @@ describe('Receive', () => {
   test('it renders correctly', () => {
     const { container } = render(
       <ThemeProvider>
-        <Address
-          address='t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy'
-          onClose={noop}
-          onComplete={noop}
-        />
+        <Address address='t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy' />
       </ThemeProvider>
     )
 
@@ -24,11 +19,7 @@ describe('Receive', () => {
   test('it reveals the address when the user clicks reveal', () => {
     const { container, getByText } = render(
       <ThemeProvider>
-        <Address
-          address='t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy'
-          onClose={noop}
-          onComplete={noop}
-        />
+        <Address address='t137sjdbgunloi7couiy4l5nc7pd6k2jmq32vizpy' />
       </ThemeProvider>
     )
 
