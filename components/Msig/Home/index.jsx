@@ -12,26 +12,12 @@ import Withdraw from '../Withdraw'
 import ChangeOwner from '../ChangeOwner'
 import { AddSigner, RemoveSigner } from '../AddRmSigners'
 
-import {
-  PAGE_MSIG_HOME,
-  PAGE_MSIG_HISTORY,
-  PAGE_MSIG_OWNERS,
-  PAGE_MSIG_WITHDRAW,
-  PAGE_MSIG_CHANGE_OWNER,
-  PAGE_MSIG_REMOVE_SIGNER_WITH_CID,
-  PAGE_MSIG_REMOVE_SIGNER,
-  PAGE_MSIG_ADD_SIGNER,
-  RESPONSIVE_BREAKPOINT
-} from '../../../constants'
+import { PAGE } from '../../../constants'
 import State from './State'
-import NavMenu from './NavMenu'
+import NavMenu from '../NavMenu'
 import useWallet from '../../../WalletProvider/useWallet'
 import MsgConfirmer from '../../../lib/confirm-message'
-import {
-  gotoRouteWithKeyUrlParams,
-  detectPage,
-  resetWallet
-} from '../../../utils/urlParams'
+import { navigate, detectPage, resetWallet } from '../../../utils/urlParams'
 
 const MsigHome = () => {
   const messagesPending = useSelector(
@@ -64,11 +50,11 @@ const MsigHome = () => {
       >
         {msig.loading && <LoadingScreen width='100%' />}
         {!msig.loading &&
-          (pageId === PAGE_MSIG_HOME ||
-            pageId === PAGE_MSIG_HISTORY ||
-            pageId === PAGE_MSIG_OWNERS) && (
+          (pageId === PAGE.MSIG_HOME ||
+            pageId === PAGE.MSIG_HISTORY ||
+            pageId === PAGE.MSIG_OWNERS) && (
             <Box display='flex' flexDirection='column' width='100%'>
-              <NavMenu pageId={pageId} msigAddress={msig.Address} />
+              <NavMenu msigAddress={msig.Address} />
               <State
                 msigAddress={msig.Address}
                 walletAddress={address}
@@ -79,39 +65,39 @@ const MsigHome = () => {
               />
             </Box>
           )}
-        {!msig.loading && pageId === PAGE_MSIG_WITHDRAW && (
+        {!msig.loading && pageId === PAGE.MSIG_WITHDRAW && (
           <Withdraw
             onClose={() => {
-              gotoRouteWithKeyUrlParams(router, PAGE_MSIG_HOME)
+              navigate(router, PAGE.MSIG_HOME)
             }}
             onComplete={() => {
-              gotoRouteWithKeyUrlParams(router, PAGE_MSIG_HISTORY)
+              navigate(router, PAGE.MSIG_HISTORY)
             }}
             balance={msig.AvailableBalance}
             address={msig.Address}
           />
         )}
-        {!msig.loading && pageId === PAGE_MSIG_ADD_SIGNER && (
+        {!msig.loading && pageId === PAGE.MSIG_ADD_SIGNER && (
           <AddSigner
             onClose={() => {
-              gotoRouteWithKeyUrlParams(router, PAGE_MSIG_OWNERS)
+              navigate(router, PAGE.MSIG_OWNERS)
             }}
             onComplete={() => {
-              gotoRouteWithKeyUrlParams(router, PAGE_MSIG_HISTORY)
+              navigate(router, PAGE.MSIG_HISTORY)
             }}
             balance={msig.AvailableBalance}
             address={msig.Address}
           />
         )}
         {!msig.loading &&
-          (pageId === PAGE_MSIG_REMOVE_SIGNER ||
-            pageId === PAGE_MSIG_REMOVE_SIGNER_WITH_CID) && (
+          (pageId === PAGE.MSIG_REMOVE_SIGNER ||
+            pageId === PAGE.MSIG_REMOVE_SIGNER_WITH_CID) && (
             <RemoveSigner
               onClose={() => {
-                gotoRouteWithKeyUrlParams(router, PAGE_MSIG_OWNERS)
+                navigate(router, PAGE.MSIG_OWNERS)
               }}
               onComplete={() => {
-                gotoRouteWithKeyUrlParams(router, PAGE_MSIG_HISTORY)
+                navigate(router, PAGE.MSIG_HISTORY)
               }}
               signers={msig.Signers}
               balance={msig.AvailableBalance}
@@ -121,13 +107,13 @@ const MsigHome = () => {
           )}
         {!msig.loading &&
           !messagesPending &&
-          pageId === PAGE_MSIG_CHANGE_OWNER && (
+          pageId === PAGE.MSIG_CHANGE_OWNER && (
             <ChangeOwner
               onClose={() => {
-                gotoRouteWithKeyUrlParams(router, PAGE_MSIG_OWNERS)
+                navigate(router, PAGE.MSIG_OWNERS)
               }}
               onComplete={() => {
-                gotoRouteWithKeyUrlParams(router, PAGE_MSIG_HISTORY)
+                navigate(router, PAGE.MSIG_HISTORY)
               }}
               balance={msig.AvailableBalance}
               address={msig.Address}
@@ -146,10 +132,6 @@ const MsigHome = () => {
             background-color: ${({ theme }) => theme.colors.core.secondary}00;
             &:hover {
               background-color: ${({ theme }) => theme.colors.core.secondary};
-            }
-            /* todo #responsiveDesign: decide how to do responsive design */
-            @media only screen and (max-width: ${RESPONSIVE_BREAKPOINT}px) {
-              margin: 0;
             }
           `}
           onClick={resetWallet}

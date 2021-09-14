@@ -103,7 +103,7 @@ const EnterActorAddress = () => {
             <StyledLink
               href='/vault/create?network=f'
               name='Create one'
-              target=''
+              target='_self'
             />
           </Box>
         </OnboardCard>

@@ -1,11 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Box } from '@glif/react-components'
-import {
-  PAGE_MSIG_HOME,
-  PAGE_MSIG_HISTORY,
-  PAGE_MSIG_OWNERS
-} from '../../../constants'
+import { PAGE } from '../../../constants'
 import Balances from './Balances'
 import {
   ADDRESS_PROPTYPE,
@@ -50,11 +46,11 @@ const State = ({
       maxWidth={18}
       margin='0 auto'
     >
-      {pageId === PAGE_MSIG_HOME && (
+      {pageId === PAGE.MSIG_HOME && (
         <Balances available={available} total={total} />
       )}
-      {pageId === PAGE_MSIG_HISTORY && <MessageHistory address={msigAddress} />}
-      {pageId === PAGE_MSIG_OWNERS && (
+      {pageId === PAGE.MSIG_HISTORY && <MessageHistory address={msigAddress} />}
+      {pageId === PAGE.MSIG_OWNERS && (
         <AccountSummary
           msigAddress={msigAddress}
           walletAddress={walletAddress}

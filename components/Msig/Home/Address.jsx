@@ -10,7 +10,13 @@ import {
 } from '@glif/react-components'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
-const Address = ({ widthOverride, address, label, glyphAcronym, onClose }) => {
+const Address = ({
+  widthOverride,
+  address,
+  label,
+  glyphAcronym,
+  onRemoveSigner
+}) => {
   return (
     <Box
       display='flex'
@@ -23,7 +29,7 @@ const Address = ({ widthOverride, address, label, glyphAcronym, onClose }) => {
       mr={2}
       my={1}
       borderRadius={2}
-      maxWidth={widthOverride ? 'none' : 11}
+      maxWidth={widthOverride ? 'none' : 12}
       width={widthOverride || 'auto'}
     >
       {glyphAcronym ? (
@@ -53,7 +59,9 @@ const Address = ({ widthOverride, address, label, glyphAcronym, onClose }) => {
         <Label fontSize={1}>{label}</Label>
         <CopyAddress color='core.nearblack' address={address} />
       </Box>
-      {onClose && <ButtonClose role='button' type='button' onClick={onClose} />}
+      {onRemoveSigner && (
+        <ButtonClose role='button' type='button' onClick={onRemoveSigner} />
+      )}
     </Box>
   )
 }
@@ -63,7 +71,8 @@ Address.propTypes = {
   label: PropTypes.string.isRequired,
   glyphAcronym: PropTypes.string,
   widthOverride: PropTypes.string,
-  onClose: PropTypes.func
+  onRemoveSigner: PropTypes.func,
+  onChangeSigner: PropTypes.func
 }
 
 export default Address

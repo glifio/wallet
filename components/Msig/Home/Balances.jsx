@@ -4,8 +4,8 @@ import { useRouter } from 'next/router'
 import { Box, Button, Num, Title } from '@glif/react-components'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
-import { PAGE_MSIG_WITHDRAW } from '../../../constants'
-import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
+import { PAGE } from '../../../constants'
+import { navigate } from '../../../utils/urlParams'
 
 const AvailableBalanceContainer = styled(Box)`
   background: linear-gradient(
@@ -92,7 +92,7 @@ const Balances = ({ available, total }) => {
           type='button'
           variant='primary'
           onClick={() => {
-            gotoRouteWithKeyUrlParams(router, PAGE_MSIG_WITHDRAW)
+            navigate(router, PAGE.MSIG_WITHDRAW)
           }}
           title='Withdraw'
           maxWidth={10}

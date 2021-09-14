@@ -3,7 +3,6 @@ import MessageDetail from './Detail'
 import { MessageHistoryTable } from '../../Shared'
 import useWallet from '../../../WalletProvider/useWallet'
 import useTransactionHistory from '../../../lib/useTransactionHistory'
-import noop from '../../../utils/noop'
 
 const MessageView = () => {
   const [selectedMessageCid, setSelectedMessageCid] = useState('')
@@ -35,7 +34,7 @@ const MessageView = () => {
           selectMessage={setSelectedMessageCid}
           paginating={paginating}
           showMore={showMore}
-          refresh={refresh || noop}
+          refresh={refresh}
           total={total}
         />
       )}

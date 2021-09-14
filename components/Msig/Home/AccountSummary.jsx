@@ -14,10 +14,10 @@ import {
   Tooltip
 } from '@glif/react-components'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
-import { PAGE_MSIG_ADD_SIGNER } from '../../../constants'
+import { PAGE } from '../../../constants'
 import Address from './Address'
 import Signers from './Signers'
-import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
+import { navigate } from '../../../utils/urlParams'
 import { useMsig } from '../../../MsigProvider'
 
 const ButtonViewOnLedgerDevice = styled(BaseButton)``
@@ -88,20 +88,18 @@ const AccountSummary = ({
     </Box>
   ) : (
     <Box width='100%'>
-      {msig.NumApprovalsThreshold && (
-        <Box display='flex' flexWrap='wrap' my={6}>
-          <Title display='inline-flex'>
-            <Glyph
-              acronym={msig.NumApprovalsThreshold}
-              size={5}
-              justifyContent='start'
-              border={0}
-            />
-            Required Approvals
-          </Title>
-          <Tooltip content='The number of approvals required for a transaction' />
-        </Box>
-      )}
+      <Box display='flex' flexWrap='wrap' my={6}>
+        <Title display='inline-flex'>
+          <Glyph
+            acronym={msig.NumApprovalsThreshold}
+            size={5}
+            justifyContent='start'
+            border={0}
+          />
+          Required Approvals
+        </Title>
+        <Tooltip content='The number of approvals required for a transaction' />
+      </Box>
       <Box position='relative' display='flex' flexWrap='wrap'>
         <Title>Owners</Title>
         <Tooltip content='These are the owners' />
@@ -142,7 +140,7 @@ const AccountSummary = ({
           type='button'
           variant='secondary'
           onClick={() => {
-            gotoRouteWithKeyUrlParams(router, PAGE_MSIG_ADD_SIGNER)
+            navigate(router, PAGE.MSIG_ADD_SIGNER)
           }}
           title='Add Signer'
           minWidth={8}

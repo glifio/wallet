@@ -1,5 +1,5 @@
+import { useCallback } from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import {
   NavLink,
@@ -9,30 +9,15 @@ import {
   MenuItem,
   IconGlif
 } from '@glif/react-components'
-import Address from './Address'
-import {
-  PAGE_MSIG_HOME,
-  PAGE_MSIG_HISTORY,
-  PAGE_MSIG_OWNERS,
-  RESPONSIVE_BREAKPOINT
-} from '../../../constants'
-import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
+import Address from './Home/Address'
+import { PAGE, RESPONSIVE_BREAKPOINT } from '../../constants'
+import { generateRouteWithRequiredUrlParams } from '../../utils/urlParams'
 
 const responsiveMenuBuffer = RESPONSIVE_BREAKPOINT + 300
 
-const StyledNavLink = styled(NavLink).attrs(() => ({
-  mr: 3
-}))``
-
-const NavMenu = ({ pageId, msigAddress }) => {
+const NavMenu = ({ msigAddress }) => {
   const router = useRouter()
-
-  const repairLink = e => {
-    e.preventDefault()
-
-    gotoRouteWithKeyUrlParams(router, e.currentTarget.pathname)
-  }
-
+  const getRoute = useCallback(generateRouteWithRequiredUrlParams, [router])
   return (
     <>
       <Box
@@ -86,27 +71,27 @@ const NavMenu = ({ pageId, msigAddress }) => {
           <Title ml={2}>Vault</Title>
         </MenuItem>
         <MenuItem display='flex' justifyContent='space-between'>
-          <StyledNavLink
-            href={PAGE_MSIG_HOME}
-            onClick={repairLink}
-            isActive={pageId === PAGE_MSIG_HOME}
+          <NavLink
+            href={getRoute(router, PAGE.MSIG_HOME)}
+            isActive={router.pathname === PAGE.MSIG_HOME}
+            mr={3}
           >
             Assets
-          </StyledNavLink>
-          <StyledNavLink
-            href={PAGE_MSIG_HISTORY}
-            onClick={repairLink}
-            isActive={pageId === PAGE_MSIG_HISTORY}
+          </NavLink>
+          <NavLink
+            href={getRoute(router, PAGE.MSIG_HISTORY)}
+            isActive={router.pathname === PAGE.MSIG_HISTORY}
+            mr={3}
           >
             History
-          </StyledNavLink>
-          <StyledNavLink
-            href={PAGE_MSIG_OWNERS}
-            onClick={repairLink}
-            isActive={pageId === PAGE_MSIG_OWNERS}
+          </NavLink>
+          <NavLink
+            href={getRoute(router, PAGE.MSIG_OWNERS)}
+            isActive={router.pathname === PAGE.MSIG_OWNERS}
+            mr={3}
           >
             Owners
-          </StyledNavLink>
+          </NavLink>
         </MenuItem>
         <MenuItem ml='auto'>
           <Box>
@@ -123,8 +108,7 @@ const NavMenu = ({ pageId, msigAddress }) => {
 }
 
 NavMenu.propTypes = {
-  pageId: PropTypes.string,
-  msigAddress: PropTypes.string
+  msigAddress: PropTypes.string.isRequired
 }
 
 export default NavMenu

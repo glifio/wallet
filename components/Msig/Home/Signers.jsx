@@ -5,8 +5,8 @@ import { Box } from '@glif/react-components'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
 import Address from './Address'
-import { gotoRouteWithKeyUrlParams } from '../../../utils/urlParams'
-import { PAGE_MSIG_REMOVE_SIGNER } from '../../../constants'
+import { navigate } from '../../../utils/urlParams'
+import { PAGE } from '../../../constants'
 
 const Signers = ({ signers, walletAddress }) => {
   const router = useRouter()
@@ -28,10 +28,7 @@ const Signers = ({ signers, walletAddress }) => {
               glyphAcronym={(i + 2).toString()}
               widthOverride='100%'
               onClose={() => {
-                gotoRouteWithKeyUrlParams(
-                  router,
-                  `${PAGE_MSIG_REMOVE_SIGNER}/${signer.account}`
-                )
+                navigate(router, `${PAGE.MSIG_REMOVE_SIGNER}/${signer.account}`)
               }}
             />
           )

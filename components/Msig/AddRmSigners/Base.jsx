@@ -38,7 +38,7 @@ const ManipulateSignersHOC = method => {
     const { serializeParams } = useWasm()
     const [step, setStep] = useState(1)
     const [attemptingTx, setAttemptingTx] = useState(false)
-    const [signerAddress, setSignerAddress] = useState(cid || '')
+    const [signerAddress, setSignerAddress] = useState(cid)
     const [signerAddressError, setSignerAddressError] = useState('')
     const [uncaughtError, setUncaughtError] = useState('')
     const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
@@ -365,6 +365,10 @@ const ManipulateSignersHOC = method => {
       })
     ),
     cid: PropTypes.string
+  }
+
+  Base.defaultProps = {
+    cid: ''
   }
   return Base
 }

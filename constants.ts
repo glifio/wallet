@@ -70,17 +70,33 @@ export const PL_SIGNERS = new Set([
 export const SCREEN_MAX_WIDTH = 1440
 
 /* PAGES */
-export const PAGE_HOME = '/home'
-export const PAGE_SEND = '/send'
-export const PAGE_SPEED_UP = '/speed-up'
-export const PAGE_MSIG_HOME = '/vault/home'
-export const PAGE_MSIG_HISTORY = '/vault/history'
-export const PAGE_MSIG_OWNERS = '/vault/owners'
-export const PAGE_MSIG_WITHDRAW = '/vault/withdraw'
-export const PAGE_MSIG_CHANGE_OWNER = '/vault/owner-change'
-export const PAGE_MSIG_REMOVE_SIGNER = '/vault/signer-remove'
-export const PAGE_MSIG_REMOVE_SIGNER_WITH_CID = '/vault/signer-remove/[cid]'
-export const PAGE_MSIG_ADD_SIGNER = '/vault/signer-add'
+export const WALLET_HOME = '/home'
+export const WALLET_SEND = '/send'
+export const SPEED_UP = '/speed-up'
+export const MSIG_HOME = '/vault/home'
+export const MSIG_HISTORY = '/vault/history'
+export const MSIG_OWNERS = '/vault/owners'
+export const MSIG_WITHDRAW = '/vault/withdraw'
+export const MSIG_CHANGE_OWNER = '/vault/owner-change'
+export const MSIG_REMOVE_SIGNER = '/vault/signer-remove'
+export const MSIG_REMOVE_SIGNER_WITH_CID = '/vault/signer-remove/[cid]'
+export const MSIG_ADD_SIGNER = '/vault/signer-add'
+
+/* eslint-disable no-unused-vars */
+export enum PAGE {
+  WALLET_HOME = '/home',
+  WALLET_SEND = '/send',
+  SPEED_UP = '/speed-up',
+  MSIG_HOME = '/vault/home',
+  MSIG_HISTORY = '/vault/history',
+  MSIG_OWNERS = '/vault/owners',
+  MSIG_WITHDRAW = '/vault/withdraw',
+  MSIG_CHANGE_OWNER = '/vault/owner-change',
+  MSIG_REMOVE_SIGNER = '/vault/signer-remove',
+  MSIG_REMOVE_SIGNER_WITH_CID = '/vault/signer-remove/[cid]',
+  MSIG_ADD_SIGNER = '/vault/signer-add'
+}
+/* eslint-enable */
 
 // todo #responsiveDesign: decide how to do responsive design
 export const RESPONSIVE_BREAKPOINT = 1024
