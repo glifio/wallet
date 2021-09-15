@@ -64,7 +64,6 @@ TotalBalance.propTypes = {
 
 const Balances = ({ available, total }) => {
   const router = useRouter()
-
   return (
     <Box
       position='relative'

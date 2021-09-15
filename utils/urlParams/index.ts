@@ -3,13 +3,13 @@ import { PAGE } from '../../constants'
 
 const requiredUrlParams = ['network']
 
-export const persistRequiredUrlParams = (router: NextRouter) => {
+export const persistRequiredUrlParams = (
+  existingQParams: Record<string, string>
+) => {
   const keyParams = new Set([...requiredUrlParams])
-
   const newParams = {}
-
   // @ts-ignore
-  const currParams = new URLSearchParams(router.query)
+  const currParams = new URLSearchParams(existingQParams)
   currParams.forEach((val, key) => {
     if (keyParams.has(key)) {
       newParams[key] = val
@@ -20,17 +20,27 @@ export const persistRequiredUrlParams = (router: NextRouter) => {
 }
 
 export const generateRouteWithRequiredUrlParams = (
-  router: NextRouter,
+  existingQParams: Record<string, string>,
   pageUrl: PAGE,
-  extraParams?: Record<string, any>
+  options?: {
+    // this is to handle nextJS page routing structure
+    // while staying compliant with TS compiler
+    urlPathExtension: string[]
+    queryParams?: Record<string, any>
+  }
 ): string => {
-  const newParams = persistRequiredUrlParams(router)
-  if (extraParams) {
-    Object.keys(extraParams).forEach(key => {
-      newParams.append(key, extraParams[key])
+  const newParams = persistRequiredUrlParams(existingQParams)
+  if (options?.queryParams) {
+    Object.keys(options.queryParams).forEach(key => {
+      newParams.append(key, options.queryParams[key])
     })
   }
 
+  if (options?.urlPathExtension) {
+    return `${pageUrl}/${options.urlPathExtension.join(
+      '/'
+    )}?${newParams.toString()}`
+  }
   return `${pageUrl}?${newParams.toString()}`
 }
 
@@ -38,9 +48,22 @@ export const generateRouteWithRequiredUrlParams = (
 export const navigate = (
   router: NextRouter,
   pageUrl: PAGE,
-  extraParams: Record<string, any>
+  options?: {
+    // this is to handle nextJS page routing structure
+    // while staying compliant with TS compiler
+    urlPathExtension: string[]
+    queryParams?: Record<string, any>
+  }
 ): void => {
-  router.push(generateRouteWithRequiredUrlParams(router, pageUrl, extraParams))
+  router.push(
+    generateRouteWithRequiredUrlParams(
+      // router.query and URLSearchParams aren't playing nicely together with typescript,
+      // so i'm making some semi aggressive moevs around it because this has been working for a while
+      router.query as Record<string, string>,
+      pageUrl,
+      options
+    )
+  )
 }
 
 export const detectPage = (router: NextRouter) => {

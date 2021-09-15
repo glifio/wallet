@@ -9,9 +9,9 @@ import {
   MenuItem,
   IconGlif
 } from '@glif/react-components'
-import Address from './Home/Address'
-import { PAGE, RESPONSIVE_BREAKPOINT } from '../../constants'
-import { generateRouteWithRequiredUrlParams } from '../../utils/urlParams'
+import { Address } from '../Shared'
+import { PAGE, RESPONSIVE_BREAKPOINT } from '../../../constants'
+import { generateRouteWithRequiredUrlParams } from '../../../utils/urlParams'
 
 const responsiveMenuBuffer = RESPONSIVE_BREAKPOINT + 300
 

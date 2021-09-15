@@ -1,12 +1,11 @@
 import React from 'react'
-import { MsigHome } from '../../components/Msig'
+import { MsigHistory } from '../../components/Msig'
 import RequireWallet from '../../lib/RequireWallet'
 
 const History = () => {
   return (
     <RequireWallet>
-      {/* TODO: Replace with MsigHistory */}
-      <MsigHome />
+      <MsigHistory />
     </RequireWallet>
   )
 }

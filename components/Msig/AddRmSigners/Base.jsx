@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
+import React, { useCallback, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
 import { Message } from '@glif/filecoin-message'
@@ -9,16 +8,12 @@ import { BigNumber } from '@glif/filecoin-number'
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
 import { Box, Button, ButtonClose, StepHeader, Form, Card } from '../../Shared'
-import {
-  ADDRESS_PROPTYPE,
-  FILECOIN_NUMBER_PROP
-} from '../../../customPropTypes'
 import { CardHeader, AddRmSignerHeaderText } from '../Shared'
 import Preface from './Prefaces'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
-import { LEDGER, PROPOSE, emptyGasInfo } from '../../../constants'
+import { LEDGER, PROPOSE, emptyGasInfo, PAGE } from '../../../constants'
 import CustomizeFee from '../../Wallet/Send/CustomizeFee'
 import {
   reportLedgerConfigError,
@@ -28,17 +23,22 @@ import reportError from '../../../utils/reportError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
 import { AddSignerInput, RemoveSignerInput } from './SignerInput'
+import { useMsig } from '../../../MsigProvider'
+import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
+import { useRouter } from 'next/router'
+import { navigate } from '../../../utils/urlParams'
 
 const ManipulateSignersHOC = method => {
   if (!method) throw new Error('must pass method to ManipulateSignersHOC')
-  const Base = ({ address, balance, onClose, onComplete, signers, cid }) => {
+  const Base = ({ signerAddress }) => {
     const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
     const wallet = useWallet()
     const dispatch = useDispatch()
+    const router = useRouter()
     const { serializeParams } = useWasm()
     const [step, setStep] = useState(1)
     const [attemptingTx, setAttemptingTx] = useState(false)
-    const [signerAddress, setSignerAddress] = useState(cid)
+    const [signerAddress, setSignerAddress] = useState(signerAddress)
     const [signerAddressError, setSignerAddressError] = useState('')
     const [uncaughtError, setUncaughtError] = useState('')
     const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
@@ -46,6 +46,19 @@ const ManipulateSignersHOC = method => {
     const [gasError, setGasError] = useState('')
     const [gasInfo, setGasInfo] = useState(emptyGasInfo)
     const [frozen, setFrozen] = useState(false)
+    const {
+      Address: address,
+      AvailableBalance: balance,
+      Signers: signers
+    } = useMsig()
+
+    const onClose = useCallback(() => {
+      navigate(router, PAGE.MSIG_OWNERS)
+    }, [router])
+
+    const onComplete = useCallback(() => {
+      navigate(router, PAGE.MSIG_HISTORY)
+    }, [router])
 
     const constructMsg = (nonce = 0) => {
       const innerParams = {
@@ -354,21 +367,11 @@ const ManipulateSignersHOC = method => {
   }
 
   Base.propTypes = {
-    address: ADDRESS_PROPTYPE,
-    balance: FILECOIN_NUMBER_PROP,
-    onClose: PropTypes.func.isRequired,
-    onComplete: PropTypes.func.isRequired,
-    signers: PropTypes.arrayOf(
-      PropTypes.shape({
-        account: ADDRESS_PROPTYPE,
-        id: ADDRESS_PROPTYPE
-      })
-    ),
-    cid: PropTypes.string
+    signerAddress: ADDRESS_PROPTYPE
   }
 
   Base.defaultProps = {
-    cid: ''
+    signerAddress: ''
   }
   return Base
 }

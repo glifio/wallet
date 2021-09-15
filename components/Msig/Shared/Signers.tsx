@@ -7,8 +7,15 @@ import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
 import Address from './Address'
 import { navigate } from '../../../utils/urlParams'
 import { PAGE } from '../../../constants'
+import { Signer } from '../../../MsigProvider/types'
 
-const Signers = ({ signers, walletAddress }) => {
+const Signers = ({
+  signers,
+  walletAddress
+}: {
+  signers: Signer[]
+  walletAddress: string
+}) => {
   const router = useRouter()
 
   return (
@@ -27,8 +34,10 @@ const Signers = ({ signers, walletAddress }) => {
               address={signer.account}
               glyphAcronym={(i + 2).toString()}
               widthOverride='100%'
-              onClose={() => {
-                navigate(router, `${PAGE.MSIG_REMOVE_SIGNER}/${signer.account}`)
+              onRemoveSigner={() => {
+                navigate(router, PAGE.MSIG_REMOVE_SIGNER, {
+                  urlPathExtension: [signer.account]
+                })
               }}
             />
           )
