@@ -1,22 +1,29 @@
 import { NextRouter } from 'next/router'
 import { PAGE } from '../../constants'
 
-const requiredUrlParams = ['network']
+const requiredUrlParamsWithDefaults = {
+  network: 'f'
+}
 
-export const persistRequiredUrlParams = (
-  existingQParams: Record<string, string>
-) => {
-  const keyParams = new Set([...requiredUrlParams])
-  const newParams = {}
+export const combineExistingNewAndRequiredQueryParams = (
+  existingQParams: Record<string, string>,
+  newQParams?: Record<string, string>
+): URLSearchParams => {
   // @ts-ignore
-  const currParams = new URLSearchParams(existingQParams)
-  currParams.forEach((val, key) => {
-    if (keyParams.has(key)) {
-      newParams[key] = val
+  const searchParams = new URLSearchParams(existingQParams)
+  if (newQParams) {
+    for (const param in newQParams) {
+      searchParams.set(param, newQParams[param])
     }
-  })
+  }
 
-  return new URLSearchParams(newParams)
+  for (const param in requiredUrlParamsWithDefaults) {
+    if (!searchParams.get(param)) {
+      searchParams.set(param, requiredUrlParamsWithDefaults[param])
+    }
+  }
+
+  return searchParams
 }
 
 export const generateRouteWithRequiredUrlParams = (
@@ -25,16 +32,14 @@ export const generateRouteWithRequiredUrlParams = (
   options?: {
     // this is to handle nextJS page routing structure
     // while staying compliant with TS compiler
-    urlPathExtension: string[]
-    queryParams?: Record<string, any>
+    urlPathExtension?: string[]
+    newQueryParams?: Record<string, any>
   }
 ): string => {
-  const newParams = persistRequiredUrlParams(existingQParams)
-  if (options?.queryParams) {
-    Object.keys(options.queryParams).forEach(key => {
-      newParams.append(key, options.queryParams[key])
-    })
-  }
+  const newParams = combineExistingNewAndRequiredQueryParams(
+    existingQParams,
+    options?.newQueryParams
+  )
 
   if (options?.urlPathExtension) {
     return `${pageUrl}/${options.urlPathExtension.join(

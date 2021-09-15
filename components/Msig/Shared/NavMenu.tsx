@@ -84,14 +84,20 @@ const NavMenu = ({ msigAddress }) => {
             Assets
           </NavLink>
           <NavLink
-            href={getRoute(router, PAGE.MSIG_HISTORY)}
+            href={getRoute(
+              router.query as Record<string, string>,
+              PAGE.MSIG_HISTORY
+            )}
             isActive={router.pathname === PAGE.MSIG_HISTORY}
             mr={3}
           >
             History
           </NavLink>
           <NavLink
-            href={getRoute(router, PAGE.MSIG_OWNERS)}
+            href={getRoute(
+              router.query as Record<string, string>,
+              PAGE.MSIG_OWNERS
+            )}
             isActive={router.pathname === PAGE.MSIG_OWNERS}
             mr={3}
           >

@@ -30,7 +30,7 @@ import { navigate } from '../../../utils/urlParams'
 
 const ManipulateSignersHOC = method => {
   if (!method) throw new Error('must pass method to ManipulateSignersHOC')
-  const Base = ({ signerAddress }) => {
+  const Base = props => {
     const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
     const wallet = useWallet()
     const dispatch = useDispatch()
@@ -38,7 +38,7 @@ const ManipulateSignersHOC = method => {
     const { serializeParams } = useWasm()
     const [step, setStep] = useState(1)
     const [attemptingTx, setAttemptingTx] = useState(false)
-    const [signerAddress, setSignerAddress] = useState(signerAddress)
+    const [signerAddress, setSignerAddress] = useState(props.signerAddress)
     const [signerAddressError, setSignerAddressError] = useState('')
     const [uncaughtError, setUncaughtError] = useState('')
     const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
