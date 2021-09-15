@@ -1,13 +1,16 @@
 import React from 'react'
 import { AddSigner } from '../../components/Msig'
+import { MsigPageWrapper } from '../../components/Msig/Shared'
 import RequireWallet from '../../lib/RequireWallet'
 
-const SignerAdd = () => {
+const Add = () => {
   return (
     <RequireWallet>
-      <AddSigner />
+      <MsigPageWrapper hideNav>
+        <AddSigner />
+      </MsigPageWrapper>
     </RequireWallet>
   )
 }
 
-export default SignerAdd
+export default Add

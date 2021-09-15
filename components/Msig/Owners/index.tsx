@@ -50,7 +50,7 @@ export default function Owners() {
           <Box display='flex' flexWrap='wrap' my={6}>
             <Title display='inline-flex'>
               <Glyph
-                acronym={NumApprovalsThreshold}
+                acronym={NumApprovalsThreshold.toString()}
                 size={5}
                 justifyContent='start'
                 border={0}

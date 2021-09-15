@@ -36,7 +36,7 @@ const ManipulateSignersHOC = method => {
     const dispatch = useDispatch()
     const router = useRouter()
     const { serializeParams } = useWasm()
-    const [step, setStep] = useState(1)
+    const [step, setStep] = useState(props.signerAddress ? 3 : 1)
     const [attemptingTx, setAttemptingTx] = useState(false)
     const [signerAddress, setSignerAddress] = useState(props.signerAddress)
     const [signerAddressError, setSignerAddressError] = useState('')

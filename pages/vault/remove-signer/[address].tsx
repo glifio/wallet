@@ -1,13 +1,19 @@
+import { useRouter } from 'next/router'
 import React from 'react'
 import { RemoveSigner } from '../../../components/Msig'
+import { MsigPageWrapper } from '../../../components/Msig/Shared'
 import RequireWallet from '../../../lib/RequireWallet'
 
-const SignerRemoveWithCid = () => {
+const Remove = () => {
+  const { query } = useRouter()
+  const address = query?.address || ''
   return (
     <RequireWallet>
-      <RemoveSigner />
+      <MsigPageWrapper hideNav>
+        <RemoveSigner signerAddress={address} />
+      </MsigPageWrapper>
     </RequireWallet>
   )
 }
 
-export default SignerRemoveWithCid
+export default Remove
