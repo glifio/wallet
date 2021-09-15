@@ -17,7 +17,9 @@ const responsiveMenuBuffer = RESPONSIVE_BREAKPOINT + 300
 
 const NavMenu = ({ msigAddress }) => {
   const router = useRouter()
-  const getRoute = useCallback(generateRouteWithRequiredUrlParams, [router])
+  const getRoute = useCallback(generateRouteWithRequiredUrlParams, [
+    router.query
+  ])
   return (
     <>
       <Box
@@ -72,7 +74,10 @@ const NavMenu = ({ msigAddress }) => {
         </MenuItem>
         <MenuItem display='flex' justifyContent='space-between'>
           <NavLink
-            href={getRoute(router, PAGE.MSIG_HOME)}
+            href={getRoute(
+              router.query as Record<string, string>,
+              PAGE.MSIG_HOME
+            )}
             isActive={router.pathname === PAGE.MSIG_HOME}
             mr={3}
           >
