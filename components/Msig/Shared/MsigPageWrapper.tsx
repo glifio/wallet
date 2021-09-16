@@ -11,6 +11,7 @@ import NavMenu from './NavMenu'
 import { useMsig } from '../../../MsigProvider'
 import MsgConfirmer from '../../../lib/confirm-message'
 import { resetWallet } from '../../../utils/urlParams'
+import PageHeader from './PageHeader'
 
 const MsigPageWrapper = ({
   children,
@@ -47,7 +48,7 @@ const MsigPageWrapper = ({
             {msig.loading && <LoadingScreen width='100%' />}
             {!msig.loading && (
               <Box display='flex' flexDirection='column' width='100%'>
-                <NavMenu msigAddress={msig.Address} />
+                <PageHeader msigAddress={msig.Address} />
                 {cloneElement(children, props)}
               </Box>
             )}

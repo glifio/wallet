@@ -7,8 +7,8 @@ import { BigNumber } from '@glif/filecoin-number'
 
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
-import { Box, Button, ButtonClose, StepHeader, Form, Card } from '../../Shared'
-import { CardHeader, AddRmSignerHeaderText } from '../Shared'
+import { Box, Button, ButtonClose, Form, Card } from '../../Shared'
+import { CardHeader, AddRmSignerHeader } from '../Shared'
 import Preface from './Prefaces'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
@@ -258,13 +258,7 @@ const ManipulateSignersHOC = method => {
                     my={2}
                     backgroundColor='blue.muted700'
                   >
-                    <StepHeader
-                      title='Change Ownership'
-                      currentStep={step}
-                      totalSteps={4}
-                      glyphAcronym='Ch'
-                    />
-                    <AddRmSignerHeaderText step={step} method={method} />
+                    <AddRmSignerHeader step={step} method={method} />
                   </Card>
                 )}
               {step === 1 && <Preface method={method} />}

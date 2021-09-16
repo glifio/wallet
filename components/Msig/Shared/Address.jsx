@@ -31,6 +31,7 @@ const Address = ({
       borderRadius={2}
       maxWidth={widthOverride ? 'none' : 12}
       width={widthOverride || 'auto'}
+      minWidth={11}
     >
       {glyphAcronym ? (
         <Glyph

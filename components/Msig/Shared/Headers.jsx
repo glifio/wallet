@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FilecoinNumber } from '@glif/filecoin-number'
-import { Box, Text, Glyph, StyledATag } from '../../Shared'
+import { Box, Text, Glyph } from '../../Shared'
+import { StyledATag, StepHeader } from '../../Shared'
 import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
@@ -199,12 +200,38 @@ AddSignerHeaderText.propTypes = {
   step: PropTypes.number.isRequired
 }
 
-export const AddRmSignerHeaderText = ({ method, step }) => {
-  if (method === 5) return <AddSignerHeaderText step={step} />
-  if (method === 6) return <RemoveSignerHeaderText step={step} />
+export const AddRmSignerHeader = ({ method, step }) => {
+  if (method === 5) {
+    return (
+      <>
+        <StepHeader
+          title='Add Signer'
+          currentStep={step}
+          totalSteps={4}
+          glyphAcronym='As'
+        />
+
+        <AddSignerHeaderText step={step} />
+      </>
+    )
+  }
+  if (method === 6) {
+    return (
+      <>
+        <StepHeader
+          title='Remove Signer'
+          currentStep={step}
+          totalSteps={4}
+          glyphAcronym='Rs'
+        />
+
+        <RemoveSignerHeaderText step={step} />
+      </>
+    )
+  }
 }
 
-AddRmSignerHeaderText.propTypes = {
+AddRmSignerHeader.propTypes = {
   method: PropTypes.number.isRequired,
   step: PropTypes.number.isRequired
 }

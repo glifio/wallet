@@ -10,30 +10,17 @@ import {
   IconGlif
 } from '@glif/react-components'
 import { Address } from '../Shared'
-import { PAGE, RESPONSIVE_BREAKPOINT } from '../../../constants'
+import { PAGE } from '../../../constants'
 import { generateRouteWithRequiredUrlParams } from '../../../utils/urlParams'
 
-const responsiveMenuBuffer = RESPONSIVE_BREAKPOINT + 300
-
-const NavMenu = ({ msigAddress }) => {
+const PageHeader = ({ msigAddress }) => {
   const router = useRouter()
   const getRoute = useCallback(generateRouteWithRequiredUrlParams, [
     router.query
   ])
   return (
     <>
-      <Box
-        display='flex'
-        alignItems='center'
-        position='absolute'
-        my={5}
-        css={`
-          /* todo #responsiveDesign: decide how to do responsive design */
-          @media only screen and (max-width: ${responsiveMenuBuffer}px) {
-            display: none;
-          }
-        `}
-      >
+      <Box display='flex' alignItems='center' position='absolute'>
         <IconGlif
           size={6}
           css={`
@@ -42,37 +29,14 @@ const NavMenu = ({ msigAddress }) => {
         />
         <Title ml={2}>Vault</Title>
       </Box>
-      <Menu
+      <Box
         display='flex'
-        flexWrap='wrap'
-        width='100%'
-        maxWidth={18}
-        margin='0 auto'
-        justifyContent='flex-start'
         alignItems='center'
-        my={5}
+        flexDirection='row'
+        justifyContent='space-between'
+        mb={3}
       >
-        <MenuItem
-          display='flex'
-          justifyContent='space-between'
-          alignItems='center'
-          pr={3}
-          css={`
-            /* todo: decide how to do responsive design */
-            @media only screen and (min-width: ${responsiveMenuBuffer + 1}px) {
-              display: none;
-            }
-          `}
-        >
-          <IconGlif
-            size={6}
-            css={`
-              transform: rotate(-90deg);
-            `}
-          />
-          <Title ml={2}>Vault</Title>
-        </MenuItem>
-        <MenuItem display='flex' justifyContent='space-between'>
+        <Box display='flex' alignItems='center' flexDirection='row' mx='auto'>
           <NavLink
             href={getRoute(
               router.query as Record<string, string>,
@@ -103,23 +67,19 @@ const NavMenu = ({ msigAddress }) => {
           >
             Owners
           </NavLink>
-        </MenuItem>
-        <MenuItem ml='auto'>
-          <Box>
-            <Address
-              label='Multisig Address'
-              address={msigAddress}
-              glyphAcronym='Ms'
-            />
-          </Box>
-        </MenuItem>
-      </Menu>
+          <Address
+            label='Multisig Address'
+            address={msigAddress}
+            glyphAcronym='Ms'
+          />
+        </Box>
+      </Box>
     </>
   )
 }
 
-NavMenu.propTypes = {
+PageHeader.propTypes = {
   msigAddress: PropTypes.string.isRequired
 }
 
-export default NavMenu
+export default PageHeader
