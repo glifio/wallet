@@ -100,7 +100,7 @@ export default function Owners() {
               type='button'
               variant='secondary'
               onClick={() => {
-                navigate(router, PAGE.MSIG_ADD_SIGNER)
+                navigate(router, { pageUrl: PAGE.MSIG_ADD_SIGNER })
               }}
               title='Add Signer'
               minWidth={8}

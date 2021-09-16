@@ -5,12 +5,23 @@ const requiredUrlParamsWithDefaults = {
   network: 'f'
 }
 
+interface NavigationOptions {
+  existingQParams: Record<string, string>
+  pageUrl: PAGE
+  urlPathExtension?: string[]
+  newQueryParams?: Record<string, any>
+  maintainQueryParams?: boolean
+}
+
 export const combineExistingNewAndRequiredQueryParams = (
   existingQParams: Record<string, string>,
-  newQParams?: Record<string, string>
+  newQParams?: Record<string, string>,
+  maintainQParams?: boolean
 ): URLSearchParams => {
   // @ts-ignore
-  const searchParams = new URLSearchParams(existingQParams)
+  const searchParams = new URLSearchParams(
+    !!maintainQParams ? existingQParams : {}
+  )
   if (newQParams) {
     for (const param in newQParams) {
       searchParams.set(param, newQParams[param])
@@ -27,47 +38,32 @@ export const combineExistingNewAndRequiredQueryParams = (
 }
 
 export const generateRouteWithRequiredUrlParams = (
-  existingQParams: Record<string, string>,
-  pageUrl: PAGE,
-  options?: {
-    // this is to handle nextJS page routing structure
-    // while staying compliant with TS compiler
-    urlPathExtension?: string[]
-    newQueryParams?: Record<string, any>
-  }
+  opts: NavigationOptions
 ): string => {
   const newParams = combineExistingNewAndRequiredQueryParams(
-    existingQParams,
-    options?.newQueryParams
+    opts.existingQParams,
+    opts?.newQueryParams,
+    opts?.maintainQueryParams
   )
 
-  if (options?.urlPathExtension) {
-    return `${pageUrl}/${options.urlPathExtension.join(
+  if (opts?.urlPathExtension) {
+    return `${opts.pageUrl}/${opts.urlPathExtension.join(
       '/'
     )}?${newParams.toString()}`
   }
-  return `${pageUrl}?${newParams.toString()}`
+  return `${opts.pageUrl}?${newParams.toString()}`
 }
 
 // maintains the required query params while navigating to pageUrl
 export const navigate = (
   router: NextRouter,
-  pageUrl: PAGE,
-  options?: {
-    // this is to handle nextJS page routing structure
-    // while staying compliant with TS compiler
-    urlPathExtension: string[]
-    queryParams?: Record<string, any>
-  }
+  opts: Omit<NavigationOptions, 'existingQParams'>
 ): void => {
   router.push(
-    generateRouteWithRequiredUrlParams(
-      // router.query and URLSearchParams aren't playing nicely together with typescript,
-      // so i'm making some semi aggressive moevs around it because this has been working for a while
-      router.query as Record<string, string>,
-      pageUrl,
-      options
-    )
+    generateRouteWithRequiredUrlParams({
+      ...opts,
+      existingQParams: router.query as Record<string, string>
+    })
   )
 }
 

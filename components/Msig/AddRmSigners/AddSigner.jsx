@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from 'react'
-import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
 import { Message } from '@glif/filecoin-message'
@@ -11,16 +10,18 @@ import { Box, Button, ButtonClose, Form, Card } from '@glif/react-components'
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
 import { useMsig } from '../../../MsigProvider'
-import {
-  ADDRESS_PROPTYPE,
-  FILECOIN_NUMBER_PROP
-} from '../../../customPropTypes'
 import { CardHeader, AddRmSignerHeader } from '../Shared'
 import Preface from './Prefaces'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
-import { LEDGER, PROPOSE, emptyGasInfo, MSIG_METHOD } from '../../../constants'
+import {
+  LEDGER,
+  PROPOSE,
+  emptyGasInfo,
+  MSIG_METHOD,
+  PAGE
+} from '../../../constants'
 import CustomizeFee from '../../Wallet/Send/CustomizeFee'
 import {
   reportLedgerConfigError,
@@ -51,11 +52,11 @@ const AddSigner = () => {
   const router = useRouter()
 
   const onClose = useCallback(() => {
-    navigate(router, PAGE.MSIG_OWNERS)
+    navigate(router, { pageUrl: PAGE.MSIG_OWNERS })
   }, [router])
 
   const onComplete = useCallback(() => {
-    navigate(router, PAGE.MSIG_HISTORY)
+    navigate(router, { pageUrl: PAGE.MSIG_HISTORY })
   }, [router])
 
   const constructMsg = (nonce = 0) => {
@@ -315,7 +316,7 @@ const AddSigner = () => {
             width='100%'
             minWidth={11}
             maxHeight={12}
-            my={3}
+            py={4}
           >
             <Button
               title='Back'
@@ -343,18 +344,6 @@ const AddSigner = () => {
         </Box>
       </Form>
     </Box>
-  )
-}
-
-AddSigner.propTypes = {
-  address: ADDRESS_PROPTYPE,
-  balance: FILECOIN_NUMBER_PROP,
-  close: PropTypes.func.isRequired,
-  signers: PropTypes.arrayOf(
-    PropTypes.shape({
-      account: ADDRESS_PROPTYPE,
-      id: ADDRESS_PROPTYPE
-    })
   )
 }
 

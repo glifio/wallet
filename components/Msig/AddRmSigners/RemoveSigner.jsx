@@ -49,11 +49,11 @@ const RemoveSigner = ({ signerAddress }) => {
   const [frozen, setFrozen] = useState(false)
   const { Address: address, AvailableBalance: balance } = useMsig()
   const onClose = useCallback(() => {
-    navigate(router, PAGE.MSIG_OWNERS)
+    navigate(router, { pageUrl: PAGE.MSIG_OWNERS })
   }, [router])
 
   const onComplete = useCallback(() => {
-    navigate(router, PAGE.MSIG_HISTORY)
+    navigate(router, { pageUrl: PAGE.MSIG_HISTORY })
   }, [router])
 
   const constructMsg = (nonce = 0) => {
@@ -308,7 +308,6 @@ const RemoveSigner = ({ signerAddress }) => {
             minWidth={11}
             maxHeight={12}
             py={4}
-            my={4}
           >
             <Button
               title='Back'

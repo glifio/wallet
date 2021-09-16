@@ -35,7 +35,8 @@ const Signers = ({
               glyphAcronym={(i + 2).toString()}
               widthOverride='100%'
               onRemoveSigner={() => {
-                navigate(router, PAGE.MSIG_REMOVE_SIGNER, {
+                navigate(router, {
+                  pageUrl: PAGE.MSIG_REMOVE_SIGNER,
                   urlPathExtension: [signer.account]
                 })
               }}

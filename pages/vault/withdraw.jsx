@@ -1,11 +1,14 @@
 import React from 'react'
-import { MsigHome } from '../../components/Msig'
+import { MsigWithdraw } from '../../components/Msig'
+import { MsigPageWrapper } from '../../components/Msig/Shared'
 import RequireWallet from '../../lib/RequireWallet'
 
 const Withdraw = () => {
   return (
     <RequireWallet>
-      <MsigHome />
+      <MsigPageWrapper hideNav>
+        <MsigWithdraw />
+      </MsigPageWrapper>
     </RequireWallet>
   )
 }

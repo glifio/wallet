@@ -91,7 +91,7 @@ const Balances = ({ available, total }) => {
           type='button'
           variant='primary'
           onClick={() => {
-            navigate(router, PAGE.MSIG_WITHDRAW)
+            navigate(router, { pageUrl: PAGE.MSIG_WITHDRAW })
           }}
           title='Withdraw'
           maxWidth={10}
