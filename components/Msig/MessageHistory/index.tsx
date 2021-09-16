@@ -50,6 +50,7 @@ const MessageHistory = () => {
             showMore={showMore}
             refresh={refresh}
             total={total}
+            displayTitle={false}
           />
         )}
       </Box>

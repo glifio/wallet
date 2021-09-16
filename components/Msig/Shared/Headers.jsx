@@ -143,63 +143,6 @@ ChangeOwnerHeaderText.propTypes = {
   step: PropTypes.number.isRequired
 }
 
-export const RemoveSignerHeaderText = ({ step }) => {
-  let text = ''
-
-  switch (step) {
-    case 2:
-      text =
-        'Please select the Filecoin address you want to remove from your multisig wallet.'
-      break
-    case 3:
-      text =
-        'Please review the transaction fee details. If the fee is too high, please come back and try again later.'
-      break
-    default:
-      text = ''
-  }
-  return (
-    <>
-      <Text textAlign='center'>
-        Your Ledger Address pays the transaction fee.
-      </Text>
-      <Text textAlign='center'>{text}</Text>
-    </>
-  )
-}
-
-RemoveSignerHeaderText.propTypes = {
-  step: PropTypes.number.isRequired
-}
-
-export const AddSignerHeaderText = ({ step }) => {
-  let text = ''
-
-  switch (step) {
-    case 2:
-      text = 'Please enter the Filecoin address of the new signer.'
-      break
-    case 3:
-      text =
-        'Please review the transaction fee details. If the fee is too high, please come back and try again later.'
-      break
-    default:
-      text = ''
-  }
-  return (
-    <>
-      <Text textAlign='center'>
-        Your Ledger Address pays the transaction fee.
-      </Text>
-      <Text textAlign='center'>{text}</Text>
-    </>
-  )
-}
-
-AddSignerHeaderText.propTypes = {
-  step: PropTypes.number.isRequired
-}
-
 export const AddRmSignerHeader = ({ method, step }) => {
   if (method === 5) {
     return (
@@ -210,8 +153,12 @@ export const AddRmSignerHeader = ({ method, step }) => {
           totalSteps={4}
           glyphAcronym='As'
         />
-
-        <AddSignerHeaderText step={step} />
+        <Text textAlign='center'>
+          Your Ledger Address pays the transaction fee.
+        </Text>
+        <Text textAlign='center'>
+          Please review the transaction fee details and click Next to continue.
+        </Text>
       </>
     )
   }
@@ -225,7 +172,12 @@ export const AddRmSignerHeader = ({ method, step }) => {
           glyphAcronym='Rs'
         />
 
-        <RemoveSignerHeaderText step={step} />
+        <Text textAlign='center'>
+          Your Ledger Address pays the transaction fee.
+        </Text>
+        <Text textAlign='center'>
+          Please review the transaction fee details and click Next to continue.
+        </Text>
       </>
     )
   }

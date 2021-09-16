@@ -20,7 +20,8 @@ const MessageHistoryTable = ({
   paginating,
   showMore,
   refresh,
-  total
+  total,
+  displayTitle
 }) => {
   return (
     <Box width='100%' border='none'>
@@ -31,9 +32,11 @@ const MessageHistoryTable = ({
         mb={5}
       >
         <Box display='flex' flexDirection='column' justifyContent='flex-start'>
-          <Text m={0} p={0} color='core.primary'>
-            Transaction History
-          </Text>
+          {displayTitle && (
+            <Text m={0} p={0} color='core.primary'>
+              Transaction History
+            </Text>
+          )}
           {messages.length > 0 && (
             <Box display='flex' alignItems='center'>
               <Text fontSize='12' m={0} p={0} color='core.darkgray'>
@@ -99,12 +102,14 @@ MessageHistoryTable.propTypes = {
   paginating: PropTypes.bool.isRequired,
   showMore: PropTypes.func.isRequired,
   total: PropTypes.number.isRequired,
-  refresh: PropTypes.func.isRequired
+  refresh: PropTypes.func.isRequired,
+  displayTitle: PropTypes.bool
 }
 
 MessageHistoryTable.defaultProps = {
   messages: [],
-  loading: false
+  loading: false,
+  displayTitle: true
 }
 
 export default MessageHistoryTable

@@ -1,14 +1,7 @@
 import { useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
-import {
-  NavLink,
-  Box,
-  Title,
-  Menu,
-  MenuItem,
-  IconGlif
-} from '@glif/react-components'
+import { NavLink, Box, Title, IconGlif } from '@glif/react-components'
 import { Address } from '../Shared'
 import { PAGE } from '../../../constants'
 import { generateRouteWithRequiredUrlParams } from '../../../utils/urlParams'

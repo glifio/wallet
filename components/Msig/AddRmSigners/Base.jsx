@@ -2,8 +2,8 @@ import React, { useCallback, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
 import { Message } from '@glif/filecoin-message'
-import { validateAddressString } from '@glif/filecoin-address'
 import { BigNumber } from '@glif/filecoin-number'
+import { useRouter } from 'next/router'
 
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
@@ -25,7 +25,6 @@ import { confirmMessage } from '../../../store/actions'
 import { AddSignerInput, RemoveSignerInput } from './SignerInput'
 import { useMsig } from '../../../MsigProvider'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
-import { useRouter } from 'next/router'
 import { navigate } from '../../../utils/urlParams'
 
 const ManipulateSignersHOC = method => {
@@ -36,7 +35,7 @@ const ManipulateSignersHOC = method => {
     const dispatch = useDispatch()
     const router = useRouter()
     const { serializeParams } = useWasm()
-    const [step, setStep] = useState(props.signerAddress ? 3 : 1)
+    const [step, setStep] = useState(1)
     const [attemptingTx, setAttemptingTx] = useState(false)
     const [signerAddress, setSignerAddress] = useState(props.signerAddress)
     const [signerAddressError, setSignerAddressError] = useState('')
@@ -46,12 +45,7 @@ const ManipulateSignersHOC = method => {
     const [gasError, setGasError] = useState('')
     const [gasInfo, setGasInfo] = useState(emptyGasInfo)
     const [frozen, setFrozen] = useState(false)
-    const {
-      Address: address,
-      AvailableBalance: balance,
-      Signers: signers
-    } = useMsig()
-
+    const { Address: address, AvailableBalance: balance } = useMsig()
     const onClose = useCallback(() => {
       navigate(router, PAGE.MSIG_OWNERS)
     }, [router])
@@ -135,11 +129,7 @@ const ManipulateSignersHOC = method => {
       e.preventDefault()
       if (step === 1) {
         setStep(2)
-      } else if (step === 2 && !validateAddressString(signerAddress)) {
-        setSignerAddressError('Invalid address')
-      } else if (step === 2 && validateAddressString(signerAddress)) {
-        setStep(3)
-      } else if (step === 3) {
+      } else if (step === 2) {
         setAttemptingTx(true)
         try {
           const msg = await sendMsg()
@@ -183,10 +173,10 @@ const ManipulateSignersHOC = method => {
     const isSubmitBtnDisabled = () => {
       if (frozen) return true
       if (step === 1) return false
-      if (step === 3 && gasError) return true
+      if (step === 2 && gasError) return true
       if (uncaughtError) return false
       if (attemptingTx) return true
-      if (step > 3) return true
+      if (step > 2) return true
     }
 
     const isBackBtnDisabled = () => {
@@ -219,7 +209,6 @@ const ManipulateSignersHOC = method => {
             display='flex'
             flexDirection='column'
             justifyContent='flex-start'
-            flexGrow='1'
           >
             <Box>
               {hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
@@ -241,86 +230,86 @@ const ManipulateSignersHOC = method => {
                 <ConfirmationCard
                   loading={fetchingTxDetails || mPoolPushing}
                   walletType={LEDGER}
-                  currentStep={4}
-                  totalSteps={4}
+                  currentStep={3}
+                  totalSteps={3}
                   msig
                 />
               )}
-              {!attemptingTx &&
-                step > 1 &&
-                !hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
-                  <Card
-                    display='flex'
-                    flexDirection='column'
-                    justifyContent='space-between'
-                    border='none'
-                    width='auto'
-                    my={2}
-                    backgroundColor='blue.muted700'
-                  >
-                    <AddRmSignerHeader step={step} method={method} />
-                  </Card>
-                )}
               {step === 1 && <Preface method={method} />}
-              <Box boxShadow={2} borderRadius={4}>
-                {step > 1 && (
+              <>
+                {step >= 2 && (
                   <>
-                    <CardHeader
-                      msig
-                      address={address}
-                      msigBalance={balance}
-                      signerBalance={wallet.balance}
-                    />
-                    <Box width='100%' p={3} border={0} bg='background.screen'>
-                      {method === 5 && (
-                        <AddSignerInput
-                          signerAddress={signerAddress}
-                          setSignerAddress={setSignerAddress}
-                          signerAddressError={signerAddressError}
-                          setSignerAddressError={setSignerAddressError}
-                          step={step}
-                        />
+                    {!attemptingTx &&
+                      !hasLedgerError({
+                        ...ledger,
+                        otherError: uncaughtError
+                      }) && (
+                        <Box boxShadow={2} borderRadius={4}>
+                          <Card
+                            display='flex'
+                            flexDirection='column'
+                            justifyContent='space-between'
+                            border='none'
+                            width='auto'
+                            my={2}
+                            backgroundColor='blue.muted700'
+                          >
+                            <AddRmSignerHeader step={step} method={method} />
+                          </Card>
+                        </Box>
                       )}
-                      {method === 6 && (
-                        <RemoveSignerInput
-                          selfAddress={wallet.address}
-                          signerAddress={signerAddress}
-                          setSignerAddress={setSignerAddress}
-                          signerAddressError={signerAddressError}
-                          signers={signers}
-                          setSignerAddressError={setSignerAddressError}
-                          step={step}
+                    <Box boxShadow={2} borderRadius={4}>
+                      <CardHeader
+                        msig
+                        address={address}
+                        msigBalance={balance}
+                        signerBalance={wallet.balance}
+                      />
+                      <Box width='100%' p={3} border={0} bg='background.screen'>
+                        {method === 5 && (
+                          <AddSignerInput
+                            signerAddress={signerAddress}
+                            setSignerAddress={setSignerAddress}
+                            signerAddressError={signerAddressError}
+                            setSignerAddressError={setSignerAddressError}
+                            step={step}
+                          />
+                        )}
+                        {method === 6 && (
+                          <RemoveSignerInput
+                            selfAddress={wallet.address}
+                            signerAddress={signerAddress}
+                            setSignerAddress={setSignerAddress}
+                            signerAddressError={signerAddressError}
+                          />
+                        )}
+                      </Box>
+                      <Box
+                        display='flex'
+                        flexDirection='row'
+                        justifyContent='space-between'
+                        width='100%'
+                        p={3}
+                        border={0}
+                        bg='background.screen'
+                      >
+                        <CustomizeFee
+                          message={constructMsg().message.toLotusType()}
+                          gasInfo={gasInfo}
+                          setGasInfo={setGasInfo}
+                          setFrozen={setFrozen}
+                          setError={setGasError}
+                          error={gasError}
+                          feeMustBeLessThanThisAmount={wallet.balance}
                         />
-                      )}
+                      </Box>
                     </Box>
                   </>
                 )}
-                {step > 2 && (
-                  <Box
-                    display='flex'
-                    flexDirection='row'
-                    justifyContent='space-between'
-                    width='100%'
-                    p={3}
-                    border={0}
-                    bg='background.screen'
-                  >
-                    <CustomizeFee
-                      message={constructMsg().message.toLotusType()}
-                      gasInfo={gasInfo}
-                      setGasInfo={setGasInfo}
-                      setFrozen={setFrozen}
-                      setError={setGasError}
-                      error={gasError}
-                      feeMustBeLessThanThisAmount={wallet.balance}
-                    />
-                  </Box>
-                )}
-              </Box>
+              </>
             </Box>
             <Box
               display='flex'
-              flex='1'
               flexDirection='row'
               justifyContent='space-between'
               alignItems='flex-end'
@@ -329,7 +318,8 @@ const ManipulateSignersHOC = method => {
               width='100%'
               minWidth={11}
               maxHeight={12}
-              my={3}
+              py={4}
+              my={4}
             >
               <Button
                 title='Back'

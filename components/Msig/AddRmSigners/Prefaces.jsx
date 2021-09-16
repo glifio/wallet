@@ -1,6 +1,6 @@
 import React from 'react'
 import { oneOf } from 'prop-types'
-import { Warning } from '../../Shared'
+import { Warning } from '@glif/react-components'
 
 const Preface = ({ method }) => {
   return (
