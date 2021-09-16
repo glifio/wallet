@@ -65,11 +65,28 @@ describe('generateRouteWithRequiredUrlParams', () => {
     expect(route2.includes('/extension')).toBe(true)
   })
 
+  test('it deletes not required q params by default', () => {
+    const route = generateRouteWithRequiredUrlParams({
+      existingQParams: { network: 't', param2: 'kobe' },
+      pageUrl: PAGE.MSIG_HOME,
+      urlPathExtension: ['extension', 'second-extension'],
+      newQueryParams: {
+        test: 'value',
+        test2: 'thingy'
+      }
+    })
+
+    expect(route.includes(PAGE.MSIG_HOME)).toBe(true)
+    expect(route.includes('network=t')).toBe(true)
+    expect(route.includes('param2=kobe')).toBe(false)
+    expect(route.includes('/extension/second-extension')).toBe(true)
+  })
+
   test('it works for the most complex cases', () => {
     const route = generateRouteWithRequiredUrlParams({
       existingQParams: { network: 't', param2: 'kobe' },
       pageUrl: PAGE.MSIG_HOME,
-
+      maintainQueryParams: true,
       urlPathExtension: ['extension', 'second-extension'],
       newQueryParams: {
         test: 'value',

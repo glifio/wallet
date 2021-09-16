@@ -19,15 +19,26 @@ export const combineExistingNewAndRequiredQueryParams = (
   maintainQParams?: boolean
 ): URLSearchParams => {
   // @ts-ignore
-  const searchParams = new URLSearchParams(
-    !!maintainQParams ? existingQParams : {}
-  )
+  const searchParams = new URLSearchParams(existingQParams)
+
+  // delete q params if the maintainQParams flag is not set
+  if (!maintainQParams) {
+    // @ts-ignore line
+    for (const [key] of searchParams) {
+      if (!requiredUrlParamsWithDefaults[key]) {
+        searchParams.delete(key)
+      }
+    }
+  }
+
+  // add new query params
   if (newQParams) {
     for (const param in newQParams) {
       searchParams.set(param, newQParams[param])
     }
   }
 
+  // patch required q params if not present
   for (const param in requiredUrlParamsWithDefaults) {
     if (!searchParams.get(param)) {
       searchParams.set(param, requiredUrlParamsWithDefaults[param])
