@@ -1,7 +1,6 @@
 import React from 'react'
 
-import Warning from '../../Shared/Warning'
-import { Box } from '../../Shared'
+import { Warning, Box } from '@glif/react-components'
 
 const Preface = () => {
   return (

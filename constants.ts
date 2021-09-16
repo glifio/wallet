@@ -83,6 +83,18 @@ export enum PAGE {
   MSIG_REMOVE_SIGNER = '/vault/remove-signer',
   MSIG_ADD_SIGNER = '/vault/add-signer'
 }
+
+export enum MSIG_METHOD {
+  CONSTRUCTOR = 1,
+  PROPOSE,
+  APPROVE,
+  CANCEL,
+  ADD_SIGNER,
+  REMOVE_SIGNER,
+  SWAP_SIGNER,
+  CHANGE_NUM_APPROVALS_THRESHOLD,
+  LOCK_BALANCE
+}
 /* eslint-enable */
 
 // todo #responsiveDesign: decide how to do responsive design

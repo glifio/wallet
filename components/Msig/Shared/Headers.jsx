@@ -156,9 +156,17 @@ export const AddRmSignerHeader = ({ method, step }) => {
         <Text textAlign='center'>
           Your Ledger Address pays the transaction fee.
         </Text>
-        <Text textAlign='center'>
-          Please review the transaction fee details and click Next to continue.
-        </Text>
+        {step === 2 && (
+          <Text textAlign='center'>
+            Please enter a Filecoin address to add as a signer and click Next.
+          </Text>
+        )}
+        {step === 3 && (
+          <Text textAlign='center'>
+            Please review the transaction fee details and click Next to
+            continue.
+          </Text>
+        )}
       </>
     )
   }
