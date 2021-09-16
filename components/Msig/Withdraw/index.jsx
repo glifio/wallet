@@ -25,7 +25,7 @@ import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
 import CustomizeFee from '../../Wallet/Send/CustomizeFee'
-import { LEDGER, PROPOSE, emptyGasInfo } from '../../../constants'
+import { LEDGER, PROPOSE, emptyGasInfo, PAGE } from '../../../constants'
 import {
   reportLedgerConfigError,
   hasLedgerError
@@ -62,7 +62,7 @@ const Withdrawing = () => {
   const router = useRouter()
 
   const onClose = useCallback(() => {
-    navigate(router, { pageUrl: PAGE.MSIG_OWNERS })
+    navigate(router, { pageUrl: PAGE.MSIG_HOME })
   }, [router])
 
   const onComplete = useCallback(() => {
