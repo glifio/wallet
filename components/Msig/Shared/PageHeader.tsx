@@ -12,7 +12,7 @@ const PageHeader = ({ msigAddress }) => {
     router.query
   ])
   return (
-    <>
+    <Box mb={6}>
       <Box display='flex' alignItems='center' position='absolute'>
         <IconGlif
           size={6}
@@ -31,30 +31,30 @@ const PageHeader = ({ msigAddress }) => {
       >
         <Box display='flex' alignItems='center' flexDirection='row' mx='auto'>
           <NavLink
-            href={getRoute(
-              router.query as Record<string, string>,
-              PAGE.MSIG_HOME
-            )}
+            href={getRoute({
+              existingQParams: router.query as Record<string, string>,
+              pageUrl: PAGE.MSIG_HOME
+            })}
             isActive={router.pathname === PAGE.MSIG_HOME}
             mr={3}
           >
             Assets
           </NavLink>
           <NavLink
-            href={getRoute(
-              router.query as Record<string, string>,
-              PAGE.MSIG_HISTORY
-            )}
+            href={getRoute({
+              existingQParams: router.query as Record<string, string>,
+              pageUrl: PAGE.MSIG_HISTORY
+            })}
             isActive={router.pathname === PAGE.MSIG_HISTORY}
             mr={3}
           >
             History
           </NavLink>
           <NavLink
-            href={getRoute(
-              router.query as Record<string, string>,
-              PAGE.MSIG_OWNERS
-            )}
+            href={getRoute({
+              existingQParams: router.query as Record<string, string>,
+              pageUrl: PAGE.MSIG_OWNERS
+            })}
             isActive={router.pathname === PAGE.MSIG_OWNERS}
             mr={3}
           >
@@ -67,7 +67,7 @@ const PageHeader = ({ msigAddress }) => {
           />
         </Box>
       </Box>
-    </>
+    </Box>
   )
 }
 
