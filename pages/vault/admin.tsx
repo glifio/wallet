@@ -1,11 +1,11 @@
 import React from 'react'
-import { MsigOwners } from '../../components/Msig'
+import { MsigAdmin } from '../../components/Msig'
 import RequireWallet from '../../lib/RequireWallet'
 
 const Owners = () => {
   return (
     <RequireWallet>
-      <MsigOwners />
+      <MsigAdmin />
     </RequireWallet>
   )
 }

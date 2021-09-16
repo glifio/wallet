@@ -49,7 +49,7 @@ const RemoveSigner = ({ signerAddress }) => {
   const [frozen, setFrozen] = useState(false)
   const { Address: address, AvailableBalance: balance } = useMsig()
   const onClose = useCallback(() => {
-    navigate(router, { pageUrl: PAGE.MSIG_OWNERS })
+    navigate(router, { pageUrl: PAGE.MSIG_ADMIN })
   }, [router])
 
   const onComplete = useCallback(() => {

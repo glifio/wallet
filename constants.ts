@@ -77,7 +77,7 @@ export enum PAGE {
   SPEED_UP = '/speed-up',
   MSIG_HOME = '/vault/home',
   MSIG_HISTORY = '/vault/history',
-  MSIG_OWNERS = '/vault/owners',
+  MSIG_ADMIN = '/vault/admin',
   MSIG_WITHDRAW = '/vault/withdraw',
   MSIG_CHANGE_OWNER = '/vault/owner-change',
   MSIG_REMOVE_SIGNER = '/vault/remove-signer',

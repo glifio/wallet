@@ -60,8 +60,8 @@ export default function Owners() {
             <Tooltip content='The number of approvals required for a transaction' />
           </Box>
           <Box position='relative' display='flex' flexWrap='wrap'>
-            <Title>Owners</Title>
-            <Tooltip content='These are the owners' />
+            <Title>Signers</Title>
+            <Tooltip content='These are the Filecoin addresses that can approve and reject proposals from your Multisig wallet.' />
           </Box>
           <Box position='relative' display='flex' flexWrap='wrap' my={3}>
             <Address
@@ -95,7 +95,7 @@ export default function Owners() {
             <Tooltip content='Displays your address on your Ledger device' />
           </Box>
           <Signers signers={signers} walletAddress={wallet.address} />
-          <Box display='flex' alignItems='center'>
+          <Box display='flex' alignItems='center' mt={1}>
             <Button
               type='button'
               variant='secondary'

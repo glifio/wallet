@@ -53,12 +53,12 @@ const PageHeader = ({ msigAddress }) => {
           <NavLink
             href={getRoute({
               existingQParams: router.query as Record<string, string>,
-              pageUrl: PAGE.MSIG_OWNERS
+              pageUrl: PAGE.MSIG_ADMIN
             })}
-            isActive={router.pathname === PAGE.MSIG_OWNERS}
+            isActive={router.pathname === PAGE.MSIG_ADMIN}
             mr={3}
           >
-            Owners
+            Admin
           </NavLink>
           <Address
             label='Multisig Address'

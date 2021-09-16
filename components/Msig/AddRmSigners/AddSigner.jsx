@@ -52,7 +52,7 @@ const AddSigner = () => {
   const router = useRouter()
 
   const onClose = useCallback(() => {
-    navigate(router, { pageUrl: PAGE.MSIG_OWNERS })
+    navigate(router, { pageUrl: PAGE.MSIG_ADMIN })
   }, [router])
 
   const onComplete = useCallback(() => {
