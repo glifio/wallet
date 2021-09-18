@@ -7,7 +7,6 @@ import {
   BaseButton as ButtonLogout
 } from '@glif/react-components'
 
-import NavMenu from './NavMenu'
 import { useMsig } from '../../../MsigProvider'
 import MsgConfirmer from '../../../lib/confirm-message'
 import { resetWallet } from '../../../utils/urlParams'

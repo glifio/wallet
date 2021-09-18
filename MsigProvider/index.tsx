@@ -15,6 +15,11 @@ const MsigProviderContext = createContext<
   setMsigActor: null
 })
 
+export type MsigProviderContextType = MsigActorState & {
+  setMsigActor: null | Dispatch<string | null>
+  loading: boolean
+}
+
 export const MsigProviderWrapper = ({ children }: { children: ReactNode }) => {
   const wallet = useWallet()
   const [msigActor, setMsigActor] = useState(null)
