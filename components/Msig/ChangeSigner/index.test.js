@@ -1,5 +1,4 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
-import { FilecoinNumber } from '@glif/filecoin-number'
 
 import ChangeSigner from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
