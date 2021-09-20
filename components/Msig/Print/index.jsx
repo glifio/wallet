@@ -13,7 +13,7 @@ import getMsgParams from '../../../lib/useTransactionHistory/getMsgParams'
 import getAddrFromReceipt from '../../../utils/getAddrFromReceipt'
 import getMsgsUntilCustodyTaken from './getMsgsUntilCustodyTaken'
 
-const PAGE.SIZE = 20
+const PAGE_SIZE = 20
 
 const Print = () => {
   const router = useRouter()
@@ -32,7 +32,7 @@ const Print = () => {
         return setErr('Invalid Actor Address. Second character must be 0 or 2.')
 
       const res = await axios.get(
-        `${FILFOX}/v1/address/${address}/messages?pageSize=${PAGE.SIZE}&page=0&detailed`
+        `${FILFOX}/v1/address/${address}/messages?pageSize=${PAGE_SIZE}&page=0&detailed`
       )
 
       if (res.status !== 200) {
@@ -42,10 +42,10 @@ const Print = () => {
       const total = Number(res.data.totalCount)
 
       let { messages } = res.data
-      if (total > PAGE.SIZE) {
-        const lastPage = Math.ceil(PAGE.SIZE / total)
+      if (total > PAGE_SIZE) {
+        const lastPage = Math.ceil(PAGE_SIZE / total)
         const res = await axios.get(
-          `${FILFOX}/v1/address/${address}/messages?pageSize=${PAGE.SIZE}&page=${lastPage}&detailed`
+          `${FILFOX}/v1/address/${address}/messages?pageSize=${PAGE_SIZE}&page=${lastPage}&detailed`
         )
 
         if (res.status !== 200) {
