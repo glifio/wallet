@@ -1,28 +1,27 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
+import React, { useCallback, useState } from 'react'
 import { BigNumber } from '@glif/filecoin-number'
 import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
 import { Message } from '@glif/filecoin-message'
 import { validateAddressString } from '@glif/filecoin-address'
-
-import { useWalletProvider } from '../../../WalletProvider'
-import useWallet from '../../../WalletProvider/useWallet'
 import {
+  Form,
+  Card,
+  StyledATag,
   Box,
   Button,
   ButtonClose,
-  StepHeader,
-  Input,
-  Form,
-  Card
-} from '../../Shared'
-import {
-  ADDRESS_PROPTYPE,
-  FILECOIN_NUMBER_PROP
-} from '../../../customPropTypes'
-import { CardHeader, ChangeOwnerHeaderText } from '../Shared'
-import Preface from './Preface'
+  Label,
+  CopyText,
+  Warning
+} from '@glif/react-components'
+
+import { useWalletProvider } from '../../../WalletProvider'
+import useWallet from '../../../WalletProvider/useWallet'
+import { StepHeader, Input } from '../../Shared'
+import truncateAddress from '../../../utils/truncateAddress'
+import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
+import { CardHeader, ChangeSignerHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
@@ -35,27 +34,39 @@ import {
 import reportError from '../../../utils/reportError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
+import { useMsig } from '../../../MsigProvider'
+import { useRouter } from 'next/router'
 
-const ChangeOwner = ({ address, balance, onClose, onComplete }) => {
+const ChangeOwner = ({ oldSignerAddress }) => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
   const wallet = useWallet()
   const dispatch = useDispatch()
+  const router = useRouter()
   const { serializeParams } = useWasm()
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
-  const [toAddress, setToAddress] = useState('')
-  const [toAddressError, setToAddressError] = useState('')
+  const [newSignerAddress, setNewSignerAddress] = useState('')
+  const [newSignerAddressError, setNewSignerAddressError] = useState('')
   const [uncaughtError, setUncaughtError] = useState('')
   const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
   const [mPoolPushing, setMPoolPushing] = useState(false)
   const [gasError, setGasError] = useState('')
   const [gasInfo, setGasInfo] = useState(emptyGasInfo)
   const [frozen, setFrozen] = useState(false)
+  const { Address: address, AvailableBalance: balance } = useMsig()
+
+  const onClose = useCallback(() => {
+    navigate(router, { pageUrl: PAGE.MSIG_ADMIN })
+  }, [router])
+
+  const onComplete = useCallback(() => {
+    navigate(router, { pageUrl: PAGE.MSIG_HISTORY })
+  }, [router])
 
   const constructMsg = (nonce = 0) => {
     const innerParams = {
-      to: toAddress,
-      from: wallet.address
+      to: newSignerAddress,
+      from: oldSignerAddress
     }
 
     const serializedInnerParams = Buffer.from(
@@ -127,9 +138,9 @@ const ChangeOwner = ({ address, balance, onClose, onComplete }) => {
     e.preventDefault()
     if (step === 1) {
       setStep(2)
-    } else if (step === 2 && !validateAddressString(toAddress)) {
-      setToAddressError('Invalid to address')
-    } else if (step === 2 && validateAddressString(toAddress)) {
+    } else if (step === 2 && !validateAddressString(newSignerAddress)) {
+      setNewSignerAddressError('Invalid to address')
+    } else if (step === 2 && validateAddressString(newSignerAddress)) {
       setStep(3)
     } else if (step === 3) {
       setAttemptingTx(true)
@@ -211,7 +222,6 @@ const ChangeOwner = ({ address, balance, onClose, onComplete }) => {
           display='flex'
           flexDirection='column'
           justifyContent='flex-start'
-          flexGrow='1'
         >
           <Box>
             {hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
@@ -256,10 +266,21 @@ const ChangeOwner = ({ address, balance, onClose, onComplete }) => {
                     totalSteps={4}
                     glyphAcronym='Ch'
                   />
-                  <ChangeOwnerHeaderText step={step} />
+                  <ChangeSignerHeaderText step={step} />
                 </Card>
               )}
-            {step === 1 && <Preface />}
+            {step === 1 && (
+              <Warning
+                title='Warning'
+                description={[
+                  "You're changing a signer of your multisig account to a new Filecoin address.",
+                  'Make sure you or someone you trust owns the private key to this new Filecoin address.',
+                  'If you or anyone else does not own this address, you could lose access to your funds permanently. There is no way to resolve this.'
+                ]}
+                linkDisplay="Why isn't it secure?"
+                linkhref='https://coinsutra.com/security-risks-bitcoin-wallets/'
+              />
+            )}
             <Box boxShadow={2} borderRadius={4}>
               {step > 1 && (
                 <>
@@ -270,16 +291,41 @@ const ChangeOwner = ({ address, balance, onClose, onComplete }) => {
                     signerBalance={wallet.balance}
                   />
                   <Box width='100%' p={3} border={0} bg='background.screen'>
-                    <Input.Address
-                      label='New owner'
-                      value={toAddress}
-                      onChange={e => setToAddress(e.target.value)}
-                      error={toAddressError}
-                      disabled={step === 3}
-                      onFocus={() => {
-                        if (toAddressError) setToAddressError('')
-                      }}
-                    />
+                    <Box
+                      display='flex'
+                      flexDirection='row'
+                      alignItems='center'
+                      justifyContent='space-between'
+                      py={3}
+                    >
+                      <Label color='core.nearblack' pl='0'>
+                        Old signer
+                      </Label>
+                      <Box
+                        display='flex'
+                        flexDirection='row'
+                        alignItems='center'
+                      >
+                        <StyledATag
+                          target='_blank'
+                          href={`https://filfox.info/en/address/${oldSignerAddress}`}
+                        >{`${truncateAddress(oldSignerAddress)}`}</StyledATag>
+                        <CopyText text={oldSignerAddress} hideCopyText />
+                      </Box>
+                    </Box>
+                    <Box mt={2}>
+                      <Input.Address
+                        label='New signer'
+                        value={newSignerAddress}
+                        onChange={e => setNewSignerAddress(e.target.value)}
+                        error={newSignerAddressError}
+                        disabled={step === 3}
+                        onFocus={() => {
+                          if (newSignerAddressError)
+                            setNewSignerAddressError('')
+                        }}
+                      />
+                    </Box>
                   </Box>
                   {step > 2 && (
                     <Box
@@ -349,10 +395,8 @@ const ChangeOwner = ({ address, balance, onClose, onComplete }) => {
 }
 
 ChangeOwner.propTypes = {
-  address: ADDRESS_PROPTYPE,
-  balance: FILECOIN_NUMBER_PROP,
-  onClose: PropTypes.func.isRequired,
-  onComplete: PropTypes.func.isRequired
+  newSignerAddress: ADDRESS_PROPTYPE,
+  oldSignerAddress: ADDRESS_PROPTYPE
 }
 
 export default ChangeOwner

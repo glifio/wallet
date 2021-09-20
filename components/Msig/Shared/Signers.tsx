@@ -37,7 +37,17 @@ const Signers = ({
               onRemoveSigner={() => {
                 navigate(router, {
                   pageUrl: PAGE.MSIG_REMOVE_SIGNER,
-                  urlPathExtension: [signer.account]
+                  newQueryParams: {
+                    address: signer.account
+                  }
+                })
+              }}
+              onChangeSigner={() => {
+                navigate(router, {
+                  pageUrl: PAGE.MSIG_CHANGE_SIGNER,
+                  newQueryParams: {
+                    address: signer.account
+                  }
                 })
               }}
             />

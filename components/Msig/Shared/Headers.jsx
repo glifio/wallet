@@ -114,13 +114,13 @@ WithdrawHeaderText.propTypes = {
   step: PropTypes.number.isRequired
 }
 
-export const ChangeOwnerHeaderText = ({ step }) => {
+export const ChangeSignerHeaderText = ({ step }) => {
   let text = ''
 
   switch (step) {
     case 2:
       text =
-        'Please input the new Filecoin address you want to be the owner of your multisig wallet.'
+        'Please input the new Filecoin address you want to be the signer of your multisig wallet.'
       break
     case 3:
       text =
@@ -139,7 +139,7 @@ export const ChangeOwnerHeaderText = ({ step }) => {
   )
 }
 
-ChangeOwnerHeaderText.propTypes = {
+ChangeSignerHeaderText.propTypes = {
   step: PropTypes.number.isRequired
 }
 

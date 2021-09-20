@@ -79,7 +79,7 @@ export enum PAGE {
   MSIG_HISTORY = '/vault/history',
   MSIG_ADMIN = '/vault/admin',
   MSIG_WITHDRAW = '/vault/withdraw',
-  MSIG_CHANGE_OWNER = '/vault/owner-change',
+  MSIG_CHANGE_SIGNER = '/vault/change-signer',
   MSIG_REMOVE_SIGNER = '/vault/remove-signer',
   MSIG_ADD_SIGNER = '/vault/add-signer'
 }

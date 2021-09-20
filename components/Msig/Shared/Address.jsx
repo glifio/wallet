@@ -15,7 +15,8 @@ const Address = ({
   address,
   label,
   glyphAcronym,
-  onRemoveSigner
+  onRemoveSigner,
+  onChangeSigner
 }) => {
   return (
     <Box
@@ -60,6 +61,9 @@ const Address = ({
         <Label fontSize={1}>{label}</Label>
         <CopyAddress color='core.nearblack' address={address} />
       </Box>
+      {onChangeSigner && (
+        <ButtonClose role='button' type='button' onClick={onChangeSigner} />
+      )}
       {onRemoveSigner && (
         <ButtonClose role='button' type='button' onClick={onRemoveSigner} />
       )}
