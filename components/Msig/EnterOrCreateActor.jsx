@@ -5,13 +5,13 @@ import styled from 'styled-components'
 import {
   Box,
   Button,
-  Input,
   OnboardCard,
   StepHeader,
   StyledLink,
   Text,
   Title
 } from '@glif/react-components'
+import { Input } from '../Shared'
 import { useMsig } from '../../MsigProvider'
 import { IconLedger } from '../Shared/Icons'
 
@@ -100,7 +100,11 @@ const EnterActorAddress = () => {
           <br />
           <Box display='flex' flexDirection='row' alignItems='center'>
             <Text mr={3}>Don&apos;t have a multisig actor ID?</Text>
-            <StyledLink href='/vault/create?network=f' name='Create one' />
+            <StyledLink
+              href='/vault/create?network=f'
+              name='Create one'
+              target='_self'
+            />
           </Box>
         </OnboardCard>
         <Box

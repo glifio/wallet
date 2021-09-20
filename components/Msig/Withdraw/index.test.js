@@ -4,15 +4,25 @@ import { FilecoinNumber } from '@glif/filecoin-number'
 import Withdraw from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import { flushPromises } from '../../../test-utils'
+import { MULTISIG_ACTOR_ADDRESS } from '../../../MsigProvider/__mocks__'
+import { PAGE } from '../../../constants'
 
 jest.mock('@glif/filecoin-wallet-provider')
+jest.mock('../../../MsigProvider')
+
+const routerPushMock = jest.fn()
+jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
+  return {
+    query: { network: 't' },
+    pathname: PAGE.MSIG_WITHDRAW,
+    push: routerPushMock
+  }
+})
 
 describe('Multisig withdraw flow', () => {
-  let close = () => {}
   beforeEach(() => {
     jest.useFakeTimers()
     jest.clearAllMocks()
-    close = jest.fn()
   })
 
   describe('Withdrawing FIL', () => {
@@ -23,8 +33,6 @@ describe('Multisig withdraw flow', () => {
 
     test('it allows a user to withdraw filecoin', async () => {
       const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
 
       const toAddr = 't0100'
       const filAmount = new FilecoinNumber('1', 'fil')
@@ -32,11 +40,7 @@ describe('Multisig withdraw flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Withdraw
-              address={msigAddress}
-              balance={msigBalance}
-              close={close}
-            />
+            <Withdraw />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -72,26 +76,19 @@ describe('Multisig withdraw flow', () => {
       expect(typeof message.gaslimit).toBe('number')
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')
-      expect(message.to).toBe(msigAddress)
+      expect(message.to).toBe(MULTISIG_ACTOR_ADDRESS)
 
       expect(store.getState().messages.pending.length).toBe(1)
     })
 
     test('it does not allow a user to withdraw FIL if address is poorly formed', async () => {
       const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
-
       const toAddr = 't5100'
 
       await act(async () => {
         render(
           <Tree>
-            <Withdraw
-              address={msigAddress}
-              balance={msigBalance}
-              close={close}
-            />
+            <Withdraw />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -110,17 +107,11 @@ describe('Multisig withdraw flow', () => {
 
     test('it does not allow a user to proceed if address is left blank', async () => {
       const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
 
       await act(async () => {
         render(
           <Tree>
-            <Withdraw
-              address={msigAddress}
-              balance={msigBalance}
-              close={close}
-            />
+            <Withdraw />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -139,19 +130,13 @@ describe('Multisig withdraw flow', () => {
 
     test('it does not allow a user to send a message if balance is less than total amount intended to send', async () => {
       const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
 
       const toAddr = 't0100'
       const filAmount = new FilecoinNumber('2', 'fil')
       await act(async () => {
         render(
           <Tree>
-            <Withdraw
-              address={msigAddress}
-              balance={msigBalance}
-              close={close}
-            />
+            <Withdraw />
           </Tree>
         )
 
@@ -183,19 +168,13 @@ describe('Multisig withdraw flow', () => {
 
     test('it does not allow a user to send a message if value intended to send is 0', async () => {
       const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
 
       const toAddr = 't0100'
       const filAmount = new FilecoinNumber('0', 'fil')
       await act(async () => {
         render(
           <Tree>
-            <Withdraw
-              address={msigAddress}
-              balance={msigBalance}
-              close={close}
-            />
+            <Withdraw />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -224,19 +203,13 @@ describe('Multisig withdraw flow', () => {
 
     test('it allows the user to see the max transaction fee', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
 
       const toAddr = 't0100'
       const filAmount = new FilecoinNumber('.5', 'fil')
       await act(async () => {
         render(
           <Tree>
-            <Withdraw
-              address={msigAddress}
-              balance={msigBalance}
-              close={close}
-            />
+            <Withdraw />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -259,19 +232,13 @@ describe('Multisig withdraw flow', () => {
 
     test('it allows the user to set the max transaction fee', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
 
       const toAddr = 't0100'
       const filAmount = new FilecoinNumber('.5', 'fil')
       await act(async () => {
         render(
           <Tree>
-            <Withdraw
-              address={msigAddress}
-              balance={msigBalance}
-              close={close}
-            />
+            <Withdraw />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -301,19 +268,13 @@ describe('Multisig withdraw flow', () => {
 
     test('it allows the user to save the max transaction fee', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
 
       const toAddr = 't0100'
       const filAmount = new FilecoinNumber('.5', 'fil')
       await act(async () => {
         render(
           <Tree>
-            <Withdraw
-              address={msigAddress}
-              balance={msigBalance}
-              close={close}
-            />
+            <Withdraw />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -344,8 +305,6 @@ describe('Multisig withdraw flow', () => {
 
     test('it restricts a user from continuing if the tx fee > balance', async () => {
       const { Tree } = composeMockAppTree('postOnboardLowBal')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
 
       const toAddr = 't0100'
       const filAmount = new FilecoinNumber('.99999999999999999999999', 'fil')
@@ -353,11 +312,7 @@ describe('Multisig withdraw flow', () => {
       await act(async () => {
         res = render(
           <Tree>
-            <Withdraw
-              address={msigAddress}
-              balance={msigBalance}
-              close={close}
-            />
+            <Withdraw />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -392,8 +347,6 @@ describe('Multisig withdraw flow', () => {
 
     test('it restricts a user from continuing if the tx fee entered is invalid', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
 
       const toAddr = 't0100'
       const filAmount = new FilecoinNumber('.5', 'fil')
@@ -401,11 +354,7 @@ describe('Multisig withdraw flow', () => {
       await act(async () => {
         res = render(
           <Tree>
-            <Withdraw
-              address={msigAddress}
-              balance={msigBalance}
-              close={close}
-            />
+            <Withdraw />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -438,19 +387,13 @@ describe('Multisig withdraw flow', () => {
 
     test('it sends the user to the message history after message successfully sent', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
 
       const toAddr = 't0100'
       const filAmount = new FilecoinNumber('.5', 'fil')
       await act(async () => {
         render(
           <Tree>
-            <Withdraw
-              address={msigAddress}
-              balance={msigBalance}
-              close={close}
-            />
+            <Withdraw />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -474,7 +417,7 @@ describe('Multisig withdraw flow', () => {
         await flushPromises()
       })
       await flushPromises()
-      expect(close).toHaveBeenCalled()
+      expect(routerPushMock).toHaveBeenCalledWith('/vault/history?network=t')
     })
   })
 
@@ -482,42 +425,30 @@ describe('Multisig withdraw flow', () => {
     afterEach(cleanup)
     test('it renders correctly', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
 
       let res
       await act(async () => {
         res = render(
           <Tree>
-            <Withdraw
-              address={msigAddress}
-              balance={msigBalance}
-              close={close}
-            />
+            <Withdraw />
           </Tree>
         )
       })
-      expect(res.container).toMatchSnapshot()
       expect(screen.getByText(/Withdrawing Filecoin/)).toBeInTheDocument()
       expect(screen.getByText(/Recipient/)).toBeInTheDocument()
       expect(screen.getByText(/Step 1/)).toBeInTheDocument()
+      expect(res.container).toMatchSnapshot()
     })
 
     test('it renders step 2 correctly', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
       const toAddr = 't0100'
 
       let res
       await act(async () => {
         res = render(
           <Tree>
-            <Withdraw
-              address={msigAddress}
-              balance={msigBalance}
-              close={close}
-            />
+            <Withdraw />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -535,8 +466,6 @@ describe('Multisig withdraw flow', () => {
 
     test('it renders step 3 correctly', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
       const toAddr = 't0100'
       const filAmount = new FilecoinNumber('.5', 'fil')
 
@@ -544,11 +473,7 @@ describe('Multisig withdraw flow', () => {
       await act(async () => {
         res = render(
           <Tree>
-            <Withdraw
-              address={msigAddress}
-              balance={msigBalance}
-              close={close}
-            />
+            <Withdraw />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -575,8 +500,6 @@ describe('Multisig withdraw flow', () => {
 
     test('it renders step 4 correctly', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
       const toAddr = 't0100'
       const filAmount = new FilecoinNumber('.5', 'fil')
 
@@ -584,11 +507,7 @@ describe('Multisig withdraw flow', () => {
       await act(async () => {
         res = render(
           <Tree>
-            <Withdraw
-              address={msigAddress}
-              balance={msigBalance}
-              close={close}
-            />
+            <Withdraw />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {

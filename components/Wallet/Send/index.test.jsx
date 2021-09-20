@@ -8,11 +8,13 @@ import { flushPromises } from '../../../test-utils'
 jest.mock('@glif/filecoin-wallet-provider')
 
 describe('Send Flow', () => {
-  let close = () => {}
+  let onClose = () => {}
+  let onComplete = () => {}
   beforeEach(() => {
     jest.useFakeTimers()
     jest.clearAllMocks()
-    close = jest.fn()
+    onClose = jest.fn()
+    onComplete = jest.fn()
   })
 
   describe('Sending a message', () => {
@@ -28,7 +30,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send close={close} />
+            <Send onClose={onClose} onComplete={onComplete} />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -78,7 +80,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send close={close} />
+            <Send onClose={onClose} onComplete={onComplete} />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -100,7 +102,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send close={close} />
+            <Send onClose={onClose} onComplete={onComplete} />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -125,7 +127,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send close={close} />
+            <Send onClose={onClose} onComplete={onComplete} />
           </Tree>
         )
 
@@ -163,7 +165,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send close={close} />
+            <Send onClose={onClose} onComplete={onComplete} />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -199,7 +201,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send close={close} />
+            <Send onClose={onClose} onComplete={onComplete} />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -258,7 +260,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send close={close} />
+            <Send onClose={onClose} onComplete={onComplete} />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -288,7 +290,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send close={close} />
+            <Send onClose={onClose} onComplete={onComplete} />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -325,7 +327,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send close={close} />
+            <Send onClose={onClose} onComplete={onComplete} />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -363,7 +365,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send close={close} />
+            <Send onClose={onClose} onComplete={onComplete} />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -396,7 +398,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send close={close} />
+            <Send onClose={onClose} onComplete={onComplete} />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -435,7 +437,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send close={close} />
+            <Send onClose={onClose} onComplete={onComplete} />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -463,7 +465,7 @@ describe('Send Flow', () => {
         await flushPromises()
       })
       await flushPromises()
-      expect(close).toHaveBeenCalled()
+      expect(onComplete).toHaveBeenCalled()
     })
   })
 
@@ -475,7 +477,7 @@ describe('Send Flow', () => {
       await act(async () => {
         res = render(
           <Tree>
-            <Send close={close} />
+            <Send onClose={onClose} onComplete={onComplete} />
           </Tree>
         )
       })
@@ -489,7 +491,7 @@ describe('Send Flow', () => {
       await act(async () => {
         res = render(
           <Tree>
-            <Send close={close} />
+            <Send onClose={onClose} onComplete={onComplete} />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -512,7 +514,7 @@ describe('Send Flow', () => {
       await act(async () => {
         res = render(
           <Tree>
-            <Send close={close} />
+            <Send onClose={onClose} onComplete={onComplete} />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -545,7 +547,7 @@ describe('Send Flow', () => {
       await act(async () => {
         res = render(
           <Tree>
-            <Send close={close} />
+            <Send onClose={onClose} onComplete={onComplete} />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -578,7 +580,7 @@ describe('Send Flow', () => {
       await act(async () => {
         res = render(
           <Tree>
-            <Send close={close} />
+            <Send onClose={onClose} onComplete={onComplete} />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -601,7 +603,7 @@ describe('Send Flow', () => {
       await act(async () => {
         res = render(
           <Tree>
-            <Send close={close} />
+            <Send onClose={onClose} onComplete={onComplete} />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -637,7 +639,7 @@ describe('Send Flow', () => {
       await act(async () => {
         res = render(
           <Tree>
-            <Send close={close} />
+            <Send onClose={onClose} onComplete={onComplete} />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {

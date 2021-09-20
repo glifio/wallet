@@ -7,9 +7,9 @@ import {
   Title,
   Header,
   Button,
-  Warning,
-  NetworkSwitcherGlyph
-} from '../../Shared'
+  Warning
+} from '@glif/react-components'
+import { NetworkSwitcherGlyph } from '../../Shared'
 import HeaderGlyph from '../../Shared/Glyph/HeaderGlyph'
 import ImportWallet from './Import'
 import CreateWallet from './Create'
@@ -49,14 +49,16 @@ export default () => {
   return (
     <>
       {localWalletType ? (
-        <Warning
-          title='Warning'
-          description='We do not recommend you use this account to hold or transact significant sums of Filecoin. This account is for testing purposes only. For significant sums, Glif should only be used with a Ledger hardware wallet.'
-          linkDisplay="Why isn't it secure?"
-          linkhref='https://coinsutra.com/security-risks-bitcoin-wallets/'
-          onBack={() => setLocalWalletType(null)}
-          onAccept={onChoose}
-        />
+        <Box display='flex' flexDirection='column' justifyContent='center'>
+          <Warning
+            title='Warning'
+            description='We do not recommend you use this account to hold or transact significant sums of Filecoin. This account is for testing purposes only. For significant sums, Glif should only be used with a Ledger hardware wallet.'
+            linkDisplay="Why isn't it secure?"
+            linkhref='https://coinsutra.com/security-risks-bitcoin-wallets/'
+            onBack={() => setLocalWalletType(null)}
+            onAccept={onChoose}
+          />
+        </Box>
       ) : (
         <Box
           display='flex'

@@ -19,6 +19,9 @@ import createMockWalletProviderContextFuncs from './createWalletProviderContextF
 import mockWalletSubproviders from '../mocks/mock-wallet-subproviders'
 import { presets, composeWalletProviderState } from './composeState'
 import { TESTNET } from '../../constants'
+import { MsigProviderWrapper } from '../../MsigProvider/__mocks__'
+
+jest.mock('../../MsigProvider')
 
 const Index = (statePreset = 'preOnboard', options = {}) => {
   const state = options.state || presets[statePreset]
@@ -62,14 +65,16 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
                 ...mockWalletProviderContextFuncs
               }}
             >
-              <NetworkChecker
-                networkFromRdx={store.getState().network}
-                pathname={pathname}
-                query={query}
-                switchNetwork={jest.fn()}
-              />
-              <BalancePoller />
-              <ThemeProvider theme={theme}>{children}</ThemeProvider>
+              <MsigProviderWrapper>
+                <NetworkChecker
+                  networkFromRdx={store.getState().network}
+                  pathname={pathname}
+                  query={query}
+                  switchNetwork={jest.fn()}
+                />
+                <BalancePoller />
+                <ThemeProvider theme={theme}>{children}</ThemeProvider>
+              </MsigProviderWrapper>
             </WalletProviderContext.Provider>
           </ConverterContext.Provider>
         </WasmContext.Provider>

@@ -1,34 +1,31 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
+import React, { useCallback, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
 import { validateAddressString } from '@glif/filecoin-address'
-
-import { useWalletProvider } from '../../../WalletProvider'
-import useWallet from '../../../WalletProvider/useWallet'
 import {
   Box,
   Button,
   ButtonClose,
   StepHeader,
-  Input,
   Num,
   Title,
   Form,
   Card
-} from '../../Shared'
-import {
-  ADDRESS_PROPTYPE,
-  FILECOIN_NUMBER_PROP
-} from '../../../customPropTypes'
+} from '@glif/react-components'
+import { useRouter } from 'next/router'
+
+import { useMsig } from '../../../MsigProvider'
+import { useWalletProvider } from '../../../WalletProvider'
+import useWallet from '../../../WalletProvider/useWallet'
+import { Input } from '../../Shared'
 import { CardHeader, WithdrawHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
 import CustomizeFee from '../../Wallet/Send/CustomizeFee'
-import { LEDGER, PROPOSE, emptyGasInfo } from '../../../constants'
+import { LEDGER, PROPOSE, emptyGasInfo, PAGE } from '../../../constants'
 import {
   reportLedgerConfigError,
   hasLedgerError
@@ -36,6 +33,7 @@ import {
 import reportError from '../../../utils/reportError'
 import { confirmMessage } from '../../../store/actions'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
+import { navigate } from '../../../utils/urlParams'
 
 const isValidAmount = (value, balance, errorFromForms) => {
   const valueFieldFilledOut = value && value.isGreaterThan(0)
@@ -43,12 +41,12 @@ const isValidAmount = (value, balance, errorFromForms) => {
   return valueFieldFilledOut && enoughInTheBank && !errorFromForms
 }
 
-const Withdrawing = ({ address, balance, close }) => {
+const Withdrawing = () => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
   const wallet = useWallet()
   const dispatch = useDispatch()
   const { serializeParams } = useWasm()
-
+  const { Address: address, AvailableBalance: balance } = useMsig()
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
   const [toAddress, setToAddress] = useState('')
@@ -61,6 +59,15 @@ const Withdrawing = ({ address, balance, close }) => {
   const [frozen, setFrozen] = useState(false)
   const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
   const [mPoolPushing, setMPoolPushing] = useState(false)
+  const router = useRouter()
+
+  const onClose = useCallback(() => {
+    navigate(router, { pageUrl: PAGE.MSIG_HOME })
+  }, [router])
+
+  const onComplete = useCallback(() => {
+    navigate(router, { pageUrl: PAGE.MSIG_HISTORY })
+  }, [router])
 
   const constructMsg = (nonce = 0) => {
     const params = {
@@ -144,7 +151,7 @@ const Withdrawing = ({ address, balance, close }) => {
         if (msg) {
           dispatch(confirmMessage(toLowerCaseMsgFields(msg)))
           setValue(new FilecoinNumber('0', 'fil'))
-          close()
+          onComplete()
         }
       } catch (err) {
         if (err.message.includes('19')) {
@@ -209,7 +216,7 @@ const Withdrawing = ({ address, balance, close }) => {
             setUncaughtError('')
             setGasError('')
             resetLedgerState()
-            close()
+            onClose()
           }}
         />
         <Form onSubmit={onSubmit}>
@@ -218,7 +225,6 @@ const Withdrawing = ({ address, balance, close }) => {
             width='100%'
             minWidth={11}
             display='flex'
-            flex='1'
             flexDirection='column'
             justifyContent='flex-start'
           >
@@ -364,7 +370,6 @@ const Withdrawing = ({ address, balance, close }) => {
 
             <Box
               display='flex'
-              flex='1'
               flexDirection='row'
               justifyContent='space-between'
               alignItems='flex-end'
@@ -373,7 +378,7 @@ const Withdrawing = ({ address, balance, close }) => {
               width='100%'
               minWidth={11}
               maxHeight={12}
-              my={3}
+              py={4}
             >
               <Button
                 title='Back'
@@ -384,7 +389,7 @@ const Withdrawing = ({ address, balance, close }) => {
                   setGasError('')
                   resetLedgerState()
                   if (step === 1) {
-                    close()
+                    onClose()
                   } else {
                     setStep(step - 1)
                   }
@@ -403,12 +408,6 @@ const Withdrawing = ({ address, balance, close }) => {
       </Box>
     </>
   )
-}
-
-Withdrawing.propTypes = {
-  address: ADDRESS_PROPTYPE,
-  balance: FILECOIN_NUMBER_PROP,
-  close: PropTypes.func.isRequired
 }
 
 export default Withdrawing

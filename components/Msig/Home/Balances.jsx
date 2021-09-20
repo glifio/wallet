@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { func } from 'prop-types'
-import { Box, Button, Num, Title } from '../../Shared'
+import { useRouter } from 'next/router'
+import { Box, Button, Num, Title } from '@glif/react-components'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import makeFriendlyBalance from '../../../utils/makeFriendlyBalance'
+import { PAGE } from '../../../constants'
+import { navigate } from '../../../utils/urlParams'
 
 const AvailableBalanceContainer = styled(Box)`
   background: linear-gradient(
@@ -60,7 +62,8 @@ TotalBalance.propTypes = {
   total: FILECOIN_NUMBER_PROP
 }
 
-const Balances = ({ available, setWithdrawing, total }) => {
+const Balances = ({ available, total }) => {
+  const router = useRouter()
   return (
     <Box
       position='relative'
@@ -87,7 +90,9 @@ const Balances = ({ available, setWithdrawing, total }) => {
         <WithdrawButton
           type='button'
           variant='primary'
-          onClick={setWithdrawing}
+          onClick={() => {
+            navigate(router, { pageUrl: PAGE.MSIG_WITHDRAW })
+          }}
           title='Withdraw'
           maxWidth={10}
           minWidth={9}
@@ -113,8 +118,7 @@ const Balances = ({ available, setWithdrawing, total }) => {
 
 Balances.propTypes = {
   available: FILECOIN_NUMBER_PROP,
-  total: FILECOIN_NUMBER_PROP,
-  setWithdrawing: func.isRequired
+  total: FILECOIN_NUMBER_PROP
 }
 
 export default Balances

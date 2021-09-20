@@ -40,7 +40,7 @@ const TransactionFeeDisplay = styled(Input.Text)`
   }
 `
 
-const MessageDetail = ({ address, close, message }) => {
+const MessageDetail = ({ address, onClose, message }) => {
   const { walletProvider } = useWalletProvider()
   const [fee, setFee] = useState(
     new FilecoinNumber(
@@ -120,7 +120,7 @@ const MessageDetail = ({ address, close, message }) => {
           <ButtonClose
             ml={2}
             type='button'
-            onClick={close}
+            onClick={onClose}
             css={`
               align-self: flex-end;
             `}
@@ -191,7 +191,7 @@ const MessageDetail = ({ address, close, message }) => {
 
 MessageDetail.propTypes = {
   address: ADDRESS_PROPTYPE,
-  close: func,
+  onClose: func,
   message: MESSAGE_PROPS
 }
 

@@ -6,19 +6,18 @@ import { Message } from '@glif/filecoin-message'
 import { validateAddressString } from '@glif/filecoin-address'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
-
-import { useWalletProvider } from '../../../WalletProvider'
-import useWallet from '../../../WalletProvider/useWallet'
 import {
   Box,
   Button,
   ButtonClose,
   StepHeader,
-  Input,
   Text,
   Form,
   Card
-} from '../../Shared'
+} from '@glif/react-components'
+import { useWalletProvider } from '../../../WalletProvider'
+import useWallet from '../../../WalletProvider/useWallet'
+import { Input } from '../../Shared'
 import { CardHeader, CreateMultisigHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
@@ -61,7 +60,7 @@ const Create = () => {
   const [frozen, setFrozen] = useState(false)
   const router = useRouter()
 
-  const close = () => router.back()
+  const onClose = () => router.back()
 
   const constructMsg = (nonce = 0, epoch = startEpoch) => {
     const tx = wasm.createMultisig(
@@ -252,7 +251,7 @@ const Create = () => {
           setAttemptingTx(false)
           setUncaughtError('')
           resetLedgerState()
-          close()
+          onClose()
         }}
       />
       <Form onSubmit={onSubmit}>
@@ -481,7 +480,7 @@ const Create = () => {
                 setGasError('')
                 resetLedgerState()
                 if (step === 1) {
-                  close()
+                  onClose()
                 }
                 if (step === 5 && vest === 0) {
                   setStep(3)

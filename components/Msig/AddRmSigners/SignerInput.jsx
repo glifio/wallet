@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Box, Input, Text } from '../../Shared'
-import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
+import { Box, CopyText, Label, StyledATag, Text } from '@glif/react-components'
 import { PL_SIGNERS } from '../../../constants'
-import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
+import { Input } from '../../Shared'
 import truncateAddress from '../../../utils/truncateAddress'
 
 export const AddSignerInput = ({
@@ -35,78 +34,35 @@ AddSignerInput.propTypes = {
   setSignerAddressError: PropTypes.func.isRequired
 }
 
-export const RemoveSignerInput = ({
-  signerAddress,
-  setSignerAddress,
-  signers,
-  selfAddress,
-  signerAddressError,
-  setSignerAddressError,
-  step
-}) => {
-  const disabled = step > 2
+export const RemoveSignerInput = ({ signerAddress }) => {
   return (
-    <Box>
-      {signers
-        .filter(
-          s =>
-            converAddrToFPrefix(s.account) !== converAddrToFPrefix(selfAddress)
-        )
-        .map(s => (
-          <Box
-            key={s.account}
-            display='flex'
-            flexDirection='row'
-            alignItems='center'
-            onClick={() => {
-              if (disabled) return
-              setSignerAddressError('')
-              setSignerAddress(s.account)
-            }}
-            css={`
-               {
-                &:hover {
-                  cursor: ${step > 2 ? 'not-allowed' : 'pointer'};
-                }
-              }
-            `}
-          >
-            <Box
-              borderRadius='50%'
-              width={3}
-              height={3}
-              display='inline-block'
-              border={1}
-              borderColor='core.primary'
-              bg={
-                converAddrToFPrefix(s.account) ===
-                converAddrToFPrefix(signerAddress)
-                  ? 'core.primary'
-                  : 'core.transparent'
-              }
-              mr={2}
-              role='button'
-            />
-            <Text>{`${truncateAddress(s.account)} (${s.id})`}</Text>
-            {PL_SIGNERS.has(s) && <Text ml={2}>(Protocol Labs)</Text>}
-          </Box>
-        ))}
-      {signerAddressError && <Text>Please select an address</Text>}
+    <Box
+      display='flex'
+      flexDirection='row'
+      alignItems='center'
+      width='100%'
+      justifyContent='space-between'
+      mt={1}
+    >
+      <Label px={2}>Removing signer</Label>
+      <Box display='flex' flexDirection='row' alignItems='center'>
+        <StyledATag
+          target='_blank'
+          href={`https://filfox.info/en/address/${signerAddress}`}
+        >
+          {`${truncateAddress(signerAddress)}`}
+        </StyledATag>
+        {PL_SIGNERS.has(signerAddress) && (
+          <Text color='core.darkgray' ml={2}>
+            (Protocol Labs)
+          </Text>
+        )}
+        <CopyText text={signerAddress} hideCopyText />
+      </Box>
     </Box>
   )
 }
 
 RemoveSignerInput.propTypes = {
-  selfAddress: ADDRESS_PROPTYPE,
-  signerAddress: PropTypes.string.isRequired,
-  setSignerAddress: PropTypes.func.isRequired,
-  signerAddressError: PropTypes.string,
-  signers: PropTypes.arrayOf(
-    PropTypes.shape({
-      account: ADDRESS_PROPTYPE,
-      id: ADDRESS_PROPTYPE
-    })
-  ),
-  step: PropTypes.number.isRequired,
-  setSignerAddressError: PropTypes.func.isRequired
+  signerAddress: PropTypes.string.isRequired
 }

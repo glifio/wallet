@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FilecoinNumber } from '@glif/filecoin-number'
-import { Box, Text, Glyph, StyledATag } from '../../Shared'
+import { Box, Text, Glyph } from '../../Shared'
+import { StyledATag, StepHeader } from '../../Shared'
 import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
@@ -113,13 +114,13 @@ WithdrawHeaderText.propTypes = {
   step: PropTypes.number.isRequired
 }
 
-export const ChangeOwnerHeaderText = ({ step }) => {
+export const ChangeSignerHeaderText = ({ step }) => {
   let text = ''
 
   switch (step) {
     case 2:
       text =
-        'Please input the new Filecoin address you want to be the owner of your multisig wallet.'
+        'Please input the new Filecoin address you want to be the signer of your multisig wallet.'
       break
     case 3:
       text =
@@ -138,73 +139,59 @@ export const ChangeOwnerHeaderText = ({ step }) => {
   )
 }
 
-ChangeOwnerHeaderText.propTypes = {
+ChangeSignerHeaderText.propTypes = {
   step: PropTypes.number.isRequired
 }
 
-export const RemoveSignerHeaderText = ({ step }) => {
-  let text = ''
-
-  switch (step) {
-    case 2:
-      text =
-        'Please select the Filecoin address you want to remove from your multisig wallet.'
-      break
-    case 3:
-      text =
-        'Please review the transaction fee details. If the fee is too high, please come back and try again later.'
-      break
-    default:
-      text = ''
+export const AddRmSignerHeader = ({ method, step }) => {
+  if (method === 5) {
+    return (
+      <>
+        <StepHeader
+          title='Add Signer'
+          currentStep={step}
+          totalSteps={4}
+          glyphAcronym='As'
+        />
+        <Text textAlign='center'>
+          Your Ledger Address pays the transaction fee.
+        </Text>
+        {step === 2 && (
+          <Text textAlign='center'>
+            Please enter a Filecoin address to add as a signer and click Next.
+          </Text>
+        )}
+        {step === 3 && (
+          <Text textAlign='center'>
+            Please review the transaction fee details and click Next to
+            continue.
+          </Text>
+        )}
+      </>
+    )
   }
-  return (
-    <>
-      <Text textAlign='center'>
-        Your Ledger Address pays the transaction fee.
-      </Text>
-      <Text textAlign='center'>{text}</Text>
-    </>
-  )
-}
+  if (method === 6) {
+    return (
+      <>
+        <StepHeader
+          title='Remove Signer'
+          currentStep={step}
+          totalSteps={4}
+          glyphAcronym='Rs'
+        />
 
-RemoveSignerHeaderText.propTypes = {
-  step: PropTypes.number.isRequired
-}
-
-export const AddSignerHeaderText = ({ step }) => {
-  let text = ''
-
-  switch (step) {
-    case 2:
-      text = 'Please enter the Filecoin address of the new signer.'
-      break
-    case 3:
-      text =
-        'Please review the transaction fee details. If the fee is too high, please come back and try again later.'
-      break
-    default:
-      text = ''
+        <Text textAlign='center'>
+          Your Ledger Address pays the transaction fee.
+        </Text>
+        <Text textAlign='center'>
+          Please review the transaction fee details and click Next to continue.
+        </Text>
+      </>
+    )
   }
-  return (
-    <>
-      <Text textAlign='center'>
-        Your Ledger Address pays the transaction fee.
-      </Text>
-      <Text textAlign='center'>{text}</Text>
-    </>
-  )
 }
 
-AddSignerHeaderText.propTypes = {
-  step: PropTypes.number.isRequired
-}
-
-export const AddRmSignerHeaderText = ({ method, step }) => {
-  if (method === 5) return <AddSignerHeaderText step={step} />
-  if (method === 6) return <RemoveSignerHeaderText step={step} />
-}
-
-AddRmSignerHeaderText.propTypes = {
+AddRmSignerHeader.propTypes = {
   method: PropTypes.number.isRequired,
   step: PropTypes.number.isRequired
 }

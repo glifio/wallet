@@ -7,6 +7,11 @@ export interface MsigActorErrors {
   unhandledError: string
 }
 
+export interface Signer {
+  id: string
+  account: string
+}
+
 export interface MsigActorState {
   Address: string | null
   ActorCode: string
@@ -17,7 +22,7 @@ export interface MsigActorState {
   NumApprovalsThreshold: number
   StartEpoch: number
   UnlockDuration: number
-  Signers: { id: string; account: string }[]
+  Signers: Signer[]
   errors: MsigActorErrors
 }
 

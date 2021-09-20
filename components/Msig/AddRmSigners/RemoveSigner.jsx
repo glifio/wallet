@@ -1,32 +1,25 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import { BigNumber } from '@glif/filecoin-number'
+import React, { useCallback, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
 import { Message } from '@glif/filecoin-message'
-import { validateAddressString } from '@glif/filecoin-address'
+import { BigNumber } from '@glif/filecoin-number'
+import { useRouter } from 'next/router'
 
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
-import {
-  Box,
-  Button,
-  ButtonClose,
-  StepHeader,
-  Input,
-  Form,
-  Card
-} from '../../Shared'
-import {
-  ADDRESS_PROPTYPE,
-  FILECOIN_NUMBER_PROP
-} from '../../../customPropTypes'
-import { CardHeader, ChangeOwnerHeaderText } from '../Shared'
-import Preface from './Preface'
+import { Box, Button, ButtonClose, Form, Card } from '@glif/react-components'
+import { CardHeader, AddRmSignerHeader } from '../Shared'
+import Preface from './Prefaces'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
-import { LEDGER, PROPOSE, emptyGasInfo } from '../../../constants'
+import {
+  LEDGER,
+  PROPOSE,
+  emptyGasInfo,
+  PAGE,
+  MSIG_METHOD
+} from '../../../constants'
 import CustomizeFee from '../../Wallet/Send/CustomizeFee'
 import {
   reportLedgerConfigError,
@@ -35,27 +28,38 @@ import {
 import reportError from '../../../utils/reportError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
+import { RemoveSignerInput } from './SignerInput'
+import { useMsig } from '../../../MsigProvider'
+import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
+import { navigate } from '../../../utils/urlParams'
 
-const ChangeOwner = ({ address, balance, close }) => {
+const RemoveSigner = ({ signerAddress }) => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
   const wallet = useWallet()
   const dispatch = useDispatch()
+  const router = useRouter()
   const { serializeParams } = useWasm()
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
-  const [toAddress, setToAddress] = useState('')
-  const [toAddressError, setToAddressError] = useState('')
   const [uncaughtError, setUncaughtError] = useState('')
   const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
   const [mPoolPushing, setMPoolPushing] = useState(false)
   const [gasError, setGasError] = useState('')
   const [gasInfo, setGasInfo] = useState(emptyGasInfo)
   const [frozen, setFrozen] = useState(false)
+  const { Address: address, AvailableBalance: balance } = useMsig()
+  const onClose = useCallback(() => {
+    navigate(router, { pageUrl: PAGE.MSIG_ADMIN })
+  }, [router])
+
+  const onComplete = useCallback(() => {
+    navigate(router, { pageUrl: PAGE.MSIG_HISTORY })
+  }, [router])
 
   const constructMsg = (nonce = 0) => {
     const innerParams = {
-      to: toAddress,
-      from: wallet.address
+      signer: signerAddress,
+      decrease: false
     }
 
     const serializedInnerParams = Buffer.from(
@@ -66,7 +70,7 @@ const ChangeOwner = ({ address, balance, close }) => {
     const outerParams = {
       to: address,
       value: '0',
-      method: 7,
+      method: MSIG_METHOD.REMOVE_SIGNER,
       params: serializedInnerParams
     }
 
@@ -79,7 +83,7 @@ const ChangeOwner = ({ address, balance, close }) => {
       to: address,
       from: wallet.address,
       value: '0',
-      method: 2,
+      method: MSIG_METHOD.PROPOSE,
       nonce,
       params: serializedOuterParams,
       gasFeeCap: gasInfo.gasFeeCap.toAttoFil(),
@@ -87,7 +91,7 @@ const ChangeOwner = ({ address, balance, close }) => {
       gasPremium: gasInfo.gasPremium.toAttoFil()
     })
 
-    return { message, params: { ...innerParams, params: outerParams } }
+    return { message, params: { ...outerParams, params: { ...innerParams } } }
   }
 
   const sendMsg = async () => {
@@ -127,18 +131,14 @@ const ChangeOwner = ({ address, balance, close }) => {
     e.preventDefault()
     if (step === 1) {
       setStep(2)
-    } else if (step === 2 && !validateAddressString(toAddress)) {
-      setToAddressError('Invalid to address')
-    } else if (step === 2 && validateAddressString(toAddress)) {
-      setStep(3)
-    } else if (step === 3) {
+    } else if (step === 2) {
       setAttemptingTx(true)
       try {
         const msg = await sendMsg()
         setAttemptingTx(false)
         if (msg) {
           dispatch(confirmMessage(toLowerCaseMsgFields(msg)))
-          close()
+          onComplete()
         }
       } catch (err) {
         if (err.message.includes('19')) {
@@ -175,10 +175,10 @@ const ChangeOwner = ({ address, balance, close }) => {
   const isSubmitBtnDisabled = () => {
     if (frozen) return true
     if (step === 1) return false
-    if (step === 3 && gasError) return true
+    if (step === 2 && gasError) return true
     if (uncaughtError) return false
     if (attemptingTx) return true
-    if (step > 3) return true
+    if (step > 2) return true
   }
 
   const isBackBtnDisabled = () => {
@@ -200,7 +200,7 @@ const ChangeOwner = ({ address, balance, close }) => {
           setAttemptingTx(false)
           setUncaughtError('')
           resetLedgerState()
-          close()
+          onClose()
         }}
       />
       <Form onSubmit={onSubmit}>
@@ -211,7 +211,6 @@ const ChangeOwner = ({ address, balance, close }) => {
           display='flex'
           flexDirection='column'
           justifyContent='flex-start'
-          flexGrow='1'
         >
           <Box>
             {hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
@@ -233,55 +232,47 @@ const ChangeOwner = ({ address, balance, close }) => {
               <ConfirmationCard
                 loading={fetchingTxDetails || mPoolPushing}
                 walletType={LEDGER}
-                currentStep={4}
-                totalSteps={4}
+                currentStep={3}
+                totalSteps={3}
                 msig
               />
             )}
-            {!attemptingTx &&
-              step > 1 &&
-              !hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
-                <Card
-                  display='flex'
-                  flexDirection='column'
-                  justifyContent='space-between'
-                  border='none'
-                  width='auto'
-                  my={2}
-                  backgroundColor='blue.muted700'
-                >
-                  <StepHeader
-                    title='Change Ownership'
-                    currentStep={step}
-                    totalSteps={4}
-                    glyphAcronym='Ch'
-                  />
-                  <ChangeOwnerHeaderText step={step} />
-                </Card>
-              )}
-            {step === 1 && <Preface />}
-            <Box boxShadow={2} borderRadius={4}>
-              {step > 1 && (
+            {step === 1 && <Preface method={MSIG_METHOD.REMOVE_SIGNER} />}
+            <>
+              {step >= 2 && (
                 <>
-                  <CardHeader
-                    msig
-                    address={address}
-                    msigBalance={balance}
-                    signerBalance={wallet.balance}
-                  />
-                  <Box width='100%' p={3} border={0} bg='background.screen'>
-                    <Input.Address
-                      label='New owner'
-                      value={toAddress}
-                      onChange={e => setToAddress(e.target.value)}
-                      error={toAddressError}
-                      disabled={step === 3}
-                      onFocus={() => {
-                        if (toAddressError) setToAddressError('')
-                      }}
+                  {!attemptingTx &&
+                    !hasLedgerError({
+                      ...ledger,
+                      otherError: uncaughtError
+                    }) && (
+                      <Box boxShadow={2} borderRadius={4}>
+                        <Card
+                          display='flex'
+                          flexDirection='column'
+                          justifyContent='space-between'
+                          border='none'
+                          width='auto'
+                          my={2}
+                          backgroundColor='blue.muted700'
+                        >
+                          <AddRmSignerHeader
+                            step={step}
+                            method={MSIG_METHOD.REMOVE_SIGNER}
+                          />
+                        </Card>
+                      </Box>
+                    )}
+                  <Box boxShadow={2} borderRadius={4}>
+                    <CardHeader
+                      msig
+                      address={address}
+                      msigBalance={balance}
+                      signerBalance={wallet.balance}
                     />
-                  </Box>
-                  {step > 2 && (
+                    <Box width='100%' p={3} border={0} bg='background.screen'>
+                      <RemoveSignerInput signerAddress={signerAddress} />
+                    </Box>
                     <Box
                       display='flex'
                       flexDirection='row'
@@ -301,14 +292,13 @@ const ChangeOwner = ({ address, balance, close }) => {
                         feeMustBeLessThanThisAmount={wallet.balance}
                       />
                     </Box>
-                  )}
+                  </Box>
                 </>
               )}
-            </Box>
+            </>
           </Box>
           <Box
             display='flex'
-            flex='1'
             flexDirection='row'
             justifyContent='space-between'
             alignItems='flex-end'
@@ -317,7 +307,7 @@ const ChangeOwner = ({ address, balance, close }) => {
             width='100%'
             minWidth={11}
             maxHeight={12}
-            my={3}
+            py={4}
           >
             <Button
               title='Back'
@@ -328,7 +318,7 @@ const ChangeOwner = ({ address, balance, close }) => {
                 setGasError('')
                 resetLedgerState()
                 if (step === 1) {
-                  close()
+                  onClose()
                 } else {
                   setStep(step - 1)
                 }
@@ -348,10 +338,12 @@ const ChangeOwner = ({ address, balance, close }) => {
   )
 }
 
-ChangeOwner.propTypes = {
-  address: ADDRESS_PROPTYPE,
-  balance: FILECOIN_NUMBER_PROP,
-  close: PropTypes.func.isRequired
+RemoveSigner.propTypes = {
+  signerAddress: ADDRESS_PROPTYPE
 }
 
-export default ChangeOwner
+RemoveSigner.defaultProps = {
+  signerAddress: ''
+}
+
+export default RemoveSigner

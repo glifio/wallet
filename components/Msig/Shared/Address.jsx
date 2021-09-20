@@ -1,10 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {
+  Box,
+  Glyph,
+  CopyAddress,
+  Label,
+  IconLedger,
+  ButtonClose,
+  ButtonEdit
+} from '@glif/react-components'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
-import { Box, Glyph, CopyAddress, Label, IconLedger } from '../../Shared'
-
-const Address = ({ address, label, glyphAcronym }) => {
+const Address = ({
+  widthOverride,
+  address,
+  label,
+  glyphAcronym,
+  onRemoveSigner,
+  onChangeSigner
+}) => {
   return (
     <Box
       display='flex'
@@ -17,7 +31,9 @@ const Address = ({ address, label, glyphAcronym }) => {
       mr={2}
       my={1}
       borderRadius={2}
-      maxWidth={11}
+      maxWidth={widthOverride ? 'none' : 12}
+      width={widthOverride || 'auto'}
+      minWidth={11}
     >
       {glyphAcronym ? (
         <Glyph
@@ -44,12 +60,24 @@ const Address = ({ address, label, glyphAcronym }) => {
       )}
       <Box flexGrow='1'>
         <Label fontSize={1}>{label}</Label>
-        <CopyAddress
-          justifyContent='space-between'
-          color='core.nearblack'
-          address={address}
-        />
+        <CopyAddress color='core.nearblack' address={address} />
       </Box>
+      {onChangeSigner && (
+        <ButtonEdit
+          role='button'
+          type='button'
+          onClick={onChangeSigner}
+          stroke='core.darkgray'
+        />
+      )}
+      {onRemoveSigner && (
+        <ButtonClose
+          fill='core.darkgray'
+          role='button'
+          type='button'
+          onClick={onRemoveSigner}
+        />
+      )}
     </Box>
   )
 }
@@ -57,7 +85,10 @@ const Address = ({ address, label, glyphAcronym }) => {
 Address.propTypes = {
   address: ADDRESS_PROPTYPE,
   label: PropTypes.string.isRequired,
-  glyphAcronym: PropTypes.string
+  glyphAcronym: PropTypes.string,
+  widthOverride: PropTypes.string,
+  onRemoveSigner: PropTypes.func,
+  onChangeSigner: PropTypes.func
 }
 
 export default Address

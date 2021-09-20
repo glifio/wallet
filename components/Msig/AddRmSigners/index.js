@@ -1,4 +1,2 @@
-import BaseHOC from './Base'
-
-export const AddSigner = BaseHOC(5)
-export const RemoveSigner = BaseHOC(6)
+export { default as AddSigner } from './AddSigner'
+export { default as RemoveSigner } from './RemoveSigner'
