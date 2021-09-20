@@ -18,7 +18,7 @@ describe('fetchMsigState', () => {
     expect(converAddrToFPrefix(successSpy.mock.calls[0][0])).toBe(
       MULTISIG_ACTOR_ADDRESS
     )
-  })
+  }, 12500)
 
   test('it calls the error callback when there is an error', async () => {
     const successSpy = jest.fn()
@@ -30,5 +30,5 @@ describe('fetchMsigState', () => {
     )
 
     expect(errorSpy).toHaveBeenCalled()
-  })
+  }, 12500)
 })
