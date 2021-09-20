@@ -21,7 +21,7 @@
     "@glif/filecoin-message-confirmer": "^1.1.0",
     "@glif/filecoin-number": "^1.1.0",
     "@glif/filecoin-rpc-client": "^1.1.0",
-    "@glif/filecoin-wallet-provider": "^1.1.0",
+    "@glif/filecoin-wallet-provider": "^1.1.1-alpha.5",
     "@glif/react-components": "^1.1.1-alpha.6",
     "@ledgerhq/hw-transport-webhid": "^6.4.1",
     "@zondax/filecoin-signing-tools": "^0.17.1",
