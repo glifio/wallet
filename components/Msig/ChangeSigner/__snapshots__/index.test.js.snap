@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Change owner flow snapshots it renders preface correctly 1`] = `
+exports[`Change signer flow snapshots it renders preface correctly 1`] = `
 .c0 {
   min-width: 0;
   box-sizing: border-box;
@@ -31,10 +31,6 @@ exports[`Change owner flow snapshots it renders preface correctly 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
 }
 
 .c5 {
@@ -45,7 +41,8 @@ exports[`Change owner flow snapshots it renders preface correctly 1`] = `
 .c6 {
   min-width: 0;
   box-sizing: border-box;
-  padding: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -71,6 +68,7 @@ exports[`Change owner flow snapshots it renders preface correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -90,7 +88,6 @@ exports[`Change owner flow snapshots it renders preface correctly 1`] = `
   border-radius: 4px;
   border-width: 1px;
   padding: 0;
-  margin-left: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -197,6 +194,12 @@ exports[`Change owner flow snapshots it renders preface correctly 1`] = `
   align-items: flex-end;
 }
 
+.c11 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c18 {
   cursor: pointer;
   border: 1px solid #262626;
@@ -265,12 +268,6 @@ exports[`Change owner flow snapshots it renders preface correctly 1`] = `
   height: 24;
 }
 
-.c11 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
 .c3 {
   width: 100%;
   display: -webkit-box;
@@ -335,7 +332,6 @@ exports[`Change owner flow snapshots it renders preface correctly 1`] = `
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"
@@ -362,87 +358,84 @@ exports[`Change owner flow snapshots it renders preface correctly 1`] = `
         >
           
           <div
-            class="c5"
+            class="c6"
+            display="flex"
+            width="100%"
           >
             <div
-              class="c6"
+              class="c7"
               display="flex"
               width="100%"
             >
               <div
-                class="c7"
+                class="c8"
                 display="flex"
+                overflow="hidden"
+                width="100%"
               >
                 <div
-                  class="c8"
+                  class="c9"
                   display="flex"
-                  overflow="hidden"
-                  width="100%"
                 >
                   <div
-                    class="c9"
+                    class="c10"
+                    color="status.warning.foreground"
                     display="flex"
+                    size="6"
                   >
-                    <div
-                      class="c10"
-                      color="status.warning.foreground"
-                      display="flex"
-                      size="6"
+                    <h3
+                      class="c11"
                     >
-                      <h3
-                        class="c11"
-                      >
-                        Wn
-                      </h3>
-                    </div>
-                    <h2
-                      class="c12"
-                      color="status.warning.foreground"
-                      font-family="RT-Alias-Grotesk"
-                      font-size="4"
-                      font-weight="400"
-                    >
-                      Warning
-                    </h2>
+                      Wn
+                    </h3>
                   </div>
-                  <div
-                    class="c13"
+                  <h2
+                    class="c12"
+                    color="status.warning.foreground"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="4"
+                    font-weight="400"
                   >
-                    <p
-                      class="c14"
-                      font-family="RT-Alias-Grotesk"
-                      font-size="2"
-                      font-weight="400"
-                    >
-                      You're changing the ownership of your multisig account to a new Filecoin address.
-                    </p>
-                    <p
-                      class="c14"
-                      font-family="RT-Alias-Grotesk"
-                      font-size="2"
-                      font-weight="400"
-                    >
-                      Make sure you own the private key to this new Filecoin address.
-                    </p>
-                    <p
-                      class="c14"
-                      font-family="RT-Alias-Grotesk"
-                      font-size="2"
-                      font-weight="400"
-                    >
-                      If you do not own the private key, you will lose access to your funds permanently. There is no way to resolve this.
-                    </p>
-                    <a
-                      class="c15"
-                      color="core.primary"
-                      font-size="3"
-                      href="https://coinsutra.com/security-risks-bitcoin-wallets/"
-                      rel="noopener"
-                      target="_blank"
-                    >
-                      Why isn't it secure?
-                    </a>
-                  </div>
+                    Warning
+                  </h2>
+                </div>
+                <div
+                  class="c13"
+                >
+                  <p
+                    class="c14"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    You're changing a signer of your multisig account to a new Filecoin address.
+                  </p>
+                  <p
+                    class="c14"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    Make sure you or someone you trust owns the private key to this new Filecoin address.
+                  </p>
+                  <p
+                    class="c14"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                  >
+                    If you or anyone else does not own this address, you could lose access to your funds permanently. There is no way to resolve this.
+                  </p>
+                  <a
+                    class="c15"
+                    color="core.primary"
+                    font-size="3"
+                    href="https://coinsutra.com/security-risks-bitcoin-wallets/"
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    Why isn't it secure?
+                  </a>
                 </div>
               </div>
             </div>
@@ -479,7 +472,7 @@ exports[`Change owner flow snapshots it renders preface correctly 1`] = `
 </div>
 `;
 
-exports[`Change owner flow snapshots it renders step 2 correctly 1`] = `
+exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
 .c0 {
   min-width: 0;
   box-sizing: border-box;
@@ -510,10 +503,6 @@ exports[`Change owner flow snapshots it renders step 2 correctly 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
 }
 
 .c5 {
@@ -528,7 +517,7 @@ exports[`Change owner flow snapshots it renders step 2 correctly 1`] = `
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c33 {
+.c44 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -581,6 +570,236 @@ exports[`Change owner flow snapshots it renders step 2 correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  padding: 16px;
+  background-color: #EFF3FD;
+  width: 100%;
+}
+
+.c28 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c30 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #E0D7FE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 8px;
+}
+
+.c45 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c45:hover {
+  opacity: 0.8;
+}
+
+.c46 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c46:hover {
+  opacity: 0.8;
+}
+
+.c34 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c34:hover {
+  opacity: 0.8;
+}
+
+.c29 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  padding-left: 0;
+}
+
+.c2 {
+  width: 24;
+  height: 24;
+}
+
+.c35 {
+  height: auto;
+  opacity: 1 !important;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  outline: none;
+}
+
+.c37 {
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+}
+
+.c33:hover .c36 {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c3 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c31 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+}
+
+.c31:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c1 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: auto;
+  justify-self: flex-end;
+}
+
+.c1:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 .c8 {
@@ -772,16 +991,7 @@ exports[`Change owner flow snapshots it renders step 2 correctly 1`] = `
   align-items: flex-start;
 }
 
-.c27 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 0;
-  padding: 16px;
-  background-color: #EFF3FD;
-  width: 100%;
-}
-
-.c29 {
+.c40 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -800,7 +1010,7 @@ exports[`Change owner flow snapshots it renders step 2 correctly 1`] = `
   align-items: center;
 }
 
-.c31 {
+.c42 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -815,52 +1025,6 @@ exports[`Change owner flow snapshots it renders step 2 correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.c34 {
-  cursor: pointer;
-  border: 1px solid #262626;
-  background-color: transparent;
-  border-color: #262626;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c34:hover {
-  opacity: 0.8;
-}
-
-.c35 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: #08442F;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c35:hover {
-  opacity: 0.8;
 }
 
 .c12 {
@@ -898,7 +1062,7 @@ exports[`Change owner flow snapshots it renders step 2 correctly 1`] = `
   margin: 0;
 }
 
-.c30 {
+.c41 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -907,18 +1071,13 @@ exports[`Change owner flow snapshots it renders step 2 correctly 1`] = `
   margin: 0;
 }
 
-.c2 {
-  width: 24;
-  height: 24;
-}
-
 .c11 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c32 {
+.c43 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -943,39 +1102,21 @@ exports[`Change owner flow snapshots it renders step 2 correctly 1`] = `
   border-color: #999999;
 }
 
-.c32:hover {
+.c43:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c32:focus {
+.c43:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c28 {
+.c39 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
-}
-
-.c3 {
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .c7 {
@@ -1010,24 +1151,6 @@ exports[`Change owner flow snapshots it renders step 2 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c1 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: auto;
-  justify-self: flex-end;
-}
-
-.c1:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
 <div>
   <div
     class="c0"
@@ -1042,7 +1165,6 @@ exports[`Change owner flow snapshots it renders step 2 correctly 1`] = `
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"
@@ -1191,7 +1313,7 @@ exports[`Change owner flow snapshots it renders step 2 correctly 1`] = `
               font-size="2"
               font-weight="400"
             >
-              Please input the new Filecoin address you want to be the owner of your multisig wallet.
+              Please input the new Filecoin address you want to be the signer of your multisig wallet.
             </p>
           </div>
           <div
@@ -1240,7 +1362,7 @@ exports[`Change owner flow snapshots it renders step 2 correctly 1`] = `
                       font-size="2"
                       font-weight="400"
                     >
-                      t034066
+                      f2m4f2 ... sha5za
                     </p>
                   </div>
                 </div>
@@ -1301,53 +1423,123 @@ exports[`Change owner flow snapshots it renders step 2 correctly 1`] = `
             >
               <div
                 class="c28"
+                display="flex"
               >
+                <h4
+                  class="c29"
+                  color="core.nearblack"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Old signer
+                </h4>
                 <div
-                  class="c15"
+                  class="c30"
                   display="flex"
                 >
-                  <div
-                    class="c29"
-                    display="flex"
-                  >
-                    <h4
-                      class="c30"
-                      color="core.nearblack"
-                      font-family="RT-Alias-Grotesk"
-                      font-size="2"
-                      font-weight="400"
-                    >
-                      New owner
-                    </h4>
-                  </div>
-                  <div
+                  <a
                     class="c31"
+                    color="core.primary"
+                    font-size="2"
+                    href="https://filfox.info/en/address/f1nq5k2mps5umtebdovlyo7y6a3ywc7u4tobtuo3a"
+                    target="_blank"
+                  >
+                    f1nq5k ... btuo3a
+                  </a>
+                  <div
+                    class="c32"
+                    color="core.secondary"
                     display="flex"
                   >
-                    <input
-                      class="c32"
-                      display="inline-block"
+                    <button
+                      class="c33 c34 c35"
+                      display="flex"
+                      font-size="3"
                       height="6"
-                      name=""
-                      placeholder="f1..."
-                      value=""
-                      width="100%"
-                    />
-                    
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c2 c36 c37"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
                   </div>
                 </div>
               </div>
-              
+              <div
+                class="c38"
+              >
+                <div
+                  class="c39"
+                >
+                  <div
+                    class="c15"
+                    display="flex"
+                  >
+                    <div
+                      class="c40"
+                      display="flex"
+                    >
+                      <h4
+                        class="c41"
+                        color="core.nearblack"
+                        font-family="RT-Alias-Grotesk"
+                        font-size="2"
+                        font-weight="400"
+                      >
+                        New signer
+                      </h4>
+                    </div>
+                    <div
+                      class="c42"
+                      display="flex"
+                    >
+                      <input
+                        class="c43"
+                        display="inline-block"
+                        height="6"
+                        name=""
+                        placeholder="f1..."
+                        value=""
+                        width="100%"
+                      />
+                      
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
             </div>
           </div>
         </div>
         <div
-          class="c33"
+          class="c44"
           display="flex"
           width="100%"
         >
           <button
-            class="c34"
+            class="c45"
             font-size="3"
             height="6"
             type="button"
@@ -1355,7 +1547,7 @@ exports[`Change owner flow snapshots it renders step 2 correctly 1`] = `
             Back
           </button>
           <button
-            class="c35"
+            class="c46"
             font-size="3"
             height="6"
             type="submit"
@@ -1369,7 +1561,7 @@ exports[`Change owner flow snapshots it renders step 2 correctly 1`] = `
 </div>
 `;
 
-exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
+exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
 .c0 {
   min-width: 0;
   box-sizing: border-box;
@@ -1400,10 +1592,6 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
 }
 
 .c5 {
@@ -1418,7 +1606,7 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c47 {
+.c58 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -1471,6 +1659,256 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  padding: 16px;
+  background-color: #EFF3FD;
+  width: 100%;
+}
+
+.c28 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c30 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #E0D7FE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 8px;
+}
+
+.c44 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  padding: 16px;
+  background-color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c59 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c59:hover {
+  opacity: 0.8;
+}
+
+.c60 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c60:hover {
+  opacity: 0.8;
+}
+
+.c34 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c34:hover {
+  opacity: 0.8;
+}
+
+.c29 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  padding-left: 0;
+}
+
+.c2 {
+  width: 24;
+  height: 24;
+}
+
+.c35 {
+  height: auto;
+  opacity: 1 !important;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  outline: none;
+}
+
+.c37 {
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+}
+
+.c33:hover .c36 {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c3 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c31 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+}
+
+.c31:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c1 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: auto;
+  justify-self: flex-end;
+}
+
+.c1:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 .c8 {
@@ -1662,16 +2100,7 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   align-items: flex-start;
 }
 
-.c27 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 0;
-  padding: 16px;
-  background-color: #EFF3FD;
-  width: 100%;
-}
-
-.c29 {
+.c40 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -1690,7 +2119,7 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c31 {
+.c42 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1707,27 +2136,7 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c33 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 0;
-  padding: 16px;
-  background-color: #EFF3FD;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c34 {
+.c45 {
   min-width: 0;
   box-sizing: border-box;
   background-color: #EFF3FD;
@@ -1748,7 +2157,7 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c35 {
+.c46 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1769,7 +2178,7 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   flex-grow: 1;
 }
 
-.c36 {
+.c47 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1783,7 +2192,7 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c37 {
+.c48 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 8px;
@@ -1794,7 +2203,7 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   text-align: left;
 }
 
-.c39 {
+.c50 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1812,7 +2221,7 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   justify-content: flex-end;
 }
 
-.c42 {
+.c53 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -1839,7 +2248,7 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   font-size: 1.25rem;
 }
 
-.c44 {
+.c55 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1852,52 +2261,6 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   -ms-flex-pack: end;
   justify-content: flex-end;
   text-align: left;
-}
-
-.c48 {
-  cursor: pointer;
-  border: 1px solid #262626;
-  background-color: transparent;
-  border-color: #262626;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c48:hover {
-  opacity: 0.8;
-}
-
-.c49 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: #08442F;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c49:hover {
-  opacity: 0.8;
 }
 
 .c12 {
@@ -1935,7 +2298,7 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   margin: 0;
 }
 
-.c45 {
+.c56 {
   color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
@@ -1944,7 +2307,7 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   width: 100%;
 }
 
-.c30 {
+.c41 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -1953,17 +2316,12 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   margin: 0;
 }
 
-.c38 {
+.c49 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c2 {
-  width: 24;
-  height: 24;
 }
 
 .c11 {
@@ -1972,7 +2330,7 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c32 {
+.c43 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -1997,18 +2355,18 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   border-color: #999999;
 }
 
-.c32:hover {
+.c43:hover {
   background: #bacbf7;
   cursor: initial;
 }
 
-.c32:focus {
+.c43:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c40 {
+.c51 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -2034,55 +2392,37 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   border-color: #999999;
 }
 
-.c40:hover {
+.c51:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c40:focus {
+.c51:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c28 {
+.c39 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
 }
 
-.c43 {
+.c54 {
   text-align: center;
   position: relative;
   background: #d1ddfa;
 }
 
-.c41 {
+.c52 {
   -moz-appearance: textfield;
 }
 
-.c41::-webkit-outer-spin-button,
-.c41::-webkit-inner-spin-button {
+.c52::-webkit-outer-spin-button,
+.c52::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-.c3 {
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .c7 {
@@ -2117,7 +2457,7 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c46 {
+.c57 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -2127,26 +2467,8 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
   font-size: 1.125rem;
 }
 
-.c46:hover {
+.c57:hover {
   border-bottom: 2px solid #5E26FF;
-}
-
-.c1 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: auto;
-  justify-self: flex-end;
-}
-
-.c1:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
 }
 
 <div>
@@ -2163,7 +2485,6 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"
@@ -2361,7 +2682,7 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
                       font-size="2"
                       font-weight="400"
                     >
-                      t034066
+                      f2m4f2 ... sha5za
                     </p>
                   </div>
                 </div>
@@ -2422,72 +2743,142 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
             >
               <div
                 class="c28"
+                display="flex"
               >
+                <h4
+                  class="c29"
+                  color="core.nearblack"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                >
+                  Old signer
+                </h4>
                 <div
-                  class="c15"
+                  class="c30"
                   display="flex"
                 >
-                  <div
-                    class="c29"
-                    display="flex"
-                  >
-                    <h4
-                      class="c30"
-                      color="core.nearblack"
-                      font-family="RT-Alias-Grotesk"
-                      font-size="2"
-                      font-weight="400"
-                    >
-                      New owner
-                    </h4>
-                  </div>
-                  <div
+                  <a
                     class="c31"
+                    color="core.primary"
+                    font-size="2"
+                    href="https://filfox.info/en/address/f1nq5k2mps5umtebdovlyo7y6a3ywc7u4tobtuo3a"
+                    target="_blank"
+                  >
+                    f1nq5k ... btuo3a
+                  </a>
+                  <div
+                    class="c32"
+                    color="core.secondary"
                     display="flex"
                   >
-                    <input
-                      class="c32"
-                      disabled=""
-                      display="inline-block"
+                    <button
+                      class="c33 c34 c35"
+                      display="flex"
+                      font-size="3"
                       height="6"
-                      name=""
-                      placeholder="f1..."
-                      value="t0100"
-                      width="100%"
-                    />
-                    
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c2 c36 c37"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
                   </div>
                 </div>
               </div>
-              
+              <div
+                class="c38"
+              >
+                <div
+                  class="c39"
+                >
+                  <div
+                    class="c15"
+                    display="flex"
+                  >
+                    <div
+                      class="c40"
+                      display="flex"
+                    >
+                      <h4
+                        class="c41"
+                        color="core.nearblack"
+                        font-family="RT-Alias-Grotesk"
+                        font-size="2"
+                        font-weight="400"
+                      >
+                        New signer
+                      </h4>
+                    </div>
+                    <div
+                      class="c42"
+                      display="flex"
+                    >
+                      <input
+                        class="c43"
+                        disabled=""
+                        display="inline-block"
+                        height="6"
+                        name=""
+                        placeholder="f1..."
+                        value="t0100"
+                        width="100%"
+                      />
+                      
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
             </div>
             <div
-              class="c33"
+              class="c44"
               display="flex"
               width="100%"
             >
               <div
-                class="c34"
+                class="c45"
                 display="flex"
               >
                 <div
-                  class="c35"
+                  class="c46"
                   display="flex"
                 >
                   <div
-                    class="c28"
+                    class="c39"
                     name="tx-fee"
                   >
                     <div
-                      class="c36"
+                      class="c47"
                       display="flex"
                     >
                       <div
-                        class="c37"
+                        class="c48"
                         display="inline-block"
                       >
                         <h4
-                          class="c38"
+                          class="c49"
                           font-family="RT-Alias-Grotesk"
                           font-size="2"
                           font-weight="400"
@@ -2496,13 +2887,13 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
                         </h4>
                       </div>
                       <div
-                        class="c39"
+                        class="c50"
                         color="background.screen"
                         display="flex"
                         width="100%"
                       >
                         <input
-                          class="c40 c41"
+                          class="c51 c52"
                           display="inline-block"
                           height="6"
                           type="number"
@@ -2510,7 +2901,7 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
                           width="100%"
                         />
                         <div
-                          class="c42 c43"
+                          class="c53 c54"
                           color="core.primary"
                           display="flex"
                           font-size="3"
@@ -2522,12 +2913,12 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    class="c44"
+                    class="c55"
                     display="flex"
                     width="100%"
                   >
                     <p
-                      class="c45"
+                      class="c56"
                       color="core.darkgray"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -2539,7 +2930,7 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
                        FIL for this transaction.
                        
                       <a
-                        class="c46"
+                        class="c57"
                         color="core.primary"
                         font-size="2"
                         href="https://filfox.info/en/stats/gas"
@@ -2556,12 +2947,12 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
           </div>
         </div>
         <div
-          class="c47"
+          class="c58"
           display="flex"
           width="100%"
         >
           <button
-            class="c48"
+            class="c59"
             font-size="3"
             height="6"
             type="button"
@@ -2569,7 +2960,7 @@ exports[`Change owner flow snapshots it renders step 3 correctly 1`] = `
             Back
           </button>
           <button
-            class="c49"
+            class="c60"
             font-size="3"
             height="6"
             type="submit"

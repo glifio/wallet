@@ -13,13 +13,13 @@ const MsigProviderContextMock = createContext<
     setMsigActor: null | Dispatch<string | null>
   } & { loading: boolean }
 >({
-  Address: 'f2m4f2dv7m35skytoqzsyrh5wqz3kxxfflxsha5za',
+  Address: MULTISIG_ACTOR_ADDRESS,
   ActorCode: 'fil/5/multisig',
   Balance: new FilecoinNumber('1', 'fil'),
   AvailableBalance: new FilecoinNumber('1', 'fil'),
   Signers: [
     {
-      account: 'f1nq5k2mps5umtebdovlyo7y6a3ywc7u4tobtuo3a',
+      account: MULTISIG_SIGNER_ADDRESS,
       id: 't01234'
     }
   ],
