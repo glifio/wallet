@@ -394,8 +394,15 @@ describe('Create msig flow', () => {
           )
         })
 
-        expect(res.container).toMatchSnapshot()
+        expect(screen.getByText(/Balance/)).toBeInTheDocument()
+        expect(screen.getByText(/1 FIL/)).toBeInTheDocument()
+        expect(screen.getByText(/Signer Address/)).toBeInTheDocument()
+        expect(screen.getByText(/Add Another Signer/)).toBeInTheDocument()
+        expect(
+          screen.getByDisplayValue(/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi/)
+        ).toBeInTheDocument()
         expect(screen.getByText(/Step 1/)).toBeInTheDocument()
+        expect(res.container).toMatchSnapshot()
       })
 
       test('it renders multiple signers correctly', async () => {
@@ -417,9 +424,9 @@ describe('Create msig flow', () => {
           await flushPromises()
         })
 
-        expect(res.container).toMatchSnapshot()
         expect(screen.getByText(/Step 1/)).toBeInTheDocument()
         expect(screen.getByDisplayValue(secondSigner)).toBeInTheDocument()
+        expect(res.container).toMatchSnapshot()
       })
 
       test('it renders step 2 correctly', async () => {
@@ -435,11 +442,19 @@ describe('Create msig flow', () => {
           await flushPromises()
         })
 
-        expect(res.container).toMatchSnapshot()
         expect(screen.getByText(/Step 2/)).toBeInTheDocument()
+        expect(
+          screen.getByText(
+            /Next, please choose how much FIL to send to the multisig./
+          )
+        ).toBeInTheDocument()
+        expect(screen.getByText(/Amount/)).toBeInTheDocument()
+        expect(screen.getByPlaceholderText('0')).toBeInTheDocument()
+
+        expect(res.container).toMatchSnapshot()
       })
 
-      test('it renders step 3 correctly', async () => {
+      test.only('it renders step 3 correctly', async () => {
         const { Tree } = composeMockAppTree('postOnboard')
         const filAmount = new FilecoinNumber(1, 'fil')
         let res
@@ -465,8 +480,9 @@ describe('Create msig flow', () => {
           fireEvent.blur(screen.getAllByPlaceholderText('0')[1])
         })
 
-        expect(res.container).toMatchSnapshot()
         expect(screen.getByText(/Step 3/)).toBeInTheDocument()
+        expect(screen.getByText('Vest (# blocks)')).toBeInTheDocument()
+        expect(res.container).toMatchSnapshot()
       })
 
       test('it renders step 4 correctly', async () => {
@@ -497,8 +513,11 @@ describe('Create msig flow', () => {
           await flushPromises()
         })
 
-        expect(res.container).toMatchSnapshot()
         expect(screen.getByText(/Step 4/)).toBeInTheDocument()
+        expect(screen.getByText(/Start epoch/)).toBeInTheDocument()
+        expect(screen.getByDisplayValue('1000')).toBeInTheDocument()
+
+        expect(res.container).toMatchSnapshot()
       })
 
       test('it renders step 5 correctly', async () => {
@@ -535,8 +554,17 @@ describe('Create msig flow', () => {
           fireEvent.click(screen.getByText('Next'))
         })
 
-        expect(res.container).toMatchSnapshot()
         expect(screen.getByText(/Step 5/)).toBeInTheDocument()
+        expect(
+          screen.getByText(/Please review the transaction details./)
+        ).toBeInTheDocument()
+
+        expect(screen.getByDisplayValue('1000000')).toBeInTheDocument()
+        expect(screen.getByText('Transaction fee')).toBeInTheDocument()
+        expect(
+          screen.getByText(/You will not pay more than/)
+        ).toBeInTheDocument()
+        expect(res.container).toMatchSnapshot()
       })
     })
   })
