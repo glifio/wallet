@@ -6,7 +6,8 @@ import {
   CopyAddress,
   Label,
   IconLedger,
-  ButtonClose
+  ButtonClose,
+  ButtonEdit
 } from '@glif/react-components'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 
@@ -62,10 +63,20 @@ const Address = ({
         <CopyAddress color='core.nearblack' address={address} />
       </Box>
       {onChangeSigner && (
-        <ButtonClose role='button' type='button' onClick={onChangeSigner} />
+        <ButtonEdit
+          role='button'
+          type='button'
+          onClick={onChangeSigner}
+          stroke='core.darkgray'
+        />
       )}
       {onRemoveSigner && (
-        <ButtonClose role='button' type='button' onClick={onRemoveSigner} />
+        <ButtonClose
+          fill='core.darkgray'
+          role='button'
+          type='button'
+          onClick={onRemoveSigner}
+        />
       )}
     </Box>
   )

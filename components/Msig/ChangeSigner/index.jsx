@@ -15,6 +15,7 @@ import {
   CopyText,
   Warning
 } from '@glif/react-components'
+import { useRouter } from 'next/router'
 
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
@@ -25,7 +26,7 @@ import { CardHeader, ChangeSignerHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
-import { LEDGER, PROPOSE, emptyGasInfo } from '../../../constants'
+import { LEDGER, PROPOSE, emptyGasInfo, PAGE } from '../../../constants'
 import CustomizeFee from '../../Wallet/Send/CustomizeFee'
 import {
   reportLedgerConfigError,
@@ -35,7 +36,7 @@ import reportError from '../../../utils/reportError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
 import { useMsig } from '../../../MsigProvider'
-import { useRouter } from 'next/router'
+import { navigate } from '../../../utils/urlParams'
 
 const ChangeOwner = ({ oldSignerAddress }) => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
@@ -395,7 +396,6 @@ const ChangeOwner = ({ oldSignerAddress }) => {
 }
 
 ChangeOwner.propTypes = {
-  newSignerAddress: ADDRESS_PROPTYPE,
   oldSignerAddress: ADDRESS_PROPTYPE
 }
 
