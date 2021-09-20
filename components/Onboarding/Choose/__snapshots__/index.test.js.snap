@@ -1,6 +1,439 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Choosing a wallet it renders all wallet options when in test accounts mode 1`] = `
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-right: 0;
+  margin-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  opacity: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 300px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c18 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 8px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  overflow: hidden;
+  height: 64px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: space-between;
+  align-content: space-between;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  border: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c25 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.c42 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 8px;
+  background-color: #EFF3FD;
+  color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  overflow: hidden;
+  height: 64px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: space-between;
+  align-content: space-between;
+  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
+}
+
+.c28 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  border: 0;
+  color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c26 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: #e8ecf7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c30 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 8px;
+  margin: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  overflow: hidden;
+  height: 64px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: space-between;
+  align-content: space-between;
+}
+
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c33 {
+  cursor: pointer;
+  border: 1px solid #E0D7FE;
+  background-color: transparent;
+  border-color: #E0D7FE;
+  color: core.black;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin: 8px;
+  padding: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border: 0;
+  border-width: 1px;
+  border-radius: 4px;
+  color: #000;
+}
+
+.c33:hover {
+  opacity: 0.8;
+}
+
+.c11 {
+  color: black;
+  font-size: calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360));
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-left: 16px;
+}
+
+.c36 {
+  color: #ffffff;
+  font-size: calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360));
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-left: 16px;
+}
+
+.c23 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 24px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c9 {
+  width: 64px;
+  height: 64px;
+}
+
+.c29 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c8:before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0,0,0,0.25);
+  background: url(/imgwallet.png) center no-repeat;
+  background-size: 100%;
+  border-radius: 16px;
+  opacity: 0.7;
+  z-index: -9;
+}
+
+.c35:before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0,0,0,0.25);
+  background: url(/imgvault.png) center no-repeat;
+  background-size: 100%;
+  border-radius: 16px;
+  opacity: 0.9;
+  z-index: -9;
+}
+
+.c10 {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.c16 {
+  background: #1AD08F;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 0;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: RT-Alias-Grotesk;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  height: 64px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c16:hover {
+  -webkit-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  cursor: pointer;
+  background: props.theme.colors.input.background.valid;
+}
+
+.c17 {
+  background: #E4EBFC;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border: 0;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: RT-Alias-Grotesk;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  height: 64px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c17:hover {
+  -webkit-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  cursor: pointer;
+  background: props.theme.colors.input.background.valid;
+}
+
 .c0 {
   min-width: 0;
   box-sizing: border-box;
@@ -106,34 +539,6 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   align-content: center;
 }
 
-.c7 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-radius: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  margin-right: 0;
-  margin-bottom: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
-  opacity: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 120px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
 .c12 {
   min-width: 0;
   box-sizing: border-box;
@@ -151,93 +556,12 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   text-align: left;
 }
 
-.c15 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-top: 24px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  max-width: 300px;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-}
-
-.c18 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 1px solid;
-  border-radius: 4px;
-  border-width: 1px;
-  padding: 8px;
-  margin-top: 24px;
-  margin-bottom: 24px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 300px;
-  overflow: hidden;
-  height: 64px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-content: space-between;
-  -ms-flex-line-pack: space-between;
-  align-content: space-between;
-}
-
-.c20 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-}
-
-.c21 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  border: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
 .c24 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c33 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -263,7 +587,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c36 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   padding: 24px;
@@ -280,7 +604,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   text-align: left;
 }
 
-.c38 {
+.c39 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -307,7 +631,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   justify-content: flex-start;
 }
 
-.c39 {
+.c40 {
   min-width: 0;
   box-sizing: border-box;
   margin: 16px;
@@ -318,137 +642,6 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c41 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 0;
-  border-radius: 4px;
-  border-width: 1px;
-  padding: 8px;
-  background-color: #EFF3FD;
-  color: #000;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 300px;
-  overflow: hidden;
-  height: 64px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-content: space-between;
-  -ms-flex-line-pack: space-between;
-  align-content: space-between;
-  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
-}
-
-.c27 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  border: 0;
-  color: #000;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c25 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 1px solid;
-  border-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  background-color: #e8ecf7;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-}
-
-.c26 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c29 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 1px solid;
-  border-radius: 4px;
-  border-width: 1px;
-  padding: 8px;
-  margin: 8px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 300px;
-  overflow: hidden;
-  height: 64px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-content: space-between;
-  -ms-flex-line-pack: space-between;
-  align-content: space-between;
-}
-
-.c31 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -484,59 +677,12 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   opacity: 0.8;
 }
 
-.c32 {
-  cursor: pointer;
-  border: 1px solid #E0D7FE;
-  background-color: transparent;
-  border-color: #E0D7FE;
-  color: core.black;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  margin: 8px;
-  padding: 0;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border: 0;
-  border-width: 1px;
-  border-radius: 4px;
-  color: #000;
-}
-
-.c32:hover {
-  opacity: 0.8;
-}
-
-.c11 {
-  color: black;
-  font-size: calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360));
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-left: 16px;
-}
-
 .c13 {
   font-size: 2rem;
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c35 {
-  color: #ffffff;
-  font-size: calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360));
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-left: 16px;
 }
 
 .c14 {
@@ -549,7 +695,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   margin-top: 16px;
 }
 
-.c37 {
+.c38 {
   color: #ffffff;
   font-size: 2rem;
   font-weight: 400;
@@ -568,17 +714,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   margin: 0;
 }
 
-.c23 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-left: 24px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c40 {
+.c41 {
   color: #C4C4C4;
   font-size: 1.125rem;
   font-weight: 400;
@@ -590,140 +726,9 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   margin-top: 0;
 }
 
-.c9 {
-  width: 64px;
-  height: 64px;
-}
-
 .c22 {
   width: 40px;
   height: 40px;
-}
-
-.c28 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c8:before {
-  content: '';
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  background-color: rgba(0,0,0,0.25);
-  background: url(/imgwallet.png) center no-repeat;
-  background-size: 100%;
-  border-radius: 16px;
-  opacity: 0.7;
-  z-index: -9;
-}
-
-.c34:before {
-  content: '';
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  background-color: rgba(0,0,0,0.25);
-  background: url(/imgvault.png) center no-repeat;
-  background-size: 100%;
-  border-radius: 16px;
-  opacity: 0.9;
-  z-index: -9;
-}
-
-.c10 {
-  -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-}
-
-.c16 {
-  background: #1AD08F;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  outline: none;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border: 0;
-  font-size: 1.125rem;
-  font-weight: 400;
-  font-family: RT-Alias-Grotesk;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50%;
-  height: 64px;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.c16:hover {
-  -webkit-transform: translateY(-4px);
-  -ms-transform: translateY(-4px);
-  transform: translateY(-4px);
-  cursor: pointer;
-  background: props.theme.colors.input.background.valid;
-}
-
-.c17 {
-  background: #E4EBFC;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  outline: none;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border: 0;
-  font-size: 1.125rem;
-  font-weight: 400;
-  font-family: RT-Alias-Grotesk;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50%;
-  height: 64px;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.c17:hover {
-  -webkit-transform: translateY(-4px);
-  -ms-transform: translateY(-4px);
-  transform: translateY(-4px);
-  cursor: pointer;
-  background: props.theme.colors.input.background.valid;
 }
 
 .c19 {
@@ -738,16 +743,29 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   transform: scale(1.05);
 }
 
-.c30 {
+.c31 {
   cursor: pointer;
   -webkit-transition: 0.13s ease-in-out;
   transition: 0.13s ease-in-out;
 }
 
-.c30:hover {
+.c31:hover {
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
+}
+
+@media screen and (min-width:40em) {
+  .c7 {
+    margin-right: 48px;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width:40em) {
+  .c7 {
+    width: auto;
+  }
 }
 
 @media screen and (min-width:40em) {
@@ -783,19 +801,6 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
 }
 
 @media screen and (min-width:40em) {
-  .c7 {
-    margin-right: 48px;
-    margin-bottom: 0;
-  }
-}
-
-@media screen and (min-width:40em) {
-  .c7 {
-    width: auto;
-  }
-}
-
-@media screen and (min-width:40em) {
   .c12 {
     margin-top: 24px;
   }
@@ -808,13 +813,13 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
 }
 
 @media screen and (min-width:40em) {
-  .c33 {
+  .c34 {
     width: 100%;
   }
 }
 
 @media screen and (min-width:52em) {
-  .c33 {
+  .c34 {
     width: 50%;
   }
 }
@@ -992,24 +997,24 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
         class="c24"
       >
         <div
-          class="c24"
+          class="c25"
         >
           <div
-            class="c25"
+            class="c26"
             display="flex"
           >
             <div
-              class="c26"
+              class="c27"
               display="flex"
             >
               <div
-                class="c27"
+                class="c28"
                 color="#000"
                 display="flex"
                 size="6"
               >
                 <h3
-                  class="c28"
+                  class="c29"
                 >
                   Ta
                 </h3>
@@ -1024,7 +1029,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
               </p>
             </div>
             <div
-              class="c29 c30"
+              class="c30 c31"
               display="flex"
               height="7"
               overflow="hidden"
@@ -1032,20 +1037,20 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
               width="300"
             >
               <div
-                class="c24"
+                class="c25"
               >
                 <div
-                  class="c31"
+                  class="c32"
                   display="flex"
                 >
                   <div
-                    class="c27"
+                    class="c28"
                     color="#000"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c28"
+                      class="c29"
                     >
                       Sp
                     </h3>
@@ -1062,7 +1067,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
               </div>
             </div>
             <div
-              class="c29 c19"
+              class="c30 c19"
               display="flex"
               height="7"
               overflow="hidden"
@@ -1080,7 +1085,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
                   size="6"
                 >
                   <h3
-                    class="c28"
+                    class="c29"
                   >
                     Sp
                   </h3>
@@ -1096,7 +1101,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
               </div>
             </div>
             <div
-              class="c29 c19"
+              class="c30 c19"
               display="flex"
               height="7"
               overflow="hidden"
@@ -1114,7 +1119,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
                   size="6"
                 >
                   <h3
-                    class="c28"
+                    class="c29"
                   >
                     Pk
                   </h3>
@@ -1130,7 +1135,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
               </div>
             </div>
             <button
-              class="c32"
+              class="c33"
               color="core.black"
               font-size="3"
               height="6"
@@ -1143,12 +1148,12 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
       </div>
     </div>
     <div
-      class="c33"
+      class="c34"
       display="flex"
       width="100%,100%,50%"
     >
       <div
-        class="c7 c34"
+        class="c7 c35"
         display="flex"
         height="120px"
         opacity="1"
@@ -1171,7 +1176,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
           />
         </svg>
         <h1
-          class="c35"
+          class="c36"
           color="core.white"
           font-family="RT-Alias-Grotesk"
           font-size="calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360))"
@@ -1181,11 +1186,11 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
         </h1>
       </div>
       <div
-        class="c36"
+        class="c37"
         display="flex"
       >
         <h2
-          class="c37"
+          class="c38"
           color="core.white"
           font-family="RT-Alias-Grotesk"
           font-size="5"
@@ -1194,16 +1199,16 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
           For Filecoin multisig holders
         </h2>
         <div
-          class="c38"
+          class="c39"
           display="flex"
           width="100%"
         >
           <div
-            class="c39"
+            class="c40"
             display="flex"
           >
             <p
-              class="c40"
+              class="c41"
               color="core.lightgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1212,7 +1217,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
               Use your Ledger device to manage a Filecoin multisig wallet.
             </p>
             <div
-              class="c41 c19"
+              class="c42 c19"
               color="core.black"
               display="flex"
               height="7"
@@ -1225,13 +1230,13 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
                 display="flex"
               >
                 <div
-                  class="c27"
+                  class="c28"
                   color="core.black"
                   display="flex"
                   size="6"
                 >
                   <h3
-                    class="c28"
+                    class="c29"
                   >
                     Ev
                   </h3>
@@ -1255,6 +1260,364 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
 `;
 
 exports[`Choosing a wallet it renders correctly 1`] = `
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-right: 0;
+  margin-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  opacity: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 300px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c18 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 8px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  overflow: hidden;
+  height: 64px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: space-between;
+  align-content: space-between;
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  border: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c25 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.c26 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  overflow: hidden;
+  height: 64px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: space-between;
+  align-content: space-between;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  justify-self: flex-end;
+}
+
+.c36 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 8px;
+  background-color: #EFF3FD;
+  color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  overflow: hidden;
+  height: 64px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: space-between;
+  align-content: space-between;
+  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
+}
+
+.c37 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  border: 0;
+  color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c11 {
+  color: black;
+  font-size: calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360));
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-left: 16px;
+}
+
+.c30 {
+  color: #ffffff;
+  font-size: calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360));
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-left: 16px;
+}
+
+.c23 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 24px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c9 {
+  width: 64px;
+  height: 64px;
+}
+
+.c27 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c8:before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0,0,0,0.25);
+  background: url(/imgwallet.png) center no-repeat;
+  background-size: 100%;
+  border-radius: 16px;
+  opacity: 0.7;
+  z-index: -9;
+}
+
+.c29:before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0,0,0,0.25);
+  background: url(/imgvault.png) center no-repeat;
+  background-size: 100%;
+  border-radius: 16px;
+  opacity: 0.9;
+  z-index: -9;
+}
+
+.c10 {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.c16 {
+  background: #1AD08F;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 0;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: RT-Alias-Grotesk;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  height: 64px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c16:hover {
+  -webkit-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  cursor: pointer;
+  background: props.theme.colors.input.background.valid;
+}
+
+.c17 {
+  background: #E4EBFC;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border: 0;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: RT-Alias-Grotesk;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  height: 64px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c17:hover {
+  -webkit-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  cursor: pointer;
+  background: props.theme.colors.input.background.valid;
+}
+
 .c0 {
   min-width: 0;
   box-sizing: border-box;
@@ -1360,34 +1723,6 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   align-content: center;
 }
 
-.c7 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-radius: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  margin-right: 0;
-  margin-bottom: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
-  opacity: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 120px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
 .c12 {
   min-width: 0;
   box-sizing: border-box;
@@ -1405,123 +1740,12 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   text-align: left;
 }
 
-.c15 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-top: 24px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  max-width: 300px;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-}
-
-.c18 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 1px solid;
-  border-radius: 4px;
-  border-width: 1px;
-  padding: 8px;
-  margin-top: 24px;
-  margin-bottom: 24px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 300px;
-  overflow: hidden;
-  height: 64px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-content: space-between;
-  -ms-flex-line-pack: space-between;
-  align-content: space-between;
-}
-
-.c20 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-}
-
-.c21 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  border: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
 .c24 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c25 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 1px solid;
-  border-radius: 4px;
-  border-width: 1px;
-  padding: 8px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 300px;
-  overflow: hidden;
-  height: 64px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-content: space-between;
-  -ms-flex-line-pack: space-between;
-  align-content: space-between;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  justify-self: flex-end;
-}
-
-.c27 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1547,7 +1771,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c30 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   padding: 24px;
@@ -1564,7 +1788,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   text-align: left;
 }
 
-.c32 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -1591,7 +1815,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   justify-content: flex-start;
 }
 
-.c33 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
   margin: 16px;
@@ -1606,59 +1830,6 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.c35 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 0;
-  border-radius: 4px;
-  border-width: 1px;
-  padding: 8px;
-  background-color: #EFF3FD;
-  color: #000;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 300px;
-  overflow: hidden;
-  height: 64px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-content: space-between;
-  -ms-flex-line-pack: space-between;
-  align-content: space-between;
-  box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
-}
-
-.c36 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  border: 0;
-  color: #000;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
 }
 
 .c4 {
@@ -1690,32 +1861,12 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   opacity: 0.8;
 }
 
-.c11 {
-  color: black;
-  font-size: calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360));
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-left: 16px;
-}
-
 .c13 {
   font-size: 2rem;
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c29 {
-  color: #ffffff;
-  font-size: calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360));
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-left: 16px;
 }
 
 .c14 {
@@ -1728,7 +1879,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   margin-top: 16px;
 }
 
-.c31 {
+.c32 {
   color: #ffffff;
   font-size: 2rem;
   font-weight: 400;
@@ -1747,17 +1898,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   margin: 0;
 }
 
-.c23 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-left: 24px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c34 {
+.c35 {
   color: #C4C4C4;
   font-size: 1.125rem;
   font-weight: 400;
@@ -1769,140 +1910,9 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   margin-top: 0;
 }
 
-.c9 {
-  width: 64px;
-  height: 64px;
-}
-
 .c22 {
   width: 40px;
   height: 40px;
-}
-
-.c26 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c8:before {
-  content: '';
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  background-color: rgba(0,0,0,0.25);
-  background: url(/imgwallet.png) center no-repeat;
-  background-size: 100%;
-  border-radius: 16px;
-  opacity: 0.7;
-  z-index: -9;
-}
-
-.c28:before {
-  content: '';
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  background-color: rgba(0,0,0,0.25);
-  background: url(/imgvault.png) center no-repeat;
-  background-size: 100%;
-  border-radius: 16px;
-  opacity: 0.9;
-  z-index: -9;
-}
-
-.c10 {
-  -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-}
-
-.c16 {
-  background: #1AD08F;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  outline: none;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border: 0;
-  font-size: 1.125rem;
-  font-weight: 400;
-  font-family: RT-Alias-Grotesk;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50%;
-  height: 64px;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.c16:hover {
-  -webkit-transform: translateY(-4px);
-  -ms-transform: translateY(-4px);
-  transform: translateY(-4px);
-  cursor: pointer;
-  background: props.theme.colors.input.background.valid;
-}
-
-.c17 {
-  background: #E4EBFC;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  outline: none;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border: 0;
-  font-size: 1.125rem;
-  font-weight: 400;
-  font-family: RT-Alias-Grotesk;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50%;
-  height: 64px;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.c17:hover {
-  -webkit-transform: translateY(-4px);
-  -ms-transform: translateY(-4px);
-  transform: translateY(-4px);
-  cursor: pointer;
-  background: props.theme.colors.input.background.valid;
 }
 
 .c19 {
@@ -1915,6 +1925,19 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
+}
+
+@media screen and (min-width:40em) {
+  .c7 {
+    margin-right: 48px;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width:40em) {
+  .c7 {
+    width: auto;
+  }
 }
 
 @media screen and (min-width:40em) {
@@ -1950,19 +1973,6 @@ exports[`Choosing a wallet it renders correctly 1`] = `
 }
 
 @media screen and (min-width:40em) {
-  .c7 {
-    margin-right: 48px;
-    margin-bottom: 0;
-  }
-}
-
-@media screen and (min-width:40em) {
-  .c7 {
-    width: auto;
-  }
-}
-
-@media screen and (min-width:40em) {
   .c12 {
     margin-top: 24px;
   }
@@ -1975,13 +1985,13 @@ exports[`Choosing a wallet it renders correctly 1`] = `
 }
 
 @media screen and (min-width:40em) {
-  .c27 {
+  .c28 {
     width: 100%;
   }
 }
 
 @media screen and (min-width:52em) {
-  .c27 {
+  .c28 {
     width: 50%;
   }
 }
@@ -2159,10 +2169,10 @@ exports[`Choosing a wallet it renders correctly 1`] = `
         class="c24"
       >
         <div
-          class="c24"
+          class="c25"
         >
           <div
-            class="c25 c19 ExpandableBox__Condensed-sc-19nv1v6-0"
+            class="c26 c19 ExpandableBox__Condensed-sc-19nv1v6-0"
             display="flex"
             height="7"
             overflow="hidden"
@@ -2180,7 +2190,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
                 size="6"
               >
                 <h3
-                  class="c26"
+                  class="c27"
                 >
                   Ta
                 </h3>
@@ -2199,12 +2209,12 @@ exports[`Choosing a wallet it renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="c27"
+      class="c28"
       display="flex"
       width="100%,100%,50%"
     >
       <div
-        class="c7 c28"
+        class="c7 c29"
         display="flex"
         height="120px"
         opacity="1"
@@ -2227,7 +2237,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
           />
         </svg>
         <h1
-          class="c29"
+          class="c30"
           color="core.white"
           font-family="RT-Alias-Grotesk"
           font-size="calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360))"
@@ -2237,11 +2247,11 @@ exports[`Choosing a wallet it renders correctly 1`] = `
         </h1>
       </div>
       <div
-        class="c30"
+        class="c31"
         display="flex"
       >
         <h2
-          class="c31"
+          class="c32"
           color="core.white"
           font-family="RT-Alias-Grotesk"
           font-size="5"
@@ -2250,16 +2260,16 @@ exports[`Choosing a wallet it renders correctly 1`] = `
           For Filecoin multisig holders
         </h2>
         <div
-          class="c32"
+          class="c33"
           display="flex"
           width="100%"
         >
           <div
-            class="c33"
+            class="c34"
             display="flex"
           >
             <p
-              class="c34"
+              class="c35"
               color="core.lightgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -2268,7 +2278,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
               Use your Ledger device to manage a Filecoin multisig wallet.
             </p>
             <div
-              class="c35 c19"
+              class="c36 c19"
               color="core.black"
               display="flex"
               height="7"
@@ -2281,13 +2291,13 @@ exports[`Choosing a wallet it renders correctly 1`] = `
                 display="flex"
               >
                 <div
-                  class="c36"
+                  class="c37"
                   color="core.black"
                   display="flex"
                   size="6"
                 >
                   <h3
-                    class="c26"
+                    class="c27"
                   >
                     Ev
                   </h3>
@@ -2314,7 +2324,24 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
 .c0 {
   min-width: 0;
   box-sizing: border-box;
-  padding: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 24px;
+  padding-bottom: 24px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2333,13 +2360,14 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   justify-content: flex-start;
 }
 
-.c1 {
+.c2 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2352,14 +2380,13 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   align-content: center;
 }
 
-.c2 {
+.c3 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
   border-radius: 4px;
   border-width: 1px;
   padding: 0;
-  margin-left: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2377,7 +2404,7 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   justify-content: flex-start;
 }
 
-.c3 {
+.c4 {
   min-width: 0;
   box-sizing: border-box;
   padding: 16px;
@@ -2396,7 +2423,7 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   justify-content: space-between;
 }
 
-.c4 {
+.c5 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -2420,7 +2447,7 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   justify-content: center;
 }
 
-.c7 {
+.c8 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 16px;
@@ -2429,7 +2456,7 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   padding-bottom: 24px;
 }
 
-.c10 {
+.c11 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -2442,7 +2469,13 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   justify-content: space-between;
 }
 
-.c11 {
+.c6 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c12 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -2462,11 +2495,11 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   border-radius: 4px;
 }
 
-.c11:hover {
+.c12:hover {
   opacity: 0.8;
 }
 
-.c12 {
+.c13 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -2486,11 +2519,11 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   border-radius: 4px;
 }
 
-.c12:hover {
+.c13:hover {
   opacity: 0.8;
 }
 
-.c6 {
+.c7 {
   color: #661800;
   font-size: 1.5rem;
   font-weight: 400;
@@ -2499,20 +2532,14 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   margin: 0;
 }
 
-.c8 {
+.c9 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
 }
 
-.c5 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c9 {
+.c10 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -2522,7 +2549,7 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
   font-size: 1.25rem;
 }
 
-.c9:hover {
+.c10:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
@@ -2530,10 +2557,6 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
 
 }
 
-@media screen and (min-width:52em) {
-
-}
-
 @media screen and (min-width:40em) {
 
 }
@@ -2551,6 +2574,10 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
 }
 
 @media screen and (min-width:40em) {
+
+}
+
+@media screen and (min-width:52em) {
 
 }
 
@@ -2573,87 +2600,93 @@ exports[`Choosing a wallet it renders warning text for create wallet option 1`] 
 <div
   class="c0"
   display="flex"
-  width="100%"
 >
   <div
     class="c1"
     display="flex"
+    width="100%"
   >
     <div
       class="c2"
       display="flex"
-      overflow="hidden"
       width="100%"
     >
       <div
         class="c3"
         display="flex"
+        overflow="hidden"
+        width="100%"
       >
         <div
           class="c4"
-          color="status.warning.foreground"
           display="flex"
-          size="6"
         >
-          <h3
+          <div
             class="c5"
+            color="status.warning.foreground"
+            display="flex"
+            size="6"
           >
-            Wn
-          </h3>
+            <h3
+              class="c6"
+            >
+              Wn
+            </h3>
+          </div>
+          <h2
+            class="c7"
+            color="status.warning.foreground"
+            font-family="RT-Alias-Grotesk"
+            font-size="4"
+            font-weight="400"
+          >
+            Warning
+          </h2>
         </div>
-        <h2
-          class="c6"
-          color="status.warning.foreground"
-          font-family="RT-Alias-Grotesk"
-          font-size="4"
-          font-weight="400"
+        <div
+          class="c8"
         >
-          Warning
-        </h2>
+          <p
+            class="c9"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            We do not recommend you use this account to hold or transact significant sums of Filecoin. This account is for testing purposes only. For significant sums, Glif should only be used with a Ledger hardware wallet.
+          </p>
+          <a
+            class="c10"
+            color="core.primary"
+            font-size="3"
+            href="https://coinsutra.com/security-risks-bitcoin-wallets/"
+            rel="noopener"
+            target="_blank"
+          >
+            Why isn't it secure?
+          </a>
+        </div>
       </div>
       <div
-        class="c7"
-      >
-        <p
-          class="c8"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          We do not recommend you use this account to hold or transact significant sums of Filecoin. This account is for testing purposes only. For significant sums, Glif should only be used with a Ledger hardware wallet.
-        </p>
-        <a
-          class="c9"
-          color="core.primary"
-          font-size="3"
-          href="https://coinsutra.com/security-risks-bitcoin-wallets/"
-          rel="noopener"
-          target="_blank"
-        >
-          Why isn't it secure?
-        </a>
-      </div>
-    </div>
-    <div
-      class="c10"
-      display="flex"
-    >
-      <button
         class="c11"
-        font-size="3"
-        height="6"
-        type="button"
+        display="flex"
       >
-        Back
-      </button>
-      <button
-        class="c12"
-        font-size="3"
-        height="6"
-        type="button"
-      >
-        I Understand
-      </button>
+        <button
+          class="c12"
+          font-size="3"
+          height="6"
+          type="button"
+        >
+          Back
+        </button>
+        <button
+          class="c13"
+          font-size="3"
+          height="6"
+          type="button"
+        >
+          I Understand
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -2663,7 +2696,24 @@ exports[`Choosing a wallet it renders warning text for import private key option
 .c0 {
   min-width: 0;
   box-sizing: border-box;
-  padding: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 24px;
+  padding-bottom: 24px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2682,13 +2732,14 @@ exports[`Choosing a wallet it renders warning text for import private key option
   justify-content: flex-start;
 }
 
-.c1 {
+.c2 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2701,14 +2752,13 @@ exports[`Choosing a wallet it renders warning text for import private key option
   align-content: center;
 }
 
-.c2 {
+.c3 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
   border-radius: 4px;
   border-width: 1px;
   padding: 0;
-  margin-left: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2726,7 +2776,7 @@ exports[`Choosing a wallet it renders warning text for import private key option
   justify-content: flex-start;
 }
 
-.c3 {
+.c4 {
   min-width: 0;
   box-sizing: border-box;
   padding: 16px;
@@ -2745,7 +2795,7 @@ exports[`Choosing a wallet it renders warning text for import private key option
   justify-content: space-between;
 }
 
-.c4 {
+.c5 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -2769,7 +2819,7 @@ exports[`Choosing a wallet it renders warning text for import private key option
   justify-content: center;
 }
 
-.c7 {
+.c8 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 16px;
@@ -2778,7 +2828,7 @@ exports[`Choosing a wallet it renders warning text for import private key option
   padding-bottom: 24px;
 }
 
-.c10 {
+.c11 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -2791,7 +2841,13 @@ exports[`Choosing a wallet it renders warning text for import private key option
   justify-content: space-between;
 }
 
-.c11 {
+.c6 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c12 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -2811,11 +2867,11 @@ exports[`Choosing a wallet it renders warning text for import private key option
   border-radius: 4px;
 }
 
-.c11:hover {
+.c12:hover {
   opacity: 0.8;
 }
 
-.c12 {
+.c13 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -2835,11 +2891,11 @@ exports[`Choosing a wallet it renders warning text for import private key option
   border-radius: 4px;
 }
 
-.c12:hover {
+.c13:hover {
   opacity: 0.8;
 }
 
-.c6 {
+.c7 {
   color: #661800;
   font-size: 1.5rem;
   font-weight: 400;
@@ -2848,20 +2904,14 @@ exports[`Choosing a wallet it renders warning text for import private key option
   margin: 0;
 }
 
-.c8 {
+.c9 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
 }
 
-.c5 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c9 {
+.c10 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -2871,7 +2921,7 @@ exports[`Choosing a wallet it renders warning text for import private key option
   font-size: 1.25rem;
 }
 
-.c9:hover {
+.c10:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
@@ -2879,10 +2929,6 @@ exports[`Choosing a wallet it renders warning text for import private key option
 
 }
 
-@media screen and (min-width:52em) {
-
-}
-
 @media screen and (min-width:40em) {
 
 }
@@ -2900,6 +2946,10 @@ exports[`Choosing a wallet it renders warning text for import private key option
 }
 
 @media screen and (min-width:40em) {
+
+}
+
+@media screen and (min-width:52em) {
 
 }
 
@@ -2922,87 +2972,93 @@ exports[`Choosing a wallet it renders warning text for import private key option
 <div
   class="c0"
   display="flex"
-  width="100%"
 >
   <div
     class="c1"
     display="flex"
+    width="100%"
   >
     <div
       class="c2"
       display="flex"
-      overflow="hidden"
       width="100%"
     >
       <div
         class="c3"
         display="flex"
+        overflow="hidden"
+        width="100%"
       >
         <div
           class="c4"
-          color="status.warning.foreground"
           display="flex"
-          size="6"
         >
-          <h3
+          <div
             class="c5"
+            color="status.warning.foreground"
+            display="flex"
+            size="6"
           >
-            Wn
-          </h3>
+            <h3
+              class="c6"
+            >
+              Wn
+            </h3>
+          </div>
+          <h2
+            class="c7"
+            color="status.warning.foreground"
+            font-family="RT-Alias-Grotesk"
+            font-size="4"
+            font-weight="400"
+          >
+            Warning
+          </h2>
         </div>
-        <h2
-          class="c6"
-          color="status.warning.foreground"
-          font-family="RT-Alias-Grotesk"
-          font-size="4"
-          font-weight="400"
+        <div
+          class="c8"
         >
-          Warning
-        </h2>
+          <p
+            class="c9"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            We do not recommend you use this account to hold or transact significant sums of Filecoin. This account is for testing purposes only. For significant sums, Glif should only be used with a Ledger hardware wallet.
+          </p>
+          <a
+            class="c10"
+            color="core.primary"
+            font-size="3"
+            href="https://coinsutra.com/security-risks-bitcoin-wallets/"
+            rel="noopener"
+            target="_blank"
+          >
+            Why isn't it secure?
+          </a>
+        </div>
       </div>
       <div
-        class="c7"
-      >
-        <p
-          class="c8"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          We do not recommend you use this account to hold or transact significant sums of Filecoin. This account is for testing purposes only. For significant sums, Glif should only be used with a Ledger hardware wallet.
-        </p>
-        <a
-          class="c9"
-          color="core.primary"
-          font-size="3"
-          href="https://coinsutra.com/security-risks-bitcoin-wallets/"
-          rel="noopener"
-          target="_blank"
-        >
-          Why isn't it secure?
-        </a>
-      </div>
-    </div>
-    <div
-      class="c10"
-      display="flex"
-    >
-      <button
         class="c11"
-        font-size="3"
-        height="6"
-        type="button"
+        display="flex"
       >
-        Back
-      </button>
-      <button
-        class="c12"
-        font-size="3"
-        height="6"
-        type="button"
-      >
-        I Understand
-      </button>
+        <button
+          class="c12"
+          font-size="3"
+          height="6"
+          type="button"
+        >
+          Back
+        </button>
+        <button
+          class="c13"
+          font-size="3"
+          height="6"
+          type="button"
+        >
+          I Understand
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -3012,7 +3068,24 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
 .c0 {
   min-width: 0;
   box-sizing: border-box;
-  padding: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-top: 24px;
+  padding-bottom: 24px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3031,13 +3104,14 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   justify-content: flex-start;
 }
 
-.c1 {
+.c2 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -3050,14 +3124,13 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   align-content: center;
 }
 
-.c2 {
+.c3 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
   border-radius: 4px;
   border-width: 1px;
   padding: 0;
-  margin-left: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3075,7 +3148,7 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   justify-content: flex-start;
 }
 
-.c3 {
+.c4 {
   min-width: 0;
   box-sizing: border-box;
   padding: 16px;
@@ -3094,7 +3167,7 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   justify-content: space-between;
 }
 
-.c4 {
+.c5 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -3118,7 +3191,7 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   justify-content: center;
 }
 
-.c7 {
+.c8 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 16px;
@@ -3127,7 +3200,7 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   padding-bottom: 24px;
 }
 
-.c10 {
+.c11 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3140,7 +3213,13 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   justify-content: space-between;
 }
 
-.c11 {
+.c6 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c12 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -3160,11 +3239,11 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   border-radius: 4px;
 }
 
-.c11:hover {
+.c12:hover {
   opacity: 0.8;
 }
 
-.c12 {
+.c13 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -3184,11 +3263,11 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   border-radius: 4px;
 }
 
-.c12:hover {
+.c13:hover {
   opacity: 0.8;
 }
 
-.c6 {
+.c7 {
   color: #661800;
   font-size: 1.5rem;
   font-weight: 400;
@@ -3197,20 +3276,14 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   margin: 0;
 }
 
-.c8 {
+.c9 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
 }
 
-.c5 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c9 {
+.c10 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -3220,7 +3293,7 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
   font-size: 1.25rem;
 }
 
-.c9:hover {
+.c10:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
@@ -3228,10 +3301,6 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
 
 }
 
-@media screen and (min-width:52em) {
-
-}
-
 @media screen and (min-width:40em) {
 
 }
@@ -3249,6 +3318,10 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
 }
 
 @media screen and (min-width:40em) {
+
+}
+
+@media screen and (min-width:52em) {
 
 }
 
@@ -3271,87 +3344,93 @@ exports[`Choosing a wallet it renders warning text for import seed option 1`] = 
 <div
   class="c0"
   display="flex"
-  width="100%"
 >
   <div
     class="c1"
     display="flex"
+    width="100%"
   >
     <div
       class="c2"
       display="flex"
-      overflow="hidden"
       width="100%"
     >
       <div
         class="c3"
         display="flex"
+        overflow="hidden"
+        width="100%"
       >
         <div
           class="c4"
-          color="status.warning.foreground"
           display="flex"
-          size="6"
         >
-          <h3
+          <div
             class="c5"
+            color="status.warning.foreground"
+            display="flex"
+            size="6"
           >
-            Wn
-          </h3>
+            <h3
+              class="c6"
+            >
+              Wn
+            </h3>
+          </div>
+          <h2
+            class="c7"
+            color="status.warning.foreground"
+            font-family="RT-Alias-Grotesk"
+            font-size="4"
+            font-weight="400"
+          >
+            Warning
+          </h2>
         </div>
-        <h2
-          class="c6"
-          color="status.warning.foreground"
-          font-family="RT-Alias-Grotesk"
-          font-size="4"
-          font-weight="400"
+        <div
+          class="c8"
         >
-          Warning
-        </h2>
+          <p
+            class="c9"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            We do not recommend you use this account to hold or transact significant sums of Filecoin. This account is for testing purposes only. For significant sums, Glif should only be used with a Ledger hardware wallet.
+          </p>
+          <a
+            class="c10"
+            color="core.primary"
+            font-size="3"
+            href="https://coinsutra.com/security-risks-bitcoin-wallets/"
+            rel="noopener"
+            target="_blank"
+          >
+            Why isn't it secure?
+          </a>
+        </div>
       </div>
       <div
-        class="c7"
-      >
-        <p
-          class="c8"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          We do not recommend you use this account to hold or transact significant sums of Filecoin. This account is for testing purposes only. For significant sums, Glif should only be used with a Ledger hardware wallet.
-        </p>
-        <a
-          class="c9"
-          color="core.primary"
-          font-size="3"
-          href="https://coinsutra.com/security-risks-bitcoin-wallets/"
-          rel="noopener"
-          target="_blank"
-        >
-          Why isn't it secure?
-        </a>
-      </div>
-    </div>
-    <div
-      class="c10"
-      display="flex"
-    >
-      <button
         class="c11"
-        font-size="3"
-        height="6"
-        type="button"
+        display="flex"
       >
-        Back
-      </button>
-      <button
-        class="c12"
-        font-size="3"
-        height="6"
-        type="button"
-      >
-        I Understand
-      </button>
+        <button
+          class="c12"
+          font-size="3"
+          height="6"
+          type="button"
+        >
+          Back
+        </button>
+        <button
+          class="c13"
+          font-size="3"
+          height="6"
+          type="button"
+        >
+          I Understand
+        </button>
+      </div>
     </div>
   </div>
 </div>

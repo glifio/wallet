@@ -4240,7 +4240,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"

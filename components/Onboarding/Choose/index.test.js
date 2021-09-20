@@ -15,8 +15,19 @@ describe('Choosing a wallet', () => {
       </Tree>
     )
 
-    expect(container.firstChild).toMatchSnapshot()
     expect(screen.getByText('Wallet')).toBeInTheDocument()
+    expect(
+      screen.getByText(/For your protection, please check your browser/)
+    ).toBeInTheDocument()
+    expect(
+      screen.getByText(
+        /A lightweight web interface to send and receive Filecoin via your Ledger device/
+      )
+    ).toBeInTheDocument()
+    expect(
+      screen.getByText(/For Filecoin multisig holders/)
+    ).toBeInTheDocument()
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   test('it renders all wallet options when in test accounts mode', () => {
@@ -52,8 +63,8 @@ describe('Choosing a wallet', () => {
     act(() => {
       fireEvent.click(screen.getByText('Generate Seed Phrase'))
     })
-    expect(container.firstChild).toMatchSnapshot()
     expect(screen.getByText(/Warning/)).toBeInTheDocument()
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   test('it renders warning text for import seed option', () => {

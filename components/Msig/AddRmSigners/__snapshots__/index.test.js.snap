@@ -329,7 +329,6 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders prefac
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"
@@ -1015,7 +1014,6 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 2
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"
@@ -2129,7 +2127,6 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"
@@ -2871,7 +2868,6 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders pref
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"
@@ -3824,7 +3820,6 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"

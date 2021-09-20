@@ -956,7 +956,6 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"
@@ -2406,7 +2405,6 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"
@@ -3533,7 +3531,6 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"
@@ -4665,7 +4662,6 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"
@@ -6072,7 +6068,6 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"
@@ -7618,7 +7613,6 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"
