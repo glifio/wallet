@@ -1,20 +1,16 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
-import { FilecoinNumber } from '@glif/filecoin-number'
 
 import { AddSigner, RemoveSigner } from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import { flushPromises } from '../../../test-utils'
+import { MULTISIG_ACTOR_ADDRESS } from '../../../MsigProvider/__mocks__'
 
-jest.mock('@glif/filecoin-wallet-provider')
+jest.mock('../../../MsigProvider')
 
 describe('Multisig add & remove  flow', () => {
-  let onClose = () => {}
-  let onComplete = () => {}
   beforeEach(() => {
     jest.useFakeTimers()
     jest.clearAllMocks()
-    onClose = jest.fn()
-    onComplete = jest.fn()
   })
 
   describe('Adding a signer', () => {
@@ -25,20 +21,12 @@ describe('Multisig add & remove  flow', () => {
 
     test('it allows a user to add a signer', async () => {
       const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
-
       const toAddr = 't0100'
 
       await act(async () => {
         render(
           <Tree>
-            <AddSigner
-              address={msigAddress}
-              balance={msigBalance}
-              onClose={onClose}
-              onComplete={onComplete}
-            />
+            <AddSigner />
           </Tree>
         )
         fireEvent.click(screen.getByText('Next'))
@@ -66,25 +54,18 @@ describe('Multisig add & remove  flow', () => {
       expect(typeof message.gaslimit).toBe('number')
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')
-      expect(message.to).toBe(msigAddress)
+      expect(message.to).toBe(MULTISIG_ACTOR_ADDRESS)
 
       expect(store.getState().messages.pending.length).toBe(1)
     })
 
     test('it does not allow a user to add signer if address is poorly formed', async () => {
       const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
 
       await act(async () => {
         render(
           <Tree>
-            <AddSigner
-              address={msigAddress}
-              balance={msigBalance}
-              onClose={onClose}
-              onComplete={onComplete}
-            />
+            <AddSigner />
           </Tree>
         )
         fireEvent.click(screen.getByText('Next'))
@@ -105,19 +86,12 @@ describe('Multisig add & remove  flow', () => {
 
     test('it allows the user to see the max transaction fee', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
 
       const toAddr = 't0100'
       await act(async () => {
         render(
           <Tree>
-            <AddSigner
-              address={msigAddress}
-              balance={msigBalance}
-              onClose={onClose}
-              onComplete={onComplete}
-            />
+            <AddSigner />
           </Tree>
         )
         fireEvent.click(screen.getByText('Next'))
@@ -134,19 +108,12 @@ describe('Multisig add & remove  flow', () => {
 
     test('it allows the user to set the max transaction fee', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
 
       const toAddr = 't0100'
       await act(async () => {
         render(
           <Tree>
-            <AddSigner
-              address={msigAddress}
-              balance={msigBalance}
-              onClose={onClose}
-              onComplete={onComplete}
-            />
+            <AddSigner />
           </Tree>
         )
         fireEvent.click(screen.getByText('Next'))
@@ -170,19 +137,12 @@ describe('Multisig add & remove  flow', () => {
 
     test('it allows the user to save the max transaction fee', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
 
       const toAddr = 't0100'
       await act(async () => {
         render(
           <Tree>
-            <AddSigner
-              address={msigAddress}
-              balance={msigBalance}
-              onClose={onClose}
-              onComplete={onComplete}
-            />
+            <AddSigner />
           </Tree>
         )
         fireEvent.click(screen.getByText('Next'))
@@ -210,19 +170,12 @@ describe('Multisig add & remove  flow', () => {
 
       test('it renders preface correctly', async () => {
         const { Tree } = composeMockAppTree('postOnboard')
-        const msigAddress = 't034066'
-        const msigBalance = new FilecoinNumber('1', 'fil')
 
         let res
         await act(async () => {
           res = render(
             <Tree>
-              <AddSigner
-                address={msigAddress}
-                balance={msigBalance}
-                onClose={onClose}
-                onComplete={onComplete}
-              />
+              <AddSigner />
             </Tree>
           )
         })
@@ -232,19 +185,12 @@ describe('Multisig add & remove  flow', () => {
 
       test('it renders step 2 correctly', async () => {
         const { Tree } = composeMockAppTree('postOnboard')
-        const msigAddress = 't034066'
-        const msigBalance = new FilecoinNumber('1', 'fil')
 
         let res
         await act(async () => {
           res = render(
             <Tree>
-              <AddSigner
-                address={msigAddress}
-                balance={msigBalance}
-                onClose={onClose}
-                onComplete={onComplete}
-              />
+              <AddSigner />
             </Tree>
           )
           fireEvent.click(screen.getByText('Next'))
@@ -253,27 +199,20 @@ describe('Multisig add & remove  flow', () => {
         expect(res.container).toMatchSnapshot()
         expect(
           screen.getByText(
-            /Please enter the Filecoin address of the new signer/
+            /Please enter a Filecoin address to add as a signer and click Next./
           )
         ).toBeInTheDocument()
       })
 
       test('it renders step 3 correctly', async () => {
         const { Tree } = composeMockAppTree('postOnboard')
-        const msigAddress = 't034066'
-        const msigBalance = new FilecoinNumber('1', 'fil')
         const toAddr = 't0100'
 
         let res
         await act(async () => {
           res = render(
             <Tree>
-              <AddSigner
-                address={msigAddress}
-                balance={msigBalance}
-                onClose={onClose}
-                onComplete={onComplete}
-              />
+              <AddSigner />
             </Tree>
           )
           fireEvent.click(screen.getByText('Next'))
@@ -301,34 +240,13 @@ describe('Multisig add & remove  flow', () => {
 
     test('it allows a user to remove a signer', async () => {
       const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
-
-      const toAddrId = 't0100'
-      const toAddrAccount = 'f1gdiug3uoxk6pwh75fqaygnxc4pmfca464zuh4hi'
       const { selectedWalletIdx, wallets } = store.getState()
-
-      const signers = [
-        { account: wallets[selectedWalletIdx].address, id: 't0101' },
-        { account: toAddrAccount, id: toAddrId }
-      ]
-
       await act(async () => {
         render(
           <Tree>
-            <RemoveSigner
-              address={msigAddress}
-              balance={msigBalance}
-              signers={signers}
-              onClose={onClose}
-              onComplete={onComplete}
-            />
+            <RemoveSigner signerAddress={wallets[selectedWalletIdx].address} />
           </Tree>
         )
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText(/t0100/))
-        await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
@@ -346,75 +264,40 @@ describe('Multisig add & remove  flow', () => {
       expect(typeof message.gaslimit).toBe('number')
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')
-      expect(message.to).toBe(msigAddress)
+      expect(message.to).toBe(MULTISIG_ACTOR_ADDRESS)
 
       expect(store.getState().messages.pending.length).toBe(1)
     })
 
     test('it allows the user to see the max transaction fee', async () => {
       const { Tree, store } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
-
-      const toAddrId = 't0100'
-      const toAddrAccount = 'f1gdiug3uoxk6pwh75fqaygnxc4pmfca464zuh4hi'
       const { selectedWalletIdx, wallets } = store.getState()
-
-      const signers = [
-        { account: wallets[selectedWalletIdx].address, id: 't0101' },
-        { account: toAddrAccount, id: toAddrId }
-      ]
 
       await act(async () => {
         render(
           <Tree>
-            <RemoveSigner
-              address={msigAddress}
-              balance={msigBalance}
-              signers={signers}
-              onClose={onClose}
-              onComplete={onComplete}
-            />
+            <RemoveSigner signerAddress={wallets[selectedWalletIdx].address} />
           </Tree>
         )
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
-        fireEvent.click(screen.getByText(/t0100/))
-        await flushPromises()
         fireEvent.click(screen.getByText('Next'))
+        await flushPromises()
       })
       expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
     })
 
     test('it allows the user to set the max transaction fee', async () => {
       const { Tree, store } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
-
-      const toAddrId = 't0100'
-      const toAddrAccount = 'f1gdiug3uoxk6pwh75fqaygnxc4pmfca464zuh4hi'
       const { selectedWalletIdx, wallets } = store.getState()
-
-      const signers = [
-        { account: wallets[selectedWalletIdx].address, id: 't0101' },
-        { account: toAddrAccount, id: toAddrId }
-      ]
 
       await act(async () => {
         render(
           <Tree>
-            <RemoveSigner
-              address={msigAddress}
-              balance={msigBalance}
-              signers={signers}
-              onClose={onClose}
-              onComplete={onComplete}
-            />
+            <RemoveSigner signerAddress={wallets[selectedWalletIdx].address} />
           </Tree>
         )
         fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText(/t0100/))
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
@@ -430,33 +313,15 @@ describe('Multisig add & remove  flow', () => {
 
     test('it allows the user to save the max transaction fee', async () => {
       const { Tree, store } = composeMockAppTree('postOnboard')
-      const msigAddress = 't034066'
-      const msigBalance = new FilecoinNumber('1', 'fil')
-
-      const toAddrId = 't0100'
-      const toAddrAccount = 'f1gdiug3uoxk6pwh75fqaygnxc4pmfca464zuh4hi'
       const { selectedWalletIdx, wallets } = store.getState()
-
-      const signers = [
-        { account: wallets[selectedWalletIdx].address, id: 't0101' },
-        { account: toAddrAccount, id: toAddrId }
-      ]
 
       await act(async () => {
         render(
           <Tree>
-            <RemoveSigner
-              address={msigAddress}
-              balance={msigBalance}
-              signers={signers}
-              onClose={onClose}
-              onComplete={onComplete}
-            />
+            <RemoveSigner signerAddress={wallets[selectedWalletIdx].address} />
           </Tree>
         )
         fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText(/t0100/))
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
@@ -476,60 +341,32 @@ describe('Multisig add & remove  flow', () => {
 
       test('it renders preface correctly', async () => {
         const { Tree, store } = composeMockAppTree('postOnboard')
-        const msigAddress = 't034066'
-        const msigBalance = new FilecoinNumber('1', 'fil')
-
-        const toAddrId = 't0100'
-        const toAddrAccount = 'f1gdiug3uoxk6pwh75fqaygnxc4pmfca464zuh4hi'
         const { selectedWalletIdx, wallets } = store.getState()
-
-        const signers = [
-          { account: wallets[selectedWalletIdx].address, id: 't0101' },
-          { account: toAddrAccount, id: toAddrId }
-        ]
         let res
 
         await act(async () => {
           res = render(
             <Tree>
               <RemoveSigner
-                address={msigAddress}
-                balance={msigBalance}
-                signers={signers}
-                onClose={onClose}
-                onComplete={onComplete}
+                signerAddress={wallets[selectedWalletIdx].address}
               />
             </Tree>
           )
+          expect(res.container).toMatchSnapshot()
+          expect(screen.getByText(/Warning/)).toBeInTheDocument()
         })
-        expect(res.container).toMatchSnapshot()
-        expect(screen.getByText(/Warning/)).toBeInTheDocument()
       })
 
       test('it renders step 2 correctly', async () => {
         const { Tree, store } = composeMockAppTree('postOnboard')
-        const msigAddress = 't034066'
-        const msigBalance = new FilecoinNumber('1', 'fil')
-
-        const toAddrId = 't0100'
-        const toAddrAccount = 'f1gdiug3uoxk6pwh75fqaygnxc4pmfca464zuh4hi'
         const { selectedWalletIdx, wallets } = store.getState()
-
-        const signers = [
-          { account: wallets[selectedWalletIdx].address, id: 't0101' },
-          { account: toAddrAccount, id: toAddrId }
-        ]
         let res
 
         await act(async () => {
           res = render(
             <Tree>
               <RemoveSigner
-                address={msigAddress}
-                balance={msigBalance}
-                signers={signers}
-                onClose={onClose}
-                onComplete={onComplete}
+                signerAddress={wallets[selectedWalletIdx].address}
               />
             </Tree>
           )
@@ -539,47 +376,8 @@ describe('Multisig add & remove  flow', () => {
         expect(res.container).toMatchSnapshot()
         expect(
           screen.getByText(
-            /Please select the Filecoin address you want to remove from your multisig wallet/
+            /lease review the transaction fee details and click Next to continue./
           )
-        ).toBeInTheDocument()
-      })
-
-      test('it renders step 3 correctly', async () => {
-        const { Tree, store } = composeMockAppTree('postOnboard')
-        const msigAddress = 't034066'
-        const msigBalance = new FilecoinNumber('1', 'fil')
-
-        const toAddrId = 't0100'
-        const toAddrAccount = 'f1gdiug3uoxk6pwh75fqaygnxc4pmfca464zuh4hi'
-        const { selectedWalletIdx, wallets } = store.getState()
-
-        const signers = [
-          { account: wallets[selectedWalletIdx].address, id: 't0101' },
-          { account: toAddrAccount, id: toAddrId }
-        ]
-        let res
-
-        await act(async () => {
-          res = render(
-            <Tree>
-              <RemoveSigner
-                address={msigAddress}
-                balance={msigBalance}
-                signers={signers}
-                onClose={onClose}
-                onComplete={onComplete}
-              />
-            </Tree>
-          )
-          fireEvent.click(screen.getByText('Next'))
-          await flushPromises()
-          fireEvent.click(screen.getByText(/t0100/))
-          await flushPromises()
-          fireEvent.click(screen.getByText('Next'))
-        })
-        expect(res.container).toMatchSnapshot()
-        expect(
-          screen.getByText(/review the transaction fee details/)
         ).toBeInTheDocument()
       })
     })

@@ -384,16 +384,6 @@ Object {
   opacity: 0.8;
 }
 
-.c5 {
-  width: 48px;
-  height: 48px;
-}
-
-.c22 {
-  width: 24;
-  height: 24;
-}
-
 .c7 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -477,6 +467,16 @@ Object {
   margin: 0;
   margin-top: 0;
   margin-left: 4px;
+}
+
+.c5 {
+  width: 48px;
+  height: 48px;
+}
+
+.c22 {
+  width: 24;
+  height: 24;
 }
 
 .c21 {
@@ -575,6 +575,10 @@ Object {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   cursor: pointer;
   border-color: #5E26FF;
   background-color: transparent;
@@ -589,6 +593,7 @@ Object {
   padding-left: 16px;
   padding-right: 16px;
   height: 48px;
+  width: 160px;
 }
 
 .c10:hover {
@@ -607,6 +612,10 @@ Object {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   cursor: pointer;
   border-color: #262626;
   background-color: transparent;
@@ -621,6 +630,7 @@ Object {
   padding-left: 16px;
   padding-right: 16px;
   height: 48px;
+  width: 160px;
 }
 
 .c11:hover {
@@ -718,6 +728,7 @@ Object {
                     font-size="3"
                     height="6"
                     href="/vault/home?network=t"
+                    width="9"
                   >
                     Assets
                   </a>
@@ -726,6 +737,7 @@ Object {
                     font-size="3"
                     height="6"
                     href="/vault/history?network=t"
+                    width="9"
                   >
                     History
                   </a>
@@ -734,6 +746,7 @@ Object {
                     font-size="3"
                     height="6"
                     href="/vault/admin?network=t"
+                    width="9"
                   >
                     Admin
                   </a>
@@ -781,45 +794,53 @@ Object {
                         >
                           f2m4f2 ... sha5za
                         </h2>
-                        <button
-                          class="c19 c20 c21"
+                        <div
+                          class="c17"
+                          color="core.nearblack"
                           display="flex"
-                          font-size="3"
-                          height="6"
                         >
-                          <svg
-                            class="c22 c23 c24"
-                            fill="none"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            width="24"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <button
+                            class="c19 c20 c21"
+                            display="flex"
+                            font-size="3"
+                            height="6"
+                            role="button"
+                            type="button"
                           >
-                            <rect
-                              fill="#1A0066"
-                              height="12"
-                              width="12"
-                              x="8"
-                              y="4"
-                            />
-                            <rect
-                              fill="#E0D7FE"
-                              height="12"
-                              width="12"
-                              x="4"
-                              y="8"
-                            />
-                          </svg>
-                          <h4
-                            class="c25 c26 c27"
-                            color="core.nearblack"
-                            font-family="RT-Alias-Grotesk"
-                            font-size="2"
-                            font-weight="400"
-                          >
-                            Copy
-                          </h4>
-                        </button>
+                            <svg
+                              class="c22 c23 c24"
+                              fill="none"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              width="24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <rect
+                                fill="#1A0066"
+                                height="12"
+                                width="12"
+                                x="8"
+                                y="4"
+                              />
+                              <rect
+                                fill="#E0D7FE"
+                                height="12"
+                                width="12"
+                                x="4"
+                                y="8"
+                              />
+                            </svg>
+                            <h4
+                              class="c25 c26 c27"
+                              color="core.nearblack"
+                              font-family="RT-Alias-Grotesk"
+                              font-size="2"
+                              font-weight="400"
+                            >
+                              Copy
+                            </h4>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1006,26 +1027,29 @@ Object {
                 display="flex"
               >
                 <a
-                  class="NavLink__StyledNavLink-sc-1kcp6eq-0 knqDpg"
+                  class="NavLink__StyledNavLink-sc-1kcp6eq-0 jPPMFo"
                   font-size="3"
                   height="6"
                   href="/vault/home?network=t"
+                  width="9"
                 >
                   Assets
                 </a>
                 <a
-                  class="NavLink__StyledNavLink-sc-1kcp6eq-0 gijMkz"
+                  class="NavLink__StyledNavLink-sc-1kcp6eq-0 cOEfcH"
                   font-size="3"
                   height="6"
                   href="/vault/history?network=t"
+                  width="9"
                 >
                   History
                 </a>
                 <a
-                  class="NavLink__StyledNavLink-sc-1kcp6eq-0 gijMkz"
+                  class="NavLink__StyledNavLink-sc-1kcp6eq-0 cOEfcH"
                   font-size="3"
                   height="6"
                   href="/vault/admin?network=t"
+                  width="9"
                 >
                   Admin
                 </a>
@@ -1073,45 +1097,53 @@ Object {
                       >
                         f2m4f2 ... sha5za
                       </h2>
-                      <button
-                        class="BaseButton-expoia-0 Copy-sc-1gp7pl5-0 jJxtms hLSoKI"
+                      <div
+                        class="Box-sc-16t49rp-0 caPHnD"
+                        color="core.nearblack"
                         display="flex"
-                        font-size="3"
-                        height="6"
                       >
-                        <svg
-                          class="Icons__IconBase-sc-1nqrtw7-0 RfXKO Copy__StyledIconCopyAccountAddress-sc-1gp7pl5-1 gxPfQs"
-                          fill="none"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          width="24"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <button
+                          class="BaseButton-expoia-0 CopyText__Copy-n6rbbk-0 jJxtms bczods"
+                          display="flex"
+                          font-size="3"
+                          height="6"
+                          role="button"
+                          type="button"
                         >
-                          <rect
-                            fill="#1A0066"
-                            height="12"
-                            width="12"
-                            x="8"
-                            y="4"
-                          />
-                          <rect
-                            fill="#E0D7FE"
-                            height="12"
-                            width="12"
-                            x="4"
-                            y="8"
-                          />
-                        </svg>
-                        <h4
-                          class="Typography__H4Base-sc-1qc0548-3 igCqGo Copy__LabelCopy-sc-1gp7pl5-2 eqrYWb"
-                          color="core.nearblack"
-                          font-family="RT-Alias-Grotesk"
-                          font-size="2"
-                          font-weight="400"
-                        >
-                          Copy
-                        </h4>
-                      </button>
+                          <svg
+                            class="Icons__IconBase-sc-1nqrtw7-0 RfXKO CopyText__StyledIconCopyAccountAddress-n6rbbk-1 jTtVbl"
+                            fill="none"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              fill="#1A0066"
+                              height="12"
+                              width="12"
+                              x="8"
+                              y="4"
+                            />
+                            <rect
+                              fill="#E0D7FE"
+                              height="12"
+                              width="12"
+                              x="4"
+                              y="8"
+                            />
+                          </svg>
+                          <h4
+                            class="Typography__H4Base-sc-1qc0548-3 igCqGo CopyText__LabelCopy-n6rbbk-2 etcigS"
+                            color="core.nearblack"
+                            font-family="RT-Alias-Grotesk"
+                            font-size="2"
+                            font-weight="400"
+                          >
+                            Copy
+                          </h4>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>

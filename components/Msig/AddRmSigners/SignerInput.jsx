@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Box, CopyText, Label, StyledATag, Text } from '@glif/react-components'
 import { PL_SIGNERS } from '../../../constants'
 import { Input } from '../../Shared'
-import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import truncateAddress from '../../../utils/truncateAddress'
 
 export const AddSignerInput = ({
@@ -65,12 +64,5 @@ export const RemoveSignerInput = ({ signerAddress }) => {
 }
 
 RemoveSignerInput.propTypes = {
-  selfAddress: ADDRESS_PROPTYPE,
-  signerAddress: PropTypes.string.isRequired,
-  signers: PropTypes.arrayOf(
-    PropTypes.shape({
-      account: ADDRESS_PROPTYPE,
-      id: ADDRESS_PROPTYPE
-    })
-  )
+  signerAddress: PropTypes.string.isRequired
 }
