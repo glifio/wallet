@@ -254,6 +254,12 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
   justify-content: space-between;
 }
 
+.c6 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c14 {
   cursor: pointer;
   border: 1px solid #262626;
@@ -351,12 +357,6 @@ exports[`Create seed phrase configuration it renders correctly 1`] = `
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
-}
-
-.c6 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c2 {

@@ -4,6 +4,8 @@ import useWallet from './useWallet'
 import { IMPORT_MNEMONIC } from '../constants'
 import composeMockAppTree from '../test-utils/composeMockAppTree'
 
+jest.mock('.')
+
 describe('useWallet', () => {
   afterEach(cleanup)
   test('it returns a nullWallet state when no wallet exists in redux', () => {

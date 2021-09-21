@@ -6,6 +6,7 @@ import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import { flushPromises } from '../../../test-utils'
 
 jest.mock('@glif/filecoin-wallet-provider')
+jest.mock('../../../WalletProvider')
 
 describe('Send Flow', () => {
   let onClose = () => {}

@@ -5,6 +5,8 @@ import Admin from '.'
 import { PAGE } from '../../../constants'
 import { MULTISIG_SIGNER_ADDRESS_2 } from '../../../MsigProvider/__mocks__'
 
+jest.mock('../../../WalletProvider')
+
 const routerPushMock = jest.fn()
 jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
   return {

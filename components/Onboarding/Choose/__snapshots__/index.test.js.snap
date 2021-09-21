@@ -246,6 +246,12 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   align-items: center;
 }
 
+.c29 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c33 {
   cursor: pointer;
   border: 1px solid #E0D7FE;
@@ -271,6 +277,11 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
 
 .c33:hover {
   opacity: 0.8;
+}
+
+.c9 {
+  width: 64px;
+  height: 64px;
 }
 
 .c11 {
@@ -301,17 +312,6 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   margin-left: 24px;
   margin-top: 0;
   margin-bottom: 0;
-}
-
-.c9 {
-  width: 64px;
-  height: 64px;
-}
-
-.c29 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c8:before {
@@ -1457,6 +1457,17 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   justify-content: center;
 }
 
+.c27 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c9 {
+  width: 64px;
+  height: 64px;
+}
+
 .c11 {
   color: black;
   font-size: calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360));
@@ -1485,17 +1496,6 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   margin-left: 24px;
   margin-top: 0;
   margin-bottom: 0;
-}
-
-.c9 {
-  width: 64px;
-  height: 64px;
-}
-
-.c27 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c8:before {

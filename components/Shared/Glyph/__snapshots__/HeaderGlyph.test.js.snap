@@ -29,6 +29,11 @@ exports[`HeaderGlyph renders the HeaderGlyph 1`] = `
   justify-content: space-between;
 }
 
+.c2 {
+  width: 64px;
+  height: 64px;
+}
+
 .c4 {
   color: black;
   font-size: calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360));
@@ -37,11 +42,6 @@ exports[`HeaderGlyph renders the HeaderGlyph 1`] = `
   font-family: RT-Alias-Grotesk;
   margin: 0;
   margin-left: 16px;
-}
-
-.c2 {
-  width: 64px;
-  height: 64px;
 }
 
 .c1:before {

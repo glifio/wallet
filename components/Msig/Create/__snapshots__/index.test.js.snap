@@ -4052,6 +4052,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   justify-content: flex-end;
 }
 
+.c25 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c19 {
   font-size: 1.125rem;
   font-weight: 400;
@@ -4083,12 +4089,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c25 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c38 {

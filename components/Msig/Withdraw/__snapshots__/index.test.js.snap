@@ -738,6 +738,12 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   text-align: left;
 }
 
+.c28 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c21 {
   font-size: 1.125rem;
   font-weight: 400;
@@ -778,12 +784,6 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c28 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c39 {
@@ -2187,6 +2187,12 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   text-align: left;
 }
 
+.c28 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c21 {
   font-size: 1.125rem;
   font-weight: 400;
@@ -2227,12 +2233,6 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c28 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c39 {
@@ -3429,6 +3429,12 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   align-items: center;
 }
 
+.c28 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c21 {
   font-size: 1.125rem;
   font-weight: 400;
@@ -3452,12 +3458,6 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c28 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c39 {
@@ -4504,6 +4504,12 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   font-size: 1.25rem;
 }
 
+.c28 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c21 {
   font-size: 1.125rem;
   font-weight: 400;
@@ -4527,12 +4533,6 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c28 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c39 {
@@ -5836,6 +5836,12 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   text-align: left;
 }
 
+.c28 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c21 {
   font-size: 1.125rem;
   font-weight: 400;
@@ -5876,12 +5882,6 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c28 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c39 {
@@ -7383,6 +7383,12 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   text-align: left;
 }
 
+.c28 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c21 {
   font-size: 1.125rem;
   font-weight: 400;
@@ -7423,12 +7429,6 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c28 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c39 {

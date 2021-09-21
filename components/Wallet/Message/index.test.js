@@ -6,6 +6,8 @@ import { filfoxMockData } from '../../../test-utils/mockData'
 import { formatFilfoxMessages } from '../../../lib/useTransactionHistory/formatMessages'
 import { flushPromises } from '../../../test-utils'
 
+jest.mock('../../../WalletProvider')
+
 jest.mock('axios')
 const spy = jest.spyOn(require('../../../lib/useTransactionHistory'), 'default')
 const mockTxHistory = {

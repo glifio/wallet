@@ -876,6 +876,12 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 2
   align-items: center;
 }
 
+.c11 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c12 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -918,12 +924,6 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 2
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c11 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c32 {
@@ -1905,6 +1905,12 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   text-align: left;
 }
 
+.c11 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c12 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -1964,12 +1970,6 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c11 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c32 {
@@ -3643,6 +3643,12 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   text-align: left;
 }
 
+.c12 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c13 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -3693,12 +3699,6 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c12 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c46 {
