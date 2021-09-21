@@ -10,7 +10,6 @@ import { theme, ThemeProvider } from '../../components/Shared'
 import { WasmContext } from '../../lib/WasmLoader'
 import { mockWalletProviderInstance } from '../mocks/mock-wallet-provider'
 import * as wasmMethods from '../mocks/mock-filecoin-signer-wasm'
-import { presets } from './composeState'
 import { TESTNET } from '../../constants'
 import { MsigProviderWrapper } from '../../MsigProvider'
 import WalletProviderWrapper from '../../WalletProvider'
@@ -20,7 +19,7 @@ jest.mock('../../WalletProvider')
 jest.mock('../../MsigProvider')
 
 const Index = (statePreset = 'preOnboard', options = {}) => {
-  const store = mockReduxStoreWithState(options.state || presets[statePreset])
+  const store = mockReduxStoreWithState({ state: options.state, statePreset })
   const pathname = options.pathname || '/wallet'
   const query = options.query || { network: TESTNET }
 
