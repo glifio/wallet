@@ -6,13 +6,15 @@ import { IMPORT_MNEMONIC } from '../../constants'
 import { initialState } from '../../store/states'
 import { mockWalletProviderInstance } from '../mocks/mock-wallet-provider'
 
+export const WALLET_ADDRESS = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
+
 export const presets = {
   preOnboard: cloneDeep(initialState),
   postOnboard: cloneDeep({
     ...initialState,
     wallets: [
       {
-        address: 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi',
+        address: WALLET_ADDRESS,
         balance: new FilecoinNumber('1', 'fil'),
         path: createPath(1, 0)
       }
@@ -23,7 +25,7 @@ export const presets = {
     ...initialState,
     wallets: [
       {
-        address: 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi',
+        address: WALLET_ADDRESS,
         balance: new FilecoinNumber('.000001', 'fil'),
         path: createPath(1, 0)
       }
@@ -35,7 +37,7 @@ export const presets = {
     error: 'error for testing',
     wallets: [
       {
-        address: 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi',
+        address: WALLET_ADDRESS,
         balance: new FilecoinNumber('1', 'fil'),
         path: createPath(1, 0)
       }
@@ -46,7 +48,7 @@ export const presets = {
     ...initialState,
     wallets: [
       {
-        address: 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi',
+        address: WALLET_ADDRESS,
         balance: new FilecoinNumber('1', 'fil'),
         path: createPath(1, 0)
       }
