@@ -1,6 +1,6 @@
 import { useState, createContext, ReactNode, useContext, Dispatch } from 'react'
 import { FilecoinNumber } from '@glif/filecoin-number'
-import useSWR, { SWRConfig } from 'swr'
+import useSWR, { SWRConfig, SWRConfiguration } from 'swr'
 import useWallet from '../WalletProvider/useWallet'
 import { fetchMsigState } from '../utils/msig'
 import { MsigActorState, emptyMsigState } from './types'
@@ -20,7 +20,13 @@ export type MsigProviderContextType = MsigActorState & {
   loading: boolean
 }
 
-export const MsigProviderWrapper = ({ children }: { children: ReactNode }) => {
+export const MsigProviderWrapper = ({
+  children,
+  test
+}: {
+  children: ReactNode
+  test: boolean
+}) => {
   const wallet = useWallet()
   const [msigActor, setMsigActor] = useState(null)
   const { data: actor, error: msigActorStateError, isValidating } = useSWR(
@@ -28,8 +34,13 @@ export const MsigProviderWrapper = ({ children }: { children: ReactNode }) => {
     fetchMsigState
   )
 
+  let config: SWRConfiguration = { refreshInterval: 2000 }
+  if (test) {
+    config = { dedupingInterval: 0 }
+  }
+
   return (
-    <SWRConfig value={{ refreshInterval: 2000 }}>
+    <SWRConfig value={config}>
       <MsigProviderContext.Provider
         value={{
           Address: msigActor,

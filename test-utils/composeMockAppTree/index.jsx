@@ -7,7 +7,6 @@ import { NetworkChecker } from '../../lib/check-network'
 import BalancePoller from '../../lib/update-balance'
 import { ConverterContext } from '../../lib/Converter'
 import { theme, ThemeProvider } from '../../components/Shared'
-import { initializeStore } from '..'
 import { WasmContext } from '../../lib/WasmLoader'
 import { mockWalletProviderInstance } from '../mocks/mock-wallet-provider'
 import * as wasmMethods from '../mocks/mock-filecoin-signer-wasm'
@@ -15,14 +14,13 @@ import { presets } from './composeState'
 import { TESTNET } from '../../constants'
 import { MsigProviderWrapper } from '../../MsigProvider'
 import WalletProviderWrapper from '../../WalletProvider'
+import mockReduxStoreWithState from './mockReduxStoreWithState'
 
 jest.mock('../../WalletProvider')
 jest.mock('../../MsigProvider')
 
 const Index = (statePreset = 'preOnboard', options = {}) => {
-  const state = options.state || presets[statePreset]
-  const store = initializeStore(state)
-
+  const store = mockReduxStoreWithState(options.state || presets[statePreset])
   const pathname = options.pathname || '/wallet'
   const query = options.query || { network: TESTNET }
 

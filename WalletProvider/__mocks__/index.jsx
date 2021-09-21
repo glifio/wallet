@@ -10,8 +10,8 @@ export const WalletProviderContext = createContext({ walletProvider: null })
 
 const WalletProviderWrapper = ({ children, options, statePreset }) => {
   const [initialWalletProviderState, walletProviderDispatch] = useReducer(
-    options.reducer || walletProviderReducer,
-    options.walletProviderInitialState || walletProviderInitialState
+    options?.reducer || walletProviderReducer,
+    options?.walletProviderInitialState || walletProviderInitialState
   )
 
   const walletProviderState = composeWalletProviderState(
@@ -20,14 +20,14 @@ const WalletProviderWrapper = ({ children, options, statePreset }) => {
   )
 
   const mockWalletProviderContextFuncs = createMockWalletProviderContextFuncs(
-    options.walletProviderDispatch || walletProviderDispatch
+    options?.walletProviderDispatch || walletProviderDispatch
   )
 
   return (
     <WalletProviderContext.Provider
       value={{
         state: walletProviderState,
-        dispatch: options.walletProviderDispatch || walletProviderDispatch,
+        dispatch: options?.walletProviderDispatch || walletProviderDispatch,
         walletSubproviders: {
           ...mockWalletSubproviders
         },
