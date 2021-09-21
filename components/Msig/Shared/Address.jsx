@@ -68,6 +68,7 @@ const Address = ({
           type='button'
           onClick={onChangeSigner}
           stroke='core.darkgray'
+          aria-label='edit-signer'
         />
       )}
       {onRemoveSigner && (
@@ -76,6 +77,7 @@ const Address = ({
           role='button'
           type='button'
           onClick={onRemoveSigner}
+          aria-label='remove-signer'
         />
       )}
     </Box>

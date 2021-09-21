@@ -239,8 +239,8 @@ describe('Change signer flow', () => {
       ).toBeInTheDocument()
       expect(screen.getByText(/New signer/)).toBeInTheDocument()
       expect(screen.getByText(/Old signer/)).toBeInTheDocument()
-      //f1nq5k2mps5umtebdovlyo7y6a3ywc7u4tobtuo3a
-      expect(screen.getByText(/uo3a/)).toBeInTheDocument()
+      //t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi
+      expect(screen.getByText(/6wgi/)).toBeInTheDocument()
       expect(res.container).toMatchSnapshot()
     })
 
