@@ -1,3 +1,5 @@
+jest.mock('@glif/filecoin-rpc-client')
+import LotusRPCEngine from '@glif/filecoin-rpc-client'
 import converAddrToFPrefix from '../convertAddrToFPrefix'
 import fetchAndSetMsigActor from './fetchAndSetMsigActor'
 // this is a premade multisig vesting actor
@@ -5,7 +7,21 @@ import fetchAndSetMsigActor from './fetchAndSetMsigActor'
 const MULTISIG_ACTOR_ADDRESS = 'f2m4f2dv7m35skytoqzsyrh5wqz3kxxfflxsha5za'
 
 describe('fetchMsigState', () => {
+  beforeEach(() => {
+    jest.clearAllMocks()
+  })
   test('it calls the success callback with the new multisig address (passing an exec message CID)', async () => {
+    // @ts-ignore
+    LotusRPCEngine.mockImplementation(() => {
+      return {
+        request: jest.fn(() => ({
+          ExitCode: 0,
+          Return: 'gkQAyogBVQJnC6HX7N9krE3QzLET9tDO1XuUqw==',
+          GasUsed: 8555837
+        }))
+      }
+    })
+
     const successSpy = jest.fn()
     const errorSpy = jest.fn()
     await fetchAndSetMsigActor(
@@ -20,6 +36,14 @@ describe('fetchMsigState', () => {
   }, 12500)
 
   test('it calls the error callback when there is an error', async () => {
+    // @ts-ignore
+    LotusRPCEngine.mockImplementation(() => {
+      return {
+        request: jest.fn(() => {
+          throw new Error()
+        })
+      }
+    })
     const successSpy = jest.fn()
     const errorSpy = jest.fn()
     await fetchAndSetMsigActor(
