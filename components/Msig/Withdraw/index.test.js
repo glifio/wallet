@@ -9,6 +9,7 @@ import { PAGE } from '../../../constants'
 
 jest.mock('@glif/filecoin-wallet-provider')
 jest.mock('../../../MsigProvider')
+jest.mock('../../../WalletProvider')
 
 const routerPushMock = jest.fn()
 jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {

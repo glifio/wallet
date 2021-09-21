@@ -6,6 +6,8 @@ import { initialLedgerState } from '../../../../utils/ledger/ledgerStateManageme
 import { mockRouterPush } from '../../../../test-utils/mocks/mock-routing'
 import { flushPromises } from '../../../../test-utils'
 
+jest.mock('../../../../WalletProvider')
+
 describe('Ledger configuration', () => {
   describe('Step1', () => {
     afterEach(() => {

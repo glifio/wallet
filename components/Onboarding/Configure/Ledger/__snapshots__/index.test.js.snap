@@ -142,6 +142,12 @@ exports[`Ledger configuration Step1 it renders connectedFailure ledger error in 
   color: #660000;
 }
 
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c13 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -174,12 +180,6 @@ exports[`Ledger configuration Step1 it renders connectedFailure ledger error in 
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
-}
-
-.c5 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c1 {
@@ -475,6 +475,12 @@ exports[`Ledger configuration Step1 it renders inUseByAnotherApp ledger error in
   color: #660000;
 }
 
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c13 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -507,12 +513,6 @@ exports[`Ledger configuration Step1 it renders inUseByAnotherApp ledger error in
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
-}
-
-.c5 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c1 {
@@ -808,6 +808,11 @@ exports[`Ledger configuration Step1 it renders msig step1 correctly, with the ri
   color: #262626;
 }
 
+.c5 {
+  width: 40px;
+  height: 40px;
+}
+
 .c13 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -832,11 +837,6 @@ exports[`Ledger configuration Step1 it renders msig step1 correctly, with the ri
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
-}
-
-.c5 {
-  width: 40px;
-  height: 40px;
 }
 
 .c1 {
@@ -1145,6 +1145,11 @@ exports[`Ledger configuration Step1 it renders normal wallet step1 correctly, wi
   color: #262626;
 }
 
+.c5 {
+  width: 40px;
+  height: 40px;
+}
+
 .c13 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -1169,11 +1174,6 @@ exports[`Ledger configuration Step1 it renders normal wallet step1 correctly, wi
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
-}
-
-.c5 {
-  width: 40px;
-  height: 40px;
 }
 
 .c1 {
@@ -1464,6 +1464,12 @@ exports[`Ledger configuration Step2 it renders busy error in the UI correctly 1`
   color: #660000;
 }
 
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c12 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -1488,12 +1494,6 @@ exports[`Ledger configuration Step2 it renders busy error in the UI correctly 1`
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
-}
-
-.c5 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c1 {
@@ -1775,6 +1775,12 @@ exports[`Ledger configuration Step2 it renders connectedFailure ledger error in 
   color: #660000;
 }
 
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c12 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -1799,12 +1805,6 @@ exports[`Ledger configuration Step2 it renders connectedFailure ledger error in 
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
-}
-
-.c5 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c1 {
@@ -2086,6 +2086,12 @@ exports[`Ledger configuration Step2 it renders filecoinAppNotOpen error in the U
   color: #660000;
 }
 
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c12 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -2110,12 +2116,6 @@ exports[`Ledger configuration Step2 it renders filecoinAppNotOpen error in the U
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
-}
-
-.c5 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c1 {
@@ -2397,6 +2397,12 @@ exports[`Ledger configuration Step2 it renders inUseByAnotherApp ledger error in
   color: #660000;
 }
 
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c12 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -2421,12 +2427,6 @@ exports[`Ledger configuration Step2 it renders inUseByAnotherApp ledger error in
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
-}
-
-.c5 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c1 {
@@ -2708,6 +2708,12 @@ exports[`Ledger configuration Step2 it renders locked ledger error in the UI cor
   color: #660000;
 }
 
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c12 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -2732,12 +2738,6 @@ exports[`Ledger configuration Step2 it renders locked ledger error in the UI cor
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
-}
-
-.c5 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c1 {
@@ -3029,6 +3029,11 @@ exports[`Ledger configuration Step2 it renders msig step2 correctly, with the ri
   color: #262626;
 }
 
+.c5 {
+  width: 40px;
+  height: 40px;
+}
+
 .c13 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -3053,11 +3058,6 @@ exports[`Ledger configuration Step2 it renders msig step2 correctly, with the ri
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
-}
-
-.c5 {
-  width: 40px;
-  height: 40px;
 }
 
 .c1 {
@@ -3390,6 +3390,11 @@ exports[`Ledger configuration Step2 it renders normal wallet step2 correctly, wi
   color: #262626;
 }
 
+.c5 {
+  width: 40px;
+  height: 40px;
+}
+
 .c12 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -3414,11 +3419,6 @@ exports[`Ledger configuration Step2 it renders normal wallet step2 correctly, wi
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
-}
-
-.c5 {
-  width: 40px;
-  height: 40px;
 }
 
 .c1 {
@@ -3742,6 +3742,12 @@ exports[`Ledger configuration Step2 it renders replug error in the UI correctly 
   color: #660000;
 }
 
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c12 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -3766,12 +3772,6 @@ exports[`Ledger configuration Step2 it renders replug error in the UI correctly 
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
-}
-
-.c5 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c1 {

@@ -4,6 +4,8 @@ import { mockRouterPush } from '../../../test-utils/mocks/mock-routing'
 
 import Choose from '.'
 
+jest.mock('../../../WalletProvider')
+
 describe('Choosing a wallet', () => {
   afterEach(cleanup)
   test('it renders correctly', () => {

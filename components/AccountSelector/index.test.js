@@ -6,6 +6,8 @@ import ThemeProvider from '../Shared/ThemeProvider'
 
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 
+jest.mock('../../WalletProvider')
+
 describe('AccountSelector', () => {
   afterEach(cleanup)
   test('it renders the loading screen first', async () => {

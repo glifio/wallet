@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useReducer } from 'react'
+import React from 'react'
 import { Provider } from 'react-redux'
 import { Converter } from '@glif/filecoin-number'
 
@@ -8,19 +8,15 @@ import BalancePoller from '../../lib/update-balance'
 import { ConverterContext } from '../../lib/Converter'
 import { theme, ThemeProvider } from '../../components/Shared'
 import { initializeStore } from '..'
-import walletProviderReducer, {
-  initialState as walletProviderInitialState
-} from '../../WalletProvider/state'
 import { WasmContext } from '../../lib/WasmLoader'
-import { WalletProviderContext } from '../../WalletProvider'
 import { mockWalletProviderInstance } from '../mocks/mock-wallet-provider'
 import * as wasmMethods from '../mocks/mock-filecoin-signer-wasm'
-import createMockWalletProviderContextFuncs from './createWalletProviderContextFuncs.js'
-import mockWalletSubproviders from '../mocks/mock-wallet-subproviders'
-import { presets, composeWalletProviderState } from './composeState'
+import { presets } from './composeState'
 import { TESTNET } from '../../constants'
-import { MsigProviderWrapper } from '../../MsigProvider/__mocks__'
+import { MsigProviderWrapper } from '../../MsigProvider'
+import WalletProviderWrapper from '../../WalletProvider'
 
+jest.mock('../../WalletProvider')
 jest.mock('../../MsigProvider')
 
 const Index = (statePreset = 'preOnboard', options = {}) => {
@@ -31,20 +27,6 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
   const query = options.query || { network: TESTNET }
 
   const Tree = ({ children }) => {
-    const [initialWalletProviderState, walletProviderDispatch] = useReducer(
-      options.reducer || walletProviderReducer,
-      options.walletProviderInitialState || walletProviderInitialState
-    )
-
-    const walletProviderState = composeWalletProviderState(
-      initialWalletProviderState,
-      statePreset
-    )
-
-    const mockWalletProviderContextFuncs = createMockWalletProviderContextFuncs(
-      options.walletProviderDispatch || walletProviderDispatch
-    )
-
     return (
       <Provider store={store}>
         <WasmContext.Provider value={wasmMethods}>
@@ -54,17 +36,7 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
               converterError: options.converterError || null
             }}
           >
-            <WalletProviderContext.Provider
-              value={{
-                state: walletProviderState,
-                dispatch:
-                  options.walletProviderDispatch || walletProviderDispatch,
-                walletSubproviders: {
-                  ...mockWalletSubproviders
-                },
-                ...mockWalletProviderContextFuncs
-              }}
-            >
+            <WalletProviderWrapper options={options} statePreset={statePreset}>
               <MsigProviderWrapper>
                 <NetworkChecker
                   networkFromRdx={store.getState().network}
@@ -75,7 +47,7 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
                 <BalancePoller />
                 <ThemeProvider theme={theme}>{children}</ThemeProvider>
               </MsigProviderWrapper>
-            </WalletProviderContext.Provider>
+            </WalletProviderWrapper>
           </ConverterContext.Provider>
         </WasmContext.Provider>
       </Provider>

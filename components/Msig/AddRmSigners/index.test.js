@@ -6,6 +6,7 @@ import { flushPromises } from '../../../test-utils'
 import { MULTISIG_ACTOR_ADDRESS } from '../../../MsigProvider/__mocks__'
 
 jest.mock('../../../MsigProvider')
+jest.mock('../../../WalletProvider')
 
 describe('Multisig add & remove  flow', () => {
   beforeEach(() => {

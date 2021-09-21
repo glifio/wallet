@@ -5,6 +5,8 @@ import { flushPromises } from '../../../../test-utils'
 
 import ImportMnemonic from '.'
 
+jest.mock('../../../../WalletProvider')
+
 describe('Import seed phrase configuration', () => {
   afterEach(() => {
     jest.clearAllMocks()

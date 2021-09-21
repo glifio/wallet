@@ -5,6 +5,8 @@ import { flushPromises } from '../../../../test-utils'
 
 import ImportPrivateKey from '.'
 
+jest.mock('../../../../WalletProvider')
+
 describe('Import private key configuration', () => {
   afterEach(() => {
     jest.clearAllMocks()

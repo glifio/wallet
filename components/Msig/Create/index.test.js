@@ -9,6 +9,8 @@ import { createMultisig } from '../../../test-utils/mocks/mock-filecoin-signer-w
 
 jest.mock('@glif/filecoin-wallet-provider')
 jest.mock('@glif/filecoin-rpc-client')
+jest.mock('../../../MsigProvider')
+jest.mock('../../../WalletProvider')
 
 const CHAIN_HEAD = '1000'
 const VEST = 100

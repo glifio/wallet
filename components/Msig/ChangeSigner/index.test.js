@@ -10,6 +10,7 @@ import {
 
 jest.mock('@glif/filecoin-wallet-provider')
 jest.mock('../../../MsigProvider')
+jest.mock('../../../WalletProvider')
 
 describe('Change signer flow', () => {
   beforeEach(() => {
