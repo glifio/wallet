@@ -16,7 +16,6 @@ jest.mock('../WalletProvider')
 describe('Multisig provider', () => {
   describe('Fetching state', () => {
     afterEach(cleanup)
-    // @ts-ignore
     let Tree = ({ children }) => <>{children}</>
     beforeEach(() => {
       jest.clearAllMocks()

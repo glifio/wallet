@@ -2,7 +2,11 @@ import { FilecoinNumber } from '@glif/filecoin-number'
 import { createContext, ReactNode, Dispatch, useContext } from 'react'
 import { SWRConfig } from 'swr'
 import { MsigActorState } from '../../MsigProvider/types'
-import { WALLET_ADDRESS } from '../../test-utils/composeMockAppTree/composeState'
+import {
+  composeMsigProviderState,
+  presets,
+  WALLET_ADDRESS
+} from '../../test-utils/composeMockAppTree/composeState'
 import converAddrToFPrefix from '../../utils/convertAddrToFPrefix'
 
 export const MULTISIG_ACTOR_ADDRESS =
@@ -43,16 +47,33 @@ const emptyMsigProviderContext = {
   setMsigActor: null
 }
 
+type Presets = keyof typeof presets
+
 const MsigProviderContextMock = createContext<
   MsigActorState & {
     setMsigActor: null | Dispatch<string | null>
   } & { loading: boolean }
 >(emptyMsigProviderContext)
 
-export const MsigProviderWrapper = ({ children }: { children: ReactNode }) => {
+export const MsigProviderWrapper = ({
+  children,
+  options,
+  statePreset
+}: {
+  children: ReactNode
+  options: object
+  statePreset: Presets
+}) => {
+  const providerContextValue = composeMsigProviderState(statePreset)
   return (
     <SWRConfig value={{ dedupingInterval: 0 }}>
-      <MsigProviderContextMock.Provider value={emptyMsigProviderContext}>
+      <MsigProviderContextMock.Provider
+        value={{
+          ...providerContextValue,
+          loading: false,
+          setMsigActor: () => {}
+        }}
+      >
         {children}
       </MsigProviderContextMock.Provider>
     </SWRConfig>

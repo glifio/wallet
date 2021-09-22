@@ -19,9 +19,9 @@ jest.mock('../../WalletProvider')
 jest.mock('../../MsigProvider')
 
 const Index = (statePreset = 'preOnboard', options = {}) => {
-  const store = mockReduxStoreWithState({ state: options.state, statePreset })
-  const pathname = options.pathname || '/wallet'
-  const query = options.query || { network: TESTNET }
+  const store = mockReduxStoreWithState({ state: options?.state, statePreset })
+  const pathname = options?.pathname || '/wallet'
+  const query = options?.query || { network: TESTNET }
 
   const Tree = ({ children }) => {
     return (
@@ -34,7 +34,7 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
             }}
           >
             <WalletProviderWrapper options={options} statePreset={statePreset}>
-              <MsigProviderWrapper>
+              <MsigProviderWrapper options={options} statePreset={statePreset}>
                 <NetworkChecker
                   networkFromRdx={store.getState().network}
                   pathname={pathname}
