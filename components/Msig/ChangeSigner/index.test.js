@@ -2,11 +2,11 @@ import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 
 import ChangeSigner from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
-import { flushPromises } from '../../../test-utils'
 import {
+  flushPromises,
   MULTISIG_ACTOR_ADDRESS,
   MULTISIG_SIGNER_ADDRESS
-} from '../../../MsigProvider/__mocks__'
+} from '../../../test-utils'
 
 jest.mock('@glif/filecoin-wallet-provider')
 jest.mock('../../../MsigProvider')

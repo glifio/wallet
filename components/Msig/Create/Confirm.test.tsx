@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom/extend-expect'
-import { act, cleanup, render, screen, unmo } from '@testing-library/react'
+import { act, cleanup, render, screen } from '@testing-library/react'
 
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import { PAGE } from '../../../constants'

@@ -6,8 +6,7 @@ import { IMPORT_MNEMONIC } from '../../constants'
 import { initialState } from '../../store/states'
 import { mockWalletProviderInstance } from '../mocks/mock-wallet-provider'
 import { emptyMsigState } from '../../MsigProvider/types'
-
-export const WALLET_ADDRESS = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
+import { WALLET_ADDRESS, MULTISIG_ACTOR_ADDRESS, signers } from '../constants'
 
 export const presets = {
   preOnboard: cloneDeep(initialState),
@@ -90,6 +89,27 @@ export const composeWalletProviderState = initialWalletProviderState => {
   })
 }
 
+export const mockMsigProviderContext = {
+  Address: MULTISIG_ACTOR_ADDRESS,
+  ActorCode: 'fil/5/multisig',
+  Balance: new FilecoinNumber('1', 'fil'),
+  AvailableBalance: new FilecoinNumber('1', 'fil'),
+  Signers: signers,
+  InitialBalance: new FilecoinNumber('1', 'fil'),
+  NextTxnID: 0,
+  NumApprovalsThreshold: 1,
+  StartEpoch: 0,
+  UnlockDuration: 0,
+  errors: {
+    notMsigActor: false,
+    connectedWalletNotMsigSigner: false,
+    actorNotFound: false,
+    unhandledError: ''
+  },
+  loading: false,
+  setMsigActor: null
+}
+
 export const composeMsigProviderState = (preset: keyof typeof presets) => {
   switch (preset) {
     case 'preOnboard': {
@@ -99,7 +119,7 @@ export const composeMsigProviderState = (preset: keyof typeof presets) => {
       return Object.freeze(emptyMsigState)
     }
     default: {
-      return Object.freeze(emptyMsigState)
+      return Object.freeze(mockMsigProviderContext)
     }
   }
 }

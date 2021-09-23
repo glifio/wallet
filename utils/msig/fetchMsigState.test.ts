@@ -1,10 +1,11 @@
 import converAddrToFPrefix from '../convertAddrToFPrefix'
 import fetchMsigState from './fetchMsigState'
 
-// this is a premade multisig vesting actor
-// if calibration net resets, these tests will fail
-const MULTISIG_ACTOR_ADDRESS = 'f2m4f2dv7m35skytoqzsyrh5wqz3kxxfflxsha5za'
-const MULTISIG_SIGNER_ADDRESS = 'f1nq5k2mps5umtebdovlyo7y6a3ywc7u4tobtuo3a'
+import {
+  MULTISIG_ACTOR_ADDRESS,
+  MULTISIG_SIGNER_ADDRESS,
+  MULTISIG_SIGNER_ADDRESS_2
+} from '../../test-utils'
 
 describe('fetchMsigState', () => {
   test('it returns an notMsigActor error if the actor is not a multisig', async () => {
@@ -50,14 +51,14 @@ describe('fetchMsigState', () => {
       NumApprovalsThreshold,
       StartEpoch,
       UnlockDuration
-    } = await fetchMsigState(MULTISIG_ACTOR_ADDRESS, MULTISIG_SIGNER_ADDRESS)
+    } = await fetchMsigState(MULTISIG_ACTOR_ADDRESS, MULTISIG_SIGNER_ADDRESS_2)
 
     expect(Address).toBe(converAddrToFPrefix(MULTISIG_ACTOR_ADDRESS))
     expect(Balance.isGreaterThan(0)).toBe(true)
     expect(AvailableBalance.isGreaterThan(0)).toBe(true)
     expect(Signers.length).toBeGreaterThan(0)
     expect(converAddrToFPrefix(Signers[0].account)).toBe(
-      MULTISIG_SIGNER_ADDRESS
+      MULTISIG_SIGNER_ADDRESS_2
     )
     expect(ActorCode.includes('multisig')).toBe(true)
     expect(InitialBalance.isGreaterThan(0)).toBe(true)

@@ -3,8 +3,7 @@ import { FilecoinNumber } from '@glif/filecoin-number'
 
 import Withdraw from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
-import { flushPromises } from '../../../test-utils'
-import { MULTISIG_ACTOR_ADDRESS } from '../../../MsigProvider/__mocks__'
+import { flushPromises, MULTISIG_ACTOR_ADDRESS } from '../../../test-utils'
 import { PAGE } from '../../../constants'
 
 jest.mock('@glif/filecoin-wallet-provider')

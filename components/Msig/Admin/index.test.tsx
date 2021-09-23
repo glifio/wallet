@@ -1,9 +1,11 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
-import composeMockAppTree from '../../../test-utils/composeMockAppTree'
+import {
+  composeMockAppTree,
+  MULTISIG_SIGNER_ADDRESS_2
+} from '../../../test-utils'
 
 import Admin from '.'
 import { PAGE } from '../../../constants'
-import { MULTISIG_SIGNER_ADDRESS_2 } from '../../../MsigProvider/__mocks__'
 
 jest.mock('../../../WalletProvider')
 

@@ -2,9 +2,7 @@ jest.mock('@glif/filecoin-rpc-client')
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
 import converAddrToFPrefix from '../convertAddrToFPrefix'
 import fetchAndSetMsigActor from './fetchAndSetMsigActor'
-// this is a premade multisig vesting actor
-// if calibration net resets, these tests will fail
-const MULTISIG_ACTOR_ADDRESS = 'f2m4f2dv7m35skytoqzsyrh5wqz3kxxfflxsha5za'
+import { MULTISIG_ACTOR_ADDRESS } from '../../test-utils'
 
 describe('fetchMsigState', () => {
   beforeEach(() => {
