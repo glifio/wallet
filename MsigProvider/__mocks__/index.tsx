@@ -1,5 +1,5 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
-import { createContext, ReactNode, Dispatch, useContext } from 'react'
+import { createContext, ReactNode, Dispatch, useContext, useState } from 'react'
 import { SWRConfig } from 'swr'
 import { MsigActorState } from '../../MsigProvider/types'
 import {
@@ -65,13 +65,15 @@ export const MsigProviderWrapper = ({
   statePreset: Presets
 }) => {
   const providerContextValue = composeMsigProviderState(statePreset)
+  const [Address, setMsigAddress] = useState<null | string>(null)
   return (
     <SWRConfig value={{ dedupingInterval: 0 }}>
       <MsigProviderContextMock.Provider
         value={{
           ...providerContextValue,
+          Address,
           loading: false,
-          setMsigActor: () => {}
+          setMsigActor: setMsigAddress
         }}
       >
         {children}
