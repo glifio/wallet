@@ -11,4 +11,6 @@ export function initializeStore(state = initialState) {
   return createStore(reducer, state)
 }
 
+export * from './constants'
+
 export default initializeStore

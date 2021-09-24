@@ -81,7 +81,9 @@ export enum PAGE {
   MSIG_WITHDRAW = '/vault/withdraw',
   MSIG_CHANGE_SIGNER = '/vault/change-signer',
   MSIG_REMOVE_SIGNER = '/vault/remove-signer',
-  MSIG_ADD_SIGNER = '/vault/add-signer'
+  MSIG_ADD_SIGNER = '/vault/add-signer',
+  MSIG_CREATE_CONFIRM = '/vault/create/confirm',
+  MSIG_CREATE = '/vault/create'
 }
 
 export enum MSIG_METHOD {

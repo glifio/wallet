@@ -35,6 +35,8 @@ export const MsigProviderWrapper = ({
   )
 
   let config: SWRConfiguration = { refreshInterval: 2000 }
+  // this only exists for the tests covering THIS file only
+  // every other test mocks this wrapper
   if (test) {
     config = { dedupingInterval: 0 }
   }

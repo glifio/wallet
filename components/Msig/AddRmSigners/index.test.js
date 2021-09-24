@@ -2,8 +2,7 @@ import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 
 import { AddSigner, RemoveSigner } from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
-import { flushPromises } from '../../../test-utils'
-import { MULTISIG_ACTOR_ADDRESS } from '../../../MsigProvider/__mocks__'
+import { flushPromises, MULTISIG_ACTOR_ADDRESS } from '../../../test-utils'
 
 jest.mock('../../../MsigProvider')
 jest.mock('../../../WalletProvider')

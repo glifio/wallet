@@ -5,6 +5,8 @@ import { initializeStore } from '../../test-utils'
 import { WalletProviderContext } from '../../WalletProvider'
 import { initialState } from '../../store/states'
 
+jest.mock('../../WalletProvider')
+
 describe('useReset', () => {
   test('it resets both the redux and walletprovider state when called, keeping the current states network', () => {
     const resetState = jest.fn()

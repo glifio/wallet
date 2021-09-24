@@ -1,62 +1,68 @@
-import { FilecoinNumber } from '@glif/filecoin-number'
-import { createContext, ReactNode, Dispatch, useContext } from 'react'
+import { node, object, string } from 'prop-types'
+import { createContext, ReactNode, Dispatch, useContext, useState } from 'react'
 import { SWRConfig } from 'swr'
-import { MsigActorState } from '../../MsigProvider/types'
-import { WALLET_ADDRESS } from '../../test-utils/composeMockAppTree/composeState'
-import converAddrToFPrefix from '../../utils/convertAddrToFPrefix'
+import { emptyMsigState, MsigActorState } from '../../MsigProvider/types'
+import {
+  composeMsigProviderState,
+  presets
+} from '../../test-utils/composeMockAppTree/composeState'
 
-export const MULTISIG_ACTOR_ADDRESS =
-  'f2m4f2dv7m35skytoqzsyrh5wqz3kxxfflxsha5za'
-export const MULTISIG_SIGNER_ADDRESS = converAddrToFPrefix(WALLET_ADDRESS)
-export const MULTISIG_SIGNER_ADDRESS_2 =
-  'f1kxx73uhwgtorxxn7gbyihi6rwmaokj64iyg5qjy'
-
-const signers = [
-  {
-    account: MULTISIG_SIGNER_ADDRESS,
-    id: 't01234'
-  },
-  {
-    account: MULTISIG_SIGNER_ADDRESS_2,
-    id: 't01235'
-  }
-]
-
-const emptyMsigProviderContext = {
-  Address: MULTISIG_ACTOR_ADDRESS,
-  ActorCode: 'fil/5/multisig',
-  Balance: new FilecoinNumber('1', 'fil'),
-  AvailableBalance: new FilecoinNumber('1', 'fil'),
-  Signers: signers,
-  InitialBalance: new FilecoinNumber('1', 'fil'),
-  NextTxnID: 0,
-  NumApprovalsThreshold: 1,
-  StartEpoch: 0,
-  UnlockDuration: 0,
-  errors: {
-    notMsigActor: false,
-    connectedWalletNotMsigSigner: false,
-    actorNotFound: true,
-    unhandledError: ''
-  },
+export const emptyMsigProviderContext = {
+  ...emptyMsigState,
   loading: false,
   setMsigActor: null
 }
 
+type Preset = keyof typeof presets
+
 const MsigProviderContextMock = createContext<
   MsigActorState & {
     setMsigActor: null | Dispatch<string | null>
-  } & { loading: boolean }
+    loading: boolean
+  }
 >(emptyMsigProviderContext)
 
-export const MsigProviderWrapper = ({ children }: { children: ReactNode }) => {
+export const MsigProviderWrapper = ({
+  children,
+  options,
+  statePreset
+}: {
+  children: ReactNode
+  options: object
+  statePreset: Preset
+}) => {
+  const providerContextValue = composeMsigProviderState(statePreset)
+  const [Address, setMsigAddress] = useState<null | string>(null)
+  // this is a bit confusing, but if the composed msig provider state has an address, use that one
+  // if its null, we use the stateful variable above ^^
+  const addressForContextConsumers = providerContextValue.Address || Address
   return (
     <SWRConfig value={{ dedupingInterval: 0 }}>
-      <MsigProviderContextMock.Provider value={emptyMsigProviderContext}>
+      <MsigProviderContextMock.Provider
+        value={{
+          ...providerContextValue,
+          Address: addressForContextConsumers,
+          loading: false,
+          setMsigActor: setMsigAddress
+        }}
+      >
         {children}
       </MsigProviderContextMock.Provider>
     </SWRConfig>
   )
 }
 
-export const useMsig = () => useContext(MsigProviderContextMock)
+MsigProviderWrapper.propTypes = {
+  options: object,
+  statePreset: string,
+  children: node.isRequired
+}
+
+MsigProviderWrapper.defaultProps = {
+  statePreset: 'postOnboard'
+}
+
+export const useMsig = () => {
+  const context = useContext(MsigProviderContextMock)
+  return context
+}
