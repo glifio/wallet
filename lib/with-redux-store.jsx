@@ -19,7 +19,7 @@ function getOrCreateStore(initialState) {
   return window[__NEXT_REDUX_STORE__]
 }
 
-const WithReduxStore = App => {
+function WithReduxStore(App) {
   return class AppWithRedux extends React.Component {
     /* eslint-disable react/static-property-placement */
     static propTypes = {
