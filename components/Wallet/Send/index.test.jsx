@@ -4,18 +4,15 @@ import { FilecoinNumber } from '@glif/filecoin-number'
 import Send from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import { flushPromises } from '../../../test-utils'
+import { PAGE } from '../../../constants'
 
 jest.mock('@glif/filecoin-wallet-provider')
 jest.mock('../../../WalletProvider')
 
 describe('Send Flow', () => {
-  let onClose = () => {}
-  let onComplete = () => {}
   beforeEach(() => {
     jest.useFakeTimers()
     jest.clearAllMocks()
-    onClose = jest.fn()
-    onComplete = jest.fn()
   })
 
   describe('Sending a message', () => {
@@ -31,7 +28,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send onClose={onClose} onComplete={onComplete} />
+            <Send />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -81,7 +78,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send onClose={onClose} onComplete={onComplete} />
+            <Send />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -103,7 +100,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send onClose={onClose} onComplete={onComplete} />
+            <Send />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -128,7 +125,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send onClose={onClose} onComplete={onComplete} />
+            <Send />
           </Tree>
         )
 
@@ -166,7 +163,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send onClose={onClose} onComplete={onComplete} />
+            <Send />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -202,7 +199,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send onClose={onClose} onComplete={onComplete} />
+            <Send />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -261,7 +258,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send onClose={onClose} onComplete={onComplete} />
+            <Send />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -291,7 +288,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send onClose={onClose} onComplete={onComplete} />
+            <Send />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -328,7 +325,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send onClose={onClose} onComplete={onComplete} />
+            <Send />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -366,7 +363,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send onClose={onClose} onComplete={onComplete} />
+            <Send />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -399,7 +396,7 @@ describe('Send Flow', () => {
       await act(async () => {
         render(
           <Tree>
-            <Send onClose={onClose} onComplete={onComplete} />
+            <Send />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -435,10 +432,20 @@ describe('Send Flow', () => {
       const { Tree } = composeMockAppTree('postOnboard')
       const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
       const filAmount = new FilecoinNumber('.01', 'fil')
+
+      const routerPushMock = jest.fn()
+      jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
+        return {
+          query: { network: 'f' },
+          pathname: PAGE.WALLET_SEND,
+          push: routerPushMock
+        }
+      })
+
       await act(async () => {
         render(
           <Tree>
-            <Send onClose={onClose} onComplete={onComplete} />
+            <Send />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -466,7 +473,7 @@ describe('Send Flow', () => {
         await flushPromises()
       })
       await flushPromises()
-      expect(onComplete).toHaveBeenCalled()
+      expect(routerPushMock).toHaveBeenCalledWith('/home?network=f')
     })
   })
 
@@ -478,7 +485,7 @@ describe('Send Flow', () => {
       await act(async () => {
         res = render(
           <Tree>
-            <Send onClose={onClose} onComplete={onComplete} />
+            <Send />
           </Tree>
         )
       })
@@ -492,7 +499,7 @@ describe('Send Flow', () => {
       await act(async () => {
         res = render(
           <Tree>
-            <Send onClose={onClose} onComplete={onComplete} />
+            <Send />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -515,7 +522,7 @@ describe('Send Flow', () => {
       await act(async () => {
         res = render(
           <Tree>
-            <Send onClose={onClose} onComplete={onComplete} />
+            <Send />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -548,7 +555,7 @@ describe('Send Flow', () => {
       await act(async () => {
         res = render(
           <Tree>
-            <Send onClose={onClose} onComplete={onComplete} />
+            <Send />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -581,7 +588,7 @@ describe('Send Flow', () => {
       await act(async () => {
         res = render(
           <Tree>
-            <Send onClose={onClose} onComplete={onComplete} />
+            <Send />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -604,7 +611,7 @@ describe('Send Flow', () => {
       await act(async () => {
         res = render(
           <Tree>
-            <Send onClose={onClose} onComplete={onComplete} />
+            <Send />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
@@ -640,7 +647,7 @@ describe('Send Flow', () => {
       await act(async () => {
         res = render(
           <Tree>
-            <Send onClose={onClose} onComplete={onComplete} />
+            <Send />
           </Tree>
         )
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
