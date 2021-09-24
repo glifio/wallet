@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import PropTypes from 'prop-types'
 import dayjs from 'dayjs'
 import { useDispatch } from 'react-redux'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { validateAddressString } from '@glif/filecoin-address'
 import { Message } from '@glif/filecoin-message'
+import { useRouter } from 'next/router'
 
 import {
   Box,
@@ -25,12 +26,13 @@ import ErrorCard from './ErrorCard'
 import CustomizeFee from './CustomizeFee'
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
-import { LEDGER, SEND, emptyGasInfo } from '../../../constants'
+import { LEDGER, SEND, emptyGasInfo, PAGE } from '../../../constants'
 import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfigError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import reportError from '../../../utils/reportError'
 import isBase64 from '../../../utils/isBase64'
 import { confirmMessage } from '../../../store/actions'
+import { navigate } from '../../../utils/urlParams'
 
 // this is a bit confusing, sometimes the form can report errors, so we check those here too
 const isValidAmount = (value, balance, errorFromForms) => {
@@ -57,7 +59,7 @@ const isValidForm = (
   return validToAddress && validAmount && !otherError && !paramsError
 }
 
-const Send = ({ onClose, onComplete }) => {
+const Send = () => {
   const dispatch = useDispatch()
   const wallet = useWallet()
   const {
@@ -82,6 +84,16 @@ const Send = ({ onClose, onComplete }) => {
 
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
+
+  const router = useRouter()
+
+  const onClose = useCallback(() => {
+    navigate(router, { pageUrl: PAGE.WALLET_HOME })
+  }, [router])
+
+  const onComplete = useCallback(() => {
+    navigate(router, { pageUrl: PAGE.WALLET_HOME })
+  }, [router])
 
   const send = async () => {
     setFetchingTxDetails(true)
