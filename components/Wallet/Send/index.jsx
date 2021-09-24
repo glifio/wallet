@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from 'react'
-import PropTypes from 'prop-types'
 import dayjs from 'dayjs'
 import { useDispatch } from 'react-redux'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
@@ -525,11 +524,6 @@ const Send = () => {
       </Box>
     </PageWrapper>
   )
-}
-
-Send.propTypes = {
-  onClose: PropTypes.func.isRequired,
-  onComplete: PropTypes.func.isRequired
 }
 
 export default Send
