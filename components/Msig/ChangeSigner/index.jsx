@@ -26,7 +26,13 @@ import { CardHeader, ChangeSignerHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
-import { LEDGER, PROPOSE, emptyGasInfo, PAGE } from '../../../constants'
+import {
+  LEDGER,
+  PROPOSE,
+  emptyGasInfo,
+  PAGE,
+  MSIG_METHOD
+} from '../../../constants'
 import CustomizeFee from '../../Wallet/Send/CustomizeFee'
 import {
   reportLedgerConfigError,
@@ -78,7 +84,7 @@ const ChangeOwner = ({ oldSignerAddress }) => {
     const outerParams = {
       to: address,
       value: '0',
-      method: 7,
+      method: MSIG_METHOD.SWAP_SIGNER,
       params: serializedInnerParams
     }
 
@@ -91,7 +97,7 @@ const ChangeOwner = ({ oldSignerAddress }) => {
       to: address,
       from: wallet.address,
       value: '0',
-      method: 2,
+      method: MSIG_METHOD.PROPOSE,
       nonce,
       params: serializedOuterParams,
       gasFeeCap: gasInfo.gasFeeCap.toAttoFil(),
@@ -99,7 +105,7 @@ const ChangeOwner = ({ oldSignerAddress }) => {
       gasPremium: gasInfo.gasPremium.toAttoFil()
     })
 
-    return { message, params: { ...innerParams, params: outerParams } }
+    return { message, params: { ...outerParams, params: { ...innerParams } } }
   }
 
   const sendMsg = async () => {
