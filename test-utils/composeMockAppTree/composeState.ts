@@ -81,12 +81,35 @@ export const presets = {
   })
 }
 
-export const composeWalletProviderState = initialWalletProviderState => {
-  return Object.freeze({
-    ...initialWalletProviderState,
-    walletType: IMPORT_MNEMONIC,
-    walletProvider: mockWalletProviderInstance
-  })
+export const composeWalletProviderState = (
+  initialWalletProviderState: object,
+  preset: keyof typeof presets
+) => {
+  switch (preset) {
+    case 'postOnboard': {
+      return Object.freeze({
+        ...initialWalletProviderState,
+        walletType: IMPORT_MNEMONIC,
+        walletProvider: mockWalletProviderInstance
+      })
+    }
+    case 'postOnboardLowBal': {
+      return Object.freeze({
+        ...initialWalletProviderState,
+        walletType: IMPORT_MNEMONIC,
+        walletProvider: mockWalletProviderInstance
+      })
+    }
+    case 'postOnboardWithError': {
+      return Object.freeze({
+        ...initialWalletProviderState,
+        walletType: IMPORT_MNEMONIC,
+        walletProvider: mockWalletProviderInstance
+      })
+    }
+    default:
+      return initialWalletProviderState
+  }
 }
 
 export const mockMsigProviderContext = {

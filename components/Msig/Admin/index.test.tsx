@@ -1,8 +1,6 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
-import {
-  composeMockAppTree,
-  MULTISIG_SIGNER_ADDRESS_2
-} from '../../../test-utils'
+import { MULTISIG_SIGNER_ADDRESS_2 } from '../../../test-utils'
+import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 
 import Admin from '.'
 import { PAGE } from '../../../constants'
@@ -43,9 +41,9 @@ describe('Admin page', () => {
     expect(screen.queryAllByText(/Additional Signer/).length).toBe(1)
     expect(screen.getByText('View on Device')).toBeInTheDocument()
     expect(screen.getByText(/Multisig Address/)).toBeInTheDocument()
-    // signers - "t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi" and f1kxx73uhwgtorxxn7gbyihi6rwmaokj64iyg5qjy from msig provider mocks
+    // signers - "t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi" and f1nq5k2mps5umtebdovlyo7y6a3ywc7u4tobtuo3a from msig provider mocks
     expect(screen.getByText(/6wgi/)).toBeInTheDocument()
-    expect(screen.getByText(/5qjy/)).toBeInTheDocument()
+    expect(screen.getByText(/uo3a/)).toBeInTheDocument()
     expect(container).toMatchSnapshot()
   })
 

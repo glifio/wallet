@@ -11,8 +11,6 @@ export function initializeStore(state = initialState) {
   return createStore(reducer, state)
 }
 
-export { default as composeMockAppTree } from './composeMockAppTree'
-
 export * from './constants'
 
 export default initializeStore

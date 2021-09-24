@@ -1,41 +1,25 @@
-import { FilecoinNumber } from '@glif/filecoin-number'
 import { node, object, string } from 'prop-types'
 import { createContext, ReactNode, Dispatch, useContext, useState } from 'react'
 import { SWRConfig } from 'swr'
-import { MsigActorState } from '../../MsigProvider/types'
+import { emptyMsigState, MsigActorState } from '../../MsigProvider/types'
 import {
   composeMsigProviderState,
   presets
 } from '../../test-utils/composeMockAppTree/composeState'
-import { signers } from '../../test-utils'
 
 export const emptyMsigProviderContext = {
-  Address: null,
-  ActorCode: '',
-  Balance: new FilecoinNumber('0', 'fil'),
-  AvailableBalance: new FilecoinNumber('0', 'fil'),
-  Signers: signers,
-  InitialBalance: new FilecoinNumber('0', 'fil'),
-  NextTxnID: 0,
-  NumApprovalsThreshold: 0,
-  StartEpoch: 0,
-  UnlockDuration: 0,
-  errors: {
-    notMsigActor: false,
-    connectedWalletNotMsigSigner: false,
-    actorNotFound: false,
-    unhandledError: ''
-  },
+  ...emptyMsigState,
   loading: false,
   setMsigActor: null
 }
 
-type Presets = keyof typeof presets
+type Preset = keyof typeof presets
 
 const MsigProviderContextMock = createContext<
   MsigActorState & {
     setMsigActor: null | Dispatch<string | null>
-  } & { loading: boolean }
+    loading: boolean
+  }
 >(emptyMsigProviderContext)
 
 export const MsigProviderWrapper = ({
@@ -45,7 +29,7 @@ export const MsigProviderWrapper = ({
 }: {
   children: ReactNode
   options: object
-  statePreset: Presets
+  statePreset: Preset
 }) => {
   const providerContextValue = composeMsigProviderState(statePreset)
   const [Address, setMsigAddress] = useState<null | string>(null)
@@ -78,4 +62,7 @@ MsigProviderWrapper.defaultProps = {
   statePreset: 'postOnboard'
 }
 
-export const useMsig = () => useContext(MsigProviderContextMock)
+export const useMsig = () => {
+  const context = useContext(MsigProviderContextMock)
+  return context
+}
