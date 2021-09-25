@@ -226,7 +226,7 @@ exports[`confirmation of newly created multisig it displays the multisig address
       display="flex"
     >
       <button
-        class="c10 c11 Confirm___StyledButton-sc-116jhcz-0 c11"
+        class="c10 c11 Confirm___StyledButton-sc-1z08vvm-0 c11"
         color="core.primary"
         display="flex"
         font-size="3"
@@ -235,17 +235,6 @@ exports[`confirmation of newly created multisig it displays the multisig address
         type="button"
       >
         Go to Multisig home
-      </button>
-      <button
-        class="c10 c11 Confirm___StyledButton-sc-116jhcz-0 c11"
-        color="core.primary"
-        display="flex"
-        font-size="3"
-        height="6"
-        opacity="1"
-        type="button"
-      >
-        Print multisig details
       </button>
     </div>
   </div>
