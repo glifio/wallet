@@ -1,6 +1,16 @@
-import Filecoin from '@glif/filecoin-wallet-provider'
-
+import Filecoin, { WalletSubProvider } from '@glif/filecoin-wallet-provider'
+import { Dispatch } from 'redux'
+import { ledgerActionTypes } from './ledgerStateManagement'
+import { createWalletProvider } from '../../WalletProvider/state'
+import createTransport from './createTransport'
+import reportError from '../reportError'
+import badVersion from './badVersion'
 import {
+  WalletProviderAction,
+  WalletProviderActionType
+} from '../../WalletProvider/types'
+
+const {
   LEDGER_USER_INITIATED_IMPORT,
   LEDGER_CONNECTED,
   LEDGER_NOT_FOUND,
@@ -14,13 +24,17 @@ import {
   LEDGER_USED_BY_ANOTHER_APP,
   WEBUSB_UNSUPPORTED,
   LEDGER_BAD_VERSION
-} from './ledgerStateManagement'
-import { createWalletProvider } from '../../WalletProvider/state'
-import createTransport from './createTransport'
-import reportError from '../reportError'
-import badVersion from './badVersion'
+} = ledgerActionTypes as Record<string, WalletProviderActionType>
 
-export const setLedgerProvider = async (dispatch, LedgerProvider) => {
+export interface LedgerSubProvider extends WalletSubProvider {
+  getVersion: () => any
+  showAddressAndPubKey: () => any
+}
+
+export const setLedgerProvider = async (
+  dispatch: Dispatch<WalletProviderAction>,
+  LedgerProvider: (_: any) => LedgerSubProvider
+) => {
   dispatch({ type: LEDGER_USER_INITIATED_IMPORT })
   try {
     const transport = await createTransport()
@@ -31,24 +45,20 @@ export const setLedgerProvider = async (dispatch, LedgerProvider) => {
     dispatch(createWalletProvider(provider))
     return provider
   } catch (err) {
-    if (
-      err.message &&
-      err.message.includes('TRANSPORT NOT SUPPORTED BY DEVICE')
-    ) {
+    if (err?.message.includes('TRANSPORT NOT SUPPORTED BY DEVICE')) {
       dispatch({ type: WEBUSB_UNSUPPORTED })
     } else if (
-      err.message &&
-      err.message.toLowerCase().includes('unable to claim interface.')
+      err?.message.toLowerCase().includes('unable to claim interface.') ||
+      err?.message.toLowerCase().includes('failed to open the device')
     ) {
       dispatch({ type: LEDGER_USED_BY_ANOTHER_APP })
     } else if (
-      err.message &&
-      err.message.toLowerCase().includes('transporterror: invalid channel')
+      err?.message.toLowerCase().includes('transporterror: invalid channel')
     ) {
       dispatch({ type: LEDGER_REPLUG })
     } else if (
-      err.message &&
-      err.message.toLowerCase().includes('no device selected')
+      err?.message.toLowerCase().includes('no device selected') ||
+      err?.message.toLowerCase().includes('access denied to use ledger device')
     ) {
       dispatch({ type: LEDGER_NOT_FOUND })
     }
@@ -62,7 +72,10 @@ export const setLedgerProvider = async (dispatch, LedgerProvider) => {
   }
 }
 
-export const checkLedgerConfiguration = async (dispatch, walletProvider) => {
+export const checkLedgerConfiguration = async (
+  dispatch: Dispatch<WalletProviderAction>,
+  walletProvider: Filecoin & { wallet: LedgerSubProvider }
+) => {
   dispatch({ type: LEDGER_ESTABLISHING_CONNECTION_W_FILECOIN_APP })
   try {
     const response = await walletProvider.wallet.getVersion()
@@ -81,21 +94,18 @@ export const checkLedgerConfiguration = async (dispatch, walletProvider) => {
     return true
   } catch (err) {
     if (
-      err.message &&
-      err.message.toLowerCase().includes('transporterror: invalid channel')
+      err?.message.toLowerCase().includes('transporterror: invalid channel')
     ) {
       dispatch({ type: LEDGER_REPLUG })
     } else if (
-      err.message &&
-      err.message.toLowerCase().includes('ledger device locked or busy')
+      err?.message.toLowerCase().includes('ledger device locked or busy')
     ) {
       dispatch({ type: LEDGER_BUSY })
     } else if (
-      err.message &&
-      err.message.toLowerCase().includes('app does not seem to be open')
+      err?.message.toLowerCase().includes('app does not seem to be open')
     ) {
       dispatch({ type: LEDGER_FILECOIN_APP_NOT_OPEN })
-    } else if (err.message && err.message.toLowerCase().includes('28161')) {
+    } else if (err.message && err?.message.toLowerCase().includes('28161')) {
       dispatch({ type: LEDGER_FILECOIN_APP_NOT_OPEN })
     } else {
       dispatch({ type: LEDGER_REPLUG })
