@@ -1,10 +1,6 @@
 import reducer, {
   initialState,
-  SET_WALLET_TYPE,
-  CREATE_WALLET_PROVIDER,
-  WALLET_ERROR,
-  CLEAR_ERROR,
-  RESET_STATE,
+  walletActionTypes,
   setWalletType,
   createWalletProvider,
   setError,
@@ -13,6 +9,12 @@ import reducer, {
   resetState
 } from './state'
 import {
+  ledgerActionTypes,
+  initialLedgerState
+} from '../utils/ledger/ledgerStateManagement'
+import { IMPORT_MNEMONIC } from '../constants'
+
+const {
   LEDGER_RESET_STATE,
   LEDGER_USER_INITIATED_IMPORT,
   LEDGER_NOT_FOUND,
@@ -25,10 +27,16 @@ import {
   LEDGER_BUSY,
   LEDGER_REPLUG,
   LEDGER_USED_BY_ANOTHER_APP,
-  LEDGER_BAD_VERSION,
-  initialLedgerState
-} from '../utils/ledger/ledgerStateManagement'
-import { IMPORT_MNEMONIC } from '../constants'
+  LEDGER_BAD_VERSION
+} = ledgerActionTypes
+
+const {
+  SET_WALLET_TYPE,
+  CREATE_WALLET_PROVIDER,
+  WALLET_ERROR,
+  CLEAR_ERROR,
+  RESET_STATE
+} = walletActionTypes
 
 describe('WalletProvider', () => {
   describe('actions', () => {
@@ -99,7 +107,7 @@ describe('WalletProvider', () => {
     test('it clears walletErrors', () => {
       const state = Object.freeze({ ...initialState, error: 'fake' })
       const nextState = reducer(state, clearError())
-      expect(nextState.err).toBeFalsy()
+      expect(nextState.error).toBeFalsy()
     })
 
     test('it resets state', () => {
