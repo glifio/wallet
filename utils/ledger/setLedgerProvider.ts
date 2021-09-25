@@ -26,19 +26,23 @@ const {
   LEDGER_BAD_VERSION
 } = ledgerActionTypes as Record<string, WalletProviderActionType>
 
+export interface LedgerSubProvider extends WalletSubProvider {
+  getVersion: () => any
+  showAddressAndPubKey: () => any
+}
+
 export const setLedgerProvider = async (
   dispatch: Dispatch<WalletProviderAction>,
-  LedgerProvider: WalletSubProvider
+  LedgerProvider: (_: any) => LedgerSubProvider
 ) => {
   dispatch({ type: LEDGER_USER_INITIATED_IMPORT })
   try {
     const transport = await createTransport()
-    // @ts-ignore
     const provider = new Filecoin(LedgerProvider(transport), {
       apiAddress: process.env.LOTUS_NODE_JSONRPC
     })
     dispatch({ type: LEDGER_CONNECTED })
-    dispatch(createWalletProvider(provider) as WalletProviderAction)
+    dispatch(createWalletProvider(provider))
     return provider
   } catch (err) {
     if (err?.message.includes('TRANSPORT NOT SUPPORTED BY DEVICE')) {
@@ -70,11 +74,10 @@ export const setLedgerProvider = async (
 
 export const checkLedgerConfiguration = async (
   dispatch: Dispatch<WalletProviderAction>,
-  walletProvider: Filecoin
+  walletProvider: Filecoin & { wallet: LedgerSubProvider }
 ) => {
   dispatch({ type: LEDGER_ESTABLISHING_CONNECTION_W_FILECOIN_APP })
   try {
-    // @ts-ignore
     const response = await walletProvider.wallet.getVersion()
     if (response.device_locked) {
       dispatch({ type: LEDGER_LOCKED })
