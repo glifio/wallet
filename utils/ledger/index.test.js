@@ -10,15 +10,17 @@ import {
   LEDGER_VERSION_MINOR,
   LEDGER_VERSION_PATCH
 } from '../../constants'
-import {
+import { ledgerActionTypes } from './ledgerStateManagement'
+import badVersion from './badVersion'
+
+const {
   LEDGER_FILECOIN_APP_OPEN,
   LEDGER_UNLOCKED,
   LEDGER_LOCKED,
   LEDGER_BUSY,
   LEDGER_FILECOIN_APP_NOT_OPEN,
   LEDGER_REPLUG
-} from './ledgerStateManagement'
-import badVersion from './badVersion'
+} = ledgerActionTypes
 
 const mockDispatch = jest.fn()
 
