@@ -114,7 +114,13 @@ const Confirm = () => {
       p={3}
     >
       {Address ? (
-        <Box p={5}>
+        <Box
+          p={5}
+          display='flex'
+          flexDirection='column'
+          alignItems='center'
+          justifyContent='center'
+        >
           <Title>Your multisig has been created.</Title>
           <Card
             maxWidth={13}
@@ -130,16 +136,13 @@ const Confirm = () => {
             </Text>
             <Text mt={2}>{Address}</Text>
           </Card>
-          <Text>What would you like to do?</Text>
-          <Box display='flex' justifyContent='space-between'>
-            <NextOption
-              text='Go to Multisig home'
-              onClick={() => {
-                dispatch(clearMessages())
-                navigate(router, { pageUrl: PAGE.MSIG_HOME })
-              }}
-            />
-          </Box>
+          <NextOption
+            text='Go to Multisig home'
+            onClick={() => {
+              dispatch(clearMessages())
+              navigate(router, { pageUrl: PAGE.MSIG_HOME })
+            }}
+          />
         </Box>
       ) : (
         <>
