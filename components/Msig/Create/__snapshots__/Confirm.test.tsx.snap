@@ -21,6 +21,21 @@ exports[`confirmation of newly created multisig it displays the multisig address
   min-width: 0;
   box-sizing: border-box;
   padding: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c3 {
@@ -63,26 +78,13 @@ exports[`confirmation of newly created multisig it displays the multisig address
   justify-content: center;
 }
 
-.c9 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
 .c5 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c10 {
+.c8 {
   cursor: pointer;
   border: 1px solid core.primary;
   background-color: #1AD08F;
@@ -119,7 +121,7 @@ exports[`confirmation of newly created multisig it displays the multisig address
   opacity: 1;
 }
 
-.c10:hover {
+.c8:hover {
   opacity: 0.8;
 }
 
@@ -129,13 +131,6 @@ exports[`confirmation of newly created multisig it displays the multisig address
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c8 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
 }
 
 .c6 {
@@ -156,7 +151,7 @@ exports[`confirmation of newly created multisig it displays the multisig address
   margin-top: 8px;
 }
 
-.c11:hover {
+.c9:hover {
   cursor: pointer;
 }
 
@@ -167,6 +162,7 @@ exports[`confirmation of newly created multisig it displays the multisig address
 >
   <div
     class="c1"
+    display="flex"
   >
     <h2
       class="c2"
@@ -213,41 +209,17 @@ exports[`confirmation of newly created multisig it displays the multisig address
         f2m4f2dv7m35skytoqzsyrh5wqz3kxxfflxsha5za
       </p>
     </div>
-    <p
-      class="c8"
-      font-family="RT-Alias-Grotesk"
-      font-size="2"
-      font-weight="400"
-    >
-      What would you like to do?
-    </p>
-    <div
-      class="c9"
+    <button
+      class="c8 c9 Confirm___StyledButton-sc-1z08vvm-0 c9"
+      color="core.primary"
       display="flex"
+      font-size="3"
+      height="6"
+      opacity="1"
+      type="button"
     >
-      <button
-        class="c10 c11 Confirm___StyledButton-sc-116jhcz-0 c11"
-        color="core.primary"
-        display="flex"
-        font-size="3"
-        height="6"
-        opacity="1"
-        type="button"
-      >
-        Go to Multisig home
-      </button>
-      <button
-        class="c10 c11 Confirm___StyledButton-sc-116jhcz-0 c11"
-        color="core.primary"
-        display="flex"
-        font-size="3"
-        height="6"
-        opacity="1"
-        type="button"
-      >
-        Print multisig details
-      </button>
-    </div>
+      Go to Multisig home
+    </button>
   </div>
 </div>
 `;
