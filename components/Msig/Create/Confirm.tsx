@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { SyntheticEvent, useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { func, string } from 'prop-types'
 import { useRouter } from 'next/router'
@@ -17,9 +17,17 @@ import { useMsig } from '../../../MsigProvider'
 import { clearMessages } from '../../../store/actions'
 import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
 import { fetchAndSetMsigActor } from '../../../utils/msig'
-import { EXEC_ACTOR } from '../../../constants'
+import { EXEC_ACTOR, PAGE } from '../../../constants'
+import { navigate } from '../../../utils/urlParams'
+import { initialState } from '../../../store/states'
 
-const NextOption = ({ text, onClick }) => {
+const NextOption = ({
+  text,
+  onClick
+}: {
+  text: string
+  onClick: (_: SyntheticEvent) => void
+}) => {
   return (
     <Button
       title={text}
@@ -51,13 +59,17 @@ const Confirm = () => {
   const dispatch = useDispatch()
   const [msigError, setMsigError] = useState('')
   const { setMsigActor, Address } = useMsig()
-  const { pending, confirmed } = useSelector(s => s.messages)
+  const { pending, confirmed } = useSelector(
+    (s: typeof initialState) => s.messages
+  )
   // the create message is the one sent to the f01 actor
   const createMsigMessage = pending.find(
     m => EXEC_ACTOR === converAddrToFPrefix(m.to)
   )
 
-  const { current: msgCid } = useRef(createMsigMessage?.cid)
+  const { current: msgCid }: { current: string } = useRef(
+    createMsigMessage?.cid
+  )
   const router = useRouter()
 
   useEffect(() => {
@@ -124,18 +136,7 @@ const Confirm = () => {
               text='Go to Multisig home'
               onClick={() => {
                 dispatch(clearMessages())
-                const searchParams = new URLSearchParams(router.query)
-                router.push(`/vault/home?${searchParams.toString()}`)
-              }}
-            />
-            <NextOption
-              text='Print multisig details'
-              onClick={() => {
-                const searchParams = new URLSearchParams({
-                  ...router.query,
-                  address: Address
-                })
-                router.push(`/vault/print?${searchParams.toString()}`)
+                navigate(router, { pageUrl: PAGE.MSIG_HOME })
               }}
             />
           </Box>
