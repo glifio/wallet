@@ -19,7 +19,7 @@ describe('fetchMsigState', () => {
     )
 
     expect(errors2.notMsigActor).toBe(true)
-  })
+  }, 10000)
 
   test('it returns a connected wallet not signer error if the wallet isnt a signer on the multisig', async () => {
     const { errors } = await fetchMsigState(
@@ -28,7 +28,7 @@ describe('fetchMsigState', () => {
     )
 
     expect(errors.connectedWalletNotMsigSigner).toBe(true)
-  })
+  }, 10000)
 
   test('it returns an actor not found error if the actor isnt found', async () => {
     const { errors } = await fetchMsigState(
@@ -37,7 +37,7 @@ describe('fetchMsigState', () => {
     )
 
     expect(errors.actorNotFound).toBe(true)
-  })
+  }, 10000)
 
   test('it returns the full multisig actor', async () => {
     const {
@@ -66,5 +66,5 @@ describe('fetchMsigState', () => {
     expect(StartEpoch).toBeGreaterThan(0)
     expect(UnlockDuration).not.toBeUndefined()
     expect(NextTxnID).not.toBeUndefined()
-  })
+  }, 10000)
 })

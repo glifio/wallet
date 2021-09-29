@@ -188,16 +188,16 @@ describe('badVersion', () => {
   test('it returns true if the version is below the LEDGER_VERSION_MAJOR LEDGER_VERSION_MINOR or LEDGER_VERSION_PATCH', () => {
     expect(
       badVersion({
-        major: 0,
-        minor: 18,
-        patch: 1
+        major: LEDGER_VERSION_MAJOR,
+        minor: LEDGER_VERSION_MINOR,
+        patch: LEDGER_VERSION_PATCH - 1
       })
     ).toBe(true)
     expect(
       badVersion({
-        major: 0,
-        minor: 17,
-        patch: 1
+        major: LEDGER_VERSION_MAJOR,
+        minor: LEDGER_VERSION_MINOR - 1,
+        patch: LEDGER_VERSION_PATCH
       })
     ).toBe(true)
   })
@@ -205,16 +205,16 @@ describe('badVersion', () => {
   test('it returns false if the version is at or above the LEDGER_VERSION_MAJOR LEDGER_VERSION_MINOR or LEDGER_VERSION_PATCH', () => {
     expect(
       badVersion({
-        major: 0,
-        minor: 18,
-        patch: 2
+        major: LEDGER_VERSION_MAJOR,
+        minor: LEDGER_VERSION_MINOR,
+        patch: LEDGER_VERSION_PATCH
       })
     ).toBe(false)
     expect(
       badVersion({
-        major: 1,
-        minor: 19,
-        patch: 5
+        major: LEDGER_VERSION_MAJOR + 1,
+        minor: LEDGER_VERSION_MINOR + 1,
+        patch: LEDGER_VERSION_PATCH + 1
       })
     ).toBe(false)
   })
