@@ -8,7 +8,7 @@ import { Text, Label } from '../Typography'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 import noop from '../../../utils/noop'
 
-const formatFilValue = number => {
+const formatFilValue = (number) => {
   if (!number) return ''
   if (FilecoinNumber.isBigNumber(number)) return number.toFil()
   return number
@@ -35,7 +35,7 @@ const Funds = forwardRef(
     const [filAmount, setFilAmount] = useState(initialFilAmount)
     const timeout = useRef()
 
-    const checkBalance = val => {
+    const checkBalance = (val) => {
       if (!val || new BigNumber(val).isEqualTo(0)) {
         setError('Please enter a valid amount.')
         return false
@@ -50,7 +50,7 @@ const Funds = forwardRef(
       return true
     }
 
-    const onTimerFil = async val => {
+    const onTimerFil = async (val) => {
       const fil = new FilecoinNumber(val, 'fil')
       const validBalance = checkBalance(fil)
       if (validBalance) {
@@ -60,7 +60,7 @@ const Funds = forwardRef(
       }
     }
 
-    const onFilChange = e => {
+    const onFilChange = (e) => {
       setError('')
       clearTimeout(timeout.current)
 

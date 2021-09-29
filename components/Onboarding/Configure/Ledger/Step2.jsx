@@ -83,7 +83,7 @@ const Step2 = ({ msig }) => {
   const dispatch = useDispatch()
   const resetState = useReset()
   // TODO: fix hack to ignore proptype errors => || null
-  const generalError = useSelector(state => state.error || null)
+  const generalError = useSelector((state) => state.error || null)
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const error = hasLedgerError({

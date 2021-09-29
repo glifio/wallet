@@ -1,4 +1,4 @@
-const getMsgsUntilCustodyTaken = async messages => {
+const getMsgsUntilCustodyTaken = async (messages) => {
   let go = true
   const messagePool = [...messages]
   const relevantMessages = []

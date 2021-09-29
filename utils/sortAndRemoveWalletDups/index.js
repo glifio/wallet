@@ -1,7 +1,7 @@
 const sortAndRemoveDups = (walletsInRdx, wallets) => {
   const seenWallets = new Set()
   return [...walletsInRdx, ...wallets]
-    .filter(wallet => {
+    .filter((wallet) => {
       if (!seenWallets.has(wallet.address)) {
         seenWallets.add(wallet.address)
         return true

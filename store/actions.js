@@ -16,14 +16,14 @@ import {
   RESET_STATE
 } from './actionTypes'
 
-export const walletList = wallets => ({
+export const walletList = (wallets) => ({
   type: WALLET_LIST,
   payload: {
     wallets
   }
 })
 
-export const switchWallet = index => ({
+export const switchWallet = (index) => ({
   type: SWITCH_WALLET,
   payload: {
     index
@@ -38,7 +38,7 @@ export const updateBalance = (balance, walletIdx = 0) => ({
   }
 })
 
-export const confirmMessage = message => {
+export const confirmMessage = (message) => {
   // disabling for now
   // setMessageInCache(message.from, message)
   return {
@@ -49,7 +49,7 @@ export const confirmMessage = message => {
   }
 }
 
-export const confirmedMessage = msgCid => ({
+export const confirmedMessage = (msgCid) => ({
   type: CONFIRMED_MESSAGE,
   payload: {
     msgCid
@@ -72,7 +72,7 @@ export const fetchedConfirmedMessagesSuccess = (messages, total) => ({
   }
 })
 
-export const fetchedConfirmedMessagesFailure = error => ({
+export const fetchedConfirmedMessagesFailure = (error) => ({
   type: FETCHED_CONFIRMED_MESSAGES_FAILURE,
   error
 })
@@ -81,7 +81,7 @@ export const fetchingNextPage = () => ({
   type: FETCHING_NEXT_PAGE
 })
 
-export const error = err => ({
+export const error = (err) => ({
   type: ERROR,
   error: err
 })
@@ -92,7 +92,7 @@ export const clearError = () => {
   }
 }
 
-export const populateRedux = pendingMsgs => ({
+export const populateRedux = (pendingMsgs) => ({
   type: POPULATE_REDUX,
   payload: {
     pendingMsgs

@@ -39,17 +39,17 @@ const DownloadButton = styled.a.attrs(() => ({
   borderRadius: 2,
   role: 'button'
 }))`
-  cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
-  background-color: ${props =>
+  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+  background-color: ${(props) =>
     applyStyles('background', props, props.theme.colors.status.inactive)};
-  border-color: ${props =>
+  border-color: ${(props) =>
     applyStyles('borderColor', props, props.theme.colors.status.inactive)};
-  color: ${props => applyStyles('color', props, '')};
-  font-size: ${props => props.theme.fontSizes[2]};
+  color: ${(props) => applyStyles('color', props, '')};
+  font-size: ${(props) => props.theme.fontSizes[2]};
   transition: 0.18s ease-in-out;
   text-decoration: none;
   &:hover {
-    opacity: ${props => (props.disabled ? '1' : '0.8')};
+    opacity: ${(props) => (props.disabled ? '1' : '0.8')};
   }
   ${borderRadius}
   ${space}

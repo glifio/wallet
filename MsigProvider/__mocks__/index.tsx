@@ -24,6 +24,7 @@ const MsigProviderContextMock = createContext<
 
 export const MsigProviderWrapper = ({
   children,
+  // eslint-disable-next-line
   options,
   statePreset
 }: {

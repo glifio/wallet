@@ -13,12 +13,12 @@ const TooltipContent = styled(Box)`
   left: 50%;
   transform: translateX(-50%);
   bottom: -48px;
-  padding: ${props => props.theme.sizes[2]}px;
-  color: ${props => props.theme.colors.core.nearblack};
-  background-color: ${props => props.theme.colors.core.white};
-  border-radius: ${props => props.theme.radii[2]};
-  box-shadow: ${props => props.theme.shadows[2]};
-  z-index: ${props => props.theme.zIndices[1]};
+  padding: ${(props) => props.theme.sizes[2]}px;
+  color: ${(props) => props.theme.colors.core.nearblack};
+  background-color: ${(props) => props.theme.colors.core.white};
+  border-radius: ${(props) => props.theme.radii[2]};
+  box-shadow: ${(props) => props.theme.shadows[2]};
+  z-index: ${(props) => props.theme.zIndices[1]};
   transition: 0.24s ease-in-out;
   ${color}
 `
@@ -27,7 +27,7 @@ const TooltipContainer = styled.a`
   position: relative;
   display: flex;
   background-color: transparent;
-  border-radius: ${props => props.theme.radii[6]};
+  border-radius: ${(props) => props.theme.radii[6]};
   border: 1px solid;
   width: 24px;
   height: 24px;
@@ -39,7 +39,7 @@ const TooltipContainer = styled.a`
   ${border}
 
  &:hover ~ ${TooltipContent} {
-      display: block;
+    display: block;
   }
 
   /* Paired with the ontouchstart declaration inside the TooltipContent markup, this is intended to enable touch devices to trigger the tooltip, too. While we don't support touch devices at launch, we may do so in the future. Ref: https://stackoverflow.com/a/37150472/2839730 */

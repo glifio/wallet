@@ -2,9 +2,9 @@ import toLowerCaseMsgFields from '.'
 import { Message } from '@glif/filecoin-message'
 import { BigNumber } from '@glif/filecoin-number'
 
-const keysAreLowercase = obj => {
+const keysAreLowercase = (obj) => {
   let lowercase = true
-  Object.keys(obj).forEach(key => {
+  Object.keys(obj).forEach((key) => {
     if (key[0] !== key[0].toLowerCase()) lowercase = false
   })
   return lowercase

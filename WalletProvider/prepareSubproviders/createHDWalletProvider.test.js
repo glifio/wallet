@@ -6,7 +6,7 @@ import { HD_WALLET, TESTNET } from '../../constants'
 const mnemonic =
   'slender spread awkward chicken noise useful thank dentist tip bronze ritual explain version spot collect whisper glow peanut bus local country album punch frown'
 
-const followsSubproviderInterface = subprovider =>
+const followsSubproviderInterface = (subprovider) =>
   !!(subprovider.sign && subprovider.getAccounts && subprovider.type)
 
 describe('createHDWalletProvider', () => {

@@ -11,7 +11,7 @@ import {
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 
-export const StyledATag = styled.a.attrs(props => ({
+export const StyledATag = styled.a.attrs((props) => ({
   color: 'core.primary',
   fontSize: 2,
   rel: props.rel || 'noopener noreferrer',
@@ -20,9 +20,9 @@ export const StyledATag = styled.a.attrs(props => ({
 }))`
   text-decoration: none;
   transition: 0.18s ease-in-out;
-  border-bottom: 2px solid ${props => props.theme.colors.core.primary}00;
+  border-bottom: 2px solid ${(props) => props.theme.colors.core.primary}00;
   &:hover {
-    border-bottom: 2px solid ${props => props.theme.colors.core.primary};
+    border-bottom: 2px solid ${(props) => props.theme.colors.core.primary};
   }
   ${color}
   ${typography}

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Box from '../../Box'
 
-export default styled(Box).attrs(props => ({
+export default styled(Box).attrs((props) => ({
   borderRadius: 2,
   border: 1,
   p: 2,
@@ -11,11 +11,11 @@ export default styled(Box).attrs(props => ({
   minWidth: 'max-content',
   ...props
 }))`
-  border-color: ${props => {
+  border-color: ${(props) => {
     if (props.status === 'pending') return props.theme.colors.core.silver
     return props.theme.colors.background.messageHistory
   }};
-  background-color: ${props => {
+  background-color: ${(props) => {
     if (props.status === 'pending') return props.theme.colors.core.transparent
     return props.theme.colors.background.messageHistory
   }};
@@ -26,6 +26,6 @@ export default styled(Box).attrs(props => ({
 
   &:hover {
     cursor: pointer;
-    background-color: ${props => props.theme.colors.background.screen};
+    background-color: ${(props) => props.theme.colors.background.screen};
   }
 `

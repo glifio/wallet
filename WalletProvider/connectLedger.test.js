@@ -26,7 +26,7 @@ describe('connectLedger', () => {
     // if we find new errors, we can add specific test cases to address them
     test('it captures ledger in use by another app errors', async () => {
       let nextState = { ...initialState }
-      const mockDispatch = jest.fn().mockImplementation(action => {
+      const mockDispatch = jest.fn().mockImplementation((action) => {
         nextState = reducer(nextState, action)
       })
 
@@ -40,7 +40,7 @@ describe('connectLedger', () => {
 
     test('it captures unsupported webusb error', async () => {
       let nextState = { ...initialState }
-      const mockDispatch = jest.fn().mockImplementation(action => {
+      const mockDispatch = jest.fn().mockImplementation((action) => {
         nextState = reducer(nextState, action)
       })
 
@@ -54,7 +54,7 @@ describe('connectLedger', () => {
 
     test('it captures transport errors', async () => {
       let nextState = { ...initialState }
-      const mockDispatch = jest.fn().mockImplementation(action => {
+      const mockDispatch = jest.fn().mockImplementation((action) => {
         nextState = reducer(nextState, action)
       })
 
@@ -68,7 +68,7 @@ describe('connectLedger', () => {
 
     test('it captures no device selected errors', async () => {
       let nextState = { ...initialState }
-      const mockDispatch = jest.fn().mockImplementation(action => {
+      const mockDispatch = jest.fn().mockImplementation((action) => {
         nextState = reducer(nextState, action)
       })
 
@@ -83,7 +83,7 @@ describe('connectLedger', () => {
 
     test('it captures ledger device locked or busy errors', async () => {
       let nextState = { ...initialState }
-      const mockDispatch = jest.fn().mockImplementation(action => {
+      const mockDispatch = jest.fn().mockImplementation((action) => {
         nextState = reducer(nextState, action)
       })
 
@@ -101,7 +101,7 @@ describe('connectLedger', () => {
 
     test('it captures ledger filecoin app not open errors', async () => {
       let nextState = { ...initialState }
-      const mockDispatch = jest.fn().mockImplementation(action => {
+      const mockDispatch = jest.fn().mockImplementation((action) => {
         nextState = reducer(nextState, action)
       })
 

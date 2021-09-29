@@ -8,7 +8,7 @@ import { Label } from '../Typography'
 
 import { inputBackgroundColor } from './inputBackgroundColors'
 
-export const DenomTag = styled(Box).attrs(props => ({
+export const DenomTag = styled(Box).attrs((props) => ({
   display: 'flex',
   height: '100%',
   px: 3,
@@ -21,7 +21,7 @@ export const DenomTag = styled(Box).attrs(props => ({
 }))`
   text-align: center;
   position: relative;
-  background: ${props => inputBackgroundColor(props)};
+  background: ${(props) => inputBackgroundColor(props)};
 `
 
 export const RawNumberInput = styled(BaseInput)`

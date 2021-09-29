@@ -7,8 +7,8 @@ import {
   MAINNET
 } from '../../constants'
 
-const createHDWalletProvider = rustModule => {
-  return mnemonic => {
+const createHDWalletProvider = (rustModule) => {
+  return (mnemonic) => {
     // here we close over the private variables, so they aren't accessible to the outside world
     const MNEMONIC = mnemonic
     return {

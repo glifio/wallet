@@ -62,7 +62,7 @@ const MessageHistoryTable = ({
         <>
           {messages.length > 0 ? (
             <>
-              {messages.map(msg => (
+              {messages.map((msg) => (
                 <MessageHistoryRow
                   address={address}
                   key={msg.cid}

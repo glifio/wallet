@@ -1,4 +1,4 @@
-const fallbackCopyTextToClipboard = text => {
+const fallbackCopyTextToClipboard = (text) => {
   const textArea = document.createElement('textarea')
   textArea.value = text
   textArea.style.position = 'fixed' // avoid scrolling to bottom
@@ -9,7 +9,7 @@ const fallbackCopyTextToClipboard = text => {
   document.body.removeChild(textArea)
 }
 
-export default text =>
+export default (text) =>
   new Promise((resolve, reject) => {
     if (!navigator.clipboard) {
       fallbackCopyTextToClipboard(text)

@@ -77,7 +77,7 @@ export default () => {
               error={mnemonicError}
               setError={setMnemonicError}
               value={mnemonic}
-              onChange={e => setMnemonic(e.target.value)}
+              onChange={(e) => setMnemonic(e.target.value)}
             />
           </OnboardCard>
           <Box

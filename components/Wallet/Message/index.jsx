@@ -7,15 +7,8 @@ import useTransactionHistory from '../../../lib/useTransactionHistory'
 const MessageView = () => {
   const [selectedMessageCid, setSelectedMessageCid] = useState('')
   const wallet = useWallet()
-  const {
-    pending,
-    confirmed,
-    loading,
-    paginating,
-    showMore,
-    refresh,
-    total
-  } = useTransactionHistory(wallet.address)
+  const { pending, confirmed, loading, paginating, showMore, refresh, total } =
+    useTransactionHistory(wallet.address)
 
   const messages = [...pending, ...confirmed]
   return (

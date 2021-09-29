@@ -8,7 +8,7 @@ import {
 } from '../../constants'
 import createPath from '../../utils/createPath'
 
-const handleErrors = response => {
+const handleErrors = (response) => {
   if (
     response.error_message &&
     response.error_message.toLowerCase().includes('no errors')
@@ -28,15 +28,15 @@ const handleErrors = response => {
   throw new Error(response.error_message)
 }
 
-const throwIfBusy = busy => {
+const throwIfBusy = (busy) => {
   if (busy)
     throw new Error(
       'Ledger is busy, please check device, or quit Filecoin app and unplug/replug your device.'
     )
 }
 
-const createLedgerProvider = rustModule => {
-  return transport => {
+const createLedgerProvider = (rustModule) => {
+  return (transport) => {
     let ledgerBusy = false
     const ledgerApp = new FilecoinApp(transport)
     return {
@@ -82,7 +82,7 @@ const createLedgerProvider = rustModule => {
         for (let i = nStart; i < nEnd; i += 1) {
           paths.push(createPath(networkCode, i))
         }
-        const addresses = await mapSeries(paths, async path => {
+        const addresses = await mapSeries(paths, async (path) => {
           const { addrString } = handleErrors(
             await ledgerApp.getAddressAndPubKey(path)
           )
@@ -95,9 +95,8 @@ const createLedgerProvider = rustModule => {
       sign: async (filecoinMessage, path) => {
         throwIfBusy(ledgerBusy)
         ledgerBusy = true
-        const serializedMessage = rustModule.transactionSerialize(
-          filecoinMessage
-        )
+        const serializedMessage =
+          rustModule.transactionSerialize(filecoinMessage)
         const res = handleErrors(
           await ledgerApp.sign(path, Buffer.from(serializedMessage, 'hex'))
         )
@@ -105,7 +104,7 @@ const createLedgerProvider = rustModule => {
         return res.signature_compact.toString('base64')
       },
 
-      showAddressAndPubKey: async path => {
+      showAddressAndPubKey: async (path) => {
         throwIfBusy(ledgerBusy)
         ledgerBusy = true
         const res = handleErrors(await ledgerApp.showAddressAndPubKey(path))

@@ -38,7 +38,7 @@ const AccountSelector = ({ msig }) => {
   const [loadingPage, setLoadingPage] = useState(true)
   const [uncaughtError, setUncaughtError] = useState('')
   const dispatch = useDispatch()
-  const { errorInRdx, walletsInRdx, network } = useSelector(state => ({
+  const { errorInRdx, walletsInRdx, network } = useSelector((state) => ({
     network: state.network,
     walletsInRdx: state.wallets,
     errorInRdx: state.error

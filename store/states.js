@@ -25,9 +25,7 @@ export const initialState = {
   selectedWalletIdx: -1,
   error: '',
   messages: initialMessagesState,
-  network: process.env.IS_PROD ? MAINNET : TESTNET,
-  investor: '',
-  msigActorAddress: ''
+  network: process.env.IS_PROD ? MAINNET : TESTNET
 }
 
 export const noWallet = {
@@ -41,7 +39,7 @@ export const walletList = (state, { wallets }) => ({
   // make sure we only ever add wallets to our list that include the right network prefix (blocks race conditions with ledger)
   wallets: sortAndRemoveWalletDups(
     state.wallets,
-    wallets.filter(wallet => wallet.address[0] === state.network)
+    wallets.filter((wallet) => wallet.address[0] === state.network)
   ),
   selectedWalletIdx: state.selectedWalletIdx >= 0 ? state.selectedWalletIdx : 0
 })
@@ -90,7 +88,7 @@ export const confirmedMessage = (state, { msgCid }) => {
   }
 }
 
-export const fetchingConfirmedMessages = state => ({
+export const fetchingConfirmedMessages = (state) => ({
   ...state,
   messages: {
     ...state.messages,
@@ -100,7 +98,7 @@ export const fetchingConfirmedMessages = state => ({
   }
 })
 
-export const clearMessages = state => ({
+export const clearMessages = (state) => ({
   ...state,
   messages: {
     ...initialMessagesState
@@ -112,8 +110,8 @@ export const fetchedConfirmedMessagesSuccess = (state, { messages, total }) => {
   const cachedMessages = getMessagesFromCache(
     state.wallets[state.selectedWalletIdx].address
   )
-  const cids = new Set(messages.map(msg => msg.cid))
-  cachedMessages.forEach(message => {
+  const cids = new Set(messages.map((msg) => msg.cid))
+  cachedMessages.forEach((message) => {
     // we now have the CID
     if (cids.has(message.cid))
       removeMessageFromCache(
@@ -148,7 +146,7 @@ export const fetchedConfirmedMessagesFailure = (state, error) => ({
   error
 })
 
-export const fetchingNextPage = state => ({
+export const fetchingNextPage = (state) => ({
   ...state,
   messages: {
     ...state.messages,
@@ -161,7 +159,7 @@ export const error = (state, err) => ({
   error: err
 })
 
-export const clearError = state => ({
+export const clearError = (state) => ({
   ...state,
   error: null
 })
@@ -181,14 +179,4 @@ export const switchNetwork = (state, { network, wallets }) => ({
   network,
   wallets,
   messages: initialMessagesState
-})
-
-export const setInvestorId = (state, { uuid }) => ({
-  ...state,
-  investor: uuid
-})
-
-export const setMsigActorAddress = (state, { msigActorAddress }) => ({
-  ...state,
-  msigActorAddress
 })

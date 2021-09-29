@@ -16,7 +16,7 @@ export const AddSignerInput = ({
     <Input.Address
       label='New Signer'
       value={signerAddress}
-      onChange={e => setSignerAddress(e.target.value)}
+      onChange={(e) => setSignerAddress(e.target.value)}
       error={signerAddressError}
       disabled={step === 3}
       onFocus={() => {

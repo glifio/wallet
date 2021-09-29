@@ -141,7 +141,7 @@ const ChangeOwner = ({ oldSignerAddress }) => {
     throw new Error('There was an issue when sending your message.')
   }
 
-  const onSubmit = async e => {
+  const onSubmit = async (e) => {
     e.preventDefault()
     if (step === 1) {
       setStep(2)
@@ -324,7 +324,7 @@ const ChangeOwner = ({ oldSignerAddress }) => {
                       <Input.Address
                         label='New signer'
                         value={newSignerAddress}
-                        onChange={e => setNewSignerAddress(e.target.value)}
+                        onChange={(e) => setNewSignerAddress(e.target.value)}
                         error={newSignerAddressError}
                         disabled={step === 3}
                         onFocus={() => {

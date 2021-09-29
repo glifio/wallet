@@ -1,6 +1,6 @@
 const unix = jest.fn().mockImplementation(() => {
   return {
-    format: fmt => {
+    format: (fmt) => {
       if (fmt === 'YYYY-MM-DD') return '2020-01-12'
       if (fmt === 'MMM DD, YYYY') return 'Jan 12, 2020'
       if (fmt === 'HH:mm:ss') return '2:30:30'

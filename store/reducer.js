@@ -13,9 +13,7 @@ import {
   FETCHING_NEXT_PAGE,
   POPULATE_REDUX,
   SWITCH_NETWORK,
-  RESET_STATE,
-  SET_INVESTOR_ID,
-  SET_MSIG_ACTOR_ADDRESS
+  RESET_STATE
 } from './actionTypes'
 
 import {
@@ -32,8 +30,6 @@ import {
   fetchingNextPage,
   populateRedux,
   switchNetwork,
-  setMsigActorAddress,
-  setInvestorId,
   initialState,
   clearMessages
 } from './states'
@@ -79,10 +75,6 @@ const reducer = (state, action) => {
       return switchNetwork(Object.freeze(state), action.payload)
     case RESET_STATE:
       return { ...initialState, network: state.network }
-    case SET_INVESTOR_ID:
-      return setInvestorId(Object.freeze(state), action.payload)
-    case SET_MSIG_ACTOR_ADDRESS:
-      return setMsigActorAddress(Object.freeze(state), action.payload)
     default:
       return state
   }

@@ -135,7 +135,7 @@ const Step1 = ({ msig, setStep }) => {
   const router = useRouter()
   const resetState = useReset()
   if (!isDesktopChromeBrowser()) router.push(`/error/use-chrome`)
-  const errFromRdx = useSelector(state => state.error)
+  const errFromRdx = useSelector((state) => state.error)
   const error = hasLedgerError({ ...ledger, otherError: errFromRdx })
 
   const back = () => {

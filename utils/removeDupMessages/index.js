@@ -1,5 +1,5 @@
 export function uniqueifyMsgs(oldMessages, newMessages) {
-  const cids = new Set(newMessages.map(msg => msg.cid))
+  const cids = new Set(newMessages.map((msg) => msg.cid))
   return oldMessages
     .reduce(
       (uniqueMessageArr, message) => {
@@ -15,8 +15,8 @@ export function uniqueifyMsgs(oldMessages, newMessages) {
 }
 
 export function pluckConfirmed(pending, confirmed) {
-  const confirmedCids = new Set(confirmed.map(msg => msg.cid))
+  const confirmedCids = new Set(confirmed.map((msg) => msg.cid))
   return pending
-    .filter(msg => !confirmedCids.has(msg.cid))
+    .filter((msg) => !confirmedCids.has(msg.cid))
     .sort((a, b) => Number(b.timestamp) - Number(a.timestamp))
 }

@@ -61,12 +61,8 @@ const isValidForm = (
 const Send = () => {
   const dispatch = useDispatch()
   const wallet = useWallet()
-  const {
-    ledger,
-    walletProvider,
-    connectLedger,
-    resetLedgerState
-  } = useWalletProvider()
+  const { ledger, walletProvider, connectLedger, resetLedgerState } =
+    useWalletProvider()
   const [toAddress, setToAddress] = useState('')
   const [params, setParams] = useState('')
   const [toAddressError, setToAddressError] = useState('')
@@ -182,7 +178,7 @@ const Send = () => {
       )
   }
 
-  const onSubmit = async e => {
+  const onSubmit = async (e) => {
     e.preventDefault()
     if (step === 1 && validateAddressString(toAddress)) {
       setStep(2)
@@ -365,7 +361,7 @@ const Send = () => {
                   <Input.Address
                     label='Recipient'
                     value={toAddress}
-                    onChange={e => setToAddress(e.target.value)}
+                    onChange={(e) => setToAddress(e.target.value)}
                     error={toAddressError}
                     disabled={step > 1}
                     placeholder='f1...'
@@ -400,7 +396,7 @@ const Send = () => {
                       <Input.Text
                         label='Params'
                         value={params}
-                        onChange={e => setParams(e.target.value)}
+                        onChange={(e) => setParams(e.target.value)}
                         error={paramsError}
                         disabled={step > 3}
                         placeholder='Optional base64 params'

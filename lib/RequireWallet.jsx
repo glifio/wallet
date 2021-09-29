@@ -42,7 +42,7 @@ RequireWallet.defaultProps = {
   wallet: noWallet
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   if (state.wallets.length === 0)
     return { wallet: noWallet, network: state.network }
   if (!state.wallets[state.selectedWalletIdx])

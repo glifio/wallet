@@ -71,7 +71,7 @@ const EnterActorAddress = () => {
     }
   }, [err, router, ActorCode])
 
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault()
     setErr('')
     const trimmedAddr = input.current.value.trim()

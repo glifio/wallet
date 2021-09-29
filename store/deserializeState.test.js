@@ -21,7 +21,7 @@ describe('deserializeState', () => {
 
     const deserializedState = {
       ...initialState,
-      wallets: wallets.map(w => ({
+      wallets: wallets.map((w) => ({
         ...w,
         balance: new FilecoinNumber(w.balance, 'fil')
       }))

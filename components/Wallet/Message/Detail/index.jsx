@@ -32,7 +32,7 @@ const MessageDetailCard = styled(Card).attrs(() => ({
   justify-content: flex-start;
   width: auto;
   height: max-content;
-  background-color: ${props => props.theme.colors.background.screen};
+  background-color: ${(props) => props.theme.colors.background.screen};
 `
 const TransactionFeeDisplay = styled(Input.Text)`
   &:hover {
@@ -54,7 +54,7 @@ const MessageDetail = ({ address, onClose, message }) => {
   const loadingFee = fee.toAttoFil() === '0' && !fetchedTransactionFee
 
   useEffect(() => {
-    const fetchGasUsed = async message => {
+    const fetchGasUsed = async (message) => {
       try {
         const res = await axios.get(`${FILFOX}/v1/message/${message.cid}`)
         if (res.status === 200) {

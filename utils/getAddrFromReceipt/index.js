@@ -6,7 +6,7 @@ const bytesToAddress = (payload, test = false) => {
   return address.encode(test ? 't' : 'f', addr)
 }
 
-const getAddrFromReceipt = base64Return => {
+const getAddrFromReceipt = (base64Return) => {
   const [, cborBytes] = cbor.decode(Buffer.from(base64Return, 'base64'))
   return bytesToAddress(cborBytes)
 }

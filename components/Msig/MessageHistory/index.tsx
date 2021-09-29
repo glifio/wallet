@@ -13,15 +13,8 @@ const MessageHistory = () => {
   const [selectedMessageCid, setSelectedMessageCid] = useState('')
   const wallet = useWallet()
   const { Address } = useMsig()
-  const {
-    pending,
-    confirmed,
-    loading,
-    paginating,
-    showMore,
-    refresh,
-    total
-  } = useTransactionHistory(Address)
+  const { pending, confirmed, loading, paginating, showMore, refresh, total } =
+    useTransactionHistory(Address)
 
   const messages = [...pending, ...confirmed]
   return (

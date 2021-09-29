@@ -8,7 +8,7 @@ import {
 import { LEDGER, TESTNET } from '../../constants'
 import createLedgerProvider from './createLedgerProvider'
 
-const followsSubproviderInterface = subprovider =>
+const followsSubproviderInterface = (subprovider) =>
   !!(subprovider.sign && subprovider.getAccounts && subprovider.type)
 
 describe('createLedgerProvider', () => {
