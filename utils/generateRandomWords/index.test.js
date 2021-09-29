@@ -8,7 +8,7 @@ describe('generateRandomWords', () => {
     const vals = generateRandomWords(mnemonic, 4)
     expect(vals.size).toBe(4)
     expect(vals instanceof Set).toBe(true)
-    vals.forEach(val => expect(typeof val).toBe('number'))
+    vals.forEach((val) => expect(typeof val).toBe('number'))
   })
 
   test('it returns ascending set', () => {

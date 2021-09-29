@@ -133,7 +133,7 @@ const Withdrawing = () => {
     throw new Error('There was an issue when sending your message.')
   }
 
-  const onSubmit = async e => {
+  const onSubmit = async (e) => {
     e.preventDefault()
     if (step === 1 && validateAddressString(toAddress)) {
       setStep(2)
@@ -288,7 +288,7 @@ const Withdrawing = () => {
                   <Input.Address
                     label='Recipient'
                     value={toAddress}
-                    onChange={e => setToAddress(e.target.value)}
+                    onChange={(e) => setToAddress(e.target.value)}
                     error={toAddressError}
                     disabled={step >= 2}
                     onFocus={() => {

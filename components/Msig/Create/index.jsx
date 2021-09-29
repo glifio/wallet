@@ -128,7 +128,7 @@ const Create = () => {
     throw new Error('There was an issue when sending your message.')
   }
 
-  const onSubmit = async e => {
+  const onSubmit = async (e) => {
     e.preventDefault()
     if (step === 1 && !signerAddresses.every(validateAddressString)) {
       setSignerAddressError('Invalid to address')
@@ -216,7 +216,7 @@ const Create = () => {
   }
 
   const onSignerAddressChange = (val, idx) => {
-    return setSignerAddresses(addresses => {
+    return setSignerAddresses((addresses) => {
       const addressesCopy = [...addresses]
       if (addressesCopy.includes(val)) {
         setSignerAddressError('Signers must be unique.')
@@ -231,9 +231,9 @@ const Create = () => {
     })
   }
 
-  const onSignerAddressRm = idx => {
+  const onSignerAddressRm = (idx) => {
     setSignerAddressError('')
-    return setSignerAddresses(addresses => {
+    return setSignerAddresses((addresses) => {
       const addressesCopy = [...addresses]
       addressesCopy.splice(idx, 1)
       return addressesCopy
@@ -345,7 +345,7 @@ const Create = () => {
                         <Input.Address
                           label={`${i + 1}`}
                           value={a}
-                          onChange={e =>
+                          onChange={(e) =>
                             onSignerAddressChange(e.target.value, i)
                           }
                           error={
@@ -414,7 +414,7 @@ const Create = () => {
                       label='Vest (# blocks)'
                       value={vest > 0 ? vest.toString() : ''}
                       placeholder='0'
-                      onChange={e => setVest(e.target.value)}
+                      onChange={(e) => setVest(e.target.value)}
                       disabled={step > 3}
                     />
                   </Box>
@@ -426,7 +426,7 @@ const Create = () => {
                       label='Start epoch (block #)'
                       value={startEpoch > 0 ? startEpoch.toString() : ''}
                       placeholder={startEpoch.toString()}
-                      onChange={e => setStartEpoch(e.target.value)}
+                      onChange={(e) => setStartEpoch(e.target.value)}
                       disabled={step > 4}
                     />
                   </Box>

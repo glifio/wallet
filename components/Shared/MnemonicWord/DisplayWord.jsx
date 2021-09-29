@@ -7,17 +7,17 @@ import StyledWrapper from './StyledWrapper'
 import Circle from './Circle'
 import contentProps from './contentProps'
 
-const setBackgroundColor = props => {
+const setBackgroundColor = (props) => {
   if (props.valid) return 'status.success.background'
   return 'core.primary'
 }
 
-const setColor = props => {
+const setColor = (props) => {
   if (props.valid) return 'darkgreen'
   return 'core.white'
 }
 
-export const Word = styled(Box).attrs(props => ({
+export const Word = styled(Box).attrs((props) => ({
   ...contentProps,
   color: setColor(props)
 }))`

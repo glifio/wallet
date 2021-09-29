@@ -52,7 +52,7 @@ export default async function fetchMsigState(
     const [availableBalance, accountKeys] = await Promise.all([
       lCli.request<string>('MsigGetAvailableBalance', actorID, null),
       Promise.all(
-        State?.Signers.map(s =>
+        State?.Signers.map((s) =>
           lCli.request<string>('StateAccountKey', s, null)
         )
       )

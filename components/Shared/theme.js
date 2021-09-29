@@ -235,32 +235,12 @@ const theme = {
       '"RT-Alias-Grotesk", "system-ui", "Segoe UI", "Roboto", Helvetica',
     sansSerif:
       '"system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";',
-    mono:
-      '"system-ui", "Segoe UI", Roboto Mono, Helvetica, Arial, monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";'
+    mono: '"system-ui", "Segoe UI", Roboto Mono, Helvetica, Arial, monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";'
   },
   space: [0, 4, 8, 16, 24, 32, 48, 64, 128, 256],
   sizes: [
-    0,
-    4,
-    8,
-    16,
-    24,
-    32,
-    48,
-    64,
-    80,
-    160,
-    240,
-    300,
-    480,
-    560,
-    640,
-    720,
-    800,
-    960,
-    1024,
-    1200,
-    1440
+    0, 4, 8, 16, 24, 32, 48, 64, 80, 160, 240, 300, 480, 560, 640, 720, 800,
+    960, 1024, 1200, 1440
   ],
   radii: ['0', '1px', '4px', '8px', '16px', '32px', '100px'],
   borders: [0, `1px solid`, `4px solid`],

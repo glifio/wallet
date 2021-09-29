@@ -14,7 +14,7 @@ export const Content = styled.div`
   justify-content: center;
   flex-basis: 0;
   flex-grow: 999;
-  padding-top: ${props => props.theme.sizes[3]}px;
+  padding-top: ${(props) => props.theme.sizes[3]}px;
   margin: 0 0.5rem 0.5rem 0.5rem;
   min-width: 53%;
 `

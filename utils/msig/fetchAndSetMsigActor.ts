@@ -12,7 +12,11 @@ export default async function fetchAndSetMsigActor(
     apiAddress: process.env.LOTUS_NODE_JSONRPC
   })
   try {
-    const receipt = await lCli.request<MessageReceipt>('StateGetReceipt', { '/': msgCid }, null)
+    const receipt = await lCli.request<MessageReceipt>(
+      'StateGetReceipt',
+      { '/': msgCid },
+      null
+    )
     if (!receipt.Return) {
       // this error message is currently not being used anywhere in the UI - its being used moreso as a boolean that an error occured...
       setMsigError(

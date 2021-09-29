@@ -5,7 +5,7 @@ import { TESTNET, SINGLE_KEY } from '../../constants'
 
 const privateKey = 'xxxxxxtttttzzzzzzz'
 
-const followsSubproviderInterface = subprovider =>
+const followsSubproviderInterface = (subprovider) =>
   !!(subprovider.sign && subprovider.getAccounts && subprovider.type)
 
 describe('createHDWalletProvider', () => {

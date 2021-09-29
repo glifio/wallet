@@ -18,7 +18,7 @@ const applyStyles = (styleProperty, props, disabledColor) => {
   return props.theme.colors.buttons.primary[styleProperty]
 }
 
-export default styled.button.attrs(props => ({
+export default styled.button.attrs((props) => ({
   height: 6,
   py: 2,
   px: 3,
@@ -27,19 +27,20 @@ export default styled.button.attrs(props => ({
   borderRadius: 2,
   ...props
 }))`
-  cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
+  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
   /* We are applying both the explicit and shorthand border properties to resolve multiple, conflicting cross-browser rendering issues */
-  border: 1px solid ${props =>
-    applyStyles('borderColor', props, props.theme.colors.status.inactive)};
-  background-color: ${props =>
+  border: 1px solid
+    ${(props) =>
+      applyStyles('borderColor', props, props.theme.colors.status.inactive)};
+  background-color: ${(props) =>
     applyStyles('background', props, props.theme.colors.status.inactive)};
-  border-color: ${props =>
+  border-color: ${(props) =>
     applyStyles('borderColor', props, props.theme.colors.status.inactive)};
-  color: ${props => applyStyles('color', props, '')};
-  font-size: ${props => props.theme.fontSizes[2]};
+  color: ${(props) => applyStyles('color', props, '')};
+  font-size: ${(props) => props.theme.fontSizes[2]};
   transition: 0.18s ease-in-out;
   &:hover {
-    opacity: ${props => (props.disabled ? '1' : '0.8')};
+    opacity: ${(props) => (props.disabled ? '1' : '0.8')};
   }
   ${borderRadius}
   ${space}

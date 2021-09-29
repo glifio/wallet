@@ -8,7 +8,7 @@ import {
 } from '../../WalletProvider/state'
 import { mockWalletProviderInstance } from '../mocks/mock-wallet-provider'
 
-export default walletProviderDispatch => ({
+export default (walletProviderDispatch) => ({
   fetchDefaultWallet: jest.fn().mockImplementation(() => ({
     balance: new FilecoinNumber('1', 'fil'),
     address: 't1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq',
@@ -16,12 +16,12 @@ export default walletProviderDispatch => ({
   })),
   setWalletError: jest
     .fn()
-    .mockImplementation(errorMessage =>
+    .mockImplementation((errorMessage) =>
       walletProviderDispatch(setError(errorMessage))
     ),
   setWalletType: jest
     .fn()
-    .mockImplementation(walletType =>
+    .mockImplementation((walletType) =>
       walletProviderDispatch(setWalletType(walletType))
     ),
   setLedgerProvider: jest.fn(),

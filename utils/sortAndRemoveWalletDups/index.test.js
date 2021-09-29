@@ -81,7 +81,7 @@ describe('sortAndRemoveWalletDups', () => {
     const wallets = sortAndRemoveWalletDups(unsortedWallets, [])
 
     const sorted = wallets
-      .map(w => w.path.split('/')[5])
+      .map((w) => w.path.split('/')[5])
       .every((val, i, arr) => !i || val >= arr[i - 1])
 
     expect(sorted).toEqual(true)

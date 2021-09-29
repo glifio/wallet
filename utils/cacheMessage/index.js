@@ -25,7 +25,7 @@ export function setMessageInCache(address, message) {
 
 export function removeMessageFromCache(address, messageCid) {
   const cachedMessages = getMessagesFromCache(address)
-  const newMessages = cachedMessages.filter(msg => msg.cid !== messageCid)
+  const newMessages = cachedMessages.filter((msg) => msg.cid !== messageCid)
   window.localStorage.setItem(
     `${address}/${PENDING_MESSAGE_CACHE_PATH}`,
     JSON.stringify(newMessages)

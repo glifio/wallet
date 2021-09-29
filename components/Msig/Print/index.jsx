@@ -22,7 +22,7 @@ const Print = () => {
   const [printing, setPrinting] = useState(false)
   const [err, setErr] = useState('')
 
-  const onSubmit = async e => {
+  const onSubmit = async (e) => {
     e.preventDefault()
     try {
       setPrinting(true)
@@ -194,7 +194,7 @@ const Print = () => {
             >
               <Input.Text
                 value={address}
-                onChange={e => setAddress(e.target.value)}
+                onChange={(e) => setAddress(e.target.value)}
                 label='Msig address'
                 placeholder='f02'
                 error={err}

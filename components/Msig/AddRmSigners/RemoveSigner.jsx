@@ -127,7 +127,7 @@ const RemoveSigner = ({ signerAddress }) => {
     throw new Error('There was an issue when sending your message.')
   }
 
-  const onSubmit = async e => {
+  const onSubmit = async (e) => {
     e.preventDefault()
     if (step === 1) {
       setStep(2)

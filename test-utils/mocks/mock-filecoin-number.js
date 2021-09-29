@@ -4,10 +4,10 @@ export const mocks = {
   cacheConversionRate: jest.fn().mockImplementation(() => {
     return Promise.resolve()
   }),
-  toFIL: jest.fn().mockImplementation(amount => {
+  toFIL: jest.fn().mockImplementation((amount) => {
     return new FilecoinNumber(amount, 'fil').dividedBy(5)
   }),
-  fromFIL: jest.fn().mockImplementation(amount => {
+  fromFIL: jest.fn().mockImplementation((amount) => {
     return new FilecoinNumber(amount, 'fil').multipliedBy(5)
   })
 }

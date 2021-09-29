@@ -23,7 +23,7 @@ describe('MessageHistoryTable', () => {
       <Tree>
         <MessageHistoryTable
           address='t01'
-          messages={formatFilfoxMessages(filfoxMockData).map(msg => ({
+          messages={formatFilfoxMessages(filfoxMockData).map((msg) => ({
             ...msg,
             status: 'confirmed'
           }))}
@@ -46,7 +46,7 @@ describe('MessageHistoryTable', () => {
       <Tree>
         <MessageHistoryTable
           address='t01'
-          messages={formatFilfoxMessages(filfoxMockData).map(msg => ({
+          messages={formatFilfoxMessages(filfoxMockData).map((msg) => ({
             ...msg,
             status: 'confirmed'
           }))}
@@ -91,7 +91,7 @@ describe('MessageHistoryTable', () => {
       <Tree>
         <MessageHistoryTable
           address='t01'
-          messages={formatFilfoxMessages(filfoxMockData).map(msg => ({
+          messages={formatFilfoxMessages(filfoxMockData).map((msg) => ({
             ...msg,
             status: 'confirmed'
           }))}
@@ -114,7 +114,7 @@ describe('MessageHistoryTable', () => {
       <Tree>
         <MessageHistoryTable
           address='t01'
-          messages={formatFilfoxMessages(filfoxMockData).map(msg => ({
+          messages={formatFilfoxMessages(filfoxMockData).map((msg) => ({
             ...msg,
             status: 'confirmed'
           }))}
@@ -144,7 +144,7 @@ describe('MessageHistoryTable', () => {
       <Tree>
         <MessageHistoryTable
           address='t01'
-          messages={formatFilfoxMessages(filfoxMockData).map(msg => ({
+          messages={formatFilfoxMessages(filfoxMockData).map((msg) => ({
             ...msg,
             status: 'confirmed'
           }))}
@@ -171,7 +171,7 @@ describe('MessageHistoryTable', () => {
       <Tree>
         <MessageHistoryTable
           address='t01'
-          messages={formatFilfoxMessages(filfoxMockData).map(msg => ({
+          messages={formatFilfoxMessages(filfoxMockData).map((msg) => ({
             ...msg,
             status: 'confirmed'
           }))}
@@ -195,7 +195,7 @@ describe('MessageHistoryTable', () => {
       <Tree>
         <MessageHistoryTable
           address='t01'
-          messages={formatFilfoxMessages(filfoxMockData).map(msg => ({
+          messages={formatFilfoxMessages(filfoxMockData).map((msg) => ({
             ...msg,
             status: 'confirmed'
           }))}

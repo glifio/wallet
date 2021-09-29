@@ -14,7 +14,7 @@ const spy = jest.spyOn(require('../../lib/useTransactionHistory'), 'default')
 const mockTxHistory = {
   showMore: jest.fn(),
   pending: [],
-  confirmed: formatFilfoxMessages(filfoxMockData).map(msg => ({
+  confirmed: formatFilfoxMessages(filfoxMockData).map((msg) => ({
     ...msg,
     status: 'confirmed'
   })),

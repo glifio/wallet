@@ -24,21 +24,20 @@ const NetworkSwitcherButton = styled.button.attrs(() => ({
   fontFamily: 'RT-Alias-Grotesk',
   border: 0
 }))`
-  background: ${props => {
+  background: ${(props) => {
     if (props.disabled) return props.theme.colors.status.inactive
     if (props.connected && props.active)
       return props.theme.colors.status.success.background
     if (props.error) return props.theme.colors.status.error.background
     return props.theme.colors.background.text
   }};
-  
+
   transition: 0.2s ease-in-out;
 
-
   &:hover {
-    ${props => !props.disabled && 'transform:translateY(-4px);'}
-    ${props => !props.disabled && 'cursor: pointer;'}
-    ${props =>
+    ${(props) => !props.disabled && 'transform:translateY(-4px);'}
+    ${(props) => !props.disabled && 'cursor: pointer;'}
+    ${(props) =>
       !props.disabled &&
       'background: props.theme.colors.input.background.valid'}
   }
@@ -52,9 +51,9 @@ const NetworkSwitcherButton = styled.button.attrs(() => ({
 
 const NetworkSwitcherGlyph = ({ ...props }) => {
   const router = useRouter()
-  const networkFromRedux = useSelector(state => state.network)
+  const networkFromRedux = useSelector((state) => state.network)
   const dispatch = useDispatch()
-  const onNetworkSwitch = network => {
+  const onNetworkSwitch = (network) => {
     if (network !== networkFromRedux) {
       const searchParams = new URLSearchParams(router.query)
       searchParams.set('network', network)

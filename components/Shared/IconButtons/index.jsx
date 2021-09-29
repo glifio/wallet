@@ -12,7 +12,7 @@ const IconButtonBase = styled.button`
   cursor: pointer;
 
   &:hover {
-   transform:scale(1.25);
+    transform: scale(1.25);
   }
   ${layout}
   ${space}

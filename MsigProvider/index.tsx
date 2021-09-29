@@ -29,10 +29,11 @@ export const MsigProviderWrapper = ({
 }) => {
   const wallet = useWallet()
   const [msigActor, setMsigActor] = useState(null)
-  const { data: actor, error: msigActorStateError, isValidating } = useSWR(
-    msigActor ? [msigActor, wallet.address] : null,
-    fetchMsigState
-  )
+  const {
+    data: actor,
+    error: msigActorStateError,
+    isValidating
+  } = useSWR(msigActor ? [msigActor, wallet.address] : null, fetchMsigState)
 
   let config: SWRConfiguration = { refreshInterval: 2000 }
   // this only exists for the tests covering THIS file only

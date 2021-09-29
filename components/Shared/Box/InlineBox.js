@@ -12,10 +12,10 @@ import {
 import styled from 'styled-components'
 
 export default styled.span`
-    min-width: 0;
-    box-sizing: border-box;
-    ${position}
-    ${border}
+  min-width: 0;
+  box-sizing: border-box;
+  ${position}
+  ${border}
     ${space}
     ${color}
     ${layout}
@@ -23,4 +23,4 @@ export default styled.span`
     ${typography}
     ${grid}
     ${shadow}
-  `
+`

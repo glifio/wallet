@@ -22,7 +22,7 @@ export const mockSign = jest.fn().mockImplementation(async (path, msg) => {
 
 export const mockGetAddressAndPubKey = jest
   .fn()
-  .mockImplementation(async path => {
+  .mockImplementation(async (path) => {
     // here we just randomize addresses based on the last index in the path
     // just for returning different addresses
     return Promise.resolve({
@@ -37,13 +37,13 @@ export const mockGetVersion = jest
   .fn()
   .mockImplementation(
     () =>
-      new Promise(resolve => setTimeout(() => resolve(errorFreeReturn), 500))
+      new Promise((resolve) => setTimeout(() => resolve(errorFreeReturn), 500))
   )
 
 class Filecoin {
   sign = (msg, path) => mockSign(path, msg)
 
-  getAddressAndPubKey = path => mockGetAddressAndPubKey(path)
+  getAddressAndPubKey = (path) => mockGetAddressAndPubKey(path)
 
   getVersion = () => mockGetVersion()
 }

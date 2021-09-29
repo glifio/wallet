@@ -29,7 +29,7 @@ export default () => {
   const [localWalletType, setLocalWalletType] = useState(null)
   const router = useRouter()
 
-  const onChoose = type => {
+  const onChoose = (type) => {
     if (
       !localWalletType &&
       (type === CREATE_MNEMONIC ||

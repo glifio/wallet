@@ -82,7 +82,7 @@ export default () => {
                 error={privateKeyError}
                 setError={setPrivateKeyError}
                 value={privateKey}
-                onChange={e => setPrivateKey(e.target.value)}
+                onChange={(e) => setPrivateKey(e.target.value)}
               />
             </Box>
           </OnboardCard>

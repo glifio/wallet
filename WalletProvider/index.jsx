@@ -44,8 +44,8 @@ const WalletProviderWrapper = ({ network, children }) => {
             walletSubproviders
           ]
         ),
-        setWalletError: errorMessage => dispatch(setError(errorMessage)),
-        setWalletType: walletType => dispatch(setWalletType(walletType)),
+        setWalletError: (errorMessage) => dispatch(setError(errorMessage)),
+        setWalletType: (walletType) => dispatch(setWalletType(walletType)),
         setLedgerProvider: useCallback(
           () => setLedgerProvider(dispatch, walletSubproviders.LedgerProvider),
           [dispatch, walletSubproviders.LedgerProvider]

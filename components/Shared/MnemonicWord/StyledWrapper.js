@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Box from '../Box'
 
-export default styled(Box).attrs(props => ({
+export default styled(Box).attrs((props) => ({
   height: 6,
   my: 2,
   mr: 2,

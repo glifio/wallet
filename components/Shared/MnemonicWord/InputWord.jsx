@@ -26,7 +26,7 @@ const setInputColor = ({ completed, importSeedError }) => {
   return 'core.primary'
 }
 
-export const MnemonicWordInput = styled.input.attrs(props => ({
+export const MnemonicWordInput = styled.input.attrs((props) => ({
   ...contentProps,
   borderRadius: 6,
   border: 1,
@@ -89,7 +89,7 @@ const MnemonicWord = ({
             : 'core.primary'
         }
         onFocus={() => setCompleted(false)}
-        onChange={e => setWord(e.target.value)}
+        onChange={(e) => setWord(e.target.value)}
         completed={completed}
         value={word}
         importSeedError={importSeedError}

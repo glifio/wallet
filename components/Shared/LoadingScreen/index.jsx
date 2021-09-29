@@ -2,7 +2,7 @@ import Box from '../Box'
 import Loading from '../LoaderGlyph'
 import { Label } from '../Typography'
 
-const Index = props => (
+const Index = (props) => (
   <Box
     display='flex'
     flexDirection='column'

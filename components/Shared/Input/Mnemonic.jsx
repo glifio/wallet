@@ -10,7 +10,7 @@ const Mnemonic = forwardRef(
     const timer = useRef()
     const [reveal, setReveal] = useState(false)
 
-    const validate = mnemonic => {
+    const validate = (mnemonic) => {
       let validMnemonic = false
       try {
         validMnemonic = validateMnemonic(mnemonic.trim())
@@ -48,7 +48,7 @@ const Mnemonic = forwardRef(
             }}
             ref={ref}
             label='Seed phrase'
-            onChange={e => {
+            onChange={(e) => {
               clearTimeout(timer.current)
               onChange(e)
               const seed = e.target.value

@@ -22,7 +22,7 @@ const Signers = ({
     <Box display='flex' flexWrap='wrap'>
       {signers
         .filter(
-          signer =>
+          (signer) =>
             converAddrToFPrefix(signer.account) !==
             converAddrToFPrefix(walletAddress)
         )

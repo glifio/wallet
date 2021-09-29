@@ -5,7 +5,7 @@ const {
   PHASE_PRODUCTION_SERVER
 } = require('next/constants')
 
-const webpack = config => {
+const webpack = (config) => {
   const adjustedConf = { ...config }
   const experiments = config.experiments || {}
   adjustedConf.experiments = { ...experiments, syncWebAssembly: true }
@@ -21,7 +21,7 @@ const webpack = config => {
   return adjustedConf
 }
 
-module.exports = phase => {
+module.exports = (phase) => {
   if (phase === PHASE_PRODUCTION_SERVER || phase === PHASE_PRODUCTION_BUILD) {
     return {
       webpack,
