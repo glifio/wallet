@@ -25,9 +25,7 @@ export const initialState = {
   selectedWalletIdx: -1,
   error: '',
   messages: initialMessagesState,
-  network: process.env.IS_PROD ? MAINNET : TESTNET,
-  investor: '',
-  msigActorAddress: ''
+  network: process.env.IS_PROD ? MAINNET : TESTNET
 }
 
 export const noWallet = {
@@ -181,14 +179,4 @@ export const switchNetwork = (state, { network, wallets }) => ({
   network,
   wallets,
   messages: initialMessagesState
-})
-
-export const setInvestorId = (state, { uuid }) => ({
-  ...state,
-  investor: uuid
-})
-
-export const setMsigActorAddress = (state, { msigActorAddress }) => ({
-  ...state,
-  msigActorAddress
 })
