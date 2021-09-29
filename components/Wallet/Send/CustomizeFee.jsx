@@ -79,7 +79,7 @@ const insufficientMsigFundsErr =
 const insufficientSendFundsErr =
   'This account does not have enough FIL to pay for this transaction + the transaction fee.'
 
-const friendlifyError = err => {
+const friendlifyError = (err) => {
   if (!err.message) return err
   if (err.message.toLowerCase().includes('retcode=2'))
     return insufficientMsigFundsErr
@@ -226,7 +226,7 @@ const CustomizeFee = ({
             label='Transaction fee'
             value={localTxFee.toAttoFil()}
             denom='aFil'
-            onChange={e => {
+            onChange={(e) => {
               if (error) setError('')
               if (!dirty) {
                 setDirty(true)

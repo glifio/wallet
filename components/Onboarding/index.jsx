@@ -21,7 +21,7 @@ export default () => {
         {nodeConnecting && (
           <NodeConnectingGlyph
             apiAddress={process.env.LOTUS_NODE_JSONRPC}
-            onConnectionStrengthChange={newStrength => {
+            onConnectionStrengthChange={(newStrength) => {
               // give a little extra time
               setTimeout(() => {
                 if (newStrength === 2) setNodeConnecting(false)

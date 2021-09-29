@@ -64,7 +64,7 @@ const Confirm = () => {
   )
   // the create message is the one sent to the f01 actor
   const createMsigMessage = pending.find(
-    m => EXEC_ACTOR === converAddrToFPrefix(m.to)
+    (m) => EXEC_ACTOR === converAddrToFPrefix(m.to)
   )
 
   const { current: msgCid }: { current: string } = useRef(
@@ -73,7 +73,7 @@ const Confirm = () => {
   const router = useRouter()
 
   useEffect(() => {
-    if (confirmed.some(m => m.cid === msgCid)) {
+    if (confirmed.some((m) => m.cid === msgCid)) {
       fetchAndSetMsigActor(msgCid, setMsigActor, setMsigError)
     }
   }, [confirmed, msgCid, setMsigActor, setMsigError])

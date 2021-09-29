@@ -1,3 +1,4 @@
+import Filecoin from '@glif/filecoin-wallet-provider'
 import { Dispatch } from 'redux'
 import {
   checkLedgerConfiguration,
@@ -15,7 +16,10 @@ const connectWithLedger = async (
   dispatch(resetLedgerState())
   const provider = await setLedgerProvider(dispatch, LedgerProvider)
   if (!provider) return null
-  const configured = await checkLedgerConfiguration(dispatch, provider)
+  const configured = await checkLedgerConfiguration(
+    dispatch,
+    provider as Filecoin & { wallet: LedgerSubProvider }
+  )
   if (!configured) return null
   return provider
 }
