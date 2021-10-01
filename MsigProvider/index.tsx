@@ -29,11 +29,10 @@ export const MsigProviderWrapper = ({
 }) => {
   const wallet = useWallet()
   const [msigActor, setMsigActor] = useState(null)
-  const {
-    data: actor,
-    error: msigActorStateError,
-    isValidating
-  } = useSWR(msigActor ? [msigActor, wallet.address] : null, fetchMsigState)
+  const { data: actor, error: msigActorStateError } = useSWR(
+    msigActor ? [msigActor, wallet.address] : null,
+    fetchMsigState
+  )
 
   let config: SWRConfiguration = { refreshInterval: 2000 }
   // this only exists for the tests covering THIS file only
@@ -51,7 +50,7 @@ export const MsigProviderWrapper = ({
           Balance: actor?.Balance || new FilecoinNumber('0', 'fil'),
           AvailableBalance:
             actor?.AvailableBalance || new FilecoinNumber('0', 'fil'),
-          loading: isValidating,
+          loading: !actor,
           Signers: actor?.Signers || [],
           NextTxnID: actor?.NextTxnID || 0,
           NumApprovalsThreshold: actor?.NumApprovalsThreshold || 0,
