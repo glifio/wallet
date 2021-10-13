@@ -1,3 +1,7 @@
+const { TextDecoder } = require('util')
+// @ts-ignore
+global.TextDecoder = TextDecoder
+
 import '@testing-library/jest-dom'
 import 'jest-styled-components'
 

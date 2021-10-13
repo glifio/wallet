@@ -1,10 +1,10 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
-import axios from 'axios'
+import { CID } from '@glif/filecoin-wallet-provider'
 
 import isAddressSigner from './isAddressSigner'
+import { decodeActorCID } from '../actorCode'
 import { MsigActorState, emptyMsigState } from '../../MsigProvider/types'
-import { CID } from '@glif/filecoin-wallet-provider'
 
 const lCli = new LotusRPCEngine({
   apiAddress: process.env.LOTUS_NODE_JSONRPC
@@ -21,9 +21,7 @@ export default async function fetchMsigState(
       null
     )
 
-    const { data: ActorCode } = await axios.get<string>(
-      `https://ipfs.io/ipfs/${Code['/']}`
-    )
+    const ActorCode = decodeActorCID(Code['/'])
 
     if (!ActorCode?.includes('multisig')) {
       return {
