@@ -27,6 +27,7 @@
     "@zondax/filecoin-signing-tools": "^0.17.1",
     "@zondax/ledger-filecoin": "0.11.2",
     "axios": "0.21.2",
+    "base32-decode": "^1.0.0",
     "bip39": "3.0.4",
     "bluebird": "3.7.2",
     "cbor": "^5.1.0",
