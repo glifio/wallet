@@ -167,7 +167,7 @@ exports[`AccountCardAlt renders the card 1`] = `
           font-size="4"
           font-weight="400"
         >
-          t01234 ... 456789
+          t0123456789
         </h2>
       </div>
     </div>

@@ -5,25 +5,38 @@ import HelperText from './HelperText'
 import ThemeProvider from '../Shared/ThemeProvider'
 
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
+import { flushPromises } from '../../test-utils'
+
+jest.mock('@glif/filecoin-rpc-client')
 
 jest.mock('../../WalletProvider')
+
+function expectAllAccountsInView(screen) {
+  for (let i = 0; i < 5; i++) {
+    if (i === 0) {
+      expect(screen.getByText('Default')).toBeInTheDocument()
+    } else expect(screen.getByText(`Account ${i}`)).toBeInTheDocument()
+  }
+}
 
 describe('AccountSelector', () => {
   afterEach(cleanup)
   test('it renders the loading screen first', async () => {
     const { Tree } = composeMockAppTree('postOnboard')
     await act(async () => {
-      let res = render(<AccountSelector />, { wrapper: Tree })
+      let res = render(<AccountSelector test />, { wrapper: Tree })
       expect(res.container.firstChild).toMatchSnapshot()
     })
   })
 
-  test('it renders the wallets in redux with the investor copy when the investor prop is passed', async () => {
+  test('it renders the wallets in redux with the msig copy when the msig prop is passed', async () => {
     const { Tree } = composeMockAppTree('postOnboard')
     let res
     await act(async () => {
-      res = render(<AccountSelector msig />, { wrapper: Tree })
+      res = render(<AccountSelector test msig />, { wrapper: Tree })
     })
+
+    expectAllAccountsInView(screen)
     // IMPORTANT; the the X button alone is the 0th child, so we assert against the first child
     expect(res.container.firstChild).toMatchSnapshot()
   })
@@ -32,12 +45,15 @@ describe('AccountSelector', () => {
     const { Tree, store } = composeMockAppTree('postOnboard')
     let res
     await act(async () => {
-      res = render(<AccountSelector />, { wrapper: Tree })
+      res = render(<AccountSelector test />, { wrapper: Tree })
     })
+    await flushPromises()
     expect(store.getState().wallets.length).toBe(5)
     store.getState().wallets.forEach((w, i) => {
       expect(Number(w.path.split('/')[5])).toBe(Number(i))
     })
+    expectAllAccountsInView(screen)
+
     expect(res.container.firstChild).toMatchSnapshot()
   })
 
@@ -45,12 +61,11 @@ describe('AccountSelector', () => {
     const { Tree } = composeMockAppTree('postOnboardWithError')
     let res
     await act(async () => {
-      res = render(<AccountSelector />, { wrapper: Tree })
+      res = render(<AccountSelector test />, { wrapper: Tree })
     })
     expect(screen.getAllByText('error for testing')[0]).toBeInTheDocument()
-    for (let i = 0; i < 5; i++) {
-      expect(screen.getAllByText('Address')[i]).toBeInTheDocument()
-    }
+    expectAllAccountsInView(screen)
+
     expect(res.container.firstChild).toMatchSnapshot()
   })
 })

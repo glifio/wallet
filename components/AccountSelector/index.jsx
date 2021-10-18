@@ -26,13 +26,12 @@ import {
   hasLedgerError,
   reportLedgerConfigError
 } from '../../utils/ledger/reportLedgerConfigError'
-import makeFriendlyBalance from '../../utils/makeFriendlyBalance'
 import useWallet from '../../WalletProvider/useWallet'
 import createPath from '../../utils/createPath'
 import reportError from '../../utils/reportError'
 import converAddrToFPrefix from '../../utils/convertAddrToFPrefix'
 
-const AccountSelector = ({ msig }) => {
+const AccountSelector = ({ msig, test }) => {
   const wallet = useWallet()
   const [loadingAccounts, setLoadingAccounts] = useState(false)
   const [loadingPage, setLoadingPage] = useState(true)
@@ -209,7 +208,10 @@ const AccountSelector = ({ msig }) => {
                     address={w.address}
                     index={i}
                     selected={false}
-                    balance={makeFriendlyBalance(w.balance, 6)}
+                    // This is a hack to make testing the UI easier
+                    // its hard to mock SWR + balance fetcher in the AccountCardAlt
+                    // so we pass a manual balance to not rely on SWR for testing
+                    balance={test ? '1' : null}
                   />
                 </MenuItem>
               ))}
