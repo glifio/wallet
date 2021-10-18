@@ -156,8 +156,12 @@ export default () => {
                 <NetworkSwitcherGlyph />
                 {router.query.network === 't' && (
                   <Text>
-                    {"*We're changing the way you access t addresses.  "}
-                    <StyledATag href=''>More info.</StyledATag>
+                    {
+                      "*We're changing the way you access t addresses on mainnet.  "
+                    }
+                    <StyledATag href='https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV'>
+                      More info.
+                    </StyledATag>
                   </Text>
                 )}
                 <ImportWallet

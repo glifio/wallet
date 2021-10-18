@@ -7,8 +7,6 @@ import ThemeProvider from '../Shared/ThemeProvider'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import { flushPromises } from '../../test-utils'
 
-jest.mock('@glif/filecoin-rpc-client')
-
 jest.mock('../../WalletProvider')
 
 function expectAllAccountsInView(screen) {
