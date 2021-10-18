@@ -55,18 +55,6 @@ describe('AccountSelector', () => {
     expect(res.container.firstChild).toMatchSnapshot()
   })
 
-  test('it renders an error when an error exists', async () => {
-    const { Tree } = composeMockAppTree('postOnboardWithError')
-    let res
-    await act(async () => {
-      res = render(<AccountSelector test />, { wrapper: Tree })
-    })
-    expect(screen.getAllByText('error for testing')[0]).toBeInTheDocument()
-    expectAllAccountsInView(screen)
-
-    expect(res.container.firstChild).toMatchSnapshot()
-  })
-
   test('it adds a wallet to redux upon create', async () => {
     const { Tree, store } = composeMockAppTree('postOnboard')
     await act(async () => {

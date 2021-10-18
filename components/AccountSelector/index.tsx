@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { bool } from 'prop-types'
 import { useSelector, useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
@@ -19,6 +19,7 @@ import {
   LEDGER,
   MAINNET,
   MAINNET_PATH_CODE,
+  PAGE,
   TESTNET_PATH_CODE
 } from '../../constants'
 import { walletList, switchWallet } from '../../store/actions'
@@ -30,6 +31,9 @@ import useWallet from '../../WalletProvider/useWallet'
 import createPath from '../../utils/createPath'
 import reportError from '../../utils/reportError'
 import converAddrToFPrefix from '../../utils/convertAddrToFPrefix'
+import { initialState } from '../../store/states'
+import { navigate } from '../../utils/urlParams'
+import Filecoin from '@glif/filecoin-wallet-provider'
 
 const AccountSelector = ({ msig, test }) => {
   const wallet = useWallet()
@@ -37,11 +41,12 @@ const AccountSelector = ({ msig, test }) => {
   const [loadingPage, setLoadingPage] = useState(true)
   const [uncaughtError, setUncaughtError] = useState('')
   const dispatch = useDispatch()
-  const { errorInRdx, walletsInRdx, network } = useSelector((state) => ({
-    network: state.network,
-    walletsInRdx: state.wallets,
-    errorInRdx: state.error
-  }))
+  const { walletsInRdx, network } = useSelector(
+    (state: typeof initialState) => ({
+      network: state.network,
+      walletsInRdx: state.wallets
+    })
+  )
   const { ledger, connectLedger, walletProvider } = useWalletProvider()
   const router = useRouter()
 
@@ -52,13 +57,14 @@ const AccountSelector = ({ msig, test }) => {
     const loadFirstFiveWallets = async () => {
       if (walletsInRdx.length < 5) {
         try {
-          let provider = walletProvider
+          let provider = walletProvider as Filecoin
           if (wallet.type === LEDGER) {
             provider = await connectLedger()
           }
 
           if (provider) {
             const addresses = await provider.wallet.getAccounts(
+              // @ts-ignore
               network,
               walletsInRdx.length,
               5
@@ -108,32 +114,28 @@ const AccountSelector = ({ msig, test }) => {
     loadedFirstFiveWallets
   ])
 
-  const onClose = () => {
-    const searchParams = new URLSearchParams(router.query)
-    let route = ''
-    if (msig) route = `/vault/choose?${searchParams.toString()}`
-    else route = `/home?${searchParams.toString()}`
-    router.push(route)
-  }
+  const onClose = useCallback(() => {
+    if (msig) navigate(router, { pageUrl: PAGE.MSIG_CHOOSE })
+    else navigate(router, { pageUrl: PAGE.WALLET_HOME })
+  }, [router, msig])
 
   let errorMsg = ''
 
   if (hasLedgerError({ ...ledger, otherError: uncaughtError })) {
     errorMsg = reportLedgerConfigError({ ...ledger, otherError: uncaughtError })
-  } else if (errorInRdx) {
-    errorMsg = errorInRdx.message || errorInRdx
   }
 
-  const fetchNextAccount = async (index, network) => {
+  const fetchNextAccount = async (index: number, network: 't' | 'f') => {
     setLoadingAccounts(true)
     try {
-      let provider = walletProvider
+      let provider = walletProvider as Filecoin
       if (wallet.type === LEDGER) {
         provider = await connectLedger()
       }
 
       if (provider) {
         const [address] = await provider.wallet.getAccounts(
+          // @ts-ignore
           network,
           index,
           index + 1
@@ -191,11 +193,7 @@ const AccountSelector = ({ msig, test }) => {
               </Title>
             </Box>
             <Box mt={3}>
-              <HelperText
-                color='core.nearblack'
-                msig={msig}
-                isLedger={wallet.type === LEDGER}
-              />
+              <HelperText msig={msig} isLedger={wallet.type === LEDGER} />
             </Box>
           </Card>
           <Menu>
@@ -204,10 +202,13 @@ const AccountSelector = ({ msig, test }) => {
                 <MenuItem key={w.address}>
                   <AccountCardAlt
                     alignItems='center'
-                    onClick={() => dispatch(switchWallet(i), onClose())}
+                    onClick={() => {
+                      dispatch(switchWallet(i))
+                      onClose()
+                    }}
                     address={w.address}
                     index={i}
-                    selected={false}
+                    selected={w.address === wallet.address}
                     // This is a hack to make testing the UI easier
                     // its hard to mock SWR + balance fetcher in the AccountCardAlt
                     // so we pass a manual balance to not rely on SWR for testing
@@ -221,7 +222,6 @@ const AccountSelector = ({ msig, test }) => {
                   nextAccountIndex={walletsInRdx.length}
                   onClick={fetchNextAccount}
                   loading={loadingAccounts}
-                  mb={2}
                 />
               </MenuItem>
             </Box>

@@ -1,1360 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AccountSelector it renders an error when an error exists 1`] = `
-.c0 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  justify-items: center;
-}
-
-.c1 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding: 24px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 1200px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-}
-
-.c2 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: none;
-  border-radius: 4px;
-  border-width: 1px;
-  padding: 16px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  background-color: #d9e0f2;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  overflow: hidden;
-  max-width: 800px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c3 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c4 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  border-color: #5E26FF;
-  background-color: #5E26FF;
-  color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c7 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-top: 16px;
-}
-
-.c12 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c13 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin: 8px;
-  display: inline-block;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c14 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 1px solid;
-  border-radius: 4px;
-  border-width: 1px;
-  padding: 16px;
-  background-color: hsla(0,0%,90%,0);
-  color: colors.core.black;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 300px;
-  overflow: hidden;
-  height: 300px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c15 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-}
-
-.c16 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  margin-right: 16px;
-  color: colors.core.black;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c17 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c19 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c21 {
-  min-width: 0;
-  box-sizing: border-box;
-  color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c28 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-}
-
-.c31 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 4px;
-  padding: 16px;
-  margin: 8px;
-  background-color: #FC6D6F;
-  color: #660000;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 300px;
-  height: 300px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  box-shadow: 0 0.7px 2.2px -8px rgba(0,0,0,0.18),0 1.7px 5.4px rgba(0,0,0,0.129),0 3.1px 10.1px rgba(0,0,0,0.107),0 5.6px 18.1px rgba(0,0,0,0.09),0 10.4px 33.8px rgba(0,0,0,0.073),0 25px 81px rgba(0,0,0,0.051);
-}
-
-.c32 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  margin-right: 16px;
-  color: #660000;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c34 {
-  min-width: 0;
-  box-sizing: border-box;
-}
-
-.c36 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c5 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c23 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: #08442F;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  margin-left: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c23:hover {
-  opacity: 0.8;
-}
-
-.c30 {
-  cursor: pointer;
-  border: 1px solid #262626;
-  background-color: transparent;
-  border-color: #262626;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c30:hover {
-  opacity: 0.8;
-}
-
-.c37 {
-  cursor: pointer;
-  border: 1px solid status.fail.foreground;
-  background-color: #1AD08F;
-  border-color: status.fail.foreground;
-  color: status.fail.foreground;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 100%;
-  border-color: #660000;
-  border-width: 1px;
-  border-radius: 4px;
-  background-color: transparent;
-  color: #660000;
-}
-
-.c37:hover {
-  opacity: 0.8;
-}
-
-.c6 {
-  color: #5E26FF;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-left: 8px;
-}
-
-.c18 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c29 {
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c33 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-}
-
-.c35 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c25 {
-  width: 24;
-  height: 24;
-}
-
-.c24 {
-  height: auto;
-  opacity: 1 !important;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  outline: none;
-}
-
-.c27 {
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-}
-
-.c22:hover .c26 {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
-.c20 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.5rem;
-}
-
-.c20:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
-.c11 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.c8 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-}
-
-.c9 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-top: 8px;
-}
-
-.c10 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-  margin-left: 8px;
-}
-
-.c10:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
-<div
-  class="c0"
-  display="flex"
->
-  <div
-    class="c1"
-    display="flex"
-  >
-    <div
-      class="c2"
-      display="flex"
-      overflow="hidden"
-      width="100%"
-    >
-      <div
-        class="c3"
-        display="flex"
-      >
-        <div
-          class="c4"
-          color="core.white"
-          display="flex"
-          size="6"
-        >
-          <h3
-            class="c5"
-          >
-            Ac
-          </h3>
-        </div>
-        <h2
-          class="c6"
-          color="core.primary"
-          font-family="RT-Alias-Grotesk"
-          font-size="4"
-          font-weight="400"
-        >
-          Switch Accounts
-        </h2>
-      </div>
-      <div
-        class="c7"
-      >
-        <p
-          class="c8"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          Your single seed phrase creates hundreds of individual accounts. We're showing you the first 5.
-        </p>
-        <p
-          class="c9"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          Don't see an account you're looking for? 
-          <a
-            class="c10"
-            color="core.primary"
-            font-size="2"
-            href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
-            rel="noopener noreferrer"
-            target="blank"
-          >
-            Learn More
-          </a>
-        </p>
-      </div>
-    </div>
-    <ul
-      class="c11"
-    >
-      <div
-        class="c12"
-        display="flex"
-      >
-        <li
-          class=""
-        >
-          <div
-            class="c13"
-            display="inline-block"
-          >
-            <div
-              class="c14"
-              color="colors.core.black"
-              display="flex"
-              height="11"
-              overflow="hidden"
-              width="11"
-            >
-              <div
-                class="c15"
-                display="flex"
-              >
-                <div
-                  class="c16"
-                  color="colors.core.black"
-                  display="flex"
-                  size="6"
-                >
-                  <h3
-                    class="c5"
-                  >
-                    0
-                  </h3>
-                </div>
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    Default
-                  </h2>
-                </div>
-              </div>
-              <div
-                class="c19"
-                display="flex"
-              >
-                <a
-                  class="c20"
-                  color="core.primary"
-                  font-size="4"
-                  href="https://filfox.info/en/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
-                  target="_blank"
-                >
-                  t1z22 ... 6z6wgi
-                </a>
-                <div
-                  class="c21"
-                  color="core.primary"
-                  display="flex"
-                >
-                  <button
-                    class="c22 c23 c24"
-                    display="flex"
-                    font-size="3"
-                    height="6"
-                    role="button"
-                    type="button"
-                  >
-                    <svg
-                      class="c25 c26 c27"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="c28"
-                display="flex"
-              >
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <p
-                    class="c29"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="3"
-                    font-weight="400"
-                  >
-                    Balance
-                  </p>
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    1
-                     FIL
-                  </h2>
-                </div>
-                <button
-                  class="c30"
-                  font-size="3"
-                  height="6"
-                  type="button"
-                >
-                  Select
-                </button>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li
-          class=""
-        >
-          <div
-            class="c13"
-            display="inline-block"
-          >
-            <div
-              class="c14"
-              color="colors.core.black"
-              display="flex"
-              height="11"
-              overflow="hidden"
-              width="11"
-            >
-              <div
-                class="c15"
-                display="flex"
-              >
-                <div
-                  class="c16"
-                  color="colors.core.black"
-                  display="flex"
-                  size="6"
-                >
-                  <h3
-                    class="c5"
-                  >
-                    1
-                  </h3>
-                </div>
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    Account 
-                    1
-                  </h2>
-                </div>
-              </div>
-              <div
-                class="c19"
-                display="flex"
-              >
-                <a
-                  class="c20"
-                  color="core.primary"
-                  font-size="4"
-                  href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb1uq"
-                  target="_blank"
-                >
-                  t1mbk ... icb1uq
-                </a>
-                <div
-                  class="c21"
-                  color="core.primary"
-                  display="flex"
-                >
-                  <button
-                    class="c22 c23 c24"
-                    display="flex"
-                    font-size="3"
-                    height="6"
-                    role="button"
-                    type="button"
-                  >
-                    <svg
-                      class="c25 c26 c27"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="c28"
-                display="flex"
-              >
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <p
-                    class="c29"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="3"
-                    font-weight="400"
-                  >
-                    Balance
-                  </p>
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    1
-                     FIL
-                  </h2>
-                </div>
-                <button
-                  class="c30"
-                  font-size="3"
-                  height="6"
-                  type="button"
-                >
-                  Select
-                </button>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li
-          class=""
-        >
-          <div
-            class="c13"
-            display="inline-block"
-          >
-            <div
-              class="c14"
-              color="colors.core.black"
-              display="flex"
-              height="11"
-              overflow="hidden"
-              width="11"
-            >
-              <div
-                class="c15"
-                display="flex"
-              >
-                <div
-                  class="c16"
-                  color="colors.core.black"
-                  display="flex"
-                  size="6"
-                >
-                  <h3
-                    class="c5"
-                  >
-                    2
-                  </h3>
-                </div>
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    Account 
-                    2
-                  </h2>
-                </div>
-              </div>
-              <div
-                class="c19"
-                display="flex"
-              >
-                <a
-                  class="c20"
-                  color="core.primary"
-                  font-size="4"
-                  href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
-                  target="_blank"
-                >
-                  t1mbk ... icb2uq
-                </a>
-                <div
-                  class="c21"
-                  color="core.primary"
-                  display="flex"
-                >
-                  <button
-                    class="c22 c23 c24"
-                    display="flex"
-                    font-size="3"
-                    height="6"
-                    role="button"
-                    type="button"
-                  >
-                    <svg
-                      class="c25 c26 c27"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="c28"
-                display="flex"
-              >
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <p
-                    class="c29"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="3"
-                    font-weight="400"
-                  >
-                    Balance
-                  </p>
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    1
-                     FIL
-                  </h2>
-                </div>
-                <button
-                  class="c30"
-                  font-size="3"
-                  height="6"
-                  type="button"
-                >
-                  Select
-                </button>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li
-          class=""
-        >
-          <div
-            class="c13"
-            display="inline-block"
-          >
-            <div
-              class="c14"
-              color="colors.core.black"
-              display="flex"
-              height="11"
-              overflow="hidden"
-              width="11"
-            >
-              <div
-                class="c15"
-                display="flex"
-              >
-                <div
-                  class="c16"
-                  color="colors.core.black"
-                  display="flex"
-                  size="6"
-                >
-                  <h3
-                    class="c5"
-                  >
-                    3
-                  </h3>
-                </div>
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    Account 
-                    3
-                  </h2>
-                </div>
-              </div>
-              <div
-                class="c19"
-                display="flex"
-              >
-                <a
-                  class="c20"
-                  color="core.primary"
-                  font-size="4"
-                  href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb3uq"
-                  target="_blank"
-                >
-                  t1mbk ... icb3uq
-                </a>
-                <div
-                  class="c21"
-                  color="core.primary"
-                  display="flex"
-                >
-                  <button
-                    class="c22 c23 c24"
-                    display="flex"
-                    font-size="3"
-                    height="6"
-                    role="button"
-                    type="button"
-                  >
-                    <svg
-                      class="c25 c26 c27"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="c28"
-                display="flex"
-              >
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <p
-                    class="c29"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="3"
-                    font-weight="400"
-                  >
-                    Balance
-                  </p>
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    1
-                     FIL
-                  </h2>
-                </div>
-                <button
-                  class="c30"
-                  font-size="3"
-                  height="6"
-                  type="button"
-                >
-                  Select
-                </button>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li
-          class=""
-        >
-          <div
-            class="c13"
-            display="inline-block"
-          >
-            <div
-              class="c14"
-              color="colors.core.black"
-              display="flex"
-              height="11"
-              overflow="hidden"
-              width="11"
-            >
-              <div
-                class="c15"
-                display="flex"
-              >
-                <div
-                  class="c16"
-                  color="colors.core.black"
-                  display="flex"
-                  size="6"
-                >
-                  <h3
-                    class="c5"
-                  >
-                    4
-                  </h3>
-                </div>
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    Account 
-                    4
-                  </h2>
-                </div>
-              </div>
-              <div
-                class="c19"
-                display="flex"
-              >
-                <a
-                  class="c20"
-                  color="core.primary"
-                  font-size="4"
-                  href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb4uq"
-                  target="_blank"
-                >
-                  t1mbk ... icb4uq
-                </a>
-                <div
-                  class="c21"
-                  color="core.primary"
-                  display="flex"
-                >
-                  <button
-                    class="c22 c23 c24"
-                    display="flex"
-                    font-size="3"
-                    height="6"
-                    role="button"
-                    type="button"
-                  >
-                    <svg
-                      class="c25 c26 c27"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="c28"
-                display="flex"
-              >
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <p
-                    class="c29"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="3"
-                    font-weight="400"
-                  >
-                    Balance
-                  </p>
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    1
-                     FIL
-                  </h2>
-                </div>
-                <button
-                  class="c30"
-                  font-size="3"
-                  height="6"
-                  type="button"
-                >
-                  Select
-                </button>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li
-          class=""
-        >
-          <div
-            class="c31"
-            color="card.error.foreground"
-            display="flex"
-            height="11"
-            width="11"
-          >
-            <div
-              class="c15"
-              display="flex"
-            >
-              <div
-                class="c32"
-                color="status.fail.foreground"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c5"
-                >
-                  Er
-                </h3>
-              </div>
-              <p
-                class="c33"
-                font-family="RT-Alias-Grotesk"
-                font-size="2"
-                font-weight="400"
-              >
-                Error
-              </p>
-            </div>
-            <div
-              class="c34"
-            >
-              <p
-                class="c35"
-                font-family="RT-Alias-Grotesk"
-                font-size="2"
-                font-weight="400"
-              >
-                error for testing
-              </p>
-            </div>
-            <div
-              class="c36"
-              display="flex"
-            >
-              <button
-                class="c37"
-                color="status.fail.foreground"
-                font-size="3"
-                height="100%"
-                type="button"
-              >
-                Try again
-              </button>
-            </div>
-          </div>
-        </li>
-      </div>
-    </ul>
-  </div>
-</div>
-`;
-
 exports[`AccountSelector it renders the loading screen first 1`] = `
 .c0 {
   min-width: 0;
@@ -1586,8 +231,8 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   border-radius: 4px;
   border-width: 1px;
   padding: 16px;
-  background-color: hsla(0,0%,90%,0);
-  color: colors.core.black;
+  background-color: #5E26FF;
+  color: #E0D7FE;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1628,7 +273,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: colors.core.black;
+  color: #E0D7FE;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1676,7 +321,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
 .c21 {
   min-width: 0;
   box-sizing: border-box;
-  color: #5E26FF;
+  color: #E0D7FE;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1707,7 +352,70 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   align-items: flex-end;
 }
 
+.c30 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  background-color: hsla(0,0%,90%,0);
+  color: colors.core.black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  overflow: hidden;
+  height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 .c31 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  margin-right: 16px;
+  color: colors.core.black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c35 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -1737,12 +445,12 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: space-between;
 }
 
-.c33 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c34 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1763,7 +471,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: center;
 }
 
-.c38 {
+.c42 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1778,7 +486,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: flex-start;
 }
 
-.c41 {
+.c45 {
   min-width: 0;
   box-sizing: border-box;
   width: 100%;
@@ -1833,7 +541,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   opacity: 0.8;
 }
 
-.c30 {
+.c34 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -1852,7 +560,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   border-radius: 4px;
 }
 
-.c30:hover {
+.c34:hover {
   opacity: 0.8;
 }
 
@@ -1876,7 +584,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   margin-bottom: 0;
 }
 
-.c32 {
+.c36 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -1895,7 +603,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   margin-bottom: 0;
 }
 
-.c35 {
+.c39 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -1935,7 +643,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
+  color: #E0D7FE;
   font-size: 1.5rem;
 }
 
@@ -1943,7 +651,21 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   border-bottom: 2px solid #5E26FF;
 }
 
-.c39 {
+.c32 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.5rem;
+}
+
+.c32:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c43 {
   background: #E4EBFC;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
@@ -1977,7 +699,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   padding-bottom: 4px;
 }
 
-.c39:hover {
+.c43:hover {
   -webkit-transform: translateY(-4px);
   -ms-transform: translateY(-4px);
   transform: translateY(-4px);
@@ -1985,7 +707,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   background: props.theme.colors.input.background.valid;
 }
 
-.c40 {
+.c44 {
   background: #1AD08F;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
@@ -2019,7 +741,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   padding-bottom: 4px;
 }
 
-.c40:hover {
+.c44:hover {
   -webkit-transform: translateY(-4px);
   -ms-transform: translateY(-4px);
   transform: translateY(-4px);
@@ -2048,7 +770,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   margin-top: 8px;
 }
 
-.c36 {
+.c40 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -2071,23 +793,23 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   border-color: #999999;
 }
 
-.c36:hover {
+.c40:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c36:focus {
+.c40:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c37 {
+.c41 {
   -moz-appearance: textfield;
 }
 
-.c37::-webkit-outer-spin-button,
-.c37::-webkit-inner-spin-button {
+.c41::-webkit-outer-spin-button,
+.c41::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -2194,7 +916,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
           >
             <div
               class="c14"
-              color="colors.core.black"
+              color="card.account.color"
               display="flex"
               height="11"
               overflow="hidden"
@@ -2206,7 +928,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
               >
                 <div
                   class="c16"
-                  color="colors.core.black"
+                  color="card.account.color"
                   display="flex"
                   size="6"
                 >
@@ -2236,7 +958,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
               >
                 <a
                   class="c20"
-                  color="core.primary"
+                  color="card.account.color"
                   font-size="4"
                   href="https://filfox.info/en/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                   target="_blank"
@@ -2245,7 +967,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                 </a>
                 <div
                   class="c21"
-                  color="core.primary"
+                  color="card.account.color"
                   display="flex"
                 >
                   <button
@@ -2308,14 +1030,6 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                      FIL
                   </h2>
                 </div>
-                <button
-                  class="c30"
-                  font-size="3"
-                  height="6"
-                  type="button"
-                >
-                  Select
-                </button>
               </div>
             </div>
           </div>
@@ -2328,7 +1042,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
             display="inline-block"
           >
             <div
-              class="c14"
+              class="c30"
               color="colors.core.black"
               display="flex"
               height="11"
@@ -2340,7 +1054,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                 display="flex"
               >
                 <div
-                  class="c16"
+                  class="c31"
                   color="colors.core.black"
                   display="flex"
                   size="6"
@@ -2371,7 +1085,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                 display="flex"
               >
                 <a
-                  class="c20"
+                  class="c32"
                   color="core.primary"
                   font-size="4"
                   href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb1uq"
@@ -2380,7 +1094,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   t1mbk ... icb1uq
                 </a>
                 <div
-                  class="c21"
+                  class="c33"
                   color="core.primary"
                   display="flex"
                 >
@@ -2445,7 +1159,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   </h2>
                 </div>
                 <button
-                  class="c30"
+                  class="c34"
                   font-size="3"
                   height="6"
                   type="button"
@@ -2464,7 +1178,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
             display="inline-block"
           >
             <div
-              class="c14"
+              class="c30"
               color="colors.core.black"
               display="flex"
               height="11"
@@ -2476,7 +1190,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                 display="flex"
               >
                 <div
-                  class="c16"
+                  class="c31"
                   color="colors.core.black"
                   display="flex"
                   size="6"
@@ -2507,7 +1221,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                 display="flex"
               >
                 <a
-                  class="c20"
+                  class="c32"
                   color="core.primary"
                   font-size="4"
                   href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
@@ -2516,7 +1230,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   t1mbk ... icb2uq
                 </a>
                 <div
-                  class="c21"
+                  class="c33"
                   color="core.primary"
                   display="flex"
                 >
@@ -2581,7 +1295,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   </h2>
                 </div>
                 <button
-                  class="c30"
+                  class="c34"
                   font-size="3"
                   height="6"
                   type="button"
@@ -2600,7 +1314,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
             display="inline-block"
           >
             <div
-              class="c14"
+              class="c30"
               color="colors.core.black"
               display="flex"
               height="11"
@@ -2612,7 +1326,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                 display="flex"
               >
                 <div
-                  class="c16"
+                  class="c31"
                   color="colors.core.black"
                   display="flex"
                   size="6"
@@ -2643,7 +1357,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                 display="flex"
               >
                 <a
-                  class="c20"
+                  class="c32"
                   color="core.primary"
                   font-size="4"
                   href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb3uq"
@@ -2652,7 +1366,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   t1mbk ... icb3uq
                 </a>
                 <div
-                  class="c21"
+                  class="c33"
                   color="core.primary"
                   display="flex"
                 >
@@ -2717,7 +1431,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   </h2>
                 </div>
                 <button
-                  class="c30"
+                  class="c34"
                   font-size="3"
                   height="6"
                   type="button"
@@ -2736,7 +1450,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
             display="inline-block"
           >
             <div
-              class="c14"
+              class="c30"
               color="colors.core.black"
               display="flex"
               height="11"
@@ -2748,7 +1462,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                 display="flex"
               >
                 <div
-                  class="c16"
+                  class="c31"
                   color="colors.core.black"
                   display="flex"
                   size="6"
@@ -2779,7 +1493,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                 display="flex"
               >
                 <a
-                  class="c20"
+                  class="c32"
                   color="core.primary"
                   font-size="4"
                   href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb4uq"
@@ -2788,7 +1502,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   t1mbk ... icb4uq
                 </a>
                 <div
-                  class="c21"
+                  class="c33"
                   color="core.primary"
                   display="flex"
                 >
@@ -2853,7 +1567,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   </h2>
                 </div>
                 <button
-                  class="c30"
+                  class="c34"
                   font-size="3"
                   height="6"
                   type="button"
@@ -2868,7 +1582,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
           class=""
         >
           <div
-            class="c31"
+            class="c35"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -2876,7 +1590,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
             width="11"
           >
             <h2
-              class="c32"
+              class="c36"
               font-family="RT-Alias-Grotesk"
               font-size="4"
               font-weight="400"
@@ -2884,14 +1598,14 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
               Create new account
             </h2>
             <div
-              class="c33"
+              class="c37"
             >
               <div
-                class="c34"
+                class="c38"
                 display="flex"
               >
                 <h4
-                  class="c35"
+                  class="c39"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
@@ -2900,7 +1614,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   Account index
                 </h4>
                 <input
-                  class="c36 c37"
+                  class="c40 c41"
                   display="inline-block"
                   height="6"
                   value="5"
@@ -2910,15 +1624,15 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
               
             </div>
             <div
-              class="c33"
+              class="c37"
             >
               <div
-                class="c38"
+                class="c42"
                 display="flex"
                 width="100%"
               >
                 <button
-                  class="c39"
+                  class="c43"
                   display="flex"
                   font-family="RT-Alias-Grotesk"
                   font-size="1"
@@ -2929,7 +1643,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   Legacy address
                 </button>
                 <button
-                  class="c40"
+                  class="c44"
                   display="flex"
                   font-family="RT-Alias-Grotesk"
                   font-size="1"
@@ -2942,12 +1656,12 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
               </div>
             </div>
             <div
-              class="c41"
+              class="c45"
               display="flex"
               width="100%"
             >
               <button
-                class="c30"
+                class="c34"
                 font-size="3"
                 height="6"
                 type="button"
@@ -3102,8 +1816,8 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   border-radius: 4px;
   border-width: 1px;
   padding: 16px;
-  background-color: hsla(0,0%,90%,0);
-  color: colors.core.black;
+  background-color: #5E26FF;
+  color: #E0D7FE;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3144,7 +1858,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: colors.core.black;
+  color: #E0D7FE;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3192,7 +1906,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
 .c21 {
   min-width: 0;
   box-sizing: border-box;
-  color: #5E26FF;
+  color: #E0D7FE;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3223,7 +1937,70 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   align-items: flex-end;
 }
 
+.c30 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  background-color: hsla(0,0%,90%,0);
+  color: colors.core.black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  overflow: hidden;
+  height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 .c31 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  margin-right: 16px;
+  color: colors.core.black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c35 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -3253,12 +2030,12 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: space-between;
 }
 
-.c33 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c34 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3279,7 +2056,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: center;
 }
 
-.c38 {
+.c42 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3294,7 +2071,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: flex-start;
 }
 
-.c41 {
+.c45 {
   min-width: 0;
   box-sizing: border-box;
   width: 100%;
@@ -3349,7 +2126,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   opacity: 0.8;
 }
 
-.c30 {
+.c34 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -3368,7 +2145,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   border-radius: 4px;
 }
 
-.c30:hover {
+.c34:hover {
   opacity: 0.8;
 }
 
@@ -3392,7 +2169,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-bottom: 0;
 }
 
-.c32 {
+.c36 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -3411,7 +2188,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-bottom: 0;
 }
 
-.c35 {
+.c39 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -3451,7 +2228,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
+  color: #E0D7FE;
   font-size: 1.5rem;
 }
 
@@ -3459,7 +2236,21 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   border-bottom: 2px solid #5E26FF;
 }
 
-.c39 {
+.c32 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.5rem;
+}
+
+.c32:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c43 {
   background: #E4EBFC;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
@@ -3493,7 +2284,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   padding-bottom: 4px;
 }
 
-.c39:hover {
+.c43:hover {
   -webkit-transform: translateY(-4px);
   -ms-transform: translateY(-4px);
   transform: translateY(-4px);
@@ -3501,7 +2292,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   background: props.theme.colors.input.background.valid;
 }
 
-.c40 {
+.c44 {
   background: #1AD08F;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
@@ -3535,7 +2326,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   padding-bottom: 4px;
 }
 
-.c40:hover {
+.c44:hover {
   -webkit-transform: translateY(-4px);
   -ms-transform: translateY(-4px);
   transform: translateY(-4px);
@@ -3564,7 +2355,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-top: 8px;
 }
 
-.c36 {
+.c40 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3587,23 +2378,23 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   border-color: #999999;
 }
 
-.c36:hover {
+.c40:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c36:focus {
+.c40:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c37 {
+.c41 {
   -moz-appearance: textfield;
 }
 
-.c37::-webkit-outer-spin-button,
-.c37::-webkit-inner-spin-button {
+.c41::-webkit-outer-spin-button,
+.c41::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -3710,7 +2501,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
           >
             <div
               class="c14"
-              color="colors.core.black"
+              color="card.account.color"
               display="flex"
               height="11"
               overflow="hidden"
@@ -3722,7 +2513,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               >
                 <div
                   class="c16"
-                  color="colors.core.black"
+                  color="card.account.color"
                   display="flex"
                   size="6"
                 >
@@ -3752,7 +2543,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               >
                 <a
                   class="c20"
-                  color="core.primary"
+                  color="card.account.color"
                   font-size="4"
                   href="https://filfox.info/en/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                   target="_blank"
@@ -3761,7 +2552,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 </a>
                 <div
                   class="c21"
-                  color="core.primary"
+                  color="card.account.color"
                   display="flex"
                 >
                   <button
@@ -3824,14 +2615,6 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                      FIL
                   </h2>
                 </div>
-                <button
-                  class="c30"
-                  font-size="3"
-                  height="6"
-                  type="button"
-                >
-                  Select
-                </button>
               </div>
             </div>
           </div>
@@ -3844,7 +2627,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
             display="inline-block"
           >
             <div
-              class="c14"
+              class="c30"
               color="colors.core.black"
               display="flex"
               height="11"
@@ -3856,7 +2639,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 display="flex"
               >
                 <div
-                  class="c16"
+                  class="c31"
                   color="colors.core.black"
                   display="flex"
                   size="6"
@@ -3887,7 +2670,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 display="flex"
               >
                 <a
-                  class="c20"
+                  class="c32"
                   color="core.primary"
                   font-size="4"
                   href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb1uq"
@@ -3896,7 +2679,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   t1mbk ... icb1uq
                 </a>
                 <div
-                  class="c21"
+                  class="c33"
                   color="core.primary"
                   display="flex"
                 >
@@ -3961,7 +2744,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   </h2>
                 </div>
                 <button
-                  class="c30"
+                  class="c34"
                   font-size="3"
                   height="6"
                   type="button"
@@ -3980,7 +2763,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
             display="inline-block"
           >
             <div
-              class="c14"
+              class="c30"
               color="colors.core.black"
               display="flex"
               height="11"
@@ -3992,7 +2775,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 display="flex"
               >
                 <div
-                  class="c16"
+                  class="c31"
                   color="colors.core.black"
                   display="flex"
                   size="6"
@@ -4023,7 +2806,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 display="flex"
               >
                 <a
-                  class="c20"
+                  class="c32"
                   color="core.primary"
                   font-size="4"
                   href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
@@ -4032,7 +2815,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   t1mbk ... icb2uq
                 </a>
                 <div
-                  class="c21"
+                  class="c33"
                   color="core.primary"
                   display="flex"
                 >
@@ -4097,7 +2880,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   </h2>
                 </div>
                 <button
-                  class="c30"
+                  class="c34"
                   font-size="3"
                   height="6"
                   type="button"
@@ -4116,7 +2899,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
             display="inline-block"
           >
             <div
-              class="c14"
+              class="c30"
               color="colors.core.black"
               display="flex"
               height="11"
@@ -4128,7 +2911,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 display="flex"
               >
                 <div
-                  class="c16"
+                  class="c31"
                   color="colors.core.black"
                   display="flex"
                   size="6"
@@ -4159,7 +2942,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 display="flex"
               >
                 <a
-                  class="c20"
+                  class="c32"
                   color="core.primary"
                   font-size="4"
                   href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb3uq"
@@ -4168,7 +2951,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   t1mbk ... icb3uq
                 </a>
                 <div
-                  class="c21"
+                  class="c33"
                   color="core.primary"
                   display="flex"
                 >
@@ -4233,7 +3016,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   </h2>
                 </div>
                 <button
-                  class="c30"
+                  class="c34"
                   font-size="3"
                   height="6"
                   type="button"
@@ -4252,7 +3035,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
             display="inline-block"
           >
             <div
-              class="c14"
+              class="c30"
               color="colors.core.black"
               display="flex"
               height="11"
@@ -4264,7 +3047,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 display="flex"
               >
                 <div
-                  class="c16"
+                  class="c31"
                   color="colors.core.black"
                   display="flex"
                   size="6"
@@ -4295,7 +3078,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                 display="flex"
               >
                 <a
-                  class="c20"
+                  class="c32"
                   color="core.primary"
                   font-size="4"
                   href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb4uq"
@@ -4304,7 +3087,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   t1mbk ... icb4uq
                 </a>
                 <div
-                  class="c21"
+                  class="c33"
                   color="core.primary"
                   display="flex"
                 >
@@ -4369,7 +3152,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   </h2>
                 </div>
                 <button
-                  class="c30"
+                  class="c34"
                   font-size="3"
                   height="6"
                   type="button"
@@ -4384,7 +3167,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
           class=""
         >
           <div
-            class="c31"
+            class="c35"
             color="colors.core.black"
             display="flex"
             height="11"
@@ -4392,7 +3175,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
             width="11"
           >
             <h2
-              class="c32"
+              class="c36"
               font-family="RT-Alias-Grotesk"
               font-size="4"
               font-weight="400"
@@ -4400,14 +3183,14 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               Create new account
             </h2>
             <div
-              class="c33"
+              class="c37"
             >
               <div
-                class="c34"
+                class="c38"
                 display="flex"
               >
                 <h4
-                  class="c35"
+                  class="c39"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
@@ -4416,7 +3199,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   Account index
                 </h4>
                 <input
-                  class="c36 c37"
+                  class="c40 c41"
                   display="inline-block"
                   height="6"
                   value="5"
@@ -4426,15 +3209,15 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               
             </div>
             <div
-              class="c33"
+              class="c37"
             >
               <div
-                class="c38"
+                class="c42"
                 display="flex"
                 width="100%"
               >
                 <button
-                  class="c39"
+                  class="c43"
                   display="flex"
                   font-family="RT-Alias-Grotesk"
                   font-size="1"
@@ -4445,7 +3228,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   Legacy address
                 </button>
                 <button
-                  class="c40"
+                  class="c44"
                   display="flex"
                   font-family="RT-Alias-Grotesk"
                   font-size="1"
@@ -4458,12 +3241,12 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               </div>
             </div>
             <div
-              class="c41"
+              class="c45"
               display="flex"
               width="100%"
             >
               <button
-                class="c30"
+                class="c34"
                 font-size="3"
                 height="6"
                 type="button"
