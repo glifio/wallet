@@ -87,7 +87,10 @@ const Create = ({ onClick, loading, nextAccountIndex, errorMsg }) => {
       >
         <Button
           title='Create'
-          onClick={() => onClick(accountIndex, network)}
+          onClick={() => {
+            setNetwork('f')
+            onClick(accountIndex, network)
+          }}
           variant='secondary'
         />
       </Box>

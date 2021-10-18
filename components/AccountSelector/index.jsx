@@ -30,6 +30,7 @@ import makeFriendlyBalance from '../../utils/makeFriendlyBalance'
 import useWallet from '../../WalletProvider/useWallet'
 import createPath from '../../utils/createPath'
 import reportError from '../../utils/reportError'
+import converAddrToFPrefix from '../../utils/convertAddrToFPrefix'
 
 const AccountSelector = ({ msig }) => {
   const wallet = useWallet()
@@ -144,10 +145,9 @@ const AccountSelector = ({ msig }) => {
           network === MAINNET ? MAINNET_PATH_CODE : TESTNET_PATH_CODE
         const wallet = {
           balance,
-          address,
+          address: converAddrToFPrefix(address),
           path: createPath(networkCode, walletsInRdx.length)
         }
-
         dispatch(walletList([wallet]))
       }
     } catch (err) {
@@ -170,66 +170,59 @@ const AccountSelector = ({ msig }) => {
           maxWidth={19}
           p={4}
         >
-          <Menu
+          <Card
             display='flex'
             flexDirection='column'
-            alignItems='center'
-            textAlign='center'
-            m={2}
+            justifyContent='space-between'
+            border='none'
+            width='100%'
+            my={2}
             maxWidth={16}
+            backgroundColor='blue.muted700'
           >
-            <MenuItem display='flex' alignItems='center' color='core.nearblack'>
-              <Card
-                display='flex'
-                flexDirection='column'
-                justifyContent='space-between'
-                border='none'
-                width='100%'
-                my={2}
-                backgroundColor='blue.muted700'
-              >
-                <Box display='flex' alignItems='center'>
-                  <Glyph
-                    acronym='Ac'
-                    bg='core.primary'
-                    borderColor='core.primary'
-                    color='core.white'
-                  />
-                  <Title ml={2} color='core.primary'>
-                    {msig ? 'Select Account' : 'Switch Accounts'}
-                  </Title>
-                </Box>
-                <Box mt={3}>
-                  <HelperText
-                    color='core.nearblack'
-                    msig={msig}
-                    isLedger={wallet.type === LEDGER}
-                  />
-                </Box>
-              </Card>
-            </MenuItem>
-          </Menu>
-          <Menu>
-            <MenuItem display='flex' flexWrap='wrap' justifyContent='center'>
-              {walletsInRdx.map((w, i) => (
-                <AccountCardAlt
-                  alignItems='center'
-                  onClick={() => dispatch(switchWallet(i), onClose())}
-                  key={w.address}
-                  address={w.address}
-                  index={i}
-                  selected={false}
-                  balance={makeFriendlyBalance(w.balance, 6)}
-                />
-              ))}
-              <Create
-                errorMsg={errorMsg}
-                nextAccountIndex={walletsInRdx.length}
-                onClick={fetchNextAccount}
-                loading={loadingAccounts}
-                mb={2}
+            <Box display='flex' alignItems='center'>
+              <Glyph
+                acronym='Ac'
+                bg='core.primary'
+                borderColor='core.primary'
+                color='core.white'
               />
-            </MenuItem>
+              <Title ml={2} color='core.primary'>
+                {msig ? 'Select Account' : 'Switch Accounts'}
+              </Title>
+            </Box>
+            <Box mt={3}>
+              <HelperText
+                color='core.nearblack'
+                msig={msig}
+                isLedger={wallet.type === LEDGER}
+              />
+            </Box>
+          </Card>
+          <Menu>
+            <Box display='flex' flexWrap='wrap' justifyContent='center'>
+              {walletsInRdx.map((w, i) => (
+                <MenuItem key={w.address}>
+                  <AccountCardAlt
+                    alignItems='center'
+                    onClick={() => dispatch(switchWallet(i), onClose())}
+                    address={w.address}
+                    index={i}
+                    selected={false}
+                    balance={makeFriendlyBalance(w.balance, 6)}
+                  />
+                </MenuItem>
+              ))}
+              <MenuItem>
+                <Create
+                  errorMsg={errorMsg}
+                  nextAccountIndex={walletsInRdx.length}
+                  onClick={fetchNextAccount}
+                  loading={loadingAccounts}
+                  mb={2}
+                />
+              </MenuItem>
+            </Box>
           </Menu>
         </Box>
       )}
