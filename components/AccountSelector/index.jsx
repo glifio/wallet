@@ -3,18 +3,17 @@ import { bool } from 'prop-types'
 import { useSelector, useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
 import {
+  AccountCardAlt,
   Box,
-  Box as Wrapper,
   Card,
   Glyph,
   Title,
   Menu,
   MenuItem,
   LoadingScreen
-} from '../Shared'
+} from '@glif/react-components'
 import HelperText from './HelperText'
 import Create from './Create'
-import AccountCardAlt from '../Shared/AccountCardAlt'
 import { useWalletProvider } from '../../WalletProvider'
 import {
   LEDGER,
@@ -125,7 +124,7 @@ const AccountSelector = ({ msig }) => {
     errorMsg = errorInRdx.message || errorInRdx
   }
 
-  const fetchNextAccount = async () => {
+  const fetchNextAccount = async (index, network) => {
     setLoadingAccounts(true)
     try {
       let provider = walletProvider
@@ -136,8 +135,8 @@ const AccountSelector = ({ msig }) => {
       if (provider) {
         const [address] = await provider.wallet.getAccounts(
           network,
-          walletsInRdx.length,
-          walletsInRdx.length + 1
+          index,
+          index + 1
         )
 
         const balance = await provider.getBalance(address)
@@ -159,7 +158,7 @@ const AccountSelector = ({ msig }) => {
   }
 
   return (
-    <Wrapper display='flex' flexDirection='column' justifyItems='center'>
+    <Box display='flex' flexDirection='column' justifyItems='center'>
       {loadingPage ? (
         <LoadingScreen height='100vh' />
       ) : (
@@ -234,7 +233,7 @@ const AccountSelector = ({ msig }) => {
           </Menu>
         </Box>
       )}
-    </Wrapper>
+    </Box>
   )
 }
 

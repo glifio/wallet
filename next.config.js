@@ -37,7 +37,7 @@ module.exports = (phase) => {
   return {
     webpack,
     env: {
-      LOTUS_NODE_JSONRPC: 'https://calibration.node.glif.io/rpc/v0',
+      LOTUS_NODE_JSONRPC: 'https://api.node.glif.io',
       MAGIC_STRING_ENDPOINT: 'https://glif-verifier.vercel.app/api/verify',
       IS_PROD: false
     }
