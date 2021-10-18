@@ -73,6 +73,7 @@ describe('AccountSelector', () => {
     const { Tree, store } = composeMockAppTree('postOnboard')
     await act(async () => {
       render(<AccountSelector test />, { wrapper: Tree })
+      await flushPromises()
       await fireEvent.click(screen.getByText('Create'))
       await flushPromises()
     })
