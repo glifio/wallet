@@ -33,32 +33,6 @@ describe('state manipulators', () => {
         JSON.stringify(states.walletList(initialState, { wallets }))
       ).toEqual(JSON.stringify(expectedState))
     })
-    test('it does not add wallets on the wrong network to the store', () => {
-      const walletsWithMixedNetworks = [
-        {
-          address: 'f1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
-          balance: new FilecoinNumber('1', 'fil'),
-          path: SINGLE_KEY
-        },
-        {
-          address: 't1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
-          balance: new FilecoinNumber('1', 'fil'),
-          path: SINGLE_KEY
-        }
-      ]
-
-      const expectedState = {
-        ...initialState,
-        selectedWalletIdx: 0,
-        wallets: [walletsWithMixedNetworks[1]]
-      }
-
-      expect(
-        states.walletList(initialState, {
-          wallets: walletsWithMixedNetworks
-        })
-      ).toEqual(expectedState)
-    })
 
     test('it keeps the selectedWalletIdx if one is already set', () => {
       const wallets = [

@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { SyntheticEvent, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import {
   Box,
   Button,
   Card,
+  Label,
   Title,
   Text,
   AccountError,
   Loading,
   NetworkSwitcherGlyphV2
 } from '@glif/react-components'
-import { Input } from '../Shared'
+import { RawNumberInput } from '../Shared/Input/Number'
 
 const LoadingCard = () => (
   <Card
@@ -34,10 +35,22 @@ const LoadingCard = () => (
   </Card>
 )
 
-const Create = ({ onClick, loading, nextAccountIndex, errorMsg }) => {
-  const [accountIndex, setAccountIndex] = useState(nextAccountIndex)
+const Create = ({
+  onClick,
+  loading,
+  nextAccountIndex,
+  errorMsg
+}: {
+  onClick: (_index: number, _network: 'f' | 't') => void
+  loading: boolean
+  nextAccountIndex: number
+  errorMsg?: string
+}) => {
+  const [accountIndex, setAccountIndex] = useState<number>(
+    Number(nextAccountIndex)
+  )
+  const [accountIndexErr, setAccountIndexErr] = useState<string>('')
   const [network, setNetwork] = useState<'f' | 't'>('f')
-
   useEffect(() => setAccountIndex(nextAccountIndex), [nextAccountIndex])
 
   if (loading) return <LoadingCard />
@@ -60,17 +73,45 @@ const Create = ({ onClick, loading, nextAccountIndex, errorMsg }) => {
       color='colors.core.black'
     >
       <Title my={2}>Create new account</Title>
-      <Box width={10}>
-        <Input.Text
-          /* @ts-ignore */
-          label='Account index'
-          value={accountIndex}
-          onChange={(e) => setAccountIndex(e.target.value)}
-        />
+
+      <Box>
+        <Box
+          display='flex'
+          flexDirection='row'
+          alignItems='center'
+          justifyContent='center'
+          maxWidth={11}
+        >
+          <Label width='50%'>Account index</Label>
+          <RawNumberInput
+            width='50%'
+            borderRadius={2}
+            onFocus={() => setAccountIndexErr('')}
+            value={accountIndex}
+            onChange={(e: SyntheticEvent) => {
+              setAccountIndexErr('')
+              const target = e.target as HTMLInputElement
+              const num = Number(target.value)
+              if (!isNaN(num)) setAccountIndex(num)
+              else setAccountIndexErr('Account index must be a number')
+            }}
+          />
+        </Box>
+        {accountIndexErr && (
+          <Text
+            p={0}
+            m={0}
+            fontSize='15px'
+            textAlign='right'
+            color='status.fail.background'
+          >
+            {accountIndexErr}
+          </Text>
+        )}
       </Box>
       <Box>
         <NetworkSwitcherGlyphV2
-          onNetworkSwitch={setNetwork}
+          onNetworkSwitch={(network: 't' | 'f') => setNetwork(network)}
           network={network}
         />
         {network === 't' && (

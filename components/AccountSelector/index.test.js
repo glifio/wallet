@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, act, screen, cleanup } from '@testing-library/react'
+import { render, act, screen, cleanup, fireEvent } from '@testing-library/react'
 import AccountSelector from '.'
 import HelperText from './HelperText'
 import ThemeProvider from '../Shared/ThemeProvider'
@@ -67,6 +67,17 @@ describe('AccountSelector', () => {
     expectAllAccountsInView(screen)
 
     expect(res.container.firstChild).toMatchSnapshot()
+  })
+
+  test('it adds a wallet to redux upon create', async () => {
+    const { Tree, store } = composeMockAppTree('postOnboard')
+    await act(async () => {
+      render(<AccountSelector test />, { wrapper: Tree })
+      await fireEvent.click(screen.getByText('Create'))
+      await flushPromises()
+    })
+    expect(store.getState().wallets.length).toBe(6)
+    expect(screen.getByDisplayValue('6')).toBeInTheDocument()
   })
 })
 

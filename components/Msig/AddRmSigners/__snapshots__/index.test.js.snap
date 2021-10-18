@@ -265,6 +265,20 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders prefac
   height: 24;
 }
 
+.c15 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.25rem;
+}
+
+.c15:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
 .c3 {
   width: 100%;
   display: -webkit-box;
@@ -281,20 +295,6 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders prefac
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.c15 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.25rem;
-}
-
-.c15:hover {
-  border-bottom: 2px solid #5E26FF;
 }
 
 .c1 {
@@ -2804,6 +2804,20 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders pref
   height: 24;
 }
 
+.c15 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.25rem;
+}
+
+.c15:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
 .c3 {
   width: 100%;
   display: -webkit-box;
@@ -2820,20 +2834,6 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders pref
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.c15 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.25rem;
-}
-
-.c15:hover {
-  border-bottom: 2px solid #5E26FF;
 }
 
 .c1 {
@@ -3277,6 +3277,20 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   transform: scale(1.25);
 }
 
+.c31 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+}
+
+.c31:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
 .c3 {
   width: 100%;
   display: -webkit-box;
@@ -3293,20 +3307,6 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.c31 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-}
-
-.c31:hover {
-  border-bottom: 2px solid #5E26FF;
 }
 
 .c1 {

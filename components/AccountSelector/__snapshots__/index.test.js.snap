@@ -1740,15 +1740,30 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
 .c33 {
   min-width: 0;
   box-sizing: border-box;
-  width: 240px;
 }
 
-.c40 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 300px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-.c41 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1763,7 +1778,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: flex-start;
 }
 
-.c44 {
+.c41 {
   min-width: 0;
   box-sizing: border-box;
   width: 100%;
@@ -1880,6 +1895,15 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   margin-bottom: 0;
 }
 
+.c35 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  width: 50%;
+  margin: 0;
+}
+
 .c25 {
   width: 24;
   height: 24;
@@ -1919,7 +1943,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   border-bottom: 2px solid #5E26FF;
 }
 
-.c42 {
+.c39 {
   background: #E4EBFC;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
@@ -1953,7 +1977,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   padding-bottom: 4px;
 }
 
-.c42:hover {
+.c39:hover {
   -webkit-transform: translateY(-4px);
   -ms-transform: translateY(-4px);
   transform: translateY(-4px);
@@ -1961,7 +1985,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   background: props.theme.colors.input.background.valid;
 }
 
-.c43 {
+.c40 {
   background: #1AD08F;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
@@ -1995,7 +2019,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   padding-bottom: 4px;
 }
 
-.c43:hover {
+.c40:hover {
   -webkit-transform: translateY(-4px);
   -ms-transform: translateY(-4px);
   transform: translateY(-4px);
@@ -2007,55 +2031,6 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.c35 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c36 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 48px;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c38 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .c8 {
@@ -2073,16 +2048,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   margin-top: 8px;
 }
 
-.c37 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c39 {
+.c36 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -2097,31 +2063,33 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   text-align: left;
   cursor: text;
   background: #d1ddfa;
-  padding-left: 16px;
-  padding-right: 16px;
+  width: 50%;
   display: inline-block;
   height: 48px;
-  width: 100%;
   border-radius: 4px;
   border: 0;
   border-color: #999999;
 }
 
-.c39:hover {
+.c36:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c39:focus {
+.c36:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c34 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
+.c37 {
+  -moz-appearance: textfield;
+}
+
+.c37::-webkit-outer-spin-button,
+.c37::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .c10 {
@@ -2917,56 +2885,40 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
             </h2>
             <div
               class="c33"
-              width="10"
             >
               <div
                 class="c34"
+                display="flex"
               >
-                <div
+                <h4
                   class="c35"
-                  display="flex"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                  width="50%"
                 >
-                  <div
-                    class="c36"
-                    display="flex"
-                  >
-                    <h4
-                      class="c37"
-                      color="core.nearblack"
-                      font-family="RT-Alias-Grotesk"
-                      font-size="2"
-                      font-weight="400"
-                    >
-                      Account index
-                    </h4>
-                  </div>
-                  <div
-                    class="c38"
-                    display="flex"
-                  >
-                    <input
-                      class="c39"
-                      display="inline-block"
-                      height="6"
-                      name=""
-                      value="5"
-                      width="100%"
-                    />
-                    
-                  </div>
-                </div>
+                  Account index
+                </h4>
+                <input
+                  class="c36 c37"
+                  display="inline-block"
+                  height="6"
+                  value="5"
+                  width="50%"
+                />
               </div>
+              
             </div>
             <div
-              class="c40"
+              class="c33"
             >
               <div
-                class="c41"
+                class="c38"
                 display="flex"
                 width="100%"
               >
                 <button
-                  class="c42"
+                  class="c39"
                   display="flex"
                   font-family="RT-Alias-Grotesk"
                   font-size="1"
@@ -2977,7 +2929,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   Legacy address
                 </button>
                 <button
-                  class="c43"
+                  class="c40"
                   display="flex"
                   font-family="RT-Alias-Grotesk"
                   font-size="1"
@@ -2990,7 +2942,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
               </div>
             </div>
             <div
-              class="c44"
+              class="c41"
               display="flex"
               width="100%"
             >
@@ -3304,15 +3256,30 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
 .c33 {
   min-width: 0;
   box-sizing: border-box;
-  width: 240px;
 }
 
-.c40 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 300px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-.c41 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3327,7 +3294,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: flex-start;
 }
 
-.c44 {
+.c41 {
   min-width: 0;
   box-sizing: border-box;
   width: 100%;
@@ -3444,6 +3411,15 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-bottom: 0;
 }
 
+.c35 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  width: 50%;
+  margin: 0;
+}
+
 .c25 {
   width: 24;
   height: 24;
@@ -3483,7 +3459,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   border-bottom: 2px solid #5E26FF;
 }
 
-.c42 {
+.c39 {
   background: #E4EBFC;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
@@ -3517,7 +3493,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   padding-bottom: 4px;
 }
 
-.c42:hover {
+.c39:hover {
   -webkit-transform: translateY(-4px);
   -ms-transform: translateY(-4px);
   transform: translateY(-4px);
@@ -3525,7 +3501,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   background: props.theme.colors.input.background.valid;
 }
 
-.c43 {
+.c40 {
   background: #1AD08F;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
@@ -3559,7 +3535,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   padding-bottom: 4px;
 }
 
-.c43:hover {
+.c40:hover {
   -webkit-transform: translateY(-4px);
   -ms-transform: translateY(-4px);
   transform: translateY(-4px);
@@ -3571,55 +3547,6 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.c35 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c36 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 48px;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c38 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .c8 {
@@ -3637,16 +3564,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-top: 8px;
 }
 
-.c37 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c39 {
+.c36 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3661,31 +3579,33 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   text-align: left;
   cursor: text;
   background: #d1ddfa;
-  padding-left: 16px;
-  padding-right: 16px;
+  width: 50%;
   display: inline-block;
   height: 48px;
-  width: 100%;
   border-radius: 4px;
   border: 0;
   border-color: #999999;
 }
 
-.c39:hover {
+.c36:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c39:focus {
+.c36:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c34 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
+.c37 {
+  -moz-appearance: textfield;
+}
+
+.c37::-webkit-outer-spin-button,
+.c37::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .c10 {
@@ -4481,56 +4401,40 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
             </h2>
             <div
               class="c33"
-              width="10"
             >
               <div
                 class="c34"
+                display="flex"
               >
-                <div
+                <h4
                   class="c35"
-                  display="flex"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="2"
+                  font-weight="400"
+                  width="50%"
                 >
-                  <div
-                    class="c36"
-                    display="flex"
-                  >
-                    <h4
-                      class="c37"
-                      color="core.nearblack"
-                      font-family="RT-Alias-Grotesk"
-                      font-size="2"
-                      font-weight="400"
-                    >
-                      Account index
-                    </h4>
-                  </div>
-                  <div
-                    class="c38"
-                    display="flex"
-                  >
-                    <input
-                      class="c39"
-                      display="inline-block"
-                      height="6"
-                      name=""
-                      value="5"
-                      width="100%"
-                    />
-                    
-                  </div>
-                </div>
+                  Account index
+                </h4>
+                <input
+                  class="c36 c37"
+                  display="inline-block"
+                  height="6"
+                  value="5"
+                  width="50%"
+                />
               </div>
+              
             </div>
             <div
-              class="c40"
+              class="c33"
             >
               <div
-                class="c41"
+                class="c38"
                 display="flex"
                 width="100%"
               >
                 <button
-                  class="c42"
+                  class="c39"
                   display="flex"
                   font-family="RT-Alias-Grotesk"
                   font-size="1"
@@ -4541,7 +4445,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                   Legacy address
                 </button>
                 <button
-                  class="c43"
+                  class="c40"
                   display="flex"
                   font-family="RT-Alias-Grotesk"
                   font-size="1"
@@ -4554,7 +4458,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               </div>
             </div>
             <div
-              class="c44"
+              class="c41"
               display="flex"
               width="100%"
             >
