@@ -55,7 +55,16 @@ const Create = ({
 
   if (loading) return <LoadingCard />
   if (errorMsg)
-    return <AccountError onTryAgain={onClick} errorMsg={errorMsg} m={2} />
+    return (
+      <AccountError
+        onClick={() => {
+          setNetwork('f')
+          onClick(accountIndex, network)
+        }}
+        errorMsg={errorMsg}
+        m={2}
+      />
+    )
 
   return (
     <Card
