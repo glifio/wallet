@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AccountSelector it renders the loading screen first 1`] = `
-.c0 {
+.c2 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -14,7 +14,7 @@ exports[`AccountSelector it renders the loading screen first 1`] = `
   justify-items: center;
 }
 
-.c1 {
+.c3 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -35,7 +35,7 @@ exports[`AccountSelector it renders the loading screen first 1`] = `
   justify-content: center;
 }
 
-.c4 {
+.c6 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -44,14 +44,19 @@ exports[`AccountSelector it renders the loading screen first 1`] = `
   margin-top: 16px;
 }
 
-.c2 {
+.c1 {
+  width: 24;
+  height: 24;
+}
+
+.c4 {
   display: inline-block;
   height: 48px;
   width: 48px;
   background-color: #5E26FF;
 }
 
-.c3 {
+.c5 {
   display: inline-block;
   height: 24px;
   width: 24px;
@@ -64,36 +69,80 @@ exports[`AccountSelector it renders the loading screen first 1`] = `
   animation-iteration-count: infinite;
 }
 
-<div
-  class="c0"
-  display="flex"
->
-  <div
-    class="c1"
-    display="flex"
-    height="100vh"
+.c0 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 24px;
+  margin-right: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+<div>
+  <button
+    class="c0"
+    display="inline-block"
+    role="button"
+    type="button"
   >
-    <span
-      class="c2"
+    <svg
+      class="c1"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clip-rule="evenodd"
+        d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+        fill="#5E26FF"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </button>
+  <div
+    class="c2"
+    display="flex"
+  >
+    <div
+      class="c3"
+      display="flex"
+      height="100vh"
     >
       <span
-        class="c3"
-      />
-    </span>
-    <h4
-      class="c4"
-      font-family="RT-Alias-Grotesk"
-      font-size="2"
-      font-weight="400"
-    >
-      Loading...
-    </h4>
+        class="c4"
+      >
+        <span
+          class="c5"
+        />
+      </span>
+      <h4
+        class="c6"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Loading...
+      </h4>
+    </div>
   </div>
 </div>
 `;
 
 exports[`AccountSelector it renders the wallets in redux with the msig copy when the msig prop is passed 1`] = `
-.c0 {
+.c2 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -106,7 +155,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-items: center;
 }
 
-.c1 {
+.c3 {
   min-width: 0;
   box-sizing: border-box;
   padding: 24px;
@@ -127,7 +176,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   align-self: center;
 }
 
-.c2 {
+.c4 {
   min-width: 0;
   box-sizing: border-box;
   border: none;
@@ -153,7 +202,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: space-between;
 }
 
-.c3 {
+.c5 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -166,7 +215,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   align-items: center;
 }
 
-.c4 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -191,13 +240,13 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: center;
 }
 
-.c7 {
+.c9 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 16px;
 }
 
-.c12 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -213,7 +262,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: center;
 }
 
-.c13 {
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   margin: 8px;
@@ -224,7 +273,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   align-items: center;
 }
 
-.c14 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -249,7 +298,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: space-between;
 }
 
-.c15 {
+.c17 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -266,7 +315,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: flex-start;
 }
 
-.c16 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -290,7 +339,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: center;
 }
 
-.c17 {
+.c19 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -302,7 +351,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   flex-direction: column;
 }
 
-.c19 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -318,7 +367,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: center;
 }
 
-.c21 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   color: #E0D7FE;
@@ -332,7 +381,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   align-items: center;
 }
 
-.c28 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -352,7 +401,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   align-items: flex-end;
 }
 
-.c30 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -377,7 +426,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: space-between;
 }
 
-.c31 {
+.c32 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -401,7 +450,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: center;
 }
 
-.c33 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
   color: #5E26FF;
@@ -415,7 +464,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   align-items: center;
 }
 
-.c35 {
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -445,12 +494,12 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: space-between;
 }
 
-.c37 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c38 {
+.c39 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -471,7 +520,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: center;
 }
 
-.c42 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -486,7 +535,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: flex-start;
 }
 
-.c45 {
+.c46 {
   min-width: 0;
   box-sizing: border-box;
   width: 100%;
@@ -503,13 +552,13 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: flex-end;
 }
 
-.c5 {
+.c7 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c23 {
+.c25 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -537,11 +586,11 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   border-radius: 4px;
 }
 
-.c23:hover {
+.c25:hover {
   opacity: 0.8;
 }
 
-.c34 {
+.c35 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -560,11 +609,11 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   border-radius: 4px;
 }
 
-.c34:hover {
+.c35:hover {
   opacity: 0.8;
 }
 
-.c6 {
+.c8 {
   color: #5E26FF;
   font-size: 1.5rem;
   font-weight: 400;
@@ -574,7 +623,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   margin-left: 8px;
 }
 
-.c18 {
+.c20 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -584,7 +633,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   margin-bottom: 0;
 }
 
-.c36 {
+.c37 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -594,7 +643,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   margin-bottom: 8px;
 }
 
-.c29 {
+.c30 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
@@ -603,7 +652,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   margin-bottom: 0;
 }
 
-.c39 {
+.c40 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -612,12 +661,12 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   margin: 0;
 }
 
-.c25 {
+.c1 {
   width: 24;
   height: 24;
 }
 
-.c24 {
+.c26 {
   height: auto;
   opacity: 1 !important;
   border: 0;
@@ -626,18 +675,18 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   outline: none;
 }
 
-.c27 {
+.c28 {
   -webkit-transition: 0.24s ease-in-out;
   transition: 0.24s ease-in-out;
 }
 
-.c22:hover .c26 {
+.c24:hover .c27 {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
 
-.c20 {
+.c22 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -647,11 +696,11 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   font-size: 1.5rem;
 }
 
-.c20:hover {
+.c22:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c32 {
+.c33 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -661,59 +710,17 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   font-size: 1.5rem;
 }
 
-.c32:hover {
+.c33:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c43 {
+.c44 {
   background: #E4EBFC;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   outline: none;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
-  border: 0;
-  font-size: 1rem;
-  font-weight: 400;
-  font-family: RT-Alias-Grotesk;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50%;
-  height: 48px;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.c43:hover {
-  -webkit-transform: translateY(-4px);
-  -ms-transform: translateY(-4px);
-  transform: translateY(-4px);
-  cursor: pointer;
-  background: props.theme.colors.input.background.valid;
-}
-
-.c44 {
-  background: #1AD08F;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  outline: none;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
   border: 0;
   font-size: 1rem;
   font-weight: 400;
@@ -749,20 +756,83 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   background: props.theme.colors.input.background.valid;
 }
 
-.c11 {
+.c45 {
+  background: #1AD08F;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: RT-Alias-Grotesk;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  height: 48px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c45:hover {
+  -webkit-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  cursor: pointer;
+  background: props.theme.colors.input.background.valid;
+}
+
+.c13 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c8 {
+.c0 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 24px;
+  margin-right: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c10 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
 }
 
-.c9 {
+.c11 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -770,7 +840,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   margin-top: 8px;
 }
 
-.c40 {
+.c41 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -793,28 +863,28 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   border-color: #999999;
 }
 
-.c40:hover {
+.c41:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c40:focus {
+.c41:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c41 {
+.c42 {
   -moz-appearance: textfield;
 }
 
-.c41::-webkit-outer-spin-button,
-.c41::-webkit-inner-spin-button {
+.c42::-webkit-outer-spin-button,
+.c42::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c10 {
+.c12 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -825,860 +895,883 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   margin-left: 8px;
 }
 
-.c10:hover {
+.c12:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-<div
-  class="c0"
-  display="flex"
->
+<div>
+  <button
+    class="c0"
+    display="inline-block"
+    role="button"
+    type="button"
+  >
+    <svg
+      class="c1"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clip-rule="evenodd"
+        d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+        fill="#5E26FF"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </button>
   <div
-    class="c1"
+    class="c2"
     display="flex"
   >
     <div
-      class="c2"
+      class="c3"
       display="flex"
-      overflow="hidden"
-      width="100%"
     >
       <div
-        class="c3"
+        class="c4"
         display="flex"
+        overflow="hidden"
+        width="100%"
       >
         <div
-          class="c4"
-          color="core.white"
+          class="c5"
           display="flex"
-          size="6"
-        >
-          <h3
-            class="c5"
-          >
-            Ac
-          </h3>
-        </div>
-        <h2
-          class="c6"
-          color="core.primary"
-          font-family="RT-Alias-Grotesk"
-          font-size="4"
-          font-weight="400"
-        >
-          Select Account
-        </h2>
-      </div>
-      <div
-        class="c7"
-      >
-        <p
-          class="c8"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          Please select a Ledger account.
-        </p>
-        <p
-          class="c9"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          Don't see an account you're looking for? 
-          <a
-            class="c10"
-            color="core.primary"
-            font-size="2"
-            href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
-            rel="noopener noreferrer"
-            target="blank"
-          >
-            Learn More
-          </a>
-        </p>
-      </div>
-    </div>
-    <ul
-      class="c11"
-    >
-      <div
-        class="c12"
-        display="flex"
-      >
-        <li
-          class=""
         >
           <div
-            class="c13"
-            display="inline-block"
+            class="c6"
+            color="core.white"
+            display="flex"
+            size="6"
+          >
+            <h3
+              class="c7"
+            >
+              Ac
+            </h3>
+          </div>
+          <h2
+            class="c8"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="4"
+            font-weight="400"
+          >
+            Select Account
+          </h2>
+        </div>
+        <div
+          class="c9"
+        >
+          <p
+            class="c10"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Please select a Ledger account.
+          </p>
+          <p
+            class="c11"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Don't see an account you're looking for? 
+            <a
+              class="c12"
+              color="core.primary"
+              font-size="2"
+              href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
+              rel="noopener noreferrer"
+              target="blank"
+            >
+              Learn More
+            </a>
+          </p>
+        </div>
+      </div>
+      <ul
+        class="c13"
+      >
+        <div
+          class="c14"
+          display="flex"
+        >
+          <li
+            class=""
           >
             <div
-              class="c14"
-              color="card.account.color"
-              display="flex"
-              height="11"
-              overflow="hidden"
-              width="11"
+              class="c15"
+              display="inline-block"
             >
               <div
-                class="c15"
+                class="c16"
+                color="card.account.color"
                 display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
               >
-                <div
-                  class="c16"
-                  color="card.account.color"
-                  display="flex"
-                  size="6"
-                >
-                  <h3
-                    class="c5"
-                  >
-                    0
-                  </h3>
-                </div>
                 <div
                   class="c17"
                   display="flex"
                 >
-                  <h2
+                  <div
                     class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
+                    color="card.account.color"
+                    display="flex"
+                    size="6"
                   >
-                    Default
-                  </h2>
+                    <h3
+                      class="c7"
+                    >
+                      0
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Default
+                    </h2>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="c19"
-                display="flex"
-              >
-                <a
-                  class="c20"
-                  color="card.account.color"
-                  font-size="4"
-                  href="https://filfox.info/en/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
-                  target="_blank"
-                >
-                  t1z22 ... 6z6wgi
-                </a>
                 <div
                   class="c21"
-                  color="card.account.color"
                   display="flex"
                 >
-                  <button
-                    class="c22 c23 c24"
-                    display="flex"
-                    font-size="3"
-                    height="6"
-                    role="button"
-                    type="button"
-                  >
-                    <svg
-                      class="c25 c26 c27"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="c28"
-                display="flex"
-              >
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <p
-                    class="c29"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="3"
-                    font-weight="400"
-                  >
-                    Balance
-                  </p>
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
+                  <a
+                    class="c22"
+                    color="card.account.color"
                     font-size="4"
-                    font-weight="400"
+                    href="https://filfox.info/en/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                    target="_blank"
                   >
-                    1
-                     FIL
-                  </h2>
+                    t1z22 ... 6z6wgi
+                  </a>
+                  <div
+                    class="c23"
+                    color="card.account.color"
+                    display="flex"
+                  >
+                    <button
+                      class="c24 c25 c26"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c27 c28"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c29"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c30"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </li>
-        <li
-          class=""
-        >
-          <div
-            class="c13"
-            display="inline-block"
+          </li>
+          <li
+            class=""
           >
             <div
-              class="c30"
-              color="colors.core.black"
-              display="flex"
-              height="11"
-              overflow="hidden"
-              width="11"
+              class="c15"
+              display="inline-block"
             >
               <div
-                class="c15"
+                class="c31"
+                color="colors.core.black"
                 display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
               >
-                <div
-                  class="c31"
-                  color="colors.core.black"
-                  display="flex"
-                  size="6"
-                >
-                  <h3
-                    class="c5"
-                  >
-                    1
-                  </h3>
-                </div>
                 <div
                   class="c17"
                   display="flex"
                 >
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
+                  <div
+                    class="c32"
+                    color="colors.core.black"
+                    display="flex"
+                    size="6"
                   >
-                    Account 
-                    1
-                  </h2>
+                    <h3
+                      class="c7"
+                    >
+                      1
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Account 
+                      1
+                    </h2>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="c19"
-                display="flex"
-              >
-                <a
-                  class="c32"
-                  color="core.primary"
-                  font-size="4"
-                  href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb1uq"
-                  target="_blank"
-                >
-                  t1mbk ... icb1uq
-                </a>
                 <div
-                  class="c33"
-                  color="core.primary"
+                  class="c21"
                   display="flex"
                 >
-                  <button
-                    class="c22 c23 c24"
+                  <a
+                    class="c33"
+                    color="core.primary"
+                    font-size="4"
+                    href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb1uq"
+                    target="_blank"
+                  >
+                    t1mbk ... icb1uq
+                  </a>
+                  <div
+                    class="c34"
+                    color="core.primary"
                     display="flex"
+                  >
+                    <button
+                      class="c24 c25 c26"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c27 c28"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c29"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c30"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
+                  <button
+                    class="c35"
                     font-size="3"
                     height="6"
-                    role="button"
                     type="button"
                   >
-                    <svg
-                      class="c25 c26 c27"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
+                    Select
                   </button>
                 </div>
               </div>
-              <div
-                class="c28"
-                display="flex"
-              >
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <p
-                    class="c29"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="3"
-                    font-weight="400"
-                  >
-                    Balance
-                  </p>
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    1
-                     FIL
-                  </h2>
-                </div>
-                <button
-                  class="c34"
-                  font-size="3"
-                  height="6"
-                  type="button"
-                >
-                  Select
-                </button>
-              </div>
             </div>
-          </div>
-        </li>
-        <li
-          class=""
-        >
-          <div
-            class="c13"
-            display="inline-block"
+          </li>
+          <li
+            class=""
           >
             <div
-              class="c30"
-              color="colors.core.black"
-              display="flex"
-              height="11"
-              overflow="hidden"
-              width="11"
+              class="c15"
+              display="inline-block"
             >
               <div
-                class="c15"
+                class="c31"
+                color="colors.core.black"
                 display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
               >
-                <div
-                  class="c31"
-                  color="colors.core.black"
-                  display="flex"
-                  size="6"
-                >
-                  <h3
-                    class="c5"
-                  >
-                    2
-                  </h3>
-                </div>
                 <div
                   class="c17"
                   display="flex"
                 >
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
+                  <div
+                    class="c32"
+                    color="colors.core.black"
+                    display="flex"
+                    size="6"
                   >
-                    Account 
-                    2
-                  </h2>
+                    <h3
+                      class="c7"
+                    >
+                      2
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Account 
+                      2
+                    </h2>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="c19"
-                display="flex"
-              >
-                <a
-                  class="c32"
-                  color="core.primary"
-                  font-size="4"
-                  href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
-                  target="_blank"
-                >
-                  t1mbk ... icb2uq
-                </a>
                 <div
-                  class="c33"
-                  color="core.primary"
+                  class="c21"
                   display="flex"
                 >
-                  <button
-                    class="c22 c23 c24"
+                  <a
+                    class="c33"
+                    color="core.primary"
+                    font-size="4"
+                    href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
+                    target="_blank"
+                  >
+                    t1mbk ... icb2uq
+                  </a>
+                  <div
+                    class="c34"
+                    color="core.primary"
                     display="flex"
+                  >
+                    <button
+                      class="c24 c25 c26"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c27 c28"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c29"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c30"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
+                  <button
+                    class="c35"
                     font-size="3"
                     height="6"
-                    role="button"
                     type="button"
                   >
-                    <svg
-                      class="c25 c26 c27"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
+                    Select
                   </button>
                 </div>
               </div>
-              <div
-                class="c28"
-                display="flex"
-              >
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <p
-                    class="c29"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="3"
-                    font-weight="400"
-                  >
-                    Balance
-                  </p>
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    1
-                     FIL
-                  </h2>
-                </div>
-                <button
-                  class="c34"
-                  font-size="3"
-                  height="6"
-                  type="button"
-                >
-                  Select
-                </button>
-              </div>
             </div>
-          </div>
-        </li>
-        <li
-          class=""
-        >
-          <div
-            class="c13"
-            display="inline-block"
+          </li>
+          <li
+            class=""
           >
             <div
-              class="c30"
-              color="colors.core.black"
-              display="flex"
-              height="11"
-              overflow="hidden"
-              width="11"
+              class="c15"
+              display="inline-block"
             >
               <div
-                class="c15"
+                class="c31"
+                color="colors.core.black"
                 display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
               >
-                <div
-                  class="c31"
-                  color="colors.core.black"
-                  display="flex"
-                  size="6"
-                >
-                  <h3
-                    class="c5"
-                  >
-                    3
-                  </h3>
-                </div>
                 <div
                   class="c17"
                   display="flex"
                 >
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
+                  <div
+                    class="c32"
+                    color="colors.core.black"
+                    display="flex"
+                    size="6"
                   >
-                    Account 
-                    3
-                  </h2>
+                    <h3
+                      class="c7"
+                    >
+                      3
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Account 
+                      3
+                    </h2>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="c19"
-                display="flex"
-              >
-                <a
-                  class="c32"
-                  color="core.primary"
-                  font-size="4"
-                  href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb3uq"
-                  target="_blank"
-                >
-                  t1mbk ... icb3uq
-                </a>
                 <div
-                  class="c33"
-                  color="core.primary"
+                  class="c21"
                   display="flex"
                 >
-                  <button
-                    class="c22 c23 c24"
+                  <a
+                    class="c33"
+                    color="core.primary"
+                    font-size="4"
+                    href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb3uq"
+                    target="_blank"
+                  >
+                    t1mbk ... icb3uq
+                  </a>
+                  <div
+                    class="c34"
+                    color="core.primary"
                     display="flex"
+                  >
+                    <button
+                      class="c24 c25 c26"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c27 c28"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c29"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c30"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
+                  <button
+                    class="c35"
                     font-size="3"
                     height="6"
-                    role="button"
                     type="button"
                   >
-                    <svg
-                      class="c25 c26 c27"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
+                    Select
                   </button>
                 </div>
               </div>
-              <div
-                class="c28"
-                display="flex"
-              >
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <p
-                    class="c29"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="3"
-                    font-weight="400"
-                  >
-                    Balance
-                  </p>
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    1
-                     FIL
-                  </h2>
-                </div>
-                <button
-                  class="c34"
-                  font-size="3"
-                  height="6"
-                  type="button"
-                >
-                  Select
-                </button>
-              </div>
             </div>
-          </div>
-        </li>
-        <li
-          class=""
-        >
-          <div
-            class="c13"
-            display="inline-block"
+          </li>
+          <li
+            class=""
           >
             <div
-              class="c30"
-              color="colors.core.black"
-              display="flex"
-              height="11"
-              overflow="hidden"
-              width="11"
+              class="c15"
+              display="inline-block"
             >
               <div
-                class="c15"
+                class="c31"
+                color="colors.core.black"
                 display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
               >
-                <div
-                  class="c31"
-                  color="colors.core.black"
-                  display="flex"
-                  size="6"
-                >
-                  <h3
-                    class="c5"
-                  >
-                    4
-                  </h3>
-                </div>
                 <div
                   class="c17"
                   display="flex"
                 >
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
+                  <div
+                    class="c32"
+                    color="colors.core.black"
+                    display="flex"
+                    size="6"
                   >
-                    Account 
-                    4
-                  </h2>
+                    <h3
+                      class="c7"
+                    >
+                      4
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Account 
+                      4
+                    </h2>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="c19"
-                display="flex"
-              >
-                <a
-                  class="c32"
-                  color="core.primary"
-                  font-size="4"
-                  href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb4uq"
-                  target="_blank"
-                >
-                  t1mbk ... icb4uq
-                </a>
                 <div
-                  class="c33"
-                  color="core.primary"
+                  class="c21"
                   display="flex"
                 >
-                  <button
-                    class="c22 c23 c24"
+                  <a
+                    class="c33"
+                    color="core.primary"
+                    font-size="4"
+                    href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb4uq"
+                    target="_blank"
+                  >
+                    t1mbk ... icb4uq
+                  </a>
+                  <div
+                    class="c34"
+                    color="core.primary"
                     display="flex"
+                  >
+                    <button
+                      class="c24 c25 c26"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c27 c28"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c29"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c30"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
+                  <button
+                    class="c35"
                     font-size="3"
                     height="6"
-                    role="button"
                     type="button"
                   >
-                    <svg
-                      class="c25 c26 c27"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
+                    Select
                   </button>
                 </div>
               </div>
-              <div
-                class="c28"
-                display="flex"
-              >
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <p
-                    class="c29"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="3"
-                    font-weight="400"
-                  >
-                    Balance
-                  </p>
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    1
-                     FIL
-                  </h2>
-                </div>
-                <button
-                  class="c34"
-                  font-size="3"
-                  height="6"
-                  type="button"
-                >
-                  Select
-                </button>
-              </div>
             </div>
-          </div>
-        </li>
-        <li
-          class=""
-        >
-          <div
-            class="c35"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
+          </li>
+          <li
+            class=""
           >
-            <h2
+            <div
               class="c36"
-              font-family="RT-Alias-Grotesk"
-              font-size="4"
-              font-weight="400"
+              color="colors.core.black"
+              display="flex"
+              height="11"
+              overflow="hidden"
+              width="11"
             >
-              Create new account
-            </h2>
-            <div
-              class="c37"
-            >
+              <h2
+                class="c37"
+                font-family="RT-Alias-Grotesk"
+                font-size="4"
+                font-weight="400"
+              >
+                Create new account
+              </h2>
               <div
                 class="c38"
-                display="flex"
               >
-                <h4
+                <div
                   class="c39"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                  width="50%"
+                  display="flex"
                 >
-                  Account index
-                </h4>
-                <input
-                  class="c40 c41"
-                  display="inline-block"
-                  height="6"
-                  value="5"
-                  width="50%"
-                />
+                  <h4
+                    class="c40"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                    width="50%"
+                  >
+                    Account index
+                  </h4>
+                  <input
+                    class="c41 c42"
+                    display="inline-block"
+                    height="6"
+                    value="5"
+                    width="50%"
+                  />
+                </div>
+                
               </div>
-              
-            </div>
-            <div
-              class="c37"
-            >
               <div
-                class="c42"
+                class="c38"
+              >
+                <div
+                  class="c43"
+                  display="flex"
+                  width="100%"
+                >
+                  <button
+                    class="c44"
+                    display="flex"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="1"
+                    font-weight="1"
+                    height="6"
+                    width="50%"
+                  >
+                    Legacy address
+                  </button>
+                  <button
+                    class="c45"
+                    display="flex"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="1"
+                    font-weight="1"
+                    height="6"
+                    width="50%"
+                  >
+                    Normal address
+                  </button>
+                </div>
+              </div>
+              <div
+                class="c46"
                 display="flex"
                 width="100%"
               >
                 <button
-                  class="c43"
-                  display="flex"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="1"
-                  font-weight="1"
+                  class="c35"
+                  font-size="3"
                   height="6"
-                  width="50%"
+                  type="button"
                 >
-                  Legacy address
-                </button>
-                <button
-                  class="c44"
-                  display="flex"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="1"
-                  font-weight="1"
-                  height="6"
-                  width="50%"
-                >
-                  Normal address
+                  Create
                 </button>
               </div>
             </div>
-            <div
-              class="c45"
-              display="flex"
-              width="100%"
-            >
-              <button
-                class="c34"
-                font-size="3"
-                height="6"
-                type="button"
-              >
-                Create
-              </button>
-            </div>
-          </div>
-        </li>
-      </div>
-    </ul>
+          </li>
+        </div>
+      </ul>
+    </div>
   </div>
 </div>
 `;
 
 exports[`AccountSelector it renders the wallets in redux, and an option to create the next wallet 1`] = `
-.c0 {
+.c2 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1691,7 +1784,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-items: center;
 }
 
-.c1 {
+.c3 {
   min-width: 0;
   box-sizing: border-box;
   padding: 24px;
@@ -1712,7 +1805,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   align-self: center;
 }
 
-.c2 {
+.c4 {
   min-width: 0;
   box-sizing: border-box;
   border: none;
@@ -1738,7 +1831,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: space-between;
 }
 
-.c3 {
+.c5 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1751,7 +1844,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   align-items: center;
 }
 
-.c4 {
+.c6 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -1776,13 +1869,13 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: center;
 }
 
-.c7 {
+.c9 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 16px;
 }
 
-.c12 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1798,7 +1891,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: center;
 }
 
-.c13 {
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   margin: 8px;
@@ -1809,7 +1902,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   align-items: center;
 }
 
-.c14 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -1834,7 +1927,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: space-between;
 }
 
-.c15 {
+.c17 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1851,7 +1944,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: flex-start;
 }
 
-.c16 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -1875,7 +1968,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: center;
 }
 
-.c17 {
+.c19 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1887,7 +1980,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   flex-direction: column;
 }
 
-.c19 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1903,7 +1996,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: center;
 }
 
-.c21 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   color: #E0D7FE;
@@ -1917,7 +2010,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   align-items: center;
 }
 
-.c28 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1937,7 +2030,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   align-items: flex-end;
 }
 
-.c30 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -1962,7 +2055,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: space-between;
 }
 
-.c31 {
+.c32 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -1986,7 +2079,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: center;
 }
 
-.c33 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
   color: #5E26FF;
@@ -2000,7 +2093,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   align-items: center;
 }
 
-.c35 {
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -2030,12 +2123,12 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: space-between;
 }
 
-.c37 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c38 {
+.c39 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -2056,7 +2149,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: center;
 }
 
-.c42 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -2071,7 +2164,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: flex-start;
 }
 
-.c45 {
+.c46 {
   min-width: 0;
   box-sizing: border-box;
   width: 100%;
@@ -2088,13 +2181,13 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: flex-end;
 }
 
-.c5 {
+.c7 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c23 {
+.c25 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -2122,11 +2215,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   border-radius: 4px;
 }
 
-.c23:hover {
+.c25:hover {
   opacity: 0.8;
 }
 
-.c34 {
+.c35 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -2145,11 +2238,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   border-radius: 4px;
 }
 
-.c34:hover {
+.c35:hover {
   opacity: 0.8;
 }
 
-.c6 {
+.c8 {
   color: #5E26FF;
   font-size: 1.5rem;
   font-weight: 400;
@@ -2159,7 +2252,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-left: 8px;
 }
 
-.c18 {
+.c20 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -2169,7 +2262,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-bottom: 0;
 }
 
-.c36 {
+.c37 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -2179,7 +2272,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-bottom: 8px;
 }
 
-.c29 {
+.c30 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
@@ -2188,7 +2281,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-bottom: 0;
 }
 
-.c39 {
+.c40 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -2197,12 +2290,12 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin: 0;
 }
 
-.c25 {
+.c1 {
   width: 24;
   height: 24;
 }
 
-.c24 {
+.c26 {
   height: auto;
   opacity: 1 !important;
   border: 0;
@@ -2211,18 +2304,18 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   outline: none;
 }
 
-.c27 {
+.c28 {
   -webkit-transition: 0.24s ease-in-out;
   transition: 0.24s ease-in-out;
 }
 
-.c22:hover .c26 {
+.c24:hover .c27 {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
 
-.c20 {
+.c22 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -2232,11 +2325,11 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   font-size: 1.5rem;
 }
 
-.c20:hover {
+.c22:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c32 {
+.c33 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -2246,59 +2339,17 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   font-size: 1.5rem;
 }
 
-.c32:hover {
+.c33:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c43 {
+.c44 {
   background: #E4EBFC;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   outline: none;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
-  border: 0;
-  font-size: 1rem;
-  font-weight: 400;
-  font-family: RT-Alias-Grotesk;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50%;
-  height: 48px;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.c43:hover {
-  -webkit-transform: translateY(-4px);
-  -ms-transform: translateY(-4px);
-  transform: translateY(-4px);
-  cursor: pointer;
-  background: props.theme.colors.input.background.valid;
-}
-
-.c44 {
-  background: #1AD08F;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  outline: none;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
   border: 0;
   font-size: 1rem;
   font-weight: 400;
@@ -2334,20 +2385,83 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   background: props.theme.colors.input.background.valid;
 }
 
-.c11 {
+.c45 {
+  background: #1AD08F;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: RT-Alias-Grotesk;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  height: 48px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c45:hover {
+  -webkit-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  cursor: pointer;
+  background: props.theme.colors.input.background.valid;
+}
+
+.c13 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c8 {
+.c0 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 24px;
+  margin-right: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c10 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
 }
 
-.c9 {
+.c11 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -2355,7 +2469,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-top: 8px;
 }
 
-.c40 {
+.c41 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -2378,28 +2492,28 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   border-color: #999999;
 }
 
-.c40:hover {
+.c41:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c40:focus {
+.c41:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c41 {
+.c42 {
   -moz-appearance: textfield;
 }
 
-.c41::-webkit-outer-spin-button,
-.c41::-webkit-inner-spin-button {
+.c42::-webkit-outer-spin-button,
+.c42::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c10 {
+.c12 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -2410,854 +2524,877 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-left: 8px;
 }
 
-.c10:hover {
+.c12:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-<div
-  class="c0"
-  display="flex"
->
+<div>
+  <button
+    class="c0"
+    display="inline-block"
+    role="button"
+    type="button"
+  >
+    <svg
+      class="c1"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clip-rule="evenodd"
+        d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+        fill="#5E26FF"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </button>
   <div
-    class="c1"
+    class="c2"
     display="flex"
   >
     <div
-      class="c2"
+      class="c3"
       display="flex"
-      overflow="hidden"
-      width="100%"
     >
       <div
-        class="c3"
+        class="c4"
         display="flex"
+        overflow="hidden"
+        width="100%"
       >
         <div
-          class="c4"
-          color="core.white"
+          class="c5"
           display="flex"
-          size="6"
-        >
-          <h3
-            class="c5"
-          >
-            Ac
-          </h3>
-        </div>
-        <h2
-          class="c6"
-          color="core.primary"
-          font-family="RT-Alias-Grotesk"
-          font-size="4"
-          font-weight="400"
-        >
-          Switch Accounts
-        </h2>
-      </div>
-      <div
-        class="c7"
-      >
-        <p
-          class="c8"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          Your single seed phrase creates hundreds of individual accounts. We're showing you the first 5.
-        </p>
-        <p
-          class="c9"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          Don't see an account you're looking for? 
-          <a
-            class="c10"
-            color="core.primary"
-            font-size="2"
-            href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
-            rel="noopener noreferrer"
-            target="blank"
-          >
-            Learn More
-          </a>
-        </p>
-      </div>
-    </div>
-    <ul
-      class="c11"
-    >
-      <div
-        class="c12"
-        display="flex"
-      >
-        <li
-          class=""
         >
           <div
-            class="c13"
-            display="inline-block"
+            class="c6"
+            color="core.white"
+            display="flex"
+            size="6"
+          >
+            <h3
+              class="c7"
+            >
+              Ac
+            </h3>
+          </div>
+          <h2
+            class="c8"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="4"
+            font-weight="400"
+          >
+            Switch Accounts
+          </h2>
+        </div>
+        <div
+          class="c9"
+        >
+          <p
+            class="c10"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Your single seed phrase creates hundreds of individual accounts. We're showing you the first 5.
+          </p>
+          <p
+            class="c11"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Don't see an account you're looking for? 
+            <a
+              class="c12"
+              color="core.primary"
+              font-size="2"
+              href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
+              rel="noopener noreferrer"
+              target="blank"
+            >
+              Learn More
+            </a>
+          </p>
+        </div>
+      </div>
+      <ul
+        class="c13"
+      >
+        <div
+          class="c14"
+          display="flex"
+        >
+          <li
+            class=""
           >
             <div
-              class="c14"
-              color="card.account.color"
-              display="flex"
-              height="11"
-              overflow="hidden"
-              width="11"
+              class="c15"
+              display="inline-block"
             >
               <div
-                class="c15"
+                class="c16"
+                color="card.account.color"
                 display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
               >
-                <div
-                  class="c16"
-                  color="card.account.color"
-                  display="flex"
-                  size="6"
-                >
-                  <h3
-                    class="c5"
-                  >
-                    0
-                  </h3>
-                </div>
                 <div
                   class="c17"
                   display="flex"
                 >
-                  <h2
+                  <div
                     class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
+                    color="card.account.color"
+                    display="flex"
+                    size="6"
                   >
-                    Default
-                  </h2>
+                    <h3
+                      class="c7"
+                    >
+                      0
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Default
+                    </h2>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="c19"
-                display="flex"
-              >
-                <a
-                  class="c20"
-                  color="card.account.color"
-                  font-size="4"
-                  href="https://filfox.info/en/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
-                  target="_blank"
-                >
-                  t1z22 ... 6z6wgi
-                </a>
                 <div
                   class="c21"
-                  color="card.account.color"
                   display="flex"
                 >
-                  <button
-                    class="c22 c23 c24"
-                    display="flex"
-                    font-size="3"
-                    height="6"
-                    role="button"
-                    type="button"
-                  >
-                    <svg
-                      class="c25 c26 c27"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="c28"
-                display="flex"
-              >
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <p
-                    class="c29"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="3"
-                    font-weight="400"
-                  >
-                    Balance
-                  </p>
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
+                  <a
+                    class="c22"
+                    color="card.account.color"
                     font-size="4"
-                    font-weight="400"
+                    href="https://filfox.info/en/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                    target="_blank"
                   >
-                    1
-                     FIL
-                  </h2>
+                    t1z22 ... 6z6wgi
+                  </a>
+                  <div
+                    class="c23"
+                    color="card.account.color"
+                    display="flex"
+                  >
+                    <button
+                      class="c24 c25 c26"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c27 c28"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c29"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c30"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </li>
-        <li
-          class=""
-        >
-          <div
-            class="c13"
-            display="inline-block"
+          </li>
+          <li
+            class=""
           >
             <div
-              class="c30"
-              color="colors.core.black"
-              display="flex"
-              height="11"
-              overflow="hidden"
-              width="11"
+              class="c15"
+              display="inline-block"
             >
               <div
-                class="c15"
+                class="c31"
+                color="colors.core.black"
                 display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
               >
-                <div
-                  class="c31"
-                  color="colors.core.black"
-                  display="flex"
-                  size="6"
-                >
-                  <h3
-                    class="c5"
-                  >
-                    1
-                  </h3>
-                </div>
                 <div
                   class="c17"
                   display="flex"
                 >
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
+                  <div
+                    class="c32"
+                    color="colors.core.black"
+                    display="flex"
+                    size="6"
                   >
-                    Account 
-                    1
-                  </h2>
+                    <h3
+                      class="c7"
+                    >
+                      1
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Account 
+                      1
+                    </h2>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="c19"
-                display="flex"
-              >
-                <a
-                  class="c32"
-                  color="core.primary"
-                  font-size="4"
-                  href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb1uq"
-                  target="_blank"
-                >
-                  t1mbk ... icb1uq
-                </a>
                 <div
-                  class="c33"
-                  color="core.primary"
+                  class="c21"
                   display="flex"
                 >
-                  <button
-                    class="c22 c23 c24"
+                  <a
+                    class="c33"
+                    color="core.primary"
+                    font-size="4"
+                    href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb1uq"
+                    target="_blank"
+                  >
+                    t1mbk ... icb1uq
+                  </a>
+                  <div
+                    class="c34"
+                    color="core.primary"
                     display="flex"
+                  >
+                    <button
+                      class="c24 c25 c26"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c27 c28"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c29"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c30"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
+                  <button
+                    class="c35"
                     font-size="3"
                     height="6"
-                    role="button"
                     type="button"
                   >
-                    <svg
-                      class="c25 c26 c27"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
+                    Select
                   </button>
                 </div>
               </div>
-              <div
-                class="c28"
-                display="flex"
-              >
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <p
-                    class="c29"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="3"
-                    font-weight="400"
-                  >
-                    Balance
-                  </p>
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    1
-                     FIL
-                  </h2>
-                </div>
-                <button
-                  class="c34"
-                  font-size="3"
-                  height="6"
-                  type="button"
-                >
-                  Select
-                </button>
-              </div>
             </div>
-          </div>
-        </li>
-        <li
-          class=""
-        >
-          <div
-            class="c13"
-            display="inline-block"
+          </li>
+          <li
+            class=""
           >
             <div
-              class="c30"
-              color="colors.core.black"
-              display="flex"
-              height="11"
-              overflow="hidden"
-              width="11"
+              class="c15"
+              display="inline-block"
             >
               <div
-                class="c15"
+                class="c31"
+                color="colors.core.black"
                 display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
               >
-                <div
-                  class="c31"
-                  color="colors.core.black"
-                  display="flex"
-                  size="6"
-                >
-                  <h3
-                    class="c5"
-                  >
-                    2
-                  </h3>
-                </div>
                 <div
                   class="c17"
                   display="flex"
                 >
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
+                  <div
+                    class="c32"
+                    color="colors.core.black"
+                    display="flex"
+                    size="6"
                   >
-                    Account 
-                    2
-                  </h2>
+                    <h3
+                      class="c7"
+                    >
+                      2
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Account 
+                      2
+                    </h2>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="c19"
-                display="flex"
-              >
-                <a
-                  class="c32"
-                  color="core.primary"
-                  font-size="4"
-                  href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
-                  target="_blank"
-                >
-                  t1mbk ... icb2uq
-                </a>
                 <div
-                  class="c33"
-                  color="core.primary"
+                  class="c21"
                   display="flex"
                 >
-                  <button
-                    class="c22 c23 c24"
+                  <a
+                    class="c33"
+                    color="core.primary"
+                    font-size="4"
+                    href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
+                    target="_blank"
+                  >
+                    t1mbk ... icb2uq
+                  </a>
+                  <div
+                    class="c34"
+                    color="core.primary"
                     display="flex"
+                  >
+                    <button
+                      class="c24 c25 c26"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c27 c28"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c29"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c30"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
+                  <button
+                    class="c35"
                     font-size="3"
                     height="6"
-                    role="button"
                     type="button"
                   >
-                    <svg
-                      class="c25 c26 c27"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
+                    Select
                   </button>
                 </div>
               </div>
-              <div
-                class="c28"
-                display="flex"
-              >
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <p
-                    class="c29"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="3"
-                    font-weight="400"
-                  >
-                    Balance
-                  </p>
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    1
-                     FIL
-                  </h2>
-                </div>
-                <button
-                  class="c34"
-                  font-size="3"
-                  height="6"
-                  type="button"
-                >
-                  Select
-                </button>
-              </div>
             </div>
-          </div>
-        </li>
-        <li
-          class=""
-        >
-          <div
-            class="c13"
-            display="inline-block"
+          </li>
+          <li
+            class=""
           >
             <div
-              class="c30"
-              color="colors.core.black"
-              display="flex"
-              height="11"
-              overflow="hidden"
-              width="11"
+              class="c15"
+              display="inline-block"
             >
               <div
-                class="c15"
+                class="c31"
+                color="colors.core.black"
                 display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
               >
-                <div
-                  class="c31"
-                  color="colors.core.black"
-                  display="flex"
-                  size="6"
-                >
-                  <h3
-                    class="c5"
-                  >
-                    3
-                  </h3>
-                </div>
                 <div
                   class="c17"
                   display="flex"
                 >
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
+                  <div
+                    class="c32"
+                    color="colors.core.black"
+                    display="flex"
+                    size="6"
                   >
-                    Account 
-                    3
-                  </h2>
+                    <h3
+                      class="c7"
+                    >
+                      3
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Account 
+                      3
+                    </h2>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="c19"
-                display="flex"
-              >
-                <a
-                  class="c32"
-                  color="core.primary"
-                  font-size="4"
-                  href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb3uq"
-                  target="_blank"
-                >
-                  t1mbk ... icb3uq
-                </a>
                 <div
-                  class="c33"
-                  color="core.primary"
+                  class="c21"
                   display="flex"
                 >
-                  <button
-                    class="c22 c23 c24"
+                  <a
+                    class="c33"
+                    color="core.primary"
+                    font-size="4"
+                    href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb3uq"
+                    target="_blank"
+                  >
+                    t1mbk ... icb3uq
+                  </a>
+                  <div
+                    class="c34"
+                    color="core.primary"
                     display="flex"
+                  >
+                    <button
+                      class="c24 c25 c26"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c27 c28"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c29"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c30"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
+                  <button
+                    class="c35"
                     font-size="3"
                     height="6"
-                    role="button"
                     type="button"
                   >
-                    <svg
-                      class="c25 c26 c27"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
+                    Select
                   </button>
                 </div>
               </div>
-              <div
-                class="c28"
-                display="flex"
-              >
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <p
-                    class="c29"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="3"
-                    font-weight="400"
-                  >
-                    Balance
-                  </p>
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    1
-                     FIL
-                  </h2>
-                </div>
-                <button
-                  class="c34"
-                  font-size="3"
-                  height="6"
-                  type="button"
-                >
-                  Select
-                </button>
-              </div>
             </div>
-          </div>
-        </li>
-        <li
-          class=""
-        >
-          <div
-            class="c13"
-            display="inline-block"
+          </li>
+          <li
+            class=""
           >
             <div
-              class="c30"
-              color="colors.core.black"
-              display="flex"
-              height="11"
-              overflow="hidden"
-              width="11"
+              class="c15"
+              display="inline-block"
             >
               <div
-                class="c15"
+                class="c31"
+                color="colors.core.black"
                 display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
               >
-                <div
-                  class="c31"
-                  color="colors.core.black"
-                  display="flex"
-                  size="6"
-                >
-                  <h3
-                    class="c5"
-                  >
-                    4
-                  </h3>
-                </div>
                 <div
                   class="c17"
                   display="flex"
                 >
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
+                  <div
+                    class="c32"
+                    color="colors.core.black"
+                    display="flex"
+                    size="6"
                   >
-                    Account 
-                    4
-                  </h2>
+                    <h3
+                      class="c7"
+                    >
+                      4
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Account 
+                      4
+                    </h2>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="c19"
-                display="flex"
-              >
-                <a
-                  class="c32"
-                  color="core.primary"
-                  font-size="4"
-                  href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb4uq"
-                  target="_blank"
-                >
-                  t1mbk ... icb4uq
-                </a>
                 <div
-                  class="c33"
-                  color="core.primary"
+                  class="c21"
                   display="flex"
                 >
-                  <button
-                    class="c22 c23 c24"
+                  <a
+                    class="c33"
+                    color="core.primary"
+                    font-size="4"
+                    href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb4uq"
+                    target="_blank"
+                  >
+                    t1mbk ... icb4uq
+                  </a>
+                  <div
+                    class="c34"
+                    color="core.primary"
                     display="flex"
+                  >
+                    <button
+                      class="c24 c25 c26"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c27 c28"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c29"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c30"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
+                  <button
+                    class="c35"
                     font-size="3"
                     height="6"
-                    role="button"
                     type="button"
                   >
-                    <svg
-                      class="c25 c26 c27"
-                      fill="none"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        fill="#1A0066"
-                        height="12"
-                        width="12"
-                        x="8"
-                        y="4"
-                      />
-                      <rect
-                        fill="#E0D7FE"
-                        height="12"
-                        width="12"
-                        x="4"
-                        y="8"
-                      />
-                    </svg>
+                    Select
                   </button>
                 </div>
               </div>
-              <div
-                class="c28"
-                display="flex"
-              >
-                <div
-                  class="c17"
-                  display="flex"
-                >
-                  <p
-                    class="c29"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="3"
-                    font-weight="400"
-                  >
-                    Balance
-                  </p>
-                  <h2
-                    class="c18"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    1
-                     FIL
-                  </h2>
-                </div>
-                <button
-                  class="c34"
-                  font-size="3"
-                  height="6"
-                  type="button"
-                >
-                  Select
-                </button>
-              </div>
             </div>
-          </div>
-        </li>
-        <li
-          class=""
-        >
-          <div
-            class="c35"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
+          </li>
+          <li
+            class=""
           >
-            <h2
+            <div
               class="c36"
-              font-family="RT-Alias-Grotesk"
-              font-size="4"
-              font-weight="400"
+              color="colors.core.black"
+              display="flex"
+              height="11"
+              overflow="hidden"
+              width="11"
             >
-              Create new account
-            </h2>
-            <div
-              class="c37"
-            >
+              <h2
+                class="c37"
+                font-family="RT-Alias-Grotesk"
+                font-size="4"
+                font-weight="400"
+              >
+                Create new account
+              </h2>
               <div
                 class="c38"
-                display="flex"
               >
-                <h4
+                <div
                   class="c39"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="2"
-                  font-weight="400"
-                  width="50%"
+                  display="flex"
                 >
-                  Account index
-                </h4>
-                <input
-                  class="c40 c41"
-                  display="inline-block"
-                  height="6"
-                  value="5"
-                  width="50%"
-                />
+                  <h4
+                    class="c40"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                    width="50%"
+                  >
+                    Account index
+                  </h4>
+                  <input
+                    class="c41 c42"
+                    display="inline-block"
+                    height="6"
+                    value="5"
+                    width="50%"
+                  />
+                </div>
+                
               </div>
-              
-            </div>
-            <div
-              class="c37"
-            >
               <div
-                class="c42"
+                class="c38"
+              >
+                <div
+                  class="c43"
+                  display="flex"
+                  width="100%"
+                >
+                  <button
+                    class="c44"
+                    display="flex"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="1"
+                    font-weight="1"
+                    height="6"
+                    width="50%"
+                  >
+                    Legacy address
+                  </button>
+                  <button
+                    class="c45"
+                    display="flex"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="1"
+                    font-weight="1"
+                    height="6"
+                    width="50%"
+                  >
+                    Normal address
+                  </button>
+                </div>
+              </div>
+              <div
+                class="c46"
                 display="flex"
                 width="100%"
               >
                 <button
-                  class="c43"
-                  display="flex"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="1"
-                  font-weight="1"
+                  class="c35"
+                  font-size="3"
                   height="6"
-                  width="50%"
+                  type="button"
                 >
-                  Legacy address
-                </button>
-                <button
-                  class="c44"
-                  display="flex"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="1"
-                  font-weight="1"
-                  height="6"
-                  width="50%"
-                >
-                  Normal address
+                  Create
                 </button>
               </div>
             </div>
-            <div
-              class="c45"
-              display="flex"
-              width="100%"
-            >
-              <button
-                class="c34"
-                font-size="3"
-                height="6"
-                type="button"
-              >
-                Create
-              </button>
-            </div>
-          </div>
-        </li>
-      </div>
-    </ul>
+          </li>
+        </div>
+      </ul>
+    </div>
   </div>
 </div>
 `;

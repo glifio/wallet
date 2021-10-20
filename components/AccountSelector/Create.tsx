@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useEffect, useState } from 'react'
+import React, { SyntheticEvent, useState } from 'react'
 import PropTypes from 'prop-types'
 import {
   Box,
@@ -51,7 +51,6 @@ const Create = ({
   )
   const [accountIndexErr, setAccountIndexErr] = useState<string>('')
   const [network, setNetwork] = useState<'f' | 't'>('f')
-  useEffect(() => setAccountIndex(nextAccountIndex), [nextAccountIndex])
 
   if (loading) return <LoadingCard />
   if (errorMsg)
@@ -138,8 +137,9 @@ const Create = ({
         <Button
           title='Create'
           onClick={() => {
-            setNetwork('f')
             onClick(accountIndex, network)
+            setNetwork('f')
+            setAccountIndex(nextAccountIndex + 1)
           }}
           variant='secondary'
         />

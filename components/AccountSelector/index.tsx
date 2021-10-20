@@ -10,7 +10,8 @@ import {
   Title,
   Menu,
   MenuItem,
-  LoadingScreen
+  LoadingScreen,
+  ButtonClose
 } from '@glif/react-components'
 import HelperText from './HelperText'
 import Create from './Create'
@@ -147,7 +148,7 @@ const AccountSelector = ({ msig, test }) => {
         const wallet = {
           balance,
           address: converAddrToFPrefix(address),
-          path: createPath(networkCode, walletsInRdx.length)
+          path: createPath(networkCode, index)
         }
         dispatch(walletList([wallet]))
       }
@@ -159,76 +160,88 @@ const AccountSelector = ({ msig, test }) => {
   }
 
   return (
-    <Box display='flex' flexDirection='column' justifyItems='center'>
-      {loadingPage ? (
-        <LoadingScreen height='100vh' />
-      ) : (
-        <Box
-          display='flex'
-          flexDirection='column'
-          alignItems='center'
-          alignSelf='center'
-          maxWidth={19}
-          p={4}
-        >
-          <Card
+    <>
+      <ButtonClose
+        role='button'
+        type='button'
+        onClick={router.back}
+        position='absolute'
+        top='0'
+        right='0'
+        mt={4}
+        mr={4}
+      />
+      <Box display='flex' flexDirection='column' justifyItems='center'>
+        {loadingPage ? (
+          <LoadingScreen height='100vh' />
+        ) : (
+          <Box
             display='flex'
             flexDirection='column'
-            justifyContent='space-between'
-            border='none'
-            width='100%'
-            my={2}
-            maxWidth={16}
-            backgroundColor='blue.muted700'
+            alignItems='center'
+            alignSelf='center'
+            maxWidth={19}
+            p={4}
           >
-            <Box display='flex' alignItems='center'>
-              <Glyph
-                acronym='Ac'
-                bg='core.primary'
-                borderColor='core.primary'
-                color='core.white'
-              />
-              <Title ml={2} color='core.primary'>
-                {msig ? 'Select Account' : 'Switch Accounts'}
-              </Title>
-            </Box>
-            <Box mt={3}>
-              <HelperText msig={msig} isLedger={wallet.type === LEDGER} />
-            </Box>
-          </Card>
-          <Menu>
-            <Box display='flex' flexWrap='wrap' justifyContent='center'>
-              {walletsInRdx.map((w, i) => (
-                <MenuItem key={w.address}>
-                  <AccountCardAlt
-                    alignItems='center'
-                    onClick={() => {
-                      dispatch(switchWallet(i))
-                      onClose()
-                    }}
-                    address={w.address}
-                    index={i}
-                    selected={w.address === wallet.address}
-                    // This is a hack to make testing the UI easier
-                    // its hard to mock SWR + balance fetcher in the AccountCardAlt
-                    // so we pass a manual balance to not rely on SWR for testing
-                    balance={test ? '1' : null}
+            <Card
+              display='flex'
+              flexDirection='column'
+              justifyContent='space-between'
+              border='none'
+              width='100%'
+              my={2}
+              maxWidth={16}
+              backgroundColor='blue.muted700'
+            >
+              <Box display='flex' alignItems='center'>
+                <Glyph
+                  acronym='Ac'
+                  bg='core.primary'
+                  borderColor='core.primary'
+                  color='core.white'
+                />
+                <Title ml={2} color='core.primary'>
+                  {msig ? 'Select Account' : 'Switch Accounts'}
+                </Title>
+              </Box>
+              <Box mt={3}>
+                <HelperText msig={msig} isLedger={wallet.type === LEDGER} />
+              </Box>
+            </Card>
+            <Menu>
+              <Box display='flex' flexWrap='wrap' justifyContent='center'>
+                {walletsInRdx.map((w, i) => (
+                  <MenuItem key={w.address}>
+                    <AccountCardAlt
+                      alignItems='center'
+                      onClick={() => {
+                        dispatch(switchWallet(i))
+                        onClose()
+                      }}
+                      address={w.address}
+                      index={i}
+                      selected={w.address === wallet.address}
+                      // This is a hack to make testing the UI easier
+                      // its hard to mock SWR + balance fetcher in the AccountCardAlt
+                      // so we pass a manual balance to not rely on SWR for testing
+                      balance={test ? '1' : null}
+                    />
+                  </MenuItem>
+                ))}
+                <MenuItem>
+                  <Create
+                    errorMsg={errorMsg}
+                    nextAccountIndex={walletsInRdx.length}
+                    onClick={fetchNextAccount}
+                    loading={loadingAccounts}
                   />
                 </MenuItem>
-              ))}
-              <MenuItem>
-                <Create
-                  errorMsg={errorMsg}
-                  nextAccountIndex={walletsInRdx.length}
-                  onClick={fetchNextAccount}
-                  loading={loadingAccounts}
-                />
-              </MenuItem>
-            </Box>
-          </Menu>
-        </Box>
-      )}
-    </Box>
+              </Box>
+            </Menu>
+          </Box>
+        )}
+      </Box>
+    </>
   )
 }
 
