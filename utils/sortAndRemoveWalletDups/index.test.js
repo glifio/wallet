@@ -1,7 +1,11 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
 import sortAndRemoveWalletDups from '.'
 import createPath from '../createPath'
-import { SINGLE_KEY } from '../../constants'
+import {
+  MAINNET_PATH_CODE,
+  SINGLE_KEY,
+  TESTNET_PATH_CODE
+} from '../../constants'
 
 describe('sortAndRemoveWalletDups', () => {
   test('it removes duplicate wallets', () => {
@@ -110,5 +114,46 @@ describe('sortAndRemoveWalletDups', () => {
       [simpleWallet2]
     )
     expect(wallets).toHaveLength(2)
+  })
+
+  test('it correctly orders testnet and mainnet addresses', () => {
+    const mainnetWallets = [
+      {
+        address: 'f013241',
+        balance: new FilecoinNumber('1', 'fil'),
+        path: createPath(461, 0)
+      },
+      {
+        address: 'f0423563',
+        balance: new FilecoinNumber('1', 'fil'),
+        path: createPath(461, 1)
+      }
+    ]
+    const testnetWallets = [
+      {
+        address: 'f045654',
+        balance: new FilecoinNumber('1', 'fil'),
+        path: createPath(1, 0)
+      },
+      {
+        address: 'f04565909',
+        balance: new FilecoinNumber('1', 'fil'),
+        path: createPath(1, 1)
+      }
+    ]
+
+    const wallets = sortAndRemoveWalletDups(mainnetWallets, testnetWallets)
+    expect(wallets[0].path.split('/')[2].includes(MAINNET_PATH_CODE)).toBe(true)
+    expect(wallets[1].path.split('/')[2].includes(MAINNET_PATH_CODE)).toBe(true)
+    expect(wallets[2].path.split('/')[2].includes(TESTNET_PATH_CODE)).toBe(true)
+    expect(wallets[3].path.split('/')[2].includes(TESTNET_PATH_CODE)).toBe(true)
+
+    expect(
+      Number(wallets[0].path.split('/')[5]) < wallets[1].path.split('/')[5]
+    ).toBe(true)
+
+    expect(
+      Number(wallets[2].path.split('/')[5]) < wallets[3].path.split('/')[5]
+    ).toBe(true)
   })
 })
