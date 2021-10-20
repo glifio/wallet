@@ -74,7 +74,7 @@ describe('AccountSelector', () => {
       render(<AccountSelector test />, { wrapper: Tree })
       await flushPromises()
       // this makes the test assertions pass bc tests are on run testnet wallet path
-      fireEvent.click(screen.getByText(/Legacy/))
+      fireEvent.click(screen.getByText('Legacy address'))
       fireEvent.change(screen.getByDisplayValue(/5/), {
         target: { value: index },
         preventDefault: () => {}

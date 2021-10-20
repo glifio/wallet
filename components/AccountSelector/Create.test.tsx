@@ -45,7 +45,7 @@ describe('Create Account', () => {
           />
         </ThemeProvider>
       )
-      fireEvent.click(screen.getByText(/Legacy/))
+      fireEvent.click(screen.getByText('Legacy address'))
       await flushPromises()
       fireEvent.click(screen.getByText('Create'))
     })

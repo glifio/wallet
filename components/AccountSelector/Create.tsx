@@ -9,7 +9,8 @@ import {
   Text,
   AccountError,
   Loading,
-  NetworkSwitcherGlyphV2
+  NetworkSwitcherGlyphV2,
+  StyledATag
 } from '@glif/react-components'
 import { RawNumberInput } from '../Shared/Input/Number'
 
@@ -122,10 +123,25 @@ const Create = ({
           onNetworkSwitch={(network: 't' | 'f') => setNetwork(network)}
           network={network}
         />
-        {network === 't' && (
+        {network === 't' ? (
           <Text p={0} m={0} fontSize='15px' textAlign='left'>
             {'*Not recommended'}
           </Text>
+        ) : (
+          <>
+            {/* Hack to get around margin limitations here... */}
+            <Box height={1} />
+            <StyledATag
+              href='https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV'
+              color='core.primary'
+              p={0}
+              m={0}
+              fontSize='15px'
+              ml={1}
+            >
+              Legacy address?
+            </StyledATag>
+          </>
         )}
       </Box>
       <Box

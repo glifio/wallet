@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { bool } from 'prop-types'
 import { useSelector, useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
+import { FilecoinNumber } from '@glif/filecoin-number'
 import {
   AccountCardAlt,
   Box,
@@ -36,16 +37,23 @@ import { initialState } from '../../store/states'
 import { navigate } from '../../utils/urlParams'
 import Filecoin from '@glif/filecoin-wallet-provider'
 
+type Wallet = {
+  path: string
+  balance: FilecoinNumber
+  address: string
+  type?: string
+}
+
 const AccountSelector = ({ msig, test }) => {
-  const wallet = useWallet()
+  const wallet = useWallet() as Wallet
   const [loadingAccounts, setLoadingAccounts] = useState(false)
   const [loadingPage, setLoadingPage] = useState(true)
   const [uncaughtError, setUncaughtError] = useState('')
   const dispatch = useDispatch()
   const { walletsInRdx, network } = useSelector(
     (state: typeof initialState) => ({
-      network: state.network,
-      walletsInRdx: state.wallets
+      network: state.network as 't' | 'f',
+      walletsInRdx: state.wallets as Wallet[]
     })
   )
   const { ledger, connectLedger, walletProvider } = useWalletProvider()
@@ -76,7 +84,7 @@ const AccountSelector = ({ msig, test }) => {
                 const balance = await provider.getBalance(address)
                 const networkCode =
                   network === MAINNET ? MAINNET_PATH_CODE : TESTNET_PATH_CODE
-                const wallet = {
+                const wallet: Wallet = {
                   balance,
                   address,
                   path: createPath(
@@ -112,7 +120,8 @@ const AccountSelector = ({ msig, test }) => {
     wallet.type,
     walletProvider,
     walletsInRdx.length,
-    loadedFirstFiveWallets
+    loadedFirstFiveWallets,
+    walletsInRdx
   ])
 
   const onClose = useCallback(() => {
@@ -145,7 +154,7 @@ const AccountSelector = ({ msig, test }) => {
         const balance = await provider.getBalance(address)
         const networkCode =
           network === MAINNET ? MAINNET_PATH_CODE : TESTNET_PATH_CODE
-        const wallet = {
+        const wallet: Wallet = {
           balance,
           address: converAddrToFPrefix(address),
           path: createPath(networkCode, index)
@@ -219,8 +228,12 @@ const AccountSelector = ({ msig, test }) => {
                         onClose()
                       }}
                       address={w.address}
-                      index={i}
+                      index={Number(w.path.split('/')[5])}
                       selected={w.address === wallet.address}
+                      legacy={
+                        network === 'f' &&
+                        w.path.split('/')[2] === `${TESTNET_PATH_CODE}'`
+                      }
                       // This is a hack to make testing the UI easier
                       // its hard to mock SWR + balance fetcher in the AccountCardAlt
                       // so we pass a manual balance to not rely on SWR for testing

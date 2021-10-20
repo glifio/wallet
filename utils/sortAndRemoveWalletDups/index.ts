@@ -11,7 +11,6 @@ const sortByIndex = (w1: Wallet, w2: Wallet) =>
   Number(w1.path.split('/')[5]) - Number(w2.path.split('/')[5])
 
 const sortAndRemoveDups = (walletsInRdx: Wallet[], wallets: Wallet[]) => {
-  console.log(wallets, 'wallets')
   const seenWallets = new Set()
   const uniqueWallets = [...walletsInRdx, ...wallets].filter((wallet) => {
     if (!seenWallets.has(wallet.address)) {
