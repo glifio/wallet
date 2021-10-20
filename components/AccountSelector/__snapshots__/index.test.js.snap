@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AccountSelector it renders an error when an error exists 1`] = `
-.c0 {
+exports[`AccountSelector it renders the loading screen first 1`] = `
+.c2 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -12,959 +12,9 @@ exports[`AccountSelector it renders an error when an error exists 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   justify-items: center;
-}
-
-.c1 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding: 24px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 1200px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-}
-
-.c4 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: none;
-  border-radius: 4px;
-  border-width: 1px;
-  padding: 16px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  background-color: #d9e0f2;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  overflow: hidden;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c5 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c6 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  border-color: #5E26FF;
-  background-color: #5E26FF;
-  color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c9 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-top: 16px;
-}
-
-.c15 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin: 8px;
-  display: inline-block;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c16 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 1px solid;
-  border-radius: 4px;
-  border-width: 1px;
-  padding: 16px;
-  background-color: hsla(0,0%,90%,0);
-  color: colors.core.black;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 300px;
-  overflow: hidden;
-  height: 300px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c18 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-}
-
-.c19 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  margin-right: 16px;
-  color: colors.core.black;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c20 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c23 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 4px;
-  padding: 16px;
-  margin: 8px;
-  background-color: #FC6D6F;
-  color: #660000;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 300px;
-  height: 300px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  box-shadow: 0 0.7px 2.2px -8px rgba(0,0,0,0.18),0 1.7px 5.4px rgba(0,0,0,0.129),0 3.1px 10.1px rgba(0,0,0,0.107),0 5.6px 18.1px rgba(0,0,0,0.09),0 10.4px 33.8px rgba(0,0,0,0.073),0 25px 81px rgba(0,0,0,0.051);
-}
-
-.c24 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  margin-right: 16px;
-  color: #660000;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c25 {
-  min-width: 0;
-  box-sizing: border-box;
-}
-
-.c27 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c7 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c28 {
-  cursor: pointer;
-  border: 1px solid status.fail.foreground;
-  background-color: #1AD08F;
-  border-color: status.fail.foreground;
-  color: status.fail.foreground;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 100%;
-  border-color: #660000;
-  border-width: 1px;
-  border-radius: 4px;
-  background-color: transparent;
-  color: #660000;
-}
-
-.c28:hover {
-  opacity: 0.8;
-}
-
-.c8 {
-  color: #5E26FF;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-left: 8px;
-}
-
-.c22 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c10 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-}
-
-.c11 {
-  color: #5E26FF;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-}
-
-.c21 {
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c26 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c2 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin: 8px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 800px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c13 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .c3 {
-  color: #262626;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c12 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-  margin-left: 8px;
-}
-
-.c12:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
-.c17 {
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  cursor: pointer;
-}
-
-.c17:hover {
-  background: hsla(0,0%,90%,1);
-  opacity: 1;
-}
-
-<div
-  class="c0"
-  display="flex"
->
-  <div
-    class="c1"
-    display="flex"
-  >
-    <ul
-      class="c2"
-      display="flex"
-    >
-      <li
-        class="c3"
-        color="core.nearblack"
-        display="flex"
-      >
-        <div
-          class="c4"
-          display="flex"
-          overflow="hidden"
-          width="100%"
-        >
-          <div
-            class="c5"
-            display="flex"
-          >
-            <div
-              class="c6"
-              color="core.white"
-              display="flex"
-              size="6"
-            >
-              <h3
-                class="c7"
-              >
-                Ac
-              </h3>
-            </div>
-            <h2
-              class="c8"
-              color="core.primary"
-              font-family="RT-Alias-Grotesk"
-              font-size="4"
-              font-weight="400"
-            >
-              Switch Accounts
-            </h2>
-          </div>
-          <div
-            class="c9"
-          >
-            <p
-              class="c10"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Your single seed phrase creates hundreds of individual accounts. We're showing you the first 5.
-            </p>
-            <p
-              class="c11"
-              color="core.primary"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Don't see an address you're looking for?
-            </p>
-            <p
-              class="c10"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Your seed phrase generates different addresses depending on whether it's connected to the Filecoin testnet or mainnet.
-              <a
-                class="c12"
-                color="core.primary"
-                font-size="2"
-                href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
-                rel="noopener noreferrer"
-                target="blank"
-              >
-                Learn More
-              </a>
-            </p>
-          </div>
-        </div>
-      </li>
-    </ul>
-    <ul
-      class="c13"
-    >
-      <li
-        class="c14"
-        display="flex"
-      >
-        <div
-          class="c15"
-          display="inline-block"
-        >
-          <div
-            class="c16 c17"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c18"
-              display="flex"
-            >
-              <div
-                class="c19"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c7"
-                >
-                  0
-                </h3>
-              </div>
-              <div
-                class="c20"
-                display="flex"
-              >
-                <p
-                  class="c21"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c22"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1z225 ... 6z6wgi
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c20"
-              display="flex"
-            >
-              <p
-                class="c21"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c22"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div
-          class="c15"
-          display="inline-block"
-        >
-          <div
-            class="c16 c17"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c18"
-              display="flex"
-            >
-              <div
-                class="c19"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c7"
-                >
-                  1
-                </h3>
-              </div>
-              <div
-                class="c20"
-                display="flex"
-              >
-                <p
-                  class="c21"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c22"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1mbk7 ... icb1uq
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c20"
-              display="flex"
-            >
-              <p
-                class="c21"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c22"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div
-          class="c15"
-          display="inline-block"
-        >
-          <div
-            class="c16 c17"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c18"
-              display="flex"
-            >
-              <div
-                class="c19"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c7"
-                >
-                  2
-                </h3>
-              </div>
-              <div
-                class="c20"
-                display="flex"
-              >
-                <p
-                  class="c21"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c22"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1mbk7 ... icb2uq
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c20"
-              display="flex"
-            >
-              <p
-                class="c21"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c22"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div
-          class="c15"
-          display="inline-block"
-        >
-          <div
-            class="c16 c17"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c18"
-              display="flex"
-            >
-              <div
-                class="c19"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c7"
-                >
-                  3
-                </h3>
-              </div>
-              <div
-                class="c20"
-                display="flex"
-              >
-                <p
-                  class="c21"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c22"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1mbk7 ... icb3uq
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c20"
-              display="flex"
-            >
-              <p
-                class="c21"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c22"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div
-          class="c15"
-          display="inline-block"
-        >
-          <div
-            class="c16 c17"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c18"
-              display="flex"
-            >
-              <div
-                class="c19"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c7"
-                >
-                  4
-                </h3>
-              </div>
-              <div
-                class="c20"
-                display="flex"
-              >
-                <p
-                  class="c21"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c22"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1mbk7 ... icb4uq
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c20"
-              display="flex"
-            >
-              <p
-                class="c21"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c22"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div
-          class="c23"
-          color="card.error.foreground"
-          display="flex"
-          height="11"
-          width="11"
-        >
-          <div
-            class="c18"
-            display="flex"
-          >
-            <div
-              class="c24"
-              color="status.fail.foreground"
-              display="flex"
-              size="6"
-            >
-              <h3
-                class="c7"
-              >
-                Er
-              </h3>
-            </div>
-            <p
-              class="c10"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Error
-            </p>
-          </div>
-          <div
-            class="c25"
-          >
-            <p
-              class="c26"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              error for testing
-            </p>
-          </div>
-          <div
-            class="c27"
-            display="flex"
-          >
-            <button
-              class="c28"
-              color="status.fail.foreground"
-              font-size="3"
-              height="100%"
-              type="button"
-            >
-              Try again
-            </button>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
-`;
-
-exports[`AccountSelector it renders the loading screen first 1`] = `
-.c0 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  justify-items: center;
-}
-
-.c1 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -985,7 +35,7 @@ exports[`AccountSelector it renders the loading screen first 1`] = `
   justify-content: center;
 }
 
-.c4 {
+.c6 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -994,14 +44,19 @@ exports[`AccountSelector it renders the loading screen first 1`] = `
   margin-top: 16px;
 }
 
-.c2 {
+.c1 {
+  width: 24;
+  height: 24;
+}
+
+.c4 {
   display: inline-block;
   height: 48px;
   width: 48px;
   background-color: #5E26FF;
 }
 
-.c3 {
+.c5 {
   display: inline-block;
   height: 24px;
   width: 24px;
@@ -1014,36 +69,80 @@ exports[`AccountSelector it renders the loading screen first 1`] = `
   animation-iteration-count: infinite;
 }
 
-<div
-  class="c0"
-  display="flex"
->
-  <div
-    class="c1"
-    display="flex"
-    height="100vh"
+.c0 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 24px;
+  margin-right: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+<div>
+  <button
+    class="c0"
+    display="inline-block"
+    role="button"
+    type="button"
   >
-    <span
-      class="c2"
+    <svg
+      class="c1"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clip-rule="evenodd"
+        d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+        fill="#5E26FF"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </button>
+  <div
+    class="c2"
+    display="flex"
+  >
+    <div
+      class="c3"
+      display="flex"
+      height="100vh"
     >
       <span
-        class="c3"
-      />
-    </span>
-    <h4
-      class="c4"
-      font-family="RT-Alias-Grotesk"
-      font-size="2"
-      font-weight="400"
-    >
-      Loading...
-    </h4>
+        class="c4"
+      >
+        <span
+          class="c5"
+        />
+      </span>
+      <h4
+        class="c6"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Loading...
+      </h4>
+    </div>
   </div>
 </div>
 `;
 
-exports[`AccountSelector it renders the wallets in redux with the investor copy when the investor prop is passed 1`] = `
-.c0 {
+exports[`AccountSelector it renders the wallets in redux with the msig copy when the msig prop is passed 1`] = `
+.c2 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1056,7 +155,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   justify-items: center;
 }
 
-.c1 {
+.c3 {
   min-width: 0;
   box-sizing: border-box;
   padding: 24px;
@@ -1093,6 +192,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   display: flex;
   width: 100%;
   overflow: hidden;
+  max-width: 800px;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1146,7 +246,23 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   margin-top: 16px;
 }
 
-.c16 {
+.c14 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   margin: 8px;
@@ -1157,7 +273,147 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   align-items: center;
 }
 
+.c16 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  background-color: #5E26FF;
+  color: #E0D7FE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  overflow: hidden;
+  height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 .c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c18 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  margin-right: 16px;
+  color: #E0D7FE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c19 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c24 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #E0D7FE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c30 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c32 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -1182,24 +438,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   justify-content: space-between;
 }
 
-.c19 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-}
-
-.c20 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -1223,25 +462,112 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   justify-content: center;
 }
 
-.c21 {
+.c35 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c37 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin: 8px;
+  background-color: hsla(0,0%,90%,0);
+  color: colors.core.black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  overflow: hidden;
+  height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.c40 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  max-width: 300px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-.c25 {
+.c44 {
   min-width: 0;
   box-sizing: border-box;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 300px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c47 {
+  min-width: 0;
+  box-sizing: border-box;
+  height: 4px;
+}
+
+.c49 {
+  min-width: 0;
+  box-sizing: border-box;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 .c7 {
@@ -1250,43 +576,58 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   font-size: 1.5rem;
 }
 
-.c24 {
+.c26 {
   cursor: pointer;
-  border: 1px solid core.nearblack;
+  border: 1px solid #1AD08F;
   background-color: #1AD08F;
-  border-color: core.nearblack;
-  color: core.nearblack;
+  border-color: #1AD08F;
+  color: #08442F;
   font-size: 1.125rem;
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
+  margin-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   padding-left: 16px;
   padding-right: 16px;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  margin: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 300px;
-  height: 300px;
-  position: relative;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-content: flex-start;
-  -ms-flex-line-pack: start;
-  align-content: flex-start;
-  border-color: #262626;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   border-width: 1px;
   border-radius: 4px;
-  background-color: transparent;
-  color: #262626;
-  opacity: 1;
 }
 
-.c24:hover {
+.c26:hover {
+  opacity: 0.8;
+}
+
+.c36 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c36:hover {
   opacity: 0.8;
 }
 
@@ -1300,7 +641,7 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   margin-left: 8px;
 }
 
-.c23 {
+.c20 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -1310,40 +651,17 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   margin-bottom: 0;
 }
 
-.c28 {
+.c38 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c10 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-}
-
-.c11 {
-  color: #5E26FF;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-top: 32px;
-  margin-bottom: 0;
-}
-
-.c12 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
   margin-top: 8px;
+  margin-bottom: 8px;
 }
 
-.c22 {
+.c31 {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
@@ -1352,905 +670,194 @@ exports[`AccountSelector it renders the wallets in redux with the investor copy 
   margin-bottom: 0;
 }
 
-.c29 {
+.c41 {
   font-size: 1.125rem;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1;
   font-family: RT-Alias-Grotesk;
-  text-align: left;
-}
-
-.c2 {
-  list-style: none;
+  width: 50%;
   margin: 0;
-  padding: 0;
-  margin: 8px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 800px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
-.c14 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.c3 {
-  color: #262626;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+.c1 {
+  width: 24;
+  height: 24;
 }
 
 .c27 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  height: auto;
+  opacity: 1 !important;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  outline: none;
 }
 
-.c13 {
+.c29 {
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+}
+
+.c25:hover .c28 {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c23 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #E0D7FE;
+  font-size: 1.5rem;
+}
+
+.c23:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c34 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-bottom: 2px solid #5E26FF00;
   color: #5E26FF;
-  font-size: 1.125rem;
-  margin-left: 8px;
+  font-size: 1.5rem;
 }
 
-.c13:hover {
+.c34:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c26 {
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-}
-
-.c18 {
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  cursor: pointer;
-}
-
-.c18:hover {
-  background: hsla(0,0%,90%,1);
-  opacity: 1;
-}
-
-<div
-  class="c0"
-  display="flex"
->
-  <div
-    class="c1"
-    display="flex"
-  >
-    <ul
-      class="c2"
-      display="flex"
-    >
-      <li
-        class="c3"
-        color="core.nearblack"
-        display="flex"
-      >
-        <div
-          class="c4"
-          display="flex"
-          overflow="hidden"
-          width="100%"
-        >
-          <div
-            class="c5"
-            display="flex"
-          >
-            <div
-              class="c6"
-              color="core.white"
-              display="flex"
-              size="6"
-            >
-              <h3
-                class="c7"
-              >
-                Ac
-              </h3>
-            </div>
-            <h2
-              class="c8"
-              color="core.primary"
-              font-family="RT-Alias-Grotesk"
-              font-size="4"
-              font-weight="400"
-            >
-              Select Account
-            </h2>
-          </div>
-          <div
-            class="c9"
-          >
-            <p
-              class="c10"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Please select a Ledger account.
-            </p>
-            <p
-              class="c11"
-              color="core.primary"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Don't see an address you're looking for?
-            </p>
-            <p
-              class="c12"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Your Ledger Device generates different addresses depending on whether it's connected to the Filecoin testnet or mainnet.
-              <a
-                class="c13"
-                color="core.primary"
-                font-size="2"
-                href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
-                rel="noopener noreferrer"
-                target="blank"
-              >
-                Learn More
-              </a>
-            </p>
-          </div>
-        </div>
-      </li>
-    </ul>
-    <ul
-      class="c14"
-    >
-      <li
-        class="c15"
-        display="flex"
-      >
-        <div
-          class="c16"
-          display="inline-block"
-        >
-          <div
-            class="c17 c18"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c19"
-              display="flex"
-            >
-              <div
-                class="c20"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c7"
-                >
-                  0
-                </h3>
-              </div>
-              <div
-                class="c21"
-                display="flex"
-              >
-                <p
-                  class="c22"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c23"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1z225 ... 6z6wgi
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c21"
-              display="flex"
-            >
-              <p
-                class="c22"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c23"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div
-          class="c16"
-          display="inline-block"
-        >
-          <div
-            class="c17 c18"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c19"
-              display="flex"
-            >
-              <div
-                class="c20"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c7"
-                >
-                  1
-                </h3>
-              </div>
-              <div
-                class="c21"
-                display="flex"
-              >
-                <p
-                  class="c22"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c23"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1mbk7 ... icb1uq
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c21"
-              display="flex"
-            >
-              <p
-                class="c22"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c23"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div
-          class="c16"
-          display="inline-block"
-        >
-          <div
-            class="c17 c18"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c19"
-              display="flex"
-            >
-              <div
-                class="c20"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c7"
-                >
-                  2
-                </h3>
-              </div>
-              <div
-                class="c21"
-                display="flex"
-              >
-                <p
-                  class="c22"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c23"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1mbk7 ... icb2uq
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c21"
-              display="flex"
-            >
-              <p
-                class="c22"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c23"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div
-          class="c16"
-          display="inline-block"
-        >
-          <div
-            class="c17 c18"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c19"
-              display="flex"
-            >
-              <div
-                class="c20"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c7"
-                >
-                  3
-                </h3>
-              </div>
-              <div
-                class="c21"
-                display="flex"
-              >
-                <p
-                  class="c22"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c23"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1mbk7 ... icb3uq
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c21"
-              display="flex"
-            >
-              <p
-                class="c22"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c23"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div
-          class="c16"
-          display="inline-block"
-        >
-          <div
-            class="c17 c18"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c19"
-              display="flex"
-            >
-              <div
-                class="c20"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c7"
-                >
-                  4
-                </h3>
-              </div>
-              <div
-                class="c21"
-                display="flex"
-              >
-                <p
-                  class="c22"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c23"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1mbk7 ... icb4uq
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c21"
-              display="flex"
-            >
-              <p
-                class="c22"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c23"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <button
-          class="c24"
-          color="core.nearblack"
-          cursor="pointer"
-          display="flex"
-          font-size="3"
-          height="11"
-          opacity="1"
-          type="button"
-          width="11"
-        >
-          <div
-            class="c25 c26"
-            font-size="7"
-          >
-            ＋
-          </div>
-          <ul
-            class="c14"
-          >
-            <li
-              class="c27"
-              display="flex"
-            >
-              <h2
-                class="c28"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                Create new account
-              </h2>
-            </li>
-            <li
-              class=""
-            >
-              <p
-                class="c29"
-                font-family="RT-Alias-Grotesk"
-                font-size="2"
-                font-weight="400"
-              >
-                Click here to create account #
-                5
-                .
-              </p>
-            </li>
-          </ul>
-        </button>
-      </li>
-    </ul>
-  </div>
-</div>
-`;
-
-exports[`AccountSelector it renders the wallets in redux, and an option to create the next wallet 1`] = `
-.c0 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  justify-items: center;
-}
-
-.c1 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding: 24px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 1200px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-}
-
-.c4 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: none;
-  border-radius: 4px;
-  border-width: 1px;
-  padding: 16px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  background-color: #d9e0f2;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  overflow: hidden;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c5 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c6 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  border-color: #5E26FF;
-  background-color: #5E26FF;
-  color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c9 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-top: 16px;
-}
-
-.c15 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin: 8px;
-  display: inline-block;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c16 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 1px solid;
-  border-radius: 4px;
-  border-width: 1px;
-  padding: 16px;
-  background-color: hsla(0,0%,90%,0);
-  color: colors.core.black;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 300px;
-  overflow: hidden;
-  height: 300px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c18 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-}
-
-.c19 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  margin-right: 16px;
-  color: colors.core.black;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c20 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c24 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 5rem;
-}
-
-.c7 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c23 {
-  cursor: pointer;
-  border: 1px solid core.nearblack;
-  background-color: #1AD08F;
-  border-color: core.nearblack;
-  color: core.nearblack;
-  font-size: 1.125rem;
+.c48 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  margin: 8px;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+  margin-left: 4px;
+}
+
+.c48:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c45 {
+  background: #E4EBFC;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: RT-Alias-Grotesk;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 300px;
-  height: 300px;
-  position: relative;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-content: flex-start;
-  -ms-flex-line-pack: start;
-  align-content: flex-start;
-  border-color: #262626;
-  border-width: 1px;
-  border-radius: 4px;
-  background-color: transparent;
-  color: #262626;
-  opacity: 1;
+  width: 50%;
+  height: 48px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
-.c23:hover {
-  opacity: 0.8;
+.c45:hover {
+  -webkit-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  cursor: pointer;
+  background: props.theme.colors.input.background.valid;
 }
 
-.c8 {
-  color: #5E26FF;
-  font-size: 1.5rem;
+.c46 {
+  background: #1AD08F;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border: 0;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 1.2;
   font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-left: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  height: 48px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
-.c22 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-top: 0;
-  margin-bottom: 0;
+.c46:hover {
+  -webkit-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  cursor: pointer;
+  background: props.theme.colors.input.background.valid;
 }
 
-.c27 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
+.c13 {
+  list-style: none;
   margin: 0;
+  padding: 0;
+}
+
+.c0 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 24px;
+  margin-right: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 .c10 {
@@ -2261,90 +868,55 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
 }
 
 .c11 {
-  color: #5E26FF;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
+  margin-top: 8px;
 }
 
-.c21 {
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c28 {
+.c42 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
   font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
   text-align: left;
+  cursor: text;
+  background: #d1ddfa;
+  width: 50%;
+  display: inline-block;
+  height: 48px;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
 }
 
-.c2 {
-  list-style: none;
+.c42:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c42:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c43 {
+  -moz-appearance: textfield;
+}
+
+.c43::-webkit-outer-spin-button,
+.c43::-webkit-inner-spin-button {
+  -webkit-appearance: none;
   margin: 0;
-  padding: 0;
-  margin: 8px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 800px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c13 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.c3 {
-  color: #262626;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c26 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .c12 {
@@ -2362,542 +934,2603 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   border-bottom: 2px solid #5E26FF;
 }
 
-.c25 {
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-}
-
-.c17 {
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  cursor: pointer;
-}
-
-.c17:hover {
-  background: hsla(0,0%,90%,1);
-  opacity: 1;
-}
-
-<div
-  class="c0"
-  display="flex"
->
+<div>
+  <button
+    class="c0"
+    display="inline-block"
+    role="button"
+    type="button"
+  >
+    <svg
+      class="c1"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clip-rule="evenodd"
+        d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+        fill="#5E26FF"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </button>
   <div
-    class="c1"
+    class="c2"
     display="flex"
   >
-    <ul
-      class="c2"
+    <div
+      class="c3"
       display="flex"
     >
-      <li
-        class="c3"
-        color="core.nearblack"
+      <div
+        class="c4"
         display="flex"
+        overflow="hidden"
+        width="100%"
       >
         <div
-          class="c4"
+          class="c5"
           display="flex"
-          overflow="hidden"
-          width="100%"
         >
           <div
-            class="c5"
+            class="c6"
+            color="core.white"
             display="flex"
+            size="6"
           >
-            <div
-              class="c6"
-              color="core.white"
-              display="flex"
-              size="6"
+            <h3
+              class="c7"
             >
-              <h3
-                class="c7"
-              >
-                Ac
-              </h3>
-            </div>
-            <h2
-              class="c8"
-              color="core.primary"
-              font-family="RT-Alias-Grotesk"
-              font-size="4"
-              font-weight="400"
-            >
-              Switch Accounts
-            </h2>
+              Ac
+            </h3>
           </div>
-          <div
-            class="c9"
+          <h2
+            class="c8"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="4"
+            font-weight="400"
           >
-            <p
-              class="c10"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Your single seed phrase creates hundreds of individual accounts. We're showing you the first 5.
-            </p>
-            <p
-              class="c11"
-              color="core.primary"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Don't see an address you're looking for?
-            </p>
-            <p
-              class="c10"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
-            >
-              Your seed phrase generates different addresses depending on whether it's connected to the Filecoin testnet or mainnet.
-              <a
-                class="c12"
-                color="core.primary"
-                font-size="2"
-                href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
-                rel="noopener noreferrer"
-                target="blank"
-              >
-                Learn More
-              </a>
-            </p>
-          </div>
+            Select Account
+          </h2>
         </div>
-      </li>
-    </ul>
-    <ul
-      class="c13"
-    >
-      <li
-        class="c14"
-        display="flex"
+        <div
+          class="c9"
+        >
+          <p
+            class="c10"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Please select a Ledger account.
+          </p>
+          <p
+            class="c11"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Don't see an account you're looking for? 
+            <a
+              class="c12"
+              color="core.primary"
+              font-size="2"
+              href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
+              rel="noopener noreferrer"
+              target="blank"
+            >
+              Learn More
+            </a>
+          </p>
+        </div>
+      </div>
+      <ul
+        class="c13"
       >
         <div
-          class="c15"
-          display="inline-block"
-        >
-          <div
-            class="c16 c17"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c18"
-              display="flex"
-            >
-              <div
-                class="c19"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c7"
-                >
-                  0
-                </h3>
-              </div>
-              <div
-                class="c20"
-                display="flex"
-              >
-                <p
-                  class="c21"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c22"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1z225 ... 6z6wgi
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c20"
-              display="flex"
-            >
-              <p
-                class="c21"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c22"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div
-          class="c15"
-          display="inline-block"
-        >
-          <div
-            class="c16 c17"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c18"
-              display="flex"
-            >
-              <div
-                class="c19"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c7"
-                >
-                  1
-                </h3>
-              </div>
-              <div
-                class="c20"
-                display="flex"
-              >
-                <p
-                  class="c21"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c22"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1mbk7 ... icb1uq
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c20"
-              display="flex"
-            >
-              <p
-                class="c21"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c22"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div
-          class="c15"
-          display="inline-block"
-        >
-          <div
-            class="c16 c17"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c18"
-              display="flex"
-            >
-              <div
-                class="c19"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c7"
-                >
-                  2
-                </h3>
-              </div>
-              <div
-                class="c20"
-                display="flex"
-              >
-                <p
-                  class="c21"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c22"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1mbk7 ... icb2uq
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c20"
-              display="flex"
-            >
-              <p
-                class="c21"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c22"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div
-          class="c15"
-          display="inline-block"
-        >
-          <div
-            class="c16 c17"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c18"
-              display="flex"
-            >
-              <div
-                class="c19"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c7"
-                >
-                  3
-                </h3>
-              </div>
-              <div
-                class="c20"
-                display="flex"
-              >
-                <p
-                  class="c21"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c22"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1mbk7 ... icb3uq
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c20"
-              display="flex"
-            >
-              <p
-                class="c21"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c22"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div
-          class="c15"
-          display="inline-block"
-        >
-          <div
-            class="c16 c17"
-            color="colors.core.black"
-            display="flex"
-            height="11"
-            overflow="hidden"
-            width="11"
-          >
-            <div
-              class="c18"
-              display="flex"
-            >
-              <div
-                class="c19"
-                color="colors.core.black"
-                display="flex"
-                size="6"
-              >
-                <h3
-                  class="c7"
-                >
-                  4
-                </h3>
-              </div>
-              <div
-                class="c20"
-                display="flex"
-              >
-                <p
-                  class="c21"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="3"
-                  font-weight="400"
-                >
-                  Address
-                </p>
-                <h2
-                  class="c22"
-                  font-family="RT-Alias-Grotesk"
-                  font-size="4"
-                  font-weight="400"
-                >
-                  t1mbk7 ... icb4uq
-                </h2>
-              </div>
-            </div>
-            <div
-              class="c20"
-              display="flex"
-            >
-              <p
-                class="c21"
-                font-family="RT-Alias-Grotesk"
-                font-size="3"
-                font-weight="400"
-              >
-                Balance
-              </p>
-              <h2
-                class="c22"
-                font-family="RT-Alias-Grotesk"
-                font-size="4"
-                font-weight="400"
-              >
-                1
-                FIL
-              </h2>
-            </div>
-          </div>
-        </div>
-        <button
-          class="c23"
-          color="core.nearblack"
-          cursor="pointer"
+          class="c14"
           display="flex"
-          font-size="3"
-          height="11"
-          opacity="1"
-          type="button"
-          width="11"
         >
-          <div
-            class="c24 c25"
-            font-size="7"
+          <li
+            class=""
           >
-            ＋
-          </div>
-          <ul
-            class="c13"
+            <div
+              class="c15"
+              display="inline-block"
+            >
+              <div
+                class="c16"
+                color="card.account.color"
+                display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
+              >
+                <div
+                  class="c17"
+                  display="flex"
+                >
+                  <div
+                    class="c18"
+                    color="card.account.color"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c7"
+                    >
+                      0
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Default
+                    </h2>
+                    <div
+                      class="c21"
+                      display="flex"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="c22"
+                  display="flex"
+                >
+                  <a
+                    class="c23"
+                    color="card.account.color"
+                    font-size="4"
+                    href="https://filfox.info/en/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                    target="_blank"
+                  >
+                    t1z22 ... 6z6wgi
+                  </a>
+                  <div
+                    class="c24"
+                    color="card.account.color"
+                    display="flex"
+                  >
+                    <button
+                      class="c25 c26 c27"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c28 c29"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c30"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c31"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            class=""
           >
-            <li
-              class="c26"
+            <div
+              class="c15"
+              display="inline-block"
+            >
+              <div
+                class="c32"
+                color="colors.core.black"
+                display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
+              >
+                <div
+                  class="c17"
+                  display="flex"
+                >
+                  <div
+                    class="c33"
+                    color="colors.core.black"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c7"
+                    >
+                      1
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Account 
+                      1
+                    </h2>
+                    <div
+                      class="c21"
+                      display="flex"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="c22"
+                  display="flex"
+                >
+                  <a
+                    class="c34"
+                    color="core.primary"
+                    font-size="4"
+                    href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb1uq"
+                    target="_blank"
+                  >
+                    t1mbk ... icb1uq
+                  </a>
+                  <div
+                    class="c35"
+                    color="core.primary"
+                    display="flex"
+                  >
+                    <button
+                      class="c25 c26 c27"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c28 c29"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c30"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c31"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
+                  <button
+                    class="c36"
+                    font-size="3"
+                    height="6"
+                    type="button"
+                  >
+                    Select
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <div
+              class="c15"
+              display="inline-block"
+            >
+              <div
+                class="c32"
+                color="colors.core.black"
+                display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
+              >
+                <div
+                  class="c17"
+                  display="flex"
+                >
+                  <div
+                    class="c33"
+                    color="colors.core.black"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c7"
+                    >
+                      2
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Account 
+                      2
+                    </h2>
+                    <div
+                      class="c21"
+                      display="flex"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="c22"
+                  display="flex"
+                >
+                  <a
+                    class="c34"
+                    color="core.primary"
+                    font-size="4"
+                    href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
+                    target="_blank"
+                  >
+                    t1mbk ... icb2uq
+                  </a>
+                  <div
+                    class="c35"
+                    color="core.primary"
+                    display="flex"
+                  >
+                    <button
+                      class="c25 c26 c27"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c28 c29"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c30"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c31"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
+                  <button
+                    class="c36"
+                    font-size="3"
+                    height="6"
+                    type="button"
+                  >
+                    Select
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <div
+              class="c15"
+              display="inline-block"
+            >
+              <div
+                class="c32"
+                color="colors.core.black"
+                display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
+              >
+                <div
+                  class="c17"
+                  display="flex"
+                >
+                  <div
+                    class="c33"
+                    color="colors.core.black"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c7"
+                    >
+                      3
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Account 
+                      3
+                    </h2>
+                    <div
+                      class="c21"
+                      display="flex"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="c22"
+                  display="flex"
+                >
+                  <a
+                    class="c34"
+                    color="core.primary"
+                    font-size="4"
+                    href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb3uq"
+                    target="_blank"
+                  >
+                    t1mbk ... icb3uq
+                  </a>
+                  <div
+                    class="c35"
+                    color="core.primary"
+                    display="flex"
+                  >
+                    <button
+                      class="c25 c26 c27"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c28 c29"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c30"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c31"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
+                  <button
+                    class="c36"
+                    font-size="3"
+                    height="6"
+                    type="button"
+                  >
+                    Select
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <div
+              class="c15"
+              display="inline-block"
+            >
+              <div
+                class="c32"
+                color="colors.core.black"
+                display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
+              >
+                <div
+                  class="c17"
+                  display="flex"
+                >
+                  <div
+                    class="c33"
+                    color="colors.core.black"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c7"
+                    >
+                      4
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Account 
+                      4
+                    </h2>
+                    <div
+                      class="c21"
+                      display="flex"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="c22"
+                  display="flex"
+                >
+                  <a
+                    class="c34"
+                    color="core.primary"
+                    font-size="4"
+                    href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb4uq"
+                    target="_blank"
+                  >
+                    t1mbk ... icb4uq
+                  </a>
+                  <div
+                    class="c35"
+                    color="core.primary"
+                    display="flex"
+                  >
+                    <button
+                      class="c25 c26 c27"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c28 c29"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c30"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c31"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
+                  <button
+                    class="c36"
+                    font-size="3"
+                    height="6"
+                    type="button"
+                  >
+                    Select
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <div
+              class="c37"
+              color="colors.core.black"
               display="flex"
+              height="11"
+              overflow="hidden"
+              width="11"
             >
               <h2
-                class="c27"
+                class="c38"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
               >
                 Create new account
               </h2>
-            </li>
-            <li
-              class=""
+              <div
+                class="c39"
+              >
+                <div
+                  class="c40"
+                  display="flex"
+                >
+                  <h4
+                    class="c41"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                    width="50%"
+                  >
+                    Account index
+                  </h4>
+                  <input
+                    class="c42 c43"
+                    display="inline-block"
+                    height="6"
+                    value="5"
+                    width="50%"
+                  />
+                </div>
+                
+              </div>
+              <div
+                class="c39"
+              >
+                <div
+                  class="c44"
+                  display="flex"
+                  width="100%"
+                >
+                  <button
+                    class="c45"
+                    display="flex"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="1"
+                    font-weight="1"
+                    height="6"
+                    width="50%"
+                  >
+                    Legacy address
+                  </button>
+                  <button
+                    class="c46"
+                    display="flex"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="1"
+                    font-weight="1"
+                    height="6"
+                    width="50%"
+                  >
+                    Normal address
+                  </button>
+                </div>
+                <div
+                  class="c47"
+                  height="1"
+                />
+                <a
+                  class="c48"
+                  color="core.primary"
+                  font-size="15px"
+                  href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
+                  target="_blank"
+                >
+                  Legacy address?
+                </a>
+              </div>
+              <div
+                class="c49"
+                display="flex"
+                width="100%"
+              >
+                <button
+                  class="c36"
+                  font-size="3"
+                  height="6"
+                  type="button"
+                >
+                  Create
+                </button>
+              </div>
+            </div>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AccountSelector it renders the wallets in redux, and an option to create the next wallet 1`] = `
+.c2 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.c3 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1200px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c4 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #d9e0f2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  max-width: 800px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c6 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: #5E26FF;
+  background-color: #5E26FF;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c9 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.c14 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c15 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 8px;
+  display: inline-block;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c16 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  background-color: #5E26FF;
+  color: #E0D7FE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  overflow: hidden;
+  height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c18 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  margin-right: 16px;
+  color: #E0D7FE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c19 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c24 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #E0D7FE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c30 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  background-color: hsla(0,0%,90%,0);
+  color: colors.core.black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  overflow: hidden;
+  height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  margin-right: 16px;
+  color: colors.core.black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c35 {
+  min-width: 0;
+  box-sizing: border-box;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c37 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin: 8px;
+  background-color: hsla(0,0%,90%,0);
+  color: colors.core.black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  overflow: hidden;
+  height: 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 300px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c44 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 300px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c47 {
+  min-width: 0;
+  box-sizing: border-box;
+  height: 4px;
+}
+
+.c49 {
+  min-width: 0;
+  box-sizing: border-box;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c7 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c26 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  margin-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c26:hover {
+  opacity: 0.8;
+}
+
+.c36 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c36:hover {
+  opacity: 0.8;
+}
+
+.c8 {
+  color: #5E26FF;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-left: 8px;
+}
+
+.c20 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c38 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.c31 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c41 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  width: 50%;
+  margin: 0;
+}
+
+.c1 {
+  width: 24;
+  height: 24;
+}
+
+.c27 {
+  height: auto;
+  opacity: 1 !important;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  outline: none;
+}
+
+.c29 {
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+}
+
+.c25:hover .c28 {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c23 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #E0D7FE;
+  font-size: 1.5rem;
+}
+
+.c23:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c34 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.5rem;
+}
+
+.c34:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c48 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+  margin-left: 4px;
+}
+
+.c48:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c45 {
+  background: #E4EBFC;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: RT-Alias-Grotesk;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  height: 48px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c45:hover {
+  -webkit-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  cursor: pointer;
+  background: props.theme.colors.input.background.valid;
+}
+
+.c46 {
+  background: #1AD08F;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: RT-Alias-Grotesk;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  height: 48px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c46:hover {
+  -webkit-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  cursor: pointer;
+  background: props.theme.colors.input.background.valid;
+}
+
+.c13 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c0 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 24px;
+  margin-right: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c10 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c11 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 8px;
+}
+
+.c42 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #d1ddfa;
+  width: 50%;
+  display: inline-block;
+  height: 48px;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c42:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c42:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c43 {
+  -moz-appearance: textfield;
+}
+
+.c43::-webkit-outer-spin-button,
+.c43::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c12 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+  margin-left: 8px;
+}
+
+.c12:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+<div>
+  <button
+    class="c0"
+    display="inline-block"
+    role="button"
+    type="button"
+  >
+    <svg
+      class="c1"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clip-rule="evenodd"
+        d="M19.7333 4.2669C19.3776 3.91103 18.801 3.91103 18.4453 4.2669L11.9994 10.7166L5.55552 4.26885C5.19986 3.91299 4.62323 3.91299 4.26757 4.26885C3.91191 4.62472 3.91191 5.20169 4.26757 5.55756L10.7115 12.0053L4.27793 18.4426C3.92228 18.7985 3.92228 19.3755 4.27793 19.7313C4.63359 20.0872 5.21022 20.0872 5.56587 19.7313L11.9994 13.294L18.435 19.7333C18.7906 20.0892 19.3672 20.0892 19.7229 19.7333C20.0786 19.3774 20.0786 18.8005 19.7229 18.4446L13.2874 12.0053L19.7333 5.5556C20.0889 5.19974 20.0889 4.62276 19.7333 4.2669Z"
+        fill="#5E26FF"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </button>
+  <div
+    class="c2"
+    display="flex"
+  >
+    <div
+      class="c3"
+      display="flex"
+    >
+      <div
+        class="c4"
+        display="flex"
+        overflow="hidden"
+        width="100%"
+      >
+        <div
+          class="c5"
+          display="flex"
+        >
+          <div
+            class="c6"
+            color="core.white"
+            display="flex"
+            size="6"
+          >
+            <h3
+              class="c7"
             >
-              <p
-                class="c28"
+              Ac
+            </h3>
+          </div>
+          <h2
+            class="c8"
+            color="core.primary"
+            font-family="RT-Alias-Grotesk"
+            font-size="4"
+            font-weight="400"
+          >
+            Switch Accounts
+          </h2>
+        </div>
+        <div
+          class="c9"
+        >
+          <p
+            class="c10"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Your single seed phrase creates hundreds of individual accounts. We're showing you the first 5.
+          </p>
+          <p
+            class="c11"
+            font-family="RT-Alias-Grotesk"
+            font-size="2"
+            font-weight="400"
+          >
+            Don't see an account you're looking for? 
+            <a
+              class="c12"
+              color="core.primary"
+              font-size="2"
+              href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
+              rel="noopener noreferrer"
+              target="blank"
+            >
+              Learn More
+            </a>
+          </p>
+        </div>
+      </div>
+      <ul
+        class="c13"
+      >
+        <div
+          class="c14"
+          display="flex"
+        >
+          <li
+            class=""
+          >
+            <div
+              class="c15"
+              display="inline-block"
+            >
+              <div
+                class="c16"
+                color="card.account.color"
+                display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
+              >
+                <div
+                  class="c17"
+                  display="flex"
+                >
+                  <div
+                    class="c18"
+                    color="card.account.color"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c7"
+                    >
+                      0
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Default
+                    </h2>
+                    <div
+                      class="c21"
+                      display="flex"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="c22"
+                  display="flex"
+                >
+                  <a
+                    class="c23"
+                    color="card.account.color"
+                    font-size="4"
+                    href="https://filfox.info/en/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+                    target="_blank"
+                  >
+                    t1z22 ... 6z6wgi
+                  </a>
+                  <div
+                    class="c24"
+                    color="card.account.color"
+                    display="flex"
+                  >
+                    <button
+                      class="c25 c26 c27"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c28 c29"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c30"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c31"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <div
+              class="c15"
+              display="inline-block"
+            >
+              <div
+                class="c32"
+                color="colors.core.black"
+                display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
+              >
+                <div
+                  class="c17"
+                  display="flex"
+                >
+                  <div
+                    class="c33"
+                    color="colors.core.black"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c7"
+                    >
+                      1
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Account 
+                      1
+                    </h2>
+                    <div
+                      class="c21"
+                      display="flex"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="c22"
+                  display="flex"
+                >
+                  <a
+                    class="c34"
+                    color="core.primary"
+                    font-size="4"
+                    href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb1uq"
+                    target="_blank"
+                  >
+                    t1mbk ... icb1uq
+                  </a>
+                  <div
+                    class="c35"
+                    color="core.primary"
+                    display="flex"
+                  >
+                    <button
+                      class="c25 c26 c27"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c28 c29"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c30"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c31"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
+                  <button
+                    class="c36"
+                    font-size="3"
+                    height="6"
+                    type="button"
+                  >
+                    Select
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <div
+              class="c15"
+              display="inline-block"
+            >
+              <div
+                class="c32"
+                color="colors.core.black"
+                display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
+              >
+                <div
+                  class="c17"
+                  display="flex"
+                >
+                  <div
+                    class="c33"
+                    color="colors.core.black"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c7"
+                    >
+                      2
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Account 
+                      2
+                    </h2>
+                    <div
+                      class="c21"
+                      display="flex"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="c22"
+                  display="flex"
+                >
+                  <a
+                    class="c34"
+                    color="core.primary"
+                    font-size="4"
+                    href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
+                    target="_blank"
+                  >
+                    t1mbk ... icb2uq
+                  </a>
+                  <div
+                    class="c35"
+                    color="core.primary"
+                    display="flex"
+                  >
+                    <button
+                      class="c25 c26 c27"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c28 c29"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c30"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c31"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
+                  <button
+                    class="c36"
+                    font-size="3"
+                    height="6"
+                    type="button"
+                  >
+                    Select
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <div
+              class="c15"
+              display="inline-block"
+            >
+              <div
+                class="c32"
+                color="colors.core.black"
+                display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
+              >
+                <div
+                  class="c17"
+                  display="flex"
+                >
+                  <div
+                    class="c33"
+                    color="colors.core.black"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c7"
+                    >
+                      3
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Account 
+                      3
+                    </h2>
+                    <div
+                      class="c21"
+                      display="flex"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="c22"
+                  display="flex"
+                >
+                  <a
+                    class="c34"
+                    color="core.primary"
+                    font-size="4"
+                    href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb3uq"
+                    target="_blank"
+                  >
+                    t1mbk ... icb3uq
+                  </a>
+                  <div
+                    class="c35"
+                    color="core.primary"
+                    display="flex"
+                  >
+                    <button
+                      class="c25 c26 c27"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c28 c29"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c30"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c31"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
+                  <button
+                    class="c36"
+                    font-size="3"
+                    height="6"
+                    type="button"
+                  >
+                    Select
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <div
+              class="c15"
+              display="inline-block"
+            >
+              <div
+                class="c32"
+                color="colors.core.black"
+                display="flex"
+                height="11"
+                overflow="hidden"
+                width="11"
+              >
+                <div
+                  class="c17"
+                  display="flex"
+                >
+                  <div
+                    class="c33"
+                    color="colors.core.black"
+                    display="flex"
+                    size="6"
+                  >
+                    <h3
+                      class="c7"
+                    >
+                      4
+                    </h3>
+                  </div>
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      Account 
+                      4
+                    </h2>
+                    <div
+                      class="c21"
+                      display="flex"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="c22"
+                  display="flex"
+                >
+                  <a
+                    class="c34"
+                    color="core.primary"
+                    font-size="4"
+                    href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb4uq"
+                    target="_blank"
+                  >
+                    t1mbk ... icb4uq
+                  </a>
+                  <div
+                    class="c35"
+                    color="core.primary"
+                    display="flex"
+                  >
+                    <button
+                      class="c25 c26 c27"
+                      display="flex"
+                      font-size="3"
+                      height="6"
+                      role="button"
+                      type="button"
+                    >
+                      <svg
+                        class="c1 c28 c29"
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="8"
+                          y="4"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="c30"
+                  display="flex"
+                >
+                  <div
+                    class="c19"
+                    display="flex"
+                  >
+                    <p
+                      class="c31"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="3"
+                      font-weight="400"
+                    >
+                      Balance
+                    </p>
+                    <h2
+                      class="c20"
+                      font-family="RT-Alias-Grotesk"
+                      font-size="4"
+                      font-weight="400"
+                    >
+                      1
+                       FIL
+                    </h2>
+                  </div>
+                  <button
+                    class="c36"
+                    font-size="3"
+                    height="6"
+                    type="button"
+                  >
+                    Select
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            class=""
+          >
+            <div
+              class="c37"
+              color="colors.core.black"
+              display="flex"
+              height="11"
+              overflow="hidden"
+              width="11"
+            >
+              <h2
+                class="c38"
                 font-family="RT-Alias-Grotesk"
-                font-size="2"
+                font-size="4"
                 font-weight="400"
               >
-                Click here to create account #
-                5
-                .
-              </p>
-            </li>
-          </ul>
-        </button>
-      </li>
-    </ul>
+                Create new account
+              </h2>
+              <div
+                class="c39"
+              >
+                <div
+                  class="c40"
+                  display="flex"
+                >
+                  <h4
+                    class="c41"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="2"
+                    font-weight="400"
+                    width="50%"
+                  >
+                    Account index
+                  </h4>
+                  <input
+                    class="c42 c43"
+                    display="inline-block"
+                    height="6"
+                    value="5"
+                    width="50%"
+                  />
+                </div>
+                
+              </div>
+              <div
+                class="c39"
+              >
+                <div
+                  class="c44"
+                  display="flex"
+                  width="100%"
+                >
+                  <button
+                    class="c45"
+                    display="flex"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="1"
+                    font-weight="1"
+                    height="6"
+                    width="50%"
+                  >
+                    Legacy address
+                  </button>
+                  <button
+                    class="c46"
+                    display="flex"
+                    font-family="RT-Alias-Grotesk"
+                    font-size="1"
+                    font-weight="1"
+                    height="6"
+                    width="50%"
+                  >
+                    Normal address
+                  </button>
+                </div>
+                <div
+                  class="c47"
+                  height="1"
+                />
+                <a
+                  class="c48"
+                  color="core.primary"
+                  font-size="15px"
+                  href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
+                  target="_blank"
+                >
+                  Legacy address?
+                </a>
+              </div>
+              <div
+                class="c49"
+                display="flex"
+                width="100%"
+              >
+                <button
+                  class="c36"
+                  font-size="3"
+                  height="6"
+                  type="button"
+                >
+                  Create
+                </button>
+              </div>
+            </div>
+          </li>
+        </div>
+      </ul>
+    </div>
   </div>
 </div>
 `;

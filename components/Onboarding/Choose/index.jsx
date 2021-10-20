@@ -7,7 +7,8 @@ import {
   Title,
   Header,
   Button,
-  Warning
+  Warning,
+  StyledATag
 } from '@glif/react-components'
 import { NetworkSwitcherGlyph } from '../../Shared'
 import HeaderGlyph from '../../Shared/Glyph/HeaderGlyph'
@@ -153,6 +154,16 @@ export default () => {
                   browser, and are erased upon page refresh
                 </Title>
                 <NetworkSwitcherGlyph />
+                {router.query.network === 't' && (
+                  <Text>
+                    {
+                      "*We're changing the way you access t addresses on mainnet.  "
+                    }
+                    <StyledATag href='https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV'>
+                      More info.
+                    </StyledATag>
+                  </Text>
+                )}
                 <ImportWallet
                   onClick={() => onChoose(LEDGER)}
                   Icon={IconLedger}

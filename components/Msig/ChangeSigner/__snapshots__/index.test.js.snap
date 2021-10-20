@@ -268,6 +268,20 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
   height: 24;
 }
 
+.c15 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.25rem;
+}
+
+.c15:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
 .c3 {
   width: 100%;
   display: -webkit-box;
@@ -284,20 +298,6 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.c15 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.25rem;
-}
-
-.c15:hover {
-  border-bottom: 2px solid #5E26FF;
 }
 
 .c1 {
@@ -752,6 +752,20 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   transform: scale(1.25);
 }
 
+.c31 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+}
+
+.c31:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
 .c3 {
   width: 100%;
   display: -webkit-box;
@@ -768,20 +782,6 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.c31 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-}
-
-.c31:hover {
-  border-bottom: 2px solid #5E26FF;
 }
 
 .c1 {
@@ -1861,6 +1861,20 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   transform: scale(1.25);
 }
 
+.c31 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+}
+
+.c31:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
 .c3 {
   width: 100%;
   display: -webkit-box;
@@ -1877,20 +1891,6 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.c31 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-}
-
-.c31:hover {
-  border-bottom: 2px solid #5E26FF;
 }
 
 .c1 {

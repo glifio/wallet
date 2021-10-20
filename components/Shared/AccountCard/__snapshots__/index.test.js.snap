@@ -318,7 +318,7 @@ exports[`AccountCard renders the card 1`] = `
         font-size="3"
         font-weight="1"
       >
-        t01234 ... 456789
+        t0123456789
       </h2>
       <button
         class="c10 c11 c12"
@@ -676,7 +676,7 @@ exports[`AccountCard renders the card CREATE_MNEMONIC 1`] = `
         font-size="3"
         font-weight="1"
       >
-        t01234 ... 456789
+        t0123456789
       </h2>
       <button
         class="c10 c11 c12"
