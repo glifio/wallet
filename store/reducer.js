@@ -12,7 +12,6 @@ import {
   FETCHED_CONFIRMED_MESSAGES_FAILURE,
   FETCHING_NEXT_PAGE,
   POPULATE_REDUX,
-  SWITCH_NETWORK,
   RESET_STATE
 } from './actionTypes'
 
@@ -29,7 +28,6 @@ import {
   fetchedConfirmedMessagesFailure,
   fetchingNextPage,
   populateRedux,
-  switchNetwork,
   initialState,
   clearMessages
 } from './states'
@@ -71,8 +69,6 @@ const reducer = (state, action) => {
       return clearMessages(Object.freeze(state))
     case POPULATE_REDUX:
       return populateRedux(Object.freeze(state), action.payload)
-    case SWITCH_NETWORK:
-      return switchNetwork(Object.freeze(state), action.payload)
     case RESET_STATE:
       return { ...initialState, network: state.network }
     default:

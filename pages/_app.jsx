@@ -6,7 +6,6 @@ import { theme, ThemeProvider } from '../components/Shared'
 import withReduxStore from '../lib/with-redux-store'
 import WalletProviderWrapper from '../WalletProvider'
 import { MsigProviderWrapper } from '../MsigProvider'
-import { NetworkChecker } from '../lib/check-network'
 import BalancePoller from '../lib/update-balance'
 import { WasmLoader } from '../lib/WasmLoader'
 import ErrorBoundary from '../lib/ErrorBoundary'
@@ -14,12 +13,8 @@ import '../stylesheets/normalize.css'
 import '../stylesheets/styles.css'
 
 class MyApp extends App {
-  static getInitialProps({ ctx: { query, pathname } }) {
-    return { query, pathname }
-  }
-
   render() {
-    const { Component, pageProps, reduxStore, query, pathname } = this.props
+    const { Component, pageProps, reduxStore } = this.props
     return (
       <>
         <Head>
@@ -28,8 +23,7 @@ class MyApp extends App {
         <Provider store={reduxStore}>
           <ThemeProvider theme={theme}>
             <WasmLoader>
-              <NetworkChecker pathname={pathname} query={query} />
-              <WalletProviderWrapper network={reduxStore.getState().network}>
+              <WalletProviderWrapper>
                 <MsigProviderWrapper>
                   <BalancePoller />
                   <ErrorBoundary>

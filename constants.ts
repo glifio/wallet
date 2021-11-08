@@ -84,7 +84,9 @@ export enum PAGE {
   MSIG_ADD_SIGNER = '/vault/add-signer',
   MSIG_CREATE_CONFIRM = '/vault/create/confirm',
   MSIG_CREATE = '/vault/create',
-  MSIG_CHOOSE = '/vault/choose'
+  MSIG_CHOOSE = '/vault/choose',
+  MSIG_CHOOSE_ACCOUNTS = '/vault/accounts',
+  LANDING = '/'
 }
 
 export enum MSIG_METHOD {

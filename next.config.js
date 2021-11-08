@@ -29,7 +29,8 @@ module.exports = (phase) => {
         // this api is configured to be load balanced across multiple nodes,
         // if a single node gets sick, it will get dropped and not accept requests
         LOTUS_NODE_JSONRPC: 'https://api.node.glif.io',
-        MAGIC_STRING_ENDPOINT: 'https://glif-verifier.vercel.app/api/verify',
+        // mainnet
+        NETWORK: 'f',
         IS_PROD: true
       }
     }
@@ -37,8 +38,9 @@ module.exports = (phase) => {
   return {
     webpack,
     env: {
-      LOTUS_NODE_JSONRPC: 'https://calibration.node.glif.io/rpc/v0',
-      MAGIC_STRING_ENDPOINT: 'https://glif-verifier.vercel.app/api/verify',
+      LOTUS_NODE_JSONRPC: 'https://api.node.glif.io',
+      // testnet
+      NETWORK: 't',
       IS_PROD: false
     }
   }

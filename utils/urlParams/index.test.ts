@@ -99,4 +99,12 @@ describe('generateRouteWithRequiredUrlParams', () => {
     expect(route.includes('param2=kobe')).toBe(true)
     expect(route.includes('/extension/second-extension')).toBe(true)
   })
+
+  test('it does not prepend a query question mark if no params are present', () => {
+    const route = generateRouteWithRequiredUrlParams({
+      pageUrl: PAGE.LANDING,
+      existingQParams: {}
+    })
+    expect(route).toBe('/')
+  })
 })

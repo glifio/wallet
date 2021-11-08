@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { FilecoinNumber } from '@glif/filecoin-number'
 import updateArrayItem from '../utils/updateArrayItem'
 import sortAndRemoveWalletDups from '../utils/sortAndRemoveWalletDups'
@@ -7,7 +6,6 @@ import {
   getMessagesFromCache,
   removeMessageFromCache
 } from '../utils/cacheMessage'
-import { MAINNET, TESTNET } from '../constants'
 
 export const initialMessagesState = {
   loading: false,
@@ -24,8 +22,7 @@ export const initialState = {
   wallets: [],
   selectedWalletIdx: -1,
   error: '',
-  messages: initialMessagesState,
-  network: process.env.IS_PROD ? MAINNET : TESTNET
+  messages: initialMessagesState
 }
 
 export const noWallet = {
@@ -168,11 +165,4 @@ export const populateRedux = (state, { pendingMsgs }) => ({
     pending: uniqueifyMsgs(pendingMsgs, state.messages.pending),
     populatedFromCache: true
   }
-})
-
-export const switchNetwork = (state, { network, wallets }) => ({
-  ...state,
-  network,
-  wallets,
-  messages: initialMessagesState
 })

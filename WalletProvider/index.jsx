@@ -12,11 +12,10 @@ import { setLedgerProvider } from '../utils/ledger/setLedgerProvider'
 import fetchDefaultWallet from './fetchDefaultWallet'
 import connectLedger from './connectLedger'
 import { useWasm } from '../lib/WasmLoader'
-import { TESTNET, MAINNET } from '../constants'
 
 export const WalletProviderContext = createContext({})
 
-const WalletProviderWrapper = ({ network, children }) => {
+const WalletProviderWrapper = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
   const { walletSubproviders } = useWasm()
   return (
@@ -31,18 +30,11 @@ const WalletProviderWrapper = ({ network, children }) => {
           (walletProvider = state.walletProvider) =>
             fetchDefaultWallet(
               dispatch,
-              network,
               state.walletType,
               walletProvider,
               walletSubproviders
             ),
-          [
-            dispatch,
-            network,
-            state.walletType,
-            state.walletProvider,
-            walletSubproviders
-          ]
+          [dispatch, state.walletType, state.walletProvider, walletSubproviders]
         ),
         setWalletError: (errorMessage) => dispatch(setError(errorMessage)),
         setWalletType: (walletType) => dispatch(setWalletType(walletType)),
@@ -65,8 +57,7 @@ const WalletProviderWrapper = ({ network, children }) => {
 }
 
 WalletProviderWrapper.propTypes = {
-  children: PropTypes.node.isRequired,
-  network: PropTypes.oneOf([TESTNET, MAINNET]).isRequired
+  children: PropTypes.node.isRequired
 }
 
 export const useWalletProvider = () => {

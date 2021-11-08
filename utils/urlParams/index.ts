@@ -1,9 +1,7 @@
 import { NextRouter } from 'next/router'
 import { PAGE } from '../../constants'
 
-const requiredUrlParamsWithDefaults = {
-  network: 'f'
-}
+const requiredUrlParamsWithDefaults = {}
 
 interface NavigationOptions {
   existingQParams: Record<string, string>
@@ -62,6 +60,13 @@ export const generateRouteWithRequiredUrlParams = (
       '/'
     )}?${newParams.toString()}`
   }
+
+  console.log(newParams.toString(), ' yoooo', newParams.toString().length)
+
+  if (!newParams.toString()) {
+    return opts.pageUrl
+  }
+
   return `${opts.pageUrl}?${newParams.toString()}`
 }
 
@@ -73,7 +78,7 @@ export const navigate = (
   router.push(
     generateRouteWithRequiredUrlParams({
       ...opts,
-      existingQParams: router.query as Record<string, string>
+      existingQParams: {}
     })
   )
 }

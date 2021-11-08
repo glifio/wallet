@@ -17,6 +17,8 @@ import { walletList } from '../../../../store/actions'
 import { useWalletProvider } from '../../../../WalletProvider'
 import { createWalletProvider } from '../../../../WalletProvider/state'
 import reportError from '../../../../utils/reportError'
+import { navigate } from '../../../../utils/urlParams'
+import { PAGE } from '../../../../constants'
 
 export default () => {
   const {
@@ -44,8 +46,7 @@ export default () => {
         dispatch(createWalletProvider(provider))
         const wallet = await fetchDefaultWallet(provider)
         dispatchRdx(walletList([wallet]))
-        const params = new URLSearchParams(router.query)
-        router.push(`/home?${params.toString()}`)
+        navigate(router, { pageUrl: PAGE.WALLET_HOME })
       } else {
         setMnemonicError('Invalid seed phrase')
       }
