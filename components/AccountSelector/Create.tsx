@@ -12,6 +12,7 @@ import {
   NetworkSwitcherGlyphV2,
   StyledATag
 } from '@glif/react-components'
+import { Network } from '@glif/filecoin-address'
 import { RawNumberInput } from '../Shared/Input/Number'
 
 const LoadingCard = () => (
@@ -42,7 +43,7 @@ const Create = ({
   nextAccountIndex,
   errorMsg
 }: {
-  onClick: (_index: number, _network: 'f' | 't') => void
+  onClick: (_index: number, _network: Network) => void
   loading: boolean
   nextAccountIndex: number
   errorMsg?: string
@@ -51,14 +52,14 @@ const Create = ({
     Number(nextAccountIndex)
   )
   const [accountIndexErr, setAccountIndexErr] = useState<string>('')
-  const [network, setNetwork] = useState<'f' | 't'>('f')
+  const [network, setNetwork] = useState<Network>(Network.MAIN)
 
   if (loading) return <LoadingCard />
   if (errorMsg)
     return (
       <AccountError
         onClick={() => {
-          setNetwork('f')
+          setNetwork(Network.MAIN)
           onClick(accountIndex, network)
         }}
         errorMsg={errorMsg}
@@ -120,7 +121,7 @@ const Create = ({
       </Box>
       <Box>
         <NetworkSwitcherGlyphV2
-          onNetworkSwitch={(network: 't' | 'f') => setNetwork(network)}
+          onNetworkSwitch={(network: Network) => setNetwork(network)}
           network={network}
         />
         {network === 't' ? (
@@ -154,7 +155,7 @@ const Create = ({
           title='Create'
           onClick={() => {
             onClick(accountIndex, network)
-            setNetwork('f')
+            setNetwork(Network.MAIN)
             setAccountIndex(nextAccountIndex + 1)
           }}
           variant='secondary'
