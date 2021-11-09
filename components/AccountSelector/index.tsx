@@ -14,7 +14,7 @@ import {
   ButtonClose
 } from '@glif/react-components'
 import Filecoin from '@glif/filecoin-wallet-provider'
-import { Network } from '@glif/filecoin-address'
+import { Network as CoinType } from '@glif/filecoin-address'
 import HelperText from './HelperText'
 import Create from './Create'
 import { useWalletProvider } from '../../WalletProvider'
@@ -26,13 +26,13 @@ import {
   reportLedgerConfigError
 } from '../../utils/ledger/reportLedgerConfigError'
 import useWallet from '../../WalletProvider/useWallet'
-import createPath, { networkToCoinType } from '../../utils/createPath'
+import createPath, { coinTypeCode } from '../../utils/createPath'
 import reportError from '../../utils/reportError'
 import converAddrToFPrefix from '../../utils/convertAddrToFPrefix'
 import { initialState } from '../../store/states'
 import { navigate } from '../../utils/urlParams'
 
-const NETWORK = process.env.NETWORK! as Network
+const COIN_TYPE = process.env.COIN_TYPE! as CoinType
 
 const AccountSelector = ({ msig, test }) => {
   const wallet = useWallet() as Wallet
@@ -61,7 +61,7 @@ const AccountSelector = ({ msig, test }) => {
           if (provider) {
             const addresses = await provider.wallet.getAccounts(
               // @ts-ignore
-              NETWORK,
+              COIN_TYPE,
               walletsInRdx.length,
               // @ts-ignore
               5
@@ -74,7 +74,7 @@ const AccountSelector = ({ msig, test }) => {
                   balance,
                   address,
                   path: createPath(
-                    networkToCoinType(NETWORK),
+                    coinTypeCode(COIN_TYPE),
                     Number(i) + Number(walletsInRdx.length)
                   )
                 }
@@ -120,7 +120,7 @@ const AccountSelector = ({ msig, test }) => {
     errorMsg = reportLedgerConfigError({ ...ledger, otherError: uncaughtError })
   }
 
-  const fetchNextAccount = async (index: number, network: Network) => {
+  const fetchNextAccount = async (index: number, coinType: CoinType) => {
     setLoadingAccounts(true)
     try {
       let provider = walletProvider as Filecoin
@@ -131,7 +131,7 @@ const AccountSelector = ({ msig, test }) => {
       if (provider) {
         const [address] = await provider.wallet.getAccounts(
           // @ts-ignore
-          network,
+          coinType,
           index,
           index + 1
         )
@@ -140,7 +140,7 @@ const AccountSelector = ({ msig, test }) => {
         const wallet: Wallet = {
           balance,
           address: converAddrToFPrefix(address),
-          path: createPath(networkToCoinType(network), index)
+          path: createPath(coinTypeCode(coinType), index)
         }
         dispatch(walletList([wallet]))
       }
@@ -214,7 +214,7 @@ const AccountSelector = ({ msig, test }) => {
                       index={Number(w.path.split('/')[5])}
                       selected={w.address === wallet.address}
                       legacy={
-                        NETWORK === 'f' &&
+                        COIN_TYPE === 'f' &&
                         w.path.split('/')[2] === `${TESTNET_PATH_CODE}'`
                       }
                       // This is a hack to make testing the UI easier

@@ -6,6 +6,7 @@ import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import { filfoxMockData } from '../../test-utils/mockData'
 import { formatFilfoxMessages } from '../../lib/useTransactionHistory/formatMessages'
 import { flushPromises } from '../../test-utils'
+import { PAGE } from '../../constants'
 
 jest.mock('@glif/filecoin-wallet-provider')
 jest.mock('../../WalletProvider')
@@ -84,6 +85,6 @@ describe('WalletView', () => {
       fireEvent.click(screen.getByText('Send'))
       await flushPromises()
     })
-    expect(mockRouterPush).toHaveBeenCalledWith('/send?network=t')
+    expect(mockRouterPush).toHaveBeenCalledWith(PAGE.WALLET_SEND)
   })
 })

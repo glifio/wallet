@@ -1,4 +1,5 @@
 import Filecoin from '@glif/filecoin-wallet-provider'
+import { Network as CoinType } from '@glif/filecoin-address'
 import { SINGLE_KEY, LEDGER } from '../constants'
 import {
   checkLedgerConfiguration,
@@ -6,8 +7,7 @@ import {
   setLedgerProvider
 } from '../utils/ledger/setLedgerProvider'
 import { clearError, resetLedgerState } from './state'
-import createPath, { networkToCoinType } from '../utils/createPath'
-import { Network } from '@glif/filecoin-address'
+import createPath, { coinTypeCode } from '../utils/createPath'
 
 // a helper function for getting the default wallet associated with the wallet provider
 const fetchDefaultWallet = async (
@@ -36,12 +36,13 @@ const fetchDefaultWallet = async (
 
   const [defaultAddress] = await provider.wallet.getAccounts(
     // @ts-ignore
-    Number(process.env.NETWORK!) as Network,
+    Number(process.env.COIN_TYPE!) as Network,
     0,
+    // @ts-ignore
     1
   )
   const balance = await provider.getBalance(defaultAddress)
-  let path = createPath(networkToCoinType(process.env.NETWORK! as Network), 0)
+  let path = createPath(coinTypeCode(process.env.COIN_TYPE! as CoinType), 0)
 
   if (walletType === SINGLE_KEY) path = SINGLE_KEY
   return {

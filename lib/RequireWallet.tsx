@@ -7,7 +7,7 @@ import { navigate } from '../utils/urlParams'
 import useWallet from '../WalletProvider/useWallet'
 import { Wallet } from '../WalletProvider/types'
 
-export default function RequireWallet({ children }: { children: ReactNode }) {
+export function RequireWallet({ children }: { children: ReactNode }) {
   const router = useRouter()
   const wallet = useWallet() as Wallet
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function RequireWallet({ children }: { children: ReactNode }) {
       navigate(router, { pageUrl: PAGE.LANDING })
     }
   }, [wallet.address, router])
-
+  console.log(wallet.address)
   return <>{wallet.address && children}</>
 }
 

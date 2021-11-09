@@ -17,10 +17,12 @@ import {
   IMPORT_MNEMONIC,
   CREATE_MNEMONIC,
   IMPORT_SINGLE_KEY,
-  SCREEN_MAX_WIDTH
+  SCREEN_MAX_WIDTH,
+  PAGE
 } from '../../../constants'
 import { useWalletProvider } from '../../../WalletProvider'
 import ExpandableBox from './ExpandableBox'
+import { navigate } from '../../../utils/urlParams'
 
 export default () => {
   const { setWalletType } = useWalletProvider()
@@ -247,7 +249,9 @@ export default () => {
                     </Text>
 
                     <ImportWallet
-                      onClick={() => router.push('/vault?network=f')}
+                      onClick={() =>
+                        navigate(router, { pageUrl: PAGE.MSIG_LANDING })
+                      }
                       glyphAcronym='Ev'
                       title='Enter the Vault'
                       backgroundColor='background.screen'

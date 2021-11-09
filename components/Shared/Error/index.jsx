@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useCallback } from 'react'
+import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import Box from '../Box'
 import Button from '../Button'
@@ -6,11 +7,15 @@ import Glyph from '../Glyph'
 import OnboardCard from '../Card/OnboardCard'
 import { StyledATag } from '../Link'
 import { Text, Title } from '../Typography'
+import { navigate } from '../../../utils/urlParams'
+import { PAGE } from '../../../constants'
 
 const ErrorView = ({ description, linkhref, linkDisplay, title }) => {
-  const sendHome = () => {
-    window.location.href = `${window.location.origin}?network=f`
-  }
+  const router = useRouter()
+  const sendHome = useCallback(() => {
+    navigate(router, { pageUrl: PAGE.LANDING })
+  }, [router])
+
   return (
     <Box
       display='flex'

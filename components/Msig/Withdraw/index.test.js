@@ -13,7 +13,7 @@ jest.mock('../../../WalletProvider')
 const routerPushMock = jest.fn()
 jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
   return {
-    query: { network: 't' },
+    query: {},
     pathname: PAGE.MSIG_WITHDRAW,
     push: routerPushMock
   }
@@ -417,7 +417,7 @@ describe('Multisig withdraw flow', () => {
         await flushPromises()
       })
       await flushPromises()
-      expect(routerPushMock).toHaveBeenCalledWith('/vault/history?network=t')
+      expect(routerPushMock).toHaveBeenCalledWith(PAGE.MSIG_HISTORY)
     })
   })
 

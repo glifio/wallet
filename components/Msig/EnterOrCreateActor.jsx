@@ -14,6 +14,11 @@ import {
 import { Input } from '../Shared'
 import { useMsig } from '../../MsigProvider'
 import { IconLedger } from '../Shared/Icons'
+import {
+  generateRouteWithRequiredUrlParams,
+  navigate
+} from '../../utils/urlParams'
+import { PAGE } from '../../constants'
 
 const Form = styled.form`
   width: 100%;
@@ -66,8 +71,7 @@ const EnterActorAddress = () => {
   useEffect(() => {
     // as long as there is an ActorCode, we know we successfully retrieved the multisig
     if (!err && !!ActorCode) {
-      const searchParams = new URLSearchParams(router.query)
-      router.push(`/vault/home?${searchParams.toString()}`)
+      navigate(router, { pageUrl: PAGE.MSIG_HOME })
     }
   }, [err, router, ActorCode])
 
@@ -101,7 +105,9 @@ const EnterActorAddress = () => {
           <Box display='flex' flexDirection='row' alignItems='center'>
             <Text mr={3}>Don&apos;t have a multisig actor ID?</Text>
             <StyledLink
-              href='/vault/create?network=f'
+              href={generateRouteWithRequiredUrlParams({
+                pageUrl: PAGE.MSIG_CHOOSE
+              })}
               name='Create one'
               target='_self'
             />

@@ -70,7 +70,7 @@ const reducer = (state, action) => {
     case POPULATE_REDUX:
       return populateRedux(Object.freeze(state), action.payload)
     case RESET_STATE:
-      return { ...initialState, network: state.network }
+      return { ...initialState }
     default:
       return state
   }

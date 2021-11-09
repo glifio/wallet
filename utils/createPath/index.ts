@@ -1,19 +1,18 @@
-import { Network } from '@glif/filecoin-address'
+import { Network as CoinType } from '@glif/filecoin-address'
 import { MAINNET_PATH_CODE, TESTNET_PATH_CODE } from '../../constants'
 
-type NetworkCode = 461 | 1
+type CoinTypeCode = 461 | 1
 
-const createPath = (networkCode: NetworkCode, i: number) => {
-  if (networkCode !== MAINNET_PATH_CODE && networkCode !== TESTNET_PATH_CODE)
-    throw new Error('Invalid network code passed')
-  return `m/44'/${networkCode}'/0'/0/${i}`
+const createPath = (coinTypeCode: CoinTypeCode, i: number) => {
+  if (coinTypeCode !== MAINNET_PATH_CODE && coinTypeCode !== TESTNET_PATH_CODE)
+    throw new Error('Invalid cointype code passed')
+  return `m/44'/${coinTypeCode}'/0'/0/${i}`
 }
 
-export const networkToCoinType = (network: Network): NetworkCode => {
-  console.log(network)
-  if (network === 't') return 1
-  if (network === 'f') return 461
-  throw new Error('Unrecognized Network')
+export const coinTypeCode = (coinType: CoinType): CoinTypeCode => {
+  if (coinType === 't') return 1
+  if (coinType === 'f') return 461
+  throw new Error('Unrecognized CoinType')
 }
 
 export default createPath

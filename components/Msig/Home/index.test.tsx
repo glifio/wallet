@@ -69,6 +69,6 @@ describe('Msig Home', () => {
       fireEvent.click(screen.getByText('Withdraw'))
     })
 
-    expect(routerPushMock).toHaveBeenCalledWith('/vault/withdraw?network=t')
+    expect(routerPushMock).toHaveBeenCalledWith(PAGE.MSIG_WITHDRAW)
   })
 })

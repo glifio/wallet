@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { useRouter } from 'next/router'
 
 import {
@@ -21,7 +21,8 @@ import {
 import MsgConfirmer from '../../lib/confirm-message'
 import useWallet from '../../WalletProvider/useWallet'
 import reportError from '../../utils/reportError'
-import { resetWallet } from '../../utils/urlParams'
+import { navigate, resetWallet } from '../../utils/urlParams'
+import { PAGE } from '../../constants'
 
 export default () => {
   const wallet = useWallet()
@@ -46,15 +47,13 @@ export default () => {
     setLedgerBusy(false)
   }
 
-  const onSend = () => {
-    const params = new URLSearchParams(router.query)
-    router.push(`/send?${params.toString()}`)
-  }
+  const onSend = useCallback(() => {
+    navigate(router, { pageUrl: PAGE.WALLET_SEND })
+  }, [router])
 
-  const onAccountSwitch = () => {
-    const params = new URLSearchParams(router.query)
-    router.push(`/home/accounts?${params.toString()}`)
-  }
+  const onAccountSwitch = useCallback(() => {
+    navigate(router, { pageUrl: PAGE.WALLET_CHOOSE_ACCOUNTS })
+  }, [router])
 
   return (
     <>

@@ -30,7 +30,7 @@ module.exports = (phase) => {
         // if a single node gets sick, it will get dropped and not accept requests
         LOTUS_NODE_JSONRPC: 'https://api.node.glif.io',
         // mainnet
-        NETWORK: 'f',
+        COIN_TYPE: 'f',
         IS_PROD: true
       }
     }
@@ -40,7 +40,7 @@ module.exports = (phase) => {
     env: {
       LOTUS_NODE_JSONRPC: 'https://api.node.glif.io',
       // testnet
-      NETWORK: 't',
+      COIN_TYPE: 't',
       IS_PROD: false
     }
   }

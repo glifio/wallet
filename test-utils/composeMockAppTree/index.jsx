@@ -2,15 +2,12 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { Converter } from '@glif/filecoin-number'
-
-import { NetworkChecker } from '../../lib/check-network'
 import BalancePoller from '../../lib/update-balance'
 import { ConverterContext } from '../../lib/Converter'
 import { theme, ThemeProvider } from '../../components/Shared'
 import { WasmContext } from '../../lib/WasmLoader'
 import { mockWalletProviderInstance } from '../mocks/mock-wallet-provider'
 import * as wasmMethods from '../mocks/mock-filecoin-signer-wasm'
-import { TESTNET } from '../../constants'
 import { MsigProviderWrapper } from '../../MsigProvider'
 import WalletProviderWrapper from '../../WalletProvider'
 import mockReduxStoreWithState from './mockReduxStoreWithState'
@@ -20,8 +17,6 @@ jest.mock('../../MsigProvider')
 
 const Index = (statePreset = 'preOnboard', options = {}) => {
   const store = mockReduxStoreWithState({ state: options?.state, statePreset })
-  const pathname = options?.pathname || '/wallet'
-  const query = options?.query || { network: TESTNET }
 
   const Tree = ({ children }) => {
     return (
@@ -35,12 +30,6 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
           >
             <WalletProviderWrapper options={options} statePreset={statePreset}>
               <MsigProviderWrapper options={options} statePreset={statePreset}>
-                <NetworkChecker
-                  networkFromRdx={store.getState().network}
-                  pathname={pathname}
-                  query={query}
-                  switchNetwork={jest.fn()}
-                />
                 <BalancePoller />
                 <ThemeProvider theme={theme}>{children}</ThemeProvider>
               </MsigProviderWrapper>
@@ -67,7 +56,7 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
  * walletProviderInitialState(a reducer to stub the state of the walletProvider context)
  * walletProviderDispatch(a dispatcher to mock/read calls to the walletProvider's state)
  * pathname
- * query (usually { network: 'f' } or { network: TESTNET })
+ * query
  */
 
 export default Index

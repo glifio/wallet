@@ -1,12 +1,15 @@
-import { MAINNET, SINGLE_KEY, TESTNET } from '../../constants'
+import { Network as CoinType } from '@glif/filecoin-address'
+import { SINGLE_KEY } from '../../constants'
 
 const createSingleKeyProvider = (rustModule) => {
   return (privateKey) => {
     // here we close over the private variables, so they aren't accessible to the outside world
     const PRIVATE_KEY = privateKey
     return {
-      getAccounts: async (network = MAINNET) => {
-        return [rustModule.keyRecover(PRIVATE_KEY, network === TESTNET).address]
+      getAccounts: async (coinType = CoinType.MAIN) => {
+        return [
+          rustModule.keyRecover(PRIVATE_KEY, coinType === CoinType.TEST).address
+        ]
       },
 
       sign: async (filecoinMessage) => {

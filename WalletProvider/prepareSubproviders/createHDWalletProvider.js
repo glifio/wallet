@@ -1,25 +1,21 @@
-import createPath from '../../utils/createPath'
-import {
-  HD_WALLET,
-  TESTNET,
-  TESTNET_PATH_CODE,
-  MAINNET_PATH_CODE,
-  MAINNET
-} from '../../constants'
+import { Network as CoinType } from '@glif/filecoin-address'
+import createPath, { coinTypeCode } from '../../utils/createPath'
+import { HD_WALLET } from '../../constants'
 
 const createHDWalletProvider = (rustModule) => {
   return (mnemonic) => {
     // here we close over the private variables, so they aren't accessible to the outside world
     const MNEMONIC = mnemonic
     return {
-      getAccounts: async (network = MAINNET, nStart = 0, nEnd = 5) => {
+      getAccounts: async (coinType = CoinType.MAIN, nStart = 0, nEnd = 5) => {
         const accounts = []
         for (let i = nStart; i < nEnd; i += 1) {
-          const networkCode =
-            network === TESTNET ? TESTNET_PATH_CODE : MAINNET_PATH_CODE
           accounts.push(
-            rustModule.keyDerive(MNEMONIC, createPath(networkCode, i), '')
-              .address
+            rustModule.keyDerive(
+              MNEMONIC,
+              createPath(coinTypeCode(coinType), i),
+              ''
+            ).address
           )
         }
         return accounts

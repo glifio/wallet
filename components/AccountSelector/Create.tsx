@@ -9,10 +9,10 @@ import {
   Text,
   AccountError,
   Loading,
-  NetworkSwitcherGlyphV2,
+  NetworkSwitcherGlyphV2 as CoinTypeSwitcherGlyph,
   StyledATag
 } from '@glif/react-components'
-import { Network } from '@glif/filecoin-address'
+import { Network as CoinType } from '@glif/filecoin-address'
 import { RawNumberInput } from '../Shared/Input/Number'
 
 const LoadingCard = () => (
@@ -43,7 +43,7 @@ const Create = ({
   nextAccountIndex,
   errorMsg
 }: {
-  onClick: (_index: number, _network: Network) => void
+  onClick: (_index: number, _coinType: CoinType) => void
   loading: boolean
   nextAccountIndex: number
   errorMsg?: string
@@ -52,15 +52,15 @@ const Create = ({
     Number(nextAccountIndex)
   )
   const [accountIndexErr, setAccountIndexErr] = useState<string>('')
-  const [network, setNetwork] = useState<Network>(Network.MAIN)
+  const [coinType, setCoinType] = useState<CoinType>(CoinType.MAIN)
 
   if (loading) return <LoadingCard />
   if (errorMsg)
     return (
       <AccountError
         onClick={() => {
-          setNetwork(Network.MAIN)
-          onClick(accountIndex, network)
+          setCoinType(CoinType.MAIN)
+          onClick(accountIndex, coinType)
         }}
         errorMsg={errorMsg}
         m={2}
@@ -120,11 +120,11 @@ const Create = ({
         )}
       </Box>
       <Box>
-        <NetworkSwitcherGlyphV2
-          onNetworkSwitch={(network: Network) => setNetwork(network)}
-          network={network}
+        <CoinTypeSwitcherGlyph
+          onNetworkSwitch={(coinType: CoinType) => setCoinType(coinType)}
+          network={coinType}
         />
-        {network === 't' ? (
+        {coinType === 't' ? (
           <Text p={0} m={0} fontSize='15px' textAlign='left'>
             {'*Not recommended'}
           </Text>
@@ -154,8 +154,8 @@ const Create = ({
         <Button
           title='Create'
           onClick={() => {
-            onClick(accountIndex, network)
-            setNetwork(Network.MAIN)
+            onClick(accountIndex, coinType)
+            setCoinType(CoinType.MAIN)
             setAccountIndex(nextAccountIndex + 1)
           }}
           variant='secondary'
