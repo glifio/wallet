@@ -221,6 +221,7 @@ const AccountSelector = ({ msig, test }) => {
                       // its hard to mock SWR + balance fetcher in the AccountCardAlt
                       // so we pass a manual balance to not rely on SWR for testing
                       balance={test ? '1' : null}
+                      jsonRpcEndpoint={process.env.LOTUS_NODE_JSONRPC!}
                     />
                   </MenuItem>
                 ))}
