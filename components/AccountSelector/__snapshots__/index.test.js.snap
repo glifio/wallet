@@ -484,13 +484,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: flex-start;
 }
 
-.c43 {
-  min-width: 0;
-  box-sizing: border-box;
-  height: 4px;
-}
-
-.c45 {
+.c44 {
   min-width: 0;
   box-sizing: border-box;
   width: 100%;
@@ -607,6 +601,16 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   margin-bottom: 0;
 }
 
+.c43 {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
 .c37 {
   font-size: 1.125rem;
   font-weight: 400;
@@ -655,25 +659,8 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   border-bottom: 2px solid #5E26FF;
 }
 
-.c44 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 15px;
-  padding: 0;
-  margin: 0;
-  margin-left: 4px;
-}
-
-.c44:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
 .c41 {
-  background: #E4EBFC;
+  background: #1AD08F;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   outline: none;
@@ -715,7 +702,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
 }
 
 .c42 {
-  background: #1AD08F;
+  background: #E4EBFC;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   outline: none;
@@ -1732,22 +1719,17 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                     Normal address
                   </button>
                 </div>
-                <div
+                <p
                   class="c43"
-                  height="1"
-                />
-                <a
-                  class="c44"
-                  color="core.primary"
+                  font-family="RT-Alias-Grotesk"
                   font-size="15px"
-                  href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
-                  target="_blank"
+                  font-weight="400"
                 >
-                  Legacy address?
-                </a>
+                  *Not recommended
+                </p>
               </div>
               <div
-                class="c45"
+                class="c44"
                 display="flex"
                 width="100%"
               >
@@ -2175,13 +2157,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   justify-content: flex-start;
 }
 
-.c48 {
-  min-width: 0;
-  box-sizing: border-box;
-  height: 4px;
-}
-
-.c50 {
+.c49 {
   min-width: 0;
   box-sizing: border-box;
   width: 100%;
@@ -2321,6 +2297,16 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-bottom: 0;
 }
 
+.c48 {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
 .c42 {
   font-size: 1.125rem;
   font-weight: 400;
@@ -2383,25 +2369,8 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   border-bottom: 2px solid #5E26FF;
 }
 
-.c49 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 15px;
-  padding: 0;
-  margin: 0;
-  margin-left: 4px;
-}
-
-.c49:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
 .c46 {
-  background: #E4EBFC;
+  background: #1AD08F;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   outline: none;
@@ -2443,7 +2412,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
 }
 
 .c47 {
-  background: #1AD08F;
+  background: #E4EBFC;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   outline: none;
@@ -3460,22 +3429,17 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
                     Normal address
                   </button>
                 </div>
-                <div
+                <p
                   class="c48"
-                  height="1"
-                />
-                <a
-                  class="c49"
-                  color="core.primary"
+                  font-family="RT-Alias-Grotesk"
                   font-size="15px"
-                  href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
-                  target="_blank"
+                  font-weight="400"
                 >
-                  Legacy address?
-                </a>
+                  *Not recommended
+                </p>
               </div>
               <div
-                class="c50"
+                class="c49"
                 display="flex"
                 width="100%"
               >
