@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks'
 import { cleanup } from '@testing-library/react'
-import useWallet from './useWallet'
+import useWallet from '.'
 import { IMPORT_MNEMONIC } from '../../constants'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 
