@@ -15,7 +15,6 @@ export function RequireWallet({ children }: { children: ReactNode }) {
       navigate(router, { pageUrl: PAGE.LANDING })
     }
   }, [wallet.address, router])
-  console.log(wallet.address)
   return <>{wallet.address && children}</>
 }
 
