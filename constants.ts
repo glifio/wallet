@@ -74,7 +74,7 @@ export const SCREEN_MAX_WIDTH = 1440
 export enum PAGE {
   WALLET_HOME = '/home',
   WALLET_SEND = '/send',
-  WALLET_CHOOSE_ACCOUNTS = '/accounts',
+  WALLET_CHOOSE_ACCOUNTS = '/home/accounts',
   SPEED_UP = '/speed-up',
   MSIG_LANDING = '/vault',
   MSIG_HOME = '/vault/home',

@@ -29,7 +29,7 @@ module.exports = (phase) => {
         // this api is configured to be load balanced across multiple nodes,
         // if a single node gets sick, it will get dropped and not accept requests
         LOTUS_NODE_JSONRPC: 'https://mainnet.glif.host',
-        // mainnet
+        // 461'
         COIN_TYPE: 'f',
         IS_PROD: true
       }
@@ -39,7 +39,7 @@ module.exports = (phase) => {
     webpack,
     env: {
       LOTUS_NODE_JSONRPC: 'https://api.node.glif.io',
-      // testnet
+      // 1'
       COIN_TYPE: 't',
       IS_PROD: false
     }

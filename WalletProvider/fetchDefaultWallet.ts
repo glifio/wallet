@@ -9,6 +9,8 @@ import {
 import { clearError, resetLedgerState } from './state'
 import createPath, { coinTypeCode } from '../utils/createPath'
 
+const COIN_TYPE = process.env.COIN_TYPE! as CoinType
+
 // a helper function for getting the default wallet associated with the wallet provider
 const fetchDefaultWallet = async (
   dispatch,
@@ -36,13 +38,13 @@ const fetchDefaultWallet = async (
 
   const [defaultAddress] = await provider.wallet.getAccounts(
     // @ts-ignore
-    Number(process.env.COIN_TYPE!) as Network,
+    COIN_TYPE,
     0,
     // @ts-ignore
     1
   )
   const balance = await provider.getBalance(defaultAddress)
-  let path = createPath(coinTypeCode(process.env.COIN_TYPE! as CoinType), 0)
+  let path = createPath(coinTypeCode(COIN_TYPE), 0)
 
   if (walletType === SINGLE_KEY) path = SINGLE_KEY
   return {

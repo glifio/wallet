@@ -15,6 +15,8 @@ import {
 import { Network as CoinType } from '@glif/filecoin-address'
 import { RawNumberInput } from '../Shared/Input/Number'
 
+const COIN_TYPE = process.env.COIN_TYPE! as CoinType
+
 const LoadingCard = () => (
   <Card
     display='flex'
@@ -52,7 +54,7 @@ const Create = ({
     Number(nextAccountIndex)
   )
   const [accountIndexErr, setAccountIndexErr] = useState<string>('')
-  const [coinType, setCoinType] = useState<CoinType>(CoinType.MAIN)
+  const [coinType, setCoinType] = useState<CoinType>(COIN_TYPE)
 
   if (loading) return <LoadingCard />
   if (errorMsg)
