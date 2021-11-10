@@ -171,27 +171,6 @@ describe('actions', () => {
     expect(actions.populateRedux(pendingMsgs)).toEqual(expectedAction)
   })
 
-  test('switchNetwork', () => {
-    const network = MAINNET
-    const wallets = [
-      {
-        address: 't1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
-        balance: new FilecoinNumber('1', 'fil'),
-        path: ''
-      }
-    ]
-
-    const expectedAction = {
-      type: types.SWITCH_NETWORK,
-      payload: {
-        network,
-        wallets
-      }
-    }
-
-    expect(actions.switchNetwork(network, wallets)).toEqual(expectedAction)
-  })
-
   test('resetState', () => {
     expect(actions.resetState()).toEqual({ type: types.RESET_STATE })
   })

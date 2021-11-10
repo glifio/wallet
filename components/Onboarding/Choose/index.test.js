@@ -3,6 +3,7 @@ import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import { mockRouterPush } from '../../../test-utils/mocks/mock-routing'
 
 import Choose from '.'
+import { PAGE } from '../../../constants'
 
 jest.mock('../../../WalletProvider')
 
@@ -116,6 +117,6 @@ describe('Choosing a wallet', () => {
     act(() => {
       fireEvent.click(screen.getByText('Enter the Vault'))
     })
-    expect(mockRouterPush).toHaveBeenCalledWith('/vault?network=f')
+    expect(mockRouterPush).toHaveBeenCalledWith(PAGE.MSIG_LANDING)
   })
 })

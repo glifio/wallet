@@ -29,7 +29,7 @@ describe('useReset', () => {
       current()
     })
     expect(JSON.stringify(store.getState())).toEqual(
-      JSON.stringify({ ...initialState, network: store.getState().network })
+      JSON.stringify({ ...initialState })
     )
     expect(resetState).toHaveBeenCalled()
   })

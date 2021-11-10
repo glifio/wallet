@@ -99,14 +99,6 @@ export const populateRedux = (pendingMsgs) => ({
   }
 })
 
-export const switchNetwork = (network, wallets = []) => ({
-  type: SWITCH_NETWORK,
-  payload: {
-    network,
-    wallets
-  }
-})
-
 export const resetState = () => {
   return {
     type: RESET_STATE

@@ -22,7 +22,13 @@ import { CardHeader, CreateMultisigHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
-import { LEDGER, emptyGasInfo, EXEC, EXEC_ACTOR } from '../../../constants'
+import {
+  LEDGER,
+  emptyGasInfo,
+  EXEC,
+  EXEC_ACTOR,
+  PAGE
+} from '../../../constants'
 import CustomizeFee from '../../Wallet/Send/CustomizeFee'
 import {
   reportLedgerConfigError,
@@ -31,6 +37,7 @@ import {
 import reportError from '../../../utils/reportError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
+import { navigate } from '../../../utils/urlParams'
 
 const isValidAmount = (value, balance, errorFromForms) => {
   const valueFieldFilledOut = value && value.isGreaterThan(0)
@@ -157,8 +164,7 @@ const Create = () => {
         if (msg) {
           setPageChanging(true)
           dispatch(confirmMessage(toLowerCaseMsgFields(msg)))
-          const params = new URLSearchParams(router.query)
-          router.push(`/vault/create/confirm?${params.toString()}`)
+          navigate(router, { pageUrl: PAGE.MSIG_CREATE_CONFIRM })
         }
       } catch (err) {
         if (err.message.includes('19')) {

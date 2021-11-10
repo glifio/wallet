@@ -2,7 +2,7 @@ import { FilecoinNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
 import clonedeep from 'lodash.clonedeep'
 import * as states from './states'
-import { SINGLE_KEY, MAINNET } from '../constants'
+import { SINGLE_KEY } from '../constants'
 import createPath from '../utils/createPath'
 
 describe('state manipulators', () => {
@@ -708,51 +708,6 @@ describe('state manipulators', () => {
       const { messages } = states.populateRedux(initialState, { pendingMsgs })
       expect(messages.pending.length).toBe(pendingMsgs.length)
       expect(messages.pending[0]).toEqual(pendingMsgs[0])
-    })
-  })
-
-  describe('switchNetwork', () => {
-    test('it sets the network in state', () => {
-      const { network } = states.switchNetwork(initialState, {
-        network: MAINNET,
-        wallets: []
-      })
-
-      expect(network).toBe(MAINNET)
-    })
-
-    test('it sets new wallets in state', () => {
-      const wallets = [
-        {
-          address: 'f1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
-          balance: new FilecoinNumber('1', 'fil'),
-          path: ''
-        },
-        {
-          address: 'f1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
-          balance: new FilecoinNumber('1', 'fil'),
-          path: ''
-        }
-      ]
-      const nextState = states.switchNetwork(initialState, {
-        network: MAINNET,
-        wallets
-      })
-
-      expect(nextState.wallets).toEqual(wallets)
-    })
-
-    test('it resets the messages in state to the initial message state', () => {
-      const state = {
-        ...initialState,
-        messages: { ...initialState.messages, loading: true }
-      }
-
-      const nextState = states.switchNetwork(state, {
-        network: MAINNET,
-        wallets: []
-      })
-      expect(nextState.messages).toEqual(states.initialMessagesState)
     })
   })
 })

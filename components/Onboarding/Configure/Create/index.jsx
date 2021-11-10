@@ -18,6 +18,8 @@ import { walletList } from '../../../../store/actions'
 import { useWalletProvider } from '../../../../WalletProvider'
 import { createWalletProvider } from '../../../../WalletProvider/state'
 import reportError from '../../../../utils/reportError'
+import { navigate } from '../../../../utils/urlParams'
+import { PAGE } from '../../../../constants'
 
 // we pass this optional prop to make testing the core wallet functionality easier
 const Create = ({ initialWalkthroughStep }) => {
@@ -59,14 +61,16 @@ const Create = ({ initialWalkthroughStep }) => {
         dispatch(createWalletProvider(provider))
         const wallet = await fetchDefaultWallet(provider)
         dispatchRdx(walletList([wallet]))
-        const params = new URLSearchParams(router.query)
-        router.push(`/home?${params.toString()}`)
+        navigate(router, { pageUrl: PAGE.WALLET_HOME })
       } catch (err) {
         reportError(16, false, err.message, err.stack)
         setImportSeedError(err.message || JSON.stringify(err))
       }
     }
-    if (walkthroughStep === 4) instantiateProvider()
+    if (walkthroughStep === 4 && !loading) {
+      setLoading(true)
+      instantiateProvider()
+    }
   }, [
     dispatch,
     dispatchRdx,
@@ -74,7 +78,8 @@ const Create = ({ initialWalkthroughStep }) => {
     mnemonic,
     router,
     walkthroughStep,
-    HDWalletProvider
+    HDWalletProvider,
+    loading
   ])
 
   return (

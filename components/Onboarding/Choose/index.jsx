@@ -7,10 +7,8 @@ import {
   Title,
   Header,
   Button,
-  Warning,
-  StyledATag
+  Warning
 } from '@glif/react-components'
-import { NetworkSwitcherGlyph } from '../../Shared'
 import HeaderGlyph from '../../Shared/Glyph/HeaderGlyph'
 import ImportWallet from './Import'
 import CreateWallet from './Create'
@@ -19,10 +17,12 @@ import {
   IMPORT_MNEMONIC,
   CREATE_MNEMONIC,
   IMPORT_SINGLE_KEY,
-  SCREEN_MAX_WIDTH
+  SCREEN_MAX_WIDTH,
+  PAGE
 } from '../../../constants'
 import { useWalletProvider } from '../../../WalletProvider'
 import ExpandableBox from './ExpandableBox'
+import { navigate } from '../../../utils/urlParams'
 
 export default () => {
   const { setWalletType } = useWalletProvider()
@@ -153,17 +153,6 @@ export default () => {
                   Your private and sensitive information never leave the
                   browser, and are erased upon page refresh
                 </Title>
-                <NetworkSwitcherGlyph />
-                {router.query.network === 't' && (
-                  <Text>
-                    {
-                      "*We're changing the way you access t addresses on mainnet.  "
-                    }
-                    <StyledATag href='https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV'>
-                      More info.
-                    </StyledATag>
-                  </Text>
-                )}
                 <ImportWallet
                   onClick={() => onChoose(LEDGER)}
                   Icon={IconLedger}
@@ -260,7 +249,9 @@ export default () => {
                     </Text>
 
                     <ImportWallet
-                      onClick={() => router.push('/vault?network=f')}
+                      onClick={() =>
+                        navigate(router, { pageUrl: PAGE.MSIG_LANDING })
+                      }
                       glyphAcronym='Ev'
                       title='Enter the Vault'
                       backgroundColor='background.screen'

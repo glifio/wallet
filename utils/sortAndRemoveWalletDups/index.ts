@@ -1,11 +1,5 @@
-import { FilecoinNumber } from '@glif/filecoin-number'
 import { MAINNET_PATH_CODE, TESTNET_PATH_CODE } from '../../constants'
-
-type Wallet = {
-  path: string
-  balance: FilecoinNumber
-  address: string
-}
+import { Wallet } from '../../WalletProvider/types'
 
 const sortByIndex = (w1: Wallet, w2: Wallet) =>
   Number(w1.path.split('/')[5]) - Number(w2.path.split('/')[5])

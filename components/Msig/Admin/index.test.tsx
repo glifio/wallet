@@ -10,7 +10,7 @@ jest.mock('../../../WalletProvider')
 const routerPushMock = jest.fn()
 jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
   return {
-    query: { network: 't' },
+    query: {},
     pathname: PAGE.MSIG_ADMIN,
     push: routerPushMock
   }
@@ -59,7 +59,7 @@ describe('Admin page', () => {
       fireEvent.click(screen.getByText('Add Signer'))
     })
 
-    expect(routerPushMock).toHaveBeenCalledWith('/vault/add-signer?network=t')
+    expect(routerPushMock).toHaveBeenCalledWith('/vault/add-signer')
   })
 
   test('it sends you to the change signer page with the right query params when the user clicks the edit signer button', () => {
@@ -75,7 +75,7 @@ describe('Admin page', () => {
     })
 
     expect(routerPushMock).toHaveBeenCalledWith(
-      `${PAGE.MSIG_CHANGE_SIGNER}?network=t&address=${MULTISIG_SIGNER_ADDRESS_2}`
+      `${PAGE.MSIG_CHANGE_SIGNER}?address=${MULTISIG_SIGNER_ADDRESS_2}`
     )
   })
 
@@ -92,7 +92,7 @@ describe('Admin page', () => {
     })
 
     expect(routerPushMock).toHaveBeenCalledWith(
-      `${PAGE.MSIG_REMOVE_SIGNER}?network=t&address=${MULTISIG_SIGNER_ADDRESS_2}`
+      `${PAGE.MSIG_REMOVE_SIGNER}?address=${MULTISIG_SIGNER_ADDRESS_2}`
     )
   })
 })

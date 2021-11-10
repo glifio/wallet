@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { bool } from 'prop-types'
 import { useSelector, useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
-import { FilecoinNumber } from '@glif/filecoin-number'
 import {
   AccountCardAlt,
   Box,
@@ -14,35 +13,26 @@ import {
   LoadingScreen,
   ButtonClose
 } from '@glif/react-components'
+import Filecoin from '@glif/filecoin-wallet-provider'
+import { Network as CoinType } from '@glif/filecoin-address'
 import HelperText from './HelperText'
 import Create from './Create'
 import { useWalletProvider } from '../../WalletProvider'
-import {
-  LEDGER,
-  MAINNET,
-  MAINNET_PATH_CODE,
-  PAGE,
-  TESTNET_PATH_CODE
-} from '../../constants'
+import { Wallet } from '../../WalletProvider/types'
+import { LEDGER, PAGE, TESTNET_PATH_CODE } from '../../constants'
 import { walletList, switchWallet } from '../../store/actions'
 import {
   hasLedgerError,
   reportLedgerConfigError
 } from '../../utils/ledger/reportLedgerConfigError'
 import useWallet from '../../WalletProvider/useWallet'
-import createPath from '../../utils/createPath'
+import createPath, { coinTypeCode } from '../../utils/createPath'
 import reportError from '../../utils/reportError'
 import converAddrToFPrefix from '../../utils/convertAddrToFPrefix'
 import { initialState } from '../../store/states'
 import { navigate } from '../../utils/urlParams'
-import Filecoin from '@glif/filecoin-wallet-provider'
 
-type Wallet = {
-  path: string
-  balance: FilecoinNumber
-  address: string
-  type?: string
-}
+const COIN_TYPE = process.env.COIN_TYPE! as CoinType
 
 const AccountSelector = ({ msig, test }) => {
   const wallet = useWallet() as Wallet
@@ -50,12 +40,9 @@ const AccountSelector = ({ msig, test }) => {
   const [loadingPage, setLoadingPage] = useState(true)
   const [uncaughtError, setUncaughtError] = useState('')
   const dispatch = useDispatch()
-  const { walletsInRdx, network } = useSelector(
-    (state: typeof initialState) => ({
-      network: state.network as 't' | 'f',
-      walletsInRdx: state.wallets as Wallet[]
-    })
-  )
+  const { walletsInRdx } = useSelector((state: typeof initialState) => ({
+    walletsInRdx: state.wallets as Wallet[]
+  }))
   const { ledger, connectLedger, walletProvider } = useWalletProvider()
   const router = useRouter()
 
@@ -74,21 +61,20 @@ const AccountSelector = ({ msig, test }) => {
           if (provider) {
             const addresses = await provider.wallet.getAccounts(
               // @ts-ignore
-              network,
+              COIN_TYPE,
               walletsInRdx.length,
+              // @ts-ignore
               5
             )
 
             await Promise.all(
               addresses.map(async (address, i) => {
                 const balance = await provider.getBalance(address)
-                const networkCode =
-                  network === MAINNET ? MAINNET_PATH_CODE : TESTNET_PATH_CODE
                 const wallet: Wallet = {
                   balance,
                   address,
                   path: createPath(
-                    networkCode,
+                    coinTypeCode(COIN_TYPE),
                     Number(i) + Number(walletsInRdx.length)
                   )
                 }
@@ -116,7 +102,6 @@ const AccountSelector = ({ msig, test }) => {
   }, [
     connectLedger,
     dispatch,
-    network,
     wallet.type,
     walletProvider,
     walletsInRdx.length,
@@ -135,7 +120,7 @@ const AccountSelector = ({ msig, test }) => {
     errorMsg = reportLedgerConfigError({ ...ledger, otherError: uncaughtError })
   }
 
-  const fetchNextAccount = async (index: number, network: 't' | 'f') => {
+  const fetchNextAccount = async (index: number, coinType: CoinType) => {
     setLoadingAccounts(true)
     try {
       let provider = walletProvider as Filecoin
@@ -146,18 +131,16 @@ const AccountSelector = ({ msig, test }) => {
       if (provider) {
         const [address] = await provider.wallet.getAccounts(
           // @ts-ignore
-          network,
+          coinType,
           index,
           index + 1
         )
 
         const balance = await provider.getBalance(address)
-        const networkCode =
-          network === MAINNET ? MAINNET_PATH_CODE : TESTNET_PATH_CODE
         const wallet: Wallet = {
           balance,
           address: converAddrToFPrefix(address),
-          path: createPath(networkCode, index)
+          path: createPath(coinTypeCode(coinType), index)
         }
         dispatch(walletList([wallet]))
       }
@@ -231,13 +214,14 @@ const AccountSelector = ({ msig, test }) => {
                       index={Number(w.path.split('/')[5])}
                       selected={!msig && w.address === wallet.address}
                       legacy={
-                        network === 'f' &&
+                        COIN_TYPE === 'f' &&
                         w.path.split('/')[2] === `${TESTNET_PATH_CODE}'`
                       }
                       // This is a hack to make testing the UI easier
                       // its hard to mock SWR + balance fetcher in the AccountCardAlt
                       // so we pass a manual balance to not rely on SWR for testing
                       balance={test ? '1' : null}
+                      jsonRpcEndpoint={process.env.LOTUS_NODE_JSONRPC!}
                     />
                   </MenuItem>
                 ))}

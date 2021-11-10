@@ -3,7 +3,6 @@ import { cleanup } from '@testing-library/react'
 
 import WalletProviderWrapper, { useWalletProvider } from '.'
 import { initialState } from './state'
-import { TESTNET } from '../constants'
 
 const spy = jest.spyOn(require('../lib/WasmLoader'), 'useWasm')
 
@@ -27,9 +26,7 @@ describe('useWalletProvider', () => {
 
   test('it exposes the necessary methods to manipulate state', () => {
     const wrapper = ({ children }) => (
-      <WalletProviderWrapper network={TESTNET}>
-        {children}
-      </WalletProviderWrapper>
+      <WalletProviderWrapper>{children}</WalletProviderWrapper>
     )
     const { result } = renderHook(useWalletProvider, { wrapper })
     expect(typeof result.current.dispatch).toBe('function')
@@ -44,9 +41,7 @@ describe('useWalletProvider', () => {
 
   test('it passes down the wallet provider state', () => {
     const wrapper = ({ children }) => (
-      <WalletProviderWrapper network={TESTNET}>
-        {children}
-      </WalletProviderWrapper>
+      <WalletProviderWrapper>{children}</WalletProviderWrapper>
     )
     const { result } = renderHook(() => useWalletProvider(), { wrapper })
     expect(JSON.stringify(result.current.state)).toEqual(

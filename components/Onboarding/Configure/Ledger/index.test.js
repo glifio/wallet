@@ -5,6 +5,7 @@ import Step2 from './Step2'
 import { initialLedgerState } from '../../../../utils/ledger/ledgerStateManagement'
 import { mockRouterPush } from '../../../../test-utils/mocks/mock-routing'
 import { flushPromises } from '../../../../test-utils'
+import { PAGE } from '../../../../constants'
 
 jest.mock('../../../../WalletProvider')
 
@@ -304,7 +305,7 @@ describe('Ledger configuration', () => {
         )
         await flushPromises()
       })
-      expect(mockRouterPush).toHaveBeenCalledWith('/home?network=t')
+      expect(mockRouterPush).toHaveBeenCalledWith(PAGE.WALLET_HOME)
     })
 
     test('it pushes to the right url for msig', async () => {
@@ -323,7 +324,7 @@ describe('Ledger configuration', () => {
         )
         await flushPromises()
       })
-      expect(mockRouterPush).toHaveBeenCalledWith('/vault/accounts?network=t')
+      expect(mockRouterPush).toHaveBeenCalledWith(PAGE.MSIG_CHOOSE_ACCOUNTS)
     })
   })
 })

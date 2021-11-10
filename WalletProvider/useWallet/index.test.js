@@ -1,10 +1,10 @@
 import { renderHook } from '@testing-library/react-hooks'
 import { cleanup } from '@testing-library/react'
-import useWallet from './useWallet'
-import { IMPORT_MNEMONIC } from '../constants'
-import composeMockAppTree from '../test-utils/composeMockAppTree'
+import useWallet from '.'
+import { IMPORT_MNEMONIC } from '../../constants'
+import composeMockAppTree from '../../test-utils/composeMockAppTree'
 
-jest.mock('.')
+jest.mock('../')
 
 describe('useWallet', () => {
   afterEach(cleanup)

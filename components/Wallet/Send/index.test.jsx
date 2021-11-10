@@ -473,7 +473,7 @@ describe('Send Flow', () => {
         await flushPromises()
       })
       await flushPromises()
-      expect(routerPushMock).toHaveBeenCalledWith('/home?network=f')
+      expect(routerPushMock).toHaveBeenCalledWith(PAGE.WALLET_HOME)
     })
   })
 

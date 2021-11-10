@@ -74,7 +74,9 @@ export const SCREEN_MAX_WIDTH = 1440
 export enum PAGE {
   WALLET_HOME = '/home',
   WALLET_SEND = '/send',
+  WALLET_CHOOSE_ACCOUNTS = '/home/accounts',
   SPEED_UP = '/speed-up',
+  MSIG_LANDING = '/vault',
   MSIG_HOME = '/vault/home',
   MSIG_HISTORY = '/vault/history',
   MSIG_ADMIN = '/vault/admin',
@@ -84,7 +86,9 @@ export enum PAGE {
   MSIG_ADD_SIGNER = '/vault/add-signer',
   MSIG_CREATE_CONFIRM = '/vault/create/confirm',
   MSIG_CREATE = '/vault/create',
-  MSIG_CHOOSE = '/vault/choose'
+  MSIG_CHOOSE = '/vault/choose',
+  MSIG_CHOOSE_ACCOUNTS = '/vault/accounts',
+  LANDING = '/'
 }
 
 export enum MSIG_METHOD {

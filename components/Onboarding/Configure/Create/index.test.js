@@ -4,6 +4,7 @@ import { mockRouterPush } from '../../../../test-utils/mocks/mock-routing'
 import { flushPromises } from '../../../../test-utils'
 
 import Create from '.'
+import { PAGE } from '../../../../constants'
 
 describe('Create seed phrase configuration', () => {
   beforeAll(() => {
@@ -41,7 +42,7 @@ describe('Create seed phrase configuration', () => {
       await flushPromises()
     })
     expect(container.firstChild).toMatchSnapshot()
-    expect(mockRouterPush).toHaveBeenCalledWith('/home?network=t')
+    expect(mockRouterPush).toHaveBeenCalledWith(PAGE.WALLET_HOME)
     expect(mockWalletProviderDispatch.mock.calls[0][0].type).toBe(
       'CREATE_WALLET_PROVIDER'
     )

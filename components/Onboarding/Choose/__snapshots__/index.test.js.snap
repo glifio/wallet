@@ -32,22 +32,6 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
 .c15 {
   min-width: 0;
   box-sizing: border-box;
-  margin-top: 24px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  max-width: 300px;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-}
-
-.c18 {
-  min-width: 0;
-  box-sizing: border-box;
   border: 1px solid;
   border-radius: 4px;
   border-width: 1px;
@@ -73,7 +57,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   align-content: space-between;
 }
 
-.c20 {
+.c17 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -87,7 +71,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   text-align: center;
 }
 
-.c21 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -110,12 +94,12 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   justify-content: center;
 }
 
-.c25 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c42 {
+.c39 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -144,7 +128,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c28 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -168,7 +152,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   justify-content: center;
 }
 
-.c26 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -190,7 +174,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   align-self: center;
 }
 
-.c27 {
+.c24 {
   min-width: 0;
   box-sizing: border-box;
   margin: 8px;
@@ -206,7 +190,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   align-items: center;
 }
 
-.c30 {
+.c27 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -233,7 +217,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   align-content: space-between;
 }
 
-.c32 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -246,13 +230,13 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   align-items: center;
 }
 
-.c29 {
+.c26 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c33 {
+.c30 {
   cursor: pointer;
   border: 1px solid #E0D7FE;
   background-color: transparent;
@@ -275,7 +259,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   color: #000;
 }
 
-.c33:hover {
+.c30:hover {
   opacity: 0.8;
 }
 
@@ -294,7 +278,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   margin-left: 16px;
 }
 
-.c36 {
+.c33 {
   color: #ffffff;
   font-size: calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360));
   font-weight: 400;
@@ -304,7 +288,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   margin-left: 16px;
 }
 
-.c23 {
+.c20 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -329,7 +313,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   z-index: -9;
 }
 
-.c35:before {
+.c32:before {
   content: '';
   position: absolute;
   top: 0px;
@@ -348,90 +332,6 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
-}
-
-.c16 {
-  background: #1AD08F;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  outline: none;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border: 0;
-  font-size: 1.125rem;
-  font-weight: 400;
-  font-family: RT-Alias-Grotesk;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50%;
-  height: 64px;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.c16:hover {
-  -webkit-transform: translateY(-4px);
-  -ms-transform: translateY(-4px);
-  transform: translateY(-4px);
-  cursor: pointer;
-  background: props.theme.colors.input.background.valid;
-}
-
-.c17 {
-  background: #E4EBFC;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  outline: none;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border: 0;
-  font-size: 1.125rem;
-  font-weight: 400;
-  font-family: RT-Alias-Grotesk;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50%;
-  height: 64px;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.c17:hover {
-  -webkit-transform: translateY(-4px);
-  -ms-transform: translateY(-4px);
-  transform: translateY(-4px);
-  cursor: pointer;
-  background: props.theme.colors.input.background.valid;
 }
 
 .c0 {
@@ -556,12 +456,12 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   text-align: left;
 }
 
-.c24 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c34 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -587,7 +487,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c37 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
   padding: 24px;
@@ -604,7 +504,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   text-align: left;
 }
 
-.c39 {
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -631,7 +531,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   justify-content: flex-start;
 }
 
-.c40 {
+.c37 {
   min-width: 0;
   box-sizing: border-box;
   margin: 16px;
@@ -695,7 +595,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   margin-top: 16px;
 }
 
-.c38 {
+.c35 {
   color: #ffffff;
   font-size: 2rem;
   font-weight: 400;
@@ -714,7 +614,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   margin: 0;
 }
 
-.c41 {
+.c38 {
   color: #C4C4C4;
   font-size: 1.125rem;
   font-weight: 400;
@@ -726,30 +626,30 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
   margin-top: 0;
 }
 
-.c22 {
+.c19 {
   width: 40px;
   height: 40px;
 }
 
-.c19 {
+.c16 {
   cursor: pointer;
   -webkit-transition: 0.13s ease-in-out;
   transition: 0.13s ease-in-out;
 }
 
-.c19:hover {
+.c16:hover {
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
 }
 
-.c31 {
+.c28 {
   cursor: pointer;
   -webkit-transition: 0.13s ease-in-out;
   transition: 0.13s ease-in-out;
 }
 
-.c31:hover {
+.c28:hover {
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
@@ -813,13 +713,13 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
 }
 
 @media screen and (min-width:40em) {
-  .c34 {
+  .c31 {
     width: 100%;
   }
 }
 
 @media screen and (min-width:52em) {
-  .c34 {
+  .c31 {
     width: 50%;
   }
 }
@@ -921,35 +821,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
           Your private and sensitive information never leave the browser, and are erased upon page refresh
         </h2>
         <div
-          class="c15"
-          display="flex"
-          width="100%"
-        >
-          <button
-            class="c16"
-            display="flex"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="1"
-            height="7"
-            width="50%"
-          >
-            Use t addresses
-          </button>
-          <button
-            class="c17"
-            display="flex"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="1"
-            height="7"
-            width="50%"
-          >
-            Use f addresses
-          </button>
-        </div>
-        <div
-          class="c18 c19"
+          class="c15 c16"
           display="flex"
           height="7"
           overflow="hidden"
@@ -957,17 +829,17 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
           width="300"
         >
           <div
-            class="c20"
+            class="c17"
             display="flex"
           >
             <div
-              class="c21"
+              class="c18"
               color=""
               display="flex"
               size="6"
             >
               <svg
-                class="c22"
+                class="c19"
                 fill="none"
                 height="40px"
                 viewBox="0 0 24 24"
@@ -983,7 +855,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
               </svg>
             </div>
             <p
-              class="c23"
+              class="c20"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -994,33 +866,33 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
         </div>
       </div>
       <div
-        class="c24"
+        class="c21"
       >
         <div
-          class="c25"
+          class="c22"
         >
           <div
-            class="c26"
+            class="c23"
             display="flex"
           >
             <div
-              class="c27"
+              class="c24"
               display="flex"
             >
               <div
-                class="c28"
+                class="c25"
                 color="#000"
                 display="flex"
                 size="6"
               >
                 <h3
-                  class="c29"
+                  class="c26"
                 >
                   Ta
                 </h3>
               </div>
               <p
-                class="c23"
+                class="c20"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"
@@ -1029,7 +901,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
               </p>
             </div>
             <div
-              class="c30 c31"
+              class="c27 c28"
               display="flex"
               height="7"
               overflow="hidden"
@@ -1037,26 +909,26 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
               width="300"
             >
               <div
-                class="c25"
+                class="c22"
               >
                 <div
-                  class="c32"
+                  class="c29"
                   display="flex"
                 >
                   <div
-                    class="c28"
+                    class="c25"
                     color="#000"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c29"
+                      class="c26"
                     >
                       Sp
                     </h3>
                   </div>
                   <p
-                    class="c23"
+                    class="c20"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -1067,7 +939,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
               </div>
             </div>
             <div
-              class="c30 c19"
+              class="c27 c16"
               display="flex"
               height="7"
               overflow="hidden"
@@ -1075,23 +947,23 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
               width="300"
             >
               <div
-                class="c20"
+                class="c17"
                 display="flex"
               >
                 <div
-                  class="c21"
+                  class="c18"
                   color=""
                   display="flex"
                   size="6"
                 >
                   <h3
-                    class="c29"
+                    class="c26"
                   >
                     Sp
                   </h3>
                 </div>
                 <p
-                  class="c23"
+                  class="c20"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
@@ -1101,7 +973,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
               </div>
             </div>
             <div
-              class="c30 c19"
+              class="c27 c16"
               display="flex"
               height="7"
               overflow="hidden"
@@ -1109,23 +981,23 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
               width="300"
             >
               <div
-                class="c20"
+                class="c17"
                 display="flex"
               >
                 <div
-                  class="c21"
+                  class="c18"
                   color=""
                   display="flex"
                   size="6"
                 >
                   <h3
-                    class="c29"
+                    class="c26"
                   >
                     Pk
                   </h3>
                 </div>
                 <p
-                  class="c23"
+                  class="c20"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
@@ -1135,7 +1007,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
               </div>
             </div>
             <button
-              class="c33"
+              class="c30"
               color="core.black"
               font-size="3"
               height="6"
@@ -1148,12 +1020,12 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
       </div>
     </div>
     <div
-      class="c34"
+      class="c31"
       display="flex"
       width="100%,100%,50%"
     >
       <div
-        class="c7 c35"
+        class="c7 c32"
         display="flex"
         height="120px"
         opacity="1"
@@ -1176,7 +1048,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
           />
         </svg>
         <h1
-          class="c36"
+          class="c33"
           color="core.white"
           font-family="RT-Alias-Grotesk"
           font-size="calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360))"
@@ -1186,11 +1058,11 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
         </h1>
       </div>
       <div
-        class="c37"
+        class="c34"
         display="flex"
       >
         <h2
-          class="c38"
+          class="c35"
           color="core.white"
           font-family="RT-Alias-Grotesk"
           font-size="5"
@@ -1199,16 +1071,16 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
           For Filecoin multisig holders
         </h2>
         <div
-          class="c39"
+          class="c36"
           display="flex"
           width="100%"
         >
           <div
-            class="c40"
+            class="c37"
             display="flex"
           >
             <p
-              class="c41"
+              class="c38"
               color="core.lightgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -1217,7 +1089,7 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
               Use your Ledger device to manage a Filecoin multisig wallet.
             </p>
             <div
-              class="c42 c19"
+              class="c39 c16"
               color="core.black"
               display="flex"
               height="7"
@@ -1226,23 +1098,23 @@ exports[`Choosing a wallet it renders all wallet options when in test accounts m
               width="300"
             >
               <div
-                class="c20"
+                class="c17"
                 display="flex"
               >
                 <div
-                  class="c28"
+                  class="c25"
                   color="core.black"
                   display="flex"
                   size="6"
                 >
                   <h3
-                    class="c29"
+                    class="c26"
                   >
                     Ev
                   </h3>
                 </div>
                 <p
-                  class="c23"
+                  class="c20"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"
@@ -1291,22 +1163,6 @@ exports[`Choosing a wallet it renders correctly 1`] = `
 .c15 {
   min-width: 0;
   box-sizing: border-box;
-  margin-top: 24px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  max-width: 300px;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-}
-
-.c18 {
-  min-width: 0;
-  box-sizing: border-box;
   border: 1px solid;
   border-radius: 4px;
   border-width: 1px;
@@ -1332,7 +1188,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   align-content: space-between;
 }
 
-.c20 {
+.c17 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1346,7 +1202,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   text-align: center;
 }
 
-.c21 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -1369,12 +1225,12 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c25 {
+.c22 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c26 {
+.c23 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -1404,7 +1260,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   justify-self: flex-end;
 }
 
-.c36 {
+.c33 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -1433,7 +1289,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c37 {
+.c34 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -1457,7 +1313,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c27 {
+.c24 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
@@ -1478,7 +1334,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   margin-left: 16px;
 }
 
-.c30 {
+.c27 {
   color: #ffffff;
   font-size: calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360));
   font-weight: 400;
@@ -1488,7 +1344,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   margin-left: 16px;
 }
 
-.c23 {
+.c20 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -1513,7 +1369,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   z-index: -9;
 }
 
-.c29:before {
+.c26:before {
   content: '';
   position: absolute;
   top: 0px;
@@ -1532,90 +1388,6 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
-}
-
-.c16 {
-  background: #1AD08F;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  outline: none;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border: 0;
-  font-size: 1.125rem;
-  font-weight: 400;
-  font-family: RT-Alias-Grotesk;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50%;
-  height: 64px;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.c16:hover {
-  -webkit-transform: translateY(-4px);
-  -ms-transform: translateY(-4px);
-  transform: translateY(-4px);
-  cursor: pointer;
-  background: props.theme.colors.input.background.valid;
-}
-
-.c17 {
-  background: #E4EBFC;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  outline: none;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border: 0;
-  font-size: 1.125rem;
-  font-weight: 400;
-  font-family: RT-Alias-Grotesk;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50%;
-  height: 64px;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.c17:hover {
-  -webkit-transform: translateY(-4px);
-  -ms-transform: translateY(-4px);
-  transform: translateY(-4px);
-  cursor: pointer;
-  background: props.theme.colors.input.background.valid;
 }
 
 .c0 {
@@ -1740,12 +1512,12 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   text-align: left;
 }
 
-.c24 {
+.c21 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c28 {
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1771,7 +1543,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c31 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
   padding: 24px;
@@ -1788,7 +1560,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   text-align: left;
 }
 
-.c33 {
+.c30 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 4px;
@@ -1815,7 +1587,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   justify-content: flex-start;
 }
 
-.c34 {
+.c31 {
   min-width: 0;
   box-sizing: border-box;
   margin: 16px;
@@ -1879,7 +1651,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   margin-top: 16px;
 }
 
-.c32 {
+.c29 {
   color: #ffffff;
   font-size: 2rem;
   font-weight: 400;
@@ -1898,7 +1670,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   margin: 0;
 }
 
-.c35 {
+.c32 {
   color: #C4C4C4;
   font-size: 1.125rem;
   font-weight: 400;
@@ -1910,18 +1682,18 @@ exports[`Choosing a wallet it renders correctly 1`] = `
   margin-top: 0;
 }
 
-.c22 {
+.c19 {
   width: 40px;
   height: 40px;
 }
 
-.c19 {
+.c16 {
   cursor: pointer;
   -webkit-transition: 0.13s ease-in-out;
   transition: 0.13s ease-in-out;
 }
 
-.c19:hover {
+.c16:hover {
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
@@ -1985,13 +1757,13 @@ exports[`Choosing a wallet it renders correctly 1`] = `
 }
 
 @media screen and (min-width:40em) {
-  .c28 {
+  .c25 {
     width: 100%;
   }
 }
 
 @media screen and (min-width:52em) {
-  .c28 {
+  .c25 {
     width: 50%;
   }
 }
@@ -2093,35 +1865,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
           Your private and sensitive information never leave the browser, and are erased upon page refresh
         </h2>
         <div
-          class="c15"
-          display="flex"
-          width="100%"
-        >
-          <button
-            class="c16"
-            display="flex"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="1"
-            height="7"
-            width="50%"
-          >
-            Use t addresses
-          </button>
-          <button
-            class="c17"
-            display="flex"
-            font-family="RT-Alias-Grotesk"
-            font-size="2"
-            font-weight="1"
-            height="7"
-            width="50%"
-          >
-            Use f addresses
-          </button>
-        </div>
-        <div
-          class="c18 c19"
+          class="c15 c16"
           display="flex"
           height="7"
           overflow="hidden"
@@ -2129,17 +1873,17 @@ exports[`Choosing a wallet it renders correctly 1`] = `
           width="300"
         >
           <div
-            class="c20"
+            class="c17"
             display="flex"
           >
             <div
-              class="c21"
+              class="c18"
               color=""
               display="flex"
               size="6"
             >
               <svg
-                class="c22"
+                class="c19"
                 fill="none"
                 height="40px"
                 viewBox="0 0 24 24"
@@ -2155,7 +1899,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
               </svg>
             </div>
             <p
-              class="c23"
+              class="c20"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2166,13 +1910,13 @@ exports[`Choosing a wallet it renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="c24"
+        class="c21"
       >
         <div
-          class="c25"
+          class="c22"
         >
           <div
-            class="c26 c19 ExpandableBox__Condensed-sc-19nv1v6-0"
+            class="c23 c16 ExpandableBox__Condensed-sc-19nv1v6-0"
             display="flex"
             height="7"
             overflow="hidden"
@@ -2180,23 +1924,23 @@ exports[`Choosing a wallet it renders correctly 1`] = `
             width="300"
           >
             <div
-              class="c20"
+              class="c17"
               display="flex"
             >
               <div
-                class="c21"
+                class="c18"
                 color=""
                 display="flex"
                 size="6"
               >
                 <h3
-                  class="c27"
+                  class="c24"
                 >
                   Ta
                 </h3>
               </div>
               <p
-                class="c23"
+                class="c20"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"
@@ -2209,12 +1953,12 @@ exports[`Choosing a wallet it renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="c28"
+      class="c25"
       display="flex"
       width="100%,100%,50%"
     >
       <div
-        class="c7 c29"
+        class="c7 c26"
         display="flex"
         height="120px"
         opacity="1"
@@ -2237,7 +1981,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
           />
         </svg>
         <h1
-          class="c30"
+          class="c27"
           color="core.white"
           font-family="RT-Alias-Grotesk"
           font-size="calc(48px + (48 - 32) * (100vw - 360px) / (1440 - 360))"
@@ -2247,11 +1991,11 @@ exports[`Choosing a wallet it renders correctly 1`] = `
         </h1>
       </div>
       <div
-        class="c31"
+        class="c28"
         display="flex"
       >
         <h2
-          class="c32"
+          class="c29"
           color="core.white"
           font-family="RT-Alias-Grotesk"
           font-size="5"
@@ -2260,16 +2004,16 @@ exports[`Choosing a wallet it renders correctly 1`] = `
           For Filecoin multisig holders
         </h2>
         <div
-          class="c33"
+          class="c30"
           display="flex"
           width="100%"
         >
           <div
-            class="c34"
+            class="c31"
             display="flex"
           >
             <p
-              class="c35"
+              class="c32"
               color="core.lightgray"
               font-family="RT-Alias-Grotesk"
               font-size="2"
@@ -2278,7 +2022,7 @@ exports[`Choosing a wallet it renders correctly 1`] = `
               Use your Ledger device to manage a Filecoin multisig wallet.
             </p>
             <div
-              class="c36 c19"
+              class="c33 c16"
               color="core.black"
               display="flex"
               height="7"
@@ -2287,23 +2031,23 @@ exports[`Choosing a wallet it renders correctly 1`] = `
               width="300"
             >
               <div
-                class="c20"
+                class="c17"
                 display="flex"
               >
                 <div
-                  class="c37"
+                  class="c34"
                   color="core.black"
                   display="flex"
                   size="6"
                 >
                   <h3
-                    class="c27"
+                    class="c24"
                   >
                     Ev
                   </h3>
                 </div>
                 <p
-                  class="c23"
+                  class="c20"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
                   font-weight="400"

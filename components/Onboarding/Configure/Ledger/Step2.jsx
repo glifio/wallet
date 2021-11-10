@@ -20,6 +20,8 @@ import {
   reportLedgerConfigError
 } from '../../../../utils/ledger/reportLedgerConfigError'
 import useReset from '../../../../utils/useReset'
+import { navigate } from '../../../../utils/urlParams'
+import { PAGE } from '../../../../constants'
 
 const Step2Helper = ({ ...errors }) => (
   <Box
@@ -92,11 +94,11 @@ const Step2 = ({ msig }) => {
   })
 
   const routeToNextPage = () => {
-    const params = new URLSearchParams(router.query)
-    let query = ''
-    if (msig) query = `/vault/accounts?${params.toString()}`
-    else query = `/home?${params.toString()}`
-    router.push(query)
+    msig
+      ? navigate(router, {
+          pageUrl: PAGE.MSIG_CHOOSE_ACCOUNTS
+        })
+      : navigate(router, { pageUrl: PAGE.WALLET_HOME })
   }
 
   const onClick = async () => {

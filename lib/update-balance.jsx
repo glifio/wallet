@@ -6,7 +6,7 @@ import { updateBalance } from '../store/actions'
 import reportError from '../utils/reportError'
 
 // Polls lotus for up to date balances about the user's selected wallet
-export default function Updatebalance() {
+function Updatebalance() {
   const dispatch = useDispatch()
   const { walletProvider } = useWalletProvider()
   const wallet = useWallet()
@@ -51,3 +51,5 @@ export default function Updatebalance() {
 
   return null
 }
+
+export default Updatebalance

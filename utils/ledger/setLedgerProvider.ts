@@ -34,7 +34,7 @@ export interface LedgerSubProvider extends WalletSubProvider {
 export const setLedgerProvider = async (
   dispatch: Dispatch<WalletProviderAction>,
   LedgerProvider: (_: any) => LedgerSubProvider
-) => {
+): Promise<(Filecoin & { wallet: LedgerSubProvider }) | null> => {
   dispatch({ type: LEDGER_USER_INITIATED_IMPORT })
   try {
     const transport = await createTransport()
@@ -43,7 +43,7 @@ export const setLedgerProvider = async (
     })
     dispatch({ type: LEDGER_CONNECTED })
     dispatch(createWalletProvider(provider))
-    return provider
+    return provider as Filecoin & { wallet: LedgerSubProvider }
   } catch (err) {
     if (err?.message.includes('TRANSPORT NOT SUPPORTED BY DEVICE')) {
       dispatch({ type: WEBUSB_UNSUPPORTED })
@@ -68,7 +68,7 @@ export const setLedgerProvider = async (
       `Unhandled error in setLedgerProvider: ${err.message}`,
       err.stack
     )
-    return false
+    return null
   }
 }
 

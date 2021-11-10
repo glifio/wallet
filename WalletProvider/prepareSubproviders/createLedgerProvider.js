@@ -1,12 +1,8 @@
+import { CoinType } from '@glif/filecoin-address'
 import FilecoinApp from '@zondax/ledger-filecoin'
 import { mapSeries } from 'bluebird'
-import {
-  LEDGER,
-  MAINNET,
-  MAINNET_PATH_CODE,
-  TESTNET_PATH_CODE
-} from '../../constants'
-import createPath from '../../utils/createPath'
+import { LEDGER } from '../../constants'
+import createPath, { coinTypeCode } from '../../utils/createPath'
 
 const handleErrors = (response) => {
   if (
@@ -73,14 +69,12 @@ const createLedgerProvider = (rustModule) => {
         })
       },
 
-      getAccounts: async (network = MAINNET, nStart = 0, nEnd = 5) => {
+      getAccounts: async (coinType = CoinType.MAIN, nStart = 0, nEnd = 5) => {
         throwIfBusy(ledgerBusy)
         ledgerBusy = true
-        const networkCode =
-          network === MAINNET ? MAINNET_PATH_CODE : TESTNET_PATH_CODE
         const paths = []
         for (let i = nStart; i < nEnd; i += 1) {
-          paths.push(createPath(networkCode, i))
+          paths.push(createPath(coinTypeCode(coinType), i))
         }
         const addresses = await mapSeries(paths, async (path) => {
           const { addrString } = handleErrors(

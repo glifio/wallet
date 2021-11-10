@@ -27,7 +27,7 @@ describe('Create Account', () => {
       fireEvent.click(screen.getByText('Create'))
     })
 
-    expect(mock).toHaveBeenCalledWith(nextAccountIdx, 'f')
+    expect(mock).toHaveBeenCalledWith(nextAccountIdx, 't')
   })
 
   test('it calls the callback with the right network and index 2', async () => {
@@ -45,11 +45,11 @@ describe('Create Account', () => {
           />
         </ThemeProvider>
       )
-      fireEvent.click(screen.getByText('Legacy address'))
+      fireEvent.click(screen.getByText('Normal address'))
       await flushPromises()
       fireEvent.click(screen.getByText('Create'))
     })
 
-    expect(mock).toHaveBeenCalledWith(nextAccountIdx, 't')
+    expect(mock).toHaveBeenCalledWith(nextAccountIdx, 'f')
   })
 })

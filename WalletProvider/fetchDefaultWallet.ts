@@ -1,23 +1,21 @@
-import {
-  SINGLE_KEY,
-  LEDGER,
-  MAINNET,
-  MAINNET_PATH_CODE,
-  TESTNET_PATH_CODE
-} from '../constants'
+import Filecoin from '@glif/filecoin-wallet-provider'
+import { Network as CoinType } from '@glif/filecoin-address'
+import { SINGLE_KEY, LEDGER } from '../constants'
 import {
   checkLedgerConfiguration,
+  LedgerSubProvider,
   setLedgerProvider
 } from '../utils/ledger/setLedgerProvider'
 import { clearError, resetLedgerState } from './state'
-import createPath from '../utils/createPath'
+import createPath, { coinTypeCode } from '../utils/createPath'
+
+const COIN_TYPE = process.env.COIN_TYPE! as CoinType
 
 // a helper function for getting the default wallet associated with the wallet provider
 const fetchDefaultWallet = async (
   dispatch,
-  network = MAINNET,
   walletType,
-  walletProvider,
+  walletProvider: Filecoin,
   walletSubProviders
 ) => {
   dispatch(clearError())
@@ -31,17 +29,24 @@ const fetchDefaultWallet = async (
       walletSubProviders.LedgerProvider
     )
     if (!provider) return null
-    const configured = await checkLedgerConfiguration(dispatch, provider)
+    const configured = await checkLedgerConfiguration(
+      dispatch,
+      provider as Filecoin & { wallet: LedgerSubProvider }
+    )
     if (!configured) return null
   }
 
-  const [defaultAddress] = await provider.wallet.getAccounts(network, 0, 1)
+  const [defaultAddress] = await provider.wallet.getAccounts(
+    // @ts-ignore
+    COIN_TYPE,
+    0,
+    // @ts-ignore
+    1
+  )
   const balance = await provider.getBalance(defaultAddress)
-  const networkCode =
-    network === MAINNET ? MAINNET_PATH_CODE : TESTNET_PATH_CODE
+  let path = createPath(coinTypeCode(COIN_TYPE), 0)
 
-  let path = createPath(networkCode, 0)
-  if (provider.wallet.type === SINGLE_KEY) path = SINGLE_KEY
+  if (walletType === SINGLE_KEY) path = SINGLE_KEY
   return {
     balance,
     address: defaultAddress,

@@ -836,7 +836,7 @@ Object {
                     class="c10"
                     font-size="3"
                     height="6"
-                    href="/vault/home?network=t"
+                    href="/vault/home"
                     width="9"
                   >
                     Assets
@@ -845,7 +845,7 @@ Object {
                     class="c10"
                     font-size="3"
                     height="6"
-                    href="/vault/history?network=t"
+                    href="/vault/history"
                     width="9"
                   >
                     History
@@ -854,7 +854,7 @@ Object {
                     class="c11"
                     font-size="3"
                     height="6"
-                    href="/vault/admin?network=t"
+                    href="/vault/admin"
                     width="9"
                   >
                     Admin
@@ -1500,7 +1500,7 @@ Object {
                   class="NavLink__StyledNavLink-sc-1kcp6eq-0 cOEfcH"
                   font-size="3"
                   height="6"
-                  href="/vault/home?network=t"
+                  href="/vault/home"
                   width="9"
                 >
                   Assets
@@ -1509,7 +1509,7 @@ Object {
                   class="NavLink__StyledNavLink-sc-1kcp6eq-0 cOEfcH"
                   font-size="3"
                   height="6"
-                  href="/vault/history?network=t"
+                  href="/vault/history"
                   width="9"
                 >
                   History
@@ -1518,7 +1518,7 @@ Object {
                   class="NavLink__StyledNavLink-sc-1kcp6eq-0 jPPMFo"
                   font-size="3"
                   height="6"
-                  href="/vault/admin?network=t"
+                  href="/vault/admin"
                   width="9"
                 >
                   Admin
