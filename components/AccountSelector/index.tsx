@@ -212,7 +212,7 @@ const AccountSelector = ({ msig, test }) => {
                       }}
                       address={w.address}
                       index={Number(w.path.split('/')[5])}
-                      selected={w.address === wallet.address}
+                      selected={!msig && w.address === wallet.address}
                       legacy={
                         COIN_TYPE === 'f' &&
                         w.path.split('/')[2] === `${TESTNET_PATH_CODE}'`

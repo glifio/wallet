@@ -280,8 +280,8 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   border-radius: 4px;
   border-width: 1px;
   padding: 16px;
-  background-color: #5E26FF;
-  color: #E0D7FE;
+  background-color: hsla(0,0%,90%,0);
+  color: colors.core.black;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -322,7 +322,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   border-radius: 8px;
   border-style: solid;
   margin-right: 16px;
-  color: #E0D7FE;
+  color: colors.core.black;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -382,7 +382,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
 .c24 {
   min-width: 0;
   box-sizing: border-box;
-  color: #E0D7FE;
+  color: #5E26FF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -420,69 +420,6 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   border-radius: 4px;
   border-width: 1px;
   padding: 16px;
-  background-color: hsla(0,0%,90%,0);
-  color: colors.core.black;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 300px;
-  overflow: hidden;
-  height: 300px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c34 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  margin-right: 16px;
-  color: colors.core.black;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c36 {
-  min-width: 0;
-  box-sizing: border-box;
-  color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c38 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 1px solid;
-  border-radius: 4px;
-  border-width: 1px;
-  padding: 16px;
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 16px;
@@ -506,12 +443,12 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: space-between;
 }
 
-.c40 {
+.c35 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c41 {
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -532,7 +469,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: center;
 }
 
-.c45 {
+.c40 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -547,13 +484,13 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   justify-content: flex-start;
 }
 
-.c48 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   height: 4px;
 }
 
-.c50 {
+.c45 {
   min-width: 0;
   box-sizing: border-box;
   width: 100%;
@@ -610,29 +547,6 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
 
 .c32 {
   cursor: pointer;
-  border: 1px solid #E0D7FE;
-  background-color: transparent;
-  border-color: #E0D7FE;
-  color: #E0D7FE;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c32:hover {
-  opacity: 0.8;
-}
-
-.c37 {
-  cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
   border-color: #262626;
@@ -650,7 +564,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   border-radius: 4px;
 }
 
-.c37:hover {
+.c32:hover {
   opacity: 0.8;
 }
 
@@ -674,7 +588,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   margin-bottom: 0;
 }
 
-.c39 {
+.c34 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -693,7 +607,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   margin-bottom: 0;
 }
 
-.c42 {
+.c37 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -733,7 +647,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-bottom: 2px solid #5E26FF00;
-  color: #E0D7FE;
+  color: #5E26FF;
   font-size: 1.5rem;
 }
 
@@ -741,21 +655,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   border-bottom: 2px solid #5E26FF;
 }
 
-.c35 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.5rem;
-}
-
-.c35:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
-.c49 {
+.c44 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -768,11 +668,11 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   margin-left: 4px;
 }
 
-.c49:hover {
+.c44:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c46 {
+.c41 {
   background: #E4EBFC;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
@@ -806,7 +706,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   padding-bottom: 4px;
 }
 
-.c46:hover {
+.c41:hover {
   -webkit-transform: translateY(-4px);
   -ms-transform: translateY(-4px);
   transform: translateY(-4px);
@@ -814,7 +714,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   background: props.theme.colors.input.background.valid;
 }
 
-.c47 {
+.c42 {
   background: #1AD08F;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
@@ -848,7 +748,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   padding-bottom: 4px;
 }
 
-.c47:hover {
+.c42:hover {
   -webkit-transform: translateY(-4px);
   -ms-transform: translateY(-4px);
   transform: translateY(-4px);
@@ -898,7 +798,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   margin-top: 8px;
 }
 
-.c43 {
+.c38 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -921,23 +821,23 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   border-color: #999999;
 }
 
-.c43:hover {
+.c38:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c43:focus {
+.c38:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c44 {
+.c39 {
   -moz-appearance: textfield;
 }
 
-.c44::-webkit-outer-spin-button,
-.c44::-webkit-inner-spin-button {
+.c39::-webkit-outer-spin-button,
+.c39::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -1066,7 +966,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
             >
               <div
                 class="c16"
-                color="card.account.color"
+                color="colors.core.black"
                 display="flex"
                 height="11"
                 overflow="hidden"
@@ -1078,7 +978,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                 >
                   <div
                     class="c18"
-                    color="card.account.color"
+                    color="colors.core.black"
                     display="flex"
                     size="6"
                   >
@@ -1112,7 +1012,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                 >
                   <a
                     class="c23"
-                    color="card.account.color"
+                    color="core.primary"
                     font-size="4"
                     href="https://filfox.info/en/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                     target="_blank"
@@ -1121,7 +1021,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   </a>
                   <div
                     class="c24"
-                    color="card.account.color"
+                    color="core.primary"
                     display="flex"
                   >
                     <button
@@ -1204,7 +1104,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
               display="inline-block"
             >
               <div
-                class="c33"
+                class="c16"
                 color="colors.core.black"
                 display="flex"
                 height="11"
@@ -1216,7 +1116,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   display="flex"
                 >
                   <div
-                    class="c34"
+                    class="c18"
                     color="colors.core.black"
                     display="flex"
                     size="6"
@@ -1251,7 +1151,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   display="flex"
                 >
                   <a
-                    class="c35"
+                    class="c23"
                     color="core.primary"
                     font-size="4"
                     href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb1uq"
@@ -1260,7 +1160,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                     t1mbk ... icb1uq
                   </a>
                   <div
-                    class="c36"
+                    class="c24"
                     color="core.primary"
                     display="flex"
                   >
@@ -1325,7 +1225,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                     </h2>
                   </div>
                   <button
-                    class="c37"
+                    class="c32"
                     font-size="3"
                     height="6"
                     type="button"
@@ -1344,7 +1244,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
               display="inline-block"
             >
               <div
-                class="c33"
+                class="c16"
                 color="colors.core.black"
                 display="flex"
                 height="11"
@@ -1356,7 +1256,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   display="flex"
                 >
                   <div
-                    class="c34"
+                    class="c18"
                     color="colors.core.black"
                     display="flex"
                     size="6"
@@ -1391,7 +1291,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   display="flex"
                 >
                   <a
-                    class="c35"
+                    class="c23"
                     color="core.primary"
                     font-size="4"
                     href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq"
@@ -1400,7 +1300,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                     t1mbk ... icb2uq
                   </a>
                   <div
-                    class="c36"
+                    class="c24"
                     color="core.primary"
                     display="flex"
                   >
@@ -1465,7 +1365,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                     </h2>
                   </div>
                   <button
-                    class="c37"
+                    class="c32"
                     font-size="3"
                     height="6"
                     type="button"
@@ -1484,7 +1384,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
               display="inline-block"
             >
               <div
-                class="c33"
+                class="c16"
                 color="colors.core.black"
                 display="flex"
                 height="11"
@@ -1496,7 +1396,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   display="flex"
                 >
                   <div
-                    class="c34"
+                    class="c18"
                     color="colors.core.black"
                     display="flex"
                     size="6"
@@ -1531,7 +1431,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   display="flex"
                 >
                   <a
-                    class="c35"
+                    class="c23"
                     color="core.primary"
                     font-size="4"
                     href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb3uq"
@@ -1540,7 +1440,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                     t1mbk ... icb3uq
                   </a>
                   <div
-                    class="c36"
+                    class="c24"
                     color="core.primary"
                     display="flex"
                   >
@@ -1605,7 +1505,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                     </h2>
                   </div>
                   <button
-                    class="c37"
+                    class="c32"
                     font-size="3"
                     height="6"
                     type="button"
@@ -1624,7 +1524,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
               display="inline-block"
             >
               <div
-                class="c33"
+                class="c16"
                 color="colors.core.black"
                 display="flex"
                 height="11"
@@ -1636,7 +1536,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   display="flex"
                 >
                   <div
-                    class="c34"
+                    class="c18"
                     color="colors.core.black"
                     display="flex"
                     size="6"
@@ -1671,7 +1571,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   display="flex"
                 >
                   <a
-                    class="c35"
+                    class="c23"
                     color="core.primary"
                     font-size="4"
                     href="https://filfox.info/en/address/t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb4uq"
@@ -1680,7 +1580,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                     t1mbk ... icb4uq
                   </a>
                   <div
-                    class="c36"
+                    class="c24"
                     color="core.primary"
                     display="flex"
                   >
@@ -1745,7 +1645,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                     </h2>
                   </div>
                   <button
-                    class="c37"
+                    class="c32"
                     font-size="3"
                     height="6"
                     type="button"
@@ -1760,7 +1660,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
             class=""
           >
             <div
-              class="c38"
+              class="c33"
               color="colors.core.black"
               display="flex"
               height="11"
@@ -1768,7 +1668,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
               width="11"
             >
               <h2
-                class="c39"
+                class="c34"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -1776,14 +1676,14 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                 Create new account
               </h2>
               <div
-                class="c40"
+                class="c35"
               >
                 <div
-                  class="c41"
+                  class="c36"
                   display="flex"
                 >
                   <h4
-                    class="c42"
+                    class="c37"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -1792,7 +1692,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                     Account index
                   </h4>
                   <input
-                    class="c43 c44"
+                    class="c38 c39"
                     display="inline-block"
                     height="6"
                     value="5"
@@ -1802,15 +1702,15 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                 
               </div>
               <div
-                class="c40"
+                class="c35"
               >
                 <div
-                  class="c45"
+                  class="c40"
                   display="flex"
                   width="100%"
                 >
                   <button
-                    class="c46"
+                    class="c41"
                     display="flex"
                     font-family="RT-Alias-Grotesk"
                     font-size="1"
@@ -1821,7 +1721,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                     Legacy address
                   </button>
                   <button
-                    class="c47"
+                    class="c42"
                     display="flex"
                     font-family="RT-Alias-Grotesk"
                     font-size="1"
@@ -1833,11 +1733,11 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                   </button>
                 </div>
                 <div
-                  class="c48"
+                  class="c43"
                   height="1"
                 />
                 <a
-                  class="c49"
+                  class="c44"
                   color="core.primary"
                   font-size="15px"
                   href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
@@ -1847,12 +1747,12 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
                 </a>
               </div>
               <div
-                class="c50"
+                class="c45"
                 display="flex"
                 width="100%"
               >
                 <button
-                  class="c37"
+                  class="c32"
                   font-size="3"
                   height="6"
                   type="button"
