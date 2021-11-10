@@ -106,7 +106,7 @@ const EnterActorAddress = () => {
             <Text mr={3}>Don&apos;t have a multisig actor ID?</Text>
             <StyledLink
               href={generateRouteWithRequiredUrlParams({
-                pageUrl: PAGE.MSIG_CHOOSE
+                pageUrl: PAGE.MSIG_CREATE
               })}
               name='Create one'
               target='_self'
