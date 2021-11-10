@@ -67,7 +67,10 @@ const Create = ({ initialWalkthroughStep }) => {
         setImportSeedError(err.message || JSON.stringify(err))
       }
     }
-    if (walkthroughStep === 4) instantiateProvider()
+    if (walkthroughStep === 4 && !loading) {
+      setLoading(true)
+      instantiateProvider()
+    }
   }, [
     dispatch,
     dispatchRdx,
@@ -75,7 +78,8 @@ const Create = ({ initialWalkthroughStep }) => {
     mnemonic,
     router,
     walkthroughStep,
-    HDWalletProvider
+    HDWalletProvider,
+    loading
   ])
 
   return (
