@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import reducer, {
   initialState,
-  setWalletType,
+  setLoginOption,
   setError,
   resetLedgerState,
   resetState
@@ -37,7 +37,7 @@ const WalletProviderWrapper = ({ children }) => {
           [dispatch, state.walletType, state.walletProvider, walletSubproviders]
         ),
         setWalletError: (errorMessage) => dispatch(setError(errorMessage)),
-        setWalletType: (walletType) => dispatch(setWalletType(walletType)),
+        setLoginOption: (loginOption) => dispatch(setLoginOption(loginOption)),
         setLedgerProvider: useCallback(
           () => setLedgerProvider(dispatch, walletSubproviders.LedgerProvider),
           [dispatch, walletSubproviders.LedgerProvider]
