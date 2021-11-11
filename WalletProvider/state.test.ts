@@ -1,59 +1,106 @@
+import { FilecoinNumber } from '@glif/filecoin-number'
+import Filecoin from '@glif/filecoin-wallet-provider'
+import clonedeep from 'lodash.clonedeep'
+import { Message, SignedLotusMessage } from '@glif/filecoin-message'
 import reducer, {
   initialState,
-  walletActionTypes,
-  setWalletType,
+  setLoginOption,
   createWalletProvider,
   setError,
   clearError,
   resetLedgerState,
-  resetState
+  resetState,
+  walletList,
+  switchWallet,
+  updateBalance
 } from './state'
-import {
-  ledgerActionTypes,
-  initialLedgerState
-} from '../utils/ledger/ledgerStateManagement'
-import { IMPORT_MNEMONIC } from '../constants'
+import { initialLedgerState } from '../utils/ledger/ledgerStateManagement'
+import { IMPORT_MNEMONIC, SINGLE_KEY } from '../constants'
+import { WalletProviderAction } from './types'
 
-const {
-  LEDGER_RESET_STATE,
-  LEDGER_USER_INITIATED_IMPORT,
-  LEDGER_NOT_FOUND,
-  LEDGER_CONNECTED,
-  LEDGER_ESTABLISHING_CONNECTION_W_FILECOIN_APP,
-  LEDGER_LOCKED,
-  LEDGER_UNLOCKED,
-  LEDGER_FILECOIN_APP_NOT_OPEN,
-  LEDGER_FILECOIN_APP_OPEN,
-  LEDGER_BUSY,
-  LEDGER_REPLUG,
-  LEDGER_USED_BY_ANOTHER_APP,
-  LEDGER_BAD_VERSION
-} = ledgerActionTypes
-
-const {
-  SET_WALLET_TYPE,
-  CREATE_WALLET_PROVIDER,
-  WALLET_ERROR,
-  CLEAR_ERROR,
-  RESET_STATE
-} = walletActionTypes
+const mockSubProvider = {
+  type: 'MOCK',
+  getAccounts: async (): Promise<string[]> => {
+    return []
+  },
+  sign: async (): Promise<SignedLotusMessage> => {
+    return {
+      Message: new Message({
+        to: '',
+        from: '',
+        value: '0',
+        method: 0,
+        nonce: 0
+      }).toLotusType(),
+      Signature: {
+        Type: 1,
+        Data: 'string'
+      }
+    }
+  }
+}
 
 describe('WalletProvider', () => {
   describe('actions', () => {
-    test('setWalletType', () => {
-      const walletType = IMPORT_MNEMONIC
+    test('walletList', () => {
+      const wallets = [
+        {
+          address: 't1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
+          balance: new FilecoinNumber('1', 'fil'),
+          path: ''
+        }
+      ]
+
       const expectedAction = {
-        type: SET_WALLET_TYPE,
-        payload: { walletType }
+        type: 'WALLET_LIST',
+        payload: {
+          wallets
+        }
       }
 
-      expect(setWalletType(walletType)).toEqual(expectedAction)
+      expect(walletList(wallets)).toEqual(expectedAction)
+    })
+
+    test('switchWallet', () => {
+      const index = 1
+      const expectedAction = {
+        type: 'SWITCH_WALLET',
+        payload: {
+          index
+        }
+      }
+
+      expect(switchWallet(index)).toEqual(expectedAction)
+    })
+
+    test('updateBalance', () => {
+      const walletIdx = 1
+      const balance = new FilecoinNumber('1', 'fil')
+      const expectedAction = {
+        type: 'UPDATE_BALANCE',
+        payload: {
+          balance,
+          walletIdx
+        }
+      }
+
+      expect(updateBalance(balance, walletIdx)).toEqual(expectedAction)
+    })
+
+    test('setLoginOption', () => {
+      const loginOption = IMPORT_MNEMONIC
+      const expectedAction: WalletProviderAction = {
+        type: 'SET_LOGIN_OPTION',
+        payload: { loginOption }
+      }
+
+      expect(setLoginOption(loginOption)).toEqual(expectedAction)
     })
 
     test('createWalletProvider', () => {
-      const provider = { fake: 'provider' }
-      const expectedAction = {
-        type: CREATE_WALLET_PROVIDER,
+      const provider = new Filecoin(mockSubProvider)
+      const expectedAction: WalletProviderAction = {
+        type: 'CREATE_WALLET_PROVIDER',
         payload: { provider }
       }
 
@@ -62,8 +109,8 @@ describe('WalletProvider', () => {
 
     test('setError', () => {
       const errMessage = 'error message'
-      const expectedAction = {
-        type: WALLET_ERROR,
+      const expectedAction: WalletProviderAction = {
+        type: 'WALLET_ERROR',
         error: errMessage
       }
 
@@ -71,31 +118,205 @@ describe('WalletProvider', () => {
     })
 
     test('clearError', () => {
-      expect(clearError()).toEqual({ type: CLEAR_ERROR })
+      expect(clearError()).toEqual({ type: 'CLEAR_ERROR' })
     })
 
     test('resetLedgerState', () => {
-      expect(resetLedgerState()).toEqual({ type: LEDGER_RESET_STATE })
+      expect(resetLedgerState()).toEqual({ type: 'LEDGER_RESET_STATE' })
     })
 
     test('resetState', () => {
-      expect(resetState()).toEqual({ type: RESET_STATE })
+      expect(resetState()).toEqual({ type: 'RESET_STATE' })
     })
   })
 
   describe('reducer', () => {
-    test('it sets the wallet type', () => {
-      const walletType = IMPORT_MNEMONIC
-      const nextState = reducer(initialState, setWalletType(walletType))
-      expect(nextState.walletType).toBe(IMPORT_MNEMONIC)
+    describe('walletList', () => {
+      test('it adds wallets to redux store', () => {
+        const wallets = [
+          {
+            address: 't1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
+            balance: new FilecoinNumber('1', 'fil'),
+            path: SINGLE_KEY
+          },
+          {
+            address: 't1jalfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
+            balance: new FilecoinNumber('1', 'fil'),
+            path: SINGLE_KEY
+          }
+        ]
+
+        const expectedState = {
+          ...initialState,
+          selectedWalletIdx: 0,
+          wallets
+        }
+
+        const nextState = reducer(initialState, walletList(wallets))
+
+        expect(JSON.stringify(nextState)).toEqual(JSON.stringify(expectedState))
+      })
+
+      test('it keeps the selectedWalletIdx if one is already set', () => {
+        const wallets = [
+          {
+            address: 't1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
+            balance: new FilecoinNumber('1', 'fil'),
+            path: SINGLE_KEY
+          },
+          {
+            address: 't1jdlfl73voafblrvn2yfivvn5ifucwwv5f26nfza',
+            balance: new FilecoinNumber('1', 'fil'),
+            path: SINGLE_KEY
+          }
+        ]
+
+        const newInitialState = clonedeep({
+          ...initialState,
+          selectedWalletIdx: 3
+        })
+
+        const expectedState = {
+          ...initialState,
+          selectedWalletIdx: 3,
+          wallets
+        }
+
+        const nextState = reducer(newInitialState, walletList(wallets))
+
+        expect(JSON.stringify(nextState)).toEqual(JSON.stringify(expectedState))
+      })
+
+      test('it adds the wallets to store when some already exist', () => {
+        const existingWallets = [
+          {
+            address: 't1zdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
+            balance: new FilecoinNumber('1', 'fil'),
+            path: SINGLE_KEY
+          },
+          {
+            address: 't1jflfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
+            balance: new FilecoinNumber('1', 'fil'),
+            path: SINGLE_KEY
+          }
+        ]
+
+        const newWallets = [
+          {
+            address: 't1jdlflg3voaiblrvn2yfivvn5ifucwwv5f26nfza',
+            balance: new FilecoinNumber('1', 'fil'),
+            path: SINGLE_KEY
+          },
+          {
+            address: 't1jdlfl73voaiblsvn2yfivvn5ifucwwv5f26nfza',
+            balance: new FilecoinNumber('1', 'fil'),
+            path: SINGLE_KEY
+          }
+        ]
+
+        const newInitialState = clonedeep({
+          ...initialState,
+          wallets: existingWallets
+        })
+
+        const expectedState = {
+          ...initialState,
+          selectedWalletIdx: 0,
+          wallets: [...existingWallets, ...newWallets]
+        }
+        const nextState = reducer(newInitialState, walletList(newWallets))
+
+        expect(JSON.stringify(nextState)).toEqual(JSON.stringify(expectedState))
+      })
+
+      test('it removes wallet duplicates', () => {
+        const dupWallets = [
+          {
+            address: 't1jdlflg3voaiblrvn2yfivvn5ifucwwv5f26nfza',
+            balance: new FilecoinNumber('1', 'fil'),
+            path: SINGLE_KEY
+          },
+          {
+            address: 't1jdlflg3voaiblrvn2yfivvn5ifucwwv5f26nfza',
+            balance: new FilecoinNumber('1', 'fil'),
+            path: SINGLE_KEY
+          }
+        ]
+
+        const newInitialState = clonedeep({
+          ...initialState,
+          wallets: dupWallets
+        })
+
+        const expectedState = {
+          ...initialState,
+          selectedWalletIdx: 0,
+          wallets: [dupWallets[0]]
+        }
+
+        const nextState = reducer(newInitialState, walletList(dupWallets))
+
+        expect(JSON.stringify(nextState)).toEqual(JSON.stringify(expectedState))
+      })
+    })
+
+    describe('switchWallet', () => {
+      test('it updates the selected wallet index in state', () => {
+        const selectedWalletIdx = 1
+        const expectedState = { ...initialState, selectedWalletIdx }
+
+        const nextState = reducer(initialState, switchWallet(selectedWalletIdx))
+
+        expect(JSON.stringify(nextState)).toEqual(JSON.stringify(expectedState))
+      })
+    })
+
+    describe('updateBalance', () => {
+      test('it updates the balance of the wallet at walletIdx', () => {
+        const selectedWalletIdx = 1
+        const wallets = [
+          {
+            address: 't1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
+            balance: new FilecoinNumber('1', 'fil'),
+            path: ''
+          },
+          {
+            address: 't1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
+            balance: new FilecoinNumber('1', 'fil'),
+            path: ''
+          }
+        ]
+
+        const newInitialState = clonedeep({
+          ...initialState,
+          wallets,
+          selectedWalletIdx
+        })
+
+        const newBalance = new FilecoinNumber('2', 'fil')
+
+        const nextState = reducer(
+          newInitialState,
+          updateBalance(newBalance, selectedWalletIdx)
+        )
+
+        expect(nextState.wallets[selectedWalletIdx].balance.toFil()).toBe('2')
+        expect(nextState.selectedWalletIdx).toBe(selectedWalletIdx)
+      })
+    })
+    test('it sets the login option', () => {
+      const loginOption = IMPORT_MNEMONIC
+      const nextState = reducer(initialState, setLoginOption(loginOption))
+      expect(nextState.loginOption).toBe(IMPORT_MNEMONIC)
     })
 
     test('it creates the wallet provider', () => {
-      const provider = { fake: 'provider' }
-      const nextState = reducer(initialState, createWalletProvider(provider))
-      expect(JSON.stringify(nextState.walletProvider)).toEqual(
-        JSON.stringify(provider)
+      const nextState = reducer(
+        initialState,
+        createWalletProvider(new Filecoin(mockSubProvider))
       )
+
+      expect(nextState.walletProvider.wallet.type).toEqual('MOCK')
     })
 
     test('it stores wallet error', () => {
@@ -120,21 +341,21 @@ describe('WalletProvider', () => {
       let establishingConnectionWithFilecoinAppState
       beforeEach(() => {
         postImportInitiationState = reducer(initialState, {
-          type: LEDGER_USER_INITIATED_IMPORT
+          type: 'LEDGER_USER_INITIATED_IMPORT'
         })
         postConnectedSuccessState = reducer(postImportInitiationState, {
-          type: LEDGER_CONNECTED
+          type: 'LEDGER_CONNECTED'
         })
         establishingConnectionWithFilecoinAppState = reducer(
           postConnectedSuccessState,
-          { type: LEDGER_ESTABLISHING_CONNECTION_W_FILECOIN_APP }
+          { type: 'LEDGER_ESTABLISHING_CONNECTION_W_FILECOIN_APP' }
         )
       })
       test('ledger user initiated import', () => {
         const {
           ledger: { connecting, connectedFailure }
         } = reducer(initialState, {
-          type: LEDGER_USER_INITIATED_IMPORT
+          type: 'LEDGER_USER_INITIATED_IMPORT'
         })
         expect(connecting).toEqual(true)
         expect(connectedFailure).toEqual(false)
@@ -144,7 +365,7 @@ describe('WalletProvider', () => {
         const {
           ledger: { connecting, connectedFailure }
         } = reducer(postImportInitiationState, {
-          type: LEDGER_NOT_FOUND
+          type: 'LEDGER_NOT_FOUND'
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(true)
@@ -154,7 +375,7 @@ describe('WalletProvider', () => {
         const {
           ledger: { connecting, connectedFailure, inUseByAnotherApp }
         } = reducer(postImportInitiationState, {
-          type: LEDGER_CONNECTED
+          type: 'LEDGER_CONNECTED'
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(false)
@@ -174,7 +395,7 @@ describe('WalletProvider', () => {
             replug
           }
         } = reducer(establishingConnectionWithFilecoinAppState, {
-          type: LEDGER_ESTABLISHING_CONNECTION_W_FILECOIN_APP
+          type: 'LEDGER_ESTABLISHING_CONNECTION_W_FILECOIN_APP'
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(false)
@@ -199,7 +420,7 @@ describe('WalletProvider', () => {
             replug
           }
         } = reducer(establishingConnectionWithFilecoinAppState, {
-          type: LEDGER_LOCKED
+          type: 'LEDGER_LOCKED'
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(false)
@@ -224,7 +445,7 @@ describe('WalletProvider', () => {
             replug
           }
         } = reducer(establishingConnectionWithFilecoinAppState, {
-          type: LEDGER_UNLOCKED
+          type: 'LEDGER_UNLOCKED'
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(false)
@@ -249,7 +470,7 @@ describe('WalletProvider', () => {
             replug
           }
         } = reducer(establishingConnectionWithFilecoinAppState, {
-          type: LEDGER_FILECOIN_APP_NOT_OPEN
+          type: 'LEDGER_FILECOIN_APP_NOT_OPEN'
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(false)
@@ -274,7 +495,7 @@ describe('WalletProvider', () => {
             replug
           }
         } = reducer(establishingConnectionWithFilecoinAppState, {
-          type: LEDGER_FILECOIN_APP_OPEN
+          type: 'LEDGER_FILECOIN_APP_OPEN'
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(false)
@@ -299,7 +520,7 @@ describe('WalletProvider', () => {
             replug
           }
         } = reducer(establishingConnectionWithFilecoinAppState, {
-          type: LEDGER_BUSY
+          type: 'LEDGER_BUSY'
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(false)
@@ -324,7 +545,7 @@ describe('WalletProvider', () => {
             replug
           }
         } = reducer(establishingConnectionWithFilecoinAppState, {
-          type: LEDGER_REPLUG
+          type: 'LEDGER_REPLUG'
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(false)
@@ -349,7 +570,7 @@ describe('WalletProvider', () => {
             replug
           }
         } = reducer(establishingConnectionWithFilecoinAppState, {
-          type: LEDGER_USED_BY_ANOTHER_APP
+          type: 'LEDGER_USED_BY_ANOTHER_APP'
         })
         expect(connecting).toEqual(false)
         expect(connectedFailure).toEqual(false)
@@ -363,7 +584,7 @@ describe('WalletProvider', () => {
 
       test('ledger replug', () => {
         const { ledger } = reducer(establishingConnectionWithFilecoinAppState, {
-          type: LEDGER_RESET_STATE
+          type: 'LEDGER_RESET_STATE'
         })
         expect(JSON.stringify(ledger)).toEqual(
           JSON.stringify(initialLedgerState)
@@ -372,7 +593,7 @@ describe('WalletProvider', () => {
 
       test('bad version', () => {
         const { ledger } = reducer(establishingConnectionWithFilecoinAppState, {
-          type: LEDGER_BAD_VERSION
+          type: 'LEDGER_BAD_VERSION'
         })
         expect(ledger.badVersion).toBe(true)
       })

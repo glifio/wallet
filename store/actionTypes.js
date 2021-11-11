@@ -1,8 +1,3 @@
-export const WALLET_LIST = 'WALLET_LIST'
-export const SWITCH_WALLET = 'SWITCH_WALLET'
-
-export const UPDATE_BALANCE = 'UPDATE_BALANCE'
-
 export const CONFIRM_MESSAGE = 'CONFIRM_MESSAGE'
 export const CONFIRMED_MESSAGE = 'CONFIRMED_MESSAGE'
 
@@ -18,7 +13,5 @@ export const ERROR = 'ERROR'
 export const CLEAR_ERROR = 'CLEAR_ERROR'
 
 export const POPULATE_REDUX = 'POPULATE_REDUX'
-
-export const SWITCH_NETWORK = 'SWITCH_NETWORK'
 
 export const RESET_STATE = 'RESET_STATE'

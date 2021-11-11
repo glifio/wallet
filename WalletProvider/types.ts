@@ -6,7 +6,7 @@ import {
 } from '../utils/ledger/ledgerStateManagement'
 
 export type WalletActionType =
-  | 'SET_WALLET_TYPE'
+  | 'SET_LOGIN_OPTION'
   | 'CREATE_WALLET_PROVIDER'
   | 'WALLET_ERROR'
   | 'CLEAR_ERROR'
@@ -15,23 +15,26 @@ export type WalletActionType =
   | 'SWITCH_WALLET'
   | 'UPDATE_BALANCE'
 
-export type WalletType = 'LEDGER' | 'HD_WALLET' | 'SINGLE_KEY'
+export type LoginOption =
+  | 'IMPORT_MNEMONIC'
+  | 'CREATE_MNEMONIC'
+  | 'IMPORT_SINGLE_KEY'
+  | 'LEDGER'
 
 export type WalletProviderAction = {
   type: WalletActionType | LedgerActionType
-  payload?: object
   error?: string
+  payload?: any
 }
 
 export type Wallet = {
   path: string
   balance: FilecoinNumber
   address: string
-  type?: WalletType
 }
 
 export type WalletProviderState = {
-  walletType: WalletType | null
+  loginOption: LoginOption
   walletProvider: Filecoin | null
   ledger: LedgerState
   wallets: Wallet[]

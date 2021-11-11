@@ -2,41 +2,15 @@ import {
   CONFIRM_MESSAGE,
   CONFIRMED_MESSAGE,
   ERROR,
-  SWITCH_WALLET,
-  SWITCH_NETWORK,
-  UPDATE_BALANCE,
   CLEAR_ERROR,
   CLEAR_MESSAGES,
   FETCHING_CONFIRMED_MESSAGES,
   FETCHED_CONFIRMED_MESSAGES_SUCCESS,
   FETCHED_CONFIRMED_MESSAGES_FAILURE,
   FETCHING_NEXT_PAGE,
-  WALLET_LIST,
   POPULATE_REDUX,
   RESET_STATE
 } from './actionTypes'
-
-export const walletList = (wallets) => ({
-  type: WALLET_LIST,
-  payload: {
-    wallets
-  }
-})
-
-export const switchWallet = (index) => ({
-  type: SWITCH_WALLET,
-  payload: {
-    index
-  }
-})
-
-export const updateBalance = (balance, walletIdx = 0) => ({
-  type: UPDATE_BALANCE,
-  payload: {
-    balance,
-    walletIdx
-  }
-})
 
 export const confirmMessage = (message) => {
   // disabling for now

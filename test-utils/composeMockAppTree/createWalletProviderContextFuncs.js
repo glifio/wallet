@@ -1,7 +1,7 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
 
 import {
-  setWalletType,
+  setLoginOption,
   setError,
   resetLedgerState,
   resetState
@@ -19,10 +19,10 @@ export default (walletProviderDispatch) => ({
     .mockImplementation((errorMessage) =>
       walletProviderDispatch(setError(errorMessage))
     ),
-  setWalletType: jest
+  setLoginOption: jest
     .fn()
-    .mockImplementation((walletType) =>
-      walletProviderDispatch(setWalletType(walletType))
+    .mockImplementation((loginOption) =>
+      walletProviderDispatch(setLoginOption(loginOption))
     ),
   setLedgerProvider: jest.fn(),
   connectLedger: jest.fn().mockImplementation(() => mockWalletProviderInstance),

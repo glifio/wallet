@@ -1,6 +1,3 @@
-import { FilecoinNumber } from '@glif/filecoin-number'
-import updateArrayItem from '../utils/updateArrayItem'
-import sortAndRemoveWalletDups from '../utils/sortAndRemoveWalletDups'
 import { pluckConfirmed, uniqueifyMsgs } from '../utils/removeDupMessages'
 import {
   getMessagesFromCache,
@@ -19,37 +16,9 @@ export const initialMessagesState = {
 }
 
 export const initialState = {
-  wallets: [],
-  selectedWalletIdx: -1,
   error: '',
   messages: initialMessagesState
 }
-
-export const noWallet = {
-  address: '',
-  balance: new FilecoinNumber('0', 'fil'),
-  path: ''
-}
-
-export const walletList = (state, { wallets }) => ({
-  ...state,
-  wallets: sortAndRemoveWalletDups(state.wallets, wallets),
-  selectedWalletIdx: state.selectedWalletIdx >= 0 ? state.selectedWalletIdx : 0
-})
-
-export const switchWallet = (state, { index }) => ({
-  ...state,
-  selectedWalletIdx: index,
-  messages: initialMessagesState
-})
-
-export const updateBalance = (state, { balance, walletIdx }) => ({
-  ...state,
-  wallets: updateArrayItem(state.wallets, walletIdx, {
-    ...state.wallets[walletIdx],
-    balance
-  })
-})
 
 export const confirmMessage = (state, { message }) => {
   return {

@@ -2,15 +2,16 @@ import { FilecoinNumber } from '@glif/filecoin-number'
 import Filecoin from '@glif/filecoin-wallet-provider'
 import { initialLedgerState } from '../utils/ledger/ledgerStateManagement'
 import sortAndRemoveWalletDups from '../utils/sortAndRemoveWalletDups'
+import updateArrayItem from '../utils/updateArrayItem'
 import {
   WalletProviderAction,
   WalletProviderState,
   Wallet,
-  WalletType
+  LoginOption
 } from './types'
 
 export const initialState = {
-  walletType: null,
+  loginOption: null,
   walletProvider: null,
   error: '',
   ledger: initialLedgerState,
@@ -19,11 +20,11 @@ export const initialState = {
 }
 
 /* ACTIONS */
-export const setWalletType = (
-  walletType: WalletType
+export const setLoginOption = (
+  loginOption: LoginOption
 ): WalletProviderAction => ({
-  type: 'SET_WALLET_TYPE',
-  payload: { walletType }
+  type: 'SET_LOGIN_OPTION',
+  payload: { loginOption }
 })
 
 export const createWalletProvider = (
@@ -35,7 +36,7 @@ export const createWalletProvider = (
   }
 })
 
-export const setError = (errMessage): WalletProviderAction => ({
+export const setError = (errMessage: string): WalletProviderAction => ({
   type: 'WALLET_ERROR',
   error: errMessage
 })
@@ -78,6 +79,7 @@ export const updateBalance = (
 })
 
 /* REDUCER */
+// TODO - we need strict typechecking on `payload`... Haven't figured out an elegant solution to this yet
 export default function reducer(
   state: WalletProviderState,
   action: WalletProviderAction
@@ -91,9 +93,24 @@ export default function reducer(
           state.selectedWalletIdx >= 0 ? state.selectedWalletIdx : 0
       }
     case 'UPDATE_BALANCE':
+      const { walletIdx, balance } = action.payload
+      return {
+        ...Object.freeze(state),
+        wallets: updateArrayItem(state.wallets, walletIdx, {
+          ...state.wallets[walletIdx],
+          balance
+        })
+      }
     case 'SWITCH_WALLET':
-    case 'SET_WALLET_TYPE':
-      return { ...Object.freeze(state), walletType: action.payload.walletType }
+      return {
+        ...Object.freeze(state),
+        selectedWalletIdx: action.payload.index
+      }
+    case 'SET_LOGIN_OPTION':
+      return {
+        ...Object.freeze(state),
+        loginOption: action.payload.loginOption
+      }
     case 'CREATE_WALLET_PROVIDER':
       return {
         ...Object.freeze(state),

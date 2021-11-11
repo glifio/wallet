@@ -1,8 +1,5 @@
 import {
-  WALLET_LIST,
-  SWITCH_WALLET,
   ERROR,
-  UPDATE_BALANCE,
   CONFIRM_MESSAGE,
   CONFIRMED_MESSAGE,
   CLEAR_ERROR,
@@ -18,9 +15,6 @@ import {
 import {
   confirmMessage,
   confirmedMessage,
-  switchWallet,
-  walletList,
-  updateBalance,
   error,
   clearError,
   fetchingConfirmedMessages,
@@ -34,15 +28,6 @@ import {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case WALLET_LIST: {
-      return walletList(Object.freeze(state), action.payload)
-    }
-    case SWITCH_WALLET: {
-      return switchWallet(Object.freeze(state), action.payload)
-    }
-    case UPDATE_BALANCE: {
-      return updateBalance(Object.freeze(state), action.payload)
-    }
     case CONFIRM_MESSAGE: {
       return confirmMessage(Object.freeze(state), action.payload)
     }
