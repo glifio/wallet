@@ -1,81 +1,112 @@
-import {
-  initialLedgerState,
-  ledgerActionTypes
-} from '../utils/ledger/ledgerStateManagement'
+import { FilecoinNumber } from '@glif/filecoin-number'
+import Filecoin from '@glif/filecoin-wallet-provider'
+import { initialLedgerState } from '../utils/ledger/ledgerStateManagement'
+import sortAndRemoveWalletDups from '../utils/sortAndRemoveWalletDups'
 import {
   WalletProviderAction,
-  WalletProviderActionType,
-  WalletProviderState
+  WalletProviderState,
+  Wallet,
+  WalletType
 } from './types'
-
-export const walletActionTypes = {
-  SET_WALLET_TYPE: 'SET_WALLET_TYPE',
-  CREATE_WALLET_PROVIDER: 'CREATE_WALLET_PROVIDER',
-  WALLET_ERROR: 'WALLET_ERROR',
-  CLEAR_ERROR: 'CLEAR_ERROR',
-  RESET_STATE: 'RESET_STATE'
-} as Record<string, WalletProviderActionType>
 
 export const initialState = {
   walletType: null,
   walletProvider: null,
   error: '',
-  ledger: initialLedgerState
+  ledger: initialLedgerState,
+  wallets: [],
+  selectedWalletIdx: -1
 }
 
 /* ACTIONS */
-export const setWalletType = (walletType): WalletProviderAction => ({
-  type: walletActionTypes.SET_WALLET_TYPE,
-  payload: {
-    walletType
-  }
+export const setWalletType = (
+  walletType: WalletType
+): WalletProviderAction => ({
+  type: 'SET_WALLET_TYPE',
+  payload: { walletType }
 })
 
-export const createWalletProvider = (provider): WalletProviderAction => ({
-  type: walletActionTypes.CREATE_WALLET_PROVIDER,
+export const createWalletProvider = (
+  provider: Filecoin
+): WalletProviderAction => ({
+  type: 'CREATE_WALLET_PROVIDER',
   payload: {
     provider
   }
 })
 
 export const setError = (errMessage): WalletProviderAction => ({
-  type: walletActionTypes.WALLET_ERROR,
+  type: 'WALLET_ERROR',
   error: errMessage
 })
 
 export const clearError = (): WalletProviderAction => ({
-  type: walletActionTypes.CLEAR_ERROR
+  type: 'CLEAR_ERROR'
 })
 
 export const resetLedgerState = (): WalletProviderAction => ({
-  type: ledgerActionTypes.LEDGER_RESET_STATE
+  type: 'LEDGER_RESET_STATE'
 })
 
 export const resetState = (): WalletProviderAction => ({
-  type: walletActionTypes.RESET_STATE
+  type: 'RESET_STATE'
+})
+
+export const walletList = (wallets: Wallet[]): WalletProviderAction => ({
+  type: 'WALLET_LIST',
+  payload: {
+    wallets
+  }
+})
+
+export const switchWallet = (index: number): WalletProviderAction => ({
+  type: 'SWITCH_WALLET',
+  payload: {
+    index
+  }
+})
+
+export const updateBalance = (
+  balance: FilecoinNumber,
+  walletIdx = 0
+): WalletProviderAction => ({
+  type: 'UPDATE_BALANCE',
+  payload: {
+    balance,
+    walletIdx
+  }
 })
 
 /* REDUCER */
-export default (
+export default function reducer(
   state: WalletProviderState,
   action: WalletProviderAction
-): WalletProviderState => {
+): WalletProviderState {
   switch (action.type) {
-    case walletActionTypes.SET_WALLET_TYPE:
+    case 'WALLET_LIST':
+      return {
+        ...Object.freeze(state),
+        wallets: sortAndRemoveWalletDups(state.wallets, action.payload.wallets),
+        selectedWalletIdx:
+          state.selectedWalletIdx >= 0 ? state.selectedWalletIdx : 0
+      }
+    case 'UPDATE_BALANCE':
+    case 'SWITCH_WALLET':
+    case 'SET_WALLET_TYPE':
       return { ...Object.freeze(state), walletType: action.payload.walletType }
-    case walletActionTypes.CREATE_WALLET_PROVIDER:
+    case 'CREATE_WALLET_PROVIDER':
       return {
         ...Object.freeze(state),
         walletProvider: action.payload.provider
       }
-    case walletActionTypes.WALLET_ERROR:
+    case 'WALLET_ERROR':
       return { ...Object.freeze(state), error: action.error }
-    case walletActionTypes.CLEAR_ERROR:
+    case 'CLEAR_ERROR':
       return { ...Object.freeze(state), error: '' }
-    case walletActionTypes.RESET_STATE:
+    case 'RESET_STATE':
       return Object.freeze(initialState)
     // ledger cases
-    case ledgerActionTypes.LEDGER_USER_INITIATED_IMPORT:
+    case 'LEDGER_USER_INITIATED_IMPORT':
       return {
         ...Object.freeze(state),
         ledger: {
@@ -84,7 +115,7 @@ export default (
           connectedFailure: false
         }
       }
-    case ledgerActionTypes.LEDGER_NOT_FOUND:
+    case 'LEDGER_NOT_FOUND':
       return {
         ...Object.freeze(state),
         ledger: {
@@ -94,7 +125,7 @@ export default (
           userImportFailure: true
         }
       }
-    case ledgerActionTypes.LEDGER_CONNECTED:
+    case 'LEDGER_CONNECTED':
       return {
         ...Object.freeze(state),
         ledger: {
@@ -104,7 +135,7 @@ export default (
           inUseByAnotherApp: false
         }
       }
-    case ledgerActionTypes.LEDGER_ESTABLISHING_CONNECTION_W_FILECOIN_APP:
+    case 'LEDGER_ESTABLISHING_CONNECTION_W_FILECOIN_APP':
       return {
         ...Object.freeze(state),
         ledger: {
@@ -116,7 +147,7 @@ export default (
           replug: false
         }
       }
-    case ledgerActionTypes.LEDGER_LOCKED:
+    case 'LEDGER_LOCKED':
       return {
         ...Object.freeze(state),
         ledger: {
@@ -126,7 +157,7 @@ export default (
           userImportFailure: true
         }
       }
-    case ledgerActionTypes.LEDGER_UNLOCKED:
+    case 'LEDGER_UNLOCKED':
       return {
         ...Object.freeze(state),
         ledger: {
@@ -135,7 +166,7 @@ export default (
           unlocked: true
         }
       }
-    case ledgerActionTypes.LEDGER_FILECOIN_APP_NOT_OPEN:
+    case 'LEDGER_FILECOIN_APP_NOT_OPEN':
       return {
         ...Object.freeze(state),
         ledger: {
@@ -147,7 +178,7 @@ export default (
           unlocked: true
         }
       }
-    case ledgerActionTypes.LEDGER_FILECOIN_APP_OPEN:
+    case 'LEDGER_FILECOIN_APP_OPEN':
       return {
         ...Object.freeze(state),
         ledger: {
@@ -159,7 +190,7 @@ export default (
           busy: false
         }
       }
-    case ledgerActionTypes.LEDGER_BUSY:
+    case 'LEDGER_BUSY':
       return {
         ...Object.freeze(state),
         ledger: {
@@ -167,7 +198,7 @@ export default (
           busy: true
         }
       }
-    case ledgerActionTypes.LEDGER_REPLUG:
+    case 'LEDGER_REPLUG':
       return {
         ...Object.freeze(state),
         ledger: {
@@ -175,7 +206,7 @@ export default (
           replug: true
         }
       }
-    case ledgerActionTypes.LEDGER_USED_BY_ANOTHER_APP:
+    case 'LEDGER_USED_BY_ANOTHER_APP':
       return {
         ...Object.freeze(state),
         ledger: {
@@ -183,7 +214,7 @@ export default (
           inUseByAnotherApp: true
         }
       }
-    case ledgerActionTypes.LEDGER_BAD_VERSION:
+    case 'LEDGER_BAD_VERSION':
       return {
         ...Object.freeze(state),
         ledger: {
@@ -191,7 +222,7 @@ export default (
           badVersion: true
         }
       }
-    case ledgerActionTypes.WEBUSB_UNSUPPORTED:
+    case 'WEBUSB_UNSUPPORTED':
       return {
         ...Object.freeze(state),
         ledger: {
@@ -199,7 +230,7 @@ export default (
           webUSBSupported: false
         }
       }
-    case ledgerActionTypes.LEDGER_RESET_STATE:
+    case 'LEDGER_RESET_STATE':
       return {
         ...Object.freeze(state),
         ledger: {
