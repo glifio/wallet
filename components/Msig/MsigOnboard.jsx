@@ -6,14 +6,14 @@ import { LEDGER } from '../../constants'
 
 const MsigOnboard = () => {
   const [mounted, setMounted] = useState(false)
-  const { setWalletType } = useWalletProvider()
+  const { setLoginOption } = useWalletProvider()
 
   useEffect(() => {
     if (!mounted) {
       setMounted(true)
-      setWalletType(LEDGER)
+      setLoginOption(LEDGER)
     }
-  }, [mounted, setMounted, setWalletType])
+  }, [mounted, setMounted, setLoginOption])
   return (
     <Box
       display='flex'

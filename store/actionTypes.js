@@ -9,9 +9,6 @@ export const FETCHED_CONFIRMED_MESSAGES_FAILURE =
 export const FETCHING_NEXT_PAGE = 'FETCHING_NEXT_PAGE'
 export const CLEAR_MESSAGES = 'CLEAR_MESSAGES'
 
-export const ERROR = 'ERROR'
-export const CLEAR_ERROR = 'CLEAR_ERROR'
-
 export const POPULATE_REDUX = 'POPULATE_REDUX'
 
 export const RESET_STATE = 'RESET_STATE'

@@ -23,25 +23,28 @@ import {
 import { useWalletProvider } from '../../../WalletProvider'
 import ExpandableBox from './ExpandableBox'
 import { navigate } from '../../../utils/urlParams'
+import { LoginOption } from '../../../WalletProvider/types'
 
-export default () => {
-  const { setWalletType } = useWalletProvider()
+export default function Choose() {
+  const { setLoginOption } = useWalletProvider()
   // this could be cleaner, but we use this to more easily navigate to/from the warning card
-  const [localWalletType, setLocalWalletType] = useState(null)
+  const [localLoginOption, setLocalLoginOption] = useState<LoginOption | null>(
+    null
+  )
   const router = useRouter()
 
-  const onChoose = (type) => {
+  const onChoose = (loginOption: LoginOption) => {
     if (
-      !localWalletType &&
-      (type === CREATE_MNEMONIC ||
-        type === IMPORT_MNEMONIC ||
-        type === IMPORT_SINGLE_KEY)
+      !localLoginOption &&
+      (loginOption === CREATE_MNEMONIC ||
+        loginOption === IMPORT_MNEMONIC ||
+        loginOption === IMPORT_SINGLE_KEY)
     ) {
-      setLocalWalletType(type)
-    } else if (localWalletType) {
-      setWalletType(localWalletType)
+      setLocalLoginOption(loginOption)
+    } else if (localLoginOption) {
+      setLoginOption(localLoginOption)
     } else {
-      setWalletType(type)
+      setLoginOption(loginOption)
     }
   }
 
@@ -49,14 +52,14 @@ export default () => {
 
   return (
     <>
-      {localWalletType ? (
+      {localLoginOption ? (
         <Box display='flex' flexDirection='column' justifyContent='center'>
           <Warning
             title='Warning'
             description='We do not recommend you use this account to hold or transact significant sums of Filecoin. This account is for testing purposes only. For significant sums, Glif should only be used with a Ledger hardware wallet.'
             linkDisplay="Why isn't it secure?"
             linkhref='https://coinsutra.com/security-risks-bitcoin-wallets/'
-            onBack={() => setLocalWalletType(null)}
+            onBack={() => setLocalLoginOption(null)}
             onAccept={onChoose}
           />
         </Box>
@@ -157,10 +160,9 @@ export default () => {
                   onClick={() => onChoose(LEDGER)}
                   Icon={IconLedger}
                   title='Login via Ledger Device'
-                  tag='Most Secure'
-                  display='flex'
                   justifyContent='space-between'
                   flexDirection='column'
+                  display='flex'
                   my={4}
                 />
               </Box>
@@ -204,7 +206,6 @@ export default () => {
                 imageUrl='/imgvault.png'
                 color='core.white'
                 fill='#fff'
-                width='100%'
                 imageOpacity='0.9'
               />
 

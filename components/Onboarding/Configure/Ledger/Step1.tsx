@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { FC } from 'react'
 import PropTypes from 'prop-types'
-import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import {
   Box,
@@ -8,20 +7,20 @@ import {
   OnboardCard,
   Text,
   Title,
-  StepHeader
-} from '../../../Shared'
-import { IconLedger } from '../../../Shared/Icons'
+  StepHeader,
+  IconLedger
+} from '@glif/react-components'
 
 import { useWalletProvider } from '../../../../WalletProvider'
 import isDesktopChromeBrowser from '../../../../utils/isDesktopChromeBrowser'
 import { hasLedgerError } from '../../../../utils/ledger/reportLedgerConfigError'
 import useReset from '../../../../utils/useReset'
 
-const Step1Helper = ({
-  inUseByAnotherApp,
-  connectedFailure,
-  webUSBSupported
-}) => {
+const Step1Helper: FC<{
+  inUseByAnotherApp: boolean
+  connectedFailure: boolean
+  webUSBSupported: boolean
+}> = ({ inUseByAnotherApp, connectedFailure, webUSBSupported }) => {
   return (
     <Box
       display='block'
@@ -135,12 +134,13 @@ const Step1 = ({ msig, setStep }) => {
   const router = useRouter()
   const resetState = useReset()
   if (!isDesktopChromeBrowser()) router.push(`/error/use-chrome`)
-  const errFromRdx = useSelector((state) => state.error)
-  const error = hasLedgerError({ ...ledger, otherError: errFromRdx })
+  const error = hasLedgerError({ ...ledger })
 
   const back = () => {
-    if (msig) router.replace('/')
-    resetState()
+    if (msig) {
+      resetState()
+      router.back()
+    }
   }
 
   const calculateTotalSteps = () => {

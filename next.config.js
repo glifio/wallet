@@ -38,7 +38,7 @@ module.exports = (phase) => {
   return {
     webpack,
     env: {
-      LOTUS_NODE_JSONRPC: 'https://calibrationnet.glif.host/rpc/v0',
+      LOTUS_NODE_JSONRPC: 'https://calibration.node.glif.io',
       // 1'
       COIN_TYPE: 't',
       IS_PROD: false

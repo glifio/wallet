@@ -1,30 +1,17 @@
-import { useSelector } from 'react-redux'
+import { FilecoinNumber } from '@glif/filecoin-number'
 import { useWalletProvider } from '../'
-import { noWallet } from '../../store/states'
 import { Wallet } from '../types'
 
-// this will get cleaned up once we remove redux all together...
-type WalletState = {
-  wallets: Wallet[]
-  selectedWalletIdx: number
+const noWallet: Wallet = {
+  address: '',
+  balance: new FilecoinNumber('0', 'fil'),
+  path: ''
 }
 
 export default function useWallet() {
-  const { walletType } = useWalletProvider()
-  const { wallet, selectedWalletIdx } = useSelector((state: WalletState) => {
-    if (state.wallets.length === 0)
-      return { wallet: noWallet, selectedWalletIdx: -1 }
-    if (!state.wallets[state.selectedWalletIdx])
-      return { wallet: noWallet, selectedWalletIdx: -1 }
-    return {
-      wallet: state.wallets[state.selectedWalletIdx],
-      selectedWalletIdx: state.selectedWalletIdx
-    }
-  })
+  const { wallets, selectedWalletIdx } = useWalletProvider()
 
-  return {
-    ...wallet,
-    type: walletType,
-    index: selectedWalletIdx
-  }
+  if (wallets.length === 0) return noWallet
+  if (!wallets[selectedWalletIdx]) return noWallet
+  return wallets[selectedWalletIdx]
 }

@@ -1,56 +1,9 @@
 import { Message } from '@glif/filecoin-message'
-import { FilecoinNumber } from '@glif/filecoin-number'
 
 import * as actions from './actions'
 import * as types from './actionTypes'
-import { MAINNET } from '../constants'
 
 describe('actions', () => {
-  test('walletList', () => {
-    const wallets = [
-      {
-        address: 't1jdlfl73voaiblrvn2yfivvn5ifucwwv5f26nfza',
-        balance: new FilecoinNumber('1', 'fil'),
-        path: ''
-      }
-    ]
-
-    const expectedAction = {
-      type: types.WALLET_LIST,
-      payload: {
-        wallets
-      }
-    }
-
-    expect(actions.walletList(wallets)).toEqual(expectedAction)
-  })
-
-  test('switchWallet', () => {
-    const index = 1
-    const expectedAction = {
-      type: types.SWITCH_WALLET,
-      payload: {
-        index
-      }
-    }
-
-    expect(actions.switchWallet(index)).toEqual(expectedAction)
-  })
-
-  test('updateBalance', () => {
-    const walletIdx = 1
-    const balance = new FilecoinNumber('1', 'fil')
-    const expectedAction = {
-      type: types.UPDATE_BALANCE,
-      payload: {
-        balance,
-        walletIdx
-      }
-    }
-
-    expect(actions.updateBalance(balance, walletIdx)).toEqual(expectedAction)
-  })
-
   test('clearMessage', () => {
     const expectedAction = {
       type: types.CLEAR_MESSAGES
@@ -134,20 +87,6 @@ describe('actions', () => {
     expect(actions.fetchingNextPage()).toEqual({
       type: types.FETCHING_NEXT_PAGE
     })
-  })
-
-  test('error', () => {
-    const err = new Error()
-    const expectedAction = {
-      type: types.ERROR,
-      error: err
-    }
-
-    expect(actions.error(err)).toEqual(expectedAction)
-  })
-
-  test('clearError', () => {
-    expect(actions.clearError()).toEqual({ type: types.CLEAR_ERROR })
   })
 
   test('populateRedux', () => {

@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import { bool } from 'prop-types'
-import { Box } from '../../../Shared'
+import { Box } from '@glif/react-components'
 
 import Step1 from './Step1'
 import Step2 from './Step2'
 
-const Ledger = ({ msig }) => {
+const Ledger: FC<{ msig: boolean }> = ({ msig }) => {
   const [step, setStep] = useState(1)
   return (
     <Box

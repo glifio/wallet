@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { number } from 'prop-types'
-import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
 import Filecoin from '@glif/filecoin-wallet-provider'
 import {
@@ -9,12 +8,11 @@ import {
   OnboardCard,
   StepHeader,
   LoadingScreen
-} from '../../../Shared'
+} from '@glif/react-components'
 
 import Walkthrough from './Walkthrough'
 import Back from './Back'
 import { useWasm } from '../../../../lib/WasmLoader'
-import { walletList } from '../../../../store/actions'
 import { useWalletProvider } from '../../../../WalletProvider'
 import { createWalletProvider } from '../../../../WalletProvider/state'
 import reportError from '../../../../utils/reportError'
@@ -22,7 +20,9 @@ import { navigate } from '../../../../utils/urlParams'
 import { PAGE } from '../../../../constants'
 
 // we pass this optional prop to make testing the core wallet functionality easier
-const Create = ({ initialWalkthroughStep }) => {
+const Create: FC<{ initialWalkthroughStep: number }> = ({
+  initialWalkthroughStep
+}) => {
   const router = useRouter()
   const [mnemonic, setMnemonic] = useState('')
   const [walkthroughStep, setWalkthroughStep] = useState(initialWalkthroughStep)
@@ -30,14 +30,14 @@ const Create = ({ initialWalkthroughStep }) => {
   const [returningHome, setReturningHome] = useState(false)
   const [canContinue, setCanContinue] = useState(false)
   const [importSeedError, setImportSeedError] = useState(false)
+  // @ts-ignore
   const { generateMnemonic } = useWasm()
   const {
     dispatch,
     fetchDefaultWallet,
-    walletSubproviders: { HDWalletProvider }
+    walletSubproviders: { HDWalletProvider },
+    walletList
   } = useWalletProvider()
-
-  const dispatchRdx = useDispatch()
 
   const nextStep = () => {
     setImportSeedError(false)
@@ -60,7 +60,7 @@ const Create = ({ initialWalkthroughStep }) => {
         })
         dispatch(createWalletProvider(provider))
         const wallet = await fetchDefaultWallet(provider)
-        dispatchRdx(walletList([wallet]))
+        walletList([wallet])
         navigate(router, { pageUrl: PAGE.WALLET_HOME })
       } catch (err) {
         reportError(16, false, err.message, err.stack)
@@ -73,13 +73,13 @@ const Create = ({ initialWalkthroughStep }) => {
     }
   }, [
     dispatch,
-    dispatchRdx,
     fetchDefaultWallet,
     mnemonic,
     router,
     walkthroughStep,
     HDWalletProvider,
-    loading
+    loading,
+    walletList
   ])
 
   return (

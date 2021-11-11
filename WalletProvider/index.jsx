@@ -6,7 +6,9 @@ import reducer, {
   setLoginOption,
   setError,
   resetLedgerState,
-  resetState
+  resetState,
+  walletList,
+  switchWallet
 } from './state'
 import { setLedgerProvider } from '../utils/ledger/setLedgerProvider'
 import fetchDefaultWallet from './fetchDefaultWallet'
@@ -48,6 +50,11 @@ const WalletProviderWrapper = ({ children }) => {
         ),
         resetLedgerState: () => dispatch(resetLedgerState()),
         resetState: useCallback(() => dispatch(resetState()), [dispatch]),
+        walletList: (wallets, selectedWalletIdx) =>
+          dispatch(walletList(wallets, selectedWalletIdx)),
+        switchWallet: (selectedWalletIdx) =>
+          dispatch(switchWallet(selectedWalletIdx)),
+
         walletSubproviders
       }}
     >

@@ -1,8 +1,4 @@
 import { pluckConfirmed, uniqueifyMsgs } from '../utils/removeDupMessages'
-import {
-  getMessagesFromCache,
-  removeMessageFromCache
-} from '../utils/cacheMessage'
 
 export const initialMessagesState = {
   loading: false,
@@ -16,7 +12,6 @@ export const initialMessagesState = {
 }
 
 export const initialState = {
-  error: '',
   messages: initialMessagesState
 }
 
@@ -68,19 +63,6 @@ export const clearMessages = (state) => ({
 })
 
 export const fetchedConfirmedMessagesSuccess = (state, { messages, total }) => {
-  // here we pluck out any messages from localstorage since filfox now has them
-  const cachedMessages = getMessagesFromCache(
-    state.wallets[state.selectedWalletIdx].address
-  )
-  const cids = new Set(messages.map((msg) => msg.cid))
-  cachedMessages.forEach((message) => {
-    // we now have the CID
-    if (cids.has(message.cid))
-      removeMessageFromCache(
-        state.wallets[state.selectedWalletIdx].address,
-        message.cid
-      )
-  })
   return {
     ...state,
     messages: {
@@ -114,16 +96,6 @@ export const fetchingNextPage = (state) => ({
     ...state.messages,
     paginating: true
   }
-})
-
-export const error = (state, err) => ({
-  ...state,
-  error: err
-})
-
-export const clearError = (state) => ({
-  ...state,
-  error: null
 })
 
 export const populateRedux = (state, { pendingMsgs }) => ({

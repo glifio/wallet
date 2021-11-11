@@ -431,21 +431,6 @@ describe('state manipulators', () => {
     })
   })
 
-  describe('error', () => {
-    test('it sets the error in state', () => {
-      const err = new Error('test')
-      const { error } = states.error(initialState, err)
-      expect(error).toEqual(err)
-    })
-  })
-
-  describe('clearError', () => {
-    test('it clears the error from state', () => {
-      const { error } = states.clearError(initialState)
-      expect(error).toBeNull()
-    })
-  })
-
   describe('populateRedux', () => {
     test('it sets pending messages in state', () => {
       const pendingMsgs = []

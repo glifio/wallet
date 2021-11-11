@@ -8,18 +8,19 @@ import {
   IMPORT_SINGLE_KEY,
   CREATE_MNEMONIC
 } from '../../../constants'
+import { LoginOption } from '../../../WalletProvider/types'
 
 const Create = dynamic(() => import('./Create'))
 const Ledger = dynamic(() => import('./Ledger'))
 const ImportPrivateKey = dynamic(() => import('./ImportPrivateKey'))
 const ImportMnemonic = dynamic(() => import('./ImportMnemonic'))
 
-const Configure = ({ walletType }) => {
-  switch (walletType) {
+const Configure = ({ loginOption }: { loginOption: LoginOption }) => {
+  switch (loginOption) {
     case CREATE_MNEMONIC:
-      return <Create />
+      return <Create initialWalkthroughStep={1} />
     case LEDGER:
-      return <Ledger />
+      return <Ledger msig={false} />
     case IMPORT_SINGLE_KEY:
       return <ImportPrivateKey />
     case IMPORT_MNEMONIC:
@@ -30,7 +31,7 @@ const Configure = ({ walletType }) => {
 }
 
 Configure.propTypes = {
-  walletType: PropTypes.oneOf([
+  loginOption: PropTypes.oneOf([
     LEDGER,
     IMPORT_MNEMONIC,
     CREATE_MNEMONIC,

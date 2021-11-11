@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
-import { useDispatch, useSelector } from 'react-redux'
 import {
   Box,
   Button,
@@ -9,21 +8,26 @@ import {
   Text,
   Title,
   StepHeader,
-  StyledATag
-} from '../../../Shared'
-import { IconLedger } from '../../../Shared/Icons'
+  StyledATag,
+  IconLedger
+} from '@glif/react-components'
 
 import { useWalletProvider } from '../../../../WalletProvider'
-import { walletList, error as rdxError } from '../../../../store/actions'
 import {
   hasLedgerError,
   reportLedgerConfigError
 } from '../../../../utils/ledger/reportLedgerConfigError'
 import useReset from '../../../../utils/useReset'
 import { navigate } from '../../../../utils/urlParams'
+import {
+  LedgerState,
+  LEDGER_STATE_PROPTYPES
+} from '../../../../utils/ledger/ledgerStateManagement'
 import { PAGE } from '../../../../constants'
 
-const Step2Helper = ({ ...errors }) => (
+const Step2Helper: FC<LedgerState & { otherError: string }> = ({
+  ...errors
+}) => (
   <Box
     display='flex'
     flexDirection='column'
@@ -67,12 +71,7 @@ const Step2Helper = ({ ...errors }) => (
 )
 
 Step2Helper.propTypes = {
-  connectedFailure: PropTypes.bool.isRequired,
-  locked: PropTypes.bool.isRequired,
-  filecoinAppNotOpen: PropTypes.bool.isRequired,
-  replug: PropTypes.bool.isRequired,
-  busy: PropTypes.bool.isRequired,
-  inUseByAnotherApp: PropTypes.bool.isRequired,
+  ...LEDGER_STATE_PROPTYPES,
   otherError: PropTypes.string
 }
 
@@ -80,17 +79,15 @@ Step2Helper.defaultProps = {
   otherError: ''
 }
 
-const Step2 = ({ msig }) => {
-  const { ledger, fetchDefaultWallet } = useWalletProvider()
-  const dispatch = useDispatch()
+const Step2: FC<{ msig: boolean }> = ({ msig }) => {
+  const { ledger, fetchDefaultWallet, walletList } = useWalletProvider()
   const resetState = useReset()
-  // TODO: fix hack to ignore proptype errors => || null
-  const generalError = useSelector((state) => state.error || null)
+  const [uncaughtError, setUncaughtError] = useState('')
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const error = hasLedgerError({
     ...ledger,
-    otherError: generalError
+    otherError: uncaughtError
   })
 
   const routeToNextPage = () => {
@@ -106,11 +103,11 @@ const Step2 = ({ msig }) => {
     try {
       const wallet = await fetchDefaultWallet()
       if (wallet) {
-        dispatch(walletList([wallet]))
+        walletList([wallet])
         routeToNextPage()
       }
     } catch (err) {
-      dispatch(rdxError(err.message))
+      setUncaughtError(err?.message || err.toString())
     } finally {
       setLoading(false)
     }
@@ -144,7 +141,7 @@ const Step2 = ({ msig }) => {
           Icon={IconLedger}
           error={!!error}
         />
-        <Step2Helper otherError={generalError} {...ledger} />
+        <Step2Helper otherError={uncaughtError} {...ledger} />
       </OnboardCard>
       <Box
         mt={6}
