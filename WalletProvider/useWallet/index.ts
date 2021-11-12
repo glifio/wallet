@@ -8,7 +8,7 @@ const noWallet: Wallet = {
   path: ''
 }
 
-export default function useWallet() {
+export default function useWallet(): Wallet {
   const { wallets, selectedWalletIdx } = useWalletProvider()
 
   if (wallets.length === 0) return noWallet

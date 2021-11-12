@@ -114,8 +114,10 @@ const Step2: FC<{ msig: boolean }> = ({ msig }) => {
   }
 
   const back = () => {
-    if (msig) router.replace('/')
-    resetState()
+    if (msig) {
+      resetState()
+      router.replace('/')
+    }
   }
 
   const calculateTotalSteps = () => {

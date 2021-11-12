@@ -6,7 +6,7 @@ import Text from './Text'
 import PrivateKey from './PrivateKey'
 import BaseInput from './BaseInput'
 
-export default {
+const Input = {
   Address,
   Funds,
   Mnemonic,
@@ -17,3 +17,5 @@ export default {
   DenomTag,
   Base: BaseInput
 }
+
+export default Input

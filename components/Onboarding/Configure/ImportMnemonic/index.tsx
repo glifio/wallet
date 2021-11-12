@@ -9,9 +9,9 @@ import {
   Title,
   Text,
   StepHeader,
-  LoadingScreen
+  LoadingScreen,
+  Input
 } from '@glif/react-components'
-import { Input } from '../../../Shared'
 import { useWalletProvider } from '../../../../WalletProvider'
 import { createWalletProvider } from '../../../../WalletProvider/state'
 import reportError from '../../../../utils/reportError'

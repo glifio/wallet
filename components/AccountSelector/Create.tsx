@@ -55,7 +55,6 @@ const Create = ({
   )
   const [accountIndexErr, setAccountIndexErr] = useState<string>('')
   const [coinType, setCoinType] = useState<CoinType>(COIN_TYPE)
-
   if (loading) return <LoadingCard />
   if (errorMsg)
     return (

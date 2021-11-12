@@ -13,7 +13,8 @@
     "test": "jest --detectOpenHandles --forceExit",
     "test:watch": "jest --watch",
     "export": "next build && next export",
-    "serve": "npx serve ./out"
+    "serve": "npx serve ./out",
+    "tsc": "tsc"
   },
   "dependencies": {
     "@glif/filecoin-address": "^1.1.0",

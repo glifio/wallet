@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import Filecoin from '@glif/filecoin-wallet-provider'
-import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
 import {
   Box,
@@ -9,16 +8,16 @@ import {
   Title,
   Text,
   StepHeader,
-  LoadingScreen
+  LoadingScreen,
+  Input
 } from '@glif/react-components'
-import { Input } from '../../../Shared'
 import { useWalletProvider } from '../../../../WalletProvider'
 import { createWalletProvider } from '../../../../WalletProvider/state'
 import reportError from '../../../../utils/reportError'
 import { navigate } from '../../../../utils/urlParams'
 import { PAGE } from '../../../../constants'
 
-export default () => {
+const InputPrivateKey: FC<{}> = () => {
   const {
     dispatch,
     fetchDefaultWallet,
@@ -111,3 +110,5 @@ export default () => {
     </>
   )
 }
+
+export default InputPrivateKey
