@@ -44,21 +44,21 @@ describe('createHDWalletProvider', () => {
       test('it returns an array of accounts', async () => {
         const HDWalletProvider = createHDWalletProvider(mockRustModule)
         const hdWalletProvider = HDWalletProvider(mnemonic)
-        const accounts = await hdWalletProvider.getAccounts(TESTNET, 0, 5)
+        const accounts = await hdWalletProvider.getAccounts(0, 5, TESTNET)
         expect(accounts.length).toBe(5)
       })
 
       test('it calls the wasm keyDerive method', async () => {
         const HDWalletProvider = createHDWalletProvider(mockRustModule)
         const hdWalletProvider = HDWalletProvider(mnemonic)
-        await hdWalletProvider.getAccounts(TESTNET, 0, 5)
+        await hdWalletProvider.getAccounts(0, 5, TESTNET)
         expect(mockRustModule.keyDerive).toHaveBeenCalledTimes(5)
       })
 
       test('it passes the right, hardened paths', async () => {
         const HDWalletProvider = createHDWalletProvider(mockRustModule)
         const hdWalletProvider = HDWalletProvider(mnemonic)
-        await hdWalletProvider.getAccounts(TESTNET, 0, 5)
+        await hdWalletProvider.getAccounts(0, 5, TESTNET)
         mockRustModule.keyDerive.mock.calls.forEach(([_, path], walletIdx) => {
           // check to make sure the path fits m/44'/1'/0'/0/0
           path.split('/').forEach((v, i) => {
