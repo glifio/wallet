@@ -10,7 +10,6 @@ import reducer, {
   walletList,
   switchWallet
 } from './state'
-import { setLedgerProvider } from '../utils/ledger/setLedgerProvider'
 import fetchDefaultWallet from './fetchDefaultWallet'
 import connectLedger from './connectLedger'
 import { useWasm } from '../lib/WasmLoader'
@@ -40,13 +39,18 @@ const WalletProviderWrapper = ({ children }) => {
         ),
         setWalletError: (errorMessage) => dispatch(setError(errorMessage)),
         setLoginOption: (loginOption) => dispatch(setLoginOption(loginOption)),
-        setLedgerProvider: useCallback(
-          () => setLedgerProvider(dispatch, walletSubproviders.LedgerProvider),
-          [dispatch, walletSubproviders.LedgerProvider]
-        ),
         connectLedger: useCallback(
-          () => connectLedger(dispatch, walletSubproviders.LedgerProvider),
-          [dispatch, walletSubproviders.LedgerProvider]
+          () =>
+            connectLedger(
+              dispatch,
+              walletSubproviders.LedgerProvider,
+              state?.walletProvider?.wallet
+            ),
+          [
+            dispatch,
+            walletSubproviders.LedgerProvider,
+            state?.walletProvider?.wallet
+          ]
         ),
         resetLedgerState: () => dispatch(resetLedgerState()),
         resetState: useCallback(() => dispatch(resetState()), [dispatch]),

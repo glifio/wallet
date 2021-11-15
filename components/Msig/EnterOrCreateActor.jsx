@@ -89,7 +89,7 @@ const EnterActorAddress = () => {
     <Box padding={[2, 3, 5]}>
       <Form autoComplete='on' onSubmit={onSubmit}>
         <OnboardCard>
-          <StepHeader currentStep={4} totalSteps={4} Icon={IconLedger} />
+          <StepHeader showStepper={false} Icon={IconLedger} />
           <Title mt={3}>Actor ID</Title>
           <Text>Please input your actor ID address below to continue </Text>
           <Input.Text

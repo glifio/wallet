@@ -25,9 +25,7 @@ import {
 } from '../../../../utils/ledger/ledgerStateManagement'
 import { PAGE } from '../../../../constants'
 
-const Step2Helper: FC<LedgerState & { otherError: string }> = ({
-  ...errors
-}) => (
+const Helper: FC<LedgerState & { otherError: string }> = ({ ...errors }) => (
   <Box
     display='flex'
     flexDirection='column'
@@ -70,17 +68,18 @@ const Step2Helper: FC<LedgerState & { otherError: string }> = ({
   </Box>
 )
 
-Step2Helper.propTypes = {
+Helper.propTypes = {
   ...LEDGER_STATE_PROPTYPES,
   otherError: PropTypes.string
 }
 
-Step2Helper.defaultProps = {
+Helper.defaultProps = {
   otherError: ''
 }
 
-const Step2: FC<{ msig: boolean }> = ({ msig }) => {
-  const { ledger, fetchDefaultWallet, walletList } = useWalletProvider()
+const ConnectLedger: FC<{ msig: boolean }> = ({ msig }) => {
+  const { connectLedger, ledger, fetchDefaultWallet, walletList } =
+    useWalletProvider()
   const resetState = useReset()
   const [uncaughtError, setUncaughtError] = useState('')
   const router = useRouter()
@@ -101,12 +100,18 @@ const Step2: FC<{ msig: boolean }> = ({ msig }) => {
   const onClick = async () => {
     setLoading(true)
     try {
-      const wallet = await fetchDefaultWallet()
-      if (wallet) {
-        walletList([wallet])
-        routeToNextPage()
+      const provider = await connectLedger()
+      console.log(provider)
+      if (provider) {
+        setUncaughtError('')
+        const wallet = await fetchDefaultWallet(provider)
+        if (wallet) {
+          walletList([wallet])
+          routeToNextPage()
+        }
       }
     } catch (err) {
+      console.log(err)
       setUncaughtError(err?.message || err.toString())
     } finally {
       setLoading(false)
@@ -114,15 +119,8 @@ const Step2: FC<{ msig: boolean }> = ({ msig }) => {
   }
 
   const back = () => {
-    if (msig) {
-      resetState()
-      router.replace('/')
-    }
-  }
-
-  const calculateTotalSteps = () => {
-    if (msig) return 3
-    return 2
+    resetState()
+    router.replace('/')
   }
 
   return (
@@ -135,15 +133,12 @@ const Step2: FC<{ msig: boolean }> = ({ msig }) => {
         bg={error ? 'status.fail.background' : 'core.transparent'}
       >
         <StepHeader
-          currentStep={2}
-          description='Please complete the following steps so Filament can interface with
-          your Ledger device.'
           loading={!ledger.userImportFailure && loading}
-          totalSteps={calculateTotalSteps()}
+          showStepper={false}
           Icon={IconLedger}
           error={!!error}
         />
-        <Step2Helper otherError={uncaughtError} {...ledger} />
+        <Helper otherError={uncaughtError} {...ledger} />
       </OnboardCard>
       <Box
         mt={6}
@@ -165,8 +160,8 @@ const Step2: FC<{ msig: boolean }> = ({ msig }) => {
   )
 }
 
-Step2.propTypes = {
+ConnectLedger.propTypes = {
   msig: PropTypes.bool.isRequired
 }
 
-export default Step2
+export default ConnectLedger

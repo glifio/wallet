@@ -1,5 +1,6 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
-import Filecoin from '@glif/filecoin-wallet-provider'
+import Filecoin, { WalletSubProvider } from '@glif/filecoin-wallet-provider'
+import Transport from '@ledgerhq/hw-transport'
 import {
   LedgerActionType,
   LedgerState
@@ -40,4 +41,22 @@ export type WalletProviderState = {
   wallets: Wallet[]
   selectedWalletIdx: number
   error: string
+}
+
+export type LedgerVersion = {
+  return_code: number
+  error_message: string
+  // ///
+  test_mode: boolean
+  major: number
+  minor: number
+  patch: number
+  device_locked: boolean
+  target_id: string
+}
+
+export type LedgerSubProvider = WalletSubProvider & {
+  getVersion: () => Promise<LedgerVersion>
+  showAddressAndPubKey: (_: string) => Promise<string | Error>
+  resetTransport: (_: Transport) => Promise<void>
 }

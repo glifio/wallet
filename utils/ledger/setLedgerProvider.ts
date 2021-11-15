@@ -1,24 +1,31 @@
-import Filecoin, { WalletSubProvider } from '@glif/filecoin-wallet-provider'
+import Filecoin from '@glif/filecoin-wallet-provider'
 import { Dispatch } from 'redux'
 import { createWalletProvider } from '../../WalletProvider/state'
 import createTransport from './createTransport'
 import reportError from '../reportError'
 import badVersion from './badVersion'
-import { WalletProviderAction } from '../../WalletProvider/types'
-
-export interface LedgerSubProvider extends WalletSubProvider {
-  getVersion: () => any
-  showAddressAndPubKey: () => any
-}
+import {
+  WalletProviderAction,
+  LedgerSubProvider
+} from '../../WalletProvider/types'
 
 export const setLedgerProvider = async (
   dispatch: Dispatch<WalletProviderAction>,
-  LedgerProvider: (_: any) => LedgerSubProvider
+  LedgerProvider: (_: any) => LedgerSubProvider,
+  existingLedgerProvider?: LedgerSubProvider
 ): Promise<(Filecoin & { wallet: LedgerSubProvider }) | null> => {
   dispatch({ type: 'LEDGER_USER_INITIATED_IMPORT' })
   try {
     const transport = await createTransport()
-    const provider = new Filecoin(LedgerProvider(transport), {
+    let subProvider: LedgerSubProvider
+    if (existingLedgerProvider) {
+      existingLedgerProvider.resetTransport(transport)
+      subProvider = existingLedgerProvider
+    } else {
+      subProvider = LedgerProvider(transport)
+    }
+
+    const provider = new Filecoin(subProvider, {
       apiAddress: process.env.LOTUS_NODE_JSONRPC
     })
     dispatch({ type: 'LEDGER_CONNECTED' })
@@ -33,7 +40,8 @@ export const setLedgerProvider = async (
     ) {
       dispatch({ type: 'LEDGER_USED_BY_ANOTHER_APP' })
     } else if (
-      err?.message.toLowerCase().includes('transporterror: invalid channel')
+      err?.message.toLowerCase().includes('transporterror: invalid channel') ||
+      err?.message.toLowerCase().includes(/device open/)
     ) {
       dispatch({ type: 'LEDGER_REPLUG' })
     } else if (

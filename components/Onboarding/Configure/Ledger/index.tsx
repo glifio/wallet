@@ -1,12 +1,9 @@
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 import { bool } from 'prop-types'
 import { Box } from '@glif/react-components'
 
-import Step1 from './Step1'
-import Step2 from './Step2'
-
+import ConnectLedger from './ConnectLedger'
 const Ledger: FC<{ msig: boolean }> = ({ msig }) => {
-  const [step, setStep] = useState(1)
   return (
     <Box
       display='flex'
@@ -16,8 +13,7 @@ const Ledger: FC<{ msig: boolean }> = ({ msig }) => {
       width='100%'
       maxWidth={13}
     >
-      {step === 1 && <Step1 msig={msig} setStep={setStep} />}
-      {step === 2 && <Step2 msig={msig} />}
+      <ConnectLedger msig={msig} />
     </Box>
   )
 }

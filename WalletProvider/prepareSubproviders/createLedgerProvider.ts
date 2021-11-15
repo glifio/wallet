@@ -1,8 +1,15 @@
-import { CoinType } from '@glif/filecoin-address'
+import { Network as CoinType } from '@glif/filecoin-address'
 import FilecoinApp from '@zondax/ledger-filecoin'
+import Transport from '@ledgerhq/hw-transport'
 import { mapSeries } from 'bluebird'
 import { LEDGER } from '../../constants'
+import {
+  LotusMessage,
+  Message,
+  SignedLotusMessage
+} from '@glif/filecoin-message'
 import createPath, { coinTypeCode } from '../../utils/createPath'
+import { LedgerSubProvider } from '../types'
 
 const handleErrors = (response) => {
   if (
@@ -32,9 +39,10 @@ const throwIfBusy = (busy) => {
 }
 
 const createLedgerProvider = (rustModule) => {
-  return (transport) => {
+  return (_transport: Transport): LedgerSubProvider => {
+    let transport: Transport = _transport
     let ledgerBusy = false
-    const ledgerApp = new FilecoinApp(transport)
+    let accountToPath = {} as Record<string, string>
     return {
       type: LEDGER,
 
@@ -55,7 +63,9 @@ const createLedgerProvider = (rustModule) => {
 
           setTimeout(async () => {
             try {
-              const response = handleErrors(await ledgerApp.getVersion())
+              const response = handleErrors(
+                await new FilecoinApp(transport).getVersion()
+              )
               return resolve(response)
             } catch (err) {
               return reject(err)
@@ -69,7 +79,7 @@ const createLedgerProvider = (rustModule) => {
         })
       },
 
-      getAccounts: async (coinType = CoinType.MAIN, nStart = 0, nEnd = 5) => {
+      getAccounts: async (nStart = 0, nEnd = 5, coinType = CoinType.MAIN) => {
         throwIfBusy(ledgerBusy)
         ledgerBusy = true
         const paths = []
@@ -78,32 +88,57 @@ const createLedgerProvider = (rustModule) => {
         }
         const addresses = await mapSeries(paths, async (path) => {
           const { addrString } = handleErrors(
-            await ledgerApp.getAddressAndPubKey(path)
+            await new FilecoinApp(transport).getAddressAndPubKey(path)
           )
+          accountToPath[addrString] = path
+          console.log(accountToPath)
           return addrString
         })
         ledgerBusy = false
         return addresses
       },
 
-      sign: async (filecoinMessage, path) => {
+      sign: async (
+        from: string,
+        message: LotusMessage
+      ): Promise<SignedLotusMessage> => {
         throwIfBusy(ledgerBusy)
         ledgerBusy = true
-        const serializedMessage =
-          rustModule.transactionSerialize(filecoinMessage)
+        console.log(accountToPath, from)
+        const path = accountToPath[from]
+        const msg = Message.fromLotusType(message)
+        const serializedMessage = rustModule.transactionSerialize(
+          msg.toZondaxType()
+        )
         const res = handleErrors(
-          await ledgerApp.sign(path, Buffer.from(serializedMessage, 'hex'))
+          await new FilecoinApp(transport).sign(
+            path,
+            Buffer.from(serializedMessage, 'hex')
+          )
         )
         ledgerBusy = false
-        return res.signature_compact.toString('base64')
+        const signedMessage: SignedLotusMessage = {
+          Message: message,
+          Signature: {
+            Data: res.signature_compact.toString('base64'),
+            Type: 1
+          }
+        }
+        return signedMessage
       },
 
-      showAddressAndPubKey: async (path) => {
+      showAddressAndPubKey: async (path: string): Promise<string | Error> => {
         throwIfBusy(ledgerBusy)
         ledgerBusy = true
-        const res = handleErrors(await ledgerApp.showAddressAndPubKey(path))
+        const res = handleErrors(
+          await new FilecoinApp(transport).showAddressAndPubKey(path)
+        )
         ledgerBusy = false
         return res
+      },
+
+      resetTransport: async (_transport: Transport): Promise<void> => {
+        transport = _transport
       }
     }
   }
