@@ -5,7 +5,12 @@ import ConnectLedger from './ConnectLedger'
 import { initialLedgerState } from '../../../../utils/ledger/ledgerStateManagement'
 import { mockRouterPush } from '../../../../test-utils/mocks/mock-routing'
 import { flushPromises } from '../../../../test-utils'
-import { PAGE } from '../../../../constants'
+import { PAGE, TESTNET_PATH_CODE } from '../../../../constants'
+import {
+  mockFetchDefaultWallet,
+  mockWalletList
+} from '../../../../test-utils/composeMockAppTree/createWalletProviderContextFuncs'
+import createPath from '../../../../utils/createPath'
 
 jest.mock('../../../../WalletProvider')
 
@@ -180,6 +185,29 @@ describe('Ledger configuration', () => {
     ).toBeInTheDocument()
 
     expect(container.firstChild).toMatchSnapshot()
+  })
+
+  test('it fetches the default wallet and adds it to the wallet provider state', async () => {
+    const { Tree } = composeMockAppTree('preOnboard')
+    const {
+      /* container */
+    } = render(
+      <Tree>
+        <ConnectLedger msig={false} />
+      </Tree>
+    )
+
+    await act(async () => {
+      fireEvent.click(
+        screen.getByText('My Ledger device is unlocked & Filecoin app open')
+      )
+      await flushPromises()
+    })
+
+    expect(mockFetchDefaultWallet).toHaveBeenCalled()
+    const [wallet] = mockWalletList.mock.calls[0][0]
+    expect(wallet.address).toBeTruthy()
+    expect(wallet.path).toBe(createPath(TESTNET_PATH_CODE, 0))
   })
 
   test('it pushes to the right url', async () => {

@@ -1,20 +1,26 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { TESTNET_PATH_CODE } from '../../constants'
+import createPath from '../../utils/createPath'
 
 import {
   setLoginOption,
   setError,
   resetLedgerState,
-  resetState,
-  walletList
+  resetState
 } from '../../WalletProvider/state'
 import { mockWalletProviderInstance } from '../mocks/mock-wallet-provider'
 
+export const mockFetchDefaultWallet = jest.fn().mockImplementation(() => ({
+  balance: new FilecoinNumber('1', 'fil'),
+  address: 't1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq',
+  path: createPath(TESTNET_PATH_CODE, 0)
+}))
+
+export const mockWalletList = jest.fn()
+
 export default (walletProviderDispatch) => ({
-  fetchDefaultWallet: jest.fn().mockImplementation(() => ({
-    balance: new FilecoinNumber('1', 'fil'),
-    address: 't1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb2uq',
-    path: "m/44'/1'/0/0/0"
-  })),
+  fetchDefaultWallet: mockFetchDefaultWallet,
+  walletList: mockWalletList,
   setWalletError: jest
     .fn()
     .mockImplementation((errorMessage) =>
@@ -31,8 +37,5 @@ export default (walletProviderDispatch) => ({
   }),
   resetState: jest.fn().mockImplementation(() => {
     walletProviderDispatch(resetState())
-  }),
-  walletList: jest.fn().mockImplementation((wallets) => {
-    walletProviderDispatch(walletList(wallets))
   })
 })
