@@ -70,7 +70,13 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   justify-content: center;
 }
 
-.c9 {
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  width: 8px;
+}
+
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -86,7 +92,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   align-items: flex-end;
 }
 
-.c10 {
+.c11 {
   min-width: 0;
   box-sizing: border-box;
   margin-bottom: 8px;
@@ -94,7 +100,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   text-align: right;
 }
 
-.c14 {
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -107,7 +113,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   align-items: center;
 }
 
-.c15 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -126,7 +132,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   align-items: center;
 }
 
-.c17 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -143,7 +149,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   align-items: center;
 }
 
-.c19 {
+.c20 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 48px;
@@ -167,7 +173,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c11 {
+.c12 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -191,11 +197,11 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   color: #5E26FF;
 }
 
-.c11:hover {
+.c12:hover {
   opacity: 0.8;
 }
 
-.c20 {
+.c21 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -215,11 +221,11 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   border-radius: 4px;
 }
 
-.c20:hover {
+.c21:hover {
   opacity: 0.8;
 }
 
-.c21 {
+.c22 {
   cursor: not-allowed;
   border: 1px solid #C4C4C4;
   background-color: #C4C4C4;
@@ -238,11 +244,11 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   border-radius: 4px;
 }
 
-.c21:hover {
+.c22:hover {
   opacity: 1;
 }
 
-.c7 {
+.c8 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -251,14 +257,14 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   margin-top: 16px;
 }
 
-.c8 {
+.c9 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
 }
 
-.c16 {
+.c17 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -267,7 +273,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   margin: 0;
 }
 
-.c18 {
+.c19 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -292,24 +298,24 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   border-color: #999999;
 }
 
-.c18:hover {
+.c19:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c18:focus {
+.c19:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c13 {
+.c14 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
 }
 
-.c12 {
+.c13 {
   cursor: pointer;
   outline: none;
 }
@@ -318,6 +324,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
+  margin: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -335,7 +342,6 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
 }
 
 .c4 {
-  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -382,11 +388,15 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
             </h3>
           </div>
         </li>
+        <div
+          class="c7"
+          width="2"
+        />
         
       </div>
     </ul>
     <h2
-      class="c7"
+      class="c8"
       font-family="RT-Alias-Grotesk"
       font-size="4"
       font-weight="400"
@@ -394,7 +404,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
       Input, Import & Proceed
     </h2>
     <p
-      class="c8"
+      class="c9"
       font-family="RT-Alias-Grotesk"
       font-size="2"
       font-weight="400"
@@ -406,15 +416,15 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
       display="flex"
     >
       <div
-        class="c9"
+        class="c10"
         display="flex"
       >
         <div
-          class="c10"
+          class="c11"
           display="block"
         >
           <button
-            class="c11 c12"
+            class="c12 c13"
             color="core.primary"
             font-size="3"
             height="6"
@@ -423,18 +433,18 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
           </button>
         </div>
         <div
-          class="c13"
+          class="c14"
         >
           <div
-            class="c14"
+            class="c15"
             display="flex"
           >
             <div
-              class="c15"
+              class="c16"
               display="flex"
             >
               <h4
-                class="c16"
+                class="c17"
                 color="core.nearblack"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
@@ -444,14 +454,13 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
               </h4>
             </div>
             <div
-              class="c17"
+              class="c18"
               display="flex"
             >
               <input
-                class="c18"
+                class="c19"
                 display="inline-block"
                 height="6"
-                name=""
                 placeholder="Your seed phrase"
                 type="password"
                 value=""
@@ -466,12 +475,12 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
     </div>
   </div>
   <div
-    class="c19"
+    class="c20"
     display="flex"
     width="100%"
   >
     <button
-      class="c20"
+      class="c21"
       font-size="3"
       height="6"
       type="button"
@@ -479,7 +488,7 @@ exports[`Import seed phrase configuration it renders correctly 1`] = `
       Back
     </button>
     <button
-      class="c21"
+      class="c22"
       disabled=""
       font-size="3"
       height="6"

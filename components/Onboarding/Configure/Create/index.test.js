@@ -4,7 +4,12 @@ import { mockRouterPush } from '../../../../test-utils/mocks/mock-routing'
 import { flushPromises } from '../../../../test-utils'
 
 import Create from '.'
-import { PAGE } from '../../../../constants'
+import { PAGE, TESTNET_PATH_CODE } from '../../../../constants'
+import {
+  mockFetchDefaultWallet,
+  mockWalletList
+} from '../../../../test-utils/composeMockAppTree/createWalletProviderContextFuncs'
+import createPath from '../../../../utils/createPath'
 
 describe('Create seed phrase configuration', () => {
   beforeAll(() => {
@@ -27,7 +32,7 @@ describe('Create seed phrase configuration', () => {
 
   test('it sends the user to wallet view, with a wallet in state upon successful config', async () => {
     const mockWalletProviderDispatch = jest.fn()
-    const { Tree, store } = composeMockAppTree('preOnboard', {
+    const { Tree } = composeMockAppTree('preOnboard', {
       walletProviderDispatch: mockWalletProviderDispatch
     })
 
@@ -46,6 +51,10 @@ describe('Create seed phrase configuration', () => {
     expect(mockWalletProviderDispatch.mock.calls[0][0].type).toBe(
       'CREATE_WALLET_PROVIDER'
     )
-    expect(store.getState().wallets.length).toBe(1)
+
+    expect(mockFetchDefaultWallet).toHaveBeenCalled()
+    const [wallet] = mockWalletList.mock.calls[0][0]
+    expect(wallet.address).toBeTruthy()
+    expect(wallet.path).toBe(createPath(TESTNET_PATH_CODE, 0))
   })
 })

@@ -102,6 +102,7 @@ const createLedgerProvider = (rustModule) => {
         message: LotusMessage
       ): Promise<SignedLotusMessage> => {
         throwIfBusy(ledgerBusy)
+        if (from !== message.From) throw new Error('From address mismatch')
         ledgerBusy = true
         const path = accountToPath[from]
         const msg = Message.fromLotusType(message)

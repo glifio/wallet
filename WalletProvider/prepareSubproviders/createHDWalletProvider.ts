@@ -33,6 +33,7 @@ const createHDWalletProvider = (rustModule) => {
         from: string,
         message: LotusMessage
       ): Promise<SignedLotusMessage> => {
+        if (from !== message.From) throw new Error('From address mismatch')
         const path = accountToPath[from]
         const msg = Message.fromLotusType(message)
         const { private_hexstring } = rustModule.keyDerive(MNEMONIC, path, '')
