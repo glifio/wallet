@@ -5,7 +5,7 @@ import { TESTNET } from '../../constants'
 const mockGetAccounts = jest
   .fn()
   // eslint-disable-next-line no-unused-vars
-  .mockImplementation((network = TESTNET, start = 0, end = 1) => {
+  .mockImplementation((start = 0, end = 1, network = TESTNET) => {
     const accounts = []
     for (let i = start; i < end; i++) {
       accounts.push(`t1mbk7q6gm4rjlndfqw6f2vkfgqotres3fgicb${i}uq`)

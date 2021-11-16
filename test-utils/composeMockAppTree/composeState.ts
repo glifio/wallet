@@ -7,53 +7,21 @@ import { initialState } from '../../store/states'
 import { mockWalletProviderInstance } from '../mocks/mock-wallet-provider'
 import { emptyMsigState } from '../../MsigProvider/types'
 import { WALLET_ADDRESS, MULTISIG_ACTOR_ADDRESS, signers } from '../constants'
+import { WalletProviderState } from '../../WalletProvider/types'
 
 export const presets = {
   preOnboard: cloneDeep(initialState),
   postOnboard: cloneDeep({
-    ...initialState,
-    wallets: [
-      {
-        address: WALLET_ADDRESS,
-        balance: new FilecoinNumber('1', 'fil'),
-        path: createPath(1, 0)
-      }
-    ],
-    selectedWalletIdx: 0
+    ...initialState
   }),
   postOnboardLowBal: cloneDeep({
-    ...initialState,
-    wallets: [
-      {
-        address: WALLET_ADDRESS,
-        balance: new FilecoinNumber('.000001', 'fil'),
-        path: createPath(1, 0)
-      }
-    ],
-    selectedWalletIdx: 0
+    ...initialState
   }),
   postOnboardWithError: cloneDeep({
-    ...initialState,
-    error: 'error for testing',
-    wallets: [
-      {
-        address: WALLET_ADDRESS,
-        balance: new FilecoinNumber('1', 'fil'),
-        path: createPath(1, 0)
-      }
-    ],
-    selectedWalletIdx: 0
+    ...initialState
   }),
   pendingMsigCreate: cloneDeep({
     ...initialState,
-    wallets: [
-      {
-        address: WALLET_ADDRESS,
-        balance: new FilecoinNumber('1', 'fil'),
-        path: createPath(1, 0)
-      }
-    ],
-    selectedWalletIdx: 0,
     messages: {
       confirmed: [],
       pending: [
@@ -82,7 +50,7 @@ export const presets = {
 }
 
 export const composeWalletProviderState = (
-  initialWalletProviderState: object,
+  initialWalletProviderState: WalletProviderState,
   preset: keyof typeof presets
 ) => {
   switch (preset) {
@@ -90,21 +58,48 @@ export const composeWalletProviderState = (
       return Object.freeze({
         ...initialWalletProviderState,
         walletType: IMPORT_MNEMONIC,
-        walletProvider: mockWalletProviderInstance
+        walletProvider: mockWalletProviderInstance,
+        wallets: [
+          {
+            address: WALLET_ADDRESS,
+            balance: new FilecoinNumber('1', 'fil'),
+            path: createPath(1, 0)
+          }
+        ],
+        selectedWalletIdx: 0,
+        loginOption: 'IMPORT_SINGLE_KEY'
       })
     }
     case 'postOnboardLowBal': {
       return Object.freeze({
         ...initialWalletProviderState,
         walletType: IMPORT_MNEMONIC,
-        walletProvider: mockWalletProviderInstance
+        walletProvider: mockWalletProviderInstance,
+        wallets: [
+          {
+            address: WALLET_ADDRESS,
+            balance: new FilecoinNumber('.000001', 'fil'),
+            path: createPath(1, 0)
+          }
+        ],
+        selectedWalletIdx: 0,
+        loginOption: 'IMPORT_SINGLE_KEY'
       })
     }
     case 'postOnboardWithError': {
       return Object.freeze({
         ...initialWalletProviderState,
         walletType: IMPORT_MNEMONIC,
-        walletProvider: mockWalletProviderInstance
+        walletProvider: mockWalletProviderInstance,
+        wallets: [
+          {
+            address: WALLET_ADDRESS,
+            balance: new FilecoinNumber('1', 'fil'),
+            path: createPath(1, 0)
+          }
+        ],
+        selectedWalletIdx: 0,
+        loginOption: 'IMPORT_SINGLE_KEY'
       })
     }
     default:

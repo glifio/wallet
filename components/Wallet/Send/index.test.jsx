@@ -1,5 +1,6 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { Message } from '@glif/filecoin-message'
 
 import Send from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
@@ -58,7 +59,9 @@ describe('Send Flow', () => {
       expect(walletProvider.getNonce).toHaveBeenCalledWith(address)
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
       expect(walletProvider.simulateMessage).toHaveBeenCalled()
-      const message = walletProvider.wallet.sign.mock.calls[0][0]
+      const message = Message.fromLotusType(
+        walletProvider.wallet.sign.mock.calls[0][1]
+      ).toZondaxType()
       expect(!!message.gaspremium).toBe(true)
       expect(typeof message.gaspremium).toBe('string')
       expect(!!message.gasfeecap).toBe(true)
@@ -232,7 +235,9 @@ describe('Send Flow', () => {
       })
       expect(walletProvider.getNonce).toHaveBeenCalledWith(address)
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
-      const message = walletProvider.wallet.sign.mock.calls[0][0]
+      const message = Message.fromLotusType(
+        walletProvider.wallet.sign.mock.calls[0][1]
+      ).toZondaxType()
       expect(!!message.gaspremium).toBe(true)
       expect(typeof message.gaspremium).toBe('string')
       expect(!!message.gasfeecap).toBe(true)
@@ -479,7 +484,7 @@ describe('Send Flow', () => {
 
   describe('snapshots', () => {
     afterEach(cleanup)
-    test('it renders correctly', async () => {
+    test.only('it renders correctly', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
       let res
       await act(async () => {

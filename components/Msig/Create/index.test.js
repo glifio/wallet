@@ -1,6 +1,7 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
+import { Message } from '@glif/filecoin-message'
 
 import Create from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
@@ -69,7 +70,9 @@ describe('Create msig flow', () => {
 
       expect(walletProvider.getNonce).toHaveBeenCalled()
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
-      const message = walletProvider.wallet.sign.mock.calls[0][0]
+      const message = Message.fromLotusType(
+        walletProvider.wallet.sign.mock.calls[0][1]
+      ).toZondaxType()
       expect(!!message.gaspremium).toBe(true)
       expect(typeof message.gaspremium).toBe('string')
       expect(!!message.gasfeecap).toBe(true)
@@ -167,7 +170,9 @@ describe('Create msig flow', () => {
 
       expect(walletProvider.getNonce).toHaveBeenCalled()
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
-      const message = walletProvider.wallet.sign.mock.calls[0][0]
+      const message = Message.fromLotusType(
+        walletProvider.wallet.sign.mock.calls[0][1]
+      ).toZondaxType()
       expect(!!message.gaspremium).toBe(true)
       expect(typeof message.gaspremium).toBe('string')
       expect(!!message.gasfeecap).toBe(true)

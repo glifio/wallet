@@ -24,7 +24,6 @@ export default (walletProviderDispatch) => ({
     .mockImplementation((loginOption) =>
       walletProviderDispatch(setLoginOption(loginOption))
     ),
-  setLedgerProvider: jest.fn(),
   connectLedger: jest.fn().mockImplementation(() => mockWalletProviderInstance),
   resetLedgerState: jest.fn().mockImplementation(() => {
     walletProviderDispatch(resetLedgerState())

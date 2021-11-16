@@ -1,4 +1,5 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
+import { Message } from '@glif/filecoin-message'
 
 import { AddSigner, RemoveSigner } from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
@@ -45,7 +46,9 @@ describe('Multisig add & remove  flow', () => {
       expect(walletProvider.getNonce).toHaveBeenCalled()
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
       expect(walletProvider.simulateMessage).toHaveBeenCalled()
-      const message = walletProvider.wallet.sign.mock.calls[0][0]
+      const message = Message.fromLotusType(
+        walletProvider.wallet.sign.mock.calls[0][1]
+      ).toZondaxType()
       expect(!!message.gaspremium).toBe(true)
       expect(typeof message.gaspremium).toBe('string')
       expect(!!message.gasfeecap).toBe(true)
@@ -255,7 +258,9 @@ describe('Multisig add & remove  flow', () => {
 
       expect(walletProvider.getNonce).toHaveBeenCalled()
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
-      const message = walletProvider.wallet.sign.mock.calls[0][0]
+      const message = Message.fromLotusType(
+        walletProvider.wallet.sign.mock.calls[0][1]
+      ).toZondaxType()
       expect(!!message.gaspremium).toBe(true)
       expect(typeof message.gaspremium).toBe('string')
       expect(!!message.gasfeecap).toBe(true)

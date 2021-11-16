@@ -15,9 +15,9 @@ import {
   Title,
   Form,
   Card,
-  PageWrapper,
-  Input
+  PageWrapper
 } from '@glif/react-components'
+import { Input } from '../../Shared'
 import { CardHeader } from '../../Msig/Shared'
 import ConfirmationCard from './ConfirmationCard'
 import HeaderText from './HeaderText'
