@@ -218,4 +218,14 @@ describe('badVersion', () => {
       })
     ).toBe(false)
   })
+
+  test('it returns false if the minor version is at or above the LEDGER_VERSION_MINOR and the path version is less than LEDGER_VERSION_PATCH', () => {
+    expect(
+      badVersion({
+        major: LEDGER_VERSION_MAJOR,
+        minor: LEDGER_VERSION_MINOR + 2,
+        patch: 0
+      })
+    ).toBe(false)
+  })
 })
