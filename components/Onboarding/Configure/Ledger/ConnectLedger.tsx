@@ -29,7 +29,7 @@ const Helper: FC<LedgerState & { otherError: string }> = ({ ...errors }) => (
   <Box
     display='flex'
     flexDirection='column'
-    justifyContent='space-between'
+    justifyContent='space-around'
     borderColor='silver'
     width='100%'
     minHeight={9}
@@ -44,6 +44,9 @@ const Helper: FC<LedgerState & { otherError: string }> = ({ ...errors }) => (
         </Box>
         <Box mt={3} color='status.fail.foreground'>
           <Text>{reportLedgerConfigError({ ...errors })}</Text>
+          {errors.inUseByAnotherApp && (
+            <Text>(Most of the time, this is Ledger Live!)</Text>
+          )}
         </Box>
       </>
     ) : (
@@ -52,8 +55,10 @@ const Helper: FC<LedgerState & { otherError: string }> = ({ ...errors }) => (
           <Title>Unlock & Open</Title>
         </Box>
         <Box color='core.nearblack' mt={3}>
-          <Text>Please unlock your Ledger device.</Text>
-          <Text>And make sure the Filecoin App is open</Text>
+          <Text>
+            Please unlock your Ledger device and open the Filecoin App
+          </Text>
+
           <StyledATag
             fontSize={2}
             target='_blank'
@@ -90,11 +95,8 @@ const ConnectLedger: FC<{ msig: boolean }> = ({ msig }) => {
   })
 
   const routeToNextPage = () => {
-    msig
-      ? navigate(router, {
-          pageUrl: PAGE.MSIG_CHOOSE_ACCOUNTS
-        })
-      : navigate(router, { pageUrl: PAGE.WALLET_HOME })
+    const pageUrl = msig ? PAGE.MSIG_CHOOSE_ACCOUNTS : PAGE.WALLET_HOME
+    navigate(router, { pageUrl })
   }
 
   const onClick = async () => {

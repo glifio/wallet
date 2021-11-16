@@ -40,8 +40,7 @@ export const setLedgerProvider = async (
     ) {
       dispatch({ type: 'LEDGER_USED_BY_ANOTHER_APP' })
     } else if (
-      err?.message.toLowerCase().includes('transporterror: invalid channel') ||
-      err?.message.toLowerCase().includes(/device open/)
+      err?.message.toLowerCase().includes('transporterror: invalid channel')
     ) {
       dispatch({ type: 'LEDGER_REPLUG' })
     } else if (
@@ -49,6 +48,8 @@ export const setLedgerProvider = async (
       err?.message.toLowerCase().includes('access denied to use ledger device')
     ) {
       dispatch({ type: 'LEDGER_NOT_FOUND' })
+    } else {
+      dispatch({ type: 'LEDGER_REPLUG' })
     }
     reportError(
       5,
