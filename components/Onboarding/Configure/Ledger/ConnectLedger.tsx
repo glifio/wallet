@@ -101,7 +101,6 @@ const ConnectLedger: FC<{ msig: boolean }> = ({ msig }) => {
     setLoading(true)
     try {
       const provider = await connectLedger()
-      console.log(provider)
       if (provider) {
         setUncaughtError('')
         const wallet = await fetchDefaultWallet(provider)
@@ -111,7 +110,6 @@ const ConnectLedger: FC<{ msig: boolean }> = ({ msig }) => {
         }
       }
     } catch (err) {
-      console.log(err)
       setUncaughtError(err?.message || err.toString())
     } finally {
       setLoading(false)

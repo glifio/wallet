@@ -45,6 +45,7 @@ const Withdrawing = () => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
   const wallet = useWallet()
   const dispatch = useDispatch()
+  // @ts-expect-error
   const { serializeParams } = useWasm()
   const { Address: address, AvailableBalance: balance } = useMsig()
   const [step, setStep] = useState(1)
@@ -104,29 +105,39 @@ const Withdrawing = () => {
 
       setFetchingTxDetails(false)
 
+      const messageObj = message.toLotusType()
       const signedMessage = await provider.wallet.sign(
-        message.toSerializeableType(),
-        wallet.path
+        wallet.address,
+        messageObj
       )
 
-      const messageObj = message.toLotusType()
       setMPoolPushing(true)
-      const validMsg = await provider.simulateMessage(message.toLotusType())
+      const validMsg = await provider.simulateMessage(messageObj)
       if (validMsg) {
-        const msgCid = await provider.sendMessage(messageObj, signedMessage)
-        messageObj.cid = msgCid['/']
-        messageObj.timestamp = dayjs().unix()
-        messageObj.maxFee = gasInfo.estimatedTransactionFee.toAttoFil()
+        const msgCid = await provider.sendMessage(signedMessage)
+        // @ts-expect-error
+        const messageForTxHistory: LotusMessage & {
+          cid: string
+          timestamp: number
+          maxFee: string
+          paidFee: string
+          value: string
+          method: string
+          params: string | object
+        } = { ...messageObj }
+        messageForTxHistory.cid = msgCid['/']
+        messageForTxHistory.timestamp = dayjs().unix()
+        messageForTxHistory.maxFee = gasInfo.estimatedTransactionFee.toAttoFil()
         // dont know how much was actually paid in this message yet, so we mark it as 0
-        messageObj.paidFee = '0'
-        messageObj.value = new FilecoinNumber(
+        messageForTxHistory.paidFee = '0'
+        messageForTxHistory.value = new FilecoinNumber(
           messageObj.Value,
           'attofil'
         ).toFil()
         // reformat the params and method for tx table
-        messageObj.params = params
-        messageObj.method = PROPOSE
-        return messageObj
+        messageForTxHistory.params = params
+        messageForTxHistory.method = PROPOSE
+        return messageForTxHistory
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')
     }
@@ -272,7 +283,7 @@ const Withdrawing = () => {
                         glyphAcronym='Wd'
                       />
                       <Box mt={3} mb={4}>
-                        <WithdrawHeaderText my={0} step={step} />
+                        <WithdrawHeaderText step={step} />
                       </Box>
                     </Card>
                   </>
@@ -286,6 +297,7 @@ const Withdrawing = () => {
                 />
                 <Box width='100%' p={3} border={0} bg='background.screen'>
                   <Input.Address
+                    // @ts-expect-error
                     label='Recipient'
                     value={toAddress}
                     onChange={(e) => setToAddress(e.target.value)}
@@ -299,6 +311,7 @@ const Withdrawing = () => {
                 {step > 1 && (
                   <Box width='100%' p={3} border={0} bg='background.screen'>
                     <Input.Funds
+                      // @ts-expect-error
                       name='amount'
                       label='Amount'
                       amount={value.toAttoFil()}

@@ -91,7 +91,6 @@ const createLedgerProvider = (rustModule) => {
             await new FilecoinApp(transport).getAddressAndPubKey(path)
           )
           accountToPath[addrString] = path
-          console.log(accountToPath)
           return addrString
         })
         ledgerBusy = false
@@ -104,7 +103,6 @@ const createLedgerProvider = (rustModule) => {
       ): Promise<SignedLotusMessage> => {
         throwIfBusy(ledgerBusy)
         ledgerBusy = true
-        console.log(accountToPath, from)
         const path = accountToPath[from]
         const msg = Message.fromLotusType(message)
         const serializedMessage = rustModule.transactionSerialize(

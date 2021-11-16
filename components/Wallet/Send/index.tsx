@@ -96,7 +96,6 @@ const Send = () => {
   }, [router])
 
   const send = async () => {
-    console.log('here')
     setFetchingTxDetails(true)
     let provider = walletProvider
     // attempt to establish a new connection with the ledger device if the user selected ledger
@@ -125,7 +124,6 @@ const Send = () => {
 
       setMPoolPushing(true)
       const validMsg = await provider.simulateMessage(messageObj)
-      debugger
       if (validMsg) {
         const msgCid = await provider.sendMessage(signedMessage)
         // @ts-expect-error
@@ -157,7 +155,6 @@ const Send = () => {
 
   const sendMsg = async () => {
     try {
-      console.log('hiii')
       const message = await send()
       if (message) {
         dispatch(confirmMessage(toLowerCaseMsgFields(message)))
