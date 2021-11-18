@@ -313,6 +313,9 @@ describe('Send Flow', () => {
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
+      })
+
+      await act(async () => {
         fireEvent.change(screen.getByDisplayValue('1000000'), {
           target: { value: '2000000' }
         })
@@ -350,6 +353,9 @@ describe('Send Flow', () => {
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
+      })
+
+      await act(async () => {
         fireEvent.change(screen.getByDisplayValue('1000000'), {
           target: { value: '2000000' }
         })
@@ -421,6 +427,9 @@ describe('Send Flow', () => {
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
+      })
+
+      await act(async () => {
         fireEvent.change(screen.getByDisplayValue('1000000'), {
           target: { value: '' }
         })
@@ -484,7 +493,7 @@ describe('Send Flow', () => {
 
   describe('snapshots', () => {
     afterEach(cleanup)
-    test.only('it renders correctly', async () => {
+    test('it renders correctly', async () => {
       const { Tree } = composeMockAppTree('postOnboard')
       let res
       await act(async () => {
@@ -494,6 +503,12 @@ describe('Send Flow', () => {
           </Tree>
         )
       })
+      expect(
+        screen.getByText(
+          /First, please confirm the account you're sending from, and the recipient you want to send to./
+        )
+      )
+      expect(screen.getByText(/Step 1/))
       expect(res.container).toMatchSnapshot()
     })
 
@@ -515,6 +530,12 @@ describe('Send Flow', () => {
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
       })
+      expect(
+        screen.getByText(
+          /Next, please choose an amount of FIL you'd like to withdraw./
+        )
+      )
+      expect(screen.getByText(/Step 2/))
       expect(res.container).toMatchSnapshot()
     })
 
