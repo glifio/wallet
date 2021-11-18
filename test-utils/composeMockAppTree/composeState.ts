@@ -2,7 +2,7 @@ import cloneDeep from 'lodash.clonedeep'
 import { FilecoinNumber } from '@glif/filecoin-number'
 
 import createPath from '../../utils/createPath'
-import { IMPORT_MNEMONIC } from '../../constants'
+import { IMPORT_MNEMONIC, IMPORT_SINGLE_KEY } from '../../constants'
 import { initialState } from '../../store/states'
 import { mockWalletProviderInstance } from '../mocks/mock-wallet-provider'
 import { emptyMsigState } from '../../MsigProvider/types'
@@ -18,6 +18,9 @@ export const presets = {
     ...initialState
   }),
   postOnboardWithError: cloneDeep({
+    ...initialState
+  }),
+  selectedOtherWallet: cloneDeep({
     ...initialState
   }),
   pendingMsigCreate: cloneDeep({
@@ -67,7 +70,7 @@ export const composeWalletProviderState = (
           }
         ],
         selectedWalletIdx: 0,
-        loginOption: 'IMPORT_SINGLE_KEY'
+        loginOption: IMPORT_SINGLE_KEY
       })
     }
     case 'postOnboardLowBal': {
@@ -83,13 +86,12 @@ export const composeWalletProviderState = (
           }
         ],
         selectedWalletIdx: 0,
-        loginOption: 'IMPORT_SINGLE_KEY'
+        loginOption: IMPORT_SINGLE_KEY
       })
     }
     case 'postOnboardWithError': {
       return Object.freeze({
         ...initialWalletProviderState,
-        walletType: IMPORT_MNEMONIC,
         walletProvider: mockWalletProviderInstance,
         wallets: [
           {
@@ -99,7 +101,27 @@ export const composeWalletProviderState = (
           }
         ],
         selectedWalletIdx: 0,
-        loginOption: 'IMPORT_SINGLE_KEY'
+        loginOption: IMPORT_SINGLE_KEY
+      })
+    }
+    case 'selectedOtherWallet': {
+      return Object.freeze({
+        ...initialWalletProviderState,
+        walletProvider: mockWalletProviderInstance,
+        wallets: [
+          {
+            address: WALLET_ADDRESS,
+            balance: new FilecoinNumber('1', 'fil'),
+            path: createPath(1, 0)
+          },
+          {
+            address: 't1nq5k2mps5umtebdovlyo7y6a3ywc7u4tobtuo3a',
+            balance: new FilecoinNumber('5', 'fil'),
+            path: createPath(1, 1)
+          }
+        ],
+        selectedWalletIdx: 1,
+        loginOption: IMPORT_MNEMONIC
       })
     }
     default:

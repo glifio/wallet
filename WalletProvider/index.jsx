@@ -8,7 +8,8 @@ import reducer, {
   resetLedgerState,
   resetState,
   walletList,
-  switchWallet
+  switchWallet,
+  updateBalance
 } from './state'
 import fetchDefaultWallet from './fetchDefaultWallet'
 import connectLedger from './connectLedger'
@@ -58,7 +59,8 @@ const WalletProviderWrapper = ({ children }) => {
           dispatch(walletList(wallets, selectedWalletIdx)),
         switchWallet: (selectedWalletIdx) =>
           dispatch(switchWallet(selectedWalletIdx)),
-
+        updateBalance: (balance, index) =>
+          dispatch(updateBalance(balance, index)),
         walletSubproviders
       }}
     >

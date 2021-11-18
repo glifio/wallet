@@ -21,7 +21,7 @@ class MyApp extends App {
         <Head>
           <title>Glif</title>
         </Head>
-        <SWRConfig value={{ refreshInterval: 5000 }}>
+        <SWRConfig value={{ refreshInterval: 10000 }}>
           <Provider store={reduxStore}>
             <ThemeProvider theme={theme}>
               <WasmLoader>
