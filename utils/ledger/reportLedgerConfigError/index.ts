@@ -3,6 +3,7 @@ import {
   LEDGER_VERSION_MINOR,
   LEDGER_VERSION_PATCH
 } from '../../../constants'
+import { LedgerState } from '../ledgerStateManagement'
 
 export const reportLedgerConfigError = ({
   connectedFailure,
@@ -14,7 +15,7 @@ export const reportLedgerConfigError = ({
   badVersion,
   webUSBSupported,
   otherError
-}) => {
+}: LedgerState & { otherError: string }): string => {
   if (!webUSBSupported)
     return "We're sorry, but we can't connect to your device because your machine does not support WebUSB."
   if (connectedFailure) return 'Is your Ledger device plugged in?'
@@ -41,7 +42,7 @@ export const hasLedgerError = ({
   badVersion,
   webUSBSupported,
   otherError
-}) =>
+}: LedgerState & { otherError: string }): boolean =>
   !webUSBSupported ||
   connectedFailure ||
   locked ||
@@ -50,4 +51,4 @@ export const hasLedgerError = ({
   busy ||
   inUseByAnotherApp ||
   badVersion ||
-  otherError
+  !!otherError

@@ -33,8 +33,30 @@ describe('createHDWalletProvider', () => {
         })
         const HDWalletProvider = createHDWalletProvider(mockRustModule)
         const hdWalletProvider = HDWalletProvider(mnemonic)
-        await hdWalletProvider.sign(msg, "m/44'/461'/0/0/2")
+        await hdWalletProvider.sign(
+          't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
+          msg.toLotusType()
+        )
         expect(mockRustModule.transactionSign).toHaveBeenCalled()
+      })
+
+      test('it errs if the from address does not match the one provided in the message', async () => {
+        const msg = new Message({
+          from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
+          to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
+          value: '1000',
+          method: 0,
+          nonce: 0
+        })
+        const HDWalletProvider = createHDWalletProvider(mockRustModule)
+        const hdWalletProvider = HDWalletProvider(mnemonic)
+        expect(
+          async () =>
+            await hdWalletProvider.sign(
+              't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muueu',
+              msg.toLotusType()
+            )
+        ).rejects.toThrow()
       })
     })
 
@@ -44,21 +66,21 @@ describe('createHDWalletProvider', () => {
       test('it returns an array of accounts', async () => {
         const HDWalletProvider = createHDWalletProvider(mockRustModule)
         const hdWalletProvider = HDWalletProvider(mnemonic)
-        const accounts = await hdWalletProvider.getAccounts(TESTNET, 0, 5)
+        const accounts = await hdWalletProvider.getAccounts(0, 5, TESTNET)
         expect(accounts.length).toBe(5)
       })
 
       test('it calls the wasm keyDerive method', async () => {
         const HDWalletProvider = createHDWalletProvider(mockRustModule)
         const hdWalletProvider = HDWalletProvider(mnemonic)
-        await hdWalletProvider.getAccounts(TESTNET, 0, 5)
+        await hdWalletProvider.getAccounts(0, 5, TESTNET)
         expect(mockRustModule.keyDerive).toHaveBeenCalledTimes(5)
       })
 
       test('it passes the right, hardened paths', async () => {
         const HDWalletProvider = createHDWalletProvider(mockRustModule)
         const hdWalletProvider = HDWalletProvider(mnemonic)
-        await hdWalletProvider.getAccounts(TESTNET, 0, 5)
+        await hdWalletProvider.getAccounts(0, 5, TESTNET)
         mockRustModule.keyDerive.mock.calls.forEach(([_, path], walletIdx) => {
           // check to make sure the path fits m/44'/1'/0'/0/0
           path.split('/').forEach((v, i) => {

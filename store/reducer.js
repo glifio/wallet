@@ -1,11 +1,6 @@
 import {
-  WALLET_LIST,
-  SWITCH_WALLET,
-  ERROR,
-  UPDATE_BALANCE,
   CONFIRM_MESSAGE,
   CONFIRMED_MESSAGE,
-  CLEAR_ERROR,
   CLEAR_MESSAGES,
   FETCHING_CONFIRMED_MESSAGES,
   FETCHED_CONFIRMED_MESSAGES_SUCCESS,
@@ -18,11 +13,6 @@ import {
 import {
   confirmMessage,
   confirmedMessage,
-  switchWallet,
-  walletList,
-  updateBalance,
-  error,
-  clearError,
   fetchingConfirmedMessages,
   fetchedConfirmedMessagesSuccess,
   fetchedConfirmedMessagesFailure,
@@ -34,15 +24,6 @@ import {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case WALLET_LIST: {
-      return walletList(Object.freeze(state), action.payload)
-    }
-    case SWITCH_WALLET: {
-      return switchWallet(Object.freeze(state), action.payload)
-    }
-    case UPDATE_BALANCE: {
-      return updateBalance(Object.freeze(state), action.payload)
-    }
     case CONFIRM_MESSAGE: {
       return confirmMessage(Object.freeze(state), action.payload)
     }
@@ -61,10 +42,6 @@ const reducer = (state, action) => {
       return fetchedConfirmedMessagesFailure(Object.freeze(state), action.error)
     case FETCHING_NEXT_PAGE:
       return fetchingNextPage(Object.freeze(state))
-    case ERROR:
-      return error(Object.freeze(state), action.error)
-    case CLEAR_ERROR:
-      return clearError(Object.freeze(state))
     case CLEAR_MESSAGES:
       return clearMessages(Object.freeze(state))
     case POPULATE_REDUX:

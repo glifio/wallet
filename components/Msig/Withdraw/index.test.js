@@ -1,5 +1,6 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { Message } from '@glif/filecoin-message'
 
 import Withdraw from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
@@ -18,6 +19,13 @@ jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
     push: routerPushMock
   }
 })
+
+const next = async () => {
+  await act(async () => {
+    fireEvent.click(screen.getByText('Next'))
+    await flushPromises()
+  })
+}
 
 describe('Multisig withdraw flow', () => {
   beforeEach(() => {
@@ -56,18 +64,18 @@ describe('Multisig withdraw flow', () => {
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
       })
+
+      await next()
+      await next()
+      await next()
 
       expect(walletProvider.getNonce).toHaveBeenCalled()
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
       expect(walletProvider.simulateMessage).toHaveBeenCalled()
-      const message = walletProvider.wallet.sign.mock.calls[0][0]
+      const message = Message.fromLotusType(
+        walletProvider.wallet.sign.mock.calls[0][1]
+      ).toZondaxType()
       expect(!!message.gaspremium).toBe(true)
       expect(typeof message.gaspremium).toBe('string')
       expect(!!message.gasfeecap).toBe(true)
@@ -96,9 +104,9 @@ describe('Multisig withdraw flow', () => {
           preventDefault: () => {}
         })
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
       })
+
+      await next()
       expect(screen.getByText(/Invalid to address/)).toBeInTheDocument()
       expect(walletProvider.getNonce).not.toHaveBeenCalled()
       expect(walletProvider.wallet.sign).not.toHaveBeenCalled()
@@ -119,9 +127,9 @@ describe('Multisig withdraw flow', () => {
           preventDefault: () => {}
         })
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
       })
+
+      await next()
       expect(screen.getByText(/Step 1/)).toBeInTheDocument()
       expect(walletProvider.getNonce).not.toHaveBeenCalled()
       expect(walletProvider.wallet.sign).not.toHaveBeenCalled()
@@ -153,9 +161,9 @@ describe('Multisig withdraw flow', () => {
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
       })
+
+      await next()
       expect(
         screen.getByText(
           /The amount must be smaller than this account's balance/
@@ -190,9 +198,9 @@ describe('Multisig withdraw flow', () => {
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
       })
+
+      await next()
       expect(
         screen.getByText(/Please enter a valid amount/)
       ).toBeInTheDocument()
@@ -225,8 +233,8 @@ describe('Multisig withdraw flow', () => {
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
       })
+      await next()
       expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
     })
 
@@ -254,8 +262,11 @@ describe('Multisig withdraw flow', () => {
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
+      })
+
+      await next()
+
+      await act(async () => {
         fireEvent.change(screen.getByDisplayValue('1000000'), {
           target: { value: '2000000' }
         })
@@ -282,17 +293,20 @@ describe('Multisig withdraw flow', () => {
           preventDefault: () => {}
         })
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+      })
+      await next()
+      await act(async () => {
+        await fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getByDisplayValue('1000000'), {
+      })
+      await next()
+
+      await act(async () => {
+        await fireEvent.change(screen.getByDisplayValue('1000000'), {
           target: { value: '2000000' }
         })
         await flushPromises()
@@ -322,15 +336,16 @@ describe('Multisig withdraw flow', () => {
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
-        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+        await fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getByDisplayValue('1000000'), {
+      })
+      await next()
+      await act(async () => {
+        await fireEvent.change(screen.getByDisplayValue('1000000'), {
           target: { value: '20000000000000000000000' }
         })
         await flushPromises()
@@ -370,8 +385,10 @@ describe('Multisig withdraw flow', () => {
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
+      })
+      await next()
+
+      await act(async () => {
         fireEvent.change(screen.getByDisplayValue('1000000'), {
           target: { value: '' }
         })
@@ -409,14 +426,11 @@ describe('Multisig withdraw flow', () => {
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
       })
-      await flushPromises()
+      await next()
+      await next()
+      await next()
+
       expect(routerPushMock).toHaveBeenCalledWith(PAGE.MSIG_HISTORY)
     })
   })
@@ -455,9 +469,9 @@ describe('Multisig withdraw flow', () => {
           target: { value: toAddr },
           preventDefault: () => {}
         })
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
       })
+
+      await next()
       expect(res.container).toMatchSnapshot()
       expect(screen.getByText(/Withdrawing Filecoin/)).toBeInTheDocument()
       expect(screen.getByText(/Amount/)).toBeInTheDocument()
@@ -476,22 +490,27 @@ describe('Multisig withdraw flow', () => {
             <Withdraw />
           </Tree>
         )
+      })
+      await act(async () => {
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
           target: { value: toAddr },
           preventDefault: () => {}
         })
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+      })
+
+      await next()
+
+      await act(async () => {
+        await fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
       })
+
+      await next()
       expect(res.container).toMatchSnapshot()
       expect(screen.getByText(/Withdrawing Filecoin/)).toBeInTheDocument()
       expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
@@ -515,19 +534,19 @@ describe('Multisig withdraw flow', () => {
           preventDefault: () => {}
         })
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+      })
+      await next()
+      await act(async () => {
+        await fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
       })
+      await next()
+      await next()
+
       expect(res.container).toMatchSnapshot()
       expect(screen.getByText(/Withdrawing Filecoin/)).toBeInTheDocument()
       expect(screen.getByText(/Total/)).toBeInTheDocument()

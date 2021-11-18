@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
+import { NodeConnectingGlyph, Box } from '@glif/react-components'
 import { useRouter } from 'next/router'
 import ChooseWallet from './Choose'
 import ConfigureWallet from './Configure'
-import { Box, NodeConnectingGlyph } from '../Shared'
-import useWallet from '../../WalletProvider/useWallet'
+import { useWalletProvider } from '../../WalletProvider'
 
-export default () => {
-  const wallet = useWallet()
+export default function Onboarding() {
+  const { loginOption } = useWalletProvider()
   const router = useRouter()
   const [nodeConnecting, setNodeConnecting] = useState(true)
   return (
@@ -32,8 +32,8 @@ export default () => {
           />
         )}
         {!nodeConnecting &&
-          (wallet.type ? (
-            <ConfigureWallet walletType={wallet.type} />
+          (loginOption ? (
+            <ConfigureWallet loginOption={loginOption} />
           ) : (
             <ChooseWallet />
           ))}

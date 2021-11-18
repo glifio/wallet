@@ -1,15 +1,28 @@
 import React, { useCallback, useState } from 'react'
+import { BigNumber } from '@glif/filecoin-number'
 import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
 import { Message } from '@glif/filecoin-message'
-import { BigNumber } from '@glif/filecoin-number'
+import { validateAddressString } from '@glif/filecoin-address'
+import {
+  Form,
+  Card,
+  StyledATag,
+  Box,
+  Button,
+  ButtonClose,
+  Label,
+  CopyText,
+  Warning
+} from '@glif/react-components'
 import { useRouter } from 'next/router'
 
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
-import { Box, Button, ButtonClose, Form, Card } from '@glif/react-components'
-import { CardHeader, AddRmSignerHeader } from '../Shared'
-import Preface from './Prefaces'
+import { StepHeader, Input } from '../../Shared'
+import truncateAddress from '../../../utils/truncateAddress'
+import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
+import { CardHeader, ChangeSignerHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
@@ -28,19 +41,20 @@ import {
 import reportError from '../../../utils/reportError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'
-import { RemoveSignerInput } from './SignerInput'
 import { useMsig } from '../../../MsigProvider'
-import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import { navigate } from '../../../utils/urlParams'
 
-const RemoveSigner = ({ signerAddress }) => {
+const ChangeOwner = ({ oldSignerAddress }) => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
   const wallet = useWallet()
   const dispatch = useDispatch()
   const router = useRouter()
+  // @ts-expect-error
   const { serializeParams } = useWasm()
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
+  const [newSignerAddress, setNewSignerAddress] = useState('')
+  const [newSignerAddressError, setNewSignerAddressError] = useState('')
   const [uncaughtError, setUncaughtError] = useState('')
   const [fetchingTxDetails, setFetchingTxDetails] = useState(false)
   const [mPoolPushing, setMPoolPushing] = useState(false)
@@ -48,6 +62,7 @@ const RemoveSigner = ({ signerAddress }) => {
   const [gasInfo, setGasInfo] = useState(emptyGasInfo)
   const [frozen, setFrozen] = useState(false)
   const { Address: address, AvailableBalance: balance } = useMsig()
+
   const onClose = useCallback(() => {
     navigate(router, { pageUrl: PAGE.MSIG_ADMIN })
   }, [router])
@@ -58,8 +73,8 @@ const RemoveSigner = ({ signerAddress }) => {
 
   const constructMsg = (nonce = 0) => {
     const innerParams = {
-      signer: signerAddress,
-      decrease: false
+      to: newSignerAddress,
+      from: oldSignerAddress
     }
 
     const serializedInnerParams = Buffer.from(
@@ -70,7 +85,7 @@ const RemoveSigner = ({ signerAddress }) => {
     const outerParams = {
       to: address,
       value: '0',
-      method: MSIG_METHOD.REMOVE_SIGNER,
+      method: MSIG_METHOD.SWAP_SIGNER,
       params: serializedInnerParams
     }
 
@@ -101,26 +116,36 @@ const RemoveSigner = ({ signerAddress }) => {
     if (provider) {
       const nonce = await provider.getNonce(wallet.address)
       const { message, params } = constructMsg(nonce)
+      const messageObj = message.toLotusType()
       setFetchingTxDetails(false)
       const signedMessage = await provider.wallet.sign(
-        message.toSerializeableType(),
-        wallet.path
+        wallet.address,
+        messageObj
       )
 
-      const messageObj = message.toLotusType()
       setMPoolPushing(true)
-      const validMsg = await provider.simulateMessage(message.toLotusType())
+      const validMsg = await provider.simulateMessage(messageObj)
       if (validMsg) {
-        const msgCid = await provider.sendMessage(messageObj, signedMessage)
-        messageObj.cid = msgCid['/']
-        messageObj.timestamp = dayjs().unix()
-        messageObj.maxFee = gasInfo.estimatedTransactionFee.toAttoFil() // dont know how much was actually paid in this message yet, so we mark it as 0
-        messageObj.paidFee = '0'
-        messageObj.value = '0'
+        const msgCid = await provider.sendMessage(signedMessage)
+        // @ts-expect-error
+        const messageForTxHistory: LotusMessage & {
+          cid: string
+          timestamp: number
+          maxFee: string
+          paidFee: string
+          value: string
+          method: string
+          params: string | object
+        } = { ...messageObj }
+        messageForTxHistory.cid = msgCid['/']
+        messageForTxHistory.timestamp = dayjs().unix()
+        messageForTxHistory.maxFee = gasInfo.estimatedTransactionFee.toAttoFil() // dont know how much was actually paid in this message yet, so we mark it as 0
+        messageForTxHistory.paidFee = '0'
+        messageForTxHistory.value = '0'
         // reformat the params and method for tx table
-        messageObj.params = params
-        messageObj.method = PROPOSE
-        return messageObj
+        messageForTxHistory.params = params
+        messageForTxHistory.method = PROPOSE
+        return messageForTxHistory
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')
     }
@@ -131,7 +156,11 @@ const RemoveSigner = ({ signerAddress }) => {
     e.preventDefault()
     if (step === 1) {
       setStep(2)
-    } else if (step === 2) {
+    } else if (step === 2 && !validateAddressString(newSignerAddress)) {
+      setNewSignerAddressError('Invalid to address')
+    } else if (step === 2 && validateAddressString(newSignerAddress)) {
+      setStep(3)
+    } else if (step === 3) {
       setAttemptingTx(true)
       try {
         const msg = await sendMsg()
@@ -175,10 +204,10 @@ const RemoveSigner = ({ signerAddress }) => {
   const isSubmitBtnDisabled = () => {
     if (frozen) return true
     if (step === 1) return false
-    if (step === 2 && gasError) return true
+    if (step === 3 && gasError) return true
     if (uncaughtError) return false
     if (attemptingTx) return true
-    if (step > 2) return true
+    if (step > 3) return true
   }
 
   const isBackBtnDisabled = () => {
@@ -232,47 +261,92 @@ const RemoveSigner = ({ signerAddress }) => {
               <ConfirmationCard
                 loading={fetchingTxDetails || mPoolPushing}
                 walletType={LEDGER}
-                currentStep={3}
-                totalSteps={3}
+                currentStep={4}
+                totalSteps={4}
                 msig
               />
             )}
-            {step === 1 && <Preface method={MSIG_METHOD.REMOVE_SIGNER} />}
-            <>
-              {step >= 2 && (
+            {!attemptingTx &&
+              step > 1 &&
+              !hasLedgerError({ ...ledger, otherError: uncaughtError }) && (
+                <Card
+                  display='flex'
+                  flexDirection='column'
+                  justifyContent='space-between'
+                  border='none'
+                  width='auto'
+                  my={2}
+                  backgroundColor='blue.muted700'
+                >
+                  <StepHeader
+                    title='Change Ownership'
+                    currentStep={step}
+                    totalSteps={4}
+                    glyphAcronym='Ch'
+                  />
+                  <ChangeSignerHeaderText step={step} />
+                </Card>
+              )}
+            {step === 1 && (
+              <Warning
+                title='Warning'
+                description={[
+                  "You're changing a signer of your multisig account to a new Filecoin address.",
+                  'Make sure you or someone you trust owns the private key to this new Filecoin address.',
+                  'If you or anyone else does not own this address, you could lose access to your funds permanently. There is no way to resolve this.'
+                ]}
+                linkDisplay="Why isn't it secure?"
+                linkhref='https://coinsutra.com/security-risks-bitcoin-wallets/'
+              />
+            )}
+            <Box boxShadow={2} borderRadius={4}>
+              {step > 1 && (
                 <>
-                  {!attemptingTx &&
-                    !hasLedgerError({
-                      ...ledger,
-                      otherError: uncaughtError
-                    }) && (
-                      <Box boxShadow={2} borderRadius={4}>
-                        <Card
-                          display='flex'
-                          flexDirection='column'
-                          justifyContent='space-between'
-                          border='none'
-                          width='auto'
-                          my={2}
-                          backgroundColor='blue.muted700'
-                        >
-                          <AddRmSignerHeader
-                            step={step}
-                            method={MSIG_METHOD.REMOVE_SIGNER}
-                          />
-                        </Card>
+                  <CardHeader
+                    msig
+                    address={address}
+                    msigBalance={balance}
+                    signerBalance={wallet.balance}
+                  />
+                  <Box width='100%' p={3} border={0} bg='background.screen'>
+                    <Box
+                      display='flex'
+                      flexDirection='row'
+                      alignItems='center'
+                      justifyContent='space-between'
+                      py={3}
+                    >
+                      <Label color='core.nearblack' pl='0'>
+                        Old signer
+                      </Label>
+                      <Box
+                        display='flex'
+                        flexDirection='row'
+                        alignItems='center'
+                      >
+                        <StyledATag
+                          target='_blank'
+                          href={`https://filfox.info/en/address/${oldSignerAddress}`}
+                        >{`${truncateAddress(oldSignerAddress)}`}</StyledATag>
+                        <CopyText text={oldSignerAddress} hideCopyText />
                       </Box>
-                    )}
-                  <Box boxShadow={2} borderRadius={4}>
-                    <CardHeader
-                      msig
-                      address={address}
-                      msigBalance={balance}
-                      signerBalance={wallet.balance}
-                    />
-                    <Box width='100%' p={3} border={0} bg='background.screen'>
-                      <RemoveSignerInput signerAddress={signerAddress} />
                     </Box>
+                    <Box mt={2}>
+                      <Input.Address
+                        // @ts-expect-error
+                        label='New signer'
+                        value={newSignerAddress}
+                        onChange={(e) => setNewSignerAddress(e.target.value)}
+                        error={newSignerAddressError}
+                        disabled={step === 3}
+                        onFocus={() => {
+                          if (newSignerAddressError)
+                            setNewSignerAddressError('')
+                        }}
+                      />
+                    </Box>
+                  </Box>
+                  {step > 2 && (
                     <Box
                       display='flex'
                       flexDirection='row'
@@ -292,13 +366,14 @@ const RemoveSigner = ({ signerAddress }) => {
                         feeMustBeLessThanThisAmount={wallet.balance}
                       />
                     </Box>
-                  </Box>
+                  )}
                 </>
               )}
-            </>
+            </Box>
           </Box>
           <Box
             display='flex'
+            flex='1'
             flexDirection='row'
             justifyContent='space-between'
             alignItems='flex-end'
@@ -307,7 +382,7 @@ const RemoveSigner = ({ signerAddress }) => {
             width='100%'
             minWidth={11}
             maxHeight={12}
-            py={4}
+            my={3}
           >
             <Button
               title='Back'
@@ -338,12 +413,8 @@ const RemoveSigner = ({ signerAddress }) => {
   )
 }
 
-RemoveSigner.propTypes = {
-  signerAddress: ADDRESS_PROPTYPE
+ChangeOwner.propTypes = {
+  oldSignerAddress: ADDRESS_PROPTYPE
 }
 
-RemoveSigner.defaultProps = {
-  signerAddress: ''
-}
-
-export default RemoveSigner
+export default ChangeOwner

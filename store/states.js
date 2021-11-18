@@ -1,11 +1,4 @@
-import { FilecoinNumber } from '@glif/filecoin-number'
-import updateArrayItem from '../utils/updateArrayItem'
-import sortAndRemoveWalletDups from '../utils/sortAndRemoveWalletDups'
 import { pluckConfirmed, uniqueifyMsgs } from '../utils/removeDupMessages'
-import {
-  getMessagesFromCache,
-  removeMessageFromCache
-} from '../utils/cacheMessage'
 
 export const initialMessagesState = {
   loading: false,
@@ -19,37 +12,8 @@ export const initialMessagesState = {
 }
 
 export const initialState = {
-  wallets: [],
-  selectedWalletIdx: -1,
-  error: '',
   messages: initialMessagesState
 }
-
-export const noWallet = {
-  address: '',
-  balance: new FilecoinNumber('0', 'fil'),
-  path: ''
-}
-
-export const walletList = (state, { wallets }) => ({
-  ...state,
-  wallets: sortAndRemoveWalletDups(state.wallets, wallets),
-  selectedWalletIdx: state.selectedWalletIdx >= 0 ? state.selectedWalletIdx : 0
-})
-
-export const switchWallet = (state, { index }) => ({
-  ...state,
-  selectedWalletIdx: index,
-  messages: initialMessagesState
-})
-
-export const updateBalance = (state, { balance, walletIdx }) => ({
-  ...state,
-  wallets: updateArrayItem(state.wallets, walletIdx, {
-    ...state.wallets[walletIdx],
-    balance
-  })
-})
 
 export const confirmMessage = (state, { message }) => {
   return {
@@ -99,19 +63,6 @@ export const clearMessages = (state) => ({
 })
 
 export const fetchedConfirmedMessagesSuccess = (state, { messages, total }) => {
-  // here we pluck out any messages from localstorage since filfox now has them
-  const cachedMessages = getMessagesFromCache(
-    state.wallets[state.selectedWalletIdx].address
-  )
-  const cids = new Set(messages.map((msg) => msg.cid))
-  cachedMessages.forEach((message) => {
-    // we now have the CID
-    if (cids.has(message.cid))
-      removeMessageFromCache(
-        state.wallets[state.selectedWalletIdx].address,
-        message.cid
-      )
-  })
   return {
     ...state,
     messages: {
@@ -145,16 +96,6 @@ export const fetchingNextPage = (state) => ({
     ...state.messages,
     paginating: true
   }
-})
-
-export const error = (state, err) => ({
-  ...state,
-  error: err
-})
-
-export const clearError = (state) => ({
-  ...state,
-  error: null
 })
 
 export const populateRedux = (state, { pendingMsgs }) => ({

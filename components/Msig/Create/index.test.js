@@ -1,6 +1,7 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
+import { Message } from '@glif/filecoin-message'
 
 import Create from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
@@ -14,6 +15,13 @@ jest.mock('../../../WalletProvider')
 
 const CHAIN_HEAD = '1000'
 const VEST = 100
+
+const next = async () => {
+  await act(async () => {
+    fireEvent.click(screen.getByText('Next'))
+    await flushPromises()
+  })
+}
 
 describe('Create msig flow', () => {
   beforeEach(() => {
@@ -41,40 +49,55 @@ describe('Create msig flow', () => {
             <Create />
           </Tree>
         )
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+      })
+
+      await next()
+
+      await act(async () => {
+        await fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
+      })
+
+      await next()
+
+      await act(async () => {
+        await fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
           target: { value: VEST }
         })
         fireEvent.blur(screen.getAllByPlaceholderText('0')[1])
-        fireEvent.click(screen.getByText('Next'))
         await flushPromises()
-        fireEvent.change(screen.getByPlaceholderText(CHAIN_HEAD.toString()), {
-          target: { value: 2000 }
-        })
+      })
+
+      await next()
+
+      await act(async () => {
+        await fireEvent.change(
+          screen.getByPlaceholderText(CHAIN_HEAD.toString()),
+          {
+            target: { value: 2000 }
+          }
+        )
         fireEvent.blur(screen.getAllByPlaceholderText('0')[1])
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
       })
+
+      await next()
+      await next()
 
       expect(walletProvider.getNonce).toHaveBeenCalled()
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
-      const message = walletProvider.wallet.sign.mock.calls[0][0]
-      expect(!!message.gaspremium).toBe(true)
+      const message = Message.fromLotusType(
+        walletProvider.wallet.sign.mock.calls[0][1]
+      ).toZondaxType()
+      expect(Number(message.gaspremium) > 0).toBe(true)
       expect(typeof message.gaspremium).toBe('string')
-      expect(!!message.gasfeecap).toBe(true)
+      expect(Number(message.gasfeecap) > 0).toBe(true)
       expect(typeof message.gasfeecap).toBe('string')
-      expect(!!message.gaslimit).toBe(true)
+      expect(message.gaslimit > 0).toBe(true)
       expect(typeof message.gaslimit).toBe('number')
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')
@@ -105,17 +128,20 @@ describe('Create msig flow', () => {
             <Create />
           </Tree>
         )
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+      })
+
+      await next()
+
+      await act(async () => {
+        await fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
       })
+
+      await next()
 
       expect(
         screen.getByText(
@@ -142,37 +168,39 @@ describe('Create msig flow', () => {
           preventDefault: () => {}
         })
         await flushPromises()
+      })
+      await next()
 
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+      await act(async () => {
+        await fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
+      })
+      await next()
+      await act(async () => {
+        await fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
           target: { value: VEST }
         })
         fireEvent.blur(screen.getAllByPlaceholderText('0')[1])
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
       })
+      await next()
+      await next()
+      await next()
 
       expect(walletProvider.getNonce).toHaveBeenCalled()
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
-      const message = walletProvider.wallet.sign.mock.calls[0][0]
-      expect(!!message.gaspremium).toBe(true)
+      const message = Message.fromLotusType(
+        walletProvider.wallet.sign.mock.calls[0][1]
+      ).toZondaxType()
+      expect(Number(message.gaspremium) > 0).toBe(true)
       expect(typeof message.gaspremium).toBe('string')
-      expect(!!message.gasfeecap).toBe(true)
+      expect(Number(message.gasfeecap) > 0).toBe(true)
       expect(typeof message.gasfeecap).toBe('string')
-      expect(!!message.gaslimit).toBe(true)
+      expect(message.gaslimit > 0).toBe(true)
       expect(typeof message.gaslimit).toBe('number')
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')
@@ -211,29 +239,33 @@ describe('Create msig flow', () => {
             <Create />
           </Tree>
         )
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+      })
+
+      await next()
+
+      await act(async () => {
+        await fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
       })
+
+      await next()
+      await next()
+      await next()
 
       expect(walletProvider.getNonce).toHaveBeenCalled()
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
-      const message = walletProvider.wallet.sign.mock.calls[0][0]
-      expect(!!message.gaspremium).toBe(true)
+      const message = Message.fromLotusType(
+        walletProvider.wallet.sign.mock.calls[0][1]
+      ).toZondaxType()
+      expect(Number(message.gaspremium) > 0).toBe(true)
       expect(typeof message.gaspremium).toBe('string')
-      expect(!!message.gasfeecap).toBe(true)
+      expect(Number(message.gasfeecap) > 0).toBe(true)
       expect(typeof message.gasfeecap).toBe('string')
-      expect(!!message.gaslimit).toBe(true)
+      expect(message.gaslimit > 0).toBe(true)
       expect(typeof message.gaslimit).toBe('number')
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')
@@ -262,36 +294,41 @@ describe('Create msig flow', () => {
             <Create />
           </Tree>
         )
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+      })
+
+      await next()
+
+      await act(async () => {
+        await fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
+      })
+
+      await next()
+      await act(async () => {
+        await fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
           target: { value: VEST }
         })
         fireEvent.blur(screen.getAllByPlaceholderText('0')[1])
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
       })
+      await next()
+      await next()
+      await next()
 
       expect(walletProvider.getNonce).toHaveBeenCalled()
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
-      const message = walletProvider.wallet.sign.mock.calls[0][0]
-      expect(!!message.gaspremium).toBe(true)
+      const message = Message.fromLotusType(
+        walletProvider.wallet.sign.mock.calls[0][1]
+      ).toZondaxType()
+      expect(Number(message.gaspremium) > 0).toBe(true)
       expect(typeof message.gaspremium).toBe('string')
-      expect(!!message.gasfeecap).toBe(true)
+      expect(Number(message.gasfeecap) > 0).toBe(true)
       expect(typeof message.gasfeecap).toBe('string')
-      expect(!!message.gaslimit).toBe(true)
+      expect(message.gaslimit > 0).toBe(true)
       expect(typeof message.gaslimit).toBe('number')
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')
@@ -325,42 +362,49 @@ describe('Create msig flow', () => {
             <Create />
           </Tree>
         )
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+      })
+
+      await next()
+
+      await act(async () => {
+        await fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
           target: { value: filAmount }
         })
         fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
         jest.runOnlyPendingTimers()
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
+      })
+      await next()
+
+      await act(async () => {
+        await fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
           target: { value: VEST }
         })
         fireEvent.blur(screen.getAllByPlaceholderText('0')[1])
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getAllByPlaceholderText(CHAIN_HEAD)[0], {
+      })
+      await next()
+      await act(async () => {
+        await fireEvent.change(screen.getAllByPlaceholderText(CHAIN_HEAD)[0], {
           target: { value: START_EPOCH }
         })
         fireEvent.blur(screen.getByDisplayValue(START_EPOCH))
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
       })
+
+      await next()
+      await next()
+      await next()
 
       expect(walletProvider.getNonce).toHaveBeenCalled()
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
-      const message = walletProvider.wallet.sign.mock.calls[0][0]
-      expect(!!message.gaspremium).toBe(true)
+      const message = Message.fromLotusType(
+        walletProvider.wallet.sign.mock.calls[0][1]
+      ).toZondaxType()
+      expect(Number(message.gaspremium) > 0).toBe(true)
       expect(typeof message.gaspremium).toBe('string')
-      expect(!!message.gasfeecap).toBe(true)
+      expect(Number(message.gasfeecap) > 0).toBe(true)
       expect(typeof message.gasfeecap).toBe('string')
-      expect(!!message.gaslimit).toBe(true)
+      expect(message.gaslimit > 0).toBe(true)
       expect(typeof message.gaslimit).toBe('number')
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')
@@ -440,9 +484,8 @@ describe('Create msig flow', () => {
               <Create />
             </Tree>
           )
-          fireEvent.click(screen.getByText('Next'))
-          await flushPromises()
         })
+        await next()
 
         expect(screen.getByText(/Step 2/)).toBeInTheDocument()
         expect(
@@ -456,7 +499,7 @@ describe('Create msig flow', () => {
         expect(res.container).toMatchSnapshot()
       })
 
-      test.only('it renders step 3 correctly', async () => {
+      test('it renders step 3 correctly', async () => {
         const { Tree } = composeMockAppTree('postOnboard')
         const filAmount = new FilecoinNumber(1, 'fil')
         let res
@@ -466,16 +509,22 @@ describe('Create msig flow', () => {
               <Create />
             </Tree>
           )
-          fireEvent.click(screen.getByText('Next'))
-          await flushPromises()
-          fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+        })
+
+        await next()
+
+        await act(async () => {
+          await fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
             target: { value: filAmount }
           })
           fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
           jest.runOnlyPendingTimers()
           await flushPromises()
-          fireEvent.click(screen.getByText('Next'))
-          await flushPromises()
+        })
+
+        await next()
+
+        await act(async () => {
           fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
             target: { value: VEST }
           })
@@ -497,23 +546,29 @@ describe('Create msig flow', () => {
               <Create />
             </Tree>
           )
-          fireEvent.click(screen.getByText('Next'))
-          await flushPromises()
-          fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+        })
+
+        await next()
+
+        await act(async () => {
+          await fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
             target: { value: filAmount }
           })
           fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
           jest.runOnlyPendingTimers()
           await flushPromises()
-          fireEvent.click(screen.getByText('Next'))
-          await flushPromises()
+        })
+
+        await next()
+
+        await act(async () => {
           fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
             target: { value: VEST }
           })
           fireEvent.blur(screen.getAllByPlaceholderText('0')[1])
-          fireEvent.click(screen.getByText('Next'))
-          await flushPromises()
         })
+
+        await next()
 
         expect(screen.getByText(/Step 4/)).toBeInTheDocument()
         expect(screen.getByText(/Start epoch/)).toBeInTheDocument()
@@ -532,30 +587,35 @@ describe('Create msig flow', () => {
               <Create />
             </Tree>
           )
-          fireEvent.click(screen.getByText('Next'))
-          await flushPromises()
-          fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
+        })
+
+        await next()
+        await act(async () => {
+          await fireEvent.change(screen.getAllByPlaceholderText('0')[0], {
             target: { value: filAmount }
           })
           fireEvent.blur(screen.getAllByPlaceholderText('0')[0])
           jest.runOnlyPendingTimers()
           await flushPromises()
-          fireEvent.click(screen.getByText('Next'))
-          await flushPromises()
+        })
+        await next()
+        await act(async () => {
           fireEvent.change(screen.getAllByPlaceholderText('0')[1], {
             target: { value: VEST }
           })
           fireEvent.blur(screen.getAllByPlaceholderText('0')[1])
-          fireEvent.click(screen.getByText('Next'))
-          await flushPromises()
+        })
+        await next()
+
+        await act(async () => {
           fireEvent.change(screen.getByPlaceholderText(CHAIN_HEAD.toString()), {
             target: { value: 2000 }
           })
           fireEvent.blur(screen.getAllByPlaceholderText('0')[1])
           await flushPromises()
-          fireEvent.click(screen.getByText('Next'))
         })
 
+        await next()
         expect(screen.getByText(/Step 5/)).toBeInTheDocument()
         expect(
           screen.getByText(/Please review the transaction details./)

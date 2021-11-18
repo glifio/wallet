@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import Filecoin from '@glif/filecoin-wallet-provider'
-import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
 import { validateMnemonic } from 'bip39'
 import {
@@ -9,29 +8,28 @@ import {
   OnboardCard,
   Title,
   Text,
-  Input,
   StepHeader,
-  LoadingScreen
-} from '../../../Shared'
-import { walletList } from '../../../../store/actions'
+  LoadingScreen,
+  Input
+} from '@glif/react-components'
 import { useWalletProvider } from '../../../../WalletProvider'
 import { createWalletProvider } from '../../../../WalletProvider/state'
 import reportError from '../../../../utils/reportError'
 import { navigate } from '../../../../utils/urlParams'
 import { PAGE } from '../../../../constants'
 
-export default () => {
+const InputMnemonic: FC<{}> = () => {
   const {
     dispatch,
     fetchDefaultWallet,
-    setWalletType,
+    setLoginOption,
     walletSubproviders: { HDWalletProvider }
   } = useWalletProvider()
   const [mnemonic, setMnemonic] = useState('')
   const [mnemonicError, setMnemonicError] = useState('')
   const [loadingNextScreen, setLoadingNextScreen] = useState(false)
-  const dispatchRdx = useDispatch()
   const router = useRouter()
+  const { walletList } = useWalletProvider()
 
   const instantiateProvider = async () => {
     setLoadingNextScreen(true)
@@ -45,7 +43,7 @@ export default () => {
         })
         dispatch(createWalletProvider(provider))
         const wallet = await fetchDefaultWallet(provider)
-        dispatchRdx(walletList([wallet]))
+        walletList([wallet])
         navigate(router, { pageUrl: PAGE.WALLET_HOME })
       } else {
         setMnemonicError('Invalid seed phrase')
@@ -90,7 +88,7 @@ export default () => {
           >
             <Button
               title='Back'
-              onClick={() => setWalletType(null)}
+              onClick={() => setLoginOption(null)}
               variant='secondary'
               mr={2}
             />
@@ -107,3 +105,5 @@ export default () => {
     </>
   )
 }
+
+export default InputMnemonic

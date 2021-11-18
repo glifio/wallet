@@ -353,7 +353,6 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders prefac
         <div
           class="c5"
         >
-          
           <div
             class="c6"
             display="flex"
@@ -1038,7 +1037,6 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 2
         <div
           class="c5"
         >
-          
           <div
             class="c6"
             display="flex"
@@ -2151,7 +2149,6 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
         <div
           class="c5"
         >
-          
           <div
             class="c6"
             display="flex"
@@ -2892,7 +2889,6 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders pref
         <div
           class="c5"
         >
-          
           <div
             class="c6"
             display="flex"
@@ -3844,7 +3840,6 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
         <div
           class="c5"
         >
-          
           <div
             class="c6"
           >

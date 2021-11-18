@@ -70,6 +70,7 @@ const Create = () => {
   const onClose = () => router.back()
 
   const constructMsg = (nonce = 0, epoch = startEpoch) => {
+    // @ts-expect-error
     const tx = wasm.createMultisig(
       wallet.address,
       [...signerAddresses],
@@ -111,24 +112,35 @@ const Create = () => {
       const nonce = await provider.getNonce(wallet.address)
       const { message, params } = constructMsg(nonce, startEpoch)
       setFetchingTxDetails(false)
+      const messageObj = message.toLotusType()
       const signedMessage = await provider.wallet.sign(
-        message.toSerializeableType(),
-        wallet.path
+        wallet.address,
+        messageObj
       )
 
-      const messageObj = message.toLotusType()
       setMPoolPushing(true)
       const validMsg = await provider.simulateMessage(message.toLotusType())
       if (validMsg) {
-        const msgCid = await provider.sendMessage(messageObj, signedMessage)
-        messageObj.cid = msgCid['/']
-        messageObj.timestamp = dayjs().unix()
-        messageObj.maxFee = gasInfo.estimatedTransactionFee.toAttoFil() // dont know how much was actually paid in this message yet, so we mark it as 0
-        messageObj.paidFee = '0'
+        const msgCid = await provider.sendMessage(signedMessage)
+        // @ts-expect-error
+        const messageForTxHistory: LotusMessage & {
+          cid: string
+          timestamp: number
+          maxFee: string
+          paidFee: string
+          value: string
+          method: string
+          params: string | object
+        } = { ...messageObj }
+        messageForTxHistory.cid = msgCid['/']
+        messageForTxHistory.timestamp = dayjs().unix()
+        messageForTxHistory.maxFee = gasInfo.estimatedTransactionFee.toAttoFil()
+        // dont know how much was actually paid in this message yet, so we mark it as 0
+        messageForTxHistory.paidFee = '0'
         // reformat the params and method for tx table
-        messageObj.params = params
-        messageObj.method = EXEC
-        return messageObj
+        messageForTxHistory.params = params
+        messageForTxHistory.method = EXEC
+        return messageForTxHistory
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')
     }
@@ -349,6 +361,7 @@ const Create = () => {
                         mb={2}
                       >
                         <Input.Address
+                          // @ts-expect-error
                           label={`${i + 1}`}
                           value={a}
                           onChange={(e) =>
@@ -402,6 +415,7 @@ const Create = () => {
                 {step > 1 && (
                   <Box width='100%' p={3} border={0} bg='background.screen'>
                     <Input.Funds
+                      // @ts-expect-error
                       name='amount'
                       label='Amount'
                       amount={value.toAttoFil()}
@@ -416,6 +430,7 @@ const Create = () => {
                 {step > 2 && (
                   <Box width='100%' p={3} border={0} bg='background.screen'>
                     <Input.Number
+                      // @ts-expect-error
                       name='vest'
                       label='Vest (# blocks)'
                       value={vest > 0 ? vest.toString() : ''}
@@ -428,6 +443,7 @@ const Create = () => {
                 {step > 3 && vest > 0 && (
                   <Box width='100%' p={3} border={0} bg='background.screen'>
                     <Input.Number
+                      // @ts-expect-error
                       name='epochs'
                       label='Start epoch (block #)'
                       value={startEpoch > 0 ? startEpoch.toString() : ''}

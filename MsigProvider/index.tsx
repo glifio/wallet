@@ -1,6 +1,6 @@
 import { useState, createContext, ReactNode, useContext, Dispatch } from 'react'
 import { FilecoinNumber } from '@glif/filecoin-number'
-import useSWR, { SWRConfig, SWRConfiguration } from 'swr'
+import useSWR from 'swr'
 import useWallet from '../WalletProvider/useWallet'
 import { fetchMsigState } from '../utils/msig'
 import { MsigActorState, emptyMsigState } from './types'
@@ -21,8 +21,7 @@ export type MsigProviderContextType = MsigActorState & {
 }
 
 export const MsigProviderWrapper = ({
-  children,
-  test
+  children
 }: {
   children: ReactNode
   test: boolean
@@ -34,42 +33,32 @@ export const MsigProviderWrapper = ({
     fetchMsigState
   )
 
-  let config: SWRConfiguration = { refreshInterval: 2000 }
-  // this only exists for the tests covering THIS file only
-  // every other test mocks this wrapper
-  if (test) {
-    config = { dedupingInterval: 0 }
-  }
-
   return (
-    <SWRConfig value={config}>
-      <MsigProviderContext.Provider
-        value={{
-          Address: msigActor,
-          ActorCode: actor?.ActorCode || '',
-          Balance: actor?.Balance || new FilecoinNumber('0', 'fil'),
-          AvailableBalance:
-            actor?.AvailableBalance || new FilecoinNumber('0', 'fil'),
-          loading: !actor,
-          Signers: actor?.Signers || [],
-          NextTxnID: actor?.NextTxnID || 0,
-          NumApprovalsThreshold: actor?.NumApprovalsThreshold || 0,
-          InitialBalance:
-            actor?.InitialBalance || new FilecoinNumber('0', 'fil'),
-          UnlockDuration: actor?.UnlockDuration || 0,
-          StartEpoch: actor?.StartEpoch || 0,
-          errors: actor?.errors || {
-            notMsigActor: false,
-            connectedWalletNotMsigSigner: false,
-            actorNotFound: false,
-            unhandledError: msigActorStateError ? msigActorStateError : ''
-          },
-          setMsigActor
-        }}
-      >
-        {children}
-      </MsigProviderContext.Provider>
-    </SWRConfig>
+    <MsigProviderContext.Provider
+      value={{
+        Address: msigActor,
+        ActorCode: actor?.ActorCode || '',
+        Balance: actor?.Balance || new FilecoinNumber('0', 'fil'),
+        AvailableBalance:
+          actor?.AvailableBalance || new FilecoinNumber('0', 'fil'),
+        loading: !actor,
+        Signers: actor?.Signers || [],
+        NextTxnID: actor?.NextTxnID || 0,
+        NumApprovalsThreshold: actor?.NumApprovalsThreshold || 0,
+        InitialBalance: actor?.InitialBalance || new FilecoinNumber('0', 'fil'),
+        UnlockDuration: actor?.UnlockDuration || 0,
+        StartEpoch: actor?.StartEpoch || 0,
+        errors: actor?.errors || {
+          notMsigActor: false,
+          connectedWalletNotMsigSigner: false,
+          actorNotFound: false,
+          unhandledError: msigActorStateError ? msigActorStateError : ''
+        },
+        setMsigActor
+      }}
+    >
+      {children}
+    </MsigProviderContext.Provider>
   )
 }
 

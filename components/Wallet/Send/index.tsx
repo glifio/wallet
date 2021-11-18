@@ -3,12 +3,11 @@ import dayjs from 'dayjs'
 import { useDispatch } from 'react-redux'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { validateAddressString } from '@glif/filecoin-address'
-import { Message } from '@glif/filecoin-message'
+import { LotusMessage, Message } from '@glif/filecoin-message'
 import { useRouter } from 'next/router'
 
 import {
   Box,
-  Input,
   Num,
   Button,
   ButtonClose,
@@ -17,7 +16,8 @@ import {
   Form,
   Card,
   PageWrapper
-} from '../../Shared'
+} from '@glif/react-components'
+import { Input } from '../../Shared'
 import { CardHeader } from '../../Msig/Shared'
 import ConfirmationCard from './ConfirmationCard'
 import HeaderText from './HeaderText'
@@ -61,8 +61,13 @@ const isValidForm = (
 const Send = () => {
   const dispatch = useDispatch()
   const wallet = useWallet()
-  const { ledger, walletProvider, connectLedger, resetLedgerState } =
-    useWalletProvider()
+  const {
+    ledger,
+    walletProvider,
+    connectLedger,
+    resetLedgerState,
+    loginOption
+  } = useWalletProvider()
   const [toAddress, setToAddress] = useState('')
   const [params, setParams] = useState('')
   const [toAddressError, setToAddressError] = useState('')
@@ -94,10 +99,9 @@ const Send = () => {
     setFetchingTxDetails(true)
     let provider = walletProvider
     // attempt to establish a new connection with the ledger device if the user selected ledger
-    if (wallet.type === LEDGER) {
+    if (loginOption === LEDGER) {
       provider = await connectLedger()
     }
-
     if (provider) {
       const nonce = await provider.getNonce(wallet.address)
       const message = new Message({
@@ -111,34 +115,39 @@ const Send = () => {
         nonce,
         params
       })
-
       setFetchingTxDetails(false)
+      const messageObj = message.toLotusType()
       const signedMessage = await provider.wallet.sign(
-        message.toSerializeableType(),
-        wallet.path
+        wallet.address,
+        messageObj
       )
 
-      const messageObj = message.toLotusType()
       setMPoolPushing(true)
-      const validMsg = await provider.simulateMessage(message.toLotusType())
+      const validMsg = await provider.simulateMessage(messageObj)
       if (validMsg) {
-        const msgCid = await provider.sendMessage(
-          message.toLotusType(),
-          signedMessage
-        )
-
-        messageObj.cid = msgCid['/']
-        messageObj.timestamp = dayjs().unix()
-        messageObj.maxFee = gasInfo.estimatedTransactionFee.toAttoFil()
+        const msgCid = await provider.sendMessage(signedMessage)
+        // @ts-expect-error
+        const messageForTxHistory: LotusMessage & {
+          cid: string
+          timestamp: number
+          maxFee: string
+          paidFee: string
+          value: string
+          method: string
+          params: string | object
+        } = { ...messageObj }
+        messageForTxHistory.cid = msgCid['/']
+        messageForTxHistory.timestamp = dayjs().unix()
+        messageForTxHistory.maxFee = gasInfo.estimatedTransactionFee.toAttoFil()
         // dont know how much was actually paid in this message yet, so we mark it as 0
-        messageObj.paidFee = '0'
-        messageObj.value = new FilecoinNumber(
+        messageForTxHistory.paidFee = '0'
+        messageForTxHistory.value = new FilecoinNumber(
           messageObj.Value,
           'attofil'
         ).toAttoFil()
-        messageObj.method = SEND
-        messageObj.params = params || {}
-        return messageObj
+        messageForTxHistory.method = SEND
+        messageForTxHistory.params = params || {}
+        return messageForTxHistory
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')
     }
@@ -188,7 +197,7 @@ const Send = () => {
       setStep(3)
     } else if (step === 3 && (!params || isBase64(params))) {
       // TODO - get rid of this once ledger supports params
-      if (wallet.type === LEDGER && params) {
+      if (loginOption === LEDGER && params) {
         setParamsError(
           'Ledger devices cannot sign base64 params yet. Coming soon.'
         )
@@ -216,7 +225,7 @@ const Send = () => {
       setStep(6)
       setAttemptingTx(true)
       // confirmation step happens on ledger device, so we send message one step earlier
-      if (wallet.type === LEDGER) {
+      if (loginOption === LEDGER) {
         await sendMsg()
       }
     } else if (
@@ -247,11 +256,11 @@ const Send = () => {
   const hasError = () =>
     !!(
       uncaughtError ||
-      (wallet.type === LEDGER && reportLedgerConfigError(ledger))
+      (loginOption === LEDGER && reportLedgerConfigError(ledger))
     )
 
   const ledgerError = () =>
-    wallet.type === LEDGER && reportLedgerConfigError(ledger)
+    loginOption === LEDGER && reportLedgerConfigError(ledger)
 
   const isSubmitBtnDisabled = () => {
     if (frozen) return true
@@ -260,21 +269,21 @@ const Send = () => {
     if (step === 2 && !isValidAmount(value, wallet.balance, valueError))
       return true
     if (step === 4 && gasError) return true
-    if (step === 6 && wallet.type === LEDGER) return true
+    if (step === 6 && loginOption === LEDGER) return true
     if (step > 6) return true
   }
 
   const isBackBtnDisabled = () => {
     if (frozen) return true
-    if (wallet.type === LEDGER && attemptingTx) return true
+    if (loginOption === LEDGER && attemptingTx) return true
     if (fetchingTxDetails) return true
     if (mPoolPushing) return true
     return false
   }
 
   const submitBtnText = () => {
-    if (step === 6 && wallet.type !== LEDGER) return 'Send'
-    if (step === 6 && wallet.type === LEDGER) return 'Confirm on device.'
+    if (step === 6 && loginOption !== LEDGER) return 'Send'
+    if (step === 6 && loginOption === LEDGER) return 'Confirm on device.'
     if (step < 6) return 'Next'
     if (step > 6) return 'Send'
   }
@@ -322,7 +331,7 @@ const Send = () => {
               )}
               {!hasError() && attemptingTx && (
                 <ConfirmationCard
-                  walletType={wallet.type}
+                  walletType={loginOption}
                   currentStep={6}
                   totalSteps={6}
                   loading={fetchingTxDetails || mPoolPushing}
@@ -346,7 +355,7 @@ const Send = () => {
                       glyphAcronym='Sf'
                     />
                     <Box mt={6} mb={4}>
-                      <HeaderText step={step} walletType={wallet.type} />
+                      <HeaderText step={step} walletType={loginOption} />
                     </Box>
                   </Card>
                 </>

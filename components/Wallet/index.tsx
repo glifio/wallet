@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from 'react'
 import { useRouter } from 'next/router'
-
 import {
   AccountCard,
   AccountError,
@@ -11,7 +10,8 @@ import {
   BaseButton as ButtonLogout,
   Box,
   Tooltip
-} from '../Shared'
+} from '@glif/react-components'
+
 import MessageView from './Message'
 import { useWalletProvider } from '../../WalletProvider'
 import {
@@ -24,10 +24,10 @@ import reportError from '../../utils/reportError'
 import { navigate, resetWallet } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
-export default () => {
+export default function WalletHome() {
   const wallet = useWallet()
   const router = useRouter()
-  const { ledger, connectLedger } = useWalletProvider()
+  const { ledger, connectLedger, loginOption } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState('')
   const [showLedgerError, setShowLedgerError] = useState(false)
   const [ledgerBusy, setLedgerBusy] = useState(false)
@@ -73,9 +73,9 @@ export default () => {
           ) : (
             <AccountCard
               onAccountSwitch={onAccountSwitch}
-              color='purple'
+              color='core.primary'
               address={wallet.address}
-              walletType={wallet.type}
+              walletType={loginOption}
               onShowOnLedger={onShowOnLedger}
               ledgerBusy={ledgerBusy}
               mb={2}

@@ -3,12 +3,14 @@ import PropTypes from 'prop-types'
 
 import reducer, {
   initialState,
-  setWalletType,
+  setLoginOption,
   setError,
   resetLedgerState,
-  resetState
+  resetState,
+  walletList,
+  switchWallet,
+  updateBalance
 } from './state'
-import { setLedgerProvider } from '../utils/ledger/setLedgerProvider'
 import fetchDefaultWallet from './fetchDefaultWallet'
 import connectLedger from './connectLedger'
 import { useWasm } from '../lib/WasmLoader'
@@ -37,17 +39,28 @@ const WalletProviderWrapper = ({ children }) => {
           [dispatch, state.walletType, state.walletProvider, walletSubproviders]
         ),
         setWalletError: (errorMessage) => dispatch(setError(errorMessage)),
-        setWalletType: (walletType) => dispatch(setWalletType(walletType)),
-        setLedgerProvider: useCallback(
-          () => setLedgerProvider(dispatch, walletSubproviders.LedgerProvider),
-          [dispatch, walletSubproviders.LedgerProvider]
-        ),
+        setLoginOption: (loginOption) => dispatch(setLoginOption(loginOption)),
         connectLedger: useCallback(
-          () => connectLedger(dispatch, walletSubproviders.LedgerProvider),
-          [dispatch, walletSubproviders.LedgerProvider]
+          () =>
+            connectLedger(
+              dispatch,
+              walletSubproviders.LedgerProvider,
+              state?.walletProvider?.wallet
+            ),
+          [
+            dispatch,
+            walletSubproviders.LedgerProvider,
+            state?.walletProvider?.wallet
+          ]
         ),
         resetLedgerState: () => dispatch(resetLedgerState()),
         resetState: useCallback(() => dispatch(resetState()), [dispatch]),
+        walletList: (wallets, selectedWalletIdx) =>
+          dispatch(walletList(wallets, selectedWalletIdx)),
+        switchWallet: (selectedWalletIdx) =>
+          dispatch(switchWallet(selectedWalletIdx)),
+        updateBalance: (balance, index) =>
+          dispatch(updateBalance(balance, index)),
         walletSubproviders
       }}
     >

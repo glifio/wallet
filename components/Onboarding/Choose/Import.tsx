@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { FC } from 'react'
 import PropTypes from 'prop-types'
-import { Box, Card, Glyph, Text } from '../../Shared'
+import { Box, Card, Glyph, Text } from '@glif/react-components'
 
-const Import = ({
-  onClick,
-  glyphAcronym,
-  glyphColor,
-  title,
-  Icon,
-  ...props
-}) => (
+const Import: FC<{
+  onClick: () => void
+  title: string
+  glyphAcronym?: string
+  glyphColor?: string
+  Icon?: object
+  [x: string]: any
+}> = ({ onClick, glyphAcronym, glyphColor, title, Icon, ...props }) => (
   <>
     <Card
       display='flex'
@@ -45,7 +45,6 @@ const Import = ({
 )
 
 Import.defaultProps = {
-  description: '',
   Icon: {},
   glyphAcronym: '',
   glyphColor: ''

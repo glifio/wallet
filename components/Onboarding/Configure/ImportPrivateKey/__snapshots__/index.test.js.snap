@@ -77,6 +77,12 @@ exports[`Import private key configuration it renders correctly 1`] = `
 .c7 {
   min-width: 0;
   box-sizing: border-box;
+  width: 8px;
+}
+
+.c8 {
+  min-width: 0;
+  box-sizing: border-box;
   border-color: #C4C4C4;
   margin: 8px;
   width: auto;
@@ -93,7 +99,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c10 {
+.c11 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -109,7 +115,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
   align-items: flex-end;
 }
 
-.c12 {
+.c13 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -122,7 +128,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
   align-items: center;
 }
 
-.c13 {
+.c14 {
   min-width: 0;
   box-sizing: border-box;
   margin-right: 16px;
@@ -141,7 +147,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
   align-items: center;
 }
 
-.c15 {
+.c16 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -158,7 +164,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
   align-items: center;
 }
 
-.c17 {
+.c18 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 48px;
@@ -179,7 +185,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c18 {
+.c19 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -199,11 +205,11 @@ exports[`Import private key configuration it renders correctly 1`] = `
   border-radius: 4px;
 }
 
-.c18:hover {
+.c19:hover {
   opacity: 0.8;
 }
 
-.c19 {
+.c20 {
   cursor: not-allowed;
   border: 1px solid #C4C4C4;
   background-color: #C4C4C4;
@@ -222,11 +228,11 @@ exports[`Import private key configuration it renders correctly 1`] = `
   border-radius: 4px;
 }
 
-.c19:hover {
+.c20:hover {
   opacity: 1;
 }
 
-.c8 {
+.c9 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -235,14 +241,14 @@ exports[`Import private key configuration it renders correctly 1`] = `
   margin-top: 16px;
 }
 
-.c9 {
+.c10 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
 }
 
-.c14 {
+.c15 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -251,7 +257,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
   margin: 0;
 }
 
-.c16 {
+.c17 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -276,18 +282,18 @@ exports[`Import private key configuration it renders correctly 1`] = `
   border-color: #999999;
 }
 
-.c16:hover {
+.c17:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c16:focus {
+.c17:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c11 {
+.c12 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
@@ -314,7 +320,6 @@ exports[`Import private key configuration it renders correctly 1`] = `
 }
 
 .c4 {
-  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -361,16 +366,20 @@ exports[`Import private key configuration it renders correctly 1`] = `
             </h3>
           </div>
         </li>
+        <div
+          class="c7"
+          width="2"
+        />
         
       </div>
     </ul>
     <div
-      class="c7"
+      class="c8"
       display="flex"
       width="auto"
     >
       <h2
-        class="c8"
+        class="c9"
         font-family="RT-Alias-Grotesk"
         font-size="4"
         font-weight="400"
@@ -378,7 +387,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
         Import
       </h2>
       <p
-        class="c9"
+        class="c10"
         font-family="RT-Alias-Grotesk"
         font-size="2"
         font-weight="400"
@@ -386,22 +395,22 @@ exports[`Import private key configuration it renders correctly 1`] = `
         Please input your private key below
       </p>
       <div
-        class="c10"
+        class="c11"
         display="flex"
       >
         <div
-          class="c11"
+          class="c12"
         >
           <div
-            class="c12"
+            class="c13"
             display="flex"
           >
             <div
-              class="c13"
+              class="c14"
               display="flex"
             >
               <h4
-                class="c14"
+                class="c15"
                 color="core.nearblack"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
@@ -411,14 +420,13 @@ exports[`Import private key configuration it renders correctly 1`] = `
               </h4>
             </div>
             <div
-              class="c15"
+              class="c16"
               display="flex"
             >
               <input
-                class="c16"
+                class="c17"
                 display="inline-block"
                 height="6"
-                name=""
                 placeholder="Your private key"
                 type="password"
                 value=""
@@ -433,12 +441,12 @@ exports[`Import private key configuration it renders correctly 1`] = `
     </div>
   </div>
   <div
-    class="c17"
+    class="c18"
     display="flex"
     width="100%"
   >
     <button
-      class="c18"
+      class="c19"
       font-size="3"
       height="6"
       type="button"
@@ -446,7 +454,7 @@ exports[`Import private key configuration it renders correctly 1`] = `
       Back
     </button>
     <button
-      class="c19"
+      class="c20"
       disabled=""
       font-size="3"
       height="6"

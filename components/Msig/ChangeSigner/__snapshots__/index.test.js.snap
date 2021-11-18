@@ -356,7 +356,6 @@ exports[`Change signer flow snapshots it renders preface correctly 1`] = `
         <div
           class="c5"
         >
-          
           <div
             class="c6"
             display="flex"
@@ -1189,7 +1188,6 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
         <div
           class="c5"
         >
-          
           <div
             class="c6"
             display="flex"
@@ -2509,7 +2507,6 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
         <div
           class="c5"
         >
-          
           <div
             class="c6"
             display="flex"

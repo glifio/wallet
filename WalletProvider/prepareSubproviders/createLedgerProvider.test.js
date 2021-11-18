@@ -47,8 +47,30 @@ describe('createLedgerProvider', () => {
         })
         const LedgerProvider = createLedgerProvider(mockRustModule)
         const ledgerProvider = LedgerProvider({})
-        await ledgerProvider.sign(msg, "m/44'/461'/0/0/2")
+        await ledgerProvider.sign(
+          't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
+          msg.toLotusType()
+        )
         expect(mockSign).toHaveBeenCalled()
+      })
+
+      test('it errs if the from address does not match the one provided in the message', async () => {
+        const msg = new Message({
+          from: 't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muuei',
+          to: 't1t5gdjfb6jojpivbl5uek6vf6svlct7dph5q2jwa',
+          value: '1000',
+          method: 0,
+          nonce: 0
+        })
+        const LedgerProvider = createLedgerProvider(mockRustModule)
+        const ledgerProvider = LedgerProvider({})
+        expect(
+          async () =>
+            await ledgerProvider.sign(
+              't1hvuzpfdycc6z6mjgbiyaiojikd6wk2vwy7muueu',
+              msg.toLotusType()
+            )
+        ).rejects.toThrow()
       })
     })
 
@@ -58,7 +80,7 @@ describe('createLedgerProvider', () => {
       test('it returns an array of accounts', async () => {
         const LedgerProvider = createLedgerProvider(mockRustModule)
         const ledgerProvider = LedgerProvider({})
-        const accounts = await ledgerProvider.getAccounts(TESTNET, 0, 5)
+        const accounts = await ledgerProvider.getAccounts(0, 5, TESTNET)
         expect(accounts.length).toBe(5)
         expect(mockGetAddressAndPubKey).toHaveBeenCalledTimes(5)
       })
@@ -66,7 +88,7 @@ describe('createLedgerProvider', () => {
       test('it generates accounts with the right, hardened paths', async () => {
         const LedgerProvider = createLedgerProvider(mockRustModule)
         const ledgerProvider = LedgerProvider({})
-        await ledgerProvider.getAccounts(TESTNET, 0, 5)
+        await ledgerProvider.getAccounts(0, 5, TESTNET)
         mockGetAddressAndPubKey.mock.calls.forEach(([path], walletIdx) => {
           // check to make sure the path fits m/44'/1'/0'/0/0
           path.split('/').forEach((v, i) => {

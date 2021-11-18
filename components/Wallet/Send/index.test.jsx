@@ -1,5 +1,6 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { Message } from '@glif/filecoin-message'
 
 import Send from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
@@ -58,12 +59,14 @@ describe('Send Flow', () => {
       expect(walletProvider.getNonce).toHaveBeenCalledWith(address)
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
       expect(walletProvider.simulateMessage).toHaveBeenCalled()
-      const message = walletProvider.wallet.sign.mock.calls[0][0]
-      expect(!!message.gaspremium).toBe(true)
+      const message = Message.fromLotusType(
+        walletProvider.wallet.sign.mock.calls[0][1]
+      ).toZondaxType()
+      expect(Number(message.gaspremium) > 0).toBe(true)
       expect(typeof message.gaspremium).toBe('string')
-      expect(!!message.gasfeecap).toBe(true)
+      expect(Number(message.gasfeecap) > 0).toBe(true)
       expect(typeof message.gasfeecap).toBe('string')
-      expect(!!message.gaslimit).toBe(true)
+      expect(message.gaslimit > 0).toBe(true)
       expect(typeof message.gaslimit).toBe('number')
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')
@@ -232,7 +235,9 @@ describe('Send Flow', () => {
       })
       expect(walletProvider.getNonce).toHaveBeenCalledWith(address)
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
-      const message = walletProvider.wallet.sign.mock.calls[0][0]
+      const message = Message.fromLotusType(
+        walletProvider.wallet.sign.mock.calls[0][1]
+      ).toZondaxType()
       expect(!!message.gaspremium).toBe(true)
       expect(typeof message.gaspremium).toBe('string')
       expect(!!message.gasfeecap).toBe(true)
@@ -308,6 +313,9 @@ describe('Send Flow', () => {
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
+      })
+
+      await act(async () => {
         fireEvent.change(screen.getByDisplayValue('1000000'), {
           target: { value: '2000000' }
         })
@@ -345,6 +353,9 @@ describe('Send Flow', () => {
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
+      })
+
+      await act(async () => {
         fireEvent.change(screen.getByDisplayValue('1000000'), {
           target: { value: '2000000' }
         })
@@ -416,6 +427,9 @@ describe('Send Flow', () => {
         await flushPromises()
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
+      })
+
+      await act(async () => {
         fireEvent.change(screen.getByDisplayValue('1000000'), {
           target: { value: '' }
         })
@@ -489,6 +503,12 @@ describe('Send Flow', () => {
           </Tree>
         )
       })
+      expect(
+        screen.getByText(
+          /First, please confirm the account you're sending from, and the recipient you want to send to./
+        )
+      )
+      expect(screen.getByText(/Step 1/))
       expect(res.container).toMatchSnapshot()
     })
 
@@ -510,6 +530,12 @@ describe('Send Flow', () => {
         fireEvent.click(screen.getByText('Next'))
         await flushPromises()
       })
+      expect(
+        screen.getByText(
+          /Next, please choose an amount of FIL you'd like to withdraw./
+        )
+      )
+      expect(screen.getByText(/Step 2/))
       expect(res.container).toMatchSnapshot()
     })
 

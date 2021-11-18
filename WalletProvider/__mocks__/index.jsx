@@ -1,22 +1,23 @@
 import { createContext, useContext, useReducer } from 'react'
 import createMockWalletProviderContextFuncs from '../../test-utils/composeMockAppTree/createWalletProviderContextFuncs'
-import { composeWalletProviderState } from '../../test-utils/composeMockAppTree/composeState'
 import mockWalletSubproviders from '../../test-utils/mocks/mock-wallet-subproviders'
 import walletProviderReducer, {
   initialState as walletProviderInitialState
 } from '../../WalletProvider/state'
 
-export const WalletProviderContext = createContext({ walletProvider: null })
+export const WalletProviderContext = createContext({
+  ...walletProviderInitialState
+})
 
-const WalletProviderWrapper = ({ children, options, statePreset }) => {
-  const [initialWalletProviderState, walletProviderDispatch] = useReducer(
+const WalletProviderWrapper = ({
+  children,
+  options,
+  initialState,
+  getState
+}) => {
+  const [walletProviderState, walletProviderDispatch] = useReducer(
     options?.reducer || walletProviderReducer,
-    options?.walletProviderInitialState || walletProviderInitialState
-  )
-
-  const walletProviderState = composeWalletProviderState(
-    initialWalletProviderState,
-    statePreset
+    initialState
   )
 
   const mockWalletProviderContextFuncs = createMockWalletProviderContextFuncs(
@@ -34,7 +35,10 @@ const WalletProviderWrapper = ({ children, options, statePreset }) => {
         ...mockWalletProviderContextFuncs
       }}
     >
-      {children}
+      <>
+        {getState(walletProviderState)}
+        {children}
+      </>
     </WalletProviderContext.Provider>
   )
 }

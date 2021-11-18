@@ -9,6 +9,8 @@ import { useMsig, MsigProviderWrapper } from '.'
 import WalletProviderWrapper from '../WalletProvider'
 import mockReduxStoreWithState from '../test-utils/composeMockAppTree/mockReduxStoreWithState'
 import { MsigActorState } from './types'
+import { composeWalletProviderState } from '../test-utils/composeMockAppTree/composeState'
+import { initialState as _walletProviderInitialState } from '../WalletProvider/state'
 
 jest.mock('../WalletProvider')
 
@@ -23,10 +25,18 @@ describe('Not a signer error handling', () => {
     jest.clearAllMocks()
     const statePreset = 'postOnboard'
     const mockReduxStore = mockReduxStoreWithState({ statePreset })
+    const walletProviderInitialState = composeWalletProviderState(
+      _walletProviderInitialState,
+      statePreset
+    )
     Tree = ({ children }: { children: ReactNode }) => (
       <Provider store={mockReduxStore}>
-        {/* @ts-ignore */}
-        <WalletProviderWrapper statePreset={statePreset}>
+        <WalletProviderWrapper
+          // @ts-expect-error
+          getState={() => {}}
+          statePreset={statePreset}
+          initialState={walletProviderInitialState}
+        >
           <MsigProviderWrapper test>{children}</MsigProviderWrapper>
         </WalletProviderWrapper>
       </Provider>

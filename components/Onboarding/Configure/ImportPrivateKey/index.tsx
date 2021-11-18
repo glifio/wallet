@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import Filecoin from '@glif/filecoin-wallet-provider'
-import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
 import {
   Box,
@@ -8,27 +7,26 @@ import {
   OnboardCard,
   Title,
   Text,
-  Input,
   StepHeader,
-  LoadingScreen
-} from '../../../Shared'
-import { walletList } from '../../../../store/actions'
+  LoadingScreen,
+  Input
+} from '@glif/react-components'
 import { useWalletProvider } from '../../../../WalletProvider'
 import { createWalletProvider } from '../../../../WalletProvider/state'
 import reportError from '../../../../utils/reportError'
 import { navigate } from '../../../../utils/urlParams'
 import { PAGE } from '../../../../constants'
 
-export default () => {
+const InputPrivateKey: FC<{}> = () => {
   const {
     dispatch,
     fetchDefaultWallet,
-    setWalletType,
+    setLoginOption,
     walletSubproviders: { SingleKeyProvider }
   } = useWalletProvider()
   const [privateKey, setPrivateKey] = useState('')
   const [privateKeyError, setPrivateKeyError] = useState('')
-  const dispatchRdx = useDispatch()
+  const { walletList } = useWalletProvider()
   const [loadingNextScreen, setLoadingNextScreen] = useState(false)
   const router = useRouter()
 
@@ -41,7 +39,7 @@ export default () => {
       })
       dispatch(createWalletProvider(provider))
       const wallet = await fetchDefaultWallet(provider)
-      dispatchRdx(walletList([wallet]))
+      walletList([wallet])
       navigate(router, { pageUrl: PAGE.WALLET_HOME })
     } catch (err) {
       reportError(18, false, err.message, err.stack)
@@ -95,7 +93,7 @@ export default () => {
           >
             <Button
               title='Back'
-              onClick={() => setWalletType(null)}
+              onClick={() => setLoginOption(null)}
               variant='secondary'
               mr={2}
             />
@@ -112,3 +110,5 @@ export default () => {
     </>
   )
 }
+
+export default InputPrivateKey

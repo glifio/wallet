@@ -10,17 +10,7 @@ import {
   LEDGER_VERSION_MINOR,
   LEDGER_VERSION_PATCH
 } from '../../constants'
-import { ledgerActionTypes } from './ledgerStateManagement'
 import badVersion from './badVersion'
-
-const {
-  LEDGER_FILECOIN_APP_OPEN,
-  LEDGER_UNLOCKED,
-  LEDGER_LOCKED,
-  LEDGER_BUSY,
-  LEDGER_FILECOIN_APP_NOT_OPEN,
-  LEDGER_REPLUG
-} = ledgerActionTypes
 
 const mockDispatch = jest.fn()
 
@@ -68,8 +58,8 @@ describe('Ledger utils', () => {
       expect(
         mockDispatch.mock.calls.filter(
           ([mockAction]) =>
-            mockAction.type === LEDGER_FILECOIN_APP_OPEN ||
-            mockAction.type === LEDGER_UNLOCKED
+            mockAction.type === 'LEDGER_FILECOIN_APP_OPEN' ||
+            mockAction.type === 'LEDGER_UNLOCKED'
         ).length === 2
       ).toBe(true)
     })
@@ -93,7 +83,7 @@ describe('Ledger utils', () => {
       expect(configured).toBe(false)
       expect(
         mockDispatch.mock.calls.filter(
-          ([mockAction]) => mockAction.type === LEDGER_LOCKED
+          ([mockAction]) => mockAction.type === 'LEDGER_LOCKED'
         ).length === 1
       ).toBe(true)
     })
@@ -114,7 +104,7 @@ describe('Ledger utils', () => {
       expect(configured).toBe(false)
       expect(
         mockDispatch.mock.calls.filter(
-          ([mockAction]) => mockAction.type === LEDGER_REPLUG
+          ([mockAction]) => mockAction.type === 'LEDGER_REPLUG'
         ).length === 1
       ).toBe(true)
     })
@@ -135,7 +125,7 @@ describe('Ledger utils', () => {
       expect(configured).toBe(false)
       expect(
         mockDispatch.mock.calls.filter(
-          ([mockAction]) => mockAction.type === LEDGER_BUSY
+          ([mockAction]) => mockAction.type === 'LEDGER_BUSY'
         ).length === 1
       ).toBe(true)
     })
@@ -156,7 +146,7 @@ describe('Ledger utils', () => {
       expect(configured).toBe(false)
       expect(
         mockDispatch.mock.calls.filter(
-          ([mockAction]) => mockAction.type === LEDGER_FILECOIN_APP_NOT_OPEN
+          ([mockAction]) => mockAction.type === 'LEDGER_FILECOIN_APP_NOT_OPEN'
         ).length === 1
       ).toBe(true)
     })
@@ -177,7 +167,7 @@ describe('Ledger utils', () => {
       expect(configured).toBe(false)
       expect(
         mockDispatch.mock.calls.filter(
-          ([mockAction]) => mockAction.type === LEDGER_REPLUG
+          ([mockAction]) => mockAction.type === 'LEDGER_REPLUG'
         ).length === 1
       ).toBe(true)
     })

@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
-import { useDispatch, useSelector } from 'react-redux'
 import {
   Box,
   Button,
@@ -9,25 +8,28 @@ import {
   Text,
   Title,
   StepHeader,
-  StyledATag
-} from '../../../Shared'
-import { IconLedger } from '../../../Shared/Icons'
+  StyledATag,
+  IconLedger
+} from '@glif/react-components'
 
 import { useWalletProvider } from '../../../../WalletProvider'
-import { walletList, error as rdxError } from '../../../../store/actions'
 import {
   hasLedgerError,
   reportLedgerConfigError
 } from '../../../../utils/ledger/reportLedgerConfigError'
 import useReset from '../../../../utils/useReset'
 import { navigate } from '../../../../utils/urlParams'
+import {
+  LedgerState,
+  LEDGER_STATE_PROPTYPES
+} from '../../../../utils/ledger/ledgerStateManagement'
 import { PAGE } from '../../../../constants'
 
-const Step2Helper = ({ ...errors }) => (
+const Helper: FC<LedgerState & { otherError: string }> = ({ ...errors }) => (
   <Box
     display='flex'
     flexDirection='column'
-    justifyContent='space-between'
+    justifyContent='space-around'
     borderColor='silver'
     width='100%'
     minHeight={9}
@@ -42,6 +44,9 @@ const Step2Helper = ({ ...errors }) => (
         </Box>
         <Box mt={3} color='status.fail.foreground'>
           <Text>{reportLedgerConfigError({ ...errors })}</Text>
+          {errors.inUseByAnotherApp && (
+            <Text>(Most of the time, this is Ledger Live!)</Text>
+          )}
         </Box>
       </>
     ) : (
@@ -50,8 +55,10 @@ const Step2Helper = ({ ...errors }) => (
           <Title>Unlock & Open</Title>
         </Box>
         <Box color='core.nearblack' mt={3}>
-          <Text>Please unlock your Ledger device.</Text>
-          <Text>And make sure the Filecoin App is open</Text>
+          <Text>
+            Please unlock your Ledger device and open the Filecoin App
+          </Text>
+
           <StyledATag
             fontSize={2}
             target='_blank'
@@ -66,64 +73,54 @@ const Step2Helper = ({ ...errors }) => (
   </Box>
 )
 
-Step2Helper.propTypes = {
-  connectedFailure: PropTypes.bool.isRequired,
-  locked: PropTypes.bool.isRequired,
-  filecoinAppNotOpen: PropTypes.bool.isRequired,
-  replug: PropTypes.bool.isRequired,
-  busy: PropTypes.bool.isRequired,
-  inUseByAnotherApp: PropTypes.bool.isRequired,
+Helper.propTypes = {
+  ...LEDGER_STATE_PROPTYPES,
   otherError: PropTypes.string
 }
 
-Step2Helper.defaultProps = {
+Helper.defaultProps = {
   otherError: ''
 }
 
-const Step2 = ({ msig }) => {
-  const { ledger, fetchDefaultWallet } = useWalletProvider()
-  const dispatch = useDispatch()
+const ConnectLedger: FC<{ msig: boolean }> = ({ msig }) => {
+  const { connectLedger, ledger, fetchDefaultWallet, walletList } =
+    useWalletProvider()
   const resetState = useReset()
-  // TODO: fix hack to ignore proptype errors => || null
-  const generalError = useSelector((state) => state.error || null)
+  const [uncaughtError, setUncaughtError] = useState('')
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const error = hasLedgerError({
     ...ledger,
-    otherError: generalError
+    otherError: uncaughtError
   })
 
   const routeToNextPage = () => {
-    msig
-      ? navigate(router, {
-          pageUrl: PAGE.MSIG_CHOOSE_ACCOUNTS
-        })
-      : navigate(router, { pageUrl: PAGE.WALLET_HOME })
+    const pageUrl = msig ? PAGE.MSIG_CHOOSE_ACCOUNTS : PAGE.WALLET_HOME
+    navigate(router, { pageUrl })
   }
 
   const onClick = async () => {
     setLoading(true)
     try {
-      const wallet = await fetchDefaultWallet()
-      if (wallet) {
-        dispatch(walletList([wallet]))
-        routeToNextPage()
+      const provider = await connectLedger()
+      if (provider) {
+        setUncaughtError('')
+        const wallet = await fetchDefaultWallet(provider)
+        if (wallet) {
+          walletList([wallet])
+          routeToNextPage()
+        }
       }
     } catch (err) {
-      dispatch(rdxError(err.message))
+      setUncaughtError(err?.message || err.toString())
     } finally {
       setLoading(false)
     }
   }
 
   const back = () => {
-    if (msig) router.replace('/')
     resetState()
-  }
-
-  const calculateTotalSteps = () => {
-    if (msig) return 3
-    return 2
+    router.replace('/')
   }
 
   return (
@@ -136,15 +133,12 @@ const Step2 = ({ msig }) => {
         bg={error ? 'status.fail.background' : 'core.transparent'}
       >
         <StepHeader
-          currentStep={2}
-          description='Please complete the following steps so Filament can interface with
-          your Ledger device.'
           loading={!ledger.userImportFailure && loading}
-          totalSteps={calculateTotalSteps()}
+          showStepper={false}
           Icon={IconLedger}
           error={!!error}
         />
-        <Step2Helper otherError={generalError} {...ledger} />
+        <Helper otherError={uncaughtError} {...ledger} />
       </OnboardCard>
       <Box
         mt={6}
@@ -166,8 +160,8 @@ const Step2 = ({ msig }) => {
   )
 }
 
-Step2.propTypes = {
+ConnectLedger.propTypes = {
   msig: PropTypes.bool.isRequired
 }
 
-export default Step2
+export default ConnectLedger

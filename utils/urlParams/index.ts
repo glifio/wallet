@@ -20,10 +20,8 @@ export const combineExistingNewAndRequiredQueryParams = (
 
   // delete q params if the maintainQParams flag is not set
   if (!maintainQParams) {
-    console.log('here')
     for (const [key] of [...searchParams.entries()]) {
       if (!requiredUrlParamsWithDefaults[key]) {
-        // console.log(searchParams.toString(), key)
         searchParams.delete(key)
       }
     }

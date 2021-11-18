@@ -36,13 +36,7 @@ const fetchDefaultWallet = async (
     if (!configured) return null
   }
 
-  const [defaultAddress] = await provider.wallet.getAccounts(
-    // @ts-ignore
-    COIN_TYPE,
-    0,
-    // @ts-ignore
-    1
-  )
+  const [defaultAddress] = await provider.wallet.getAccounts(0, 1, COIN_TYPE)
   const balance = await provider.getBalance(defaultAddress)
   let path = createPath(coinTypeCode(COIN_TYPE), 0)
 
