@@ -11,12 +11,22 @@ import * as wasmMethods from '../mocks/mock-filecoin-signer-wasm'
 import { MsigProviderWrapper } from '../../MsigProvider'
 import WalletProviderWrapper from '../../WalletProvider'
 import mockReduxStoreWithState from './mockReduxStoreWithState'
+import { initialState as walletProviderInitialState } from '../../WalletProvider/state'
 
 jest.mock('../../WalletProvider')
 jest.mock('../../MsigProvider')
 
 const Index = (statePreset = 'preOnboard', options = {}) => {
   const store = mockReduxStoreWithState({ state: options?.state, statePreset })
+
+  let walletProviderCache = { ...walletProviderInitialState }
+
+  const cacheWalletProviderState = (state) => {
+    walletProviderCache = { ...state }
+    return <></>
+  }
+
+  const getWalletProviderState = () => walletProviderCache
 
   const Tree = ({ children }) => {
     return (
@@ -28,7 +38,11 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
               converterError: options.converterError || null
             }}
           >
-            <WalletProviderWrapper options={options} statePreset={statePreset}>
+            <WalletProviderWrapper
+              options={options}
+              statePreset={statePreset}
+              getState={cacheWalletProviderState}
+            >
               <MsigProviderWrapper options={options} statePreset={statePreset}>
                 <BalancePoller />
                 <ThemeProvider theme={theme}>{children}</ThemeProvider>
@@ -43,7 +57,8 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
   return {
     Tree,
     store,
-    walletProvider: mockWalletProviderInstance
+    walletProvider: mockWalletProviderInstance,
+    getWalletProviderState
   }
 }
 

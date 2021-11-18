@@ -6,17 +6,25 @@ import walletProviderReducer, {
   initialState as walletProviderInitialState
 } from '../../WalletProvider/state'
 
-export const WalletProviderContext = createContext({ walletProvider: null })
+export const WalletProviderContext = createContext({
+  ...walletProviderInitialState
+})
 
-const WalletProviderWrapper = ({ children, options, statePreset }) => {
-  const [initialWalletProviderState, walletProviderDispatch] = useReducer(
-    options?.reducer || walletProviderReducer,
-    options?.walletProviderInitialState || walletProviderInitialState
+const WalletProviderWrapper = ({
+  children,
+  options,
+  statePreset,
+  getState
+}) => {
+  // here you can pass a walletProviderInitialState and a preset to shape the store how you want it for testing
+  const initialState = composeWalletProviderState(
+    options?.walletProviderInitialState || walletProviderInitialState,
+    statePreset
   )
 
-  const walletProviderState = composeWalletProviderState(
-    initialWalletProviderState,
-    statePreset
+  const [walletProviderState, walletProviderDispatch] = useReducer(
+    options?.reducer || walletProviderReducer,
+    initialState
   )
 
   const mockWalletProviderContextFuncs = createMockWalletProviderContextFuncs(
@@ -34,7 +42,10 @@ const WalletProviderWrapper = ({ children, options, statePreset }) => {
         ...mockWalletProviderContextFuncs
       }}
     >
-      {children}
+      <>
+        {getState(walletProviderState)}
+        {children}
+      </>
     </WalletProviderContext.Provider>
   )
 }
