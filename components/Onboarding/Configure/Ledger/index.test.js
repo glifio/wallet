@@ -6,10 +6,7 @@ import { initialLedgerState } from '../../../../utils/ledger/ledgerStateManageme
 import { mockRouterPush } from '../../../../test-utils/mocks/mock-routing'
 import { flushPromises } from '../../../../test-utils'
 import { PAGE, TESTNET_PATH_CODE } from '../../../../constants'
-import {
-  mockFetchDefaultWallet,
-  mockWalletList
-} from '../../../../test-utils/composeMockAppTree/createWalletProviderContextFuncs'
+import { mockFetchDefaultWallet } from '../../../../test-utils/composeMockAppTree/createWalletProviderContextFuncs'
 import createPath from '../../../../utils/createPath'
 
 jest.mock('../../../../WalletProvider')
@@ -188,7 +185,7 @@ describe('Ledger configuration', () => {
   })
 
   test('it fetches the default wallet and adds it to the wallet provider state', async () => {
-    const { Tree } = composeMockAppTree('preOnboard')
+    const { Tree, getWalletProviderState } = composeMockAppTree('preOnboard')
     const {
       /* container */
     } = render(
@@ -205,7 +202,7 @@ describe('Ledger configuration', () => {
     })
 
     expect(mockFetchDefaultWallet).toHaveBeenCalled()
-    const [wallet] = mockWalletList.mock.calls[0][0]
+    const wallet = getWalletProviderState().wallets[0]
     expect(wallet.address).toBeTruthy()
     expect(wallet.path).toBe(createPath(TESTNET_PATH_CODE, 0))
   })

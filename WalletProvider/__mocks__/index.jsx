@@ -1,6 +1,5 @@
 import { createContext, useContext, useReducer } from 'react'
 import createMockWalletProviderContextFuncs from '../../test-utils/composeMockAppTree/createWalletProviderContextFuncs'
-import { composeWalletProviderState } from '../../test-utils/composeMockAppTree/composeState'
 import mockWalletSubproviders from '../../test-utils/mocks/mock-wallet-subproviders'
 import walletProviderReducer, {
   initialState as walletProviderInitialState
@@ -13,15 +12,9 @@ export const WalletProviderContext = createContext({
 const WalletProviderWrapper = ({
   children,
   options,
-  statePreset,
+  initialState,
   getState
 }) => {
-  // here you can pass a walletProviderInitialState and a preset to shape the store how you want it for testing
-  const initialState = composeWalletProviderState(
-    options?.walletProviderInitialState || walletProviderInitialState,
-    statePreset
-  )
-
   const [walletProviderState, walletProviderDispatch] = useReducer(
     options?.reducer || walletProviderReducer,
     initialState

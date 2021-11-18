@@ -12,6 +12,7 @@ import { MsigProviderWrapper } from '../../MsigProvider'
 import WalletProviderWrapper from '../../WalletProvider'
 import mockReduxStoreWithState from './mockReduxStoreWithState'
 import { initialState as walletProviderInitialState } from '../../WalletProvider/state'
+import { composeWalletProviderState } from '../../test-utils/composeMockAppTree/composeState'
 
 jest.mock('../../WalletProvider')
 jest.mock('../../MsigProvider')
@@ -19,7 +20,13 @@ jest.mock('../../MsigProvider')
 const Index = (statePreset = 'preOnboard', options = {}) => {
   const store = mockReduxStoreWithState({ state: options?.state, statePreset })
 
-  let walletProviderCache = { ...walletProviderInitialState }
+  // here you can pass a walletProviderInitialState and a preset to shape the store how you want it for testing
+  const initialState = composeWalletProviderState(
+    options?.walletProviderInitialState || walletProviderInitialState,
+    statePreset
+  )
+
+  let walletProviderCache = { ...initialState }
 
   const cacheWalletProviderState = (state) => {
     walletProviderCache = { ...state }
@@ -42,6 +49,7 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
               options={options}
               statePreset={statePreset}
               getState={cacheWalletProviderState}
+              initialState={initialState}
             >
               <MsigProviderWrapper options={options} statePreset={statePreset}>
                 <BalancePoller />

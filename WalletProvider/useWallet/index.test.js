@@ -1,7 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks'
 import { cleanup } from '@testing-library/react'
 import useWallet from '.'
-import { IMPORT_MNEMONIC } from '../../constants'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 
 jest.mock('../')
@@ -14,22 +13,18 @@ describe('useWallet', () => {
     expect(result.current.address).toBeFalsy()
     expect(result.current.path).toBeFalsy()
     expect(result.current.type).toBeFalsy()
-    expect(result.current.index).toBe(-1)
     expect(result.current.balance.toString()).toBe('0')
   })
 
   test('it returns a wallet when one is selected in redux', async () => {
-    const { Tree, store } = composeMockAppTree('postOnboard')
+    const { Tree, getWalletProviderState } = composeMockAppTree('postOnboard')
     const {
       result: { current }
     } = renderHook(useWallet, { wrapper: Tree })
 
-    expect(current.address).toBe(store.getState().wallets[0].address)
-    expect(current.path).toBe(store.getState().wallets[0].path)
-    expect(current.type).toBe(IMPORT_MNEMONIC)
-    expect(current.index).toBe(store.getState().selectedWalletIdx)
-    expect(current.balance.toString()).toBe(
-      store.getState().wallets[0].balance.toString()
-    )
+    const { wallets } = getWalletProviderState()
+    expect(current.address).toBe(wallets[0].address)
+    expect(current.path).toBe(wallets[0].path)
+    expect(current.balance.toString()).toBe(wallets[0].balance.toString())
   })
 })

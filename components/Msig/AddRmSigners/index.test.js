@@ -8,6 +8,13 @@ import { flushPromises, MULTISIG_ACTOR_ADDRESS } from '../../../test-utils'
 jest.mock('../../../MsigProvider')
 jest.mock('../../../WalletProvider')
 
+const next = async () => {
+  await act(async () => {
+    fireEvent.click(screen.getByText('Next'))
+    await flushPromises()
+  })
+}
+
 describe('Multisig add & remove  flow', () => {
   beforeEach(() => {
     jest.useFakeTimers()
@@ -37,11 +44,11 @@ describe('Multisig add & remove  flow', () => {
           preventDefault: () => {}
         })
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
       })
+
+      await next()
+      await next()
+      await flushPromises()
 
       expect(walletProvider.getNonce).toHaveBeenCalled()
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
@@ -49,11 +56,12 @@ describe('Multisig add & remove  flow', () => {
       const message = Message.fromLotusType(
         walletProvider.wallet.sign.mock.calls[0][1]
       ).toZondaxType()
+
       expect(!!message.gaspremium).toBe(true)
       expect(typeof message.gaspremium).toBe('string')
-      expect(!!message.gasfeecap).toBe(true)
+      expect(Number(message.gasfeecap) > 0).toBe(true)
       expect(typeof message.gasfeecap).toBe('string')
-      expect(!!message.gaslimit).toBe(true)
+      expect(Number(message.gaslimit) > 0).toBe(true)
       expect(typeof message.gaslimit).toBe('number')
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')
@@ -78,9 +86,10 @@ describe('Multisig add & remove  flow', () => {
           preventDefault: () => {}
         })
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
       })
+
+      await next()
+
       expect(screen.getByText(/Invalid address/)).toBeInTheDocument()
       expect(walletProvider.getNonce).not.toHaveBeenCalled()
       expect(walletProvider.wallet.sign).not.toHaveBeenCalled()
@@ -103,9 +112,10 @@ describe('Multisig add & remove  flow', () => {
           target: { value: toAddr },
           preventDefault: () => {}
         })
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
       })
+
+      await next()
+
       expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
     })
 
@@ -126,12 +136,14 @@ describe('Multisig add & remove  flow', () => {
           preventDefault: () => {}
         })
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getByDisplayValue('1000000'), {
+      })
+
+      await next()
+
+      await act(async () => {
+        await fireEvent.change(screen.getByDisplayValue('1000000'), {
           target: { value: '2000000' }
         })
-        await flushPromises()
       })
       expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
       expect(screen.getByText(/Save/)).toBeInTheDocument()
@@ -155,13 +167,16 @@ describe('Multisig add & remove  flow', () => {
           preventDefault: () => {}
         })
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getByDisplayValue('1000000'), {
+      })
+
+      await next()
+
+      await act(async () => {
+        await fireEvent.change(screen.getByDisplayValue('1000000'), {
           target: { value: '2000000' }
         })
-        await flushPromises()
         fireEvent.click(screen.getByText('Save'))
+
         await flushPromises()
       })
       expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
@@ -225,8 +240,10 @@ describe('Multisig add & remove  flow', () => {
             preventDefault: () => {}
           })
           await flushPromises()
-          fireEvent.click(screen.getByText('Next'))
         })
+
+        await next()
+
         expect(res.container).toMatchSnapshot()
         expect(
           screen.getByText(/review the transaction fee details/)
@@ -242,30 +259,30 @@ describe('Multisig add & remove  flow', () => {
     })
 
     test('it allows a user to remove a signer', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
-      const { selectedWalletIdx, wallets } = store.getState()
+      const { Tree, getWalletProviderState, walletProvider, store } =
+        composeMockAppTree('postOnboard')
+      const { wallets, selectedWalletIdx } = getWalletProviderState()
       await act(async () => {
         render(
           <Tree>
             <RemoveSigner signerAddress={wallets[selectedWalletIdx].address} />
           </Tree>
         )
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
       })
+
+      await next()
+      await next()
 
       expect(walletProvider.getNonce).toHaveBeenCalled()
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
       const message = Message.fromLotusType(
         walletProvider.wallet.sign.mock.calls[0][1]
       ).toZondaxType()
-      expect(!!message.gaspremium).toBe(true)
+      expect(Number(message.gaspremium) > 0).toBe(true)
       expect(typeof message.gaspremium).toBe('string')
-      expect(!!message.gasfeecap).toBe(true)
+      expect(Number(message.gasfeecap) > 0).toBe(true)
       expect(typeof message.gasfeecap).toBe('string')
-      expect(!!message.gaslimit).toBe(true)
+      expect(message.gaslimit > 0).toBe(true)
       expect(typeof message.gaslimit).toBe('number')
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')
@@ -275,8 +292,8 @@ describe('Multisig add & remove  flow', () => {
     })
 
     test('it allows the user to see the max transaction fee', async () => {
-      const { Tree, store } = composeMockAppTree('postOnboard')
-      const { selectedWalletIdx, wallets } = store.getState()
+      const { Tree, getWalletProviderState } = composeMockAppTree('postOnboard')
+      const { wallets, selectedWalletIdx } = getWalletProviderState()
 
       await act(async () => {
         render(
@@ -284,17 +301,16 @@ describe('Multisig add & remove  flow', () => {
             <RemoveSigner signerAddress={wallets[selectedWalletIdx].address} />
           </Tree>
         )
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
       })
+
+      await next()
+      await next()
       expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
     })
 
     test('it allows the user to set the max transaction fee', async () => {
-      const { Tree, store } = composeMockAppTree('postOnboard')
-      const { selectedWalletIdx, wallets } = store.getState()
+      const { Tree, getWalletProviderState } = composeMockAppTree('postOnboard')
+      const { wallets, selectedWalletIdx } = getWalletProviderState()
 
       await act(async () => {
         render(
@@ -302,23 +318,25 @@ describe('Multisig add & remove  flow', () => {
             <RemoveSigner signerAddress={wallets[selectedWalletIdx].address} />
           </Tree>
         )
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getByDisplayValue('1000000'), {
+      })
+
+      await next()
+      await next()
+
+      await act(async () => {
+        await fireEvent.change(screen.getByDisplayValue('1000000'), {
           target: { value: '2000000' }
         })
-        await flushPromises()
       })
+
       expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
       expect(screen.getByText(/Save/)).toBeInTheDocument()
       expect(screen.getByText(/Cancel/)).toBeInTheDocument()
     })
 
     test('it allows the user to save the max transaction fee', async () => {
-      const { Tree, store } = composeMockAppTree('postOnboard')
-      const { selectedWalletIdx, wallets } = store.getState()
+      const { Tree, getWalletProviderState } = composeMockAppTree('postOnboard')
+      const { wallets, selectedWalletIdx } = getWalletProviderState()
 
       await act(async () => {
         render(
@@ -326,14 +344,15 @@ describe('Multisig add & remove  flow', () => {
             <RemoveSigner signerAddress={wallets[selectedWalletIdx].address} />
           </Tree>
         )
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.change(screen.getByDisplayValue('1000000'), {
+      })
+
+      await next()
+      await next()
+
+      await act(async () => {
+        await fireEvent.change(screen.getByDisplayValue('1000000'), {
           target: { value: '2000000' }
         })
-        await flushPromises()
         fireEvent.click(screen.getByText('Save'))
         await flushPromises()
       })
@@ -345,8 +364,9 @@ describe('Multisig add & remove  flow', () => {
       afterEach(cleanup)
 
       test('it renders preface correctly', async () => {
-        const { Tree, store } = composeMockAppTree('postOnboard')
-        const { selectedWalletIdx, wallets } = store.getState()
+        const { Tree, getWalletProviderState } =
+          composeMockAppTree('postOnboard')
+        const { wallets, selectedWalletIdx } = getWalletProviderState()
         let res
 
         await act(async () => {
@@ -363,8 +383,9 @@ describe('Multisig add & remove  flow', () => {
       })
 
       test('it renders step 2 correctly', async () => {
-        const { Tree, store } = composeMockAppTree('postOnboard')
-        const { selectedWalletIdx, wallets } = store.getState()
+        const { Tree, getWalletProviderState } =
+          composeMockAppTree('postOnboard')
+        const { wallets, selectedWalletIdx } = getWalletProviderState()
         let res
 
         await act(async () => {
@@ -375,9 +396,9 @@ describe('Multisig add & remove  flow', () => {
               />
             </Tree>
           )
-          fireEvent.click(screen.getByText('Next'))
-          await flushPromises()
         })
+
+        await next()
         expect(res.container).toMatchSnapshot()
         expect(
           screen.getByText(

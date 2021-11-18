@@ -11,6 +11,7 @@ import { WasmLoader } from '../lib/WasmLoader'
 import ErrorBoundary from '../lib/ErrorBoundary'
 import '../stylesheets/normalize.css'
 import '../stylesheets/styles.css'
+import { SWRConfig } from 'swr'
 
 class MyApp extends App {
   render() {
@@ -20,20 +21,22 @@ class MyApp extends App {
         <Head>
           <title>Glif</title>
         </Head>
-        <Provider store={reduxStore}>
-          <ThemeProvider theme={theme}>
-            <WasmLoader>
-              <WalletProviderWrapper>
-                <MsigProviderWrapper>
-                  <BalancePoller />
-                  <ErrorBoundary>
-                    <Component {...pageProps} />
-                  </ErrorBoundary>
-                </MsigProviderWrapper>
-              </WalletProviderWrapper>
-            </WasmLoader>
-          </ThemeProvider>
-        </Provider>
+        <SWRConfig value={{ refreshInterval: 5000 }}>
+          <Provider store={reduxStore}>
+            <ThemeProvider theme={theme}>
+              <WasmLoader>
+                <WalletProviderWrapper>
+                  <MsigProviderWrapper>
+                    <BalancePoller />
+                    <ErrorBoundary>
+                      <Component {...pageProps} />
+                    </ErrorBoundary>
+                  </MsigProviderWrapper>
+                </WalletProviderWrapper>
+              </WasmLoader>
+            </ThemeProvider>
+          </Provider>
+        </SWRConfig>
       </>
     )
   }

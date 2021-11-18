@@ -13,6 +13,13 @@ jest.mock('@glif/filecoin-wallet-provider')
 jest.mock('../../../MsigProvider')
 jest.mock('../../../WalletProvider')
 
+const next = async () => {
+  await act(async () => {
+    fireEvent.click(screen.getByText('Next'))
+    await flushPromises()
+  })
+}
+
 describe('Change signer flow', () => {
   beforeEach(() => {
     jest.useFakeTimers()
@@ -41,12 +48,10 @@ describe('Change signer flow', () => {
           target: { value: toAddr },
           preventDefault: () => {}
         })
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
       })
+
+      await next()
+      await next()
 
       expect(walletProvider.getNonce).toHaveBeenCalled()
       expect(walletProvider.wallet.sign).toHaveBeenCalled()
@@ -54,11 +59,11 @@ describe('Change signer flow', () => {
       const message = Message.fromLotusType(
         walletProvider.wallet.sign.mock.calls[0][1]
       ).toZondaxType()
-      expect(!!message.gaspremium).toBe(true)
+      expect(Number(message.gaspremium) > 0).toBe(true)
       expect(typeof message.gaspremium).toBe('string')
-      expect(!!message.gasfeecap).toBe(true)
+      expect(Number(message.gasfeecap) > 0).toBe(true)
       expect(typeof message.gasfeecap).toBe('string')
-      expect(!!message.gaslimit).toBe(true)
+      expect(message.gaslimit > 0).toBe(true)
       expect(typeof message.gaslimit).toBe('number')
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')
@@ -83,9 +88,9 @@ describe('Change signer flow', () => {
           preventDefault: () => {}
         })
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
       })
+      await next()
+
       expect(screen.getByText(/Invalid to address/)).toBeInTheDocument()
       expect(walletProvider.getNonce).not.toHaveBeenCalled()
       expect(walletProvider.wallet.sign).not.toHaveBeenCalled()
@@ -108,9 +113,9 @@ describe('Change signer flow', () => {
           preventDefault: () => {}
         })
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
       })
+
+      await next()
       expect(screen.getByText(/Invalid to address/)).toBeInTheDocument()
       expect(walletProvider.getNonce).not.toHaveBeenCalled()
       expect(walletProvider.wallet.sign).not.toHaveBeenCalled()
@@ -133,9 +138,9 @@ describe('Change signer flow', () => {
           target: { value: toAddr },
           preventDefault: () => {}
         })
-        await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
       })
+
+      await next()
       expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
     })
 
@@ -156,8 +161,11 @@ describe('Change signer flow', () => {
           preventDefault: () => {}
         })
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
+      })
+
+      await next()
+
+      await act(async () => {
         fireEvent.change(screen.getByDisplayValue('1000000'), {
           target: { value: '2000000' }
         })
@@ -185,8 +193,11 @@ describe('Change signer flow', () => {
           preventDefault: () => {}
         })
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
+      })
+
+      await next()
+
+      await act(async () => {
         fireEvent.change(screen.getByDisplayValue('1000000'), {
           target: { value: '2000000' }
         })
@@ -194,6 +205,7 @@ describe('Change signer flow', () => {
         fireEvent.click(screen.getByText('Save'))
         await flushPromises()
       })
+
       expect(screen.getByText(/Transaction fee/)).toBeInTheDocument()
       expect(screen.getByText(/0.000000000002/)).toBeInTheDocument()
     })
@@ -232,9 +244,8 @@ describe('Change signer flow', () => {
             <ChangeSigner oldSignerAddress={MULTISIG_SIGNER_ADDRESS} />
           </Tree>
         )
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
       })
+      await next()
       expect(
         screen.getByText(/input the new Filecoin address/)
       ).toBeInTheDocument()
@@ -259,15 +270,16 @@ describe('Change signer flow', () => {
             <ChangeSigner oldSignerAddress={MULTISIG_SIGNER_ADDRESS} />
           </Tree>
         )
-        fireEvent.click(screen.getByText('Next'))
-        await flushPromises()
+      })
+      await next()
+      await act(async () => {
         fireEvent.change(screen.getByPlaceholderText(/f1.../), {
           target: { value: toAddr },
           preventDefault: () => {}
         })
         await flushPromises()
-        fireEvent.click(screen.getByText('Next'))
       })
+      await next()
       expect(
         screen.getByText(/review the transaction fee details/)
       ).toBeInTheDocument()

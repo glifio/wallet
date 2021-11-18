@@ -599,6 +599,12 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
   align-items: center;
 }
 
+.c25 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c19 {
   font-size: 1.125rem;
   font-weight: 400;
@@ -622,12 +628,6 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c25 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c40 {
@@ -722,7 +722,6 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"
@@ -747,7 +746,6 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
         <div
           class="c5"
         >
-          
           <div
             class="c6"
             display="flex"
@@ -1089,7 +1087,6 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
                   >
                     <svg
                       class="c2"
-                      fill="none"
                       height="24"
                       viewBox="0 0 24 24"
                       width="24"
@@ -1726,6 +1723,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
   align-items: center;
 }
 
+.c25 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c19 {
   font-size: 1.125rem;
   font-weight: 400;
@@ -1749,12 +1752,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c25 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c38 {
@@ -1813,7 +1810,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"
@@ -1838,7 +1834,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
         <div
           class="c5"
         >
-          
           <div
             class="c6"
             display="flex"
@@ -2812,6 +2807,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   font-size: 1.25rem;
 }
 
+.c25 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c19 {
   font-size: 1.125rem;
   font-weight: 400;
@@ -2835,12 +2836,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c25 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c38 {
@@ -2955,7 +2950,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"
@@ -2980,7 +2974,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
         <div
           class="c5"
         >
-          
           <div
             class="c6"
             display="flex"
@@ -4264,7 +4257,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
         <div
           class="c5"
         >
-          
           <div
             class="c6"
             display="flex"
@@ -5381,6 +5373,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   justify-content: flex-end;
 }
 
+.c25 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c19 {
   font-size: 1.125rem;
   font-weight: 400;
@@ -5412,12 +5410,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c25 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c38 {
@@ -5606,7 +5598,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"
@@ -5631,7 +5622,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
         <div
           class="c5"
         >
-          
           <div
             class="c6"
             display="flex"
@@ -6885,6 +6875,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   text-align: left;
 }
 
+.c24 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .c18 {
   font-size: 1.125rem;
   font-weight: 400;
@@ -6925,12 +6921,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c24 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .c37 {
@@ -7139,7 +7129,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
     >
       <svg
         class="c2"
-        fill="none"
         height="24"
         viewBox="0 0 24 24"
         width="24"
@@ -7164,7 +7153,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
         <div
           class="c5"
         >
-          
           <div
             class="c6"
             display="flex"

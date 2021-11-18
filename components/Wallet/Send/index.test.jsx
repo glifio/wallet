@@ -62,11 +62,11 @@ describe('Send Flow', () => {
       const message = Message.fromLotusType(
         walletProvider.wallet.sign.mock.calls[0][1]
       ).toZondaxType()
-      expect(!!message.gaspremium).toBe(true)
+      expect(Number(message.gaspremium) > 0).toBe(true)
       expect(typeof message.gaspremium).toBe('string')
-      expect(!!message.gasfeecap).toBe(true)
+      expect(Number(message.gasfeecap) > 0).toBe(true)
       expect(typeof message.gasfeecap).toBe('string')
-      expect(!!message.gaslimit).toBe(true)
+      expect(message.gaslimit > 0).toBe(true)
       expect(typeof message.gaslimit).toBe('number')
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')

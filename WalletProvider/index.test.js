@@ -33,7 +33,6 @@ describe('useWalletProvider', () => {
     expect(typeof result.current.fetchDefaultWallet).toBe('function')
     expect(typeof result.current.setWalletError).toBe('function')
     expect(typeof result.current.setLoginOption).toBe('function')
-    expect(typeof result.current.setLedgerProvider).toBe('function')
     expect(typeof result.current.connectLedger).toBe('function')
     expect(typeof result.current.resetLedgerState).toBe('function')
     expect(typeof result.current.resetState).toBe('function')

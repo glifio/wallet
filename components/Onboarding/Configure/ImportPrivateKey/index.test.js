@@ -5,10 +5,7 @@ import { flushPromises } from '../../../../test-utils'
 
 import ImportPrivateKey from '.'
 import { PAGE, TESTNET_PATH_CODE } from '../../../../constants'
-import {
-  mockFetchDefaultWallet,
-  mockWalletList
-} from '../../../../test-utils/composeMockAppTree/createWalletProviderContextFuncs'
+import { mockFetchDefaultWallet } from '../../../../test-utils/composeMockAppTree/createWalletProviderContextFuncs'
 import createPath from '../../../../utils/createPath'
 
 jest.mock('../../../../WalletProvider')
@@ -30,10 +27,7 @@ describe('Import private key configuration', () => {
   })
 
   test('it sends the user to wallet view, with a wallet in state upon successful config', async () => {
-    const mockWalletProviderDispatch = jest.fn()
-    const { Tree } = composeMockAppTree('preOnboard', {
-      walletProviderDispatch: mockWalletProviderDispatch
-    })
+    const { Tree, getWalletProviderState } = composeMockAppTree('preOnboard')
 
     const { container } = render(
       <Tree>
@@ -52,11 +46,8 @@ describe('Import private key configuration', () => {
     })
     expect(container.firstChild).toMatchSnapshot()
     expect(mockRouterPush).toHaveBeenCalledWith(PAGE.WALLET_HOME)
-    expect(mockWalletProviderDispatch.mock.calls[0][0].type).toBe(
-      'CREATE_WALLET_PROVIDER'
-    )
     expect(mockFetchDefaultWallet).toHaveBeenCalled()
-    const [wallet] = mockWalletList.mock.calls[0][0]
+    const wallet = getWalletProviderState().wallets[0]
     expect(wallet.address).toBeTruthy()
     expect(wallet.path).toBe(createPath(TESTNET_PATH_CODE, 0))
   })

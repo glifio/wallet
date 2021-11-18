@@ -980,7 +980,6 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
         <div
           class="c5"
         >
-          
           <div
             class="c6"
             display="flex"
@@ -1202,7 +1201,7 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
                       font-size="2"
                       font-weight="400"
                     >
-                      1
+                      0.000001
                        FIL
                     </p>
                   </div>
@@ -2429,7 +2428,6 @@ exports[`Multisig withdraw flow Withdrawing FIL it restricts a user from continu
         <div
           class="c5"
         >
-          
           <div
             class="c6"
             display="flex"
@@ -3555,7 +3553,6 @@ exports[`Multisig withdraw flow snapshots it renders correctly 1`] = `
         <div
           class="c5"
         >
-          
           <div
             class="c6"
             display="flex"
@@ -4686,7 +4683,6 @@ exports[`Multisig withdraw flow snapshots it renders step 2 correctly 1`] = `
         <div
           class="c5"
         >
-          
           <div
             class="c6"
             display="flex"
@@ -6092,7 +6088,6 @@ exports[`Multisig withdraw flow snapshots it renders step 3 correctly 1`] = `
         <div
           class="c5"
         >
-          
           <div
             class="c6"
             display="flex"
@@ -7637,7 +7632,6 @@ exports[`Multisig withdraw flow snapshots it renders step 4 correctly 1`] = `
         <div
           class="c5"
         >
-          
           <div
             class="c6"
             display="flex"
