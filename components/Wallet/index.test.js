@@ -47,7 +47,11 @@ describe('WalletView', () => {
         <WalletView />
       </Tree>
     )
-
+    expect(screen.getByText(/Transaction History/)).toBeInTheDocument()
+    expect(screen.getByText(/Your Address/)).toBeInTheDocument()
+    expect(screen.getByText(/Balance/)).toBeInTheDocument()
+    expect(screen.getByText(/Send/)).toBeInTheDocument()
+    expect(screen.getByText(/Logout/)).toBeInTheDocument()
     expect(container.firstChild).toMatchSnapshot()
     expect(spy).toHaveBeenCalled()
   })

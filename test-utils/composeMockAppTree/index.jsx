@@ -52,7 +52,6 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
               initialState={initialState}
             >
               <MsigProviderWrapper options={options} statePreset={statePreset}>
-                <BalancePoller />
                 <ThemeProvider theme={theme}>{children}</ThemeProvider>
               </MsigProviderWrapper>
             </WalletProviderWrapper>
