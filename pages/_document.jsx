@@ -36,10 +36,7 @@ export default class MyDocument extends Document {
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }}
           />
-          <meta
-            name='description'
-            content='A Filecoin web wallet, made by Open Work Labs.'
-          />
+          <meta name='description' content='An audited Filecoin web wallet.' />
           <meta
             name='keywords'
             content='Filecoin,Wallet,Web,Storage,Blockchain'

@@ -63,8 +63,8 @@ const ErrorView = ({ description, linkhref, linkDisplay, title }) => {
 ErrorView.propTypes = {
   description: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  linkhref: PropTypes.string.isRequired,
-  linkDisplay: PropTypes.string.isRequired
+  linkhref: PropTypes.string,
+  linkDisplay: PropTypes.string
 }
 
 export default ErrorView
