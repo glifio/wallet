@@ -24,9 +24,7 @@ class ErrorBoundary extends React.Component {
       return (
         <ErrorView
           title='Glif is currently down'
-          description="We're aware of the outage and will be back up shortly."
-          linkDisplay='Follow @glifwallet for updates.'
-          linkhref='https://twitter.com/'
+          description="We're aware of the outage and will be back up shortly. Please email squad@infinitescroll.org with any questions or concerns."
         />
       )
     }
