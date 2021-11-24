@@ -14,7 +14,7 @@ export type LedgerActionType =
   | 'LEDGER_BUSY'
   | 'LEDGER_USED_BY_ANOTHER_APP'
   | 'LEDGER_BAD_VERSION'
-  | 'WEBUSB_UNSUPPORTED'
+  | 'TRANSPORT_UNSUPPORTED'
 
 export type LedgerState = {
   userImportFailure: boolean
@@ -25,7 +25,7 @@ export type LedgerState = {
   busy: boolean
   filecoinAppNotOpen: boolean
   badVersion: boolean
-  webUSBSupported: boolean
+  transportSupported: boolean
   inUseByAnotherApp: boolean
   replug: boolean
 }
@@ -42,7 +42,7 @@ export const initialLedgerState: LedgerState = {
   inUseByAnotherApp: false,
   badVersion: false,
   // true until proven otherwise
-  webUSBSupported: true
+  transportSupported: true
 }
 
 export const LEDGER_STATE_PROPTYPES = {
@@ -55,6 +55,6 @@ export const LEDGER_STATE_PROPTYPES = {
   filecoinAppNotOpen: PropTypes.bool.isRequired,
   badVersion: PropTypes.bool.isRequired,
   replug: PropTypes.bool.isRequired,
-  webUSBSupported: PropTypes.bool.isRequired,
+  transportSupported: PropTypes.bool.isRequired,
   inUseByAnotherApp: PropTypes.bool.isRequired
 }

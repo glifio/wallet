@@ -1,4 +1,4 @@
-import { Network as CoinType } from '@glif/filecoin-address'
+import { CoinType } from '@glif/filecoin-address'
 import { MAINNET_PATH_CODE, TESTNET_PATH_CODE } from '../../constants'
 
 type CoinTypeCode = 461 | 1

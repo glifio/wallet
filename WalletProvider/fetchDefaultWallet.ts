@@ -1,13 +1,9 @@
 import Filecoin from '@glif/filecoin-wallet-provider'
-import { Network as CoinType } from '@glif/filecoin-address'
+import { CoinType } from '@glif/filecoin-address'
 import { SINGLE_KEY, LEDGER } from '../constants'
-import {
-  checkLedgerConfiguration,
-  LedgerSubProvider,
-  setLedgerProvider
-} from '../utils/ledger/setLedgerProvider'
-import { clearError, resetLedgerState } from './state'
+import { clearError } from './state'
 import createPath, { coinTypeCode } from '../utils/createPath'
+import connectWithLedger from './connectLedger'
 
 const COIN_TYPE = process.env.COIN_TYPE! as CoinType
 
@@ -15,25 +11,12 @@ const COIN_TYPE = process.env.COIN_TYPE! as CoinType
 const fetchDefaultWallet = async (
   dispatch,
   walletType,
-  walletProvider: Filecoin,
-  walletSubProviders
+  walletProvider: Filecoin
 ) => {
   dispatch(clearError())
   let provider = walletProvider
   if (walletType === LEDGER) {
-    dispatch(resetLedgerState())
-    provider = await setLedgerProvider(
-      dispatch,
-      // this arg gets passed in because we need the variables in its scope
-      // see prepareSubproviders to look at the closed over variables
-      walletSubProviders.LedgerProvider
-    )
-    if (!provider) return null
-    const configured = await checkLedgerConfiguration(
-      dispatch,
-      provider as Filecoin & { wallet: LedgerSubProvider }
-    )
-    if (!configured) return null
+    provider = await connectWithLedger(dispatch)
   }
 
   const [defaultAddress] = await provider.wallet.getAccounts(0, 1, COIN_TYPE)

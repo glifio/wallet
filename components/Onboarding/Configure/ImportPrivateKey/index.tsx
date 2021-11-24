@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react'
-import Filecoin from '@glif/filecoin-wallet-provider'
+import Filecoin, { SECP256K1KeyProvider } from '@glif/filecoin-wallet-provider'
 import { useRouter } from 'next/router'
 import {
   Box,
@@ -18,12 +18,7 @@ import { navigate } from '../../../../utils/urlParams'
 import { PAGE } from '../../../../constants'
 
 const InputPrivateKey: FC<{}> = () => {
-  const {
-    dispatch,
-    fetchDefaultWallet,
-    setLoginOption,
-    walletSubproviders: { SingleKeyProvider }
-  } = useWalletProvider()
+  const { dispatch, fetchDefaultWallet, setLoginOption } = useWalletProvider()
   const [privateKey, setPrivateKey] = useState('')
   const [privateKeyError, setPrivateKeyError] = useState('')
   const { walletList } = useWalletProvider()
@@ -34,7 +29,7 @@ const InputPrivateKey: FC<{}> = () => {
     try {
       setLoadingNextScreen(true)
       setPrivateKey('')
-      const provider = new Filecoin(SingleKeyProvider(privateKey), {
+      const provider = new Filecoin(new SECP256K1KeyProvider(privateKey), {
         apiAddress: process.env.LOTUS_NODE_JSONRPC
       })
       dispatch(createWalletProvider(provider))

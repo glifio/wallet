@@ -1,7 +1,6 @@
 import React, { useContext, createContext } from 'react'
 import dynamic from 'next/dynamic'
 import { node } from 'prop-types'
-import prepareSubproviders from '../../WalletProvider/prepareSubproviders'
 import reportError from '../../utils/reportError'
 import CantLoadWasm from './CantLoadWasm'
 
@@ -20,12 +19,9 @@ export const WasmLoader = dynamic({
       loadError = true
     }
 
-    const walletSubproviders = prepareSubproviders(rustModule)
     const WasmProvider = ({ children }) => {
       return (
-        <WasmContext.Provider
-          value={{ ...rustModule, walletSubproviders, loaded: true }}
-        >
+        <WasmContext.Provider value={{ ...rustModule, loaded: true }}>
           {loadError ? <CantLoadWasm /> : children}
         </WasmContext.Provider>
       )
