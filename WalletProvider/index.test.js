@@ -4,6 +4,8 @@ import { cleanup } from '@testing-library/react'
 import WalletProviderWrapper, { useWalletProvider } from '.'
 import { initialState } from './state'
 
+const spy = jest.spyOn(require('../lib/WasmLoader'), 'useWasm')
+
 const createMockSubprovider = () => {
   return {
     sign: jest.fn(),

@@ -4,13 +4,13 @@ import dayjs from 'dayjs'
 import { Message } from '@glif/filecoin-message'
 import { BigNumber } from '@glif/filecoin-number'
 import { useRouter } from 'next/router'
-import { serializeParams } from '@zondax/filecoin-signing-tools/js'
 
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
 import { Box, Button, ButtonClose, Form, Card } from '@glif/react-components'
 import { CardHeader, AddRmSignerHeader } from '../Shared'
 import Preface from './Prefaces'
+import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
 import {
@@ -38,6 +38,8 @@ const RemoveSigner = ({ signerAddress }) => {
   const wallet = useWallet()
   const dispatch = useDispatch()
   const router = useRouter()
+  // @ts-expect-error
+  const { serializeParams } = useWasm()
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
   const [uncaughtError, setUncaughtError] = useState('')
