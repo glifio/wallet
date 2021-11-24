@@ -15,11 +15,12 @@ import {
   Form,
   Card
 } from '@glif/react-components'
+import { createMultisig } from '@zondax/filecoin-signing-tools/js'
+
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
 import { Input } from '../../Shared'
 import { CardHeader, CreateMultisigHeaderText } from '../Shared'
-import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
 import {
@@ -49,7 +50,6 @@ const Create = () => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
   const wallet = useWallet()
   const dispatch = useDispatch()
-  const wasm = useWasm()
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
   const [signerAddresses, setSignerAddresses] = useState([wallet.address])
@@ -70,8 +70,7 @@ const Create = () => {
   const onClose = () => router.back()
 
   const constructMsg = (nonce = 0, epoch = startEpoch) => {
-    // @ts-expect-error
-    const tx = wasm.createMultisig(
+    const tx = createMultisig(
       wallet.address,
       [...signerAddresses],
       value.toAttoFil(),

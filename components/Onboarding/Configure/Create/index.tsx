@@ -9,10 +9,10 @@ import {
   StepHeader,
   LoadingScreen
 } from '@glif/react-components'
+import { generateMnemonic } from '@zondax/filecoin-signing-tools/js'
 
 import Walkthrough from './Walkthrough'
 import Back from './Back'
-import { useWasm } from '../../../../lib/WasmLoader'
 import { useWalletProvider } from '../../../../WalletProvider'
 import { createWalletProvider } from '../../../../WalletProvider/state'
 import reportError from '../../../../utils/reportError'
@@ -30,8 +30,6 @@ const Create: FC<{ initialWalkthroughStep: number }> = ({
   const [returningHome, setReturningHome] = useState(false)
   const [canContinue, setCanContinue] = useState(false)
   const [importSeedError, setImportSeedError] = useState(false)
-  // @ts-ignore
-  const { generateMnemonic } = useWasm()
   const {
     dispatch,
     fetchDefaultWallet,

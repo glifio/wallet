@@ -15,6 +15,7 @@ import {
   CopyText,
   Warning
 } from '@glif/react-components'
+import { serializeParams } from '@zondax/filecoin-signing-tools/js'
 import { useRouter } from 'next/router'
 
 import { useWalletProvider } from '../../../WalletProvider'
@@ -23,7 +24,6 @@ import { StepHeader, Input } from '../../Shared'
 import truncateAddress from '../../../utils/truncateAddress'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import { CardHeader, ChangeSignerHeaderText } from '../Shared'
-import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
 import {
@@ -49,8 +49,6 @@ const ChangeOwner = ({ oldSignerAddress }) => {
   const wallet = useWallet()
   const dispatch = useDispatch()
   const router = useRouter()
-  // @ts-expect-error
-  const { serializeParams } = useWasm()
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
   const [newSignerAddress, setNewSignerAddress] = useState('')

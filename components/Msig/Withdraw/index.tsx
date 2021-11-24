@@ -15,13 +15,13 @@ import {
   Card
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
+import { serializeParams } from '@zondax/filecoin-signing-tools/js'
 
 import { useMsig } from '../../../MsigProvider'
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
 import { Input } from '../../Shared'
 import { CardHeader, WithdrawHeaderText } from '../Shared'
-import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
 import CustomizeFee from '../../Wallet/Send/CustomizeFee'
@@ -45,8 +45,6 @@ const Withdrawing = () => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
   const wallet = useWallet()
   const dispatch = useDispatch()
-  // @ts-expect-error
-  const { serializeParams } = useWasm()
   const { Address: address, AvailableBalance: balance } = useMsig()
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)

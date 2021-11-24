@@ -7,7 +7,6 @@ import withReduxStore from '../lib/with-redux-store'
 import WalletProviderWrapper from '../WalletProvider'
 import { MsigProviderWrapper } from '../MsigProvider'
 import BalancePoller from '../lib/update-balance'
-import { WasmLoader } from '../lib/WasmLoader'
 import ErrorBoundary from '../lib/ErrorBoundary'
 import '../stylesheets/normalize.css'
 import '../stylesheets/styles.css'
@@ -24,16 +23,14 @@ class MyApp extends App {
         <SWRConfig value={{ refreshInterval: 10000 }}>
           <Provider store={reduxStore}>
             <ThemeProvider theme={theme}>
-              <WasmLoader>
-                <WalletProviderWrapper>
-                  <MsigProviderWrapper>
-                    <BalancePoller />
-                    <ErrorBoundary>
-                      <Component {...pageProps} />
-                    </ErrorBoundary>
-                  </MsigProviderWrapper>
-                </WalletProviderWrapper>
-              </WasmLoader>
+              <WalletProviderWrapper>
+                <MsigProviderWrapper>
+                  <BalancePoller />
+                  <ErrorBoundary>
+                    <Component {...pageProps} />
+                  </ErrorBoundary>
+                </MsigProviderWrapper>
+              </WalletProviderWrapper>
             </ThemeProvider>
           </Provider>
         </SWRConfig>

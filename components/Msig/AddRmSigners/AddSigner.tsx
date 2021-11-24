@@ -6,13 +6,13 @@ import { validateAddressString } from '@glif/filecoin-address'
 import { BigNumber } from '@glif/filecoin-number'
 import { useRouter } from 'next/router'
 import { Box, Button, ButtonClose, Form, Card } from '@glif/react-components'
+import { serializeParams } from '@zondax/filecoin-signing-tools/js'
 
 import { useWalletProvider } from '../../../WalletProvider'
 import useWallet from '../../../WalletProvider/useWallet'
 import { useMsig } from '../../../MsigProvider'
 import { CardHeader, AddRmSignerHeader } from '../Shared'
 import Preface from './Prefaces'
-import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
 import {
@@ -38,8 +38,6 @@ const AddSigner = () => {
   const { Address: address, AvailableBalance: balance } = useMsig()
   const wallet = useWallet()
   const dispatch = useDispatch()
-  // @ts-expect-error
-  const { serializeParams } = useWasm()
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
   const [signerAddress, setSignerAddress] = useState('')
