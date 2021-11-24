@@ -1,8 +1,8 @@
+import { Dispatch } from 'react'
 import Filecoin, {
   LedgerProvider,
   errors as walletProviderErrors
 } from '@glif/filecoin-wallet-provider'
-import { Dispatch } from 'redux'
 import { clearError, resetLedgerState } from './state'
 import { WalletProviderAction } from './types'
 import transportWrapperSingleton from './transportWrapperSingleton'
@@ -60,7 +60,7 @@ const connectWithLedger = async (
         err instanceof walletProviderErrors.TransportNotSupportedError
       ) {
         console.log('TRANSPORT NOT SUPPORTED')
-        dispatch({ type: '' })
+        dispatch({ type: 'TRANSPORT_UNSUPPORTED' })
       } else if (err instanceof walletProviderErrors.LedgerReplugError) {
         console.log('LEDGER REPLUG')
         dispatch({ type: 'LEDGER_REPLUG' })

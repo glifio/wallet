@@ -86,4 +86,15 @@ class MockWalletProvider {
 
 export const mockWalletProviderInstance = new MockWalletProvider()
 
+export class TransportWrapper {
+  transport = null
+  checkSupport = jest.fn().mockImplementation(() => true)
+  disconnect = jest.fn()
+  connect = jest.fn()
+}
+
+export const HDWalletProvider = MockWalletProvider
+export const SECP256K1KeyProvider = MockWalletProvider
+// export const HDWalletProvider = MockWalletProvider
+
 export default MockWalletProvider

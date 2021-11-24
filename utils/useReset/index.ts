@@ -3,9 +3,10 @@ import { useDispatch } from 'react-redux'
 import { useWalletProvider } from '../../WalletProvider'
 import { resetState as resetRdxState } from '../../store/actions'
 
-export default () => {
+export default function useReset() {
   const dispatch = useDispatch()
   const { resetState } = useWalletProvider()
+
   return useCallback(() => {
     dispatch(resetRdxState())
     resetState()

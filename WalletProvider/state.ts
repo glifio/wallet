@@ -10,7 +10,7 @@ import {
   LoginOption
 } from './types'
 
-export const initialState = {
+export const initialState: WalletProviderState = {
   loginOption: null,
   walletProvider: null,
   error: '',

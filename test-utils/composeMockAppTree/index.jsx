@@ -2,7 +2,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { Converter } from '@glif/filecoin-number'
-import BalancePoller from '../../lib/update-balance'
 import { ConverterContext } from '../../lib/Converter'
 import { theme, ThemeProvider } from '../../components/Shared'
 import { WasmContext } from '../../lib/WasmLoader'

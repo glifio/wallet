@@ -1,9 +1,8 @@
 import { createContext, useContext, useReducer } from 'react'
 import createMockWalletProviderContextFuncs from '../../test-utils/composeMockAppTree/createWalletProviderContextFuncs'
-import mockWalletSubproviders from '../../test-utils/mocks/mock-wallet-subproviders'
 import walletProviderReducer, {
   initialState as walletProviderInitialState
-} from '../../WalletProvider/state'
+} from '../state'
 
 export const WalletProviderContext = createContext({
   ...walletProviderInitialState
@@ -23,15 +22,12 @@ const WalletProviderWrapper = ({
   const mockWalletProviderContextFuncs = createMockWalletProviderContextFuncs(
     options?.walletProviderDispatch || walletProviderDispatch
   )
-
   return (
     <WalletProviderContext.Provider
       value={{
+        // @ts-ignore
         state: walletProviderState,
         dispatch: options?.walletProviderDispatch || walletProviderDispatch,
-        walletSubproviders: {
-          ...mockWalletSubproviders
-        },
         ...mockWalletProviderContextFuncs
       }}
     >
@@ -45,6 +41,7 @@ const WalletProviderWrapper = ({
 
 export const useWalletProvider = () => {
   const value = useContext(WalletProviderContext)
+  // @ts-ignore
   const { state } = value
   return {
     ...state,

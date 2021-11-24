@@ -31,7 +31,7 @@ describe('Import seed phrase configuration', () => {
     expect(container.firstChild).toMatchSnapshot()
   })
 
-  test('it sends the user to wallet view, with a wallet in state upon successful config', async () => {
+  test.only('it sends the user to wallet view, with a wallet in state upon successful config', async () => {
     const { Tree, getWalletProviderState } = composeMockAppTree('preOnboard')
 
     const { container } = render(
@@ -52,11 +52,11 @@ describe('Import seed phrase configuration', () => {
       fireEvent.click(screen.getByText('Next'))
       await flushPromises()
     })
-    expect(container.firstChild).toMatchSnapshot()
     expect(mockRouterPush).toHaveBeenCalledWith(PAGE.WALLET_HOME)
     expect(mockFetchDefaultWallet).toHaveBeenCalled()
     const wallet = getWalletProviderState().wallets[0]
     expect(wallet.address).toBeTruthy()
     expect(wallet.path).toBe(createPath(TESTNET_PATH_CODE, 0))
+    expect(container.firstChild).toMatchSnapshot()
   })
 })
