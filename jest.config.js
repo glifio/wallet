@@ -10,18 +10,7 @@ module.exports = {
     '^.+\\.module\\.(css|sass|scss)$'
   ],
   moduleNameMapper: {
-    '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
-    '@zondax/filecoin-signing-tools':
-      '<rootDir>/test-utils/mocks/mock-filecoin-signer-wasm.js',
-    dayjs: '<rootDir>/test-utils/mocks/mock-dates.js',
-    'next/router': '<rootDir>/test-utils/mocks/mock-routing.js',
-    '@glif/filecoin-number':
-      '<rootDir>/test-utils/mocks/mock-filecoin-number.js',
-    '@glif/filecoin-wallet-provider':
-      '<rootDir>/test-utils/mocks/mock-wallet-provider.js',
-    '@zondax/ledger-filecoin':
-      '<rootDir>/test-utils/mocks/mock-ledger-filecoin.js',
-    '@ledgerhq/hw-transport-webhid': '<rootDir>/test-utils/mocks/mock-webhid.js'
+    '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy'
   },
   setupFilesAfterEnv: ['./jest.setup.js'],
   testEnvironment: 'jsdom',

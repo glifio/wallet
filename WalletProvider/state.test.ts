@@ -1,5 +1,5 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
-import Filecoin from '@glif/filecoin-wallet-provider'
+import Filecoin, { WalletSubProvider } from '@glif/filecoin-wallet-provider'
 import clonedeep from 'lodash.clonedeep'
 import { Message, SignedLotusMessage } from '@glif/filecoin-message'
 import reducer, {
@@ -18,7 +18,7 @@ import { initialLedgerState } from '../utils/ledger/ledgerStateManagement'
 import { IMPORT_MNEMONIC, SINGLE_KEY } from '../constants'
 import { WalletProviderAction } from './types'
 
-const mockSubProvider = {
+const mockSubProvider: WalletSubProvider = {
   type: 'MOCK',
   getAccounts: async (): Promise<string[]> => {
     return []

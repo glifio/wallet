@@ -95,6 +95,6 @@ export class TransportWrapper {
 
 export const HDWalletProvider = MockWalletProvider
 export const SECP256K1KeyProvider = MockWalletProvider
-// export const HDWalletProvider = MockWalletProvider
+export const LedgerProvider = MockWalletProvider
 
 export default MockWalletProvider
