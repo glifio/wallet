@@ -256,11 +256,12 @@ const Send = () => {
   const hasError = () =>
     !!(
       uncaughtError ||
-      (loginOption === LEDGER && reportLedgerConfigError(ledger))
+      (loginOption === LEDGER &&
+        reportLedgerConfigError({ ...ledger, otherError: uncaughtError }))
     )
 
   const ledgerError = () =>
-    loginOption === LEDGER && reportLedgerConfigError(ledger)
+    loginOption === LEDGER && reportLedgerConfigError({ ...ledger })
 
   const isSubmitBtnDisabled = () => {
     if (frozen) return true
@@ -368,6 +369,7 @@ const Send = () => {
 
                 <Box width='100%' p={3} border={0} bg='background.screen'>
                   <Input.Address
+                    // @ts-ignore
                     label='Recipient'
                     value={toAddress}
                     onChange={(e) => setToAddress(e.target.value)}
@@ -389,6 +391,7 @@ const Send = () => {
                       bg='background.screen'
                     >
                       <Input.Funds
+                        // @ts-ignore
                         name='amount'
                         label='Amount'
                         amount={value.toAttoFil()}
@@ -403,6 +406,7 @@ const Send = () => {
                   {step > 2 && (
                     <Box width='100%' p={3} border={0} bg='background.screen'>
                       <Input.Text
+                        // @ts-ignore
                         label='Params'
                         value={params}
                         onChange={(e) => setParams(e.target.value)}

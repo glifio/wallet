@@ -13,6 +13,7 @@ import {
 } from '@glif/react-components'
 
 import { useWalletProvider } from '../../../../WalletProvider'
+import { createWalletProvider } from '../../../../WalletProvider/state'
 import {
   hasLedgerError,
   reportLedgerConfigError
@@ -83,7 +84,7 @@ Helper.defaultProps = {
 }
 
 const ConnectLedger: FC<{ msig: boolean }> = ({ msig }) => {
-  const { connectLedger, ledger, fetchDefaultWallet, walletList } =
+  const { connectLedger, dispatch, ledger, fetchDefaultWallet, walletList } =
     useWalletProvider()
   const resetState = useReset()
   const [uncaughtError, setUncaughtError] = useState('')
@@ -101,10 +102,11 @@ const ConnectLedger: FC<{ msig: boolean }> = ({ msig }) => {
 
   const onClick = async () => {
     setLoading(true)
+    setUncaughtError('')
     try {
       const provider = await connectLedger()
       if (provider) {
-        setUncaughtError('')
+        dispatch(createWalletProvider(provider))
         const wallet = await fetchDefaultWallet(provider)
         if (wallet) {
           walletList([wallet])

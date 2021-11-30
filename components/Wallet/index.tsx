@@ -29,17 +29,15 @@ export default function WalletHome() {
   const router = useRouter()
   const { ledger, connectLedger, loginOption } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState('')
-  const [showLedgerError, setShowLedgerError] = useState(false)
   const [ledgerBusy, setLedgerBusy] = useState(false)
 
   const onShowOnLedger = async () => {
     setLedgerBusy(true)
+    setUncaughtError('')
     try {
-      setUncaughtError('')
-      setShowLedgerError(false)
       const provider = await connectLedger()
       if (provider) await provider.wallet.showAddressAndPubKey(wallet.path)
-      else setShowLedgerError(true)
+      else setUncaughtError('Error connecting to your Ledger Device')
     } catch (err) {
       reportError(8, false, err.message, err.stack)
       setUncaughtError(err.message)
@@ -60,8 +58,7 @@ export default function WalletHome() {
       <MsgConfirmer />
       <PageWrapper>
         <Sidebar height='100vh'>
-          {hasLedgerError({ ...ledger, otherError: uncaughtError }) &&
-          showLedgerError ? (
+          {hasLedgerError({ ...ledger, otherError: uncaughtError }) ? (
             <AccountError
               onTryAgain={onShowOnLedger}
               errorMsg={reportLedgerConfigError({

@@ -33,7 +33,7 @@ type WalletProviderContextType = {
   state: WalletProviderState
   dispatch: Dispatch<WalletProviderAction> | null
   fetchDefaultWallet: (walletProvider: Filecoin) => Promise<Wallet>
-  connectLedger: () => Promise<Filecoin>
+  connectLedger: () => Promise<Filecoin & { wallet: LedgerProvider }>
   setWalletError: (errorMessage: string) => void
   setLoginOption: (loginOption: LoginOption) => void
   resetLedgerState: () => void

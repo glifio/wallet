@@ -15,7 +15,7 @@ export const reportLedgerConfigError = ({
   badVersion,
   transportSupported,
   otherError
-}: LedgerState & { otherError: string }): string => {
+}: LedgerState & { otherError?: string }): string => {
   if (!transportSupported)
     return "We're sorry, but we can't communicate with your Ledger Device because your browser is incompatible with our Ledger communication mechanism."
   if (connectedFailure) return 'Is your Ledger device plugged in?'
