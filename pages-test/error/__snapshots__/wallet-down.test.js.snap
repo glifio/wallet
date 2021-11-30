@@ -202,7 +202,7 @@ exports[`WalletDown it renders the error page 1`] = `
           font-size="2"
           font-weight="400"
         >
-          We've been notified of the problem.
+          We've been notified of the problem, but feel free to reach out to squad@infinitescroll.org with any questions or concerns.
         </p>
       </div>
       <div
@@ -212,12 +212,9 @@ exports[`WalletDown it renders the error page 1`] = `
           class="c8"
           color="core.white"
           font-size="3"
-          href="https://twitter.com/openworklabs"
           rel="noopener"
           target="_blank"
-        >
-          Follow @openworklabs for updates.
-        </a>
+        />
       </div>
     </div>
   </div>

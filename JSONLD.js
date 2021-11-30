@@ -3,7 +3,7 @@ export default {
   '@type': 'WebApplication',
   name: 'Glif Wallet',
   description:
-    'A lightweight web interface to send and receive Filecoin via your Ledger device.',
+    'A lightweight web interface to send and receive Filecoin via multisig wallets and your Ledger device.',
   url: 'https://glif.io',
   knowsAbout: [
     {
@@ -21,13 +21,8 @@ export default {
   ],
   parentOrganization: {
     '@type': 'Organization',
-    name: 'Infinite Scroll',
-    description: 'Self-sustaining systems for the worlds to come.',
-    url: 'https://infinitescroll.org',
-    sameAs: [
-      'https://github.com/infinitescroll',
-      'https://twitter.com/infinitescroll_',
-      'https://www.are.na/infinite-scroll'
-    ]
+    name: 'Glif',
+    description: '.',
+    url: 'https://www.glif.io'
   }
 }
