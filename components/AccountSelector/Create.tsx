@@ -12,7 +12,7 @@ import {
   NetworkSwitcherGlyphV2 as CoinTypeSwitcherGlyph,
   StyledATag
 } from '@glif/react-components'
-import { Network as CoinType } from '@glif/filecoin-address'
+import { CoinType } from '@glif/filecoin-address'
 import { RawNumberInput } from '../Shared/Input/Number'
 
 const COIN_TYPE = process.env.COIN_TYPE! as CoinType

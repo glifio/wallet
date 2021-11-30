@@ -13,7 +13,7 @@ import {
   ButtonClose
 } from '@glif/react-components'
 import Filecoin from '@glif/filecoin-wallet-provider'
-import { Network as CoinType } from '@glif/filecoin-address'
+import { CoinType } from '@glif/filecoin-address'
 import HelperText from './HelperText'
 import Create from './Create'
 import { useWalletProvider } from '../../WalletProvider'

@@ -10,7 +10,7 @@ import {
   LoginOption
 } from './types'
 
-export const initialState = {
+export const initialState: WalletProviderState = {
   loginOption: null,
   walletProvider: null,
   error: '',
@@ -239,12 +239,12 @@ export default function reducer(
           badVersion: true
         }
       }
-    case 'WEBUSB_UNSUPPORTED':
+    case 'TRANSPORT_UNSUPPORTED':
       return {
         ...Object.freeze(state),
         ledger: {
           ...state.ledger,
-          webUSBSupported: false
+          transportSupported: false
         }
       }
     case 'LEDGER_RESET_STATE':

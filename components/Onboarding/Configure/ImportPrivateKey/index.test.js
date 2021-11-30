@@ -1,6 +1,6 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 import composeMockAppTree from '../../../../test-utils/composeMockAppTree'
-import { mockRouterPush } from '../../../../test-utils/mocks/mock-routing'
+import { mockRouterPush } from '../../../../__mocks__/next/router'
 import { flushPromises } from '../../../../test-utils'
 
 import ImportPrivateKey from '.'

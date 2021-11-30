@@ -6,7 +6,7 @@ import { Message } from '@glif/filecoin-message'
 import Create from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import { flushPromises } from '../../../test-utils'
-import { createMultisig } from '../../../test-utils/mocks/mock-filecoin-signer-wasm'
+import { createMultisig } from '../../../__mocks__/@zondax/filecoin-signing-tools'
 
 jest.mock('@glif/filecoin-wallet-provider')
 jest.mock('@glif/filecoin-rpc-client')

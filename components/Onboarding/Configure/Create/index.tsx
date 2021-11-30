@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react'
 import { number } from 'prop-types'
 import { useRouter } from 'next/router'
-import Filecoin from '@glif/filecoin-wallet-provider'
+import Filecoin, { HDWalletProvider } from '@glif/filecoin-wallet-provider'
 import {
   Box,
   Button,
@@ -32,12 +32,7 @@ const Create: FC<{ initialWalkthroughStep: number }> = ({
   const [importSeedError, setImportSeedError] = useState(false)
   // @ts-ignore
   const { generateMnemonic } = useWasm()
-  const {
-    dispatch,
-    fetchDefaultWallet,
-    walletSubproviders: { HDWalletProvider },
-    walletList
-  } = useWalletProvider()
+  const { dispatch, fetchDefaultWallet, walletList } = useWalletProvider()
 
   const nextStep = () => {
     setImportSeedError(false)
@@ -55,7 +50,7 @@ const Create: FC<{ initialWalkthroughStep: number }> = ({
   useEffect(() => {
     const instantiateProvider = async () => {
       try {
-        const provider = new Filecoin(HDWalletProvider(mnemonic), {
+        const provider = new Filecoin(new HDWalletProvider(mnemonic), {
           apiAddress: process.env.LOTUS_NODE_JSONRPC
         })
         dispatch(createWalletProvider(provider))
@@ -77,7 +72,6 @@ const Create: FC<{ initialWalkthroughStep: number }> = ({
     mnemonic,
     router,
     walkthroughStep,
-    HDWalletProvider,
     loading,
     walletList
   ])

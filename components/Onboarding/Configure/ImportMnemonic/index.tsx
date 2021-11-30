@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react'
-import Filecoin from '@glif/filecoin-wallet-provider'
+import Filecoin, { HDWalletProvider } from '@glif/filecoin-wallet-provider'
 import { useRouter } from 'next/router'
 import { validateMnemonic } from 'bip39'
 import {
@@ -19,12 +19,7 @@ import { navigate } from '../../../../utils/urlParams'
 import { PAGE } from '../../../../constants'
 
 const InputMnemonic: FC<{}> = () => {
-  const {
-    dispatch,
-    fetchDefaultWallet,
-    setLoginOption,
-    walletSubproviders: { HDWalletProvider }
-  } = useWalletProvider()
+  const { dispatch, fetchDefaultWallet, setLoginOption } = useWalletProvider()
   const [mnemonic, setMnemonic] = useState('')
   const [mnemonicError, setMnemonicError] = useState('')
   const [loadingNextScreen, setLoadingNextScreen] = useState(false)
@@ -38,7 +33,7 @@ const InputMnemonic: FC<{}> = () => {
       const trimmed = mnemonic.trim()
       const isValid = validateMnemonic(trimmed)
       if (isValid) {
-        const provider = new Filecoin(HDWalletProvider(mnemonic), {
+        const provider = new Filecoin(new HDWalletProvider(mnemonic), {
           apiAddress: process.env.LOTUS_NODE_JSONRPC
         })
         dispatch(createWalletProvider(provider))
