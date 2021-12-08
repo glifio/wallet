@@ -63,6 +63,14 @@ export default function Landing() {
                 >
                   Connect
                 </H2>
+                {/**
+                 * This <Box display='flex'...etc> is equivalent to
+                 * <div style={{ display: 'flex', ....etc }} /> OR
+                 * <div css={`
+                 *    display: flex;
+                 *    ...other styles...
+                 * `}
+                 */}
                 <Box display='flex' flexDirection='column' height='100%'>
                   <Box
                     display='flex'
@@ -88,6 +96,11 @@ export default function Landing() {
                     <BurnerWallet large>Import Seed Phrase</BurnerWallet>
                     <BurnerWallet large>Import Private Key</BurnerWallet>
                   </Box>
+                  {/**
+                   * This <Box mt={6}> is equivalent to
+                   * <div style={{ marginTop: theme.spaces[6] }} /> OR
+                   * <div css={` margin-top: ${theme.spaces[6]} `}
+                   */}
                   <Box mt={6}>
                     <P
                       css={`
@@ -126,13 +139,9 @@ export default function Landing() {
           </ConnectContentContainer>
         </LandingPageContentContainer>
       </LandingPageContainer>
-      <div
-        style={{
-          padding: `0 ${space()} ${space()}`
-        }}
-      >
+      <Box p={`0 ${space()} ${space()}`}>
         <Footer />
-      </div>
+      </Box>
     </>
   )
 }
