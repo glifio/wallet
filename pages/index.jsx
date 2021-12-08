@@ -1,11 +1,9 @@
 import React from 'react'
 
-import useDesktopBrowser from '../lib/useDesktopBrowser'
-import { Onboard } from '../components'
+import { Landing } from '../components'
 
 const Index = () => {
-  useDesktopBrowser()
-  return <Onboard />
+  return <Landing />
 }
 
 export default Index
