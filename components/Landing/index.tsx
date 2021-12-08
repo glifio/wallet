@@ -35,7 +35,6 @@ export default function Landing() {
             <AppTile
               title='Wallet'
               description='A lightweight interface for sending Filecoin.'
-              href='https://wallet.beta.glif.io'
               imgSrc='/bg-wallet.png'
               large
             />
