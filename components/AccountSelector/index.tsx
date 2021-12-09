@@ -10,20 +10,20 @@ import {
   Menu,
   MenuItem,
   LoadingScreen,
-  ButtonClose
+  ButtonClose,
+  useWalletProvider,
+  Wallet,
+  useWallet
 } from '@glif/react-components'
 import Filecoin from '@glif/filecoin-wallet-provider'
 import { CoinType } from '@glif/filecoin-address'
 import HelperText from './HelperText'
 import Create from './Create'
-import { useWalletProvider } from '../../WalletProvider'
-import { Wallet } from '../../WalletProvider/types'
 import { LEDGER, PAGE, TESTNET_PATH_CODE } from '../../constants'
 import {
   hasLedgerError,
   reportLedgerConfigError
 } from '../../utils/ledger/reportLedgerConfigError'
-import useWallet from '../../WalletProvider/useWallet'
 import createPath, { coinTypeCode } from '../../utils/createPath'
 import reportError from '../../utils/reportError'
 import converAddrToFPrefix from '../../utils/convertAddrToFPrefix'

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import { Box, useWalletProvider } from '@glif/react-components'
 import Ledger from '../Onboarding/Configure/Ledger'
-import { Box } from '../Shared'
-import { useWalletProvider } from '../../WalletProvider'
 import { LEDGER } from '../../constants'
 
 const MsigOnboard = () => {

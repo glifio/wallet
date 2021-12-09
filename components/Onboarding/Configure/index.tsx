@@ -1,6 +1,7 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import PropTypes from 'prop-types'
+import type { LoginOption } from '@glif/filecoin-wallet-provider'
 
 import {
   LEDGER,
@@ -8,7 +9,6 @@ import {
   IMPORT_SINGLE_KEY,
   CREATE_MNEMONIC
 } from '../../../constants'
-import { LoginOption } from '../../../WalletProvider/types'
 
 const Create = dynamic(() => import('./Create'))
 const Ledger = dynamic(() => import('./Ledger'))

@@ -13,10 +13,10 @@ import {
   StepHeader,
   Text,
   Form,
-  Card
+  Card,
+  useWalletProvider,
+  useWallet
 } from '@glif/react-components'
-import { useWalletProvider } from '../../../WalletProvider'
-import useWallet from '../../../WalletProvider/useWallet'
 import { Input } from '../../Shared'
 import { CardHeader, CreateMultisigHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'

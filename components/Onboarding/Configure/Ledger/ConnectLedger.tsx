@@ -9,11 +9,11 @@ import {
   Title,
   StepHeader,
   StyledATag,
-  IconLedger
+  IconLedger,
+  useWalletProvider,
+  createWalletProvider
 } from '@glif/react-components'
 
-import { useWalletProvider } from '../../../../WalletProvider'
-import { createWalletProvider } from '../../../../WalletProvider/state'
 import {
   hasLedgerError,
   reportLedgerConfigError

@@ -1,11 +1,10 @@
 import { ReactNode, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { node } from 'prop-types'
+import { useWallet, Wallet } from '@glif/react-components'
 
 import { PAGE } from '../constants'
 import { navigate } from '../utils/urlParams'
-import useWallet from '../WalletProvider/useWallet'
-import { Wallet } from '../WalletProvider/types'
 
 export default function RequireWallet({ children }: { children: ReactNode }) {
   const router = useRouter()

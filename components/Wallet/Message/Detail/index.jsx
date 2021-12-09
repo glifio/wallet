@@ -12,12 +12,12 @@ import {
   Glyph,
   Text,
   Label,
-  StyledATag
-} from '../../../Shared'
+  StyledATag,
+  useWalletProvider
+} from '@glif/react-components'
 import { ButtonClose } from '../../../Shared/IconButtons'
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../../customPropTypes'
 import noop from '../../../../utils/noop'
-import { useWalletProvider } from '../../../../WalletProvider'
 import MsgTypeAndStatus from './MsgTypeAndStatus'
 import DetailSection from './DetailSection'
 import { FILFOX } from '../../../../constants'

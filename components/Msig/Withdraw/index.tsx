@@ -12,13 +12,13 @@ import {
   Num,
   Title,
   Form,
-  Card
+  Card,
+  useWalletProvider,
+  useWallet
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
 import { useMsig } from '../../../MsigProvider'
-import { useWalletProvider } from '../../../WalletProvider'
-import useWallet from '../../../WalletProvider/useWallet'
 import { Input } from '../../Shared'
 import { CardHeader, WithdrawHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'

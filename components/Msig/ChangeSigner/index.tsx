@@ -13,12 +13,12 @@ import {
   ButtonClose,
   Label,
   CopyText,
-  Warning
+  Warning,
+  useWalletProvider,
+  useWallet
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
-import { useWalletProvider } from '../../../WalletProvider'
-import useWallet from '../../../WalletProvider/useWallet'
 import { StepHeader, Input } from '../../Shared'
 import truncateAddress from '../../../utils/truncateAddress'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'

@@ -15,7 +15,9 @@ import {
   Title,
   Form,
   Card,
-  PageWrapper
+  PageWrapper,
+  useWalletProvider,
+  useWallet
 } from '@glif/react-components'
 import { Input } from '../../Shared'
 import { CardHeader } from '../../Msig/Shared'
@@ -23,8 +25,6 @@ import ConfirmationCard from './ConfirmationCard'
 import HeaderText from './HeaderText'
 import ErrorCard from './ErrorCard'
 import CustomizeFee from './CustomizeFee'
-import { useWalletProvider } from '../../../WalletProvider'
-import useWallet from '../../../WalletProvider/useWallet'
 import { LEDGER, SEND, emptyGasInfo, PAGE } from '../../../constants'
 import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfigError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
