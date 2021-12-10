@@ -14,7 +14,6 @@ jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
 })
 
 jest.mock('../../../MsigProvider')
-jest.mock('../../../WalletProvider')
 
 describe('Msig Home', () => {
   beforeEach(() => {

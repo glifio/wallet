@@ -8,8 +8,6 @@ import { PAGE, TESTNET_PATH_CODE } from '../../../../constants'
 import { mockFetchDefaultWallet } from '../../../../test-utils/composeMockAppTree/createWalletProviderContextFuncs'
 import createPath from '../../../../utils/createPath'
 
-jest.mock('../../../../WalletProvider')
-
 describe('Import seed phrase configuration', () => {
   afterEach(() => {
     jest.clearAllMocks()

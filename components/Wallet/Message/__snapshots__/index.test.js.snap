@@ -1993,19 +1993,6 @@ exports[`MessageHistory View it renders correctly 1`] = `
 `;
 
 exports[`MessageHistory View it renders the message detail view after clicking on a message 1`] = `
-.c20 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .c0 {
   min-width: 0;
   box-sizing: border-box;
@@ -2138,6 +2125,248 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
+}
+
+.c35 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c36 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 48px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c46 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c5 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c6 {
+  color: #5E26FF;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-left: 8px;
+}
+
+.c15 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 16px;
+}
+
+.c16 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c37 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c47 {
+  color: #999999;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+  margin: 4px;
+}
+
+.c48 {
+  color: #999999;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+  max-width: 160px;
+  margin: 4px;
+}
+
+.c51 {
+  color: #5E26FF;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+  margin: 4px;
+}
+
+.c10 {
+  width: 24;
+  height: 24;
+}
+
+.c50 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+}
+
+.c50:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c39 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  text-align: right;
+  background-color: #EFF3FD;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c39:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c39:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c34 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c8 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.c8:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c18 {
@@ -2282,7 +2511,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   font-size: 1.25rem;
 }
 
-.c36 {
+.c41 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
@@ -2305,7 +2534,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   justify-content: space-between;
 }
 
-.c38 {
+.c43 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -2319,48 +2548,12 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   text-align: right;
 }
 
-.c41 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-top: 64px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-}
-
-.c5 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c10 {
-  width: 24;
-  height: 24;
-}
-
 .c12 {
   width: 24px;
   height: 24px;
 }
 
-.c37 {
+.c42 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -2369,42 +2562,13 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   margin-top: 4px;
 }
 
-.c39 {
+.c44 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.2;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c6 {
-  color: #5E26FF;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-left: 8px;
-}
-
-.c15 {
-  color: #666666;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-right: 16px;
-}
-
-.c16 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 .c13 {
@@ -2423,37 +2587,6 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
-}
-
-.c42 {
-  color: #999999;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  text-align: left;
-  margin: 4px;
-}
-
-.c43 {
-  color: #999999;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  text-align: left;
-  max-width: 160px;
-  margin: 4px;
-}
-
-.c46 {
-  color: #5E26FF;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  text-align: left;
-  margin: 4px;
 }
 
 .c24 {
@@ -2532,44 +2665,6 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   background: #bacbf7;
 }
 
-.c34 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #bacbf7;
-  text-align: right;
-  background-color: #EFF3FD;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c34:hover {
-  background: #bacbf7;
-  cursor: initial;
-}
-
-.c34:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
 .c19 {
   display: inline-block;
   width: 100%;
@@ -2593,37 +2688,6 @@ exports[`MessageHistory View it renders the message detail view after clicking o
 }
 
 .c45 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-}
-
-.c45:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
-.c8 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: 8px;
-}
-
-.c8:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
-.c40 {
   word-wrap: break-word;
 }
 
@@ -2646,7 +2710,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   background-color: #EFF3FD;
 }
 
-.c35:hover {
+.c40:hover {
   background: transparent;
 }
 
@@ -2656,7 +2720,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
   align-self: flex-end;
 }
 
-.c44 {
+.c49 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: no-wrap;
@@ -2717,7 +2781,6 @@ exports[`MessageHistory View it renders the message detail view after clicking o
       >
         <svg
           class="c10"
-          fill="none"
           height="24"
           viewBox="0 0 24 24"
           width="24"
@@ -2932,18 +2995,18 @@ exports[`MessageHistory View it renders the message detail view after clicking o
       </div>
     </div>
     <div
-      class="c19"
+      class="c34"
     >
       <div
-        class="c20"
+        class="c35"
         display="flex"
       >
         <div
-          class="c21"
+          class="c36"
           display="flex"
         >
           <h4
-            class="c22"
+            class="c37"
             color="core.nearblack"
             font-family="RT-Alias-Grotesk"
             font-size="2"
@@ -2953,15 +3016,14 @@ exports[`MessageHistory View it renders the message detail view after clicking o
           </h4>
         </div>
         <div
-          class="c23"
+          class="c38"
           display="flex"
         >
           <input
-            class="c34 c35 Detail__TransactionFeeDisplay-h9colq-1 c35"
+            class="c39 c40 Detail__TransactionFeeDisplay-h9colq-1 c40"
             disabled=""
             display="inline-block"
             height="6"
-            name=""
             value="1 pFIL"
             width="100%"
           />
@@ -2971,11 +3033,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
     </div>
     
     <div
-      class="c36"
+      class="c41"
       display="flex"
     >
       <h2
-        class="c37"
+        class="c42"
         font-family="RT-Alias-Grotesk"
         font-size="4"
         font-weight="400"
@@ -2983,11 +3045,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         Total
       </h2>
       <div
-        class="c38"
+        class="c43"
         display="flex"
       >
         <h2
-          class="c39 c40"
+          class="c44 c45"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="5"
@@ -2999,11 +3061,11 @@ exports[`MessageHistory View it renders the message detail view after clicking o
       </div>
     </div>
     <div
-      class="c41"
+      class="c46"
       display="flex"
     >
       <h4
-        class="c42"
+        class="c47"
         color="core.silver"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -3012,7 +3074,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         Message Hash
       </h4>
       <h4
-        class="c43 c44"
+        class="c48 c49"
         color="core.silver"
         font-family="RT-Alias-Grotesk"
         font-size="2"
@@ -3021,7 +3083,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         bafy2bzacedchco2ff4almriyyfsnxae2fv6xosyffy5s77y2ebqjslt4dovd2
       </h4>
       <a
-        class="c45"
+        class="c50"
         color="core.primary"
         font-size="2"
         href="https://filfox.info/en/message/bafy2bzacedchco2ff4almriyyfsnxae2fv6xosyffy5s77y2ebqjslt4dovd2"
@@ -3029,7 +3091,7 @@ exports[`MessageHistory View it renders the message detail view after clicking o
         target="_blank"
       >
         <h4
-          class="c46"
+          class="c51"
           color="core.primary"
           font-family="RT-Alias-Grotesk"
           font-size="2"

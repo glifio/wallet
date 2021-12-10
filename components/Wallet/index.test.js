@@ -9,7 +9,6 @@ import { flushPromises } from '../../test-utils'
 import { PAGE } from '../../constants'
 
 jest.mock('@glif/filecoin-wallet-provider')
-jest.mock('../../WalletProvider')
 const spy = jest.spyOn(require('../../lib/useTransactionHistory'), 'default')
 
 const mockTxHistory = {

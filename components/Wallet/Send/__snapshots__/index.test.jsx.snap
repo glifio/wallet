@@ -5507,7 +5507,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   width: 100%;
 }
 
-.c59 {
+.c61 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -5559,13 +5559,140 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   width: 100%;
 }
 
+.c47 {
+  min-width: 0;
+  box-sizing: border-box;
+  background-color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c48 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 560px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c50 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c51 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  display: inline-block;
+  min-width: 240px;
+  text-align: left;
+}
+
+.c53 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c56 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  height: 48px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.c58 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  text-align: left;
+}
+
 .c12 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c60 {
+.c62 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -5584,11 +5711,11 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c60:hover {
+.c62:hover {
   opacity: 0.8;
 }
 
-.c61 {
+.c63 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -5607,7 +5734,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c61:hover {
+.c63:hover {
   opacity: 0.8;
 }
 
@@ -5630,9 +5757,99 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   margin-bottom: 0;
 }
 
+.c59 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  width: 100%;
+}
+
+.c52 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
 .c3 {
   width: 24;
   height: 24;
+}
+
+.c60 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+}
+
+.c60:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c54 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #d1ddfa;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c54:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c54:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c49 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c57 {
+  text-align: center;
+  position: relative;
+  background: #d1ddfa;
+}
+
+.c55 {
+  -moz-appearance: textfield;
+}
+
+.c55::-webkit-outer-spin-button,
+.c55::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .c4 {
@@ -5944,133 +6161,6 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   font-size: 1.25rem;
 }
 
-.c47 {
-  min-width: 0;
-  box-sizing: border-box;
-  background-color: #EFF3FD;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c48 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 560px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-}
-
-.c49 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c50 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 8px;
-  padding-right: 8px;
-  margin-right: 8px;
-  display: inline-block;
-  min-width: 240px;
-  text-align: left;
-}
-
-.c52 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-bottom: 1px solid;
-  border-top: 1px solid;
-  color: #EFF3FD;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.c54 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  height: 48px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-}
-
-.c56 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  text-align: left;
-}
-
 .c27 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
@@ -6094,25 +6184,8 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   margin: 0;
 }
 
-.c57 {
-  color: #666666;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  width: 100%;
-}
-
 .c34 {
   color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c51 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -6196,53 +6269,10 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   background: #bacbf7;
 }
 
-.c53 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #d1ddfa;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c53:hover {
-  background: #bacbf7;
-  cursor: text;
-}
-
-.c53:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
 .c31 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
-}
-
-.c55 {
-  text-align: center;
-  position: relative;
-  background: #d1ddfa;
 }
 
 .c45 {
@@ -6259,20 +6289,6 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
 .c43::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-.c58 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-}
-
-.c58:hover {
-  border-bottom: 2px solid #5E26FF;
 }
 
 <div>
@@ -6692,19 +6708,19 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                       display="flex"
                     >
                       <div
-                        class="c31"
+                        class="c49"
                         name="tx-fee"
                       >
                         <div
-                          class="c49"
+                          class="c50"
                           display="flex"
                         >
                           <div
-                            class="c50"
+                            class="c51"
                             display="inline-block"
                           >
                             <h4
-                              class="c51"
+                              class="c52"
                               font-family="RT-Alias-Grotesk"
                               font-size="2"
                               font-weight="400"
@@ -6713,13 +6729,13 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                             </h4>
                           </div>
                           <div
-                            class="c52"
+                            class="c53"
                             color="background.screen"
                             display="flex"
                             width="100%"
                           >
                             <input
-                              class="c53 c43"
+                              class="c54 c55"
                               display="inline-block"
                               height="6"
                               type="number"
@@ -6727,7 +6743,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                               width="100%"
                             />
                             <div
-                              class="c54 c55"
+                              class="c56 c57"
                               color="core.primary"
                               display="flex"
                               font-size="3"
@@ -6739,12 +6755,12 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                         </div>
                       </div>
                       <div
-                        class="c56"
+                        class="c58"
                         display="flex"
                         width="100%"
                       >
                         <p
-                          class="c57"
+                          class="c59"
                           color="core.darkgray"
                           font-family="RT-Alias-Grotesk"
                           font-size="2"
@@ -6756,7 +6772,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
                            FIL for this transaction.
                            
                           <a
-                            class="c58"
+                            class="c60"
                             color="core.primary"
                             font-size="2"
                             href="https://filfox.info/en/stats/gas"
@@ -6774,12 +6790,12 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
             </div>
           </div>
           <div
-            class="c59"
+            class="c61"
             display="flex"
             width="100%"
           >
             <button
-              class="c60"
+              class="c62"
               font-size="3"
               height="6"
               type="button"
@@ -6787,7 +6803,7 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
               Back
             </button>
             <button
-              class="c61"
+              class="c63"
               font-size="3"
               height="6"
               type="submit"
@@ -6973,7 +6989,7 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   width: 100%;
 }
 
-.c61 {
+.c63 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -7014,7 +7030,134 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   width: 100%;
 }
 
-.c57 {
+.c45 {
+  min-width: 0;
+  box-sizing: border-box;
+  background-color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c46 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 560px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c48 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c49 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  display: inline-block;
+  min-width: 240px;
+  text-align: left;
+}
+
+.c51 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c54 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  height: 48px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.c56 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  text-align: left;
+}
+
+.c59 {
   min-width: 0;
   box-sizing: border-box;
   border-bottom-left-radius: 8px;
@@ -7041,7 +7184,7 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c58 {
+.c60 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 24px;
@@ -7061,7 +7204,7 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c62 {
+.c64 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -7080,11 +7223,11 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c62:hover {
+.c64:hover {
   opacity: 0.8;
 }
 
-.c63 {
+.c65 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -7103,7 +7246,7 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c63:hover {
+.c65:hover {
   opacity: 0.8;
 }
 
@@ -7115,7 +7258,7 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   margin: 0;
 }
 
-.c59 {
+.c61 {
   color: #5E26FF;
   font-size: 2rem;
   font-weight: 700;
@@ -7135,9 +7278,99 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   margin-bottom: 0;
 }
 
+.c57 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  width: 100%;
+}
+
+.c50 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
 .c3 {
   width: 24;
   height: 24;
+}
+
+.c58 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+}
+
+.c58:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c52 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #d1ddfa;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c52:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c52:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c47 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c55 {
+  text-align: center;
+  position: relative;
+  background: #d1ddfa;
+}
+
+.c53 {
+  -moz-appearance: textfield;
+}
+
+.c53::-webkit-outer-spin-button,
+.c53::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .c4 {
@@ -7449,133 +7682,6 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   font-size: 1.25rem;
 }
 
-.c45 {
-  min-width: 0;
-  box-sizing: border-box;
-  background-color: #EFF3FD;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c46 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 560px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-}
-
-.c47 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c48 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 8px;
-  padding-right: 8px;
-  margin-right: 8px;
-  display: inline-block;
-  min-width: 240px;
-  text-align: left;
-}
-
-.c50 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-bottom: 1px solid;
-  border-top: 1px solid;
-  color: #EFF3FD;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.c52 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  height: 48px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-}
-
-.c54 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  text-align: left;
-}
-
 .c26 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
@@ -7599,25 +7705,8 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   margin: 0;
 }
 
-.c55 {
-  color: #666666;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  width: 100%;
-}
-
 .c33 {
   color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c49 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -7701,53 +7790,10 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   background: #bacbf7;
 }
 
-.c51 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #d1ddfa;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c51:hover {
-  background: #bacbf7;
-  cursor: text;
-}
-
-.c51:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
 .c30 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
-}
-
-.c53 {
-  text-align: center;
-  position: relative;
-  background: #d1ddfa;
 }
 
 .c44 {
@@ -7766,21 +7812,7 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   margin: 0;
 }
 
-.c56 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-}
-
-.c56:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
-.c60 {
+.c62 {
   word-wrap: break-word;
 }
 
@@ -8201,19 +8233,19 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
                       display="flex"
                     >
                       <div
-                        class="c30"
+                        class="c47"
                         name="tx-fee"
                       >
                         <div
-                          class="c47"
+                          class="c48"
                           display="flex"
                         >
                           <div
-                            class="c48"
+                            class="c49"
                             display="inline-block"
                           >
                             <h4
-                              class="c49"
+                              class="c50"
                               font-family="RT-Alias-Grotesk"
                               font-size="2"
                               font-weight="400"
@@ -8222,13 +8254,13 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
                             </h4>
                           </div>
                           <div
-                            class="c50"
+                            class="c51"
                             color="background.screen"
                             display="flex"
                             width="100%"
                           >
                             <input
-                              class="c51 c42"
+                              class="c52 c53"
                               display="inline-block"
                               height="6"
                               type="number"
@@ -8236,7 +8268,7 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
                               width="100%"
                             />
                             <div
-                              class="c52 c53"
+                              class="c54 c55"
                               color="core.primary"
                               display="flex"
                               font-size="3"
@@ -8248,12 +8280,12 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
                         </div>
                       </div>
                       <div
-                        class="c54"
+                        class="c56"
                         display="flex"
                         width="100%"
                       >
                         <p
-                          class="c55"
+                          class="c57"
                           color="core.darkgray"
                           font-family="RT-Alias-Grotesk"
                           font-size="2"
@@ -8265,7 +8297,7 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
                            FIL for this transaction.
                            
                           <a
-                            class="c56"
+                            class="c58"
                             color="core.primary"
                             font-size="2"
                             href="https://filfox.info/en/stats/gas"
@@ -8281,7 +8313,7 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
                 </div>
               </div>
               <div
-                class="c57"
+                class="c59"
                 display="flex"
               >
                 <h2
@@ -8293,11 +8325,11 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
                   Total
                 </h2>
                 <div
-                  class="c58"
+                  class="c60"
                   display="flex"
                 >
                   <h2
-                    class="c59 c60"
+                    class="c61 c62"
                     color="core.primary"
                     font-family="RT-Alias-Grotesk"
                     font-size="5"
@@ -8312,12 +8344,12 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
             </div>
           </div>
           <div
-            class="c61"
+            class="c63"
             display="flex"
             width="100%"
           >
             <button
-              class="c62"
+              class="c64"
               font-size="3"
               height="6"
               type="button"
@@ -8325,7 +8357,7 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
               Back
             </button>
             <button
-              class="c63"
+              class="c65"
               font-size="3"
               height="6"
               type="submit"

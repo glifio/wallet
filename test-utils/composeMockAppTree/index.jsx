@@ -2,18 +2,19 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { Converter } from '@glif/filecoin-number'
+import WalletProviderWrapper, {
+  initialState as walletProviderInitialState
+} from '@glif/wallet-provider-react'
 import { ConverterContext } from '../../lib/Converter'
 import { theme, ThemeProvider } from '../../components/Shared'
 import { WasmContext } from '../../lib/WasmLoader'
 import { mockWalletProviderInstance } from '../../__mocks__/@glif/filecoin-wallet-provider'
 import * as wasmMethods from '../../__mocks__/@zondax/filecoin-signing-tools'
 import { MsigProviderWrapper } from '../../MsigProvider'
-import WalletProviderWrapper from '../../WalletProvider'
 import mockReduxStoreWithState from './mockReduxStoreWithState'
-import { initialState as walletProviderInitialState } from '../../WalletProvider/state'
+
 import { composeWalletProviderState } from '../../test-utils/composeMockAppTree/composeState'
 
-jest.mock('../../WalletProvider')
 jest.mock('../../MsigProvider')
 
 const Index = (statePreset = 'preOnboard', options = {}) => {

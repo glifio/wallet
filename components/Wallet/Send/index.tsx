@@ -17,7 +17,11 @@ import {
   Card,
   PageWrapper
 } from '@glif/react-components'
-import { useWalletProvider, useWallet } from '@glif/wallet-provider-react'
+import {
+  useWalletProvider,
+  useWallet,
+  reportLedgerConfigError
+} from '@glif/wallet-provider-react'
 
 import { Input } from '../../Shared'
 import { CardHeader } from '../../Msig/Shared'
@@ -26,7 +30,6 @@ import HeaderText from './HeaderText'
 import ErrorCard from './ErrorCard'
 import CustomizeFee from './CustomizeFee'
 import { LEDGER, SEND, emptyGasInfo, PAGE } from '../../../constants'
-import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfigError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import reportError from '../../../utils/reportError'
 import isBase64 from '../../../utils/isBase64'

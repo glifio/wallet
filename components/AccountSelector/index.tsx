@@ -16,16 +16,15 @@ import Filecoin from '@glif/filecoin-wallet-provider'
 import {
   useWalletProvider,
   Wallet,
-  useWallet
+  useWallet,
+  hasLedgerError,
+  reportLedgerConfigError
 } from '@glif/wallet-provider-react'
 import { CoinType } from '@glif/filecoin-address'
 import HelperText from './HelperText'
 import Create from './Create'
 import { LEDGER, PAGE, TESTNET_PATH_CODE } from '../../constants'
-import {
-  hasLedgerError,
-  reportLedgerConfigError
-} from '../../utils/ledger/reportLedgerConfigError'
+
 import createPath, { coinTypeCode } from '../../utils/createPath'
 import reportError from '../../utils/reportError'
 import converAddrToFPrefix from '../../utils/convertAddrToFPrefix'

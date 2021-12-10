@@ -8,7 +8,6 @@ import { flushPromises } from '../../../test-utils'
 import { PAGE } from '../../../constants'
 
 jest.mock('@glif/filecoin-wallet-provider')
-jest.mock('../../../WalletProvider')
 
 describe('Send Flow', () => {
   beforeEach(() => {

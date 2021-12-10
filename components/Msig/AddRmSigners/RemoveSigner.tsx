@@ -5,7 +5,12 @@ import { Message } from '@glif/filecoin-message'
 import { BigNumber } from '@glif/filecoin-number'
 import { useRouter } from 'next/router'
 import { Box, Button, ButtonClose, Form, Card } from '@glif/react-components'
-import { useWalletProvider, useWallet } from '@glif/wallet-provider-react'
+import {
+  useWalletProvider,
+  useWallet,
+  reportLedgerConfigError,
+  hasLedgerError
+} from '@glif/wallet-provider-react'
 
 import { CardHeader, AddRmSignerHeader } from '../Shared'
 import Preface from './Prefaces'
@@ -20,10 +25,6 @@ import {
   MSIG_METHOD
 } from '../../../constants'
 import CustomizeFee from '../../Wallet/Send/CustomizeFee'
-import {
-  reportLedgerConfigError,
-  hasLedgerError
-} from '../../../utils/ledger/reportLedgerConfigError'
 import reportError from '../../../utils/reportError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { confirmMessage } from '../../../store/actions'

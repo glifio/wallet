@@ -3,16 +3,15 @@ import { act, renderHook } from '@testing-library/react-hooks'
 import { cleanup } from '@testing-library/react'
 import { ReactNode } from 'react'
 import { Provider } from 'react-redux'
+import WalletProviderWrapper, {
+  initialState as _walletProviderInitialState
+} from '@glif/wallet-provider-react'
 
 import { MULTISIG_ACTOR_ADDRESS } from '../test-utils/constants'
 import { useMsig, MsigProviderWrapper } from '.'
-import WalletProviderWrapper from '../WalletProvider'
 import mockReduxStoreWithState from '../test-utils/composeMockAppTree/mockReduxStoreWithState'
 import { MsigActorState } from './types'
 import { composeWalletProviderState } from '../test-utils/composeMockAppTree/composeState'
-import { initialState as _walletProviderInitialState } from '../WalletProvider/state'
-
-jest.mock('../WalletProvider')
 
 // trying to mock a module with two differet functions and the react hooks test renderer does not work
 // so this file tests 1 function that depends on a different implementation of a mock
@@ -31,8 +30,8 @@ describe('Not a signer error handling', () => {
     )
     Tree = ({ children }: { children: ReactNode }) => (
       <Provider store={mockReduxStore}>
+        {/* @ts-expect-error */}
         <WalletProviderWrapper
-          // @ts-expect-error
           getState={() => {}}
           statePreset={statePreset}
           initialState={walletProviderInitialState}

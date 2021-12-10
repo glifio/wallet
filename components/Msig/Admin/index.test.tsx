@@ -5,8 +5,6 @@ import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import Admin from '.'
 import { PAGE } from '../../../constants'
 
-jest.mock('../../../WalletProvider')
-
 const routerPushMock = jest.fn()
 jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
   return {

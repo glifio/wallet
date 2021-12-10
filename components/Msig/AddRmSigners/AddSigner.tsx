@@ -6,7 +6,12 @@ import { validateAddressString } from '@glif/filecoin-address'
 import { BigNumber } from '@glif/filecoin-number'
 import { useRouter } from 'next/router'
 import { Box, Button, ButtonClose, Form, Card } from '@glif/react-components'
-import { useWalletProvider, useWallet } from '@glif/wallet-provider-react'
+import {
+  useWalletProvider,
+  useWallet,
+  reportLedgerConfigError,
+  hasLedgerError
+} from '@glif/wallet-provider-react'
 
 import { useMsig } from '../../../MsigProvider'
 import { CardHeader, AddRmSignerHeader } from '../Shared'
@@ -22,10 +27,6 @@ import {
   PAGE
 } from '../../../constants'
 import CustomizeFee from '../../Wallet/Send/CustomizeFee'
-import {
-  reportLedgerConfigError,
-  hasLedgerError
-} from '../../../utils/ledger/reportLedgerConfigError'
 import reportError from '../../../utils/reportError'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { navigate } from '../../../utils/urlParams'

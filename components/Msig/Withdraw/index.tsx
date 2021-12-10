@@ -14,7 +14,12 @@ import {
   Form,
   Card
 } from '@glif/react-components'
-import { useWalletProvider, useWallet } from '@glif/wallet-provider-react'
+import {
+  useWalletProvider,
+  useWallet,
+  reportLedgerConfigError,
+  hasLedgerError
+} from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 
 import { useMsig } from '../../../MsigProvider'
@@ -25,10 +30,6 @@ import ErrorCard from '../../Wallet/Send/ErrorCard'
 import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
 import CustomizeFee from '../../Wallet/Send/CustomizeFee'
 import { LEDGER, PROPOSE, emptyGasInfo, PAGE } from '../../../constants'
-import {
-  reportLedgerConfigError,
-  hasLedgerError
-} from '../../../utils/ledger/reportLedgerConfigError'
 import reportError from '../../../utils/reportError'
 import { confirmMessage } from '../../../store/actions'
 import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'

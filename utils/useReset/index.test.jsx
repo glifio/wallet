@@ -2,13 +2,12 @@ import { renderHook, act } from '@testing-library/react-hooks'
 import { Provider } from 'react-redux'
 import useReset from '.'
 import { initializeStore } from '../../test-utils'
-import WalletProviderWrapper from '../../WalletProvider'
-import { initialState as _walletProviderInitialState } from '../../WalletProvider/state'
+import WalletProviderWrapper, {
+  initialState as _walletProviderInitialState
+} from '@glif/wallet-provider-react'
 
 import { initialState } from '../../store/states'
 import { composeWalletProviderState } from '../../test-utils/composeMockAppTree/composeState'
-
-jest.mock('../../WalletProvider')
 
 describe('useReset', () => {
   test('it resets both the redux and walletprovider state when called', () => {

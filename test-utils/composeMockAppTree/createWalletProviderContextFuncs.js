@@ -9,7 +9,7 @@ import {
   resetState,
   walletList,
   updateBalance
-} from '../../WalletProvider/state'
+} from '@glif/wallet-provider-react'
 import { mockWalletProviderInstance } from '../../__mocks__/@glif/filecoin-wallet-provider'
 
 export const mockFetchDefaultWallet = jest.fn().mockImplementation(() => ({
