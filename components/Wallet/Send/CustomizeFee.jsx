@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
+import { Box, Text, Input, Button, StyledATag } from '@glif/react-components'
+import { useWalletProvider, useWallet } from '@glif/wallet-provider-react'
 
-import { Box, Text, Input, Button, StyledATag } from '../../Shared'
-import { useWalletProvider } from '../../../WalletProvider'
-import useWallet from '../../../WalletProvider/useWallet'
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 
 const Helper = ({

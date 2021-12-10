@@ -2,7 +2,8 @@ import { createContext, useContext, useReducer } from 'react'
 import createMockWalletProviderContextFuncs from '../../test-utils/composeMockAppTree/createWalletProviderContextFuncs'
 import walletProviderReducer, {
   initialState as walletProviderInitialState
-} from '../state'
+} from '../../node_modules/@glif/wallet-provider-react/dist/lib/WalletProvider/state'
+export * from '../../node_modules/@glif/wallet-provider-react/dist'
 
 export const WalletProviderContext = createContext({
   ...walletProviderInitialState
@@ -22,6 +23,7 @@ const WalletProviderWrapper = ({
   const mockWalletProviderContextFuncs = createMockWalletProviderContextFuncs(
     options?.walletProviderDispatch || walletProviderDispatch
   )
+
   return (
     <WalletProviderContext.Provider
       value={{
@@ -41,12 +43,19 @@ const WalletProviderWrapper = ({
 
 export const useWalletProvider = () => {
   const value = useContext(WalletProviderContext)
-  // @ts-ignore
   const { state } = value
   return {
     ...state,
     ...value
   }
+}
+
+export function useWallet() {
+  const { wallets, selectedWalletIdx } = useWalletProvider()
+
+  if (wallets.length === 0) return noWallet
+  if (!wallets[selectedWalletIdx]) return noWallet
+  return wallets[selectedWalletIdx]
 }
 
 export default WalletProviderWrapper

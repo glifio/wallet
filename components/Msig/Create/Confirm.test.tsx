@@ -8,7 +8,6 @@ import Confirm from './Confirm'
 import { flushPromises } from '../../../test-utils'
 
 jest.mock('../../../MsigProvider')
-jest.mock('../../../WalletProvider')
 const mockMessageConfirmation = jest.fn(async () => true)
 jest
   .spyOn(require('@glif/filecoin-message-confirmer'), 'default')

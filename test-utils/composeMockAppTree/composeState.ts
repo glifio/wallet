@@ -1,5 +1,6 @@
 import cloneDeep from 'lodash.clonedeep'
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { WalletProviderState } from '@glif/react-components'
 
 import createPath from '../../utils/createPath'
 import { IMPORT_MNEMONIC, IMPORT_SINGLE_KEY } from '../../constants'
@@ -7,7 +8,6 @@ import { initialState } from '../../store/states'
 import { mockWalletProviderInstance } from '../../__mocks__/@glif/filecoin-wallet-provider'
 import { emptyMsigState } from '../../MsigProvider/types'
 import { WALLET_ADDRESS, MULTISIG_ACTOR_ADDRESS, signers } from '../constants'
-import { WalletProviderState } from '../../WalletProvider/types'
 
 export const presets = {
   preOnboard: cloneDeep(initialState),

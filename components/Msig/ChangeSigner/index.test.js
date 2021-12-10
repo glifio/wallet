@@ -11,7 +11,6 @@ import {
 
 jest.mock('@glif/filecoin-wallet-provider')
 jest.mock('../../../MsigProvider')
-jest.mock('../../../WalletProvider')
 
 const next = async () => {
   await act(async () => {

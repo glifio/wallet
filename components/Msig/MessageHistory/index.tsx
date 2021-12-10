@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Box } from '@glif/react-components'
+import { useWallet } from '@glif/wallet-provider-react'
 
 import MessageDetail from '../../Wallet/Message/Detail'
 import { MessageHistoryTable } from '../../Shared'
 import { MsigPageWrapper } from '../Shared'
-import useWallet from '../../../WalletProvider/useWallet'
 import useTransactionHistory from '../../../lib/useTransactionHistory'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import { useMsig } from '../../../MsigProvider'

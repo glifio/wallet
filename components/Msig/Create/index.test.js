@@ -11,7 +11,6 @@ import { createMultisig } from '../../../__mocks__/@zondax/filecoin-signing-tool
 jest.mock('@glif/filecoin-wallet-provider')
 jest.mock('@glif/filecoin-rpc-client')
 jest.mock('../../../MsigProvider')
-jest.mock('../../../WalletProvider')
 
 const CHAIN_HEAD = '1000'
 const VEST = 100

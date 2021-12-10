@@ -5,8 +5,6 @@ import { mockRouterPush } from '../../../__mocks__/next/router'
 import Choose from '.'
 import { PAGE } from '../../../constants'
 
-jest.mock('../../../WalletProvider')
-
 describe('Choosing a wallet', () => {
   afterEach(cleanup)
   test('it renders correctly', () => {

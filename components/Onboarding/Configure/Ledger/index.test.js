@@ -1,15 +1,15 @@
 import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
+import {
+  initialState as wpInitialState,
+  initialLedgerState
+} from '@glif/wallet-provider-react'
 import composeMockAppTree from '../../../../test-utils/composeMockAppTree'
-import { initialState as wpInitialState } from '../../../../WalletProvider/state'
 import ConnectLedger from './ConnectLedger'
-import { initialLedgerState } from '../../../../utils/ledger/ledgerStateManagement'
 import { mockRouterPush } from '../../../../__mocks__/next/router'
 import { flushPromises } from '../../../../test-utils'
 import { PAGE, TESTNET_PATH_CODE } from '../../../../constants'
 import { mockFetchDefaultWallet } from '../../../../test-utils/composeMockAppTree/createWalletProviderContextFuncs'
 import createPath from '../../../../utils/createPath'
-
-jest.mock('../../../../WalletProvider')
 
 describe('Ledger configuration', () => {
   afterEach(() => {

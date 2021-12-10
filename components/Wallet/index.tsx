@@ -11,15 +11,15 @@ import {
   Box,
   Tooltip
 } from '@glif/react-components'
-
-import MessageView from './Message'
-import { useWalletProvider } from '../../WalletProvider'
 import {
+  useWalletProvider,
+  useWallet,
   hasLedgerError,
   reportLedgerConfigError
-} from '../../utils/ledger/reportLedgerConfigError'
+} from '@glif/wallet-provider-react'
+
+import MessageView from './Message'
 import MsgConfirmer from '../../lib/confirm-message'
-import useWallet from '../../WalletProvider/useWallet'
 import reportError from '../../utils/reportError'
 import { navigate, resetWallet } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
