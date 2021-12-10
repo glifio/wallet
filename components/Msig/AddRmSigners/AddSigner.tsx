@@ -5,15 +5,8 @@ import { Message } from '@glif/filecoin-message'
 import { validateAddressString } from '@glif/filecoin-address'
 import { BigNumber } from '@glif/filecoin-number'
 import { useRouter } from 'next/router'
-import {
-  Box,
-  Button,
-  ButtonClose,
-  Form,
-  Card,
-  useWalletProvider,
-  useWallet
-} from '@glif/react-components'
+import { Box, Button, ButtonClose, Form, Card } from '@glif/react-components'
+import { useWalletProvider, useWallet } from '@glif/wallet-provider-react'
 
 import { useMsig } from '../../../MsigProvider'
 import { CardHeader, AddRmSignerHeader } from '../Shared'

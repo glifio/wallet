@@ -4,15 +4,8 @@ import dayjs from 'dayjs'
 import { Message } from '@glif/filecoin-message'
 import { BigNumber } from '@glif/filecoin-number'
 import { useRouter } from 'next/router'
-import {
-  Box,
-  Button,
-  ButtonClose,
-  Form,
-  Card,
-  useWalletProvider,
-  useWallet
-} from '@glif/react-components'
+import { Box, Button, ButtonClose, Form, Card } from '@glif/react-components'
+import { useWalletProvider, useWallet } from '@glif/wallet-provider-react'
 
 import { CardHeader, AddRmSignerHeader } from '../Shared'
 import Preface from './Prefaces'

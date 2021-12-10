@@ -2,15 +2,8 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
-import {
-  Box,
-  Text,
-  Input,
-  Button,
-  StyledATag,
-  useWalletProvider,
-  useWallet
-} from '@glif/react-components'
+import { Box, Text, Input, Button, StyledATag } from '@glif/react-components'
+import { useWalletProvider, useWallet } from '@glif/wallet-provider-react'
 
 import { FILECOIN_NUMBER_PROP } from '../../../customPropTypes'
 

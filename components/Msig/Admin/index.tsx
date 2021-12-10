@@ -6,10 +6,9 @@ import {
   Title,
   Button,
   IconLedger,
-  Tooltip,
-  useWallet,
-  useWalletProvider
+  Tooltip
 } from '@glif/react-components'
+import { useWalletProvider, useWallet } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 
 import { PAGE } from '../../../constants'

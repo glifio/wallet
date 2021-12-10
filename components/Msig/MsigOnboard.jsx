@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Box, useWalletProvider } from '@glif/react-components'
+import { Box } from '@glif/react-components'
+import { useWalletProvider } from '@glif/wallet-provider-react'
 import Ledger from '../Onboarding/Configure/Ledger'
 import { LEDGER } from '../../constants'
 

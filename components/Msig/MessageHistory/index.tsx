@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Box, useWallet } from '@glif/react-components'
+import { Box } from '@glif/react-components'
+import { useWallet } from '@glif/wallet-provider-react'
 
 import MessageDetail from '../../Wallet/Message/Detail'
 import { MessageHistoryTable } from '../../Shared'

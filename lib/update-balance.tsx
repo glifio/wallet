@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
-import { useWalletProvider, useWallet } from '@glif/react-components'
+import { useWalletProvider, useWallet } from '@glif/wallet-provider-react'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import useSWR from 'swr'
 

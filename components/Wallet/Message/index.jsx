@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useWallet } from '@glif/react-components'
+import { useWallet } from '@glif/wallet-provider-react'
 import MessageDetail from './Detail'
 import { MessageHistoryTable } from '../../Shared'
 import useTransactionHistory from '../../../lib/useTransactionHistory'

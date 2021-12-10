@@ -8,9 +8,9 @@ import {
   Header,
   Button,
   Warning,
-  useWalletProvider,
   LoginOption
 } from '@glif/react-components'
+import { useWalletProvider } from '@glif/wallet-provider-react'
 import HeaderGlyph from '../../Shared/Glyph/HeaderGlyph'
 import ImportWallet from './Import'
 import CreateWallet from './Create'

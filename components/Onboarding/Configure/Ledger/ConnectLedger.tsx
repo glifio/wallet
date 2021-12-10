@@ -9,21 +9,19 @@ import {
   Title,
   StepHeader,
   StyledATag,
-  IconLedger,
-  useWalletProvider,
-  createWalletProvider
+  IconLedger
 } from '@glif/react-components'
-
 import {
+  useWalletProvider,
+  createWalletProvider,
   hasLedgerError,
-  reportLedgerConfigError
-} from '../../../../utils/ledger/reportLedgerConfigError'
-import useReset from '../../../../utils/useReset'
-import { navigate } from '../../../../utils/urlParams'
-import {
+  reportLedgerConfigError,
   LedgerState,
   LEDGER_STATE_PROPTYPES
-} from '../../../../utils/ledger/ledgerStateManagement'
+} from '@glif/wallet-provider-react'
+
+import useReset from '../../../../utils/useReset'
+import { navigate } from '../../../../utils/urlParams'
 import { PAGE } from '../../../../constants'
 
 const Helper: FC<LedgerState & { otherError: string }> = ({ ...errors }) => (

@@ -13,10 +13,9 @@ import {
   ButtonClose,
   Label,
   CopyText,
-  Warning,
-  useWalletProvider,
-  useWallet
+  Warning
 } from '@glif/react-components'
+import { useWalletProvider, useWallet } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 
 import { StepHeader, Input } from '../../Shared'

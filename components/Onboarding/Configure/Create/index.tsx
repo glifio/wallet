@@ -7,10 +7,12 @@ import {
   Button,
   OnboardCard,
   StepHeader,
-  LoadingScreen,
+  LoadingScreen
+} from '@glif/react-components'
+import {
   useWalletProvider,
   createWalletProvider
-} from '@glif/react-components'
+} from '@glif/wallet-provider-react'
 
 import Walkthrough from './Walkthrough'
 import Back from './Back'

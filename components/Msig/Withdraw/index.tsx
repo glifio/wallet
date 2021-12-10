@@ -12,10 +12,9 @@ import {
   Num,
   Title,
   Form,
-  Card,
-  useWalletProvider,
-  useWallet
+  Card
 } from '@glif/react-components'
+import { useWalletProvider, useWallet } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 
 import { useMsig } from '../../../MsigProvider'

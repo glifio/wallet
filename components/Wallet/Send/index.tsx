@@ -15,10 +15,10 @@ import {
   Title,
   Form,
   Card,
-  PageWrapper,
-  useWalletProvider,
-  useWallet
+  PageWrapper
 } from '@glif/react-components'
+import { useWalletProvider, useWallet } from '@glif/wallet-provider-react'
+
 import { Input } from '../../Shared'
 import { CardHeader } from '../../Msig/Shared'
 import ConfirmationCard from './ConfirmationCard'

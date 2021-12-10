@@ -2,11 +2,8 @@ import App from 'next/app'
 import Head from 'next/head'
 import React from 'react'
 import { Provider } from 'react-redux'
-import {
-  theme,
-  ThemeProvider,
-  WalletProviderWrapper
-} from '@glif/react-components'
+import { theme, ThemeProvider } from '@glif/react-components'
+import { WalletProviderWrapper } from '@glif/wallet-provider-react'
 import { SWRConfig } from 'swr'
 import withReduxStore from '../lib/with-redux-store'
 import { MsigProviderWrapper } from '../MsigProvider'

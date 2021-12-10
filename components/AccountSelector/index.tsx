@@ -10,12 +10,14 @@ import {
   Menu,
   MenuItem,
   LoadingScreen,
-  ButtonClose,
+  ButtonClose
+} from '@glif/react-components'
+import Filecoin from '@glif/filecoin-wallet-provider'
+import {
   useWalletProvider,
   Wallet,
   useWallet
-} from '@glif/react-components'
-import Filecoin from '@glif/filecoin-wallet-provider'
+} from '@glif/wallet-provider-react'
 import { CoinType } from '@glif/filecoin-address'
 import HelperText from './HelperText'
 import Create from './Create'
@@ -32,7 +34,7 @@ import { navigate } from '../../utils/urlParams'
 const COIN_TYPE = process.env.COIN_TYPE! as CoinType
 
 const AccountSelector = ({ msig, test }) => {
-  const wallet = useWallet() as Wallet
+  const wallet = useWallet()
   const [loadingAccounts, setLoadingAccounts] = useState(false)
   const [loadingPage, setLoadingPage] = useState(true)
   const [uncaughtError, setUncaughtError] = useState('')

@@ -9,16 +9,16 @@ import {
   Content,
   BaseButton as ButtonLogout,
   Box,
-  Tooltip,
-  useWalletProvider,
-  useWallet
+  Tooltip
 } from '@glif/react-components'
-
-import MessageView from './Message'
 import {
+  useWalletProvider,
+  useWallet,
   hasLedgerError,
   reportLedgerConfigError
-} from '../../utils/ledger/reportLedgerConfigError'
+} from '@glif/wallet-provider-react'
+
+import MessageView from './Message'
 import MsgConfirmer from '../../lib/confirm-message'
 import reportError from '../../utils/reportError'
 import { navigate, resetWallet } from '../../utils/urlParams'

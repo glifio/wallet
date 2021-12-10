@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
-import {
-  NodeConnectingGlyph,
-  Box,
-  useWalletProvider
-} from '@glif/react-components'
+import { NodeConnectingGlyph, Box } from '@glif/react-components'
+import { useWalletProvider } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 import ChooseWallet from './Choose'
 import ConfigureWallet from './Configure'

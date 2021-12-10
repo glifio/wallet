@@ -10,10 +10,13 @@ import {
   Text,
   StepHeader,
   LoadingScreen,
-  Input,
+  Input
+} from '@glif/react-components'
+import {
   useWalletProvider,
   createWalletProvider
-} from '@glif/react-components'
+} from '@glif/wallet-provider-react'
+
 import reportError from '../../../../utils/reportError'
 import { navigate } from '../../../../utils/urlParams'
 import { PAGE } from '../../../../constants'
