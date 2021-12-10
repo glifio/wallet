@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import {
   Box,
   ButtonV2,
@@ -10,9 +10,19 @@ import {
 
 export const ResponsiveWalletTile = styled.div`
   cursor: default;
+
   @media (min-width: ${devices.gt.tablet}) {
-    width: 50%;
-    flex-grow: 0;
+    position: sticky;
+    top: ${space()};
+
+    ${(props) =>
+      !props.phishingBannerClosed
+        ? css`
+            height: calc(100vh - 50px - (${space()} * 3));
+          `
+        : css`
+            height: calc(100vh - (${space()} * 2));
+          `}
   }
 
   @media (max-width: ${devices.tablet}) {
@@ -24,18 +34,13 @@ export const ConnectContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  flex-shrink: 0;
-
   width: 100%;
-  max-width: 650px;
 
   @media (max-width: ${devices.tablet}) {
-    padding: 40px;
+    padding: 80px 30px 30px;
   }
 
   @media (min-width: ${devices.gt.tablet}) {
-    width: 50%;
-    flex-grow: 0;
     padding: ${space('large')} 50px 50px 50px;
   }
 `
@@ -58,11 +63,15 @@ export const TextBox = styled.div`
   flex-direction: column;
 
   @media (max-width: ${devices.tablet}) {
-    padding: 80px;
+    padding: 30px;
   }
 
   @media (min-width: ${devices.gt.tablet}) {
     padding: 80px 40px;
+  }
+
+  p {
+    margin: 0;
   }
 `
 

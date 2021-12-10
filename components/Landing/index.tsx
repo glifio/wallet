@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useState } from 'react'
 import {
   AppTile,
   Box,
@@ -26,20 +26,33 @@ import {
 
 export default function Landing() {
   const isUnsupportedDevice = useMemo(() => isMobileOrTablet(), [])
+  const [closed, setClosed] = useState(false)
+
   return (
     <>
-      <LandingPageContainer css={'background: white'}>
-        <PhishingBanner href='https://wallet.glif.io' />
-        <LandingPageContentContainer>
-          <ResponsiveWalletTile>
+      <LandingPageContainer>
+        <LandingPageContentContainer phishingBannerClosed={closed}>
+          <PhishingBanner
+            href='https://wallet.glif.io'
+            closed={closed}
+            setClosed={() => setClosed(true)}
+          />
+          <ResponsiveWalletTile phishingBannerClosed={closed}>
             <AppTile
               title='Wallet'
               description='A lightweight interface for sending Filecoin.'
-              imgSrc='/bg-wallet.png'
+              imgSrc='/bg-sender.jpg'
+              imgSrcHover='/bg-sender-hover.jpg'
+              small={false}
               large
             />
           </ResponsiveWalletTile>
-          <ConnectContentContainer>
+          <ConnectContentContainer
+            style={{
+              display: 'flex',
+              alignItems: 'center'
+            }}
+          >
             {isUnsupportedDevice ? (
               <TextBox style={{ background: theme.colors.core.primary }}>
                 <P
@@ -53,16 +66,7 @@ export default function Landing() {
                 </P>
               </TextBox>
             ) : (
-              <>
-                <H2
-                  style={{
-                    marginBottom: '1em',
-                    fontSize: fontSize('large'),
-                    lineHeight: '1.3em'
-                  }}
-                >
-                  Connect
-                </H2>
+              <Box>
                 {/**
                  * This <Box display='flex'...etc> is equivalent to
                  * <div style={{ display: 'flex', ....etc }} /> OR
@@ -71,70 +75,80 @@ export default function Landing() {
                  *    ...other styles...
                  * `}
                  */}
-                <Box display='flex' flexDirection='column' height='100%'>
-                  <Box
-                    display='flex'
-                    flexDirection='column'
-                    width='100%'
+                <H2
+                  style={{
+                    marginTop: 0,
+                    marginBottom: '1em',
+                    fontWeight: 'normal',
+                    fontSize: fontSize('large'),
+                    lineHeight: '1.3em'
+                  }}
+                >
+                  Connect
+                </H2>
+
+                <Box
+                  display='flex'
+                  flexDirection='column'
+                  width='100%'
+                  css={`
+                    &:not(:first-child) {
+                      margin-top: ${space()};
+                    }
+                  `}
+                >
+                  <ConnectBtn large>MetaMask</ConnectBtn>
+                  <ConnectBtn large>Brave</ConnectBtn>
+                  <ConnectBtn large>Ledger Device</ConnectBtn>
+                  <ConnectBtn large>Glif CLI</ConnectBtn>
+                  <Caution>
+                    <IconCaution />
+                    <P>
+                      Burner Wallets (use with caution, <a>read more</a>)
+                    </P>
+                  </Caution>
+                  <BurnerWallet large>Generate Seed Phrase</BurnerWallet>
+                  <BurnerWallet large>Import Seed Phrase</BurnerWallet>
+                  <BurnerWallet large>Import Private Key</BurnerWallet>
+                </Box>
+                {/**
+                 * This <Box mt={6}> is equivalent to
+                 * <div style={{ marginTop: theme.spaces[6] }} /> OR
+                 * <div css={` margin-top: ${theme.spaces[6]} `}
+                 */}
+                <Box mt={6}>
+                  <P
                     css={`
-                      &:not(:first-child) {
-                        margin-top: ${space()};
-                      }
+                      font-size: ${fontSize('default')};
                     `}
                   >
-                    <ConnectBtn large>MetaMask</ConnectBtn>
-                    <ConnectBtn large>Brave</ConnectBtn>
-                    <ConnectBtn large>Ledger Device</ConnectBtn>
-                    <ConnectBtn large>Glif CLI</ConnectBtn>
-                    <Caution>
-                      <IconCaution />
-                      <P>
-                        Burner Wallets (use with caution, <a>read more</a>)
-                      </P>
-                    </Caution>
-                    <BurnerWallet large>Generate Seed Phrase</BurnerWallet>
-                    <BurnerWallet large>Import Seed Phrase</BurnerWallet>
-                    <BurnerWallet large>Import Private Key</BurnerWallet>
-                  </Box>
-                  {/**
-                   * This <Box mt={6}> is equivalent to
-                   * <div style={{ marginTop: theme.spaces[6] }} /> OR
-                   * <div css={` margin-top: ${theme.spaces[6]} `}
-                   */}
-                  <Box mt={6}>
-                    <P
-                      css={`
-                        font-size: ${fontSize('default')};
-                      `}
-                    >
-                      What is this and why is it important?
-                      <br />
-                      Read the <a href='#'>Glif Verifier walkthrough</a> on the
-                      blog.
-                    </P>
+                    What is this and why is it important?
+                    <br />
+                    Read the <a href='#'>Glif Verifier walkthrough</a> on the
+                    blog.
+                  </P>
 
-                    <P
-                      css={`
-                        font-size: ${fontSize('default')};
-                      `}
-                    >
-                      Want to load this app directly from IPFS/FIL?
-                      <br />
-                      Check our <a href='#'>release page</a>
-                    </P>
+                  <P
+                    css={`
+                      font-size: ${fontSize('default')};
+                    `}
+                  >
+                    Want to load this app directly from IPFS/FIL?
+                    <br />
+                    Check our <a href='#'>release page</a>
+                  </P>
 
-                    <P
-                      css={`
-                        font-size: ${fontSize('default')};
-                      `}
-                    >
-                      Need help?
-                      <br />
-                      <a href='#'>Reach out</a> to us
-                    </P>
-                  </Box>
+                  <P
+                    css={`
+                      font-size: ${fontSize('default')};
+                    `}
+                  >
+                    Need help?
+                    <br />
+                    <a href='#'>Reach out</a> to us
+                  </P>
                 </Box>
-              </>
+              </Box>
             )}
           </ConnectContentContainer>
         </LandingPageContentContainer>
