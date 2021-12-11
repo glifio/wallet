@@ -6,18 +6,20 @@ import {
   Title,
   Button,
   IconLedger,
-  Tooltip
+  Tooltip,
+  BaseButton
 } from '@glif/react-components'
+import {
+  useWalletProvider,
+  useWallet,
+  reportLedgerConfigError
+} from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 
 import { PAGE } from '../../../constants'
 import { Address, Signers, MsigPageWrapper } from '../Shared'
 import { navigate } from '../../../utils/urlParams'
 import { useMsig } from '../../../MsigProvider'
-import useWallet from '../../../WalletProvider/useWallet'
-import { BaseButton } from '../../Shared'
-import { useWalletProvider } from '../../../WalletProvider'
-import { reportLedgerConfigError } from '../../../utils/ledger/reportLedgerConfigError'
 
 export default function Owners() {
   const router = useRouter()

@@ -1,11 +1,6 @@
 import copyToClipboard from '.'
 
 describe('copyToClipboard', () => {
-  test('it returns a promise', () => {
-    const returnVal = copyToClipboard('text')
-    expect(returnVal instanceof Promise).toBe(true)
-  })
-
   test('it calls the navigator.clipboard.writeText method with the passed text', async () => {
     const { navigator } = window
     const mockWriteText = jest.fn(() => Promise.resolve())

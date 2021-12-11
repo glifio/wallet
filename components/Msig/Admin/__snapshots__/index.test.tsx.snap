@@ -3,45 +3,7 @@
 exports[`Admin page it renders the required approvals and the signers 1`] = `
 Object {
   "asFragment": [Function],
-  "baseElement": .c43 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: core.nearblack;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 100px;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  margin-left: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 240px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border: 1px solid;
-  border-radius: 100px;
-  border-width: 1px;
-  color: #262626;
-  background-color: transparent;
-}
-
-.c43:hover {
-  opacity: 0.8;
-}
-
-.c0 {
+  "baseElement": .c0 {
   min-width: 0;
   box-sizing: border-box;
   padding: 16px;
@@ -419,6 +381,44 @@ Object {
 }
 
 .c20:hover {
+  opacity: 0.8;
+}
+
+.c43 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: core.nearblack;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 100px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 240px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 100px;
+  border-width: 1px;
+  color: #262626;
+  background-color: transparent;
+}
+
+.c43:hover {
   opacity: 0.8;
 }
 
@@ -1831,7 +1831,7 @@ Object {
                   </div>
                 </div>
                 <button
-                  class="BaseButton-sc-1iyr4rl-0 jcycmP"
+                  class="BaseButton-expoia-0 fRjsYp"
                   color="core.nearblack"
                   display="flex"
                   font-size="3"

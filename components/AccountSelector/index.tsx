@@ -13,17 +13,18 @@ import {
   ButtonClose
 } from '@glif/react-components'
 import Filecoin from '@glif/filecoin-wallet-provider'
+import {
+  useWalletProvider,
+  Wallet,
+  useWallet,
+  hasLedgerError,
+  reportLedgerConfigError
+} from '@glif/wallet-provider-react'
 import { CoinType } from '@glif/filecoin-address'
 import HelperText from './HelperText'
 import Create from './Create'
-import { useWalletProvider } from '../../WalletProvider'
-import { Wallet } from '../../WalletProvider/types'
 import { LEDGER, PAGE, TESTNET_PATH_CODE } from '../../constants'
-import {
-  hasLedgerError,
-  reportLedgerConfigError
-} from '../../utils/ledger/reportLedgerConfigError'
-import useWallet from '../../WalletProvider/useWallet'
+
 import createPath, { coinTypeCode } from '../../utils/createPath'
 import reportError from '../../utils/reportError'
 import converAddrToFPrefix from '../../utils/convertAddrToFPrefix'
@@ -32,7 +33,7 @@ import { navigate } from '../../utils/urlParams'
 const COIN_TYPE = process.env.COIN_TYPE! as CoinType
 
 const AccountSelector = ({ msig, test }) => {
-  const wallet = useWallet() as Wallet
+  const wallet = useWallet()
   const [loadingAccounts, setLoadingAccounts] = useState(false)
   const [loadingPage, setLoadingPage] = useState(true)
   const [uncaughtError, setUncaughtError] = useState('')

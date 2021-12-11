@@ -7,8 +7,10 @@ import {
   Title,
   Header,
   Button,
-  Warning
+  Warning,
+  LoginOption
 } from '@glif/react-components'
+import { useWalletProvider } from '@glif/wallet-provider-react'
 import HeaderGlyph from '../../Shared/Glyph/HeaderGlyph'
 import ImportWallet from './Import'
 import CreateWallet from './Create'
@@ -20,10 +22,8 @@ import {
   SCREEN_MAX_WIDTH,
   PAGE
 } from '../../../constants'
-import { useWalletProvider } from '../../../WalletProvider'
 import ExpandableBox from './ExpandableBox'
 import { navigate } from '../../../utils/urlParams'
-import { LoginOption } from '../../../WalletProvider/types'
 
 export default function Choose() {
   const { setLoginOption } = useWalletProvider()

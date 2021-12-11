@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
+import { useWallet } from '@glif/wallet-provider-react'
 import MessageDetail from './Detail'
 import { MessageHistoryTable } from '../../Shared'
-import useWallet from '../../../WalletProvider/useWallet'
 import useTransactionHistory from '../../../lib/useTransactionHistory'
 
 const MessageView = () => {

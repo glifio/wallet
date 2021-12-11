@@ -4,7 +4,6 @@ import { FilecoinNumber } from '@glif/filecoin-number'
 import { func } from 'prop-types'
 import styled from 'styled-components'
 import dayjs from 'dayjs'
-
 import {
   Box,
   Card,
@@ -12,12 +11,13 @@ import {
   Glyph,
   Text,
   Label,
-  StyledATag
-} from '../../../Shared'
-import { ButtonClose } from '../../../Shared/IconButtons'
+  StyledATag,
+  ButtonClose
+} from '@glif/react-components'
+import { useWalletProvider } from '@glif/wallet-provider-react'
+
 import { MESSAGE_PROPS, ADDRESS_PROPTYPE } from '../../../../customPropTypes'
 import noop from '../../../../utils/noop'
-import { useWalletProvider } from '../../../../WalletProvider'
 import MsgTypeAndStatus from './MsgTypeAndStatus'
 import DetailSection from './DetailSection'
 import { FILFOX } from '../../../../constants'

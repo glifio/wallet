@@ -6,7 +6,6 @@ import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import { flushPromises, MULTISIG_ACTOR_ADDRESS } from '../../../test-utils'
 
 jest.mock('../../../MsigProvider')
-jest.mock('../../../WalletProvider')
 
 const next = async () => {
   await act(async () => {

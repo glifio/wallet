@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { NodeConnectingGlyph, Box } from '@glif/react-components'
+import { useWalletProvider } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 import ChooseWallet from './Choose'
 import ConfigureWallet from './Configure'
-import { useWalletProvider } from '../../WalletProvider'
 
 export default function Onboarding() {
   const { loginOption } = useWalletProvider()

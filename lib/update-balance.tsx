@@ -1,10 +1,10 @@
 import { useCallback } from 'react'
 import LotusRPCEngine from '@glif/filecoin-rpc-client'
-import useSWR from 'swr'
-import { useWalletProvider } from '../WalletProvider'
-import useWallet from '../WalletProvider/useWallet'
-import reportError from '../utils/reportError'
+import { useWalletProvider, useWallet } from '@glif/wallet-provider-react'
 import { FilecoinNumber } from '@glif/filecoin-number'
+import useSWR from 'swr'
+
+import reportError from '../utils/reportError'
 
 export const useBalancePoller = () => {
   const { selectedWalletIdx, updateBalance } = useWalletProvider()

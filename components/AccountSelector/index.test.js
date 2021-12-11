@@ -7,8 +7,6 @@ import ThemeProvider from '../Shared/ThemeProvider'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import { flushPromises } from '../../test-utils'
 
-jest.mock('../../WalletProvider')
-
 function expectAllAccountsInView(screen) {
   for (let i = 0; i < 5; i++) {
     if (i === 0) {
@@ -23,6 +21,7 @@ describe('AccountSelector', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     await act(async () => {
       let res = render(<AccountSelector test />, { wrapper: Tree })
+      expect(screen.getByText(/Loading/)).toBeInTheDocument()
       expect(res.container).toMatchSnapshot()
     })
   })

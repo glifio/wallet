@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
-import { useWalletProvider } from '../../WalletProvider'
+import { useWalletProvider } from '@glif/wallet-provider-react'
 import { resetState as resetRdxState } from '../../store/actions'
 
 export default function useReset() {

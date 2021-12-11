@@ -1383,7 +1383,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c47 {
+.c48 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -1464,7 +1464,134 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   justify-content: space-between;
 }
 
-.c48 {
+.c34 {
+  min-width: 0;
+  box-sizing: border-box;
+  background-color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c35 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 560px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c37 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  display: inline-block;
+  min-width: 240px;
+  text-align: left;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c43 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  height: 48px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.c45 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  text-align: left;
+}
+
+.c49 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -1483,11 +1610,11 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   border-radius: 4px;
 }
 
-.c48:hover {
+.c49:hover {
   opacity: 0.8;
 }
 
-.c49 {
+.c50 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -1506,13 +1633,103 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   border-radius: 4px;
 }
 
-.c49:hover {
+.c50:hover {
   opacity: 0.8;
+}
+
+.c46 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  width: 100%;
+}
+
+.c39 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
 }
 
 .c2 {
   width: 24;
   height: 24;
+}
+
+.c47 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+}
+
+.c47:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
+.c41 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #d1ddfa;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c41:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c41:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c36 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c44 {
+  text-align: center;
+  position: relative;
+  background: #d1ddfa;
+}
+
+.c42 {
+  -moz-appearance: textfield;
+}
+
+.c42::-webkit-outer-spin-button,
+.c42::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .c3 {
@@ -1776,133 +1993,6 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   align-items: center;
 }
 
-.c34 {
-  min-width: 0;
-  box-sizing: border-box;
-  background-color: #EFF3FD;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c35 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 560px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-}
-
-.c36 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c37 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 8px;
-  padding-right: 8px;
-  margin-right: 8px;
-  display: inline-block;
-  min-width: 240px;
-  text-align: left;
-}
-
-.c39 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-bottom: 1px solid;
-  border-top: 1px solid;
-  color: #EFF3FD;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.c42 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  height: 48px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-}
-
-.c44 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  text-align: left;
-}
-
 .c11 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
@@ -1944,25 +2034,8 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   margin: 0;
 }
 
-.c45 {
-  color: #666666;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  width: 100%;
-}
-
 .c30 {
   color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c38 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -2006,63 +2079,10 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   background: #bacbf7;
 }
 
-.c40 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #d1ddfa;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c40:hover {
-  background: #bacbf7;
-  cursor: text;
-}
-
-.c40:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
 .c28 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
-}
-
-.c43 {
-  text-align: center;
-  position: relative;
-  background: #d1ddfa;
-}
-
-.c41 {
-  -moz-appearance: textfield;
-}
-
-.c41::-webkit-outer-spin-button,
-.c41::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 
 .c7 {
@@ -2095,20 +2115,6 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c46 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-}
-
-.c46:hover {
-  border-bottom: 2px solid #5E26FF;
 }
 
 <div>
@@ -2435,19 +2441,19 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
                   display="flex"
                 >
                   <div
-                    class="c28"
+                    class="c36"
                     name="tx-fee"
                   >
                     <div
-                      class="c36"
+                      class="c37"
                       display="flex"
                     >
                       <div
-                        class="c37"
+                        class="c38"
                         display="inline-block"
                       >
                         <h4
-                          class="c38"
+                          class="c39"
                           font-family="RT-Alias-Grotesk"
                           font-size="2"
                           font-weight="400"
@@ -2456,13 +2462,13 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
                         </h4>
                       </div>
                       <div
-                        class="c39"
+                        class="c40"
                         color="background.screen"
                         display="flex"
                         width="100%"
                       >
                         <input
-                          class="c40 c41"
+                          class="c41 c42"
                           display="inline-block"
                           height="6"
                           type="number"
@@ -2470,7 +2476,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
                           width="100%"
                         />
                         <div
-                          class="c42 c43"
+                          class="c43 c44"
                           color="core.primary"
                           display="flex"
                           font-size="3"
@@ -2482,12 +2488,12 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
                     </div>
                   </div>
                   <div
-                    class="c44"
+                    class="c45"
                     display="flex"
                     width="100%"
                   >
                     <p
-                      class="c45"
+                      class="c46"
                       color="core.darkgray"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -2499,7 +2505,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
                        FIL for this transaction.
                        
                       <a
-                        class="c46"
+                        class="c47"
                         color="core.primary"
                         font-size="2"
                         href="https://filfox.info/en/stats/gas"
@@ -2516,12 +2522,12 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
           </div>
         </div>
         <div
-          class="c47"
+          class="c48"
           display="flex"
           width="100%"
         >
           <button
-            class="c48"
+            class="c49"
             font-size="3"
             height="6"
             type="button"
@@ -2529,7 +2535,7 @@ exports[`Multisig add & remove  flow Adding a signer snapshots it renders step 3
             Back
           </button>
           <button
-            class="c49"
+            class="c50"
             font-size="3"
             height="6"
             type="submit"
@@ -3020,7 +3026,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   box-sizing: border-box;
 }
 
-.c53 {
+.c52 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -3160,7 +3166,134 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   justify-content: space-between;
 }
 
-.c54 {
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
+  background-color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 560px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c42 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c43 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  display: inline-block;
+  min-width: 240px;
+  text-align: left;
+}
+
+.c45 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c48 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  height: 48px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.c50 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  text-align: left;
+}
+
+.c53 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -3179,11 +3312,11 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   border-radius: 4px;
 }
 
-.c54:hover {
+.c53:hover {
   opacity: 0.8;
 }
 
-.c55 {
+.c54 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -3202,7 +3335,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   border-radius: 4px;
 }
 
-.c55:hover {
+.c54:hover {
   opacity: 0.8;
 }
 
@@ -3238,6 +3371,15 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   opacity: 0.8;
 }
 
+.c51 {
+  color: #666666;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  width: 100%;
+}
+
 .c29 {
   font-size: 1.125rem;
   font-weight: 400;
@@ -3246,6 +3388,14 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   margin: 0;
   padding-left: 8px;
   padding-right: 8px;
+}
+
+.c44 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
 }
 
 .c2 {
@@ -3285,6 +3435,65 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
 
 .c31:hover {
   border-bottom: 2px solid #5E26FF;
+}
+
+.c46 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #d1ddfa;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c46:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c46:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c41 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c49 {
+  text-align: center;
+  position: relative;
+  background: #d1ddfa;
+}
+
+.c47 {
+  -moz-appearance: textfield;
+}
+
+.c47::-webkit-outer-spin-button,
+.c47::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .c3 {
@@ -3512,133 +3721,6 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   align-items: flex-start;
 }
 
-.c39 {
-  min-width: 0;
-  box-sizing: border-box;
-  background-color: #EFF3FD;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c40 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 560px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-}
-
-.c42 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c43 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 8px;
-  padding-right: 8px;
-  margin-right: 8px;
-  display: inline-block;
-  min-width: 240px;
-  text-align: left;
-}
-
-.c45 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-bottom: 1px solid;
-  border-top: 1px solid;
-  color: #EFF3FD;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.c48 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  height: 48px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-}
-
-.c50 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  text-align: left;
-}
-
 .c12 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
@@ -3680,82 +3762,6 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   margin: 0;
 }
 
-.c51 {
-  color: #666666;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  width: 100%;
-}
-
-.c44 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c46 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #d1ddfa;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c46:hover {
-  background: #bacbf7;
-  cursor: text;
-}
-
-.c46:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c41 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
-}
-
-.c49 {
-  text-align: center;
-  position: relative;
-  background: #d1ddfa;
-}
-
-.c47 {
-  -moz-appearance: textfield;
-}
-
-.c47::-webkit-outer-spin-button,
-.c47::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 .c8 {
   list-style: none;
   margin: 0;
@@ -3786,20 +3792,6 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.c52 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-}
-
-.c52:hover {
-  border-bottom: 2px solid #5E26FF;
 }
 
 <div>
@@ -4220,7 +4212,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
                        FIL for this transaction.
                        
                       <a
-                        class="c52"
+                        class="c31"
                         color="core.primary"
                         font-size="2"
                         href="https://filfox.info/en/stats/gas"
@@ -4237,12 +4229,12 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
           </div>
         </div>
         <div
-          class="c53"
+          class="c52"
           display="flex"
           width="100%"
         >
           <button
-            class="c54"
+            class="c53"
             font-size="3"
             height="6"
             type="button"
@@ -4250,7 +4242,7 @@ exports[`Multisig add & remove  flow Removing a signer snapshots it renders step
             Back
           </button>
           <button
-            class="c55"
+            class="c54"
             font-size="3"
             height="6"
             type="submit"

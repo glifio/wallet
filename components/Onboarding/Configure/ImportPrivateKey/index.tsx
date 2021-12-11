@@ -11,8 +11,11 @@ import {
   LoadingScreen,
   Input
 } from '@glif/react-components'
-import { useWalletProvider } from '../../../../WalletProvider'
-import { createWalletProvider } from '../../../../WalletProvider/state'
+import {
+  useWalletProvider,
+  createWalletProvider
+} from '@glif/wallet-provider-react'
+
 import reportError from '../../../../utils/reportError'
 import { navigate } from '../../../../utils/urlParams'
 import { PAGE } from '../../../../constants'
