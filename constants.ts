@@ -89,6 +89,10 @@ export enum PAGE {
   MSIG_CREATE = '/vault/create',
   MSIG_CHOOSE = '/vault/choose',
   MSIG_CHOOSE_ACCOUNTS = '/vault/accounts',
+  CONNECT_LEDGER = '/connect/ledger',
+  CONNECT_BURNER_IMPORT_SEED = '/connect/burner/import-seed',
+  CONNECT_BURNER_IMPORT_PK = '/connect/burner/import-private-key',
+  CONNECT_BURNER_CREATE_SEED = '/connect/burner/create-seed',
   LANDING = '/'
 }
 

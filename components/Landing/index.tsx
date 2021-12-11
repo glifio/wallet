@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 import {
   AppTile,
   Box,
@@ -14,6 +14,7 @@ import {
   isMobileOrTablet,
   theme
 } from '@glif/react-components'
+import { useRouter } from 'next/router'
 
 import {
   ResponsiveWalletTile,
@@ -23,10 +24,20 @@ import {
   TextBox,
   Caution
 } from './Helpers'
+import { navigate } from '../../utils/urlParams'
+import { PAGE } from '../../constants'
 
 export default function Landing() {
   const isUnsupportedDevice = useMemo(() => isMobileOrTablet(), [])
   const [closed, setClosed] = useState(false)
+  const router = useRouter()
+
+  const connect = useCallback(
+    (pageUrl: PAGE) => {
+      navigate(router, { pageUrl })
+    },
+    [router]
+  )
 
   return (
     <>
@@ -39,7 +50,8 @@ export default function Landing() {
           />
           <ResponsiveWalletTile phishingBannerClosed={closed}>
             <AppTile
-              title='Wallet'
+              title='Sender'
+              oldTileName='Wallet'
               description='A lightweight interface for sending Filecoin.'
               imgSrc='/bg-sender.jpg'
               imgSrcHover='/bg-sender-hover.jpg'
@@ -61,20 +73,12 @@ export default function Landing() {
                     color: white;
                   `}
                 >
-                  We&apos;re sorry, the Glif Wallet only supports desktop
+                  We&apos;re sorry, the Glif Sender only supports desktop
                   browsers at the moment. Please come back on your computer!
                 </P>
               </TextBox>
             ) : (
               <Box>
-                {/**
-                 * This <Box display='flex'...etc> is equivalent to
-                 * <div style={{ display: 'flex', ....etc }} /> OR
-                 * <div css={`
-                 *    display: flex;
-                 *    ...other styles...
-                 * `}
-                 */}
                 <H2
                   style={{
                     marginTop: 0,
@@ -99,7 +103,12 @@ export default function Landing() {
                 >
                   <ConnectBtn large>MetaMask</ConnectBtn>
                   <ConnectBtn large>Brave</ConnectBtn>
-                  <ConnectBtn large>Ledger Device</ConnectBtn>
+                  <ConnectBtn
+                    large
+                    onClick={() => connect(PAGE.CONNECT_LEDGER)}
+                  >
+                    Ledger Device
+                  </ConnectBtn>
                   <ConnectBtn large>Glif CLI</ConnectBtn>
                   <Caution>
                     <IconCaution />
@@ -107,15 +116,25 @@ export default function Landing() {
                       Burner Wallets (use with caution, <a>read more</a>)
                     </P>
                   </Caution>
-                  <BurnerWallet large>Generate Seed Phrase</BurnerWallet>
-                  <BurnerWallet large>Import Seed Phrase</BurnerWallet>
-                  <BurnerWallet large>Import Private Key</BurnerWallet>
+                  <BurnerWallet
+                    large
+                    onClick={() => connect(PAGE.CONNECT_BURNER_CREATE_SEED)}
+                  >
+                    Generate Seed Phrase
+                  </BurnerWallet>
+                  <BurnerWallet
+                    large
+                    onClick={() => connect(PAGE.CONNECT_BURNER_IMPORT_SEED)}
+                  >
+                    Import Seed Phrase
+                  </BurnerWallet>
+                  <BurnerWallet
+                    large
+                    onClick={() => connect(PAGE.CONNECT_BURNER_IMPORT_PK)}
+                  >
+                    Import Private Key
+                  </BurnerWallet>
                 </Box>
-                {/**
-                 * This <Box mt={6}> is equivalent to
-                 * <div style={{ marginTop: theme.spaces[6] }} /> OR
-                 * <div css={` margin-top: ${theme.spaces[6]} `}
-                 */}
                 <Box mt={6}>
                   <P
                     css={`
