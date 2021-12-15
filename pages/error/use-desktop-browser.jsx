@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconGlif, Box, BigTitle, Title, Button } from '../../components/Shared'
+import { IconGlif, Box, BigTitle, Title, Button } from '@glif/react-components'
 
 const UseDesktopBrowser = () => {
   return (

@@ -78,7 +78,11 @@ export default function WalletHome() {
               mb={2}
             />
           )}
-          <BalanceCard balance={wallet.balance} onSend={onSend} />
+          <BalanceCard
+            balance={wallet.balance}
+            onSend={onSend}
+            disableButtons={false}
+          />
           <ButtonLogout
             variant='secondary'
             width='100%'
