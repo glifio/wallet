@@ -1,6 +1,6 @@
 import cloneDeep from 'lodash.clonedeep'
 import { FilecoinNumber } from '@glif/filecoin-number'
-import { WalletProviderState } from '@glif/react-components'
+import { WalletProviderState } from '@glif/wallet-provider-react'
 
 import createPath from '../../utils/createPath'
 import { IMPORT_MNEMONIC, IMPORT_SINGLE_KEY } from '../../constants'

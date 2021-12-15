@@ -141,17 +141,6 @@ export default function Landing() {
                       font-size: ${fontSize('default')};
                     `}
                   >
-                    What is this and why is it important?
-                    <br />
-                    Read the <a href='#'>Glif Verifier walkthrough</a> on the
-                    blog.
-                  </P>
-
-                  <P
-                    css={`
-                      font-size: ${fontSize('default')};
-                    `}
-                  >
                     Want to load this app directly from IPFS/FIL?
                     <br />
                     Check our <a href='#'>release page</a>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ErrorView } from '../../components/Shared'
+import { ErrorView } from '@glif/react-components'
 
 const NotAMultisig = () => {
   return (

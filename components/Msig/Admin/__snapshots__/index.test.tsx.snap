@@ -1464,7 +1464,7 @@ Object {
               display="flex"
             >
               <svg
-                class="Icons__IconBase-sc-1nqrtw7-0 kxxmwq PageHeader___StyledIconGlif-kuc4nf-0 kqACQJ"
+                class="Icons__IconBase-sc-1idz9m0-0 gkGEcA PageHeader___StyledIconGlif-kuc4nf-0 kqACQJ"
                 fill=""
                 height="24"
                 size="6"
@@ -1480,7 +1480,7 @@ Object {
                 />
               </svg>
               <h2
-                class="Typography__H2Base-sc-1qc0548-1 hyLotQ"
+                class="Typography__H2Base-sc-gm91tw-1 jfulIv"
                 font-family="RT-Alias-Grotesk"
                 font-size="4"
                 font-weight="400"
@@ -1537,7 +1537,7 @@ Object {
                     size="5"
                   >
                     <h3
-                      class="Glyph__GlyphText-sc-171043d-0 bucRnn"
+                      class="Glyph__GlyphText-sc-n069ej-0 jORGgJ"
                     >
                       Ms
                     </h3>
@@ -1546,7 +1546,7 @@ Object {
                     class="Box-sc-16t49rp-0 cQSPNr"
                   >
                     <h4
-                      class="Typography__H4Base-sc-1qc0548-3 yzGhq"
+                      class="Typography__H4Base-sc-gm91tw-3 fkBfnJ"
                       font-family="RT-Alias-Grotesk"
                       font-size="1"
                       font-weight="400"
@@ -1559,7 +1559,7 @@ Object {
                       display="flex"
                     >
                       <h2
-                        class="Typography__H2Base-sc-1qc0548-1 DwrGk"
+                        class="Typography__H2Base-sc-gm91tw-1 bfyzkz"
                         font-family="RT-Alias-Grotesk"
                         font-size="3"
                         font-weight="1"
@@ -1573,7 +1573,7 @@ Object {
                         display="flex"
                       >
                         <button
-                          class="BaseButton-expoia-0 CopyText__Copy-n6rbbk-0 jJxtms bczods"
+                          class="BaseButton-sc-expoia-0 CopyText__Copy-sc-n6rbbk-0 hxgdmp jiWBwR"
                           display="flex"
                           font-size="3"
                           height="6"
@@ -1581,7 +1581,7 @@ Object {
                           type="button"
                         >
                           <svg
-                            class="Icons__IconBase-sc-1nqrtw7-0 RfXKO CopyText__StyledIconCopyAccountAddress-n6rbbk-1 jTtVbl"
+                            class="Icons__IconBase-sc-1idz9m0-0 gxDGyc CopyText__StyledIconCopyAccountAddress-sc-n6rbbk-1 bqUtvB"
                             fill="none"
                             height="24"
                             viewBox="0 0 24 24"
@@ -1604,7 +1604,7 @@ Object {
                             />
                           </svg>
                           <h4
-                            class="Typography__H4Base-sc-1qc0548-3 igCqGo CopyText__LabelCopy-n6rbbk-2 etcigS"
+                            class="Typography__H4Base-sc-gm91tw-3 kDHdXH CopyText__LabelCopy-sc-n6rbbk-2 gmmBNO"
                             color="core.nearblack"
                             font-family="RT-Alias-Grotesk"
                             font-size="2"
@@ -1634,7 +1634,7 @@ Object {
                 display="flex"
               >
                 <h2
-                  class="Typography__H2Base-sc-1qc0548-1 dteaQp"
+                  class="Typography__H2Base-sc-gm91tw-1 cewftW"
                   display="inline-flex"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
@@ -1647,7 +1647,7 @@ Object {
                     size="5"
                   >
                     <h3
-                      class="Glyph__GlyphText-sc-171043d-0 bucRnn"
+                      class="Glyph__GlyphText-sc-n069ej-0 jORGgJ"
                     >
                       1
                     </h3>
@@ -1659,11 +1659,11 @@ Object {
                 >
                   <a
                     aria-label="Tooltip"
-                    class="Tooltip__TooltipContainer-sc-60xb0w-1 krzOQw"
+                    class="Tooltip__TooltipContainer-sc-1gertzh-1 dBjzsM"
                     color="core.black"
                   >
                     <p
-                      class="Typography__TextBase-sc-1qc0548-2 fbVXkM"
+                      class="Typography__TextBase-sc-gm91tw-2 gzWmgD"
                       color="core.black"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -1673,10 +1673,10 @@ Object {
                     </p>
                   </a>
                   <div
-                    class="Box-sc-16t49rp-0 Tooltip__TooltipContent-sc-60xb0w-0 fViZAL cUUQFM"
+                    class="Box-sc-16t49rp-0 Tooltip__TooltipContent-sc-1gertzh-0 fViZAL kDosFI"
                   >
                     <p
-                      class="Typography__TextBase-sc-1qc0548-2 ivpQlO"
+                      class="Typography__TextBase-sc-gm91tw-2 ddGFCp"
                       display="block"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -1692,7 +1692,7 @@ Object {
                 display="flex"
               >
                 <h2
-                  class="Typography__H2Base-sc-1qc0548-1 kDQXkh"
+                  class="Typography__H2Base-sc-gm91tw-1 gndNhy"
                   font-family="RT-Alias-Grotesk"
                   font-size="4"
                   font-weight="400"
@@ -1704,11 +1704,11 @@ Object {
                 >
                   <a
                     aria-label="Tooltip"
-                    class="Tooltip__TooltipContainer-sc-60xb0w-1 krzOQw"
+                    class="Tooltip__TooltipContainer-sc-1gertzh-1 dBjzsM"
                     color="core.black"
                   >
                     <p
-                      class="Typography__TextBase-sc-1qc0548-2 fbVXkM"
+                      class="Typography__TextBase-sc-gm91tw-2 gzWmgD"
                       color="core.black"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -1718,10 +1718,10 @@ Object {
                     </p>
                   </a>
                   <div
-                    class="Box-sc-16t49rp-0 Tooltip__TooltipContent-sc-60xb0w-0 fViZAL cUUQFM"
+                    class="Box-sc-16t49rp-0 Tooltip__TooltipContent-sc-1gertzh-0 fViZAL kDosFI"
                   >
                     <p
-                      class="Typography__TextBase-sc-1qc0548-2 ivpQlO"
+                      class="Typography__TextBase-sc-gm91tw-2 ddGFCp"
                       display="block"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -1750,7 +1750,7 @@ Object {
                     size="5"
                   >
                     <h3
-                      class="Glyph__GlyphText-sc-171043d-0 bucRnn"
+                      class="Glyph__GlyphText-sc-n069ej-0 jORGgJ"
                     >
                       1
                     </h3>
@@ -1759,7 +1759,7 @@ Object {
                     class="Box-sc-16t49rp-0 cQSPNr"
                   >
                     <h4
-                      class="Typography__H4Base-sc-1qc0548-3 yzGhq"
+                      class="Typography__H4Base-sc-gm91tw-3 fkBfnJ"
                       font-family="RT-Alias-Grotesk"
                       font-size="1"
                       font-weight="400"
@@ -1772,7 +1772,7 @@ Object {
                       display="flex"
                     >
                       <h2
-                        class="Typography__H2Base-sc-1qc0548-1 DwrGk"
+                        class="Typography__H2Base-sc-gm91tw-1 bfyzkz"
                         font-family="RT-Alias-Grotesk"
                         font-size="3"
                         font-weight="1"
@@ -1786,7 +1786,7 @@ Object {
                         display="flex"
                       >
                         <button
-                          class="BaseButton-expoia-0 CopyText__Copy-n6rbbk-0 jJxtms bczods"
+                          class="BaseButton-sc-expoia-0 CopyText__Copy-sc-n6rbbk-0 hxgdmp jiWBwR"
                           display="flex"
                           font-size="3"
                           height="6"
@@ -1794,7 +1794,7 @@ Object {
                           type="button"
                         >
                           <svg
-                            class="Icons__IconBase-sc-1nqrtw7-0 RfXKO CopyText__StyledIconCopyAccountAddress-n6rbbk-1 jTtVbl"
+                            class="Icons__IconBase-sc-1idz9m0-0 gxDGyc CopyText__StyledIconCopyAccountAddress-sc-n6rbbk-1 bqUtvB"
                             fill="none"
                             height="24"
                             viewBox="0 0 24 24"
@@ -1817,7 +1817,7 @@ Object {
                             />
                           </svg>
                           <h4
-                            class="Typography__H4Base-sc-1qc0548-3 igCqGo CopyText__LabelCopy-n6rbbk-2 etcigS"
+                            class="Typography__H4Base-sc-gm91tw-3 kDHdXH CopyText__LabelCopy-sc-n6rbbk-2 gmmBNO"
                             color="core.nearblack"
                             font-family="RT-Alias-Grotesk"
                             font-size="2"
@@ -1831,14 +1831,14 @@ Object {
                   </div>
                 </div>
                 <button
-                  class="BaseButton-expoia-0 fRjsYp"
+                  class="BaseButton-sc-expoia-0 hosyaQ"
                   color="core.nearblack"
                   display="flex"
                   font-size="3"
                   height="6"
                 >
                   <svg
-                    class="Icons__IconBase-sc-1nqrtw7-0 jwYqYI"
+                    class="Icons__IconBase-sc-1idz9m0-0 ezrrFe"
                     fill="none"
                     height="40px"
                     size="4"
@@ -1854,7 +1854,7 @@ Object {
                     />
                   </svg>
                   <p
-                    class="Typography__TextBase-sc-1qc0548-2 dVlkLA"
+                    class="Typography__TextBase-sc-gm91tw-2 fupjdP"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -1867,11 +1867,11 @@ Object {
                 >
                   <a
                     aria-label="Tooltip"
-                    class="Tooltip__TooltipContainer-sc-60xb0w-1 krzOQw"
+                    class="Tooltip__TooltipContainer-sc-1gertzh-1 dBjzsM"
                     color="core.black"
                   >
                     <p
-                      class="Typography__TextBase-sc-1qc0548-2 fbVXkM"
+                      class="Typography__TextBase-sc-gm91tw-2 gzWmgD"
                       color="core.black"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -1881,10 +1881,10 @@ Object {
                     </p>
                   </a>
                   <div
-                    class="Box-sc-16t49rp-0 Tooltip__TooltipContent-sc-60xb0w-0 fViZAL cUUQFM"
+                    class="Box-sc-16t49rp-0 Tooltip__TooltipContent-sc-1gertzh-0 fViZAL kDosFI"
                   >
                     <p
-                      class="Typography__TextBase-sc-1qc0548-2 ivpQlO"
+                      class="Typography__TextBase-sc-gm91tw-2 ddGFCp"
                       display="block"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -1913,7 +1913,7 @@ Object {
                     size="5"
                   >
                     <h3
-                      class="Glyph__GlyphText-sc-171043d-0 bucRnn"
+                      class="Glyph__GlyphText-sc-n069ej-0 jORGgJ"
                     >
                       2
                     </h3>
@@ -1922,7 +1922,7 @@ Object {
                     class="Box-sc-16t49rp-0 cQSPNr"
                   >
                     <h4
-                      class="Typography__H4Base-sc-1qc0548-3 yzGhq"
+                      class="Typography__H4Base-sc-gm91tw-3 fkBfnJ"
                       font-family="RT-Alias-Grotesk"
                       font-size="1"
                       font-weight="400"
@@ -1935,7 +1935,7 @@ Object {
                       display="flex"
                     >
                       <h2
-                        class="Typography__H2Base-sc-1qc0548-1 DwrGk"
+                        class="Typography__H2Base-sc-gm91tw-1 bfyzkz"
                         font-family="RT-Alias-Grotesk"
                         font-size="3"
                         font-weight="1"
@@ -1949,7 +1949,7 @@ Object {
                         display="flex"
                       >
                         <button
-                          class="BaseButton-expoia-0 CopyText__Copy-n6rbbk-0 jJxtms bczods"
+                          class="BaseButton-sc-expoia-0 CopyText__Copy-sc-n6rbbk-0 hxgdmp jiWBwR"
                           display="flex"
                           font-size="3"
                           height="6"
@@ -1957,7 +1957,7 @@ Object {
                           type="button"
                         >
                           <svg
-                            class="Icons__IconBase-sc-1nqrtw7-0 RfXKO CopyText__StyledIconCopyAccountAddress-n6rbbk-1 jTtVbl"
+                            class="Icons__IconBase-sc-1idz9m0-0 gxDGyc CopyText__StyledIconCopyAccountAddress-sc-n6rbbk-1 bqUtvB"
                             fill="none"
                             height="24"
                             viewBox="0 0 24 24"
@@ -1980,7 +1980,7 @@ Object {
                             />
                           </svg>
                           <h4
-                            class="Typography__H4Base-sc-1qc0548-3 igCqGo CopyText__LabelCopy-n6rbbk-2 etcigS"
+                            class="Typography__H4Base-sc-gm91tw-3 kDHdXH CopyText__LabelCopy-sc-n6rbbk-2 gmmBNO"
                             color="core.nearblack"
                             font-family="RT-Alias-Grotesk"
                             font-size="2"
@@ -1994,14 +1994,14 @@ Object {
                   </div>
                   <button
                     aria-label="edit-signer"
-                    class="IconButtons__IconButtonBase-sc-1p3xkgq-0 ctYzcQ"
+                    class="IconButtons__IconButtonBase-sc-15zh3go-0 gXzmcW"
                     display="inline-block"
                     role="button"
                     stroke="core.darkgray"
                     type="button"
                   >
                     <svg
-                      class="Icons__IconBase-sc-1nqrtw7-0 RfXKO"
+                      class="Icons__IconBase-sc-1idz9m0-0 gxDGyc"
                       fill="none"
                       height="24"
                       stroke="#666666"
@@ -2020,14 +2020,14 @@ Object {
                   </button>
                   <button
                     aria-label="remove-signer"
-                    class="IconButtons__IconButtonBase-sc-1p3xkgq-0 ctYzcQ"
+                    class="IconButtons__IconButtonBase-sc-15zh3go-0 gXzmcW"
                     display="inline-block"
                     fill="core.darkgray"
                     role="button"
                     type="button"
                   >
                     <svg
-                      class="Icons__IconBase-sc-1nqrtw7-0 RfXKO"
+                      class="Icons__IconBase-sc-1idz9m0-0 gxDGyc"
                       fill="core.darkgray"
                       height="24"
                       viewBox="0 0 24 24"
@@ -2049,7 +2049,7 @@ Object {
                 display="flex"
               >
                 <button
-                  class="BaseButton-expoia-0 fPyAYF"
+                  class="BaseButton-sc-expoia-0 kqRmMI"
                   font-size="3"
                   height="40px"
                   type="button"
@@ -2061,7 +2061,7 @@ Object {
           </div>
         </div>
         <button
-          class="BaseButton-expoia-0 MsigPageWrapper___StyledButtonLogout-sc-1o2jot0-0 jmpRMb btwtdo"
+          class="BaseButton-sc-expoia-0 MsigPageWrapper___StyledButtonLogout-sc-1o2jot0-0 hsKmuK btwtdo"
           display="flex"
           font-size="3"
           height="6"
@@ -2072,11 +2072,11 @@ Object {
           >
             <a
               aria-label="Tooltip"
-              class="Tooltip__TooltipContainer-sc-60xb0w-1 krzOQw"
+              class="Tooltip__TooltipContainer-sc-1gertzh-1 dBjzsM"
               color="core.black"
             >
               <p
-                class="Typography__TextBase-sc-1qc0548-2 fbVXkM"
+                class="Typography__TextBase-sc-gm91tw-2 gzWmgD"
                 color="core.black"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
@@ -2086,10 +2086,10 @@ Object {
               </p>
             </a>
             <div
-              class="Box-sc-16t49rp-0 Tooltip__TooltipContent-sc-60xb0w-0 fViZAL cUUQFM"
+              class="Box-sc-16t49rp-0 Tooltip__TooltipContent-sc-1gertzh-0 fViZAL kDosFI"
             >
               <p
-                class="Typography__TextBase-sc-1qc0548-2 ivpQlO"
+                class="Typography__TextBase-sc-gm91tw-2 ddGFCp"
                 display="block"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"

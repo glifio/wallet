@@ -59,7 +59,7 @@ const Create = ({
   if (errorMsg)
     return (
       <AccountError
-        onClick={() => {
+        onTryAgain={() => {
           setCoinType(CoinType.MAIN)
           onClick(accountIndex, coinType)
         }}

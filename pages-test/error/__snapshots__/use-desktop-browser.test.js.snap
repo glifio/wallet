@@ -68,11 +68,6 @@ exports[`UseDesktopBrowser it renders the error page 1`] = `
   opacity: 0.8;
 }
 
-.c3 {
-  width: 64px;
-  height: 64px;
-}
-
 .c4 {
   font-size: 3rem;
   font-weight: 700;
@@ -92,6 +87,11 @@ exports[`UseDesktopBrowser it renders the error page 1`] = `
   margin: 0;
   margin-top: 32px;
   margin-bottom: 32px;
+}
+
+.c3 {
+  width: 64px;
+  height: 64px;
 }
 
 <div

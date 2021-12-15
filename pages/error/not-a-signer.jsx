@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import { ErrorView } from '../../components/Shared'
+import { ErrorView } from '@glif/react-components'
 
 const NotASigner = () => {
   const router = useRouter()
