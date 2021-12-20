@@ -9,11 +9,11 @@ import {
   StepHeader,
   StyledLink,
   Text,
-  Title
+  Title,
+  IconLedger,
+  Input
 } from '@glif/react-components'
-import { Input } from '../Shared'
 import { useMsig } from '../../MsigProvider'
-import { IconLedger } from '../Shared/Icons'
 import {
   generateRouteWithRequiredUrlParams,
   navigate
