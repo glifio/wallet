@@ -592,6 +592,21 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   margin-bottom: 8px;
 }
 
+.c10 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c11 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 8px;
+}
+
 .c31 {
   font-size: 1.25rem;
   font-weight: 400;
@@ -645,6 +660,21 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   transform: scale(1.25);
 }
 
+.c12 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+  margin-left: 8px;
+}
+
+.c12:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
 .c23 {
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -657,6 +687,50 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
 
 .c23:hover {
   border-bottom: 2px solid #5E26FF;
+}
+
+.c38 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #d1ddfa;
+  width: 50%;
+  display: inline-block;
+  height: 48px;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c38:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c38:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c39 {
+  -moz-appearance: textfield;
+}
+
+.c39::-webkit-outer-spin-button,
+.c39::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .c41 {
@@ -770,80 +844,6 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
   transform: scale(1.25);
 }
 
-.c10 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-}
-
-.c11 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-top: 8px;
-}
-
-.c38 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #d1ddfa;
-  width: 50%;
-  display: inline-block;
-  height: 48px;
-  border-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c38:hover {
-  background: #bacbf7;
-  cursor: text;
-}
-
-.c38:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c39 {
-  -moz-appearance: textfield;
-}
-
-.c39::-webkit-outer-spin-button,
-.c39::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c12 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-  margin-left: 8px;
-}
-
-.c12:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
 <div>
   <button
     class="c0"
@@ -929,8 +929,7 @@ exports[`AccountSelector it renders the wallets in redux with the msig copy when
               color="core.primary"
               font-size="2"
               href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
-              rel="noopener noreferrer"
-              target="blank"
+              target="_blank"
             >
               Learn More
             </a>
@@ -2288,6 +2287,21 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   margin-bottom: 8px;
 }
 
+.c10 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
+.c11 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-top: 8px;
+}
+
 .c31 {
   font-size: 1.25rem;
   font-weight: 400;
@@ -2341,6 +2355,21 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   transform: scale(1.25);
 }
 
+.c12 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-bottom: 2px solid #5E26FF00;
+  color: #5E26FF;
+  font-size: 1.125rem;
+  margin-left: 8px;
+}
+
+.c12:hover {
+  border-bottom: 2px solid #5E26FF;
+}
+
 .c23 {
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2367,6 +2396,50 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
 
 .c35:hover {
   border-bottom: 2px solid #5E26FF;
+}
+
+.c43 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #d1ddfa;
+  width: 50%;
+  display: inline-block;
+  height: 48px;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c43:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c43:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c44 {
+  -moz-appearance: textfield;
+}
+
+.c44::-webkit-outer-spin-button,
+.c44::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .c46 {
@@ -2480,80 +2553,6 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
   transform: scale(1.25);
 }
 
-.c10 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-}
-
-.c11 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-top: 8px;
-}
-
-.c43 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #d1ddfa;
-  width: 50%;
-  display: inline-block;
-  height: 48px;
-  border-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c43:hover {
-  background: #bacbf7;
-  cursor: text;
-}
-
-.c43:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c44 {
-  -moz-appearance: textfield;
-}
-
-.c44::-webkit-outer-spin-button,
-.c44::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c12 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-bottom: 2px solid #5E26FF00;
-  color: #5E26FF;
-  font-size: 1.125rem;
-  margin-left: 8px;
-}
-
-.c12:hover {
-  border-bottom: 2px solid #5E26FF;
-}
-
 <div>
   <button
     class="c0"
@@ -2639,8 +2638,7 @@ exports[`AccountSelector it renders the wallets in redux, and an option to creat
               color="core.primary"
               font-size="2"
               href="https://reading.supply/@glif/not-seeing-the-right-address-when-accessing-the-glif-wallet-NE1FhV"
-              rel="noopener noreferrer"
-              target="blank"
+              target="_blank"
             >
               Learn More
             </a>

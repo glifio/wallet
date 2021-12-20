@@ -12,7 +12,8 @@ import {
   Num,
   Title,
   Form,
-  Card
+  Card,
+  Input
 } from '@glif/react-components'
 import {
   useWalletProvider,
@@ -23,7 +24,6 @@ import {
 import { useRouter } from 'next/router'
 
 import { useMsig } from '../../../MsigProvider'
-import { Input } from '../../Shared'
 import { CardHeader, WithdrawHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
@@ -297,7 +297,6 @@ const Withdrawing = () => {
                 />
                 <Box width='100%' p={3} border={0} bg='background.screen'>
                   <Input.Address
-                    // @ts-expect-error
                     label='Recipient'
                     value={toAddress}
                     onChange={(e) => setToAddress(e.target.value)}
@@ -311,7 +310,6 @@ const Withdrawing = () => {
                 {step > 1 && (
                   <Box width='100%' p={3} border={0} bg='background.screen'>
                     <Input.Funds
-                      // @ts-expect-error
                       name='amount'
                       label='Amount'
                       amount={value.toAttoFil()}

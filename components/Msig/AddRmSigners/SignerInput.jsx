@@ -1,8 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Box, CopyText, Label, StyledATag, Text } from '@glif/react-components'
+import {
+  Box,
+  CopyText,
+  Label,
+  StyledATag,
+  Text,
+  Input
+} from '@glif/react-components'
 import { PL_SIGNERS } from '../../../constants'
-import { Input } from '../../Shared'
 import truncateAddress from '../../../utils/truncateAddress'
 
 export const AddSignerInput = ({

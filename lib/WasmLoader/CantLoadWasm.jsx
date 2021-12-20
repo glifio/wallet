@@ -1,8 +1,5 @@
 import React from 'react'
-import Box from '../../components/Shared/Box'
-import Button from '../../components/Shared/Button'
-import { BigTitle, Title } from '../../components/Shared/Typography'
-import { IconGlif } from '../../components/Shared/Icons'
+import { Box, Button, BigTitle, Title, IconGlif } from '@glif/react-components'
 
 const CantLoadWasm = () => (
   <Box

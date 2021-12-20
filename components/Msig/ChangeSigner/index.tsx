@@ -13,7 +13,9 @@ import {
   ButtonClose,
   Label,
   CopyText,
-  Warning
+  Warning,
+  StepHeader,
+  Input
 } from '@glif/react-components'
 import {
   useWalletProvider,
@@ -23,7 +25,6 @@ import {
 } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 
-import { StepHeader, Input } from '../../Shared'
 import truncateAddress from '../../../utils/truncateAddress'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
 import { CardHeader, ChangeSignerHeaderText } from '../Shared'
@@ -333,7 +334,6 @@ const ChangeOwner = ({ oldSignerAddress }) => {
                     </Box>
                     <Box mt={2}>
                       <Input.Address
-                        // @ts-expect-error
                         label='New signer'
                         value={newSignerAddress}
                         onChange={(e) => setNewSignerAddress(e.target.value)}

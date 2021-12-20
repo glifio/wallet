@@ -1,7 +1,7 @@
 import React from 'react'
+import { Label, IconMessageStatus, IconPending } from '@glif/react-components'
 import { ADDRESS_PROPTYPE, MESSAGE_PROPS } from '../../../../customPropTypes'
 import { SEND, PROPOSE, EXEC } from '../../../../constants'
-import { Label, IconMessageStatus, IconPending } from '../../../Shared'
 
 const TxStatusText = ({ address, message }) => {
   let text = ''

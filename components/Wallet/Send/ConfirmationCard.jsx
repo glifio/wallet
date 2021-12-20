@@ -2,14 +2,21 @@ import React from 'react'
 import styled from 'styled-components'
 import { typography } from 'styled-system'
 import PropTypes from 'prop-types'
-import { Box, Card, Glyph, Text, Stepper, StyledATag } from '../../Shared'
+import {
+  Box,
+  Card,
+  Glyph,
+  Text,
+  Stepper,
+  StyledATag,
+  Loading as LoaderGlyph
+} from '@glif/react-components'
 import {
   LEDGER,
   IMPORT_MNEMONIC,
   CREATE_MNEMONIC,
   IMPORT_SINGLE_KEY
 } from '../../../constants'
-import LoaderGlyph from '../../Shared/LoaderGlyph'
 
 const TextHighlight = styled.span.attrs(() => ({
   fontSize: 'inherit'

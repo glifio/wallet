@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Text } from '@glif/react-components'
 
 import MessageHistoryRowContainer from './MessageHistoryRow/MessageHistoryRowContainer'
-import { Text } from '../Typography'
 import { MESSAGE_PROPS } from '../../../customPropTypes'
 
 const ShowMore = ({ paginating, showMore, confirmed, total }) => {

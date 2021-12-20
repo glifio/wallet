@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Box from '../../Box'
+import { Box } from '@glif/react-components'
 
 export default styled(Box).attrs((props) => ({
   borderRadius: 2,

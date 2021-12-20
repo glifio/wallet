@@ -1,8 +1,8 @@
 import React from 'react'
+import { ThemeProvider, theme } from '@glif/react-components'
 import { render, act, screen, cleanup, fireEvent } from '@testing-library/react'
 import AccountSelector from '.'
 import HelperText from './HelperText'
-import ThemeProvider from '../Shared/ThemeProvider'
 
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import { flushPromises } from '../../test-utils'
@@ -98,7 +98,7 @@ describe('HelperText', () => {
   afterEach(cleanup)
   test('it renders the non-msig, non-saft, non-ledger helper text correctly', () => {
     const { container } = render(
-      <ThemeProvider>
+      <ThemeProvider theme={theme}>
         <HelperText isLedger={false} msig={false} />
       </ThemeProvider>
     )
@@ -107,7 +107,7 @@ describe('HelperText', () => {
 
   test('it renders the non-msig, non-saft, ledger helper text correctly', () => {
     const { container } = render(
-      <ThemeProvider>
+      <ThemeProvider theme={theme}>
         <HelperText isLedger={true} msig={false} />
       </ThemeProvider>
     )
@@ -116,7 +116,7 @@ describe('HelperText', () => {
 
   test('it renders the msig helper text correctly', () => {
     const { container } = render(
-      <ThemeProvider>
+      <ThemeProvider theme={theme}>
         <HelperText isLedger={true} msig={true} />
       </ThemeProvider>
     )

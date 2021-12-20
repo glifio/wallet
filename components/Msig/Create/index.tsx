@@ -13,7 +13,8 @@ import {
   StepHeader,
   Text,
   Form,
-  Card
+  Card,
+  Input
 } from '@glif/react-components'
 import {
   useWalletProvider,
@@ -22,7 +23,6 @@ import {
   hasLedgerError
 } from '@glif/wallet-provider-react'
 
-import { Input } from '../../Shared'
 import { CardHeader, CreateMultisigHeaderText } from '../Shared'
 import { useWasm } from '../../../lib/WasmLoader'
 import ErrorCard from '../../Wallet/Send/ErrorCard'
@@ -362,7 +362,6 @@ const Create = () => {
                         mb={2}
                       >
                         <Input.Address
-                          // @ts-expect-error
                           label={`${i + 1}`}
                           value={a}
                           onChange={(e) =>
@@ -416,7 +415,6 @@ const Create = () => {
                 {step > 1 && (
                   <Box width='100%' p={3} border={0} bg='background.screen'>
                     <Input.Funds
-                      // @ts-expect-error
                       name='amount'
                       label='Amount'
                       amount={value.toAttoFil()}
@@ -431,7 +429,6 @@ const Create = () => {
                 {step > 2 && (
                   <Box width='100%' p={3} border={0} bg='background.screen'>
                     <Input.Number
-                      // @ts-expect-error
                       name='vest'
                       label='Vest (# blocks)'
                       value={vest > 0 ? vest.toString() : ''}
@@ -444,7 +441,6 @@ const Create = () => {
                 {step > 3 && vest > 0 && (
                   <Box width='100%' p={3} border={0} bg='background.screen'>
                     <Input.Number
-                      // @ts-expect-error
                       name='epochs'
                       label='Start epoch (block #)'
                       value={startEpoch > 0 ? startEpoch.toString() : ''}

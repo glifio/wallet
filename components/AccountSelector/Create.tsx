@@ -10,10 +10,10 @@ import {
   AccountError,
   Loading,
   NetworkSwitcherGlyphV2 as CoinTypeSwitcherGlyph,
-  StyledATag
+  StyledATag,
+  Input
 } from '@glif/react-components'
 import { CoinType } from '@glif/filecoin-address'
-import { RawNumberInput } from '../Shared/Input/Number'
 
 const COIN_TYPE = process.env.COIN_TYPE! as CoinType
 
@@ -94,7 +94,7 @@ const Create = ({
           maxWidth={11}
         >
           <Label width='50%'>Account index</Label>
-          <RawNumberInput
+          <Input.RawNumberInput
             width='50%'
             borderRadius={2}
             onFocus={() => setAccountIndexErr('')}
