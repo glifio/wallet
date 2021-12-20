@@ -2,9 +2,14 @@ import React from 'react'
 import dayjs from 'dayjs'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import { string, oneOf, oneOfType, number, object, shape } from 'prop-types'
-import { Menu, MenuItem } from '../../Menu'
-import { Text, Label } from '../../Typography'
-import { IconSend, IconPending } from '../../Icons'
+import {
+  Text,
+  Label,
+  Menu,
+  MenuItem,
+  IconSend,
+  IconPending
+} from '@glif/react-components'
 import makeFriendlyBalance from '../../../../utils/makeFriendlyBalance'
 import truncate from '../../../../utils/truncateAddress'
 import getAddrFromReceipt from '../../../../utils/getAddrFromReceipt'

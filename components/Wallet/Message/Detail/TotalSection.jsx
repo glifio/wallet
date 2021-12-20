@@ -1,8 +1,8 @@
 import React from 'react'
 import { string } from 'prop-types'
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { Box, Title as Total, Num } from '@glif/react-components'
 
-import { Box, Title as Total, Num } from '../../../Shared'
 import {
   MESSAGE_PROPS,
   FILECOIN_NUMBER_PROP

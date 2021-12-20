@@ -509,7 +509,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   box-sizing: border-box;
 }
 
-.c19 {
+.c20 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 16px;
@@ -571,7 +571,202 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   justify-content: space-between;
 }
 
+.c8 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c12 {
+  min-width: 0;
+  box-sizing: border-box;
+  width: 8px;
+}
+
+.c14 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-left: 24px;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c16 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #1AD08F;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c18 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #C4C4C4;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 16px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 100%;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  margin-right: 16px;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c24 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c26 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
 .c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c28 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -580,7 +775,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   width: 100%;
 }
 
-.c28 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   padding-top: 16px;
@@ -602,22 +797,6 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c30 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .c32 {
   min-width: 0;
   box-sizing: border-box;
@@ -636,6 +815,48 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   margin-top: 8px;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 48px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c42 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c11 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .c45 {
@@ -716,7 +937,42 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   opacity: 0.8;
 }
 
-.c29 {
+.c13 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c15 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c19 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+}
+
+.c25 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c30 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -724,6 +980,15 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   font-family: RT-Alias-Grotesk;
   margin: 0;
   padding-left: 0;
+}
+
+.c41 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
 }
 
 .c2 {
@@ -763,317 +1028,6 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
 
 .c31:hover {
   border-bottom: 2px solid #5E26FF;
-}
-
-.c3 {
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c1 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: auto;
-  justify-self: flex-end;
-}
-
-.c1:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
-.c8 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c10 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  color: #000;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c13 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-left: 24px;
-  margin-top: 0;
-  margin-bottom: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c15 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c16 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 100px;
-  margin-left: 4px;
-  margin-right: 4px;
-  background-color: #1AD08F;
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-}
-
-.c17 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 100px;
-  margin-left: 4px;
-  margin-right: 4px;
-  background-color: #C4C4C4;
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-}
-
-.c20 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 0;
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
-  padding: 16px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 100%;
-}
-
-.c21 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c22 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  margin-right: 16px;
-  color: white;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c23 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c25 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c26 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c40 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 48px;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c42 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c11 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c12 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c14 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-right: 8px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c18 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  text-align: center;
-}
-
-.c24 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c41 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
 }
 
 .c43 {
@@ -1118,6 +1072,24 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   border-radius: 1px;
 }
 
+.c3 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 .c7 {
   list-style: none;
   margin: 0;
@@ -1139,7 +1111,6 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
 }
 
 .c9 {
-  margin-right: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1148,6 +1119,24 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c1 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: auto;
+  justify-self: flex-end;
+}
+
+.c1:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 <div>
@@ -1220,28 +1209,28 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                     </h3>
                   </div>
                 </li>
-                <li
-                  class=""
+                <div
+                  class="c12"
+                  width="2"
+                />
+                <h2
+                  class="c13"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="4"
+                  font-weight="400"
                 >
-                  <h2
-                    class="c12"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    Change Ownership
-                  </h2>
-                </li>
+                  Change Ownership
+                </h2>
               </div>
               <li
                 class=""
               >
                 <div
-                  class="c13"
+                  class="c14"
                   display="flex"
                 >
                   <p
-                    class="c14"
+                    class="c15"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -1251,29 +1240,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                     2
                   </p>
                   <div
-                    class="c15"
-                    display="flex"
-                  >
-                    <div
-                      class="c16"
-                      display="inline-block"
-                      height="2"
-                      width="2"
-                    />
-                  </div>
-                  <div
-                    class="c15"
-                    display="flex"
-                  >
-                    <div
-                      class="c16"
-                      display="inline-block"
-                      height="2"
-                      width="2"
-                    />
-                  </div>
-                  <div
-                    class="c15"
+                    class="c16"
                     display="flex"
                   >
                     <div
@@ -1284,11 +1251,33 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                     />
                   </div>
                   <div
-                    class="c15"
+                    class="c16"
                     display="flex"
                   >
                     <div
                       class="c17"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                  <div
+                    class="c16"
+                    display="flex"
+                  >
+                    <div
+                      class="c18"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                  <div
+                    class="c16"
+                    display="flex"
+                  >
+                    <div
+                      class="c18"
                       display="inline-block"
                       height="2"
                       width="2"
@@ -1298,7 +1287,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
               </li>
             </ul>
             <p
-              class="c18"
+              class="c19"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1306,7 +1295,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
               Your Ledger Address pays the transaction fee.
             </p>
             <p
-              class="c18"
+              class="c19"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -1315,15 +1304,15 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
             </p>
           </div>
           <div
-            class="c19"
+            class="c20"
           >
             <div
-              class="c20"
+              class="c21"
               color="core.white"
               width="100%"
             >
               <div
-                class="c21"
+                class="c22"
                 display="flex"
               >
                 <div
@@ -1331,7 +1320,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                   display="flex"
                 >
                   <div
-                    class="c22"
+                    class="c23"
                     color="white"
                     display="flex"
                     size="6"
@@ -1343,11 +1332,11 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                     </h3>
                   </div>
                   <div
-                    class="c23"
+                    class="c24"
                     display="flex"
                   >
                     <p
-                      class="c24"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -1355,7 +1344,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                       From
                     </p>
                     <p
-                      class="c24"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -1365,15 +1354,15 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  class="c25"
+                  class="c26"
                   display="flex"
                 >
                   <div
-                    class="c26"
+                    class="c27"
                     display="flex"
                   >
                     <p
-                      class="c24"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -1381,7 +1370,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                       Ledger Balance
                     </p>
                     <p
-                      class="c24"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -1391,11 +1380,11 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                     </p>
                   </div>
                   <div
-                    class="c23"
+                    class="c24"
                     display="flex"
                   >
                     <p
-                      class="c24"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -1403,7 +1392,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                       Msig Balance
                     </p>
                     <p
-                      class="c24"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -1416,15 +1405,15 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
               </div>
             </div>
             <div
-              class="c27"
+              class="c28"
               width="100%"
             >
               <div
-                class="c28"
+                class="c29"
                 display="flex"
               >
                 <h4
-                  class="c29"
+                  class="c30"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -1433,7 +1422,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                   Old signer
                 </h4>
                 <div
-                  class="c30"
+                  class="c8"
                   display="flex"
                 >
                   <a
@@ -1492,7 +1481,7 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                   class="c39"
                 >
                   <div
-                    class="c15"
+                    class="c16"
                     display="flex"
                   >
                     <div
@@ -1517,7 +1506,6 @@ exports[`Change signer flow snapshots it renders step 2 correctly 1`] = `
                         class="c43"
                         display="inline-block"
                         height="6"
-                        name=""
                         placeholder="f1..."
                         value=""
                         width="100%"
@@ -1597,14 +1585,14 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   box-sizing: border-box;
 }
 
-.c19 {
+.c20 {
   min-width: 0;
   box-sizing: border-box;
   border-radius: 16px;
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c58 {
+.c57 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -1659,7 +1647,202 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   justify-content: space-between;
 }
 
+.c8 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c10 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c12 {
+  min-width: 0;
+  box-sizing: border-box;
+  width: 8px;
+}
+
+.c14 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-left: 24px;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c16 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #1AD08F;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c18 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #C4C4C4;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 16px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 100%;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  margin-right: 16px;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c24 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c26 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
 .c27 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c28 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -1668,7 +1851,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   width: 100%;
 }
 
-.c28 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   padding-top: 16px;
@@ -1690,22 +1873,6 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   justify-content: space-between;
 }
 
-.c30 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .c32 {
   min-width: 0;
   box-sizing: border-box;
@@ -1724,6 +1891,42 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   min-width: 0;
   box-sizing: border-box;
   margin-top: 8px;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 48px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c42 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c44 {
@@ -1788,7 +1991,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   flex-grow: 1;
 }
 
-.c48 {
+.c47 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1802,7 +2005,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   align-items: center;
 }
 
-.c49 {
+.c48 {
   min-width: 0;
   box-sizing: border-box;
   padding-left: 8px;
@@ -1813,7 +2016,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   text-align: left;
 }
 
-.c51 {
+.c50 {
   min-width: 0;
   box-sizing: border-box;
   position: relative;
@@ -1831,7 +2034,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   justify-content: flex-end;
 }
 
-.c54 {
+.c53 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -1858,7 +2061,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   font-size: 1.25rem;
 }
 
-.c56 {
+.c55 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1873,7 +2076,13 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   text-align: left;
 }
 
-.c59 {
+.c11 {
+  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.c58 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -1892,11 +2101,11 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c59:hover {
+.c58:hover {
   opacity: 0.8;
 }
 
-.c60 {
+.c59 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -1915,7 +2124,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   border-radius: 4px;
 }
 
-.c60:hover {
+.c59:hover {
   opacity: 0.8;
 }
 
@@ -1951,7 +2160,42 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   opacity: 0.8;
 }
 
-.c57 {
+.c13 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c15 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c19 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+}
+
+.c25 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c56 {
   color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
@@ -1960,7 +2204,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   width: 100%;
 }
 
-.c29 {
+.c30 {
   color: #262626;
   font-size: 1.125rem;
   font-weight: 400;
@@ -1970,7 +2214,16 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   padding-left: 0;
 }
 
-.c50 {
+.c41 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c49 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -2017,376 +2270,6 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   border-bottom: 2px solid #5E26FF;
 }
 
-.c52 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #d1ddfa;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c52:hover {
-  background: #bacbf7;
-  cursor: text;
-}
-
-.c52:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c47 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
-}
-
-.c55 {
-  text-align: center;
-  position: relative;
-  background: #d1ddfa;
-}
-
-.c53 {
-  -moz-appearance: textfield;
-}
-
-.c53::-webkit-outer-spin-button,
-.c53::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c3 {
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c1 {
-  outline: 0;
-  border: 0;
-  background: transparent;
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: auto;
-  justify-self: flex-end;
-}
-
-.c1:hover {
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
-.c8 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c10 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  color: #000;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c13 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-left: 24px;
-  margin-top: 0;
-  margin-bottom: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c15 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c16 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 100px;
-  margin-left: 4px;
-  margin-right: 4px;
-  background-color: #1AD08F;
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-}
-
-.c17 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 100px;
-  margin-left: 4px;
-  margin-right: 4px;
-  background-color: #C4C4C4;
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-}
-
-.c20 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 0;
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
-  padding: 16px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 100%;
-}
-
-.c21 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c22 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  margin-right: 16px;
-  color: white;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c23 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c25 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c26 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c40 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 48px;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c42 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c11 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c12 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c14 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-right: 8px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c18 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  text-align: center;
-}
-
-.c24 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c41 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
 .c43 {
   min-width: 0;
   -webkit-box-flex: 1;
@@ -2423,10 +2306,81 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   background: #bacbf7;
 }
 
+.c51 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #d1ddfa;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c51:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c51:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
 .c39 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
+}
+
+.c54 {
+  text-align: center;
+  position: relative;
+  background: #d1ddfa;
+}
+
+.c52 {
+  -moz-appearance: textfield;
+}
+
+.c52::-webkit-outer-spin-button,
+.c52::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c3 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c7 {
@@ -2450,7 +2404,6 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
 }
 
 .c9 {
-  margin-right: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2459,6 +2412,24 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c1 {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: auto;
+  justify-self: flex-end;
+}
+
+.c1:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 <div>
@@ -2531,28 +2502,28 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                     </h3>
                   </div>
                 </li>
-                <li
-                  class=""
+                <div
+                  class="c12"
+                  width="2"
+                />
+                <h2
+                  class="c13"
+                  font-family="RT-Alias-Grotesk"
+                  font-size="4"
+                  font-weight="400"
                 >
-                  <h2
-                    class="c12"
-                    font-family="RT-Alias-Grotesk"
-                    font-size="4"
-                    font-weight="400"
-                  >
-                    Change Ownership
-                  </h2>
-                </li>
+                  Change Ownership
+                </h2>
               </div>
               <li
                 class=""
               >
                 <div
-                  class="c13"
+                  class="c14"
                   display="flex"
                 >
                   <p
-                    class="c14"
+                    class="c15"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -2562,40 +2533,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                     3
                   </p>
                   <div
-                    class="c15"
-                    display="flex"
-                  >
-                    <div
-                      class="c16"
-                      display="inline-block"
-                      height="2"
-                      width="2"
-                    />
-                  </div>
-                  <div
-                    class="c15"
-                    display="flex"
-                  >
-                    <div
-                      class="c16"
-                      display="inline-block"
-                      height="2"
-                      width="2"
-                    />
-                  </div>
-                  <div
-                    class="c15"
-                    display="flex"
-                  >
-                    <div
-                      class="c16"
-                      display="inline-block"
-                      height="2"
-                      width="2"
-                    />
-                  </div>
-                  <div
-                    class="c15"
+                    class="c16"
                     display="flex"
                   >
                     <div
@@ -2605,11 +2543,44 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                       width="2"
                     />
                   </div>
+                  <div
+                    class="c16"
+                    display="flex"
+                  >
+                    <div
+                      class="c17"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                  <div
+                    class="c16"
+                    display="flex"
+                  >
+                    <div
+                      class="c17"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
+                  <div
+                    class="c16"
+                    display="flex"
+                  >
+                    <div
+                      class="c18"
+                      display="inline-block"
+                      height="2"
+                      width="2"
+                    />
+                  </div>
                 </div>
               </li>
             </ul>
             <p
-              class="c18"
+              class="c19"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2617,7 +2588,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
               Your Ledger Address pays the transaction fee.
             </p>
             <p
-              class="c18"
+              class="c19"
               font-family="RT-Alias-Grotesk"
               font-size="2"
               font-weight="400"
@@ -2626,15 +2597,15 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
             </p>
           </div>
           <div
-            class="c19"
+            class="c20"
           >
             <div
-              class="c20"
+              class="c21"
               color="core.white"
               width="100%"
             >
               <div
-                class="c21"
+                class="c22"
                 display="flex"
               >
                 <div
@@ -2642,7 +2613,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                   display="flex"
                 >
                   <div
-                    class="c22"
+                    class="c23"
                     color="white"
                     display="flex"
                     size="6"
@@ -2654,11 +2625,11 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                     </h3>
                   </div>
                   <div
-                    class="c23"
+                    class="c24"
                     display="flex"
                   >
                     <p
-                      class="c24"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2666,7 +2637,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                       From
                     </p>
                     <p
-                      class="c24"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2676,15 +2647,15 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  class="c25"
+                  class="c26"
                   display="flex"
                 >
                   <div
-                    class="c26"
+                    class="c27"
                     display="flex"
                   >
                     <p
-                      class="c24"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2692,7 +2663,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                       Ledger Balance
                     </p>
                     <p
-                      class="c24"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2702,11 +2673,11 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                     </p>
                   </div>
                   <div
-                    class="c23"
+                    class="c24"
                     display="flex"
                   >
                     <p
-                      class="c24"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2714,7 +2685,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                       Msig Balance
                     </p>
                     <p
-                      class="c24"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2727,15 +2698,15 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
               </div>
             </div>
             <div
-              class="c27"
+              class="c28"
               width="100%"
             >
               <div
-                class="c28"
+                class="c29"
                 display="flex"
               >
                 <h4
-                  class="c29"
+                  class="c30"
                   color="core.nearblack"
                   font-family="RT-Alias-Grotesk"
                   font-size="2"
@@ -2744,7 +2715,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                   Old signer
                 </h4>
                 <div
-                  class="c30"
+                  class="c8"
                   display="flex"
                 >
                   <a
@@ -2803,7 +2774,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                   class="c39"
                 >
                   <div
-                    class="c15"
+                    class="c16"
                     display="flex"
                   >
                     <div
@@ -2829,7 +2800,6 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                         disabled=""
                         display="inline-block"
                         height="6"
-                        name=""
                         placeholder="f1..."
                         value="t0100"
                         width="100%"
@@ -2855,19 +2825,19 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                   display="flex"
                 >
                   <div
-                    class="c47"
+                    class="c39"
                     name="tx-fee"
                   >
                     <div
-                      class="c48"
+                      class="c47"
                       display="flex"
                     >
                       <div
-                        class="c49"
+                        class="c48"
                         display="inline-block"
                       >
                         <h4
-                          class="c50"
+                          class="c49"
                           font-family="RT-Alias-Grotesk"
                           font-size="2"
                           font-weight="400"
@@ -2876,13 +2846,13 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                         </h4>
                       </div>
                       <div
-                        class="c51"
+                        class="c50"
                         color="background.screen"
                         display="flex"
                         width="100%"
                       >
                         <input
-                          class="c52 c53"
+                          class="c51 c52"
                           display="inline-block"
                           height="6"
                           type="number"
@@ -2890,7 +2860,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                           width="100%"
                         />
                         <div
-                          class="c54 c55"
+                          class="c53 c54"
                           color="core.primary"
                           display="flex"
                           font-size="3"
@@ -2902,12 +2872,12 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
                     </div>
                   </div>
                   <div
-                    class="c56"
+                    class="c55"
                     display="flex"
                     width="100%"
                   >
                     <p
-                      class="c57"
+                      class="c56"
                       color="core.darkgray"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -2936,12 +2906,12 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
           </div>
         </div>
         <div
-          class="c58"
+          class="c57"
           display="flex"
           width="100%"
         >
           <button
-            class="c59"
+            class="c58"
             font-size="3"
             height="6"
             type="button"
@@ -2949,7 +2919,7 @@ exports[`Change signer flow snapshots it renders step 3 correctly 1`] = `
             Back
           </button>
           <button
-            class="c60"
+            class="c59"
             font-size="3"
             height="6"
             type="submit"

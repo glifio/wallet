@@ -5,8 +5,8 @@ import { Converter } from '@glif/filecoin-number'
 import WalletProviderWrapper, {
   initialState as walletProviderInitialState
 } from '@glif/wallet-provider-react'
+import { theme, ThemeProvider } from '@glif/react-components'
 import { ConverterContext } from '../../lib/Converter'
-import { theme, ThemeProvider } from '../../components/Shared'
 import { WasmContext } from '../../lib/WasmLoader'
 import { mockWalletProviderInstance } from '../../__mocks__/@glif/filecoin-wallet-provider'
 import * as wasmMethods from '../../__mocks__/@zondax/filecoin-signing-tools'

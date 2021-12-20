@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from '../Typography'
+import { Text } from '@glif/react-components'
 
 export default () => {
   return (

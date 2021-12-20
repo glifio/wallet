@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Text } from '@glif/react-components'
 
-import { Text } from '../../Shared'
 import { LEDGER } from '../../../constants'
 
 const HeaderText = ({ step, walletType }) => {

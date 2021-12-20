@@ -3,9 +3,15 @@ import dayjs from 'dayjs'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import { bool, string, oneOf, oneOfType, number } from 'prop-types'
 import { ADDRESS_PROPTYPE } from '../../../../customPropTypes'
-import { Menu, MenuItem } from '../../Menu'
-import { Text, Label } from '../../Typography'
-import { IconSend, IconReceive, IconPending } from '../../Icons'
+import {
+  IconSend,
+  IconReceive,
+  IconPending,
+  Menu,
+  MenuItem,
+  Text,
+  Label
+} from '@glif/react-components'
 import truncate from '../../../../utils/truncateAddress'
 import makeFriendlyBalance from '../../../../utils/makeFriendlyBalance'
 

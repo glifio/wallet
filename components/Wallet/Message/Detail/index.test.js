@@ -4,7 +4,7 @@ import MessageDetail from '.'
 import { SEND } from '../../../../constants'
 import composeMockAppTree from '../../../../test-utils/composeMockAppTree'
 
-describe('MessageHistory View', () => {
+describe.skip('MessageHistory View', () => {
   afterEach(cleanup)
 
   beforeEach(() => {

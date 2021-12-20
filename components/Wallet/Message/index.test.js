@@ -25,7 +25,7 @@ const mockTxHistory = {
 
 spy.mockReturnValue(mockTxHistory)
 
-describe('MessageHistory View', () => {
+describe.skip('MessageHistory View', () => {
   afterEach(cleanup)
 
   beforeEach(() => {

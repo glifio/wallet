@@ -15,7 +15,8 @@ import {
   Title,
   Form,
   Card,
-  PageWrapper
+  PageWrapper,
+  Input
 } from '@glif/react-components'
 import {
   useWalletProvider,
@@ -23,7 +24,6 @@ import {
   reportLedgerConfigError
 } from '@glif/wallet-provider-react'
 
-import { Input } from '../../Shared'
 import { CardHeader } from '../../Msig/Shared'
 import ConfirmationCard from './ConfirmationCard'
 import HeaderText from './HeaderText'

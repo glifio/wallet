@@ -168,7 +168,79 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c28 {
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 16px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 100%;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  margin-right: 16px;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c24 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c26 {
   min-width: 0;
   box-sizing: border-box;
   padding-top: 16px;
@@ -184,7 +256,7 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
   align-items: center;
 }
 
-.c31 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -193,7 +265,7 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
   width: 100%;
 }
 
-.c32 {
+.c30 {
   min-width: 0;
   box-sizing: border-box;
   margin-bottom: 8px;
@@ -206,7 +278,43 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
   flex-direction: row;
 }
 
-.c39 {
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 48px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c34 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -220,7 +328,7 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
   align-items: center;
 }
 
-.c43 {
+.c40 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -256,7 +364,7 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
   font-size: 1.5rem;
 }
 
-.c42 {
+.c39 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -277,11 +385,11 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
   border-radius: 4px;
 }
 
-.c42:hover {
+.c39:hover {
   opacity: 0.8;
 }
 
-.c44 {
+.c41 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -300,11 +408,11 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
   border-radius: 4px;
 }
 
-.c44:hover {
+.c41:hover {
   opacity: 0.8;
 }
 
-.c45 {
+.c42 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -323,7 +431,7 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
   border-radius: 4px;
 }
 
-.c45:hover {
+.c42:hover {
   opacity: 0.8;
 }
 
@@ -346,7 +454,23 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
   margin-bottom: 0;
 }
 
-.c29 {
+.c19 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+}
+
+.c25 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c27 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -360,7 +484,7 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
   margin-right: 0;
 }
 
-.c30 {
+.c28 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -372,9 +496,96 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
   margin-bottom: 0;
 }
 
+.c33 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
 .c2 {
   width: 24;
   height: 24;
+}
+
+.c37 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #d1ddfa;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c37:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c37:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c35 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c35:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c35:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c31 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
 }
 
 .c3 {
@@ -444,7 +655,7 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
   transform: scale(1.25);
 }
 
-.c41 {
+.c38 {
   outline: 0;
   border: 0;
   background: transparent;
@@ -456,256 +667,10 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
   border-color: #FC6D6F;
 }
 
-.c41:hover {
+.c38:hover {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
-}
-
-.c21 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 0;
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
-  padding: 16px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 100%;
-}
-
-.c22 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c23 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c24 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  margin-right: 16px;
-  color: white;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c26 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c34 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c35 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 48px;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c37 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c25 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c19 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  text-align: center;
-}
-
-.c27 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c36 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c40 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #d1ddfa;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c40:hover {
-  background: #bacbf7;
-  cursor: text;
-}
-
-.c40:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c38 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #bacbf7;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c38:hover {
-  background: #bacbf7;
-  cursor: initial;
-}
-
-.c38:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c33 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
 }
 
 <div>
@@ -896,27 +861,27 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
                 display="flex"
               >
                 <div
-                  class="c23"
+                  class="c8"
                   display="flex"
                 >
                   <div
-                    class="c24"
+                    class="c23"
                     color="white"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c25"
+                      class="c11"
                     >
                       Ms
                     </h3>
                   </div>
                   <div
-                    class="c26"
+                    class="c24"
                     display="flex"
                   >
                     <p
-                      class="c27"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -924,7 +889,7 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
                       From
                     </p>
                     <p
-                      class="c27"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -934,11 +899,11 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
                   </div>
                 </div>
                 <div
-                  class="c26"
+                  class="c24"
                   display="flex"
                 >
                   <p
-                    class="c27"
+                    class="c25"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -946,7 +911,7 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
                     Balance
                   </p>
                   <p
-                    class="c27"
+                    class="c25"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -958,12 +923,12 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
               </div>
             </div>
             <div
-              class="c28"
+              class="c26"
               display="flex"
               width="100%"
             >
               <p
-                class="c29"
+                class="c27"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"
@@ -971,7 +936,7 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
                 No.
               </p>
               <p
-                class="c30"
+                class="c28"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"
@@ -980,26 +945,26 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
               </p>
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c32"
+                class="c30"
                 display="flex"
               >
                 <div
-                  class="c33"
+                  class="c31"
                 >
                   <div
-                    class="c34"
+                    class="c16"
                     display="flex"
                   >
                     <div
-                      class="c35"
+                      class="c32"
                       display="flex"
                     >
                       <h4
-                        class="c36"
+                        class="c33"
                         color="core.nearblack"
                         font-family="RT-Alias-Grotesk"
                         font-size="2"
@@ -1009,15 +974,14 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
                       </h4>
                     </div>
                     <div
-                      class="c37"
+                      class="c34"
                       display="flex"
                     >
                       <input
-                        class="c38"
+                        class="c35"
                         disabled=""
                         display="inline-block"
                         height="6"
-                        name=""
                         placeholder="f1..."
                         value="t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                         width="100%"
@@ -1028,28 +992,28 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
                 </div>
                 
                 <div
-                  class="c39"
+                  class="c36"
                   display="flex"
                   width="6"
                 />
               </div>
               <div
-                class="c32"
+                class="c30"
                 display="flex"
               >
                 <div
-                  class="c33"
+                  class="c31"
                 >
                   <div
-                    class="c34"
+                    class="c16"
                     display="flex"
                   >
                     <div
-                      class="c35"
+                      class="c32"
                       display="flex"
                     >
                       <h4
-                        class="c36"
+                        class="c33"
                         color="core.nearblack"
                         font-family="RT-Alias-Grotesk"
                         font-size="2"
@@ -1059,14 +1023,13 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
                       </h4>
                     </div>
                     <div
-                      class="c37"
+                      class="c34"
                       display="flex"
                     >
                       <input
-                        class="c40"
+                        class="c37"
                         display="inline-block"
                         height="6"
-                        name=""
                         placeholder="f1..."
                         value="t0100"
                         width="100%"
@@ -1077,12 +1040,12 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
                 </div>
                 
                 <div
-                  class="c39"
+                  class="c36"
                   display="flex"
                   width="6"
                 >
                   <button
-                    class="c41"
+                    class="c38"
                     display="inline-block"
                   >
                     <svg
@@ -1103,7 +1066,7 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
                 </div>
               </div>
               <button
-                class="c42"
+                class="c39"
                 font-size="3"
                 height="6"
                 type="button"
@@ -1115,12 +1078,12 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
           </div>
         </div>
         <div
-          class="c43"
+          class="c40"
           display="flex"
           width="100%"
         >
           <button
-            class="c44"
+            class="c41"
             font-size="3"
             height="6"
             type="button"
@@ -1128,7 +1091,7 @@ exports[`Create msig flow Creating multisig snapshots it renders multiple signer
             Back
           </button>
           <button
-            class="c45"
+            class="c42"
             font-size="3"
             height="6"
             type="submit"
@@ -1310,7 +1273,79 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c28 {
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 16px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 100%;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  margin-right: 16px;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c24 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c26 {
   min-width: 0;
   box-sizing: border-box;
   padding-top: 16px;
@@ -1326,7 +1361,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
   align-items: center;
 }
 
-.c31 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -1335,7 +1370,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
   width: 100%;
 }
 
-.c32 {
+.c30 {
   min-width: 0;
   box-sizing: border-box;
   margin-bottom: 8px;
@@ -1348,7 +1383,43 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
   flex-direction: row;
 }
 
-.c39 {
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 48px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c34 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1362,7 +1433,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
   align-items: center;
 }
 
-.c41 {
+.c38 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -1398,7 +1469,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
   font-size: 1.5rem;
 }
 
-.c40 {
+.c37 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -1419,11 +1490,11 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
   border-radius: 4px;
 }
 
-.c40:hover {
+.c37:hover {
   opacity: 0.8;
 }
 
-.c42 {
+.c39 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -1442,11 +1513,11 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
   border-radius: 4px;
 }
 
-.c42:hover {
+.c39:hover {
   opacity: 0.8;
 }
 
-.c43 {
+.c40 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -1465,7 +1536,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
   border-radius: 4px;
 }
 
-.c43:hover {
+.c40:hover {
   opacity: 0.8;
 }
 
@@ -1488,7 +1559,23 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
   margin-bottom: 0;
 }
 
-.c29 {
+.c19 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+}
+
+.c25 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c27 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -1502,7 +1589,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
   margin-right: 0;
 }
 
-.c30 {
+.c28 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -1514,9 +1601,60 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
   margin-bottom: 0;
 }
 
+.c33 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
 .c2 {
   width: 24;
   height: 24;
+}
+
+.c35 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #d1ddfa;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c35:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c35:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c31 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
 }
 
 .c3 {
@@ -1584,216 +1722,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
-}
-
-.c21 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 0;
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
-  padding: 16px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 100%;
-}
-
-.c22 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c23 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c24 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  margin-right: 16px;
-  color: white;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c26 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c34 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c35 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 48px;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c37 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c25 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c19 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  text-align: center;
-}
-
-.c27 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c36 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c38 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #d1ddfa;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c38:hover {
-  background: #bacbf7;
-  cursor: text;
-}
-
-.c38:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c33 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
 }
 
 <div>
@@ -1984,27 +1912,27 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
                 display="flex"
               >
                 <div
-                  class="c23"
+                  class="c8"
                   display="flex"
                 >
                   <div
-                    class="c24"
+                    class="c23"
                     color="white"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c25"
+                      class="c11"
                     >
                       Ms
                     </h3>
                   </div>
                   <div
-                    class="c26"
+                    class="c24"
                     display="flex"
                   >
                     <p
-                      class="c27"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2012,7 +1940,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
                       From
                     </p>
                     <p
-                      class="c27"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -2022,11 +1950,11 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
                   </div>
                 </div>
                 <div
-                  class="c26"
+                  class="c24"
                   display="flex"
                 >
                   <p
-                    class="c27"
+                    class="c25"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -2034,7 +1962,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
                     Balance
                   </p>
                   <p
-                    class="c27"
+                    class="c25"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -2046,12 +1974,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
               </div>
             </div>
             <div
-              class="c28"
+              class="c26"
               display="flex"
               width="100%"
             >
               <p
-                class="c29"
+                class="c27"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"
@@ -2059,7 +1987,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
                 No.
               </p>
               <p
-                class="c30"
+                class="c28"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"
@@ -2068,26 +1996,26 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
               </p>
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c32"
+                class="c30"
                 display="flex"
               >
                 <div
-                  class="c33"
+                  class="c31"
                 >
                   <div
-                    class="c34"
+                    class="c16"
                     display="flex"
                   >
                     <div
-                      class="c35"
+                      class="c32"
                       display="flex"
                     >
                       <h4
-                        class="c36"
+                        class="c33"
                         color="core.nearblack"
                         font-family="RT-Alias-Grotesk"
                         font-size="2"
@@ -2097,14 +2025,13 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
                       </h4>
                     </div>
                     <div
-                      class="c37"
+                      class="c34"
                       display="flex"
                     >
                       <input
-                        class="c38"
+                        class="c35"
                         display="inline-block"
                         height="6"
-                        name=""
                         placeholder="f1..."
                         value="t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                         width="100%"
@@ -2115,13 +2042,13 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
                 </div>
                 
                 <div
-                  class="c39"
+                  class="c36"
                   display="flex"
                   width="6"
                 />
               </div>
               <button
-                class="c40"
+                class="c37"
                 font-size="3"
                 height="6"
                 type="button"
@@ -2133,12 +2060,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
           </div>
         </div>
         <div
-          class="c41"
+          class="c38"
           display="flex"
           width="100%"
         >
           <button
-            class="c42"
+            class="c39"
             font-size="3"
             height="6"
             type="button"
@@ -2146,7 +2073,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 1 correctl
             Back
           </button>
           <button
-            class="c43"
+            class="c40"
             font-size="3"
             height="6"
             type="submit"
@@ -2328,7 +2255,79 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c28 {
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 16px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 100%;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  margin-right: 16px;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c24 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c26 {
   min-width: 0;
   box-sizing: border-box;
   padding-top: 16px;
@@ -2344,7 +2343,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   align-items: center;
 }
 
-.c31 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -2353,7 +2352,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   width: 100%;
 }
 
-.c32 {
+.c30 {
   min-width: 0;
   box-sizing: border-box;
   margin-bottom: 8px;
@@ -2366,7 +2365,43 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   flex-direction: row;
 }
 
-.c39 {
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 48px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c34 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -2380,7 +2415,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   align-items: center;
 }
 
-.c48 {
+.c45 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -2410,13 +2445,105 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   align-items: flex-end;
 }
 
+.c37 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-color: #999999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin-right: 8px;
+  color: #999999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 240px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-color: #EFF3FD;
+  border-top-left-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  width: 100%;
+}
+
+.c43 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
 .c11 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c49 {
+.c46 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -2435,11 +2562,11 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   border-radius: 4px;
 }
 
-.c49:hover {
+.c46:hover {
   opacity: 0.8;
 }
 
-.c50 {
+.c47 {
   cursor: not-allowed;
   border: 1px solid #C4C4C4;
   background-color: #C4C4C4;
@@ -2457,7 +2584,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   border-radius: 4px;
 }
 
-.c50:hover {
+.c47:hover {
   opacity: 1;
 }
 
@@ -2480,7 +2607,23 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   margin-bottom: 0;
 }
 
-.c29 {
+.c19 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+}
+
+.c25 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c27 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -2494,7 +2637,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   margin-right: 0;
 }
 
-.c30 {
+.c28 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -2506,9 +2649,116 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   margin-bottom: 0;
 }
 
+.c33 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
 .c2 {
   width: 24;
   height: 24;
+}
+
+.c35 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c35:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c35:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c41 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #d1ddfa;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c41:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c41:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c31 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c44 {
+  text-align: center;
+  position: relative;
+  background: #d1ddfa;
+}
+
+.c42 {
+  -moz-appearance: textfield;
+}
+
+.c42::-webkit-outer-spin-button,
+.c42::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .c3 {
@@ -2576,364 +2826,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
-}
-
-.c21 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 0;
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
-  padding: 16px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 100%;
-}
-
-.c22 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c23 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c24 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  margin-right: 16px;
-  color: white;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c26 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c34 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c35 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 48px;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c37 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c40 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-color: #999999;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-height: 120px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c41 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 4px;
-  margin-right: 8px;
-  color: #999999;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  max-width: 240px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  text-align: center;
-}
-
-.c42 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: inline-block;
-  width: 100%;
-}
-
-.c43 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-bottom: 1px solid;
-  border-color: #EFF3FD;
-  border-top-left-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 80px;
-  width: 100%;
-}
-
-.c46 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-}
-
-.c25 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c19 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  text-align: center;
-}
-
-.c27 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c36 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c38 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #bacbf7;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c38:hover {
-  background: #bacbf7;
-  cursor: initial;
-}
-
-.c38:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c44 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #d1ddfa;
-  font-size: 2rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 100%;
-  display: inline-block;
-  width: 100%;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c44:hover {
-  background: #bacbf7;
-  cursor: text;
-}
-
-.c44:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c33 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
-}
-
-.c47 {
-  text-align: center;
-  position: relative;
-  background: #d1ddfa;
-}
-
-.c45 {
-  -moz-appearance: textfield;
-}
-
-.c45::-webkit-outer-spin-button,
-.c45::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 
 <div>
@@ -3124,27 +3016,27 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
                 display="flex"
               >
                 <div
-                  class="c23"
+                  class="c8"
                   display="flex"
                 >
                   <div
-                    class="c24"
+                    class="c23"
                     color="white"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c25"
+                      class="c11"
                     >
                       Ms
                     </h3>
                   </div>
                   <div
-                    class="c26"
+                    class="c24"
                     display="flex"
                   >
                     <p
-                      class="c27"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -3152,7 +3044,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
                       From
                     </p>
                     <p
-                      class="c27"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -3162,11 +3054,11 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
                   </div>
                 </div>
                 <div
-                  class="c26"
+                  class="c24"
                   display="flex"
                 >
                   <p
-                    class="c27"
+                    class="c25"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -3174,7 +3066,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
                     Balance
                   </p>
                   <p
-                    class="c27"
+                    class="c25"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -3186,12 +3078,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
               </div>
             </div>
             <div
-              class="c28"
+              class="c26"
               display="flex"
               width="100%"
             >
               <p
-                class="c29"
+                class="c27"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"
@@ -3199,7 +3091,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
                 No.
               </p>
               <p
-                class="c30"
+                class="c28"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"
@@ -3208,26 +3100,26 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
               </p>
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c32"
+                class="c30"
                 display="flex"
               >
                 <div
-                  class="c33"
+                  class="c31"
                 >
                   <div
-                    class="c34"
+                    class="c16"
                     display="flex"
                   >
                     <div
-                      class="c35"
+                      class="c32"
                       display="flex"
                     >
                       <h4
-                        class="c36"
+                        class="c33"
                         color="core.nearblack"
                         font-family="RT-Alias-Grotesk"
                         font-size="2"
@@ -3237,15 +3129,14 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
                       </h4>
                     </div>
                     <div
-                      class="c37"
+                      class="c34"
                       display="flex"
                     >
                       <input
-                        class="c38"
+                        class="c35"
                         disabled=""
                         display="inline-block"
                         height="6"
-                        name=""
                         placeholder="f1..."
                         value="t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                         width="100%"
@@ -3256,29 +3147,29 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
                 </div>
                 
                 <div
-                  class="c39"
+                  class="c36"
                   display="flex"
                   width="6"
                 />
               </div>
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c40"
+                class="c37"
                 display="flex"
                 name="amount"
               >
                 <div
-                  class="c41"
+                  class="c38"
                   color="input.border"
                   display="flex"
                   width="100%"
                 >
                   <h4
-                    class="c36"
+                    class="c33"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -3288,18 +3179,18 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
                   </h4>
                 </div>
                 <div
-                  class="c42"
+                  class="c39"
                   display="inline-block"
                   width="100%"
                 >
                   <div
-                    class="c43"
+                    class="c40"
                     display="flex"
                     height="80px"
                     width="100%"
                   >
                     <input
-                      class="c44 c45"
+                      class="c41 c42"
                       display="inline-block"
                       font-size="5"
                       height="100%"
@@ -3311,7 +3202,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
                       width="100%"
                     />
                     <div
-                      class="c46 c47"
+                      class="c43 c44"
                       color="core.primary"
                       display="flex"
                       font-size="3"
@@ -3326,12 +3217,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
           </div>
         </div>
         <div
-          class="c48"
+          class="c45"
           display="flex"
           width="100%"
         >
           <button
-            class="c49"
+            class="c46"
             font-size="3"
             height="6"
             type="button"
@@ -3339,7 +3230,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 2 correctl
             Back
           </button>
           <button
-            class="c50"
+            class="c47"
             disabled=""
             font-size="3"
             height="6"
@@ -3522,7 +3413,79 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c28 {
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 16px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 100%;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  margin-right: 16px;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c24 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c26 {
   min-width: 0;
   box-sizing: border-box;
   padding-top: 16px;
@@ -3538,7 +3501,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   align-items: center;
 }
 
-.c31 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -3547,7 +3510,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   width: 100%;
 }
 
-.c32 {
+.c30 {
   min-width: 0;
   box-sizing: border-box;
   margin-bottom: 8px;
@@ -3560,7 +3523,43 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   flex-direction: row;
 }
 
-.c39 {
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 48px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c34 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3574,7 +3573,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   align-items: center;
 }
 
-.c53 {
+.c50 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -3604,13 +3603,148 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   align-items: flex-end;
 }
 
+.c37 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-color: #999999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin-right: 8px;
+  color: #999999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 240px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-color: #EFF3FD;
+  border-top-left-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  width: 100%;
+}
+
+.c43 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.c45 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c46 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  display: inline-block;
+  min-width: 240px;
+  text-align: left;
+}
+
+.c48 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
 .c11 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c54 {
+.c51 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -3629,11 +3763,11 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   border-radius: 4px;
 }
 
-.c54:hover {
+.c51:hover {
   opacity: 0.8;
 }
 
-.c55 {
+.c52 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -3652,7 +3786,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   border-radius: 4px;
 }
 
-.c55:hover {
+.c52:hover {
   opacity: 0.8;
 }
 
@@ -3675,7 +3809,23 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   margin-bottom: 0;
 }
 
-.c29 {
+.c19 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+}
+
+.c25 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c27 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -3689,7 +3839,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   margin-right: 0;
 }
 
-.c30 {
+.c28 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -3701,9 +3851,161 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   margin-bottom: 0;
 }
 
+.c33 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c47 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
 .c2 {
   width: 24;
   height: 24;
+}
+
+.c35 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c35:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c35:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c41 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c41:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c41:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c49 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #d1ddfa;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c49:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c49:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c31 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c44 {
+  text-align: center;
+  position: relative;
+  background: #bacbf7;
+}
+
+.c42 {
+  -moz-appearance: textfield;
+}
+
+.c42::-webkit-outer-spin-button,
+.c42::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .c3 {
@@ -3771,452 +4073,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
-}
-
-.c21 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 0;
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
-  padding: 16px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 100%;
-}
-
-.c22 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c23 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c24 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  margin-right: 16px;
-  color: white;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c26 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c34 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c35 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 48px;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c37 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c40 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-color: #999999;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-height: 120px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c41 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 4px;
-  margin-right: 8px;
-  color: #999999;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  max-width: 240px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  text-align: center;
-}
-
-.c42 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: inline-block;
-  width: 100%;
-}
-
-.c43 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-bottom: 1px solid;
-  border-color: #EFF3FD;
-  border-top-left-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 80px;
-  width: 100%;
-}
-
-.c46 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-}
-
-.c48 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c49 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 8px;
-  padding-right: 8px;
-  margin-right: 8px;
-  display: inline-block;
-  min-width: 240px;
-  text-align: left;
-}
-
-.c51 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-bottom: 1px solid;
-  border-top: 1px solid;
-  color: #EFF3FD;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.c25 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c19 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  text-align: center;
-}
-
-.c27 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c36 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c50 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c38 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #bacbf7;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c38:hover {
-  background: #bacbf7;
-  cursor: initial;
-}
-
-.c38:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c44 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #bacbf7;
-  font-size: 2rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 100%;
-  display: inline-block;
-  width: 100%;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c44:hover {
-  background: #bacbf7;
-  cursor: initial;
-}
-
-.c44:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c52 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #d1ddfa;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c52:hover {
-  background: #bacbf7;
-  cursor: text;
-}
-
-.c52:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c33 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
-}
-
-.c47 {
-  text-align: center;
-  position: relative;
-  background: #bacbf7;
-}
-
-.c45 {
-  -moz-appearance: textfield;
-}
-
-.c45::-webkit-outer-spin-button,
-.c45::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 
 <div>
@@ -4407,27 +4263,27 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
                 display="flex"
               >
                 <div
-                  class="c23"
+                  class="c8"
                   display="flex"
                 >
                   <div
-                    class="c24"
+                    class="c23"
                     color="white"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c25"
+                      class="c11"
                     >
                       Ms
                     </h3>
                   </div>
                   <div
-                    class="c26"
+                    class="c24"
                     display="flex"
                   >
                     <p
-                      class="c27"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -4435,7 +4291,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
                       From
                     </p>
                     <p
-                      class="c27"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -4445,11 +4301,11 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
                   </div>
                 </div>
                 <div
-                  class="c26"
+                  class="c24"
                   display="flex"
                 >
                   <p
-                    class="c27"
+                    class="c25"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -4457,7 +4313,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
                     Balance
                   </p>
                   <p
-                    class="c27"
+                    class="c25"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -4469,12 +4325,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
               </div>
             </div>
             <div
-              class="c28"
+              class="c26"
               display="flex"
               width="100%"
             >
               <p
-                class="c29"
+                class="c27"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"
@@ -4482,7 +4338,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
                 No.
               </p>
               <p
-                class="c30"
+                class="c28"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"
@@ -4491,26 +4347,26 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
               </p>
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c32"
+                class="c30"
                 display="flex"
               >
                 <div
-                  class="c33"
+                  class="c31"
                 >
                   <div
-                    class="c34"
+                    class="c16"
                     display="flex"
                   >
                     <div
-                      class="c35"
+                      class="c32"
                       display="flex"
                     >
                       <h4
-                        class="c36"
+                        class="c33"
                         color="core.nearblack"
                         font-family="RT-Alias-Grotesk"
                         font-size="2"
@@ -4520,15 +4376,14 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
                       </h4>
                     </div>
                     <div
-                      class="c37"
+                      class="c34"
                       display="flex"
                     >
                       <input
-                        class="c38"
+                        class="c35"
                         disabled=""
                         display="inline-block"
                         height="6"
-                        name=""
                         placeholder="f1..."
                         value="t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                         width="100%"
@@ -4539,29 +4394,29 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
                 </div>
                 
                 <div
-                  class="c39"
+                  class="c36"
                   display="flex"
                   width="6"
                 />
               </div>
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c40"
+                class="c37"
                 display="flex"
                 name="amount"
               >
                 <div
-                  class="c41"
+                  class="c38"
                   color="input.border"
                   display="flex"
                   width="100%"
                 >
                   <h4
-                    class="c36"
+                    class="c33"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -4571,18 +4426,18 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
                   </h4>
                 </div>
                 <div
-                  class="c42"
+                  class="c39"
                   display="inline-block"
                   width="100%"
                 >
                   <div
-                    class="c43"
+                    class="c40"
                     display="flex"
                     height="80px"
                     width="100%"
                   >
                     <input
-                      class="c44 c45"
+                      class="c41 c42"
                       disabled=""
                       display="inline-block"
                       font-size="5"
@@ -4595,7 +4450,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
                       width="100%"
                     />
                     <div
-                      class="c46 c47"
+                      class="c43 c44"
                       color="core.primary"
                       disabled=""
                       display="flex"
@@ -4609,23 +4464,23 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
               </div>
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c33"
+                class="c31"
                 name="vest"
               >
                 <div
-                  class="c48"
+                  class="c45"
                   display="flex"
                 >
                   <div
-                    class="c49"
+                    class="c46"
                     display="inline-block"
                   >
                     <h4
-                      class="c50"
+                      class="c47"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -4634,13 +4489,13 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
                     </h4>
                   </div>
                   <div
-                    class="c51"
+                    class="c48"
                     color="background.screen"
                     display="flex"
                     width="100%"
                   >
                     <input
-                      class="c52 c45"
+                      class="c49 c42"
                       display="inline-block"
                       height="6"
                       placeholder="0"
@@ -4655,12 +4510,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
           </div>
         </div>
         <div
-          class="c53"
+          class="c50"
           display="flex"
           width="100%"
         >
           <button
-            class="c54"
+            class="c51"
             font-size="3"
             height="6"
             type="button"
@@ -4668,7 +4523,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 3 correctl
             Back
           </button>
           <button
-            class="c55"
+            class="c52"
             font-size="3"
             height="6"
             type="submit"
@@ -4850,7 +4705,79 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c28 {
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 16px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 100%;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  margin-right: 16px;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c24 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c26 {
   min-width: 0;
   box-sizing: border-box;
   padding-top: 16px;
@@ -4866,7 +4793,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   align-items: center;
 }
 
-.c31 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -4875,7 +4802,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   width: 100%;
 }
 
-.c32 {
+.c30 {
   min-width: 0;
   box-sizing: border-box;
   margin-bottom: 8px;
@@ -4888,7 +4815,43 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   flex-direction: row;
 }
 
-.c39 {
+.c32 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 48px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c34 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c36 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -4902,7 +4865,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   align-items: center;
 }
 
-.c54 {
+.c51 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -4932,13 +4895,148 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   align-items: flex-end;
 }
 
+.c37 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-color: #999999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin-right: 8px;
+  color: #999999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 240px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c40 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-color: #EFF3FD;
+  border-top-left-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  width: 100%;
+}
+
+.c43 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.c45 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c46 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  display: inline-block;
+  min-width: 240px;
+  text-align: left;
+}
+
+.c48 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
 .c11 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c55 {
+.c52 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -4957,11 +5055,11 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   border-radius: 4px;
 }
 
-.c55:hover {
+.c52:hover {
   opacity: 0.8;
 }
 
-.c56 {
+.c53 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -4980,7 +5078,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   border-radius: 4px;
 }
 
-.c56:hover {
+.c53:hover {
   opacity: 0.8;
 }
 
@@ -5003,7 +5101,23 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   margin-bottom: 0;
 }
 
-.c29 {
+.c19 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+}
+
+.c25 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c27 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -5017,7 +5131,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   margin-right: 0;
 }
 
-.c30 {
+.c28 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -5029,9 +5143,198 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   margin-bottom: 0;
 }
 
+.c33 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c47 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
 .c2 {
   width: 24;
   height: 24;
+}
+
+.c35 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c35:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c35:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c41 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c41:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c41:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c50 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #d1ddfa;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c50:hover {
+  background: #bacbf7;
+  cursor: text;
+}
+
+.c50:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c49 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c49:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c49:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c31 {
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.c44 {
+  text-align: center;
+  position: relative;
+  background: #bacbf7;
+}
+
+.c42 {
+  -moz-appearance: textfield;
+}
+
+.c42::-webkit-outer-spin-button,
+.c42::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .c3 {
@@ -5099,489 +5402,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
-}
-
-.c21 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 0;
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
-  padding: 16px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 100%;
-}
-
-.c22 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c23 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c24 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  margin-right: 16px;
-  color: white;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c26 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c34 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c35 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 48px;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c37 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c40 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-color: #999999;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-height: 120px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c41 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 4px;
-  margin-right: 8px;
-  color: #999999;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  max-width: 240px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  text-align: center;
-}
-
-.c42 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: inline-block;
-  width: 100%;
-}
-
-.c43 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-bottom: 1px solid;
-  border-color: #EFF3FD;
-  border-top-left-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 80px;
-  width: 100%;
-}
-
-.c46 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-}
-
-.c48 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c49 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 8px;
-  padding-right: 8px;
-  margin-right: 8px;
-  display: inline-block;
-  min-width: 240px;
-  text-align: left;
-}
-
-.c51 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-bottom: 1px solid;
-  border-top: 1px solid;
-  color: #EFF3FD;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.c25 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c19 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  text-align: center;
-}
-
-.c27 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c36 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c50 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c38 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #bacbf7;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c38:hover {
-  background: #bacbf7;
-  cursor: initial;
-}
-
-.c38:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c44 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #bacbf7;
-  font-size: 2rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 100%;
-  display: inline-block;
-  width: 100%;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c44:hover {
-  background: #bacbf7;
-  cursor: initial;
-}
-
-.c44:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c53 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #d1ddfa;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c53:hover {
-  background: #bacbf7;
-  cursor: text;
-}
-
-.c53:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c52 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #bacbf7;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c52:hover {
-  background: #bacbf7;
-  cursor: initial;
-}
-
-.c52:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c33 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
-}
-
-.c47 {
-  text-align: center;
-  position: relative;
-  background: #bacbf7;
-}
-
-.c45 {
-  -moz-appearance: textfield;
-}
-
-.c45::-webkit-outer-spin-button,
-.c45::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 
 <div>
@@ -5772,27 +5592,27 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
                 display="flex"
               >
                 <div
-                  class="c23"
+                  class="c8"
                   display="flex"
                 >
                   <div
-                    class="c24"
+                    class="c23"
                     color="white"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c25"
+                      class="c11"
                     >
                       Ms
                     </h3>
                   </div>
                   <div
-                    class="c26"
+                    class="c24"
                     display="flex"
                   >
                     <p
-                      class="c27"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -5800,7 +5620,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
                       From
                     </p>
                     <p
-                      class="c27"
+                      class="c25"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -5810,11 +5630,11 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
                   </div>
                 </div>
                 <div
-                  class="c26"
+                  class="c24"
                   display="flex"
                 >
                   <p
-                    class="c27"
+                    class="c25"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -5822,7 +5642,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
                     Balance
                   </p>
                   <p
-                    class="c27"
+                    class="c25"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -5834,12 +5654,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
               </div>
             </div>
             <div
-              class="c28"
+              class="c26"
               display="flex"
               width="100%"
             >
               <p
-                class="c29"
+                class="c27"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"
@@ -5847,7 +5667,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
                 No.
               </p>
               <p
-                class="c30"
+                class="c28"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"
@@ -5856,26 +5676,26 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
               </p>
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c32"
+                class="c30"
                 display="flex"
               >
                 <div
-                  class="c33"
+                  class="c31"
                 >
                   <div
-                    class="c34"
+                    class="c16"
                     display="flex"
                   >
                     <div
-                      class="c35"
+                      class="c32"
                       display="flex"
                     >
                       <h4
-                        class="c36"
+                        class="c33"
                         color="core.nearblack"
                         font-family="RT-Alias-Grotesk"
                         font-size="2"
@@ -5885,15 +5705,14 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
                       </h4>
                     </div>
                     <div
-                      class="c37"
+                      class="c34"
                       display="flex"
                     >
                       <input
-                        class="c38"
+                        class="c35"
                         disabled=""
                         display="inline-block"
                         height="6"
-                        name=""
                         placeholder="f1..."
                         value="t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                         width="100%"
@@ -5904,29 +5723,29 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
                 </div>
                 
                 <div
-                  class="c39"
+                  class="c36"
                   display="flex"
                   width="6"
                 />
               </div>
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c40"
+                class="c37"
                 display="flex"
                 name="amount"
               >
                 <div
-                  class="c41"
+                  class="c38"
                   color="input.border"
                   display="flex"
                   width="100%"
                 >
                   <h4
-                    class="c36"
+                    class="c33"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -5936,18 +5755,18 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
                   </h4>
                 </div>
                 <div
-                  class="c42"
+                  class="c39"
                   display="inline-block"
                   width="100%"
                 >
                   <div
-                    class="c43"
+                    class="c40"
                     display="flex"
                     height="80px"
                     width="100%"
                   >
                     <input
-                      class="c44 c45"
+                      class="c41 c42"
                       disabled=""
                       display="inline-block"
                       font-size="5"
@@ -5960,7 +5779,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
                       width="100%"
                     />
                     <div
-                      class="c46 c47"
+                      class="c43 c44"
                       color="core.primary"
                       disabled=""
                       display="flex"
@@ -5974,23 +5793,23 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
               </div>
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c33"
+                class="c31"
                 name="vest"
               >
                 <div
-                  class="c48"
+                  class="c45"
                   display="flex"
                 >
                   <div
-                    class="c49"
+                    class="c46"
                     display="inline-block"
                   >
                     <h4
-                      class="c50"
+                      class="c47"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -5999,13 +5818,13 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
                     </h4>
                   </div>
                   <div
-                    class="c51"
+                    class="c48"
                     color="background.screen"
                     display="flex"
                     width="100%"
                   >
                     <input
-                      class="c52 c45"
+                      class="c49 c42"
                       disabled=""
                       display="inline-block"
                       height="6"
@@ -6019,23 +5838,23 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
               </div>
             </div>
             <div
-              class="c31"
+              class="c29"
               width="100%"
             >
               <div
-                class="c33"
+                class="c31"
                 name="epochs"
               >
                 <div
-                  class="c48"
+                  class="c45"
                   display="flex"
                 >
                   <div
-                    class="c49"
+                    class="c46"
                     display="inline-block"
                   >
                     <h4
-                      class="c50"
+                      class="c47"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -6044,13 +5863,13 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
                     </h4>
                   </div>
                   <div
-                    class="c51"
+                    class="c48"
                     color="background.screen"
                     display="flex"
                     width="100%"
                   >
                     <input
-                      class="c53 c45"
+                      class="c50 c42"
                       display="inline-block"
                       height="6"
                       placeholder="1000"
@@ -6065,12 +5884,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
           </div>
         </div>
         <div
-          class="c54"
+          class="c51"
           display="flex"
           width="100%"
         >
           <button
-            class="c55"
+            class="c52"
             font-size="3"
             height="6"
             type="button"
@@ -6078,7 +5897,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 4 correctl
             Back
           </button>
           <button
-            class="c56"
+            class="c53"
             font-size="3"
             height="6"
             type="submit"
@@ -6248,7 +6067,79 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   box-shadow: rgba(0,0,0,0.10) 0px 0.7px 2.2px -8px,rgba(0,0,0,0.04) 0px 1.7px 2.4px,rgba(0,0,0,0.106) 0px 3.1px 8.1px,rgba(0,0,0,0.04) 0px 5.6px 12.1px,rgba(0,0,0,0.045) 0px 4.4px 4.8px,rgba(0,0,0,0.05) 0px 15px 41px;
 }
 
-.c27 {
+.c20 {
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 16px;
+  background-color: #5E26FF;
+  color: #ffffff;
+  width: 100%;
+}
+
+.c21 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c22 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-width: 0.1875rem;
+  border-radius: 8px;
+  border-style: solid;
+  margin-right: 16px;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c23 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c25 {
   min-width: 0;
   box-sizing: border-box;
   padding-top: 16px;
@@ -6264,7 +6155,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   align-items: center;
 }
 
-.c30 {
+.c28 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -6273,7 +6164,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   width: 100%;
 }
 
-.c31 {
+.c29 {
   min-width: 0;
   box-sizing: border-box;
   margin-bottom: 8px;
@@ -6286,7 +6177,43 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   flex-direction: row;
 }
 
-.c38 {
+.c31 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 48px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c33 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c35 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -6300,7 +6227,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   align-items: center;
 }
 
-.c67 {
+.c58 {
   min-width: 0;
   box-sizing: border-box;
   margin: auto;
@@ -6330,7 +6257,142 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   align-items: flex-end;
 }
 
-.c52 {
+.c36 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-color: #999999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 120px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c37 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin-right: 8px;
+  color: #999999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 240px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.c38 {
+  min-width: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.c39 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-color: #EFF3FD;
+  border-top-left-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  width: 100%;
+}
+
+.c42 {
+  min-width: 0;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #5E26FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-width: 64px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.c44 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c45 {
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  display: inline-block;
+  min-width: 240px;
+  text-align: left;
+}
+
+.c47 {
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  color: #EFF3FD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c49 {
   min-width: 0;
   box-sizing: border-box;
   border: 0;
@@ -6350,7 +6412,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   justify-content: space-between;
 }
 
-.c53 {
+.c50 {
   min-width: 0;
   box-sizing: border-box;
   background-color: #EFF3FD;
@@ -6371,7 +6433,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   justify-content: space-between;
 }
 
-.c54 {
+.c51 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -6392,50 +6454,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   flex-grow: 1;
 }
 
-.c56 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c57 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 8px;
-  padding-right: 8px;
-  margin-right: 8px;
-  display: inline-block;
-  min-width: 240px;
-  text-align: left;
-}
-
-.c59 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-bottom: 1px solid;
-  border-top: 1px solid;
-  color: #EFF3FD;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.c62 {
+.c53 {
   min-width: 0;
   box-sizing: border-box;
   top: 0px;
@@ -6462,7 +6481,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   font-size: 1.25rem;
 }
 
-.c64 {
+.c55 {
   min-width: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -6483,7 +6502,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   font-size: 1.5rem;
 }
 
-.c68 {
+.c59 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -6502,11 +6521,11 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   border-radius: 4px;
 }
 
-.c68:hover {
+.c59:hover {
   opacity: 0.8;
 }
 
-.c69 {
+.c60 {
   cursor: pointer;
   border: 1px solid #1AD08F;
   background-color: #1AD08F;
@@ -6525,7 +6544,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   border-radius: 4px;
 }
 
-.c69:hover {
+.c60:hover {
   opacity: 0.8;
 }
 
@@ -6548,7 +6567,23 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   margin-bottom: 0;
 }
 
-.c28 {
+.c18 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+}
+
+.c24 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c26 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -6562,7 +6597,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   margin-right: 0;
 }
 
-.c29 {
+.c27 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
@@ -6574,7 +6609,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   margin-bottom: 0;
 }
 
-.c65 {
+.c56 {
   color: #666666;
   font-size: 1.125rem;
   font-weight: 400;
@@ -6583,7 +6618,16 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   width: 100%;
 }
 
-.c58 {
+.c32 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c46 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1;
@@ -6596,7 +6640,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   height: 24;
 }
 
-.c66 {
+.c57 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -6606,11 +6650,87 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   font-size: 1.125rem;
 }
 
-.c66:hover {
+.c57:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-.c60 {
+.c34 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c34:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c34:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c40 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c40:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c40:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c52 {
   min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -6636,35 +6756,78 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   border-color: #999999;
 }
 
-.c60:hover {
+.c52:hover {
   background: #bacbf7;
   cursor: text;
 }
 
-.c60:focus {
+.c52:focus {
   box-shadow: 0;
   outline: 0;
   background: #bacbf7;
 }
 
-.c55 {
+.c48 {
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: text;
+  background: #bacbf7;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border: 0;
+  border-color: #999999;
+}
+
+.c48:hover {
+  background: #bacbf7;
+  cursor: initial;
+}
+
+.c48:focus {
+  box-shadow: 0;
+  outline: 0;
+  background: #bacbf7;
+}
+
+.c30 {
   display: inline-block;
   width: 100%;
   border-radius: 1px;
 }
 
-.c63 {
+.c54 {
   text-align: center;
   position: relative;
   background: #d1ddfa;
 }
 
-.c61 {
+.c43 {
+  text-align: center;
+  position: relative;
+  background: #bacbf7;
+}
+
+.c41 {
   -moz-appearance: textfield;
 }
 
-.c61::-webkit-outer-spin-button,
-.c61::-webkit-inner-spin-button {
+.c41::-webkit-outer-spin-button,
+.c41::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -6734,452 +6897,6 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
-}
-
-.c20 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 0;
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
-  padding: 16px;
-  background-color: #5E26FF;
-  color: #ffffff;
-  width: 100%;
-}
-
-.c21 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c22 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c23 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
-  border-radius: 8px;
-  border-style: solid;
-  margin-right: 16px;
-  color: white;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c25 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c33 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c34 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-right: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 48px;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c36 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c39 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-color: #999999;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-height: 120px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c40 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-radius: 4px;
-  margin-right: 8px;
-  color: #999999;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  max-width: 240px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  text-align: center;
-}
-
-.c41 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: inline-block;
-  width: 100%;
-}
-
-.c42 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-bottom: 1px solid;
-  border-color: #EFF3FD;
-  border-top-left-radius: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 80px;
-  width: 100%;
-}
-
-.c45 {
-  min-width: 0;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #5E26FF;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  min-width: 64px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 1.25rem;
-}
-
-.c47 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c48 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 8px;
-  padding-right: 8px;
-  margin-right: 8px;
-  display: inline-block;
-  min-width: 240px;
-  text-align: left;
-}
-
-.c50 {
-  min-width: 0;
-  box-sizing: border-box;
-  position: relative;
-  border-bottom: 1px solid;
-  border-top: 1px solid;
-  color: #EFF3FD;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.c24 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c18 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  text-align: center;
-}
-
-.c26 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c35 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c49 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c37 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #bacbf7;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c37:hover {
-  background: #bacbf7;
-  cursor: initial;
-}
-
-.c37:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c43 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #bacbf7;
-  font-size: 2rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 100%;
-  display: inline-block;
-  width: 100%;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c43:hover {
-  background: #bacbf7;
-  cursor: initial;
-}
-
-.c43:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c51 {
-  min-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 1px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  font-size: 1.125rem;
-  text-align: left;
-  cursor: text;
-  background: #bacbf7;
-  padding-left: 16px;
-  padding-right: 16px;
-  display: inline-block;
-  height: 48px;
-  width: 100%;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-  border: 0;
-  border-color: #999999;
-}
-
-.c51:hover {
-  background: #bacbf7;
-  cursor: initial;
-}
-
-.c51:focus {
-  box-shadow: 0;
-  outline: 0;
-  background: #bacbf7;
-}
-
-.c32 {
-  display: inline-block;
-  width: 100%;
-  border-radius: 1px;
-}
-
-.c46 {
-  text-align: center;
-  position: relative;
-  background: #bacbf7;
-}
-
-.c44 {
-  -moz-appearance: textfield;
-}
-
-.c44::-webkit-outer-spin-button,
-.c44::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 
 <div>
@@ -7370,27 +7087,27 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                 display="flex"
               >
                 <div
-                  class="c22"
+                  class="c8"
                   display="flex"
                 >
                   <div
-                    class="c23"
+                    class="c22"
                     color="white"
                     display="flex"
                     size="6"
                   >
                     <h3
-                      class="c24"
+                      class="c11"
                     >
                       Ms
                     </h3>
                   </div>
                   <div
-                    class="c25"
+                    class="c23"
                     display="flex"
                   >
                     <p
-                      class="c26"
+                      class="c24"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -7398,7 +7115,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                       From
                     </p>
                     <p
-                      class="c26"
+                      class="c24"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -7408,11 +7125,11 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                   </div>
                 </div>
                 <div
-                  class="c25"
+                  class="c23"
                   display="flex"
                 >
                   <p
-                    class="c26"
+                    class="c24"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -7420,7 +7137,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                     Balance
                   </p>
                   <p
-                    class="c26"
+                    class="c24"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
                     font-weight="400"
@@ -7432,12 +7149,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
               </div>
             </div>
             <div
-              class="c27"
+              class="c25"
               display="flex"
               width="100%"
             >
               <p
-                class="c28"
+                class="c26"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"
@@ -7445,7 +7162,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                 No.
               </p>
               <p
-                class="c29"
+                class="c27"
                 font-family="RT-Alias-Grotesk"
                 font-size="2"
                 font-weight="400"
@@ -7454,26 +7171,26 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
               </p>
             </div>
             <div
-              class="c30"
+              class="c28"
               width="100%"
             >
               <div
-                class="c31"
+                class="c29"
                 display="flex"
               >
                 <div
-                  class="c32"
+                  class="c30"
                 >
                   <div
-                    class="c33"
+                    class="c16"
                     display="flex"
                   >
                     <div
-                      class="c34"
+                      class="c31"
                       display="flex"
                     >
                       <h4
-                        class="c35"
+                        class="c32"
                         color="core.nearblack"
                         font-family="RT-Alias-Grotesk"
                         font-size="2"
@@ -7483,15 +7200,14 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                       </h4>
                     </div>
                     <div
-                      class="c36"
+                      class="c33"
                       display="flex"
                     >
                       <input
-                        class="c37"
+                        class="c34"
                         disabled=""
                         display="inline-block"
                         height="6"
-                        name=""
                         placeholder="f1..."
                         value="t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
                         width="100%"
@@ -7502,29 +7218,29 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                 </div>
                 
                 <div
-                  class="c38"
+                  class="c35"
                   display="flex"
                   width="6"
                 />
               </div>
             </div>
             <div
-              class="c30"
+              class="c28"
               width="100%"
             >
               <div
-                class="c39"
+                class="c36"
                 display="flex"
                 name="amount"
               >
                 <div
-                  class="c40"
+                  class="c37"
                   color="input.border"
                   display="flex"
                   width="100%"
                 >
                   <h4
-                    class="c35"
+                    class="c32"
                     color="core.nearblack"
                     font-family="RT-Alias-Grotesk"
                     font-size="2"
@@ -7534,18 +7250,18 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                   </h4>
                 </div>
                 <div
-                  class="c41"
+                  class="c38"
                   display="inline-block"
                   width="100%"
                 >
                   <div
-                    class="c42"
+                    class="c39"
                     display="flex"
                     height="80px"
                     width="100%"
                   >
                     <input
-                      class="c43 c44"
+                      class="c40 c41"
                       disabled=""
                       display="inline-block"
                       font-size="5"
@@ -7558,7 +7274,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                       width="100%"
                     />
                     <div
-                      class="c45 c46"
+                      class="c42 c43"
                       color="core.primary"
                       disabled=""
                       display="flex"
@@ -7572,23 +7288,23 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
               </div>
             </div>
             <div
-              class="c30"
+              class="c28"
               width="100%"
             >
               <div
-                class="c32"
+                class="c30"
                 name="vest"
               >
                 <div
-                  class="c47"
+                  class="c44"
                   display="flex"
                 >
                   <div
-                    class="c48"
+                    class="c45"
                     display="inline-block"
                   >
                     <h4
-                      class="c49"
+                      class="c46"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -7597,13 +7313,13 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                     </h4>
                   </div>
                   <div
-                    class="c50"
+                    class="c47"
                     color="background.screen"
                     display="flex"
                     width="100%"
                   >
                     <input
-                      class="c51 c44"
+                      class="c48 c41"
                       disabled=""
                       display="inline-block"
                       height="6"
@@ -7617,23 +7333,23 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
               </div>
             </div>
             <div
-              class="c30"
+              class="c28"
               width="100%"
             >
               <div
-                class="c32"
+                class="c30"
                 name="epochs"
               >
                 <div
-                  class="c47"
+                  class="c44"
                   display="flex"
                 >
                   <div
-                    class="c48"
+                    class="c45"
                     display="inline-block"
                   >
                     <h4
-                      class="c49"
+                      class="c46"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
                       font-weight="400"
@@ -7642,13 +7358,13 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                     </h4>
                   </div>
                   <div
-                    class="c50"
+                    class="c47"
                     color="background.screen"
                     display="flex"
                     width="100%"
                   >
                     <input
-                      class="c51 c44"
+                      class="c48 c41"
                       disabled=""
                       display="inline-block"
                       height="6"
@@ -7662,32 +7378,32 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
               </div>
             </div>
             <div
-              class="c52"
+              class="c49"
               display="flex"
               width="100%"
             >
               <div
-                class="c53"
+                class="c50"
                 display="flex"
               >
                 <div
-                  class="c54"
+                  class="c51"
                   display="flex"
                 >
                   <div
-                    class="c55"
+                    class="c30"
                     name="tx-fee"
                   >
                     <div
-                      class="c56"
+                      class="c44"
                       display="flex"
                     >
                       <div
-                        class="c57"
+                        class="c45"
                         display="inline-block"
                       >
                         <h4
-                          class="c58"
+                          class="c46"
                           font-family="RT-Alias-Grotesk"
                           font-size="2"
                           font-weight="400"
@@ -7696,13 +7412,13 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                         </h4>
                       </div>
                       <div
-                        class="c59"
+                        class="c47"
                         color="background.screen"
                         display="flex"
                         width="100%"
                       >
                         <input
-                          class="c60 c61"
+                          class="c52 c41"
                           display="inline-block"
                           height="6"
                           type="number"
@@ -7710,7 +7426,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                           width="100%"
                         />
                         <div
-                          class="c62 c63"
+                          class="c53 c54"
                           color="core.primary"
                           display="flex"
                           font-size="3"
@@ -7722,12 +7438,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                     </div>
                   </div>
                   <div
-                    class="c64"
+                    class="c55"
                     display="flex"
                     width="100%"
                   >
                     <p
-                      class="c65"
+                      class="c56"
                       color="core.darkgray"
                       font-family="RT-Alias-Grotesk"
                       font-size="2"
@@ -7739,7 +7455,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
                        FIL for this transaction.
                        
                       <a
-                        class="c66"
+                        class="c57"
                         color="core.primary"
                         font-size="2"
                         href="https://filfox.info/en/stats/gas"
@@ -7756,12 +7472,12 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
           </div>
         </div>
         <div
-          class="c67"
+          class="c58"
           display="flex"
           width="100%"
         >
           <button
-            class="c68"
+            class="c59"
             font-size="3"
             height="6"
             type="button"
@@ -7769,7 +7485,7 @@ exports[`Create msig flow Creating multisig snapshots it renders step 5 correctl
             Back
           </button>
           <button
-            class="c69"
+            class="c60"
             font-size="3"
             height="6"
             type="submit"

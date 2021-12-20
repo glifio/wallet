@@ -1,16 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Box from '../Box'
-import { Text } from '../Typography'
-import Button from '../Button'
+import {
+  Box,
+  Text,
+  Button,
+  StyledATag,
+  LoadingScreen
+} from '@glif/react-components'
 
 import { ADDRESS_PROPTYPE, MESSAGE_PROPS } from '../../../customPropTypes'
 import MessageHistoryRow from './MessageHistoryRow'
 import EmptyHistory from './EmptyHistory'
-import LoadingScreen from '../LoadingScreen'
 import ShowMore from './ShowMore'
-import { StyledATag } from '../Link'
 
 const MessageHistoryTable = ({
   address,

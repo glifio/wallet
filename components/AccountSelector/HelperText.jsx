@@ -1,6 +1,6 @@
 import React from 'react'
 import { bool } from 'prop-types'
-import { Text, StyledATag } from '../Shared'
+import { Text, StyledATag } from '@glif/react-components'
 
 const Help = () => (
   <>

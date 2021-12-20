@@ -1,8 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FilecoinNumber } from '@glif/filecoin-number'
-import { Box, Text, Glyph } from '../../Shared'
-import { StyledATag, StepHeader } from '../../Shared'
+import {
+  Box,
+  Text,
+  Glyph,
+  StepHeader,
+  StyledATag
+} from '@glif/react-components'
 import {
   ADDRESS_PROPTYPE,
   FILECOIN_NUMBER_PROP
