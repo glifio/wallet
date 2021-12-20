@@ -355,7 +355,7 @@ const Send = () => {
                     <StepHeader
                       title='Sending Filecoin'
                       currentStep={step}
-                      totalSteps={5}
+                      totalSteps={6}
                       glyphAcronym='Sf'
                     />
                     <Box mt={6} mb={4}>
