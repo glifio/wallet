@@ -3,11 +3,13 @@ import Head from 'next/head'
 import React from 'react'
 import { Provider } from 'react-redux'
 import { theme, ThemeProvider } from '@glif/react-components'
-import { WalletProviderWrapper } from '@glif/wallet-provider-react'
+import {
+  WalletProviderWrapper,
+  BalancePoller
+} from '@glif/wallet-provider-react'
 import { SWRConfig } from 'swr'
 import withReduxStore from '../lib/with-redux-store'
 import { MsigProviderWrapper } from '../MsigProvider'
-import BalancePoller from '../lib/update-balance'
 import { WasmLoader } from '../lib/WasmLoader'
 import ErrorBoundary from '../lib/ErrorBoundary'
 import '../stylesheets/normalize.css'

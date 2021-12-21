@@ -1,11 +1,12 @@
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import { RequireWallet } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
-import { MsigAdmin } from '../../components/Msig'
+
+import { MsigHome } from '../../components/Msig'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
-const Owners = () => {
+const Home = () => {
   const router = useRouter()
   const gatekeep = useCallback(
     () => navigate(router, { pageUrl: PAGE.LANDING }),
@@ -13,9 +14,9 @@ const Owners = () => {
   )
   return (
     <RequireWallet gatekeep={gatekeep}>
-      <MsigAdmin />
+      <MsigHome />
     </RequireWallet>
   )
 }
 
-export default Owners
+export default Home

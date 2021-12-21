@@ -1,9 +1,8 @@
 import { CoinType } from '@glif/filecoin-address'
-import { AccountSelector } from '@glif/wallet-provider-react'
+import { AccountSelector, RequireWallet } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 import { useCallback } from 'react'
 import { PAGE } from '../../constants'
-import RenderChildrenIfWalletConnected from '../../lib/RequireWallet'
 import useDesktopBrowser from '../../lib/useDesktopBrowser'
 import { navigate } from '../../utils/urlParams'
 
@@ -17,8 +16,12 @@ const Accounts = () => {
     () => navigate(router, { pageUrl: PAGE.MSIG_CHOOSE }),
     [router]
   )
+  const gatekeep = useCallback(
+    () => navigate(router, { pageUrl: PAGE.LANDING }),
+    [router]
+  )
   return (
-    <RenderChildrenIfWalletConnected>
+    <RequireWallet gatekeep={gatekeep}>
       <AccountSelector
         title='Select Account'
         helperText={`Your connected wallet creates hundreds of individual accounts. We're showing you the first ${nWalletsToShow}.`}
@@ -27,7 +30,7 @@ const Accounts = () => {
         coinType={COIN_TYPE}
         showSelectedAccount
       />
-    </RenderChildrenIfWalletConnected>
+    </RequireWallet>
   )
 }
 
