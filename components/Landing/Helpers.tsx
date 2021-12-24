@@ -11,7 +11,7 @@ import {
 export const ResponsiveWalletTile = styled.div`
   cursor: default;
 
-  @media (min-width: ${devices.gt.tablet}) {
+  @media (min-width: ${devices.tablet}) {
     position: sticky;
     top: ${space()};
 
@@ -40,7 +40,7 @@ export const ConnectContentContainer = styled.div`
     padding: 80px 30px 30px;
   }
 
-  @media (min-width: ${devices.gt.tablet}) {
+  @media (min-width: ${devices.tablet}) {
     padding: ${space('large')} 50px 50px 50px;
   }
 `
@@ -66,7 +66,7 @@ export const TextBox = styled.div`
     padding: 30px;
   }
 
-  @media (min-width: ${devices.gt.tablet}) {
+  @media (min-width: ${devices.tablet}) {
     padding: 80px 40px;
   }
 
