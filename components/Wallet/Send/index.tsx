@@ -120,10 +120,12 @@ const Send = () => {
       })
       setFetchingTxDetails(false)
       const messageObj = message.toLotusType()
+      console.log('hereeee')
       const signedMessage = await provider.wallet.sign(
         wallet.address,
         messageObj
       )
+      console.log('signed', signedMessage)
 
       setMPoolPushing(true)
       const validMsg = await provider.simulateMessage(messageObj)

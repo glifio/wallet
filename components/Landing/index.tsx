@@ -101,15 +101,17 @@ export default function Landing() {
                     }
                   `}
                 >
-                  <ConnectBtn large>MetaMask</ConnectBtn>
-                  <ConnectBtn large>Brave</ConnectBtn>
+                  <ConnectBtn large onClick={() => connect(PAGE.CONNECT_MM)}>
+                    MetaMask
+                  </ConnectBtn>
+                  {/* <ConnectBtn large>Brave</ConnectBtn> */}
                   <ConnectBtn
                     large
                     onClick={() => connect(PAGE.CONNECT_LEDGER)}
                   >
                     Ledger Device
                   </ConnectBtn>
-                  <ConnectBtn large>Glif CLI</ConnectBtn>
+                  {/* <ConnectBtn large>Glif CLI</ConnectBtn> */}
                   <Caution>
                     <IconCaution />
                     <P>
@@ -120,7 +122,7 @@ export default function Landing() {
                     large
                     onClick={() => connect(PAGE.CONNECT_BURNER_CREATE_SEED)}
                   >
-                    Generate Seed Phrase
+                    Create Seed Phrase
                   </BurnerWallet>
                   <BurnerWallet
                     large

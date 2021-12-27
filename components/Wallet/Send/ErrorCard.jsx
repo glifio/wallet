@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Box, Glyph, Card, Text, Button } from '../../Shared'
+import { Box, Glyph, Card, Text, Button } from '@glif/react-components'
 
 const ErrorCard = ({ error, reset }) => {
   return (
