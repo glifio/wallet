@@ -5,7 +5,8 @@ module.exports = {
     '/node_modules/',
     '/.next/',
     '/Msig/',
-    '/MsigProvider/'
+    '/MsigProvider/',
+    '/msig/'
   ],
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest'
