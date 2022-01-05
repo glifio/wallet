@@ -1,12 +1,9 @@
 import { renderHook, act } from '@testing-library/react-hooks'
-import { Provider } from 'react-redux'
 import useReset from '.'
-import { initializeStore } from '../../test-utils'
 import WalletProviderWrapper, {
   initialState as _walletProviderInitialState
 } from '@glif/wallet-provider-react'
 
-import { initialState } from '../../store/states'
 import { composeWalletProviderState } from '../../test-utils/composeMockAppTree/composeState'
 
 describe('useReset', () => {
@@ -24,19 +21,14 @@ describe('useReset', () => {
       return <></>
     }
 
-    const screwedUpState = { wallets: [], selectedWalletIdx: -10000 }
-    const store = initializeStore(screwedUpState)
-
     const Tree = ({ children }) => (
-      <Provider store={store}>
-        <WalletProviderWrapper
-          getState={cacheWalletProviderState}
-          statePreset={statePreset}
-          initialState={walletProviderInitialState}
-        >
-          {children}
-        </WalletProviderWrapper>
-      </Provider>
+      <WalletProviderWrapper
+        getState={cacheWalletProviderState}
+        statePreset={statePreset}
+        initialState={walletProviderInitialState}
+      >
+        {children}
+      </WalletProviderWrapper>
     )
 
     const {
@@ -47,9 +39,6 @@ describe('useReset', () => {
       // this is the reset hook
       current()
     })
-    expect(JSON.stringify(store.getState())).toEqual(
-      JSON.stringify({ ...initialState })
-    )
 
     expect(JSON.stringify(walletProviderState)).toBe(
       JSON.stringify(_walletProviderInitialState)

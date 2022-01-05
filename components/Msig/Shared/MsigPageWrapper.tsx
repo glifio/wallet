@@ -8,7 +8,6 @@ import {
 } from '@glif/react-components'
 
 import { useMsig } from '../../../MsigProvider'
-import MsgConfirmer from '../../../lib/confirm-message'
 import { resetWallet } from '../../../utils/urlParams'
 import PageHeader from './PageHeader'
 
@@ -34,7 +33,6 @@ const MsigPageWrapper = ({
         cloneElement(children, props)
       ) : (
         <>
-          <MsgConfirmer />
           <Box
             position='relative'
             display='flex'

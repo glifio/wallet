@@ -1,11 +1,12 @@
 import App from 'next/app'
 import Head from 'next/head'
 import React from 'react'
-import { theme, ThemeProvider } from '@glif/react-components'
+import { theme, ThemeProvider, client } from '@glif/react-components'
 import {
   WalletProviderWrapper,
   BalancePoller
 } from '@glif/wallet-provider-react'
+import { ApolloProvider } from '@apollo/client'
 import { SWRConfig } from 'swr'
 import { MsigProviderWrapper } from '../MsigProvider'
 import { WasmLoader } from '../lib/WasmLoader'
@@ -21,20 +22,22 @@ class MyApp extends App {
         <Head>
           <title>Glif</title>
         </Head>
-        <SWRConfig value={{ refreshInterval: 10000 }}>
-          <ThemeProvider theme={theme}>
-            <WasmLoader>
-              <WalletProviderWrapper>
-                <MsigProviderWrapper>
-                  <BalancePoller />
-                  <ErrorBoundary>
-                    <Component {...pageProps} />
-                  </ErrorBoundary>
-                </MsigProviderWrapper>
-              </WalletProviderWrapper>
-            </WasmLoader>
-          </ThemeProvider>
-        </SWRConfig>
+        <ApolloProvider client={client}>
+          <SWRConfig value={{ refreshInterval: 10000 }}>
+            <ThemeProvider theme={theme}>
+              <WasmLoader>
+                <WalletProviderWrapper>
+                  <MsigProviderWrapper>
+                    <BalancePoller />
+                    <ErrorBoundary>
+                      <Component {...pageProps} />
+                    </ErrorBoundary>
+                  </MsigProviderWrapper>
+                </WalletProviderWrapper>
+              </WasmLoader>
+            </ThemeProvider>
+          </SWRConfig>
+        </ApolloProvider>
       </>
     )
   }

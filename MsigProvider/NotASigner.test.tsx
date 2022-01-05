@@ -2,14 +2,12 @@ import '@testing-library/jest-dom/extend-expect'
 import { act, renderHook } from '@testing-library/react-hooks'
 import { cleanup } from '@testing-library/react'
 import { ReactNode } from 'react'
-import { Provider } from 'react-redux'
 import WalletProviderWrapper, {
   initialState as _walletProviderInitialState
 } from '@glif/wallet-provider-react'
 
 import { MULTISIG_ACTOR_ADDRESS } from '../test-utils/constants'
 import { useMsig, MsigProviderWrapper } from '.'
-import mockReduxStoreWithState from '../test-utils/composeMockAppTree/mockReduxStoreWithState'
 import { MsigActorState } from './types'
 import { composeWalletProviderState } from '../test-utils/composeMockAppTree/composeState'
 
@@ -23,22 +21,19 @@ describe('Not a signer error handling', () => {
   beforeEach(() => {
     jest.clearAllMocks()
     const statePreset = 'postOnboard'
-    const mockReduxStore = mockReduxStoreWithState({ statePreset })
     const walletProviderInitialState = composeWalletProviderState(
       _walletProviderInitialState,
       statePreset
     )
     Tree = ({ children }: { children: ReactNode }) => (
-      <Provider store={mockReduxStore}>
-        {/* @ts-expect-error */}
-        <WalletProviderWrapper
-          getState={() => {}}
-          statePreset={statePreset}
-          initialState={walletProviderInitialState}
-        >
-          <MsigProviderWrapper test>{children}</MsigProviderWrapper>
-        </WalletProviderWrapper>
-      </Provider>
+      /* @ts-expect-error */
+      <WalletProviderWrapper
+        getState={() => {}}
+        statePreset={statePreset}
+        initialState={walletProviderInitialState}
+      >
+        <MsigProviderWrapper test>{children}</MsigProviderWrapper>
+      </WalletProviderWrapper>
     )
   })
 
