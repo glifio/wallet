@@ -5,7 +5,7 @@ import WalletProviderWrapper, {
   initialState as walletProviderInitialState
 } from '@glif/wallet-provider-react'
 import { theme, ThemeProvider } from '@glif/react-components'
-import { MockedProvider } from '@apollo/client'
+import { MockedProvider } from '@apollo/client/testing'
 import { ConverterContext } from '../../lib/Converter'
 import { WasmContext } from '../../lib/WasmLoader'
 import { mockWalletProviderInstance } from '../../__mocks__/@glif/filecoin-wallet-provider'
@@ -34,27 +34,27 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
 
   const Tree = ({ children }) => {
     return (
-      // <MockedProvider mocks={[]} addTypeName={false}>
-      <WasmContext.Provider value={wasmMethods}>
-        <ConverterContext.Provider
-          value={{
-            converter: new Converter(),
-            converterError: options.converterError || null
-          }}
-        >
-          <WalletProviderWrapper
-            options={options}
-            statePreset={statePreset}
-            getState={cacheWalletProviderState}
-            initialState={initialState}
+      <MockedProvider mocks={[]} addTypeName={false}>
+        <WasmContext.Provider value={wasmMethods}>
+          <ConverterContext.Provider
+            value={{
+              converter: new Converter(),
+              converterError: options.converterError || null
+            }}
           >
-            <MsigProviderWrapper options={options} statePreset={statePreset}>
-              <ThemeProvider theme={theme}>{children}</ThemeProvider>
-            </MsigProviderWrapper>
-          </WalletProviderWrapper>
-        </ConverterContext.Provider>
-      </WasmContext.Provider>
-      // </MockedProvider>
+            <WalletProviderWrapper
+              options={options}
+              statePreset={statePreset}
+              getState={cacheWalletProviderState}
+              initialState={initialState}
+            >
+              <MsigProviderWrapper options={options} statePreset={statePreset}>
+                <ThemeProvider theme={theme}>{children}</ThemeProvider>
+              </MsigProviderWrapper>
+            </WalletProviderWrapper>
+          </ConverterContext.Provider>
+        </WasmContext.Provider>
+      </MockedProvider>
     )
   }
 
