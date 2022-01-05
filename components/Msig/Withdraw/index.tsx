@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from 'react'
-import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
@@ -31,8 +30,6 @@ import ConfirmationCard from '../../Wallet/Send/ConfirmationCard'
 import CustomizeFee from '../../Wallet/Send/CustomizeFee'
 import { LEDGER, PROPOSE, emptyGasInfo, PAGE } from '../../../constants'
 import reportError from '../../../utils/reportError'
-import { confirmMessage } from '../../../store/actions'
-import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
 import { navigate } from '../../../utils/urlParams'
 
 const isValidAmount = (value, balance, errorFromForms) => {
@@ -44,7 +41,6 @@ const isValidAmount = (value, balance, errorFromForms) => {
 const Withdrawing = () => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
   const wallet = useWallet()
-  const dispatch = useDispatch()
   // @ts-expect-error
   const { serializeParams } = useWasm()
   const { Address: address, AvailableBalance: balance } = useMsig()
@@ -160,7 +156,6 @@ const Withdrawing = () => {
         const msg = await sendMsg()
         setAttemptingTx(false)
         if (msg) {
-          dispatch(confirmMessage(toLowerCaseMsgFields(msg)))
           setValue(new FilecoinNumber('0', 'fil'))
           onComplete()
         }

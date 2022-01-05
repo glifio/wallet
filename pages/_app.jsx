@@ -1,14 +1,12 @@
 import App from 'next/app'
 import Head from 'next/head'
 import React from 'react'
-import { Provider } from 'react-redux'
 import { theme, ThemeProvider } from '@glif/react-components'
 import {
   WalletProviderWrapper,
   BalancePoller
 } from '@glif/wallet-provider-react'
 import { SWRConfig } from 'swr'
-import withReduxStore from '../lib/with-redux-store'
 import { MsigProviderWrapper } from '../MsigProvider'
 import { WasmLoader } from '../lib/WasmLoader'
 import ErrorBoundary from '../lib/ErrorBoundary'
@@ -17,31 +15,29 @@ import '../stylesheets/styles.css'
 
 class MyApp extends App {
   render() {
-    const { Component, pageProps, reduxStore } = this.props
+    const { Component, pageProps } = this.props
     return (
       <>
         <Head>
           <title>Glif</title>
         </Head>
         <SWRConfig value={{ refreshInterval: 10000 }}>
-          <Provider store={reduxStore}>
-            <ThemeProvider theme={theme}>
-              <WasmLoader>
-                <WalletProviderWrapper>
-                  <MsigProviderWrapper>
-                    <BalancePoller />
-                    <ErrorBoundary>
-                      <Component {...pageProps} />
-                    </ErrorBoundary>
-                  </MsigProviderWrapper>
-                </WalletProviderWrapper>
-              </WasmLoader>
-            </ThemeProvider>
-          </Provider>
+          <ThemeProvider theme={theme}>
+            <WasmLoader>
+              <WalletProviderWrapper>
+                <MsigProviderWrapper>
+                  <BalancePoller />
+                  <ErrorBoundary>
+                    <Component {...pageProps} />
+                  </ErrorBoundary>
+                </MsigProviderWrapper>
+              </WalletProviderWrapper>
+            </WasmLoader>
+          </ThemeProvider>
         </SWRConfig>
       </>
     )
   }
 }
 
-export default withReduxStore(MyApp)
+export default MyApp

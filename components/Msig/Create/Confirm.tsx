@@ -1,5 +1,4 @@
-import React, { SyntheticEvent, useEffect, useRef, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { SyntheticEvent, useState } from 'react'
 import { func, string } from 'prop-types'
 import { useRouter } from 'next/router'
 import {
@@ -12,14 +11,10 @@ import {
   Glyph,
   Title
 } from '@glif/react-components'
-import ConfirmMessage from '../../../lib/confirm-message'
+
 import { useMsig } from '../../../MsigProvider'
-import { clearMessages } from '../../../store/actions'
-import converAddrToFPrefix from '../../../utils/convertAddrToFPrefix'
-import { fetchAndSetMsigActor } from '../../../utils/msig'
-import { EXEC_ACTOR, PAGE } from '../../../constants'
+import { PAGE } from '../../../constants'
 import { navigate } from '../../../utils/urlParams'
-import { initialState } from '../../../store/states'
 
 const NextOption = ({
   text,
@@ -56,27 +51,10 @@ NextOption.propTypes = {
 }
 
 const Confirm = () => {
-  const dispatch = useDispatch()
   const [msigError, setMsigError] = useState('')
   const { setMsigActor, Address } = useMsig()
-  const { pending, confirmed } = useSelector(
-    (s: typeof initialState) => s.messages
-  )
-  // the create message is the one sent to the f01 actor
-  const createMsigMessage = pending.find(
-    (m) => EXEC_ACTOR === converAddrToFPrefix(m.to)
-  )
-
-  const { current: msgCid }: { current: string } = useRef(
-    createMsigMessage?.cid
-  )
   const router = useRouter()
-
-  useEffect(() => {
-    if (confirmed.some((m) => m.cid === msgCid)) {
-      fetchAndSetMsigActor(msgCid, setMsigActor, setMsigError)
-    }
-  }, [confirmed, msgCid, setMsigActor, setMsigError])
+  const msgCid = ''
 
   if (msigError) {
     return (
@@ -139,14 +117,12 @@ const Confirm = () => {
           <NextOption
             text='Go to Multisig home'
             onClick={() => {
-              dispatch(clearMessages())
               navigate(router, { pageUrl: PAGE.MSIG_HOME })
             }}
           />
         </Box>
       ) : (
         <>
-          <ConfirmMessage />
           {pending.length > 0 && (
             <Box display='flex' justifyContent='center' flexDirection='column'>
               <Box display='flex' justifyContent='center' alignItems='center'>

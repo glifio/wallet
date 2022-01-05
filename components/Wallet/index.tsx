@@ -9,7 +9,8 @@ import {
   Content,
   BaseButton as ButtonLogout,
   Box,
-  Tooltip
+  Tooltip,
+  MessageHistoryTable
 } from '@glif/react-components'
 import {
   useWalletProvider,
@@ -18,8 +19,6 @@ import {
   reportLedgerConfigError
 } from '@glif/wallet-provider-react'
 
-import MessageView from './Message'
-import MsgConfirmer from '../../lib/confirm-message'
 import reportError from '../../utils/reportError'
 import { navigate, resetWallet } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
@@ -55,7 +54,6 @@ export default function WalletHome() {
 
   return (
     <>
-      <MsgConfirmer />
       <PageWrapper>
         <Sidebar height='100vh'>
           {hasLedgerError({ ...ledger, otherError: uncaughtError }) ? (
@@ -109,7 +107,7 @@ export default function WalletHome() {
             maxWidth={16}
             width='100%'
           >
-            <MessageView />
+            <MessageHistoryTable address={wallet.address} />
           </Box>
         </Content>
       </PageWrapper>
