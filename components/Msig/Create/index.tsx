@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
@@ -36,8 +35,6 @@ import {
 } from '../../../constants'
 import CustomizeFee from '../../Wallet/Send/CustomizeFee'
 import reportError from '../../../utils/reportError'
-import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
-import { confirmMessage } from '../../../store/actions'
 import { navigate } from '../../../utils/urlParams'
 
 const isValidAmount = (value, balance, errorFromForms) => {
@@ -49,7 +46,6 @@ const isValidAmount = (value, balance, errorFromForms) => {
 const Create = () => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
   const wallet = useWallet()
-  const dispatch = useDispatch()
   const wasm = useWasm()
   const [step, setStep] = useState(1)
   const [attemptingTx, setAttemptingTx] = useState(false)
@@ -176,7 +172,6 @@ const Create = () => {
         setAttemptingTx(false)
         if (msg) {
           setPageChanging(true)
-          dispatch(confirmMessage(toLowerCaseMsgFields(msg)))
           navigate(router, { pageUrl: PAGE.MSIG_CREATE_CONFIRM })
         }
       } catch (err) {

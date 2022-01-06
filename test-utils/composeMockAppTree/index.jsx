@@ -1,25 +1,22 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
-import { Provider } from 'react-redux'
 import { Converter } from '@glif/filecoin-number'
 import WalletProviderWrapper, {
   initialState as walletProviderInitialState
 } from '@glif/wallet-provider-react'
 import { theme, ThemeProvider } from '@glif/react-components'
+import { MockedProvider } from '@apollo/client/testing'
 import { ConverterContext } from '../../lib/Converter'
 import { WasmContext } from '../../lib/WasmLoader'
 import { mockWalletProviderInstance } from '../../__mocks__/@glif/filecoin-wallet-provider'
 import * as wasmMethods from '../../__mocks__/@zondax/filecoin-signing-tools'
 import { MsigProviderWrapper } from '../../MsigProvider'
-import mockReduxStoreWithState from './mockReduxStoreWithState'
 
 import { composeWalletProviderState } from '../../test-utils/composeMockAppTree/composeState'
 
 jest.mock('../../MsigProvider')
 
 const Index = (statePreset = 'preOnboard', options = {}) => {
-  const store = mockReduxStoreWithState({ state: options?.state, statePreset })
-
   // here you can pass a walletProviderInitialState and a preset to shape the store how you want it for testing
   const initialState = composeWalletProviderState(
     options?.walletProviderInitialState || walletProviderInitialState,
@@ -37,7 +34,7 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
 
   const Tree = ({ children }) => {
     return (
-      <Provider store={store}>
+      <MockedProvider mocks={[]} addTypeName={false}>
         <WasmContext.Provider value={wasmMethods}>
           <ConverterContext.Provider
             value={{
@@ -57,13 +54,12 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
             </WalletProviderWrapper>
           </ConverterContext.Provider>
         </WasmContext.Provider>
-      </Provider>
+      </MockedProvider>
     )
   }
 
   return {
     Tree,
-    store,
     walletProvider: mockWalletProviderInstance,
     getWalletProviderState
   }

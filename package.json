@@ -23,7 +23,7 @@
     "@glif/filecoin-number": "latest",
     "@glif/filecoin-rpc-client": "latest",
     "@glif/filecoin-wallet-provider": "latest",
-    "@glif/react-components": "^2.0.0-alpha.16",
+    "@glif/react-components": "^2.0.0-alpha.21",
     "@glif/wallet-provider-react": "latest",
     "@ledgerhq/hw-transport-webhid": "^6.4.1",
     "@zondax/filecoin-signing-tools": "^0.18.2",
@@ -43,10 +43,6 @@
     "prop-types": "15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-redux": "7.2.4",
-    "redux": "4.1.1",
-    "redux-logger": "3.0.6",
-    "redux-thunk": "2.3.0",
     "styled-components": "5.3.1",
     "styled-system": "5.1.5",
     "swr": "^1.0.0"
@@ -68,7 +64,8 @@
     "prettier": "2.4.1",
     "react-test-renderer": "17.0.2",
     "ts-jest": "^27.0.5",
-    "typescript": "^4.4.3"
+    "typescript": "^4.4.3",
+    "whatwg-fetch": "^3.6.2"
   },
   "license": "(Apache-2.0 OR MIT)"
 }

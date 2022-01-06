@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from 'react'
-import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
 import { Message } from '@glif/filecoin-message'
 import { BigNumber } from '@glif/filecoin-number'
@@ -26,8 +25,6 @@ import {
 } from '../../../constants'
 import CustomizeFee from '../../Wallet/Send/CustomizeFee'
 import reportError from '../../../utils/reportError'
-import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
-import { confirmMessage } from '../../../store/actions'
 import { RemoveSignerInput } from './SignerInput'
 import { useMsig } from '../../../MsigProvider'
 import { ADDRESS_PROPTYPE } from '../../../customPropTypes'
@@ -36,7 +33,6 @@ import { navigate } from '../../../utils/urlParams'
 const RemoveSigner = ({ signerAddress }) => {
   const { ledger, connectLedger, resetLedgerState } = useWalletProvider()
   const wallet = useWallet()
-  const dispatch = useDispatch()
   const router = useRouter()
   // @ts-expect-error
   const { serializeParams } = useWasm()
@@ -148,7 +144,6 @@ const RemoveSigner = ({ signerAddress }) => {
         const msg = await sendMsg()
         setAttemptingTx(false)
         if (msg) {
-          dispatch(confirmMessage(toLowerCaseMsgFields(msg)))
           onComplete()
         }
       } catch (err) {

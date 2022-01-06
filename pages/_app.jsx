@@ -1,14 +1,13 @@
 import App from 'next/app'
 import Head from 'next/head'
 import React from 'react'
-import { Provider } from 'react-redux'
-import { theme, ThemeProvider } from '@glif/react-components'
+import { theme, ThemeProvider, client } from '@glif/react-components'
 import {
   WalletProviderWrapper,
   BalancePoller
 } from '@glif/wallet-provider-react'
+import { ApolloProvider } from '@apollo/client'
 import { SWRConfig } from 'swr'
-import withReduxStore from '../lib/with-redux-store'
 import { MsigProviderWrapper } from '../MsigProvider'
 import { WasmLoader } from '../lib/WasmLoader'
 import ErrorBoundary from '../lib/ErrorBoundary'
@@ -17,14 +16,14 @@ import '../stylesheets/styles.css'
 
 class MyApp extends App {
   render() {
-    const { Component, pageProps, reduxStore } = this.props
+    const { Component, pageProps } = this.props
     return (
       <>
         <Head>
           <title>Glif</title>
         </Head>
-        <SWRConfig value={{ refreshInterval: 10000 }}>
-          <Provider store={reduxStore}>
+        <ApolloProvider client={client}>
+          <SWRConfig value={{ refreshInterval: 10000 }}>
             <ThemeProvider theme={theme}>
               <WasmLoader>
                 <WalletProviderWrapper>
@@ -37,11 +36,11 @@ class MyApp extends App {
                 </WalletProviderWrapper>
               </WasmLoader>
             </ThemeProvider>
-          </Provider>
-        </SWRConfig>
+          </SWRConfig>
+        </ApolloProvider>
       </>
     )
   }
 }
 
-export default withReduxStore(MyApp)
+export default MyApp

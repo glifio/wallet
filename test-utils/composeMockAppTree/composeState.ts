@@ -1,60 +1,23 @@
-import cloneDeep from 'lodash.clonedeep'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import { WalletProviderState } from '@glif/wallet-provider-react'
 
 import createPath from '../../utils/createPath'
 import { IMPORT_MNEMONIC, IMPORT_SINGLE_KEY } from '../../constants'
-import { initialState } from '../../store/states'
 import { mockWalletProviderInstance } from '../../__mocks__/@glif/filecoin-wallet-provider'
 import { emptyMsigState } from '../../MsigProvider/types'
 import { WALLET_ADDRESS, MULTISIG_ACTOR_ADDRESS, signers } from '../constants'
 
-export const presets = {
-  preOnboard: cloneDeep(initialState),
-  postOnboard: cloneDeep({
-    ...initialState
-  }),
-  postOnboardLowBal: cloneDeep({
-    ...initialState
-  }),
-  postOnboardWithError: cloneDeep({
-    ...initialState
-  }),
-  selectedOtherWallet: cloneDeep({
-    ...initialState
-  }),
-  pendingMsigCreate: cloneDeep({
-    ...initialState,
-    messages: {
-      confirmed: [],
-      pending: [
-        {
-          cid: 'bafy2bzaced2godar6dht6ag6omfa53jr6tykygtzskzodqo2k4ngvyou4yct2',
-          from: 'f1nq5k2mps5umtebdovlyo7y6a3ywc7u4tobtuo3a',
-          gasFeeCap: '100425',
-          gasLimit: 11452096,
-          gasPremium: '99371',
-          maxFee: '1150076740800',
-          method: 'EXEC',
-          nonce: 56,
-          paidFee: '0',
-          params: {
-            num_approvals_threshold: 1,
-            signers: ['f1nq5k2mps5umtebdovlyo7y6a3ywc7u4tobtuo3a'],
-            start_epoch: '0',
-            unlock_duration: '0'
-          },
-          timestamp: 1632317830,
-          to: 'f01'
-        }
-      ]
-    }
-  })
-}
+export type Preset =
+  | 'preOnboard'
+  | 'postOnboard'
+  | 'postOnboardLowBal'
+  | 'postOnboardWithError'
+  | 'selectedOtherWallet'
+  | 'pendingMsigCreate'
 
 export const composeWalletProviderState = (
   initialWalletProviderState: WalletProviderState,
-  preset: keyof typeof presets
+  preset: Preset
 ) => {
   switch (preset) {
     case 'postOnboard': {
@@ -150,7 +113,7 @@ export const mockMsigProviderContext = {
   setMsigActor: null
 }
 
-export const composeMsigProviderState = (preset: keyof typeof presets) => {
+export const composeMsigProviderState = (preset: Preset) => {
   switch (preset) {
     case 'preOnboard': {
       return Object.freeze(emptyMsigState)
