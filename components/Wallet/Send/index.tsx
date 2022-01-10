@@ -1,9 +1,7 @@
 import React, { useCallback, useMemo, useState } from 'react'
-import dayjs from 'dayjs'
-import { useDispatch } from 'react-redux'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { validateAddressString } from '@glif/filecoin-address'
-import { LotusMessage, Message } from '@glif/filecoin-message'
+import { Message } from '@glif/filecoin-message'
 import { useRouter } from 'next/router'
 
 import {
@@ -24,15 +22,13 @@ import {
   ConfirmationCard
 } from '@glif/wallet-provider-react'
 
-import { CardHeader } from '../../Msig/Shared'
+import { CardHeader } from './CardHeader'
 import HeaderText from './HeaderText'
 import ErrorCard from './ErrorCard'
 import CustomizeFee from './CustomizeFee'
-import { LEDGER, SEND, emptyGasInfo, PAGE, METAMASK } from '../../../constants'
-import toLowerCaseMsgFields from '../../../utils/toLowerCaseMsgFields'
+import { LEDGER, emptyGasInfo, PAGE, METAMASK } from '../../../constants'
 import reportError from '../../../utils/reportError'
 import isBase64 from '../../../utils/isBase64'
-import { confirmMessage } from '../../../store/actions'
 import { navigate } from '../../../utils/urlParams'
 
 // this is a bit confusing, sometimes the form can report errors, so we check those here too
@@ -61,7 +57,6 @@ const isValidForm = (
 }
 
 const Send = () => {
-  const dispatch = useDispatch()
   const wallet = useWallet()
   const { resetWalletError, loginOption, getProvider, walletError } =
     useWalletProvider()
@@ -119,28 +114,7 @@ const Send = () => {
       const validMsg = await provider.simulateMessage(messageObj)
       if (validMsg) {
         const msgCid = await provider.sendMessage(signedMessage)
-        // @ts-expect-error
-        const messageForTxHistory: LotusMessage & {
-          cid: string
-          timestamp: number
-          maxFee: string
-          paidFee: string
-          value: string
-          method: string
-          params: string | object
-        } = { ...messageObj }
-        messageForTxHistory.cid = msgCid['/']
-        messageForTxHistory.timestamp = dayjs().unix()
-        messageForTxHistory.maxFee = gasInfo.estimatedTransactionFee.toAttoFil()
-        // dont know how much was actually paid in this message yet, so we mark it as 0
-        messageForTxHistory.paidFee = '0'
-        messageForTxHistory.value = new FilecoinNumber(
-          messageObj.Value,
-          'attofil'
-        ).toAttoFil()
-        messageForTxHistory.method = SEND
-        messageForTxHistory.params = params || {}
-        return messageForTxHistory
+        return msgCid
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')
     }
@@ -148,9 +122,8 @@ const Send = () => {
 
   const sendMsg = async () => {
     try {
-      const message = await send()
-      if (message) {
-        dispatch(confirmMessage(toLowerCaseMsgFields(message)))
+      const msgCid = await send()
+      if (msgCid) {
         setValue(new FilecoinNumber('0', 'fil'))
         onComplete()
       }
@@ -353,10 +326,7 @@ const Send = () => {
                 </>
               )}
               <Box boxShadow={2} borderRadius={4}>
-                <CardHeader
-                  address={wallet.address}
-                  signerBalance={wallet.balance}
-                />
+                <CardHeader address={wallet.address} balance={wallet.balance} />
 
                 <Box width='100%' p={3} border={0} bg='background.screen'>
                   <Input.Address
