@@ -4,8 +4,7 @@ import { WalletProviderState } from '@glif/wallet-provider-react'
 import createPath from '../../utils/createPath'
 import { IMPORT_MNEMONIC, IMPORT_SINGLE_KEY } from '../../constants'
 import { mockWalletProviderInstance } from '../../__mocks__/@glif/filecoin-wallet-provider'
-import { emptyMsigState } from '../../MsigProvider/types'
-import { WALLET_ADDRESS, MULTISIG_ACTOR_ADDRESS, signers } from '../constants'
+import { WALLET_ADDRESS } from '../constants'
 
 export type Preset =
   | 'preOnboard'
@@ -89,40 +88,5 @@ export const composeWalletProviderState = (
     }
     default:
       return initialWalletProviderState
-  }
-}
-
-export const mockMsigProviderContext = {
-  Address: MULTISIG_ACTOR_ADDRESS,
-  ActorCode: 'fil/5/multisig',
-  Balance: new FilecoinNumber('1', 'fil'),
-  AvailableBalance: new FilecoinNumber('1', 'fil'),
-  Signers: signers,
-  InitialBalance: new FilecoinNumber('1', 'fil'),
-  NextTxnID: 0,
-  NumApprovalsThreshold: 1,
-  StartEpoch: 0,
-  UnlockDuration: 0,
-  errors: {
-    notMsigActor: false,
-    connectedWalletNotMsigSigner: false,
-    actorNotFound: false,
-    unhandledError: ''
-  },
-  loading: false,
-  setMsigActor: null
-}
-
-export const composeMsigProviderState = (preset: Preset) => {
-  switch (preset) {
-    case 'preOnboard': {
-      return Object.freeze(emptyMsigState)
-    }
-    case 'pendingMsigCreate': {
-      return Object.freeze(emptyMsigState)
-    }
-    default: {
-      return Object.freeze(mockMsigProviderContext)
-    }
   }
 }
