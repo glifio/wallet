@@ -22,7 +22,6 @@
     "@glif/filecoin-message-confirmer": "latest",
     "@glif/filecoin-number": "latest",
     "@glif/filecoin-rpc-client": "latest",
-    "@glif/filsnap-adapter-test": "^0.0.0-alpha.2",
     "@glif/react-components": "latest",
     "@ledgerhq/hw-transport-webhid": "^6.4.1",
     "@zondax/filecoin-signing-tools": "^0.18.2",
