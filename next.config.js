@@ -31,6 +31,7 @@ module.exports = (phase) => {
         LOTUS_NODE_JSONRPC: 'https://mainnet.glif.host',
         // 461'
         COIN_TYPE: 'f',
+        FIL_SNAP_HOST: 'local:http://localhost:8081',
         IS_PROD: true
       }
     }
@@ -41,6 +42,7 @@ module.exports = (phase) => {
       LOTUS_NODE_JSONRPC: 'https://calibration.node.glif.io',
       // 1'
       COIN_TYPE: 't',
+      FIL_SNAP_HOST: 'local:http://localhost:8081',
       IS_PROD: false
     }
   }
