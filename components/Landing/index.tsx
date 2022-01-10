@@ -104,14 +104,12 @@ export default function Landing() {
                   <ConnectBtn large onClick={() => connect(PAGE.CONNECT_MM)}>
                     MetaMask
                   </ConnectBtn>
-                  {/* <ConnectBtn large>Brave</ConnectBtn> */}
                   <ConnectBtn
                     large
                     onClick={() => connect(PAGE.CONNECT_LEDGER)}
                   >
                     Ledger Device
                   </ConnectBtn>
-                  {/* <ConnectBtn large>Glif CLI</ConnectBtn> */}
                   <Caution>
                     <IconCaution />
                     <P>
