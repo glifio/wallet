@@ -9,8 +9,8 @@ import {
   Content,
   BaseButton as ButtonLogout,
   Box,
-  Tooltip
-  // MessageHistoryTable
+  Tooltip,
+  MessageHistoryTable
 } from '@glif/react-components'
 import {
   useWalletProvider,
@@ -107,7 +107,7 @@ export default function WalletHome() {
             maxWidth={16}
             width='100%'
           >
-            {/* <MessageHistoryTable address={wallet.address} /> */}
+            <MessageHistoryTable address={wallet.address} />
           </Box>
         </Content>
       </PageWrapper>
