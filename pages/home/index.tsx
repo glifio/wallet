@@ -2,12 +2,10 @@ import { useCallback } from 'react'
 import { RequireWallet } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 import { WalletView } from '../../components'
-import useDesktopBrowser from '../../lib/useDesktopBrowser'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
 const Home = () => {
-  useDesktopBrowser()
   const router = useRouter()
   const gatekeep = useCallback(
     () => navigate(router, { pageUrl: PAGE.LANDING }),
