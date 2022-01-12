@@ -4,14 +4,12 @@ import { useRouter } from 'next/router'
 import { useCallback } from 'react'
 
 import { PAGE } from '../../constants'
-import useDesktopBrowser from '../../lib/useDesktopBrowser'
 import { navigate } from '../../utils/urlParams'
 
 const COIN_TYPE = process.env.COIN_TYPE! as CoinType
 const nWalletsToShow = 10
 
 const Accounts = () => {
-  useDesktopBrowser()
   const router = useRouter()
   const onSelectAccount = useCallback(
     () => navigate(router, { pageUrl: PAGE.WALLET_HOME }),
