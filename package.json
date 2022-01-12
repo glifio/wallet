@@ -5,7 +5,7 @@
     "node": ">=12.0.0"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 3001",
     "build": "next build",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint-fix": "npm run lint -- --fix",
@@ -22,9 +22,9 @@
     "@glif/filecoin-message-confirmer": "latest",
     "@glif/filecoin-number": "latest",
     "@glif/filecoin-rpc-client": "latest",
-    "@glif/filecoin-wallet-provider": "latest",
-    "@glif/react-components": "^2.0.0-alpha.21",
-    "@glif/wallet-provider-react": "latest",
+    "@glif/filecoin-wallet-provider": "^2.0.0-alpha.11",
+    "@glif/react-components": "latest",
+    "@glif/wallet-provider-react": "^0.0.0-alpha.7",
     "@ledgerhq/hw-transport-webhid": "^6.4.1",
     "@zondax/filecoin-signing-tools": "^0.18.2",
     "@zondax/ledger-filecoin": "0.11.2",

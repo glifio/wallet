@@ -9,6 +9,7 @@ export const SINGLE_KEY = 'SINGLE_KEY'
 export const IMPORT_MNEMONIC = 'IMPORT_MNEMONIC'
 export const CREATE_MNEMONIC = 'CREATE_MNEMONIC'
 export const IMPORT_SINGLE_KEY = 'IMPORT_SINGLE_KEY'
+export const METAMASK = 'METAMASK'
 
 /* API ENDPOINTS */
 export const FILSCAN = 'https://api.filscan.io:8700/v0/filscan'
@@ -56,6 +57,7 @@ export enum PAGE {
   CONNECT_BURNER_IMPORT_SEED = '/connect/burner/import-seed',
   CONNECT_BURNER_IMPORT_PK = '/connect/burner/import-private-key',
   CONNECT_BURNER_CREATE_SEED = '/connect/burner/create-seed',
+  CONNECT_MM = '/connect/metamask',
   LANDING = '/'
 }
 

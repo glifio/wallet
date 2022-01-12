@@ -18,7 +18,7 @@ export const mockFetchDefaultWallet = jest.fn().mockImplementation(() => ({
   path: createPath(TESTNET_PATH_CODE, 0)
 }))
 
-export default (walletProviderDispatch) => ({
+export default (walletProviderDispatch, state) => ({
   fetchDefaultWallet: mockFetchDefaultWallet,
   walletList: jest
     .fn()
@@ -36,6 +36,11 @@ export default (walletProviderDispatch) => ({
       walletProviderDispatch(setLoginOption(loginOption))
     ),
   connectLedger: jest.fn().mockImplementation(() => mockWalletProviderInstance),
+  connectMetaMask: jest.fn().mockImplementation(() => {
+    walletProviderDispatch({ type: 'METAMASK_CONFIGURED_SUCCESS' })
+    return mockWalletProviderInstance
+  }),
+  getProvider: jest.fn().mockImplementation(() => mockWalletProviderInstance),
   resetLedgerState: jest.fn().mockImplementation(() => {
     walletProviderDispatch(resetLedgerState())
   }),
@@ -44,5 +49,7 @@ export default (walletProviderDispatch) => ({
   }),
   updateBalance: jest.fn().mockImplementation((balance, index) => {
     walletProviderDispatch(updateBalance(balance, index))
-  })
+  }),
+  walletError: jest.fn().mockImplementation(() => state.error),
+  resetWalletError: jest.fn().mockImplementation(() => {})
 })

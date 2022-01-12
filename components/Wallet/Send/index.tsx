@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { validateAddressString } from '@glif/filecoin-address'
 import { Message } from '@glif/filecoin-message'
@@ -19,15 +19,14 @@ import {
 import {
   useWalletProvider,
   useWallet,
-  reportLedgerConfigError
+  ConfirmationCard
 } from '@glif/wallet-provider-react'
 
 import { CardHeader } from './CardHeader'
-import ConfirmationCard from './ConfirmationCard'
 import HeaderText from './HeaderText'
 import ErrorCard from './ErrorCard'
 import CustomizeFee from './CustomizeFee'
-import { LEDGER, emptyGasInfo, PAGE } from '../../../constants'
+import { LEDGER, emptyGasInfo, PAGE, METAMASK } from '../../../constants'
 import reportError from '../../../utils/reportError'
 import isBase64 from '../../../utils/isBase64'
 import { navigate } from '../../../utils/urlParams'
@@ -59,13 +58,8 @@ const isValidForm = (
 
 const Send = () => {
   const wallet = useWallet()
-  const {
-    ledger,
-    walletProvider,
-    connectLedger,
-    resetLedgerState,
-    loginOption
-  } = useWalletProvider()
+  const { resetWalletError, loginOption, getProvider, walletError } =
+    useWalletProvider()
   const [toAddress, setToAddress] = useState('')
   const [params, setParams] = useState('')
   const [toAddressError, setToAddressError] = useState('')
@@ -95,11 +89,7 @@ const Send = () => {
 
   const send = async () => {
     setFetchingTxDetails(true)
-    let provider = walletProvider
-    // attempt to establish a new connection with the ledger device if the user selected ledger
-    if (loginOption === LEDGER) {
-      provider = await connectLedger()
-    }
+    const provider = await getProvider()
     if (provider) {
       const nonce = await provider.getNonce(wallet.address)
       const message = new Message({
@@ -201,7 +191,7 @@ const Send = () => {
       setStep(6)
       setAttemptingTx(true)
       // confirmation step happens on ledger device, so we send message one step earlier
-      if (loginOption === LEDGER) {
+      if (loginOption === LEDGER || loginOption === METAMASK) {
         await sendMsg()
       }
     } else if (
@@ -229,15 +219,11 @@ const Send = () => {
     return new FilecoinNumber(affordableFee, 'fil')
   }
 
-  const hasError = () =>
-    !!(
-      uncaughtError ||
-      (loginOption === LEDGER &&
-        reportLedgerConfigError({ ...ledger, otherError: uncaughtError }))
-    )
-
-  const ledgerError = () =>
-    loginOption === LEDGER && reportLedgerConfigError({ ...ledger })
+  const errorMsg = useMemo(() => {
+    if (walletError()) return walletError()
+    if (uncaughtError) return uncaughtError
+    return ''
+  }, [uncaughtError, walletError])
 
   const isSubmitBtnDisabled = () => {
     if (frozen) return true
@@ -247,11 +233,13 @@ const Send = () => {
       return true
     if (step === 4 && gasError) return true
     if (step === 6 && loginOption === LEDGER) return true
+    if (step === 6 && loginOption === METAMASK) return true
     if (step > 6) return true
   }
 
   const isBackBtnDisabled = () => {
     if (frozen) return true
+    if (loginOption === METAMASK && attemptingTx) return true
     if (loginOption === LEDGER && attemptingTx) return true
     if (fetchingTxDetails) return true
     if (mPoolPushing) return true
@@ -278,7 +266,7 @@ const Send = () => {
             setUncaughtError('')
             setGasError('')
             setParamsError('')
-            resetLedgerState()
+            resetWalletError()
             onClose()
           }}
         />
@@ -293,20 +281,20 @@ const Send = () => {
             justifyContent='flex-start'
           >
             <Box>
-              {hasError() && (
+              {!!errorMsg && (
                 <ErrorCard
-                  error={ledgerError() || uncaughtError}
+                  error={errorMsg}
                   reset={() => {
                     setAttemptingTx(false)
                     setUncaughtError('')
                     setGasError('')
                     setParamsError('')
-                    resetLedgerState()
+                    resetWalletError()
                     setStep(step - 1)
                   }}
                 />
               )}
-              {!hasError() && attemptingTx && (
+              {!errorMsg && attemptingTx && (
                 <ConfirmationCard
                   walletType={loginOption}
                   currentStep={6}
@@ -314,7 +302,7 @@ const Send = () => {
                   loading={fetchingTxDetails || mPoolPushing}
                 />
               )}
-              {!hasError() && !attemptingTx && (
+              {!errorMsg && !attemptingTx && (
                 <>
                   <Card
                     display='flex'
@@ -342,7 +330,6 @@ const Send = () => {
 
                 <Box width='100%' p={3} border={0} bg='background.screen'>
                   <Input.Address
-                    // @ts-ignore
                     label='Recipient'
                     value={toAddress}
                     onChange={(e) => setToAddress(e.target.value)}
@@ -364,7 +351,6 @@ const Send = () => {
                       bg='background.screen'
                     >
                       <Input.Funds
-                        // @ts-ignore
                         name='amount'
                         label='Amount'
                         amount={value.toAttoFil()}
@@ -372,14 +358,13 @@ const Send = () => {
                         balance={wallet.balance}
                         error={valueError}
                         setError={setValueError}
-                        disabled={step > 2 && !hasError()}
+                        disabled={step > 2 && !errorMsg}
                       />
                     </Box>
                   )}
                   {step > 2 && (
                     <Box width='100%' p={3} border={0} bg='background.screen'>
                       <Input.Text
-                        // @ts-ignore
                         label='Params'
                         value={params}
                         onChange={(e) => setParams(e.target.value)}
@@ -485,7 +470,7 @@ const Send = () => {
                   setUncaughtError('')
                   setGasError('')
                   setParamsError('')
-                  resetLedgerState()
+                  resetWalletError()
                   if (step === 1) {
                     onClose()
                   } else {

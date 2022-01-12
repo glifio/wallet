@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { ErrorView } from '@glif/react-components'
 import reportError from '../utils/reportError'
-import { ErrorView } from '../components/Shared'
 
 // This component catches all uncaught react and syncronous JS errors
 // and forwards the user to an error page + sends us the error report
