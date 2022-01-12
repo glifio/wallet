@@ -2,6 +2,8 @@ import { FilecoinNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
 import { TESTNET } from '../../constants'
 
+export * from '../../node_modules/@glif/filecoin-wallet-provider/dist/errors'
+
 const mockGetAccounts = jest
   .fn()
   // eslint-disable-next-line no-unused-vars

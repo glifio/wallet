@@ -9,7 +9,7 @@ import { PAGE } from '../../../constants'
 
 jest.mock('@glif/filecoin-wallet-provider')
 
-describe.skip('Send Flow', () => {
+describe('Send Flow', () => {
   beforeEach(() => {
     jest.useFakeTimers()
     jest.clearAllMocks()
@@ -22,7 +22,7 @@ describe.skip('Send Flow', () => {
     })
 
     test('it allows a user to send a message', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
       const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
       const filAmount = new FilecoinNumber('.01', 'fil')
       await act(async () => {
@@ -70,12 +70,10 @@ describe.skip('Send Flow', () => {
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')
       expect(message.to).toBe(address)
-
-      expect(store.getState().messages.pending.length).toBe(1)
     })
 
     test('it does not allow a user to send a message if address is poorly formed', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
       const badAddress = 't1z225tguggx4onbauimqvxz'
       await act(async () => {
         render(
@@ -94,11 +92,10 @@ describe.skip('Send Flow', () => {
       expect(screen.getByText(/Invalid to address/)).toBeInTheDocument()
       expect(walletProvider.getNonce).not.toHaveBeenCalled()
       expect(walletProvider.wallet.sign).not.toHaveBeenCalled()
-      expect(store.getState().messages.pending.length).toBe(0)
     })
 
     test('it does not allow a user to proceed if address is left blank', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
       await act(async () => {
         render(
           <Tree>
@@ -116,11 +113,10 @@ describe.skip('Send Flow', () => {
       expect(screen.getByText(/Step 1/)).toBeInTheDocument()
       expect(walletProvider.getNonce).not.toHaveBeenCalled()
       expect(walletProvider.wallet.sign).not.toHaveBeenCalled()
-      expect(store.getState().messages.pending.length).toBe(0)
     })
 
     test('it does not allow a user to send a message if balance is less than total amount intended to send', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
       const filAmount = new FilecoinNumber('1.1', 'fil')
       const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
 
@@ -154,11 +150,10 @@ describe.skip('Send Flow', () => {
       ).toBeInTheDocument()
       expect(walletProvider.getNonce).not.toHaveBeenCalled()
       expect(walletProvider.wallet.sign).not.toHaveBeenCalled()
-      expect(store.getState().messages.pending.length).toBe(0)
     })
 
     test('it does not allow a user to send a message if value intended to send is 0', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
       const filAmount = new FilecoinNumber('0', 'fil')
       const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
 
@@ -189,11 +184,10 @@ describe.skip('Send Flow', () => {
       ).toBeInTheDocument()
       expect(walletProvider.getNonce).not.toHaveBeenCalled()
       expect(walletProvider.wallet.sign).not.toHaveBeenCalled()
-      expect(store.getState().messages.pending.length).toBe(0)
     })
 
     test('it allows the user to set params', async () => {
-      const { Tree, store, walletProvider } = composeMockAppTree('postOnboard')
+      const { Tree, walletProvider } = composeMockAppTree('postOnboard')
       const address = 't1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi'
       const filAmount = new FilecoinNumber('.01', 'fil')
       const params =
@@ -247,8 +241,6 @@ describe.skip('Send Flow', () => {
       expect(Number(message.value)).not.toBe('NaN')
       expect(message.to).toBe(address)
       expect(message.params).toBe(params)
-
-      expect(store.getState().messages.pending.length).toBe(1)
     })
 
     test.todo(
