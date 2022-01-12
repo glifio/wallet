@@ -1,6 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
-import JSONLD from '../JSONLD'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -30,31 +29,8 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
-          <script
-            type='application/ld+json'
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }}
-          />
-          <meta name='description' content='An audited Filecoin web wallet.' />
-          <meta
-            name='keywords'
-            content='Filecoin,Wallet,Web,Storage,Blockchain'
-          />
-          <meta property='og:image' content='static/imgnode.png' />
-          <link
-            rel='icon'
-            type='image/png'
-            sizes='32x32'
-            href='/static/favicon-32x32.png'
-          />
-          <link
-            rel='icon'
-            type='image/png'
-            sizes='16x16'
-            href='/static/favicon-32x32.png'
-          />
-        </Head>
+        <Head />
+
         <body>
           <Main />
           <NextScript />
