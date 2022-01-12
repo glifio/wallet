@@ -5,8 +5,10 @@ import { useRouter } from 'next/router'
 import useReset from '../../utils/useReset'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
+import useDesktopBrowser from '../../lib/useDesktopBrowser'
 
 export default function ConnectLedger() {
+  useDesktopBrowser()
   const router = useRouter()
   const resetState = useReset()
   const back = useCallback(() => {

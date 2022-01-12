@@ -1,12 +1,11 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { isMobileOrTablet } from '@glif/react-components'
 
-import isMobileOrTableBrowser from '../utils/isMobileOrTablet'
-
-export default () => {
+export default function useDesktopBrowser() {
   const { replace } = useRouter()
   useEffect(() => {
-    const onMobileBrowser = isMobileOrTableBrowser()
+    const onMobileBrowser = isMobileOrTablet()
     if (onMobileBrowser) replace('/error/use-desktop-browser')
   })
 }
