@@ -8,7 +8,7 @@ import {
 } from '@glif/wallet-provider-react'
 import { ApolloProvider } from '@apollo/client'
 import { SWRConfig } from 'swr'
-import ErrorBoundary from '../lib/ErrorBoundary'
+import ErrorBoundary from '../components/ErrorBoundary'
 import '../stylesheets/normalize.css'
 import '../stylesheets/styles.css'
 

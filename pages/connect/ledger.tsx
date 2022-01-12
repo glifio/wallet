@@ -1,14 +1,13 @@
 import React, { useCallback } from 'react'
 import { ConnectLedger as ConnectLedgerComponent } from '@glif/wallet-provider-react'
-import { Box } from '@glif/react-components'
+import { Box, useChromeDesktopBrowser } from '@glif/react-components'
 import { useRouter } from 'next/router'
 import useReset from '../../utils/useReset'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
-import useDesktopBrowser from '../../lib/useDesktopBrowser'
 
 export default function ConnectLedger() {
-  useDesktopBrowser()
+  useChromeDesktopBrowser()
   const router = useRouter()
   const resetState = useReset()
   const back = useCallback(() => {
