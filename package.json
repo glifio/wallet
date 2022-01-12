@@ -1,6 +1,6 @@
 {
-  "name": "filecoin-web-wallet",
-  "version": "2.10.4",
+  "name": "sender",
+  "version": "0.0.0-alpha.1",
   "engines": {
     "node": ">=12.0.0"
   },
@@ -29,17 +29,13 @@
     "@zondax/filecoin-signing-tools": "^0.18.2",
     "@zondax/ledger-filecoin": "0.11.2",
     "axios": "0.24.0",
-    "base32-decode": "^1.0.0",
     "bip39": "3.0.4",
     "bluebird": "3.7.2",
-    "cbor": "^5.1.0",
     "crypto": "1.0.1",
     "dayjs": "1.10.7",
-    "jspdf": "^2.3.1",
     "lodash.clonedeep": "4.5.0",
     "lodash.isequal": "4.5.0",
     "next": "^12.0.7",
-    "object-path": ">=0.11.6",
     "prop-types": "15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
