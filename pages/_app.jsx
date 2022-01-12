@@ -8,7 +8,6 @@ import {
 } from '@glif/wallet-provider-react'
 import { ApolloProvider } from '@apollo/client'
 import { SWRConfig } from 'swr'
-import { WasmLoader } from '../lib/WasmLoader'
 import ErrorBoundary from '../lib/ErrorBoundary'
 import '../stylesheets/normalize.css'
 import '../stylesheets/styles.css'
@@ -24,14 +23,12 @@ class MyApp extends App {
         <ApolloProvider client={client}>
           <SWRConfig value={{ refreshInterval: 10000 }}>
             <ThemeProvider theme={theme}>
-              <WasmLoader>
-                <WalletProviderWrapper>
-                  <BalancePoller />
-                  <ErrorBoundary>
-                    <Component {...pageProps} />
-                  </ErrorBoundary>
-                </WalletProviderWrapper>
-              </WasmLoader>
+              <WalletProviderWrapper>
+                <BalancePoller />
+                <ErrorBoundary>
+                  <Component {...pageProps} />
+                </ErrorBoundary>
+              </WalletProviderWrapper>
             </ThemeProvider>
           </SWRConfig>
         </ApolloProvider>
