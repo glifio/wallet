@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import {
   AppTile,
   Box,
@@ -28,7 +28,10 @@ import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
 export default function Landing() {
-  const isUnsupportedDevice = useMemo(() => isMobileOrTablet(), [])
+  const [unsupportedDevice, setUnsupportedDevice] = useState(false)
+  useEffect(() => {
+    if (isMobileOrTablet()) setUnsupportedDevice(true)
+  }, [])
   const [closed, setClosed] = useState(false)
   const router = useRouter()
 
@@ -65,7 +68,7 @@ export default function Landing() {
               alignItems: 'center'
             }}
           >
-            {isUnsupportedDevice ? (
+            {unsupportedDevice ? (
               <TextBox style={{ background: theme.colors.core.primary }}>
                 <P
                   css={`

@@ -10,13 +10,13 @@ jest.mock('@glif/filecoin-wallet-provider')
 
 const useRouter = jest.spyOn(require('next/router'), 'useRouter')
 
-describe.skip('WalletView', () => {
+describe('WalletView', () => {
   afterEach(cleanup)
   beforeEach(() => {
     jest.clearAllMocks()
   })
 
-  test('it renders correctly', () => {
+  test.skip('it renders correctly', () => {
     useRouter.mockImplementation(() => ({
       pathname: 'home'
     }))
@@ -35,7 +35,21 @@ describe.skip('WalletView', () => {
     expect(container.firstChild).toMatchSnapshot()
   })
 
-  test('it renders the message history view when the pathname is home', () => {
+  test.skip('it renders the message history view when the pathname is home', () => {
+    useRouter.mockImplementation(() => ({
+      pathname: 'home'
+    }))
+    const { Tree } = composeMockAppTree('postOnboard')
+    render(
+      <Tree>
+        <WalletView />
+      </Tree>
+    )
+
+    expect(screen.getByText('Transaction History')).toBeInTheDocument()
+  })
+
+  test.skip('it renders the message detail view when there is a cid query param', () => {
     useRouter.mockImplementation(() => ({
       pathname: 'home'
     }))
@@ -53,7 +67,7 @@ describe.skip('WalletView', () => {
     const mockRouterPush = jest.fn()
     useRouter.mockImplementation(() => ({
       push: mockRouterPush,
-      query: 'network=t',
+      query: '',
       pathname: 'home'
     }))
     const { Tree } = composeMockAppTree('postOnboard')

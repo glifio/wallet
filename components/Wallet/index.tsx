@@ -10,7 +10,9 @@ import {
   BaseButton as ButtonLogout,
   Box,
   Tooltip,
-  MessageHistoryTable
+  MessageHistoryTable,
+  MessageDetail,
+  ButtonClose
 } from '@glif/react-components'
 import {
   useWalletProvider,
@@ -107,7 +109,22 @@ export default function WalletHome() {
             maxWidth={16}
             width='100%'
           >
-            <MessageHistoryTable address={wallet.address} />
+            {router.query.cid ? (
+              <Box display='flex' flexDirection='row'>
+                <MessageDetail cid={router.query.cid as string} />
+                <ButtonClose
+                  alignSelf='flex-start'
+                  ml={7}
+                  pt={4}
+                  onClick={router.back}
+                />
+              </Box>
+            ) : (
+              <MessageHistoryTable
+                address={wallet.address}
+                cidHref={(cid: string) => `/home?cid=${cid}`}
+              />
+            )}
           </Box>
         </Content>
       </PageWrapper>
