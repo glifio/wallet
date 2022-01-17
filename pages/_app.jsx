@@ -33,7 +33,7 @@ class MyApp extends App {
             property='og:description'
             content='An audited Filecoin web wallet.'
           />
-          <meta property='og:url' content='https://apps.glif.io' />
+          <meta property='og:url' content='https://sender.glif.io' />
           <meta name='twitter:title' content='GLIF Sender' />
           <meta
             name='twitter:description'
