@@ -109,7 +109,11 @@ export default function WalletHome() {
           >
             {router.query.cid ? (
               <Box display='flex' flexDirection='row'>
-                <MessageDetail cid={router.query.cid as string} />
+                <MessageDetail
+                  cid={router.query.cid as string}
+                  addressHref={address => `/#/history/${address}`}
+                  confirmations={50}
+                />
                 <ButtonClose
                   alignSelf='flex-start'
                   ml={7}
