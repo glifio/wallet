@@ -2,7 +2,12 @@ import App from 'next/app'
 import Head from 'next/head'
 import Script from 'next/script'
 import React from 'react'
-import { theme, ThemeProvider, client } from '@glif/react-components'
+import {
+  theme,
+  ThemeProvider,
+  client,
+  PendingMessageProvider
+} from '@glif/react-components'
 import {
   WalletProviderWrapper,
   BalancePoller
@@ -72,7 +77,9 @@ class MyApp extends App {
               <WalletProviderWrapper>
                 <BalancePoller />
                 <ErrorBoundary>
-                  <Component {...pageProps} />
+                  <PendingMessageProvider>
+                    <Component {...pageProps} />
+                  </PendingMessageProvider>
                 </ErrorBoundary>
               </WalletProviderWrapper>
             </ThemeProvider>

@@ -14,7 +14,9 @@ import {
   Form,
   Card,
   PageWrapper,
-  Input
+  Input,
+  useSubmittedMessages,
+  MessagePending
 } from '@glif/react-components'
 import {
   useWalletProvider,
@@ -58,6 +60,7 @@ const isValidForm = (
 
 const Send = () => {
   const wallet = useWallet()
+  const { pushPendingMessage } = useSubmittedMessages()
   const { resetWalletError, loginOption, getProvider, walletError } =
     useWalletProvider()
   const [toAddress, setToAddress] = useState('')
@@ -87,7 +90,7 @@ const Send = () => {
     navigate(router, { pageUrl: PAGE.WALLET_HOME })
   }, [router])
 
-  const send = async () => {
+  const send = async (): Promise<MessagePending> => {
     setFetchingTxDetails(true)
     const provider = await getProvider()
     if (provider) {
@@ -114,7 +117,7 @@ const Send = () => {
       const validMsg = await provider.simulateMessage(messageObj)
       if (validMsg) {
         const msgCid = await provider.sendMessage(signedMessage)
-        return msgCid
+        return message.toPendingMessage(msgCid['/']) as MessagePending
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')
     }
@@ -122,9 +125,10 @@ const Send = () => {
 
   const sendMsg = async () => {
     try {
-      const msgCid = await send()
-      if (msgCid) {
+      const pendingMsg = await send()
+      if (pendingMsg) {
         setValue(new FilecoinNumber('0', 'fil'))
+        pushPendingMessage(pendingMsg)
         onComplete()
       }
     } catch (err) {
