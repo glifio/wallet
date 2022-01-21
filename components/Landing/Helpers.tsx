@@ -9,8 +9,6 @@ import {
 } from '@glif/react-components'
 
 export const ResponsiveWalletTile = styled.div`
-  cursor: default;
-
   @media (min-width: ${devices.tablet}) {
     position: sticky;
     top: ${space()};
