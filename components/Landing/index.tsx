@@ -45,12 +45,12 @@ export default function Landing() {
   return (
     <>
       <LandingPageContainer>
-        <LandingPageContentContainer phishingBannerClosed={closed}>
-          <PhishingBanner
-            href='https://wallet.glif.io'
-            closed={closed}
-            setClosed={() => setClosed(true)}
-          />
+        <PhishingBanner
+          href='https://wallet.glif.io'
+          closed={closed}
+          setClosed={() => setClosed(true)}
+        />
+        <LandingPageContentContainer>
           <ResponsiveWalletTile phishingBannerClosed={closed}>
             <AppTile
               title='Sender'
@@ -164,9 +164,7 @@ export default function Landing() {
           </ConnectContentContainer>
         </LandingPageContentContainer>
       </LandingPageContainer>
-      <Box p={`0 ${space()} ${space()}`}>
-        <Footer />
-      </Box>
+      <Footer />
     </>
   )
 }
