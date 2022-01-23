@@ -4,7 +4,7 @@ import {
   AccountCard,
   AccountError,
   BalanceCard,
-  PageWrapper,
+  Wrapper,
   Sidebar,
   Content,
   BaseButton as ButtonLogout,
@@ -56,8 +56,8 @@ export default function WalletHome() {
 
   return (
     <>
-      <PageWrapper>
-        <Sidebar height='100vh'>
+      <Wrapper>
+        <Sidebar>
           {hasLedgerError({ ...ledger, otherError: uncaughtError }) ? (
             <AccountError
               onTryAgain={onShowOnLedger}
@@ -103,15 +103,14 @@ export default function WalletHome() {
           </ButtonLogout>
         </Sidebar>
         <Content>
-          <Box
-            display='flex'
-            justifyContent='center'
-            maxWidth={16}
-            width='100%'
-          >
+          <Box display='flex' justifyContent='center'>
             {router.query.cid ? (
               <Box display='flex' flexDirection='row'>
-                <MessageDetail cid={router.query.cid as string} />
+                <MessageDetail
+                  cid={router.query.cid as string}
+                  addressHref={(address) => `https://graph.glif.io/${address}`}
+                  confirmations={50}
+                />
                 <ButtonClose
                   alignSelf='flex-start'
                   ml={7}
@@ -127,7 +126,7 @@ export default function WalletHome() {
             )}
           </Box>
         </Content>
-      </PageWrapper>
+      </Wrapper>
     </>
   )
 }

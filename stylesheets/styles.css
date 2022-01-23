@@ -1,14 +1,18 @@
 * {
   box-sizing: border-box;
   font-size: 1rem;
+  font-weight: 400;
   font-family: 'RT-Alias-Grotesk', 'system-ui', 'Segoe UI', 'Roboto', Helvetica;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   background: #f6f8fe;
-  margin: 0;
 }
 
 /* Alias Medium */
