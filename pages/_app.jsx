@@ -2,7 +2,7 @@ import App from 'next/app'
 import Head from 'next/head'
 import Script from 'next/script'
 import React from 'react'
-import { theme, ThemeProvider, client } from '@glif/react-components'
+import { theme, ThemeProvider } from '@glif/react-components'
 import {
   WalletProviderWrapper,
   BalancePoller
@@ -10,6 +10,7 @@ import {
 import { ApolloProvider } from '@apollo/client'
 import { SWRConfig } from 'swr'
 
+import { createApolloClient } from '../apolloClient'
 import ErrorBoundary from '../components/ErrorBoundary'
 import JSONLD from '../JSONLD'
 import '../stylesheets/normalize.css'
@@ -66,7 +67,7 @@ class MyApp extends App {
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }}
         />
-        <ApolloProvider client={client}>
+        <ApolloProvider client={createApolloClient()}>
           <SWRConfig value={{ refreshInterval: 10000 }}>
             <ThemeProvider theme={theme}>
               <WalletProviderWrapper>

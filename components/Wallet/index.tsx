@@ -103,15 +103,12 @@ export default function WalletHome() {
           </ButtonLogout>
         </Sidebar>
         <Content>
-          <Box
-            display='flex'
-            justifyContent='center'
-          >
+          <Box display='flex' justifyContent='center'>
             {router.query.cid ? (
               <Box display='flex' flexDirection='row'>
                 <MessageDetail
                   cid={router.query.cid as string}
-                  addressHref={address => `/#/history/${address}`}
+                  addressHref={(address) => `https://graph.glif.io/${address}`}
                   confirmations={50}
                 />
                 <ButtonClose
