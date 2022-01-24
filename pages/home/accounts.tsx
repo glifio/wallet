@@ -7,7 +7,7 @@ import { PAGE } from '../../constants'
 import { navigate } from '../../utils/urlParams'
 
 const COIN_TYPE = process.env.COIN_TYPE! as CoinType
-const nWalletsToShow = 10
+const nWalletsToShow = 5
 
 const Accounts = () => {
   const router = useRouter()

@@ -19,5 +19,6 @@ const dayjs = () => {
 }
 
 dayjs.unix = unix
+dayjs.extend = extend
 
 module.exports = dayjs

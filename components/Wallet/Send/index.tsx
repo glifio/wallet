@@ -117,6 +117,8 @@ const Send = () => {
       const validMsg = await provider.simulateMessage(messageObj)
       if (validMsg) {
         const msgCid = await provider.sendMessage(signedMessage)
+        // TODO: remove
+        // @ts-expect-error
         return message.toPendingMessage(msgCid['/']) as MessagePending
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')

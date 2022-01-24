@@ -20,6 +20,8 @@ import JSONLD from '../JSONLD'
 import '../stylesheets/normalize.css'
 import '../stylesheets/styles.css'
 
+const apolloClient = createApolloClient()
+
 class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
@@ -71,7 +73,7 @@ class MyApp extends App {
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }}
         />
-        <ApolloProvider client={createApolloClient()}>
+        <ApolloProvider client={apolloClient}>
           <SWRConfig value={{ refreshInterval: 10000 }}>
             <ThemeProvider theme={theme}>
               <WalletProviderWrapper>

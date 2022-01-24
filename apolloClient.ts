@@ -13,8 +13,8 @@ const wsLink = process.browser
   ? new WebSocketLink({
       uri: `wss://${URI}`,
       options: {
-        reconnect: false,
-        lazy: false
+        reconnect: true,
+        lazy: true
       }
     })
   : null
