@@ -9,12 +9,16 @@ const unix = jest.fn().mockImplementation(() => {
   }
 })
 
+const extend = jest.fn()
+
 const dayjs = () => {
   return {
-    unix
+    unix,
+    extend
   }
 }
 
 dayjs.unix = unix
+dayjs.extend = extend
 
 module.exports = dayjs
