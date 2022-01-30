@@ -28,8 +28,14 @@ module.exports = (phase) => {
       env: {
         // this api is configured to be load balanced across multiple nodes,
         // if a single node gets sick, it will get dropped and not accept requests
-        LOTUS_NODE_JSONRPC: 'https://mainnet.glif.host',
-        MAGIC_STRING_ENDPOINT: 'https://glif-verifier.vercel.app/api/verify',
+        LOTUS_NODE_JSONRPC:
+          process.env.LOTUS_NODE_JSONRPC || 'https://mainnet.glif.host',
+        GRAPH_API_URL: process.env.GRAPH_API_URL || 'graph.glif.host/query',
+        EXPLORER_URL: process.env.EXPLORER_URL || 'https://explorer.glif.io',
+
+        // 461'
+        COIN_TYPE: 'f',
+        FIL_SNAP_HOST: 'npm:@chainsafe/filsnap',
         IS_PROD: true
       }
     }
@@ -37,8 +43,14 @@ module.exports = (phase) => {
   return {
     webpack,
     env: {
-      LOTUS_NODE_JSONRPC: 'https://calibration.node.glif.io/rpc/v0',
-      MAGIC_STRING_ENDPOINT: 'https://glif-verifier.vercel.app/api/verify',
+      LOTUS_NODE_JSONRPC:
+        process.env.LOTUS_NODE_JSONRPC || 'https://calibration.node.glif.io',
+      GRAPH_API_URL: process.env.GRAPH_API_URL || 'graph.glif.host/query',
+      EXPLORER_URL:
+        process.env.EXPLORER_URL || 'https://calibration.explorer.glif.io',
+      // 1'
+      COIN_TYPE: 't',
+      FIL_SNAP_HOST: 'npm:@chainsafe/filsnap',
       IS_PROD: false
     }
   }

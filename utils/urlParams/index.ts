@@ -1,9 +1,7 @@
 import { NextRouter } from 'next/router'
 import { PAGE } from '../../constants'
 
-const requiredUrlParamsWithDefaults = {
-  network: 'f'
-}
+const requiredUrlParamsWithDefaults = {}
 
 interface NavigationOptions {
   existingQParams: Record<string, string>
@@ -18,13 +16,11 @@ export const combineExistingNewAndRequiredQueryParams = (
   newQParams?: Record<string, string>,
   maintainQParams?: boolean
 ): URLSearchParams => {
-  // @ts-ignore
   const searchParams = new URLSearchParams(existingQParams)
 
   // delete q params if the maintainQParams flag is not set
   if (!maintainQParams) {
-    // @ts-ignore line
-    for (const [key] of searchParams) {
+    for (const [key] of [...searchParams.entries()]) {
       if (!requiredUrlParamsWithDefaults[key]) {
         searchParams.delete(key)
       }
@@ -51,17 +47,31 @@ export const combineExistingNewAndRequiredQueryParams = (
 export const generateRouteWithRequiredUrlParams = (
   opts: NavigationOptions
 ): string => {
+  let maintain: boolean = true
+  // default to maintain
+  if (typeof opts?.maintainQueryParams !== 'undefined')
+    maintain = opts.maintainQueryParams
+
   const newParams = combineExistingNewAndRequiredQueryParams(
     opts.existingQParams,
     opts?.newQueryParams,
-    opts?.maintainQueryParams
+    maintain
   )
 
   if (opts?.urlPathExtension) {
-    return `${opts.pageUrl}/${opts.urlPathExtension.join(
-      '/'
-    )}?${newParams.toString()}`
+    let route = `${opts.pageUrl}/${opts.urlPathExtension.join('/')}`
+
+    if (newParams.toString().length > 0) {
+      route += `?${newParams.toString()}`
+    }
+
+    return route
   }
+
+  if (!newParams.toString()) {
+    return opts.pageUrl
+  }
+
   return `${opts.pageUrl}?${newParams.toString()}`
 }
 
@@ -73,7 +83,7 @@ export const navigate = (
   router.push(
     generateRouteWithRequiredUrlParams({
       ...opts,
-      existingQParams: router.query as Record<string, string>
+      existingQParams: {}
     })
   )
 }

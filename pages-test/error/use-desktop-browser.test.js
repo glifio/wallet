@@ -33,7 +33,7 @@ describe('UseDesktopBrowser', () => {
     ).toBeInTheDocument()
   })
 
-  test.skip('it sends the user to glif home page after clicking Home', async () => {
+  test('it sends the user to glif home page after clicking Home', async () => {
     const { Tree } = composeMockAppTree('preOnboard')
     delete window.location
 

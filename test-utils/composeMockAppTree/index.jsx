@@ -1,60 +1,49 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
-import { Provider } from 'react-redux'
-import { Converter } from '@glif/filecoin-number'
+import WalletProviderWrapper, {
+  initialState as walletProviderInitialState
+} from '@glif/wallet-provider-react'
+import { theme, ThemeProvider } from '@glif/react-components'
+import { MockedProvider } from '@apollo/client/testing'
+import { mockWalletProviderInstance } from '../../__mocks__/@glif/filecoin-wallet-provider'
 
-import { NetworkChecker } from '../../lib/check-network'
-import BalancePoller from '../../lib/update-balance'
-import { ConverterContext } from '../../lib/Converter'
-import { theme, ThemeProvider } from '../../components/Shared'
-import { WasmContext } from '../../lib/WasmLoader'
-import { mockWalletProviderInstance } from '../mocks/mock-wallet-provider'
-import * as wasmMethods from '../mocks/mock-filecoin-signer-wasm'
-import { TESTNET } from '../../constants'
-import { MsigProviderWrapper } from '../../MsigProvider'
-import WalletProviderWrapper from '../../WalletProvider'
-import mockReduxStoreWithState from './mockReduxStoreWithState'
-
-jest.mock('../../WalletProvider')
-jest.mock('../../MsigProvider')
+import { composeWalletProviderState } from '../../test-utils/composeMockAppTree/composeState'
 
 const Index = (statePreset = 'preOnboard', options = {}) => {
-  const store = mockReduxStoreWithState({ state: options?.state, statePreset })
-  const pathname = options?.pathname || '/wallet'
-  const query = options?.query || { network: TESTNET }
+  // here you can pass a walletProviderInitialState and a preset to shape the store how you want it for testing
+  const initialState = composeWalletProviderState(
+    options?.walletProviderInitialState || walletProviderInitialState,
+    statePreset
+  )
+
+  let walletProviderCache = { ...initialState }
+
+  const cacheWalletProviderState = (state) => {
+    walletProviderCache = { ...state }
+    return <></>
+  }
+
+  const getWalletProviderState = () => walletProviderCache
 
   const Tree = ({ children }) => {
     return (
-      <Provider store={store}>
-        <WasmContext.Provider value={wasmMethods}>
-          <ConverterContext.Provider
-            value={{
-              converter: new Converter(),
-              converterError: options.converterError || null
-            }}
-          >
-            <WalletProviderWrapper options={options} statePreset={statePreset}>
-              <MsigProviderWrapper options={options} statePreset={statePreset}>
-                <NetworkChecker
-                  networkFromRdx={store.getState().network}
-                  pathname={pathname}
-                  query={query}
-                  switchNetwork={jest.fn()}
-                />
-                <BalancePoller />
-                <ThemeProvider theme={theme}>{children}</ThemeProvider>
-              </MsigProviderWrapper>
-            </WalletProviderWrapper>
-          </ConverterContext.Provider>
-        </WasmContext.Provider>
-      </Provider>
+      <MockedProvider mocks={[]} addTypeName={false}>
+        <WalletProviderWrapper
+          options={options}
+          statePreset={statePreset}
+          getState={cacheWalletProviderState}
+          initialState={initialState}
+        >
+          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+        </WalletProviderWrapper>
+      </MockedProvider>
     )
   }
 
   return {
     Tree,
-    store,
-    walletProvider: mockWalletProviderInstance
+    walletProvider: mockWalletProviderInstance,
+    getWalletProviderState
   }
 }
 
@@ -67,7 +56,7 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
  * walletProviderInitialState(a reducer to stub the state of the walletProvider context)
  * walletProviderDispatch(a dispatcher to mock/read calls to the walletProvider's state)
  * pathname
- * query (usually { network: 'f' } or { network: TESTNET })
+ * query
  */
 
 export default Index

@@ -100,6 +100,23 @@ exports[`UseChrome it renders the error page 1`] = `
   font-size: 1.5rem;
 }
 
+.c6 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.c7 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+}
+
 .c9 {
   cursor: pointer;
   border: 1px solid #262626;
@@ -122,23 +139,6 @@ exports[`UseChrome it renders the error page 1`] = `
 
 .c9:hover {
   opacity: 0.8;
-}
-
-.c6 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-top: 24px;
-  margin-bottom: 8px;
-}
-
-.c7 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
 }
 
 .c8 {
@@ -171,6 +171,7 @@ exports[`UseChrome it renders the error page 1`] = `
       color="card.error.foreground"
       display="flex"
       overflow="hidden"
+      style="word-break: break-word;"
       width="100%"
     >
       <div
@@ -205,20 +206,16 @@ exports[`UseChrome it renders the error page 1`] = `
           Please install Google Chrome to continue using your Ledger device, or choose an alternative setup option
         </p>
       </div>
-      <div
-        class="c3"
+      <a
+        class="c8"
+        color="core.white"
+        font-size="3"
+        href="https://www.google.com/chrome"
+        rel="noopener"
+        target="_blank"
       >
-        <a
-          class="c8"
-          color="core.white"
-          font-size="3"
-          href="https://www.google.com/chrome"
-          rel="noopener"
-          target="_blank"
-        >
-          Install Google Chrome.
-        </a>
-      </div>
+        Install Google Chrome.
+      </a>
     </div>
   </div>
   <div

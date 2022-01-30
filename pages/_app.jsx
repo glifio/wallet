@@ -1,48 +1,95 @@
 import App from 'next/app'
 import Head from 'next/head'
+import Script from 'next/script'
 import React from 'react'
-import { Provider } from 'react-redux'
-import { theme, ThemeProvider } from '../components/Shared'
-import withReduxStore from '../lib/with-redux-store'
-import WalletProviderWrapper from '../WalletProvider'
-import { MsigProviderWrapper } from '../MsigProvider'
-import { NetworkChecker } from '../lib/check-network'
-import BalancePoller from '../lib/update-balance'
-import { WasmLoader } from '../lib/WasmLoader'
-import ErrorBoundary from '../lib/ErrorBoundary'
+import {
+  theme,
+  ThemeProvider,
+  PendingMessageProvider
+} from '@glif/react-components'
+import {
+  WalletProviderWrapper,
+  BalancePoller
+} from '@glif/wallet-provider-react'
+import { ApolloProvider } from '@apollo/client'
+import { SWRConfig } from 'swr'
+
+import { createApolloClient } from '../apolloClient'
+import ErrorBoundary from '../components/ErrorBoundary'
+import JSONLD from '../JSONLD'
 import '../stylesheets/normalize.css'
 import '../stylesheets/styles.css'
 
-class MyApp extends App {
-  static getInitialProps({ ctx: { query, pathname } }) {
-    return { query, pathname }
-  }
+const apolloClient = createApolloClient()
 
+class MyApp extends App {
   render() {
-    const { Component, pageProps, reduxStore, query, pathname } = this.props
+    const { Component, pageProps } = this.props
     return (
       <>
         <Head>
-          <title>Glif</title>
+          <title>GLIF Sender</title>
+          <meta name='description' content='An audited Filecoin web wallet.' />
+          <meta
+            name='keywords'
+            content='Filecoin,Wallet,Web,Storage,Blockchain,Crypto,FIL'
+          />
+          <meta property='og:image' content='/bg-sender.jpg' />
+          <meta property='og:title' content='GLIF Sender' />
+          <meta
+            property='og:description'
+            content='An audited Filecoin web wallet.'
+          />
+          <meta property='og:url' content='https://sender.glif.io' />
+          <meta name='twitter:title' content='GLIF Sender' />
+          <meta
+            name='twitter:description'
+            content='An audited Filecoin web wallet.'
+          />
+          <meta name='twitter:image' content='/bg-sender.jpg' />
+          <meta name='twitter:card' content='summary_large_image' />
+          <meta name='twitter:creator' content='@glifio' key='twhandle' />
+          <meta property='og:site_name' content='GLIF Sender' />
+          <meta
+            name='twitter:image:alt'
+            content='An audited Filecoin web wallet.'
+          />
+          <link
+            rel='icon'
+            type='image/png'
+            sizes='32x32'
+            href='/static/favicon-32x32.png'
+          />
+          <link
+            rel='icon'
+            type='image/png'
+            sizes='16x16'
+            href='/static/favicon-32x32.png'
+          />
         </Head>
-        <Provider store={reduxStore}>
-          <ThemeProvider theme={theme}>
-            <WasmLoader>
-              <NetworkChecker pathname={pathname} query={query} />
-              <WalletProviderWrapper network={reduxStore.getState().network}>
-                <MsigProviderWrapper>
-                  <BalancePoller />
+        <Script
+          id='json-ld'
+          type='application/ld+json'
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }}
+        />
+        <ApolloProvider client={apolloClient}>
+          <SWRConfig value={{ refreshInterval: 10000 }}>
+            <ThemeProvider theme={theme}>
+              <WalletProviderWrapper>
+                <BalancePoller />
+                <PendingMessageProvider>
                   <ErrorBoundary>
                     <Component {...pageProps} />
                   </ErrorBoundary>
-                </MsigProviderWrapper>
+                </PendingMessageProvider>
               </WalletProviderWrapper>
-            </WasmLoader>
-          </ThemeProvider>
-        </Provider>
+            </ThemeProvider>
+          </SWRConfig>
+        </ApolloProvider>
       </>
     )
   }
 }
 
-export default withReduxStore(MyApp)
+export default MyApp

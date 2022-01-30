@@ -3,29 +3,10 @@ import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
 import WalletView from '.'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 
-import { filfoxMockData } from '../../test-utils/mockData'
-import { formatFilfoxMessages } from '../../lib/useTransactionHistory/formatMessages'
 import { flushPromises } from '../../test-utils'
+import { PAGE } from '../../constants'
 
 jest.mock('@glif/filecoin-wallet-provider')
-jest.mock('../../WalletProvider')
-const spy = jest.spyOn(require('../../lib/useTransactionHistory'), 'default')
-
-const mockTxHistory = {
-  showMore: jest.fn(),
-  pending: [],
-  confirmed: formatFilfoxMessages(filfoxMockData).map((msg) => ({
-    ...msg,
-    status: 'confirmed'
-  })),
-  paginating: false,
-  loading: false,
-  loadedSuccess: true,
-  loadedFailure: false,
-  total: 47
-}
-
-spy.mockReturnValue(mockTxHistory)
 
 const useRouter = jest.spyOn(require('next/router'), 'useRouter')
 
@@ -35,7 +16,7 @@ describe('WalletView', () => {
     jest.clearAllMocks()
   })
 
-  test('it renders correctly', () => {
+  test.skip('it renders correctly', () => {
     useRouter.mockImplementation(() => ({
       pathname: 'home'
     }))
@@ -46,12 +27,29 @@ describe('WalletView', () => {
         <WalletView />
       </Tree>
     )
-
+    expect(screen.getByText(/Transaction History/)).toBeInTheDocument()
+    expect(screen.getByText(/Your Address/)).toBeInTheDocument()
+    expect(screen.getByText(/Balance/)).toBeInTheDocument()
+    expect(screen.getByText(/Send/)).toBeInTheDocument()
+    expect(screen.getByText(/Logout/)).toBeInTheDocument()
     expect(container.firstChild).toMatchSnapshot()
-    expect(spy).toHaveBeenCalled()
   })
 
-  test('it renders the message history view when the pathname is home', () => {
+  test.skip('it renders the message history view when the pathname is home', () => {
+    useRouter.mockImplementation(() => ({
+      pathname: 'home'
+    }))
+    const { Tree } = composeMockAppTree('postOnboard')
+    render(
+      <Tree>
+        <WalletView />
+      </Tree>
+    )
+
+    expect(screen.getByText('Transaction History')).toBeInTheDocument()
+  })
+
+  test.skip('it renders the message detail view when there is a cid query param', () => {
     useRouter.mockImplementation(() => ({
       pathname: 'home'
     }))
@@ -69,7 +67,7 @@ describe('WalletView', () => {
     const mockRouterPush = jest.fn()
     useRouter.mockImplementation(() => ({
       push: mockRouterPush,
-      query: 'network=t',
+      query: '',
       pathname: 'home'
     }))
     const { Tree } = composeMockAppTree('postOnboard')
@@ -84,6 +82,6 @@ describe('WalletView', () => {
       fireEvent.click(screen.getByText('Send'))
       await flushPromises()
     })
-    expect(mockRouterPush).toHaveBeenCalledWith('/send?network=t')
+    expect(mockRouterPush).toHaveBeenCalledWith(PAGE.WALLET_SEND)
   })
 })
