@@ -44,6 +44,27 @@ exports[`UseDesktopBrowser it renders the error page 1`] = `
   display: inline-block;
 }
 
+.c4 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: RT-Alias-Medium;
+  margin: 0;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.c5 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  text-align: left;
+  margin: 0;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
 .c6 {
   cursor: pointer;
   border: 1px solid #262626;
@@ -66,27 +87,6 @@ exports[`UseDesktopBrowser it renders the error page 1`] = `
 
 .c6:hover {
   opacity: 0.8;
-}
-
-.c4 {
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1;
-  font-family: RT-Alias-Medium;
-  margin: 0;
-  margin-top: 32px;
-  margin-bottom: 32px;
-}
-
-.c5 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  text-align: left;
-  margin: 0;
-  margin-top: 32px;
-  margin-bottom: 32px;
 }
 
 .c3 {

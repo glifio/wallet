@@ -78,11 +78,11 @@ class MyApp extends App {
             <ThemeProvider theme={theme}>
               <WalletProviderWrapper>
                 <BalancePoller />
-                <ErrorBoundary>
-                  <PendingMessageProvider>
+                <PendingMessageProvider>
+                  <ErrorBoundary>
                     <Component {...pageProps} />
-                  </PendingMessageProvider>
-                </ErrorBoundary>
+                  </ErrorBoundary>
+                </PendingMessageProvider>
               </WalletProviderWrapper>
             </ThemeProvider>
           </SWRConfig>
