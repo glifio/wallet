@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 import {
   Box,
   Num,
+  MessagePending as MessagePendingGQL,
   Button,
   ButtonClose,
   StepHeader,
@@ -16,18 +17,17 @@ import {
   PageWrapper,
   Input,
   useSubmittedMessages,
-  MessagePending
+  ErrorCard
 } from '@glif/react-components'
 import {
   useWalletProvider,
   useWallet,
-  ConfirmationCard
+  ConfirmationCard,
+  CustomizeFee
 } from '@glif/wallet-provider-react'
 
 import { CardHeader } from './CardHeader'
 import HeaderText from './HeaderText'
-import ErrorCard from './ErrorCard'
-import CustomizeFee from './CustomizeFee'
 import { LEDGER, emptyGasInfo, PAGE, METAMASK } from '../../../constants'
 import reportError from '../../../utils/reportError'
 import isBase64 from '../../../utils/isBase64'
@@ -61,8 +61,13 @@ const isValidForm = (
 const Send = () => {
   const wallet = useWallet()
   const { pushPendingMessage } = useSubmittedMessages()
-  const { resetWalletError, loginOption, getProvider, walletError } =
-    useWalletProvider()
+  const {
+    resetWalletError,
+    loginOption,
+    getProvider,
+    walletError,
+    walletProvider
+  } = useWalletProvider()
   const [toAddress, setToAddress] = useState('')
   const [params, setParams] = useState('')
   const [toAddressError, setToAddressError] = useState('')
@@ -90,7 +95,7 @@ const Send = () => {
     navigate(router, { pageUrl: PAGE.WALLET_HOME })
   }, [router])
 
-  const send = async (): Promise<MessagePending> => {
+  const send = async () => {
     setFetchingTxDetails(true)
     const provider = await getProvider()
     if (provider) {
@@ -117,9 +122,7 @@ const Send = () => {
       const validMsg = await provider.simulateMessage(messageObj)
       if (validMsg) {
         const msgCid = await provider.sendMessage(signedMessage)
-        // TODO: remove
-        // @ts-expect-error
-        return message.toPendingMessage(msgCid['/']) as MessagePending
+        return message.toPendingMessage(msgCid['/']) as MessagePendingGQL
       }
       throw new Error('Filecoin message invalid. No gas or fees were spent.')
     }
@@ -302,7 +305,7 @@ const Send = () => {
               )}
               {!errorMsg && attemptingTx && (
                 <ConfirmationCard
-                  walletType={loginOption}
+                  loginOption={loginOption}
                   currentStep={6}
                   totalSteps={6}
                   loading={fetchingTxDetails || mPoolPushing}
@@ -411,6 +414,11 @@ const Send = () => {
                         setError={setGasError}
                         error={gasError}
                         feeMustBeLessThanThisAmount={calcMaxAffordableFee()}
+                        wallet={wallet}
+                        gasEstimateMaxFee={walletProvider.gasEstimateMaxFee}
+                        gasEstimateMessageGas={
+                          walletProvider.gasEstimateMessageGas
+                        }
                       />
                     </Box>
                   )}

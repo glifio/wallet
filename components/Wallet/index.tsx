@@ -25,6 +25,8 @@ import reportError from '../../utils/reportError'
 import { navigate, resetWallet } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
+const EXPLORER_URL = process.env.EXPLORER_URL! as string
+
 export default function WalletHome() {
   const wallet = useWallet()
   const router = useRouter()
@@ -108,7 +110,7 @@ export default function WalletHome() {
               <Box display='flex' flexDirection='row'>
                 <MessageDetail
                   cid={router.query.cid as string}
-                  addressHref={(address) => `https://graph.glif.io/${address}`}
+                  addressHref={(address) => `${EXPLORER_URL}/${address}`}
                   confirmations={50}
                 />
                 <ButtonClose
@@ -122,6 +124,7 @@ export default function WalletHome() {
               <MessageHistoryTable
                 address={wallet.address}
                 cidHref={(cid: string) => `/home?cid=${cid}`}
+                addressHref={(address) => `${EXPLORER_URL}/${address}`}
               />
             )}
           </Box>

@@ -328,51 +328,6 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c35 {
-  cursor: pointer;
-  border: 1px solid #262626;
-  background-color: transparent;
-  border-color: #262626;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c35:hover {
-  opacity: 0.8;
-}
-
-.c36 {
-  cursor: not-allowed;
-  border: 1px solid #C4C4C4;
-  background-color: #C4C4C4;
-  border-color: #C4C4C4;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c36:hover {
-  opacity: 1;
-}
-
 .c14 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -416,6 +371,51 @@ exports[`Send Flow snapshots it renders correctly 1`] = `
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
+}
+
+.c35 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c35:hover {
+  opacity: 0.8;
+}
+
+.c36 {
+  cursor: not-allowed;
+  border: 1px solid #C4C4C4;
+  background-color: #C4C4C4;
+  border-color: #C4C4C4;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c36:hover {
+  opacity: 1;
 }
 
 .c3 {
@@ -1219,52 +1219,6 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c37 {
-  cursor: pointer;
-  border: 1px solid #262626;
-  background-color: transparent;
-  border-color: #262626;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c37:hover {
-  opacity: 0.8;
-}
-
-.c38 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: #08442F;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c38:hover {
-  opacity: 0.8;
-}
-
 .c14 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -1318,6 +1272,52 @@ exports[`Send Flow snapshots it renders invalid address errors correctly 1`] = `
   font-family: RT-Alias-Grotesk;
   text-align: right;
   margin: 0;
+}
+
+.c37 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c37:hover {
+  opacity: 0.8;
+}
+
+.c38 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c38:hover {
+  opacity: 0.8;
 }
 
 .c3 {
@@ -2228,51 +2228,6 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c45 {
-  cursor: pointer;
-  border: 1px solid #262626;
-  background-color: transparent;
-  border-color: #262626;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c45:hover {
-  opacity: 0.8;
-}
-
-.c46 {
-  cursor: not-allowed;
-  border: 1px solid #C4C4C4;
-  background-color: #C4C4C4;
-  border-color: #C4C4C4;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c46:hover {
-  opacity: 1;
-}
-
 .c14 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -2327,6 +2282,51 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
+}
+
+.c45 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c45:hover {
+  opacity: 0.8;
+}
+
+.c46 {
+  cursor: not-allowed;
+  border: 1px solid #C4C4C4;
+  background-color: #C4C4C4;
+  border-color: #C4C4C4;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c46:hover {
+  opacity: 1;
 }
 
 .c3 {
@@ -3344,51 +3344,6 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c44 {
-  cursor: pointer;
-  border: 1px solid #262626;
-  background-color: transparent;
-  border-color: #262626;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c44:hover {
-  opacity: 0.8;
-}
-
-.c45 {
-  cursor: not-allowed;
-  border: 1px solid #C4C4C4;
-  background-color: #C4C4C4;
-  border-color: #C4C4C4;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c45:hover {
-  opacity: 1;
-}
-
 .c14 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -3432,6 +3387,51 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
+}
+
+.c44 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c44:hover {
+  opacity: 0.8;
+}
+
+.c45 {
+  cursor: not-allowed;
+  border: 1px solid #C4C4C4;
+  background-color: #C4C4C4;
+  border-color: #C4C4C4;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c45:hover {
+  opacity: 1;
 }
 
 .c3 {
@@ -4448,6 +4448,51 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
   font-size: 1.5rem;
 }
 
+.c14 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c16 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c21 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  text-align: center;
+  margin: 0;
+}
+
+.c27 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
+.c31 {
+  color: #262626;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: RT-Alias-Grotesk;
+  margin: 0;
+}
+
 .c45 {
   cursor: pointer;
   border: 1px solid #262626;
@@ -4492,51 +4537,6 @@ exports[`Send Flow snapshots it renders step 3 correctly 1`] = `
 
 .c46:hover {
   opacity: 0.8;
-}
-
-.c14 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c16 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin-right: 8px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c21 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  text-align: center;
-  margin: 0;
-}
-
-.c27 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-}
-
-.c31 {
-  color: #262626;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
 }
 
 .c3 {
@@ -5772,52 +5772,6 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c57 {
-  cursor: pointer;
-  border: 1px solid #262626;
-  background-color: transparent;
-  border-color: #262626;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c57:hover {
-  opacity: 0.8;
-}
-
-.c58 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: #08442F;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c58:hover {
-  opacity: 0.8;
-}
-
 .c14 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -5878,6 +5832,52 @@ exports[`Send Flow snapshots it renders step 4 correctly 1`] = `
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
+}
+
+.c57 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c57:hover {
+  opacity: 0.8;
+}
+
+.c58 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c58:hover {
+  opacity: 0.8;
 }
 
 .c3 {
@@ -7256,52 +7256,6 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.c60 {
-  cursor: pointer;
-  border: 1px solid #262626;
-  background-color: transparent;
-  border-color: #262626;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c60:hover {
-  opacity: 0.8;
-}
-
-.c61 {
-  cursor: pointer;
-  border: 1px solid #1AD08F;
-  background-color: #1AD08F;
-  border-color: #1AD08F;
-  color: #08442F;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c61:hover {
-  opacity: 0.8;
-}
-
 .c14 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -7371,6 +7325,52 @@ exports[`Send Flow snapshots it renders step 5 correctly 1`] = `
   line-height: 1;
   font-family: RT-Alias-Grotesk;
   margin: 0;
+}
+
+.c60 {
+  cursor: pointer;
+  border: 1px solid #262626;
+  background-color: transparent;
+  border-color: #262626;
+  color: #262626;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c60:hover {
+  opacity: 0.8;
+}
+
+.c61 {
+  cursor: pointer;
+  border: 1px solid #1AD08F;
+  background-color: #1AD08F;
+  border-color: #1AD08F;
+  color: #08442F;
+  font-size: 1.125rem;
+  -webkit-transition: 0.18s ease-in-out;
+  transition: 0.18s ease-in-out;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.c61:hover {
+  opacity: 0.8;
 }
 
 .c3 {
