@@ -53,8 +53,7 @@ export default function Landing() {
         <LandingPageContentContainer>
           <ResponsiveWalletTile phishingBannerClosed={closed}>
             <AppTile
-              title='Sender'
-              oldTileName='Wallet'
+              title='Wallet'
               description='A lightweight interface for sending Filecoin.'
               imgSrc='/bg-sender.jpg'
               imgSrcHover='/bg-sender-hover.jpg'
@@ -116,7 +115,15 @@ export default function Landing() {
                   <Caution>
                     <IconCaution />
                     <P>
-                      Burner Wallets (use with caution, <a>read more</a>)
+                      Burner Wallets (use with caution,{' '}
+                      <a
+                        href='https://blog.glif.io/burner-wallets/'
+                        target='_blank'
+                        rel='nooppener noreferrer'
+                      >
+                        read more
+                      </a>
+                      )
                     </P>
                   </Caution>
                   <BurnerWallet
@@ -144,9 +151,16 @@ export default function Landing() {
                       font-size: ${fontSize('default')};
                     `}
                   >
-                    Want to load this app directly from IPFS/FIL?
+                    Want to load this app directly from IPFS or Filecoin?
                     <br />
-                    Check our <a href='#'>release page</a>
+                    Check our{' '}
+                    <a
+                      href='https://github.com/glifio/wallet/releases'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      release page
+                    </a>
                   </P>
 
                   <P
@@ -156,7 +170,22 @@ export default function Landing() {
                   >
                     Need help?
                     <br />
-                    <a href='#'>Reach out</a> to us
+                    Open a{' '}
+                    <a
+                      href='https://github.com/glifio/wallet/issues/new/choose'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      GitHub issue
+                    </a>{' '}
+                    or hit us up on{' '}
+                    <a
+                      href='https://twitter.com/glifio'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      Twitter
+                    </a>
                   </P>
                 </Box>
               </Box>

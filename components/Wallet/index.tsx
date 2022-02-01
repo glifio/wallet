@@ -21,11 +21,11 @@ import {
   reportLedgerConfigError
 } from '@glif/wallet-provider-react'
 
-import reportError from '../../utils/reportError'
+import { errorLogger } from '../../logger'
 import { navigate, resetWallet } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
-const EXPLORER_URL = process.env.EXPLORER_URL! as string
+const EXPLORER_URL = process.env.NEXT_PUBLIC_EXPLORER_URL! as string
 
 export default function WalletHome() {
   const wallet = useWallet()
@@ -42,7 +42,10 @@ export default function WalletHome() {
       if (provider) await provider.wallet.showAddressAndPubKey(wallet.path)
       else setUncaughtError('Error connecting to your Ledger Device')
     } catch (err) {
-      reportError(8, false, err.message, err.stack)
+      errorLogger.error(
+        err instanceof Error ? err.message : JSON.stringify(err),
+        'onShowLedger'
+      )
       setUncaughtError(err.message)
     }
     setLedgerBusy(false)

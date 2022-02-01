@@ -28,30 +28,35 @@ module.exports = (phase) => {
       env: {
         // this api is configured to be load balanced across multiple nodes,
         // if a single node gets sick, it will get dropped and not accept requests
-        LOTUS_NODE_JSONRPC:
+        NEXT_PUBLIC_LOTUS_NODE_JSONRPC:
           process.env.LOTUS_NODE_JSONRPC || 'https://mainnet.glif.host',
-        GRAPH_API_URL: process.env.GRAPH_API_URL || 'graph.glif.host/query',
-        EXPLORER_URL: process.env.EXPLORER_URL || 'https://explorer.glif.io',
+        NEXT_PUBLIC_GRAPH_API_URL:
+          process.env.GRAPH_API_URL || 'graph.glif.host/query',
+        NEXT_PUBLIC_EXPLORER_URL:
+          process.env.EXPLORER_URL || 'https://explorer.glif.io',
 
         // 461'
-        COIN_TYPE: 'f',
-        FIL_SNAP_HOST: 'npm:@chainsafe/filsnap',
-        IS_PROD: true
+        NEXT_PUBLIC_COIN_TYPE: process.env.COIN_TYPE || 'f',
+        NEXT_PUBLIC_IS_PROD: true,
+
+        NEXT_PUBLIC_SENTRY_DSN:
+          process.env.SENTRY_DSN ||
+          'https://1936108dd14b4c93b10849eb3c2f98f4@o1126745.ingest.sentry.io/6168017',
+        NEXT_PUBLIC_SENTRY_ENV: process.env.SENTRY_ENV || 'test-env'
       }
     }
   }
   return {
     webpack,
     env: {
-      LOTUS_NODE_JSONRPC:
+      NEXT_PUBLIC_LOTUS_NODE_JSONRPC:
         process.env.LOTUS_NODE_JSONRPC || 'https://calibration.node.glif.io',
-      GRAPH_API_URL: process.env.GRAPH_API_URL || 'graph.glif.host/query',
-      EXPLORER_URL:
+      NEXT_PUBLIC_GRAPH_API_URL:
+        process.env.GRAPH_API_URL || 'graph.glif.host/query',
+      NEXT_PUBLIC_EXPLORER_URL:
         process.env.EXPLORER_URL || 'https://calibration.explorer.glif.io',
       // 1'
-      COIN_TYPE: 't',
-      FIL_SNAP_HOST: 'npm:@chainsafe/filsnap',
-      IS_PROD: false
+      NEXT_PUBLIC_COIN_TYPE: process.env.COIN_TYPE || 't'
     }
   }
 }

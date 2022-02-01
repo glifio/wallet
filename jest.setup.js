@@ -7,5 +7,6 @@ import '@testing-library/jest-dom'
 import 'jest-styled-components'
 import 'whatwg-fetch'
 
-process.env.LOTUS_NODE_JSONRPC = 'https://calibration.node.glif.io/rpc/v0'
-process.env.COIN_TYPE = 't'
+process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC =
+  'https://calibration.node.glif.io/rpc/v0'
+process.env.NEXT_PUBLIC_COIN_TYPE = 't'

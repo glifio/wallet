@@ -1,9 +1,9 @@
 export default {
   '@context': 'http://schema.org/',
   '@type': 'WebApplication',
-  name: 'Glif Sender',
+  name: 'Glif Wallet',
   description: 'A lightweight web interface to send and receive Filecoin.',
-  url: 'https://sender.glif.io',
+  url: 'https://beta.wallet.glif.io',
   knowsAbout: [
     {
       '@type': 'SoftwareApplication',

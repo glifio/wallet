@@ -6,7 +6,8 @@ import { useCallback } from 'react'
 import { PAGE } from '../../constants'
 import { navigate } from '../../utils/urlParams'
 
-const COIN_TYPE = process.env.COIN_TYPE! as CoinType
+const COIN_TYPE = process.env.NEXT_PUBLIC_COIN_TYPE! as CoinType
+const IS_PROD = process.env.NEXT_PUBLIC_IS_PROD
 const nWalletsToShow = 5
 
 const Accounts = () => {
@@ -29,6 +30,7 @@ const Accounts = () => {
         nWalletsToLoad={nWalletsToShow}
         coinType={COIN_TYPE}
         showSelectedAccount
+        isProd={!!IS_PROD}
       />
     </RequireWallet>
   )

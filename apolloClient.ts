@@ -3,7 +3,7 @@ import { getMainDefinition } from '@apollo/client/utilities'
 import { WebSocketLink } from '@apollo/client/link/ws'
 import { defaultMessageHistoryClientCacheConfig } from '@glif/react-components'
 
-const URI = process.env.GRAPH_API_URL
+const URI = process.env.NEXT_PUBLIC_GRAPH_API_URL
 
 const httpLink = new HttpLink({
   uri: `https://${URI}`
