@@ -28,20 +28,20 @@ class MyApp extends App {
     return (
       <>
         <Head>
-          <title>GLIF Sender</title>
+          <title>GLIF Wallet</title>
           <meta name='description' content='An audited Filecoin web wallet.' />
           <meta
             name='keywords'
             content='Filecoin,Wallet,Web,Storage,Blockchain,Crypto,FIL'
           />
           <meta property='og:image' content='/bg-sender.jpg' />
-          <meta property='og:title' content='GLIF Sender' />
+          <meta property='og:title' content='GLIF Wallet' />
           <meta
             property='og:description'
             content='An audited Filecoin web wallet.'
           />
-          <meta property='og:url' content='https://sender.glif.io' />
-          <meta name='twitter:title' content='GLIF Sender' />
+          <meta property='og:url' content='https://beta.wallet.glif.io' />
+          <meta name='twitter:title' content='GLIF Wallet' />
           <meta
             name='twitter:description'
             content='An audited Filecoin web wallet.'
@@ -76,7 +76,10 @@ class MyApp extends App {
         <ApolloProvider client={apolloClient}>
           <SWRConfig value={{ refreshInterval: 10000 }}>
             <ThemeProvider theme={theme}>
-              <WalletProviderWrapper>
+              <WalletProviderWrapper
+                lotusApiAddr={process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC}
+                coinType={process.env.NEXT_PUBLIC_COIN_TYPE}
+              >
                 <BalancePoller />
                 <PendingMessageProvider>
                   <ErrorBoundary>

@@ -1,6 +1,6 @@
 {
-  "name": "sender",
-  "version": "0.0.0-alpha.1",
+  "name": "wallet",
+  "version": "3.0.0",
   "engines": {
     "node": ">=12.0.0"
   },
@@ -25,7 +25,7 @@
     "@glif/filecoin-rpc-client": "latest",
     "@glif/filecoin-wallet-provider": "latest",
     "@glif/react-components": "^2.0.0-alpha.33",
-    "@glif/wallet-provider-react": "^0.0.0-alpha.13",
+    "@glif/wallet-provider-react": "^0.0.0-alpha.14",
     "@ledgerhq/hw-transport-webhid": "^6.4.1",
     "@zondax/filecoin-signing-tools": "^0.18.6",
     "@zondax/ledger-filecoin": "0.11.2",

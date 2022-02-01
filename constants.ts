@@ -32,8 +32,8 @@ export const PROPOSE = 'PROPOSE'
 export const EXEC = 'EXEC'
 /* FILECOIN APP VERSION MIN */
 export const LEDGER_VERSION_MAJOR = 0
-export const LEDGER_VERSION_MINOR = 18
-export const LEDGER_VERSION_PATCH = 2
+export const LEDGER_VERSION_MINOR = 20
+export const LEDGER_VERSION_PATCH = 0
 
 /* GAS CONSTANTS */
 export const emptyGasInfo = {
