@@ -39,10 +39,8 @@ module.exports = (phase) => {
         NEXT_PUBLIC_COIN_TYPE: process.env.COIN_TYPE || 'f',
         NEXT_PUBLIC_IS_PROD: true,
 
-        NEXT_PUBLIC_SENTRY_DSN:
-          process.env.SENTRY_DSN ||
-          'https://1936108dd14b4c93b10849eb3c2f98f4@o1126745.ingest.sentry.io/6168017',
-        NEXT_PUBLIC_SENTRY_ENV: process.env.SENTRY_ENV || 'test-env'
+        NEXT_PUBLIC_SENTRY_DSN: process.env.SENTRY_DSN,
+        NEXT_PUBLIC_SENTRY_ENV: process.env.SENTRY_ENV
       }
     }
   }
