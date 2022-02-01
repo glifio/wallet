@@ -75,8 +75,8 @@ export default function Landing() {
                     color: white;
                   `}
                 >
-                  We&apos;re sorry, the Glif Sender only supports desktop
-                  browsers at the moment. Please come back on your computer!
+                  We&apos;re sorry, the Glif Safe only supports desktop browsers
+                  at the moment. Please come back on your computer!
                 </P>
               </TextBox>
             ) : (
