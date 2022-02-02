@@ -3,6 +3,7 @@ import React from 'react'
 import WalletProviderWrapper, {
   initialState as walletProviderInitialState
 } from '@glif/wallet-provider-react'
+import { PendingMessageProvider } from '@glif/react-components'
 import { theme, ThemeProvider } from '@glif/react-components'
 import { MockedProvider } from '@apollo/client/testing'
 import { mockWalletProviderInstance } from '../../__mocks__/@glif/filecoin-wallet-provider'
@@ -28,14 +29,16 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
   const Tree = ({ children }) => {
     return (
       <MockedProvider mocks={[]} addTypeName={false}>
-        <WalletProviderWrapper
-          options={options}
-          statePreset={statePreset}
-          getState={cacheWalletProviderState}
-          initialState={initialState}
-        >
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
-        </WalletProviderWrapper>
+        <PendingMessageProvider>
+          <WalletProviderWrapper
+            options={options}
+            statePreset={statePreset}
+            getState={cacheWalletProviderState}
+            initialState={initialState}
+          >
+            <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          </WalletProviderWrapper>
+        </PendingMessageProvider>
       </MockedProvider>
     )
   }
