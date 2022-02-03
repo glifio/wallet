@@ -5,6 +5,7 @@ import { Message } from '@glif/filecoin-message'
 import Send from '.'
 import composeMockAppTree from '../../../test-utils/composeMockAppTree'
 import { flushPromises } from '../../../test-utils'
+import { pushPendingMessageSpy } from '../../../__mocks__/@glif/react-components'
 import { PAGE } from '../../../constants'
 
 jest.mock('@glif/filecoin-wallet-provider')
@@ -70,6 +71,15 @@ describe('Send Flow', () => {
       expect(!!message.value).toBe(true)
       expect(Number(message.value)).not.toBe('NaN')
       expect(message.to).toBe(address)
+
+      const pendingMsg = pushPendingMessageSpy.mock.calls[0][0]
+      expect(pendingMsg.to.robust).toBeTruthy()
+      expect(pendingMsg.from.robust).toBe(address)
+      expect(Number(pendingMsg.gasFeeCap) > 0).toBeTruthy()
+      expect(Number(pendingMsg.gasLimit) > 0).toBeTruthy()
+      expect(Number(pendingMsg.gasPremium) > 0).toBeTruthy()
+      expect(!!pendingMsg.value).toBe(true)
+      expect(Number(pendingMsg.value)).not.toBe('NaN')
     })
 
     test('it does not allow a user to send a message if address is poorly formed', async () => {

@@ -5,7 +5,7 @@ const WalletDown = () => {
   return (
     <ErrorView
       title='Oops! Something went wrong.'
-      description="We've been notified of the problem, but feel free to reach out to squad@infinitescroll.org with any questions or concerns."
+      description="We've been notified of the outage and expect to be back up and running again shortly."
     />
   )
 }
