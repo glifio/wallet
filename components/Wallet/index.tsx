@@ -12,7 +12,8 @@ import {
   Tooltip,
   MessageHistoryTable,
   MessageDetail,
-  ButtonClose
+  ButtonClose,
+  NetworkConnection
 } from '@glif/react-components'
 import {
   useWalletProvider,
@@ -59,10 +60,20 @@ export default function WalletHome() {
     navigate(router, { pageUrl: PAGE.WALLET_CHOOSE_ACCOUNTS })
   }, [router])
 
+  const onNodeDisconnect = useCallback(() => {
+    navigate(router, { pageUrl: PAGE.NODE_DISCONNECTED })
+  }, [router])
+
   return (
     <>
       <Wrapper>
         <Sidebar>
+          <NetworkConnection
+            lotusApiAddr={process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC}
+            apiKey={process.env.NEXT_PUBLIC_NODE_STATUS_API_KEY}
+            statusApiAddr={process.env.NEXT_PUBLIC_NODE_STATUS_API_ADDRESS}
+            errorCallback={onNodeDisconnect}
+          />
           {hasLedgerError({ ...ledger, otherError: uncaughtError }) ? (
             <AccountError
               onTryAgain={onShowOnLedger}

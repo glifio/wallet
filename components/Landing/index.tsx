@@ -12,7 +12,8 @@ import {
   H2,
   P,
   isMobileOrTablet,
-  theme
+  theme,
+  useNetworkName
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
@@ -35,6 +36,9 @@ export default function Landing() {
   const [closed, setClosed] = useState(false)
   const router = useRouter()
 
+  const { networkName } = useNetworkName(
+    process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
+  )
   const connect = useCallback(
     (pageUrl: PAGE) => {
       navigate(router, { pageUrl })
@@ -53,7 +57,9 @@ export default function Landing() {
         <LandingPageContentContainer>
           <ResponsiveWalletTile phishingBannerClosed={closed}>
             <AppTile
-              title='Wallet'
+              title={
+                networkName !== 'Mainnet' ? `Wallet (${networkName})` : 'Wallet'
+              }
               description='A lightweight interface for sending Filecoin.'
               imgSrc='/bg-sender.jpg'
               imgSrcHover='/bg-sender-hover.jpg'

@@ -58,7 +58,8 @@ export enum PAGE {
   CONNECT_BURNER_IMPORT_PK = '/connect/burner/import-private-key',
   CONNECT_BURNER_CREATE_SEED = '/connect/burner/create-seed',
   CONNECT_MM = '/connect/metamask',
-  LANDING = '/'
+  LANDING = '/',
+  NODE_DISCONNECTED = '/error/node-disconnected'
 }
 
 // todo #responsiveDesign: decide how to do responsive design

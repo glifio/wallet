@@ -34,6 +34,13 @@ module.exports = (phase) => {
           process.env.GRAPH_API_URL || 'graph.glif.host/query',
         NEXT_PUBLIC_EXPLORER_URL:
           process.env.EXPLORER_URL || 'https://explorer.glif.io',
+        // its fine for this to be public
+        NEXT_PUBLIC_NODE_STATUS_API_KEY:
+          process.env.NODE_STATUS_API_KEY ||
+          'm786191525-b3192b91db66217a44f7d4be',
+        NEXT_PUBLIC_NODE_STATUS_API_ADDRESS:
+          process.env.STATUS_API_ADDRESS ||
+          'https://api.uptimerobot.com/v2/getMonitors',
 
         // 461'
         NEXT_PUBLIC_COIN_TYPE: process.env.COIN_TYPE || 'f',
@@ -53,6 +60,13 @@ module.exports = (phase) => {
         process.env.GRAPH_API_URL || 'graph.glif.host/query',
       NEXT_PUBLIC_EXPLORER_URL:
         process.env.EXPLORER_URL || 'https://calibration.explorer.glif.io',
+      // its fine for this to be public
+      NEXT_PUBLIC_NODE_STATUS_API_KEY:
+        process.env.NODE_STATUS_API_KEY ||
+        'm787669344-2a9b90eb03dbff3e503c93c7',
+      NEXT_PUBLIC_NODE_STATUS_API_ADDRESS:
+        process.env.STATUS_API_ADDRESS ||
+        'https://api.uptimerobot.com/v2/getMonitors',
       // 1'
       NEXT_PUBLIC_COIN_TYPE: process.env.COIN_TYPE || 't'
     }
