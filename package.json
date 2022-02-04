@@ -29,7 +29,7 @@
     "@ledgerhq/hw-transport-webhid": "^6.4.1",
     "@zondax/filecoin-signing-tools": "^0.18.6",
     "@zondax/ledger-filecoin": "0.11.2",
-    "axios": "0.24.0",
+    "axios": "0.25.0",
     "bip39": "3.0.4",
     "bluebird": "3.7.2",
     "crypto": "1.0.1",
