@@ -1,3 +1,4 @@
+import '@glif/base-css'
 import App from 'next/app'
 import Head from 'next/head'
 import Script from 'next/script'
@@ -17,8 +18,6 @@ import { SWRConfig } from 'swr'
 import { createApolloClient } from '../apolloClient'
 import ErrorBoundary from '../components/ErrorBoundary'
 import JSONLD from '../JSONLD'
-import '../stylesheets/normalize.css'
-import '../stylesheets/styles.css'
 
 const apolloClient = createApolloClient()
 
