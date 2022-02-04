@@ -48,6 +48,12 @@ module.exports = (phase) => {
 
         NEXT_PUBLIC_SENTRY_DSN: process.env.SENTRY_DSN,
         NEXT_PUBLIC_SENTRY_ENV: process.env.SENTRY_ENV
+      },
+      trailingSlash: true,
+      exportPathMap: () => {
+        return {
+          '/': { page: '/' }
+        }
       }
     }
   }
@@ -69,6 +75,12 @@ module.exports = (phase) => {
         'https://api.uptimerobot.com/v2/getMonitors',
       // 1'
       NEXT_PUBLIC_COIN_TYPE: process.env.COIN_TYPE || 't'
+    },
+    trailingSlash: true,
+    exportPathMap: () => {
+      return {
+        '/': { page: '/' }
+      }
     }
   }
 }
