@@ -58,7 +58,9 @@ export default function Landing() {
           <ResponsiveWalletTile phishingBannerClosed={closed}>
             <AppTile
               title={
-                networkName !== 'Mainnet' ? `Wallet (${networkName})` : 'Wallet'
+                networkName && networkName !== 'Mainnet'
+                  ? `Wallet (${networkName})`
+                  : 'Wallet'
               }
               description='A lightweight interface for sending Filecoin.'
               imgSrc='/bg-sender.jpg'
