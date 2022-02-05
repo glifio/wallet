@@ -48,7 +48,7 @@ class MyApp extends App {
           <meta name='twitter:image' content='/bg-sender.jpg' />
           <meta name='twitter:card' content='summary_large_image' />
           <meta name='twitter:creator' content='@glifio' key='twhandle' />
-          <meta property='og:site_name' content='GLIF Sender' />
+          <meta property='og:site_name' content='GLIF Wallet' />
           <meta
             name='twitter:image:alt'
             content='An audited Filecoin web wallet.'
