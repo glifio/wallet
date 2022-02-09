@@ -125,7 +125,7 @@ export default function WalletHome() {
                 <MessageDetail
                   cid={router.query.cid as string}
                   addressHref={(address) =>
-                    `${EXPLORER_URL}/address/${address}`
+                    `${EXPLORER_URL}/actor/?address=${address}`
                   }
                   confirmations={50}
                 />
@@ -140,7 +140,9 @@ export default function WalletHome() {
               <MessageHistoryTable
                 address={wallet.address}
                 cidHref={(cid: string) => `/home?cid=${cid}`}
-                addressHref={(address) => `${EXPLORER_URL}/address/${address}`}
+                addressHref={(address) =>
+                  `${EXPLORER_URL}/actor/?address=${address}`
+                }
               />
             )}
           </Box>
