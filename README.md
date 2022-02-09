@@ -28,6 +28,20 @@ npm install
 npm run dev
 ```
 
+### Deploy
+
+Environment variables to export:
+
+- `WEB3_STORAGE_TOKEN`
+- `LOTUS_NODE_JSONRPC`
+- `GRAPH_API_URL`
+- `EXPLORER_URL`
+- `NODE_STATUS_API_KEY`
+- `STATUS_API_ADDRESS`
+- `COIN_TYPE` (either `t` or `f`)
+- `SENTRY_DSN` (optional)
+- `SENTRY_ENV` (optional)
+
 ### Versioning
 
 Glif follows semantic versioning.
@@ -57,12 +71,15 @@ In order to develop packages locally and see the changes live in this local wall
 Package linking is a two-step process.
 
 First, from your local package folder, run:
+
 ```
 npm link
 ```
 
 Next, from this main wallet repository, run:
+
 ```
 npm link @glif/<package-name>
 ```
+
 for example, use `npm link @glif/react-components` to symlink the `react-components` package to your local version. See the npm link docs for details.

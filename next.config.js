@@ -24,6 +24,7 @@ const webpack = (config) => {
 module.exports = (phase) => {
   if (phase === PHASE_PRODUCTION_SERVER || phase === PHASE_PRODUCTION_BUILD) {
     return {
+      trailingSlash: true,
       webpack,
       env: {
         // this api is configured to be load balanced across multiple nodes,
@@ -52,6 +53,7 @@ module.exports = (phase) => {
     }
   }
   return {
+    trailingSlash: true,
     webpack,
     env: {
       NEXT_PUBLIC_LOTUS_NODE_JSONRPC:
