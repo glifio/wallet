@@ -13,7 +13,7 @@ const HeaderText = ({ step, walletType }) => {
         "First, please confirm the account you're sending from, and the recipient you want to send to."
       break
     case 2:
-      text = "Next, please choose an amount of FIL you'd like to withdraw."
+      text = "Next, please choose an amount of FIL you'd like to transfer."
       break
     case 3:
       text = 'Optionally, input base64 encoded transaction parameters.'

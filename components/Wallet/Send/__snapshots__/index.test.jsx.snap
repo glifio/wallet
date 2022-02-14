@@ -2693,7 +2693,7 @@ exports[`Send Flow snapshots it renders invalid value errors correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Next, please choose an amount of FIL you'd like to withdraw.
+                  Next, please choose an amount of FIL you'd like to transfer.
                 </p>
               </div>
             </div>
@@ -3798,7 +3798,7 @@ exports[`Send Flow snapshots it renders step 2 correctly 1`] = `
                   font-size="2"
                   font-weight="400"
                 >
-                  Next, please choose an amount of FIL you'd like to withdraw.
+                  Next, please choose an amount of FIL you'd like to transfer.
                 </p>
               </div>
             </div>

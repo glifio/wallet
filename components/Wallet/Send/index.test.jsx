@@ -533,7 +533,7 @@ describe('Send Flow', () => {
       })
       expect(
         screen.getByText(
-          /Next, please choose an amount of FIL you'd like to withdraw./
+          /Next, please choose an amount of FIL you'd like to transfer./
         )
       )
       expect(screen.getByText(/Step 2/))
