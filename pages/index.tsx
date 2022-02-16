@@ -1,9 +1,5 @@
-import React from 'react'
-
 import { Landing } from '../components'
 
-const Index = () => {
-  return <Landing />
-}
+const Index = () => <Landing />
 
 export default Index
