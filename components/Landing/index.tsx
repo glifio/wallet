@@ -9,7 +9,6 @@ import {
   LandingPageContentContainer,
   space,
   fontSize,
-  H2,
   P,
   isMobileOrTablet,
   theme,
@@ -89,18 +88,7 @@ export default function Landing() {
               </TextBox>
             ) : (
               <Box>
-                <H2
-                  style={{
-                    marginTop: 0,
-                    marginBottom: '1em',
-                    fontWeight: 'normal',
-                    fontSize: fontSize('large'),
-                    lineHeight: '1.3em'
-                  }}
-                >
-                  Connect
-                </H2>
-
+                <h2>Connect</h2>
                 <Box
                   display='flex'
                   flexDirection='column'
