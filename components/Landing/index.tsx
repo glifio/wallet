@@ -150,8 +150,8 @@ export default function Landing() {
                     Open a{' '}
                     <SmartLink href='https://github.com/glifio/wallet/issues/new/choose'>
                       GitHub issue
-                    </SmartLink>
-                    {' '}or hit us up on{' '}
+                    </SmartLink>{' '}
+                    or hit us up on{' '}
                     <SmartLink href='https://twitter.com/glifio'>
                       Twitter
                     </SmartLink>
