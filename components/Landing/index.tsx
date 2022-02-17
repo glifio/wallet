@@ -135,7 +135,7 @@ export default function Landing() {
                   </BurnerWallet>
                 </Box>
 
-                <Box mt={6} fontSize='1.125rem'>
+                <Box mt={6}>
                   <P>
                     Want to load this app directly from IPFS or Filecoin?
                     <br />
