@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: '14'
           cache: 'npm'
-      - run: npm ci
+      - run: npm i
       - run: npm run build --if-present
         env:
           LOTUS_NODE_JSONRPC: 'https://calibration.node.glif.io'
