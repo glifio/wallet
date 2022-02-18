@@ -127,28 +127,27 @@ export default function Landing() {
                 </BurnerWallet>
               </Box>
 
-              <Box mt={6}>
-                <P>
-                  Want to load this app directly from IPFS or Filecoin?
-                  <br />
-                  Check our{' '}
-                  <SmartLink href='https://github.com/glifio/wallet/releases'>
-                    release page
-                  </SmartLink>
-                </P>
-                <P>
-                  Need help?
-                  <br />
-                  Open a{' '}
-                  <SmartLink href='https://github.com/glifio/wallet/issues/new/choose'>
-                    GitHub issue
-                  </SmartLink>{' '}
-                  or hit us up on{' '}
-                  <SmartLink href='https://twitter.com/glifio'>
-                    Twitter
-                  </SmartLink>
-                </P>
-              </Box>
+              <p>
+                Want to load this app directly from IPFS or Filecoin?
+                <br />
+                Check our{' '}
+                <SmartLink href='https://github.com/glifio/wallet/releases'>
+                  release page
+                </SmartLink>
+              </p>
+              
+              <p>
+                Need help?
+                <br />
+                Open a{' '}
+                <SmartLink href='https://github.com/glifio/wallet/issues/new/choose'>
+                  GitHub issue
+                </SmartLink>{' '}
+                or hit us up on{' '}
+                <SmartLink href='https://twitter.com/glifio'>
+                  Twitter
+                </SmartLink>
+              </p>
             </>
           )}
         </LandingPageContent>
