@@ -3,8 +3,7 @@ import {
   AppTile,
   Box,
   IconCaution,
-  LandingPageWrapper,
-  LandingPageAppTile,
+  LandingPageColumns,
   LandingPageContent,
   space,
   fontSize,
@@ -46,21 +45,19 @@ export default function Landing() {
       explorerUrl={process.env.NEXT_PUBLIC_EXPLORER_URL}
       safeUrl={process.env.NEXT_PUBLIC_SAFE_URL}
     >
-      <LandingPageWrapper>
-        <LandingPageAppTile>
-          <AppTile
-            title={
-              networkName && networkName !== 'Mainnet'
-                ? `Wallet (${networkName})`
-                : 'Wallet'
-            }
-            description='A lightweight interface for sending Filecoin.'
-            imgSrc='/bg-sender.jpg'
-            imgSrcHover='/bg-sender-hover.jpg'
-            small={false}
-            large
-          />
-        </LandingPageAppTile>
+      <LandingPageColumns>
+        <AppTile
+          title={
+            networkName && networkName !== 'Mainnet'
+              ? `Wallet (${networkName})`
+              : 'Wallet'
+          }
+          description='A lightweight interface for sending Filecoin.'
+          imgSrc='/bg-sender.jpg'
+          imgSrcHover='/bg-sender-hover.jpg'
+          small={false}
+          large
+        />
         <LandingPageContent>
           {unsupportedDevice ? (
             <TextBox style={{ background: theme.colors.core.primary }}>
@@ -149,7 +146,7 @@ export default function Landing() {
             </>
           )}
         </LandingPageContent>
-      </LandingPageWrapper>
+      </LandingPageColumns>
     </Page>
   )
 }
