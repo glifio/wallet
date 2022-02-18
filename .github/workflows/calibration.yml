@@ -36,12 +36,12 @@ jobs:
           STATUS_API_ADDRESS: 'https://api.uptimerobot.com/v2/getMonitors'
           COIN_TYPE: 't'
       - run: npm test
-      - run: npm export
+      - run: npm run export
       - run: npm run publish:calibration
         env:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-      - run: npm store-ipfs
+      - run: npm run store-ipfs
         env:
           WEB3_STORAGE_TOKEN: ${{ secrets.WEB3_STORAGE_TOKEN }}
