@@ -1,11 +1,9 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: deploy - calibration
+name: deploy - mainnet
 
 on:
-  push:
-    branches: [primary]
   workflow_dispatch:
 
 jobs:
@@ -28,13 +26,13 @@ jobs:
       - run: npm test
       - run: npm run export
         env:
-          LOTUS_NODE_JSONRPC: 'https://calibration.node.glif.io'
+          LOTUS_NODE_JSONRPC: 'https://mainnet.glif.host'
           GRAPH_API_URL: 'graph.glif.host/query'
-          EXPLORER_URL: 'https://calibration.explorer.glif.io'
-          NODE_STATUS_API_KEY: 'm787669344-2a9b90eb03dbff3e503c93c7'
+          EXPLORER_URL: 'https://explorer.glif.io'
+          NODE_STATUS_API_KEY: 'm786191525-b3192b91db66217a44f7d4be'
           STATUS_API_ADDRESS: 'https://api.uptimerobot.com/v2/getMonitors'
-          COIN_TYPE: 't'
-      - run: npm run publish:calibration
+          COIN_TYPE: 'f'
+      - run: npm run publish:mainnet
         env:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
