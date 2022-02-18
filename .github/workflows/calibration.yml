@@ -1,0 +1,46 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [primary]
+  pull_request:
+    branches: [primary]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: 14.9
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build --if-present
+        env:
+          LOTUS_NODE_JSONRPC: 'https://calibration.node.glif.io'
+          GRAPH_API_URL: 'graph.glif.host/query'
+          EXPLORER_URL: 'https://calibration.explorer.glif.io'
+          NODE_STATUS_API_KEY: 'm787669344-2a9b90eb03dbff3e503c93c7'
+          STATUS_API_ADDRESS: 'https://api.uptimerobot.com/v2/getMonitors'
+          COIN_TYPE: 't'
+      - run: npm test
+      - run: npm export
+      - run: npm run publish:calibration
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+      - run: npm store-ipfs
+        env:
+          WEB3_STORAGE_TOKEN: ${{ secrets.WEB3_STORAGE_TOKEN }}

@@ -15,7 +15,9 @@
     "test:watch": "jest --watch",
     "export": "next build && next export",
     "serve": "npx serve ./out",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "publish:calibration": "wrangler publish --env calibration",
+    "publish:mainnet": "wrangler publish --env mainnet"
   },
   "dependencies": {
     "@apollo/client": "^3.5.7",
@@ -48,6 +50,7 @@
     "swr": "^1.0.0"
   },
   "devDependencies": {
+    "@cloudflare/wrangler": "^1.19.8",
     "@glif/deployment-cli": "^2.0.0-alpha.16",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.1.2",
