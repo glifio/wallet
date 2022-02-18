@@ -135,7 +135,7 @@ export default function Landing() {
                   release page
                 </SmartLink>
               </p>
-              
+
               <p>
                 Need help?
                 <br />
@@ -144,9 +144,7 @@ export default function Landing() {
                   GitHub issue
                 </SmartLink>{' '}
                 or hit us up on{' '}
-                <SmartLink href='https://twitter.com/glifio'>
-                  Twitter
-                </SmartLink>
+                <SmartLink href='https://twitter.com/glifio'>Twitter</SmartLink>
               </p>
             </>
           )}
