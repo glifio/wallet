@@ -30,10 +30,17 @@ jobs:
         env:
           LOTUS_NODE_JSONRPC: 'https://calibration.node.glif.io'
           GRAPH_API_URL: 'graph.glif.host/query'
-          EXPLORER_URL: 'https://calibration.explorer.glif.io'
+          EXPLORER_URL: 'https://explorer-calibration.glif.link'
           NODE_STATUS_API_KEY: 'm787669344-2a9b90eb03dbff3e503c93c7'
           STATUS_API_ADDRESS: 'https://api.uptimerobot.com/v2/getMonitors'
           COIN_TYPE: 't'
+          HOME_URL: 'https://apps.glif.io'
+          BLOG_URL: 'https://blog.glif.io'
+          WALLET_URL: 'https://wallet-calibration.glif.link'
+          SAFE_URL: 'https://safe-calibration.glif.link'
+          VERIFIER_URL: 'https://verify-calibration.glif.link'
+          SENTRY_DSN: 'https://58b59b7635864e11b15b0a2fa44fac88@o1126745.ingest.sentry.io/6168017'
+          SENTRY_ENV: 'calibration'
       - run: npm run publish:calibration
         env:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
