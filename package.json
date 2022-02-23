@@ -52,7 +52,7 @@
   "devDependencies": {
     "@cloudflare/wrangler": "^1.19.8",
     "@glif/deployment-cli": "^2.0.0-alpha.16",
-    "@testing-library/jest-dom": "5.14.1",
+    "@testing-library/jest-dom": "5.16.2",
     "@testing-library/react": "12.1.2",
     "@testing-library/react-hooks": "7.0.2",
     "@types/jest": "^27.0.2",
@@ -60,7 +60,7 @@
     "babel-jest": "^27.1.1",
     "babel-plugin-styled-components": "2.0.2",
     "eslint": "^7.32.0",
-    "eslint-config-next": "11.1.2",
+    "eslint-config-next": "12.1.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-prettier": "4.0.0",
     "jest": "^27.1.1",
