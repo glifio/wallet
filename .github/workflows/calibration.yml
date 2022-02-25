@@ -31,7 +31,7 @@ jobs:
           # fetch full history so things like auto-changelog work properly
           fetch-depth: 0
       - name: Use Node.js ${{ env.node_version }}
-        uses: actions/setup-node@v2.5.1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ env.node_version }}
 
