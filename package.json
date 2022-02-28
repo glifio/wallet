@@ -1,6 +1,6 @@
 {
   "name": "filecoin-web-wallet",
-  "version": "2.10.4",
+  "version": "2.10.5",
   "engines": {
     "node": ">=12.0.0"
   },
