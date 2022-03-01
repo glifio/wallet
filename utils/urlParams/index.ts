@@ -30,7 +30,7 @@ export const combineExistingNewAndRequiredQueryParams = (
   // add new query params
   if (newQParams) {
     for (const param in newQParams) {
-      searchParams.set(param, newQParams[param])
+      if (newQParams[param]) searchParams.set(param, newQParams[param])
     }
   }
 
