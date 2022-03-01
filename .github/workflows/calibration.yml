@@ -57,7 +57,7 @@ jobs:
         run: npm run export
         env:
           LOTUS_NODE_JSONRPC: 'https://calibration.node.glif.io'
-          GRAPH_API_URL: 'graph.glif.host/query'
+          GRAPH_API_URL: 'graph-calibration.glif.link/query'
           EXPLORER_URL: 'https://explorer-calibration.glif.link'
           NODE_STATUS_API_KEY: 'm787669344-2a9b90eb03dbff3e503c93c7'
           STATUS_API_ADDRESS: 'https://api.uptimerobot.com/v2/getMonitors'
