@@ -9,8 +9,7 @@ import {
   Content,
   Box,
   MessageHistoryTable,
-  MessageDetail,
-  ButtonClose
+  MessageDetail
 } from '@glif/react-components'
 import {
   useWalletProvider,
@@ -101,12 +100,6 @@ export default function WalletHome() {
                     `${EXPLORER_URL}/actor/?address=${address}`
                   }
                   confirmations={50}
-                />
-                <ButtonClose
-                  alignSelf='flex-start'
-                  ml={7}
-                  pt={4}
-                  onClick={router.back}
                 />
               </Box>
             ) : (

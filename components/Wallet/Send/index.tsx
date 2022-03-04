@@ -9,7 +9,6 @@ import {
   Num,
   MessagePending as MessagePendingGQL,
   Button,
-  ButtonClose,
   StepHeader,
   Title,
   Form,
@@ -266,20 +265,6 @@ const Send = () => {
 
   return (
     <Box display='flex' flexDirection='column' width='100%'>
-      <ButtonClose
-        role='button'
-        type='button'
-        justifySelf='flex-end'
-        marginLeft='auto'
-        onClick={() => {
-          setAttemptingTx(false)
-          setUncaughtError('')
-          setGasError('')
-          setParamsError('')
-          resetWalletError()
-          onClose()
-        }}
-      />
       <Form onSubmit={onSubmit}>
         <Box
           maxWidth={13}
