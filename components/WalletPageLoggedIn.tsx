@@ -5,7 +5,7 @@ import { useWallet } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
 
 import { resetWallet, navigate } from '../utils/urlParams'
-import { PAGE } from '../constants'
+import { GLIF_DISCORD, PAGE } from '../constants'
 import WalletPage from './WalletPage'
 
 export default function WalletPageLoggedIn({
@@ -37,7 +37,7 @@ export default function WalletPageLoggedIn({
       ]}
       appHeaderLinks={[
         {
-          title: 'Wallet',
+          title: 'Account Home',
           url: PAGE.WALLET_HOME
         },
         {
@@ -45,8 +45,12 @@ export default function WalletPageLoggedIn({
           url: PAGE.WALLET_CHOOSE_ACCOUNTS
         },
         {
-          title: 'Send',
+          title: 'Send FIL',
           url: PAGE.WALLET_SEND
+        },
+        {
+          title: 'Discord',
+          url: GLIF_DISCORD
         }
       ]}
     >

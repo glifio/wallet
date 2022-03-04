@@ -479,6 +479,14 @@ exports[`UseDesktopBrowser it renders the error page 1`] = `
         >
           <a
             class="c21"
+            href="https://discord.gg/8Hqm3qvK"
+            rel="noopenner noreferrer"
+            target="_blank"
+          >
+            Discord
+          </a>
+          <a
+            class="c21"
             href="https://blog.glif.io"
             rel="noopenner noreferrer"
             target="_blank"
@@ -529,7 +537,7 @@ exports[`UseDesktopBrowser it renders the error page 1`] = `
         >
           <a
             class="c21"
-            href="#"
+            href="undefined"
           >
             Wallet
           </a>
@@ -539,7 +547,7 @@ exports[`UseDesktopBrowser it renders the error page 1`] = `
         >
           <a
             class="c21"
-            href="#"
+            href="undefined"
           >
             Safe
           </a>
@@ -549,7 +557,7 @@ exports[`UseDesktopBrowser it renders the error page 1`] = `
         >
           <a
             class="c21"
-            href="#"
+            href="undefined"
           >
             Explorer
           </a>
@@ -559,7 +567,7 @@ exports[`UseDesktopBrowser it renders the error page 1`] = `
         >
           <a
             class="c21"
-            href="#"
+            href="undefined"
           >
             Verifier
           </a>
