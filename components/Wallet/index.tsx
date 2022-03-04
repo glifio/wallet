@@ -7,13 +7,10 @@ import {
   Wrapper,
   Sidebar,
   Content,
-  BaseButton as ButtonLogout,
   Box,
-  Tooltip,
   MessageHistoryTable,
   MessageDetail,
-  ButtonClose,
-  NetworkConnection
+  ButtonClose
 } from '@glif/react-components'
 import {
   useWalletProvider,
@@ -25,8 +22,7 @@ import {
 import { errorLogger } from '../../logger'
 import {
   generateRouteWithRequiredUrlParams,
-  navigate,
-  resetWallet
+  navigate
 } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
@@ -64,20 +60,10 @@ export default function WalletHome() {
     navigate(router, { pageUrl: PAGE.WALLET_CHOOSE_ACCOUNTS })
   }, [router])
 
-  const onNodeDisconnect = useCallback(() => {
-    navigate(router, { pageUrl: PAGE.NODE_DISCONNECTED })
-  }, [router])
-
   return (
     <>
       <Wrapper>
         <Sidebar>
-          <NetworkConnection
-            lotusApiAddr={process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC}
-            apiKey={process.env.NEXT_PUBLIC_NODE_STATUS_API_KEY}
-            statusApiAddr={process.env.NEXT_PUBLIC_NODE_STATUS_API_ADDRESS}
-            errorCallback={onNodeDisconnect}
-          />
           {hasLedgerError({ ...ledger, otherError: uncaughtError }) ? (
             <AccountError
               onTryAgain={onShowOnLedger}
@@ -103,24 +89,6 @@ export default function WalletHome() {
             onSend={onSend}
             disableButtons={false}
           />
-          <ButtonLogout
-            variant='secondary'
-            width='100%'
-            mt={4}
-            display='flex'
-            alignItems='center'
-            justifyContent='space-between'
-            css={`
-              background-color: ${({ theme }) => theme.colors.core.secondary}00;
-              &:hover {
-                background-color: ${({ theme }) => theme.colors.core.secondary};
-              }
-            `}
-            onClick={resetWallet}
-          >
-            Logout
-            <Tooltip content='Logging out clears all your sensitive information from the browser and sends you back to the home page' />
-          </ButtonLogout>
         </Sidebar>
         <Content>
           <Box display='flex' justifyContent='center'>
