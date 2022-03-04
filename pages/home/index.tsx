@@ -16,11 +16,9 @@ const Home = () => {
   )
   return (
     <WalletPageLoggedIn>
-      <OneColumn>
-        <RequireWallet gatekeep={gatekeep}>
-          <WalletView />
-        </RequireWallet>
-      </OneColumn>
+      <RequireWallet gatekeep={gatekeep}>
+        <WalletView />
+      </RequireWallet>
     </WalletPageLoggedIn>
   )
 }

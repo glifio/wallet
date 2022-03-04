@@ -37,11 +37,11 @@ export default function WalletPageLoggedIn({
       ]}
       appHeaderLinks={[
         {
-          title: 'Wallet',
+          title: 'Account',
           url: PAGE.WALLET_HOME
         },
         {
-          title: 'Switch',
+          title: 'Switch Account',
           url: PAGE.WALLET_CHOOSE_ACCOUNTS
         },
         {

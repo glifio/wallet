@@ -1,15 +1,14 @@
 import React, { useCallback, useState } from 'react'
 import { useRouter } from 'next/router'
+import styled from 'styled-components'
 import {
   AccountCard,
   AccountError,
   BalanceCard,
-  Wrapper,
-  Sidebar,
-  Content,
-  Box,
+  OneColumn,
   MessageHistoryTable,
-  MessageDetail
+  MessageDetail,
+  space
 } from '@glif/react-components'
 import {
   useWalletProvider,
@@ -26,6 +25,11 @@ import {
 import { PAGE } from '../../constants'
 
 const EXPLORER_URL = process.env.NEXT_PUBLIC_EXPLORER_URL! as string
+
+const Cards = styled.div`
+  display: flex;
+  gap: ${space('large')};
+`
 
 export default function WalletHome() {
   const wallet = useWallet()
@@ -61,8 +65,8 @@ export default function WalletHome() {
 
   return (
     <>
-      <Wrapper>
-        <Sidebar>
+      <OneColumn>
+        <Cards>
           {hasLedgerError({ ...ledger, otherError: uncaughtError }) ? (
             <AccountError
               onTryAgain={onShowOnLedger}
@@ -70,7 +74,6 @@ export default function WalletHome() {
                 ...ledger,
                 otherError: uncaughtError
               })}
-              mb={2}
             />
           ) : (
             <AccountCard
@@ -80,7 +83,6 @@ export default function WalletHome() {
               walletType={loginOption}
               onShowOnLedger={onShowOnLedger}
               ledgerBusy={ledgerBusy}
-              mb={2}
             />
           )}
           <BalanceCard
@@ -88,41 +90,37 @@ export default function WalletHome() {
             onSend={onSend}
             disableButtons={false}
           />
-        </Sidebar>
-        <Content>
-          <Box display='flex' justifyContent='center'>
-            {router.query.cid ? (
-              <Box display='flex' flexDirection='row'>
-                <MessageDetail
-                  cid={router.query.cid as string}
-                  height={Number(router.query?.height) || null}
-                  addressHref={(address) =>
-                    `${EXPLORER_URL}/actor/?address=${address}`
-                  }
-                  confirmations={50}
-                />
-              </Box>
-            ) : (
-              <MessageHistoryTable
-                address={wallet.address}
-                cidHref={(cid: string, height?: string) =>
-                  generateRouteWithRequiredUrlParams({
-                    pageUrl: PAGE.WALLET_HOME,
-                    newQueryParams: { height, cid },
-                    existingQParams: { ...router.query } as Record<
-                      string,
-                      string
-                    >
-                  })
-                }
-                addressHref={(address) =>
-                  `${EXPLORER_URL}/actor/?address=${address}`
-                }
-              />
-            )}
-          </Box>
-        </Content>
-      </Wrapper>
+        </Cards>
+      </OneColumn>
+      <OneColumn>
+        {router.query.cid ? (
+          <MessageDetail
+            cid={router.query.cid as string}
+            height={Number(router.query?.height) || null}
+            addressHref={(address) =>
+              `${EXPLORER_URL}/actor/?address=${address}`
+            }
+            confirmations={50}
+          />
+        ) : (
+          <MessageHistoryTable
+            address={wallet.address}
+            cidHref={(cid: string, height?: string) =>
+              generateRouteWithRequiredUrlParams({
+                pageUrl: PAGE.WALLET_HOME,
+                newQueryParams: { height, cid },
+                existingQParams: { ...router.query } as Record<
+                  string,
+                  string
+                >
+              })
+            }
+            addressHref={(address) =>
+              `${EXPLORER_URL}/actor/?address=${address}`
+            }
+          />
+        )}
+      </OneColumn>
     </>
   )
 }
