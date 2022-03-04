@@ -35,6 +35,20 @@ export default function WalletPageLoggedIn({
           urlPrefix: `${process.env.NEXT_PUBLIC_EXPLORER_URL}/address/`
         }
       ]}
+      appHeaderLinks={[
+        {
+          title: 'Wallet',
+          url: PAGE.WALLET_HOME
+        },
+        {
+          title: 'Switch',
+          url: PAGE.WALLET_CHOOSE_ACCOUNTS
+        },
+        {
+          title: 'Send',
+          url: PAGE.WALLET_SEND
+        }
+      ]}
     >
       {children}
     </WalletPage>
