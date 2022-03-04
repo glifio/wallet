@@ -8,7 +8,9 @@ import { resetWallet, navigate } from '../utils/urlParams'
 import { PAGE } from '../constants'
 import WalletPage from './WalletPage'
 
-export default function WalletPageLoggedIn({ children }: WalletPageLoggedInProps) {
+export default function WalletPageLoggedIn({
+  children
+}: WalletPageLoggedInProps) {
   const router = useRouter()
   const wallet = useWallet()
   const onNodeDisconnect = useCallback(() => {
