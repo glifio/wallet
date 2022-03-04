@@ -10,7 +10,6 @@ import { PAGE } from '../constants'
 
 const Send = () => {
   const router = useRouter()
-
   const gatekeep = useCallback(
     () => navigate(router, { pageUrl: PAGE.LANDING }),
     [router]
