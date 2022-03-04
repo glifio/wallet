@@ -23,7 +23,11 @@ import {
 } from '@glif/wallet-provider-react'
 
 import { errorLogger } from '../../logger'
-import { navigate, resetWallet } from '../../utils/urlParams'
+import {
+  generateRouteWithRequiredUrlParams,
+  navigate,
+  resetWallet
+} from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
 const EXPLORER_URL = process.env.NEXT_PUBLIC_EXPLORER_URL! as string
@@ -124,6 +128,7 @@ export default function WalletHome() {
               <Box display='flex' flexDirection='row'>
                 <MessageDetail
                   cid={router.query.cid as string}
+                  height={Number(router.query?.height) || null}
                   addressHref={(address) =>
                     `${EXPLORER_URL}/actor/?address=${address}`
                   }
@@ -139,7 +144,16 @@ export default function WalletHome() {
             ) : (
               <MessageHistoryTable
                 address={wallet.address}
-                cidHref={(cid: string) => `/home?cid=${cid}`}
+                cidHref={(cid: string, height?: string) =>
+                  generateRouteWithRequiredUrlParams({
+                    pageUrl: PAGE.WALLET_HOME,
+                    newQueryParams: { height, cid },
+                    existingQParams: { ...router.query } as Record<
+                      string,
+                      string
+                    >
+                  })
+                }
                 addressHref={(address) =>
                   `${EXPLORER_URL}/actor/?address=${address}`
                 }

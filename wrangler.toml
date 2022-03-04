@@ -1,0 +1,19 @@
+name = "glif-wallet"
+type = "webpack"
+route = 'dev.glif.link/*'
+zone_id = ''
+usage_model = ''
+compatibility_flags = []
+workers_dev = true
+site = {bucket = "./out",entry-point = "workers-site"}
+compatibility_date = "2022-02-18"
+
+[env.calibration]
+name = "wallet-calibration"
+vars = { ENVIRONMENT = "calibration" }
+route = 'wallet-calibration.glif.link/*'
+
+[env.mainnet]
+name = "wallet-mainnet"
+vars = { ENVIRONMENT = "production" }
+route = 'wallet.glif.link/*'

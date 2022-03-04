@@ -1,2 +1,5 @@
 .next
 node_modules
+*.test.js
+test-utils
+out
