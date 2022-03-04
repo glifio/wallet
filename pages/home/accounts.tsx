@@ -4,7 +4,7 @@ import { CoinType } from '@glif/filecoin-address'
 import { AccountSelector, RequireWallet } from '@glif/wallet-provider-react'
 import { OneColumn } from '@glif/react-components'
 
-import WalletPage from '../../components/WalletPage'
+import WalletPageLoggedIn from '../../components/WalletPageLoggedIn'
 import { PAGE } from '../../constants'
 import { navigate } from '../../utils/urlParams'
 
@@ -23,7 +23,7 @@ const Accounts = () => {
     [router]
   )
   return (
-    <WalletPage>
+    <WalletPageLoggedIn>
       <OneColumn>
         <RequireWallet gatekeep={gatekeep}>
           <AccountSelector
@@ -37,7 +37,7 @@ const Accounts = () => {
           />
         </RequireWallet>
       </OneColumn>
-    </WalletPage>
+    </WalletPageLoggedIn>
   )
 }
 
