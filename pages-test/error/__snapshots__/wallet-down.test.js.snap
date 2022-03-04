@@ -509,6 +509,14 @@ exports[`WalletDown it renders the error page 1`] = `
         >
           <a
             class="c23"
+            href="https://discord.gg/8Hqm3qvK"
+            rel="noopenner noreferrer"
+            target="_blank"
+          >
+            Discord
+          </a>
+          <a
+            class="c23"
             href="https://blog.glif.io"
             rel="noopenner noreferrer"
             target="_blank"
@@ -559,7 +567,7 @@ exports[`WalletDown it renders the error page 1`] = `
         >
           <a
             class="c23"
-            href="#"
+            href="undefined"
           >
             Wallet
           </a>
@@ -569,7 +577,7 @@ exports[`WalletDown it renders the error page 1`] = `
         >
           <a
             class="c23"
-            href="#"
+            href="undefined"
           >
             Safe
           </a>
@@ -579,7 +587,7 @@ exports[`WalletDown it renders the error page 1`] = `
         >
           <a
             class="c23"
-            href="#"
+            href="undefined"
           >
             Explorer
           </a>
@@ -589,7 +597,7 @@ exports[`WalletDown it renders the error page 1`] = `
         >
           <a
             class="c23"
-            href="#"
+            href="undefined"
           >
             Verifier
           </a>

@@ -533,6 +533,14 @@ exports[`UseChrome it renders the error page 1`] = `
         >
           <a
             class="c24"
+            href="https://discord.gg/8Hqm3qvK"
+            rel="noopenner noreferrer"
+            target="_blank"
+          >
+            Discord
+          </a>
+          <a
+            class="c24"
             href="https://blog.glif.io"
             rel="noopenner noreferrer"
             target="_blank"
@@ -583,7 +591,7 @@ exports[`UseChrome it renders the error page 1`] = `
         >
           <a
             class="c24"
-            href="#"
+            href="undefined"
           >
             Wallet
           </a>
@@ -593,7 +601,7 @@ exports[`UseChrome it renders the error page 1`] = `
         >
           <a
             class="c24"
-            href="#"
+            href="undefined"
           >
             Safe
           </a>
@@ -603,7 +611,7 @@ exports[`UseChrome it renders the error page 1`] = `
         >
           <a
             class="c24"
-            href="#"
+            href="undefined"
           >
             Explorer
           </a>
@@ -613,7 +621,7 @@ exports[`UseChrome it renders the error page 1`] = `
         >
           <a
             class="c24"
-            href="#"
+            href="undefined"
           >
             Verifier
           </a>
