@@ -4,49 +4,11 @@ exports[`UseChrome it renders the error page 1`] = `
 .c0 {
   min-width: 0;
   box-sizing: border-box;
-  padding: 24px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 90vh;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c1 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c2 {
-  min-width: 0;
-  box-sizing: border-box;
   border: 1px solid;
   border-radius: 4px;
   border-width: 1px;
   border-color: #FC6D6F;
   padding: 16px;
-  margin-left: 8px;
   background-color: #FC6D6F;
   color: #660000;
   display: -webkit-box;
@@ -60,18 +22,14 @@ exports[`UseChrome it renders the error page 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
 }
 
-.c3 {
+.c1 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c4 {
+.c2 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -94,13 +52,20 @@ exports[`UseChrome it renders the error page 1`] = `
   justify-content: center;
 }
 
-.c5 {
+.c7 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 32px;
+  text-align: center;
+}
+
+.c3 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c6 {
+.c4 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -110,14 +75,14 @@ exports[`UseChrome it renders the error page 1`] = `
   margin-bottom: 8px;
 }
 
-.c7 {
+.c5 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
 }
 
-.c9 {
+.c8 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -127,7 +92,6 @@ exports[`UseChrome it renders the error page 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  margin-top: 32px;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 16px;
@@ -137,11 +101,11 @@ exports[`UseChrome it renders the error page 1`] = `
   border-radius: 4px;
 }
 
-.c9:hover {
+.c8:hover {
   opacity: 0.8;
 }
 
-.c8 {
+.c6 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -151,78 +115,67 @@ exports[`UseChrome it renders the error page 1`] = `
   font-size: 1.25rem;
 }
 
-.c8:hover {
+.c6:hover {
   border-bottom: 2px solid #5E26FF;
 }
 
-<div
-  class="c0"
-  display="flex"
-  height="90vh"
-  width="100%"
->
+<div>
   <div
-    class="c1"
+    class="c0"
+    color="card.error.foreground"
     display="flex"
+    overflow="hidden"
+    style="word-break: break-word;"
     width="100%"
   >
     <div
-      class="c2"
-      color="card.error.foreground"
-      display="flex"
-      overflow="hidden"
-      style="word-break: break-word;"
-      width="100%"
+      class="c1"
     >
       <div
-        class="c3"
+        class="c2"
+        color="status.fail.foreground"
+        display="flex"
+        size="6"
       >
-        <div
-          class="c4"
-          color="status.fail.foreground"
-          display="flex"
-          size="6"
+        <h3
+          class="c3"
         >
-          <h3
-            class="c5"
-          >
-            Er
-          </h3>
-        </div>
-        <h2
-          class="c6"
-          font-family="RT-Alias-Grotesk"
-          font-size="4"
-          font-weight="400"
-        >
-          Only Chrome has Ledger support
-        </h2>
-        <p
-          class="c7"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          Please install Google Chrome to continue using your Ledger device, or choose an alternative setup option
-        </p>
+          Er
+        </h3>
       </div>
-      <a
-        class="c8"
-        color="core.white"
-        font-size="3"
-        href="https://www.google.com/chrome"
-        rel="noopener"
-        target="_blank"
+      <h2
+        class="c4"
+        font-family="RT-Alias-Grotesk"
+        font-size="4"
+        font-weight="400"
       >
-        Install Google Chrome.
-      </a>
+        Only Chrome has Ledger support
+      </h2>
+      <p
+        class="c5"
+        font-family="RT-Alias-Grotesk"
+        font-size="2"
+        font-weight="400"
+      >
+        Please install Google Chrome to continue using your Ledger device, or choose an alternative setup option
+      </p>
     </div>
+    <a
+      class="c6"
+      color="core.white"
+      font-size="3"
+      href="https://www.google.com/chrome"
+      rel="noopener"
+      target="_blank"
+    >
+      Install Google Chrome.
+    </a>
   </div>
   <div
-    class="c3"
+    class="c7"
   >
     <button
-      class="c9"
+      class="c8"
       font-size="3"
       height="6"
       type="button"
