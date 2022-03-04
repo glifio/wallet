@@ -1,19 +1,14 @@
 import React, { useCallback, useState } from 'react'
 import { useRouter } from 'next/router'
+import styled from 'styled-components'
 import {
   AccountCard,
   AccountError,
   BalanceCard,
-  Wrapper,
-  Sidebar,
-  Content,
-  BaseButton as ButtonLogout,
-  Box,
-  Tooltip,
+  OneColumn,
   MessageHistoryTable,
   MessageDetail,
-  ButtonClose,
-  NetworkConnection
+  space
 } from '@glif/react-components'
 import {
   useWalletProvider,
@@ -25,12 +20,16 @@ import {
 import { errorLogger } from '../../logger'
 import {
   generateRouteWithRequiredUrlParams,
-  navigate,
-  resetWallet
+  navigate
 } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
 const EXPLORER_URL = process.env.NEXT_PUBLIC_EXPLORER_URL! as string
+
+const Cards = styled.div`
+  display: flex;
+  gap: ${space('large')};
+`
 
 export default function WalletHome() {
   const wallet = useWallet()
@@ -64,20 +63,10 @@ export default function WalletHome() {
     navigate(router, { pageUrl: PAGE.WALLET_CHOOSE_ACCOUNTS })
   }, [router])
 
-  const onNodeDisconnect = useCallback(() => {
-    navigate(router, { pageUrl: PAGE.NODE_DISCONNECTED })
-  }, [router])
-
   return (
     <>
-      <Wrapper>
-        <Sidebar>
-          <NetworkConnection
-            lotusApiAddr={process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC}
-            apiKey={process.env.NEXT_PUBLIC_NODE_STATUS_API_KEY}
-            statusApiAddr={process.env.NEXT_PUBLIC_NODE_STATUS_API_ADDRESS}
-            errorCallback={onNodeDisconnect}
-          />
+      <OneColumn>
+        <Cards>
           {hasLedgerError({ ...ledger, otherError: uncaughtError }) ? (
             <AccountError
               onTryAgain={onShowOnLedger}
@@ -85,7 +74,6 @@ export default function WalletHome() {
                 ...ledger,
                 otherError: uncaughtError
               })}
-              mb={2}
             />
           ) : (
             <AccountCard
@@ -95,7 +83,6 @@ export default function WalletHome() {
               walletType={loginOption}
               onShowOnLedger={onShowOnLedger}
               ledgerBusy={ledgerBusy}
-              mb={2}
             />
           )}
           <BalanceCard
@@ -103,65 +90,34 @@ export default function WalletHome() {
             onSend={onSend}
             disableButtons={false}
           />
-          <ButtonLogout
-            variant='secondary'
-            width='100%'
-            mt={4}
-            display='flex'
-            alignItems='center'
-            justifyContent='space-between'
-            css={`
-              background-color: ${({ theme }) => theme.colors.core.secondary}00;
-              &:hover {
-                background-color: ${({ theme }) => theme.colors.core.secondary};
-              }
-            `}
-            onClick={resetWallet}
-          >
-            Logout
-            <Tooltip content='Logging out clears all your sensitive information from the browser and sends you back to the home page' />
-          </ButtonLogout>
-        </Sidebar>
-        <Content>
-          <Box display='flex' justifyContent='center'>
-            {router.query.cid ? (
-              <Box display='flex' flexDirection='row'>
-                <MessageDetail
-                  cid={router.query.cid as string}
-                  height={Number(router.query?.height) || null}
-                  addressHref={(address) =>
-                    `${EXPLORER_URL}/actor/?address=${address}`
-                  }
-                  confirmations={50}
-                />
-                <ButtonClose
-                  alignSelf='flex-start'
-                  ml={7}
-                  pt={4}
-                  onClick={router.back}
-                />
-              </Box>
-            ) : (
-              <MessageHistoryTable
-                address={wallet.address}
-                cidHref={(cid: string, height?: string) =>
-                  generateRouteWithRequiredUrlParams({
-                    pageUrl: PAGE.WALLET_HOME,
-                    newQueryParams: { height, cid },
-                    existingQParams: { ...router.query } as Record<
-                      string,
-                      string
-                    >
-                  })
-                }
-                addressHref={(address) =>
-                  `${EXPLORER_URL}/actor/?address=${address}`
-                }
-              />
-            )}
-          </Box>
-        </Content>
-      </Wrapper>
+        </Cards>
+      </OneColumn>
+      <OneColumn>
+        {router.query.cid ? (
+          <MessageDetail
+            cid={router.query.cid as string}
+            height={Number(router.query?.height) || null}
+            addressHref={(address) =>
+              `${EXPLORER_URL}/actor/?address=${address}`
+            }
+            confirmations={50}
+          />
+        ) : (
+          <MessageHistoryTable
+            address={wallet.address}
+            cidHref={(cid: string, height?: string) =>
+              generateRouteWithRequiredUrlParams({
+                pageUrl: PAGE.WALLET_HOME,
+                newQueryParams: { height, cid },
+                existingQParams: { ...router.query } as Record<string, string>
+              })
+            }
+            addressHref={(address) =>
+              `${EXPLORER_URL}/actor/?address=${address}`
+            }
+          />
+        )}
+      </OneColumn>
     </>
   )
 }

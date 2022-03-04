@@ -1,44 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UseChrome it renders the error page 1`] = `
-.c0 {
-  min-width: 0;
-  box-sizing: border-box;
-  padding: 24px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 90vh;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c1 {
-  min-width: 0;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c2 {
+.c10 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -46,7 +9,6 @@ exports[`UseChrome it renders the error page 1`] = `
   border-width: 1px;
   border-color: #FC6D6F;
   padding: 16px;
-  margin-left: 8px;
   background-color: #FC6D6F;
   color: #660000;
   display: -webkit-box;
@@ -60,18 +22,14 @@ exports[`UseChrome it renders the error page 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
 }
 
-.c3 {
+.c11 {
   min-width: 0;
   box-sizing: border-box;
 }
 
-.c4 {
+.c12 {
   min-width: 0;
   box-sizing: border-box;
   border-width: 0.1875rem;
@@ -94,13 +52,20 @@ exports[`UseChrome it renders the error page 1`] = `
   justify-content: center;
 }
 
-.c5 {
+.c17 {
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 32px;
+  text-align: center;
+}
+
+.c13 {
   font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.c6 {
+.c14 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.2;
@@ -110,14 +75,14 @@ exports[`UseChrome it renders the error page 1`] = `
   margin-bottom: 8px;
 }
 
-.c7 {
+.c15 {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4;
   font-family: RT-Alias-Grotesk;
 }
 
-.c9 {
+.c18 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -127,7 +92,6 @@ exports[`UseChrome it renders the error page 1`] = `
   -webkit-transition: 0.18s ease-in-out;
   transition: 0.18s ease-in-out;
   border-radius: 4px;
-  margin-top: 32px;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 16px;
@@ -137,11 +101,22 @@ exports[`UseChrome it renders the error page 1`] = `
   border-radius: 4px;
 }
 
-.c9:hover {
+.c18:hover {
   opacity: 0.8;
 }
 
-.c8 {
+.c6 {
+  width: auto;
+  height: 35px;
+}
+
+.c20 {
+  width: auto;
+  height: 35px;
+  margin-bottom: 2em;
+}
+
+.c16 {
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: 0.18s ease-in-out;
@@ -151,84 +126,512 @@ exports[`UseChrome it renders the error page 1`] = `
   font-size: 1.25rem;
 }
 
-.c8:hover {
+.c16:hover {
   border-bottom: 2px solid #5E26FF;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.c2 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 10px 0;
+  margin: -10px 0;
+  background-color: var(--white-broken);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-column-gap: 20px;
+  column-gap: 20px;
+  row-gap: 10px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.c7 {
+  gap: 10px;
+}
+
+.c4 {
+  color: black;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c4:hover {
+  color: black;
+}
+
+.c22 {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.c23 {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.c24 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: inherit;
+}
+
+.c19 {
+  background: #272727;
+  border-radius: 8px;
+  padding: 30px;
+  color: white;
+  position: relative;
+}
+
+.c26 {
+  text-transform: uppercase;
+  display: block;
+}
+
+.c8 {
+  position: relative;
+  padding: 3rem 1.5rem;
+}
+
+.c8 > *:first-child {
+  margin-top: 0;
+}
+
+.c8 > *:last-child {
+  margin-bottom: 0;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 10px;
+  gap: 10px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: calc(100vh - 2 * 10px);
+  gap: 10px;
+}
+
+.c1 > * {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c1 > *:last-child {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+@media (min-width:480px) {
+  .c6 {
+    height: 45px;
+  }
+}
+
+@media (min-width:868px) {
+  .c6 {
+    height: 55px;
+  }
+}
+
+@media (min-width:480px) {
+  .c20 {
+    height: 45px;
+  }
+}
+
+@media (min-width:868px) {
+  .c20 {
+    height: 55px;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+  }
+}
+
+@media (min-width:868px) {
+  .c21 {
+    max-width: 670px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:868px) {
+  .c25 {
+    margin-top: 2em;
+  }
+}
+
+@media (min-width:868px) {
+  .c26 {
+    margin-top: 1em;
+  }
+}
+
+@media (max-width:868px) {
+  .c26 {
+    margin-top: 5em;
+  }
+}
+
+@media (max-width:868px) {
+
+}
+
+@media (min-width:868px) {
+
+}
+
+@media (min-width:868px) {
+  .c8 {
+    padding: 3rem;
+  }
 }
 
 <div
   class="c0"
-  display="flex"
-  height="90vh"
-  width="100%"
 >
   <div
     class="c1"
-    display="flex"
-    width="100%"
   >
-    <div
+    <header
       class="c2"
-      color="card.error.foreground"
-      display="flex"
-      overflow="hidden"
-      style="word-break: break-word;"
-      width="100%"
     >
-      <div
+      <nav
         class="c3"
       >
-        <div
+        <a
           class="c4"
-          color="status.fail.foreground"
-          display="flex"
-          size="6"
+          href="/"
         >
-          <h3
+          <div
             class="c5"
           >
-            Er
-          </h3>
+            <svg
+              class="c6"
+              fill="none"
+              height="960"
+              viewBox="0 0 640 960"
+              width="640"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10 0H630C635.523 0 640 4.47715 640 10V70C640 75.5229 635.523 80 630 80H385C371.193 80 360 91.1929 360 105V290C360 295.523 355.523 300 350 300H290C284.477 300 280 295.523 280 290V105C280 91.1929 268.807 80 255 80H10C4.47718 80 3.05176e-05 75.5229 3.05176e-05 70V10C3.05176e-05 4.47715 4.47718 0 10 0ZM420 710C420 726.569 406.569 740 390 740C373.431 740 360 726.569 360 710V370C360 364.477 355.523 360 350 360H290C284.477 360 280 364.477 280 370V710C280 726.569 266.569 740 250 740C233.431 740 220 726.569 220 710L220 150C220 144.477 215.523 140 210 140L150 140C144.477 140 140 144.477 140 150L140 749.976L140 750V810C140 815.523 144.477 820 150 820H210H290H350H430H490C495.523 820 500 815.523 500 810V750V150C500 144.477 495.523 140 490 140L430 140C424.477 140 420 144.477 420 150V710ZM370 880H535C548.807 880 560 868.807 560 855V150C560 144.477 564.477 140 570 140H630C635.523 140 640 144.477 640 150V890V950C640 955.523 635.523 960 630 960H570H370C364.477 960 360 955.523 360 950V890C360 884.477 364.477 880 370 880ZM2.89871e-05 889.976L0 890V950C0 952.071 0.629602 953.995 1.70785 955.591C3.50492 958.251 6.54823 960 10 960H70H270C275.523 960 280 955.523 280 950V890C280 884.477 275.523 880 270 880H105C91.1929 880 80 868.807 80 855L80 150C80 144.477 75.5229 140 70 140H10C4.47717 140 1.26938e-05 144.477 1.28145e-05 150L2.89871e-05 889.976Z"
+                fill="black"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </div>
+        </a>
+      </nav>
+      <nav
+        class="c3 c7"
+      />
+    </header>
+    <div
+      class="c8 c9"
+    >
+      <div>
+        <div
+          class="c10"
+          color="card.error.foreground"
+          display="flex"
+          overflow="hidden"
+          style="word-break: break-word;"
+          width="100%"
+        >
+          <div
+            class="c11"
+          >
+            <div
+              class="c12"
+              color="status.fail.foreground"
+              display="flex"
+              size="6"
+            >
+              <h3
+                class="c13"
+              >
+                Er
+              </h3>
+            </div>
+            <h2
+              class="c14"
+              font-family="RT-Alias-Grotesk"
+              font-size="4"
+              font-weight="400"
+            >
+              Only Chrome has Ledger support
+            </h2>
+            <p
+              class="c15"
+              font-family="RT-Alias-Grotesk"
+              font-size="2"
+              font-weight="400"
+            >
+              Please install Google Chrome to continue using your Ledger device, or choose an alternative setup option
+            </p>
+          </div>
+          <a
+            class="c16"
+            color="core.white"
+            font-size="3"
+            href="https://www.google.com/chrome"
+            rel="noopener"
+            target="_blank"
+          >
+            Install Google Chrome.
+          </a>
         </div>
-        <h2
-          class="c6"
-          font-family="RT-Alias-Grotesk"
-          font-size="4"
-          font-weight="400"
+        <div
+          class="c17"
         >
-          Only Chrome has Ledger support
-        </h2>
-        <p
-          class="c7"
-          font-family="RT-Alias-Grotesk"
-          font-size="2"
-          font-weight="400"
-        >
-          Please install Google Chrome to continue using your Ledger device, or choose an alternative setup option
-        </p>
+          <button
+            class="c18"
+            font-size="3"
+            height="6"
+            type="button"
+          >
+            Back
+          </button>
+        </div>
       </div>
-      <a
-        class="c8"
-        color="core.white"
-        font-size="3"
-        href="https://www.google.com/chrome"
-        rel="noopener"
-        target="_blank"
-      >
-        Install Google Chrome.
-      </a>
     </div>
   </div>
-  <div
-    class="c3"
+  <footer
+    class="c19"
   >
-    <button
-      class="c9"
-      font-size="3"
-      height="6"
-      type="button"
+    <svg
+      class="c20"
+      height="71px"
+      version="1.1"
+      viewBox="0 0 52 71"
+      width="52px"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
-      Back
-    </button>
-  </div>
+      <title>
+        logo-glif
+      </title>
+      <g
+        fill="none"
+        fill-rule="evenodd"
+        id="Page-1"
+        stroke="none"
+        stroke-width="1"
+      >
+        <g
+          fill="#FFFFFF"
+          fill-rule="nonzero"
+          id="logo-glif"
+          transform="translate(-0.000000, 0.000000)"
+        >
+          <path
+            d="M10.4352,26.1836 C10.4352,26.2474 10.4481,26.3105 10.4727,26.3693 C10.4973,26.4281 10.5332,26.4815 10.5785,26.5264 C10.6237,26.5714 10.6773,26.6069 10.7363,26.6312 C10.7952,26.6554 10.8584,26.6675024 10.9222,26.6675024 L50.5292,26.6675024 C50.593,26.6675024 50.6561,26.6554 50.7151,26.6312 C50.7741,26.6069 50.8277,26.5714 50.8729,26.5264 C50.9181,26.4815 50.9541,26.4281 50.9786,26.3693 C51.0032,26.3105 51.0162,26.2474 51.0162,26.1836 L51.0162,10.919 C51.0162,10.8552 51.0032,10.7922 50.9786,10.7333 C50.9541,10.6745 50.9181,10.6211 50.8729,10.5762 C50.8277,10.5313 50.7741,10.4957 50.7151,10.4715 C50.6561,10.4473 50.593,10.4349 50.5292,10.4351 L21.3573,10.4351 C21.2935,10.4349 21.2304,10.4473 21.1714,10.4715 C21.1124,10.4957 21.0588,10.5313 21.0136,10.5762 C20.9683,10.6211 20.9324,10.6745 20.9078,10.7333 C20.8833,10.7922 20.8705,10.8552 20.8703,10.919 L20.8703,15.7485 C20.8705,15.8123 20.8833,15.8753 20.9078,15.9342 C20.9324,15.993 20.9683,16.0464 21.0136,16.0913 C21.0588,16.1362 21.1124,16.1718 21.1714,16.196 C21.2304,16.2202 21.2935,16.2326 21.3573,16.2324 L42.9,16.2324 C43.515,16.2324 44.1048,16.4767 44.5397,16.9116 C44.9746,17.3465 45.2189,17.9363 45.2189,18.5513 C45.2189,19.1663 44.9746,19.7562 44.5397,20.191 C44.1048,20.6259 43.515,20.8702 42.9,20.8702 L18.5514,20.8702 C17.9364,20.8702 17.3465,20.6259 16.9117,20.191 C16.4768,19.7562 16.2325,19.1663 16.2325,18.5513 L16.2325,8.1162 C16.2325,7.50119 16.4768,6.91136 16.9117,6.47648 C17.3465,6.0416 17.9364,5.79729 18.5514,5.79729 L50.5292,5.79729 C50.593,5.79749 50.6561,5.78513 50.7151,5.76093 C50.7741,5.73672 50.8277,5.70113 50.8729,5.6562 C50.9181,5.61127 50.9541,5.55787 50.9786,5.49905 C51.0032,5.44024 51.0162,5.37715 51.0162,5.31341 L51.0162,0.483881 C51.0156,0.355201 50.964,0.232012 50.8727,0.141311 C50.7814,0.0506101 50.6579,0 50.5292,0 L10.9222,0 C10.7935,0 10.67,0.0506101 10.5787,0.141311 C10.4874,0.232012 10.4358,0.355201 10.4352,0.483881 L10.4352,26.1836 Z"
+            id="Path"
+          />
+          <path
+            d="M50.5284,47.6879024 C50.6572,47.6883 50.7809,47.6376 50.8723,47.5468 C50.9638,47.4561 51.0155,47.3328 51.0161,47.204 L51.0161,42.3706 C51.0155,42.2418 50.9638,42.1185 50.8723,42.0278 C50.7809,41.937 50.6572,41.8863 50.5284,41.8866977 L0.487747,41.8866977 C0.358933,41.8863 0.235219,41.937 0.143772,42.0278 C0.0523238001,42.1185 0.000616192051,42.2418 5.25659516e-11,42.3706 L5.25659516e-11,47.2001 C5.25659516e-11,47.2642 0.0122749001,47.3278 0.0367141001,47.387 C0.0611532001,47.4463 0.0970723001,47.5001 0.142404,47.5455 C0.187736,47.5908 0.241586,47.6267 0.300854,47.6512 C0.360122,47.6756 0.423639,47.6881 0.487747,47.6879024 L50.5284,47.6879024 Z"
+            id="Path"
+          />
+          <path
+            d="M50.5284,37.2413054 C50.5921,37.2413054 50.6553,37.2293 50.7143,37.2052 C50.7733,37.1811 50.827,37.1456 50.8723,37.1008 C50.9176,37.0559 50.9536,37.0025 50.9783,36.9438 C51.0029,36.885 51.0161,36.8219 51.0161,36.7582 L51.0161,31.9279 C51.0155,31.7991 50.9638,31.6758 50.8723,31.585 C50.7809,31.4943 50.6572,31.4436 50.5284,31.444 L8.1162,31.444 C7.50119,31.444 6.91136,31.1997 6.47648,30.7648 C6.0416,30.3299 5.79729,29.7401 5.79729,29.1251 L5.79729,0.626417 C5.7977,0.497602 5.74697,0.373889 5.65625,0.282441 C5.56553,0.190993 5.44222,0.139286 5.31341,0.138672 L0.483882,0.138672 C0.355068,0.139286 0.231763,0.190993 0.14104,0.282441 C0.0503165001,0.373889 5.71134251e-11,0.497602 5.71134251e-11,0.626417 L5.71134251e-11,36.7582 C5.71134251e-11,36.8811 0.0473625001,36.9993 0.13218,37.0882 L0.143002,37.0998 C0.187479,37.1443 0.240271,37.1795 0.298363,37.2035 C0.356455,37.2275 0.418707,37.2398 0.481564,37.2397 L50.5284,37.2397 L50.5284,37.2413054 Z"
+            id="Path"
+          />
+          <path
+            d="M0,70.3858 C-0.000684023949,70.4499 0.0112877001,70.5136 0.0352565001,70.573 C0.0592253001,70.6325 0.0947178001,70.6866 0.139691,70.7323 C0.184664,70.778 0.23823,70.8143 0.297306,70.8393 C0.356381,70.8642 0.419799,70.8771 0.48391,70.8774 L5.31344,70.8774 C5.44225,70.8768 5.56556,70.8251 5.65628,70.7337 C5.747,70.6422 5.79773,70.5185 5.79732,70.3897 C5.79732,69.904 5.99024,69.4383 6.33365,69.0949 C6.67706,68.7515 7.14283,68.5585 7.62848,68.5585 L50.5284,68.5585 C50.6572,68.5589 50.7809,68.5082 50.8724,68.4175 C50.9638,68.3268 51.0155,68.2035 51.0161,68.0746 L51.0161,63.2413 C51.0155,63.1124 50.9638,62.9891 50.8724,62.8984 C50.7809,62.8077 50.6572,62.757 50.5284,62.7574 L8.11623,62.7574 C7.50121,62.7574 6.91139,62.5131 6.47651,62.0782 C6.04163,61.6433 5.79732,61.0535 5.79732,60.4385 C5.79732,59.8235 6.04163,59.2336 6.47651,58.7987 C6.91139,58.3639 7.50121,58.1196 8.11623,58.1196 L50.5284,58.1196 C50.6572,58.12 50.7809,58.0692 50.8724,57.9785 C50.9638,57.8878 51.0155,57.7645 51.0161,57.6357 L51.0161,52.8061 C51.0155,52.6773 50.9638,52.554 50.8724,52.4633 C50.7809,52.3726 50.6572,52.3219 50.5284,52.3222977 L0.487775,52.3222977 C0.35896,52.3219 0.235247,52.3726 0.143799,52.4633 C0.0523515001,52.554 0.000643898051,52.6773 0,52.8061 L0,70.3858 Z"
+            id="Path"
+          />
+        </g>
+      </g>
+    </svg>
+    <div
+      class="c21"
+    >
+      <ul
+        class="c22"
+      >
+        <li
+          class="c23"
+        >
+          <a
+            class="c24"
+            href="https://blog.glif.io"
+            rel="noopenner noreferrer"
+            target="_blank"
+          >
+            Blog
+          </a>
+        </li>
+        <li
+          class="c23"
+        >
+          <a
+            class="c24"
+            href="https://github.com/glifio"
+            rel="noopenner noreferrer"
+            target="_blank"
+          >
+            Code
+          </a>
+        </li>
+        <li
+          class="c23"
+        >
+          <a
+            class="c24"
+            href="https://lotus.filecoin.io/docs/developers/hosted-lotus/"
+            rel="noopenner noreferrer"
+            target="_blank"
+          >
+            Nodes
+          </a>
+        </li>
+        <li
+          class="c23"
+        >
+          <a
+            class="c24"
+            href="mailto:squad@glif.io"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+      <ul
+        class="c22"
+      >
+        <li
+          class="c23"
+        >
+          <a
+            class="c24"
+            href="#"
+          >
+            Wallet
+          </a>
+        </li>
+        <li
+          class="c23"
+        >
+          <a
+            class="c24"
+            href="#"
+          >
+            Safe
+          </a>
+        </li>
+        <li
+          class="c23"
+        >
+          <a
+            class="c24"
+            href="#"
+          >
+            Explorer
+          </a>
+        </li>
+        <li
+          class="c23"
+        >
+          <a
+            class="c24"
+            href="#"
+          >
+            Verifier
+          </a>
+        </li>
+      </ul>
+      <div
+        class="c25"
+      >
+        GLIF
+        <br />
+        Freeport, Grand Bahamas
+      </div>
+      <div
+        class="c26"
+      >
+        2022 Glif for life
+      </div>
+    </div>
+  </footer>
 </div>
 `;

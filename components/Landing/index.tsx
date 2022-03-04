@@ -38,13 +38,7 @@ export default function Landing() {
   )
 
   return (
-    <Page
-      phishingUrl='https://wallet.glif.io'
-      homeUrl={process.env.NEXT_PUBLIC_HOME_URL}
-      blogUrl={process.env.NEXT_PUBLIC_BLOG_URL}
-      explorerUrl={process.env.NEXT_PUBLIC_EXPLORER_URL}
-      safeUrl={process.env.NEXT_PUBLIC_SAFE_URL}
-    >
+    <Page phishingUrl='https://wallet.glif.io' hideAppHeader>
       <LandingPageColumns>
         <AppTile
           title={

@@ -1,7 +1,8 @@
 import React, { useCallback } from 'react'
 import { ConnectImportPk } from '@glif/wallet-provider-react'
-import { Box, useDesktopBrowser } from '@glif/react-components'
+import { OneColumnCentered, useDesktopBrowser } from '@glif/react-components'
 import { useRouter } from 'next/router'
+import WalletPage from '../../../components/WalletPage'
 import useReset from '../../../utils/useReset'
 import { navigate } from '../../../utils/urlParams'
 import { PAGE } from '../../../constants'
@@ -20,14 +21,10 @@ export default function ImportPK() {
   }, [router])
 
   return (
-    <Box
-      display='flex'
-      minHeight='100vh'
-      justifyContent='center'
-      alignContent='center'
-      padding={[2, 3, 5]}
-    >
-      <ConnectImportPk back={back} next={next} />
-    </Box>
+    <WalletPage>
+      <OneColumnCentered>
+        <ConnectImportPk back={back} next={next} />
+      </OneColumnCentered>
+    </WalletPage>
   )
 }

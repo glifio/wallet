@@ -1,6 +1,8 @@
 import { useCallback } from 'react'
-import { RequireWallet } from '@glif/wallet-provider-react'
 import { useRouter } from 'next/router'
+import { RequireWallet } from '@glif/wallet-provider-react'
+
+import WalletPageLoggedIn from '../../components/WalletPageLoggedIn'
 import { WalletView } from '../../components'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
@@ -12,9 +14,11 @@ const Home = () => {
     [router]
   )
   return (
-    <RequireWallet gatekeep={gatekeep}>
-      <WalletView />
-    </RequireWallet>
+    <WalletPageLoggedIn>
+      <RequireWallet gatekeep={gatekeep}>
+        <WalletView />
+      </RequireWallet>
+    </WalletPageLoggedIn>
   )
 }
 
