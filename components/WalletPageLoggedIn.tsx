@@ -37,7 +37,7 @@ export default function WalletPageLoggedIn({
       ]}
       appHeaderLinks={[
         {
-          title: 'Account',
+          title: 'Wallet',
           url: PAGE.WALLET_HOME
         },
         {
