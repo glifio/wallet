@@ -515,6 +515,10 @@ exports[`WalletDown it renders the error page 1`] = `
           >
             Discord
           </a>
+        </li>
+        <li
+          class="c22"
+        >
           <a
             class="c23"
             href="https://blog.glif.io"

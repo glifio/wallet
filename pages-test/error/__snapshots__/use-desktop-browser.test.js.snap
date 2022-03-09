@@ -485,6 +485,10 @@ exports[`UseDesktopBrowser it renders the error page 1`] = `
           >
             Discord
           </a>
+        </li>
+        <li
+          class="c20"
+        >
           <a
             class="c21"
             href="https://blog.glif.io"

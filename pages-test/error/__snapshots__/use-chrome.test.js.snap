@@ -539,6 +539,10 @@ exports[`UseChrome it renders the error page 1`] = `
           >
             Discord
           </a>
+        </li>
+        <li
+          class="c23"
+        >
           <a
             class="c24"
             href="https://blog.glif.io"
