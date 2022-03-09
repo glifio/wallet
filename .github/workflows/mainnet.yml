@@ -7,7 +7,7 @@
 name: deploy - mainnet
 
 env:
-  node_version: 14
+  node_version: 16
   git_email: jpschwartz2@uwalumni.com
 
 on:
@@ -28,7 +28,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [14]
+        node: [16]
 
     steps:
       - uses: actions/checkout@v3
