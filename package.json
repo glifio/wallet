@@ -2,7 +2,7 @@
   "name": "wallet",
   "version": "3.0.2-calibration.1",
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=16.0.0"
   },
   "scripts": {
     "dev": "next -p 3001",
