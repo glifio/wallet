@@ -24,8 +24,6 @@ import {
 } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
-const EXPLORER_URL = process.env.NEXT_PUBLIC_EXPLORER_URL! as string
-
 const Cards = styled.div`
   display: flex;
   gap: ${space('large')};
@@ -97,9 +95,6 @@ export default function WalletHome() {
           <MessageDetail
             cid={router.query.cid as string}
             height={Number(router.query?.height) || null}
-            addressHref={(address) =>
-              `${EXPLORER_URL}/actor/?address=${address}`
-            }
             confirmations={50}
           />
         ) : (
@@ -111,9 +106,6 @@ export default function WalletHome() {
                 newQueryParams: { height, cid },
                 existingQParams: { ...router.query } as Record<string, string>
               })
-            }
-            addressHref={(address) =>
-              `${EXPLORER_URL}/actor/?address=${address}`
             }
           />
         )}
