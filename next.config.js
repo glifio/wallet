@@ -29,7 +29,7 @@ module.exports = (phase) => {
       NEXT_PUBLIC_HOME_URL: process.env.HOME_URL || 'https://glif.io',
       NEXT_PUBLIC_BLOG_URL: process.env.BLOG_URL || 'https://blog.glif.io/',
       NEXT_PUBLIC_WALLET_URL:
-        process.env.WALLET_URL || 'https://wallet-calibratio.glif.link',
+        process.env.WALLET_URL || 'https://wallet-calibration.glif.link',
       NEXT_PUBLIC_SAFE_URL:
         process.env.SAFE_URL || 'https://safe-calibration.glif.link',
       NEXT_PUBLIC_EXPLORER_URL:
