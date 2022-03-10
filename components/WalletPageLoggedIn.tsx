@@ -31,8 +31,7 @@ export default function WalletPageLoggedIn({
       addressLinks={[
         {
           label: 'Wallet Address',
-          address: wallet.address,
-          urlPrefix: `${process.env.NEXT_PUBLIC_EXPLORER_URL}/address/`
+          address: wallet.address
         }
       ]}
       appHeaderLinks={[
