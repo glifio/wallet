@@ -53,8 +53,8 @@ export default function Landing() {
         {unsupportedDevice ? (
           <OneColumnLargeText className='primary'>
             <p>
-              We&apos;re sorry, the Glif Safe only supports desktop browsers
-              at the moment. Please come back on your computer!
+              We&apos;re sorry, the Glif Safe only supports desktop browsers at
+              the moment. Please come back on your computer!
             </p>
           </OneColumnLargeText>
         ) : (
@@ -105,7 +105,7 @@ export default function Landing() {
                 Import Private Key
               </BurnerWallet>
             </Box>
-  
+
             <p>
               Want to load this app directly from IPFS or Filecoin?
               <br />
@@ -114,7 +114,7 @@ export default function Landing() {
                 release page
               </SmartLink>
             </p>
-  
+
             <p>
               Need help?
               <br />

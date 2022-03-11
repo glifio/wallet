@@ -1,12 +1,5 @@
 import styled from 'styled-components'
-import {
-  Box,
-  ButtonV2,
-  devices,
-  space,
-  fontSize,
-  baseColors
-} from '@glif/react-components'
+import { Box, ButtonV2, space, baseColors } from '@glif/react-components'
 
 export const ConnectBtn = styled(ButtonV2)`
   margin-top: ${space()};
