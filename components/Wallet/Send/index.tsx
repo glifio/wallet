@@ -29,7 +29,7 @@ import HeaderText from './HeaderText'
 import { LEDGER, emptyGasInfo, PAGE, METAMASK } from '../../../constants'
 import isBase64 from '../../../utils/isBase64'
 import { navigate } from '../../../utils/urlParams'
-import { errorLogger } from '../../../logger'
+import { logger } from '../../../logger'
 
 // this is a bit confusing, sometimes the form can report errors, so we check those here too
 const isValidAmount = (value, balance, errorFromForms) => {
@@ -140,7 +140,7 @@ const Send = () => {
           'Ledger devices cannot sign arbitrary base64 params yet. Coming soon.'
         )
       } else {
-        errorLogger.error(
+        logger.error(
           err instanceof Error ? err.message : JSON.stringify(err),
           'Wallet/Send'
         )

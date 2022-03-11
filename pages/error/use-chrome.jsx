@@ -1,6 +1,5 @@
 import React from 'react'
-import { ErrorView } from '@glif/react-components'
-import { OneColumnCentered } from '@glif/react-components'
+import { ErrorView, OneColumnCentered } from '@glif/react-components'
 import WalletPage from '../../components/WalletPage'
 
 const UseChrome = () => {

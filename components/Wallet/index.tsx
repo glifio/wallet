@@ -17,7 +17,7 @@ import {
   reportLedgerConfigError
 } from '@glif/wallet-provider-react'
 
-import { errorLogger } from '../../logger'
+import { logger } from '../../logger'
 import {
   generateRouteWithRequiredUrlParams,
   navigate
@@ -44,7 +44,7 @@ export default function WalletHome() {
       if (provider) await provider.wallet.showAddressAndPubKey(wallet.path)
       else setUncaughtError('Error connecting to your Ledger Device')
     } catch (err) {
-      errorLogger.error(
+      logger.error(
         err instanceof Error ? err.message : JSON.stringify(err),
         'onShowLedger'
       )

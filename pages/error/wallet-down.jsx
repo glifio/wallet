@@ -1,6 +1,5 @@
 import React from 'react'
-import { ErrorView } from '@glif/react-components'
-import { OneColumnCentered } from '@glif/react-components'
+import { ErrorView, OneColumnCentered } from '@glif/react-components'
 import WalletPage from '../../components/WalletPage'
 
 const WalletDown = () => {
@@ -9,7 +8,7 @@ const WalletDown = () => {
       <OneColumnCentered>
         <ErrorView
           title='Oops! Something went wrong.'
-          description="We've been notified of the outage and expect to be back up and running again shortly."
+          description="We've been notified of the issue and expect to be back up and running again shortly."
         />
       </OneColumnCentered>
     </WalletPage>
