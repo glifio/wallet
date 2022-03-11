@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import {
   AppTile,
   Box,
+  ButtonV2,
   IconCaution,
   LandingPageColumns,
   LandingPageContent,
@@ -63,19 +64,14 @@ export default function Landing() {
             <Box
               display='flex'
               flexDirection='column'
-              width='100%'
-              css={`
-                &:not(:first-child) {
-                  margin-top: ${space()};
-                }
-              `}
+              gridGap={space()}
             >
-              <ConnectBtn large onClick={() => connect(PAGE.CONNECT_MM)}>
+              <ButtonV2 large onClick={() => connect(PAGE.CONNECT_MM)}>
                 MetaMask
-              </ConnectBtn>
-              <ConnectBtn large onClick={() => connect(PAGE.CONNECT_LEDGER)}>
+              </ButtonV2>
+              <ButtonV2 large onClick={() => connect(PAGE.CONNECT_LEDGER)}>
                 Ledger Device
-              </ConnectBtn>
+              </ButtonV2>
               <Caution>
                 <IconCaution />
                 <p>

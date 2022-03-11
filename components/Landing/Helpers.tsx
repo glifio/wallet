@@ -1,11 +1,7 @@
 import styled from 'styled-components'
 import { Box, ButtonV2, space, baseColors } from '@glif/react-components'
 
-export const ConnectBtn = styled(ButtonV2)`
-  margin-top: ${space()};
-`
-
-export const BurnerWallet = styled(ConnectBtn)`
+export const BurnerWallet = styled(ButtonV2)`
   color: ${(props) => props.theme.colors.core.darkgray};
   border-color: ${(props) => props.theme.colors.core.darkgray};
 `
