@@ -61,11 +61,7 @@ export default function Landing() {
         ) : (
           <LandingPageContent>
             <h2>Connect</h2>
-            <Box
-              display='flex'
-              flexDirection='column'
-              gridGap={space()}
-            >
+            <Box display='flex' flexDirection='column' gridGap={space()}>
               <ButtonV2 large onClick={() => connect(PAGE.CONNECT_MM)}>
                 MetaMask
               </ButtonV2>
