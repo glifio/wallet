@@ -17,7 +17,7 @@ describe('WalletDown', () => {
 
     expect(
       screen.getByText(
-        "We've been notified of the outage and expect to be back up and running again shortly."
+        "We've been notified of the issue and expect to be back up and running again shortly."
       )
     ).toBeInTheDocument()
     expect(container.firstChild).toMatchSnapshot()
