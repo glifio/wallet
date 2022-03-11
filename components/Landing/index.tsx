@@ -15,7 +15,7 @@ import {
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
-import { ConnectBtn, BurnerWallet, Caution } from './Helpers'
+import { BurnerWallet, Caution } from './Helpers'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
