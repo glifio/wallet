@@ -54,8 +54,8 @@ export default function Landing() {
         {unsupportedDevice ? (
           <OneColumnLargeText className='primary'>
             <p>
-              We&apos;re sorry, the Glif Safe only supports desktop browsers at
-              the moment. Please come back on your computer!
+              We&apos;re sorry, the Glif Wallet only supports desktop browsers
+              at the moment. Please come back on your computer!
             </p>
           </OneColumnLargeText>
         ) : (
