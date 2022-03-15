@@ -31,7 +31,11 @@ export default function WalletPageLoggedIn({
       addressLinks={[
         {
           label: 'Wallet Address',
-          address: wallet.address
+          address: wallet.address,
+          hideCopyText: true,
+          hideCopy: false,
+          disableLink: false,
+          stopPropagation: false
         }
       ]}
       appHeaderLinks={[
