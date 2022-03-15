@@ -32,10 +32,10 @@ export default function WalletPageLoggedIn({
         {
           label: 'Wallet Address',
           address: wallet.address,
-          hideCopyText: true,
-          hideCopy: false,
           disableLink: false,
-          stopPropagation: false
+          stopPropagation: true,
+          hideCopy: false,
+          hideCopyText: true
         }
       ]}
       appHeaderLinks={[
