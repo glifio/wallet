@@ -27,15 +27,15 @@ module.exports = (phase) => {
     webpack,
     env: {
       NEXT_PUBLIC_HOME_URL: process.env.HOME_URL || 'https://glif.io',
-      NEXT_PUBLIC_BLOG_URL: process.env.BLOG_URL || 'https://glif.io/blog',
+      NEXT_PUBLIC_BLOG_URL: process.env.BLOG_URL || 'https://blog.glif.io/',
       NEXT_PUBLIC_WALLET_URL:
-        process.env.WALLET_URL || 'https://calibration.wallet.glif.io',
+        process.env.WALLET_URL || 'https://wallet-calibration.glif.link',
       NEXT_PUBLIC_SAFE_URL:
-        process.env.SAFE_URL || 'https://calibration.safe.glif.io',
+        process.env.SAFE_URL || 'https://safe-calibration.glif.link',
       NEXT_PUBLIC_EXPLORER_URL:
-        process.env.EXPLORER_URL || 'https://calibration.explorer.glif.io',
+        process.env.EXPLORER_URL || 'https://explorer-calibration.glif.link',
       NEXT_PUBLIC_VERIFIER_URL:
-        process.env.VERIFIER_URL || 'https://calibration.verify.glif.io',
+        process.env.VERIFIER_URL || 'https://verify-calibration.glif.link',
       NEXT_PUBLIC_SENTRY_DSN: process.env.SENTRY_DSN || '',
       NEXT_PUBLIC_SENTRY_ENV: process.env.SENTRY_ENV || '',
       NEXT_PUBLIC_NODE_STATUS_API_ADDRESS:

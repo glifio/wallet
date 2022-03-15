@@ -2,23 +2,22 @@ import React, { useCallback, useEffect, useState } from 'react'
 import {
   AppTile,
   Box,
+  ButtonV2,
   IconCaution,
   LandingPageColumns,
   LandingPageContent,
+  OneColumnLargeText,
   space,
-  fontSize,
-  P,
   Page,
   isMobileOrTablet,
-  theme,
   useNetworkName,
   SmartLink
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
-import { ConnectBtn, BurnerWallet, TextBox, Caution } from './Helpers'
+import { BurnerWallet, Caution } from './Helpers'
 import { navigate } from '../../utils/urlParams'
-import { PAGE } from '../../constants'
+import { GLIF_DISCORD, GLIF_TWITTER, PAGE } from '../../constants'
 
 export default function Landing() {
   const [unsupportedDevice, setUnsupportedDevice] = useState(false)
@@ -52,94 +51,74 @@ export default function Landing() {
           small={false}
           large
         />
-        <LandingPageContent>
-          {unsupportedDevice ? (
-            <TextBox style={{ background: theme.colors.core.primary }}>
-              <P
-                css={`
-                  font-size: ${fontSize('large')};
-                  color: white;
-                `}
+        {unsupportedDevice ? (
+          <OneColumnLargeText className='primary'>
+            <p>
+              We&apos;re sorry, the Glif Wallet only supports desktop browsers
+              at the moment. Please come back on your computer!
+            </p>
+          </OneColumnLargeText>
+        ) : (
+          <LandingPageContent>
+            <h2>Connect</h2>
+            <Box display='flex' flexDirection='column' gridGap={space()}>
+              <ButtonV2 large onClick={() => connect(PAGE.CONNECT_MM)}>
+                MetaMask
+              </ButtonV2>
+              <ButtonV2 large onClick={() => connect(PAGE.CONNECT_LEDGER)}>
+                Ledger Device
+              </ButtonV2>
+              <Caution>
+                <IconCaution />
+                <p>
+                  Burner Wallets (use with caution,{' '}
+                  <SmartLink href='https://blog.glif.io/burner-wallets/'>
+                    read more
+                  </SmartLink>
+                  )
+                </p>
+              </Caution>
+              <BurnerWallet
+                large
+                onClick={() => connect(PAGE.CONNECT_BURNER_CREATE_SEED)}
               >
-                We&apos;re sorry, the Glif Safe only supports desktop browsers
-                at the moment. Please come back on your computer!
-              </P>
-            </TextBox>
-          ) : (
-            <>
-              <h2>Connect</h2>
-              <Box
-                display='flex'
-                flexDirection='column'
-                width='100%'
-                css={`
-                  &:not(:first-child) {
-                    margin-top: ${space()};
-                  }
-                `}
+                Create Seed Phrase
+              </BurnerWallet>
+              <BurnerWallet
+                large
+                onClick={() => connect(PAGE.CONNECT_BURNER_IMPORT_SEED)}
               >
-                <ConnectBtn large onClick={() => connect(PAGE.CONNECT_MM)}>
-                  MetaMask
-                </ConnectBtn>
-                <ConnectBtn large onClick={() => connect(PAGE.CONNECT_LEDGER)}>
-                  Ledger Device
-                </ConnectBtn>
-                <Caution>
-                  <IconCaution />
-                  <P>
-                    Burner Wallets (use with caution,{' '}
-                    <a
-                      href='https://blog.glif.io/burner-wallets/'
-                      target='_blank'
-                      rel='nooppener noreferrer'
-                    >
-                      read more
-                    </a>
-                    )
-                  </P>
-                </Caution>
-                <BurnerWallet
-                  large
-                  onClick={() => connect(PAGE.CONNECT_BURNER_CREATE_SEED)}
-                >
-                  Create Seed Phrase
-                </BurnerWallet>
-                <BurnerWallet
-                  large
-                  onClick={() => connect(PAGE.CONNECT_BURNER_IMPORT_SEED)}
-                >
-                  Import Seed Phrase
-                </BurnerWallet>
-                <BurnerWallet
-                  large
-                  onClick={() => connect(PAGE.CONNECT_BURNER_IMPORT_PK)}
-                >
-                  Import Private Key
-                </BurnerWallet>
-              </Box>
+                Import Seed Phrase
+              </BurnerWallet>
+              <BurnerWallet
+                large
+                onClick={() => connect(PAGE.CONNECT_BURNER_IMPORT_PK)}
+              >
+                Import Private Key
+              </BurnerWallet>
+            </Box>
 
-              <p>
-                Want to load this app directly from IPFS or Filecoin?
-                <br />
-                Check our{' '}
-                <SmartLink href='https://github.com/glifio/wallet/releases'>
-                  release page
-                </SmartLink>
-              </p>
+            <p>
+              Want to load this app directly from IPFS or Filecoin?
+              <br />
+              Check our{' '}
+              <SmartLink href='https://github.com/glifio/wallet/releases'>
+                release page
+              </SmartLink>
+            </p>
 
-              <p>
-                Need help?
-                <br />
-                Open a{' '}
-                <SmartLink href='https://github.com/glifio/wallet/issues/new/choose'>
-                  GitHub issue
-                </SmartLink>{' '}
-                or hit us up on{' '}
-                <SmartLink href='https://twitter.com/glifio'>Twitter</SmartLink>
-              </p>
-            </>
-          )}
-        </LandingPageContent>
+            <p>
+              Need help?
+              <br />
+              Open a{' '}
+              <SmartLink href='https://github.com/glifio/wallet/issues/new/choose'>
+                GitHub issue
+              </SmartLink>
+              , join our <SmartLink href={GLIF_DISCORD}>Discord</SmartLink>, or
+              or hit us up on <SmartLink href={GLIF_TWITTER}>Twitter</SmartLink>{' '}
+            </p>
+          </LandingPageContent>
+        )}
       </LandingPageColumns>
     </Page>
   )

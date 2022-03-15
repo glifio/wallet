@@ -17,14 +17,12 @@ import {
   reportLedgerConfigError
 } from '@glif/wallet-provider-react'
 
-import { errorLogger } from '../../logger'
+import { logger } from '../../logger'
 import {
   generateRouteWithRequiredUrlParams,
   navigate
 } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
-
-const EXPLORER_URL = process.env.NEXT_PUBLIC_EXPLORER_URL! as string
 
 const Cards = styled.div`
   display: flex;
@@ -46,7 +44,7 @@ export default function WalletHome() {
       if (provider) await provider.wallet.showAddressAndPubKey(wallet.path)
       else setUncaughtError('Error connecting to your Ledger Device')
     } catch (err) {
-      errorLogger.error(
+      logger.error(
         err instanceof Error ? err.message : JSON.stringify(err),
         'onShowLedger'
       )
@@ -97,9 +95,6 @@ export default function WalletHome() {
           <MessageDetail
             cid={router.query.cid as string}
             height={Number(router.query?.height) || null}
-            addressHref={(address) =>
-              `${EXPLORER_URL}/actor/?address=${address}`
-            }
             confirmations={50}
           />
         ) : (
@@ -111,9 +106,6 @@ export default function WalletHome() {
                 newQueryParams: { height, cid },
                 existingQParams: { ...router.query } as Record<string, string>
               })
-            }
-            addressHref={(address) =>
-              `${EXPLORER_URL}/actor/?address=${address}`
             }
           />
         )}

@@ -17,7 +17,8 @@ export const FILSCAN_JSONRPC = 'https://api.filscan.io:8700/rpc/v1'
 export const FILSCOUT = 'https://filscoutv3api.ipfsunion.cn'
 export const FILFOX = 'https://filfox.info/api'
 
-export const GLIF_DISCORD = 'https://discord.gg/8Hqm3qvK'
+export const GLIF_DISCORD = 'https://discord.gg/B9ju5Eu4Rq'
+export const GLIF_TWITTER = 'https://twitter.com/glifio'
 
 /* NETWORK VARS */
 export const MAINNET = 'f'

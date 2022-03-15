@@ -432,7 +432,7 @@ exports[`WalletDown it renders the error page 1`] = `
               font-size="2"
               font-weight="400"
             >
-              We've been notified of the outage and expect to be back up and running again shortly.
+              We've been notified of the issue and expect to be back up and running again shortly.
             </p>
           </div>
         </div>
@@ -509,7 +509,7 @@ exports[`WalletDown it renders the error page 1`] = `
         >
           <a
             class="c23"
-            href="https://discord.gg/8Hqm3qvK"
+            href="https://discord.gg/B9ju5Eu4Rq"
             rel="noopenner noreferrer"
             target="_blank"
           >
