@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`WalletDown it renders the error page 1`] = `
-.c10 {
+.c11 {
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid;
@@ -11,22 +11,11 @@ exports[`WalletDown it renders the error page 1`] = `
   padding: 16px;
   background-color: #FC6D6F;
   color: #660000;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
   width: 100%;
   max-width: 560px;
-  min-height: 300px;
+  min-height: 240px;
   overflow: hidden;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c11 {
-  min-width: 0;
-  box-sizing: border-box;
 }
 
 .c12 {
@@ -52,7 +41,16 @@ exports[`WalletDown it renders the error page 1`] = `
   justify-content: center;
 }
 
-.c16 {
+.c14 {
+  min-width: 0;
+  box-sizing: border-box;
+  border-top: 1px solid;
+  border-color: #660000;
+  margin-top: 1.5em;
+  padding-top: 1em;
+}
+
+.c15 {
   min-width: 0;
   box-sizing: border-box;
   margin-top: 32px;
@@ -65,24 +63,7 @@ exports[`WalletDown it renders the error page 1`] = `
   font-size: 1.5rem;
 }
 
-.c14 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: RT-Alias-Grotesk;
-  margin: 0;
-  margin-top: 24px;
-  margin-bottom: 8px;
-}
-
-.c15 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.4;
-  font-family: RT-Alias-Grotesk;
-}
-
-.c17 {
+.c16 {
   cursor: pointer;
   border: 1px solid #262626;
   background-color: transparent;
@@ -101,7 +82,7 @@ exports[`WalletDown it renders the error page 1`] = `
   border-radius: 4px;
 }
 
-.c17:hover {
+.c16:hover {
   opacity: 0.8;
 }
 
@@ -110,7 +91,7 @@ exports[`WalletDown it renders the error page 1`] = `
   height: 35px;
 }
 
-.c19 {
+.c18 {
   width: auto;
   height: 35px;
   margin-bottom: 2em;
@@ -181,25 +162,19 @@ exports[`WalletDown it renders the error page 1`] = `
   color: black;
 }
 
+.c20 {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
 .c21 {
   list-style-type: none;
   margin: 0;
   padding-left: 0;
 }
 
-.c22 {
-  list-style-type: none;
-  margin: 0;
-  padding-left: 0;
-}
-
-.c23 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  color: inherit;
-}
-
-.c18 {
+.c17 {
   background: #272727;
   border-radius: 8px;
   padding: 30px;
@@ -207,25 +182,25 @@ exports[`WalletDown it renders the error page 1`] = `
   position: relative;
 }
 
-.c25 {
+.c23 {
   text-transform: uppercase;
   display: block;
 }
 
-.c8 {
+.c9 {
   position: relative;
   padding: 3rem 1.5rem;
 }
 
-.c8 > *:first-child {
+.c9 > *:first-child {
   margin-top: 0;
 }
 
-.c8 > *:last-child {
+.c9 > *:last-child {
   margin-bottom: 0;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -281,6 +256,10 @@ exports[`WalletDown it renders the error page 1`] = `
   flex: 1 0 auto;
 }
 
+.c8 {
+  min-height: 0;
+}
+
 @media (min-width:480px) {
   .c6 {
     height: 45px;
@@ -294,13 +273,13 @@ exports[`WalletDown it renders the error page 1`] = `
 }
 
 @media (min-width:480px) {
-  .c19 {
+  .c18 {
     height: 45px;
   }
 }
 
 @media (min-width:868px) {
-  .c19 {
+  .c18 {
     height: 55px;
     position: absolute;
     left: 30px;
@@ -309,7 +288,7 @@ exports[`WalletDown it renders the error page 1`] = `
 }
 
 @media (min-width:868px) {
-  .c20 {
+  .c19 {
     max-width: 670px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -319,19 +298,19 @@ exports[`WalletDown it renders the error page 1`] = `
 }
 
 @media (max-width:868px) {
-  .c24 {
+  .c22 {
     margin-top: 2em;
   }
 }
 
 @media (min-width:868px) {
-  .c25 {
+  .c23 {
     margin-top: 1em;
   }
 }
 
 @media (max-width:868px) {
-  .c25 {
+  .c23 {
     margin-top: 5em;
   }
 }
@@ -345,7 +324,7 @@ exports[`WalletDown it renders the error page 1`] = `
 }
 
 @media (min-width:868px) {
-  .c8 {
+  .c9 {
     padding: 3rem;
   }
 }
@@ -392,19 +371,19 @@ exports[`WalletDown it renders the error page 1`] = `
       />
     </header>
     <div
-      class="c8 c9"
+      class="c1 c8"
     >
-      <div>
-        <div
-          class="c10"
-          color="card.error.foreground"
-          display="flex"
-          overflow="hidden"
-          style="word-break: break-word;"
-          width="100%"
-        >
+      <div
+        class="c9 c10"
+      >
+        <div>
           <div
             class="c11"
+            color="card.error.foreground"
+            display="inline-block"
+            overflow="hidden"
+            style="word-break: break-word;"
+            width="100%"
           >
             <div
               class="c12"
@@ -418,44 +397,56 @@ exports[`WalletDown it renders the error page 1`] = `
                 Er
               </h3>
             </div>
-            <h2
-              class="c14"
-              font-family="RT-Alias-Grotesk"
-              font-size="4"
-              font-weight="400"
-            >
+            <h2>
               Oops! Something went wrong.
             </h2>
             <p
-              class="c15"
-              font-family="RT-Alias-Grotesk"
-              font-size="2"
-              font-weight="400"
+              style="font-size: 1.125rem;"
             >
               We've been notified of the issue and expect to be back up and running again shortly.
             </p>
+            <div
+              class="c14"
+            >
+              Get help in 
+              <a
+                href="https://discord.gg/B9ju5Eu4Rq"
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                Discord
+              </a>
+               or hit us up on 
+              <a
+                href="https://twitter.com/glifio"
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                Twitter
+              </a>
+            </div>
           </div>
-        </div>
-        <div
-          class="c16"
-        >
-          <button
-            class="c17"
-            font-size="3"
-            height="6"
-            type="button"
+          <div
+            class="c15"
           >
-            Back
-          </button>
+            <button
+              class="c16"
+              font-size="3"
+              height="6"
+              type="button"
+            >
+              Back
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <footer
-    class="c18"
+    class="c17"
   >
     <svg
-      class="c19"
+      class="c18"
       height="71px"
       version="1.1"
       viewBox="0 0 52 71"
@@ -499,123 +490,124 @@ exports[`WalletDown it renders the error page 1`] = `
       </g>
     </svg>
     <div
-      class="c20"
+      class="c19"
     >
       <ul
-        class="c21"
+        class="c20"
       >
         <li
-          class="c22"
+          class="c21"
         >
           <a
-            class="c23"
             href="https://discord.gg/B9ju5Eu4Rq"
-            rel="noopenner noreferrer"
+            rel="noreferrer noopener"
             target="_blank"
           >
             Discord
           </a>
         </li>
         <li
-          class="c22"
+          class="c21"
         >
           <a
-            class="c23"
             href="https://blog.glif.io"
-            rel="noopenner noreferrer"
+            rel="noreferrer noopener"
             target="_blank"
           >
             Blog
           </a>
         </li>
         <li
-          class="c22"
+          class="c21"
         >
           <a
-            class="c23"
             href="https://github.com/glifio"
-            rel="noopenner noreferrer"
+            rel="noreferrer noopener"
             target="_blank"
           >
             Code
           </a>
         </li>
         <li
-          class="c22"
+          class="c21"
         >
           <a
-            class="c23"
             href="https://lotus.filecoin.io/docs/developers/hosted-lotus/"
-            rel="noopenner noreferrer"
+            rel="noreferrer noopener"
             target="_blank"
           >
             Nodes
           </a>
         </li>
         <li
-          class="c22"
+          class="c21"
         >
           <a
-            class="c23"
             href="mailto:squad@glif.io"
+            rel="noreferrer noopener"
+            target="_blank"
           >
             Contact
           </a>
         </li>
       </ul>
       <ul
-        class="c21"
+        class="c20"
       >
         <li
-          class="c22"
+          class="c21"
         >
           <a
-            class="c23"
             href="undefined"
+            rel="noreferrer noopener"
+            target="_blank"
           >
             Wallet
           </a>
         </li>
         <li
-          class="c22"
+          class="c21"
         >
           <a
-            class="c23"
             href="undefined"
+            rel="noreferrer noopener"
+            target="_blank"
           >
             Safe
           </a>
         </li>
         <li
-          class="c22"
+          class="c21"
         >
           <a
-            class="c23"
             href="undefined"
+            rel="noreferrer noopener"
+            target="_blank"
           >
             Explorer
           </a>
         </li>
         <li
-          class="c22"
+          class="c21"
         >
           <a
-            class="c23"
             href="undefined"
+            rel="noreferrer noopener"
+            target="_blank"
           >
             Verifier
           </a>
         </li>
       </ul>
       <div
-        class="c24"
+        class="c22"
       >
         GLIF
         <br />
         Freeport, Grand Bahamas
       </div>
       <div
-        class="c25"
+        class="c23"
       >
         2022 Glif for life
       </div>
