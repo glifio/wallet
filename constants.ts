@@ -46,24 +46,19 @@ export const emptyGasInfo = {
   gasLimit: new FilecoinNumber('0', 'attofil')
 }
 
-/* STYLE CONSTANTS */
-export const SCREEN_MAX_WIDTH = 1440
-
 /* PAGES */
 /* eslint-disable no-unused-vars */
 export enum PAGE {
+  LANDING = '/',
   WALLET_HOME = '/home',
   WALLET_SEND = '/send',
   WALLET_CHOOSE_ACCOUNTS = '/home/accounts',
   SPEED_UP = '/speed-up',
+  CANCEL = '/cancel',
+  CONNECT_MM = '/connect/metamask',
   CONNECT_LEDGER = '/connect/ledger',
   CONNECT_BURNER_IMPORT_SEED = '/connect/burner/import-seed',
   CONNECT_BURNER_IMPORT_PK = '/connect/burner/import-private-key',
   CONNECT_BURNER_CREATE_SEED = '/connect/burner/create-seed',
-  CONNECT_MM = '/connect/metamask',
-  LANDING = '/',
   NODE_DISCONNECTED = '/error/node-disconnected'
 }
-
-// todo #responsiveDesign: decide how to do responsive design
-export const RESPONSIVE_BREAKPOINT = 1024
