@@ -240,7 +240,6 @@ exports[`WalletDown it renders the error page 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: calc(100vh - 2 * 10px);
   gap: 10px;
 }
 
@@ -326,6 +325,12 @@ exports[`WalletDown it renders the error page 1`] = `
 @media (min-width:868px) {
   .c9 {
     padding: 3rem;
+  }
+}
+
+@media (min-width:868px) {
+  .c1 {
+    min-height: calc(100vh - 2 * 10px);
   }
 }
 
