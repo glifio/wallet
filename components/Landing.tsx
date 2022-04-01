@@ -14,8 +14,8 @@ import {
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
-import { navigate } from '../../utils/urlParams'
-import { GLIF_DISCORD, GLIF_TWITTER, PAGE } from '../../constants'
+import { navigate } from '../utils/urlParams'
+import { GLIF_DISCORD, GLIF_TWITTER, PAGE } from '../constants'
 
 export default function Landing() {
   const [unsupportedDevice, setUnsupportedDevice] = useState(false)
