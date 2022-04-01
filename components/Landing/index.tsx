@@ -1,13 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import {
   AppTile,
-  Box,
   ButtonV2,
-  IconCaution,
+  FullWidthButtons,
+  WarningBox,
   LandingPageColumns,
   LandingPageContent,
   OneColumnLargeText,
-  space,
   Page,
   isMobileOrTablet,
   useNetworkName,
@@ -15,7 +14,6 @@ import {
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
-import { BurnerWallet, Caution } from './Helpers'
 import { navigate } from '../../utils/urlParams'
 import { GLIF_DISCORD, GLIF_TWITTER, PAGE } from '../../constants'
 
@@ -61,42 +59,46 @@ export default function Landing() {
         ) : (
           <LandingPageContent>
             <h2>Connect</h2>
-            <Box display='flex' flexDirection='column' gridGap={space()}>
+
+            <FullWidthButtons>
               <ButtonV2 large onClick={() => connect(PAGE.CONNECT_MM)}>
                 MetaMask
               </ButtonV2>
               <ButtonV2 large onClick={() => connect(PAGE.CONNECT_LEDGER)}>
                 Ledger Device
               </ButtonV2>
-              <Caution>
-                <IconCaution />
-                <p>
-                  Burner Wallets (use with caution,{' '}
-                  <SmartLink href='https://blog.glif.io/burner-wallets/'>
-                    read more
-                  </SmartLink>
-                  )
-                </p>
-              </Caution>
-              <BurnerWallet
+            </FullWidthButtons>
+
+            <FullWidthButtons>
+              <WarningBox>
+                Burner Wallets (use with caution,{' '}
+                <SmartLink href='https://blog.glif.io/burner-wallets/'>
+                  read more
+                </SmartLink>
+                )
+              </WarningBox>
+              <ButtonV2
+                gray
                 large
                 onClick={() => connect(PAGE.CONNECT_BURNER_CREATE_SEED)}
               >
                 Create Seed Phrase
-              </BurnerWallet>
-              <BurnerWallet
+              </ButtonV2>
+              <ButtonV2
+                gray
                 large
                 onClick={() => connect(PAGE.CONNECT_BURNER_IMPORT_SEED)}
               >
                 Import Seed Phrase
-              </BurnerWallet>
-              <BurnerWallet
+              </ButtonV2>
+              <ButtonV2
+                gray
                 large
                 onClick={() => connect(PAGE.CONNECT_BURNER_IMPORT_PK)}
               >
                 Import Private Key
-              </BurnerWallet>
-            </Box>
+              </ButtonV2>
+            </FullWidthButtons>
 
             <p>
               Want to load this app directly from IPFS or Filecoin?
