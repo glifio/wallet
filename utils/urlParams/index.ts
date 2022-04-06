@@ -1,4 +1,4 @@
-import { ParsedUrlQuery } from 'querystring';
+import { ParsedUrlQuery } from 'querystring'
 import { NextRouter } from 'next/router'
 import { PAGE } from '../../constants'
 
@@ -17,7 +17,9 @@ export const combineExistingNewAndRequiredQueryParams = (
   newQParams?: Record<string, string>,
   maintainQParams?: boolean
 ): URLSearchParams => {
-  const searchParams = new URLSearchParams(existingQParams as Record<string, string>)
+  const searchParams = new URLSearchParams(
+    existingQParams as Record<string, string>
+  )
 
   // delete q params if the maintainQParams flag is not set
   if (!maintainQParams) {
