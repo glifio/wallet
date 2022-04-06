@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { RequireWallet } from '@glif/wallet-provider-react'
-import { OneColumn } from '@glif/react-components'
+import { OneColumnCentered } from '@glif/react-components'
 
 import WalletPageLoggedIn from '../components/WalletPageLoggedIn'
 import SendView from '../components/Wallet/Send'
@@ -16,11 +16,11 @@ const Send = () => {
   )
   return (
     <WalletPageLoggedIn>
-      <OneColumn>
+      <OneColumnCentered>
         <RequireWallet gatekeep={gatekeep}>
           <SendView />
         </RequireWallet>
-      </OneColumn>
+      </OneColumnCentered>
     </WalletPageLoggedIn>
   )
 }
