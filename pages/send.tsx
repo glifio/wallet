@@ -8,7 +8,7 @@ import SendView from '../components/Wallet/Send'
 import { navigate } from '../utils/urlParams'
 import { PAGE } from '../constants'
 
-const Send = () => {
+const SendPage = () => {
   const router = useRouter()
   const gatekeep = useCallback(
     () => navigate(router, { pageUrl: PAGE.LANDING }),
@@ -25,4 +25,4 @@ const Send = () => {
   )
 }
 
-export default Send
+export default SendPage
