@@ -104,7 +104,7 @@ export default function WalletHome() {
               generateRouteWithRequiredUrlParams({
                 pageUrl: PAGE.WALLET_HOME,
                 newQueryParams: { height, cid },
-                existingQParams: { ...router.query } as Record<string, string>
+                existingQParams: router.query
               })
             }
           />
