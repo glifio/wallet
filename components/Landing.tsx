@@ -67,25 +67,13 @@ export default function Landing() {
                 </SmartLink>
                 )
               </WarningBox>
-              <ButtonV2Link
-                gray
-                large
-                href={PAGE.CONNECT_BURNER_CREATE_SEED}
-              >
+              <ButtonV2Link gray large href={PAGE.CONNECT_BURNER_CREATE_SEED}>
                 Create Seed Phrase
               </ButtonV2Link>
-              <ButtonV2Link
-                gray
-                large
-                href={PAGE.CONNECT_BURNER_IMPORT_SEED}
-              >
+              <ButtonV2Link gray large href={PAGE.CONNECT_BURNER_IMPORT_SEED}>
                 Import Seed Phrase
               </ButtonV2Link>
-              <ButtonV2Link
-                gray
-                large
-                href={PAGE.CONNECT_BURNER_IMPORT_PK}
-              >
+              <ButtonV2Link gray large href={PAGE.CONNECT_BURNER_IMPORT_PK}>
                 Import Private Key
               </ButtonV2Link>
             </FullWidthButtons>
