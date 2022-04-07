@@ -19,6 +19,30 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     loading: gasParamsLoading,
     error: gasParamsError
   } = useGetReplaceMessageGasParams(walletProvider, message)
+  const isLoading = messageLoading || gasParamsLoading
+  const isLoaded = !!(message && gasParams)
+  
+  function getGlyph() {
+    switch(strategy) {
+      case ReplaceStrategy.SPEED_UP:
+        return 'Su'
+      case ReplaceStrategy.CANCEL:
+        return 'Ca'
+      default:
+        return ''
+    }
+  }
+  
+  function getTitle() {
+    switch(strategy) {
+      case ReplaceStrategy.SPEED_UP:
+        return 'Speed Up Message'
+      case ReplaceStrategy.CANCEL:
+        return 'Cancel Message'
+      default:
+        return ''
+    }
+  }
 
   return <form></form>
 }
