@@ -4,7 +4,7 @@ import { RequireWallet } from '@glif/wallet-provider-react'
 import { OneColumnCentered } from '@glif/react-components'
 
 import WalletPageLoggedIn from '../../components/WalletPageLoggedIn'
-import SpeedUpView from '../../components/Wallet/SpeedUp'
+import { Replace, ReplaceStrategy } from '../../components/Wallet/Replace'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
@@ -18,7 +18,7 @@ const SpeedUpPage = () => {
     <WalletPageLoggedIn>
       <OneColumnCentered>
         <RequireWallet gatekeep={gatekeep}>
-          <SpeedUpView />
+          <Replace strategy={ReplaceStrategy.SPEED_UP} />
         </RequireWallet>
       </OneColumnCentered>
     </WalletPageLoggedIn>

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
 import { useWalletProvider } from '@glif/wallet-provider-react'
 import {
@@ -5,7 +6,7 @@ import {
   useGetReplaceMessageGasParams
 } from '@glif/react-components'
 
-const SpeedUp = () => {
+export const Replace = ({ strategy }: ReplaceProps) => {
   const router = useRouter()
   const { walletProvider } = useWalletProvider()
   const {
@@ -22,4 +23,15 @@ const SpeedUp = () => {
   return <form></form>
 }
 
-export default SpeedUp
+export enum ReplaceStrategy {
+  SPEED_UP = 'SPEED_UP',
+  CANCEL = 'CANCEL'
+}
+
+interface ReplaceProps {
+  strategy: ReplaceStrategy
+}
+
+Replace.propTypes = {
+  strategy: PropTypes.string.isRequired
+}
