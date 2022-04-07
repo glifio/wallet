@@ -1,13 +1,24 @@
 import PropTypes from 'prop-types'
+import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { useWalletProvider } from '@glif/wallet-provider-react'
 import {
+  ButtonV2,
+  Dialog,
+  ErrorBox,
+  ShadowBox,
+  StandardBox,
+  ButtonRowSpaced,
+  StepHeader,
   useGetMessage,
   useGetReplaceMessageGasParams
 } from '@glif/react-components'
 
 export const Replace = ({ strategy }: ReplaceProps) => {
   const router = useRouter()
+  const stepCount = 2
+  const [step, setStep] = useState<number>(1)
+  const [expert, setExpert] = useState<boolean>(false)
   const { walletProvider } = useWalletProvider()
   const {
     message,
@@ -19,6 +30,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     loading: gasParamsLoading,
     error: gasParamsError
   } = useGetReplaceMessageGasParams(walletProvider, message)
+  const hasError = !!(messageError || gasParamsError)
   const isLoading = messageLoading || gasParamsLoading
   const isLoaded = !!(message && gasParams)
   
