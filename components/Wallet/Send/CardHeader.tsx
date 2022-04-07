@@ -11,20 +11,16 @@ import {
 
 export const CardHeader = ({ address, balance, glyphAcronym }) => {
   return (
-    <Box
-      width='100%'
-      p={3}
-      border={0}
-      borderTopRightRadius={3}
-      borderTopLeftRadius={3}
-      bg='core.primary'
-      color='core.white'
-    >
+    <header>
       <Box
+        p='1.5em'
         display='flex'
-        flexDirection='row'
         alignItems='center'
         justifyContent='space-between'
+        borderTopRightRadius={3}
+        borderTopLeftRadius={3}
+        bg='core.primary'
+        color='core.white'
       >
         <Box display='flex' flexDirection='row' alignItems='center'>
           <Glyph acronym={glyphAcronym} color='white' mr={3} />
@@ -38,7 +34,7 @@ export const CardHeader = ({ address, balance, glyphAcronym }) => {
           <Text m={0}>{makeFriendlyBalance(balance, 6, true)} FIL</Text>
         </Box>
       </Box>
-    </Box>
+    </header>
   )
 }
 
