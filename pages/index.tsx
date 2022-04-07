@@ -1,4 +1,4 @@
-import { Landing } from '../components'
+import Landing from '../components/Landing'
 
 const Index = () => <Landing />
 
