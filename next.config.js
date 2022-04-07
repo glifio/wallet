@@ -16,6 +16,7 @@ const webpack = (config) => {
     'react-dom': path.resolve('./node_modules/react-dom'),
     next: path.resolve('./node_modules/next'),
     'styled-components': path.resolve('./node_modules/styled-components'),
+    '@glif/base-css': path.resolve('./node_modules/@glif/base-css'),
     '@glif/react-components': path.resolve(
       './node_modules/@glif/react-components'
     )
