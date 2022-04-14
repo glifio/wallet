@@ -1,21 +1,30 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
-import { useWalletProvider } from '@glif/wallet-provider-react'
+import {
+  useWallet,
+  useWalletProvider,
+  useGetMessage,
+  useGetReplaceMessageGasParams
+} from '@glif/wallet-provider-react'
 import {
   ButtonV2,
+  InputV2,
   Dialog,
   ErrorBox,
   ShadowBox,
   StandardBox,
   ButtonRowSpaced,
   StepHeader,
-  useGetMessage,
-  useGetReplaceMessageGasParams
+  SmartLink
 } from '@glif/react-components'
+
+import { CardHeader } from './Send/CardHeader'
 
 export const Replace = ({ strategy }: ReplaceProps) => {
   const router = useRouter()
+  const wallet = useWallet()
+  const cid = router.query.cid as string
   const stepCount = 2
   const [step, setStep] = useState<number>(1)
   const [expert, setExpert] = useState<boolean>(false)
@@ -24,7 +33,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     message,
     loading: messageLoading,
     error: messageError
-  } = useGetMessage(router.query.cid)
+  } = useGetMessage(cid)
   const {
     gasParams,
     loading: gasParamsLoading,
@@ -33,9 +42,10 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const hasError = !!(messageError || gasParamsError)
   const isLoading = messageLoading || gasParamsLoading
   const isLoaded = !!(message && gasParams)
-  
+  const isSending = step === 2
+
   function getGlyph() {
-    switch(strategy) {
+    switch (strategy) {
       case ReplaceStrategy.SPEED_UP:
         return 'Su'
       case ReplaceStrategy.CANCEL:
@@ -44,9 +54,9 @@ export const Replace = ({ strategy }: ReplaceProps) => {
         return ''
     }
   }
-  
+
   function getTitle() {
-    switch(strategy) {
+    switch (strategy) {
       case ReplaceStrategy.SPEED_UP:
         return 'Speed Up Message'
       case ReplaceStrategy.CANCEL:
