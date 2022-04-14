@@ -66,7 +66,23 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     }
   }
 
-  return <form></form>
+  function getDescription() {
+    if (hasError) return ''
+    if (isLoading) return 'Loading message information...'
+    switch (step) {
+      case 1:
+        return 'Please confirm the transaction details below'
+      case 2:
+        return 'Please confirm the transaction with your wallet provider'
+      default:
+        return ''
+    }
+  }
+
+  return (
+    <Dialog>
+    </Dialog>
+  )
 }
 
 export enum ReplaceStrategy {
