@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import { FilecoinNumber } from '@glif/filecoin-number'
 import {
   useWallet,
   useWalletProvider,
@@ -28,6 +29,9 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const stepCount = 2
   const [step, setStep] = useState<number>(1)
   const [expert, setExpert] = useState<boolean>(false)
+  const [gasPremium, setGasPremium] = useState<FilecoinNumber>(new FilecoinNumber(0, 'attofil'))
+  const [gasLimit, setGasLimit] = useState<FilecoinNumber>(new FilecoinNumber(0, 'attofil'))
+  const [feeCap, setFeeCap] = useState<FilecoinNumber>(new FilecoinNumber(0, 'attofil'))
   const { walletProvider } = useWalletProvider()
   const {
     message,
