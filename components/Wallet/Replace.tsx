@@ -38,7 +38,12 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     gasParams,
     loading: gasParamsLoading,
     error: gasParamsError
-  } = useGetReplaceMessageGasParams(walletProvider, message)
+  } = useGetReplaceMessageGasParams(walletProvider, message, false)
+  const {
+    gasParams: minGasParams,
+    loading: minGasParamsLoading,
+    error: minGasParamsError
+  } = useGetReplaceMessageGasParams(walletProvider, message, true)
   const hasError = !!(messageError || gasParamsError)
   const isLoading = messageLoading || gasParamsLoading
   const isLoaded = !!(message && gasParams)
