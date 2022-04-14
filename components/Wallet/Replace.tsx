@@ -81,6 +81,16 @@ export const Replace = ({ strategy }: ReplaceProps) => {
 
   return (
     <Dialog>
+      <StandardBox>
+        <StepHeader
+          title={getTitle()}
+          currentStep={step}
+          totalSteps={stepCount}
+          glyphAcronym={getGlyph()}
+          showStepper={isLoaded}
+        />
+        {!hasError && <p>{getDescription()}</p>}
+      </StandardBox>
     </Dialog>
   )
 }
