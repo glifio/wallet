@@ -44,9 +44,9 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     loading: minGasParamsLoading,
     error: minGasParamsError
   } = useGetReplaceMessageGasParams(walletProvider, message, true)
-  const hasError = !!(messageError || gasParamsError)
-  const isLoading = messageLoading || gasParamsLoading
-  const isLoaded = !!(message && gasParams)
+  const hasError = !!(messageError || gasParamsError || minGasParamsError)
+  const isLoading = messageLoading || gasParamsLoading || minGasParamsLoading
+  const isLoaded = !!(message && gasParams && minGasParams)
   const isSending = step === 2
 
   function getGlyph() {
@@ -96,6 +96,19 @@ export const Replace = ({ strategy }: ReplaceProps) => {
         />
         {!hasError && <p>{getDescription()}</p>}
       </StandardBox>
+      {messageError && (
+        <ErrorBox>Failed to retrieve message: {messageError.message}</ErrorBox>
+      )}
+      {gasParamsError && (
+        <ErrorBox>
+          Failed to calculate gas fees: {gasParamsError.message}
+        </ErrorBox>
+      )}
+      {minGasParamsError && (
+        <ErrorBox>
+          Failed to calculate minimum gas fees: {minGasParamsError.message}
+        </ErrorBox>
+      )}
     </Dialog>
   )
 }
