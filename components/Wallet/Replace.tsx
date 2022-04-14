@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import {
@@ -52,6 +52,14 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const isLoading = messageLoading || gasParamsLoading || minGasParamsLoading
   const isLoaded = !!(message && gasParams && minGasParams)
   const isSending = step === 2
+
+  useEffect(() => {
+    if (!expert && gasParams) {
+      setGasPremium(new FilecoinNumber(gasParams.gasPremium, 'attofil'))
+      setGasLimit(new FilecoinNumber(gasParams.gasLimit, 'attofil'))
+      setFeeCap(new FilecoinNumber(gasParams.gasFeeCap, 'attofil'))
+    }
+  }, [expert, gasParams])
 
   function getGlyph() {
     switch (strategy) {
