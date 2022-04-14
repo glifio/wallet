@@ -121,6 +121,72 @@ export const Replace = ({ strategy }: ReplaceProps) => {
           Failed to calculate minimum gas fees: {minGasParamsError.message}
         </ErrorBox>
       )}
+      {isLoaded && (
+        <ShadowBox>
+          <CardHeader
+            address={wallet.address}
+            balance={wallet.balance}
+            glyphAcronym={getGlyph()}
+          />
+          <form>
+            <InputV2.Text label='Transaction CID' value={cid} disabled />
+            <InputV2.Text label='Nonce' value={message.Nonce} disabled />
+            <InputV2.Filecoin
+              label='Gas Premium'
+              denom='attofil'
+              info={expert ? `Needs to be at least ${minGasParams.gasPremium} aFIL` : ''}
+              min={new FilecoinNumber(minGasParams.gasPremium, 'attofil')}
+              value={gasPremium}
+              onChange={setGasPremium}
+              disabled={!expert || isSending}
+            />
+            <InputV2.Filecoin
+              label='Gas Limit'
+              denom='attofil'
+              info={expert ? `Needs to be at least ${minGasParams.gasLimit} aFIL` : ''}
+              min={new FilecoinNumber(minGasParams.gasLimit, 'attofil')}
+              value={gasLimit}
+              onChange={setGasLimit}
+              disabled={!expert || isSending}
+            />
+            <InputV2.Filecoin
+              label='Fee Cap'
+              denom='attofil'
+              info={expert ? `Needs to be at least ${minGasParams.gasFeeCap} aFIL` : ''}
+              min={new FilecoinNumber(minGasParams.gasFeeCap, 'attofil')}
+              value={feeCap}
+              onChange={setFeeCap}
+              disabled={!expert || isSending}
+            />
+            <InputV2.Toggle
+              label='Expert Mode'
+              checked={expert}
+              onChange={setExpert}
+              disabled={isSending}
+            />
+          </form>
+          <p>
+            You will not pay more than x FIL for this transaction.
+            <br />
+            <SmartLink href='https://filfox.info/en/stats/gas'>
+              More information on average gas fee statistics.
+            </SmartLink>
+          </p>
+        </ShadowBox>
+      )}
+      <ButtonRowSpaced>
+        <ButtonV2 large disabled={isSending} onClick={() => router.back()}>
+          Cancel
+        </ButtonV2>
+        <ButtonV2
+          large
+          green
+          disabled={!isLoaded || isSending}
+          onClick={() => setStep(2)}
+        >
+          Send
+        </ButtonV2>
+      </ButtonRowSpaced>
     </Dialog>
   )
 }
