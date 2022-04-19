@@ -20,7 +20,7 @@
     "@glif/filecoin-message": "^1.1.0",
     "@glif/filecoin-message-confirmer": "^1.1.0",
     "@glif/filecoin-number": "^1.1.0",
-    "@glif/filecoin-rpc-client": "^1.1.0",
+    "@glif/filecoin-rpc-client": "^2.0.0-beta.8",
     "@glif/filecoin-wallet-provider": "^1.1.1-alpha.5",
     "@glif/react-components": "^1.1.3",
     "@ledgerhq/hw-transport-webhid": "^6.4.1",
