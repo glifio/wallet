@@ -234,6 +234,7 @@ const AccountSelector = ({ msig, test }) => {
                         network === 'f' &&
                         w.path.split('/')[2] === `${TESTNET_PATH_CODE}'`
                       }
+                      jsonRpcEndpoint={process.env.LOTUS_NODE_JSONRPC}
                       // This is a hack to make testing the UI easier
                       // its hard to mock SWR + balance fetcher in the AccountCardAlt
                       // so we pass a manual balance to not rely on SWR for testing
