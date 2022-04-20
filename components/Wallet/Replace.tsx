@@ -28,7 +28,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const [expert, setExpert] = useState<boolean>(false)
   const [gasPremium, setGasPremium] = useState<FilecoinNumber | null>(null)
   const [gasLimit, setGasLimit] = useState<FilecoinNumber | null>(null)
-  const [feeCap, setFeeCap] = useState<FilecoinNumber | null>(null)
+  const [gasFeeCap, setGasFeeCap] = useState<FilecoinNumber | null>(null)
   const [isGasPremiumValid, setIsGasPremiumValid] = useState<boolean>(false)
   const [isGasLimitValid, setIsGasLimitValid] = useState<boolean>(false)
   const [isGasFeeCapValid, setIsGasFeeCapValid] = useState<boolean>(false)
@@ -58,7 +58,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     if (!expert && gasParams) {
       setGasPremium(gasParams.gasPremium)
       setGasLimit(gasParams.gasLimit)
-      setFeeCap(gasParams.gasFeeCap)
+      setGasFeeCap(gasParams.gasFeeCap)
     }
   }, [expert, gasParams])
 
@@ -161,9 +161,9 @@ export const Replace = ({ strategy }: ReplaceProps) => {
                   : ''
               }
               min={minGasParams.gasFeeCap}
-              value={feeCap}
+              value={gasFeeCap}
               denom='attofil'
-              onChange={setFeeCap}
+              onChange={setGasFeeCap}
               setIsValid={setIsGasFeeCapValid}
               disabled={!expert || isSending}
             />
