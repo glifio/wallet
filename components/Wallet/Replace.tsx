@@ -25,7 +25,6 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const router = useRouter()
   const wallet = useWallet()
   const cid = router.query.cid as string
-  const [step, setStep] = useState<number>(1)
   const [expert, setExpert] = useState<boolean>(false)
   const [gasPremium, setGasPremium] = useState<FilecoinNumber>(new FilecoinNumber(0, 'attofil'))
   const [gasLimit, setGasLimit] = useState<FilecoinNumber>(new FilecoinNumber(0, 'attofil'))
@@ -33,6 +32,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const [isGasPremiumValid, setIsGasPremiumValid] = useState<boolean>(false)
   const [isGasLimitValid, setIsGasLimitValid] = useState<boolean>(false)
   const [isGasFeeCapValid, setIsGasFeeCapValid] = useState<boolean>(false)
+  const [isSending, setIsSending] = useState<boolean>(false)
   const { walletProvider } = useWalletProvider()
   const {
     message,
@@ -53,7 +53,6 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const isLoading = messageLoading || gasParamsLoading || minGasParamsLoading
   const isLoaded = !!(message && gasParams && minGasParams)
   const isValid = isGasPremiumValid && isGasLimitValid && isGasFeeCapValid
-  const isSending = step === 2
 
   useEffect(() => {
     if (!expert && gasParams) {
@@ -62,6 +61,10 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       setFeeCap(new FilecoinNumber(gasParams.gasFeeCap, 'attofil'))
     }
   }, [expert, gasParams])
+
+  const onSend = () => {
+
+  }
 
   function getGlyph() {
     switch (strategy) {
@@ -181,7 +184,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
           large
           green
           disabled={!isLoaded || !isValid || isSending}
-          onClick={() => setStep(2)}
+          onClick={() => onSend()}
         >
           Send
         </ButtonV2>
