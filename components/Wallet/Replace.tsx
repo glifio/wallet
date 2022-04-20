@@ -34,6 +34,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const [isGasLimitValid, setIsGasLimitValid] = useState<boolean>(false)
   const [isGasFeeCapValid, setIsGasFeeCapValid] = useState<boolean>(false)
   const [isSending, setIsSending] = useState<boolean>(false)
+  const [sendError, setSendError] = useState<Error | null>(null)
   const { walletProvider } = useWalletProvider()
   const {
     message,
@@ -117,6 +118,11 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       {minGasParamsError && (
         <ErrorBox>
           Failed to calculate minimum gas fees: {minGasParamsError.message}
+        </ErrorBox>
+      )}
+      {sendError && (
+        <ErrorBox>
+          Failed to send message: {sendError.message}
         </ErrorBox>
       )}
       {isLoaded && (
