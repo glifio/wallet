@@ -16,7 +16,6 @@ import {
   ShadowBox,
   StandardBox,
   ButtonRowSpaced,
-  StepHeader,
   SmartLink
 } from '@glif/react-components'
 
@@ -26,7 +25,6 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const router = useRouter()
   const wallet = useWallet()
   const cid = router.query.cid as string
-  const stepCount = 2
   const [step, setStep] = useState<number>(1)
   const [expert, setExpert] = useState<boolean>(false)
   const [gasPremium, setGasPremium] = useState<FilecoinNumber>(new FilecoinNumber(0, 'attofil'))
@@ -88,11 +86,11 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   }
 
   function getDescription() {
-    if (hasError) return ''
+    if (hasError) return 'Failed to load message information'
     if (isLoading) return 'Loading message information...'
     switch (step) {
       case 1:
-        return 'Please confirm the transaction details below'
+        return 'Please confirm the updated message details below'
       case 2:
         return 'Please confirm the transaction with your wallet provider'
       default:
@@ -103,14 +101,8 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   return (
     <Dialog>
       <StandardBox>
-        <StepHeader
-          title={getTitle()}
-          currentStep={step}
-          totalSteps={stepCount}
-          glyphAcronym={getGlyph()}
-          showStepper={isLoaded}
-        />
-        {!hasError && <p>{getDescription()}</p>}
+        <h2>{getTitle()}</h2>
+        <p>{getDescription()}</p>
       </StandardBox>
       {messageError && (
         <ErrorBox>Failed to retrieve message: {messageError.message}</ErrorBox>
@@ -133,7 +125,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
             glyphAcronym={getGlyph()}
           />
           <form>
-            <InputV2.Text label='Transaction CID' value={cid} disabled />
+            <InputV2.Text label='Message CID' value={cid} disabled />
             <InputV2.Text label='Nonce' value={message.Nonce} disabled />
             <InputV2.Filecoin
               label='Gas Premium'
