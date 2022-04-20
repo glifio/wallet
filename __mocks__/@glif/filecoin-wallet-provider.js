@@ -6,7 +6,7 @@ export * from '../../node_modules/@glif/filecoin-wallet-provider/dist/errors'
 
 const mockGetAccounts = jest
   .fn()
-  // eslint-disable-next-line no-unused-vars
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   .mockImplementation((start = 0, end = 1, network = TESTNET) => {
     const accounts = []
     for (let i = start; i < end; i++) {
@@ -56,9 +56,9 @@ class MockWalletProvider {
       To,
       From,
       Value,
-      GasPremium, //eslint-disable-line no-unused-vars
-      GasFeeCap, //eslint-disable-line no-unused-vars
-      GasLimit, //eslint-disable-line no-unused-vars
+      GasPremium, //eslint-disable-line @typescript-eslint/no-unused-vars
+      GasFeeCap, //eslint-disable-line @typescript-eslint/no-unused-vars
+      GasLimit, //eslint-disable-line @typescript-eslint/no-unused-vars
       Method,
       Nonce,
       Params

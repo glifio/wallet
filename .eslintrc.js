@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['plugin:prettier/recommended', 'next/core-web-vitals', 'prettier'],
-  plugins: ['prettier'],
+  plugins: ['prettier', '@typescript-eslint'],
   parser: '@typescript-eslint/parser',
   rules: {
     'prettier/prettier': 'error',
@@ -25,7 +25,8 @@ module.exports = {
     camelcase: 0,
     'import/no-named-as-default': 0,
     'import/no-anonymous-default-export': 0,
-    'no-unused-vars': [
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': [
       'error',
       {
         argsIgnorePattern: '^_'
