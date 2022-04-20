@@ -56,9 +56,9 @@ export const Replace = ({ strategy }: ReplaceProps) => {
 
   useEffect(() => {
     if (!expert && gasParams) {
-      setGasPremium(new FilecoinNumber(gasParams.gasPremium, 'attofil'))
-      setGasLimit(new FilecoinNumber(gasParams.gasLimit, 'attofil'))
-      setFeeCap(new FilecoinNumber(gasParams.gasFeeCap, 'attofil'))
+      setGasPremium(gasParams.gasPremium)
+      setGasLimit(gasParams.gasLimit)
+      setFeeCap(gasParams.gasFeeCap)
     }
   }, [expert, gasParams])
 
@@ -129,10 +129,10 @@ export const Replace = ({ strategy }: ReplaceProps) => {
               label='Gas Premium'
               info={
                 expert
-                  ? `Needs to be at least ${minGasParams.gasPremium} aFIL`
+                  ? `Needs to be at least ${minGasParams.gasPremium.toAttoFil()} aFIL`
                   : ''
               }
-              min={new FilecoinNumber(minGasParams.gasPremium, 'attofil')}
+              min={minGasParams.gasPremium}
               value={gasPremium}
               denom='attofil'
               onChange={setGasPremium}
@@ -143,10 +143,10 @@ export const Replace = ({ strategy }: ReplaceProps) => {
               label='Gas Limit'
               info={
                 expert
-                  ? `Needs to be at least ${minGasParams.gasLimit} aFIL`
+                  ? `Needs to be at least ${minGasParams.gasLimit.toAttoFil()} aFIL`
                   : ''
               }
-              min={new FilecoinNumber(minGasParams.gasLimit, 'attofil')}
+              min={minGasParams.gasLimit}
               value={gasLimit}
               denom='attofil'
               onChange={setGasLimit}
@@ -157,10 +157,10 @@ export const Replace = ({ strategy }: ReplaceProps) => {
               label='Fee Cap'
               info={
                 expert
-                  ? `Needs to be at least ${minGasParams.gasFeeCap} aFIL`
+                  ? `Needs to be at least ${minGasParams.gasFeeCap.toAttoFil()} aFIL`
                   : ''
               }
-              min={new FilecoinNumber(minGasParams.gasFeeCap, 'attofil')}
+              min={minGasParams.gasFeeCap}
               value={feeCap}
               denom='attofil'
               onChange={setFeeCap}
