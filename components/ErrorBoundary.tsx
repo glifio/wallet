@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { ErrorView, OneColumnCentered } from '@glif/react-components'
 import { logger } from '../logger'
 import WalletPage from './WalletPage'
@@ -9,7 +9,10 @@ interface ErrorState {
 
 // This component catches all uncaught react and syncronous JS errors
 // and forwards the user to an error page + sends us the error report
-class ErrorBoundary extends React.Component {
+class ErrorBoundary extends React.Component<
+  { children: ReactNode },
+  { hasError: boolean }
+> {
   constructor(props) {
     super(props)
     this.state = { hasError: false } as ErrorState
