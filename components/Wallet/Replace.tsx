@@ -26,9 +26,9 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const wallet = useWallet()
   const cid = router.query.cid as string
   const [expert, setExpert] = useState<boolean>(false)
-  const [gasPremium, setGasPremium] = useState<FilecoinNumber>(new FilecoinNumber(0, 'attofil'))
-  const [gasLimit, setGasLimit] = useState<FilecoinNumber>(new FilecoinNumber(0, 'attofil'))
-  const [feeCap, setFeeCap] = useState<FilecoinNumber>(new FilecoinNumber(0, 'attofil'))
+  const [gasPremium, setGasPremium] = useState<FilecoinNumber>(null)
+  const [gasLimit, setGasLimit] = useState<FilecoinNumber>(null)
+  const [feeCap, setFeeCap] = useState<FilecoinNumber>(null)
   const [isGasPremiumValid, setIsGasPremiumValid] = useState<boolean>(false)
   const [isGasLimitValid, setIsGasLimitValid] = useState<boolean>(false)
   const [isGasFeeCapValid, setIsGasFeeCapValid] = useState<boolean>(false)
@@ -63,10 +63,10 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   }, [expert, gasParams])
 
   const onSend = () => {
-
+    setIsSending(true)
   }
 
-  function getGlyph() {
+  const getGlyph = () => {
     switch (strategy) {
       case ReplaceStrategy.SPEED_UP:
         return 'Su'
@@ -77,7 +77,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     }
   }
 
-  function getTitle() {
+  const getTitle = () => {
     switch (strategy) {
       case ReplaceStrategy.SPEED_UP:
         return 'Speed Up Message'
@@ -88,17 +88,12 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     }
   }
 
-  function getDescription() {
+  const getDescription = () => {
     if (hasError) return 'Failed to load message information'
     if (isLoading) return 'Loading message information...'
-    switch (step) {
-      case 1:
-        return 'Please confirm the updated message details below'
-      case 2:
-        return 'Please confirm the transaction with your wallet provider'
-      default:
-        return ''
-    }
+    if (isSending)
+      return 'Please confirm the transaction with your wallet provider'
+    return 'Please confirm the updated message details below'
   }
 
   return (
@@ -132,7 +127,11 @@ export const Replace = ({ strategy }: ReplaceProps) => {
             <InputV2.Text label='Nonce' value={message.Nonce} disabled />
             <InputV2.Filecoin
               label='Gas Premium'
-              info={expert ? `Needs to be at least ${minGasParams.gasPremium} aFIL` : ''}
+              info={
+                expert
+                  ? `Needs to be at least ${minGasParams.gasPremium} aFIL`
+                  : ''
+              }
               min={new FilecoinNumber(minGasParams.gasPremium, 'attofil')}
               value={gasPremium}
               denom='attofil'
@@ -142,7 +141,11 @@ export const Replace = ({ strategy }: ReplaceProps) => {
             />
             <InputV2.Filecoin
               label='Gas Limit'
-              info={expert ? `Needs to be at least ${minGasParams.gasLimit} aFIL` : ''}
+              info={
+                expert
+                  ? `Needs to be at least ${minGasParams.gasLimit} aFIL`
+                  : ''
+              }
               min={new FilecoinNumber(minGasParams.gasLimit, 'attofil')}
               value={gasLimit}
               denom='attofil'
@@ -152,7 +155,11 @@ export const Replace = ({ strategy }: ReplaceProps) => {
             />
             <InputV2.Filecoin
               label='Fee Cap'
-              info={expert ? `Needs to be at least ${minGasParams.gasFeeCap} aFIL` : ''}
+              info={
+                expert
+                  ? `Needs to be at least ${minGasParams.gasFeeCap} aFIL`
+                  : ''
+              }
               min={new FilecoinNumber(minGasParams.gasFeeCap, 'attofil')}
               value={feeCap}
               denom='attofil'
