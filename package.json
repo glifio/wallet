@@ -1,6 +1,6 @@
 {
   "name": "wallet",
-  "version": "3.0.2",
+  "version": "3.0.5-calibration.0",
   "engines": {
     "node": ">=16.0.0"
   },
@@ -26,9 +26,9 @@
     "@glif/filecoin-message": "^2.0.0-alpha.17",
     "@glif/filecoin-message-confirmer": "latest",
     "@glif/filecoin-number": "latest",
-    "@glif/filecoin-rpc-client": "latest",
-    "@glif/filecoin-wallet-provider": "latest",
-    "@glif/react-components": "^2.0.0-alpha.62",
+    "@glif/filecoin-rpc-client": "^2.0.0-beta.8",
+    "@glif/filecoin-wallet-provider": "^2.0.0-beta.10",
+    "@glif/react-components": "^2.0.0-alpha.65",
     "@glif/wallet-provider-react": "^0.0.0-alpha.23",
     "@ledgerhq/hw-transport-webhid": "^6.4.1",
     "@zondax/filecoin-signing-tools": "^0.18.6",
