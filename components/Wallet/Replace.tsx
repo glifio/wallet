@@ -32,6 +32,9 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const [gasPremium, setGasPremium] = useState<FilecoinNumber>(new FilecoinNumber(0, 'attofil'))
   const [gasLimit, setGasLimit] = useState<FilecoinNumber>(new FilecoinNumber(0, 'attofil'))
   const [feeCap, setFeeCap] = useState<FilecoinNumber>(new FilecoinNumber(0, 'attofil'))
+  const [isGasPremiumValid, setIsGasPremiumValid] = useState<boolean>(false)
+  const [isGasLimitValid, setIsGasLimitValid] = useState<boolean>(false)
+  const [isGasFeeCapValid, setIsGasFeeCapValid] = useState<boolean>(false)
   const { walletProvider } = useWalletProvider()
   const {
     message,
@@ -51,6 +54,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const hasError = !!(messageError || gasParamsError || minGasParamsError)
   const isLoading = messageLoading || gasParamsLoading || minGasParamsLoading
   const isLoaded = !!(message && gasParams && minGasParams)
+  const isValid = isGasPremiumValid && isGasLimitValid && isGasFeeCapValid
   const isSending = step === 2
 
   useEffect(() => {
@@ -133,29 +137,32 @@ export const Replace = ({ strategy }: ReplaceProps) => {
             <InputV2.Text label='Nonce' value={message.Nonce} disabled />
             <InputV2.Filecoin
               label='Gas Premium'
-              denom='attofil'
               info={expert ? `Needs to be at least ${minGasParams.gasPremium} aFIL` : ''}
               min={new FilecoinNumber(minGasParams.gasPremium, 'attofil')}
               value={gasPremium}
+              denom='attofil'
               onChange={setGasPremium}
+              setIsValid={setIsGasPremiumValid}
               disabled={!expert || isSending}
             />
             <InputV2.Filecoin
               label='Gas Limit'
-              denom='attofil'
               info={expert ? `Needs to be at least ${minGasParams.gasLimit} aFIL` : ''}
               min={new FilecoinNumber(minGasParams.gasLimit, 'attofil')}
               value={gasLimit}
+              denom='attofil'
               onChange={setGasLimit}
+              setIsValid={setIsGasLimitValid}
               disabled={!expert || isSending}
             />
             <InputV2.Filecoin
               label='Fee Cap'
-              denom='attofil'
               info={expert ? `Needs to be at least ${minGasParams.gasFeeCap} aFIL` : ''}
               min={new FilecoinNumber(minGasParams.gasFeeCap, 'attofil')}
               value={feeCap}
+              denom='attofil'
               onChange={setFeeCap}
+              setIsValid={setIsGasFeeCapValid}
               disabled={!expert || isSending}
             />
             <InputV2.Toggle
@@ -181,7 +188,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
         <ButtonV2
           large
           green
-          disabled={!isLoaded || isSending}
+          disabled={!isLoaded || !isValid || isSending}
           onClick={() => setStep(2)}
         >
           Send
