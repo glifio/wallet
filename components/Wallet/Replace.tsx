@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
-import { FilecoinNumber } from '@glif/filecoin-number'
+import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import {
   getMaxGasFee,
   useWallet,
@@ -21,6 +21,8 @@ import {
 } from '@glif/react-components'
 
 import { CardHeader } from './Send/CardHeader'
+import { navigate } from '../../utils/urlParams'
+import { PAGE } from '../../constants'
 
 export const Replace = ({ strategy }: ReplaceProps) => {
   const router = useRouter()
@@ -67,8 +69,34 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     }
   }, [expert, gasParams])
 
-  const onSend = () => {
+  const onSend = async () => {
     setIsSending(true)
+    const newMessage = {
+      ...message,
+      gasPremium: gasPremium.toAttoFil(),
+      gasFeeCap: gasFeeCap.toAttoFil(),
+      gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
+      ...(strategy === ReplaceStrategy.CANCEL ? {
+        Value: '0',
+        Method: 0,
+        Params: ''
+      } : {})
+    }
+    try {
+      const signedMessage = await walletProvider.wallet.sign(
+        wallet.address,
+        newMessage
+      )
+      const msgValid = await walletProvider.simulateMessage(newMessage)
+      if (!msgValid) {
+        throw new Error('Filecoin message invalid. No gas or fees were spent.')
+      }
+      await walletProvider.sendMessage(signedMessage)
+      navigate(router, { pageUrl: PAGE.WALLET_HOME })
+    } catch(e: any) {
+      setSendError(e)
+    }
+    setIsSending(false)
   }
 
   const getGlyph = () => {
