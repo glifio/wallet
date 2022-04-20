@@ -76,11 +76,13 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       gasPremium: gasPremium.toAttoFil(),
       gasFeeCap: gasFeeCap.toAttoFil(),
       gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
-      ...(strategy === ReplaceStrategy.CANCEL ? {
-        Value: '0',
-        Method: 0,
-        Params: ''
-      } : {})
+      ...(strategy === ReplaceStrategy.CANCEL
+        ? {
+            Value: '0',
+            Method: 0,
+            Params: ''
+          }
+        : {})
     }
     try {
       const signedMessage = await walletProvider.wallet.sign(
@@ -93,7 +95,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       }
       await walletProvider.sendMessage(signedMessage)
       navigate(router, { pageUrl: PAGE.WALLET_HOME })
-    } catch(e: any) {
+    } catch (e: any) {
       setSendError(e)
     }
     setIsSending(false)
@@ -149,9 +151,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
         </ErrorBox>
       )}
       {sendError && (
-        <ErrorBox>
-          Failed to send message: {sendError.message}
-        </ErrorBox>
+        <ErrorBox>Failed to send message: {sendError.message}</ErrorBox>
       )}
       {isLoaded && (
         <ShadowBox>
