@@ -26,9 +26,9 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const wallet = useWallet()
   const cid = router.query.cid as string
   const [expert, setExpert] = useState<boolean>(false)
-  const [gasPremium, setGasPremium] = useState<FilecoinNumber>(null)
-  const [gasLimit, setGasLimit] = useState<FilecoinNumber>(null)
-  const [feeCap, setFeeCap] = useState<FilecoinNumber>(null)
+  const [gasPremium, setGasPremium] = useState<FilecoinNumber | null>(null)
+  const [gasLimit, setGasLimit] = useState<FilecoinNumber | null>(null)
+  const [feeCap, setFeeCap] = useState<FilecoinNumber | null>(null)
   const [isGasPremiumValid, setIsGasPremiumValid] = useState<boolean>(false)
   const [isGasLimitValid, setIsGasLimitValid] = useState<boolean>(false)
   const [isGasFeeCapValid, setIsGasFeeCapValid] = useState<boolean>(false)
