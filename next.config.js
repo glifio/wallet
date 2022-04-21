@@ -1,4 +1,5 @@
 const path = require('path')
+const pkgjson = require('./package.json')
 
 const {
   PHASE_PRODUCTION_BUILD,
@@ -30,6 +31,8 @@ module.exports = (phase) => {
     trailingSlash: true,
     webpack,
     env: {
+      NEXT_PUBLIC_PACKAGE_NAME: pkgjson.name,
+      NEXT_PUBLIC_PACKAGE_VERSION: pkgjson.version,
       NEXT_PUBLIC_HOME_URL: process.env.HOME_URL || 'https://glif.io',
       NEXT_PUBLIC_BLOG_URL: process.env.BLOG_URL || 'https://blog.glif.io/',
       NEXT_PUBLIC_WALLET_URL:
