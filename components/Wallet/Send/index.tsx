@@ -321,7 +321,10 @@ const Send = () => {
               </>
             )}
             <Box boxShadow={2} borderRadius={4}>
-              <TransactionHeader address={wallet.address} balance={wallet.balance} />
+              <TransactionHeader
+                address={wallet.address}
+                balance={wallet.balance}
+              />
 
               <Box width='100%' p={3} border={0} bg='background.screen'>
                 <Input.Address
