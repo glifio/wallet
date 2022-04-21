@@ -28,6 +28,8 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const router = useRouter()
   const wallet = useWallet()
   const cid = router.query.cid as string
+  const { walletProvider, walletError, resetWalletError } = useWalletProvider()
+
   const [expert, setExpert] = useState<boolean>(false)
   const [gasPremium, setGasPremium] = useState<FilecoinNumber | null>(null)
   const [gasLimit, setGasLimit] = useState<FilecoinNumber | null>(null)
@@ -37,7 +39,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const [isGasFeeCapValid, setIsGasFeeCapValid] = useState<boolean>(false)
   const [isSending, setIsSending] = useState<boolean>(false)
   const [sendError, setSendError] = useState<Error | null>(null)
-  const { walletProvider, walletError, resetWalletError } = useWalletProvider()
+
   const {
     message,
     loading: messageLoading,
@@ -53,10 +55,12 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     loading: minGasParamsLoading,
     error: minGasParamsError
   } = useGetReplaceMessageGasParams(walletProvider, message, true)
+
   const hasLoadError = !!(messageError || gasParamsError || minGasParamsError)
   const isLoading = messageLoading || gasParamsLoading || minGasParamsLoading
   const isLoaded = !!(message && gasParams && minGasParams)
   const isValid = isGasPremiumValid && isGasLimitValid && isGasFeeCapValid
+
   const maxGasFee: FilecoinNumber | null = useMemo(() => {
     return gasLimit && gasFeeCap ? getMaxGasFee({ gasLimit, gasFeeCap }) : null
   }, [gasLimit, gasFeeCap])
