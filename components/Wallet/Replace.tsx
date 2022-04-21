@@ -79,9 +79,9 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     resetWalletError()
     const newMessage = {
       ...message,
-      gasPremium: gasPremium.toAttoFil(),
-      gasFeeCap: gasFeeCap.toAttoFil(),
-      gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
+      GasPremium: gasPremium.toAttoFil(),
+      GasFeeCap: gasFeeCap.toAttoFil(),
+      GasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
       ...(strategy === ReplaceStrategy.CANCEL
         ? {
             Value: '0',
