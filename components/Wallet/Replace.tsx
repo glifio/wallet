@@ -16,11 +16,11 @@ import {
   ErrorBox,
   ShadowBox,
   StandardBox,
+  TransactionHeader,
   ButtonRowSpaced,
   SmartLink
 } from '@glif/react-components'
 
-import { CardHeader } from './Send/CardHeader'
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
@@ -107,17 +107,6 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     setIsSending(false)
   }
 
-  const getGlyph = () => {
-    switch (strategy) {
-      case ReplaceStrategy.SPEED_UP:
-        return 'Su'
-      case ReplaceStrategy.CANCEL:
-        return 'Ca'
-      default:
-        return ''
-    }
-  }
-
   const getTitle = () => {
     switch (strategy) {
       case ReplaceStrategy.SPEED_UP:
@@ -141,6 +130,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     <Dialog>
       <StandardBox>
         <h2>{getTitle()}</h2>
+        <hr />
         <p>{getDescription()}</p>
       </StandardBox>
       {messageError && (
@@ -164,10 +154,9 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       )}
       {isLoaded && (
         <ShadowBox>
-          <CardHeader
+          <TransactionHeader
             address={wallet.address}
             balance={wallet.balance}
-            glyphAcronym={getGlyph()}
           />
           <form>
             <InputV2.Text label='Message CID' value={cid} disabled />

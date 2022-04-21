@@ -14,6 +14,7 @@ import {
   Form,
   Card,
   Input,
+  TransactionHeader,
   useSubmittedMessages,
   ErrorCard
 } from '@glif/react-components'
@@ -24,7 +25,6 @@ import {
   CustomizeFee
 } from '@glif/wallet-provider-react'
 
-import { CardHeader } from './CardHeader'
 import HeaderText from './HeaderText'
 import { LEDGER, emptyGasInfo, PAGE, METAMASK } from '../../../constants'
 import isBase64 from '../../../utils/isBase64'
@@ -321,7 +321,7 @@ const Send = () => {
               </>
             )}
             <Box boxShadow={2} borderRadius={4}>
-              <CardHeader address={wallet.address} balance={wallet.balance} />
+              <TransactionHeader address={wallet.address} balance={wallet.balance} />
 
               <Box width='100%' p={3} border={0} bg='background.screen'>
                 <Input.Address
