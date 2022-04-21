@@ -1,11 +1,10 @@
-import { ParsedUrlQuery } from 'querystring'
 import { NextRouter } from 'next/router'
 import { PAGE } from '../../constants'
 
 const requiredUrlParamsWithDefaults = {}
 
 interface NavigationOptions {
-  existingQParams: ParsedUrlQuery
+  existingQParams: Record<string, string | string[]>
   pageUrl: PAGE
   urlPathExtension?: string[]
   newQueryParams?: Record<string, any>
@@ -13,7 +12,7 @@ interface NavigationOptions {
 }
 
 export const combineExistingNewAndRequiredQueryParams = (
-  existingQParams: ParsedUrlQuery,
+  existingQParams: Record<string, string | string[]>,
   newQParams?: Record<string, string>,
   maintainQParams?: boolean
 ): URLSearchParams => {
