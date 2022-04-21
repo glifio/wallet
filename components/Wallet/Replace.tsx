@@ -37,7 +37,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const [isGasFeeCapValid, setIsGasFeeCapValid] = useState<boolean>(false)
   const [isSending, setIsSending] = useState<boolean>(false)
   const [sendError, setSendError] = useState<Error | null>(null)
-  const { walletProvider } = useWalletProvider()
+  const { walletProvider, walletError, resetWalletError } = useWalletProvider()
   const {
     message,
     loading: messageLoading,
@@ -71,6 +71,8 @@ export const Replace = ({ strategy }: ReplaceProps) => {
 
   const onSend = async () => {
     setIsSending(true)
+    setSendError(null)
+    resetWalletError()
     const newMessage = {
       ...message,
       gasPremium: gasPremium.toAttoFil(),
@@ -152,6 +154,9 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       )}
       {sendError && (
         <ErrorBox>Failed to send message: {sendError.message}</ErrorBox>
+      )}
+      {walletError() && (
+        <ErrorBox>The wallet produced an error: {walletError()}</ErrorBox>
       )}
       {isLoaded && (
         <ShadowBox>
