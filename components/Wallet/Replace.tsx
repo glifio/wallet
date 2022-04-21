@@ -53,7 +53,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     loading: minGasParamsLoading,
     error: minGasParamsError
   } = useGetReplaceMessageGasParams(walletProvider, message, true)
-  const hasError = !!(messageError || gasParamsError || minGasParamsError)
+  const hasLoadError = !!(messageError || gasParamsError || minGasParamsError)
   const isLoading = messageLoading || gasParamsLoading || minGasParamsLoading
   const isLoaded = !!(message && gasParams && minGasParams)
   const isValid = isGasPremiumValid && isGasLimitValid && isGasFeeCapValid
@@ -124,7 +124,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   }
 
   const getDescription = () => {
-    if (hasError) return 'Failed to load message information'
+    if (hasLoadError) return 'Failed to load message information'
     if (isLoading) return 'Loading message information...'
     if (isSending)
       return 'Please confirm the transaction with your wallet provider'
