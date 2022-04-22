@@ -4,7 +4,7 @@ import { RequireWallet } from '@glif/wallet-provider-react'
 import { OneColumnCentered } from '@glif/react-components'
 
 import WalletPageLoggedIn from '../components/WalletPageLoggedIn'
-import SendView from '../components/Wallet/Send'
+import { Send } from '../components/Wallet/Send'
 import { navigate } from '../utils/urlParams'
 import { PAGE } from '../constants'
 
@@ -18,7 +18,7 @@ const SendPage = () => {
     <WalletPageLoggedIn>
       <OneColumnCentered>
         <RequireWallet gatekeep={gatekeep}>
-          <SendView />
+          <Send />
         </RequireWallet>
       </OneColumnCentered>
     </WalletPageLoggedIn>
