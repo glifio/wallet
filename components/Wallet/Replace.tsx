@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { LotusMessage } from '@glif/filecoin-message'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import {
+  Transaction,
   getMaxGasFee,
   useWallet,
   useWalletProvider,
@@ -15,8 +16,7 @@ import {
   Dialog,
   ErrorBox,
   ShadowBox,
-  StandardBox,
-  Transaction
+  StandardBox
 } from '@glif/react-components'
 
 import { navigate } from '../../utils/urlParams'
