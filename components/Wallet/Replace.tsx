@@ -11,15 +11,12 @@ import {
   useGetReplaceMessageGasParams
 } from '@glif/wallet-provider-react'
 import {
-  ButtonV2,
   InputV2,
   Dialog,
   ErrorBox,
   ShadowBox,
   StandardBox,
-  Transaction,
-  ButtonRowSpaced,
-  SmartLink
+  Transaction
 } from '@glif/react-components'
 
 import { navigate } from '../../utils/urlParams'
@@ -214,19 +211,11 @@ export const Replace = ({ strategy }: ReplaceProps) => {
           {maxFee && <Transaction.MaxFee maxFee={maxFee} />}
         </ShadowBox>
       )}
-      <ButtonRowSpaced>
-        <ButtonV2 large disabled={isSending} onClick={() => router.back()}>
-          Cancel
-        </ButtonV2>
-        <ButtonV2
-          large
-          green
-          disabled={!isLoaded || !isValid || isSending}
-          onClick={() => onSend()}
-        >
-          Send
-        </ButtonV2>
-      </ButtonRowSpaced>
+      <Transaction.Buttons
+        cancelDisabled={isSending}
+        sendDisabled={!isLoaded || !isValid || isSending}
+        onClickSend={onSend}
+      />
     </Dialog>
   )
 }
