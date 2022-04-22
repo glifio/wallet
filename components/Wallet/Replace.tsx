@@ -17,7 +17,7 @@ import {
   ErrorBox,
   ShadowBox,
   StandardBox,
-  TransactionHeader,
+  Transaction,
   ButtonRowSpaced,
   SmartLink
 } from '@glif/react-components'
@@ -155,7 +155,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       )}
       {isLoaded && (
         <ShadowBox>
-          <TransactionHeader
+          <Transaction.Header
             address={wallet.address}
             balance={wallet.balance}
           />
