@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
+import { LotusMessage } from '@glif/filecoin-message'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import {
   getMaxGasFee,
@@ -77,7 +78,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     setIsSending(true)
     setSendError(null)
     resetWalletError()
-    const newMessage = {
+    const newMessage: LotusMessage = {
       ...message,
       GasPremium: gasPremium.toAttoFil(),
       GasFeeCap: gasFeeCap.toAttoFil(),
