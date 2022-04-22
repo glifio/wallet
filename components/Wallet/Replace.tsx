@@ -62,7 +62,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const isLoaded = !!(message && gasParams && minGasParams)
   const isValid = isGasPremiumValid && isGasLimitValid && isGasFeeCapValid
 
-  const maxGasFee: FilecoinNumber | null = useMemo(() => {
+  const maxFee: FilecoinNumber | null = useMemo(() => {
     return gasLimit && gasFeeCap ? getMaxGasFee({ gasLimit, gasFeeCap }) : null
   }, [gasLimit, gasFeeCap])
 
@@ -211,15 +211,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
               disabled={isSending}
             />
           </form>
-          {maxGasFee && (
-            <p>
-              You will not pay more than {maxGasFee.toFil()} FIL for this
-              transaction.{' '}
-              <SmartLink href='https://filfox.info/en/stats/gas'>
-                More information on average gas fee statistics.
-              </SmartLink>
-            </p>
-          )}
+          {maxFee && <Transaction.MaxFee maxFee={maxFee} />}
         </ShadowBox>
       )}
       <ButtonRowSpaced>
