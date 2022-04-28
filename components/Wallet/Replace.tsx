@@ -160,7 +160,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
           />
           <form>
             <InputV2.Text label='Message CID' value={cid} disabled />
-            <InputV2.Text label='Nonce' value={message.Nonce} disabled />
+            <InputV2.Number label='Nonce' value={message.Nonce} disabled />
             <InputV2.Filecoin
               label='Gas Premium'
               info={
