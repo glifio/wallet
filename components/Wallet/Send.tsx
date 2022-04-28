@@ -17,6 +17,7 @@ import {
 
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
+import { logger } from '../../logger'
 
 export const Send = () => {
   const router = useRouter()
@@ -70,6 +71,7 @@ export const Send = () => {
       await walletProvider.sendMessage(signedMessage)
       navigate(router, { pageUrl: PAGE.WALLET_HOME })
     } catch (e: any) {
+      logger.error(e)
       setSendError(e)
     }
     setIsSending(false)
