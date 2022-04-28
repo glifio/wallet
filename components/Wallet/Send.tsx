@@ -16,13 +16,13 @@ import {
 } from '@glif/react-components'
 
 import { navigate } from '../../utils/urlParams'
-import { PAGE } from '../../constants'
+import { PAGE, LEDGER } from '../../constants'
 import { logger } from '../../logger'
 
 export const Send = () => {
   const router = useRouter()
   const wallet = useWallet()
-  const { walletProvider, walletError, resetWalletError } = useWalletProvider()
+  const { loginOption, walletProvider, walletError, resetWalletError } = useWalletProvider()
 
   const [toAddress, setToAddress] = useState<string>('')
   const [value, setValue] = useState<FilecoinNumber | null>(null)
@@ -30,11 +30,11 @@ export const Send = () => {
   const [isToAddressValid, setIsToAddressValid] = useState<boolean>(false)
   const [isValueValid, setIsValueValid] = useState<boolean>(false)
   const [isParamsValid, setIsParamsValid] = useState<boolean>(false)
-
   const [isSending, setIsSending] = useState<boolean>(false)
   const [sendError, setSendError] = useState<Error | null>(null)
 
   const isValid = isToAddressValid && isValueValid && isParamsValid
+  const isLedger = loginOption === LEDGER
 
   const maxFee: FilecoinNumber | null = useMemo(() => {
     return value ? value : null
@@ -124,7 +124,8 @@ export const Send = () => {
             value={params}
             onChange={setParams}
             setIsValid={setIsParamsValid}
-            disabled={!isToAddressValid || !isValueValid || isSending}
+            disabled={!isToAddressValid || !isValueValid || isSending || isLedger}
+            info={isLedger ? 'Ledger devices cannot sign base64 params yet, coming soon' : ''}
           />
         </form>
         {maxFee && <Transaction.MaxFee maxFee={maxFee} />}
