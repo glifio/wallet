@@ -21,6 +21,7 @@ import {
 
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
+import { logger } from '../../logger'
 
 export const Replace = ({ strategy }: ReplaceProps) => {
   const router = useRouter()
@@ -100,6 +101,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       await walletProvider.sendMessage(signedMessage)
       navigate(router, { pageUrl: PAGE.WALLET_HOME })
     } catch (e: any) {
+      logger.error(e)
       setSendError(e)
     }
     setIsSending(false)
