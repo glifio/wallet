@@ -69,11 +69,13 @@ export const Send = () => {
   ])
 
   // Load gas parameters
+  const [initialFeeSet, setInitialFeeSet] = useState<boolean>(false)
+  const [maxFee, setMaxFee] = useState<FilecoinNumber | null>(null)
   const {
     gasParams,
     loading: gasParamsLoading,
     error: gasParamsError
-  } = useGetGasParams(walletProvider, message)
+  } = useGetGasParams(walletProvider, message, maxFee)
 
   // Data states
   const isLoaded = !!gasParams
@@ -92,8 +94,20 @@ export const Send = () => {
 
   // Calculate total amount (value plus max fee)
   const total = useMemo<FilecoinNumber | null>(() => {
-    return value && calculatedMaxFee ? getTotalAmount(value, calculatedMaxFee) : null
+    return value && calculatedMaxFee
+      ? getTotalAmount(value, calculatedMaxFee)
+      : null
   }, [value, calculatedMaxFee])
+
+
+  // Set transaction fee once after
+  // calculating initial max fee
+  useEffect(() => {
+    if (calculatedMaxFee && !initialFeeSet) {
+      setInitialFeeSet(true)
+      setTxFee(calculatedMaxFee)
+    }
+  }, [calculatedMaxFee, initialFeeSet])
 
   // Attempt sending message
   const onSend = async () => {
