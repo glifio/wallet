@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 import { LotusMessage } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import {
-  Transaction,
   useWallet,
   useWalletProvider
 } from '@glif/wallet-provider-react'
@@ -12,7 +11,8 @@ import {
   Dialog,
   ErrorBox,
   ShadowBox,
-  StandardBox
+  StandardBox,
+  Transaction
 } from '@glif/react-components'
 
 import { navigate } from '../../utils/urlParams'
@@ -77,24 +77,21 @@ export const Send = () => {
     setIsSending(false)
   }
 
-  const getDescription = () => {
-    if (isSending)
-      return 'Please confirm the transaction with your wallet provider'
-    return 'Please enter the message details below'
-  }
-
   return (
     <Dialog>
       <StandardBox>
         <h2>Send Filecoin</h2>
         <hr />
-        <p>{getDescription()}</p>
+        <p>Please enter the message details below</p>
       </StandardBox>
       {sendError && (
         <ErrorBox>Failed to send message: {sendError.message}</ErrorBox>
       )}
       {walletError() && (
         <ErrorBox>The wallet produced an error: {walletError()}</ErrorBox>
+      )}
+      {isSending && (
+        <Transaction.Confirm loginOption={loginOption} />
       )}
       <ShadowBox>
         <Transaction.Header
