@@ -84,7 +84,7 @@ export const Send = () => {
   }, [value, wallet])
 
   // Calculate maximum transaction fee (fee cap times limit)
-  const maxFee = useMemo<FilecoinNumber | null>(() => {
+  const calculatedMaxFee = useMemo<FilecoinNumber | null>(() => {
     return gasParams
       ? getMaxGasFee(gasParams.gasFeeCap, gasParams.gasLimit)
       : null
@@ -92,8 +92,8 @@ export const Send = () => {
 
   // Calculate total amount (value plus max fee)
   const total = useMemo<FilecoinNumber | null>(() => {
-    return value && maxFee ? getTotalAmount(value, maxFee) : null
-  }, [value, maxFee])
+    return value && calculatedMaxFee ? getTotalAmount(value, calculatedMaxFee) : null
+  }, [value, calculatedMaxFee])
 
   // Attempt sending message
   const onSend = async () => {
@@ -194,7 +194,7 @@ export const Send = () => {
           />
         </form>
         {gasParamsLoading && <p>Calculating transaction fees...</p>}
-        {maxFee && <Transaction.MaxFee maxFee={maxFee} />}
+        {calculatedMaxFee && <Transaction.MaxFee maxFee={calculatedMaxFee} />}
         {total && <Transaction.Total total={total} />}
       </ShadowBox>
       <Transaction.Buttons
