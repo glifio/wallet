@@ -5,6 +5,8 @@ import { FilecoinNumber } from '@glif/filecoin-number'
 import { useWallet, useWalletProvider } from '@glif/wallet-provider-react'
 import {
   getMaxAffordableFee,
+  getMaxGasFee,
+  useGetGasParams,
   InputV2,
   Dialog,
   ErrorBox,
@@ -40,17 +42,48 @@ export const Send = () => {
     isToAddressValid && isValueValid && isParamsValid && isTxFeeValid
 
   const maxAffordableFee = useMemo<FilecoinNumber | null>(() => {
-    const { balance } = wallet
-    return isValueValid ? getMaxAffordableFee({ balance, value }) : null
+    return isValueValid ? getMaxAffordableFee(wallet.balance, value) : null
   }, [value, isValueValid, wallet])
-
-  const maxFee = useMemo<FilecoinNumber | null>(() => {
-    return value ? value : null
-  }, [value])
 
   const total = useMemo<FilecoinNumber | null>(() => {
     return value ? value : null
   }, [value])
+
+  const message = useMemo<LotusMessage | null>(() => {
+    return isToAddressValid && isValueValid && isParamsValid
+      ? {
+          To: toAddress,
+          From: wallet.address,
+          Nonce: 0,
+          Value: value.toAttoFil(),
+          GasPremium: '0',
+          GasFeeCap: '0',
+          GasLimit: 0,
+          Method: 0,
+          Params: params
+        }
+      : null
+  }, [
+    isToAddressValid,
+    isValueValid,
+    isParamsValid,
+    toAddress,
+    value,
+    params,
+    wallet
+  ])
+
+  const {
+    gasParams,
+    loading: gasParamsLoading,
+    error: gasParamsError
+  } = useGetGasParams(walletProvider, message)
+
+  const maxFee = useMemo<FilecoinNumber | null>(() => {
+    return gasParams
+      ? getMaxGasFee(gasParams.gasFeeCap, gasParams.gasLimit)
+      : null
+  }, [gasParams])
 
   const onSend = async () => {
     setIsSending(true)
@@ -92,6 +125,11 @@ export const Send = () => {
         <hr />
         <p>Please enter the message details below</p>
       </StandardBox>
+      {gasParamsError && (
+        <ErrorBox>
+          Failed to calculate gas fees: {gasParamsError.message}
+        </ErrorBox>
+      )}
       {sendError && (
         <ErrorBox>Failed to send message: {sendError.message}</ErrorBox>
       )}
