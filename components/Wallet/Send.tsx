@@ -27,6 +27,7 @@ export const Send = () => {
   const { loginOption, walletProvider, walletError, resetWalletError } =
     useWalletProvider()
 
+  // Input states
   const [toAddress, setToAddress] = useState<string>('')
   const [value, setValue] = useState<FilecoinNumber | null>(null)
   const [params, setParams] = useState<string>('')
@@ -35,12 +36,14 @@ export const Send = () => {
   const [isValueValid, setIsValueValid] = useState<boolean>(false)
   const [isParamsValid, setIsParamsValid] = useState<boolean>(false)
   const [isTxFeeValid, setIsTxFeeValid] = useState<boolean>(false)
+  const areInputsValid =
+    isToAddressValid && isValueValid && isParamsValid && isTxFeeValid
+  
+  // Sending states
   const [isSending, setIsSending] = useState<boolean>(false)
   const [sendError, setSendError] = useState<Error | null>(null)
 
   const isLedger = loginOption === LoginOption.LEDGER
-  const isValid =
-    isToAddressValid && isValueValid && isParamsValid && isTxFeeValid
 
   const maxAffordableFee = useMemo<FilecoinNumber | null>(() => {
     return isValueValid ? getMaxAffordableFee(wallet.balance, value) : null
@@ -189,7 +192,7 @@ export const Send = () => {
       </ShadowBox>
       <Transaction.Buttons
         cancelDisabled={isSending}
-        sendDisabled={!isValid || isSending}
+        sendDisabled={!areInputsValid || isSending}
         onClickSend={onSend}
       />
     </Dialog>
