@@ -4,13 +4,13 @@ import { useRouter } from 'next/router'
 import { LotusMessage } from '@glif/filecoin-message'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import {
-  getMaxGasFee,
   useWallet,
   useWalletProvider,
   useGetMessage,
   useGetReplaceMessageGasParams
 } from '@glif/wallet-provider-react'
 import {
+  getMaxGasFee,
   InputV2,
   Dialog,
   ErrorBox,
