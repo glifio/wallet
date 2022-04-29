@@ -3,14 +3,11 @@ import { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
 import { LotusMessage } from '@glif/filecoin-message'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
-import {
-  useWallet,
-  useWalletProvider,
-  useGetMessage,
-  useGetReplaceMessageGasParams
-} from '@glif/wallet-provider-react'
+import { useWallet, useWalletProvider } from '@glif/wallet-provider-react'
 import {
   getMaxGasFee,
+  useGetMessage,
+  useGetReplaceMessageGasParams,
   InputV2,
   Dialog,
   ErrorBox,
@@ -62,7 +59,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const isValid = isGasPremiumValid && isGasLimitValid && isGasFeeCapValid
 
   const maxFee = useMemo<FilecoinNumber | null>(() => {
-    return gasLimit && gasFeeCap ? getMaxGasFee({ gasLimit, gasFeeCap }) : null
+    return gasLimit && gasFeeCap ? getMaxGasFee(gasFeeCap, gasLimit) : null
   }, [gasLimit, gasFeeCap])
 
   useEffect(() => {
