@@ -12,11 +12,12 @@ import {
   ErrorBox,
   ShadowBox,
   StandardBox,
-  Transaction
+  Transaction,
+  LoginOption
 } from '@glif/react-components'
 
 import { navigate } from '../../utils/urlParams'
-import { PAGE, LEDGER } from '../../constants'
+import { PAGE } from '../../constants'
 import { logger } from '../../logger'
 
 export const Send = () => {
@@ -34,7 +35,7 @@ export const Send = () => {
   const [sendError, setSendError] = useState<Error | null>(null)
 
   const isValid = isToAddressValid && isValueValid && isParamsValid
-  const isLedger = loginOption === LEDGER
+  const isLedger = loginOption === LoginOption.LEDGER
 
   const maxFee: FilecoinNumber | null = useMemo(() => {
     return value ? value : null
