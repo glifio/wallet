@@ -41,6 +41,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const [isSending, setIsSending] = useState<boolean>(false)
   const [sendError, setSendError] = useState<Error | null>(null)
 
+  // Load data
   const {
     message,
     loading: messageLoading,
@@ -57,14 +58,18 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     error: minGasParamsError
   } = useGetReplaceMessageGasParams(walletProvider, message, true)
 
+  // Data states
   const hasLoadError = !!(messageError || gasParamsError || minGasParamsError)
   const isLoading = messageLoading || gasParamsLoading || minGasParamsLoading
   const isLoaded = !!(message && gasParams && minGasParams)
 
+  // Calculate max fee
   const maxFee = useMemo<FilecoinNumber | null>(() => {
     return gasLimit && gasFeeCap ? getMaxGasFee(gasFeeCap, gasLimit) : null
   }, [gasLimit, gasFeeCap])
 
+  // Set default gas params after loading
+  // the data or disabling expert mode
   useEffect(() => {
     if (!expert && gasParams) {
       setGasPremium(gasParams.gasPremium)
@@ -73,6 +78,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     }
   }, [expert, gasParams])
 
+  // Attempt sending message
   const onSend = async () => {
     setIsSending(true)
     setSendError(null)
