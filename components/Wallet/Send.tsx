@@ -68,15 +68,17 @@ export const Send = () => {
     wallet
   ])
 
-  const maxAffordableFee = useMemo<FilecoinNumber | null>(() => {
-    return isValueValid ? getMaxAffordableFee(wallet.balance, value) : null
-  }, [value, isValueValid, wallet])
-
+  // Load gas parameters
   const {
     gasParams,
     loading: gasParamsLoading,
     error: gasParamsError
   } = useGetGasParams(walletProvider, message)
+
+  // Calculate max affordable fee (balance minus value)
+  const maxAffordableFee = useMemo<FilecoinNumber | null>(() => {
+    return isValueValid ? getMaxAffordableFee(wallet.balance, value) : null
+  }, [value, isValueValid, wallet])
 
   const maxFee = useMemo<FilecoinNumber | null>(() => {
     return gasParams
@@ -200,3 +202,4 @@ export const Send = () => {
     </Dialog>
   )
 }
+//     const validMsg = await provider.simulateMessage(messageObj)
