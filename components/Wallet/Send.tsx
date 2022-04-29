@@ -95,6 +95,7 @@ export const Send = () => {
     return value && maxFee ? getTotalAmount(value, maxFee) : null
   }, [value, maxFee])
 
+  // Attempt sending message
   const onSend = async () => {
     setIsSending(true)
     setSendError(null)
@@ -196,6 +197,7 @@ export const Send = () => {
             }
           />
         </form>
+        {gasParamsLoading && <p>Calculating transaction fees...</p>}
         {maxFee && <Transaction.MaxFee maxFee={maxFee} />}
         {total && <Transaction.Total total={total} />}
       </ShadowBox>
