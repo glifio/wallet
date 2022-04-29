@@ -61,7 +61,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const isLoaded = !!(message && gasParams && minGasParams)
   const isValid = isGasPremiumValid && isGasLimitValid && isGasFeeCapValid
 
-  const maxFee: FilecoinNumber | null = useMemo(() => {
+  const maxFee = useMemo<FilecoinNumber | null>(() => {
     return gasLimit && gasFeeCap ? getMaxGasFee({ gasLimit, gasFeeCap }) : null
   }, [gasLimit, gasFeeCap])
 

@@ -39,16 +39,16 @@ export const Send = () => {
   const isValid =
     isToAddressValid && isValueValid && isParamsValid && isTxFeeValid
 
-  const maxAffordableFee: FilecoinNumber | null = useMemo(() => {
+  const maxAffordableFee = useMemo<FilecoinNumber | null>(() => {
     const { balance } = wallet
     return isValueValid ? getMaxAffordableFee({ balance, value }) : null
   }, [value, isValueValid, wallet.balance])
 
-  const maxFee: FilecoinNumber | null = useMemo(() => {
+  const maxFee = useMemo<FilecoinNumber | null>(() => {
     return value ? value : null
   }, [value])
 
-  const total: FilecoinNumber | null = useMemo(() => {
+  const total = useMemo<FilecoinNumber | null>(() => {
     return value ? value : null
   }, [value])
 
