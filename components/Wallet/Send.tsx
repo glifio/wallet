@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
 import { LotusMessage } from '@glif/filecoin-message'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
@@ -99,6 +99,10 @@ export const Send = () => {
       : null
   }, [value, calculatedMaxFee])
 
+  // Set max fee after changing transaction fee
+  const onBlurTxFee = () => {
+    setMaxFee(txFee)
+  }
 
   // Set transaction fee once after
   // calculating initial max fee
@@ -200,6 +204,7 @@ export const Send = () => {
             max={maxAffordableFee}
             value={txFee}
             denom='attofil'
+            onBlur={onBlurTxFee}
             onChange={setTxFee}
             setIsValid={setIsTxFeeValid}
             disabled={
