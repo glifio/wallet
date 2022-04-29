@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
 import { LotusMessage } from '@glif/filecoin-message'
-import { FilecoinNumber } from '@glif/filecoin-number'
+import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { useWallet, useWalletProvider } from '@glif/wallet-provider-react'
 import {
   getMaxAffordableFee,
@@ -74,7 +74,7 @@ export const Send = () => {
     loading: gasParamsLoading,
     error: gasParamsError
   } = useGetGasParams(walletProvider, message)
-  
+
   // Data states
   const isLoaded = !!gasParams
 
@@ -101,15 +101,11 @@ export const Send = () => {
     setSendError(null)
     resetWalletError()
     const newMessage: LotusMessage = {
-      To: toAddress,
-      From: wallet.address,
+      ...message,
       Nonce: await walletProvider.getNonce(wallet.address),
-      Value: value.toAttoFil(),
-      GasPremium: '0',
-      GasLimit: 0,
-      GasFeeCap: '0',
-      Method: 0,
-      Params: params
+      GasPremium: gasParams.gasPremium.toAttoFil(),
+      GasFeeCap: gasParams.gasFeeCap.toAttoFil(),
+      GasLimit: new BigNumber(gasParams.gasLimit.toAttoFil()).toNumber()
     }
     try {
       const signedMessage = await walletProvider.wallet.sign(
@@ -209,34 +205,3 @@ export const Send = () => {
     </Dialog>
   )
 }
-//     const validMsg = await provider.simulateMessage(messageObj)
-//     if (validMsg) {
-//       const msgCid = await provider.sendMessage(signedMessage)
-//       return message.toPendingMessage(msgCid['/']) as MessagePendingGQL
-//     }
-//     throw new Error('Filecoin message invalid. No gas or fees were spent.')
-//   }
-// }
-
-// const sendMsg = async () => {
-//   try {
-//     const pendingMsg = await send()
-//     if (pendingMsg) {
-//       setValue(new FilecoinNumber('0', 'fil'))
-//       pushPendingMessage(pendingMsg)
-//       onComplete()
-//     }
-//   } catch (err) {
-//     if (err.message.includes('Unexpected number of items')) {
-//       setUncaughtError(
-//         'Ledger devices cannot sign arbitrary base64 params yet. Coming soon.'
-//       )
-//     } else {
-//       logger.error(
-//         err instanceof Error ? err.message : JSON.stringify(err),
-//         'Wallet/Send'
-//       )
-//       setUncaughtError(err.message)
-//     }
-//   }
-// }
