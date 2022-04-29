@@ -27,6 +27,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const { loginOption, walletProvider, walletError, resetWalletError } =
     useWalletProvider()
 
+  // Input states
   const [expert, setExpert] = useState<boolean>(false)
   const [gasPremium, setGasPremium] = useState<FilecoinNumber | null>(null)
   const [gasLimit, setGasLimit] = useState<FilecoinNumber | null>(null)
@@ -34,6 +35,9 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const [isGasPremiumValid, setIsGasPremiumValid] = useState<boolean>(false)
   const [isGasLimitValid, setIsGasLimitValid] = useState<boolean>(false)
   const [isGasFeeCapValid, setIsGasFeeCapValid] = useState<boolean>(false)
+  const areInputsValid = isGasPremiumValid && isGasLimitValid && isGasFeeCapValid
+  
+  // Sending states
   const [isSending, setIsSending] = useState<boolean>(false)
   const [sendError, setSendError] = useState<Error | null>(null)
 
@@ -56,7 +60,6 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const hasLoadError = !!(messageError || gasParamsError || minGasParamsError)
   const isLoading = messageLoading || gasParamsLoading || minGasParamsLoading
   const isLoaded = !!(message && gasParams && minGasParams)
-  const isValid = isGasPremiumValid && isGasLimitValid && isGasFeeCapValid
 
   const maxFee = useMemo<FilecoinNumber | null>(() => {
     return gasLimit && gasFeeCap ? getMaxGasFee(gasFeeCap, gasLimit) : null
@@ -212,7 +215,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       )}
       <Transaction.Buttons
         cancelDisabled={isSending}
-        sendDisabled={!isLoaded || !isValid || isSending}
+        sendDisabled={!isLoaded || !areInputsValid || isSending}
         onClickSend={onSend}
       />
     </Dialog>
