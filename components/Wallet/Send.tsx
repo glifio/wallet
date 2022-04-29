@@ -2,11 +2,9 @@ import { useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
 import { LotusMessage } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { useWallet, useWalletProvider } from '@glif/wallet-provider-react'
 import {
-  useWallet,
-  useWalletProvider
-} from '@glif/wallet-provider-react'
-import {
+  getMaxAffordableFee,
   InputV2,
   Dialog,
   ErrorBox,
@@ -23,7 +21,8 @@ import { logger } from '../../logger'
 export const Send = () => {
   const router = useRouter()
   const wallet = useWallet()
-  const { loginOption, walletProvider, walletError, resetWalletError } = useWalletProvider()
+  const { loginOption, walletProvider, walletError, resetWalletError } =
+    useWalletProvider()
 
   const [toAddress, setToAddress] = useState<string>('')
   const [value, setValue] = useState<FilecoinNumber | null>(null)
@@ -36,8 +35,14 @@ export const Send = () => {
   const [isSending, setIsSending] = useState<boolean>(false)
   const [sendError, setSendError] = useState<Error | null>(null)
 
-  const isValid = isToAddressValid && isValueValid && isParamsValid && isTxFeeValid
+  const isValid =
+    isToAddressValid && isValueValid && isParamsValid && isTxFeeValid
   const isLedger = loginOption === LoginOption.LEDGER
+
+  const maxAffordableFee: FilecoinNumber | null = useMemo(() => {
+    const { balance } = wallet
+    return isValueValid ? getMaxAffordableFee({ balance, value }) : null
+  }, [value, isValueValid, wallet.balance])
 
   const maxFee: FilecoinNumber | null = useMemo(() => {
     return value ? value : null
@@ -93,14 +98,9 @@ export const Send = () => {
       {walletError() && (
         <ErrorBox>The wallet produced an error: {walletError()}</ErrorBox>
       )}
-      {isSending && (
-        <Transaction.Confirm loginOption={loginOption} />
-      )}
+      {isSending && <Transaction.Confirm loginOption={loginOption} />}
       <ShadowBox>
-        <Transaction.Header
-          address={wallet.address}
-          balance={wallet.balance}
-        />
+        <Transaction.Header address={wallet.address} balance={wallet.balance} />
         <form>
           <InputV2.Address
             label='Recipient'
@@ -124,16 +124,25 @@ export const Send = () => {
             value={params}
             onChange={setParams}
             setIsValid={setIsParamsValid}
-            disabled={!isToAddressValid || !isValueValid || isSending || isLedger}
-            info={isLedger ? 'Ledger devices cannot sign base64 params yet, coming soon' : ''}
+            disabled={
+              !isToAddressValid || !isValueValid || isSending || isLedger
+            }
+            info={
+              isLedger
+                ? 'Ledger devices cannot sign base64 params yet, coming soon'
+                : ''
+            }
           />
           <InputV2.Filecoin
             label='Transaction Fee'
+            max={maxAffordableFee}
             value={txFee}
             denom='attofil'
             onChange={setTxFee}
             setIsValid={setIsTxFeeValid}
-            disabled={!isToAddressValid || !isValueValid || !isParamsValid || isSending}
+            disabled={
+              !isToAddressValid || !isValueValid || !isParamsValid || isSending
+            }
           />
         </form>
         {maxFee && <Transaction.MaxFee maxFee={maxFee} />}
