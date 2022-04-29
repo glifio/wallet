@@ -36,14 +36,12 @@ export const Send = () => {
   const [isValueValid, setIsValueValid] = useState<boolean>(false)
   const [isParamsValid, setIsParamsValid] = useState<boolean>(false)
   const [isTxFeeValid, setIsTxFeeValid] = useState<boolean>(false)
-  const areInputsValid =
+  const inputsValid =
     isToAddressValid && isValueValid && isParamsValid && isTxFeeValid
-  
+
   // Sending states
   const [isSending, setIsSending] = useState<boolean>(false)
   const [sendError, setSendError] = useState<Error | null>(null)
-
-  const isLedger = loginOption === LoginOption.LEDGER
 
   const maxAffordableFee = useMemo<FilecoinNumber | null>(() => {
     return isValueValid ? getMaxAffordableFee(wallet.balance, value) : null
@@ -167,10 +165,13 @@ export const Send = () => {
             onChange={setParams}
             setIsValid={setIsParamsValid}
             disabled={
-              !isToAddressValid || !isValueValid || isSending || isLedger
+              loginOption === LoginOption.LEDGER ||
+              !isToAddressValid ||
+              !isValueValid ||
+              isSending
             }
             info={
-              isLedger
+              loginOption === LoginOption.LEDGER
                 ? 'Ledger devices cannot sign base64 params yet, coming soon'
                 : ''
             }
@@ -192,7 +193,7 @@ export const Send = () => {
       </ShadowBox>
       <Transaction.Buttons
         cancelDisabled={isSending}
-        sendDisabled={!areInputsValid || isSending}
+        sendDisabled={!inputsValid || isSending}
         onClickSend={onSend}
       />
     </Dialog>
