@@ -45,7 +45,7 @@ export const Send = () => {
 
   // Placeholder message for getting gas params
   const message = useMemo<LotusMessage | null>(() => {
-    return isToAddressValid && isValueValid && isParamsValid
+    return isToAddressValid && isValueValid && isParamsValid && value
       ? {
           To: toAddress,
           From: wallet.address,
@@ -80,8 +80,8 @@ export const Send = () => {
 
   // Calculate max affordable fee (balance minus value)
   const maxAffordableFee = useMemo<FilecoinNumber | null>(() => {
-    return isValueValid ? getMaxAffordableFee(wallet.balance, value) : null
-  }, [value, isValueValid, wallet])
+    return value ? getMaxAffordableFee(wallet.balance, value) : null
+  }, [value, wallet])
 
   // Calculate maximum transaction fee (fee cap times limit)
   const maxFee = useMemo<FilecoinNumber | null>(() => {
