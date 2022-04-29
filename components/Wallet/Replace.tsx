@@ -35,8 +35,8 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const [isGasPremiumValid, setIsGasPremiumValid] = useState<boolean>(false)
   const [isGasLimitValid, setIsGasLimitValid] = useState<boolean>(false)
   const [isGasFeeCapValid, setIsGasFeeCapValid] = useState<boolean>(false)
-  const areInputsValid = isGasPremiumValid && isGasLimitValid && isGasFeeCapValid
-  
+  const inputsValid = isGasPremiumValid && isGasLimitValid && isGasFeeCapValid
+
   // Sending states
   const [isSending, setIsSending] = useState<boolean>(false)
   const [sendError, setSendError] = useState<Error | null>(null)
@@ -221,7 +221,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       )}
       <Transaction.Buttons
         cancelDisabled={isSending}
-        sendDisabled={!isLoaded || !areInputsValid || isSending}
+        sendDisabled={!isLoaded || !inputsValid || isSending}
         onClickSend={onSend}
       />
     </Dialog>
