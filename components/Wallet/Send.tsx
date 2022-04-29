@@ -35,9 +35,9 @@ export const Send = () => {
   const [isSending, setIsSending] = useState<boolean>(false)
   const [sendError, setSendError] = useState<Error | null>(null)
 
+  const isLedger = loginOption === LoginOption.LEDGER
   const isValid =
     isToAddressValid && isValueValid && isParamsValid && isTxFeeValid
-  const isLedger = loginOption === LoginOption.LEDGER
 
   const maxAffordableFee: FilecoinNumber | null = useMemo(() => {
     const { balance } = wallet
