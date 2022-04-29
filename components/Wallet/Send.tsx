@@ -39,14 +39,7 @@ export const Send = () => {
   const inputsValid =
     isToAddressValid && isValueValid && isParamsValid && isTxFeeValid
 
-  // Sending states
-  const [isSending, setIsSending] = useState<boolean>(false)
-  const [sendError, setSendError] = useState<Error | null>(null)
-
-  const maxAffordableFee = useMemo<FilecoinNumber | null>(() => {
-    return isValueValid ? getMaxAffordableFee(wallet.balance, value) : null
-  }, [value, isValueValid, wallet])
-
+  // Placeholder message for getting gas params
   const message = useMemo<LotusMessage | null>(() => {
     return isToAddressValid && isValueValid && isParamsValid
       ? {
@@ -70,6 +63,14 @@ export const Send = () => {
     params,
     wallet
   ])
+
+  // Sending states
+  const [isSending, setIsSending] = useState<boolean>(false)
+  const [sendError, setSendError] = useState<Error | null>(null)
+
+  const maxAffordableFee = useMemo<FilecoinNumber | null>(() => {
+    return isValueValid ? getMaxAffordableFee(wallet.balance, value) : null
+  }, [value, isValueValid, wallet])
 
   const {
     gasParams,
