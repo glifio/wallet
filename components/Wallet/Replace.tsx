@@ -27,7 +27,8 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const router = useRouter()
   const wallet = useWallet()
   const cid = router.query.cid as string
-  const { loginOption, walletProvider, walletError, resetWalletError } = useWalletProvider()
+  const { loginOption, walletProvider, walletError, resetWalletError } =
+    useWalletProvider()
 
   const [expert, setExpert] = useState<boolean>(false)
   const [gasPremium, setGasPremium] = useState<FilecoinNumber | null>(null)
@@ -150,9 +151,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       {walletError() && (
         <ErrorBox>The wallet produced an error: {walletError()}</ErrorBox>
       )}
-      {isSending && (
-        <Transaction.Confirm loginOption={loginOption} />
-      )}
+      {isSending && <Transaction.Confirm loginOption={loginOption} />}
       {isLoaded && (
         <ShadowBox>
           <Transaction.Header
