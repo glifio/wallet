@@ -42,7 +42,7 @@ export const Send = () => {
   const maxAffordableFee = useMemo<FilecoinNumber | null>(() => {
     const { balance } = wallet
     return isValueValid ? getMaxAffordableFee({ balance, value }) : null
-  }, [value, isValueValid, wallet.balance])
+  }, [value, isValueValid, wallet])
 
   const maxFee = useMemo<FilecoinNumber | null>(() => {
     return value ? value : null
