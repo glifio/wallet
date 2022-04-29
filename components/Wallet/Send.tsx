@@ -74,6 +74,9 @@ export const Send = () => {
     loading: gasParamsLoading,
     error: gasParamsError
   } = useGetGasParams(walletProvider, message)
+  
+  // Data states
+  const isLoaded = !!gasParams
 
   // Calculate max affordable fee (balance minus value)
   const maxAffordableFee = useMemo<FilecoinNumber | null>(() => {
@@ -198,10 +201,40 @@ export const Send = () => {
       </ShadowBox>
       <Transaction.Buttons
         cancelDisabled={isSending}
-        sendDisabled={!inputsValid || isSending}
+        sendDisabled={!isLoaded || !inputsValid || isSending}
         onClickSend={onSend}
       />
     </Dialog>
   )
 }
 //     const validMsg = await provider.simulateMessage(messageObj)
+//     if (validMsg) {
+//       const msgCid = await provider.sendMessage(signedMessage)
+//       return message.toPendingMessage(msgCid['/']) as MessagePendingGQL
+//     }
+//     throw new Error('Filecoin message invalid. No gas or fees were spent.')
+//   }
+// }
+
+// const sendMsg = async () => {
+//   try {
+//     const pendingMsg = await send()
+//     if (pendingMsg) {
+//       setValue(new FilecoinNumber('0', 'fil'))
+//       pushPendingMessage(pendingMsg)
+//       onComplete()
+//     }
+//   } catch (err) {
+//     if (err.message.includes('Unexpected number of items')) {
+//       setUncaughtError(
+//         'Ledger devices cannot sign arbitrary base64 params yet. Coming soon.'
+//       )
+//     } else {
+//       logger.error(
+//         err instanceof Error ? err.message : JSON.stringify(err),
+//         'Wallet/Send'
+//       )
+//       setUncaughtError(err.message)
+//     }
+//   }
+// }
