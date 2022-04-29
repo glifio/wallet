@@ -63,7 +63,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const isLoading = messageLoading || gasParamsLoading || minGasParamsLoading
   const isLoaded = !!(message && gasParams && minGasParams)
 
-  // Calculate max fee
+  // Calculate maximum transaction fee
   const maxFee = useMemo<FilecoinNumber | null>(() => {
     return gasLimit && gasFeeCap ? getMaxGasFee(gasFeeCap, gasLimit) : null
   }, [gasLimit, gasFeeCap])
