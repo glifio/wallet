@@ -28,13 +28,15 @@ export const Send = () => {
   const [toAddress, setToAddress] = useState<string>('')
   const [value, setValue] = useState<FilecoinNumber | null>(null)
   const [params, setParams] = useState<string>('')
+  const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
   const [isToAddressValid, setIsToAddressValid] = useState<boolean>(false)
   const [isValueValid, setIsValueValid] = useState<boolean>(false)
   const [isParamsValid, setIsParamsValid] = useState<boolean>(false)
+  const [isTxFeeValid, setIsTxFeeValid] = useState<boolean>(false)
   const [isSending, setIsSending] = useState<boolean>(false)
   const [sendError, setSendError] = useState<Error | null>(null)
 
-  const isValid = isToAddressValid && isValueValid && isParamsValid
+  const isValid = isToAddressValid && isValueValid && isParamsValid && isTxFeeValid
   const isLedger = loginOption === LoginOption.LEDGER
 
   const maxFee: FilecoinNumber | null = useMemo(() => {
@@ -124,6 +126,14 @@ export const Send = () => {
             setIsValid={setIsParamsValid}
             disabled={!isToAddressValid || !isValueValid || isSending || isLedger}
             info={isLedger ? 'Ledger devices cannot sign base64 params yet, coming soon' : ''}
+          />
+          <InputV2.Filecoin
+            label='Transaction Fee'
+            value={txFee}
+            denom='attofil'
+            onChange={setTxFee}
+            setIsValid={setIsTxFeeValid}
+            disabled={!isToAddressValid || !isValueValid || !isParamsValid || isSending}
           />
         </form>
         {maxFee && <Transaction.MaxFee maxFee={maxFee} />}
