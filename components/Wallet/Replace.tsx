@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 import { LotusMessage } from '@glif/filecoin-message'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import {
-  Transaction,
   getMaxGasFee,
   useWallet,
   useWalletProvider,
@@ -16,7 +15,8 @@ import {
   Dialog,
   ErrorBox,
   ShadowBox,
-  StandardBox
+  StandardBox,
+  Transaction
 } from '@glif/react-components'
 
 import { navigate } from '../../utils/urlParams'
@@ -27,7 +27,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const router = useRouter()
   const wallet = useWallet()
   const cid = router.query.cid as string
-  const { walletProvider, walletError, resetWalletError } = useWalletProvider()
+  const { loginOption, walletProvider, walletError, resetWalletError } = useWalletProvider()
 
   const [expert, setExpert] = useState<boolean>(false)
   const [gasPremium, setGasPremium] = useState<FilecoinNumber | null>(null)
@@ -121,8 +121,6 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const getDescription = () => {
     if (hasLoadError) return 'Failed to load message information'
     if (isLoading) return 'Loading message information...'
-    if (isSending)
-      return 'Please confirm the transaction with your wallet provider'
     return 'Please confirm the updated message details below'
   }
 
@@ -151,6 +149,9 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       )}
       {walletError() && (
         <ErrorBox>The wallet produced an error: {walletError()}</ErrorBox>
+      )}
+      {isSending && (
+        <Transaction.Confirm loginOption={loginOption} />
       )}
       {isLoaded && (
         <ShadowBox>
