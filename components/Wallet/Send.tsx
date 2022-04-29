@@ -80,12 +80,14 @@ export const Send = () => {
     return isValueValid ? getMaxAffordableFee(wallet.balance, value) : null
   }, [value, isValueValid, wallet])
 
+  // Calculate maximum transaction fee (fee cap times limit)
   const maxFee = useMemo<FilecoinNumber | null>(() => {
     return gasParams
       ? getMaxGasFee(gasParams.gasFeeCap, gasParams.gasLimit)
       : null
   }, [gasParams])
 
+  // Calculate total amount (value plus max fee)
   const total = useMemo<FilecoinNumber | null>(() => {
     return value && maxFee ? getTotalAmount(value, maxFee) : null
   }, [value, maxFee])
