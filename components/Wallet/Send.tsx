@@ -6,6 +6,7 @@ import { useWallet, useWalletProvider } from '@glif/wallet-provider-react'
 import {
   getMaxAffordableFee,
   getMaxGasFee,
+  getTotalAmount,
   useGetGasParams,
   InputV2,
   Dialog,
@@ -45,10 +46,6 @@ export const Send = () => {
     return isValueValid ? getMaxAffordableFee(wallet.balance, value) : null
   }, [value, isValueValid, wallet])
 
-  const total = useMemo<FilecoinNumber | null>(() => {
-    return value ? value : null
-  }, [value])
-
   const message = useMemo<LotusMessage | null>(() => {
     return isToAddressValid && isValueValid && isParamsValid
       ? {
@@ -84,6 +81,10 @@ export const Send = () => {
       ? getMaxGasFee(gasParams.gasFeeCap, gasParams.gasLimit)
       : null
   }, [gasParams])
+
+  const total = useMemo<FilecoinNumber | null>(() => {
+    return value && maxFee ? getTotalAmount(value, maxFee) : null
+  }, [value, maxFee])
 
   const onSend = async () => {
     setIsSending(true)
