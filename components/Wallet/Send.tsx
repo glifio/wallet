@@ -208,7 +208,11 @@ export const Send = () => {
             onChange={setTxFee}
             setIsValid={setIsTxFeeValid}
             disabled={
-              !isToAddressValid || !isValueValid || !isParamsValid || isSending
+              !isToAddressValid ||
+              !isValueValid ||
+              !isParamsValid ||
+              gasParamsLoading ||
+              isSending
             }
           />
         </form>
