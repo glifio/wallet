@@ -74,8 +74,11 @@ export const Send = () => {
       )
   }
 
-  // Load gas parameters
+  // Max transaction fee used for getting gas params. Will be
+  // null until the user manually changes the transaction fee.
   const [maxFee, setMaxFee] = useState<FilecoinNumber | null>(null)
+
+  // Load gas parameters when message or max fee changes
   const {
     gasParams,
     loading: gasParamsLoading,
