@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
-import { LotusMessage } from '@glif/filecoin-message'
+import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { useWallet, useWalletProvider } from '@glif/wallet-provider-react'
 import {
@@ -44,29 +44,35 @@ export const Send = () => {
   const [sendError, setSendError] = useState<Error | null>(null)
 
   // Placeholder message for getting gas params
-  const message = useMemo<LotusMessage | null>(() => {
-    return isToAddressValid && isValueValid && isParamsValid && value
-      ? {
-          To: toAddress,
-          From: wallet.address,
-          Nonce: 0,
-          Value: value.toAttoFil(),
-          GasPremium: '0',
-          GasFeeCap: '0',
-          GasLimit: 0,
-          Method: 0,
-          Params: params
-        }
-      : null
-  }, [
-    isToAddressValid,
-    isValueValid,
-    isParamsValid,
-    toAddress,
-    value,
-    params,
-    wallet
-  ])
+  const [message, setMessage] = useState<Message | null>(null)
+
+  // Prevent redundant updates to message so that we don't
+  // invoke the useGetGasParams hook more than necessary
+  const setMessageIfChanged = () => {
+    if (!isToAddressValid || !isValueValid || !isParamsValid) {
+      setMessage(null)
+      return
+    }
+    if (
+      !message ||
+      message.to !== toAddress ||
+      message.value.toString() !== value.toAttoFil() ||
+      message.params !== params
+    )
+      setMessage(
+        new Message({
+          to: toAddress,
+          from: wallet.address,
+          nonce: 0,
+          value: value.toAttoFil(),
+          method: 0,
+          params: params,
+          gasPremium: '0',
+          gasFeeCap: '0',
+          gasLimit: 0
+        })
+      )
+  }
 
   // Load gas parameters
   const [maxFee, setMaxFee] = useState<FilecoinNumber | null>(null)
@@ -114,19 +120,23 @@ export const Send = () => {
     setIsSending(true)
     setSendError(null)
     resetWalletError()
-    const newMessage: LotusMessage = {
-      ...message,
-      Nonce: await walletProvider.getNonce(wallet.address),
-      GasPremium: gasParams.gasPremium.toAttoFil(),
-      GasFeeCap: gasParams.gasFeeCap.toAttoFil(),
-      GasLimit: new BigNumber(gasParams.gasLimit.toAttoFil()).toNumber()
-    }
+    const newMessage = new Message({
+      to: message.to,
+      from: message.from,
+      nonce: await walletProvider.getNonce(wallet.address),
+      value: message.value,
+      method: message.method,
+      params: message.params,
+      gasPremium: gasParams.gasPremium.toAttoFil(),
+      gasFeeCap: gasParams.gasFeeCap.toAttoFil(),
+      gasLimit: new BigNumber(gasParams.gasLimit.toAttoFil()).toNumber()
+    })
     try {
+      const lotusMessage = newMessage.toLotusType()
       const signedMessage = await walletProvider.wallet.sign(
         wallet.address,
-        newMessage
       )
-      const msgValid = await walletProvider.simulateMessage(newMessage)
+      const msgValid = await walletProvider.simulateMessage(lotusMessage)
       if (!msgValid) {
         throw new Error('Filecoin message invalid. No gas or fees were spent.')
       }
@@ -167,6 +177,7 @@ export const Send = () => {
             label='Recipient'
             autofocus={true}
             value={toAddress}
+            onBlur={setMessageIfChanged}
             onChange={setToAddress}
             setIsValid={setIsToAddressValid}
             disabled={isSending}
@@ -176,6 +187,7 @@ export const Send = () => {
             max={wallet.balance}
             value={value}
             denom='fil'
+            onBlur={setMessageIfChanged}
             onChange={setValue}
             setIsValid={setIsValueValid}
             disabled={isSending}
@@ -183,6 +195,7 @@ export const Send = () => {
           <InputV2.Params
             label='Params'
             value={params}
+            onBlur={setMessageIfChanged}
             onChange={setParams}
             setIsValid={setIsParamsValid}
             disabled={loginOption === LoginOption.LEDGER || isSending}
