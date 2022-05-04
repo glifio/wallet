@@ -182,19 +182,14 @@ export const Send = () => {
             denom='fil'
             onChange={setValue}
             setIsValid={setIsValueValid}
-            disabled={!isToAddressValid || isSending}
+            disabled={isSending}
           />
           <InputV2.Params
             label='Params'
             value={params}
             onChange={setParams}
             setIsValid={setIsParamsValid}
-            disabled={
-              loginOption === LoginOption.LEDGER ||
-              !isToAddressValid ||
-              !isValueValid ||
-              isSending
-            }
+            disabled={loginOption === LoginOption.LEDGER || isSending}
             info={
               loginOption === LoginOption.LEDGER
                 ? 'Ledger devices cannot sign base64 params yet, coming soon'
@@ -209,13 +204,7 @@ export const Send = () => {
             onBlur={onBlurTxFee}
             onChange={setTxFee}
             setIsValid={setIsTxFeeValid}
-            disabled={
-              !isToAddressValid ||
-              !isValueValid ||
-              !isParamsValid ||
-              gasParamsLoading ||
-              isSending
-            }
+            disabled={gasParamsLoading || isSending}
           />
         </form>
         {gasParamsLoading && <p>Calculating transaction fees...</p>}
