@@ -1,6 +1,6 @@
 {
   "name": "wallet",
-  "version": "3.0.5-calibration.1",
+  "version": "3.0.10",
   "engines": {
     "node": ">=16.0.0"
   },
@@ -32,7 +32,7 @@
     "@glif/wallet-provider-react": "^0.0.0-alpha.27",
     "@ledgerhq/hw-transport-webhid": "^6.4.1",
     "@zondax/filecoin-signing-tools": "^0.18.6",
-    "@zondax/ledger-filecoin": "0.11.2",
+    "@zondax/ledger-filecoin": "^0.11.2",
     "axios": "0.26.0",
     "bip39": "3.0.4",
     "bluebird": "3.7.2",
@@ -41,7 +41,7 @@
     "lodash.clonedeep": "4.5.0",
     "lodash.isequal": "4.5.0",
     "next": "^12.1.0",
-    "prop-types": "15.7.2",
+    "prop-types": "15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "styled-components": "5.3.3",
@@ -57,7 +57,7 @@
     "@testing-library/react-hooks": "7.0.2",
     "@types/jest": "^27.0.2",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
-    "@typescript-eslint/parser": "^5.17.0",
+    "@typescript-eslint/parser": "^5.20.0",
     "babel-jest": "^27.5.1",
     "babel-plugin-styled-components": "2.0.2",
     "eslint": "^7.32.0",

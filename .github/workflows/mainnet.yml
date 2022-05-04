@@ -62,17 +62,17 @@ jobs:
       - name: Build
         run: npm run export
         env:
-          LOTUS_NODE_JSONRPC: 'https://mainnet.glif.host'
+          LOTUS_NODE_JSONRPC: 'https://tmp.node.glif.io'
           GRAPH_API_URL: 'graph.glif.link/query'
-          EXPLORER_URL: 'https://explorer.glif.link'
+          EXPLORER_URL: 'https://explorer.glif.io'
           NODE_STATUS_API_KEY: 'm786191525-b3192b91db66217a44f7d4be'
           STATUS_API_ADDRESS: 'https://api.uptimerobot.com/v2/getMonitors'
-          COIN_TYPE: 't'
+          COIN_TYPE: 'f'
           HOME_URL: 'https://apps.glif.io'
           BLOG_URL: 'https://blog.glif.io'
-          WALLET_URL: 'https://wallet.glif.link'
-          SAFE_URL: 'https://safe.glif.link'
-          VERIFIER_URL: 'https://verify.glif.link'
+          WALLET_URL: 'https://wallet.glif.io'
+          SAFE_URL: 'https://safe.glif.io'
+          VERIFIER_URL: 'https://verify.glif.io'
           SENTRY_DSN: 'https://58b59b7635864e11b15b0a2fa44fac88@o1126745.ingest.sentry.io/6168017'
           SENTRY_ENV: 'mainnet'
 
