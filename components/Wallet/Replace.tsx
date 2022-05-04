@@ -13,7 +13,8 @@ import {
   ErrorBox,
   ShadowBox,
   StandardBox,
-  Transaction
+  Transaction,
+  LoginOption
 } from '@glif/react-components'
 
 import { navigate } from '../../utils/urlParams'
@@ -157,7 +158,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       {walletError() && (
         <ErrorBox>The wallet produced an error: {walletError()}</ErrorBox>
       )}
-      {isSending && <Transaction.Confirm loginOption={loginOption} />}
+      {isSending && <Transaction.Confirm loginOption={loginOption as LoginOption} />}
       {isLoaded && (
         <ShadowBox>
           <Transaction.Header
