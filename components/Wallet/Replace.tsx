@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
-import { LotusMessage } from '@glif/filecoin-message'
+import { Message } from '@glif/filecoin-message'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import { useWallet, useWalletProvider } from '@glif/wallet-provider-react'
 import {
@@ -84,25 +84,25 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     setIsSending(true)
     setSendError(null)
     resetWalletError()
-    const newMessage: LotusMessage = {
-      ...message,
-      GasPremium: gasPremium.toAttoFil(),
-      GasFeeCap: gasFeeCap.toAttoFil(),
-      GasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber(),
-      ...(strategy === ReplaceStrategy.CANCEL
-        ? {
-            Value: '0',
-            Method: 0,
-            Params: ''
-          }
-        : {})
-    }
+    const replace = strategy === ReplaceStrategy.CANCEL
+    const newMessage = new Message({
+      to: message.to,
+      from: message.from,
+      nonce: message.nonce,
+      value: replace ? 0 : message.value,
+      method: replace ? 0 : message.method,
+      params: replace ? '' : message.params,
+      gasPremium: gasPremium.toAttoFil(),
+      gasFeeCap: gasFeeCap.toAttoFil(),
+      gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber()
+    })
     try {
+      const lotusMessage = newMessage.toLotusType()
       const signedMessage = await walletProvider.wallet.sign(
         wallet.address,
-        newMessage
+        lotusMessage
       )
-      const msgValid = await walletProvider.simulateMessage(newMessage)
+      const msgValid = await walletProvider.simulateMessage(lotusMessage)
       if (!msgValid) {
         throw new Error('Filecoin message invalid. No gas or fees were spent.')
       }
@@ -158,7 +158,9 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       {walletError() && (
         <ErrorBox>The wallet produced an error: {walletError()}</ErrorBox>
       )}
-      {isSending && <Transaction.Confirm loginOption={loginOption as LoginOption} />}
+      {isSending && (
+        <Transaction.Confirm loginOption={loginOption as LoginOption} />
+      )}
       {isLoaded && (
         <ShadowBox>
           <Transaction.Header
@@ -167,7 +169,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
           />
           <form>
             <InputV2.Text label='Message CID' value={cid} disabled />
-            <InputV2.Number label='Nonce' value={message.Nonce} disabled />
+            <InputV2.Number label='Nonce' value={message.nonce} disabled />
             <InputV2.Filecoin
               label='Gas Premium'
               info={
