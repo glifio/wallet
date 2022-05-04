@@ -135,6 +135,7 @@ export const Send = () => {
       const lotusMessage = newMessage.toLotusType()
       const signedMessage = await walletProvider.wallet.sign(
         wallet.address,
+        lotusMessage
       )
       const msgValid = await walletProvider.simulateMessage(lotusMessage)
       if (!msgValid) {
