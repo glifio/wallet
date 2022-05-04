@@ -161,7 +161,9 @@ export const Send = () => {
       {walletError() && (
         <ErrorBox>The wallet produced an error: {walletError()}</ErrorBox>
       )}
-      {isSending && <Transaction.Confirm loginOption={loginOption} />}
+      {isSending && (
+        <Transaction.Confirm loginOption={loginOption as LoginOption} />
+      )}
       <ShadowBox>
         <Transaction.Header address={wallet.address} balance={wallet.balance} />
         <form>
