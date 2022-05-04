@@ -69,7 +69,6 @@ export const Send = () => {
   ])
 
   // Load gas parameters
-  const [initialFeeSet, setInitialFeeSet] = useState<boolean>(false)
   const [maxFee, setMaxFee] = useState<FilecoinNumber | null>(null)
   const {
     gasParams,
@@ -104,8 +103,10 @@ export const Send = () => {
     setMaxFee(txFee)
   }
 
-  // Set transaction fee once after
-  // calculating initial max fee
+  // The first time we calculate a valid maximum transaction fee, we set the value
+  // for the transaction fee input. Afterwards, the transaction fee input becomes
+  // editable and the calculated fee is updated according to the user's input.
+  const [initialFeeSet, setInitialFeeSet] = useState<boolean>(false)
   useEffect(() => {
     if (calculatedMaxFee && !initialFeeSet) {
       setInitialFeeSet(true)
@@ -204,7 +205,7 @@ export const Send = () => {
             onBlur={onBlurTxFee}
             onChange={setTxFee}
             setIsValid={setIsTxFeeValid}
-            disabled={gasParamsLoading || isSending}
+            disabled={!initialFeeSet || gasParamsLoading || isSending}
           />
         </form>
         {gasParamsLoading && <p>Calculating transaction fees...</p>}
