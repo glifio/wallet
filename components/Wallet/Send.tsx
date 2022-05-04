@@ -85,9 +85,6 @@ export const Send = () => {
     error: gasParamsError
   } = useGetGasParams(walletProvider, message, maxFee)
 
-  // Data states
-  const isLoaded = !!gasParams
-
   // Calculate max affordable fee (balance minus value)
   const maxAffordableFee = useMemo<FilecoinNumber | null>(() => {
     return value ? getMaxAffordableFee(wallet.balance, value) : null
@@ -125,7 +122,8 @@ export const Send = () => {
   // - the value is different from the calculated max fee
   const onBlurTxFee = () => {
     if (
-      txFee && isTxFeeValid &&
+      txFee &&
+      isTxFeeValid &&
       (!maxFee || txFee.toAttoFil() !== maxFee.toAttoFil()) &&
       (!calculatedMaxFee || txFee.toAttoFil() !== calculatedMaxFee.toAttoFil())
     ) {
@@ -241,7 +239,7 @@ export const Send = () => {
       </ShadowBox>
       <Transaction.Buttons
         cancelDisabled={isSending}
-        sendDisabled={!isLoaded || !inputsValid || isSending}
+        sendDisabled={!total || !inputsValid || isSending}
         onClickSend={onSend}
       />
     </Dialog>
