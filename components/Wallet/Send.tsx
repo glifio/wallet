@@ -197,7 +197,7 @@ export const Send = () => {
             onBlur={setMessageIfChanged}
             onChange={setToAddress}
             setIsValid={setIsToAddressValid}
-            disabled={isSending}
+            disabled={gasParamsLoading || isSending}
           />
           <InputV2.Filecoin
             label='Amount'
@@ -207,7 +207,7 @@ export const Send = () => {
             onBlur={setMessageIfChanged}
             onChange={setValue}
             setIsValid={setIsValueValid}
-            disabled={isSending}
+            disabled={gasParamsLoading || isSending}
           />
           <InputV2.Params
             label='Params'
@@ -215,7 +215,11 @@ export const Send = () => {
             onBlur={setMessageIfChanged}
             onChange={setParams}
             setIsValid={setIsParamsValid}
-            disabled={loginOption === LoginOption.LEDGER || isSending}
+            disabled={
+              loginOption === LoginOption.LEDGER ||
+              gasParamsLoading ||
+              isSending
+            }
             info={
               loginOption === LoginOption.LEDGER
                 ? 'Ledger devices cannot sign base64 params yet, coming soon'
