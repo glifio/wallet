@@ -98,11 +98,6 @@ export const Send = () => {
       : null
   }, [value, calculatedMaxFee])
 
-  // Set max fee after changing transaction fee
-  const onBlurTxFee = () => {
-    setMaxFee(txFee)
-  }
-
   // The first time we calculate a valid maximum transaction fee, we set the value
   // for the transaction fee input. Afterwards, the transaction fee input becomes
   // editable and the calculated fee is updated according to the user's input.
@@ -202,7 +197,7 @@ export const Send = () => {
             max={maxAffordableFee}
             value={txFee}
             denom='attofil'
-            onBlur={onBlurTxFee}
+            onBlur={() => setMaxFee(txFee)}
             onChange={setTxFee}
             setIsValid={setIsTxFeeValid}
             disabled={!initialFeeSet || gasParamsLoading || isSending}
