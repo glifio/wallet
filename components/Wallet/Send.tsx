@@ -4,6 +4,7 @@ import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { useWallet, useWalletProvider } from '@glif/wallet-provider-react'
 import {
+  getFriendlyError,
   getMaxAffordableFee,
   getMaxGasFee,
   getTotalAmount,
@@ -179,7 +180,7 @@ export const Send = () => {
         </ErrorBox>
       )}
       {sendError && (
-        <ErrorBox>Failed to send message: {sendError.message}</ErrorBox>
+        <ErrorBox>Failed to send message: {getFriendlyError(sendError)}</ErrorBox>
       )}
       {walletError() && (
         <ErrorBox>The wallet produced an error: {walletError()}</ErrorBox>

@@ -5,6 +5,7 @@ import { Message } from '@glif/filecoin-message'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import { useWallet, useWalletProvider } from '@glif/wallet-provider-react'
 import {
+  getFriendlyError,
   getMaxGasFee,
   useGetMessage,
   useGetReplaceMessageGasParams,
@@ -153,7 +154,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
         </ErrorBox>
       )}
       {sendError && (
-        <ErrorBox>Failed to send message: {sendError.message}</ErrorBox>
+        <ErrorBox>Failed to send message: {getFriendlyError(sendError)}</ErrorBox>
       )}
       {walletError() && (
         <ErrorBox>The wallet produced an error: {walletError()}</ErrorBox>
