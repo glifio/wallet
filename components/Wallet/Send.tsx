@@ -118,6 +118,21 @@ export const Send = () => {
     }
   }, [calculatedMaxFee, initialFeeSet])
 
+  // When leaving the transaction fee input, we set maxFee to
+  // update the gas params if the following conditions are met:
+  // - the input is valid
+  // - the value is different from the previous max fee
+  // - the value is different from the calculated max fee
+  const onBlurTxFee = () => {
+    if (
+      txFee && isTxFeeValid &&
+      (!maxFee || txFee.toAttoFil() !== maxFee.toAttoFil()) &&
+      (!calculatedMaxFee || txFee.toAttoFil() !== calculatedMaxFee.toAttoFil())
+    ) {
+      setMaxFee(txFee)
+    }
+  }
+
   // Attempt sending message
   const onSend = async () => {
     setIsSending(true)
@@ -214,7 +229,7 @@ export const Send = () => {
             max={maxAffordableFee}
             value={txFee}
             denom='attofil'
-            onBlur={() => setMaxFee(txFee)}
+            onBlur={onBlurTxFee}
             onChange={setTxFee}
             setIsValid={setIsTxFeeValid}
             disabled={!initialFeeSet || gasParamsLoading || isSending}
