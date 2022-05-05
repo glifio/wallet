@@ -52,7 +52,7 @@ class MockWalletProvider {
   getBalance = mockGetBalance
   getNonce = jest.fn().mockImplementation(() => 0)
   gasEstimateMessageGas = jest.fn().mockImplementation(
-    ({
+    async ({
       To,
       From,
       Value,
@@ -63,19 +63,17 @@ class MockWalletProvider {
       Nonce,
       Params
     }) =>
-      Promise.resolve(
-        new Message({
-          to: To,
-          from: From,
-          value: Value,
-          gasPremium: '1',
-          gasFeeCap: '1',
-          gasLimit: 10000000,
-          method: Method,
-          nonce: Nonce,
-          params: Params
-        })
-      )
+      new Message({
+        to: To,
+        from: From,
+        value: Value,
+        gasPremium: '1',
+        gasFeeCap: '1',
+        gasLimit: 10000000,
+        method: Method,
+        nonce: Nonce,
+        params: Params
+      })
   )
   gasCalcTxFee = jest
     .fn()
