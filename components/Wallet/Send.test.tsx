@@ -12,7 +12,7 @@ import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
 
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
-import { flushPromises } from '../../test-utils'
+import { flushPromises, WALLET_ADDRESS } from '../../test-utils'
 import { Send } from './Send'
 
 const validAddress = 't1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza'
@@ -63,14 +63,21 @@ describe('Send', () => {
       // Enter recipient
       fireEvent.change(recipient, { target: { value: validAddress } })
       recipient.blur()
+
+      // Check state
       await flushPromises()
       expect(send).toBeDisabled()
 
       // Enter amount
       amount.focus()
-      fireEvent.change(amount, { target: { value: validAmount } })
+      fireEvent.change(amount, { target: { value: validAmount.toFil() } })
       amount.blur()
+      
+      // Check state
       await flushPromises()
+      const maxFeeRegex = /You will not pay more than [0-9.]+ FIL for this transaction/i
+      expect(getByText(result.container, maxFeeRegex)).toBeInTheDocument()
+      expect(getByText(result.container, 'Total')).toBeInTheDocument()
       expect(txFee).not.toHaveDisplayValue('')
       expect(txFee).toBeEnabled()
       expect(send).toBeEnabled()
@@ -89,7 +96,10 @@ describe('Send', () => {
     // Check message
     const lotusMessage = walletProvider.wallet.sign.mock.calls[0][1]
     const message = Message.fromLotusType(lotusMessage)
+    expect(message.from).toBe(WALLET_ADDRESS)
     expect(message.to).toBe(validAddress)
+    expect(typeof message.nonce).toBe('number')
+    expect(message.nonce).toBeGreaterThanOrEqual(0)
     expect(message.value instanceof BigNumber).toBe(true)
     expect(message.value.isEqualTo(validAmount)).toBe(true)
     expect(typeof message.method).toBe('number')
@@ -101,6 +111,6 @@ describe('Send', () => {
     expect(message.gasFeeCap instanceof BigNumber).toBe(true)
     expect(message.gasFeeCap.isGreaterThan(0)).toBe(true)
     expect(typeof message.gasLimit).toBe('number')
-    expect(message.gasLimit > 0).toBe(true)
+    expect(message.gasLimit).toBeGreaterThan(0)
   })
 })
