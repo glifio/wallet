@@ -73,11 +73,10 @@ describe('Send', () => {
       amount.focus()
       fireEvent.change(amount, { target: { value: validAmount.toFil() } })
       amount.blur()
-      
+
       // Check state
       await flushPromises()
-      await waitFor(() => expect(send).toBeEnabled(), { timeout: 1000 });
-
+      await waitFor(() => expect(send).toBeEnabled())
       const maxFeeRegex =
         /You will not pay more than [0-9.]+ FIL for this transaction/i
       expect(getByText(result.container, maxFeeRegex)).toBeInTheDocument()
