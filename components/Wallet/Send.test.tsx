@@ -114,5 +114,8 @@ describe('Send', () => {
     expect(message.gasFeeCap.isGreaterThan(0)).toBe(true)
     expect(typeof message.gasLimit).toBe('number')
     expect(message.gasLimit).toBeGreaterThan(0)
+
+    // Check snapshot
+    expect(result.container.firstChild).toMatchSnapshot()
   })
 })

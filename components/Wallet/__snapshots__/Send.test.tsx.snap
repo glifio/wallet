@@ -1,0 +1,509 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Send it allows a user to send a message 1`] = `
+.c9 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+}
+
+.c9 svg path {
+  stroke: var(--black);
+}
+
+.c9:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c9:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c9:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c9:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+  color: var(--white);
+  border-color: var(--green-medium);
+  background: var(--green-medium);
+}
+
+.c10 svg path {
+  stroke: var(--black);
+}
+
+.c10:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c10:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c10:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c10:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c10 svg path {
+  stroke: var(--white);
+}
+
+.c10:hover {
+  color: var(--green-medium);
+  border-color: var(--green-medium);
+  background: var(--white);
+}
+
+.c10:hover svg path {
+  stroke: var(--green-medium);
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  text-align: left;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 > *:first-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 > *:last-child:not(.toggle-wrapper) {
+  -webkit-flex: 0 0 50%;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+}
+
+.c5 span.info,
+.c5 span.error {
+  font-size: 0.875rem;
+}
+
+.c5 span.error {
+  color: var(--red-medium);
+}
+
+.c5 .text-input-wrapper {
+  position: relative;
+}
+
+.c5 .text-input-wrapper input {
+  width: 100%;
+}
+
+.c5 .text-input-wrapper .unit {
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: var(--purple-medium);
+}
+
+.c1 {
+  padding: 1.5em;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  word-break: break-word;
+}
+
+.c1 > *:first-child {
+  margin-top: 0;
+}
+
+.c1 > *:last-child {
+  margin-bottom: 0;
+}
+
+.c1 > svg:first-child {
+  display: block;
+  margin: 0 auto 1em;
+}
+
+.c1 > h2:first-child {
+  margin: 0;
+}
+
+.c1 > header:first-child {
+  margin: -1.5em -1.5em 1.5em -1.5em;
+  padding: 1.5em;
+  background-color: var(--purple-medium);
+  color: var(--white);
+}
+
+.c2 {
+  background-color: var(--blue-gray);
+}
+
+.c2 hr {
+  border-color: var(--gray-medium);
+}
+
+.c3 {
+  background-color: var(--white);
+  box-shadow: 0 0 0.5em var(--gray-light);
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  margin: 1.5em 0;
+}
+
+.c8 {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 35em;
+}
+
+.c0 form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 > * {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 > *:first-child {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c4 > *:last-child {
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c6 span {
+  color: var(--purple-medium);
+  font-size: 1.75rem;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 c2"
+  >
+    <h2>
+      Send Filecoin
+    </h2>
+    <hr />
+    <p>
+      Please enter the message details below
+    </p>
+  </div>
+  
+  <div
+    class="c1 c3"
+  >
+    <header
+      class="c4"
+    >
+      <div>
+        <span>
+          From
+        </span>
+        <span>
+          t1z225 ... 6z6wgi
+        </span>
+      </div>
+      <div>
+        <span>
+          Balance
+        </span>
+        <span>
+          1
+           FIL
+        </span>
+      </div>
+    </header>
+    <form>
+      <label
+        class="c5"
+      >
+        <div>
+          <span>
+            Recipient
+          </span>
+          
+          
+        </div>
+        <div
+          class="text-input-wrapper"
+        >
+          <input
+            class=""
+            placeholder="f1..."
+            style="padding-right: 1em;"
+            type="text"
+            value="t1iury ... xaucza"
+          />
+          
+        </div>
+      </label>
+      <label
+        class="c5"
+      >
+        <div>
+          <span>
+            Amount
+          </span>
+          
+          
+        </div>
+        <div
+          class="text-input-wrapper"
+        >
+          <input
+            class=""
+            placeholder=""
+            style="padding-right: 3.25em;"
+            type="number"
+            value="0.01"
+          />
+          <span
+            class="unit"
+          >
+            FIL
+          </span>
+        </div>
+      </label>
+      <label
+        class="c5"
+      >
+        <div>
+          <span>
+            Params
+          </span>
+          
+          
+        </div>
+        <div
+          class="text-input-wrapper"
+        >
+          <input
+            class=""
+            placeholder="Optional Base64 params"
+            style="padding-right: 1em;"
+            type="text"
+            value=""
+          />
+          
+        </div>
+      </label>
+      <label
+        class="c5"
+      >
+        <div>
+          <span>
+            Transaction Fee
+          </span>
+          
+          
+        </div>
+        <div
+          class="text-input-wrapper"
+        >
+          <input
+            class=""
+            placeholder=""
+            style="padding-right: 4em;"
+            type="number"
+            value="10000000"
+          />
+          <span
+            class="unit"
+          >
+            aFIL
+          </span>
+        </div>
+      </label>
+    </form>
+    <p>
+      You will not pay more than 
+      0.00000000001
+       FIL for this transaction.
+       
+      <a
+        href="https://filfox.info/en/stats/gas"
+        rel="noreferrer noopener"
+        target="_blank"
+      >
+        More information on average gas fee statistics.
+      </a>
+    </p>
+    <footer>
+      <hr />
+      <div
+        class="c6"
+      >
+        <span>
+          Total
+        </span>
+        <span>
+          0.01000000001
+           FIL
+        </span>
+      </div>
+    </footer>
+  </div>
+  <div
+    class="c7 c8"
+  >
+    <button
+      class="c9"
+    >
+      Cancel
+    </button>
+    <button
+      class="c10"
+    >
+      Send
+    </button>
+  </div>
+</div>
+`;
