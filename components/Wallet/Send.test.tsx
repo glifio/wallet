@@ -2,6 +2,7 @@ import {
   cleanup,
   render,
   act,
+  waitFor,
   fireEvent,
   getByText,
   getByRole,
@@ -75,12 +76,14 @@ describe('Send', () => {
       
       // Check state
       await flushPromises()
-      const maxFeeRegex = /You will not pay more than [0-9.]+ FIL for this transaction/i
+      await waitFor(() => expect(send).toBeEnabled(), { timeout: 1000 });
+
+      const maxFeeRegex =
+        /You will not pay more than [0-9.]+ FIL for this transaction/i
       expect(getByText(result.container, maxFeeRegex)).toBeInTheDocument()
       expect(getByText(result.container, 'Total')).toBeInTheDocument()
       expect(txFee).not.toHaveDisplayValue('')
       expect(txFee).toBeEnabled()
-      expect(send).toBeEnabled()
 
       // Click send
       fireEvent.click(send)
@@ -101,7 +104,7 @@ describe('Send', () => {
     expect(typeof message.nonce).toBe('number')
     expect(message.nonce).toBeGreaterThanOrEqual(0)
     expect(message.value instanceof BigNumber).toBe(true)
-    expect(message.value.isEqualTo(validAmount)).toBe(true)
+    expect(message.value.isEqualTo(validAmount.toAttoFil())).toBe(true)
     expect(typeof message.method).toBe('number')
     expect(message.method).toBe(0)
     expect(typeof message.params).toBe('string')
