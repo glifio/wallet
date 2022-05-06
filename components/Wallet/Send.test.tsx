@@ -12,6 +12,7 @@ import {
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
 
+import { pushPendingMessageSpy } from '../../__mocks__/@glif/react-components'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import { flushPromises, WALLET_ADDRESS } from '../../test-utils'
 import { Send } from './Send'
@@ -95,25 +96,36 @@ describe('Send', () => {
     expect(walletProvider.simulateMessage).toHaveBeenCalled()
     expect(walletProvider.sendMessage).toHaveBeenCalled()
 
-    // Check message
+    // Check if sent message was properly formatted
     const lotusMessage = walletProvider.wallet.sign.mock.calls[0][1]
     const message = Message.fromLotusType(lotusMessage)
     expect(message.from).toBe(WALLET_ADDRESS)
     expect(message.to).toBe(validAddress)
-    expect(typeof message.nonce).toBe('number')
     expect(message.nonce).toBeGreaterThanOrEqual(0)
     expect(message.value instanceof BigNumber).toBe(true)
     expect(message.value.isEqualTo(validAmount.toAttoFil())).toBe(true)
-    expect(typeof message.method).toBe('number')
     expect(message.method).toBe(0)
-    expect(typeof message.params).toBe('string')
     expect(message.params).toBe('')
     expect(message.gasPremium instanceof BigNumber).toBe(true)
     expect(message.gasPremium.isGreaterThan(0)).toBe(true)
     expect(message.gasFeeCap instanceof BigNumber).toBe(true)
     expect(message.gasFeeCap.isGreaterThan(0)).toBe(true)
-    expect(typeof message.gasLimit).toBe('number')
     expect(message.gasLimit).toBeGreaterThan(0)
+
+    // Check if pending message was properly pushed
+    const pendingMsg = pushPendingMessageSpy.mock.calls[0][0]
+    expect(typeof pendingMsg.cid).toBe('string')
+    expect(pendingMsg.cid).toBeTruthy()
+    expect(pendingMsg.from.robust).toBe(WALLET_ADDRESS)
+    expect(pendingMsg.to.robust).toBe(validAddress)
+    expect(pendingMsg.height).toBe('')
+    expect(pendingMsg.params).toBe('')
+    expect(Number(pendingMsg.nonce)).toBeGreaterThanOrEqual(0)
+    expect(Number(pendingMsg.method)).toBe(0)
+    expect(Number(pendingMsg.value)).toBeGreaterThan(0)
+    expect(Number(pendingMsg.gasFeeCap)).toBeGreaterThan(0)
+    expect(Number(pendingMsg.gasLimit)).toBeGreaterThan(0)
+    expect(Number(pendingMsg.gasPremium)).toBeGreaterThan(0)
 
     // Check snapshot
     expect(result.container.firstChild).toMatchSnapshot()
