@@ -130,4 +130,44 @@ describe('Send', () => {
     // Check snapshot
     expect(result.container.firstChild).toMatchSnapshot()
   })
+
+  describe('snapshots', () => {
+    test('after enter recipient state', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
+      let result: RenderResult | null = null
+
+      await act(async () => {
+        result = render(
+          <Tree>
+            <Send />
+          </Tree>
+        )
+
+        const [recipient] = getAllByRole(result.container, 'textbox')
+        // Enter recipient
+        fireEvent.change(recipient, { target: { value: validAddress } })
+        recipient.blur()
+
+        await flushPromises()
+      })
+
+      // Check snapshot
+      expect(result.container.firstChild).toMatchSnapshot()
+    })
+
+    test('initial state', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
+      let result: RenderResult | null = null
+
+      await act(async () => {
+        result = render(
+          <Tree>
+            <Send />
+          </Tree>
+        )
+      })
+      // Check snapshot
+      expect(result.container.firstChild).toMatchSnapshot()
+    })
+  })
 })
