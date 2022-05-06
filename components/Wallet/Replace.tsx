@@ -120,10 +120,9 @@ export const Replace = ({ strategy }: ReplaceProps) => {
         throw new Error('Filecoin message invalid. No gas or fees were spent.')
       }
       const msgCid = await provider.sendMessage(signedMessage)
-      const pendingMsg = newMessage.toPendingMessage(
-        msgCid['/']
-      ) as MessagePending
-      pushPendingMessage(pendingMsg)
+      pushPendingMessage(
+        newMessage.toPendingMessage(msgCid['/']) as MessagePending
+      )
       navigate(router, { pageUrl: PAGE.WALLET_HOME })
     } catch (e: any) {
       logger.error(e)
