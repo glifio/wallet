@@ -8,13 +8,15 @@ import {
   getMaxGasFee,
   getTotalAmount,
   useGetGasParams,
+  useSubmittedMessages,
   InputV2,
   Dialog,
   ErrorBox,
   ShadowBox,
   StandardBox,
   Transaction,
-  LoginOption
+  LoginOption,
+  MessagePending
 } from '@glif/react-components'
 
 import { navigate } from '../../utils/urlParams'
@@ -24,6 +26,7 @@ import { logger } from '../../logger'
 export const Send = () => {
   const router = useRouter()
   const wallet = useWallet()
+  const { pushPendingMessage } = useSubmittedMessages()
   const { loginOption, walletProvider, walletError, resetWalletError } =
     useWalletProvider()
 
@@ -157,7 +160,8 @@ export const Send = () => {
       if (!msgValid) {
         throw new Error('Filecoin message invalid. No gas or fees were spent.')
       }
-      await walletProvider.sendMessage(signedMessage)
+      const msgCid = await walletProvider.sendMessage(signedMessage)
+      pushPendingMessage(message.toPendingMessage(msgCid['/']) as MessagePending)
       navigate(router, { pageUrl: PAGE.WALLET_HOME })
     } catch (e: any) {
       logger.error(e)
