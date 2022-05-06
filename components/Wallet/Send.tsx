@@ -161,7 +161,7 @@ export const Send = () => {
         throw new Error('Filecoin message invalid. No gas or fees were spent.')
       }
       const msgCid = await walletProvider.sendMessage(signedMessage)
-      const pendingMsg = message.toPendingMessage(msgCid['/']) as MessagePending
+      const pendingMsg = newMessage.toPendingMessage(msgCid['/']) as MessagePending
       pushPendingMessage(pendingMsg)
       navigate(router, { pageUrl: PAGE.WALLET_HOME })
     } catch (e: any) {
