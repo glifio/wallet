@@ -84,14 +84,14 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     setIsSending(true)
     setSendError(null)
     resetWalletError()
-    const replace = strategy === ReplaceStrategy.CANCEL
+    const cancel = strategy === ReplaceStrategy.CANCEL
     const newMessage = new Message({
       to: message.to,
       from: message.from,
       nonce: message.nonce,
-      value: replace ? 0 : message.value,
-      method: replace ? 0 : message.method,
-      params: replace ? '' : message.params,
+      value: cancel ? 0 : message.value,
+      method: cancel ? 0 : message.method,
+      params: cancel ? '' : message.params,
       gasPremium: gasPremium.toAttoFil(),
       gasFeeCap: gasFeeCap.toAttoFil(),
       gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber()
