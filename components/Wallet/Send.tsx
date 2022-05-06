@@ -23,12 +23,19 @@ import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 import { logger } from '../../logger'
 
+enum SendState {
+  FillingForm,
+  LoadingTxDetails,
+  AwaitingConfirmation,
+  MPoolPushing
+}
+
 export const Send = () => {
   const router = useRouter()
   const wallet = useWallet()
-  const { pushPendingMessage } = useSubmittedMessages()
-  const { loginOption, walletProvider, walletError, resetWalletError } =
+  const { loginOption, walletProvider, walletError, getProvider } =
     useWalletProvider()
+  const { pushPendingMessage } = useSubmittedMessages()
 
   // Input states
   const [toAddress, setToAddress] = useState<string>('')
@@ -37,13 +44,17 @@ export const Send = () => {
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
   const [isToAddressValid, setIsToAddressValid] = useState<boolean>(false)
   const [isValueValid, setIsValueValid] = useState<boolean>(false)
-  const [isParamsValid, setIsParamsValid] = useState<boolean>(false)
+  const [isParamsValid, setIsParamsValid] = useState<boolean>(
+    // we set params to be valid when login is LEDGER
+    // (since ledger device signing b64 params not supported)
+    loginOption === LoginOption.LEDGER
+  )
   const [isTxFeeValid, setIsTxFeeValid] = useState<boolean>(false)
   const inputsValid =
     isToAddressValid && isValueValid && isParamsValid && isTxFeeValid
 
   // Sending states
-  const [isSending, setIsSending] = useState<boolean>(false)
+  const [sendState, setSendState] = useState<SendState>(SendState.FillingForm)
   const [sendError, setSendError] = useState<Error | null>(null)
 
   // Placeholder message for getting gas params
@@ -134,15 +145,17 @@ export const Send = () => {
     }
   }
 
+  const errorMsg = sendError?.message || walletError() || ''
+
   // Attempt sending message
   const onSend = async () => {
-    setIsSending(true)
+    setSendState(SendState.LoadingTxDetails)
     setSendError(null)
-    resetWalletError()
+    const provider = await getProvider()
     const newMessage = new Message({
       to: message.to,
       from: message.from,
-      nonce: await walletProvider.getNonce(wallet.address),
+      nonce: await provider.getNonce(wallet.address),
       value: message.value,
       method: message.method,
       params: message.params,
@@ -151,24 +164,28 @@ export const Send = () => {
       gasLimit: new BigNumber(gasParams.gasLimit.toAttoFil()).toNumber()
     })
     try {
+      setSendState(SendState.AwaitingConfirmation)
       const lotusMessage = newMessage.toLotusType()
-      const signedMessage = await walletProvider.wallet.sign(
+      const signedMessage = await provider.wallet.sign(
         wallet.address,
         lotusMessage
       )
-      const msgValid = await walletProvider.simulateMessage(lotusMessage)
+      setSendState(SendState.MPoolPushing)
+      const msgValid = await provider.simulateMessage(lotusMessage)
       if (!msgValid) {
         throw new Error('Filecoin message invalid. No gas or fees were spent.')
       }
-      const msgCid = await walletProvider.sendMessage(signedMessage)
-      const pendingMsg = newMessage.toPendingMessage(msgCid['/']) as MessagePending
+      const msgCid = await provider.sendMessage(signedMessage)
+      const pendingMsg = newMessage.toPendingMessage(
+        msgCid['/']
+      ) as MessagePending
       pushPendingMessage(pendingMsg)
       navigate(router, { pageUrl: PAGE.WALLET_HOME })
     } catch (e: any) {
       logger.error(e)
+      setSendState(SendState.FillingForm)
       setSendError(e)
     }
-    setIsSending(false)
   }
 
   return (
@@ -183,13 +200,8 @@ export const Send = () => {
           Failed to calculate gas fees: {gasParamsError.message}
         </ErrorBox>
       )}
-      {sendError && (
-        <ErrorBox>Failed to send message: {sendError.message}</ErrorBox>
-      )}
-      {walletError() && (
-        <ErrorBox>The wallet produced an error: {walletError()}</ErrorBox>
-      )}
-      {isSending && (
+      {errorMsg && <ErrorBox>{errorMsg}</ErrorBox>}
+      {sendState === SendState.AwaitingConfirmation && (
         <Transaction.Confirm loginOption={loginOption as LoginOption} />
       )}
       <ShadowBox>
@@ -202,7 +214,7 @@ export const Send = () => {
             onBlur={setMessageIfChanged}
             onChange={setToAddress}
             setIsValid={setIsToAddressValid}
-            disabled={gasParamsLoading || isSending}
+            disabled={gasParamsLoading || sendState !== SendState.FillingForm}
           />
           <InputV2.Filecoin
             label='Amount'
@@ -212,25 +224,18 @@ export const Send = () => {
             onBlur={setMessageIfChanged}
             onChange={setValue}
             setIsValid={setIsValueValid}
-            disabled={gasParamsLoading || isSending}
+            disabled={gasParamsLoading || sendState !== SendState.FillingForm}
           />
-          <InputV2.Params
-            label='Params'
-            value={params}
-            onBlur={setMessageIfChanged}
-            onChange={setParams}
-            setIsValid={setIsParamsValid}
-            disabled={
-              loginOption === LoginOption.LEDGER ||
-              gasParamsLoading ||
-              isSending
-            }
-            info={
-              loginOption === LoginOption.LEDGER
-                ? 'Ledger devices cannot sign base64 params yet, coming soon'
-                : ''
-            }
-          />
+          {loginOption !== LoginOption.LEDGER && (
+            <InputV2.Params
+              label='Params'
+              value={params}
+              onBlur={setMessageIfChanged}
+              onChange={setParams}
+              setIsValid={setIsParamsValid}
+              disabled={gasParamsLoading || sendState !== SendState.FillingForm}
+            />
+          )}
           <InputV2.Filecoin
             label='Transaction Fee'
             max={maxAffordableFee}
@@ -239,7 +244,11 @@ export const Send = () => {
             onBlur={onBlurTxFee}
             onChange={setTxFee}
             setIsValid={setIsTxFeeValid}
-            disabled={!initialFeeSet || gasParamsLoading || isSending}
+            disabled={
+              !initialFeeSet ||
+              gasParamsLoading ||
+              sendState !== SendState.FillingForm
+            }
           />
         </form>
         {gasParamsLoading && <p>Calculating transaction fees...</p>}
@@ -247,8 +256,10 @@ export const Send = () => {
         {total && <Transaction.Total total={total} />}
       </ShadowBox>
       <Transaction.Buttons
-        cancelDisabled={isSending}
-        sendDisabled={!total || !inputsValid || isSending}
+        cancelDisabled={sendState !== SendState.FillingForm}
+        sendDisabled={
+          !total || !inputsValid || sendState !== SendState.FillingForm
+        }
         onClickSend={onSend}
       />
     </Dialog>
