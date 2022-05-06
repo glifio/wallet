@@ -130,4 +130,103 @@ describe('Send', () => {
     // Check snapshot
     expect(result.container.firstChild).toMatchSnapshot()
   })
+
+  describe('snapshots', () => {
+    test('initial state', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
+      let result: RenderResult | null = null
+
+      await act(async () => {
+        result = render(
+          <Tree>
+            <Send />
+          </Tree>
+        )
+      })
+      // Check snapshot
+      expect(result.container.firstChild).toMatchSnapshot()
+    })
+
+    test('after enter recipient state', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
+      let result: RenderResult | null = null
+
+      await act(async () => {
+        result = render(
+          <Tree>
+            <Send />
+          </Tree>
+        )
+
+        const [recipient] = getAllByRole(result.container, 'textbox')
+        // Enter recipient
+        fireEvent.change(recipient, { target: { value: validAddress } })
+        recipient.blur()
+
+        await flushPromises()
+      })
+
+      // Check snapshot
+      expect(result.container.firstChild).toMatchSnapshot()
+    })
+
+    test('after enter amount state', async () => {
+      const { Tree } = composeMockAppTree('postOnboard')
+      let result: RenderResult | null = null
+
+      await act(async () => {
+        result = render(
+          <Tree>
+            <Send />
+          </Tree>
+        )
+
+        // Get HTML elements
+        const header = getByRole(result.container, 'heading')
+        const [recipient, params] = getAllByRole(result.container, 'textbox')
+        const [amount, txFee] = getAllByRole(result.container, 'spinbutton')
+        const cancel = getByText(result.container, 'Cancel')
+        const send = getByText(result.container, 'Send')
+
+        // Check initial state
+        expect(header).toHaveTextContent('Send Filecoin')
+        expect(recipient).toHaveFocus()
+        expect(recipient).toHaveDisplayValue('')
+        expect(params).toHaveDisplayValue('')
+        expect(amount).toHaveDisplayValue('')
+        expect(txFee).toHaveDisplayValue('')
+        expect(txFee).toBeDisabled()
+        expect(cancel).toBeEnabled()
+        expect(send).toBeDisabled()
+
+        // Enter recipient
+        fireEvent.change(recipient, { target: { value: validAddress } })
+        recipient.blur()
+
+        // Check state
+        await flushPromises()
+        expect(send).toBeDisabled()
+
+        // Enter amount
+        amount.focus()
+        fireEvent.change(amount, { target: { value: validAmount.toFil() } })
+        amount.blur()
+
+        // Check state
+        await flushPromises()
+        await waitFor(() => expect(send).toBeEnabled())
+        const maxFeeRegex =
+          /You will not pay more than [0-9.]+ FIL for this transaction/i
+        expect(getByText(result.container, maxFeeRegex)).toBeInTheDocument()
+        expect(getByText(result.container, 'Total')).toBeInTheDocument()
+        expect(txFee).not.toHaveDisplayValue('')
+        expect(txFee).toBeEnabled()
+
+        await flushPromises()
+      })
+
+      // Check snapshot
+      expect(result.container.firstChild).toMatchSnapshot()
+    })
+  })
 })
