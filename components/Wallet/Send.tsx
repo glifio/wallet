@@ -11,24 +11,16 @@ import {
   useSubmittedMessages,
   InputV2,
   Dialog,
-  ErrorBox,
   ShadowBox,
-  StandardBox,
   Transaction,
   LoginOption,
-  MessagePending
+  MessagePending,
+  TxState
 } from '@glif/react-components'
 
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 import { logger } from '../../logger'
-
-enum SendState {
-  FillingForm,
-  LoadingTxDetails,
-  AwaitingConfirmation,
-  MPoolPushing
-}
 
 export const Send = () => {
   const router = useRouter()
@@ -54,7 +46,7 @@ export const Send = () => {
     isToAddressValid && isValueValid && isParamsValid && isTxFeeValid
 
   // Sending states
-  const [sendState, setSendState] = useState<SendState>(SendState.FillingForm)
+  const [sendState, setSendState] = useState<TxState>(TxState.FillingForm)
   const [sendError, setSendError] = useState<Error | null>(null)
 
   // Placeholder message for getting gas params
@@ -145,11 +137,12 @@ export const Send = () => {
     }
   }
 
-  const errorMsg = sendError?.message || walletError() || ''
+  const errorMsg =
+    sendError?.message || walletError() || gasParamsError?.message || ''
 
   // Attempt sending message
   const onSend = async () => {
-    setSendState(SendState.LoadingTxDetails)
+    setSendState(TxState.LoadingTxDetails)
     setSendError(null)
     const provider = await getProvider()
     const newMessage = new Message({
@@ -164,13 +157,13 @@ export const Send = () => {
       gasLimit: new BigNumber(gasParams.gasLimit.toAttoFil()).toNumber()
     })
     try {
-      setSendState(SendState.AwaitingConfirmation)
+      setSendState(TxState.AwaitingConfirmation)
       const lotusMessage = newMessage.toLotusType()
       const signedMessage = await provider.wallet.sign(
         wallet.address,
         lotusMessage
       )
-      setSendState(SendState.MPoolPushing)
+      setSendState(TxState.MPoolPushing)
       const msgValid = await provider.simulateMessage(lotusMessage)
       if (!msgValid) {
         throw new Error('Filecoin message invalid. No gas or fees were spent.')
@@ -182,27 +175,20 @@ export const Send = () => {
       navigate(router, { pageUrl: PAGE.WALLET_HOME })
     } catch (e: any) {
       logger.error(e)
-      setSendState(SendState.FillingForm)
+      setSendState(TxState.FillingForm)
       setSendError(e)
     }
   }
 
   return (
     <Dialog>
-      <StandardBox>
-        <h2>Send Filecoin</h2>
-        <hr />
-        <p>Please enter the message details below</p>
-      </StandardBox>
-      {gasParamsError && (
-        <ErrorBox>
-          Failed to calculate gas fees: {gasParamsError.message}
-        </ErrorBox>
-      )}
-      {errorMsg && <ErrorBox>{errorMsg}</ErrorBox>}
-      {sendState === SendState.AwaitingConfirmation && (
-        <Transaction.Confirm loginOption={loginOption as LoginOption} />
-      )}
+      <Transaction.State
+        loginOption={loginOption as LoginOption}
+        txState={sendState}
+        txTitle='Send Filecoin'
+        txDescription='Please enter the message details below'
+        error={errorMsg}
+      />
       <ShadowBox>
         <Transaction.Header address={wallet.address} balance={wallet.balance} />
         <form>
@@ -213,7 +199,7 @@ export const Send = () => {
             onBlur={setMessageIfChanged}
             onChange={setToAddress}
             setIsValid={setIsToAddressValid}
-            disabled={gasParamsLoading || sendState !== SendState.FillingForm}
+            disabled={gasParamsLoading || sendState !== TxState.FillingForm}
           />
           <InputV2.Filecoin
             label='Amount'
@@ -223,7 +209,7 @@ export const Send = () => {
             onBlur={setMessageIfChanged}
             onChange={setValue}
             setIsValid={setIsValueValid}
-            disabled={gasParamsLoading || sendState !== SendState.FillingForm}
+            disabled={gasParamsLoading || sendState !== TxState.FillingForm}
           />
           {loginOption !== LoginOption.LEDGER && (
             <InputV2.Params
@@ -232,7 +218,7 @@ export const Send = () => {
               onBlur={setMessageIfChanged}
               onChange={setParams}
               setIsValid={setIsParamsValid}
-              disabled={gasParamsLoading || sendState !== SendState.FillingForm}
+              disabled={gasParamsLoading || sendState !== TxState.FillingForm}
             />
           )}
           {initialFeeSet && (
@@ -244,7 +230,7 @@ export const Send = () => {
               onBlur={onBlurTxFee}
               onChange={setTxFee}
               setIsValid={setIsTxFeeValid}
-              disabled={gasParamsLoading || sendState !== SendState.FillingForm}
+              disabled={gasParamsLoading || sendState !== TxState.FillingForm}
             />
           )}
         </form>
@@ -253,9 +239,9 @@ export const Send = () => {
         {total && <Transaction.Total total={total} />}
       </ShadowBox>
       <Transaction.Buttons
-        cancelDisabled={sendState !== SendState.FillingForm}
+        cancelDisabled={sendState !== TxState.FillingForm}
         sendDisabled={
-          !total || !inputsValid || sendState !== SendState.FillingForm
+          !total || !inputsValid || sendState !== TxState.FillingForm
         }
         onClickSend={onSend}
       />
