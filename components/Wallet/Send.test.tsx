@@ -47,7 +47,7 @@ describe('Send', () => {
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
       const [recipient, params] = getAllByRole(result.container, 'textbox')
-      const [amount, txFee] = getAllByRole(result.container, 'spinbutton')
+      const [amount] = getAllByRole(result.container, 'spinbutton')
       const cancel = getByText(result.container, 'Cancel')
       const send = getByText(result.container, 'Send')
 
@@ -57,8 +57,6 @@ describe('Send', () => {
       expect(recipient).toHaveDisplayValue('')
       expect(params).toHaveDisplayValue('')
       expect(amount).toHaveDisplayValue('')
-      expect(txFee).toHaveDisplayValue('')
-      expect(txFee).toBeDisabled()
       expect(cancel).toBeEnabled()
       expect(send).toBeDisabled()
 
@@ -78,6 +76,7 @@ describe('Send', () => {
       // Check state
       await flushPromises()
       await waitFor(() => expect(send).toBeEnabled())
+      const [, txFee] = getAllByRole(result.container, 'spinbutton')
       const maxFeeRegex =
         /You will not pay more than [0-9.]+ FIL for this transaction/i
       expect(getByText(result.container, maxFeeRegex)).toBeInTheDocument()

@@ -537,7 +537,7 @@ exports[`Send it allows a user to send a message 1`] = `
 `;
 
 exports[`Send snapshots after enter recipient state 1`] = `
-.c9 {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -564,30 +564,30 @@ exports[`Send snapshots after enter recipient state 1`] = `
   font-size: 1.25em;
 }
 
-.c9 svg path {
+.c8 svg path {
   stroke: var(--black);
 }
 
-.c9:hover {
+.c8:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c9:hover svg path {
+.c8:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c9:active {
+.c8:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c9:active svg path {
+.c8:active svg path {
   stroke: var(--white) !important;
 }
 
-.c10 {
+.c9 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -621,44 +621,44 @@ exports[`Send snapshots after enter recipient state 1`] = `
   background: transparent;
 }
 
-.c10 svg path {
+.c9 svg path {
   stroke: var(--black);
 }
 
-.c10:hover {
+.c9:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c10:hover svg path {
+.c9:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c10:active {
+.c9:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c10:active svg path {
+.c9:active svg path {
   stroke: var(--white) !important;
 }
 
-.c10 svg path {
+.c9 svg path {
   stroke: var(--white);
 }
 
-.c10:hover {
+.c9:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c10:hover svg path {
+.c9:hover svg path {
   stroke: var(--green-medium);
 }
 
-.c10 svg path {
+.c9 svg path {
   stroke: var(--gray-medium);
 }
 
@@ -722,68 +722,6 @@ exports[`Send snapshots after enter recipient state 1`] = `
   color: var(--purple-medium);
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
-  text-align: left;
-  pointer-events: none;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c6 > *:first-child {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 > *:last-child:not(.toggle-wrapper) {
-  -webkit-flex: 0 0 50%;
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
-}
-
-.c6 span.info,
-.c6 span.error {
-  font-size: 0.875rem;
-}
-
-.c6 span.error {
-  color: var(--red-medium);
-}
-
-.c6 .text-input-wrapper {
-  position: relative;
-}
-
-.c6 .text-input-wrapper input {
-  width: 100%;
-}
-
-.c6 .text-input-wrapper .unit {
-  position: absolute;
-  top: 50%;
-  right: 1em;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  color: var(--purple-medium);
-  color: var(--gray-dark) !important;
-}
-
 .c1 {
   padding: 1.5em;
   border-radius: 8px;
@@ -829,7 +767,7 @@ exports[`Send snapshots after enter recipient state 1`] = `
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -838,7 +776,7 @@ exports[`Send snapshots after enter recipient state 1`] = `
   margin: 1.5em 0;
 }
 
-.c8 {
+.c7 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -1021,47 +959,18 @@ exports[`Send snapshots after enter recipient state 1`] = `
           
         </div>
       </label>
-      <label
-        class="c6"
-        disabled=""
-      >
-        <div>
-          <span>
-            Transaction Fee
-          </span>
-          
-          
-        </div>
-        <div
-          class="text-input-wrapper"
-        >
-          <input
-            class=""
-            disabled=""
-            placeholder=""
-            style="padding-right: 4em;"
-            type="number"
-            value=""
-          />
-          <span
-            class="unit"
-          >
-            aFIL
-          </span>
-        </div>
-      </label>
     </form>
   </div>
   <div
-    class="c7 c8"
+    class="c6 c7"
   >
     <button
-      class="c9"
+      class="c8"
     >
       Cancel
     </button>
     <button
-      class="c10"
+      class="c9"
       disabled=""
     >
       Send
@@ -1071,7 +980,7 @@ exports[`Send snapshots after enter recipient state 1`] = `
 `;
 
 exports[`Send snapshots initial state 1`] = `
-.c9 {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1098,30 +1007,30 @@ exports[`Send snapshots initial state 1`] = `
   font-size: 1.25em;
 }
 
-.c9 svg path {
+.c8 svg path {
   stroke: var(--black);
 }
 
-.c9:hover {
+.c8:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c9:hover svg path {
+.c8:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c9:active {
+.c8:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c9:active svg path {
+.c8:active svg path {
   stroke: var(--white) !important;
 }
 
-.c10 {
+.c9 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1155,44 +1064,44 @@ exports[`Send snapshots initial state 1`] = `
   background: transparent;
 }
 
-.c10 svg path {
+.c9 svg path {
   stroke: var(--black);
 }
 
-.c10:hover {
+.c9:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c10:hover svg path {
+.c9:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c10:active {
+.c9:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c10:active svg path {
+.c9:active svg path {
   stroke: var(--white) !important;
 }
 
-.c10 svg path {
+.c9 svg path {
   stroke: var(--white);
 }
 
-.c10:hover {
+.c9:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c10:hover svg path {
+.c9:hover svg path {
   stroke: var(--green-medium);
 }
 
-.c10 svg path {
+.c9 svg path {
   stroke: var(--gray-medium);
 }
 
@@ -1256,68 +1165,6 @@ exports[`Send snapshots initial state 1`] = `
   color: var(--purple-medium);
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
-  text-align: left;
-  pointer-events: none;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c6 > *:first-child {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 > *:last-child:not(.toggle-wrapper) {
-  -webkit-flex: 0 0 50%;
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
-}
-
-.c6 span.info,
-.c6 span.error {
-  font-size: 0.875rem;
-}
-
-.c6 span.error {
-  color: var(--red-medium);
-}
-
-.c6 .text-input-wrapper {
-  position: relative;
-}
-
-.c6 .text-input-wrapper input {
-  width: 100%;
-}
-
-.c6 .text-input-wrapper .unit {
-  position: absolute;
-  top: 50%;
-  right: 1em;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  color: var(--purple-medium);
-  color: var(--gray-dark) !important;
-}
-
 .c1 {
   padding: 1.5em;
   border-radius: 8px;
@@ -1363,7 +1210,7 @@ exports[`Send snapshots initial state 1`] = `
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1372,7 +1219,7 @@ exports[`Send snapshots initial state 1`] = `
   margin: 1.5em 0;
 }
 
-.c8 {
+.c7 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -1555,47 +1402,18 @@ exports[`Send snapshots initial state 1`] = `
           
         </div>
       </label>
-      <label
-        class="c6"
-        disabled=""
-      >
-        <div>
-          <span>
-            Transaction Fee
-          </span>
-          
-          
-        </div>
-        <div
-          class="text-input-wrapper"
-        >
-          <input
-            class=""
-            disabled=""
-            placeholder=""
-            style="padding-right: 4em;"
-            type="number"
-            value=""
-          />
-          <span
-            class="unit"
-          >
-            aFIL
-          </span>
-        </div>
-      </label>
     </form>
   </div>
   <div
-    class="c7 c8"
+    class="c6 c7"
   >
     <button
-      class="c9"
+      class="c8"
     >
       Cancel
     </button>
     <button
-      class="c10"
+      class="c9"
       disabled=""
     >
       Send
