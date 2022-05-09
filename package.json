@@ -28,7 +28,7 @@
     "@glif/filecoin-number": "^2.0.0-beta.0",
     "@glif/filecoin-rpc-client": "^2.0.0-beta.8",
     "@glif/filecoin-wallet-provider": "^2.0.0-beta.12",
-    "@glif/react-components": "^2.0.0-alpha.76",
+    "@glif/react-components": "^2.0.0-alpha.77",
     "@glif/wallet-provider-react": "^0.0.0-alpha.27",
     "@ledgerhq/hw-transport-webhid": "^6.4.1",
     "@zondax/filecoin-signing-tools": "^0.20.1",

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Send it allows a user to send a message 1`] = `
-.c10 {
+.c13 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -35,48 +35,48 @@ exports[`Send it allows a user to send a message 1`] = `
   background: transparent;
 }
 
-.c10 svg path {
+.c13 svg path {
   stroke: var(--black);
 }
 
-.c10:hover {
+.c13:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c10:hover svg path {
+.c13:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c10:active {
+.c13:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c10:active svg path {
+.c13:active svg path {
   stroke: var(--white) !important;
 }
 
-.c10 svg path {
+.c13 svg path {
   stroke: var(--white);
 }
 
-.c10:hover {
+.c13:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c10:hover svg path {
+.c13:hover svg path {
   stroke: var(--green-medium);
 }
 
-.c10 svg path {
+.c13 svg path {
   stroke: var(--gray-medium);
 }
 
-.c9 {
+.c12 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -107,34 +107,34 @@ exports[`Send it allows a user to send a message 1`] = `
   background: transparent;
 }
 
-.c9 svg path {
+.c12 svg path {
   stroke: var(--black);
 }
 
-.c9:hover {
+.c12:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c9:hover svg path {
+.c12:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c9:active {
+.c12:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c9:active svg path {
+.c12:active svg path {
   stroke: var(--white) !important;
 }
 
-.c9 svg path {
+.c12 svg path {
   stroke: var(--gray-medium);
 }
 
-.c5 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -152,7 +152,7 @@ exports[`Send it allows a user to send a message 1`] = `
   justify-content: space-between;
 }
 
-.c5 > *:first-child {
+.c8 > *:first-child {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -162,30 +162,30 @@ exports[`Send it allows a user to send a message 1`] = `
   flex-direction: column;
 }
 
-.c5 > *:last-child:not(.toggle-wrapper) {
+.c8 > *:last-child:not(.toggle-wrapper) {
   -webkit-flex: 0 0 50%;
   -ms-flex: 0 0 50%;
   flex: 0 0 50%;
 }
 
-.c5 span.info,
-.c5 span.error {
+.c8 span.info,
+.c8 span.error {
   font-size: 0.875rem;
 }
 
-.c5 span.error {
+.c8 span.error {
   color: var(--red-medium);
 }
 
-.c5 .text-input-wrapper {
+.c8 .text-input-wrapper {
   position: relative;
 }
 
-.c5 .text-input-wrapper input {
+.c8 .text-input-wrapper input {
   width: 100%;
 }
 
-.c5 .text-input-wrapper .unit {
+.c8 .text-input-wrapper .unit {
   position: absolute;
   top: 50%;
   right: 1em;
@@ -194,6 +194,26 @@ exports[`Send it allows a user to send a message 1`] = `
   transform: translateY(-50%);
   color: var(--purple-medium);
   color: var(--gray-dark) !important;
+}
+
+.c4 {
+  display: inline-block;
+  height: 48px;
+  width: 48px;
+  background-color: #5E26FF;
+}
+
+.c5 {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  background-color: rgb(26,0,102);
+  -webkit-animation-name: bvGDKI;
+  animation-name: bvGDKI;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
 }
 
 .c1 {
@@ -236,12 +256,12 @@ exports[`Send it allows a user to send a message 1`] = `
   border-color: var(--gray-medium);
 }
 
-.c3 {
+.c6 {
   background-color: var(--white);
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c7 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -250,7 +270,7 @@ exports[`Send it allows a user to send a message 1`] = `
   margin: 1.5em 0;
 }
 
-.c8 {
+.c11 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -281,7 +301,7 @@ exports[`Send it allows a user to send a message 1`] = `
   gap: 10px;
 }
 
-.c4 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -296,7 +316,7 @@ exports[`Send it allows a user to send a message 1`] = `
   justify-content: space-between;
 }
 
-.c4 > * {
+.c7 > * {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -306,21 +326,29 @@ exports[`Send it allows a user to send a message 1`] = `
   flex-direction: column;
 }
 
-.c4 > *:first-child {
+.c7 > *:first-child {
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
 }
 
-.c4 > *:last-child {
+.c7 > *:last-child {
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
   align-items: flex-end;
 }
 
-.c6 {
+.c3 > *:first-child {
+  margin-right: 10px;
+  text-align: left;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -335,7 +363,7 @@ exports[`Send it allows a user to send a message 1`] = `
   justify-content: space-between;
 }
 
-.c6 span {
+.c9 span {
   color: var(--purple-medium);
   font-size: 1.75rem;
 }
@@ -344,22 +372,24 @@ exports[`Send it allows a user to send a message 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2"
+    class="c1 c2 c3"
   >
-    <h2>
-      Send Filecoin
-    </h2>
-    <hr />
+    <span
+      class="c4"
+    >
+      <span
+        class="c5"
+      />
+    </span>
     <p>
-      Please enter the message details below
+      Sending your transaction...
     </p>
   </div>
-  
   <div
-    class="c1 c3"
+    class="c1 c6"
   >
     <header
-      class="c4"
+      class="c7"
     >
       <div>
         <span>
@@ -381,7 +411,7 @@ exports[`Send it allows a user to send a message 1`] = `
     </header>
     <form>
       <label
-        class="c5"
+        class="c8"
         disabled=""
       >
         <div>
@@ -406,7 +436,7 @@ exports[`Send it allows a user to send a message 1`] = `
         </div>
       </label>
       <label
-        class="c5"
+        class="c8"
         disabled=""
       >
         <div>
@@ -435,7 +465,7 @@ exports[`Send it allows a user to send a message 1`] = `
         </div>
       </label>
       <label
-        class="c5"
+        class="c8"
         disabled=""
       >
         <div>
@@ -460,7 +490,7 @@ exports[`Send it allows a user to send a message 1`] = `
         </div>
       </label>
       <label
-        class="c5"
+        class="c8"
         disabled=""
       >
         <div>
@@ -505,7 +535,7 @@ exports[`Send it allows a user to send a message 1`] = `
     <footer>
       <hr />
       <div
-        class="c6"
+        class="c9"
       >
         <span>
           Total
@@ -518,16 +548,16 @@ exports[`Send it allows a user to send a message 1`] = `
     </footer>
   </div>
   <div
-    class="c7 c8"
+    class="c10 c11"
   >
     <button
-      class="c9"
+      class="c12"
       disabled=""
     >
       Cancel
     </button>
     <button
-      class="c10"
+      class="c13"
       disabled=""
     >
       Send
@@ -860,7 +890,6 @@ exports[`Send snapshots after enter recipient state 1`] = `
       Please enter the message details below
     </p>
   </div>
-  
   <div
     class="c1 c3"
   >
@@ -1303,7 +1332,6 @@ exports[`Send snapshots initial state 1`] = `
       Please enter the message details below
     </p>
   </div>
-  
   <div
     class="c1 c3"
   >
