@@ -235,20 +235,18 @@ export const Send = () => {
               disabled={gasParamsLoading || sendState !== SendState.FillingForm}
             />
           )}
-          <InputV2.Filecoin
-            label='Transaction Fee'
-            max={maxAffordableFee}
-            value={txFee}
-            denom='attofil'
-            onBlur={onBlurTxFee}
-            onChange={setTxFee}
-            setIsValid={setIsTxFeeValid}
-            disabled={
-              !initialFeeSet ||
-              gasParamsLoading ||
-              sendState !== SendState.FillingForm
-            }
-          />
+          {initialFeeSet && (
+            <InputV2.Filecoin
+              label='Transaction Fee'
+              max={maxAffordableFee}
+              value={txFee}
+              denom='attofil'
+              onBlur={onBlurTxFee}
+              onChange={setTxFee}
+              setIsValid={setIsTxFeeValid}
+              disabled={gasParamsLoading || sendState !== SendState.FillingForm}
+            />
+          )}
         </form>
         {gasParamsLoading && <p>Calculating transaction fees...</p>}
         {calculatedMaxFee && <Transaction.MaxFee maxFee={calculatedMaxFee} />}

@@ -100,7 +100,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       to: message.to,
       from: message.from,
       nonce: message.nonce,
-      value: cancel ? 0 : message.value,
+      value: cancel ? '0' : message.value,
       method: cancel ? 0 : message.method,
       params: cancel ? '' : message.params,
       gasPremium: gasPremium.toAttoFil(),
