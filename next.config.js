@@ -1,4 +1,5 @@
 const path = require('path')
+const pkgjson = require('./package.json')
 
 const {
   PHASE_PRODUCTION_BUILD,
@@ -15,7 +16,11 @@ const webpack = (config) => {
     react: path.resolve('./node_modules/react'),
     'react-dom': path.resolve('./node_modules/react-dom'),
     next: path.resolve('./node_modules/next'),
-    'styled-components': path.resolve('./node_modules/styled-components')
+    'styled-components': path.resolve('./node_modules/styled-components'),
+    '@glif/base-css': path.resolve('./node_modules/@glif/base-css'),
+    '@glif/react-components': path.resolve(
+      './node_modules/@glif/react-components'
+    )
   }
 
   return adjustedConf
@@ -26,6 +31,8 @@ module.exports = (phase) => {
     trailingSlash: true,
     webpack,
     env: {
+      NEXT_PUBLIC_PACKAGE_NAME: pkgjson.name,
+      NEXT_PUBLIC_PACKAGE_VERSION: pkgjson.version,
       NEXT_PUBLIC_HOME_URL: process.env.HOME_URL || 'https://glif.io',
       NEXT_PUBLIC_BLOG_URL: process.env.BLOG_URL || 'https://blog.glif.io/',
       NEXT_PUBLIC_WALLET_URL:

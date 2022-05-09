@@ -6,7 +6,7 @@ export * from '../../node_modules/@glif/filecoin-wallet-provider/dist/errors'
 
 const mockGetAccounts = jest
   .fn()
-  // eslint-disable-next-line no-unused-vars
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   .mockImplementation((start = 0, end = 1, network = TESTNET) => {
     const accounts = []
     for (let i = start; i < end; i++) {
@@ -52,13 +52,13 @@ class MockWalletProvider {
   getBalance = mockGetBalance
   getNonce = jest.fn().mockImplementation(() => 0)
   gasEstimateMessageGas = jest.fn().mockImplementation(
-    ({
+    async ({
       To,
       From,
       Value,
-      GasPremium, //eslint-disable-line no-unused-vars
-      GasFeeCap, //eslint-disable-line no-unused-vars
-      GasLimit, //eslint-disable-line no-unused-vars
+      GasPremium, //eslint-disable-line @typescript-eslint/no-unused-vars
+      GasFeeCap, //eslint-disable-line @typescript-eslint/no-unused-vars
+      GasLimit, //eslint-disable-line @typescript-eslint/no-unused-vars
       Method,
       Nonce,
       Params
@@ -82,7 +82,7 @@ class MockWalletProvider {
     maxFee: new FilecoinNumber('1000000', 'attofil'),
     message: { ...message, GasLimit: 1, GasFeeCap: '1', GasPremium: '1' }
   }))
-  sendMessage = jest.fn().mockImplementation(() => 'QmZCid!')
+  sendMessage = jest.fn().mockImplementation(() => ({ '/': 'QmZCid!' }))
   simulateMessage = mockSimulateMessage
 }
 

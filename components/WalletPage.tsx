@@ -1,4 +1,9 @@
-import { Page, PageProps, WalletIconHeaderFooter } from '@glif/react-components'
+import {
+  Page,
+  PageProps,
+  PagePropTypes,
+  WalletIconHeaderFooter
+} from '@glif/react-components'
 
 export default function WalletPage({ children, ...rest }: PageProps) {
   return (
@@ -9,5 +14,5 @@ export default function WalletPage({ children, ...rest }: PageProps) {
 }
 
 WalletPage.propTypes = {
-  ...Page.propTypes
+  ...PagePropTypes
 }

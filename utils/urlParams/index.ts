@@ -4,7 +4,7 @@ import { PAGE } from '../../constants'
 const requiredUrlParamsWithDefaults = {}
 
 interface NavigationOptions {
-  existingQParams: Record<string, string>
+  existingQParams: Record<string, string | string[]>
   pageUrl: PAGE
   urlPathExtension?: string[]
   newQueryParams?: Record<string, any>
@@ -12,11 +12,13 @@ interface NavigationOptions {
 }
 
 export const combineExistingNewAndRequiredQueryParams = (
-  existingQParams: Record<string, string>,
+  existingQParams: Record<string, string | string[]>,
   newQParams?: Record<string, string>,
   maintainQParams?: boolean
 ): URLSearchParams => {
-  const searchParams = new URLSearchParams(existingQParams)
+  const searchParams = new URLSearchParams(
+    existingQParams as Record<string, string>
+  )
 
   // delete q params if the maintainQParams flag is not set
   if (!maintainQParams) {

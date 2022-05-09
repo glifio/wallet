@@ -33,7 +33,7 @@ const serializeParams = jest
   })
 
 const createMultisig = jest.fn().mockImplementation(
-  //eslint-disable-next-line no-unused-vars
+  //eslint-disable-next-line @typescript-eslint/no-unused-vars
   (walletAddress, signerAddresses, value, numSigners, nonce, vest, epoch) => {
     // normally this returns the whole message but we just use the params
     return {

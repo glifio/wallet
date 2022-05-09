@@ -96,6 +96,14 @@ export default function WalletHome() {
             cid={router.query.cid as string}
             height={Number(router.query?.height) || null}
             confirmations={50}
+            speedUpHref={generateRouteWithRequiredUrlParams({
+              pageUrl: PAGE.SPEED_UP,
+              existingQParams: router.query
+            })}
+            cancelHref={generateRouteWithRequiredUrlParams({
+              pageUrl: PAGE.CANCEL,
+              existingQParams: router.query
+            })}
           />
         ) : (
           <MessageHistoryTable
@@ -104,7 +112,7 @@ export default function WalletHome() {
               generateRouteWithRequiredUrlParams({
                 pageUrl: PAGE.WALLET_HOME,
                 newQueryParams: { height, cid },
-                existingQParams: { ...router.query } as Record<string, string>
+                existingQParams: router.query
               })
             }
           />

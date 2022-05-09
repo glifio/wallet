@@ -3,12 +3,12 @@ import { useRouter } from 'next/router'
 import { RequireWallet } from '@glif/wallet-provider-react'
 import { OneColumnCentered } from '@glif/react-components'
 
-import WalletPageLoggedIn from '../components/WalletPageLoggedIn'
-import { Send } from '../components/Wallet/Send'
-import { navigate } from '../utils/urlParams'
-import { PAGE } from '../constants'
+import WalletPageLoggedIn from '../../components/WalletPageLoggedIn'
+import { Replace, ReplaceStrategy } from '../../components/Wallet/Replace'
+import { navigate } from '../../utils/urlParams'
+import { PAGE } from '../../constants'
 
-const SendPage = () => {
+const CancelPage = () => {
   const router = useRouter()
   const gatekeep = useCallback(
     () => navigate(router, { pageUrl: PAGE.LANDING }),
@@ -18,11 +18,11 @@ const SendPage = () => {
     <WalletPageLoggedIn>
       <OneColumnCentered>
         <RequireWallet gatekeep={gatekeep}>
-          <Send />
+          <Replace strategy={ReplaceStrategy.CANCEL} />
         </RequireWallet>
       </OneColumnCentered>
     </WalletPageLoggedIn>
   )
 }
 
-export default SendPage
+export default CancelPage
