@@ -242,9 +242,7 @@ export const Send = () => {
       </ShadowBox>
       <Transaction.Buttons
         cancelDisabled={txState !== TxState.FillingForm}
-        sendDisabled={
-          !total || !inputsValid || txState !== TxState.FillingForm
-        }
+        sendDisabled={!total || !inputsValid || txState !== TxState.FillingForm}
         onClickSend={onSend}
       />
     </Dialog>
