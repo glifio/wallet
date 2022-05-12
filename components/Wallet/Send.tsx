@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useState, useMemo } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
@@ -25,15 +25,14 @@ import { logger } from '../../logger'
 export const Send = () => {
   const router = useRouter()
   const wallet = useWallet()
+  const { pushPendingMessage } = useSubmittedMessages()
   const { loginOption, walletProvider, walletError, getProvider } =
     useWalletProvider()
-  const { pushPendingMessage } = useSubmittedMessages()
 
   // Input states
   const [toAddress, setToAddress] = useState<string>('')
   const [value, setValue] = useState<FilecoinNumber | null>(null)
   const [params, setParams] = useState<string>('')
-  const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
   const [isToAddressValid, setIsToAddressValid] = useState<boolean>(false)
   const [isValueValid, setIsValueValid] = useState<boolean>(false)
   const [isParamsValid, setIsParamsValid] = useState<boolean>(
@@ -41,9 +40,6 @@ export const Send = () => {
     // (since ledger device signing b64 params not supported)
     loginOption === LoginOption.LEDGER
   )
-  const [isTxFeeValid, setIsTxFeeValid] = useState<boolean>(false)
-  const inputsValid =
-    isToAddressValid && isValueValid && isParamsValid && isTxFeeValid
 
   // Transaction states
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
@@ -94,10 +90,10 @@ export const Send = () => {
   // Calculate max affordable fee (balance minus value)
   const maxAffordableFee = useMemo<FilecoinNumber | null>(() => {
     return value ? getMaxAffordableFee(wallet.balance, value) : null
-  }, [value, wallet])
+  }, [value, wallet.balance])
 
   // Calculate maximum transaction fee (fee cap times limit)
-  const calculatedMaxFee = useMemo<FilecoinNumber | null>(() => {
+  const calculatedFee = useMemo<FilecoinNumber | null>(() => {
     return gasParams
       ? getMaxGasFee(gasParams.gasFeeCap, gasParams.gasLimit)
       : null
@@ -105,37 +101,10 @@ export const Send = () => {
 
   // Calculate total amount (value plus max fee)
   const total = useMemo<FilecoinNumber | null>(() => {
-    return value && calculatedMaxFee
-      ? getTotalAmount(value, calculatedMaxFee)
+    return value && calculatedFee
+      ? getTotalAmount(value, calculatedFee)
       : null
-  }, [value, calculatedMaxFee])
-
-  // The first time we calculate a valid maximum transaction fee, we set the value
-  // for the transaction fee input. Afterwards, the transaction fee input becomes
-  // editable and the calculated fee is updated according to the user's input.
-  const [initialFeeSet, setInitialFeeSet] = useState<boolean>(false)
-  useEffect(() => {
-    if (calculatedMaxFee && !initialFeeSet) {
-      setInitialFeeSet(true)
-      setTxFee(calculatedMaxFee)
-    }
-  }, [calculatedMaxFee, initialFeeSet])
-
-  // When leaving the transaction fee input, we set maxFee to
-  // update the gas params if the following conditions are met:
-  // - the input is valid
-  // - the value is different from the previous max fee
-  // - the value is different from the calculated max fee
-  const onBlurTxFee = () => {
-    if (
-      txFee &&
-      isTxFeeValid &&
-      (!maxFee || txFee.toAttoFil() !== maxFee.toAttoFil()) &&
-      (!calculatedMaxFee || txFee.toAttoFil() !== calculatedMaxFee.toAttoFil())
-    ) {
-      setMaxFee(txFee)
-    }
-  }
+  }, [value, calculatedFee])
 
   // Attempt sending message
   const onSend = async () => {
@@ -223,26 +192,21 @@ export const Send = () => {
               disabled={gasParamsLoading || txState !== TxState.FillingForm}
             />
           )}
-          {initialFeeSet && (
-            <InputV2.Filecoin
-              label='Transaction Fee'
-              max={maxAffordableFee}
-              value={txFee}
-              denom='attofil'
-              onBlur={onBlurTxFee}
-              onChange={setTxFee}
-              setIsValid={setIsTxFeeValid}
-              disabled={gasParamsLoading || txState !== TxState.FillingForm}
-            />
-          )}
+          <Transaction.Fee
+            wallet={wallet}
+            sendAmount={value}
+            maxFee={maxFee}
+            setMaxFee={setMaxFee}
+            calculatedFee={calculatedFee}
+            gasLoading={gasParamsLoading}
+            disabled={gasParamsLoading || txState !== TxState.FillingForm}
+          />
         </form>
-        {gasParamsLoading && <p>Calculating transaction fees...</p>}
-        {calculatedMaxFee && <Transaction.MaxFee maxFee={calculatedMaxFee} />}
         {total && <Transaction.Total total={total} />}
       </ShadowBox>
       <Transaction.Buttons
         cancelDisabled={txState !== TxState.FillingForm}
-        sendDisabled={!total || !inputsValid || txState !== TxState.FillingForm}
+        sendDisabled={txState !== TxState.FillingForm || !total}
         onClickSend={onSend}
       />
     </Dialog>
