@@ -69,8 +69,8 @@ export const Send = () => {
           value: value.toAttoFil(),
           method: 0,
           params: params,
-          gasPremium: '0',
-          gasFeeCap: '0',
+          gasPremium: 0,
+          gasFeeCap: 0,
           gasLimit: 0
         })
       )
