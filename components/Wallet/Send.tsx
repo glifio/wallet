@@ -101,9 +101,7 @@ export const Send = () => {
 
   // Calculate total amount (value plus max fee)
   const total = useMemo<FilecoinNumber | null>(() => {
-    return value && calculatedFee
-      ? getTotalAmount(value, calculatedFee)
-      : null
+    return value && calculatedFee ? getTotalAmount(value, calculatedFee) : null
   }, [value, calculatedFee])
 
   // Attempt sending message
