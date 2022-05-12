@@ -122,29 +122,16 @@ export const Replace = ({ strategy }: ReplaceProps) => {
     }
   }
 
-  const getTitle = () => {
-    switch (strategy) {
-      case ReplaceStrategy.SPEED_UP:
-        return 'Speed Up Message'
-      case ReplaceStrategy.CANCEL:
-        return 'Cancel Message'
-      default:
-        return ''
-    }
-  }
-
-  const getDescription = () => {
-    if (hasLoadError) return 'Failed to load message information'
-    if (isLoading) return 'Loading message information...'
-    return 'Please confirm the updated message details below'
-  }
-
   return (
     <Dialog>
       <Transaction.Header
         txState={sendState}
-        title={getTitle()}
-        description={getDescription()}
+        title={
+          strategy === ReplaceStrategy.SPEED_UP
+            ? 'Speed Up Message'
+            : 'Cancel Message'
+        }
+        description={'Please confirm the updated message details below'}
         loginOption={loginOption as LoginOption}
         errorMessage={
           messageError?.message ||
