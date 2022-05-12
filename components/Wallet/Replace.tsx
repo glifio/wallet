@@ -66,10 +66,6 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const isLoading = messageLoading || gasParamsLoading || minGasParamsLoading
   const isLoaded = !!(message && gasParams && minGasParams)
 
-  const gasErr = gasParamsError?.message || minGasParamsError?.message || ''
-
-  const errorMsg = sendError?.message || walletError() || gasErr || ''
-
   // Calculate maximum transaction fee
   const maxFee = useMemo<FilecoinNumber | null>(() => {
     return gasLimit && gasFeeCap ? getMaxGasFee(gasFeeCap, gasLimit) : null
@@ -145,12 +141,19 @@ export const Replace = ({ strategy }: ReplaceProps) => {
 
   return (
     <Dialog>
-      <Transaction.State
-        loginOption={loginOption as LoginOption}
+      <Transaction.Header
         txState={sendState}
-        txTitle={getTitle()}
-        txDescription={getDescription()}
-        error={errorMsg}
+        title={getTitle()}
+        description={getDescription()}
+        loginOption={loginOption as LoginOption}
+        errorMessage={
+          messageError?.message ||
+          gasParamsError?.message ||
+          minGasParamsError?.message ||
+          sendError?.message ||
+          walletError() ||
+          ''
+        }
       />
       {isLoaded && (
         <ShadowBox>
