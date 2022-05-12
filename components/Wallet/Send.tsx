@@ -137,9 +137,6 @@ export const Send = () => {
     }
   }
 
-  const errorMsg =
-    sendError?.message || walletError() || gasParamsError?.message || ''
-
   // Attempt sending message
   const onSend = async () => {
     setSendState(TxState.LoadingTxDetails)
@@ -182,12 +179,14 @@ export const Send = () => {
 
   return (
     <Dialog>
-      <Transaction.State
-        loginOption={loginOption as LoginOption}
+      <Transaction.Header
         txState={sendState}
-        txTitle='Send Filecoin'
-        txDescription='Please enter the message details below'
-        error={errorMsg}
+        title='Send Filecoin'
+        description='Please enter the message details below'
+        loginOption={loginOption as LoginOption}
+        errorMessage={
+          gasParamsError?.message || sendError?.message || walletError() || ''
+        }
       />
       <ShadowBox>
         <Transaction.Balance
