@@ -40,9 +40,9 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const [isGasFeeCapValid, setIsGasFeeCapValid] = useState<boolean>(false)
   const inputsValid = isGasPremiumValid && isGasLimitValid && isGasFeeCapValid
 
-  // Sending states
-  const [sendState, setSendState] = useState<TxState>(TxState.FillingForm)
-  const [sendError, setSendError] = useState<Error | null>(null)
+  // Transaction states
+  const [txState, setTxState] = useState<TxState>(TxState.LoadingMe)
+  const [txError, setTxError] = useState<Error | null>(null)
 
   // Load data
   const {
@@ -83,8 +83,8 @@ export const Replace = ({ strategy }: ReplaceProps) => {
 
   // Attempt sending message
   const onSend = async () => {
-    setSendState(TxState.LoadingTxDetails)
-    setSendError(null)
+    setTxState(TxState.LoadingTxDetails)
+    setTxError(null)
     const provider = await getProvider()
     const cancel = strategy === ReplaceStrategy.CANCEL
     const newMessage = new Message({
@@ -99,13 +99,13 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber()
     })
     try {
-      setSendState(TxState.AwaitingConfirmation)
+      setTxState(TxState.AwaitingConfirmation)
       const lotusMessage = newMessage.toLotusType()
       const signedMessage = await provider.wallet.sign(
         wallet.address,
         lotusMessage
       )
-      setSendState(TxState.MPoolPushing)
+      setTxState(TxState.MPoolPushing)
       const msgValid = await provider.simulateMessage(lotusMessage)
       if (!msgValid) {
         throw new Error('Filecoin message invalid. No gas or fees were spent.')
@@ -117,15 +117,15 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       navigate(router, { pageUrl: PAGE.WALLET_HOME })
     } catch (e: any) {
       logger.error(e)
-      setSendState(TxState.FillingForm)
-      setSendError(e)
+      setTxState(TxState.FillingForm)
+      setTxError(e)
     }
   }
 
   return (
     <Dialog>
       <Transaction.Header
-        txState={sendState}
+        txState={txState}
         title={
           strategy === ReplaceStrategy.SPEED_UP
             ? 'Speed Up Message'
@@ -137,7 +137,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
           messageError?.message ||
           gasParamsError?.message ||
           minGasParamsError?.message ||
-          sendError?.message ||
+          txError?.message ||
           walletError() ||
           ''
         }
@@ -163,7 +163,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
               denom='attofil'
               onChange={setGasPremium}
               setIsValid={setIsGasPremiumValid}
-              disabled={!expert || sendState !== TxState.FillingForm}
+              disabled={!expert || txState !== TxState.FillingForm}
             />
             <InputV2.Filecoin
               label='Gas Limit'
@@ -177,7 +177,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
               denom='attofil'
               onChange={setGasLimit}
               setIsValid={setIsGasLimitValid}
-              disabled={!expert || sendState !== TxState.FillingForm}
+              disabled={!expert || txState !== TxState.FillingForm}
             />
             <InputV2.Filecoin
               label='Fee Cap'
@@ -191,22 +191,22 @@ export const Replace = ({ strategy }: ReplaceProps) => {
               denom='attofil'
               onChange={setGasFeeCap}
               setIsValid={setIsGasFeeCapValid}
-              disabled={!expert || sendState !== TxState.FillingForm}
+              disabled={!expert || txState !== TxState.FillingForm}
             />
             <InputV2.Toggle
               label='Expert Mode'
               checked={expert}
               onChange={setExpert}
-              disabled={sendState !== TxState.FillingForm}
+              disabled={txState !== TxState.FillingForm}
             />
           </form>
           {maxFee && <Transaction.MaxFee maxFee={maxFee} />}
         </ShadowBox>
       )}
       <Transaction.Buttons
-        cancelDisabled={sendState !== TxState.FillingForm}
+        cancelDisabled={txState !== TxState.FillingForm}
         sendDisabled={
-          !isLoaded || !inputsValid || sendState !== TxState.FillingForm
+          !isLoaded || !inputsValid || txState !== TxState.FillingForm
         }
         onClickSend={onSend}
       />
