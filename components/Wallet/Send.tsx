@@ -190,7 +190,7 @@ export const Send = () => {
         error={errorMsg}
       />
       <ShadowBox>
-        <Transaction.Header address={wallet.address} balance={wallet.balance} />
+        <Transaction.Balance address={wallet.address} balance={wallet.balance} />
         <form>
           <InputV2.Address
             label='Recipient'

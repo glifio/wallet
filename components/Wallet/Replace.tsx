@@ -154,7 +154,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       />
       {isLoaded && (
         <ShadowBox>
-          <Transaction.Header
+          <Transaction.Balance
             address={wallet.address}
             balance={wallet.balance}
           />
