@@ -41,30 +41,29 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const inputsValid = isGasPremiumValid && isGasLimitValid && isGasFeeCapValid
 
   // Transaction states
-  const [txState, setTxState] = useState<TxState>(TxState.LoadingMe)
+  const [txState, setTxState] = useState<TxState>(TxState.LoadingMessage)
   const [txError, setTxError] = useState<Error | null>(null)
 
   // Load data
-  const {
+  const { message, error: messageError } = useGetMessage(cid)
+  const { gasParams, error: gasParamsError } = useGetReplaceMessageGasParams(
+    walletProvider,
     message,
-    loading: messageLoading,
-    error: messageError
-  } = useGetMessage(cid)
-  const {
-    gasParams,
-    loading: gasParamsLoading,
-    error: gasParamsError
-  } = useGetReplaceMessageGasParams(walletProvider, message, false)
-  const {
-    gasParams: minGasParams,
-    loading: minGasParamsLoading,
-    error: minGasParamsError
-  } = useGetReplaceMessageGasParams(walletProvider, message, true)
+    false
+  )
+  const { gasParams: minGasParams, error: minGasParamsError } =
+    useGetReplaceMessageGasParams(walletProvider, message, true)
 
-  // Data states
-  const hasLoadError = !!(messageError || gasParamsError || minGasParamsError)
-  const isLoading = messageLoading || gasParamsLoading || minGasParamsLoading
-  const isLoaded = !!(message && gasParams && minGasParams)
+  // Set transaction state to FillingForm when all data has loaded
+  useEffect(
+    () =>
+      txState === TxState.LoadingMessage &&
+      message &&
+      gasParams &&
+      minGasParams &&
+      setTxState(TxState.FillingForm),
+    [txState, message, gasParams, minGasParams]
+  )
 
   // Calculate maximum transaction fee
   const maxFee = useMemo<FilecoinNumber | null>(() => {
@@ -142,7 +141,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
           ''
         }
       />
-      {isLoaded && (
+      {txState !== TxState.LoadingMessage && (
         <ShadowBox>
           <Transaction.Balance
             address={wallet.address}
@@ -205,9 +204,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       )}
       <Transaction.Buttons
         cancelDisabled={txState !== TxState.FillingForm}
-        sendDisabled={
-          !isLoaded || !inputsValid || txState !== TxState.FillingForm
-        }
+        sendDisabled={!inputsValid || txState !== TxState.FillingForm}
         onClickSend={onSend}
       />
     </Dialog>
