@@ -88,7 +88,7 @@ export const Send = () => {
   } = useGetGasParams(walletProvider, message, maxFee)
 
   // Calculate max affordable fee (balance minus value)
-  const maxAffordableFee = useMemo<FilecoinNumber | null>(() => {
+  const affordableFee = useMemo<FilecoinNumber | null>(() => {
     return value ? getMaxAffordableFee(wallet.balance, value) : null
   }, [value, wallet.balance])
 
@@ -193,10 +193,9 @@ export const Send = () => {
             />
           )}
           <Transaction.Fee
-            wallet={wallet}
-            sendAmount={value}
             maxFee={maxFee}
             setMaxFee={setMaxFee}
+            affordableFee={affordableFee}
             calculatedFee={calculatedFee}
             gasLoading={gasParamsLoading}
             disabled={gasParamsLoading || txState !== TxState.FillingForm}
