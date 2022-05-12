@@ -204,7 +204,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
       )}
       <Transaction.Buttons
         cancelDisabled={txState !== TxState.FillingForm}
-        sendDisabled={!inputsValid || txState !== TxState.FillingForm}
+        sendDisabled={txState !== TxState.FillingForm || !inputsValid}
         onClickSend={onSend}
       />
     </Dialog>
