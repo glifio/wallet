@@ -45,9 +45,9 @@ export const Send = () => {
   const inputsValid =
     isToAddressValid && isValueValid && isParamsValid && isTxFeeValid
 
-  // Sending states
-  const [sendState, setSendState] = useState<TxState>(TxState.FillingForm)
-  const [sendError, setSendError] = useState<Error | null>(null)
+  // Transaction states
+  const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
+  const [txError, setTxError] = useState<Error | null>(null)
 
   // Placeholder message for getting gas params
   const [message, setMessage] = useState<Message | null>(null)
@@ -139,8 +139,8 @@ export const Send = () => {
 
   // Attempt sending message
   const onSend = async () => {
-    setSendState(TxState.LoadingTxDetails)
-    setSendError(null)
+    setTxState(TxState.LoadingTxDetails)
+    setTxError(null)
     const provider = await getProvider()
     const newMessage = new Message({
       to: message.to,
@@ -154,13 +154,13 @@ export const Send = () => {
       gasLimit: new BigNumber(gasParams.gasLimit.toAttoFil()).toNumber()
     })
     try {
-      setSendState(TxState.AwaitingConfirmation)
+      setTxState(TxState.AwaitingConfirmation)
       const lotusMessage = newMessage.toLotusType()
       const signedMessage = await provider.wallet.sign(
         wallet.address,
         lotusMessage
       )
-      setSendState(TxState.MPoolPushing)
+      setTxState(TxState.MPoolPushing)
       const msgValid = await provider.simulateMessage(lotusMessage)
       if (!msgValid) {
         throw new Error('Filecoin message invalid. No gas or fees were spent.')
@@ -172,20 +172,20 @@ export const Send = () => {
       navigate(router, { pageUrl: PAGE.WALLET_HOME })
     } catch (e: any) {
       logger.error(e)
-      setSendState(TxState.FillingForm)
-      setSendError(e)
+      setTxState(TxState.FillingForm)
+      setTxError(e)
     }
   }
 
   return (
     <Dialog>
       <Transaction.Header
-        txState={sendState}
+        txState={txState}
         title='Send Filecoin'
         description='Please enter the message details below'
         loginOption={loginOption as LoginOption}
         errorMessage={
-          gasParamsError?.message || sendError?.message || walletError() || ''
+          gasParamsError?.message || txError?.message || walletError() || ''
         }
       />
       <ShadowBox>
@@ -201,7 +201,7 @@ export const Send = () => {
             onBlur={setMessageIfChanged}
             onChange={setToAddress}
             setIsValid={setIsToAddressValid}
-            disabled={gasParamsLoading || sendState !== TxState.FillingForm}
+            disabled={gasParamsLoading || txState !== TxState.FillingForm}
           />
           <InputV2.Filecoin
             label='Amount'
@@ -211,7 +211,7 @@ export const Send = () => {
             onBlur={setMessageIfChanged}
             onChange={setValue}
             setIsValid={setIsValueValid}
-            disabled={gasParamsLoading || sendState !== TxState.FillingForm}
+            disabled={gasParamsLoading || txState !== TxState.FillingForm}
           />
           {loginOption !== LoginOption.LEDGER && (
             <InputV2.Params
@@ -220,7 +220,7 @@ export const Send = () => {
               onBlur={setMessageIfChanged}
               onChange={setParams}
               setIsValid={setIsParamsValid}
-              disabled={gasParamsLoading || sendState !== TxState.FillingForm}
+              disabled={gasParamsLoading || txState !== TxState.FillingForm}
             />
           )}
           {initialFeeSet && (
@@ -232,7 +232,7 @@ export const Send = () => {
               onBlur={onBlurTxFee}
               onChange={setTxFee}
               setIsValid={setIsTxFeeValid}
-              disabled={gasParamsLoading || sendState !== TxState.FillingForm}
+              disabled={gasParamsLoading || txState !== TxState.FillingForm}
             />
           )}
         </form>
@@ -241,9 +241,9 @@ export const Send = () => {
         {total && <Transaction.Total total={total} />}
       </ShadowBox>
       <Transaction.Buttons
-        cancelDisabled={sendState !== TxState.FillingForm}
+        cancelDisabled={txState !== TxState.FillingForm}
         sendDisabled={
-          !total || !inputsValid || sendState !== TxState.FillingForm
+          !total || !inputsValid || txState !== TxState.FillingForm
         }
         onClickSend={onSend}
       />
