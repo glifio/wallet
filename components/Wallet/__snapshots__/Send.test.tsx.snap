@@ -850,6 +850,7 @@ exports[`Send snapshots after enter recipient state 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .c4 > * {
@@ -860,6 +861,13 @@ exports[`Send snapshots after enter recipient state 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c4 > *:first-child {
@@ -867,13 +875,9 @@ exports[`Send snapshots after enter recipient state 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
-}
-
-.c4 > *:last-child {
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 <div
@@ -890,6 +894,7 @@ exports[`Send snapshots after enter recipient state 1`] = `
       Please enter the message details below
     </p>
   </div>
+  
   <div
     class="c1 c3"
   >
@@ -930,6 +935,7 @@ exports[`Send snapshots after enter recipient state 1`] = `
         >
           <input
             class=""
+            name=""
             placeholder="f1..."
             style="padding-right: 1em;"
             type="text"
@@ -953,6 +959,7 @@ exports[`Send snapshots after enter recipient state 1`] = `
         >
           <input
             class=""
+            name=""
             placeholder=""
             style="padding-right: 3.25em;"
             type="number"
@@ -980,6 +987,7 @@ exports[`Send snapshots after enter recipient state 1`] = `
         >
           <input
             class=""
+            name=""
             placeholder="Optional Base64 params"
             style="padding-right: 1em;"
             type="text"
@@ -1292,6 +1300,7 @@ exports[`Send snapshots initial state 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .c4 > * {
@@ -1302,6 +1311,13 @@ exports[`Send snapshots initial state 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c4 > *:first-child {
@@ -1309,13 +1325,9 @@ exports[`Send snapshots initial state 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
-}
-
-.c4 > *:last-child {
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 <div
@@ -1332,6 +1344,7 @@ exports[`Send snapshots initial state 1`] = `
       Please enter the message details below
     </p>
   </div>
+  
   <div
     class="c1 c3"
   >
@@ -1372,6 +1385,7 @@ exports[`Send snapshots initial state 1`] = `
         >
           <input
             class=""
+            name=""
             placeholder="f1..."
             style="padding-right: 1em;"
             type="text"
@@ -1395,6 +1409,7 @@ exports[`Send snapshots initial state 1`] = `
         >
           <input
             class=""
+            name=""
             placeholder=""
             style="padding-right: 3.25em;"
             type="number"
@@ -1422,6 +1437,7 @@ exports[`Send snapshots initial state 1`] = `
         >
           <input
             class=""
+            name=""
             placeholder="Optional Base64 params"
             style="padding-right: 1em;"
             type="text"
