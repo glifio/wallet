@@ -134,7 +134,7 @@ exports[`Send it allows a user to send a message 1`] = `
   stroke: var(--gray-medium);
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -152,7 +152,7 @@ exports[`Send it allows a user to send a message 1`] = `
   justify-content: space-between;
 }
 
-.c8 > *:first-child {
+.c7 > *:first-child {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -162,30 +162,30 @@ exports[`Send it allows a user to send a message 1`] = `
   flex-direction: column;
 }
 
-.c8 > *:last-child:not(.toggle-wrapper) {
+.c7 > *:last-child:not(.toggle-wrapper) {
   -webkit-flex: 0 0 50%;
   -ms-flex: 0 0 50%;
   flex: 0 0 50%;
 }
 
-.c8 span.info,
-.c8 span.error {
+.c7 span.info,
+.c7 span.error {
   font-size: 0.875rem;
 }
 
-.c8 span.error {
+.c7 span.error {
   color: var(--red-medium);
 }
 
-.c8 .text-input-wrapper {
+.c7 .text-input-wrapper {
   position: relative;
 }
 
-.c8 .text-input-wrapper input {
+.c7 .text-input-wrapper input {
   width: 100%;
 }
 
-.c8 .text-input-wrapper .unit {
+.c7 .text-input-wrapper .unit {
   position: absolute;
   top: 50%;
   right: 1em;
@@ -196,18 +196,66 @@ exports[`Send it allows a user to send a message 1`] = `
   color: var(--gray-dark) !important;
 }
 
-.c4 {
+.c8 .toggle-wrapper {
+  position: relative;
+  padding: 0.5em 0;
+}
+
+.c8 input {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.c8 .toggle {
+  display: inline-block;
+  position: relative;
+  width: 2.25em;
+  height: 1.5em;
+  border-radius: 0.75em;
+  border: 2px solid var(--blue-medium);
+  background-color: var(--blue-medium);
+  border-color: var(--gray-light) !important;
+  background-color: var(--gray-light) !important;
+}
+
+.c8 .toggle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(1.5em - 4px);
+  height: calc(1.5em - 4px);
+  border-radius: 50%;
+  background-color: var(--white);
+}
+
+.c8 input:checked ~ .toggle {
+  border-color: var(--blue-dark);
+  background-color: var(--blue-dark);
+}
+
+.c8 input:checked ~ .toggle::after {
+  left: auto;
+  right: 0;
+}
+
+.c3 {
   display: inline-block;
   height: 48px;
   width: 48px;
-  background-color: #5E26FF;
+  text-align: left;
+  background-color: var(--purple-medium);
 }
 
-.c5 {
+.c4 {
   display: inline-block;
   height: 24px;
   width: 24px;
-  background-color: rgb(26,0,102);
+  background-color: var(--purple-dark);
   -webkit-animation-name: bvGDKI;
   animation-name: bvGDKI;
   -webkit-animation-duration: 2s;
@@ -256,7 +304,7 @@ exports[`Send it allows a user to send a message 1`] = `
   border-color: var(--gray-medium);
 }
 
-.c6 {
+.c5 {
   background-color: var(--white);
   box-shadow: 0 0 0.5em var(--gray-light);
 }
@@ -301,7 +349,7 @@ exports[`Send it allows a user to send a message 1`] = `
   gap: 10px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -314,9 +362,10 @@ exports[`Send it allows a user to send a message 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  gap: 20px;
 }
 
-.c7 > * {
+.c6 > * {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -324,28 +373,23 @@ exports[`Send it allows a user to send a message 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c7 > *:first-child {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-}
-
-.c7 > *:last-child {
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
   align-items: flex-end;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
-.c3 > *:first-child {
-  margin-right: 10px;
-  text-align: left;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
+.c6 > *:first-child {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 .c9 {
@@ -372,24 +416,29 @@ exports[`Send it allows a user to send a message 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2 c3"
+    class="c1 c2"
   >
-    <span
-      class="c4"
-    >
-      <span
-        class="c5"
-      />
-    </span>
+    <h2>
+      Send Filecoin
+    </h2>
+    <hr />
     <p>
       Sending your transaction...
     </p>
+    <span
+      class="c3"
+    >
+      <span
+        class="c4"
+      />
+    </span>
   </div>
+  
   <div
-    class="c1 c6"
+    class="c1 c5"
   >
     <header
-      class="c7"
+      class="c6"
     >
       <div>
         <span>
@@ -411,7 +460,7 @@ exports[`Send it allows a user to send a message 1`] = `
     </header>
     <form>
       <label
-        class="c8"
+        class="c7"
         disabled=""
       >
         <div>
@@ -427,6 +476,7 @@ exports[`Send it allows a user to send a message 1`] = `
           <input
             class=""
             disabled=""
+            name=""
             placeholder="f1..."
             style="padding-right: 1em;"
             type="text"
@@ -436,7 +486,7 @@ exports[`Send it allows a user to send a message 1`] = `
         </div>
       </label>
       <label
-        class="c8"
+        class="c7"
         disabled=""
       >
         <div>
@@ -452,6 +502,7 @@ exports[`Send it allows a user to send a message 1`] = `
           <input
             class=""
             disabled=""
+            name=""
             placeholder=""
             style="padding-right: 3.25em;"
             type="number"
@@ -465,7 +516,7 @@ exports[`Send it allows a user to send a message 1`] = `
         </div>
       </label>
       <label
-        class="c8"
+        class="c7"
         disabled=""
       >
         <div>
@@ -481,6 +532,7 @@ exports[`Send it allows a user to send a message 1`] = `
           <input
             class=""
             disabled=""
+            name=""
             placeholder="Optional Base64 params"
             style="padding-right: 1em;"
             type="text"
@@ -490,48 +542,41 @@ exports[`Send it allows a user to send a message 1`] = `
         </div>
       </label>
       <label
-        class="c8"
+        class="c7 c8"
         disabled=""
       >
         <div>
           <span>
-            Transaction Fee
+            Expert Mode
           </span>
           
-          
         </div>
-        <div
-          class="text-input-wrapper"
+        <span
+          class="toggle-wrapper"
         >
           <input
-            class=""
             disabled=""
-            placeholder=""
-            style="padding-right: 4em;"
-            type="number"
-            value="10000000"
+            type="checkbox"
           />
           <span
-            class="unit"
-          >
-            aFIL
-          </span>
-        </div>
+            class="toggle"
+          />
+        </span>
       </label>
+      <p>
+        You will not pay more than 
+        0.00000000001
+         FIL for this transaction.
+         
+        <a
+          href="https://filfox.info/en/stats/gas"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          More information on average gas fee statistics.
+        </a>
+      </p>
     </form>
-    <p>
-      You will not pay more than 
-      0.00000000001
-       FIL for this transaction.
-       
-      <a
-        href="https://filfox.info/en/stats/gas"
-        rel="noreferrer noopener"
-        target="_blank"
-      >
-        More information on average gas fee statistics.
-      </a>
-    </p>
     <footer>
       <hr />
       <div
