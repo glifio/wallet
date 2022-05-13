@@ -166,6 +166,7 @@ export const Send = () => {
             autofocus={true}
             value={toAddress}
             onBlur={setMessageIfChanged}
+            onEnter={setMessageIfChanged}
             onChange={setToAddress}
             setIsValid={setIsToAddressValid}
             disabled={gasParamsLoading || txState !== TxState.FillingForm}
@@ -176,6 +177,7 @@ export const Send = () => {
             value={value}
             denom='fil'
             onBlur={setMessageIfChanged}
+            onEnter={setMessageIfChanged}
             onChange={setValue}
             setIsValid={setIsValueValid}
             disabled={gasParamsLoading || txState !== TxState.FillingForm}
@@ -185,6 +187,7 @@ export const Send = () => {
               label='Params'
               value={params}
               onBlur={setMessageIfChanged}
+              onEnter={setMessageIfChanged}
               onChange={setParams}
               setIsValid={setIsParamsValid}
               disabled={gasParamsLoading || txState !== TxState.FillingForm}
