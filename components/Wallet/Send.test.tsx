@@ -76,7 +76,7 @@ describe('Send', () => {
       // Check state
       await flushPromises()
       await waitFor(() => expect(send).toBeEnabled())
-      const [, txFee] = getAllByRole(result.container, 'spinbutton')
+      const txFee = getByRole(result.container, 'spinbutton')
       const maxFeeRegex =
         /You will not pay more than [0-9.]+ FIL for this transaction/i
       expect(getByText(result.container, maxFeeRegex)).toBeInTheDocument()
