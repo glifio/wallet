@@ -3,7 +3,6 @@ import { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
-import { useWallet, useWalletProvider } from '@glif/wallet-provider-react'
 import {
   getMaxGasFee,
   useGetMessage,
@@ -15,7 +14,9 @@ import {
   Transaction,
   LoginOption,
   MessagePending,
-  TxState
+  TxState,
+  useWallet,
+  useWalletProvider
 } from '@glif/react-components'
 
 import { navigate } from '../../utils/urlParams'

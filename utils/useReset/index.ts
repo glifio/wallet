@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { useWalletProvider } from '@glif/wallet-provider-react'
+import { useWalletProvider } from '@glif/react-components'
 
 export default function useReset() {
   const { resetState } = useWalletProvider()

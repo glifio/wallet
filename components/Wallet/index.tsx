@@ -8,14 +8,12 @@ import {
   OneColumn,
   MessageHistoryTable,
   MessageDetail,
-  space
-} from '@glif/react-components'
-import {
+  space,
   useWalletProvider,
   useWallet,
   hasLedgerError,
   reportLedgerConfigError
-} from '@glif/wallet-provider-react'
+} from '@glif/react-components'
 
 import { logger } from '../../logger'
 import {

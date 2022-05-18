@@ -1,6 +1,9 @@
 import React, { useCallback } from 'react'
-import { ConnectImportPk } from '@glif/wallet-provider-react'
-import { OneColumnCentered, useDesktopBrowser } from '@glif/react-components'
+import {
+  ConnectWallet,
+  OneColumnCentered,
+  useDesktopBrowser
+} from '@glif/react-components'
 import { useRouter } from 'next/router'
 import WalletPage from '../../../components/WalletPage'
 import useReset from '../../../utils/useReset'
@@ -23,7 +26,7 @@ export default function ImportPK() {
   return (
     <WalletPage>
       <OneColumnCentered>
-        <ConnectImportPk back={back} next={next} />
+        <ConnectWallet.Burner.ImportPk back={back} next={next} />
       </OneColumnCentered>
     </WalletPage>
   )

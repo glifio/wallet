@@ -6,12 +6,10 @@ import React from 'react'
 import {
   theme,
   ThemeProvider,
-  PendingMessageProvider
-} from '@glif/react-components'
-import {
+  PendingMessageProvider,
   WalletProviderWrapper,
   BalancePoller
-} from '@glif/wallet-provider-react'
+} from '@glif/react-components'
 import { ApolloProvider } from '@apollo/client'
 import { SWRConfig } from 'swr'
 
