@@ -2,8 +2,9 @@ import { useState, useMemo } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
-import { useWallet, useWalletProvider } from '@glif/wallet-provider-react'
 import {
+  useWallet,
+  useWalletProvider,
   getMaxAffordableFee,
   getMaxGasFee,
   getTotalAmount,

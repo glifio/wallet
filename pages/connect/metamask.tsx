@@ -1,6 +1,9 @@
 import { useCallback } from 'react'
-import { OneColumnCentered, useDesktopBrowser } from '@glif/react-components'
-import { ConnectMM } from '@glif/wallet-provider-react'
+import {
+  OneColumnCentered,
+  useDesktopBrowser,
+  ConnectWallet
+} from '@glif/react-components'
 import { useRouter } from 'next/router'
 import WalletPage from '../../components/WalletPage'
 import useReset from '../../utils/useReset'
@@ -22,7 +25,7 @@ export default function ConnectMetaMask() {
   return (
     <WalletPage>
       <OneColumnCentered>
-        <ConnectMM next={next} back={back} />
+        <ConnectWallet.MetaMask next={next} back={back} />
       </OneColumnCentered>
     </WalletPage>
   )

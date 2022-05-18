@@ -134,6 +134,27 @@ exports[`Send it allows a user to send a message 1`] = `
   stroke: var(--gray-medium);
 }
 
+.c3 {
+  display: inline-block;
+  height: 48px;
+  width: 48px;
+  text-align: left;
+  background-color: var(--purple-medium);
+}
+
+.c4 {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  background-color: var(--purple-dark);
+  -webkit-animation-name: bvGDKI;
+  animation-name: bvGDKI;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -241,27 +262,6 @@ exports[`Send it allows a user to send a message 1`] = `
 .c8 input:checked ~ .toggle::after {
   left: auto;
   right: 0;
-}
-
-.c3 {
-  display: inline-block;
-  height: 48px;
-  width: 48px;
-  text-align: left;
-  background-color: var(--purple-medium);
-}
-
-.c4 {
-  display: inline-block;
-  height: 24px;
-  width: 24px;
-  background-color: var(--purple-dark);
-  -webkit-animation-name: bvGDKI;
-  animation-name: bvGDKI;
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
 }
 
 .c1 {

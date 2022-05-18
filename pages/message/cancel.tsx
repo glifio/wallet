@@ -1,7 +1,6 @@
 import { useCallback } from 'react'
 import { useRouter } from 'next/router'
-import { RequireWallet } from '@glif/wallet-provider-react'
-import { OneColumnCentered } from '@glif/react-components'
+import { RequireWallet, OneColumnCentered } from '@glif/react-components'
 
 import WalletPageLoggedIn from '../../components/WalletPageLoggedIn'
 import { Replace, ReplaceStrategy } from '../../components/Wallet/Replace'

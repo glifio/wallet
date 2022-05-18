@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import { useRouter } from 'next/router'
-import { RequireWallet } from '@glif/wallet-provider-react'
+import { RequireWallet } from '@glif/react-components'
 
 import WalletPageLoggedIn from '../../components/WalletPageLoggedIn'
 import { WalletView } from '../../components'

@@ -1,13 +1,15 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
-import WalletProviderWrapper, {
-  initialState as walletProviderInitialState
-} from '@glif/wallet-provider-react'
-import { PendingMessageProvider } from '@glif/react-components'
-import { theme, ThemeProvider } from '@glif/react-components'
+import {
+  PendingMessageProvider,
+  WalletProviderWrapper,
+  initialState as walletProviderInitialState,
+  theme,
+  ThemeProvider
+} from '@glif/react-components'
 import { MockedProvider } from '@apollo/client/testing'
-import { mockWalletProviderInstance } from '../../__mocks__/@glif/filecoin-wallet-provider'
 
+import { mockWalletProviderInstance } from '../../__mocks__/@glif/filecoin-wallet-provider'
 import { composeWalletProviderState } from '../../test-utils/composeMockAppTree/composeState'
 
 const Index = (statePreset = 'preOnboard', options = {}) => {

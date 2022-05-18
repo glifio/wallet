@@ -1,8 +1,11 @@
 import { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { CoinType } from '@glif/filecoin-address'
-import { AccountSelector, RequireWallet } from '@glif/wallet-provider-react'
-import { OneColumn } from '@glif/react-components'
+import {
+  AccountSelector,
+  RequireWallet,
+  OneColumn
+} from '@glif/react-components'
 
 import WalletPageLoggedIn from '../../components/WalletPageLoggedIn'
 import { PAGE } from '../../constants'

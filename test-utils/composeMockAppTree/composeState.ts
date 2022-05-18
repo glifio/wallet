@@ -1,5 +1,5 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
-import { WalletProviderState } from '@glif/wallet-provider-react'
+import { WalletProviderState } from '@glif/react-components'
 
 import createPath from '../../utils/createPath'
 import { IMPORT_MNEMONIC, IMPORT_SINGLE_KEY } from '../../constants'
