@@ -64,7 +64,7 @@ describe('Send', () => {
       fireEvent.change(recipient, { target: { value: validAddress } })
       recipient.blur()
 
-      // Check state
+      // Send should not be enabled yet
       await flushPromises()
       expect(send).toBeDisabled()
 
@@ -73,16 +73,20 @@ describe('Send', () => {
       fireEvent.change(amount, { target: { value: validAmount.toFil() } })
       amount.blur()
 
-      // Check state
+      // Send should enable after getting tx fee
       await flushPromises()
       await waitFor(() => expect(send).toBeEnabled())
-      const txFee = getByRole(result.container, 'spinbutton')
+
+      // Max fee and total should be shown
       const maxFeeRegex =
         /You will not pay more than [0-9.]+ FIL for this transaction/i
       expect(getByText(result.container, maxFeeRegex)).toBeInTheDocument()
       expect(getByText(result.container, 'Total')).toBeInTheDocument()
-      expect(txFee).not.toHaveDisplayValue('')
-      expect(txFee).toBeEnabled()
+
+      // The expert mode toggle should shown and be off
+      const expertMode = getByRole(result.container, 'checkbox')
+      expect(expertMode).toBeInTheDocument()
+      expect(expertMode).not.toBeChecked()
 
       // Click send
       fireEvent.click(send)
@@ -101,13 +105,13 @@ describe('Send', () => {
     expect(message.from).toBe(WALLET_ADDRESS)
     expect(message.to).toBe(validAddress)
     expect(message.nonce).toBeGreaterThanOrEqual(0)
-    expect(message.value instanceof BigNumber).toBe(true)
+    expect(message.value).toBeInstanceOf(BigNumber)
     expect(message.value.isEqualTo(validAmount.toAttoFil())).toBe(true)
     expect(message.method).toBe(0)
     expect(message.params).toBe('')
-    expect(message.gasPremium instanceof BigNumber).toBe(true)
+    expect(message.gasPremium).toBeInstanceOf(BigNumber)
     expect(message.gasPremium.isGreaterThan(0)).toBe(true)
-    expect(message.gasFeeCap instanceof BigNumber).toBe(true)
+    expect(message.gasFeeCap).toBeInstanceOf(BigNumber)
     expect(message.gasFeeCap.isGreaterThan(0)).toBe(true)
     expect(message.gasLimit).toBeGreaterThan(0)
 
