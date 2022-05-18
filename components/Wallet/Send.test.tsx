@@ -76,7 +76,7 @@ describe('Send', () => {
       // Send should enable after getting tx fee
       await flushPromises()
       await waitFor(() => expect(send).toBeEnabled())
-      
+
       // Max fee and total should be shown
       const maxFeeRegex =
         /You will not pay more than [0-9.]+ FIL for this transaction/i
