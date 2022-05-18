@@ -476,8 +476,11 @@ exports[`Send it allows a user to send a message 1`] = `
           <input
             class=""
             disabled=""
+            max=""
+            min=""
             name=""
             placeholder="f1..."
+            step=""
             style="padding-right: 1em;"
             type="text"
             value="t1iury ... xaucza"
@@ -502,8 +505,11 @@ exports[`Send it allows a user to send a message 1`] = `
           <input
             class=""
             disabled=""
+            max="1"
+            min="0"
             name=""
             placeholder=""
+            step=""
             style="padding-right: 3.25em;"
             type="number"
             value="0.01"
@@ -532,8 +538,11 @@ exports[`Send it allows a user to send a message 1`] = `
           <input
             class=""
             disabled=""
+            max=""
+            min=""
             name=""
             placeholder="Optional Base64 params"
+            step=""
             style="padding-right: 1em;"
             type="text"
             value=""
@@ -980,8 +989,11 @@ exports[`Send snapshots after enter recipient state 1`] = `
         >
           <input
             class=""
+            max=""
+            min=""
             name=""
             placeholder="f1..."
+            step=""
             style="padding-right: 1em;"
             type="text"
             value="t1iury ... xaucza"
@@ -1004,8 +1016,11 @@ exports[`Send snapshots after enter recipient state 1`] = `
         >
           <input
             class=""
+            max="1"
+            min="0"
             name=""
             placeholder=""
+            step=""
             style="padding-right: 3.25em;"
             type="number"
             value=""
@@ -1032,8 +1047,11 @@ exports[`Send snapshots after enter recipient state 1`] = `
         >
           <input
             class=""
+            max=""
+            min=""
             name=""
             placeholder="Optional Base64 params"
+            step=""
             style="padding-right: 1em;"
             type="text"
             value=""
@@ -1430,8 +1448,11 @@ exports[`Send snapshots initial state 1`] = `
         >
           <input
             class=""
+            max=""
+            min=""
             name=""
             placeholder="f1..."
+            step=""
             style="padding-right: 1em;"
             type="text"
             value=""
@@ -1454,8 +1475,11 @@ exports[`Send snapshots initial state 1`] = `
         >
           <input
             class=""
+            max="1"
+            min="0"
             name=""
             placeholder=""
+            step=""
             style="padding-right: 3.25em;"
             type="number"
             value=""
@@ -1482,8 +1506,11 @@ exports[`Send snapshots initial state 1`] = `
         >
           <input
             class=""
+            max=""
+            min=""
             name=""
             placeholder="Optional Base64 params"
+            step=""
             style="padding-right: 1em;"
             type="text"
             value=""
