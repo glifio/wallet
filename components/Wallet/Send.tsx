@@ -109,19 +109,19 @@ export const Send = () => {
   const onSend = async () => {
     setTxState(TxState.LoadingTxDetails)
     setTxError(null)
-    const provider = await getProvider()
-    const newMessage = new Message({
-      to: message.to,
-      from: message.from,
-      nonce: await provider.getNonce(wallet.address),
-      value: message.value,
-      method: message.method,
-      params: message.params,
-      gasPremium: gasParams.gasPremium.toAttoFil(),
-      gasFeeCap: gasParams.gasFeeCap.toAttoFil(),
-      gasLimit: new BigNumber(gasParams.gasLimit.toAttoFil()).toNumber()
-    })
     try {
+      const provider = await getProvider()
+      const newMessage = new Message({
+        to: message.to,
+        from: message.from,
+        nonce: await provider.getNonce(wallet.address),
+        value: message.value,
+        method: message.method,
+        params: message.params,
+        gasPremium: gasParams.gasPremium.toAttoFil(),
+        gasFeeCap: gasParams.gasFeeCap.toAttoFil(),
+        gasLimit: new BigNumber(gasParams.gasLimit.toAttoFil()).toNumber()
+      })
       setTxState(TxState.AwaitingConfirmation)
       const lotusMessage = newMessage.toLotusType()
       const signedMessage = await provider.wallet.sign(
