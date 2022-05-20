@@ -85,20 +85,20 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const onSend = async () => {
     setTxState(TxState.LoadingTxDetails)
     setTxError(null)
-    const provider = await getProvider()
     const cancel = strategy === ReplaceStrategy.CANCEL
-    const newMessage = new Message({
-      to: message.to,
-      from: message.from,
-      nonce: message.nonce,
-      value: cancel ? '0' : message.value,
-      method: cancel ? 0 : message.method,
-      params: cancel ? '' : message.params,
-      gasPremium: gasPremium.toAttoFil(),
-      gasFeeCap: gasFeeCap.toAttoFil(),
-      gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber()
-    })
     try {
+      const provider = await getProvider()
+      const newMessage = new Message({
+        to: message.to,
+        from: message.from,
+        nonce: message.nonce,
+        value: cancel ? '0' : message.value,
+        method: cancel ? 0 : message.method,
+        params: cancel ? '' : message.params,
+        gasPremium: gasPremium.toAttoFil(),
+        gasFeeCap: gasFeeCap.toAttoFil(),
+        gasLimit: new BigNumber(gasLimit.toAttoFil()).toNumber()
+      })
       setTxState(TxState.AwaitingConfirmation)
       const lotusMessage = newMessage.toLotusType()
       const signedMessage = await provider.wallet.sign(
