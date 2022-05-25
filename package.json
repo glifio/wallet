@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.5.7",
-    "@glif/base-css": "^0.0.18",
+    "@glif/base-css": "^0.0.21",
     "@glif/filecoin-address": "^2.0.0-beta.3",
     "@glif/filecoin-message": "^2.0.0-beta.12",
     "@glif/filecoin-message-confirmer": "^2.0.0-beta.8",
