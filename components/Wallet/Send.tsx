@@ -37,36 +37,32 @@ export const Send = () => {
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
-  // Placeholder message for getting gas params
-  const [message, setMessage] = useState<Message | null>(null)
-
-  // Prevent redundant updates to message so that we don't
-  // invoke the useGetGasParams hook more than necessary
-  const setMessageIfChanged = () => {
-    if (!isToAddressValid || !isValueValid || !isParamsValid) {
-      setMessage(null)
-      return
-    }
-    if (
-      !message ||
-      message.to !== toAddress ||
-      message.value.toString() !== value.toAttoFil() ||
-      message.params !== params
-    )
-      setMessage(
-        new Message({
-          to: toAddress,
-          from: wallet.address,
-          nonce: 0,
-          value: value.toAttoFil(),
-          method: 0,
-          params: params,
-          gasPremium: 0,
-          gasFeeCap: 0,
-          gasLimit: 0
-        })
-      )
-  }
+  // Create message from input
+  const message = useMemo<Message | null>(
+    () =>
+      isToAddressValid && isValueValid && isParamsValid && value
+        ? new Message({
+            to: toAddress,
+            from: wallet.address,
+            nonce: 0,
+            value: value.toAttoFil(),
+            method: 0,
+            params: params,
+            gasPremium: 0,
+            gasFeeCap: 0,
+            gasLimit: 0
+          })
+        : null,
+    [
+      isToAddressValid,
+      isValueValid,
+      isParamsValid,
+      toAddress,
+      wallet.address,
+      value,
+      params
+    ]
+  )
 
   // Calculate max affordable fee (balance minus value)
   const maxFee = useMemo<FilecoinNumber | null>(() => {
@@ -91,16 +87,11 @@ export const Send = () => {
       setTxFee={setTxFee}
       onComplete={() => navigate(router, { pageUrl: PAGE.WALLET_HOME })}
     >
-      <Transaction.Balance
-        address={wallet.address}
-        balance={wallet.balance}
-      />
+      <Transaction.Balance address={wallet.address} balance={wallet.balance} />
       <InputV2.Address
         label='Recipient'
         autofocus={true}
         value={toAddress}
-        onBlur={setMessageIfChanged}
-        onEnter={setMessageIfChanged}
         onChange={setToAddress}
         setIsValid={setIsToAddressValid}
         disabled={txState !== TxState.FillingForm}
@@ -110,8 +101,6 @@ export const Send = () => {
         max={wallet.balance}
         value={value}
         denom='fil'
-        onBlur={setMessageIfChanged}
-        onEnter={setMessageIfChanged}
         onChange={setValue}
         setIsValid={setIsValueValid}
         disabled={txState !== TxState.FillingForm}
@@ -120,8 +109,6 @@ export const Send = () => {
         <InputV2.Params
           label='Params'
           value={params}
-          onBlur={setMessageIfChanged}
-          onEnter={setMessageIfChanged}
           onChange={setParams}
           setIsValid={setIsParamsValid}
           disabled={txState !== TxState.FillingForm}
