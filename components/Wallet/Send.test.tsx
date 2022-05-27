@@ -9,10 +9,19 @@ import {
   getAllByRole,
   RenderResult
 } from '@testing-library/react'
+import { Context } from 'react'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
+import {
+  WalletProviderContextType,
+  PendingMsgContextType
+} from '@glif/react-components'
 
-import { pushPendingMessageSpy } from '../../__mocks__/@glif/react-components'
+import {
+  pushPendingMessageSpy,
+  WalletProviderContext,
+  PendingMsgContext
+} from '../../__mocks__/@glif/react-components'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import { flushPromises, WALLET_ADDRESS } from '../../test-utils'
 import { Send } from './Send'
@@ -40,7 +49,13 @@ describe('Send', () => {
     await act(async () => {
       result = render(
         <Tree>
-          <Send />
+          <Send
+            walletProviderOpts={{
+              context:
+                WalletProviderContext as unknown as Context<WalletProviderContextType>
+            }}
+            pendingMsgContext={PendingMsgContext as PendingMsgContextType}
+          />
         </Tree>
       )
 
@@ -82,7 +97,10 @@ describe('Send', () => {
       await flushPromises()
 
       // The total amount should show after getting the tx fee
-      await waitFor(() => expect(getByText(result.container, 'Total')).toBeInTheDocument(), { timeout: 10000 })
+      await waitFor(
+        () => expect(getByText(result.container, 'Total')).toBeInTheDocument(),
+        { timeout: 10000 }
+      )
 
       // The tx fee info should now be shown
       const maxFeeRegex =

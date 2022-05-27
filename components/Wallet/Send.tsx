@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, Context } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
@@ -10,16 +10,21 @@ import {
   InputV2,
   Transaction,
   LoginOption,
-  TxState
+  TxState,
+  WalletProviderOpts,
+  PendingMsgContextType
 } from '@glif/react-components'
 
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
-export const Send = () => {
+export const Send = ({
+  walletProviderOpts,
+  pendingMsgContext
+}: SendPagePropTypes) => {
   const router = useRouter()
   const wallet = useWallet()
-  const { loginOption } = useWalletProvider()
+  const { loginOption } = useWalletProvider(walletProviderOpts)
 
   // Input states
   const [toAddress, setToAddress] = useState<string>('')
@@ -86,6 +91,8 @@ export const Send = () => {
       txFee={txFee}
       setTxFee={setTxFee}
       onComplete={() => navigate(router, { pageUrl: PAGE.WALLET_HOME })}
+      walletProviderOpts={walletProviderOpts}
+      pendingMsgContext={pendingMsgContext}
     >
       <Transaction.Balance address={wallet.address} balance={wallet.balance} />
       <InputV2.Address
@@ -116,4 +123,9 @@ export const Send = () => {
       )}
     </Transaction.Form>
   )
+}
+
+type SendPagePropTypes = {
+  walletProviderOpts?: WalletProviderOpts
+  pendingMsgContext?: Context<PendingMsgContextType>
 }

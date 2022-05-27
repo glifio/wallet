@@ -198,15 +198,53 @@ exports[`Send it allows a user to send a message 1`] = `
   color: var(--red-medium);
 }
 
-.c7 .text-input-wrapper {
+.c7 .button-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.c7 .button-wrapper > *:first-child {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c7 .button-wrapper > *:not(:first-child) {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+  -webkit-transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
+}
+
+.c7 .button-wrapper > *:not(:first-child):hover:not(:active) {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.c7 .button-wrapper > *:not(:first-child):active {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.c7 .unit-wrapper {
   position: relative;
 }
 
-.c7 .text-input-wrapper input {
+.c7 .unit-wrapper input {
   width: 100%;
 }
 
-.c7 .text-input-wrapper .unit {
+.c7 .unit-wrapper .unit {
   position: absolute;
   top: 50%;
   right: 1em;
@@ -289,7 +327,7 @@ exports[`Send it allows a user to send a message 1`] = `
   margin: 0;
 }
 
-.c1 > header:first-child {
+.c1 header:first-child {
   margin: -1.5em -1.5em 1.5em -1.5em;
   padding: 1.5em;
   background-color: var(--purple-medium);
@@ -437,28 +475,28 @@ exports[`Send it allows a user to send a message 1`] = `
   <div
     class="c1 c5"
   >
-    <header
-      class="c6"
-    >
-      <div>
-        <span>
-          From
-        </span>
-        <span>
-          t1z225 ... 6z6wgi
-        </span>
-      </div>
-      <div>
-        <span>
-          Balance
-        </span>
-        <span>
-          1
-           FIL
-        </span>
-      </div>
-    </header>
     <form>
+      <header
+        class="c6"
+      >
+        <div>
+          <span>
+            From
+          </span>
+          <span>
+            t1z225 ... 6z6wgi
+          </span>
+        </div>
+        <div>
+          <span>
+            Balance
+          </span>
+          <span>
+            1
+             FIL
+          </span>
+        </div>
+      </header>
       <label
         class="c7"
         disabled=""
@@ -471,21 +509,25 @@ exports[`Send it allows a user to send a message 1`] = `
           
         </div>
         <div
-          class="text-input-wrapper"
+          class="button-wrapper"
         >
-          <input
-            class=""
-            disabled=""
-            max=""
-            min=""
-            name=""
-            placeholder="f1..."
-            step=""
-            style="padding-right: 1em;"
-            type="text"
-            value="t1iury ... xaucza"
-          />
-          
+          <div
+            class="unit-wrapper"
+          >
+            <input
+              class=""
+              disabled=""
+              max=""
+              min=""
+              name=""
+              placeholder="f1..."
+              step=""
+              style="padding-right: 1em;"
+              type="text"
+              value="t1iury ... xaucza"
+            />
+            
+          </div>
         </div>
       </label>
       <label
@@ -500,25 +542,29 @@ exports[`Send it allows a user to send a message 1`] = `
           
         </div>
         <div
-          class="text-input-wrapper"
+          class="button-wrapper"
         >
-          <input
-            class=""
-            disabled=""
-            max="1"
-            min="0"
-            name=""
-            placeholder=""
-            step=""
-            style="padding-right: 3.25em;"
-            type="number"
-            value="0.01"
-          />
-          <span
-            class="unit"
+          <div
+            class="unit-wrapper"
           >
-            FIL
-          </span>
+            <input
+              class=""
+              disabled=""
+              max="1"
+              min="0"
+              name=""
+              placeholder=""
+              step=""
+              style="padding-right: 3.25em;"
+              type="number"
+              value="0.01"
+            />
+            <span
+              class="unit"
+            >
+              FIL
+            </span>
+          </div>
         </div>
       </label>
       <label
@@ -533,21 +579,25 @@ exports[`Send it allows a user to send a message 1`] = `
           
         </div>
         <div
-          class="text-input-wrapper"
+          class="button-wrapper"
         >
-          <input
-            class=""
-            disabled=""
-            max=""
-            min=""
-            name=""
-            placeholder="Optional Base64 params"
-            step=""
-            style="padding-right: 1em;"
-            type="text"
-            value=""
-          />
-          
+          <div
+            class="unit-wrapper"
+          >
+            <input
+              class=""
+              disabled=""
+              max=""
+              min=""
+              name=""
+              placeholder="Optional Base64 params"
+              step=""
+              style="padding-right: 1em;"
+              type="text"
+              value=""
+            />
+            
+          </div>
         </div>
       </label>
       <label
@@ -608,7 +658,7 @@ exports[`Send it allows a user to send a message 1`] = `
       class="c12"
       disabled=""
     >
-      Cancel
+      Back
     </button>
     <button
       class="c13"
