@@ -8,6 +8,7 @@ import {
   useGetMessage,
   useGetReplaceMessageGasParams,
   useSubmittedMessages,
+  SmartLink,
   InputV2,
   Dialog,
   ShadowBox,
@@ -200,7 +201,14 @@ export const Replace = ({ strategy }: ReplaceProps) => {
               disabled={txState !== TxState.FillingForm}
             />
           </form>
-          {maxFee && <Transaction.MaxFee maxFee={maxFee} />}
+          {maxFee && (
+            <p>
+              You will not pay more than {maxFee.toFil()} FIL for this transaction.{' '}
+              <SmartLink href='https://filfox.info/en/stats/gas'>
+                More information on average gas fee statistics.
+              </SmartLink>
+            </p>
+          )}
         </ShadowBox>
       )}
       <Transaction.Buttons
