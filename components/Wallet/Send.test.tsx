@@ -64,7 +64,7 @@ describe('Send', () => {
       fireEvent.change(recipient, { target: { value: validAddress } })
       recipient.blur()
 
-      // Send should not be enabled yet
+      // Review should not be enabled yet
       await flushPromises()
       expect(review).toBeDisabled()
 
@@ -73,23 +73,34 @@ describe('Send', () => {
       fireEvent.change(amount, { target: { value: validAmount.toFil() } })
       amount.blur()
 
-      // Send should enable after getting tx fee
+      // Review should now be enabled
       await flushPromises()
-      await waitFor(() => expect(review).toBeEnabled())
+      expect(review).toBeEnabled()
 
-      // Max fee and total should be shown
+      // Click review
+      fireEvent.click(review)
+      await flushPromises()
+
+      // The total amount should show after getting the tx fee
+      await waitFor(() => expect(getByText(result.container, 'Total')).toBeInTheDocument(), { timeout: 10000 })
+
+      // The tx fee info should now be shown
       const maxFeeRegex =
         /You will not pay more than [0-9.]+ FIL for this transaction/i
       expect(getByText(result.container, maxFeeRegex)).toBeInTheDocument()
-      expect(getByText(result.container, 'Total')).toBeInTheDocument()
 
       // The expert mode toggle should shown and be off
       const expertMode = getByRole(result.container, 'checkbox')
       expect(expertMode).toBeInTheDocument()
       expect(expertMode).not.toBeChecked()
 
+      // The send button should now be available
+      const send = getByText(result.container, 'Send')
+      expect(send).toBeInTheDocument()
+      expect(send).toBeEnabled()
+
       // Click send
-      fireEvent.click(review)
+      fireEvent.click(send)
       await flushPromises()
     })
 
