@@ -9,10 +9,16 @@ import {
   getAllByRole,
   RenderResult
 } from '@testing-library/react'
+import { Context } from 'react'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
+import { WalletProviderContextType } from '@glif/react-components'
 
-import { pushPendingMessageSpy } from '../../__mocks__/@glif/react-components'
+import {
+  pushPendingMessageSpy,
+  WalletProviderContext,
+  PendingMsgContext
+} from '../../__mocks__/@glif/react-components'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 import { flushPromises, WALLET_ADDRESS } from '../../test-utils'
 import { Send } from './Send'
@@ -40,7 +46,13 @@ describe('Send', () => {
     await act(async () => {
       result = render(
         <Tree>
-          <Send />
+          <Send
+            walletProviderOpts={{
+              context:
+                WalletProviderContext as unknown as Context<WalletProviderContextType>
+            }}
+            pendingMsgContext={PendingMsgContext}
+          />
         </Tree>
       )
 
@@ -49,7 +61,7 @@ describe('Send', () => {
       const [recipient, params] = getAllByRole(result.container, 'textbox')
       const [amount] = getAllByRole(result.container, 'spinbutton')
       const cancel = getByText(result.container, 'Cancel')
-      const send = getByText(result.container, 'Send')
+      const review = getByText(result.container, 'Review')
 
       // Check initial state
       expect(header).toHaveTextContent('Send Filecoin')
@@ -58,35 +70,49 @@ describe('Send', () => {
       expect(params).toHaveDisplayValue('')
       expect(amount).toHaveDisplayValue('')
       expect(cancel).toBeEnabled()
-      expect(send).toBeDisabled()
+      expect(review).toBeDisabled()
 
       // Enter recipient
       fireEvent.change(recipient, { target: { value: validAddress } })
       recipient.blur()
 
-      // Send should not be enabled yet
+      // Review should not be enabled yet
       await flushPromises()
-      expect(send).toBeDisabled()
+      expect(review).toBeDisabled()
 
       // Enter amount
       amount.focus()
       fireEvent.change(amount, { target: { value: validAmount.toFil() } })
       amount.blur()
 
-      // Send should enable after getting tx fee
+      // Review should now be enabled
       await flushPromises()
-      await waitFor(() => expect(send).toBeEnabled())
+      expect(review).toBeEnabled()
 
-      // Max fee and total should be shown
+      // Click review
+      fireEvent.click(review)
+      await flushPromises()
+
+      // The total amount should show after getting the tx fee
+      await waitFor(
+        () => expect(getByText(result.container, 'Total')).toBeInTheDocument(),
+        { timeout: 10000 }
+      )
+
+      // The tx fee info should now be shown
       const maxFeeRegex =
         /You will not pay more than [0-9.]+ FIL for this transaction/i
       expect(getByText(result.container, maxFeeRegex)).toBeInTheDocument()
-      expect(getByText(result.container, 'Total')).toBeInTheDocument()
 
       // The expert mode toggle should shown and be off
       const expertMode = getByRole(result.container, 'checkbox')
       expect(expertMode).toBeInTheDocument()
       expect(expertMode).not.toBeChecked()
+
+      // The send button should now be available
+      const send = getByText(result.container, 'Send')
+      expect(send).toBeInTheDocument()
+      expect(send).toBeEnabled()
 
       // Click send
       fireEvent.click(send)
