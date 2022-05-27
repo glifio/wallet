@@ -203,7 +203,8 @@ export const Replace = ({ strategy }: ReplaceProps) => {
           </form>
           {maxFee && (
             <p>
-              You will not pay more than {maxFee.toFil()} FIL for this transaction.{' '}
+              You will not pay more than {maxFee.toFil()} FIL for this
+              transaction.{' '}
               <SmartLink href='https://filfox.info/en/stats/gas'>
                 More information on average gas fee statistics.
               </SmartLink>
