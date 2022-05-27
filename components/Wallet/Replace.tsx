@@ -213,9 +213,11 @@ export const Replace = ({ strategy }: ReplaceProps) => {
         </ShadowBox>
       )}
       <Transaction.Buttons
-        cancelDisabled={txState !== TxState.FillingForm}
-        sendDisabled={txState !== TxState.FillingForm || !inputsValid}
-        onClickSend={onSend}
+        backDisabled={txState !== TxState.FillingForm}
+        nextDisabled={txState !== TxState.FillingForm || !inputsValid}
+        backText='Cancel'
+        nextText='Send'
+        onClickNext={onSend}
       />
     </Dialog>
   )
