@@ -12,10 +12,7 @@ import {
 import { Context } from 'react'
 import { FilecoinNumber, BigNumber } from '@glif/filecoin-number'
 import { Message } from '@glif/filecoin-message'
-import {
-  WalletProviderContextType,
-  PendingMsgContextType
-} from '@glif/react-components'
+import { WalletProviderContextType } from '@glif/react-components'
 
 import {
   pushPendingMessageSpy,
@@ -54,7 +51,7 @@ describe('Send', () => {
               context:
                 WalletProviderContext as unknown as Context<WalletProviderContextType>
             }}
-            pendingMsgContext={PendingMsgContext as PendingMsgContextType}
+            pendingMsgContext={PendingMsgContext}
           />
         </Tree>
       )
