@@ -49,7 +49,7 @@ describe('Send', () => {
       const [recipient, params] = getAllByRole(result.container, 'textbox')
       const [amount] = getAllByRole(result.container, 'spinbutton')
       const cancel = getByText(result.container, 'Cancel')
-      const send = getByText(result.container, 'Send')
+      const review = getByText(result.container, 'Review')
 
       // Check initial state
       expect(header).toHaveTextContent('Send Filecoin')
@@ -58,7 +58,7 @@ describe('Send', () => {
       expect(params).toHaveDisplayValue('')
       expect(amount).toHaveDisplayValue('')
       expect(cancel).toBeEnabled()
-      expect(send).toBeDisabled()
+      expect(review).toBeDisabled()
 
       // Enter recipient
       fireEvent.change(recipient, { target: { value: validAddress } })
@@ -66,7 +66,7 @@ describe('Send', () => {
 
       // Send should not be enabled yet
       await flushPromises()
-      expect(send).toBeDisabled()
+      expect(review).toBeDisabled()
 
       // Enter amount
       amount.focus()
@@ -75,7 +75,7 @@ describe('Send', () => {
 
       // Send should enable after getting tx fee
       await flushPromises()
-      await waitFor(() => expect(send).toBeEnabled())
+      await waitFor(() => expect(review).toBeEnabled())
 
       // Max fee and total should be shown
       const maxFeeRegex =
@@ -89,7 +89,7 @@ describe('Send', () => {
       expect(expertMode).not.toBeChecked()
 
       // Click send
-      fireEvent.click(send)
+      fireEvent.click(review)
       await flushPromises()
     })
 
