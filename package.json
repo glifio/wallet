@@ -59,7 +59,7 @@
     "@typescript-eslint/parser": "^5.20.0",
     "babel-jest": "^27.5.1",
     "babel-plugin-styled-components": "2.0.2",
-    "eslint": "^7.32.0",
+    "eslint": "^8.16.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.0.0",
