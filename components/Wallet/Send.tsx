@@ -19,10 +19,7 @@ import {
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
-export const Send = ({
-  walletProviderOpts,
-  pendingMsgContext
-}: SendProps) => {
+export const Send = ({ walletProviderOpts, pendingMsgContext }: SendProps) => {
   const router = useRouter()
   const wallet = useWallet()
   const { loginOption } = useWalletProvider(walletProviderOpts)
@@ -126,12 +123,12 @@ export const Send = ({
   )
 }
 
-type SendProps = {
+interface SendProps {
   walletProviderOpts?: WalletProviderOpts
   pendingMsgContext?: Context<PendingMsgContextType>
 }
 
 Send.propTypes = {
   walletProviderOpts: PropTypes.object,
-  pendingMsgContext: PropTypes.object,
+  pendingMsgContext: PropTypes.object
 }
