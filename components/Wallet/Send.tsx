@@ -95,7 +95,7 @@ export const Send = ({ walletProviderOpts, pendingMsgContext }: SendProps) => {
       <Transaction.Balance address={wallet.address} balance={wallet.balance} />
       <InputV2.Address
         label='Recipient'
-        autofocus={true}
+        autofocus
         value={toAddress}
         onChange={setToAddress}
         setIsValid={setIsToAddressValid}
