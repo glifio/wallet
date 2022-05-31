@@ -1,6 +1,11 @@
 import { useCallback } from 'react'
 import PropTypes from 'prop-types'
-import { NetworkConnection, useWallet } from '@glif/react-components'
+import {
+  LoginOption,
+  NetworkConnection,
+  useWallet,
+  useWalletProvider
+} from '@glif/react-components'
 import { useRouter } from 'next/router'
 
 import { resetWallet, navigate } from '../utils/urlParams'
@@ -12,9 +17,45 @@ export default function WalletPageLoggedIn({
 }: WalletPageLoggedInProps) {
   const router = useRouter()
   const wallet = useWallet()
+  const { loginOption } = useWalletProvider()
   const onNodeDisconnect = useCallback(() => {
     navigate(router, { pageUrl: PAGE.NODE_DISCONNECTED })
   }, [router])
+
+  const appHeaderLinks =
+    loginOption === LoginOption.IMPORT_SINGLE_KEY
+      ? [
+          {
+            title: 'Account Home',
+            url: PAGE.WALLET_HOME
+          },
+          {
+            title: 'Send FIL',
+            url: PAGE.WALLET_SEND
+          },
+          {
+            title: 'Discord',
+            url: GLIF_DISCORD
+          }
+        ]
+      : [
+          {
+            title: 'Account Home',
+            url: PAGE.WALLET_HOME
+          },
+          {
+            title: 'Switch Account',
+            url: PAGE.WALLET_CHOOSE_ACCOUNTS
+          },
+          {
+            title: 'Send FIL',
+            url: PAGE.WALLET_SEND
+          },
+          {
+            title: 'Discord',
+            url: GLIF_DISCORD
+          }
+        ]
 
   return (
     <WalletPage
@@ -37,24 +78,7 @@ export default function WalletPageLoggedIn({
           hideCopyText: true
         }
       ]}
-      appHeaderLinks={[
-        {
-          title: 'Account Home',
-          url: PAGE.WALLET_HOME
-        },
-        {
-          title: 'Switch Account',
-          url: PAGE.WALLET_CHOOSE_ACCOUNTS
-        },
-        {
-          title: 'Send FIL',
-          url: PAGE.WALLET_SEND
-        },
-        {
-          title: 'Discord',
-          url: GLIF_DISCORD
-        }
-      ]}
+      appHeaderLinks={appHeaderLinks}
     >
       {children}
     </WalletPage>
