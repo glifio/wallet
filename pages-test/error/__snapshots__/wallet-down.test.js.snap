@@ -162,31 +162,6 @@ exports[`WalletDown it renders the error page 1`] = `
   color: black;
 }
 
-.c20 {
-  list-style-type: none;
-  margin: 0;
-  padding-left: 0;
-}
-
-.c21 {
-  list-style-type: none;
-  margin: 0;
-  padding-left: 0;
-}
-
-.c17 {
-  background: #272727;
-  border-radius: 8px;
-  padding: 30px;
-  color: white;
-  position: relative;
-}
-
-.c23 {
-  text-transform: uppercase;
-  display: block;
-}
-
 .c9 {
   position: relative;
   padding: 3rem 1.5rem;
@@ -216,6 +191,31 @@ exports[`WalletDown it renders the error page 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.c20 {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.c21 {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.c17 {
+  background: #272727;
+  border-radius: 8px;
+  padding: 30px;
+  color: white;
+  position: relative;
+}
+
+.c23 {
+  text-transform: uppercase;
+  display: block;
 }
 
 .c0 {
@@ -287,6 +287,12 @@ exports[`WalletDown it renders the error page 1`] = `
 }
 
 @media (min-width:868px) {
+  .c9 {
+    padding: 3rem;
+  }
+}
+
+@media (min-width:868px) {
   .c19 {
     max-width: 670px;
     display: grid;
@@ -320,12 +326,6 @@ exports[`WalletDown it renders the error page 1`] = `
 
 @media (min-width:868px) {
 
-}
-
-@media (min-width:868px) {
-  .c9 {
-    padding: 3rem;
-  }
 }
 
 @media (min-width:868px) {
