@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { useState, useMemo, Context } from 'react'
 import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
@@ -18,10 +19,7 @@ import {
 import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
-export const Send = ({
-  walletProviderOpts,
-  pendingMsgContext
-}: SendPagePropTypes) => {
+export const Send = ({ walletProviderOpts, pendingMsgContext }: SendProps) => {
   const router = useRouter()
   const wallet = useWallet()
   const { loginOption } = useWalletProvider(walletProviderOpts)
@@ -97,7 +95,7 @@ export const Send = ({
       <Transaction.Balance address={wallet.address} balance={wallet.balance} />
       <InputV2.Address
         label='Recipient'
-        autofocus={true}
+        autoFocus
         value={toAddress}
         onChange={setToAddress}
         setIsValid={setIsToAddressValid}
@@ -125,7 +123,12 @@ export const Send = ({
   )
 }
 
-type SendPagePropTypes = {
+interface SendProps {
   walletProviderOpts?: WalletProviderOpts
   pendingMsgContext?: Context<PendingMsgContextType>
+}
+
+Send.propTypes = {
+  walletProviderOpts: PropTypes.object,
+  pendingMsgContext: PropTypes.object
 }

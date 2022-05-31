@@ -155,6 +155,91 @@ exports[`Send it allows a user to send a message 1`] = `
   animation-iteration-count: infinite;
 }
 
+.c1 {
+  padding: 1.5em;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  word-break: break-word;
+}
+
+.c1 > *:first-child {
+  margin-top: 0;
+}
+
+.c1 > *:last-child {
+  margin-bottom: 0;
+}
+
+.c1 > svg:first-child {
+  display: block;
+  margin: 0 auto 1em;
+}
+
+.c1 > h2:first-child {
+  margin: 0;
+}
+
+.c1 header:first-child {
+  margin: -1.5em -1.5em 1.5em -1.5em;
+  padding: 1.5em;
+  background-color: var(--purple-medium);
+  color: var(--white);
+}
+
+.c2 {
+  background-color: var(--blue-gray);
+}
+
+.c2 hr {
+  border-color: var(--gray-medium);
+}
+
+.c5 {
+  background-color: var(--white);
+  box-shadow: 0 0 0.5em var(--gray-light);
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  margin: 1.5em 0;
+}
+
+.c11 {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 35em;
+}
+
+.c0 form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -302,91 +387,6 @@ exports[`Send it allows a user to send a message 1`] = `
   right: 0;
 }
 
-.c1 {
-  padding: 1.5em;
-  border-radius: 8px;
-  overflow: hidden;
-  text-align: center;
-  word-break: break-word;
-}
-
-.c1 > *:first-child {
-  margin-top: 0;
-}
-
-.c1 > *:last-child {
-  margin-bottom: 0;
-}
-
-.c1 > svg:first-child {
-  display: block;
-  margin: 0 auto 1em;
-}
-
-.c1 > h2:first-child {
-  margin: 0;
-}
-
-.c1 header:first-child {
-  margin: -1.5em -1.5em 1.5em -1.5em;
-  padding: 1.5em;
-  background-color: var(--purple-medium);
-  color: var(--white);
-}
-
-.c2 {
-  background-color: var(--blue-gray);
-}
-
-.c2 hr {
-  border-color: var(--gray-medium);
-}
-
-.c5 {
-  background-color: var(--white);
-  box-shadow: 0 0 0.5em var(--gray-light);
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
-  margin: 1.5em 0;
-}
-
-.c11 {
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  max-width: 35em;
-}
-
-.c0 form {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 10px;
-}
-
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -515,6 +515,7 @@ exports[`Send it allows a user to send a message 1`] = `
             class="unit-wrapper"
           >
             <input
+              autocomplete="on"
               class=""
               disabled=""
               max=""
@@ -548,6 +549,7 @@ exports[`Send it allows a user to send a message 1`] = `
             class="unit-wrapper"
           >
             <input
+              autocomplete="on"
               class=""
               disabled=""
               max="1"
@@ -585,6 +587,7 @@ exports[`Send it allows a user to send a message 1`] = `
             class="unit-wrapper"
           >
             <input
+              autocomplete="on"
               class=""
               disabled=""
               max=""
@@ -796,6 +799,91 @@ exports[`Send snapshots after enter recipient state 1`] = `
   stroke: var(--gray-medium);
 }
 
+.c1 {
+  padding: 1.5em;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  word-break: break-word;
+}
+
+.c1 > *:first-child {
+  margin-top: 0;
+}
+
+.c1 > *:last-child {
+  margin-bottom: 0;
+}
+
+.c1 > svg:first-child {
+  display: block;
+  margin: 0 auto 1em;
+}
+
+.c1 > h2:first-child {
+  margin: 0;
+}
+
+.c1 header:first-child {
+  margin: -1.5em -1.5em 1.5em -1.5em;
+  padding: 1.5em;
+  background-color: var(--purple-medium);
+  color: var(--white);
+}
+
+.c2 {
+  background-color: var(--blue-gray);
+}
+
+.c2 hr {
+  border-color: var(--gray-medium);
+}
+
+.c3 {
+  background-color: var(--white);
+  box-shadow: 0 0 0.5em var(--gray-light);
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  margin: 1.5em 0;
+}
+
+.c7 {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 35em;
+}
+
+.c0 form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .c5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -892,91 +980,6 @@ exports[`Send snapshots after enter recipient state 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   color: var(--purple-medium);
-}
-
-.c1 {
-  padding: 1.5em;
-  border-radius: 8px;
-  overflow: hidden;
-  text-align: center;
-  word-break: break-word;
-}
-
-.c1 > *:first-child {
-  margin-top: 0;
-}
-
-.c1 > *:last-child {
-  margin-bottom: 0;
-}
-
-.c1 > svg:first-child {
-  display: block;
-  margin: 0 auto 1em;
-}
-
-.c1 > h2:first-child {
-  margin: 0;
-}
-
-.c1 header:first-child {
-  margin: -1.5em -1.5em 1.5em -1.5em;
-  padding: 1.5em;
-  background-color: var(--purple-medium);
-  color: var(--white);
-}
-
-.c2 {
-  background-color: var(--blue-gray);
-}
-
-.c2 hr {
-  border-color: var(--gray-medium);
-}
-
-.c3 {
-  background-color: var(--white);
-  box-shadow: 0 0 0.5em var(--gray-light);
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
-  margin: 1.5em 0;
-}
-
-.c7 {
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  max-width: 35em;
-}
-
-.c0 form {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .c4 {
@@ -1079,6 +1082,7 @@ exports[`Send snapshots after enter recipient state 1`] = `
             class="unit-wrapper"
           >
             <input
+              autocomplete="on"
               class=""
               max=""
               min=""
@@ -1110,6 +1114,7 @@ exports[`Send snapshots after enter recipient state 1`] = `
             class="unit-wrapper"
           >
             <input
+              autocomplete="on"
               class=""
               max="1"
               min="0"
@@ -1145,6 +1150,7 @@ exports[`Send snapshots after enter recipient state 1`] = `
             class="unit-wrapper"
           >
             <input
+              autocomplete="on"
               class=""
               max=""
               min=""
@@ -1305,6 +1311,91 @@ exports[`Send snapshots initial state 1`] = `
   stroke: var(--gray-medium);
 }
 
+.c1 {
+  padding: 1.5em;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  word-break: break-word;
+}
+
+.c1 > *:first-child {
+  margin-top: 0;
+}
+
+.c1 > *:last-child {
+  margin-bottom: 0;
+}
+
+.c1 > svg:first-child {
+  display: block;
+  margin: 0 auto 1em;
+}
+
+.c1 > h2:first-child {
+  margin: 0;
+}
+
+.c1 header:first-child {
+  margin: -1.5em -1.5em 1.5em -1.5em;
+  padding: 1.5em;
+  background-color: var(--purple-medium);
+  color: var(--white);
+}
+
+.c2 {
+  background-color: var(--blue-gray);
+}
+
+.c2 hr {
+  border-color: var(--gray-medium);
+}
+
+.c3 {
+  background-color: var(--white);
+  box-shadow: 0 0 0.5em var(--gray-light);
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  margin: 1.5em 0;
+}
+
+.c7 {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 35em;
+}
+
+.c0 form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .c5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1401,91 +1492,6 @@ exports[`Send snapshots initial state 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   color: var(--purple-medium);
-}
-
-.c1 {
-  padding: 1.5em;
-  border-radius: 8px;
-  overflow: hidden;
-  text-align: center;
-  word-break: break-word;
-}
-
-.c1 > *:first-child {
-  margin-top: 0;
-}
-
-.c1 > *:last-child {
-  margin-bottom: 0;
-}
-
-.c1 > svg:first-child {
-  display: block;
-  margin: 0 auto 1em;
-}
-
-.c1 > h2:first-child {
-  margin: 0;
-}
-
-.c1 header:first-child {
-  margin: -1.5em -1.5em 1.5em -1.5em;
-  padding: 1.5em;
-  background-color: var(--purple-medium);
-  color: var(--white);
-}
-
-.c2 {
-  background-color: var(--blue-gray);
-}
-
-.c2 hr {
-  border-color: var(--gray-medium);
-}
-
-.c3 {
-  background-color: var(--white);
-  box-shadow: 0 0 0.5em var(--gray-light);
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
-  margin: 1.5em 0;
-}
-
-.c7 {
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  max-width: 35em;
-}
-
-.c0 form {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .c4 {
@@ -1588,6 +1594,7 @@ exports[`Send snapshots initial state 1`] = `
             class="unit-wrapper"
           >
             <input
+              autocomplete="on"
               class=""
               max=""
               min=""
@@ -1619,6 +1626,7 @@ exports[`Send snapshots initial state 1`] = `
             class="unit-wrapper"
           >
             <input
+              autocomplete="on"
               class=""
               max="1"
               min="0"
@@ -1654,6 +1662,7 @@ exports[`Send snapshots initial state 1`] = `
             class="unit-wrapper"
           >
             <input
+              autocomplete="on"
               class=""
               max=""
               min=""
