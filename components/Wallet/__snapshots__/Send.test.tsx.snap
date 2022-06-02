@@ -340,6 +340,31 @@ exports[`Send it allows a user to send a message 1`] = `
   color: var(--gray-dark) !important;
 }
 
+.c7 .select-wrapper {
+  position: relative;
+}
+
+.c7 .select-wrapper select {
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c7 .select-wrapper .select-arrow {
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  right: 1.2em;
+  width: 0.6em;
+  height: 0.6em;
+  border-right: 1.5px solid var(--black);
+  border-bottom: 1.5px solid var(--black);
+  -webkit-transform: translateY(-0.35em) rotate(45deg);
+  -ms-transform: translateY(-0.35em) rotate(45deg);
+  transform: translateY(-0.35em) rotate(45deg);
+}
+
 .c8 .toggle-wrapper {
   position: relative;
   padding: 0.5em 0;
@@ -982,6 +1007,31 @@ exports[`Send snapshots after enter recipient state 1`] = `
   color: var(--purple-medium);
 }
 
+.c5 .select-wrapper {
+  position: relative;
+}
+
+.c5 .select-wrapper select {
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c5 .select-wrapper .select-arrow {
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  right: 1.2em;
+  width: 0.6em;
+  height: 0.6em;
+  border-right: 1.5px solid var(--black);
+  border-bottom: 1.5px solid var(--black);
+  -webkit-transform: translateY(-0.35em) rotate(45deg);
+  -ms-transform: translateY(-0.35em) rotate(45deg);
+  transform: translateY(-0.35em) rotate(45deg);
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1492,6 +1542,31 @@ exports[`Send snapshots initial state 1`] = `
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   color: var(--purple-medium);
+}
+
+.c5 .select-wrapper {
+  position: relative;
+}
+
+.c5 .select-wrapper select {
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c5 .select-wrapper .select-arrow {
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  right: 1.2em;
+  width: 0.6em;
+  height: 0.6em;
+  border-right: 1.5px solid var(--black);
+  border-bottom: 1.5px solid var(--black);
+  -webkit-transform: translateY(-0.35em) rotate(45deg);
+  -ms-transform: translateY(-0.35em) rotate(45deg);
+  transform: translateY(-0.35em) rotate(45deg);
 }
 
 .c4 {
