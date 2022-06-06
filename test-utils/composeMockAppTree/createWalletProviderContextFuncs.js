@@ -1,6 +1,6 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
+import { createPath } from '@glif/react-components'
 import { TESTNET_PATH_CODE } from '../../constants'
-import createPath from '../../utils/createPath'
 
 import {
   setLoginOption,
