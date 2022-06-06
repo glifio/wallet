@@ -1,10 +1,13 @@
 import { useCallback } from 'react'
 import { useRouter } from 'next/router'
-import { OneColumnCentered, RequireWallet } from '@glif/react-components'
+import {
+  OneColumnCentered,
+  RequireWallet,
+  navigate
+} from '@glif/react-components'
 
 import WalletPageLoggedIn from '../components/WalletPageLoggedIn'
 import { Send } from '../components/Wallet/Send'
-import { navigate } from '../utils/urlParams'
 import { PAGE } from '../constants'
 
 const SendPage = () => {

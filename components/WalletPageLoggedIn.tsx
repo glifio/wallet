@@ -4,11 +4,12 @@ import {
   LoginOption,
   NetworkConnection,
   useWallet,
-  useWalletProvider
+  useWalletProvider,
+  resetWallet,
+  navigate
 } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
-import { resetWallet, navigate } from '../utils/urlParams'
 import { GLIF_DISCORD, PAGE } from '../constants'
 import WalletPage from './WalletPage'
 

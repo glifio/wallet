@@ -17,10 +17,10 @@ import {
   MessagePending,
   TxState,
   useWallet,
-  useWalletProvider
+  useWalletProvider,
+  navigate
 } from '@glif/react-components'
 
-import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 import { logger } from '../../logger'
 
