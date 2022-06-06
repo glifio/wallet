@@ -1,5 +1,3 @@
-import { FilecoinNumber } from '@glif/filecoin-number'
-
 /* WALLET TYPES */
 export const LEDGER = 'LEDGER'
 export const HD_WALLET = 'HD_WALLET'
@@ -23,28 +21,13 @@ export const GLIF_TWITTER = 'https://twitter.com/glifio'
 /* NETWORK VARS */
 export const MAINNET = 'f'
 export const TESTNET = 't'
-
 export const MAINNET_PATH_CODE = 461
 export const TESTNET_PATH_CODE = 1
 
-export const EXEC_ACTOR = 'f01'
-
-/* TX METHOD TYPES */
-export const SEND = 'SEND'
-export const PROPOSE = 'PROPOSE'
-export const EXEC = 'EXEC'
 /* FILECOIN APP VERSION MIN */
 export const LEDGER_VERSION_MAJOR = 0
 export const LEDGER_VERSION_MINOR = 20
 export const LEDGER_VERSION_PATCH = 0
-
-/* GAS CONSTANTS */
-export const emptyGasInfo = {
-  estimatedTransactionFee: new FilecoinNumber('0', 'attofil'),
-  gasPremium: new FilecoinNumber('0', 'attofil'),
-  gasFeeCap: new FilecoinNumber('0', 'attofil'),
-  gasLimit: new FilecoinNumber('0', 'attofil')
-}
 
 /* PAGES */
 /* eslint-disable no-unused-vars */

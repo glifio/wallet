@@ -13,10 +13,10 @@ import {
   LoginOption,
   TxState,
   WalletProviderOpts,
-  PendingMsgContextType
+  PendingMsgContextType,
+  navigate
 } from '@glif/react-components'
 
-import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
 export const Send = ({ walletProviderOpts, pendingMsgContext }: SendProps) => {

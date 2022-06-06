@@ -1,10 +1,13 @@
 import { useCallback } from 'react'
 import { useRouter } from 'next/router'
-import { RequireWallet, OneColumnCentered } from '@glif/react-components'
+import {
+  RequireWallet,
+  OneColumnCentered,
+  navigate
+} from '@glif/react-components'
 
 import WalletPageLoggedIn from '../../components/WalletPageLoggedIn'
 import { Replace, ReplaceStrategy } from '../../components/Wallet/Replace'
-import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
 const CancelPage = () => {

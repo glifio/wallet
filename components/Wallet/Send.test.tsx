@@ -56,6 +56,8 @@ describe('Send', () => {
         </Tree>
       )
 
+      await flushPromises()
+
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
       const [recipient, params] = getAllByRole(result.container, 'textbox')

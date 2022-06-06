@@ -17,10 +17,10 @@ import {
   MessagePending,
   TxState,
   useWallet,
-  useWalletProvider
+  useWalletProvider,
+  navigate
 } from '@glif/react-components'
 
-import { navigate } from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 import { logger } from '../../logger'
 
@@ -228,10 +228,14 @@ export enum ReplaceStrategy {
   CANCEL = 'CANCEL'
 }
 
+const REPLACE_STRATEGY_PROPTYPE = PropTypes.oneOf(
+  Object.values(ReplaceStrategy) as Array<ReplaceStrategy>
+)
+
 interface ReplaceProps {
   strategy: ReplaceStrategy
 }
 
 Replace.propTypes = {
-  strategy: PropTypes.string.isRequired
+  strategy: REPLACE_STRATEGY_PROPTYPE.isRequired
 }

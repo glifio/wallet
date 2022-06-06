@@ -1,4 +1,4 @@
-import createHash from '../../utils/createHash'
+import { createHash } from '@glif/react-components'
 
 const generateMnemonic = jest
   .fn()

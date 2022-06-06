@@ -1,7 +1,6 @@
 import { FilecoinNumber } from '@glif/filecoin-number'
-import { WalletProviderState } from '@glif/react-components'
+import { WalletProviderState, createPath } from '@glif/react-components'
 
-import createPath from '../../utils/createPath'
 import { IMPORT_MNEMONIC, IMPORT_SINGLE_KEY } from '../../constants'
 import { mockWalletProviderInstance } from '../../__mocks__/@glif/filecoin-wallet-provider'
 import { WALLET_ADDRESS } from '../constants'

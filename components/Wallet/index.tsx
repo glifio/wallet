@@ -12,14 +12,12 @@ import {
   useWalletProvider,
   useWallet,
   hasLedgerError,
-  reportLedgerConfigError
+  reportLedgerConfigError,
+  generateRouteWithRequiredUrlParams,
+  navigate
 } from '@glif/react-components'
 
 import { logger } from '../../logger'
-import {
-  generateRouteWithRequiredUrlParams,
-  navigate
-} from '../../utils/urlParams'
 import { PAGE } from '../../constants'
 
 const Cards = styled.div`
