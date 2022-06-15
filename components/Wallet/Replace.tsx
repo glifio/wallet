@@ -126,7 +126,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   return (
     <Dialog>
       <form
-        onSubmit={e => {
+        onSubmit={(e) => {
           e.preventDefault()
           onSend()
         }}
