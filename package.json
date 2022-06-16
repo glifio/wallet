@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@glif/deployment-cli": "^2.0.0-beta.2",
-    "@testing-library/jest-dom": "5.16.2",
+    "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "12.1.2",
     "@testing-library/react-hooks": "8.0.0",
     "@types/jest": "^27.0.2",
