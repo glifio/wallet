@@ -125,31 +125,36 @@ export const Replace = ({ strategy }: ReplaceProps) => {
 
   return (
     <Dialog>
-      <Transaction.Header
-        txState={txState}
-        title={
-          strategy === ReplaceStrategy.SPEED_UP
-            ? 'Speed Up Message'
-            : 'Cancel Message'
-        }
-        description={'Please confirm the updated message details below'}
-        loginOption={loginOption as LoginOption}
-        errorMessage={
-          messageError?.message ||
-          gasParamsError?.message ||
-          minGasParamsError?.message ||
-          txError?.message ||
-          walletError() ||
-          ''
-        }
-      />
-      {txState !== TxState.LoadingMessage && (
-        <ShadowBox>
-          <Transaction.Balance
-            address={wallet.address}
-            balance={wallet.balance}
-          />
-          <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          onSend()
+        }}
+      >
+        <Transaction.Header
+          txState={txState}
+          title={
+            strategy === ReplaceStrategy.SPEED_UP
+              ? 'Speed Up Message'
+              : 'Cancel Message'
+          }
+          description={'Please confirm the updated message details below'}
+          loginOption={loginOption as LoginOption}
+          errorMessage={
+            messageError?.message ||
+            gasParamsError?.message ||
+            minGasParamsError?.message ||
+            txError?.message ||
+            walletError() ||
+            ''
+          }
+        />
+        {txState !== TxState.LoadingMessage && (
+          <ShadowBox>
+            <Transaction.Balance
+              address={wallet.address}
+              balance={wallet.balance}
+            />
             <InputV2.Text label='Message CID' value={cid} disabled />
             <InputV2.Number label='Nonce' value={message.nonce} disabled />
             <InputV2.Filecoin
@@ -200,25 +205,24 @@ export const Replace = ({ strategy }: ReplaceProps) => {
               onChange={setExpert}
               disabled={txState !== TxState.FillingForm}
             />
-          </form>
-          {maxFee && (
-            <p>
-              You will not pay more than {maxFee.toFil()} FIL for this
-              transaction.{' '}
-              <SmartLink href='https://filfox.info/en/stats/gas'>
-                More information on average gas fee statistics.
-              </SmartLink>
-            </p>
-          )}
-        </ShadowBox>
-      )}
-      <Transaction.Buttons
-        backDisabled={txState !== TxState.FillingForm}
-        nextDisabled={txState !== TxState.FillingForm || !inputsValid}
-        backText='Cancel'
-        nextText='Send'
-        onClickNext={onSend}
-      />
+            {maxFee && (
+              <p>
+                You will not pay more than {maxFee.toFil()} FIL for this
+                transaction.{' '}
+                <SmartLink href='https://filfox.info/en/stats/gas'>
+                  More information on average gas fee statistics.
+                </SmartLink>
+              </p>
+            )}
+          </ShadowBox>
+        )}
+        <Transaction.Buttons
+          backDisabled={txState !== TxState.FillingForm}
+          nextDisabled={txState !== TxState.FillingForm || !inputsValid}
+          backText='Cancel'
+          nextText='Send'
+        />
+      </form>
     </Dialog>
   )
 }

@@ -57,11 +57,9 @@ Version **x.y.z**:
 A number of modules have been broken out into packages in this [modules repo](https://github.com/glifio/modules).
 
 - [Filecoin wallet provider](https://github.com/glifio/modules/tree/primary/packages/filecoin-wallet-provider)
-- [Filecoin jsonrpc client](https://github.com/glifio/modules/tree/primary/packages/filecoin-rpc-client)
 - [Filecoin number type](https://github.com/glifio/modules/tree/primary/packages/filecoin-number)
 - [Filecoin message type](https://github.com/glifio/modules/tree/primary/packages/filecoin-message)
 - [Filecoin address type](https://github.com/glifio/modules/tree/primary/packages/filecoin-address)
-- [Filecoin message confirmer](https://github.com/glifio/modules/tree/primary/packages/filecoin-message-confirmer)
 - [Filecoin react-components](https://github.com/glifio/modules/tree/primary/packages/react-components)
 
 #### Filecoin module package local development
