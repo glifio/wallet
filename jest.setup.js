@@ -5,7 +5,6 @@ global.TextEncoder = TextEncoder
 
 import '@testing-library/jest-dom'
 import 'jest-styled-components'
-import 'whatwg-fetch'
 
 process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC =
   'https://calibration.node.glif.io/rpc/v0'
