@@ -6,7 +6,6 @@ import { FilecoinNumber } from '@glif/filecoin-number'
 import {
   useWallet,
   useWalletProvider,
-  getMaxAffordableFee,
   InputV2,
   Transaction,
   LoginOption,
@@ -68,7 +67,7 @@ export const Send = ({ walletProviderOpts, pendingMsgContext }: SendProps) => {
 
   // Calculate max affordable fee (balance minus value)
   const maxFee = useMemo<FilecoinNumber | null>(() => {
-    return value ? getMaxAffordableFee(wallet.balance, value) : null
+    return value ? wallet.balance.minus(value) : null
   }, [value, wallet.balance])
 
   // Calculate total amount (value plus tx fee)
