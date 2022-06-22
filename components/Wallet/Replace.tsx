@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import {
-  getMaxGasFee,
   useGetMessage,
   useGetReplaceMessageGasParams,
   useSubmittedMessages,
@@ -69,7 +68,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
 
   // Calculate maximum transaction fee
   const maxFee = useMemo<FilecoinNumber | null>(() => {
-    return gasLimit && gasFeeCap ? getMaxGasFee(gasFeeCap, gasLimit) : null
+    return gasLimit && gasFeeCap ? gasFeeCap.times(gasLimit.toAttoFil()) : null
   }, [gasLimit, gasFeeCap])
 
   // Set default gas params after loading
