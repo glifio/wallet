@@ -7,7 +7,6 @@ import {
   useWallet,
   useWalletProvider,
   getMaxAffordableFee,
-  getTotalAmount,
   InputV2,
   Transaction,
   LoginOption,
@@ -74,7 +73,7 @@ export const Send = ({ walletProviderOpts, pendingMsgContext }: SendProps) => {
 
   // Calculate total amount (value plus tx fee)
   const total = useMemo<FilecoinNumber | null>(() => {
-    return value && txFee ? getTotalAmount(value, txFee) : null
+    return value && txFee ? value.plus(txFee) : null
   }, [value, txFee])
 
   return (
