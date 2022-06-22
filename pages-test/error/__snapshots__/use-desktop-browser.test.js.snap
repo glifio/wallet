@@ -544,7 +544,7 @@ exports[`UseDesktopBrowser it renders the error page 1`] = `
           class="c21"
         >
           <a
-            href="undefined"
+            href="https://wallet-calibration.glif.link"
             rel="noreferrer noopener"
             target="_blank"
           >
@@ -555,7 +555,7 @@ exports[`UseDesktopBrowser it renders the error page 1`] = `
           class="c21"
         >
           <a
-            href="undefined"
+            href="https://safe-calibration.glif.link"
             rel="noreferrer noopener"
             target="_blank"
           >
@@ -566,7 +566,7 @@ exports[`UseDesktopBrowser it renders the error page 1`] = `
           class="c21"
         >
           <a
-            href="undefined"
+            href="https://explorer-calibration.glif.link"
             rel="noreferrer noopener"
             target="_blank"
           >
@@ -577,7 +577,7 @@ exports[`UseDesktopBrowser it renders the error page 1`] = `
           class="c21"
         >
           <a
-            href="undefined"
+            href="https://verify-calibration.glif.link"
             rel="noreferrer noopener"
             target="_blank"
           >
