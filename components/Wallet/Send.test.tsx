@@ -63,7 +63,6 @@ describe('Send', () => {
 
       // Enter recipient
       fireEvent.change(recipient, { target: { value: validAddress } })
-      recipient.blur()
       jest.clearAllTimers()
 
       // Review should not be enabled yet
