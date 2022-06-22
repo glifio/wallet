@@ -1,4 +1,4 @@
-import { cleanup, render, screen, act, fireEvent } from '@testing-library/react'
+import { render, screen, act, fireEvent } from '@testing-library/react'
 
 import UseChrome from '../../pages/error/use-chrome.jsx'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
@@ -6,7 +6,6 @@ import composeMockAppTree from '../../test-utils/composeMockAppTree'
 jest.mock('@glif/filecoin-wallet-provider')
 
 describe('UseChrome', () => {
-  afterEach(cleanup)
   test('it renders the error page', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     const { container } = render(
