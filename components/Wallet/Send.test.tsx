@@ -63,21 +63,21 @@ describe('Send', () => {
 
       // Enter recipient
       fireEvent.change(recipient, { target: { value: validAddress } })
-      jest.clearAllTimers()
+      jest.runAllTimers()
 
       // Review should not be enabled yet
       expect(review).toBeDisabled()
 
       // Enter amount
       fireEvent.change(amount, { target: { value: validAmount.toFil() } })
-      jest.clearAllTimers()
+      jest.runAllTimers()
 
       // Review should now be enabled
       expect(review).toBeEnabled()
 
       // Click review
       fireEvent.click(review)
-      jest.clearAllTimers()
+      jest.runAllTimers()
 
       // The total amount should show after getting the tx fee
       await waitFor(
@@ -102,7 +102,7 @@ describe('Send', () => {
 
       // Click send
       fireEvent.click(send)
-      jest.clearAllTimers()
+      jest.runAllTimers()
     })
 
     // Check wallet provider calls
@@ -161,7 +161,8 @@ describe('Send', () => {
         const [recipient] = getAllByRole(result.container, 'textbox')
         // Enter recipient
         fireEvent.change(recipient, { target: { value: validAddress } })
-        jest.clearAllTimers()
+        recipient.blur()
+        jest.runAllTimers()
       })
 
       // Check snapshot

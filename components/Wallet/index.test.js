@@ -74,7 +74,7 @@ describe('WalletView', () => {
         </Tree>
       )
       fireEvent.click(screen.getByText('Send'))
-      jest.clearAllTimers()
+      jest.runAllTimers()
     })
     expect(mockRouterPush).toHaveBeenCalledWith(PAGE.WALLET_SEND)
   })

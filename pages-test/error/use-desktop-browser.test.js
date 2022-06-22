@@ -46,7 +46,7 @@ describe('UseDesktopBrowser', () => {
         </Tree>
       )
       fireEvent.click(screen.getByText('Home'))
-      jest.clearAllTimers()
+      jest.runAllTimers()
     })
 
     expect(window.location.href).toBe('https://www.glif.io')
