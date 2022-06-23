@@ -10,6 +10,7 @@ import {
   SmartLink,
   InputV2,
   Dialog,
+  Lines,
   ShadowBox,
   Transaction,
   LoginOption,
@@ -22,7 +23,6 @@ import {
 
 import { PAGE } from '../../constants'
 import { logger } from '../../logger'
-import { Lines } from '../../../react-components/dist'
 
 export const Replace = ({ strategy }: ReplaceProps) => {
   const router = useRouter()
