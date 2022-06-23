@@ -561,7 +561,7 @@ exports[`UseChrome it renders the error page 1`] = `
           <a
             href="mailto:squad@glif.io"
             rel="noreferrer noopener"
-            target="_blank"
+            target="_self"
           >
             Contact
           </a>
