@@ -117,13 +117,13 @@ describe('Send', () => {
     expect(message.from).toBe(WALLET_ADDRESS)
     expect(message.to).toBe(validAddress)
     expect(message.nonce).toBeGreaterThanOrEqual(0)
-    expect(message.value).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.value)).toBe(true)
     expect(message.value.isEqualTo(validAmount.toAttoFil())).toBe(true)
     expect(message.method).toBe(0)
     expect(message.params).toBe('')
-    expect(message.gasPremium).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.gasPremium)).toBe(true)
     expect(message.gasPremium.isGreaterThan(0)).toBe(true)
-    expect(message.gasFeeCap).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.gasFeeCap)).toBe(true)
     expect(message.gasFeeCap.isGreaterThan(0)).toBe(true)
     expect(message.gasLimit).toBeGreaterThan(0)
 
@@ -161,7 +161,6 @@ describe('Send', () => {
         const [recipient] = getAllByRole(result.container, 'textbox')
         // Enter recipient
         fireEvent.change(recipient, { target: { value: validAddress } })
-        recipient.blur()
         jest.runAllTimers()
       })
 
