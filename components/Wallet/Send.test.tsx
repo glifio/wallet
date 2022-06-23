@@ -62,14 +62,18 @@ describe('Send', () => {
       expect(review).toBeDisabled()
 
       // Enter recipient
+      recipient.focus()
       fireEvent.change(recipient, { target: { value: validAddress } })
+      recipient.blur()
       jest.runAllTimers()
 
       // Review should not be enabled yet
       expect(review).toBeDisabled()
 
       // Enter amount
+      amount.focus()
       fireEvent.change(amount, { target: { value: validAmount.toFil() } })
+      amount.blur()
       jest.runAllTimers()
 
       // Review should now be enabled
@@ -160,7 +164,9 @@ describe('Send', () => {
 
         const [recipient] = getAllByRole(result.container, 'textbox')
         // Enter recipient
+        recipient.focus()
         fireEvent.change(recipient, { target: { value: validAddress } })
+        recipient.blur()
         jest.runAllTimers()
       })
 
