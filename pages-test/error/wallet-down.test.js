@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 
 import WalletDown from '../../pages/error/wallet-down.jsx'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
@@ -6,7 +6,6 @@ import composeMockAppTree from '../../test-utils/composeMockAppTree'
 jest.mock('@glif/filecoin-wallet-provider')
 
 describe('WalletDown', () => {
-  afterEach(cleanup)
   test('it renders the error page', () => {
     const { Tree } = composeMockAppTree('postOnboard')
     const { container } = render(

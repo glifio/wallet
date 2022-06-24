@@ -13,7 +13,7 @@ import {
   useWallet,
   hasLedgerError,
   reportLedgerConfigError,
-  generateRouteWithRequiredUrlParams,
+  appendQueryParams,
   navigate
 } from '@glif/react-components'
 
@@ -92,24 +92,14 @@ export default function WalletHome() {
             cid={router.query.cid as string}
             height={Number(router.query?.height) || null}
             confirmations={50}
-            speedUpHref={generateRouteWithRequiredUrlParams({
-              pageUrl: PAGE.SPEED_UP,
-              existingQParams: router.query
-            })}
-            cancelHref={generateRouteWithRequiredUrlParams({
-              pageUrl: PAGE.CANCEL,
-              existingQParams: router.query
-            })}
+            speedUpHref={PAGE.SPEED_UP}
+            cancelHref={PAGE.CANCEL}
           />
         ) : (
           <MessageHistoryTable
             address={wallet.address}
             cidHref={(cid: string, height?: string) =>
-              generateRouteWithRequiredUrlParams({
-                pageUrl: PAGE.WALLET_HOME,
-                newQueryParams: { height, cid },
-                existingQParams: router.query
-              })
+              appendQueryParams(PAGE.WALLET_HOME, { height, cid })
             }
           />
         )}

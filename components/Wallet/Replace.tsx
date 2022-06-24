@@ -4,13 +4,13 @@ import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import {
-  getMaxGasFee,
   useGetMessage,
   useGetReplaceMessageGasParams,
   useSubmittedMessages,
   SmartLink,
   InputV2,
   Dialog,
+  Lines,
   ShadowBox,
   Transaction,
   LoginOption,
@@ -69,7 +69,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
 
   // Calculate maximum transaction fee
   const maxFee = useMemo<FilecoinNumber | null>(() => {
-    return gasLimit && gasFeeCap ? getMaxGasFee(gasFeeCap, gasLimit) : null
+    return gasLimit && gasFeeCap ? gasFeeCap.times(gasLimit.toAttoFil()) : null
   }, [gasLimit, gasFeeCap])
 
   // Set default gas params after loading
@@ -151,69 +151,72 @@ export const Replace = ({ strategy }: ReplaceProps) => {
         />
         {txState !== TxState.LoadingMessage && (
           <ShadowBox>
-            <Transaction.Balance
-              address={wallet.address}
-              balance={wallet.balance}
-            />
-            <InputV2.Text label='Message CID' value={cid} disabled />
-            <InputV2.Number label='Nonce' value={message.nonce} disabled />
-            <InputV2.Filecoin
-              label='Gas Premium'
-              info={
-                expert
-                  ? `Needs to be at least ${minGasParams.gasPremium.toAttoFil()} aFIL`
-                  : ''
-              }
-              min={minGasParams.gasPremium}
-              value={gasPremium}
-              denom='attofil'
-              onChange={setGasPremium}
-              setIsValid={setIsGasPremiumValid}
-              disabled={!expert || txState !== TxState.FillingForm}
-            />
-            <InputV2.Filecoin
-              label='Gas Limit'
-              info={
-                expert
-                  ? `Needs to be at least ${minGasParams.gasLimit.toAttoFil()} aFIL`
-                  : ''
-              }
-              min={minGasParams.gasLimit}
-              value={gasLimit}
-              denom='attofil'
-              onChange={setGasLimit}
-              setIsValid={setIsGasLimitValid}
-              disabled={!expert || txState !== TxState.FillingForm}
-            />
-            <InputV2.Filecoin
-              label='Fee Cap'
-              info={
-                expert
-                  ? `Needs to be at least ${minGasParams.gasFeeCap.toAttoFil()} aFIL`
-                  : ''
-              }
-              min={minGasParams.gasFeeCap}
-              value={gasFeeCap}
-              denom='attofil'
-              onChange={setGasFeeCap}
-              setIsValid={setIsGasFeeCapValid}
-              disabled={!expert || txState !== TxState.FillingForm}
-            />
-            <InputV2.Toggle
-              label='Expert Mode'
-              checked={expert}
-              onChange={setExpert}
-              disabled={txState !== TxState.FillingForm}
-            />
-            {maxFee && (
-              <p>
-                You will not pay more than {maxFee.toFil()} FIL for this
-                transaction.{' '}
-                <SmartLink href='https://filfox.info/en/stats/gas'>
-                  More information on average gas fee statistics.
-                </SmartLink>
-              </p>
-            )}
+            <Lines>
+              <Transaction.Balance
+                address={wallet.address}
+                balance={wallet.balance}
+              />
+              <InputV2.Text label='Message CID' value={cid} disabled />
+              <InputV2.Number label='Nonce' value={message.nonce} disabled />
+              <InputV2.Filecoin
+                label='Gas Premium'
+                info={
+                  expert
+                    ? `Needs to be at least ${minGasParams.gasPremium.toAttoFil()} aFIL`
+                    : ''
+                }
+                min={minGasParams.gasPremium}
+                value={gasPremium}
+                denom='attofil'
+                onChange={setGasPremium}
+                setIsValid={setIsGasPremiumValid}
+                disabled={!expert || txState !== TxState.FillingForm}
+              />
+              <InputV2.Filecoin
+                label='Gas Limit'
+                info={
+                  expert
+                    ? `Needs to be at least ${minGasParams.gasLimit.toAttoFil()} aFIL`
+                    : ''
+                }
+                min={minGasParams.gasLimit}
+                value={gasLimit}
+                denom='attofil'
+                onChange={setGasLimit}
+                setIsValid={setIsGasLimitValid}
+                disabled={!expert || txState !== TxState.FillingForm}
+              />
+              <InputV2.Filecoin
+                label='Fee Cap'
+                info={
+                  expert
+                    ? `Needs to be at least ${minGasParams.gasFeeCap.toAttoFil()} aFIL`
+                    : ''
+                }
+                min={minGasParams.gasFeeCap}
+                value={gasFeeCap}
+                denom='attofil'
+                onChange={setGasFeeCap}
+                setIsValid={setIsGasFeeCapValid}
+                disabled={!expert || txState !== TxState.FillingForm}
+              />
+              <hr />
+              <InputV2.Toggle
+                label='Expert Mode'
+                checked={expert}
+                onChange={setExpert}
+                disabled={txState !== TxState.FillingForm}
+              />
+              {maxFee && (
+                <p>
+                  You will not pay more than {maxFee.toFil()} FIL for this
+                  transaction.{' '}
+                  <SmartLink href='https://filfox.info/en/stats/gas'>
+                    More information on average gas fee statistics.
+                  </SmartLink>
+                </p>
+              )}
+            </Lines>
           </ShadowBox>
         )}
         <Transaction.Buttons

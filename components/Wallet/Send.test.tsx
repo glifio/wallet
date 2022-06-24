@@ -1,5 +1,4 @@
 import {
-  cleanup,
   render,
   act,
   waitFor,
@@ -20,7 +19,7 @@ import {
   PendingMsgContext
 } from '../../__mocks__/@glif/react-components'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
-import { flushPromises, WALLET_ADDRESS } from '../../test-utils'
+import { WALLET_ADDRESS } from '../../test-utils/constants'
 import { Send } from './Send'
 
 const validAddress = 't1iuryu3ke2hewrcxp4ezhmr5cmfeq3wjhpxaucza'
@@ -29,16 +28,6 @@ const validAmount = new FilecoinNumber(0.01, 'fil')
 jest.mock('@glif/filecoin-wallet-provider')
 
 describe('Send', () => {
-  beforeEach(() => {
-    jest.useFakeTimers()
-    jest.clearAllMocks()
-  })
-
-  afterEach(() => {
-    jest.clearAllTimers()
-    cleanup()
-  })
-
   test('it allows a user to send a message', async () => {
     const { Tree, walletProvider } = composeMockAppTree('postOnboard')
     let result: RenderResult | null = null
@@ -55,8 +44,6 @@ describe('Send', () => {
           />
         </Tree>
       )
-
-      await flushPromises()
 
       // Get HTML elements
       const header = getByRole(result.container, 'heading')
@@ -75,25 +62,26 @@ describe('Send', () => {
       expect(review).toBeDisabled()
 
       // Enter recipient
+      recipient.focus()
       fireEvent.change(recipient, { target: { value: validAddress } })
       recipient.blur()
+      jest.runAllTimers()
 
       // Review should not be enabled yet
-      await flushPromises()
       expect(review).toBeDisabled()
 
       // Enter amount
       amount.focus()
       fireEvent.change(amount, { target: { value: validAmount.toFil() } })
       amount.blur()
+      jest.runAllTimers()
 
       // Review should now be enabled
-      await flushPromises()
       expect(review).toBeEnabled()
 
       // Click review
       fireEvent.click(review)
-      await flushPromises()
+      jest.runAllTimers()
 
       // The total amount should show after getting the tx fee
       await waitFor(
@@ -118,7 +106,7 @@ describe('Send', () => {
 
       // Click send
       fireEvent.click(send)
-      await flushPromises()
+      jest.runAllTimers()
     })
 
     // Check wallet provider calls
@@ -133,13 +121,13 @@ describe('Send', () => {
     expect(message.from).toBe(WALLET_ADDRESS)
     expect(message.to).toBe(validAddress)
     expect(message.nonce).toBeGreaterThanOrEqual(0)
-    expect(message.value).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.value)).toBe(true)
     expect(message.value.isEqualTo(validAmount.toAttoFil())).toBe(true)
     expect(message.method).toBe(0)
     expect(message.params).toBe('')
-    expect(message.gasPremium).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.gasPremium)).toBe(true)
     expect(message.gasPremium.isGreaterThan(0)).toBe(true)
-    expect(message.gasFeeCap).toBeInstanceOf(BigNumber)
+    expect(BigNumber.isBigNumber(message.gasFeeCap)).toBe(true)
     expect(message.gasFeeCap.isGreaterThan(0)).toBe(true)
     expect(message.gasLimit).toBeGreaterThan(0)
 
@@ -176,10 +164,10 @@ describe('Send', () => {
 
         const [recipient] = getAllByRole(result.container, 'textbox')
         // Enter recipient
+        recipient.focus()
         fireEvent.change(recipient, { target: { value: validAddress } })
         recipient.blur()
-
-        await flushPromises()
+        jest.runAllTimers()
       })
 
       // Check snapshot
