@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconGlif, Box, BigTitle, Title, Button } from '@glif/react-components'
+import { ButtonV2Link, ShadowBox, Dialog, ButtonRowCenter } from '@glif/react-components'
 import { OneColumnCentered } from '@glif/react-components'
 import WalletPage from '../../components/WalletPage'
 
@@ -7,34 +7,21 @@ const UseDesktopBrowser = () => {
   return (
     <WalletPage>
       <OneColumnCentered>
-        <Box textAlign='center' px={5}>
-          <Box
-            display='inline-block'
-            borderRadius={3}
-            py={3}
-            px={2}
-            border={1}
-            borderColor='status.fail.background'
-            bg='status.fail.background'
-          >
-            <IconGlif fill='status.fail.foreground' size={7} />
-          </Box>
-          <BigTitle my={5}>Not yet</BigTitle>
-          <Title my={5} textAlign='left'>
-            Glif Wallet isn&rsquo;t ready for your phone or tablet.
-          </Title>
-          <Title my={5} textAlign='left'>
+        <Dialog>
+          <ShadowBox>
+            <h2>Not yet</h2>
+            <hr />
+            <p>
+              Glif Wallet isn&rsquo;t ready for your phone or tablet.
+            </p>
+            <p>
             Please access it from your computer instead.
-          </Title>
-          <Button
-            mt={5}
-            variant='secondary'
-            title='Home'
-            onClick={() => {
-              window.location.href = 'https://www.glif.io'
-            }}
-          />
-        </Box>
+            </p>
+          </ShadowBox>
+          <ButtonRowCenter>
+            <ButtonV2Link large green href={process.env.NEXT_PUBLIC_HOME_URL}>Home</ButtonV2Link>
+          </ButtonRowCenter>
+        </Dialog>
       </OneColumnCentered>
     </WalletPage>
   )
