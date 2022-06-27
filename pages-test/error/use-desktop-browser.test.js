@@ -1,6 +1,6 @@
-import { render, screen, act, fireEvent } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 
-import UseDesktopBrowser from '../../pages/error/use-desktop-browser.jsx'
+import UseDesktopBrowser from '../../pages/error/use-desktop-browser'
 import composeMockAppTree from '../../test-utils/composeMockAppTree'
 
 jest.mock('@glif/filecoin-wallet-provider')
