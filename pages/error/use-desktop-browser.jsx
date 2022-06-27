@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   ButtonV2Link,
   ShadowBox,
