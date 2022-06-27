@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { Message } from '@glif/filecoin-message'
 import { BigNumber, FilecoinNumber } from '@glif/filecoin-number'
 import {
+  getQueryParam,
   useGetMessage,
   useGetReplaceMessageGasParams,
   useSubmittedMessages,
@@ -27,7 +28,7 @@ import { logger } from '../../logger'
 export const Replace = ({ strategy }: ReplaceProps) => {
   const router = useRouter()
   const wallet = useWallet()
-  const cid = router.query.cid as string
+  const cid = getQueryParam.string(router, 'cid')
   const { pushPendingMessage } = useSubmittedMessages()
   const { loginOption, walletProvider, walletError, getProvider } =
     useWalletProvider()

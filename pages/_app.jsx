@@ -2,7 +2,6 @@ import '@glif/base-css'
 import App from 'next/app'
 import Head from 'next/head'
 import Script from 'next/script'
-import React from 'react'
 import {
   theme,
   ThemeProvider,
