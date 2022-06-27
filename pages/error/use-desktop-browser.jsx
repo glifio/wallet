@@ -3,9 +3,9 @@ import {
   ButtonV2Link,
   ShadowBox,
   Dialog,
-  ButtonRowCenter
+  ButtonRowCenter,
+  OneColumnCentered
 } from '@glif/react-components'
-import { OneColumnCentered } from '@glif/react-components'
 import WalletPage from '../../components/WalletPage'
 
 const UseDesktopBrowser = () => {
