@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react'
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import {
+  getQueryParam,
   AccountCard,
   AccountError,
   BalanceCard,
@@ -28,6 +29,8 @@ const Cards = styled.div`
 export default function WalletHome() {
   const wallet = useWallet()
   const router = useRouter()
+  const cid = getQueryParam.string(router, 'cid')
+  const height = getQueryParam.number(router, 'height')
   const { ledger, connectLedger, loginOption } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState('')
   const [ledgerBusy, setLedgerBusy] = useState(false)
@@ -87,11 +90,10 @@ export default function WalletHome() {
         </Cards>
       </OneColumn>
       <OneColumn>
-        {router.query.cid ? (
+        {cid ? (
           <MessageDetail
-            cid={router.query.cid as string}
-            height={Number(router.query?.height) || null}
-            confirmations={50}
+            cid={cid}
+            height={height}
             speedUpHref={PAGE.SPEED_UP}
             cancelHref={PAGE.CANCEL}
           />
