@@ -16,7 +16,10 @@ const webpack = (config) => {
     react: path.resolve('./node_modules/react'),
     'react-dom': path.resolve('./node_modules/react-dom'),
     next: path.resolve('./node_modules/next'),
-    'styled-components': path.resolve('./node_modules/styled-components')
+    'styled-components': path.resolve('./node_modules/styled-components'),
+    '@glif/react-components': path.resolve(
+      './node_modules/@glif/react-components'
+    )
   }
 
   return adjustedConf
