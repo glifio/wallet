@@ -1,7 +1,8 @@
 module.exports = {
-  extends: ['plugin:prettier/recommended', 'next/core-web-vitals', 'prettier'],
-  plugins: ['@typescript-eslint', 'prettier'],
+  root: true,
   parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint', 'prettier'],
+  extends: ['next/core-web-vitals', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
     'react/react-in-jsx-scope': 0,
