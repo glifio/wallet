@@ -100,7 +100,7 @@ export default function WalletHome() {
         ) : (
           <MessageHistoryTable
             address={wallet.address}
-            cidHref={(cid: string, height?: string) =>
+            cidHref={(cid: string, height?: number) =>
               appendQueryParams(PAGE.WALLET_HOME, { height, cid })
             }
           />
