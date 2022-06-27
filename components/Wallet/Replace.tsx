@@ -28,7 +28,7 @@ import { logger } from '../../logger'
 export const Replace = ({ strategy }: ReplaceProps) => {
   const router = useRouter()
   const wallet = useWallet()
-  const cid = getQueryParam(router, 'cid')
+  const cid = getQueryParam.string(router, 'cid')
   const { pushPendingMessage } = useSubmittedMessages()
   const { loginOption, walletProvider, walletError, getProvider } =
     useWalletProvider()
