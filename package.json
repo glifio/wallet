@@ -1,6 +1,6 @@
 {
   "name": "wallet",
-  "version": "3.0.20-calibration.3",
+  "version": "3.0.20-calibration.4",
   "engines": {
     "node": ">=16.0.0"
   },
@@ -20,7 +20,7 @@
     "publish:mainnet": "wrangler publish --env mainnet"
   },
   "dependencies": {
-    "@apollo/client": "^3.5.7",
+    "@apollo/client": "^3.6.9",
     "@glif/base-css": "^0.0.25",
     "@glif/filecoin-address": "^2.0.0-beta.16",
     "@glif/filecoin-message": "^2.0.0-beta.16",
@@ -42,9 +42,9 @@
     "@types/jest": "^28.1.1",
     "@types/react": "^17.0.45",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
-    "@typescript-eslint/parser": "^5.20.0",
+    "@typescript-eslint/parser": "^5.30.0",
     "babel-jest": "^28.1.1",
-    "babel-plugin-styled-components": "2.0.2",
+    "babel-plugin-styled-components": "2.0.7",
     "eslint": "^8.16.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "8.5.0",
