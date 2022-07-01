@@ -30,7 +30,6 @@ export default function WalletHome() {
   const wallet = useWallet()
   const router = useRouter()
   const cid = getQueryParam.string(router, 'cid')
-  const height = getQueryParam.number(router, 'height')
   const { ledger, connectLedger, loginOption } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState('')
   const [ledgerBusy, setLedgerBusy] = useState(false)
@@ -93,15 +92,14 @@ export default function WalletHome() {
         {cid ? (
           <MessageDetail
             cid={cid}
-            height={height}
             speedUpHref={PAGE.SPEED_UP}
             cancelHref={PAGE.CANCEL}
           />
         ) : (
           <MessageHistoryTable
             address={wallet.address}
-            cidHref={(cid: string, height?: number) =>
-              appendQueryParams(PAGE.WALLET_HOME, { height, cid })
+            cidHref={(cid: string) =>
+              appendQueryParams(PAGE.WALLET_HOME, { cid })
             }
           />
         )}
