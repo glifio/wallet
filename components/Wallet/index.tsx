@@ -101,6 +101,7 @@ export default function WalletHome() {
             cidHref={(cid: string) =>
               appendQueryParams(PAGE.WALLET_HOME, { cid })
             }
+            warnMissingData
           />
         )}
       </OneColumn>
