@@ -1,7 +1,9 @@
 import { useContext, createContext, useReducer } from 'react'
-import walletProviderReducer, {
-  initialState as walletProviderInitialState
-} from '../../node_modules/@glif/react-components/dist/services/WalletProvider/state'
+import {
+  walletProviderReducer,
+  initialState as walletProviderInitialState,
+  noWallet
+} from '@glif/react-components'
 import createMockWalletProviderContextFuncs from '../../test-utils/composeMockAppTree/createWalletProviderContextFuncs'
 
 export * from '../../node_modules/@glif/react-components/dist'
