@@ -559,7 +559,7 @@ exports[`UseChrome it renders the error page 1`] = `
           class="c21"
         >
           <a
-            href="mailto:squad@glif.io"
+            href="mailto:squad@infinitescroll.org"
             rel="noreferrer noopener"
             target="_self"
           >
