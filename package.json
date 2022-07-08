@@ -1,6 +1,6 @@
 {
   "name": "wallet",
-  "version": "3.0.25",
+  "version": "3.0.26-calibration.0",
   "engines": {
     "node": ">=16.0.0"
   },
@@ -46,7 +46,7 @@
     "babel-jest": "^28.1.1",
     "babel-plugin-styled-components": "2.0.7",
     "eslint": "^8.16.0",
-    "eslint-config-next": "12.1.6",
+    "eslint-config-next": "12.2.1",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.0.0",
     "jest": "^28.1.1",
