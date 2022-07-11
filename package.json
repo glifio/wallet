@@ -41,7 +41,7 @@
     "@testing-library/react-hooks": "8.0.0",
     "@types/jest": "^28.1.1",
     "@types/react": "^17.0.45",
-    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.0",
     "babel-jest": "^28.1.1",
     "babel-plugin-styled-components": "2.0.7",
