@@ -1,6 +1,6 @@
 {
   "name": "wallet",
-  "version": "3.0.27",
+  "version": "3.0.28-calibration.0",
   "engines": {
     "node": ">=16.0.0"
   },
