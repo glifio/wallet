@@ -68,7 +68,7 @@ module.exports = (phase) => {
               process.env.GRAPH_API_URL || 'graph-calibration.glif.link/query',
             NEXT_PUBLIC_LOTUS_NODE_JSONRPC:
               process.env.LOTUS_NODE_JSONRPC ||
-              'https://calibration.node.glif.io',
+              'https://api.calibration.node.glif.io/',
             // its fine for this to be public
             NEXT_PUBLIC_NODE_STATUS_API_KEY:
               process.env.NODE_STATUS_API_KEY ||
