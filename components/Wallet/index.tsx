@@ -9,7 +9,6 @@ import {
   OneColumn,
   MessageHistoryTable,
   MessageDetail,
-  space,
   useWalletProvider,
   useWallet,
   hasLedgerError,
@@ -23,7 +22,7 @@ import { PAGE } from '../../constants'
 
 const Cards = styled.div`
   display: flex;
-  gap: ${space('large')};
+  gap: var(--space-l)};
 `
 
 export default function WalletHome() {

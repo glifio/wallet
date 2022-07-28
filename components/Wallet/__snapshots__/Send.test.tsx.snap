@@ -205,7 +205,7 @@ exports[`Send it allows a user to send a message 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  gap: var(--space-m);
   margin: 1.5em 0;
 }
 
@@ -224,7 +224,7 @@ exports[`Send it allows a user to send a message 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-m);
   width: 100%;
   max-width: 35em;
 }
@@ -237,7 +237,7 @@ exports[`Send it allows a user to send a message 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-m);
 }
 
 .c6 {
@@ -248,7 +248,7 @@ exports[`Send it allows a user to send a message 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-m);
 }
 
 .c6 > p,
@@ -265,7 +265,7 @@ exports[`Send it allows a user to send a message 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  gap: var(--space-m);
   text-align: left;
   pointer-events: none;
   -webkit-align-items: center;
@@ -312,7 +312,7 @@ exports[`Send it allows a user to send a message 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-m);
 }
 
 .c9 .button-wrapper > *:first-child {
@@ -419,7 +419,7 @@ exports[`Send it allows a user to send a message 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  gap: 20px;
+  gap: var(--space-l);
 }
 
 .c7 > * {
@@ -873,7 +873,7 @@ exports[`Send snapshots after enter recipient state 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  gap: var(--space-m);
   margin: 1.5em 0;
 }
 
@@ -892,7 +892,7 @@ exports[`Send snapshots after enter recipient state 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-m);
   width: 100%;
   max-width: 35em;
 }
@@ -905,7 +905,7 @@ exports[`Send snapshots after enter recipient state 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-m);
 }
 
 .c4 {
@@ -916,7 +916,7 @@ exports[`Send snapshots after enter recipient state 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-m);
 }
 
 .c4 > p,
@@ -933,7 +933,7 @@ exports[`Send snapshots after enter recipient state 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  gap: var(--space-m);
   text-align: left;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -979,7 +979,7 @@ exports[`Send snapshots after enter recipient state 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-m);
 }
 
 .c7 .button-wrapper > *:first-child {
@@ -1039,7 +1039,7 @@ exports[`Send snapshots after enter recipient state 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  gap: 20px;
+  gap: var(--space-l);
 }
 
 .c5 > * {
@@ -1411,7 +1411,7 @@ exports[`Send snapshots initial state 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  gap: var(--space-m);
   margin: 1.5em 0;
 }
 
@@ -1430,7 +1430,7 @@ exports[`Send snapshots initial state 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-m);
   width: 100%;
   max-width: 35em;
 }
@@ -1443,7 +1443,7 @@ exports[`Send snapshots initial state 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-m);
 }
 
 .c4 {
@@ -1454,7 +1454,7 @@ exports[`Send snapshots initial state 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-m);
 }
 
 .c4 > p,
@@ -1471,7 +1471,7 @@ exports[`Send snapshots initial state 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  gap: var(--space-m);
   text-align: left;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1517,7 +1517,7 @@ exports[`Send snapshots initial state 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-m);
 }
 
 .c7 .button-wrapper > *:first-child {
@@ -1577,7 +1577,7 @@ exports[`Send snapshots initial state 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  gap: 20px;
+  gap: var(--space-l);
 }
 
 .c5 > * {
