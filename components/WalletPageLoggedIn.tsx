@@ -74,7 +74,6 @@ export default function WalletPageLoggedIn({
           label: 'Wallet Address',
           address: wallet.address,
           disableLink: false,
-          stopPropagation: true,
           hideCopy: false,
           hideCopyText: true
         }
