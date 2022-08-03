@@ -98,6 +98,7 @@ export const Send = ({ walletProviderOpts, pendingMsgContext }: SendProps) => {
         onChange={setToAddress}
         setIsValid={setIsToAddressValid}
         disabled={txState !== TxState.FillingForm}
+        truncate={false}
       />
       <InputV2.Filecoin
         label='Amount'
