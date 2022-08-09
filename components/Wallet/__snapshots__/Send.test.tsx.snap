@@ -134,32 +134,6 @@ exports[`Send it allows a user to send a message 1`] = `
   stroke: var(--gray-medium);
 }
 
-.c3 {
-  position: relative;
-  display: inline-block;
-  background-color: var(--purple-medium);
-  width: 3em;
-  height: 3em;
-  margin: 0;
-}
-
-.c3:after {
-  position: absolute;
-  display: block;
-  content: '';
-  top: 0;
-  left: 0;
-  background-color: var(--purple-dark);
-  -webkit-animation-name: gxoozo;
-  animation-name: gxoozo;
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  width: calc(3em * 0.5);
-  height: calc(3em * 0.5);
-}
-
 .c1 {
   padding: 1.5em;
   border-radius: 8px;
@@ -219,6 +193,32 @@ exports[`Send it allows a user to send a message 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c3 {
+  position: relative;
+  display: inline-block;
+  background-color: var(--purple-medium);
+  width: 3em;
+  height: 3em;
+  margin: 0;
+}
+
+.c3:after {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 0;
+  left: 0;
+  background-color: var(--purple-dark);
+  -webkit-animation-name: gxoozo;
+  animation-name: gxoozo;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  width: calc(3em * 0.5);
+  height: calc(3em * 0.5);
 }
 
 .c0 {
