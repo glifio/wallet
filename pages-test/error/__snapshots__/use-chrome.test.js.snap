@@ -1,36 +1,141 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UseChrome it renders the error page 1`] = `
-.c10 {
-  min-width: 0;
-  box-sizing: border-box;
-  border: 1px solid;
-  border-radius: 4px;
+.c14 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
   border-width: 1px;
-  border-color: #FC6D6F;
-  padding: 16px;
-  background-color: #FC6D6F;
-  color: #660000;
-  display: inline-block;
-  width: 100%;
-  max-width: 560px;
-  min-height: 240px;
-  overflow: hidden;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+}
+
+.c14 svg path {
+  stroke: var(--black);
+}
+
+.c14:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c14:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c14:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c14:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c5 {
+  width: auto;
+  height: 35px;
+}
+
+.c16 {
+  width: auto;
+  height: 35px;
+  margin-bottom: 2em;
 }
 
 .c11 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-width: 0.1875rem;
+  padding: 1.5em;
   border-radius: 8px;
-  border-style: solid;
-  color: #660000;
+  overflow: hidden;
+  text-align: center;
+  word-break: break-word;
+}
+
+.c11 > *:first-child {
+  margin-top: 0;
+}
+
+.c11 > *:last-child {
+  margin-bottom: 0;
+}
+
+.c11 > svg:first-child {
+  display: block;
+  margin: 0 auto 1em;
+}
+
+.c11 > h2:first-child {
+  margin: 0;
+}
+
+.c11 header:first-child {
+  margin: -1.5em -1.5em 1.5em -1.5em;
+  padding: 1.5em;
+  background-color: var(--purple-medium);
+  color: var(--white);
+}
+
+.c12 {
+  background-color: var(--red-light);
+  color: var(--red-dark);
+}
+
+.c12 hr {
+  border-color: var(--red-dark);
+}
+
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 48px;
-  height: 48px;
+  gap: var(--space-m);
+  margin: 1.5em 0;
+}
+
+.c8 {
+  position: relative;
+  padding: 3rem 1.5rem;
+}
+
+.c8:not(:last-child) {
+  padding-bottom: 0;
+}
+
+.c8 > *:first-child {
+  margin-top: 0;
+}
+
+.c8 > *:last-child {
+  margin-bottom: 0;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -41,60 +146,29 @@ exports[`UseChrome it renders the error page 1`] = `
   justify-content: center;
 }
 
-.c13 {
-  min-width: 0;
-  box-sizing: border-box;
-  border-top: 1px solid;
-  border-color: #660000;
-  margin-top: 1.5em;
-  padding-top: 1em;
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-m);
+  width: 100%;
+  margin: 0 auto;
+  max-width: 35em;
 }
 
-.c14 {
-  min-width: 0;
-  box-sizing: border-box;
-  margin-top: 32px;
-  text-align: center;
-}
-
-.c12 {
-  font-family: "RT-Alias-Medium","system-ui","Segoe UI","Roboto",Helvetica;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.c15 {
-  cursor: pointer;
-  border: 1px solid #262626;
-  background-color: transparent;
-  border-color: #262626;
-  color: #262626;
-  font-size: 1.125rem;
-  -webkit-transition: 0.18s ease-in-out;
-  transition: 0.18s ease-in-out;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 48px;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.c15:hover {
-  opacity: 0.8;
-}
-
-.c5 {
-  width: auto;
-  height: 35px;
-}
-
-.c17 {
-  width: auto;
-  height: 35px;
-  margin-bottom: 2em;
+.c10 form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-m);
 }
 
 .c2 {
@@ -158,39 +232,10 @@ exports[`UseChrome it renders the error page 1`] = `
   color: black;
 }
 
-.c8 {
-  position: relative;
-  padding: 3rem 1.5rem;
-}
-
-.c8:not(:last-child) {
-  padding-bottom: 0;
-}
-
-.c8 > *:first-child {
-  margin-top: 0;
-}
-
-.c8 > *:last-child {
-  margin-bottom: 0;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+.c18 {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
 }
 
 .c19 {
@@ -199,13 +244,7 @@ exports[`UseChrome it renders the error page 1`] = `
   padding-left: 0;
 }
 
-.c20 {
-  list-style-type: none;
-  margin: 0;
-  padding-left: 0;
-}
-
-.c16 {
+.c15 {
   background: #272727;
   border-radius: 8px;
   padding: 30px;
@@ -213,7 +252,7 @@ exports[`UseChrome it renders the error page 1`] = `
   position: relative;
 }
 
-.c22 {
+.c21 {
   text-transform: uppercase;
   display: block;
 }
@@ -272,13 +311,13 @@ exports[`UseChrome it renders the error page 1`] = `
 }
 
 @media (min-width:480px) {
-  .c17 {
+  .c16 {
     height: 45px;
   }
 }
 
 @media (min-width:868px) {
-  .c17 {
+  .c16 {
     height: 55px;
     position: absolute;
     left: 30px;
@@ -293,7 +332,7 @@ exports[`UseChrome it renders the error page 1`] = `
 }
 
 @media (min-width:868px) {
-  .c18 {
+  .c17 {
     max-width: 670px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -303,19 +342,19 @@ exports[`UseChrome it renders the error page 1`] = `
 }
 
 @media (max-width:868px) {
-  .c21 {
+  .c20 {
     margin-top: 2em;
   }
 }
 
 @media (min-width:868px) {
-  .c22 {
+  .c21 {
     margin-top: 1em;
   }
 }
 
 @media (max-width:868px) {
-  .c22 {
+  .c21 {
     margin-top: 5em;
   }
 }
@@ -377,38 +416,41 @@ exports[`UseChrome it renders the error page 1`] = `
       <div
         class="c8 c9"
       >
-        <div>
+        <div
+          class="c10"
+        >
           <div
-            class="c10"
-            color="card.error.foreground"
-            display="inline-block"
-            overflow="hidden"
-            style="word-break: break-word;"
-            width="100%"
+            class="c11 c12"
           >
-            <div
-              class="c11"
-              color="status.fail.foreground"
-              display="flex"
-              size="6"
+            <svg
+              fill="none"
+              height="24px"
+              viewBox="0 0 24 24"
+              width="24px"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <h3
-                class="c12"
-              >
-                Er
-              </h3>
-            </div>
+              <circle
+                cx="12"
+                cy="12"
+                r="11"
+                stroke="var(--red-dark)"
+                stroke-width="2"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M7.29489 15.2921C6.90442 15.6826 6.90442 16.3157 7.29489 16.7062C7.68535 17.0966 8.31842 17.0966 8.70888 16.7062L11.9994 13.4155L15.2916 16.7079C15.6821 17.0984 16.3151 17.0984 16.7056 16.7079C17.0961 16.3174 17.0961 15.6843 16.7056 15.2938L13.4134 12.0014L16.7076 8.70694C17.0981 8.31645 17.0981 7.68335 16.7076 7.29286C16.3172 6.90238 15.6841 6.90238 15.2937 7.29286L11.9994 10.5873L8.70684 7.29462C8.31638 6.90413 7.68331 6.90413 7.29285 7.29462C6.90238 7.68511 6.90238 8.31821 7.29285 8.7087L10.5854 12.0014L7.29489 15.2921Z"
+                fill="var(--red-dark)"
+                fill-rule="evenodd"
+              />
+            </svg>
             <h2>
               Only Chrome has Ledger support
             </h2>
-            <p
-              style="font-size: 1.125rem;"
-            >
+            <hr />
+            <p>
               Please install Google Chrome to continue using your Ledger device, or choose an alternative setup option
             </p>
-            <p
-              style="font-size: 1.125rem;"
-            >
+            <p>
               <a
                 href="https://www.google.com/chrome"
                 rel="noreferrer noopener"
@@ -417,9 +459,8 @@ exports[`UseChrome it renders the error page 1`] = `
                 Install Google Chrome.
               </a>
             </p>
-            <div
-              class="c13"
-            >
+            <hr />
+            <p>
               Get help in 
               <a
                 href="https://discord.gg/B9ju5Eu4Rq"
@@ -436,16 +477,13 @@ exports[`UseChrome it renders the error page 1`] = `
               >
                 Twitter
               </a>
-            </div>
+            </p>
           </div>
           <div
-            class="c14"
+            class="c13"
           >
             <button
-              class="c15"
-              font-size="3"
-              height="6"
-              type="button"
+              class="c14"
             >
               Back
             </button>
@@ -455,10 +493,10 @@ exports[`UseChrome it renders the error page 1`] = `
     </div>
   </div>
   <footer
-    class="c16"
+    class="c15"
   >
     <svg
-      class="c17"
+      class="c16"
       height="71px"
       version="1.1"
       viewBox="0 0 52 71"
@@ -502,13 +540,13 @@ exports[`UseChrome it renders the error page 1`] = `
       </g>
     </svg>
     <div
-      class="c18"
+      class="c17"
     >
       <ul
-        class="c19"
+        class="c18"
       >
         <li
-          class="c20"
+          class="c19"
         >
           <a
             href="https://discord.gg/B9ju5Eu4Rq"
@@ -519,7 +557,7 @@ exports[`UseChrome it renders the error page 1`] = `
           </a>
         </li>
         <li
-          class="c20"
+          class="c19"
         >
           <a
             href="https://blog.glif.io"
@@ -530,7 +568,7 @@ exports[`UseChrome it renders the error page 1`] = `
           </a>
         </li>
         <li
-          class="c20"
+          class="c19"
         >
           <a
             href="https://github.com/glifio"
@@ -541,7 +579,7 @@ exports[`UseChrome it renders the error page 1`] = `
           </a>
         </li>
         <li
-          class="c20"
+          class="c19"
         >
           <a
             href="https://lotus.filecoin.io/docs/developers/hosted-lotus/"
@@ -552,7 +590,7 @@ exports[`UseChrome it renders the error page 1`] = `
           </a>
         </li>
         <li
-          class="c20"
+          class="c19"
         >
           <a
             href="mailto:squad@infinitescroll.org"
@@ -564,10 +602,10 @@ exports[`UseChrome it renders the error page 1`] = `
         </li>
       </ul>
       <ul
-        class="c19"
+        class="c18"
       >
         <li
-          class="c20"
+          class="c19"
         >
           <a
             href="https://wallet.glif.io"
@@ -578,7 +616,7 @@ exports[`UseChrome it renders the error page 1`] = `
           </a>
         </li>
         <li
-          class="c20"
+          class="c19"
         >
           <a
             href="https://safe.glif.io"
@@ -589,7 +627,7 @@ exports[`UseChrome it renders the error page 1`] = `
           </a>
         </li>
         <li
-          class="c20"
+          class="c19"
         >
           <a
             href="https://explorer.glif.io"
@@ -600,7 +638,7 @@ exports[`UseChrome it renders the error page 1`] = `
           </a>
         </li>
         <li
-          class="c20"
+          class="c19"
         >
           <a
             href="https://verify.glif.io"
@@ -612,14 +650,14 @@ exports[`UseChrome it renders the error page 1`] = `
         </li>
       </ul>
       <div
-        class="c21"
+        class="c20"
       >
         GLIF
         <br />
         Freeport, Grand Bahamas
       </div>
       <div
-        class="c22"
+        class="c21"
       >
         2022 Glif for life
       </div>

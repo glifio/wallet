@@ -10,7 +10,7 @@ jest.mock('@glif/filecoin-wallet-provider')
 const useRouter = jest.spyOn(require('next/router'), 'useRouter')
 
 describe('WalletView', () => {
-  test.skip('it renders correctly', () => {
+  test('it renders correctly', () => {
     useRouter.mockImplementation(() => ({
       pathname: 'home'
     }))
@@ -25,11 +25,10 @@ describe('WalletView', () => {
     expect(screen.getByText(/Your Address/)).toBeInTheDocument()
     expect(screen.getByText(/Balance/)).toBeInTheDocument()
     expect(screen.getByText(/Send/)).toBeInTheDocument()
-    expect(screen.getByText(/Logout/)).toBeInTheDocument()
     expect(container.firstChild).toMatchSnapshot()
   })
 
-  test.skip('it renders the message history view when the pathname is home', () => {
+  test('it renders the message history view when the pathname is home', () => {
     useRouter.mockImplementation(() => ({
       pathname: 'home'
     }))
@@ -43,7 +42,7 @@ describe('WalletView', () => {
     expect(screen.getByText('Transaction History')).toBeInTheDocument()
   })
 
-  test.skip('it renders the message detail view when there is a cid query param', () => {
+  test('it renders the message detail view when there is a cid query param', () => {
     useRouter.mockImplementation(() => ({
       pathname: 'home'
     }))
