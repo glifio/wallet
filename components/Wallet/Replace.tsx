@@ -19,11 +19,11 @@ import {
   TxState,
   useWallet,
   useWalletProvider,
-  navigate
+  navigate,
+  useLogger
 } from '@glif/react-components'
 
 import { PAGE } from '../../constants'
-import { logger } from '../../logger'
 
 export const Replace = ({ strategy }: ReplaceProps) => {
   const router = useRouter()
@@ -32,6 +32,7 @@ export const Replace = ({ strategy }: ReplaceProps) => {
   const { pushPendingMessage } = useSubmittedMessages()
   const { loginOption, walletProvider, walletError, getProvider } =
     useWalletProvider()
+  const logger = useLogger()
 
   // Input states
   const [expert, setExpert] = useState<boolean>(false)
