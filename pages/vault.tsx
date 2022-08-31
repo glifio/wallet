@@ -1,10 +1,12 @@
+import { useEnvironment } from '@glif/react-components'
 import { useRouter } from 'next/router'
 
 function RedirectToSafe() {
   const router = useRouter()
+  const { safeUrl } = useEnvironment()
   // Make sure we're in the browser
   if (typeof window !== 'undefined') {
-    router.push(process.env.NEXT_PUBLIC_SAFE_URL)
+    router.push(safeUrl)
   }
   return null
 }

@@ -9,8 +9,9 @@ import {
   OneColumnLargeText,
   Page,
   isMobileOrTablet,
-  useNetworkName,
-  SmartLink
+  SmartLink,
+  useEnvironment,
+  Network
 } from '@glif/react-components'
 
 import { GLIF_DISCORD, GLIF_TWITTER, PAGE } from '../constants'
@@ -20,16 +21,13 @@ export default function Landing() {
   useEffect(() => {
     if (isMobileOrTablet()) setUnsupportedDevice(true)
   }, [])
-  const { networkName } = useNetworkName(
-    process.env.NEXT_PUBLIC_LOTUS_NODE_JSONRPC
-  )
-
+  const { networkName } = useEnvironment()
   return (
     <Page phishingUrl='https://wallet.glif.io' hideAppHeader>
       <LandingPageColumns>
         <AppTile
           title={
-            networkName && networkName !== 'Mainnet'
+            networkName && networkName !== Network.MAINNET
               ? `Wallet (${networkName})`
               : 'Wallet'
           }

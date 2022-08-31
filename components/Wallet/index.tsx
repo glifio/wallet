@@ -14,10 +14,10 @@ import {
   hasLedgerError,
   reportLedgerConfigError,
   appendQueryParams,
-  navigate
+  navigate,
+  useLogger
 } from '@glif/react-components'
 
-import { logger } from '../../logger'
 import { PAGE } from '../../constants'
 
 const Cards = styled.div`
@@ -32,6 +32,7 @@ export default function WalletHome() {
   const { ledger, connectLedger, loginOption } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState('')
   const [ledgerBusy, setLedgerBusy] = useState(false)
+  const logger = useLogger()
 
   const onShowOnLedger = async () => {
     setLedgerBusy(true)
