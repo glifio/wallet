@@ -4,7 +4,8 @@ import {
   WalletProviderWrapper,
   initialState as walletProviderInitialState,
   theme,
-  ThemeProvider
+  ThemeProvider,
+  TestEnvironment
 } from '@glif/react-components'
 import { MockedProvider } from '@apollo/client/testing'
 
@@ -29,18 +30,20 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
 
   const Tree = ({ children }) => {
     return (
-      <MockedProvider mocks={[]} addTypeName={false}>
-        <PendingMessageProvider>
-          <WalletProviderWrapper
-            options={options}
-            statePreset={statePreset}
-            getState={cacheWalletProviderState}
-            initialState={initialState}
-          >
-            <ThemeProvider theme={theme}>{children}</ThemeProvider>
-          </WalletProviderWrapper>
-        </PendingMessageProvider>
-      </MockedProvider>
+      <TestEnvironment>
+        <MockedProvider mocks={[]} addTypeName={false}>
+          <PendingMessageProvider>
+            <WalletProviderWrapper
+              options={options}
+              statePreset={statePreset}
+              getState={cacheWalletProviderState}
+              initialState={initialState}
+            >
+              <ThemeProvider theme={theme}>{children}</ThemeProvider>
+            </WalletProviderWrapper>
+          </PendingMessageProvider>
+        </MockedProvider>
+      </TestEnvironment>
     )
   }
 

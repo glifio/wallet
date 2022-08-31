@@ -13,7 +13,7 @@ import {
   ErrorBoundary
 } from '@glif/react-components'
 import { SWRConfig } from 'swr'
-
+import { WalletPage } from '../components/WalletPage'
 import JSONLD from '../JSONLD'
 
 class MyApp extends App {
@@ -85,7 +85,7 @@ class MyApp extends App {
                 <WalletProviderWrapper>
                   <BalancePoller />
                   <PendingMessageProvider>
-                    <ErrorBoundary>
+                    <ErrorBoundary Wrapper={WalletPage}>
                       <Component {...pageProps} />
                     </ErrorBoundary>
                   </PendingMessageProvider>

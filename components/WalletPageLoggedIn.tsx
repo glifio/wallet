@@ -63,7 +63,7 @@ export default function WalletPageLoggedIn({
       logout={resetWallet}
       connection={
         <NetworkSelector
-          enableSwitching={true}
+          enableSwitching={false}
           errorCallback={onNodeDisconnect}
         />
       }
