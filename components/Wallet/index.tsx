@@ -15,7 +15,9 @@ import {
   reportLedgerConfigError,
   appendQueryParams,
   navigate,
-  useLogger
+  useLogger,
+  useEnvironment,
+  Network
 } from '@glif/react-components'
 
 import { PAGE } from '../../constants'
@@ -33,6 +35,7 @@ export default function WalletHome() {
   const [uncaughtError, setUncaughtError] = useState('')
   const [ledgerBusy, setLedgerBusy] = useState(false)
   const logger = useLogger()
+  const { networkName } = useEnvironment()
 
   const onShowOnLedger = async () => {
     setLedgerBusy(true)
@@ -101,7 +104,7 @@ export default function WalletHome() {
             cidHref={(cid: string) =>
               appendQueryParams(PAGE.WALLET_HOME, { cid })
             }
-            warnMissingData
+            warnMissingData={networkName === Network.MAINNET}
           />
         )}
       </OneColumn>
