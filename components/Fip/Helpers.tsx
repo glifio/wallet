@@ -12,8 +12,7 @@ export enum FormState {
   FILLING_FORM,
   SIGNING_MESSAGE,
   SIGNED_MESSAGE,
-  SUCCESS,
-  ERROR
+  SUCCESS
 }
 
 export type FIPData = {
