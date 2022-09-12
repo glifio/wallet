@@ -52,9 +52,15 @@ export const Header = (props: HeaderProps) => {
                 <h3>Background</h3>
                 <p>
                   This poll is to gather the community&apos;s sentiment on{' '}
-                  <SmartLink href=''>FIP-0036.</SmartLink> Discussions about
-                  this FIP can be carried out in the original FIP{' '}
-                  <SmartLink>issue #56</SmartLink>.
+                  <SmartLink href='https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0036.md'>
+                    FIP-0036.
+                  </SmartLink>{' '}
+                  Discussions about this FIP can be carried out in the original
+                  FIP{' '}
+                  <SmartLink href='https://github.com/filecoin-project/FIPs/discussions/453'>
+                    issue #56
+                  </SmartLink>
+                  .
                 </p>
               </Stat>
               {props.fipDetails && (
