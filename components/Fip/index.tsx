@@ -43,7 +43,7 @@ export const Fip = () => {
         from: wallet.robust || wallet.id,
         nonce: 0,
         value: '0',
-        method: 0,
+        method: 1,
         params
       })
 
