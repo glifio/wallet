@@ -74,7 +74,7 @@ export const Fip = () => {
         })
         .finally(() => setFormState(FormState.FILLING_FORM))
     }
-  }, [formState, setFormState, fipDetails, setFipDetails])
+  }, [formState, setFormState, setFipDetails])
 
   return (
     <>
