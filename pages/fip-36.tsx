@@ -1,4 +1,8 @@
-import { navigate, OneColumn, RequireWallet } from '@glif/react-components'
+import {
+  navigate,
+  OneColumnCentered,
+  RequireWallet
+} from '@glif/react-components'
 import { useRouter } from 'next/router'
 import { useCallback } from 'react'
 import { Fip } from '../components/Fip'
@@ -14,9 +18,9 @@ export default function Fip36() {
   return (
     <WalletPageLoggedIn>
       <RequireWallet gatekeep={gatekeep}>
-        <OneColumn>
+        <OneColumnCentered>
           <Fip />
-        </OneColumn>
+        </OneColumnCentered>
       </RequireWallet>
     </WalletPageLoggedIn>
   )
