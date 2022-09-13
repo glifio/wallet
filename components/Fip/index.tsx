@@ -1,17 +1,22 @@
 import {
+  ButtonRowCenter,
+  ButtonRowSpaced,
   ButtonV2,
   Dialog,
   InputV2,
   LoadingScreen,
+  navigate,
   ShadowBox,
   useWallet,
   useWalletProvider
 } from '@glif/react-components'
 import axios from 'axios'
+import { useRouter } from 'next/router'
 import { FormEvent, useEffect, useState } from 'react'
 import { Message } from '@glif/filecoin-message'
 import * as cbor from '@ipld/dag-cbor'
 import { Header, FIPData, FormState } from './Helpers'
+import { PAGE } from '../../constants'
 
 enum Vote {
   APPROVE = 'Approve',
@@ -22,11 +27,12 @@ enum Vote {
 const FIP_ID = 14
 
 export const Fip = () => {
-  const [vote, setVote] = useState<Vote>(Vote.REJECT)
+  const [vote, setVote] = useState<Vote | ''>('')
   const [fipDetails, setFipDetails] = useState<FIPData>(null)
   const [error, setError] = useState<Error | null>(null)
   const [formState, setFormState] = useState<FormState>(FormState.FETCHING_VOTE)
 
+  const router = useRouter()
   const wallet = useWallet()
   const { getProvider, walletError } = useWalletProvider()
 
@@ -74,7 +80,7 @@ export const Fip = () => {
         })
         .finally(() => setFormState(FormState.FILLING_FORM))
     }
-  }, [formState, setFormState, fipDetails, setFipDetails])
+  }, [formState, setFormState, setFipDetails])
 
   return (
     <>
@@ -96,13 +102,30 @@ export const Fip = () => {
                 disabled={formState > FormState.FILLING_FORM}
               />
             </ShadowBox>
-            <ButtonV2
-              green
-              type='submit'
-              disabled={formState > FormState.FILLING_FORM}
-            >
-              Vote
-            </ButtonV2>
+            {formState <= FormState.FILLING_FORM && (
+              <ButtonRowSpaced>
+                <ButtonV2 large type='button' onClick={router.back}>
+                  Back
+                </ButtonV2>
+                <ButtonV2 large green type='submit' disabled={vote === ''}>
+                  Vote
+                </ButtonV2>
+              </ButtonRowSpaced>
+            )}
+            {formState === FormState.SUCCESS && (
+              <ButtonRowCenter>
+                <ButtonV2
+                  large
+                  green
+                  type='button'
+                  onClick={() =>
+                    navigate(router, { pageUrl: PAGE.WALLET_HOME })
+                  }
+                >
+                  Done
+                </ButtonV2>
+              </ButtonRowCenter>
+            )}
           </form>
         </Dialog>
       ) : (
