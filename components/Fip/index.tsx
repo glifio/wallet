@@ -78,7 +78,7 @@ export const Fip = () => {
         from: wallet.robust || wallet.id,
         nonce,
         value: '0',
-        method: 2,
+        method: 3,
         params: Buffer.from(cbor.encode([`${FIP_ID} - ${vote}`])).toString(
           'base64'
         ),
