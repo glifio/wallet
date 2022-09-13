@@ -13,8 +13,9 @@ import {
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import { FormEvent, useEffect, useState } from 'react'
-import { Message } from '@glif/filecoin-message'
+import { Message, SignedLotusMessage } from '@glif/filecoin-message'
 import * as cbor from '@ipld/dag-cbor'
+import { verifySignature } from '@zondax/filecoin-signing-tools/js'
 import { Header, FIPData, FormState } from './Helpers'
 import { PAGE } from '../../constants'
 
@@ -25,6 +26,32 @@ enum Vote {
 }
 
 const FIP_ID = 14
+
+// returns the vote choice for poll 14, or null if the signature is invalid or not the correct poll
+function referenceCheckSigAndExtractVote(
+  signedMessage: SignedLotusMessage
+): Vote | null {
+  const { Message: LotusMessage, Signature } = signedMessage
+
+  try {
+    const validSignature = verifySignature(Signature.Data, LotusMessage)
+    if (!validSignature) return null
+    const params = cbor
+      .decode(Buffer.from(LotusMessage.Params as string, 'base64'))
+      .toString()
+
+    const [pollID, vote] = params.split(' - ') as [string, Vote]
+
+    // make sure the params are signed for the pollID we're expecting
+    if (Number(pollID) !== FIP_ID) return null
+    // make sure the vote choice is a valid vote choice
+    const isValidVoteChoice = Object.values(Vote).some((v) => vote === v)
+    if (!isValidVoteChoice) return null
+    return vote
+  } catch {
+    return null
+  }
+}
 
 export const Fip = () => {
   const [vote, setVote] = useState<Vote | ''>('')
@@ -45,12 +72,13 @@ export const Fip = () => {
       )
       const provider = await getProvider()
       const newMessage = new Message({
-        to: 'f01',
+        to: wallet.robust || wallet.id,
         from: wallet.robust || wallet.id,
         nonce: 0,
         value: '0',
         method: 1,
-        params
+        params,
+        gasLimit: 1
       })
 
       setFormState(FormState.SIGNING_MESSAGE)
@@ -59,12 +87,18 @@ export const Fip = () => {
         newMessage.toLotusType()
       )
       setFormState(FormState.SIGNED_MESSAGE)
-      console.log(signedMessage)
+
       // comment this line in with your URL and send it...
-      // await axios.post('your-url', { ...signedMessage })
+      await axios.post('https://api.filpoll.io/api/polls/34/vote/glif', {
+        ...signedMessage
+      })
+
+      // @Catalin Bara see this code for reference on verifying and extracting the vote choice
+      referenceCheckSigAndExtractVote(signedMessage)
+
       setFormState(FormState.SUCCESS)
     } catch (err) {
-      console.log(err)
+      setFormState(FormState.FILLING_FORM)
       setError(err)
     }
   }
