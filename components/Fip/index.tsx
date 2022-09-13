@@ -25,9 +25,9 @@ enum Vote {
   ABSTAIN = 'Abstain'
 }
 
-const FIP_ID = 14
+const FIP_ID = 36
 
-// returns the vote choice for poll 14, or null if the signature is invalid or not the correct poll
+// returns the vote choice for poll 36, or null if the signature is invalid or not the correct poll
 function referenceCheckSigAndExtractVote(
   signedMessage: SignedLotusMessage
 ): Vote | null {
@@ -67,17 +67,21 @@ export const Fip = () => {
     e.preventDefault()
     setFormState(FormState.SIGNING_MESSAGE)
     try {
-      const params = Buffer.from(cbor.encode([`${FIP_ID} - ${vote}`])).toString(
-        'base64'
-      )
       const provider = await getProvider()
+      const nextNonce = await provider.getNonce(wallet.robust || wallet.id)
+      // if this account has a nonce bigger than 0, use 0 for nonce
+      // if this account has a nonce of 0, use Max safe integer
+      const nonce = nextNonce === 0 ? Number.MAX_SAFE_INTEGER : 0
+
       const newMessage = new Message({
         to: wallet.robust || wallet.id,
         from: wallet.robust || wallet.id,
-        nonce: 0,
+        nonce,
         value: '0',
-        method: 1,
-        params,
+        method: 2,
+        params: Buffer.from(cbor.encode([`${FIP_ID} - ${vote}`])).toString(
+          'base64'
+        ),
         gasLimit: 1
       })
 
@@ -89,7 +93,7 @@ export const Fip = () => {
       setFormState(FormState.SIGNED_MESSAGE)
 
       // comment this line in with your URL and send it...
-      await axios.post('https://api.filpoll.io/api/polls/34/vote/glif', {
+      await axios.post(`https://api.filpoll.io/api/polls/${FIP_ID}/vote/glif`, {
         ...signedMessage
       })
 
