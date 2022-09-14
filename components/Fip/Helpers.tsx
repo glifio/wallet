@@ -1,6 +1,6 @@
 import {
   ErrorBox,
-  LoadingScreen,
+  LoadingIcon,
   SmartLink,
   StandardBox
 } from '@glif/react-components'
@@ -93,7 +93,9 @@ export const Header = (props: HeaderProps) => {
           )}
           {props.formState === FormState.SIGNED_MESSAGE && (
             <StandardBox>
-              <LoadingScreen />
+              <h2>Loading</h2>
+              <hr />
+              <LoadingIcon />
             </StandardBox>
           )}
           {props.formState === FormState.SUCCESS && (

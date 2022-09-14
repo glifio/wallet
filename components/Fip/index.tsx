@@ -13,9 +13,8 @@ import {
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import { FormEvent, useEffect, useState } from 'react'
-import { Message, SignedLotusMessage } from '@glif/filecoin-message'
+import { Message } from '@glif/filecoin-message'
 import * as cbor from '@ipld/dag-cbor'
-import { verifySignature } from '@zondax/filecoin-signing-tools/js'
 import { Header, FIPData, FormState } from './Helpers'
 import { PAGE } from '../../constants'
 
@@ -25,32 +24,6 @@ enum Vote {
 }
 
 const FIP_ID = 10
-
-// returns the vote choice for poll 36, or null if the signature is invalid or not the correct poll
-function referenceCheckSigAndExtractVote(
-  signedMessage: SignedLotusMessage
-): Vote | null {
-  const { Message: LotusMessage, Signature } = signedMessage
-
-  try {
-    const validSignature = verifySignature(Signature.Data, LotusMessage)
-    if (!validSignature) return null
-    const params = cbor
-      .decode(Buffer.from(LotusMessage.Params as string, 'base64'))
-      .toString()
-
-    const [pollID, vote] = params.split(' - ') as [string, Vote]
-
-    // make sure the params are signed for the pollID we're expecting
-    if (Number(pollID) !== FIP_ID) return null
-    // make sure the vote choice is a valid vote choice
-    const isValidVoteChoice = Object.values(Vote).some((v) => vote === v)
-    if (!isValidVoteChoice) return null
-    return vote
-  } catch {
-    return null
-  }
-}
 
 export const Fip = () => {
   const [vote, setVote] = useState<Vote | ''>('')
@@ -91,18 +64,26 @@ export const Fip = () => {
       )
       setFormState(FormState.SIGNED_MESSAGE)
 
-      // comment this line in with your URL and send it...
-      await axios.post(`https://api.filpoll.io/api/polls/${FIP_ID}/vote/glif`, {
-        ...signedMessage
-      })
+      const res = await axios.post(
+        `https://api.filpoll.io/api/polls/${FIP_ID}/vote/glif`,
+        {
+          ...signedMessage
+        }
+      )
 
-      // @Catalin Bara see this code for reference on verifying and extracting the vote choice
-      referenceCheckSigAndExtractVote(signedMessage)
-
-      setFormState(FormState.SUCCESS)
+      if (res.status === 201) {
+        setFormState(FormState.SUCCESS)
+      } else {
+        setError(new Error('There was an error when casting your vote.'))
+        setFormState(FormState.FILLING_FORM)
+      }
     } catch (err) {
+      if (err?.response?.data?.error) {
+        setError(new Error(err.response?.data?.error))
+      } else {
+        setError(new Error(err?.message || err))
+      }
       setFormState(FormState.FILLING_FORM)
-      setError(err)
     }
   }
 
@@ -139,12 +120,22 @@ export const Fip = () => {
                 disabled={formState > FormState.FILLING_FORM}
               />
             </ShadowBox>
-            {formState <= FormState.FILLING_FORM && (
+            {formState <= FormState.SIGNED_MESSAGE && (
               <ButtonRowSpaced>
-                <ButtonV2 large type='button' onClick={router.back}>
+                <ButtonV2
+                  large
+                  type='button'
+                  onClick={router.back}
+                  disabled={formState > FormState.FILLING_FORM}
+                >
                   Back
                 </ButtonV2>
-                <ButtonV2 large green type='submit' disabled={vote === ''}>
+                <ButtonV2
+                  large
+                  green
+                  type='submit'
+                  disabled={vote === '' || formState > FormState.FILLING_FORM}
+                >
                   Vote
                 </ButtonV2>
               </ButtonRowSpaced>
