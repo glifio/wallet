@@ -24,7 +24,7 @@ enum Vote {
   REJECT = 'Reject'
 }
 
-const FIP_ID = 16
+const FIP_ID = 10
 
 // returns the vote choice for poll 36, or null if the signature is invalid or not the correct poll
 function referenceCheckSigAndExtractVote(
