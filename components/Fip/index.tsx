@@ -25,7 +25,7 @@ enum Vote {
   ABSTAIN = 'Abstain'
 }
 
-const FIP_ID = 36
+const FIP_ID = 16
 
 // returns the vote choice for poll 36, or null if the signature is invalid or not the correct poll
 function referenceCheckSigAndExtractVote(
@@ -82,7 +82,7 @@ export const Fip = () => {
         params: Buffer.from(cbor.encode([`${FIP_ID} - ${vote}`])).toString(
           'base64'
         ),
-        gasLimit: 1
+        gasPremium: '1'
       })
 
       setFormState(FormState.SIGNING_MESSAGE)
