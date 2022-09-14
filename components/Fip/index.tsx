@@ -23,7 +23,7 @@ enum Vote {
   REJECT = 'Reject'
 }
 
-const FIP_ID = 10
+const FIP_ID = 16
 
 export const Fip = () => {
   const [vote, setVote] = useState<Vote | ''>('')
