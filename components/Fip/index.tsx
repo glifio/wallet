@@ -21,8 +21,7 @@ import { PAGE } from '../../constants'
 
 enum Vote {
   APPROVE = 'Approve',
-  REJECT = 'Reject',
-  ABSTAIN = 'Abstain'
+  REJECT = 'Reject'
 }
 
 const FIP_ID = 16
@@ -134,7 +133,7 @@ export const Fip = () => {
               <InputV2.Select
                 label='Vote'
                 placeholder='Select'
-                options={[Vote.APPROVE, Vote.REJECT, Vote.ABSTAIN]}
+                options={[Vote.APPROVE, Vote.REJECT]}
                 value={vote}
                 onChange={(v: Vote) => setVote(v)}
                 disabled={formState > FormState.FILLING_FORM}
