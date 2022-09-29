@@ -3,8 +3,6 @@ import App from 'next/app'
 import Head from 'next/head'
 import Script from 'next/script'
 import {
-  theme,
-  ThemeProvider,
   PendingMessageProvider,
   WalletProviderWrapper,
   BalancePoller,
@@ -81,16 +79,14 @@ class MyApp extends App {
         >
           <ApolloWrapper>
             <SWRConfig value={{ refreshInterval: 10000 }}>
-              <ThemeProvider theme={theme}>
-                <WalletProviderWrapper>
-                  <BalancePoller />
-                  <PendingMessageProvider>
-                    <ErrorBoundary Wrapper={WalletPage}>
-                      <Component {...pageProps} />
-                    </ErrorBoundary>
-                  </PendingMessageProvider>
-                </WalletProviderWrapper>
-              </ThemeProvider>
+              <WalletProviderWrapper>
+                <BalancePoller />
+                <PendingMessageProvider>
+                  <ErrorBoundary Wrapper={WalletPage}>
+                    <Component {...pageProps} />
+                  </ErrorBoundary>
+                </PendingMessageProvider>
+              </WalletProviderWrapper>
             </SWRConfig>
           </ApolloWrapper>
         </EnvironmentProvider>
