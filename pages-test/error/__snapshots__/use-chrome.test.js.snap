@@ -113,11 +113,7 @@ exports[`UseChrome it renders the error page 1`] = `
 
 .c7 {
   position: relative;
-  padding: 3rem 1.5rem;
-}
-
-.c7:not(:last-child) {
-  padding-bottom: 0;
+  margin: 3rem 1.5rem;
 }
 
 .c7 > *:first-child {
@@ -129,6 +125,7 @@ exports[`UseChrome it renders the error page 1`] = `
 }
 
 .c8 {
+  height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -321,7 +318,7 @@ exports[`UseChrome it renders the error page 1`] = `
 
 @media (min-width:868px) {
   .c7 {
-    padding: 3rem;
+    margin: 3rem;
   }
 }
 
