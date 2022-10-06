@@ -1,0 +1,56 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: update react components
+
+env:
+  node_version: 16
+  git_email: jpschwartz2@uwalumni.com
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [16]
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          # fetch full history so things like auto-changelog work properly
+          fetch-depth: 0
+      - name: Use Node.js ${{ env.node_version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.node_version }}
+
+      - run: git config --global user.email "${{ env.git_email }}"
+      - run: git config --global user.name "${{ github.actor }}"
+
+      - name: Install
+        run: |
+          npm ci --ignore-scripts
+          npm i @glif/react-components@latest
+
+      - name: Update snapshots
+        run: npm run update-react-components
+        continue-on-error: true
+
+      - name: Create Pull Request
+        if: always()
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: Update @glif/react-components
+          committer: ${{ github.actor }} <${{ env.git_email }}>
+          author: ${{ github.actor }} <${{ env.git_email }}>
+          branch: actions/update-react-components
+          delete-branch: true
+          title: 'Update @glif/react-components'
+          body: 'Update @glif/react-components'
+          labels: |
+            automated pr
