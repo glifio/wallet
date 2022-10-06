@@ -40,12 +40,11 @@ jobs:
       - name: Update snapshots
         run: npm run update-react-components
         continue-on-error: true
-        
+
       - name: Test
         run: npm run test
 
       - name: Create Pull Request
-        if: always()
         uses: peter-evans/create-pull-request@v4
         with:
           commit-message: Update @glif/react-components
