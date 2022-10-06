@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react'
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import {
+  Colors,
   getQueryParam,
   AccountCard,
   AccountError,
@@ -77,7 +78,7 @@ export default function WalletHome() {
           ) : (
             <AccountCard
               onAccountSwitch={onAccountSwitch}
-              color='core.primary'
+              color={Colors.PURPLE_MEDIUM}
               address={wallet.address}
               walletType={loginOption}
               onShowOnLedger={onShowOnLedger}

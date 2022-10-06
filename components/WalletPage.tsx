@@ -2,12 +2,12 @@ import {
   Page,
   PageProps,
   PagePropTypes,
-  WalletIconHeaderFooter
+  IconWallet
 } from '@glif/react-components'
 
 export default function WalletPage({ children, ...rest }: PageProps) {
   return (
-    <Page appIcon={<WalletIconHeaderFooter />} {...rest}>
+    <Page appIcon={<IconWallet />} {...rest}>
       {children}
     </Page>
   )

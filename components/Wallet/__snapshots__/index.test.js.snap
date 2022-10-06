@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`WalletView it renders correctly 1`] = `
-.c18 {
+.c12 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -30,46 +30,45 @@ exports[`WalletView it renders correctly 1`] = `
   background: var(--green-medium);
 }
 
-.c18 svg path {
+.c12 svg path {
   stroke: var(--black);
 }
 
-.c18:hover {
+.c12:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c18:hover svg path {
+.c12:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c18:active {
+.c12:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c18:active svg path {
+.c12:active svg path {
   stroke: var(--white) !important;
 }
 
-.c18 svg path {
+.c12 svg path {
   stroke: var(--white);
 }
 
-.c18:hover {
+.c12:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c18:hover svg path {
+.c12:hover svg path {
   stroke: var(--green-medium);
 }
 
-.c10 {
-  width: 24;
-  height: 24;
+.c8 {
+  vertical-align: middle;
 }
 
 .c2 {
@@ -113,21 +112,17 @@ exports[`WalletView it renders correctly 1`] = `
   border-color: var(--white);
 }
 
-.c16 {
+.c10 {
   border: 1px solid var(--black);
 }
 
-.c16 hr {
+.c10 hr {
   border-color: var(--black);
 }
 
 .c0 {
   position: relative;
-  padding: 3rem 1.5rem;
-}
-
-.c0:not(:last-child) {
-  padding-bottom: 0;
+  margin: 3rem 1.5rem;
 }
 
 .c0 > *:first-child {
@@ -149,69 +144,41 @@ exports[`WalletView it renders correctly 1`] = `
 }
 
 .c7 {
-  min-width: 0;
-  box-sizing: border-box;
-  color: var(--white);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c9 {
-  height: auto;
+  position: relative;
   cursor: pointer;
-  opacity: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  outline: none;
 }
 
-.c12 {
-  -webkit-transition: 0.24s ease-in-out;
-  transition: 0.24s ease-in-out;
+.c7 svg {
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+  -webkit-transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
 }
 
-.c8:hover .c11 {
+.c7 .copy-text {
+  position: absolute;
+  top: calc(50% - 0.2em);
+  left: calc(100%);
+  padding-left: 0.5em;
+  color: var(--white);
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.c7:hover svg {
   -webkit-transform: scale(1.25);
   -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
 
-.c14 {
-  -webkit-transition: 0.18s ease-in;
-  transition: 0.18s ease-in;
-  opacity: 0;
-  text-align: left;
-  color: var(--white);
-  margin-top: 0;
-  margin-left: 4px;
-  margin-top: 0;
-  margin-left: 4px;
-}
-
-.c8:hover .c13 {
+.c7:hover .copy-text {
   opacity: 1;
+  pointer-events: all;
 }
 
 .c6 {
@@ -219,7 +186,7 @@ exports[`WalletView it renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  grid-gap: 0.25em;
+  gap: 0.35em;
   line-height: 1.5;
 }
 
@@ -238,7 +205,6 @@ exports[`WalletView it renders correctly 1`] = `
 .c6 > a svg {
   -webkit-transition: 0.24s ease-in-out;
   transition: 0.24s ease-in-out;
-  vertical-align: middle;
 }
 
 .c6 > a svg:hover {
@@ -248,7 +214,7 @@ exports[`WalletView it renders correctly 1`] = `
   fill: var(--purple-medium);
 }
 
-.c15 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -259,12 +225,12 @@ exports[`WalletView it renders correctly 1`] = `
   gap: var(--space-m);
 }
 
-.c15 > p,
-.c15 > hr {
+.c9 > p,
+.c9 > hr {
   margin: 0.5em 0;
 }
 
-.c15 > p[role='button'] {
+.c9 > p[role='button'] {
   margin: 0;
 }
 
@@ -306,7 +272,7 @@ exports[`WalletView it renders correctly 1`] = `
   background-color: var(--purple-light) !important;
 }
 
-.c17 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -322,7 +288,7 @@ exports[`WalletView it renders correctly 1`] = `
   height: 18em;
 }
 
-.c17 .title {
+.c11 .title {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -339,11 +305,11 @@ exports[`WalletView it renders correctly 1`] = `
   margin-bottom: 1em;
 }
 
-.c17 .title h3 {
+.c11 .title h3 {
   margin: 0;
 }
 
-.c17 .title .toggle {
+.c11 .title .toggle {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -352,25 +318,25 @@ exports[`WalletView it renders correctly 1`] = `
   font-size: 1rem;
 }
 
-.c17 .title .toggle span {
+.c11 .title .toggle span {
   color: var(--gray-dark);
 }
 
-.c17 .title .toggle span.active {
+.c11 .title .toggle span.active {
   color: var(--black);
 }
 
-.c17 .title .toggle span:hover {
+.c11 .title .toggle span:hover {
   cursor: pointer;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c17 hr {
+.c11 hr {
   margin: 0;
 }
 
-.c17 .balance {
+.c11 .balance {
   font-size: var(--font-size-xxl);
   font-weight: 700;
 }
@@ -385,7 +351,7 @@ exports[`WalletView it renders correctly 1`] = `
 
 @media (min-width:868px) {
   .c0 {
-    padding: 3rem;
+    margin: 3rem;
   }
 }
 
@@ -420,48 +386,39 @@ exports[`WalletView it renders correctly 1`] = `
             >
               t1z225 ... 6z6wgi
             </a>
-            <div
+            <span
               class="c7"
               color="var(--white)"
-              display="flex"
+              role="button"
             >
-              <button
-                class="c8 c9"
-                display="flex"
-                role="button"
-                type="button"
+              <svg
+                class="c8"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  class="c10 c11 c12"
-                  fill="none"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    fill="#1A0066"
-                    height="12"
-                    width="12"
-                    x="8"
-                    y="4"
-                  />
-                  <rect
-                    fill="#E0D7FE"
-                    height="12"
-                    width="12"
-                    x="4"
-                    y="8"
-                  />
-                </svg>
-                <span
-                  class="c13 c14"
-                  color="var(--white)"
-                >
-                  Copy
-                </span>
-              </button>
-            </div>
+                <rect
+                  fill="#1A0066"
+                  height="12"
+                  width="12"
+                  x="4"
+                  y="0"
+                />
+                <rect
+                  fill="#E0D7FE"
+                  height="12"
+                  width="12"
+                  x="0"
+                  y="4"
+                />
+              </svg>
+              <span
+                class="copy-text"
+              >
+                Copy
+              </span>
+            </span>
           </div>
         </div>
       </div>
@@ -469,12 +426,12 @@ exports[`WalletView it renders correctly 1`] = `
         class="buttons"
       >
         <div
-          class="c15"
+          class="c9"
         />
       </div>
     </div>
     <div
-      class="c2 c16 c17"
+      class="c2 c10 c11"
     >
       <div>
         <div
@@ -507,7 +464,7 @@ exports[`WalletView it renders correctly 1`] = `
          FIL
       </p>
       <button
-        class="c18"
+        class="c12"
       >
         Send
       </button>

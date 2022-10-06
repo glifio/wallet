@@ -3,8 +3,6 @@ import {
   PendingMessageProvider,
   WalletProviderWrapper,
   initialState as walletProviderInitialState,
-  theme,
-  ThemeProvider,
   TestEnvironment
 } from '@glif/react-components'
 import { MockedProvider } from '@apollo/client/testing'
@@ -39,7 +37,7 @@ const Index = (statePreset = 'preOnboard', options = {}) => {
               getState={cacheWalletProviderState}
               initialState={initialState}
             >
-              <ThemeProvider theme={theme}>{children}</ThemeProvider>
+              {children}
             </WalletProviderWrapper>
           </PendingMessageProvider>
         </MockedProvider>
