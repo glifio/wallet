@@ -43,6 +43,5 @@ export enum PAGE {
   CONNECT_BURNER_IMPORT_SEED = '/connect/burner/import-seed',
   CONNECT_BURNER_IMPORT_PK = '/connect/burner/import-private-key',
   CONNECT_BURNER_CREATE_SEED = '/connect/burner/create-seed',
-  NODE_DISCONNECTED = '/error/node-disconnected',
-  FIP_36 = '/fip-36'
+  NODE_DISCONNECTED = '/error/node-disconnected'
 }

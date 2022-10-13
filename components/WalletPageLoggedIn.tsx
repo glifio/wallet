@@ -35,10 +35,6 @@ export default function WalletPageLoggedIn({
             url: PAGE.WALLET_SEND
           },
           {
-            title: 'FIP-0036',
-            url: PAGE.FIP_36
-          },
-          {
             title: 'Discord',
             url: GLIF_DISCORD
           }
@@ -51,10 +47,6 @@ export default function WalletPageLoggedIn({
           {
             title: 'Switch Account',
             url: PAGE.WALLET_CHOOSE_ACCOUNTS
-          },
-          {
-            title: 'FIP-0036',
-            url: PAGE.FIP_36
           },
           {
             title: 'Send FIL',
