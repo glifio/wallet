@@ -32,20 +32,7 @@ const serializeParams = jest
     return createHash([JSON.stringify(params), version, method].join(''))
   })
 
-const createMultisig = jest.fn().mockImplementation(
-  //eslint-disable-next-line @typescript-eslint/no-unused-vars
-  (walletAddress, signerAddresses, value, numSigners, nonce, vest, epoch) => {
-    // normally this returns the whole message but we just use the params
-    return {
-      from: walletAddress,
-      to: 't01',
-      params: 'xxyyzzz'
-    }
-  }
-)
-
 module.exports = {
-  createMultisig,
   keyRecover,
   keyDerive,
   generateMnemonic,
