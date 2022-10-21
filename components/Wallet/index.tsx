@@ -25,7 +25,7 @@ import { PAGE } from '../../constants'
 
 const Cards = styled.div`
   display: flex;
-  gap: var(--space-l)};
+  gap: var(--space-l);
 `
 
 export default function WalletHome() {
