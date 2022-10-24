@@ -27,7 +27,7 @@
     "@glif/filecoin-number": "^2.0.5",
     "@glif/filecoin-wallet-provider": "^2.0.15",
     "@glif/react-components": "^2.0.6",
-    "next": "^12.2.3",
+    "next": "^12.3.1",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
