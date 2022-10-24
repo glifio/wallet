@@ -137,7 +137,7 @@ describe('Send', () => {
     expect(pendingMsg.cid).toBeTruthy()
     expect(pendingMsg.from.robust).toBe(WALLET_ADDRESS)
     expect(pendingMsg.to.robust).toBe(validAddress)
-    expect(pendingMsg.height).toBe('')
+    expect(pendingMsg.height).toBe(0)
     expect(pendingMsg.params).toBe('')
     expect(Number(pendingMsg.nonce)).toBeGreaterThanOrEqual(0)
     expect(Number(pendingMsg.method)).toBe(0)
