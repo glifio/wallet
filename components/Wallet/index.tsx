@@ -31,7 +31,7 @@ const Cards = styled.div`
 export default function WalletHome() {
   const wallet = useWallet()
   const router = useRouter()
-  const cid = getQueryParam.string(router, 'cid')
+  const txID = getQueryParam.string(router, 'txID')
   const { ledger, connectLedger, loginOption } = useWalletProvider()
   const [uncaughtError, setUncaughtError] = useState('')
   const [ledgerBusy, setLedgerBusy] = useState(false)
@@ -93,17 +93,17 @@ export default function WalletHome() {
         </Cards>
       </OneColumn>
       <OneColumn>
-        {cid ? (
+        {txID ? (
           <MessageDetail
-            cid={cid}
+            txID={txID}
             speedUpHref={PAGE.SPEED_UP}
             cancelHref={PAGE.CANCEL}
           />
         ) : (
           <MessageHistoryTable
             address={wallet.address}
-            cidHref={(cid: string) =>
-              appendQueryParams(PAGE.WALLET_HOME, { cid })
+            txIDHref={(txID: string) =>
+              appendQueryParams(PAGE.WALLET_HOME, { txID })
             }
             warnMissingData={networkName === Network.MAINNET}
           />

@@ -380,7 +380,7 @@ exports[`WalletView it renders correctly 1`] = `
             color="var(--white)"
           >
             <a
-              href="https://explorer-calibration.glif.link/actor/?address=t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
+              href="https://explorer-calibration.glif.link/address/t1z225tguggx4onbauimqvxzutopzdr2m4s6z6wgi"
               rel="noreferrer noopener"
               target="_blank"
             >
@@ -393,9 +393,8 @@ exports[`WalletView it renders correctly 1`] = `
             >
               <svg
                 class="c8"
-                height="16"
+                height="1em"
                 viewBox="0 0 16 16"
-                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <rect

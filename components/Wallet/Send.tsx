@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import { useState, useMemo, Context } from 'react'
 import { useRouter } from 'next/router'
+import { delegatedFromEthAddress } from '@glif/filecoin-address'
 import { Message } from '@glif/filecoin-message'
 import { FilecoinNumber } from '@glif/filecoin-number'
 import {
@@ -12,7 +13,9 @@ import {
   TxState,
   WalletProviderOpts,
   PendingMsgContextType,
-  navigate
+  navigate,
+  useEnvironment,
+  isEthAddress
 } from '@glif/react-components'
 
 import { PAGE } from '../../constants'
@@ -20,6 +23,7 @@ import { PAGE } from '../../constants'
 export const Send = ({ walletProviderOpts, pendingMsgContext }: SendProps) => {
   const router = useRouter()
   const wallet = useWallet()
+  const { coinType } = useEnvironment()
   const { loginOption } = useWalletProvider(walletProviderOpts)
 
   // Input states
@@ -38,12 +42,20 @@ export const Send = ({ walletProviderOpts, pendingMsgContext }: SendProps) => {
   const [txState, setTxState] = useState<TxState>(TxState.FillingForm)
   const [txFee, setTxFee] = useState<FilecoinNumber | null>(null)
 
+  const toAddrFormatted = useMemo<string>(
+    () =>
+      isToAddressValid && isEthAddress(toAddress)
+        ? delegatedFromEthAddress(toAddress, coinType)
+        : toAddress,
+    [coinType, toAddress, isToAddressValid]
+  )
+
   // Create message from input
   const message = useMemo<Message | null>(
     () =>
       isToAddressValid && isValueValid && isParamsValid && value
         ? new Message({
-            to: toAddress,
+            to: toAddrFormatted,
             from: wallet.address,
             nonce: 0,
             value: value.toAttoFil(),
@@ -58,7 +70,7 @@ export const Send = ({ walletProviderOpts, pendingMsgContext }: SendProps) => {
       isToAddressValid,
       isValueValid,
       isParamsValid,
-      toAddress,
+      toAddrFormatted,
       wallet.address,
       value,
       params
