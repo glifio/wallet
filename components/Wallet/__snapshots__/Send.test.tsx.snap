@@ -700,7 +700,7 @@ exports[`Send it allows a user to send a message 1`] = `
 `;
 
 exports[`Send it allows a user to send a message to an eth address 1`] = `
-.c14 {
+.c19 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -734,48 +734,48 @@ exports[`Send it allows a user to send a message to an eth address 1`] = `
   background: transparent;
 }
 
-.c14 svg path {
+.c19 svg path {
   stroke: var(--black);
 }
 
-.c14:hover {
+.c19:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c14:hover svg path {
+.c19:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c14:active {
+.c19:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c14:active svg path {
+.c19:active svg path {
   stroke: var(--white) !important;
 }
 
-.c14 svg path {
+.c19 svg path {
   stroke: var(--white);
 }
 
-.c14:hover {
+.c19:hover {
   color: var(--green-medium);
   border-color: var(--green-medium);
   background: var(--white);
 }
 
-.c14:hover svg path {
+.c19:hover svg path {
   stroke: var(--green-medium);
 }
 
-.c14 svg path {
+.c19 svg path {
   stroke: var(--gray-medium);
 }
 
-.c13 {
+.c18 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -806,31 +806,35 @@ exports[`Send it allows a user to send a message to an eth address 1`] = `
   background: transparent;
 }
 
-.c13 svg path {
+.c18 svg path {
   stroke: var(--black);
 }
 
-.c13:hover {
+.c18:hover {
   color: var(--purple-medium);
   border-color: var(--purple-medium);
 }
 
-.c13:hover svg path {
+.c18:hover svg path {
   stroke: var(--purple-medium);
 }
 
-.c13:active {
+.c18:active {
   color: var(--white) !important;
   border-color: var(--purple-medium) !important;
   background: var(--purple-medium) !important;
 }
 
-.c13:active svg path {
+.c18:active svg path {
   stroke: var(--white) !important;
 }
 
-.c13 svg path {
+.c18 svg path {
   stroke: var(--gray-medium);
+}
+
+.c13 {
+  vertical-align: middle;
 }
 
 .c1 {
@@ -878,7 +882,7 @@ exports[`Send it allows a user to send a message to an eth address 1`] = `
   box-shadow: 0 0 0.5em var(--gray-light);
 }
 
-.c11 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -887,7 +891,7 @@ exports[`Send it allows a user to send a message to an eth address 1`] = `
   margin: 1.5em 0;
 }
 
-.c12 {
+.c17 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -918,6 +922,91 @@ exports[`Send it allows a user to send a message to an eth address 1`] = `
   animation-iteration-count: infinite;
   width: calc(3em * 0.5);
   height: calc(3em * 0.5);
+}
+
+.c10 {
+  display: inline-block;
+}
+
+.c10 h4 {
+  margin: 0;
+  color: var(--gray-dark);
+}
+
+.c10 p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.c12 {
+  position: relative;
+  cursor: pointer;
+}
+
+.c12 svg {
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+  -webkit-transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
+}
+
+.c12 .copy-text {
+  position: absolute;
+  top: calc(50%);
+  left: calc(100%);
+  padding-left: 0.5em;
+  color: var(--purple-medium);
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.c12:hover svg {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.c12:hover .copy-text {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.35em;
+  line-height: 1.5;
+}
+
+.c11 > a {
+  color: var(--purple-medium);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c11 > a:hover {
+  color: var(--purple-medium);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c11 > a svg {
+  -webkit-transition: 0.24s ease-in-out;
+  transition: 0.24s ease-in-out;
+}
+
+.c11 > a svg:hover {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+  fill: var(--purple-medium);
 }
 
 .c5 {
@@ -1008,6 +1097,17 @@ exports[`Send it allows a user to send a message to an eth address 1`] = `
   color: var(--red-medium);
 }
 
+.c8 .suffix-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: var(--space-m);
+}
+
 .c8 .button-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1065,11 +1165,15 @@ exports[`Send it allows a user to send a message to an eth address 1`] = `
   color: var(--gray-dark) !important;
 }
 
-.c9 .toggle-wrapper {
+.c9 {
+  font-size: 0.875rem;
+}
+
+.c14 .toggle-wrapper {
   position: relative;
 }
 
-.c9 input {
+.c14 input {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1078,7 +1182,7 @@ exports[`Send it allows a user to send a message to an eth address 1`] = `
   opacity: 0;
 }
 
-.c9 .toggle {
+.c14 .toggle {
   display: inline-block;
   position: relative;
   width: 2.25em;
@@ -1090,7 +1194,7 @@ exports[`Send it allows a user to send a message to an eth address 1`] = `
   background-color: var(--gray-light) !important;
 }
 
-.c9 .toggle::after {
+.c14 .toggle::after {
   content: '';
   position: absolute;
   top: 0;
@@ -1101,12 +1205,12 @@ exports[`Send it allows a user to send a message to an eth address 1`] = `
   background-color: var(--white);
 }
 
-.c9 input:checked ~ .toggle {
+.c14 input:checked ~ .toggle {
   border-color: var(--blue-dark);
   background-color: var(--blue-dark);
 }
 
-.c9 input:checked ~ .toggle::after {
+.c14 input:checked ~ .toggle::after {
   left: auto;
   right: 0;
 }
@@ -1154,7 +1258,7 @@ exports[`Send it allows a user to send a message to an eth address 1`] = `
   flex: 1 0 auto;
 }
 
-.c10 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1169,7 +1273,7 @@ exports[`Send it allows a user to send a message to an eth address 1`] = `
   justify-content: space-between;
 }
 
-.c10 span {
+.c15 span {
   color: var(--purple-medium);
   font-size: 1.75rem;
 }
@@ -1232,25 +1336,80 @@ exports[`Send it allows a user to send a message to an eth address 1`] = `
             
           </div>
           <div
-            class="button-wrapper"
+            class="suffix-wrapper"
           >
             <div
-              class="unit-wrapper"
+              class="button-wrapper"
             >
-              <input
-                autocomplete="on"
-                class=""
-                disabled=""
-                max=""
-                min=""
-                name=""
-                placeholder="f1..."
-                step="any"
-                style="padding-right: 1em;"
-                type="text"
-                value="0x52963EF50e27e06D72D59fcB4F3c2a687BE3cfEf"
-              />
-              
+              <div
+                class="unit-wrapper"
+              >
+                <input
+                  autocomplete="on"
+                  class=""
+                  disabled=""
+                  max=""
+                  min=""
+                  name=""
+                  placeholder="f1..."
+                  step="any"
+                  style="padding-right: 1em;"
+                  type="text"
+                  value="0x52963EF50e27e06D72D59fcB4F3c2a687BE3cfEf"
+                />
+                
+              </div>
+            </div>
+            <div>
+              <div
+                class="c9"
+              >
+                Converts into
+                 
+                <div
+                  class="c10"
+                >
+                  <div
+                    class="c11"
+                    color="var(--purple-medium)"
+                  >
+                    <a
+                      href="https://explorer-calibration.glif.link/address/t410fkkld55ioe7qg24wvt7fu6pbknb56ht7pt4zamxa"
+                      rel="noreferrer noopener"
+                      target="_blank"
+                    >
+                      t410fk ... 4zamxa
+                    </a>
+                    <span
+                      class="c12"
+                      color="var(--purple-medium)"
+                      role="button"
+                    >
+                      <svg
+                        class="c13"
+                        height="1em"
+                        viewBox="0 0 16 16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="#1A0066"
+                          height="12"
+                          width="12"
+                          x="4"
+                          y="0"
+                        />
+                        <rect
+                          fill="#E0D7FE"
+                          height="12"
+                          width="12"
+                          x="0"
+                          y="4"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </label>
@@ -1266,29 +1425,33 @@ exports[`Send it allows a user to send a message to an eth address 1`] = `
             
           </div>
           <div
-            class="button-wrapper"
+            class="suffix-wrapper"
           >
             <div
-              class="unit-wrapper"
+              class="button-wrapper"
             >
-              <input
-                autocomplete="on"
-                class=""
-                disabled=""
-                max="1"
-                min="0"
-                name=""
-                placeholder=""
-                step="any"
-                style="padding-right: 3.25em;"
-                type="number"
-                value="0.01"
-              />
-              <span
-                class="unit"
+              <div
+                class="unit-wrapper"
               >
-                FIL
-              </span>
+                <input
+                  autocomplete="on"
+                  class=""
+                  disabled=""
+                  max="1"
+                  min="0"
+                  name=""
+                  placeholder=""
+                  step="any"
+                  style="padding-right: 3.25em;"
+                  type="number"
+                  value="0.01"
+                />
+                <span
+                  class="unit"
+                >
+                  FIL
+                </span>
+              </div>
             </div>
           </div>
         </label>
@@ -1304,31 +1467,35 @@ exports[`Send it allows a user to send a message to an eth address 1`] = `
             
           </div>
           <div
-            class="button-wrapper"
+            class="suffix-wrapper"
           >
             <div
-              class="unit-wrapper"
+              class="button-wrapper"
             >
-              <input
-                autocomplete="on"
-                class=""
-                disabled=""
-                max=""
-                min=""
-                name=""
-                placeholder="Optional Base64 params"
-                step="any"
-                style="padding-right: 1em;"
-                type="text"
-                value=""
-              />
-              
+              <div
+                class="unit-wrapper"
+              >
+                <input
+                  autocomplete="on"
+                  class=""
+                  disabled=""
+                  max=""
+                  min=""
+                  name=""
+                  placeholder="Optional Base64 params"
+                  step="any"
+                  style="padding-right: 1em;"
+                  type="text"
+                  value=""
+                />
+                
+              </div>
             </div>
           </div>
         </label>
         <hr />
         <label
-          class="c7 c9"
+          class="c7 c14"
           disabled=""
         >
           <div>
@@ -1364,7 +1531,7 @@ exports[`Send it allows a user to send a message to an eth address 1`] = `
         </p>
         <hr />
         <div
-          class="c10"
+          class="c15"
         >
           <span>
             Total
@@ -1377,17 +1544,17 @@ exports[`Send it allows a user to send a message to an eth address 1`] = `
       </div>
     </div>
     <div
-      class="c11 c12"
+      class="c16 c17"
     >
       <button
-        class="c13"
+        class="c18"
         disabled=""
         type="button"
       >
         Back
       </button>
       <button
-        class="c14"
+        class="c19"
         disabled=""
         type="submit"
       >
