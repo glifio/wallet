@@ -102,8 +102,8 @@ export default function WalletHome() {
         ) : (
           <MessageHistoryTable
             address={wallet.address}
-            cidHref={(cid: string) =>
-              appendQueryParams(PAGE.WALLET_HOME, { cid })
+            txIDHref={(txID: string) =>
+              appendQueryParams(PAGE.WALLET_HOME, { txID })
             }
             warnMissingData={networkName === Network.MAINNET}
           />
