@@ -1,55 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UseChrome it renders the error page 1`] = `
-.c14 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  gap: 0.75rem;
-  padding: 0.5em 0.75em;
-  color: var(--black);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 8px;
-  border-color: var(--black);
-  background: transparent;
-}
-
-.c14 svg path {
-  stroke: var(--black);
-}
-
-.c14:hover {
-  color: var(--purple-medium);
-  border-color: var(--purple-medium);
-}
-
-.c14:hover svg path {
-  stroke: var(--purple-medium);
-}
-
-.c14:active {
-  color: var(--white) !important;
-  border-color: var(--purple-medium) !important;
-  background: var(--purple-medium) !important;
-}
-
-.c14:active svg path {
-  stroke: var(--white) !important;
-}
-
 .c5 {
   vertical-align: middle;
 }
@@ -301,6 +252,56 @@ exports[`UseChrome it renders the error page 1`] = `
 
 .c7 {
   min-height: 0;
+}
+
+.c14 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.3;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+}
+
+.c14 svg path {
+  stroke: var(--black);
+}
+
+.c14:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c14:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c14:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c14:active svg path {
+  stroke: var(--white) !important;
 }
 
 @media (min-width:868px) {

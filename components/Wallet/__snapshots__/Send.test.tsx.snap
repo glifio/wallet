@@ -700,137 +700,47 @@ exports[`Send it allows a user to send a message 1`] = `
 `;
 
 exports[`Send it allows a user to send a message to an eth address 1`] = `
-.c19 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--space-m);
+  text-align: left;
+  pointer-events: none;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  gap: 0.75rem;
-  padding: 0.5em 0.75em;
-  color: var(--black);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 8px;
-  border-color: var(--black);
-  background: transparent;
-  font-size: 1.25em;
-  color: var(--white);
-  border-color: var(--green-medium);
-  background: var(--green-medium);
-  pointer-events: none;
-  color: var(--gray-medium);
-  border-color: var(--gray-medium);
-  background: transparent;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
-.c19 svg path {
-  stroke: var(--black);
+.c7 > *:first-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
-.c19:hover {
-  color: var(--purple-medium);
-  border-color: var(--purple-medium);
+.c7 > *:last-child:not(.toggle-wrapper) {
+  -webkit-flex: 0 0 65%;
+  -ms-flex: 0 0 65%;
+  flex: 0 0 65%;
 }
 
-.c19:hover svg path {
-  stroke: var(--purple-medium);
+.c7 span.info,
+.c7 span.error {
+  font-size: 0.875rem;
 }
 
-.c19:active {
-  color: var(--white) !important;
-  border-color: var(--purple-medium) !important;
-  background: var(--purple-medium) !important;
-}
-
-.c19:active svg path {
-  stroke: var(--white) !important;
-}
-
-.c19 svg path {
-  stroke: var(--white);
-}
-
-.c19:hover {
-  color: var(--green-medium);
-  border-color: var(--green-medium);
-  background: var(--white);
-}
-
-.c19:hover svg path {
-  stroke: var(--green-medium);
-}
-
-.c19 svg path {
-  stroke: var(--gray-medium);
-}
-
-.c18 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  gap: 0.75rem;
-  padding: 0.5em 0.75em;
-  color: var(--black);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 8px;
-  border-color: var(--black);
-  background: transparent;
-  font-size: 1.25em;
-  pointer-events: none;
-  color: var(--gray-medium);
-  border-color: var(--gray-medium);
-  background: transparent;
-}
-
-.c18 svg path {
-  stroke: var(--black);
-}
-
-.c18:hover {
-  color: var(--purple-medium);
-  border-color: var(--purple-medium);
-}
-
-.c18:hover svg path {
-  stroke: var(--purple-medium);
-}
-
-.c18:active {
-  color: var(--white) !important;
-  border-color: var(--purple-medium) !important;
-  background: var(--purple-medium) !important;
-}
-
-.c18:active svg path {
-  stroke: var(--white) !important;
-}
-
-.c18 svg path {
-  stroke: var(--gray-medium);
+.c7 span.error {
+  color: var(--red-medium);
 }
 
 .c13 {
@@ -1054,47 +964,139 @@ exports[`Send it allows a user to send a message to an eth address 1`] = `
   gap: var(--space-m);
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: var(--space-m);
-  text-align: left;
-  pointer-events: none;
+.c19 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.3;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+  color: var(--white);
+  border-color: var(--green-medium);
+  background: var(--green-medium);
+  pointer-events: none;
+  color: var(--gray-medium);
+  border-color: var(--gray-medium);
+  background: transparent;
 }
 
-.c7 > *:first-child {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+.c19 svg path {
+  stroke: var(--black);
 }
 
-.c7 > *:last-child:not(.toggle-wrapper) {
-  -webkit-flex: 0 0 65%;
-  -ms-flex: 0 0 65%;
-  flex: 0 0 65%;
+.c19:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
 }
 
-.c7 span.info,
-.c7 span.error {
-  font-size: 0.875rem;
+.c19:hover svg path {
+  stroke: var(--purple-medium);
 }
 
-.c7 span.error {
-  color: var(--red-medium);
+.c19:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c19:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c19 svg path {
+  stroke: var(--white);
+}
+
+.c19:hover {
+  color: var(--green-medium);
+  border-color: var(--green-medium);
+  background: var(--white);
+}
+
+.c19:hover svg path {
+  stroke: var(--green-medium);
+}
+
+.c19 svg path {
+  stroke: var(--gray-medium);
+}
+
+.c18 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.3;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  font-size: 1.25em;
+  pointer-events: none;
+  color: var(--gray-medium);
+  border-color: var(--gray-medium);
+  background: transparent;
+}
+
+.c18 svg path {
+  stroke: var(--black);
+}
+
+.c18:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c18:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c18:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c18:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c18 svg path {
+  stroke: var(--gray-medium);
 }
 
 .c8 .suffix-wrapper {
