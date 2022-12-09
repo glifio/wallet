@@ -1,73 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`WalletView it renders correctly 1`] = `
-.c12 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  line-height: 1.3;
-  cursor: pointer;
-  gap: 0.75rem;
-  padding: 0.5em 0.75em;
-  color: var(--black);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 8px;
-  border-color: var(--black);
-  background: transparent;
-  color: var(--white);
-  border-color: var(--green-medium);
-  background: var(--green-medium);
-}
-
-.c12 svg path {
-  stroke: var(--black);
-}
-
-.c12:hover {
-  color: var(--purple-medium);
-  border-color: var(--purple-medium);
-}
-
-.c12:hover svg path {
-  stroke: var(--purple-medium);
-}
-
-.c12:active {
-  color: var(--white) !important;
-  border-color: var(--purple-medium) !important;
-  background: var(--purple-medium) !important;
-}
-
-.c12:active svg path {
-  stroke: var(--white) !important;
-}
-
-.c12 svg path {
-  stroke: var(--white);
-}
-
-.c12:hover {
-  color: var(--green-medium);
-  border-color: var(--green-medium);
-  background: var(--white);
-}
-
-.c12:hover svg path {
-  stroke: var(--green-medium);
-}
-
 .c8 {
   vertical-align: middle;
 }
@@ -233,6 +166,73 @@ exports[`WalletView it renders correctly 1`] = `
 
 .c9 > p[role='button'] {
   margin: 0;
+}
+
+.c12 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.3;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.5em 0.75em;
+  color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: var(--black);
+  background: transparent;
+  color: var(--white);
+  border-color: var(--green-medium);
+  background: var(--green-medium);
+}
+
+.c12 svg path {
+  stroke: var(--black);
+}
+
+.c12:hover {
+  color: var(--purple-medium);
+  border-color: var(--purple-medium);
+}
+
+.c12:hover svg path {
+  stroke: var(--purple-medium);
+}
+
+.c12:active {
+  color: var(--white) !important;
+  border-color: var(--purple-medium) !important;
+  background: var(--purple-medium) !important;
+}
+
+.c12:active svg path {
+  stroke: var(--white) !important;
+}
+
+.c12 svg path {
+  stroke: var(--white);
+}
+
+.c12:hover {
+  color: var(--green-medium);
+  border-color: var(--green-medium);
+  background: var(--white);
+}
+
+.c12:hover svg path {
+  stroke: var(--green-medium);
 }
 
 .c4 {
